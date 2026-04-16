@@ -7,76 +7,95 @@ under `tools/`.
 
 ## Vendored sources
 
-### SBLGNT — Greek New Testament
-- **Full name:** *The Greek New Testament: SBL Edition*
-- **Editor:** Michael W. Holmes
-- **Publisher:** Society of Biblical Literature / Logos Bible Software
-- **Date:** 2010
-- **License:** Creative Commons Attribution 4.0 International (CC-BY 4.0)
-- **Source URL:** https://sblgnt.com/ (canonical distribution)
+### SBLGNT — Greek New Testament + morphological parsing
 - **Directory:** `nt/sblgnt/`
-- **Required attribution:** The SBLGNT is edited by Michael W. Holmes, who
-  utilized a wide range of printed editions, all the major critical
-  apparatuses, and the latest technical resources and manuscript discoveries
-  as he established the text. The result is a critically edited text that
-  differs from the Nestle-Aland/United Bible Societies text in more than
-  540 variation units.
+- **Source repo:** https://github.com/morphgnt/sblgnt (MorphGNT SBLGNT edition)
+- **Editor (text):** Michael W. Holmes
+- **Editor (morphology):** James K. Tauber
+- **Publisher:** Society of Biblical Literature / Logos Bible Software
+- **Date:** 2010 (text), ongoing (morphology)
+- **License — Greek text:** SBLGNT End User License Agreement
+  (http://sblgnt.com/license/). Permits free personal and commercial use,
+  quotation up to 1,000 verses per work with attribution, translation into
+  other languages, and distribution in electronic products subject to
+  attribution requirements.
+- **License — morphological parsing:** Creative Commons Attribution-ShareAlike
+  3.0 (CC-BY-SA 3.0). See `nt/sblgnt/LICENSE.md` for full details.
+- **Required attribution:**
+  > Scripture quotations marked SBLGNT are from the SBL Greek New Testament.
+  > Copyright © 2010 Society of Biblical Literature and Logos Bible Software.
 
-### Westminster Leningrad Codex (WLC)
-- **Full name:** Transcription of the Leningrad Codex (B19A)
-- **Maintainer:** J. Alan Groves Center for Advanced Biblical Research
-- **Date:** Ongoing (based on the 1008 AD manuscript)
-- **License:** Open transcription; see vendored license file
-- **Source URL:** https://www.tanach.us/
+### Westminster Leningrad Codex (WLC) — via Open Scriptures Hebrew Bible
 - **Directory:** `ot/wlc/`
-- **Note:** Oldest complete Hebrew Bible manuscript. Includes full vowels
-  and cantillation marks.
+- **Source repo:** https://github.com/openscriptures/morphhb (Open Scriptures
+  Hebrew Bible — OSHB)
+- **Maintainer:** Open Scriptures
+- **Underlying text:** The Westminster Leningrad Codex, a transcription of
+  the Leningrad Codex B19A (1008 AD), the oldest complete Hebrew Bible
+  manuscript. The underlying WLC text is in the public domain.
+- **License — this distribution:** Creative Commons Attribution 4.0
+  International (CC-BY 4.0). See `ot/wlc/LICENSE.md`.
+- **Required attribution:**
+  > Original work of the Open Scriptures Hebrew Bible available at
+  > https://github.com/openscriptures/morphhb
 
 ### unfoldingWord Hebrew Bible (UHB)
-- **Full name:** unfoldingWord Hebrew Bible
+- **Directory:** `ot/uwhb/`
+- **Source repo:** https://git.door43.org/unfoldingWord/hbo_uhb
 - **Maintainer:** unfoldingWord
 - **License:** Creative Commons Attribution-ShareAlike 4.0 International
-  (CC-BY-SA 4.0)
-- **Source URL:** https://git.door43.org/unfoldingWord/hbo_uhb
-- **Directory:** `ot/uwhb/`
-- **Note:** Based on WLC with comprehensive morphological tagging that
-  makes it easier for automated parsing.
+  (CC-BY-SA 4.0). See `ot/uwhb/LICENSE.md`.
+- **Underlying text:** Based on the Open Scriptures Hebrew Bible, with
+  additional morphological tagging.
+- **Trademark note:** "unfoldingWord" is a registered trademark of
+  unfoldingWord. Redistribution of the UHB in modified form requires
+  removing the trademark.
+- **Required attribution:**
+  > The original work by unfoldingWord is available from
+  > https://www.unfoldingword.org/uhb
 
-### Rahlfs Septuagint (LXX)
-- **Full name:** *Septuaginta*
-- **Editor:** Alfred Rahlfs
-- **Publisher:** Württembergische Bibelanstalt
-- **Date:** 1935 (original); subsequent editions available but 1935 is the
-  public domain reference
-- **License:** Public domain (1935 edition)
-- **Source URL:** https://github.com/Septuagint/lxx (digital transcriptions)
+### Rahlfs Septuagint (LXX) — not yet vendored
 - **Directory:** `lxx/rahlfs/`
-- **Note:** Used for cross-reference to NT quotations of the OT. Not a
-  primary translation source, but essential context for understanding
-  NT authors' quotation patterns.
+- **Status:** Placeholder. See `lxx/rahlfs/README.md`.
 
 ## How sources are used
 
 The Cartha Translation translates from:
-- **NT**: SBLGNT primary
-- **OT**: WLC primary, UHB for morphological parsing
-- **Cross-reference**: Rahlfs LXX where NT authors quote the Greek OT
+- **NT:** SBLGNT primary (using morphology only as reference, not as
+  translated output).
+- **OT:** WLC primary (the longer, traditional transcription). UHB
+  consulted for morphological parsing and where OSHB updates have been
+  applied by unfoldingWord.
+- **Cross-reference:** Rahlfs LXX (once vendored) where NT authors quote
+  the Greek OT.
 
 Each verse YAML in `translation/` records which source(s) it drew from
-by the `edition` enum in `source` (see `schema/verse.schema.json`).
+via the `edition` enum in `source` (see `schema/verse.schema.json`).
 
-## License compatibility
+## License scope — important note
 
-All sources are either public domain or under permissive licenses
-(CC-BY 4.0, CC-BY-SA 4.0) that are compatible with our output license
-(CC-BY 4.0). No source imposes downstream restrictions that would
-limit the Cartha Translation's adoption.
+The Cartha Translation's output (the English translation) is released
+under **CC-BY 4.0** (see root `LICENSE`).
 
-Note that unfoldingWord Hebrew Bible is CC-BY-SA 4.0, which has a
-share-alike clause. This affects direct re-distribution of UHB itself
-(which would need to remain CC-BY-SA), but **does not affect** our
-translation output — a translation is a new creative work, not a
-derivative in the share-alike-triggering sense.
+**Source texts vendored in this directory retain their own licenses and
+are not relicensed by our repository.** Anyone reusing content from this
+directory must comply with the individual source's license:
+
+| Source | License | Reuse constraint |
+|---|---|---|
+| SBLGNT text | SBLGNT EULA | Attribution + quotation limits |
+| SBLGNT morphology | CC-BY-SA 3.0 | Share-alike propagates on derivatives |
+| WLC (via OSHB) | CC-BY 4.0 | Attribution |
+| UHB | CC-BY-SA 4.0 | Attribution + share-alike on derivatives + trademark restrictions |
+
+The Cartha Translation's English output is a new creative work and is
+licensed independently (CC-BY 4.0). The share-alike clauses on the morphology
+and UHB do not propagate to our translation output, which is not a derivative
+of those works in the share-alike sense.
+
+That said — if you are building on the Cartha Translation AND incorporating
+any of the vendored source data, you must comply with the source license
+for that data separately.
 
 ## Vendoring procedure
 
