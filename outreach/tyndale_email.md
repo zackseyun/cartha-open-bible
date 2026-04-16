@@ -1,7 +1,7 @@
 # Tyndale NLT API / Permissions Outreach Email
 
 **To:** permissions@tyndale.com (CC: dev@tyndale.com if it exists)
-**From:** Zack Seyun Kim, Founder, Cartha Inc. (support@cartha.ai)
+**From:** Zack Seyun Kim, Founder, Cartha Inc. (zack@cartha.com)
 **Subject:** NLT API use — Christian mobile app, scripture-only free access,
 written permission request
 
@@ -76,14 +76,14 @@ In Christ,
 
 Zack Seyun Kim
 Founder, Cartha Inc.
-support@cartha.ai
+zack@cartha.com
 cartha.ai
 
 ---
 
 ## Notes for OpenClaw
 
-- **Send from:** support@cartha.ai
+- **Send from:** zack@cartha.com
 - **Initial recipient:** permissions@tyndale.com (Tyndale House Publishers
   Permissions). Confirm this address is current before sending.
 - **If separate developer contact exists:** CC that too.

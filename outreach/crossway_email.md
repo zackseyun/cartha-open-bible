@@ -1,7 +1,7 @@
 # Crossway ESV API Outreach Email
 
 **To:** api@crossway.org
-**From:** Zack Seyun Kim, Founder, Cartha Inc. (support@cartha.ai)
+**From:** Zack Seyun Kim, Founder, Cartha Inc. (zack@cartha.com)
 **Subject:** ESV API free-tier eligibility — Christian mobile app with scripture-only free access
 
 ---
@@ -73,14 +73,14 @@ In Christ,
 
 Zack Seyun Kim
 Founder, Cartha Inc.
-support@cartha.ai
+zack@cartha.com
 cartha.ai
 
 ---
 
 ## Notes for OpenClaw
 
-- **Send from:** support@cartha.ai
+- **Send from:** zack@cartha.com
 - **Send via:** standard Gmail (no special headers required)
 - **Expected response time:** 1-2 weeks (per research)
 - **If declined:** ship without ESV. We have BSB + KJV + ASV + WEB + Cartha
