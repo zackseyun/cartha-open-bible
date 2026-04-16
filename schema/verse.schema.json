@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/zackseyun/cartha-translation/schema/verse.schema.json",
+  "title": "Cartha Translation per-verse record",
+  "description": "Full provenance record for a single verse. Every verse in the translation is stored as a YAML file conforming to this schema.",
+  "type": "object",
+  "required": ["id", "reference", "source", "translation", "ai_draft", "human_review"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Canonical verse identifier, e.g., MAT.1.1 or PHP.1.6",
+      "pattern": "^[A-Z1-3]{3}\\.\\d+\\.\\d+$"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Human-readable reference, e.g., 'Matthew 1:1'"
+    },
+    "source": {
+      "type": "object",
+      "required": ["edition", "text"],
+      "properties": {
+        "edition": {
+          "type": "string",
+          "enum": ["SBLGNT", "WLC", "UHB", "Rahlfs-LXX"]
+        },
+        "text": {
+          "type": "string",
+          "description": "The verbatim source-language text"
+        },
+        "apparatus": {
+          "type": "array",
+          "description": "Notes on variant readings consulted",
+          "items": {
+            "type": "object",
+            "properties": {
+              "witness": { "type": "string" },
+              "reading": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "translation": {
+      "type": "object",
+      "required": ["text", "philosophy"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The final English rendering published to readers"
+        },
+        "philosophy": {
+          "type": "string",
+          "enum": ["formal", "dynamic", "optimal-equivalence"],
+          "description": "Translation approach applied to this verse"
+        },
+        "footnotes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["marker", "text"],
+            "properties": {
+              "marker": { "type": "string", "description": "In-text marker, e.g., 'a', 'b'" },
+              "text": { "type": "string" },
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "alternative_reading",
+                  "lexical_alternative",
+                  "textual_variant",
+                  "cultural_note",
+                  "cross_reference"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "lexical_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_word", "chosen", "rationale"],
+        "properties": {
+          "source_word": {
+            "type": "string",
+            "description": "The Greek or Hebrew word being rendered"
+          },
+          "chosen": {
+            "type": "string",
+            "description": "The English gloss chosen"
+          },
+          "alternatives": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "lexicon": {
+            "type": "string",
+            "description": "Lexicon referenced, e.g., BDAG, HALOT, LSJ, Louw-Nida"
+          },
+          "entry": {
+            "type": "string",
+            "description": "Entry number or identifier within the lexicon"
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Why this gloss was chosen over alternatives"
+          }
+        }
+      }
+    },
+    "theological_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue", "chosen_reading", "rationale"],
+        "properties": {
+          "issue": {
+            "type": "string",
+            "description": "Short name of the contested question"
+          },
+          "chosen_reading": { "type": "string" },
+          "alternative_readings": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "rationale": { "type": "string" },
+          "doctrine_reference": {
+            "type": "string",
+            "description": "Link to the relevant section of DOCTRINE.md"
+          }
+        }
+      }
+    },
+    "ai_draft": {
+      "type": "object",
+      "required": ["model_id", "model_version", "prompt_id", "prompt_sha256", "timestamp", "output_hash"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "prompt_id": { "type": "string" },
+        "prompt_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "temperature": { "type": "number", "minimum": 0, "maximum": 2 },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "output_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "raw_output_ref": {
+          "type": "string",
+          "description": "Git LFS or storage reference to the raw model output (optional)"
+        }
+      }
+    },
+    "cross_check": {
+      "type": "object",
+      "properties": {
+        "models": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "agreement_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "divergences_resolved_at": {
+          "type": "string",
+          "description": "GitHub issue number or URL where divergences were reconciled"
+        }
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["status", "reviewers"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["draft", "in_review", "approved", "revision_requested", "escalated"]
+        },
+        "reviewers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "credentials", "signed_at"],
+            "properties": {
+              "name": { "type": "string" },
+              "credentials": { "type": "string" },
+              "signed_at": { "type": "string", "format": "date-time" },
+              "signature": {
+                "type": "string",
+                "description": "ed25519 signature of the canonical verse hash",
+                "pattern": "^ed25519:[A-Za-z0-9+/=]+$"
+              },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "human_edits": {
+          "type": "array",
+          "description": "Record of reviewer-made changes to the AI draft",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": { "type": "string" },
+              "before": { "type": "string" },
+              "after": { "type": "string" },
+              "rationale": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "discussion": {
+      "type": "string",
+      "description": "URL to GitHub issue(s) discussing this verse",
+      "format": "uri"
+    }
+  }
+}
