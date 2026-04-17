@@ -1,6 +1,6 @@
 # Source Texts
 
-All source texts used by the Cartha Translation are vendored in this
+All source texts used by the Cartha Open Bible are vendored in this
 directory with their original licenses preserved. No source text is
 modified — any necessary normalization happens in downstream processing
 under `tools/`.
@@ -60,7 +60,7 @@ under `tools/`.
 
 ## How sources are used
 
-The Cartha Translation translates from:
+The Cartha Open Bible translates from:
 - **NT:** SBLGNT primary (using morphology only as reference, not as
   translated output).
 - **OT:** WLC primary (the longer, traditional transcription). UHB
@@ -74,7 +74,7 @@ via the `edition` enum in `source` (see `schema/verse.schema.json`).
 
 ## License scope — important note
 
-The Cartha Translation's output (the English translation) is released
+The Cartha Open Bible's output (the English translation) is released
 under **CC-BY 4.0** (see root `LICENSE`).
 
 **Source texts vendored in this directory retain their own licenses and
@@ -88,12 +88,12 @@ directory must comply with the individual source's license:
 | WLC (via OSHB) | CC-BY 4.0 | Attribution |
 | UHB | CC-BY-SA 4.0 | Attribution + share-alike on derivatives + trademark restrictions |
 
-The Cartha Translation's English output is a new creative work and is
+The Cartha Open Bible's English output is a new creative work and is
 licensed independently (CC-BY 4.0). The share-alike clauses on the morphology
 and UHB do not propagate to our translation output, which is not a derivative
 of those works in the share-alike sense.
 
-That said — if you are building on the Cartha Translation AND incorporating
+That said — if you are building on the Cartha Open Bible AND incorporating
 any of the vendored source data, you must comply with the source license
 for that data separately.
 

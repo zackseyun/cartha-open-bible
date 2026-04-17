@@ -1,6 +1,6 @@
 # Methodology
 
-The Cartha Translation follows a six-stage pipeline for every verse. Each
+The Cartha Open Bible follows a six-stage pipeline for every verse. Each
 stage produces documented artifacts that are committed to this repository,
 making the entire process auditable after the fact.
 

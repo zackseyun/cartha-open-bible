@@ -1,7 +1,8 @@
-# The Cartha Translation
+# The Cartha Open Bible
+*Translated from the original Greek and Hebrew*
 
-**An open, transparent English Bible translated directly from the original
-Greek and Hebrew, with auditable provenance for every decision.**
+**An open, transparent English Bible with auditable, commit-level
+provenance for every translation decision.**
 
 Released under **CC-BY 4.0** — anyone may use, adapt, redistribute, or
 commercialize this translation with attribution. **See [PHILOSOPHY.md](PHILOSOPHY.md)
@@ -91,7 +92,7 @@ release is `v0.1-preview`.
 ## Directory structure
 
 ```
-cartha-translation/
+cartha-open-bible/
 ├── PHILOSOPHY.md        Why this translation exists, open-source posture, commitments
 ├── DOCTRINE.md          Theological commitments driving translation decisions
 ├── METHODOLOGY.md       Drafting, review, and signing process

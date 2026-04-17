@@ -13,7 +13,7 @@ Canonical ID: (e.g., ROM.1.1 — optional, if known)
 
 ## Current rendering
 
-Paste the Cartha Translation's current rendering of the verse.
+Paste the Cartha Open Bible's current rendering of the verse.
 
 ## Concern
 

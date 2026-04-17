@@ -19,7 +19,7 @@ objective genitive")
 
 ## Current resolution
 
-How does the Cartha Translation currently render this? What alternative
+How does the Cartha Open Bible currently render this? What alternative
 is preserved in the footnote (if any)?
 
 ## Proposed resolution

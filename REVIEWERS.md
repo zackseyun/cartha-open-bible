@@ -1,6 +1,6 @@
 # Review Board
 
-No verse is published in the Cartha Translation until a named reviewer on
+No verse is published in the Cartha Open Bible until a named reviewer on
 this list has signed it with their ed25519 private key. Reviewers are
 scholars, pastors, or theologically-trained contributors with disclosed
 credentials.

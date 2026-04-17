@@ -40,7 +40,7 @@ decision is documented, every disagreement is public, every verse is
 reproducible, and every word can be traced back to the Greek or Hebrew it
 came from — in under 60 seconds, from a phone, anywhere in the world.
 
-That is the Cartha Translation.
+That is the Cartha Open Bible.
 
 ## What we are translating
 
@@ -101,7 +101,7 @@ means:
 - **Anyone may create derivative works** — paraphrases, adaptations,
   commentaries, translations into other languages, revisions.
 - **Anyone may redistribute it**, including modified versions.
-- Attribution is the only requirement: credit the Cartha Translation, link
+- Attribution is the only requirement: credit the Cartha Open Bible, link
   to the license, and indicate if you made changes.
 
 This is a deliberate theological choice, not a pragmatic one. Every major
@@ -146,13 +146,13 @@ Several things it helps to say explicitly:
   concerns all have templates. Your academic training, denominational
   perspective, and relationship to scripture are all welcome.
 - **Cite it.** In academic work, sermons, or published material, cite the
-  Cartha Translation with a link back. Attribution keeps the paper trail
+  Cartha Open Bible with a link back. Attribution keeps the paper trail
   visible and invites others into the work.
 - **Fork it.** If you have a specific scholarly disagreement you want to
   pursue, fork the repository and publish your alternative. Our provenance
   records travel with the fork, so forks remain academically legible.
 - **Translate it.** CC-BY 4.0 permits derivative translations into other
-  languages. A translator working from the Cartha Translation into any other
+  languages. A translator working from the Cartha Open Bible into any other
   language inherits the full provenance chain back to the Greek and Hebrew.
 
 ## Our commitment

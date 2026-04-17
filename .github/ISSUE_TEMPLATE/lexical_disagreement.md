@@ -17,7 +17,7 @@ Greek or Hebrew word in dispute: (e.g., δοῦλος)
 
 ## Current English gloss
 
-What the Cartha Translation currently uses: (e.g., "servant")
+What the Cartha Open Bible currently uses: (e.g., "servant")
 
 ## Proposed gloss
 

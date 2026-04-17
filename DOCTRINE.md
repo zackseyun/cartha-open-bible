@@ -1,7 +1,7 @@
 # Doctrinal Stance
 
 This document states the theological commitments that guide every translation
-decision in the Cartha Translation. Declaring our stance is an act of honesty:
+decision in the Cartha Open Bible. Declaring our stance is an act of honesty:
 critics can assess our output against our stated commitments rather than
 guessing at hidden biases.
 
@@ -11,7 +11,7 @@ guessing at hidden biases.
 
 ## Affirmations
 
-The Cartha Translation is produced within the bounds of historic,
+The Cartha Open Bible is produced within the bounds of historic,
 ecumenical Christian orthodoxy. The following creeds are affirmed as
 summaries of essential Christian doctrine:
 
@@ -25,7 +25,7 @@ unless the Greek or Hebrew unambiguously supports one reading over another.
 
 ## Translation philosophy
 
-The Cartha Translation aims at **optimal equivalence**: a middle path
+The Cartha Open Bible aims at **optimal equivalence**: a middle path
 between formal ("word-for-word") and dynamic ("thought-for-thought") approaches.
 
 Specifically:

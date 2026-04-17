@@ -33,7 +33,7 @@ Tauber are licensed under Creative Commons Attribution-ShareAlike 3.0
 
 Any redistribution of the morphological parsing data (in identical or
 modified form) must remain under CC-BY-SA 3.0 or a compatible license.
-The Cartha Translation does not redistribute this data in modified form;
+The Cartha Open Bible does not redistribute this data in modified form;
 we use it only as an input to our drafting pipeline.
 
 ### Required attribution

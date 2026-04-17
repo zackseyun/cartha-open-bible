@@ -1,7 +1,7 @@
 # Tools
 
 Python scripts for drafting, cross-checking, verifying, signing, and
-linting the Cartha Translation.
+linting the Cartha Open Bible.
 
 ## Scripts
 
