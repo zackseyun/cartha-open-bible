@@ -23,6 +23,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import consistency_lint  # noqa: E402
 import draft  # noqa: E402
 import sblgnt  # noqa: E402
+import wlc  # noqa: E402
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -45,6 +46,60 @@ PHASES: dict[str, dict[str, Any]] = {
         "tag": "v0.2-pauline",
         "lint_phase_name": "phase1-pauline",
         "lint_report": REPO_ROOT / "lint_reports" / "phase1-pauline.md",
+        "commit_mode": "chapter",
+    },
+    "phase2": {
+        "label": "Phase 2 — Gospels + Acts",
+        "books": ["MAT", "MRK", "LUK", "JHN", "ACT"],
+        "testament": "nt",
+        "tag": "v0.3-gospels",
+        "lint_phase_name": "phase2-gospels",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase2-gospels.md",
+        "commit_mode": "chapter",
+    },
+    "phase3": {
+        "label": "Phase 3 — General epistles + Revelation",
+        "books": ["HEB", "JAS", "1PE", "2PE", "1JN", "2JN", "3JN", "JUD", "REV"],
+        "testament": "nt",
+        "tag": "v0.4-nt-complete",
+        "lint_phase_name": "phase3-nt-complete",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase3-nt-complete.md",
+        "commit_mode": "chapter",
+    },
+    "phase4": {
+        "label": "Phase 4 — Torah",
+        "books": ["GEN", "EXO", "LEV", "NUM", "DEU"],
+        "testament": "ot",
+        "tag": "v0.5-torah",
+        "lint_phase_name": "phase4-torah",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase4-torah.md",
+        "commit_mode": "chapter",
+    },
+    "phase5": {
+        "label": "Phase 5 — Former Prophets",
+        "books": ["JOS", "JDG", "1SA", "2SA", "1KI", "2KI"],
+        "testament": "ot",
+        "tag": "v0.6-former-prophets",
+        "lint_phase_name": "phase5-former-prophets",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase5-former-prophets.md",
+        "commit_mode": "chapter",
+    },
+    "phase6": {
+        "label": "Phase 6 — Writings",
+        "books": ["PSA", "PRO", "JOB", "RUT", "SNG", "ECC", "LAM", "EST", "DAN", "EZR", "NEH", "1CH", "2CH"],
+        "testament": "ot",
+        "tag": "v0.7-writings",
+        "lint_phase_name": "phase6-writings",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase6-writings.md",
+        "commit_mode": "chapter",
+    },
+    "phase7": {
+        "label": "Phase 7 — Latter Prophets",
+        "books": ["ISA", "JER", "EZK", "HOS", "JOL", "AMO", "OBA", "JON", "MIC", "NAM", "HAB", "ZEP", "HAG", "ZEC", "MAL"],
+        "testament": "ot",
+        "tag": "v0.8-latter-prophets",
+        "lint_phase_name": "phase7-latter-prophets",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase7-latter-prophets.md",
         "commit_mode": "chapter",
     },
 }
@@ -166,7 +221,7 @@ def write_failed_verses(verse_ids: list[str]) -> pathlib.Path | None:
 def collect_phase_records(phase: dict[str, Any]) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     for book_code in phase["books"]:
-        slug = sblgnt.NT_BOOKS[book_code][1]
+        slug = draft.book_slug_for_code(book_code)
         book_root = REPO_ROOT / "translation" / phase["testament"] / slug
         for path in sorted(book_root.glob("*/*.yaml")):
             records.append(yaml.safe_load(path.read_text(encoding="utf-8")))
@@ -209,9 +264,10 @@ def build_phase_stats(phase: dict[str, Any]) -> dict[str, Any]:
             contested_verses.append(str(record["id"]))
 
     for book_code in phase["books"]:
-        for verse in sblgnt.iter_verses(book_code, draft.SOURCES_ROOT):
+        for verse in draft.iter_source_verses(book_code):
             for word in verse.words:
-                if any(ch.isalpha() for ch in word.word):
+                word_text = getattr(word, "word", getattr(word, "text", ""))
+                if any(ch.isalpha() for ch in word_text):
                     lemma_counter[word.lemma] += 1
 
     return {
@@ -287,7 +343,7 @@ def finalize_phase(
     flags, lint_report, _scanned = consistency_lint.run_lint(
         phase=phase["lint_phase_name"],
         testament=phase["testament"],
-        book_filters={sblgnt.NT_BOOKS[book_code][1] for book_code in active_books},
+        book_filters={draft.book_slug_for_code(book_code) for book_code in active_books},
         output_path=phase["lint_report"],
     )
     if flags:
@@ -360,7 +416,7 @@ def run_phase(
         current_chapter_key = None
 
     for book_code in active_books:
-        for verse in sblgnt.iter_verses(book_code, draft.SOURCES_ROOT):
+        for verse in draft.iter_source_verses(book_code):
             chapter_key = (book_code, verse.chapter)
             if current_chapter_key is None:
                 current_chapter_key = chapter_key

@@ -49,6 +49,7 @@ from jsonschema import Draft202012Validator
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import sblgnt  # noqa: E402
+import wlc  # noqa: E402
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -81,6 +82,11 @@ TOOL_REASON_VALUES = {
 }
 SCRIPT_TERM_RE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff\u0590-\u05ff]+")
 _REF_RE = re.compile(r"^\s*([123]?\s*[A-Za-z]+)\s+(\d+)\s*:\s*(\d+)\s*$")
+
+ALL_BOOK_NAME_TO_CODE: dict[str, str] = dict(sblgnt.BOOK_NAME_TO_CODE)
+for code, (_osis, slug, title, _filename) in wlc.OT_BOOKS.items():
+    ALL_BOOK_NAME_TO_CODE[title.lower()] = code
+    ALL_BOOK_NAME_TO_CODE[slug.replace("_", " ")] = code
 
 SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible translated directly from the original Greek and Hebrew with commit-level provenance for every translation decision.
 
@@ -301,8 +307,72 @@ def decision_matches_lemma(
 
 
 def translation_path_for_verse(verse: sblgnt.Verse) -> pathlib.Path:
-    chapter_dir = TRANSLATION_ROOT / "nt" / verse.book_slug / f"{verse.chapter:03d}"
+    chapter_dir = TRANSLATION_ROOT / verse_testament(verse.book_code) / verse.book_slug / f"{verse.chapter:03d}"
     return chapter_dir / f"{verse.verse:03d}.yaml"
+
+
+def verse_testament(book_code: str) -> str:
+    if book_code in sblgnt.NT_BOOKS:
+        return "nt"
+    if book_code in wlc.OT_BOOKS:
+        return "ot"
+    raise ValueError(f"Unknown book code: {book_code}")
+
+
+def source_edition_for_book(book_code: str) -> str:
+    if book_code in sblgnt.NT_BOOKS:
+        return "SBLGNT"
+    if book_code in wlc.OT_BOOKS:
+        return "WLC"
+    raise ValueError(f"Unknown book code: {book_code}")
+
+
+def source_language_label(book_code: str) -> str:
+    if book_code in sblgnt.NT_BOOKS:
+        return "Greek (SBLGNT)"
+    if book_code in wlc.OT_BOOKS:
+        return "Hebrew (WLC)"
+    raise ValueError(f"Unknown book code: {book_code}")
+
+
+def source_text_for_verse(verse: Any) -> str:
+    if hasattr(verse, "greek_text"):
+        return verse.greek_text
+    if hasattr(verse, "hebrew_text"):
+        return verse.hebrew_text
+    raise TypeError(f"Unsupported verse object: {type(verse)!r}")
+
+
+def morphology_lines_for_verse(verse: Any) -> str:
+    if verse.book_code in sblgnt.NT_BOOKS:
+        return sblgnt.morphology_lines(verse)
+    if verse.book_code in wlc.OT_BOOKS:
+        return wlc.morphology_lines(verse)
+    raise ValueError(f"Unknown book code: {verse.book_code}")
+
+
+def load_source_verse(book_code: str, chapter: int, verse: int) -> Any:
+    if book_code in sblgnt.NT_BOOKS:
+        return sblgnt.load_verse(book_code, chapter, verse, SOURCES_ROOT)
+    if book_code in wlc.OT_BOOKS:
+        return wlc.load_verse(book_code, chapter, verse, SOURCES_ROOT)
+    raise ValueError(f"Unknown book code: {book_code}")
+
+
+def iter_source_verses(book_code: str) -> Iterable[Any]:
+    if book_code in sblgnt.NT_BOOKS:
+        return sblgnt.iter_verses(book_code, SOURCES_ROOT)
+    if book_code in wlc.OT_BOOKS:
+        return wlc.iter_verses(book_code, SOURCES_ROOT)
+    raise ValueError(f"Unknown book code: {book_code}")
+
+
+def book_slug_for_code(book_code: str) -> str:
+    if book_code in sblgnt.NT_BOOKS:
+        return sblgnt.NT_BOOKS[book_code][1]
+    if book_code in wlc.OT_BOOKS:
+        return wlc.OT_BOOKS[book_code][1]
+    raise ValueError(f"Unknown book code: {book_code}")
 
 
 def codex_login_available() -> bool:
@@ -395,8 +465,8 @@ def load_contested_terms() -> dict[str, dict[str, str]]:
     return terms
 
 
-def build_user_prompt(verse: sblgnt.Verse) -> str:
-    morph = sblgnt.morphology_lines(verse)
+def build_user_prompt(verse: Any) -> str:
+    morph = morphology_lines_for_verse(verse)
     doctrine = load_doctrine_excerpt()
     return f"""# Verse
 
@@ -405,7 +475,7 @@ ID: {verse.canonical_id}
 
 # Source text
 
-Greek (SBLGNT): {verse.greek_text}
+{source_language_label(verse.book_code)}: {source_text_for_verse(verse)}
 
 # Morphology table
 
@@ -430,22 +500,26 @@ Document every significant lexical choice, and preserve alternatives in footnote
 """
 
 
-def content_word_count(verse: sblgnt.Verse) -> int:
+def content_word_count(verse: Any) -> int:
     function_tags = {"ART", "CONJ", "PREP", "PRT"}
     function_prefixes = ("C-", "I-", "P-", "T-")
 
     count = 0
     for word in verse.words:
-        if not any(ch.isalpha() for ch in word.word):
+        word_text = getattr(word, "word", getattr(word, "text", ""))
+        if not any(ch.isalpha() for ch in word_text):
             continue
-        tag = word.pos.upper()
+        tag = str(getattr(word, "pos", "")).upper()
+        if not tag:
+            count += 1
+            continue
         if tag in function_tags or tag.startswith(function_prefixes):
             continue
         count += 1
     return count
 
 
-def validate_tool_input(verse: sblgnt.Verse, tool_input: dict[str, Any]) -> None:
+def validate_tool_input(verse: Any, tool_input: dict[str, Any]) -> None:
     errors: list[str] = []
 
     english_text = str(tool_input.get("english_text", "") or "")
@@ -541,7 +615,7 @@ def validate_tool_input(verse: sblgnt.Verse, tool_input: dict[str, Any]) -> None
 
 
 def build_verse_record(
-    verse: sblgnt.Verse,
+    verse: Any,
     tool_input: dict[str, Any],
     *,
     model_id: str,
@@ -555,8 +629,8 @@ def build_verse_record(
         "id": verse.canonical_id,
         "reference": verse.reference,
         "source": {
-            "edition": "SBLGNT",
-            "text": verse.greek_text,
+            "edition": source_edition_for_book(verse.book_code),
+            "text": source_text_for_verse(verse),
         },
         "translation": {
             "text": str(tool_input["english_text"]).strip(),
@@ -605,7 +679,7 @@ def validate_record(record: dict[str, Any]) -> None:
         raise ValueError("translation.text must be non-empty")
 
 
-def write_verse_yaml(record: dict[str, Any], verse: sblgnt.Verse) -> pathlib.Path:
+def write_verse_yaml(record: dict[str, Any], verse: Any) -> pathlib.Path:
     import yaml
 
     out_path = translation_path_for_verse(verse)
@@ -847,7 +921,7 @@ def call_model(
 
 
 def draft_verse(
-    verse: sblgnt.Verse,
+    verse: Any,
     *,
     backend: str = DEFAULT_BACKEND,
     model: str = DEFAULT_MODEL_ID,
@@ -895,7 +969,7 @@ def draft_verse(
 
 
 def retry_draft_verse(
-    verse: sblgnt.Verse,
+    verse: Any,
     *,
     backend: str = DEFAULT_BACKEND,
     model: str = DEFAULT_MODEL_ID,
@@ -939,12 +1013,12 @@ def parse_ref(ref: str) -> tuple[str, int, int]:
     chapter = int(match.group(2))
     verse = int(match.group(3))
 
-    if book_name not in sblgnt.BOOK_NAME_TO_CODE:
+    if book_name not in ALL_BOOK_NAME_TO_CODE:
         raise argparse.ArgumentTypeError(
-            f"Unknown book {book_name!r}. Known: {sorted(sblgnt.BOOK_NAME_TO_CODE)}"
+            f"Unknown book {book_name!r}. Known: {sorted(ALL_BOOK_NAME_TO_CODE)}"
         )
 
-    return sblgnt.BOOK_NAME_TO_CODE[book_name], chapter, verse
+    return ALL_BOOK_NAME_TO_CODE[book_name], chapter, verse
 
 
 def main() -> int:
@@ -994,12 +1068,15 @@ def main() -> int:
         parser.error("Provide either --ref 'Book C:V' or --book/--chapter/--verse.")
         return 2
 
-    if book_code not in sblgnt.NT_BOOKS:
-        parser.error(f"Unknown NT book code: {book_code}. Known: {sorted(sblgnt.NT_BOOKS)}")
+    if book_code not in sblgnt.NT_BOOKS and book_code not in wlc.OT_BOOKS:
+        parser.error(
+            f"Unknown book code: {book_code}. Known NT: {sorted(sblgnt.NT_BOOKS)}; "
+            f"Known OT: {sorted(wlc.OT_BOOKS)}"
+        )
         return 2
 
     try:
-        verse = sblgnt.load_verse(book_code, chapter, verse_num, SOURCES_ROOT)
+        verse = load_source_verse(book_code, chapter, verse_num)
     except Exception as exc:
         print(f"ERROR: failed to load verse: {exc}", file=sys.stderr)
         return 3
