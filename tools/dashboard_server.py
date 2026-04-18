@@ -9,6 +9,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 from urllib.parse import urlparse
@@ -19,6 +20,10 @@ import chapter_queue  # noqa: E402
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 DB_PATH = chapter_queue.db_path_from(REPO_ROOT)
 WORKER_RE = re.compile(r"--worker-id\s+(\S+)")
+SUMMARY_CACHE_TABLE = "BibleSummaryCache-alpha"
+SUMMARY_CACHE_COUNT_TTL_SECONDS = 20
+_summary_cache_snapshot: dict[str, Any] | None = None
+_summary_cache_snapshot_at = 0.0
 
 
 def now_iso() -> str:
@@ -115,6 +120,60 @@ def queue_jobs(limit_ready: int = 20) -> dict[str, Any]:
     }
 
 
+def summary_cache_status() -> dict[str, Any]:
+    global _summary_cache_snapshot, _summary_cache_snapshot_at
+    now = time.time()
+    if _summary_cache_snapshot is not None and now - _summary_cache_snapshot_at < SUMMARY_CACHE_COUNT_TTL_SECONDS:
+        return _summary_cache_snapshot
+
+    pid = None
+    alive = False
+    command = None
+    pid_path = pathlib.Path('/tmp/cob-summary-prewarm.pid')
+    if pid_path.exists():
+        raw = pid_path.read_text().strip()
+        if raw.isdigit():
+            pid = int(raw)
+            try:
+                command = run(['ps', '-p', str(pid), '-o', 'command='])
+                alive = bool(command.strip())
+            except Exception:
+                alive = False
+                command = None
+
+    latest_lines: list[str] = []
+    log_path = pathlib.Path('/tmp/cob-summary-prewarm.log')
+    if log_path.exists():
+        try:
+            lines = log_path.read_text(encoding='utf-8', errors='replace').splitlines()
+            latest_lines = [line for line in lines[-12:] if line.strip()]
+        except Exception:
+            latest_lines = []
+
+    count = None
+    try:
+        raw = subprocess.check_output(
+            ['aws', 'dynamodb', 'scan', '--table-name', SUMMARY_CACHE_TABLE, '--region', 'us-west-2', '--select', 'COUNT'],
+            text=True,
+        )
+        count = json.loads(raw).get('Count')
+    except Exception:
+        count = None
+
+    snapshot = {
+        'table': SUMMARY_CACHE_TABLE,
+        'count': count,
+        'pid': pid,
+        'alive': alive,
+        'command': command,
+        'latest_lines': latest_lines,
+        'updated_at': now_iso(),
+    }
+    _summary_cache_snapshot = snapshot
+    _summary_cache_snapshot_at = now
+    return snapshot
+
+
 def build_status() -> dict[str, Any]:
     proc = active_processes()
     queue = queue_jobs()
@@ -138,6 +197,7 @@ def build_status() -> dict[str, Any]:
             "ready": queue["ready"],
             "failed": queue["failed"],
         },
+        "summary_cache": summary_cache_status(),
         "merge_loops": proc["merge_loops"],
         "recent_commits": recent_main_commits(),
     }
@@ -190,6 +250,7 @@ async function refresh() {
   const failed = data.queue.failed || [];
   const commits = data.recent_commits || [];
   const mergeLoops = data.merge_loops || [];
+  const summaryCache = data.summary_cache || {};
 
   const cards = `
     <div class=\"grid cards\">
@@ -200,6 +261,8 @@ async function refresh() {
       <div class=\"card\"><h3>Ready to merge</h3><div class=\"mono\">${ready.length}</div></div>
       <div class=\"card\"><h3>Failed jobs</h3><div class=\"mono\">${failed.length}</div></div>
       <div class=\"card\"><h3>Merge loops</h3><div class=\"mono\">${mergeLoops.length}</div></div>
+      <div class=\"card\"><h3>Summary cache entries</h3><div class=\"mono\">${summaryCache.count ?? '—'}</div><div class=\"small mono\">${summaryCache.table || ''}</div></div>
+      <div class=\"card\"><h3>Prewarm status</h3><div class=\"mono\">${summaryCache.alive ? 'running' : 'stopped'}</div><div class=\"small mono\">${summaryCache.pid ? 'pid ' + summaryCache.pid : 'no pid'}</div></div>
     </div>`;
 
   const runningRows = running.map(job => `
@@ -247,9 +310,16 @@ async function refresh() {
         <table><thead><tr><th>Job</th><th>Error</th></tr></thead><tbody>${failedRows}</tbody></table>
       </div>
     </div>
-    <div class=\"section card\">
-      <h2>🧾 Recent main commits</h2>
-      <table><thead><tr><th>SHA</th><th>Message</th></tr></thead><tbody>${commitRows}</tbody></table>
+    <div class=\"section grid cards\">
+      <div class=\"card\">
+        <h2>📦 Summary cache / prewarm</h2>
+        <div class=\"small\">Updated ${summaryCache.updated_at || ''}</div>
+        <div class=\"small mono\" style=\"margin-top:10px; white-space:pre-wrap; max-height:260px; overflow:auto;\">${(summaryCache.latest_lines || []).join('\\n') || 'No prewarm log yet.'}</div>
+      </div>
+      <div class=\"card\">
+        <h2>🧾 Recent main commits</h2>
+        <table><thead><tr><th>SHA</th><th>Message</th></tr></thead><tbody>${commitRows}</tbody></table>
+      </div>
     </div>`;
 }
 refresh();
@@ -266,6 +336,7 @@ class Handler(BaseHTTPRequestHandler):
             payload = json.dumps(build_status(), ensure_ascii=False).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-store, max-age=0")
             self.send_header("Content-Length", str(len(payload)))
             self.end_headers()
             self.wfile.write(payload)
@@ -274,6 +345,7 @@ class Handler(BaseHTTPRequestHandler):
             payload = html_page().encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Cache-Control", "no-store, max-age=0")
             self.send_header("Content-Length", str(len(payload)))
             self.end_headers()
             self.wfile.write(payload)
