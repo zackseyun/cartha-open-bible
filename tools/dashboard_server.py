@@ -22,6 +22,11 @@ DB_PATH = chapter_queue.db_path_from(REPO_ROOT)
 WORKER_RE = re.compile(r"--worker-id\s+(\S+)")
 SUMMARY_CACHE_TABLE = "BibleSummaryCache-alpha"
 SUMMARY_CACHE_COUNT_TTL_SECONDS = 20
+SUMMARY_LOG_PATH = pathlib.Path("/tmp/cob-summary-prewarm.log")
+SUMMARY_PID_PATH = pathlib.Path("/tmp/cob-summary-prewarm.pid")
+SUMMARY_KEY_RE = re.compile(r"key=COB\|[^|]+\|(\w+)\|([A-Z0-9_]+)\.(\d+)\|(\w+)\|")
+SUMMARY_CACHED_RE = re.compile(r"cached=(true|false)")
+SUMMARY_AZURE_RE = re.compile(r'time="([^"]+)".*AZURE_OPENAI_REQUEST_PREPARED')
 _summary_cache_snapshot: dict[str, Any] | None = None
 _summary_cache_snapshot_at = 0.0
 
@@ -120,6 +125,72 @@ def queue_jobs(limit_ready: int = 20) -> dict[str, Any]:
     }
 
 
+def parse_summary_log(limit_lines: int = 400) -> dict[str, Any]:
+    blank: dict[str, Any] = {
+        "current": None,
+        "last_generated": None,
+        "last_cached": None,
+        "recent_cached": 0,
+        "recent_generated": 0,
+        "azure_in_flight": False,
+        "last_activity": None,
+        "tail_lines": [],
+    }
+    if not SUMMARY_LOG_PATH.exists():
+        return blank
+    try:
+        all_lines = SUMMARY_LOG_PATH.read_text(encoding="utf-8", errors="replace").splitlines()
+    except Exception:
+        return blank
+    tail = all_lines[-limit_lines:]
+    cached = 0
+    generated = 0
+    current: dict[str, Any] | None = None
+    last_generated: dict[str, Any] | None = None
+    last_cached: dict[str, Any] | None = None
+    azure_after_last_key = False
+    last_azure_time: str | None = None
+    for line in tail:
+        m = SUMMARY_KEY_RE.search(line)
+        if m:
+            scope = m.group(1)
+            book = m.group(2)
+            chapter = int(m.group(3))
+            style = m.group(4)
+            cm = SUMMARY_CACHED_RE.search(line)
+            is_cached = cm.group(1) == "true" if cm else False
+            entry = {"scope": scope, "book": book, "chapter": chapter, "style": style, "cached": is_cached}
+            current = entry
+            if is_cached:
+                cached += 1
+                last_cached = entry
+            else:
+                generated += 1
+                last_generated = entry
+            azure_after_last_key = False
+            continue
+        a = SUMMARY_AZURE_RE.search(line)
+        if a:
+            last_azure_time = a.group(1)
+            azure_after_last_key = True
+    latest_lines = [line for line in tail[-12:] if line.strip()]
+    try:
+        mt = SUMMARY_LOG_PATH.stat().st_mtime
+        file_mtime = dt.datetime.fromtimestamp(mt).isoformat(timespec="seconds")
+    except Exception:
+        file_mtime = None
+    return {
+        "current": current,
+        "last_generated": last_generated,
+        "last_cached": last_cached,
+        "recent_cached": cached,
+        "recent_generated": generated,
+        "azure_in_flight": azure_after_last_key,
+        "last_activity": last_azure_time or file_mtime,
+        "tail_lines": latest_lines,
+    }
+
+
 def summary_cache_status() -> dict[str, Any]:
     global _summary_cache_snapshot, _summary_cache_snapshot_at
     now = time.time()
@@ -129,45 +200,44 @@ def summary_cache_status() -> dict[str, Any]:
     pid = None
     alive = False
     command = None
-    pid_path = pathlib.Path('/tmp/cob-summary-prewarm.pid')
-    if pid_path.exists():
-        raw = pid_path.read_text().strip()
+    if SUMMARY_PID_PATH.exists():
+        raw = SUMMARY_PID_PATH.read_text().strip()
         if raw.isdigit():
             pid = int(raw)
             try:
-                command = run(['ps', '-p', str(pid), '-o', 'command='])
+                command = run(["ps", "-p", str(pid), "-o", "command="])
                 alive = bool(command.strip())
             except Exception:
                 alive = False
                 command = None
 
-    latest_lines: list[str] = []
-    log_path = pathlib.Path('/tmp/cob-summary-prewarm.log')
-    if log_path.exists():
-        try:
-            lines = log_path.read_text(encoding='utf-8', errors='replace').splitlines()
-            latest_lines = [line for line in lines[-12:] if line.strip()]
-        except Exception:
-            latest_lines = []
+    log_info = parse_summary_log()
 
     count = None
     try:
         raw = subprocess.check_output(
-            ['aws', 'dynamodb', 'scan', '--table-name', SUMMARY_CACHE_TABLE, '--region', 'us-west-2', '--select', 'COUNT'],
+            ["aws", "dynamodb", "scan", "--table-name", SUMMARY_CACHE_TABLE, "--region", "us-west-2", "--select", "COUNT"],
             text=True,
         )
-        count = json.loads(raw).get('Count')
+        count = json.loads(raw).get("Count")
     except Exception:
         count = None
 
     snapshot = {
-        'table': SUMMARY_CACHE_TABLE,
-        'count': count,
-        'pid': pid,
-        'alive': alive,
-        'command': command,
-        'latest_lines': latest_lines,
-        'updated_at': now_iso(),
+        "table": SUMMARY_CACHE_TABLE,
+        "count": count,
+        "pid": pid,
+        "alive": alive,
+        "command": command,
+        "latest_lines": log_info["tail_lines"],
+        "current": log_info["current"],
+        "last_generated": log_info["last_generated"],
+        "last_cached": log_info["last_cached"],
+        "recent_cached": log_info["recent_cached"],
+        "recent_generated": log_info["recent_generated"],
+        "azure_in_flight": log_info["azure_in_flight"],
+        "last_activity": log_info["last_activity"],
+        "updated_at": now_iso(),
     }
     _summary_cache_snapshot = snapshot
     _summary_cache_snapshot_at = now
@@ -184,7 +254,29 @@ def build_status() -> dict[str, Any]:
         running.append({
             **job,
             **progress,
+            "kind": "chapter",
             "worker_process": worker_meta,
+        })
+    summary_cache = summary_cache_status()
+    if summary_cache.get("alive"):
+        current = summary_cache.get("current") or {}
+        last_gen = summary_cache.get("last_generated") or {}
+        book_label = current.get("book") or last_gen.get("book") or "—"
+        chapter_label = current.get("chapter") if current.get("chapter") is not None else last_gen.get("chapter", "")
+        scope_label = current.get("scope") or last_gen.get("scope") or "chapter"
+        style_label = current.get("style") or last_gen.get("style") or ""
+        running.append({
+            "kind": "summary",
+            "worker_id": "summary-prewarm",
+            "worker_process": {"pid": summary_cache.get("pid")} if summary_cache.get("pid") else None,
+            "phase": f"summary · {scope_label}{' · ' + style_label if style_label else ''}",
+            "book_code": book_label,
+            "chapter": chapter_label,
+            "cache_total": summary_cache.get("count"),
+            "recent_generated": summary_cache.get("recent_generated", 0),
+            "recent_cached": summary_cache.get("recent_cached", 0),
+            "azure_in_flight": summary_cache.get("azure_in_flight", False),
+            "last_activity": summary_cache.get("last_activity"),
         })
     return {
         "generated_at": now_iso(),
@@ -197,7 +289,7 @@ def build_status() -> dict[str, Any]:
             "ready": queue["ready"],
             "failed": queue["failed"],
         },
-        "summary_cache": summary_cache_status(),
+        "summary_cache": summary_cache,
         "merge_loops": proc["merge_loops"],
         "recent_commits": recent_main_commits(),
     }
@@ -228,6 +320,10 @@ def html_page() -> str:
     .completed { background: #065f46; color: white; }
     .pending { background: #374151; color: white; }
     .failed { background: #991b1b; color: white; }
+    .summary { background: #7c3aed; color: white; }
+    .inflight { background: #f59e0b; color: #1f1300; margin-left: 6px; }
+    tr.summary-row td { background: rgba(124, 58, 237, 0.10); }
+    .pill { display:inline-block; padding:2px 6px; border-radius:6px; background:#1f2a53; color:#cbd5e1; font-size:11px; margin-right:6px; }
     .bar { width: 220px; height: 10px; background: #1f2a53; border-radius: 999px; overflow: hidden; }
     .bar > span { display: block; height: 100%; background: linear-gradient(90deg, #22c55e, #10b981); }
     .small { font-size: 12px; color: #cbd5e1; }
@@ -265,7 +361,25 @@ async function refresh() {
       <div class=\"card\"><h3>Prewarm status</h3><div class=\"mono\">${summaryCache.alive ? 'running' : 'stopped'}</div><div class=\"small mono\">${summaryCache.pid ? 'pid ' + summaryCache.pid : 'no pid'}</div></div>
     </div>`;
 
-  const runningRows = running.map(job => `
+  const runningRows = running.map(job => {
+    if (job.kind === 'summary') {
+      const pid = job.worker_process && job.worker_process.pid ? 'pid ' + job.worker_process.pid : 'no pid';
+      const chapter = job.chapter === '' || job.chapter == null ? '' : job.chapter;
+      const inflight = job.azure_in_flight ? '<span class=\"badge inflight\">generating</span>' : '';
+      return `
+        <tr class=\"summary-row\">
+          <td><span class=\"badge summary\">${job.worker_id}</span>${inflight}<div class=\"small mono\">${pid}</div></td>
+          <td class=\"mono\">${job.phase}</td>
+          <td class=\"mono\">${job.book_code} ${chapter}</td>
+          <td>
+            <div><span class=\"pill\">cache ${job.cache_total ?? '—'}</span></div>
+            <div class=\"small\"><span class=\"pill\">+${job.recent_generated || 0} new</span><span class=\"pill\">${job.recent_cached || 0} hit</span></div>
+          </td>
+          <td class=\"small mono\">${job.last_activity || ''}</td>
+          <td class=\"small mono\"></td>
+        </tr>`;
+    }
+    return `
     <tr>
       <td><span class=\"badge running\">${job.worker_id || 'worker'}</span><div class=\"small mono\">${job.worker_process ? 'pid ' + job.worker_process.pid : 'no live pid seen'}</div></td>
       <td class=\"mono\">${job.phase}</td>
@@ -277,7 +391,8 @@ async function refresh() {
       </td>
       <td class=\"small mono\">${job.latest_file || ''}<br>${job.latest_mtime || ''}</td>
       <td class=\"small mono\">${job.claimed_at || ''}</td>
-    </tr>`).join('') || '<tr><td colspan=\"6\" class=\"small\">No running jobs.</td></tr>';
+    </tr>`;
+  }).join('') || '<tr><td colspan=\"6\" class=\"small\">No running jobs.</td></tr>';
 
   const readyRows = ready.map(job => `
     <tr>
