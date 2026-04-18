@@ -179,3 +179,29 @@ From the first ~20 verses reviewed by Opus (Philippians + Romans 1–5):
   revision is mostly polish. A follow-up global pass may find
   cross-verse inconsistencies (like the Χριστός normalization)
   that any single-verse review would miss.
+
+### Cross-genre benchmark: Revelation sample (2026-04-18)
+
+To check whether the revision rate is an artifact of Paul's dense
+argumentative style — or a consistent property of GPT-5.4 drafting —
+Opus sampled 9 verses from Revelation (Rev 3:12, 3:15–16, 3:20–21;
+11:1, 11:11, 11:15, 11:17). Results:
+
+- Revision rate: ~11% (1 of 9), landing inside the same band as the
+  Pauline pass once the first-pass high-friction verses are excluded.
+- The one fix (Rev 11:1) is category 1 English-grammar awkwardness —
+  a dangling participle that makes the reed appear to speak.
+- The drafter handled Revelation's well-known difficulties (Hebraisms,
+  ingressive aorists in worship formulas, OT intertextuality) with
+  principled restraint: `ἐβασίλευσας` as "have begun to reign"
+  (ingressive, guarding against the implication that God wasn't
+  previously sovereign); `πνεῦμα ζωῆς` as "a breath of life"
+  (echoing Ezekiel 37 without forcing "the Spirit of life");
+  `εἰς τοὺς αἰῶνας τῶν αἰώνων` as "forever and ever" rather than
+  the wooden "to the ages of ages"; `ἐμέσαι` kept as "vomit"
+  rather than softened. The repeated "my God" in Rev 3:12 was
+  preserved all four times rather than smoothed away.
+
+This suggests the drafter's quality is genre-stable, and the
+revision methodology generalizes across Paul and apocalyptic without
+re-tuning.
