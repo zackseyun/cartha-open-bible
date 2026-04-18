@@ -74,14 +74,18 @@ def book_title(book_code: str) -> str:
     raise ValueError(f"Unknown book code: {book_code}")
 
 
-def expected_chapter_map(book_code: str) -> dict[int, int]:
-    chapter_to_last_verse: dict[int, int] = {}
+def expected_chapter_map(book_code: str) -> dict[int, list[int]]:
+    """Return {chapter: [verse_numbers...]} covering only verses actually
+    present in the critical source text. Source editions (SBLGNT, WLC/UHB)
+    legitimately skip verses rejected by textual criticism (e.g. Matt 17:21,
+    Matt 23:14), so iterating range(1, last+1) is incorrect — some verse
+    numbers simply don't exist."""
+    chapter_to_verses: dict[int, list[int]] = {}
     for verse in draft.iter_source_verses(book_code):
-        chapter_to_last_verse[verse.chapter] = max(
-            chapter_to_last_verse.get(verse.chapter, 0),
-            verse.verse,
-        )
-    return chapter_to_last_verse
+        chapter_to_verses.setdefault(verse.chapter, []).append(verse.verse)
+    for chapter in chapter_to_verses:
+        chapter_to_verses[chapter].sort()
+    return chapter_to_verses
 
 
 def load_translation_record(book_code: str, chapter: int, verse: int) -> dict[str, Any] | None:
@@ -97,11 +101,10 @@ def export_book(book_code: str) -> dict[str, Any] | None:
     chapters_out: list[dict[str, Any]] = []
 
     for chapter in sorted(expected):
-        last_verse = expected[chapter]
         verses_out: list[dict[str, Any]] = []
         chapter_complete = True
 
-        for verse in range(1, last_verse + 1):
+        for verse in expected[chapter]:
             record = load_translation_record(book_code, chapter, verse)
             if record is None:
                 chapter_complete = False
