@@ -1120,12 +1120,28 @@ def call_model(
         return tool_input, model_version, raw_output, temperature
 
     if backend == BACKEND_AZURE:
-        tool_input, model_version, raw_output = call_azure_openai(
-            system=system,
-            user=user,
-            model=model,
-            temperature=temperature,
-        )
+        try:
+            tool_input, model_version, raw_output = call_azure_openai(
+                system=system,
+                user=user,
+                model=model,
+                temperature=temperature,
+            )
+        except RuntimeError as exc:
+            detail = str(exc)
+            azure_filtered = (
+                "content_filter" in detail
+                or "ResponsibleAIPolicyViolation" in detail
+            )
+            if azure_filtered and os.environ.get("OPENROUTER_API_KEY"):
+                tool_input, model_version, raw_output = call_openrouter(
+                    system=system,
+                    user=user,
+                    model=DEFAULT_OPENROUTER_MODEL_ID,
+                    temperature=temperature,
+                )
+            else:
+                raise
         return tool_input, model_version, raw_output, temperature
 
     if backend == BACKEND_CODEX:
