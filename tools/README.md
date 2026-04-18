@@ -28,6 +28,7 @@ Required environment variables:
 ```
 ANTHROPIC_API_KEY=...    # for Claude drafts / cross-check
 OPENAI_API_KEY=...       # for GPT drafts / cross-check
+OPENROUTER_API_KEY=...   # for OpenRouter GPT drafts
 GOOGLE_API_KEY=...       # for Gemini cross-check
 ```
 
@@ -37,9 +38,9 @@ GOOGLE_API_KEY=...       # for Gemini cross-check
 # Dry run: inspect the prompt that would be sent, without an API call.
 python3 tools/draft.py --ref "Philippians 1:1" --dry-run
 
-# Real run: produces translation/nt/philippians/001/001.yaml.
-export ANTHROPIC_API_KEY=...
-python3 tools/draft.py --ref "Philippians 1:1"
+# Real run via OpenRouter GPT-5.4:
+export OPENROUTER_API_KEY=...
+python3 tools/draft.py --ref "Philippians 1:1" --backend openrouter-sdk --model openai/gpt-5.4
 ```
 
 Model, temperature, and prompt ID are configurable via CLI flags or

@@ -18,6 +18,8 @@ Environment:
     CARTHA_DRAFTER_BACKEND  optional (default: codex-cli when available,
                             otherwise openai-sdk)
     OPENAI_API_KEY          required only for openai-sdk backend
+    OPENROUTER_API_KEY      required only for openrouter-sdk backend
+    CARTHA_OPENROUTER_MODEL optional (default: openai/gpt-5.4)
     CARTHA_MODEL_ID         optional (default: gpt-5.4)
     CARTHA_PROMPT_ID        optional (default: nt_draft_v1)
     CARTHA_TEMPERATURE      optional (default: 0.2)
@@ -70,7 +72,13 @@ DEFAULT_CODEX_REASONING_EFFORT = os.environ.get(
     "medium",
 )
 BACKEND_OPENAI = "openai-sdk"
+BACKEND_OPENROUTER = "openrouter-sdk"
 BACKEND_CODEX = "codex-cli"
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+DEFAULT_OPENROUTER_MODEL_ID = os.environ.get(
+    "CARTHA_OPENROUTER_MODEL",
+    "openai/gpt-5.4",
+)
 
 TOOL_NAME = "submit_verse_draft"
 TOOL_REASON_VALUES = {
@@ -742,6 +750,16 @@ def codex_output_schema() -> dict[str, Any]:
     return _strictify_for_codex_schema(SUBMIT_TOOL["function"]["parameters"])
 
 
+def openrouter_tool_schema() -> dict[str, Any]:
+    return _strictify_for_codex_schema(SUBMIT_TOOL["function"]["parameters"])
+
+
+def openrouter_submit_tool() -> dict[str, Any]:
+    tool = json.loads(json.dumps(SUBMIT_TOOL))
+    tool["function"]["parameters"] = openrouter_tool_schema()
+    return tool
+
+
 def prune_nulls(value: Any) -> Any:
     if isinstance(value, dict):
         return {
@@ -754,8 +772,12 @@ def prune_nulls(value: Any) -> Any:
     return value
 
 
-def call_openai(
+def _call_openai_compatible(
     *,
+    api_key: str,
+    base_url: str | None,
+    extra_headers: dict[str, str] | None,
+    tools: list[dict[str, Any]],
     system: str,
     user: str,
     model: str,
@@ -769,7 +791,7 @@ def call_openai(
             "openai package not installed. Run: pip install -r tools/requirements.txt"
         ) from exc
 
-    client = OpenAI()
+    client = OpenAI(api_key=api_key, base_url=base_url)
     response = client.chat.completions.create(
         model=model,
         messages=[
@@ -780,7 +802,8 @@ def call_openai(
         max_completion_tokens=max_completion_tokens,
         parallel_tool_calls=False,
         tool_choice={"type": "function", "function": {"name": TOOL_NAME}},
-        tools=[SUBMIT_TOOL],
+        tools=tools,
+        extra_headers=extra_headers,
     )
 
     message = response.choices[0].message
@@ -818,6 +841,58 @@ def call_openai(
         raise RuntimeError(f"Function-call arguments were not valid JSON: {exc}") from exc
 
     return parsed_arguments, response.model, raw_arguments
+
+
+def call_openai(
+    *,
+    system: str,
+    user: str,
+    model: str,
+    temperature: float,
+    max_completion_tokens: int = DEFAULT_MAX_COMPLETION_TOKENS,
+) -> tuple[dict[str, Any], str, str]:
+    api_key = os.environ.get("OPENAI_API_KEY", "")
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY not set")
+    return _call_openai_compatible(
+        api_key=api_key,
+        base_url=None,
+        extra_headers=None,
+        tools=[SUBMIT_TOOL],
+        system=system,
+        user=user,
+        model=model,
+        temperature=temperature,
+        max_completion_tokens=max_completion_tokens,
+    )
+
+
+def call_openrouter(
+    *,
+    system: str,
+    user: str,
+    model: str,
+    temperature: float,
+    max_completion_tokens: int = DEFAULT_MAX_COMPLETION_TOKENS,
+) -> tuple[dict[str, Any], str, str]:
+    api_key = os.environ.get("OPENROUTER_API_KEY", "")
+    if not api_key:
+        raise RuntimeError("OPENROUTER_API_KEY not set")
+    parsed_arguments, model_version, raw_arguments = _call_openai_compatible(
+        api_key=api_key,
+        base_url=OPENROUTER_BASE_URL,
+        extra_headers={
+            "HTTP-Referer": "https://cartha.com",
+            "X-Title": "Cartha Open Bible Translation",
+        },
+        tools=[openrouter_submit_tool()],
+        system=system,
+        user=user,
+        model=model,
+        temperature=temperature,
+        max_completion_tokens=max(max_completion_tokens, 16),
+    )
+    return prune_nulls(parsed_arguments), model_version, raw_arguments
 
 
 def call_codex_cli(
@@ -899,6 +974,15 @@ def call_model(
 ) -> tuple[dict[str, Any], str, str, float | None]:
     if backend == BACKEND_OPENAI:
         tool_input, model_version, raw_output = call_openai(
+            system=system,
+            user=user,
+            model=model,
+            temperature=temperature,
+        )
+        return tool_input, model_version, raw_output, temperature
+
+    if backend == BACKEND_OPENROUTER:
+        tool_input, model_version, raw_output = call_openrouter(
             system=system,
             user=user,
             model=model,
@@ -1029,7 +1113,7 @@ def main() -> int:
     parser.add_argument(
         "--backend",
         default=DEFAULT_BACKEND,
-        choices=[BACKEND_CODEX, BACKEND_OPENAI],
+        choices=[BACKEND_CODEX, BACKEND_OPENAI, BACKEND_OPENROUTER],
         help=f"Drafting backend (default: {DEFAULT_BACKEND})",
     )
     parser.add_argument(
@@ -1095,6 +1179,9 @@ def main() -> int:
 
     if args.backend == BACKEND_OPENAI and not os.environ.get("OPENAI_API_KEY"):
         print("ERROR: OPENAI_API_KEY not set for openai-sdk backend.", file=sys.stderr)
+        return 2
+    if args.backend == BACKEND_OPENROUTER and not os.environ.get("OPENROUTER_API_KEY"):
+        print("ERROR: OPENROUTER_API_KEY not set for openrouter-sdk backend.", file=sys.stderr)
         return 2
     if args.backend == BACKEND_CODEX and not codex_login_available():
         print("ERROR: codex-cli backend requested but Codex is not logged in.", file=sys.stderr)
