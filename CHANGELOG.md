@@ -9,6 +9,14 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## v0.2-pauline — 2026-04-18
+
+- Phase: Phase 1 — Pauline epistles
+- Verse count: 1925
+- Drafter model versions: `gpt-5.4-2026-03-05` × 1390, `gpt-5.4` × 428, `openai/gpt-5.4-20260305` × 107
+- Consistency lint: `lint_reports/phase1-pauline.md`
+- Deferred contested decisions: ROM.1.1, ROM.1.2, ROM.1.3, ROM.1.4, ROM.1.5, ROM.1.6, ROM.1.7, ROM.1.8, ROM.1.9, ROM.1.11, ROM.1.12, ROM.1.16…
+
 ## v0.1-preview-philippians — 2026-04-17
 
 - Phase: Phase 0 — Philippians

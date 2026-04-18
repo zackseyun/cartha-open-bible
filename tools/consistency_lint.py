@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import pathlib
+import re
 import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -52,6 +53,22 @@ LOW_SIGNAL_LEMMAS = {
         "ἐγώ",
         "σύ",
     )
+}
+GLOSS_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "but",
+    "for",
+    "from",
+    "in",
+    "is",
+    "of",
+    "on",
+    "or",
+    "the",
+    "to",
+    "with",
 }
 
 
@@ -132,6 +149,44 @@ def is_function_pos(tag: str) -> bool:
     return tag in function_tags or tag.startswith(function_prefixes)
 
 
+def script_token_count(text: str) -> int:
+    return len(draft.SCRIPT_TERM_RE.findall(text or ""))
+
+
+def strict_decision_matches_lemma(
+    decision_source_word: str,
+    lemma: str,
+    surface_forms: list[str] | tuple[str, ...] = (),
+) -> bool:
+    decision_norm = draft.normalize_term(decision_source_word)
+    lemma_norm = draft.normalize_term(lemma)
+    if not decision_norm or not lemma_norm:
+        return False
+    if decision_norm == lemma_norm:
+        return True
+    return any(
+        decision_norm == draft.normalize_term(surface)
+        for surface in surface_forms
+        if draft.normalize_term(surface)
+    )
+
+
+def canonical_gloss_key(chosen: str) -> str | None:
+    lowered = (chosen or "").strip().lower().replace("’", "'")
+    lowered = re.sub(r"\b([a-z]+)'s\b", r"\1", lowered)
+    words = re.findall(r"[a-z]+", lowered)
+    if not words:
+        return None
+    content = [word for word in words if word not in GLOSS_STOPWORDS]
+    if not content:
+        content = words
+    content = ["god" if word == "gods" else word for word in content]
+    unique = list(dict.fromkeys(content))
+    if len(unique) > 1:
+        return None
+    return unique[0]
+
+
 def gloss_variance_flags(records: list[tuple[pathlib.Path, dict[str, Any]]]) -> list[LintFlag]:
     by_lemma: dict[str, list[dict[str, str]]] = defaultdict(list)
     function_like_by_lemma: dict[str, list[bool]] = defaultdict(list)
@@ -147,13 +202,15 @@ def gloss_variance_flags(records: list[tuple[pathlib.Path, dict[str, Any]]]) -> 
             norm = draft.normalize_term(source_word)
             if not norm or not chosen:
                 continue
+            if script_token_count(source_word) != 1:
+                continue
             matched_lemmas: list[tuple[str, str]] = []
             matched_functional: list[bool] = []
             if source_verse is not None:
                 seen: set[str] = set()
                 for word in source_verse.words:
                     surface = getattr(word, "word", getattr(word, "text", ""))
-                    if draft.decision_matches_lemma(source_word, word.lemma, [surface]):
+                    if strict_decision_matches_lemma(source_word, word.lemma, [surface]):
                         lemma_norm = draft.normalize_term(word.lemma)
                         if lemma_norm and lemma_norm not in seen:
                             matched_lemmas.append((lemma_norm, word.lemma))
@@ -164,12 +221,15 @@ def gloss_variance_flags(records: list[tuple[pathlib.Path, dict[str, Any]]]) -> 
 
             targets = matched_lemmas or [(norm, source_word)]
             for index, (lemma_norm, lemma_display) in enumerate(targets):
+                chosen_key = canonical_gloss_key(chosen)
+                if chosen_key is None:
+                    continue
                 by_lemma[lemma_norm].append(
                     {
                         "source_word": source_word,
                         "lemma": lemma_display,
                         "chosen": chosen,
-                        "chosen_norm": draft.normalize_term(chosen),
+                        "chosen_norm": chosen_key,
                         "rationale": rationale,
                         "verse_id": verse_id,
                         "reference": reference,
