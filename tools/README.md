@@ -14,6 +14,9 @@ Cartha Open Bible.
 | `verify.py` | not yet written | Re-runs the documented pipeline for a published verse. Confirms AI draft reproduces and cross-check reproduces. |
 | `consistency_lint.py` | implemented | Checks internal consistency across drafted YAMLs. Flags undocumented lexical variance, contested-term doctrine gaps/overrides, and empty source text; writes Markdown reports to `lint_reports/`. |
 | `run_phase.py` | implemented | Drives a full phase (e.g., Phase 0 = Philippians) end to end: drafting, linting, commits, and CHANGELOG updates. |
+| `chapter_queue.py` | implemented | Maintains a SQLite-backed chapter queue/ledger for whole-Bible drafting. |
+| `chapter_worker.py` | implemented | Claims chapter jobs from the queue, drafts them in a worker worktree, and commits chapter-sized results. |
+| `chapter_merge.py` | implemented | Cherry-picks completed worker chapter commits onto `main` in canonical order and records merge state. |
 
 ## Prerequisites
 
