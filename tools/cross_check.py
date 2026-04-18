@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 cross_check.py — Run a verse draft through Claude, GPT, and Gemini in
-parallel, compute agreement scores, and flag divergences for human review.
+parallel, compute agreement scores, and surface divergences.
 
 Pipeline stage 3 of the Cartha Open Bible methodology. Takes a verse
 YAML produced by draft.py and augments it with cross-check results.
@@ -17,9 +17,9 @@ Environment:
     GOOGLE_API_KEY           required for Gemini
 
 Agreement thresholds (per METHODOLOGY.md Stage 3):
-- >= 0.90: human review proceeds directly.
-- 0.75-0.90: human reviewer must reconcile divergences.
-- <  0.75: escalate to review board discussion (public GitHub issue).
+- >= 0.90: draft proceeds with divergences noted as alternatives.
+- 0.75-0.90: divergences surfaced as footnotes.
+- <  0.75: disagreement escalated into a public GitHub issue.
 
 This skeleton is intentionally functional but unimplemented — wiring up
 OpenAI + Google SDKs with the same tool schema pattern used in draft.py,

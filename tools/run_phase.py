@@ -293,7 +293,7 @@ def update_changelog(phase: dict[str, Any], stats: dict[str, Any], lint_report: 
 
     release_plan = """## Release plan
 
-- `v0.1-preview-philippians` — Philippians (pilot, review pipeline validation)
+- `v0.1-preview-philippians` — Philippians (pilot)
 - `v0.2-pauline` — Romans, 1–2 Corinthians, Galatians, Ephesians, Colossians, 1–2 Thessalonians, 1–2 Timothy, Titus, Philemon
 - `v0.3-gospels` — Matthew, Mark, Luke, John, Acts
 - `v0.4-nt-complete` — General epistles + Revelation
@@ -301,7 +301,7 @@ def update_changelog(phase: dict[str, Any], stats: dict[str, Any], lint_report: 
 - `v0.6-former-prophets` — Joshua through 2 Kings
 - `v0.7-writings` — Psalms, Proverbs, Job, Ruth, Song of Songs, Ecclesiastes, Lamentations, Esther, Daniel, Ezra-Nehemiah, Chronicles
 - `v0.8-latter-prophets` — Isaiah, Jeremiah, Ezekiel, the Twelve
-- `v1.0-complete` — Full Bible, all phases re-reviewed after external scholarly engagement
+- `v1.0-complete` — Full Bible, all phases re-reviewed and re-linted
 """
 
     release_entry = f"""## {tag} — {draft.utc_timestamp()[:10]}
@@ -310,13 +310,13 @@ def update_changelog(phase: dict[str, Any], stats: dict[str, Any], lint_report: 
 - Verse count: {verse_count}
 - Drafter model versions: {model_versions}
 - Consistency lint: `{lint_report.relative_to(REPO_ROOT)}`
-- Deferred contested decisions for human review: {contested}
+- Deferred contested decisions: {contested}
 """
 
     unreleased_block = """## Unreleased
 
 - Repository scaffold
-- DOCTRINE.md, METHODOLOGY.md, REVIEWERS.md first drafts
+- DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 """
 

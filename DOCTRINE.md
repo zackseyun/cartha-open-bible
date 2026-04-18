@@ -5,9 +5,8 @@ decision in the Cartha Open Bible. Declaring our stance is an act of honesty:
 critics can assess our output against our stated commitments rather than
 guessing at hidden biases.
 
-> **Status: first draft.** This document will be refined by the project
-> founder and review board before the first public release. Input from
-> reviewers and advisors is welcomed via GitHub issues.
+> **Status: first draft.** This document will be refined as the project
+> matures. Input and disagreement are welcomed via GitHub issues.
 
 ## Affirmations
 
@@ -92,15 +91,15 @@ To prevent misunderstanding:
   word or phrase, documented in the per-verse YAML.
 - **Not a study Bible.** Footnotes document translation decisions, not doctrinal
   application or devotional commentary.
-- **Not a denominational product.** The review board is intentionally
+- **Not a denominational product.** The translation is intentionally
   cross-denominational within ecumenical orthodoxy.
-- **Not produced solely by AI.** LLMs produce drafts; named human reviewers
-  sign every verse. No verse ships without a signed human review.
+- **Not a finalized translation.** Every verse is currently an AI-drafted
+  rendering, released openly with full rationale. There is no formal
+  scholarly review process at this time.
 - **Not a first-century English approximation.** We aim at modern English
   that honors source-language meaning, not at archaism.
 
 ## Change log for this document
 
-Material changes to this document are themselves commits. Before a verse is
-reviewed against a changed stance, prior versions of the stance are preserved
-in git history and linked from the per-verse YAML where relevant.
+Material changes to this document are themselves commits. Prior versions
+of the stance are preserved in git history.

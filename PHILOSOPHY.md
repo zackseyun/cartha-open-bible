@@ -19,20 +19,17 @@ It isn't any longer.
 Three things are true now that were not true a decade ago:
 
 1. **Open source infrastructure** — public repositories, issue trackers,
-   collaborative editing, cryptographic signing — is free, instant, and
-   globally accessible. A scholar in Nairobi can audit a translation decision
-   made in Dallas the moment it's committed.
+   collaborative editing — is free, instant, and globally accessible. A
+   reader anywhere in the world can audit a translation decision the moment
+   it's committed.
 
-2. **Frontier AI models** — Claude, GPT, Gemini — can produce competent first
+2. **Frontier AI models** — Claude, GPT, Gemini — can produce competent
    drafts of biblical Greek and Hebrew translation with full lexical
-   reasoning, and can be cross-checked against each other to surface exactly
-   where human judgment is needed. The model isn't the translator. The model
-   is a drafting tool that makes the scholar's bottleneck — reviewing every
-   verse against every alternative — tractable.
+   reasoning, exposing every decision they make.
 
-3. **Modern reproducibility standards** — "same input, same output" applied to
-   translation means any third party with the source text, the prompt, and
-   the model identifier can regenerate the draft and verify it matches.
+3. **Modern reproducibility standards** — "same input, same output" applied
+   to translation means any third party with the source text, the prompt,
+   and the model identifier can regenerate the draft and verify it matches.
    Nothing like this exists in the history of Bible translation.
 
 Together, these make something new possible: a translation where every
@@ -70,12 +67,7 @@ contains:
   chosen gloss was preferred
 - Every **theologically-contested reading**, with the alternative preserved
   in footnotes rather than buried
-- The **AI model**, **prompt hash**, and **timestamp** of the initial draft
-- The **cross-check** results across three frontier models, with agreement
-  scores and divergence resolution
-- The **named human reviewer** who approved the verse, with their
-  credentials, their signature, and a link to the public discussion where
-  any disagreement was worked out
+- The **AI model**, **prompt hash**, and **timestamp** of the draft
 - A **git commit history** documenting every revision
 
 If you disagree with a rendering, you don't have to send a letter to a
@@ -87,6 +79,19 @@ with documented rationale. Nothing happens in private.
 This is transparency in the same sense scientific papers are transparent:
 we show the data, we show the methods, we show the reasoning, and we invite
 the rest of the world to check our work.
+
+## Current status
+
+The project is in its initial AI-drafting phase. Every verse you read in
+the repository is exactly what a frontier AI model produced, with the full
+rationale visible alongside it. We don't currently have a formal scholarly
+review process, and we don't pretend to — the drafts are released as
+drafts, and the repository is public so the reader can see the process
+from the first commit forward, unvarnished.
+
+This is the honest starting point. If a scholarly review process emerges
+later, it will be announced publicly and documented in the repository.
+Until then, what you see is what the AI produced.
 
 ## Open by principle, not by default
 
@@ -117,40 +122,36 @@ church, and have people read it.
 
 Several things it helps to say explicitly:
 
-- **Not an AI-generated Bible.** AI drafts every verse; named human
-  scholars review and sign every verse. No verse ships to readers without a
-  human signature. The AI is a drafting tool, not an authority.
+- **Not a finished translation.** What's in the repository is a draft. It
+  will have errors, awkward renderings, and passages that will need
+  revision. Every release tag makes this explicit.
 - **Not a replacement for scholarship.** We stand on the shoulders of
   centuries of Greek and Hebrew lexicography, textual criticism, and
   theological scholarship. Every lexical decision cites the lexicons
   (BDAG, HALOT, LSJ, Louw-Nida) the academy already uses.
 - **Not a denominational product.** Translation decisions operate within
   historic ecumenical Christian orthodoxy (Apostles' Creed, Nicene Creed,
-  Chalcedonian Definition). Within that, we do not promote one denomination's
-  distinctives over another's — contested readings are preserved in
-  footnotes, not smoothed away.
+  Chalcedonian Definition). Within that, we do not promote one
+  denomination's distinctives over another's — contested readings are
+  preserved in footnotes, not smoothed away.
 - **Not a study Bible.** Footnotes document translation decisions, not
-  devotional application. The aim is to deliver the most accurate and
-  understandable English rendering of what the Greek and Hebrew say,
-  nothing more.
-- **Not finished.** This is a multi-year effort. We ship phase-by-phase,
-  book-by-book, with every stage transparently marked as preview or
-  reviewed-and-finalized.
+  devotional application.
+- **Not finished.** This is an ongoing project. We ship phase-by-phase,
+  book-by-book, with every stage transparently marked as draft.
 
 ## How to engage
 
-- **Read it.** When a book is published, use it in your prayer, study, and
-  teaching. Tell us what lands and what doesn't.
+- **Read it.** When a book is drafted, read it. Tell us what lands and what
+  doesn't.
 - **Critique it.** File an issue on GitHub for any verse you'd translate
   differently. Lexical disagreements, theological disagreements, and general
-  concerns all have templates. Your academic training, denominational
-  perspective, and relationship to scripture are all welcome.
+  concerns all have templates.
 - **Cite it.** In academic work, sermons, or published material, cite the
   Cartha Open Bible with a link back. Attribution keeps the paper trail
-  visible and invites others into the work.
+  visible.
 - **Fork it.** If you have a specific scholarly disagreement you want to
   pursue, fork the repository and publish your alternative. Our provenance
-  records travel with the fork, so forks remain academically legible.
+  records travel with the fork.
 - **Translate it.** CC-BY 4.0 permits derivative translations into other
   languages. A translator working from the Cartha Open Bible into any other
   language inherits the full provenance chain back to the Greek and Hebrew.
@@ -164,9 +165,9 @@ We commit to:
   publicly inspectable, and reproducible.
 - **Never silence disagreement.** Public issues remain open; responses are
   public; revisions are public.
-- **Never claim authority the text doesn't have.** This translation is a
-  human-and-tool-assisted rendering of ancient documents into modern English.
-  It is not itself inspired. Scripture is.
+- **Never claim authority the text doesn't have.** This translation is an
+  AI-produced rendering of ancient documents into modern English, released
+  openly. It is not itself inspired. Scripture is.
 
 The Word belongs to the church. We are stewards of a process, not owners of
 a text.

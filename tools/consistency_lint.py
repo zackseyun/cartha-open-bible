@@ -5,7 +5,6 @@ consistency_lint.py — Scan drafted verse YAMLs for consistency issues.
 Current checks:
 - Same source word glossed differently without a sufficiently explicit rationale
 - DOCTRINE.md contested-term defaults overridden without an explicit rationale
-- Approved verses missing reviewer signatures
 - Missing source text
 """
 
@@ -223,21 +222,6 @@ def doctrine_flags(records: list[tuple[pathlib.Path, dict[str, Any]]]) -> list[L
     return flags
 
 
-def reviewer_flags(records: list[tuple[pathlib.Path, dict[str, Any]]]) -> list[LintFlag]:
-    flags: list[LintFlag] = []
-    for _path, record in records:
-        review = record.get("human_review") or {}
-        if review.get("status") == "approved" and not review.get("reviewers"):
-            flags.append(
-                LintFlag(
-                    category="Missing reviewer signatures",
-                    verse_id=str(record.get("id", "")),
-                    message=f"{record.get('reference')}: approved verse has no reviewers attached.",
-                )
-            )
-    return flags
-
-
 def source_text_flags(records: list[tuple[pathlib.Path, dict[str, Any]]]) -> list[LintFlag]:
     flags: list[LintFlag] = []
     for _path, record in records:
@@ -308,7 +292,6 @@ def run_lint(
     flags = (
         gloss_variance_flags(records)
         + doctrine_flags(records)
-        + reviewer_flags(records)
         + source_text_flags(records)
     )
     write_report(phase=phase, records=records, flags=flags, output_path=output_path)

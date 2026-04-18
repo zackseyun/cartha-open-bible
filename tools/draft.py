@@ -90,7 +90,7 @@ for code, (_osis, slug, title, _filename) in wlc.OT_BOOKS.items():
 
 SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible translated directly from the original Greek and Hebrew with commit-level provenance for every translation decision.
 
-You are drafting ONE verse. A named human scholar will review and sign your draft before it ships to readers. Your job is to produce the highest-quality draft you can, and to expose every significant lexical or theological decision so the reviewer can audit your reasoning.
+You are drafting ONE verse. Your job is to produce the highest-quality draft you can, and to expose every significant lexical or theological decision so that the draft is fully auditable.
 
 You MUST follow the doctrinal stance and translation philosophy in the DOCTRINE.md excerpt provided. If a verse involves a contested reading listed in the "Contested terms" table, use the stated default rendering and preserve the alternative in a footnote, with your rationale explicitly documented in `lexical_decisions` or `theological_decisions`.
 
@@ -645,10 +645,7 @@ def build_verse_record(
             "timestamp": utc_timestamp(),
             "output_hash": output_hash,
         },
-        "human_review": {
-            "status": "draft",
-            "reviewers": [],
-        },
+        "status": "draft",
     }
 
     footnotes = tool_input.get("footnotes")

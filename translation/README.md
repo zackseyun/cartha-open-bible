@@ -47,27 +47,17 @@ translation:
   text: "Paul and Timothy..."
   philosophy: optimal-equivalence
 ai_draft:
-  model_id: claude-opus-4-7
-  model_version: "2026-01-15"
-  prompt_id: nt_draft_v3
+  model_id: gpt-5.4
+  model_version: "gpt-5.4"
+  prompt_id: nt_draft_v1
   prompt_sha256: "..."
-  timestamp: "2026-04-16T14:23:00Z"
+  timestamp: "2026-04-17T21:31:58Z"
   output_hash: "..."
-human_review:
-  status: approved
-  reviewers:
-    - name: "Zack Yun"
-      credentials: "Founder, Cartha Inc."
-      signed_at: "2026-04-18T10:00:00Z"
-      signature: "ed25519:..."
+status: draft
 ```
 
 ## Status
 
-This directory is empty pending:
-1. Completion of the draft pipeline (`tools/draft.py`)
-2. Vendoring of SBLGNT and WLC/UHB source texts
-3. Generation of keypairs for the initial review board
-4. First pilot book draft
-
-Track progress via the project's task list and CHANGELOG.
+Every verse currently in this directory is an AI-drafted rendering,
+released openly with full rationale alongside it. Track progress via the
+CHANGELOG.

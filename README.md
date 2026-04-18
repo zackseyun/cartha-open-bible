@@ -24,9 +24,7 @@ commitments.**
    file in this repository with the source text, the English rendering, the
    key lexical choices (source word, chosen gloss, alternatives considered,
    lexicon entry, rationale), any contested theological readings with
-   alternatives preserved, the AI model and prompt that drafted it, the
-   cross-check scores across three frontier models, and the named human
-   reviewer's signature.
+   alternatives preserved, and the AI model and prompt that drafted it.
 
 3. **Every verse is reproducible.** Given the source text, the prompt hash,
    and the model identifier, any third party can re-run the LLM pipeline
@@ -37,9 +35,9 @@ commitments.**
 
 Open-source infrastructure, frontier AI models as drafting tools, and modern
 reproducibility standards together enable a kind of transparent translation
-that was not feasible in any previous era. The AI is not the translator —
-named human scholars review and sign every verse. The AI makes the
-scholar's bottleneck tractable so the work can be done in the open.
+that was not feasible in any previous era — a translation where every
+decision is documented, every verse is reproducible, and anyone with the
+source text and the prompt can re-run the draft.
 
 See [PHILOSOPHY.md](PHILOSOPHY.md) for the theological and historical
 rationale.
@@ -101,12 +99,16 @@ output against our stated commitments rather than guessing at hidden biases.
 ## Methodology
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the drafting pipeline, cross-check
-protocol, human review workflow, and reproducibility verification.
+protocol, and reproducibility verification.
 
-## Review board
+## Current status
 
-See [REVIEWERS.md](REVIEWERS.md) for the named scholars reviewing and signing
-verses. No verse ships to readers until a reviewer on this list has signed it.
+The project is in its initial AI-drafting phase. Every verse in this
+repository was produced by a frontier AI model, with full provenance, and
+is released as a draft — not as a finalized translation. What you are
+reading is exactly what the AI produced, with the rationale for every
+decision visible alongside it. The repository is public so the process is
+inspectable from the first commit forward.
 
 ## Contributing
 
@@ -138,8 +140,7 @@ cartha-open-bible/
 ├── DEDICATION.md        Blessing and hope — to whom this work is offered
 ├── PHILOSOPHY.md        Why this translation exists, open-source posture, commitments
 ├── DOCTRINE.md          Theological commitments driving translation decisions
-├── METHODOLOGY.md       Drafting, review, and signing process
-├── REVIEWERS.md         Named review board with credentials
+├── METHODOLOGY.md       Drafting and cross-check pipeline
 ├── CHANGELOG.md         Phase-by-phase release notes
 ├── LICENSE              CC-BY 4.0
 ├── schema/

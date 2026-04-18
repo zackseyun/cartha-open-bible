@@ -4,7 +4,7 @@
   "title": "Cartha Open Bible per-verse record",
   "description": "Full provenance record for a single verse. Every verse in the translation is stored as a YAML file conforming to this schema.",
   "type": "object",
-  "required": ["id", "reference", "source", "translation", "ai_draft", "human_review"],
+  "required": ["id", "reference", "source", "translation", "ai_draft"],
   "properties": {
     "id": {
       "type": "string",
@@ -168,46 +168,10 @@
         }
       }
     },
-    "human_review": {
-      "type": "object",
-      "required": ["status", "reviewers"],
-      "properties": {
-        "status": {
-          "type": "string",
-          "enum": ["draft", "in_review", "approved", "revision_requested", "escalated"]
-        },
-        "reviewers": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["name", "credentials", "signed_at"],
-            "properties": {
-              "name": { "type": "string" },
-              "credentials": { "type": "string" },
-              "signed_at": { "type": "string", "format": "date-time" },
-              "signature": {
-                "type": "string",
-                "description": "ed25519 signature of the canonical verse hash",
-                "pattern": "^ed25519:[A-Za-z0-9+/=]+$"
-              },
-              "notes": { "type": "string" }
-            }
-          }
-        },
-        "human_edits": {
-          "type": "array",
-          "description": "Record of reviewer-made changes to the AI draft",
-          "items": {
-            "type": "object",
-            "properties": {
-              "field": { "type": "string" },
-              "before": { "type": "string" },
-              "after": { "type": "string" },
-              "rationale": { "type": "string" }
-            }
-          }
-        }
-      }
+    "status": {
+      "type": "string",
+      "description": "Lifecycle status of this verse record.",
+      "enum": ["draft"]
     },
     "discussion": {
       "type": "string",
