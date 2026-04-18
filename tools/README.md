@@ -17,6 +17,7 @@ Cartha Open Bible.
 | `chapter_queue.py` | implemented | Maintains a SQLite-backed chapter queue/ledger for whole-Bible drafting. |
 | `chapter_worker.py` | implemented | Claims chapter jobs from the queue, drafts them in a worker worktree, and commits chapter-sized results. |
 | `chapter_merge.py` | implemented | Cherry-picks completed worker chapter commits onto `main` in canonical order and records merge state. |
+| `dashboard_server.py` | implemented | Serves a local live dashboard showing active queue workers, claimed chapters, progress percentages, ready-to-merge jobs, and recent commits. |
 
 ## Prerequisites
 
@@ -54,6 +55,10 @@ export AZURE_OPENAI_API_KEY=...
 export AZURE_OPENAI_DEPLOYMENT_ID=gpt-5-4-deployment
 python3 tools/draft.py --ref "Philippians 1:1" --backend azure-openai --model gpt-5.4
 ```
+
+
+# Local worker dashboard:
+python3 tools/dashboard_server.py --host 127.0.0.1 --port 8765
 
 Model, temperature, and prompt ID are configurable via CLI flags or
 environment variables (`CARTHA_MODEL_ID`, `CARTHA_TEMPERATURE`,
