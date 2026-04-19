@@ -129,6 +129,7 @@ set of complete books (not partial books):
 - Phase 5: Former Prophets (Joshua through 2 Kings)
 - Phase 6: Writings (Psalms, Proverbs, Job, Chronicles, etc.)
 - Phase 7: Latter Prophets (Isaiah, Jeremiah, Ezekiel, Twelve)
+- Phase 8: Deuterocanonical books (Tobit through 4 Maccabees, from LXX) — see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)
 
 Tagged releases follow the `vMAJOR.MINOR.PATCH` convention. The first public
 release is `v0.1-preview`.
@@ -141,6 +142,8 @@ cartha-open-bible/
 ├── PHILOSOPHY.md        Why this translation exists, open-source posture, commitments
 ├── DOCTRINE.md          Theological commitments driving translation decisions
 ├── METHODOLOGY.md       Drafting and cross-check pipeline
+├── REVISION_METHODOLOGY.md  How committed drafts are revised (reviser roles, revision criteria)
+├── DEUTEROCANONICAL.md  Strategy for including the Deuterocanonical / Apocrypha books
 ├── CHANGELOG.md         Phase-by-phase release notes
 ├── LICENSE              CC-BY 4.0
 ├── schema/
