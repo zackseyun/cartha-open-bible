@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# supervise_worker.sh <worker_id> <phase> <worktree>
+# supervise_worker.sh <worker_id> <phase> <worktree> [deployment_id]
 #
 # Run chapter_worker.py under a restart loop so a transient failure
 # (DNS blip, Azure 500, read timeout) doesn't permanently kill a worker.
@@ -18,18 +18,28 @@ set -u
 WORKER_ID="${1:?worker_id required}"
 PHASE="${2:?phase required}"
 WORKTREE="${3:?worktree required}"
+DEPLOYMENT_ID="${4:-}"
 COORD="${COORD:-/Users/zackseyun/My Drive/Moltbot-Shared/Documents/GitHub/cartha-translation}"
 LOG="/tmp/cob-chapter-${WORKER_ID}.log"
 MAX_RESTARTS="${MAX_RESTARTS:-12}"
 RESTART_SLEEP_SECONDS="${RESTART_SLEEP_SECONDS:-15}"
+PYTHON_BIN="${PYTHON_BIN:-$COORD/.venv/bin/python}"
+
+if [[ ! -x "$PYTHON_BIN" ]]; then
+  PYTHON_BIN="$(command -v python3)"
+fi
+
+if [[ -n "$DEPLOYMENT_ID" ]]; then
+  export AZURE_OPENAI_DEPLOYMENT_ID="$DEPLOYMENT_ID"
+fi
 
 cd "$WORKTREE" || { echo "[supervisor] cannot cd to $WORKTREE" >>"$LOG"; exit 2; }
 
-echo "[supervisor] started worker=$WORKER_ID phase=$PHASE wt=$WORKTREE at $(date -u +%FT%TZ)" >> "$LOG"
+echo "[supervisor] started worker=$WORKER_ID phase=$PHASE wt=$WORKTREE deployment=${DEPLOYMENT_ID:-default} py=$PYTHON_BIN at $(date -u +%FT%TZ)" >> "$LOG"
 
 restarts=0
 while :; do
-  python3 tools/chapter_worker.py \
+  "$PYTHON_BIN" tools/chapter_worker.py \
     --coord-root "$COORD" \
     --worker-id "$WORKER_ID" \
     --phase "$PHASE" \
