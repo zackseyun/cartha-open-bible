@@ -24,6 +24,8 @@ SUMMARY_CACHE_TABLE = "BibleSummaryCache-alpha"
 SUMMARY_CACHE_COUNT_TTL_SECONDS = 20
 SUMMARY_LOG_PATH = pathlib.Path("/tmp/cob-summary-prewarm.log")
 SUMMARY_PID_PATH = pathlib.Path("/tmp/cob-summary-prewarm.pid")
+SUMMARY_PIDS_PATH = pathlib.Path("/tmp/cob-summary-prewarm.pids")
+SUMMARY_PARTITION_LOG_GLOB = "cob-summary-prewarm-*.log"
 SUMMARY_KEY_RE = re.compile(r"key=COB\|[^|]+\|(\w+)\|([A-Z0-9_]+)\.(\d+)\|(\w+)\|")
 SUMMARY_CACHED_RE = re.compile(r"cached=(true|false)")
 SUMMARY_AZURE_RE = re.compile(r'time="([^"]+)".*AZURE_OPENAI_REQUEST_PREPARED')
@@ -125,7 +127,8 @@ def queue_jobs(limit_ready: int = 20) -> dict[str, Any]:
     }
 
 
-def parse_summary_log(limit_lines: int = 400) -> dict[str, Any]:
+def parse_summary_log(path: pathlib.Path | None = None, limit_lines: int = 400) -> dict[str, Any]:
+    log_path = path if path is not None else SUMMARY_LOG_PATH
     blank: dict[str, Any] = {
         "current": None,
         "last_generated": None,
@@ -136,10 +139,10 @@ def parse_summary_log(limit_lines: int = 400) -> dict[str, Any]:
         "last_activity": None,
         "tail_lines": [],
     }
-    if not SUMMARY_LOG_PATH.exists():
+    if not log_path.exists():
         return blank
     try:
-        all_lines = SUMMARY_LOG_PATH.read_text(encoding="utf-8", errors="replace").splitlines()
+        all_lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
     except Exception:
         return blank
     tail = all_lines[-limit_lines:]
@@ -175,7 +178,7 @@ def parse_summary_log(limit_lines: int = 400) -> dict[str, Any]:
             azure_after_last_key = True
     latest_lines = [line for line in tail[-12:] if line.strip()]
     try:
-        mt = SUMMARY_LOG_PATH.stat().st_mtime
+        mt = log_path.stat().st_mtime
         file_mtime = dt.datetime.fromtimestamp(mt).isoformat(timespec="seconds")
     except Exception:
         file_mtime = None
@@ -191,27 +194,73 @@ def parse_summary_log(limit_lines: int = 400) -> dict[str, Any]:
     }
 
 
+def discover_summary_workers() -> list[dict[str, Any]]:
+    partitions: list[dict[str, Any]] = []
+    if SUMMARY_PIDS_PATH.exists():
+        for line in SUMMARY_PIDS_PATH.read_text().splitlines():
+            parts = line.strip().split(None, 2)
+            if len(parts) < 2:
+                continue
+            if not parts[0].isdigit():
+                continue
+            pid = int(parts[0])
+            label = parts[1]
+            books = parts[2] if len(parts) >= 3 else ""
+            log_path = pathlib.Path(f"/tmp/cob-summary-prewarm-{label}.log")
+            partitions.append({"pid": pid, "label": label, "books": books, "log_path": log_path})
+    elif SUMMARY_PID_PATH.exists():
+        raw = SUMMARY_PID_PATH.read_text().strip()
+        if raw.isdigit():
+            partitions.append({
+                "pid": int(raw),
+                "label": "prewarm",
+                "books": "",
+                "log_path": SUMMARY_LOG_PATH,
+            })
+    for w in partitions:
+        alive = False
+        try:
+            cmd = run(["ps", "-p", str(w["pid"]), "-o", "command="])
+            alive = bool(cmd.strip())
+        except Exception:
+            alive = False
+        w["alive"] = alive
+        parsed = parse_summary_log(w["log_path"])
+        w["current"] = parsed["current"]
+        w["last_generated"] = parsed["last_generated"]
+        w["last_cached"] = parsed["last_cached"]
+        w["recent_cached"] = parsed["recent_cached"]
+        w["recent_generated"] = parsed["recent_generated"]
+        w["azure_in_flight"] = parsed["azure_in_flight"]
+        w["last_activity"] = parsed["last_activity"]
+        w["tail_lines"] = parsed["tail_lines"]
+    return partitions
+
+
 def summary_cache_status() -> dict[str, Any]:
     global _summary_cache_snapshot, _summary_cache_snapshot_at
     now = time.time()
     if _summary_cache_snapshot is not None and now - _summary_cache_snapshot_at < SUMMARY_CACHE_COUNT_TTL_SECONDS:
         return _summary_cache_snapshot
 
-    pid = None
-    alive = False
-    command = None
-    if SUMMARY_PID_PATH.exists():
-        raw = SUMMARY_PID_PATH.read_text().strip()
-        if raw.isdigit():
-            pid = int(raw)
-            try:
-                command = run(["ps", "-p", str(pid), "-o", "command="])
-                alive = bool(command.strip())
-            except Exception:
-                alive = False
-                command = None
-
-    log_info = parse_summary_log()
+    workers = discover_summary_workers()
+    for w in workers:
+        lp = w.get("log_path")
+        if lp is not None and not isinstance(lp, str):
+            w["log_path"] = str(lp)
+    alive_workers = [w for w in workers if w["alive"]]
+    total_generated = sum(w["recent_generated"] for w in workers)
+    total_cached = sum(w["recent_cached"] for w in workers)
+    any_in_flight = any(w["azure_in_flight"] for w in alive_workers)
+    first = workers[0] if workers else None
+    tail_lines: list[str] = []
+    for w in workers[:4]:
+        lines = w.get("tail_lines") or []
+        if not lines:
+            continue
+        header = f"— {w['label']} ({w.get('books') or 'all'}) —"
+        tail_lines.append(header)
+        tail_lines.extend(lines[-3:])
 
     count = None
     try:
@@ -226,17 +275,20 @@ def summary_cache_status() -> dict[str, Any]:
     snapshot = {
         "table": SUMMARY_CACHE_TABLE,
         "count": count,
-        "pid": pid,
-        "alive": alive,
-        "command": command,
-        "latest_lines": log_info["tail_lines"],
-        "current": log_info["current"],
-        "last_generated": log_info["last_generated"],
-        "last_cached": log_info["last_cached"],
-        "recent_cached": log_info["recent_cached"],
-        "recent_generated": log_info["recent_generated"],
-        "azure_in_flight": log_info["azure_in_flight"],
-        "last_activity": log_info["last_activity"],
+        "workers": workers,
+        "worker_count": len(workers),
+        "alive_count": len(alive_workers),
+        "alive": len(alive_workers) > 0,
+        "pid": first["pid"] if first else None,
+        "command": None,
+        "latest_lines": tail_lines,
+        "current": first["current"] if first else None,
+        "last_generated": first["last_generated"] if first else None,
+        "last_cached": first["last_cached"] if first else None,
+        "recent_cached": total_cached,
+        "recent_generated": total_generated,
+        "azure_in_flight": any_in_flight,
+        "last_activity": first["last_activity"] if first else None,
         "updated_at": now_iso(),
     }
     _summary_cache_snapshot = snapshot
@@ -258,25 +310,28 @@ def build_status() -> dict[str, Any]:
             "worker_process": worker_meta,
         })
     summary_cache = summary_cache_status()
-    if summary_cache.get("alive"):
-        current = summary_cache.get("current") or {}
-        last_gen = summary_cache.get("last_generated") or {}
+    for w in summary_cache.get("workers", []):
+        if not w.get("alive"):
+            continue
+        current = w.get("current") or {}
+        last_gen = w.get("last_generated") or {}
         book_label = current.get("book") or last_gen.get("book") or "—"
         chapter_label = current.get("chapter") if current.get("chapter") is not None else last_gen.get("chapter", "")
         scope_label = current.get("scope") or last_gen.get("scope") or "chapter"
         style_label = current.get("style") or last_gen.get("style") or ""
         running.append({
             "kind": "summary",
-            "worker_id": "summary-prewarm",
-            "worker_process": {"pid": summary_cache.get("pid")} if summary_cache.get("pid") else None,
+            "worker_id": f"summary-{w['label']}",
+            "worker_process": {"pid": w["pid"]},
             "phase": f"summary · {scope_label}{' · ' + style_label if style_label else ''}",
             "book_code": book_label,
             "chapter": chapter_label,
+            "books_filter": w.get("books") or "",
             "cache_total": summary_cache.get("count"),
-            "recent_generated": summary_cache.get("recent_generated", 0),
-            "recent_cached": summary_cache.get("recent_cached", 0),
-            "azure_in_flight": summary_cache.get("azure_in_flight", False),
-            "last_activity": summary_cache.get("last_activity"),
+            "recent_generated": w.get("recent_generated", 0),
+            "recent_cached": w.get("recent_cached", 0),
+            "azure_in_flight": w.get("azure_in_flight", False),
+            "last_activity": w.get("last_activity"),
         })
     return {
         "generated_at": now_iso(),
@@ -358,7 +413,8 @@ async function refresh() {
       <div class=\"card\"><h3>Failed jobs</h3><div class=\"mono\">${failed.length}</div></div>
       <div class=\"card\"><h3>Merge loops</h3><div class=\"mono\">${mergeLoops.length}</div></div>
       <div class=\"card\"><h3>Summary cache entries</h3><div class=\"mono\">${summaryCache.count ?? '—'}</div><div class=\"small mono\">${summaryCache.table || ''}</div></div>
-      <div class=\"card\"><h3>Prewarm status</h3><div class=\"mono\">${summaryCache.alive ? 'running' : 'stopped'}</div><div class=\"small mono\">${summaryCache.pid ? 'pid ' + summaryCache.pid : 'no pid'}</div></div>
+      <div class=\"card\"><h3>Summary workers</h3><div class=\"mono\">${summaryCache.alive_count ?? 0}/${summaryCache.worker_count ?? 0}</div><div class=\"small mono\">alive / total</div></div>
+      <div class=\"card\"><h3>Session summaries</h3><div class=\"mono\">+${summaryCache.recent_generated ?? 0}</div><div class=\"small mono\">${summaryCache.recent_cached ?? 0} cache hits</div></div>
     </div>`;
 
   const runningRows = running.map(job => {
@@ -366,13 +422,13 @@ async function refresh() {
       const pid = job.worker_process && job.worker_process.pid ? 'pid ' + job.worker_process.pid : 'no pid';
       const chapter = job.chapter === '' || job.chapter == null ? '' : job.chapter;
       const inflight = job.azure_in_flight ? '<span class=\"badge inflight\">generating</span>' : '';
+      const booksFilter = job.books_filter ? `<div class=\"small mono\">${job.books_filter}</div>` : '';
       return `
         <tr class=\"summary-row\">
-          <td><span class=\"badge summary\">${job.worker_id}</span>${inflight}<div class=\"small mono\">${pid}</div></td>
+          <td><span class=\"badge summary\">${job.worker_id}</span>${inflight}<div class=\"small mono\">${pid}</div>${booksFilter}</td>
           <td class=\"mono\">${job.phase}</td>
           <td class=\"mono\">${job.book_code} ${chapter}</td>
           <td>
-            <div><span class=\"pill\">cache ${job.cache_total ?? '—'}</span></div>
             <div class=\"small\"><span class=\"pill\">+${job.recent_generated || 0} new</span><span class=\"pill\">${job.recent_cached || 0} hit</span></div>
           </td>
           <td class=\"small mono\">${job.last_activity || ''}</td>
