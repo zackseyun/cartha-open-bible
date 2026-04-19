@@ -8,8 +8,8 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "Canonical verse identifier, e.g., MAT.1.1 or PHP.1.6",
-      "pattern": "^[A-Z1-3]{3}\\.\\d+\\.\\d+$"
+      "description": "Canonical verse identifier, e.g., MAT.1.1, PHP.1.6, or deuterocanonical codes like TOB.1.1, 4MA.18.24.",
+      "pattern": "^[A-Z0-9]{2,5}\\.\\d+\\.\\d+$"
     },
     "reference": {
       "type": "string",
@@ -21,7 +21,16 @@
       "properties": {
         "edition": {
           "type": "string",
-          "enum": ["SBLGNT", "WLC", "UHB", "Rahlfs-LXX"]
+          "enum": [
+            "SBLGNT",
+            "WLC",
+            "UHB",
+            "Rahlfs-LXX",
+            "lxx-swete-1909",
+            "hebrew-sirach-schechter-1899",
+            "aramaic-tobit-qumran"
+          ],
+          "description": "Source edition identifier. SBLGNT = Greek NT; WLC/UHB = Masoretic Hebrew; lxx-swete-1909 = Swete's Septuagint for deuterocanonical books; hebrew-sirach-schechter-1899 = Cairo Genizah MSS A+B for Hebrew Sirach; aramaic-tobit-qumran = Qumran Aramaic Tobit fragments."
         },
         "text": {
           "type": "string",
