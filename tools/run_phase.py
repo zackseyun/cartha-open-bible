@@ -102,6 +102,34 @@ PHASES: dict[str, dict[str, Any]] = {
         "lint_report": REPO_ROOT / "lint_reports" / "phase7-latter-prophets.md",
         "commit_mode": "chapter",
     },
+    "phase8": {
+        "label": "Phase 8 — Deuterocanonical / Apocrypha",
+        # Book codes for the deuterocanonical corpus. Canonical-status
+        # labeling (Catholic / Orthodox / Protestant-historic) lives in
+        # DEUTEROCANONICAL.md; the code here only drives enqueue + draft.
+        "books": [
+            "TOB",    # Tobit
+            "JDT",    # Judith
+            "ADE",    # Greek Esther (with additions)
+            "WIS",    # Wisdom of Solomon
+            "SIR",    # Sirach (Ecclesiasticus) — Hebrew MSS A/B primary, Swete Greek fallback
+            "BAR",    # Baruch
+            "LJE",    # Letter of Jeremiah (Swete prints separately, not as Baruch 6)
+            "ADA",    # Greek Additions to Daniel (Pr Azariah, Song of Three, Susanna, Bel)
+            "1ES",    # 1 Esdras
+            "MAN",    # Prayer of Manasseh (pending source-page discovery)
+            "PS151",  # Psalm 151 (pending source-page discovery)
+            "1MA",    # 1 Maccabees
+            "2MA",    # 2 Maccabees
+            "3MA",    # 3 Maccabees
+            "4MA",    # 4 Maccabees
+        ],
+        "testament": "deuterocanon",
+        "tag": "v0.9-deuterocanon",
+        "lint_phase_name": "phase8-deuterocanon",
+        "lint_report": REPO_ROOT / "lint_reports" / "phase8-deuterocanon.md",
+        "commit_mode": "chapter",
+    },
 }
 
 
