@@ -297,11 +297,12 @@ the Cartha Open Bible is delivering.
 
 **Current measured baseline.** First-pass Swete LXX transcription
 quality across all 572 deuterocanonical pages: 100% format-valid,
-~1–2% first-pass word-error rate on typeset Greek (Opus 4.7 vs
-GPT-5.4 cross-read on a 4-page spot-check). See
+**0.97% first-pass word-error rate** on typeset Greek (Opus 4.7 vs
+GPT-5.4 cross-read on a 24-page stratified sample, ~4,944 words).
+See
 [sources/lxx/swete/transcribed/TRANSCRIPTION_QUALITY.md](sources/lxx/swete/transcribed/TRANSCRIPTION_QUALITY.md)
-for the full measurement report, specific error examples, and the
-planned improvement pathway.
+for the per-page tally, error-pattern breakdown, and the planned
+improvement pathway.
 
 ## Consulting scholarship, reproducing nothing
 
