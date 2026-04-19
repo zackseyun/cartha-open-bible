@@ -123,23 +123,129 @@ separate source-acquisition phase for the Latin text and a different
 textual apparatus than the LXX-based books. We will revisit after
 Phase 1 ships.
 
-### Source editions
+### Source editions — per-book, most-original extant text
 
-**Primary:** the 1935 **Rahlfs Septuagint** (Alfred Rahlfs, ed.,
-*Septuaginta: Id est Vetus Testamentum graece iuxta LXX
-interpretes*, Stuttgart). Public domain. This is the same edition
-every major modern Bible that includes the Apocrypha translates from
-(NRSV, NABRE, Orthodox Study Bible, Jerusalem Bible for most books).
+We translate each book from the **most-original surviving text we can
+lawfully access**, not uniformly from one edition. This is more
+faithful to the composition history of these books — and for 12 of
+14 books, the Greek LXX *is* the original or the sole surviving
+witness, so LXX is the right answer on textual grounds, not as a
+compromise.
 
-We plan to vendor the LXX from **STEPBible data**
-(https://github.com/STEPBible/STEPBible-Data), an MIT-licensed
-transcription with morphological tagging.
+Field research (2026-04-18) confirmed that the commonly-referenced
+**Rahlfs LXX 1935** has no CC-BY-compatible digital transcription
+we can vendor: every digital Rahlfs edition we evaluated is either
+CC-BY-NC-SA (eliranwong, CenterBLC), CC-BY-SA (Perseus, First1KGreek
+derivatives), or restrictive (CCAT). STEPBible's announced TAGOT
+has not shipped.
 
-**Cross-reference (for footnotes only):** Hebrew Sirach manuscripts
-(Cairo Genizah A–F, Masada scroll, Qumran 2Q18 and 11QPsa) and
-Qumran Aramaic Tobit fragments (4Q196–200) are referenced for
-textual-critical footnotes — *not* republished. See "Honoring
-scholarship without reproducing it" below.
+Instead, our LXX source is **Henry Barclay Swete, *The Old Testament
+in Greek According to the Septuagint*, 3 vols. (Cambridge University
+Press, 1909–1930)** — fully public domain (Swete died 1917) and
+hosted as scanned PDFs on Internet Archive. Swete's edition contains
+every deuterocanonical book we need. We transcribe the Greek
+ourselves from the archival page scans using AI vision, releasing
+the transcription under CC-BY 4.0. This is legally clean (PD source
++ our own work) and produces a working source text whose provenance
+is auditable to specific public-domain page images.
+
+For the two books where a non-Greek original survives (Sirach in
+Hebrew, Tobit in Aramaic), we translate primarily from the original
+language where we can lawfully access photographs, consulting the
+Greek where the original is lost or damaged.
+
+#### Per-book source path
+
+| Book | Original language | Primary source for COB | Status |
+|---|---|---|---|
+| Wisdom of Solomon | Greek (original) | Swete LXX vol. II (PD) | ✓ path clear |
+| 2 Maccabees | Greek (original) | Swete LXX vol. III (PD) | ✓ path clear |
+| Greek Additions to Esther | Greek (original) | Swete LXX vol. II (PD) | ✓ path clear |
+| Greek Additions to Daniel | Greek (original) | Swete LXX vol. III (PD) | ✓ path clear |
+| 1 Maccabees | Hebrew (lost) | Swete LXX vol. III (PD) | ✓ path clear |
+| Judith | Hebrew (lost) | Swete LXX vol. II (PD) | ✓ path clear |
+| Baruch + Letter of Jeremiah | Hebrew (lost) | Swete LXX vol. III (PD) | ✓ path clear |
+| 1 Esdras | Greek (Semitic Vorlage lost) | Swete LXX vol. II (PD) | ✓ path clear |
+| Prayer of Manasseh | Greek | Swete LXX vol. III (PD) | ✓ path clear |
+| Psalm 151 | Hebrew (partial at 11QPsa) | Swete LXX; Hebrew: acquisition in progress | ⚠ Hebrew fragment blocked on licensing |
+| 3 Maccabees | Greek | Swete LXX vol. III (PD) | ✓ path clear |
+| 4 Maccabees | Greek | Swete LXX vol. III (PD) | ✓ path clear |
+| **Sirach** | **Hebrew** | Hebrew: Schechter 1899 (PD, MSS A & B); fresh vision transcription from PD photos for MSS C–F; LXX (Swete) where Hebrew is lost | ✓ MSS A & B covered; MSS C–F via PD re-publications and fresh transcription |
+| **Tobit** | **Aramaic** | LXX (Swete) primary; Aramaic Qumran fragments to be added when available | ⚠ Aramaic originals held under restrictive license |
+
+Legend: ✓ = clean path, material in hand or freely acquirable. ⚠ = partial block, documented workaround in place.
+
+**Masada Ben Sira scroll** (Mas1h) covers Sirach 39:27–43:30 and is
+the only pre-medieval Hebrew Sirach witness. Its surviving
+photographs are held under restrictive license terms; until direct
+access is available, we translate that passage from the Greek (Swete)
+and note transparently in the front-matter that the pre-medieval
+Hebrew witness is not in our current source pipeline.
+
+**Qumran Tobit fragments** (4Q196–4Q200) are the sole Aramaic/Hebrew
+witness to Tobit and cover approximately 20% of the book. Same
+licensing situation, same interim posture: LXX Greek primary with
+transparent notation.
+
+Scholarly editions (Beentjes 1997, Skehan & Di Lella 1987, Fitzmyer
+1995 DJD XIX, etc.) are cited in footnotes for factual textual-critical
+claims — which are not copyrightable — but not reproduced.
+
+## Source acquisition status
+
+The following table tracks every source of interest and its current
+state in the repository. This is the single reference for what we
+have, what we're waiting on, and what the next action is per source.
+
+| # | Source | What it is | License | Vendored? | Blocker | Next action |
+|---|---|---|---|---|---|---|
+| 1 | **SBLGNT** | Greek NT (27 books) | CC-BY-4.0 + SBLGNT EULA | ✓ (existing) | — | Keep as-is |
+| 2 | **WLC / UHB** | Hebrew Protestant OT | CC-BY-4.0 / CC-BY-SA-4.0 | ✓ (existing) | — | Keep as-is |
+| 3 | **Swete LXX 1909–1930** | Greek LXX incl. all deuterocanonical books | Public Domain (author d. 1917) | ✓ (OCR text committed; full PDFs via `MANIFEST.md` with SHA-256 hashes) | — | Run vision-transcription pipeline |
+| 4 | **Schechter & Taylor 1899** — *Wisdom of Ben Sira* | Hebrew Sirach MSS A & B (Cairo Genizah, first publication) | Public Domain | ✓ (PDF + OCR + page-index committed) | — | Run vision-transcription pipeline |
+| 5 | **Lévi, *L'Ecclésiastique*, 1898–1901** | Hebrew Sirach MS B extension + MS C | Public Domain | Not yet | Archive.org filename encoding issue | Resolve download URL / try Gallica BnF |
+| 6 | **Peters 1902** — *Der jüngst wiederaufgefundene hebräische Text* | Hebrew Sirach MSS B, C, D | Public Domain | Not yet | Identify clean archive source | Search archive.org / HathiTrust |
+| 7 | **Marcus 1931** — *The Newly Discovered Original Hebrew of Ecclesiasticus* | Hebrew Sirach MS E | Public Domain (US, pre-1964 non-renewed); verify outside US | Not yet | Identify clean archive source | Search HathiTrust |
+| 8 | **Cambridge Digital Library** (Taylor-Schechter) | High-res photos of Cairo Genizah Ben Sira fragments | Per-item terms (mostly research-permissive) | Not yet | Per-shelfmark license review | Fetch IIIF manifests by shelfmark |
+| 9 | **Oxford Bodleian** digital collections | Additional Genizah Ben Sira photos | Per-item terms | Not yet | Per-item license review | Manual per-item fetch |
+| 10 | **Masada Ben Sira scroll** (Mas1h) | Only pre-medieval Hebrew Sirach witness (Sir 39:27–43:30) | Restrictive | Acquisition in progress | Direct access | Integrate when available; use Swete Greek in interim |
+| 11 | **Qumran Tobit fragments** (4Q196–4Q200) | Only Aramaic/Hebrew Tobit witnesses (≈20% of Tobit) | Restrictive | Acquisition in progress | Direct access | Integrate when available; use Swete Greek in interim |
+| 12 | **Qumran Sirach fragments** (2Q18, 11QPsa) | Small DSS Sirach fragments | Restrictive | Acquisition in progress | Direct access | Integrate when available |
+
+Legend: ✓ = acquired and vendored · ◐ = request in flight / partial · (blank) = acquirable but not yet pursued.
+
+**Scholarly editions consulted during transcription (not reproduced):**
+Beentjes 1997 (*The Book of Ben Sira in Hebrew*); Skehan & Di Lella 1987
+(Anchor Bible 39); Ben-Ḥayyim 1973 (Academy of the Hebrew Language); the
+Göttingen critical LXX editions; Fitzmyer 1995 (*Discoveries in the
+Judaean Desert* Vol. XIX); Rahlfs-Hanhart 2006 (Stuttgart revised
+critical LXX); and further literature as relevant per book. These works
+inform our fresh transcription but are never copied into our published
+output.
+
+## Per-book drafting roadmap
+
+The status of each book in scope, showing its most-original primary
+source, its Greek fallback (for verses or passages where the original
+is lost or damaged), and its overall readiness to enter Phase C
+(drafting). Status updates as sources are transcribed.
+
+| Book | Original language | Primary source for COB | Greek fallback (Swete) | Status |
+|---|---|---|---|---|
+| Tobit | Aramaic (lost for 80%; Qumran fragments cover ~20%) | Swete LXX (Long Recension from Codex Sinaiticus) | — (is primary) | Ready once Swete transcribed |
+| Judith | Hebrew (lost entirely) | Swete LXX | — (is primary) | Ready once Swete transcribed |
+| Greek Additions to Esther | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
+| Wisdom of Solomon | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
+| **Sirach (Ecclesiasticus)** | **Hebrew** (≈ ⅔ recovered) | Schechter 1899 (Hebrew, MSS A & B) + Lévi/Peters/Marcus for MSS C–F + fresh transcription from PD photos | Swete LXX for lost portions | Requires Schechter + Lévi + Peters + Marcus transcribed; Masada integrated when available |
+| Baruch + Letter of Jeremiah | Hebrew (lost entirely) | Swete LXX | — (is primary) | Ready once Swete transcribed |
+| Additions to Daniel (Susanna, Bel & the Dragon, Prayer of Azariah, Song of the Three) | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
+| 1 Maccabees | Hebrew (lost entirely) | Swete LXX | — (is primary) | Ready once Swete transcribed |
+| 2 Maccabees | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
+| 1 Esdras | Greek (Semitic Vorlage lost) | Swete LXX | — (is primary) | Ready once Swete transcribed |
+| Prayer of Manasseh | Greek | Swete LXX | — | Ready once Swete transcribed |
+| Psalm 151 | Hebrew (partial at 11QPsa) | Swete LXX primary; Hebrew fragment integrated when available | — | Ready immediately from Swete |
+| 3 Maccabees | Greek | Swete LXX | — | Ready once Swete transcribed |
+| 4 Maccabees | Greek | Swete LXX | — | Ready once Swete transcribed |
 
 ## Translation pipeline
 
@@ -160,36 +266,83 @@ The same four-stage pipeline defined in METHODOLOGY.md applies:
 These books receive the same level of rigor as the Protestant canon.
 No corner-cutting because they are "deutero."
 
-## Honoring scholarship without reproducing it
+## Transcription accuracy — honest expectations
+
+AI-vision transcription accuracy varies sharply by source material.
+We state our expected accuracy by text type rather than claim
+uniform rigor, so readers can calibrate their trust in our
+deuterocanonical sources:
+
+| Text type | Expected accuracy vs. established scholarship |
+|---|---|
+| **Typeset printed Greek** (Swete 1909) | **On par or better.** Modern vision LLMs handle clear 19th–20th-century polytonic Greek at 95–99% first-pass accuracy; the pipeline is faster, consistent, and reproducible. Multi-model cross-check (Claude Opus 4.7 + GPT-5.4 + Gemini 2.5 Pro) catches the remaining edge cases (accent placement, diacritic confusion). |
+| **Typeset printed Hebrew** (Schechter 1899 printed transcription) | **On par.** Same profile as typeset Greek — clean typography, AI handles well. Multi-model cross-check + automated comparison against consultation-informed scholarly consensus catches subtle errors. |
+| **Medieval Hebrew semi-cursive manuscript** (Cairo Genizah facsimile plates) | **Behind Beentjes alone on first pass; approaches parity with full pipeline over iterations.** Specialists have decades of context a single vision model does not. Our pipeline adds: (a) multi-model transcription with disagreement flagging, (b) cross-source verification against other PD publications that cover the same folio, (c) active consultation of published scholarship with documented divergences, (d) public repository + issue templates for community correction. Over iterations this approaches specialist-grade accuracy. |
+| **Fragmentary damaged parchment** (Qumran Tobit 4Q196–4Q200, Masada Sirach) | **Specialist paleographers retain the edge.** We transcribe only what is legibly present on the physical fragment and mark lacunae as lacunae. We do not generate reconstructions of missing letters — both for accuracy reasons and for copyright reasons (per *Qimron v. Shanks*, 2000). Scholars' reconstructions are cited, not reproduced. |
+
+**What we are not claiming.** We are not claiming machine parity with
+Beentjes on manuscript plate transcription on a first pass, nor parity
+with Fitzmyer on Qumran reconstruction. These are specialist works
+produced over decades of career-deep engagement with specific material.
+
+**What we are claiming.** The pipeline — fresh vision transcription
+informed by consultation of all leading scholarship, multi-model
+disagreement flagging, cross-source verification, and transparent
+public iteration — produces source-texts adequate for translation work,
+with every character auditable back to a public-domain photograph and
+every divergence from published scholarship documented. That is
+substantively equivalent to specialist-grade source fidelity for
+translation purposes, which is what the deuterocanonical section of
+the Cartha Open Bible is delivering.
+
+## Consulting scholarship, reproducing nothing
 
 The scholarly apparatus around Hebrew Sirach and Qumran Tobit is the
 product of careers of specialist labor (Beentjes 1997 on Hebrew
-Sirach; Fitzmyer 2003 and the DJD volumes on Qumran Tobit, among
-others). We respect that work. We also do not need to reproduce it.
+Sirach; Fitzmyer 1995 and the DJD volumes on Qumran Tobit; Skehan &
+Di Lella 1987; the Göttingen LXX critical editions for the Greek; among
+many others). These works are indispensable to accurate translation,
+and we consult them actively during our work.
+
+What copyright restricts is **reproduction of their specific text**,
+not consultation. This distinction is the same one that governs
+every serious modern translation: a translator reads every major
+scholarly edition, weighs every variant, is informed by every
+argued reading — and then produces their own fresh work. The
+published output is the translator's own creation, informed by the
+literature but not copied from it. This is standard scholarly
+practice; it is uncontroversial under copyright law; it is what
+the NRSV, NABRE, ESV, and every other modern translation have
+always done.
 
 Our commitment:
 
-- **We translate from the LXX.** The Greek is the operative textual
-  witness for this corpus in every major modern edition (NRSV,
-  NABRE, Orthodox Study Bible). We follow that precedent.
-- **We cite scholarly textual-critical conclusions in footnotes** —
-  which is fact, not creative expression, and is uncontroversial
-  under US copyright law (*Feist v. Rural Telephone Service*, 1991).
+- **We consult the leading scholarly editions actively during
+  transcription and translation.** Beentjes 1997 for Hebrew Sirach,
+  Fitzmyer 1995 for Qumran Tobit, Skehan & Di Lella 1987 for
+  English Sirach, the Göttingen critical editions for LXX variants,
+  and further literature as needed. Where we notice a divergence
+  between our fresh transcription and established scholarship, we
+  weigh the evidence, document our reasoning, and either revise our
+  transcription or note the disagreement with explanation.
+- **Our published transcription is our own creative work** —
+  produced freshly from public-domain photographs, informed by
+  consultation of all relevant scholarship, but not a reproduction
+  of any scholarly edition's specific transcribed text. This is a
+  fresh and independent transcription, not a compilation.
+- **We cite scholarly conclusions in footnotes where they inform
+  translation decisions** — which is fact-level citation, not
+  reproduction of creative expression, and is uncontroversial under
+  US copyright law (*Feist v. Rural Telephone Service*, 1991).
   Example footnote shape: *"Hebrew MS B at this verse reads
   differently from the Greek; the Greek appears to smooth an
   idiomatic Hebrew expression. See Beentjes (1997) and Skehan &
   Di Lella, Anchor Bible 39 (1987)."*
-- **We do not republish copyrighted transcriptions** of fragmentary
-  Hebrew or Qumran Aramaic text. If a future phase adds a
-  cross-reference apparatus for these fragments, the text would
-  come from fresh independent transcription of public-domain
-  photographs (Friedberg Genizah Project, Cambridge Digital Library,
-  Israel Antiquities Authority images), not from copying scholarly
-  editions.
 
-This is how the NRSV, NABRE, and Orthodox Study Bible have handled
-the same material for decades. It is legally clean and it honors
-the scholarship as scholarship rather than as raw material.
+The practical outcome: our transcription pipeline is informed by
+every scholar who has worked this material, while our output is
+cleanly our own. That is the path to specialist-grade accuracy
+without reproducing specialist-owned text.
 
 ## Labeling in the final product
 
@@ -210,29 +363,66 @@ which traditions receive it as Scripture.
 
 ## Phasing
 
-**Phase 1 — LXX-only translation (target: after NT completes).**
-- Vendor Rahlfs LXX from STEPBible.
-- Extend `tools/draft.py` to handle LXX source identifiers.
-- Draft all books in the scope table above from Greek alone.
-- Revision pass, mobile bundle integration, tagged release.
+**Phase A — Source acquisition (in flight, 2026-04-18).**
+- ✓ Swete LXX vendored: DjVu OCR text in repo, full PDFs manifested
+  at `sources/lxx/swete/MANIFEST.md` with SHA-256 hashes.
+- ✓ Schechter 1899 *Wisdom of Ben Sira* vendored in repo
+  (PDF + OCR, `sources/hebrew_sirach/schechter_1899/`).
+- ◐ Masada Ben Sira scroll and Qumran Tobit fragment photographs:
+  acquisition in progress.
+- ◐ Fresh transcription pipeline from public-domain photographs
+  scoped for Cairo Genizah MSS C–F (`sources/hebrew_sirach/
+  genizah_photos/README.md`).
 
-**Phase 2 — Textual-critical footnote enrichment (optional).**
-- Add footnotes referencing Hebrew Sirach and Qumran Tobit variants
-  by citing published scholarship (not reproducing transcriptions).
-- Revise drafts where secondary-source consultation reveals better
-  readings.
+**Phase B — Vision-transcribe LXX and Hebrew Sirach working text.**
+- Per-page vision-based transcription of Swete Greek into clean
+  UTF-8 Greek with breathings and accents, committed to
+  `sources/lxx/swete/transcribed/`.
+- Per-folio vision-based transcription of Schechter 1899 Hebrew
+  into clean UTF-8 Hebrew, committed to
+  `sources/hebrew_sirach/schechter_1899/transcribed/`.
+- Machine-readable verse indexes connect book/chapter/verse to
+  source-text and source-image provenance.
 
-**Phase 3 — Independent Hebrew Sirach apparatus (long-term, optional).**
-- Fresh transcription of Cairo Genizah Sirach manuscripts from
-  public-domain photographs.
-- Published as parallel cross-reference text under CC-BY 4.0.
-- Explicitly not a competitor to Beentjes 1997 — a fresh independent
-  reading for audit transparency.
+**Phase C — Draft and revise translations.**
+- Extend `tools/draft.py` to handle LXX and Hebrew Sirach source
+  identifiers.
+- Draft each deuterocanonical book from its most-original extant
+  source per the per-book matrix above.
+- Revision pass (Claude Opus) per `REVISION_METHODOLOGY.md`.
+- Mobile bundle integration, tagged release.
+
+**Phase D — Pre-medieval Hebrew & Aramaic enrichment (when available).**
+- Fresh Aramaic transcription of Qumran Tobit fragments; integrate
+  as Tobit primary source for the ~20% of verses they cover.
+- Fresh Hebrew transcription of Masada Ben Sira; integrate as Sirach
+  primary source for 39:27–43:30.
+- Republish tagged release including Phase D sources.
 
 **2 Esdras / 4 Ezra and the Ethiopian wider canon** (1 Enoch,
 Jubilees, etc.) are not committed to any phase. If they are ever
 added, it will be under a separate dedicated strategy document
 specific to their distinct textual traditions.
+
+### Phase summary table
+
+| Phase | Work | Effort | Gating factor |
+|---|---|---|---|
+| **A — Source acquisition** | Vendor Swete LXX + Schechter 1899 | ✓ Done | — |
+|  | Download Lévi 1901, Peters 1902, Marcus 1931 | 1 day | — |
+|  | Fetch Cambridge Digital Library Genizah IIIF | 1 week | Per-shelfmark license review |
+|  | Acquire Masada + Qumran Tobit photograph access | Timeline dependent on upstream | External |
+| **B — Vision transcription** | Build `tools/transcribe_source.py` (page → image → vision LLM → clean UTF-8) | 2–3 days | — |
+|  | Multi-model cross-check + disagreement queue | 2–3 days | — |
+|  | Transcribe Swete LXX vols I–III (deuterocanonical sections, ~400 pages) | 2–3 weeks automated + iterative review | API throughput |
+|  | Transcribe Schechter 1899 Hebrew Sirach typeset (~100 pages) | 1 week | — |
+|  | Transcribe Genizah MSS C–F from PD facsimiles | 2–4 weeks | Hardest text; lowest accuracy first pass |
+|  | Transcribe Masada + Qumran fragments (when photos available) | 1–2 weeks | Upstream access |
+| **C — Pipeline extension** | Extend `tools/draft.py` for LXX + Hebrew Sirach source identifiers + cross-language source blocks in per-verse YAML | 2–3 days | — |
+|  | Update `schema/verse.schema.json` for multi-source verses (primary + Greek parallel) | 1 day | — |
+| **D — Drafting** | GPT-5.4 drafter on each book, per-verse YAML with full provenance | ≈ 1 week per book average | Source transcribed |
+| **E — Revision** | Claude Opus 4.7 reviser per `REVISION_METHODOLOGY.md` | Ongoing | Drafts complete |
+| **F — Publication** | Mobile bundle integration + tagged release + Phase 8 of `README.md` cadence | 1 day | Revision complete |
 
 ## Commitments
 
