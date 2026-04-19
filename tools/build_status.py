@@ -30,47 +30,51 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION_ROOT = REPO_ROOT / "translation"
 STATUS_PATH = REPO_ROOT / "status.json"
 
-# Canonical Protestant ordering + chapter counts. These are the
-# denominator for coverage percentages. Verse counts vary with the
-# critical text (SBLGNT's shorter Mark, for example), so we only claim
-# chapters as a stable canonical unit. Verse totals shown in the UI are
-# raw drafted counts, not a fraction.
-NT_BOOKS: list[tuple[str, str, int]] = [
-    ("Matthew", "MAT", 28), ("Mark", "MRK", 16), ("Luke", "LUK", 24),
-    ("John", "JHN", 21), ("Acts", "ACT", 28), ("Romans", "ROM", 16),
-    ("1 Corinthians", "1CO", 16), ("2 Corinthians", "2CO", 13),
-    ("Galatians", "GAL", 6), ("Ephesians", "EPH", 6),
-    ("Philippians", "PHP", 4), ("Colossians", "COL", 4),
-    ("1 Thessalonians", "1TH", 5), ("2 Thessalonians", "2TH", 3),
-    ("1 Timothy", "1TI", 6), ("2 Timothy", "2TI", 4),
-    ("Titus", "TIT", 3), ("Philemon", "PHM", 1),
-    ("Hebrews", "HEB", 13), ("James", "JAS", 5),
-    ("1 Peter", "1PE", 5), ("2 Peter", "2PE", 3),
-    ("1 John", "1JN", 5), ("2 John", "2JN", 1), ("3 John", "3JN", 1),
-    ("Jude", "JUD", 1), ("Revelation", "REV", 22),
+# Canonical Protestant ordering with chapter *and* verse counts per
+# book. Chapter counts are stable across major critical editions.
+# Verse counts are the Protestant reference numbers (Masoretic Text for
+# OT, NA28/UBS5 for NT) and are the denominator the public /progress
+# page reports against. Drafted verse counts (the numerator) are derived
+# from the filesystem — the gap between drafted and these targets is
+# what "N% of the canon" means on the dashboard.
+NT_BOOKS: list[tuple[str, str, int, int]] = [
+    ("Matthew", "MAT", 28, 1071), ("Mark", "MRK", 16, 678),
+    ("Luke", "LUK", 24, 1151), ("John", "JHN", 21, 879),
+    ("Acts", "ACT", 28, 1007), ("Romans", "ROM", 16, 433),
+    ("1 Corinthians", "1CO", 16, 437), ("2 Corinthians", "2CO", 13, 257),
+    ("Galatians", "GAL", 6, 149), ("Ephesians", "EPH", 6, 155),
+    ("Philippians", "PHP", 4, 104), ("Colossians", "COL", 4, 95),
+    ("1 Thessalonians", "1TH", 5, 89), ("2 Thessalonians", "2TH", 3, 47),
+    ("1 Timothy", "1TI", 6, 113), ("2 Timothy", "2TI", 4, 83),
+    ("Titus", "TIT", 3, 46), ("Philemon", "PHM", 1, 25),
+    ("Hebrews", "HEB", 13, 303), ("James", "JAS", 5, 108),
+    ("1 Peter", "1PE", 5, 105), ("2 Peter", "2PE", 3, 61),
+    ("1 John", "1JN", 5, 105), ("2 John", "2JN", 1, 13),
+    ("3 John", "3JN", 1, 14), ("Jude", "JUD", 1, 25),
+    ("Revelation", "REV", 22, 404),
 ]
 
-OT_BOOKS: list[tuple[str, str, int]] = [
-    ("Genesis", "GEN", 50), ("Exodus", "EXO", 40),
-    ("Leviticus", "LEV", 27), ("Numbers", "NUM", 36),
-    ("Deuteronomy", "DEU", 34), ("Joshua", "JOS", 24),
-    ("Judges", "JDG", 21), ("Ruth", "RUT", 4),
-    ("1 Samuel", "1SA", 31), ("2 Samuel", "2SA", 24),
-    ("1 Kings", "1KI", 22), ("2 Kings", "2KI", 25),
-    ("1 Chronicles", "1CH", 29), ("2 Chronicles", "2CH", 36),
-    ("Ezra", "EZR", 10), ("Nehemiah", "NEH", 13),
-    ("Esther", "EST", 10), ("Job", "JOB", 42),
-    ("Psalms", "PSA", 150), ("Proverbs", "PRO", 31),
-    ("Ecclesiastes", "ECC", 12), ("Song of Solomon", "SNG", 8),
-    ("Isaiah", "ISA", 66), ("Jeremiah", "JER", 52),
-    ("Lamentations", "LAM", 5), ("Ezekiel", "EZK", 48),
-    ("Daniel", "DAN", 12), ("Hosea", "HOS", 14),
-    ("Joel", "JOL", 3), ("Amos", "AMO", 9),
-    ("Obadiah", "OBA", 1), ("Jonah", "JON", 4),
-    ("Micah", "MIC", 7), ("Nahum", "NAM", 3),
-    ("Habakkuk", "HAB", 3), ("Zephaniah", "ZEP", 3),
-    ("Haggai", "HAG", 2), ("Zechariah", "ZEC", 14),
-    ("Malachi", "MAL", 4),
+OT_BOOKS: list[tuple[str, str, int, int]] = [
+    ("Genesis", "GEN", 50, 1533), ("Exodus", "EXO", 40, 1213),
+    ("Leviticus", "LEV", 27, 859), ("Numbers", "NUM", 36, 1288),
+    ("Deuteronomy", "DEU", 34, 959), ("Joshua", "JOS", 24, 658),
+    ("Judges", "JDG", 21, 618), ("Ruth", "RUT", 4, 85),
+    ("1 Samuel", "1SA", 31, 810), ("2 Samuel", "2SA", 24, 695),
+    ("1 Kings", "1KI", 22, 816), ("2 Kings", "2KI", 25, 719),
+    ("1 Chronicles", "1CH", 29, 942), ("2 Chronicles", "2CH", 36, 822),
+    ("Ezra", "EZR", 10, 280), ("Nehemiah", "NEH", 13, 406),
+    ("Esther", "EST", 10, 167), ("Job", "JOB", 42, 1070),
+    ("Psalms", "PSA", 150, 2461), ("Proverbs", "PRO", 31, 915),
+    ("Ecclesiastes", "ECC", 12, 222), ("Song of Solomon", "SNG", 8, 117),
+    ("Isaiah", "ISA", 66, 1292), ("Jeremiah", "JER", 52, 1364),
+    ("Lamentations", "LAM", 5, 154), ("Ezekiel", "EZK", 48, 1273),
+    ("Daniel", "DAN", 12, 357), ("Hosea", "HOS", 14, 197),
+    ("Joel", "JOL", 3, 73), ("Amos", "AMO", 9, 146),
+    ("Obadiah", "OBA", 1, 21), ("Jonah", "JON", 4, 48),
+    ("Micah", "MIC", 7, 105), ("Nahum", "NAM", 3, 47),
+    ("Habakkuk", "HAB", 3, 56), ("Zephaniah", "ZEP", 3, 53),
+    ("Haggai", "HAG", 2, 38), ("Zechariah", "ZEC", 14, 211),
+    ("Malachi", "MAL", 4, 55),
 ]
 
 
@@ -134,9 +138,9 @@ def recent_translation_commits(limit: int = 40) -> list[dict[str, str]]:
     return out
 
 
-def build_books(testament: str, catalog: list[tuple[str, str, int]]) -> list[dict[str, Any]]:
+def build_books(testament: str, catalog: list[tuple[str, str, int, int]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for name, code, chapters_total in catalog:
+    for name, code, chapters_total, verses_total in catalog:
         counts = count_book(testament, name, chapters_total)
         rows.append({
             "book": name,
@@ -144,6 +148,7 @@ def build_books(testament: str, catalog: list[tuple[str, str, int]]) -> list[dic
             "testament": testament,
             "slug": book_slug(name),
             "chapters_total": chapters_total,
+            "verses_total": verses_total,
             **counts,
         })
     return rows
@@ -154,12 +159,14 @@ def testament_totals(books: list[dict[str, Any]]) -> dict[str, int]:
     chapters_drafted = sum(b["chapters_drafted"] for b in books)
     chapters_total = sum(b["chapters_total"] for b in books)
     verses_drafted = sum(b["verses_drafted"] for b in books)
+    verses_total = sum(b["verses_total"] for b in books)
     return {
         "books_drafted": books_drafted,
         "books_total": len(books),
         "chapters_drafted": chapters_drafted,
         "chapters_total": chapters_total,
         "verses_drafted": verses_drafted,
+        "verses_total": verses_total,
     }
 
 
@@ -186,6 +193,7 @@ def main() -> int:
         "chapters_drafted": nt_totals["chapters_drafted"] + ot_totals["chapters_drafted"],
         "chapters_total": nt_totals["chapters_total"] + ot_totals["chapters_total"],
         "verses_drafted": nt_totals["verses_drafted"] + ot_totals["verses_drafted"],
+        "verses_total": nt_totals["verses_total"] + ot_totals["verses_total"],
         "nt": nt_totals,
         "ot": ot_totals,
     }
