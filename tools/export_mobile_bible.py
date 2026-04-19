@@ -97,6 +97,10 @@ def load_translation_record(book_code: str, chapter: int, verse: int) -> dict[st
 
 
 def export_book(book_code: str) -> dict[str, Any] | None:
+    """Include every chapter that is fully drafted. Skip chapters with
+    gaps rather than failing fast — a later complete chapter should not
+    be withheld just because an earlier one is still being drafted.
+    This matches the CDN publisher Lambda's behaviour."""
     expected = expected_chapter_map(book_code)
     chapters_out: list[dict[str, Any]] = []
 
@@ -121,7 +125,7 @@ def export_book(book_code: str) -> dict[str, Any] | None:
             })
 
         if not chapter_complete:
-            break
+            continue
 
         chapters_out.append({
             "chapter": chapter,
