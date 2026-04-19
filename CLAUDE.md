@@ -16,9 +16,10 @@ Conventions for AI agents (or humans) working in this repo.
 ## Regenerating `status.json`
 
 `status.json` at the repo root is the snapshot that powers the public
-[translation status page](https://cartha.com/cartha-open-bible/status).
+[translation progress page](https://cartha.com/cartha-open-bible/progress).
 It's committed like any other file — there is no server, no cron. The
-cartha.website frontend fetches it directly from GitHub's raw CDN.
+cartha.website frontend fetches it directly from GitHub's raw CDN and
+pins each coverage number to the `commit_sha` embedded in the file.
 
 **When to regenerate:**
 
