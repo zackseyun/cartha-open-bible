@@ -49,6 +49,60 @@ state *as of* the pinned SHA, before the snapshot was committed.
 **Schema:** see `tools/build_status.py` for the authoritative shape.
 Bump `schema_version` when adding fields the frontend must branch on.
 
+## Publishing to clients — CDN pipeline
+
+The website and mobile apps do **not** read this repo directly for
+Bible text. They both pull a compiled JSON snapshot from the CDN at
+`https://bible.cartha.com`. The pipeline is:
+
+```
+main (committed drafts)
+   ↓  (scripts/publish_cob.sh)
+Lambda: cartha-cob-publisher
+   ↓
+bible.cartha.com/manifest.json   (tiny, revalidated on each read)
+bible.cartha.com/cob_preview.json (large body, cache-busted by manifest.version)
+   ↓                    ↓
+website bibleData.js    mobile CobRuntimeSync
+```
+
+Clients compare their cached version sha to `manifest.version`; if
+different, they fetch the new body. Nothing ships to clients until
+the Lambda runs.
+
+**To force-refresh what clients see from whatever is on `main` right
+now:**
+
+```bash
+scripts/sync_cob.sh                 # cherry-pick any ready jobs + push + publish
+scripts/sync_cob.sh --publish-only  # just re-publish whatever is already on main
+scripts/sync_cob.sh --merge-only    # cherry-pick + push, skip publish
+```
+
+This is the one-shot manual equivalent of `scripts/supervise_merge.sh`.
+Use it after a revision pass, after a direct commit to `main`, or any
+time you suspect the CDN has drifted behind `main`.
+
+**Autonomous alternative:** `scripts/master_supervisor.sh` keeps
+translation workers, the merge supervisor, and OT summary prewarmers
+all alive in a loop. It exits when the queue drains. Pause with
+`touch /tmp/cob-stop-supervisor`; stop fully with `pkill -f
+master_supervisor.sh`. There is deliberately no launchd plist — this
+is a finite project and running as a daemon encourages forgetting to
+stop it.
+
+**Landmine that bit us on 2026-04-19 — don't reintroduce:** the
+earlier version of `tools/chapter_merge.py` used
+`git branch --contains <sha>` to decide whether a draft commit was
+"already on main." That returns true if *any* branch — including the
+`codex/*` per-worktree branches — contains the sha, so it silently
+marked 357 uncherrypicked drafts as merged and the CDN stayed on 42
+of 66 canonical books while the SQL claimed 100% completion. The
+correct check, now in place, is
+`git merge-base --is-ancestor <sha> HEAD`. If you change the merge
+script, keep that check or an equivalent that pins to `main`
+specifically.
+
 ## Public pages that depend on this repo
 
 The cartha.website frontend reads three live endpoints from this
