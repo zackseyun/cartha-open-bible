@@ -5,10 +5,9 @@
 # What it supervises:
 #   * chapter translation workers (one supervise_worker.sh per logical worker
 #     id, weighted per phase by backlog — spawns any that are missing)
-#   * summary prewarm partitions for NT (already cached; starts one pass if
-#     any cache entries are missing for the known NT corpus)
-#   * OT-book summary prewarm (auto-kicks when a book's last chapter YAML is
-#     committed to main — one partition per newly-complete OT book)
+#   * per-phase merge supervisors that continuously cherry-pick completed
+#     chapter commits onto main and publish the live COB snapshot
+#   * OT summary-prewarm supervisors for the active OT books
 #   * stale claim release (any 'running' claim whose worker is dead for
 #     >STALE_MINUTES gets returned to 'pending')
 #
@@ -27,28 +26,38 @@ STALE_MINUTES="${STALE_MINUTES:-10}"
 
 log() { echo "[$(date -u +%FT%TZ)] $*" >> "$MASTER_LOG"; }
 
-# Target workers per phase, keyed by phase → "worker_id:worktree" list.
+# Target workers per phase, keyed by phase → "worker_id phase worktree deployment" list.
 # Worktrees must already exist (pre-created git worktrees under /private/tmp).
 # We use the existing ones from the project.
 declare -a TARGETS=(
-  "phase4-r1 phase4 /private/tmp/cartha-translation-phase2-e"
-  "phase4-r2 phase4 /private/tmp/cartha-translation-phase2-f"
-  "phase4-r3 phase4 /private/tmp/cartha-translation-phase2-h"
-  "phase4-r4 phase4 /private/tmp/cartha-translation-phase2-i"
-  "phase4-r5 phase4 /private/tmp/cartha-translation-phase2-act20"
-  "phase5-a  phase5 /private/tmp/cartha-translation-phase3-a"
-  "phase5-b  phase5 /private/tmp/cartha-translation-phase3-b"
-  "phase5-c  phase5 /private/tmp/cartha-translation-phase2-g"
-  "phase6-a  phase6 /private/tmp/cartha-translation-phase3-c"
-  "phase6-b  phase6 /private/tmp/cartha-translation-phase3-d"
-  "phase6-c  phase6 /private/tmp/cartha-translation-phase3-g"
-  "phase6-d  phase6 /private/tmp/cartha-translation-phase3-h"
-  "phase6-e  phase6 /private/tmp/cartha-translation-phase2-a"
-  "phase6-f  phase6 /private/tmp/cartha-translation-phase2-b"
-  "phase7-a  phase7 /private/tmp/cartha-translation-phase3-e"
-  "phase7-b  phase7 /private/tmp/cartha-translation-phase3-f"
-  "phase7-c  phase7 /private/tmp/cartha-translation-phase2-c"
-  "phase7-d  phase7 /private/tmp/cartha-translation-phase2-d"
+  "phase4-r1 phase4 /private/tmp/cartha-translation-phase2-e gpt-5-4-deployment"
+  "phase4-r2 phase4 /private/tmp/cartha-translation-phase2-f gpt-5-4-deployment"
+  "phase4-r3 phase4 /private/tmp/cartha-translation-phase2-h gpt-5-4-translation-b"
+  "phase4-r4 phase4 /private/tmp/cartha-translation-phase2-i gpt-5-4-deployment"
+  "phase4-r5 phase4 /private/tmp/cartha-translation-phase2-act20 gpt-5-4-translation-c"
+  "phase5-a phase5 /private/tmp/cartha-translation-phase3-a gpt-5-4-deployment"
+  "phase5-b phase5 /private/tmp/cartha-translation-phase3-b gpt-5-4-translation-b"
+  "phase5-c phase5 /private/tmp/cartha-translation-phase2-g gpt-5-4-translation-c"
+  "phase6-a phase6 /private/tmp/cartha-translation-phase3-c gpt-5-4-deployment"
+  "phase6-b phase6 /private/tmp/cartha-translation-phase3-d gpt-5-4-translation-b"
+  "phase6-c phase6 /private/tmp/cartha-translation-phase3-g gpt-5-4-deployment"
+  "phase6-d phase6 /private/tmp/cartha-translation-phase3-h gpt-5-4-translation-c"
+  "phase6-e phase6 /private/tmp/cartha-translation-phase2-a gpt-5-4-deployment"
+  "phase6-f phase6 /private/tmp/cartha-translation-phase2-b gpt-5-4-translation-b"
+  "phase7-a phase7 /private/tmp/cartha-translation-phase3-e gpt-5-4-deployment"
+  "phase7-b phase7 /private/tmp/cartha-translation-phase3-f gpt-5-4-translation-b"
+  "phase7-c phase7 /private/tmp/cartha-translation-phase2-c gpt-5-4-translation-c"
+  "phase7-d phase7 /private/tmp/cartha-translation-phase2-d gpt-5-4-deployment"
+  "phase7-e phase7 /private/tmp/cartha-translation-phase4-x1 gpt-5-4-translation-c"
+  "phase7-f phase7 /private/tmp/cartha-translation-phase4-x2 gpt-5-4-translation-b"
+)
+
+declare -a MERGE_PHASES=(phase4 phase5 phase6 phase7)
+declare -a SUMMARY_TARGETS=(
+  "ot1 Genesis ''"
+  "ot2 Exodus,Joshua '--chapters-only'"
+  "ot3 Psalms '--chapters-only'"
+  "ot4 Isaiah '--chapters-only'"
 )
 
 fetch_azure_key() {
@@ -83,7 +92,7 @@ PY
   )
   for entry in "${TARGETS[@]}"; do
     # shellcheck disable=SC2086
-    read -r wid phase wt <<< "$entry"
+    read -r wid phase wt deployment <<< "$entry"
     # Phase drained? skip.
     if [[ " $phases_with_work " != *" $phase "* ]]; then
       continue
@@ -97,10 +106,34 @@ PY
     if pgrep -f "supervise_worker.sh $wid " >/dev/null 2>&1; then
       continue
     fi
-    nohup "$COORD/scripts/supervise_worker.sh" "$wid" "$phase" "$wt" \
+    nohup "$COORD/scripts/supervise_worker.sh" "$wid" "$phase" "$wt" "$deployment" \
       >/dev/null 2>&1 &
     disown
-    log "  spawned chapter worker $wid (phase=$phase)"
+    log "  spawned chapter worker $wid (phase=$phase deployment=$deployment)"
+  done
+}
+
+ensure_merge_supervisors() {
+  local tag
+  tag="$(IFS=' '; echo "${MERGE_PHASES[*]}")"
+  if pgrep -f "supervise_merge.sh ${tag}" >/dev/null 2>&1; then
+    return
+  fi
+  nohup "$COORD/scripts/supervise_merge.sh" "${MERGE_PHASES[@]}" >/dev/null 2>&1 &
+  disown
+  log "  spawned merge supervisor for phases=${MERGE_PHASES[*]}"
+}
+
+ensure_summary_workers() {
+  for entry in "${SUMMARY_TARGETS[@]}"; do
+    # shellcheck disable=SC2086
+    read -r name books extra <<< "$entry"
+    if pgrep -f "supervise_summary_prewarm.sh $name " >/dev/null 2>&1; then
+      continue
+    fi
+    nohup "$COORD/scripts/supervise_summary_prewarm.sh" "$name" "$books" "$extra" >/dev/null 2>&1 &
+    disown
+    log "  spawned summary supervisor $name books=$books extra=$extra"
   done
 }
 
@@ -166,7 +199,10 @@ sys.path.insert(0, os.path.join(os.environ["COORD"], "tools"))
 import chapter_queue
 db = chapter_queue.db_path_from(pathlib.Path(os.environ["COORD"]))
 with chapter_queue.connect(db) as c:
-    n = c.execute("SELECT COUNT(*) FROM jobs WHERE status IN ('pending','running','failed')").fetchone()[0]
+    n = c.execute(
+        "SELECT COUNT(*) FROM jobs WHERE status IN ('pending','running','failed') "
+        "OR (status='completed' AND commit_sha IS NOT NULL AND merged_at IS NULL)"
+    ).fetchone()[0]
 print(n)
 PY
 }
@@ -193,6 +229,8 @@ while :; do
 
   release_stale_claims
   ensure_chapter_workers
+  ensure_merge_supervisors
+  ensure_summary_workers
 
   sleep "$TICK_SECONDS"
 done
