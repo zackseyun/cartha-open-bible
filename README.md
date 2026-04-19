@@ -101,6 +101,121 @@ output against our stated commitments rather than guessing at hidden biases.
 See [METHODOLOGY.md](METHODOLOGY.md) for the drafting pipeline, cross-check
 protocol, and reproducibility verification.
 
+## The Deuterocanonical Books (Apocrypha)
+
+The Cartha Open Bible includes the Deuterocanonical books — Tobit, Judith,
+Wisdom of Solomon, Sirach (Ecclesiasticus), Baruch, 1–4 Maccabees, and
+others — as a clearly labeled section. See [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)
+for the full strategy; in brief:
+
+### Why we include them
+
+These books are canonical in the **Roman Catholic** (Trent, 1546),
+**Eastern Orthodox** (Synod of Jerusalem, 1672), and **Oriental Orthodox**
+traditions, and were included in **Luther's 1534 German Bible** and the
+**original 1611 King James Version** as a middle section between the
+Testaments. Their removal from most modern Protestant Bibles is a
+19th-century development driven primarily by printing economics at the
+British and Foreign Bible Society — not theological consensus.
+
+Excluding them would be making a theological editorial decision *before*
+the reader ever sees the text. That is the opposite of what the Cartha
+Open Bible exists to do. Our mission is transparency and auditability —
+present the textual tradition; let the reader and their faith community
+judge what they affirm as canonical.
+
+**We take no position on canonicity.** Including these books is not an
+assertion that they carry the same authority as the Protestant canon.
+Excluding them would be an assertion that they do not. We translate and
+publish; the reader decides.
+
+### How we honor them
+
+These books receive the **same rigor as the Protestant canon** — same
+drafter/reviser pipeline, same per-verse YAML with full provenance,
+same license (CC-BY 4.0). No corner-cutting because they are "deutero."
+
+Each book is translated from **the most-original extant text we can
+lawfully access**:
+
+- For books composed in Greek (Wisdom of Solomon, 2 Maccabees, the
+  additions to Esther and Daniel), the LXX *is* the original — there
+  is nothing behind it. Source: Swete's public-domain 1909–1930
+  Septuagint.
+- For books where the Hebrew or Aramaic original is lost (1 Maccabees,
+  Judith, Baruch, 1 Esdras), the LXX is the oldest surviving witness.
+  Same source.
+- For **Sirach**, we translate primarily from the Hebrew where it
+  survives — from Schechter & Taylor's public-domain 1899 edition
+  of Cairo Genizah MSS A and B, and from fresh AI-vision
+  transcriptions of the other manuscripts from public-domain
+  photographs.
+- For **Tobit**, we translate from the LXX Greek (Long Recension,
+  supported by Codex Sinaiticus) and plan to incorporate the Qumran
+  Aramaic fragments as a primary source for the ~20% of verses they
+  cover, pending a licensing request to the Israel Antiquities
+  Authority.
+
+### How they are labeled
+
+In both the repository and the mobile app:
+
+- A clear section header: **"Deuterocanonical Books (Apocrypha)"**
+- An introductory note explaining the canonical-status landscape across
+  traditions.
+- Each book's header shows its canonical status at a glance:
+  *"Canonical in: Roman Catholic, Eastern Orthodox. Considered useful
+  but not canonical in: most Protestant traditions."*
+- Internal references (cross-references, reading plans, search results)
+  treat these books as first-class citizens while preserving the label.
+
+The reader should never be confused about what they are reading or which
+traditions receive it as Scripture.
+
+### The scholarship-integrity commitment
+
+We consult the leading scholarly editions actively during our work —
+Beentjes 1997 for Hebrew Sirach, Fitzmyer 1995 for Qumran Tobit,
+Skehan & Di Lella 1987, the Göttingen critical LXX editions, and
+further scholarship as needed. That consultation is how modern
+translation has always been done: read everything, weigh every
+variant, produce fresh work. Copyright law governs **reproduction**,
+not reading — and consultation of scholarship to inform our own
+fresh translation is standard, uncontroversial scholarly practice.
+
+What we **do not** do is vendor or reproduce copyrighted scholarly
+transcriptions (Beentjes's specific Hebrew text, the DJD volumes'
+Qumran transcriptions, Rahlfs digital editions under restrictive
+licenses, etc.). Every source text in this repository is either
+public-domain by age or freshly produced by us from public-domain
+photographs under CC-BY 4.0.
+
+Where established scholarship informs a translation decision, we
+cite it in footnotes — fact-level citation, not reproduction of
+creative expression, uncontroversial under US copyright law
+(*Feist v. Rural*, 1991). This combination — fresh transcription +
+active consultation of the scholarly literature + transparent
+citation — is exactly how the NRSV, NABRE, and Orthodox Study
+Bible produce their Apocrypha sections. It's how serious
+translation actually works.
+
+### Why this honors the texts
+
+These books are read as Scripture by **hundreds of millions of
+Christians**, and have been for two millennia. They shaped the
+vocabulary of the New Testament — James echoes Sirach; Hebrews 11
+lists Maccabean martyrs alongside the patriarchs; the Magnificat
+echoes Judith's prayer. They were the devotional library of Jesus's
+own world.
+
+Translating them carefully, with provenance and honest footnotes,
+under a free license, using the best tools we have — this honors them
+as Scripture for those who receive them as Scripture, and as early
+Jewish religious literature for those who do not. It refuses the
+shortcut of deciding for the reader what counts.
+
+That refusal is the whole point of the Cartha Open Bible.
+
 ## Current status
 
 The project is in its initial AI-drafting phase. Every verse in this

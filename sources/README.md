@@ -60,17 +60,37 @@ under `tools/`.
 
 ## How sources are used
 
-The Cartha Open Bible translates from:
-- **NT:** SBLGNT primary (using morphology only as reference, not as
-  translated output).
-- **OT:** WLC primary (the longer, traditional transcription). UHB
-  consulted for morphological parsing and where OSHB updates have been
-  applied by unfoldingWord.
-- **Cross-reference:** Rahlfs LXX (once vendored) where NT authors quote
-  the Greek OT.
+The Cartha Open Bible translates from the **most-original extant text**
+for each book, not uniformly from one edition:
+
+- **Protestant NT:** SBLGNT primary (using morphology only as reference,
+  not as translated output).
+- **Protestant OT:** WLC primary (the longer, traditional transcription).
+  UHB consulted for morphological parsing and where OSHB updates have
+  been applied by unfoldingWord.
+- **Deuterocanonical books composed in Greek** (Wisdom of Solomon, 2
+  Maccabees, Greek additions to Esther and Daniel): **Swete LXX
+  1909–1930** (public domain). See `lxx/swete/`.
+- **Deuterocanonical books where the Hebrew/Aramaic original is lost**
+  (1 Maccabees, Judith, Baruch + Letter of Jeremiah, 1 Esdras, Prayer
+  of Manasseh, 3–4 Maccabees): **Swete LXX** (oldest surviving witness).
+- **Hebrew Sirach:** Schechter & Taylor 1899 (public domain; MSS A & B
+  of the Cairo Genizah), supplemented by fresh AI-vision transcription
+  of additional MSS from public-domain photographs. See
+  `hebrew_sirach/`. LXX Swete fills gaps where the Hebrew is lost.
+- **Tobit:** Swete LXX (Long Recension from Codex Sinaiticus) as
+  primary. Qumran Aramaic/Hebrew fragments (4Q196–4Q200) to be added
+  as primary for verses they cover, pending IAA licensing. See
+  `aramaic_tobit/`.
+- **Cross-reference:** Swete LXX is also consulted where NT authors
+  quote the Greek OT.
 
 Each verse YAML in `translation/` records which source(s) it drew from
 via the `edition` enum in `source` (see `schema/verse.schema.json`).
+
+See [DEUTEROCANONICAL.md](../DEUTEROCANONICAL.md) for the full per-book
+source-acquisition matrix and the commitments we make about integrity
+of source provenance for the deuterocanonical corpus.
 
 ## License scope — important note
 
