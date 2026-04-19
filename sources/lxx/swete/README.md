@@ -33,13 +33,17 @@ closer to a single-manuscript base and easier to audit.
 
 ## What's vendored here
 
-- `swete_vol1_djvu.txt`, `swete_vol2_djvu.txt`, `swete_vol3_djvu.txt` —
-  Archive.org's automated OCR of the three volumes. **These are rough**
-  (the OCR cannot handle polytonic Greek well). They serve as an archival
-  reference and a search-index, not as the working source text.
 - `MANIFEST.md` — archive.org URLs and SHA-256 hashes for the three full
   PDFs, which are too large to commit to git directly (~155 MB total).
   Fetch them with `curl` per the manifest instructions.
+- `transcribed/` — clean UTF-8 polytonic Greek produced by the vision
+  pipeline (`tools/transcribe_source.py`). Per-page `.txt` + `.meta.json`
+  provenance, built up incrementally as pages are transcribed. This is
+  the **working source** for drafting.
+
+The archive.org DjVu OCR dumps were previously vendored but removed
+2026-04-18: they do not handle polytonic Greek and corrupted the Greek
+script beyond usable, producing noise instead of transcription.
 
 ## What we use as the working source
 
