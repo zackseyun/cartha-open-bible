@@ -54,10 +54,27 @@ declare -a TARGETS=(
 
 declare -a MERGE_PHASES=(phase4 phase5 phase6 phase7)
 declare -a SUMMARY_TARGETS=(
+  # Torah
   "ot1 Genesis ''"
   "ot2 Exodus,Joshua '--chapters-only'"
+  "ot5 Leviticus,Numbers,Deuteronomy ''"
+  # Former Prophets (small enough for full book summaries)
+  "ot6 Judges,Ruth ''"
+  "ot7 1_Samuel,2_Samuel ''"
+  "ot8 1_Kings,2_Kings ''"
+  # Writings — small/medium (full book summaries OK)
+  "ot9 Ezra,Nehemiah,Esther ''"
+  "ot10 Job,Proverbs,Ecclesiastes,Song_of_Songs,Lamentations ''"
+  "ot11 Daniel ''"
+  # Writings — Chronicles are large (chapter-only)
+  "ot12 1_Chronicles,2_Chronicles '--chapters-only'"
+  # Large poetry / prophets (chapter-only)
   "ot3 Psalms '--chapters-only'"
   "ot4 Isaiah '--chapters-only'"
+  "ot13 Jeremiah,Ezekiel '--chapters-only'"
+  # Minor Prophets (small books, full book summaries)
+  "ot14 Hosea,Joel,Amos,Obadiah,Jonah,Micah ''"
+  "ot15 Nahum,Habakkuk,Zephaniah,Haggai,Zechariah,Malachi ''"
 )
 
 fetch_azure_key() {

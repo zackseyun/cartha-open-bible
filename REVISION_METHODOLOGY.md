@@ -145,6 +145,62 @@ applied three phrase-level reverts across the 10 verses above.
 Footnotes and `lexical_decisions.alternatives` continue to preserve
 "Messiah" as the alternative rendering.
 
+### μετανοέω → "change of mind" / "change your thinking" (accepted 2026-04-19)
+
+After a project-wide review of all 51 NT occurrences of μετανοέω
+and μετάνοια, the project adopted a context-sensitive rule for
+rendering the verb and its noun.
+
+**The drift.** μετανοέω literally = "to change one's mind/thinking"
+(μετά "change" + νοέω "think, perceive"). BDAG's gloss: "to change
+one's mind or thinking." The traditional English rendering "repent"
+preserved this in older usage but has drifted in modern English
+toward "feel guilty about sin / apologize," which collapses the
+cognitive force the Greek carries. Hearers of John the Baptist and
+Jesus heard a call for fundamental worldview reorientation, not
+primarily an emotional response.
+
+**The rule.** Render μετανοέω / μετάνοια in three buckets, by
+context:
+
+1. **Worldview-reorientation contexts** (Jesus's and John the
+   Baptist's kingdom proclamation, apostolic preaching to outsiders,
+   theological summaries of the gospel call) → **"change your
+   thinking" / "a change of mind"**. The cognitive force is dominant
+   and "repent" obscures it.
+2. **Specific-sin departure contexts** (Revelation's calls to the
+   seven churches, Paul correcting specific moral failures, the
+   adjective ἀμετανόητος "unrepentant") → **keep "repent" /
+   "repentance"**. The Greek here pairs the verb with named sins
+   (μετανοήσωσιν ἐκ τῶν ἔργων αὐτῆς, "repent of her works"), and
+   English "repent" carries the right combined cognitive-and-
+   behavioral force.
+3. **Fixed liturgical formula** ("baptism of repentance," βάπτισμα
+   μετανοίας — Mark 1:4, Luke 3:3, Acts 13:24, 19:4, and the
+   parallel Matt 3:11) → **keep "baptism of repentance"**. The
+   phrase is a 2,000-year-established English formula naming a
+   ritual; replacing it would be jarring without illuminating the
+   underlying Greek.
+
+**Distinct verb: μεταμέλομαι.** The related verb μεταμέλομαι ("to
+regret, change one's mind about something done") appears 6× in the
+NT (Matt 21:29, 21:32, 27:3; 2 Cor 7:8 ×2; Heb 7:21) and is
+distinct from μετανοέω. It carries the regret/remorse sense that
+modern English "repent" has drifted toward. We render
+μεταμέλομαι as "regret" or "change one's mind [about a prior
+action]" — keeping it lexically separate from μετανοέω.
+
+**Execution.** Two scripts (`/tmp/metanoia_revise.py`,
+`/tmp/metanoia_revise2.py`; plus a lexical-decisions updater
+`/tmp/metanoia_lex.py`; none committed) applied the per-verse
+revisions across 30 verses. The remaining 21 verses (Revelation
+specific-sin contexts, the baptism-of-repentance formula, the
+ἀμετανόητος adjective in Rom 2:5, the interpersonal Luke 17:3-4,
+the contested Heb 12:17 about Esau, and the μεταμέλομαι verses)
+were deliberately kept as-is per the rule. An anchor footnote was
+added to Matt 3:2 (the first NT occurrence) explaining the
+project-level decision for reader transparency.
+
 ## Roles
 
 | Model | Role |
