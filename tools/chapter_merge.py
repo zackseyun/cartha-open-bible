@@ -45,8 +45,13 @@ def clean_stuck_cherry_pick(coord_root: pathlib.Path) -> None:
 
 
 def commit_already_present(coord_root: pathlib.Path, commit_sha: str) -> bool:
-    proc = git(coord_root, "branch", "--contains", commit_sha, check=False, capture_output=True)
-    return proc.returncode == 0 and bool((proc.stdout or "").strip())
+    # Reachable from HEAD (main) specifically. `git branch --contains` without
+    # filtering returns True if *any* branch — including codex/* worktree
+    # branches — contains the sha, which falsely marks uncherry-picked drafts
+    # as already-applied and corrupts the merged_at flag.
+    proc = git(coord_root, "merge-base", "--is-ancestor", commit_sha, "HEAD",
+               check=False, capture_output=True)
+    return proc.returncode == 0
 
 
 def cherry_pick_or_skip(coord_root: pathlib.Path, commit_sha: str) -> tuple[bool, str]:
