@@ -7,6 +7,7 @@ import html
 import json
 import pathlib
 import re
+import sqlite3
 import subprocess
 import sys
 import time
@@ -16,6 +17,10 @@ from urllib.parse import urlparse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chapter_queue  # noqa: E402
+try:
+    import gemini_review_queue  # noqa: E402
+except Exception:
+    gemini_review_queue = None  # type: ignore
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 DB_PATH = chapter_queue.db_path_from(REPO_ROOT)
@@ -101,6 +106,59 @@ def recent_main_commits(limit: int = 12) -> list[dict[str, str]]:
         sha, _, msg = line.partition(" ")
         commits.append({"sha": sha, "message": msg})
     return commits
+
+
+def gemini_review_status() -> dict[str, Any]:
+    """Return a snapshot of the review_jobs table for the dashboard."""
+    if gemini_review_queue is None:
+        return {"summary": [], "running": [], "failed": [], "worst_agreements": []}
+    try:
+        with chapter_queue.connect(DB_PATH) as conn:
+            chapter_queue.ensure_schema(conn)
+            gemini_review_queue.ensure_schema(conn)
+            summary = [dict(r) for r in conn.execute(
+                """
+                SELECT strategy, status, COUNT(*) AS count
+                FROM review_jobs
+                GROUP BY strategy, status
+                ORDER BY strategy, status
+                """
+            ).fetchall()]
+            running = [dict(r) for r in conn.execute(
+                "SELECT * FROM review_jobs WHERE status='running' ORDER BY claimed_at DESC LIMIT 12"
+            ).fetchall()]
+            failed = [dict(r) for r in conn.execute(
+                "SELECT * FROM review_jobs WHERE status='failed' ORDER BY updated_at DESC LIMIT 10"
+            ).fetchall()]
+            worst = [dict(r) for r in conn.execute(
+                """
+                SELECT testament, book_slug, chapter, verse, strategy,
+                       agreement_score, issues_found, review_path
+                FROM review_jobs
+                WHERE status='completed' AND agreement_score IS NOT NULL
+                ORDER BY agreement_score ASC, issues_found DESC
+                LIMIT 20
+                """
+            ).fetchall()]
+            recent = [dict(r) for r in conn.execute(
+                """
+                SELECT testament, book_slug, chapter, verse, strategy,
+                       agreement_score, issues_found, completed_at
+                FROM review_jobs
+                WHERE status='completed'
+                ORDER BY completed_at DESC
+                LIMIT 12
+                """
+            ).fetchall()]
+    except sqlite3.OperationalError:  # table doesn't exist yet
+        return {"summary": [], "running": [], "failed": [], "worst_agreements": [], "recent": []}
+    return {
+        "summary": summary,
+        "running": running,
+        "failed": failed,
+        "worst_agreements": worst,
+        "recent": recent,
+    }
 
 
 def queue_jobs(limit_ready: int = 20) -> dict[str, Any]:
@@ -310,6 +368,7 @@ def build_status() -> dict[str, Any]:
             "worker_process": worker_meta,
         })
     summary_cache = summary_cache_status()
+    gemini_reviews = gemini_review_status()
     for w in summary_cache.get("workers", []):
         if not w.get("alive"):
             continue
@@ -345,6 +404,7 @@ def build_status() -> dict[str, Any]:
             "failed": queue["failed"],
         },
         "summary_cache": summary_cache,
+        "gemini_reviews": gemini_reviews,
         "merge_loops": proc["merge_loops"],
         "recent_commits": recent_main_commits(),
     }
@@ -402,6 +462,61 @@ async function refresh() {
   const commits = data.recent_commits || [];
   const mergeLoops = data.merge_loops || [];
   const summaryCache = data.summary_cache || {};
+  const gemReviews = data.gemini_reviews || {summary:[], running:[], failed:[], worst_agreements:[], recent:[]};
+
+  const gemTotals = {};
+  (gemReviews.summary || []).forEach(r => {
+    gemTotals[r.strategy] = gemTotals[r.strategy] || {pending:0, running:0, completed:0, failed:0};
+    gemTotals[r.strategy][r.status] = r.count;
+  });
+  function gemRow(strat) {
+    const t = gemTotals[strat] || {pending:0, running:0, completed:0, failed:0};
+    const total = (t.pending||0) + (t.running||0) + (t.completed||0) + (t.failed||0);
+    const donePct = total ? Math.round(100*(t.completed||0)/total) : 0;
+    return `
+      <tr>
+        <td class="mono">${strat}</td>
+        <td class="mono">${t.pending||0}</td>
+        <td class="mono">${t.running||0}</td>
+        <td class="mono">${t.completed||0}</td>
+        <td class="mono">${t.failed||0}</td>
+        <td>
+          <div class="bar"><span style="width:${donePct}%"></span></div>
+          <div class="small">${donePct}% (${t.completed||0}/${total})</div>
+        </td>
+      </tr>`;
+  }
+  const gemStrategies = ['high_scrutiny','weighted_vocab','random_sample'];
+  const gemTableRows = gemStrategies.map(gemRow).join('');
+  const gemRunningRows = (gemReviews.running||[]).map(j => `
+    <tr>
+      <td><span class="badge running">${j.worker_id || 'gemini'}</span></td>
+      <td class="mono">${j.strategy}</td>
+      <td class="mono">${j.book_slug} ${j.chapter}:${j.verse}</td>
+      <td class="small mono">${j.claimed_at || ''}</td>
+    </tr>`).join('') || '<tr><td colspan="4" class="small">No running review workers.</td></tr>';
+  const gemRecentRows = (gemReviews.recent||[]).slice(0,10).map(j => {
+    const score = j.agreement_score != null ? j.agreement_score.toFixed(2) : '—';
+    const scoreClass = j.agreement_score >= 0.85 ? 'completed' : (j.agreement_score >= 0.5 ? 'pending' : 'failed');
+    return `
+      <tr>
+        <td class="mono">${j.book_slug} ${j.chapter}:${j.verse}</td>
+        <td class="mono">${j.strategy}</td>
+        <td><span class="badge ${scoreClass}">${score}</span></td>
+        <td class="mono">${j.issues_found ?? '—'}</td>
+        <td class="small mono">${j.completed_at || ''}</td>
+      </tr>`;
+  }).join('') || '<tr><td colspan="5" class="small">No completed reviews yet.</td></tr>';
+  const gemWorstRows = (gemReviews.worst_agreements||[]).slice(0,10).map(j => {
+    const score = j.agreement_score != null ? j.agreement_score.toFixed(2) : '—';
+    return `
+      <tr>
+        <td class="mono">${j.book_slug} ${j.chapter}:${j.verse}</td>
+        <td><span class="badge failed">${score}</span></td>
+        <td class="mono">${j.issues_found ?? '—'}</td>
+        <td class="small mono">${j.strategy}</td>
+      </tr>`;
+  }).join('') || '<tr><td colspan="4" class="small">No reviews with low agreement yet.</td></tr>';
 
   const cards = `
     <div class=\"grid cards\">
@@ -479,6 +594,27 @@ async function refresh() {
       <div class=\"card\">
         <h2>⚠️ Failed jobs</h2>
         <table><thead><tr><th>Job</th><th>Error</th></tr></thead><tbody>${failedRows}</tbody></table>
+      </div>
+    </div>
+    <div class=\"section card\">
+      <h2>🔎 Gemini Pro review jobs</h2>
+      <table>
+        <thead><tr><th>Strategy</th><th>Pending</th><th>Running</th><th>Completed</th><th>Failed</th><th>Progress</th></tr></thead>
+        <tbody>${gemTableRows}</tbody>
+      </table>
+    </div>
+    <div class=\"section grid cards\">
+      <div class=\"card\">
+        <h2>🏃 Running review workers</h2>
+        <table><thead><tr><th>Worker</th><th>Strategy</th><th>Verse</th><th>Claimed</th></tr></thead><tbody>${gemRunningRows}</tbody></table>
+      </div>
+      <div class=\"card\">
+        <h2>✓ Recently reviewed</h2>
+        <table><thead><tr><th>Verse</th><th>Strategy</th><th>Agreement</th><th>Issues</th><th>Completed</th></tr></thead><tbody>${gemRecentRows}</tbody></table>
+      </div>
+      <div class=\"card\">
+        <h2>⚠️ Lowest-agreement verses</h2>
+        <table><thead><tr><th>Verse</th><th>Score</th><th>Issues</th><th>Strategy</th></tr></thead><tbody>${gemWorstRows}</tbody></table>
       </div>
     </div>
     <div class=\"section grid cards\">
