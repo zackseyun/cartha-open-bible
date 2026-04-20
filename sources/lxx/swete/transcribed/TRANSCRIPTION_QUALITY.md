@@ -337,3 +337,122 @@ mv sources/lxx/swete/transcribed/<stem>.txt.bak \
 ```
 The per-page `.applied.json` log records exactly which corrections
 were applied and why any others were deferred.
+
+
+---
+
+## 8. 2026-04-19 Gemini 2.5 Pro cross-read + targeted caveat audits
+
+A second vision model (Gemini 2.5 Pro) was run over three targeted
+scopes to address the §7 caveats with an independent-family judgment:
+
+- **Tobit (31 pages, `vol2_p0832`–`vol2_p0862`)** — `review_gemini.py`
+  run with the `tobit-dual` prompt variant, which explicitly tells the
+  model that Swete prints B-text (Codex Vaticanus) and S-text (Codex
+  Sinaiticus) in parallel on the same page and that cross-recension
+  differences are not transcription errors.
+- **1 Esdras (45 pages, `vol2_p0148`–`vol2_p0192`)** — run with the
+  `esdras-verse` variant, which audits every leading digit against the
+  scan to distinguish real inline verse markers from left-margin line
+  numbers. This was specifically to catch any real verse numbers that
+  the §7 `line-number-captured-as-verse` auto-apply pass might have
+  stripped.
+- **Random 30-page sample** (reproducible seed, stratified across all
+  books) — `generic` variant; serves as the blind residual-quality
+  baseline.
+
+All 106 pages produced parseable structured JSON; a handful of dense
+pages needed a retry at a higher output-token limit (40,000).
+
+### Cross-model merge
+
+`tools/merge_reviews.py` pairs each page's Azure and Gemini reviews
+and classifies each correction as:
+
+- **Agreed** — both models flagged essentially the same fix
+  (target-string match or location+category match after normalization)
+- **Azure-only** — Azure flagged, Gemini doesn't see it (typically
+  already-applied items; Gemini reviews the post-§7 text)
+- **Gemini-only** — Gemini surfaces an item Azure missed
+
+Aggregate over the 99 pages with both reviews:
+
+| Bucket | Count |
+|---|---:|
+| Agreed corrections | 503 |
+| Azure-only (mostly already applied in §7) | 650 |
+| Gemini-only (possible new signal) | 1,903 |
+
+Per-page merged worklists live under
+`sources/lxx/swete/reviews/merged/`.
+
+### Applied from the merged corpus
+
+`tools/apply_merged_reviews.py` with tier `gemini-body` applied 739
+additional corrections across 99 pages:
+
+| Provenance | Count |
+|---|---:|
+| Agreed (both Azure + Gemini) | 402 |
+| Gemini-only, BODY, translation-critical categories | 337 |
+
+Top categories among the Gemini-augmented apply:
+
+| Category | Count |
+|---|---:|
+| name-misread | 151 |
+| line-number-captured-as-verse | 110 |
+| missing-letter | 105 |
+| missing-phrase | 68 |
+| missing-prefix | 59 |
+| accent | 49 |
+| punctuation | 39 |
+
+The 110 `line-number-captured-as-verse` applies are specifically the
+1 Esdras verse numbers that §7's Azure-driven pass stripped. They've
+now been **restored** as Unicode superscript digits (e.g. ⁸, ⁹, ¹⁰),
+which are cleaner for downstream parsing than Swete's original inline
+regular digits.
+
+### Combined corpus-wide corrections
+
+After §7 (Azure) + §8 (Gemini-augmented merge):
+
+| Pass | Corrections applied |
+|---|---:|
+| Azure tiered apply (§7) | 4,095 |
+| Gemini-augmented merge apply (§8) | 739 |
+| **Total** | **4,834** |
+
+### Tobit-specific regression caught and fixed
+
+Audit of the Tobit pages turned up one bad apply on `vol2_p0838`:
+Azure had flagged the page's B-text opening line as a "missing-phrase"
+(bypassing the `apparatus-merge` filter) because it was implicitly
+comparing against the S-text that sits beneath it on the same page.
+The S-text had leaked into the B-text body. This was reverted
+manually, and the applier was hardened: `apply_transcription_reviews.py`
+now defers *any* BODY meaning-altering correction on a Tobit page
+whose `correct` span is materially longer than its `current` span
+(`cor_len > cur_len + 20`), since that pattern strongly indicates a
+recension-swap false positive.
+
+### Known caveats still open
+
+- **Corpus-wide WER not yet human-remeasured.** The pass-2 Azure
+  verification in §7 was a proxy. A proper remeasurement would
+  require a human-adjudicated sample on the current `.txt` state.
+  The uniform ~50% drop in cosmetic flags and the successful 1 Esdras
+  verse-restore suggest effective WER is now well under 0.5% on
+  translation-relevant tokens.
+- **Some 1 Esdras verse markers are now superscripts, not inline
+  digits.** Semantically correct and easier to parse, but
+  stylistically different from Swete's printed form. If a downstream
+  consumer needs faithful Swete typography, the superscripts can be
+  normalized back to inline digits with a simple translation table.
+- **APPARATUS items in the `gemini-body` tier were left unapplied.**
+  Running `apply_merged_reviews.py --tier all` would pick up an
+  additional ~900 items; deferred because apparatus corrections are
+  not translation-critical and are where Gemini's siglum-decode
+  calls were occasionally off (e.g. `Baᵇ → Ba?b`). Safe to run later
+  with targeted human review of the siglum-decode category.
