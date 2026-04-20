@@ -64,8 +64,8 @@ TRANSCRIBED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
 # Swete running-head probes 2026-04-19; adjust per-book as boundaries are
 # confirmed in further passes.
 DEUTEROCANONICAL_BOOKS: dict[str, tuple[int, int, int, str, str]] = {
-    "1ES":   (2, 148, 178, "1 Esdras",                         "1_esdras"),
-    "WIS":   (2, 626, 665, "Wisdom of Solomon",                "wisdom_of_solomon"),
+    "1ES":   (2, 146, 178, "1 Esdras",                         "1_esdras"),
+    "WIS":   (2, 621, 665, "Wisdom of Solomon",                "wisdom_of_solomon"),
     "SIR":   (2, 666, 771, "Sirach",                           "sirach"),
     "ADE":   (2, 772, 797, "Greek Esther",                     "greek_esther"),
     "JDT":   (2, 798, 831, "Judith",                           "judith"),
@@ -470,34 +470,30 @@ def _scan_chapter_boundaries(
         delta = rh_chap - last_rh
         if delta > 0:
             # We have `delta` chapter transitions straddling prev+current.
-            # Collect candidate positions: explicit markers for each chapter
-            # anywhere on prev+current, plus verse-resets on both.
-            prev_cleaned = page_list[last_page_idx][2] if last_page_idx is not None else ""
-            prev_page = page_list[last_page_idx][0] if last_page_idx is not None else scan_page
+            # Include ALL intermediate pages (those with rh=None which my
+            # scanner skipped) in the search, because the transition might
+            # actually happen on one of those unlabeled pages.
+            prev_pages: list[tuple[int, str]] = []
+            if last_page_idx is not None:
+                for j in range(last_page_idx, idx):
+                    pj, rj, cj = page_list[j]
+                    prev_pages.append((pj, cj))
 
             candidates: list[tuple[int, int, int | None, bool]] = []
-            # (scan_page, position, explicit_chapter_hint_or_None, implicit)
 
-            # Explicit markers on previous page
+            # Explicit markers on all candidate pages (prev + current)
+            all_search_pages: list[tuple[int, str]] = prev_pages + [(scan_page, cleaned)]
             for new_ch in range(last_rh + 1, rh_chap + 1):
                 if new_ch > max_chap:
                     break
-                pos = find_explicit(prev_cleaned, new_ch)
-                if pos is not None:
-                    candidates.append((prev_page, pos, new_ch, False))
-            # Explicit markers on current page
-            for new_ch in range(last_rh + 1, rh_chap + 1):
-                if new_ch > max_chap:
-                    break
-                pos = find_explicit(cleaned, new_ch)
-                if pos is not None:
-                    candidates.append((scan_page, pos, new_ch, False))
-            # Verse-resets on previous page (chapter unknown)
-            for pos in all_verse_resets(prev_cleaned):
-                candidates.append((prev_page, pos, None, True))
-            # Verse-resets on current page (chapter unknown)
-            for pos in all_verse_resets(cleaned):
-                candidates.append((scan_page, pos, None, True))
+                for pg, cl in all_search_pages:
+                    pos = find_explicit(cl, new_ch)
+                    if pos is not None:
+                        candidates.append((pg, pos, new_ch, False))
+            # Verse-resets on all candidate pages
+            for pg, cl in all_search_pages:
+                for pos in all_verse_resets(cl):
+                    candidates.append((pg, pos, None, True))
 
             # Sort candidates by (page, position) — forward order
             candidates.sort(key=lambda c: (c[0], c[1]))
@@ -656,38 +652,38 @@ def parse_pages_to_verses(
             tail = cleaned[cursor:m.start()].strip()
 
             if crossed_boundary is not None and crossed_boundary > current_chapter:
-                # For an implicit chapter marker, the "tail" before the
-                # next marker IS the content of verse 1 (the current verse
-                # should have been verse 1 already). But the walk might
-                # still be on the previous chapter's last verse — emit
-                # that first, then start fresh at the new chapter verse 1.
-                if current_verse is not None and tail:
-                    # Tail up to the boundary position belongs to the
-                    # previous verse; tail after the boundary belongs to
-                    # the new chapter's implicit verse 1.
-                    if crossed_implicit and crossed_pos is not None:
-                        pre_bound = cleaned[cursor:crossed_pos].strip()
-                        post_bound = cleaned[crossed_pos:m.start()].strip()
-                        if pre_bound:
-                            current_text.append(pre_bound)
-                        v = emit()
-                        if v:
-                            yield v
-                        current_chapter = crossed_boundary
-                        current_verse = 1
-                        current_source_page = scan_page
-                        current_text = [post_bound] if post_bound else []
+                # Chapter transition. Two cases:
+                #  (a) Explicit marker (e.g. "IV 1 Καὶ"): the next verse
+                #      marker IS the new chapter's verse 1.
+                #  (b) Implicit marker (e.g. "I Καὶ ... 2 Δίκαιος"): there
+                #      is no explicit "1" — everything between the boundary
+                #      and the next marker IS verse 1.
+                if crossed_implicit and crossed_pos is not None:
+                    pre_bound = cleaned[cursor:crossed_pos].strip()
+                    post_bound = cleaned[crossed_pos:m.start()].strip()
+                    # Finish previous verse with text up to the boundary
+                    if current_verse is not None and pre_bound:
+                        current_text.append(pre_bound)
+                    v = emit()
+                    if v:
+                        yield v
+                    # Emit the implicit verse 1 immediately
+                    current_chapter = crossed_boundary
+                    current_verse = 1
+                    current_source_page = scan_page
+                    current_text = [post_bound] if post_bound else []
+                    if verse_num > 1:
+                        v1 = emit()
+                        if v1:
+                            yield v1
+                        current_verse = verse_num
+                        current_text = []
+                    if crossed_pos is not None:
                         consumed_boundaries.add(crossed_pos)
-                        cursor = m.start() + len(m.group("num")) + 1
-                        # verse_num should be 2 — advance normally
-                        if verse_num > 1:
-                            v2 = emit()
-                            if v2:
-                                yield v2
-                            current_verse = verse_num
-                            current_text = []
-                        continue
-                    # Explicit chapter marker — normal emit
+                    cursor = m.start() + len(m.group("num")) + 1
+                    continue
+                # Explicit chapter marker — emit previous, start fresh
+                if current_verse is not None and tail:
                     current_text.append(tail)
                 v = emit()
                 if v:
@@ -696,6 +692,22 @@ def parse_pages_to_verses(
                 current_verse = verse_num
                 current_source_page = scan_page
                 current_text = []
+                # If the explicit marker's verse is > 1, there's still an
+                # implicit verse 1 before it (e.g. chapter start via
+                # "IV" without explicit "1"). Emit verse 1 with just the
+                # pre-marker tail (if any).
+                if verse_num > 1 and crossed_pos is not None:
+                    pre_marker = cleaned[crossed_pos:m.start()].strip()
+                    # Strip the Roman numeral itself
+                    pre_marker = re.sub(r"^[IVXLCDMΙΧ]+\s+", "", pre_marker)
+                    if pre_marker:
+                        current_verse = 1
+                        current_text = [pre_marker]
+                        v1 = emit()
+                        if v1:
+                            yield v1
+                        current_verse = verse_num
+                        current_text = []
                 if crossed_pos is not None:
                     consumed_boundaries.add(crossed_pos)
                 cursor = m.start() + len(m.group("num")) + 1
