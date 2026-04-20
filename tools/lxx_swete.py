@@ -178,12 +178,15 @@ def iter_transcribed_pages(book_code: str) -> Iterator[tuple[int, str]]:
 
 # --- parser --------------------------------------------------------------
 
-# Strip parenthesized line-number markers like "(25)", "(7)", "(60)".
-_PAREN_LINENO_RE = re.compile(r"\(\s*\d+\s*\)\s*")
-# Strip a leading lone `Β` siglum ("B text marker") at the very start of a
-# line; it appears in Tobit and a few other books that print parallel
-# recensions. Keep any real Greek word that happens to start with Β.
+# Strip parenthesized line-number markers like "(25)", "(7)", "(60)",
+# "(1,2)" (compound indicators Swete uses on pages that split a verse
+# across two printed lines), and "(1-2)" ranges.
+_PAREN_LINENO_RE = re.compile(r"\(\s*\d+(?:\s*[,\-–]\s*\d+)*\s*\)\s*")
+# Strip a lone `Β` siglum ("B text marker") at the start or end of a line
+# (Swete's printed marginal marker for B-text lines in parallel recensions
+# like Tobit). Keep any real Greek word that happens to start with Β.
 _LEADING_B_SIGLUM_RE = re.compile(r"(?m)^Β(?=\s+[^\sΒ])")
+_TRAILING_B_SIGLUM_RE = re.compile(r"(?m)\s+Β\s*$")
 # Rejoin a trailing soft hyphen at end of line with the first token of the
 # next line. Swete commonly breaks words with a hyphen-minus.
 _HYPHEN_LINEBREAK_RE = re.compile(r"([Α-Ωα-ωἀ-ῼ])[-‐]\s*\n\s*")
@@ -194,18 +197,30 @@ _VERSE_MARKER_RE = re.compile(
     r"(?<![0-9])(?P<num>\d+)\s+(?P<word>[Α-Ωα-ωἀ-ῼ][^\s]*)"
 )
 
-# Inline chapter marker: Roman numeral (Latin I-M or Greek Ι/Χ) followed by
-# verse `1` and an uppercase-starting Greek word. Example matches:
+# Explicit inline chapter marker: Roman numeral (Latin I-M or Greek Ι/Χ)
+# followed by verse `1` and an uppercase-starting Greek word. Example:
 #   "Ι 1 ΒΙΒΛΟΣ"     (Tobit 1:1 start)
 #   "II 1 Καὶ"       (chapter II start)
-#   "ΙΧ 1 Τότε"     (chapter IX start)
-# Anchored only at start-of-body or after whitespace.
-_INLINE_CHAPTER_RE = re.compile(
+_INLINE_CHAPTER_EXPLICIT_RE = re.compile(
     r"(?:(?<=\s)|^)"
     r"(?P<roman>[IVXLCDMΙΧ]{1,6})"
-    r"\s+(?P<verse>1)\s+"
+    r"\s+1\s+"
     r"(?P<word>[Α-Ω][^\s]*)"
 )
+
+# Implicit inline chapter marker: Roman numeral followed DIRECTLY by an
+# uppercase Greek word (no explicit "1"). Swete uses this for some
+# chapters; the implicit verse 1 is followed shortly by a "2 " verse
+# marker. Example: "I Καὶ λυπηθεὶς ... 2 Δίκαιος".
+_INLINE_CHAPTER_IMPLICIT_RE = re.compile(
+    r"(?:(?<=\s)|^)"
+    r"(?P<roman>[IVXLCDMΙΧ]{1,6})"
+    r"\s+(?P<word>[Α-Ω][^\s]{2,})"
+)
+
+# Kept for backward compatibility with any external callers that import
+# the original name.
+_INLINE_CHAPTER_RE = _INLINE_CHAPTER_EXPLICIT_RE
 # A line-number leak at the very start of a line: digit followed by space,
 # where the same digit also appears as a real verse marker inline later on
 # the same line.
@@ -220,6 +235,11 @@ _ROMAN_MAP = {
 
 _RUNNING_HEAD_CHAPTER_RE = re.compile(
     r"(?:^|\s)([IVXLCDMΙΧ]+)\s+\d+\s*(?:$|\s)",
+)
+# Fallback: any Roman numeral in the running head when no accompanying
+# Arabic verse number is present (e.g. "II II ΤΩΒΕΙΤ" or "III I ΕΣΔΡΑΣ Α").
+_RUNNING_HEAD_ROMAN_ONLY_RE = re.compile(
+    r"(?:^|\s)([IVXLCDMΙΧ]{1,6})(?=\s|$)",
 )
 
 
@@ -240,16 +260,32 @@ def roman_to_int(roman: str) -> int:
 
 
 def parse_running_head_chapter(page_text: str) -> int | None:
-    """Best-effort parse of the chapter number from a page's running head."""
-    # Running head is between `[RUNNING HEAD]` and `[BODY]`.
+    """Best-effort parse of the chapter number from a page's running head.
+
+    Tries two patterns in order:
+      1. Roman numeral + Arabic verse (e.g. "II 7" — chapter II verse 7).
+      2. Bare Roman numeral anywhere in head (e.g. "II II ΤΩΒΕΙΤ" where the
+         book title got interleaved with the running chapter number).
+    """
     m = re.search(r"\[RUNNING HEAD\]\s*\n(.*?)\n\[BODY\]", page_text, re.DOTALL)
     if not m:
         return None
     head = m.group(1)
     rm = _RUNNING_HEAD_CHAPTER_RE.search(head)
-    if not rm:
-        return None
-    return roman_to_int(rm.group(1)) or None
+    if rm:
+        v = roman_to_int(rm.group(1))
+        if v:
+            return v
+    # Fallback: find the highest Roman numeral anywhere in the head.
+    # Running heads often have the chapter number appearing once as a
+    # bare Roman (in the "verse" position the Roman took over from the
+    # usual "Roman + Arabic" pair).
+    best = 0
+    for rm2 in _RUNNING_HEAD_ROMAN_ONLY_RE.finditer(head):
+        v = roman_to_int(rm2.group(1))
+        if v and v < 100:  # skip anything absurd
+            best = max(best, v)
+    return best or None
 
 
 def clean_body_for_parsing(body: str) -> str:
@@ -260,8 +296,10 @@ def clean_body_for_parsing(body: str) -> str:
     """
     # 1. Drop parenthesized line numbers (always noise)
     text = _PAREN_LINENO_RE.sub("", body)
-    # 2. Drop leading B-text sigla at line start
+    # 2. Drop lone Β sigla at start or end of lines (Swete's B-text
+    #    recension marker — not part of the actual Greek text).
     text = _LEADING_B_SIGLUM_RE.sub("", text)
+    text = _TRAILING_B_SIGLUM_RE.sub("", text)
     # 3. Remove line-start digit leaks that duplicate an inline verse marker
     #    (e.g. "26 τίου τῷ κυρίῳ. 26 καὶ ..." — first "26" is a line number).
     def dedupe_line(m: re.Match) -> str:
@@ -280,16 +318,247 @@ def clean_body_for_parsing(body: str) -> str:
 
 
 def _collect_pages(book_code: str) -> list[tuple[int, int | None, str]]:
-    """Return [(scan_page, running_head_chapter, cleaned_body), ...]."""
+    """Return [(scan_page, running_head_chapter, cleaned_body), ...].
+
+    For Tobit, strip the S-text (Sinaiticus) recension block and keep
+    only the B-text (Vaticanus) — the primary translation base.
+    """
     vol, first, last = book_page_range(book_code)
     out: list[tuple[int, int | None, str]] = []
     for scan_page, body in iter_transcribed_pages(book_code):
         page_path = transcribed_page_path(vol, scan_page)
         raw = page_path.read_text(encoding="utf-8")
         rh_chap = parse_running_head_chapter(raw)
+        if book_code == "TOB":
+            body = split_tobit_b_text(body)
         cleaned = clean_body_for_parsing(body)
         out.append((scan_page, rh_chap, cleaned))
     return out
+
+
+# --- Tobit dual-recension splitter --------------------------------------
+
+# Distinctive markers of the S-text (Codex Sinaiticus) recension of Tobit.
+# Swete prints S-text as a second block on Tobit pages, separated from the
+# B-text block by a blank line. S-text uses the "Τωβειθ/Τωβιθ" spellings
+# (θ-final) where B-text uses "Τωβείτ" (τ-final), and references the
+# Sinaiticus manuscript with the Hebrew ALEF character א (U+05D0).
+_TOBIT_S_TEXT_SIGNALS = ("Τωβειθ", "Τωβιθ", "\u05D0", "ℵ")
+
+
+def split_tobit_b_text(body: str) -> str:
+    """Drop Tobit's S-text (Sinaiticus) block and return only B-text."""
+    # Split on one-or-more blank lines
+    blocks = re.split(r"\n\s*\n+", body)
+    if len(blocks) == 1:
+        # No blank-line separator — assume pure B-text continuation
+        return body
+    kept = []
+    for b in blocks:
+        # An S-text block contains a distinctive signal word/char. Drop it.
+        if any(sig in b for sig in _TOBIT_S_TEXT_SIGNALS):
+            continue
+        kept.append(b)
+    if not kept:
+        # All blocks matched — fall back to the first (most likely B-text
+        # on a page where the whole section happens to contain `ℵ` in
+        # apparatus-like form). Safer to return something than nothing.
+        return blocks[0]
+    return "\n\n".join(kept)
+
+
+def _scan_chapter_boundaries(
+    book_code: str, pages: list[tuple[int, int | None, str]]
+) -> list[tuple[int, int, int, bool]]:
+    """Pre-scan: determine chapter boundary positions by combining
+    running-head chapter deltas with text-level pattern detection.
+
+    Returns a sorted list of (scan_page, position_in_cleaned_body,
+    chapter_number, implicit_verse_1) tuples.
+
+    Strategy:
+      1. Walk pages forward. Track the last seen running-head chapter.
+      2. When a page's rh_chap > last seen, one or more chapter
+         transitions happen on this page. For each new chapter, try to
+         locate its start position via:
+           a. Explicit marker `Ι 1 Word` for the new chapter's Roman
+              numeral (anywhere on this page).
+           b. Implicit marker `<ROMAN> Word` preceded by a verse-reset
+              or at the text-start.
+           c. Fallback: position of the first small verse-reset (1..3).
+      3. If we can't locate, record the page-start position as best guess.
+    """
+    max_chap = BOOK_CHAPTER_COUNT.get(book_code, 999)
+    boundaries: list[tuple[int, int, int, bool]] = []
+
+    def find_explicit(cleaned: str, chapter: int, after_pos: int = 0) -> int | None:
+        # Roman numeral string for chapter
+        roman_candidates = _int_to_roman_variants(chapter)
+        for roman in roman_candidates:
+            pat = re.compile(
+                r"(?:(?<=\s)|^)"
+                + re.escape(roman)
+                + r"\s+1\s+[Α-Ω][^\s]*"
+            )
+            m = pat.search(cleaned, pos=after_pos)
+            if m:
+                return m.start()
+        return None
+
+    def find_implicit(cleaned: str, chapter: int, after_pos: int = 0) -> int | None:
+        """Find a bare-Roman chapter-start marker (implicit verse 1)."""
+        roman_candidates = _int_to_roman_variants(chapter)
+        for roman in roman_candidates:
+            pat = re.compile(
+                r"(?:(?<=\s)|^)"
+                + re.escape(roman)
+                + r"\s+[Α-Ω][^\s]{2,}"
+            )
+            for m in pat.finditer(cleaned, pos=after_pos):
+                # Require a nearby "2 Greek" verse marker within 400 chars
+                # (since implicit verse 1 is followed by explicit verse 2).
+                nearby = cleaned[m.end(): m.end() + 400]
+                if re.search(r"(?<!\d)\b2\s+[Α-Ωα-ωἀ-ῼ]", nearby):
+                    return m.start()
+        return None
+
+    def find_verse_reset(cleaned: str, after_pos: int = 0) -> int | None:
+        """Find the first verse-reset (marker with num ≤ 3) that follows
+        a marker with num ≥ 10 earlier on the page."""
+        markers = list(_VERSE_MARKER_RE.finditer(cleaned, pos=after_pos))
+        if not markers:
+            return None
+        for i in range(1, len(markers)):
+            prev = int(markers[i - 1].group("num"))
+            cur = int(markers[i].group("num"))
+            if prev >= 10 and cur <= 3:
+                return markers[i].start()
+        return None
+
+    # Strategy: walk running-head deltas. For each transition rh=N → rh=M,
+    # record M-N chapter boundaries. Each boundary gets its POSITION from
+    # (a) explicit marker if it exists anywhere in prev+current pages, or
+    # (b) verse-reset on prev or current page.
+
+    def all_verse_resets(cleaned: str) -> list[int]:
+        """Return positions in `cleaned` where a verse-reset happens
+        (marker with num ≤ 3 after a marker with num ≥ 10)."""
+        markers = list(_VERSE_MARKER_RE.finditer(cleaned))
+        positions = []
+        for i in range(1, len(markers)):
+            prev = int(markers[i - 1].group("num"))
+            cur = int(markers[i].group("num"))
+            if prev >= 10 and cur <= 3:
+                positions.append(markers[i].start())
+        return positions
+
+    page_list = pages
+    last_rh: int | None = None
+    last_page_idx: int | None = None
+    for idx, (scan_page, rh_chap, cleaned) in enumerate(page_list):
+        if rh_chap is None:
+            continue
+
+        if last_rh is None:
+            pos = find_explicit(cleaned, 1) or find_implicit(cleaned, 1)
+            if pos is not None and rh_chap == 1:
+                boundaries.append((scan_page, pos, 1, False))
+            last_rh = rh_chap
+            last_page_idx = idx
+            continue
+
+        delta = rh_chap - last_rh
+        if delta > 0:
+            # We have `delta` chapter transitions straddling prev+current.
+            # Collect candidate positions: explicit markers for each chapter
+            # anywhere on prev+current, plus verse-resets on both.
+            prev_cleaned = page_list[last_page_idx][2] if last_page_idx is not None else ""
+            prev_page = page_list[last_page_idx][0] if last_page_idx is not None else scan_page
+
+            candidates: list[tuple[int, int, int | None, bool]] = []
+            # (scan_page, position, explicit_chapter_hint_or_None, implicit)
+
+            # Explicit markers on previous page
+            for new_ch in range(last_rh + 1, rh_chap + 1):
+                if new_ch > max_chap:
+                    break
+                pos = find_explicit(prev_cleaned, new_ch)
+                if pos is not None:
+                    candidates.append((prev_page, pos, new_ch, False))
+            # Explicit markers on current page
+            for new_ch in range(last_rh + 1, rh_chap + 1):
+                if new_ch > max_chap:
+                    break
+                pos = find_explicit(cleaned, new_ch)
+                if pos is not None:
+                    candidates.append((scan_page, pos, new_ch, False))
+            # Verse-resets on previous page (chapter unknown)
+            for pos in all_verse_resets(prev_cleaned):
+                candidates.append((prev_page, pos, None, True))
+            # Verse-resets on current page (chapter unknown)
+            for pos in all_verse_resets(cleaned):
+                candidates.append((scan_page, pos, None, True))
+
+            # Sort candidates by (page, position) — forward order
+            candidates.sort(key=lambda c: (c[0], c[1]))
+
+            # Assign the first `delta` candidates to chapters last_rh+1..rh_chap.
+            # If a candidate has an explicit chapter hint, use it.
+            needed = list(range(last_rh + 1, min(rh_chap + 1, max_chap + 1)))
+            used_positions: set[tuple[int, int]] = set()
+            for pg, pos, hint, implicit in candidates:
+                if (pg, pos) in used_positions:
+                    continue
+                if not needed:
+                    break
+                if hint is not None:
+                    # Explicit marker: assign this chapter specifically
+                    if hint in needed:
+                        boundaries.append((pg, pos, hint, implicit))
+                        needed.remove(hint)
+                        used_positions.add((pg, pos))
+                else:
+                    # Implicit: take the lowest needed chapter
+                    ch = needed.pop(0)
+                    boundaries.append((pg, pos, ch, implicit))
+                    used_positions.add((pg, pos))
+
+        last_rh = rh_chap
+        last_page_idx = idx
+
+    # De-dup and sort
+    unique = sorted(set(boundaries), key=lambda b: (b[0], b[1]))
+    return unique
+
+
+def _int_to_roman_variants(n: int) -> list[str]:
+    """Return Swete's variant Roman-numeral spellings for `n`.
+
+    Swete uses both Latin letters (I, V, X, L) and occasional Greek
+    transliterations (Ι for I, Χ for X, especially in running heads).
+    Returns a list ordered by likelihood.
+    """
+    if n <= 0 or n > 99:
+        return []
+    # Standard Latin Roman
+    digits_latin = [
+        (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
+        (100, "C"),  (90,  "XC"), (50,  "L"), (40,  "XL"),
+        (10,  "X"),  (9,   "IX"), (5,   "V"), (4,   "IV"),
+        (1,   "I"),
+    ]
+    roman = ""
+    m = n
+    for val, sym in digits_latin:
+        while m >= val:
+            roman += sym
+            m -= val
+    variants = [roman]
+    # Greek-letter variant (Ι instead of I, Χ instead of X)
+    greek = roman.replace("I", "Ι").replace("X", "Χ")
+    if greek != roman:
+        variants.append(greek)
+    return variants
 
 
 def parse_pages_to_verses(
@@ -299,31 +568,45 @@ def parse_pages_to_verses(
 ) -> Iterator[SwtVerse]:
     """Walk a book's transcribed pages and yield (chapter, verse, text).
 
-    Chapter assignment is running-head-primary:
-      - Each page's running head tells us the chapter whose content ends
-        on that page (if the page straddles a chapter boundary, it's the
-        later chapter).
-      - On pages that span a chapter transition, the transition point is
-        the first verse-number reset (a small number after a big one).
+    Two-phase design:
 
-    Verse markers are detected by `_VERSE_MARKER_RE` after
-    `clean_body_for_parsing` has rejoined hyphens and dropped most
-    line-number noise. Remaining defenses inside the walk:
+    Phase 1 — pre-scan: find all explicit inline chapter markers
+      (`Ι 1 ΒΙΒΛΟΣ`-style). These are authoritative chapter-boundary
+      positions.
 
+    Phase 2 — walk: for each verse marker, determine its chapter by
+      looking up the most recent boundary position. If no boundary has
+      been seen yet (before chapter 1's explicit marker), fall back to
+      the running-head chapter or chapter 1.
+
+    Defenses inside the walk:
       - Ignore verse markers with numbers equal to or lower than the
-        current verse (suspected line-number leaks) UNLESS the drop is
-        to a small number and we're near a chapter boundary.
-      - Cap chapters at `BOOK_CHAPTER_COUNT[book_code]`.
+        current verse (suspected line-number leaks).
+      - Ignore huge forward jumps (>30) — almost always line-number
+        leaks from Swete's marginal typography.
     """
     pages = _collect_pages(book_code)
     if not pages:
         return
 
     max_chap = BOOK_CHAPTER_COUNT.get(book_code, 999)
+    boundaries = _scan_chapter_boundaries(book_code, pages)
 
-    # Initial chapter: prefer running head of first page.
+    # Build a lookup: (scan_page, position) → (chapter, implicit_v1).
+    boundaries_by_page: dict[int, list[tuple[int, int, bool]]] = {}
+    for pg, pos, ch, implicit in boundaries:
+        boundaries_by_page.setdefault(pg, []).append((pos, ch, implicit))
+
+    # Initial chapter: if the first boundary is on the first page, use it.
+    # Otherwise prefer running head of first page.
     first_rh = pages[0][1]
-    current_chapter: int = first_rh if first_rh else 1
+    if boundaries and boundaries[0][0] == pages[0][0]:
+        current_chapter: int = boundaries[0][2]
+    elif first_rh:
+        current_chapter = first_rh
+    else:
+        current_chapter = 1
+
     current_verse: int | None = None
     current_text: list[str] = []
     current_source_page: int | None = None
@@ -341,75 +624,110 @@ def parse_pages_to_verses(
             source_page=current_source_page,
         )
 
-    for i, (scan_page, rh_chap, cleaned) in enumerate(pages):
+    for scan_page, rh_chap, cleaned in pages:
         if not cleaned:
             continue
+        page_boundaries = boundaries_by_page.get(scan_page, [])
+        consumed_boundaries: set[int] = set()  # positions already fired
 
-        # Running-head gives the last chapter that appears on this page.
-        # If rh_chap > current_chapter, we expect a chapter transition
-        # somewhere on this page.
-        expected_max_chap = rh_chap if rh_chap else current_chapter
-
-        # Pre-scan: find explicit inline chapter markers like "Ι 1 ΒΙΒΛΟΣ"
-        # at the start of a chapter in Swete's body. These are deterministic
-        # chapter-boundary signals when present.
-        inline_chapter_starts: dict[int, int] = {}  # char pos → roman value
-        for cm in _INLINE_CHAPTER_RE.finditer(cleaned):
-            val = roman_to_int(cm.group("roman"))
-            if val and val <= max_chap:
-                inline_chapter_starts[cm.start()] = val
+        # Handle implicit-verse-1 boundaries BEFORE verse-marker walk: for
+        # each implicit boundary on this page, emit a verse-1 immediately
+        # at that position (then verse-marker walk picks up "2", "3", …).
+        # We do this inline during the walk below by checking boundaries
+        # that have NO verse marker near them.
 
         cursor = 0
         for m in _VERSE_MARKER_RE.finditer(cleaned):
             verse_num = int(m.group("num"))
+
+            # Check for a chapter boundary crossed between cursor and
+            # this marker position.
+            crossed_boundary: int | None = None
+            crossed_implicit = False
+            crossed_pos: int | None = None
+            for pos, ch, implicit in page_boundaries:
+                if pos in consumed_boundaries:
+                    continue
+                if cursor <= pos <= m.start():
+                    crossed_boundary = ch
+                    crossed_implicit = implicit
+                    crossed_pos = pos
+
             tail = cleaned[cursor:m.start()].strip()
+
+            if crossed_boundary is not None and crossed_boundary > current_chapter:
+                # For an implicit chapter marker, the "tail" before the
+                # next marker IS the content of verse 1 (the current verse
+                # should have been verse 1 already). But the walk might
+                # still be on the previous chapter's last verse — emit
+                # that first, then start fresh at the new chapter verse 1.
+                if current_verse is not None and tail:
+                    # Tail up to the boundary position belongs to the
+                    # previous verse; tail after the boundary belongs to
+                    # the new chapter's implicit verse 1.
+                    if crossed_implicit and crossed_pos is not None:
+                        pre_bound = cleaned[cursor:crossed_pos].strip()
+                        post_bound = cleaned[crossed_pos:m.start()].strip()
+                        if pre_bound:
+                            current_text.append(pre_bound)
+                        v = emit()
+                        if v:
+                            yield v
+                        current_chapter = crossed_boundary
+                        current_verse = 1
+                        current_source_page = scan_page
+                        current_text = [post_bound] if post_bound else []
+                        consumed_boundaries.add(crossed_pos)
+                        cursor = m.start() + len(m.group("num")) + 1
+                        # verse_num should be 2 — advance normally
+                        if verse_num > 1:
+                            v2 = emit()
+                            if v2:
+                                yield v2
+                            current_verse = verse_num
+                            current_text = []
+                        continue
+                    # Explicit chapter marker — normal emit
+                    current_text.append(tail)
+                v = emit()
+                if v:
+                    yield v
+                current_chapter = crossed_boundary
+                current_verse = verse_num
+                current_source_page = scan_page
+                current_text = []
+                if crossed_pos is not None:
+                    consumed_boundaries.add(crossed_pos)
+                cursor = m.start() + len(m.group("num")) + 1
+                continue
+
             if current_verse is not None and tail:
                 current_text.append(tail)
             cursor = m.start() + len(m.group("num")) + 1
 
-            # Did an inline chapter marker just occur before this verse?
-            # (Scan for an inline chapter marker between previous cursor
-            # and this marker's position.)
-            forced_chap: int | None = None
-            for pos, ch_val in inline_chapter_starts.items():
-                if pos <= m.start() and pos >= cursor - 3:
-                    # Within a small window right before this marker
-                    forced_chap = ch_val
-                    break
-
-            if forced_chap is not None and forced_chap > current_chapter:
-                v = emit()
-                if v:
-                    yield v
-                current_chapter = forced_chap
-                current_verse = verse_num
-                current_source_page = scan_page
-                current_text = []
-                continue
-
-            # Classify this marker:
             if current_verse is None:
                 # First verse of the book
                 current_verse = verse_num
                 current_source_page = scan_page
                 current_text = []
+                if debug:
+                    print(f"[init] ch={current_chapter} v={verse_num} (p{scan_page})")
                 continue
 
-            is_small = verse_num <= 3
             is_reset = verse_num < current_verse
+            is_small_reset = is_reset and verse_num <= 3
             big_jump = verse_num > current_verse + 30
+            expected_max_chap = rh_chap if rh_chap else current_chapter
 
-            # Chapter advance condition: small reset AND we're behind the
-            # running-head chapter for this page (or next), AND we haven't
-            # hit max chapters yet.
-            should_advance = (
-                is_small
-                and is_reset
+            # Chapter advance via verse-reset fallback (only when no
+            # explicit inline chapter marker has fired yet for this
+            # chapter, and the reset is small AND we're behind the
+            # running-head chapter).
+            if (
+                is_small_reset
                 and current_chapter < max_chap
                 and current_chapter < expected_max_chap
-            )
-
-            if should_advance:
+            ):
                 v = emit()
                 if v:
                     yield v
@@ -422,8 +740,8 @@ def parse_pages_to_verses(
                 continue
 
             if is_reset or verse_num == current_verse or big_jump:
-                # Line-number leak — skip this marker; the already-appended
-                # `tail` text stays with the current verse.
+                # Line-number leak — drop this marker, keep the tail text
+                # with the current verse (already appended above).
                 continue
 
             # Normal forward-progression marker
@@ -438,12 +756,6 @@ def parse_pages_to_verses(
         tail = cleaned[cursor:].strip()
         if current_verse is not None and tail:
             current_text.append(tail)
-
-        # If the page's running head says chapter X+1 but we exited the
-        # page still in chapter X with a high verse number, we missed the
-        # chapter transition (rare, but happens when reset marker was
-        # itself a leak). Don't force-advance here — prefer missing a
-        # chapter boundary over inserting a wrong one. Caller can clean up.
 
     v = emit()
     if v:
