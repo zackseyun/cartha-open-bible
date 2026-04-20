@@ -225,3 +225,23 @@ dial-ups when we want them.
 Any future re-runs that materially change the quality picture should
 append a dated entry to this file so the quality trajectory stays
 visible and auditable.
+
+
+---
+
+## 6. 2026-04-19 Azure reviewer pass (corrections discovery, not yet applied)
+
+A full Azure GPT-5.4 corrections-only review pass has now been completed
+across the same 572-page Phase 8 Swete corpus. The outputs live under
+`sources/lxx/swete/reviews/azure/` as per-page `.review.json` and
+`.review.meta.json` files.
+
+Important: this is a **review worklist**, not a post-correction quality
+measurement. The flagged corrections have not yet been adjudicated and
+applied back into the source text, so the 0.97% baseline above remains the
+last measured *source-text* WER figure. What this pass does provide is full
+corpus coverage for targeted cleanup, including a ranked list of high-risk
+BODY pages and apparatus-heavy pages.
+
+See `sources/lxx/swete/reviews/azure/REVIEW_SUMMARY.md` for the aggregate
+counts and the highest-risk pages surfaced by the reviewer.
