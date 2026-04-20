@@ -58,6 +58,7 @@ from jsonschema import Draft202012Validator
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import sblgnt  # noqa: E402
 import wlc  # noqa: E402
+import lxx_swete  # noqa: E402
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -339,6 +340,8 @@ def verse_testament(book_code: str) -> str:
         return "nt"
     if book_code in wlc.OT_BOOKS:
         return "ot"
+    if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        return "deuterocanon"
     raise ValueError(f"Unknown book code: {book_code}")
 
 
@@ -347,6 +350,8 @@ def source_edition_for_book(book_code: str) -> str:
         return "SBLGNT"
     if book_code in wlc.OT_BOOKS:
         return "WLC"
+    if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        return "Swete LXX 1909"
     raise ValueError(f"Unknown book code: {book_code}")
 
 
@@ -355,6 +360,8 @@ def source_language_label(book_code: str) -> str:
         return "Greek (SBLGNT)"
     if book_code in wlc.OT_BOOKS:
         return "Hebrew (WLC)"
+    if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        return "Greek (Swete LXX 1909)"
     raise ValueError(f"Unknown book code: {book_code}")
 
 
@@ -371,6 +378,10 @@ def morphology_lines_for_verse(verse: Any) -> str:
         return sblgnt.morphology_lines(verse)
     if verse.book_code in wlc.OT_BOOKS:
         return wlc.morphology_lines(verse)
+    if verse.book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        # Swete LXX corpus has no morphological annotations — give the
+        # prompt just the Greek text in a simple header.
+        return f"# {verse.reference}\n# Greek: {verse.greek_text}\n"
     raise ValueError(f"Unknown book code: {verse.book_code}")
 
 
@@ -379,6 +390,8 @@ def load_source_verse(book_code: str, chapter: int, verse: int) -> Any:
         return sblgnt.load_verse(book_code, chapter, verse, SOURCES_ROOT)
     if book_code in wlc.OT_BOOKS:
         return wlc.load_verse(book_code, chapter, verse, SOURCES_ROOT)
+    if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        return lxx_swete.load_verse(book_code, chapter, verse)
     raise ValueError(f"Unknown book code: {book_code}")
 
 
@@ -387,6 +400,8 @@ def iter_source_verses(book_code: str) -> Iterable[Any]:
         return sblgnt.iter_verses(book_code, SOURCES_ROOT)
     if book_code in wlc.OT_BOOKS:
         return wlc.iter_verses(book_code, SOURCES_ROOT)
+    if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        return lxx_swete.iter_source_verses(book_code)
     raise ValueError(f"Unknown book code: {book_code}")
 
 
@@ -395,6 +410,8 @@ def book_slug_for_code(book_code: str) -> str:
         return sblgnt.NT_BOOKS[book_code][1]
     if book_code in wlc.OT_BOOKS:
         return wlc.OT_BOOKS[book_code][1]
+    if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
+        return lxx_swete.DEUTEROCANONICAL_BOOKS[book_code][4]
     raise ValueError(f"Unknown book code: {book_code}")
 
 
