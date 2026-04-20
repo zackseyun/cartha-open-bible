@@ -47,6 +47,21 @@ TRANSLATION_CRITICAL_BODY_CATS = {
     "line-number-captured-as-verse",
 }
 
+# Gemini has a known failure mode on apparatus siglum-decode: it sometimes
+# reads a crisp superscript corrector-hand letter (ᵃ ᵇ ᶜ …) as a question
+# mark and "corrects" Baᵇ → Ba? or B→B?. Reject those specific transforms.
+_SUPERSCRIPT_CHARS = "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ¹²³⁴⁵⁶⁷⁸⁹⁰"
+
+
+def is_bad_siglum_swap(c: dict[str, Any]) -> bool:
+    if c.get("category") != "siglum-decode":
+        return False
+    cur = c.get("current", "") or ""
+    cor = c.get("correct", "") or ""
+    had_superscript = any(ch in cur for ch in _SUPERSCRIPT_CHARS)
+    introduced_question = "?" in cor and "?" not in cur
+    return had_superscript and introduced_question
+
 
 def classify_match(text: str, current: str) -> str:
     if not current:
@@ -62,6 +77,8 @@ def classify_match(text: str, current: str) -> str:
 def flatten_agreed(merged: dict[str, Any]) -> list[dict[str, Any]]:
     out = []
     for item in merged.get("agreed", []):
+        if is_bad_siglum_swap(item):
+            continue
         # merge_reviews writes `current`, `correct`, `severity`, etc at top level
         out.append(
             {
@@ -76,6 +93,8 @@ def flatten_gemini_only(merged: dict[str, Any], tier: str) -> list[dict[str, Any
     out = []
     for g in merged.get("gemini_only", []):
         if g.get("confidence") != "high":
+            continue
+        if is_bad_siglum_swap(g):
             continue
         section = g.get("section")
         category = g.get("category")
