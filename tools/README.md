@@ -18,6 +18,10 @@ Cartha Open Bible.
 | `chapter_worker.py` | implemented | Claims chapter jobs from the queue, drafts them in a worker worktree, and commits chapter-sized results. |
 | `chapter_merge.py` | implemented | Cherry-picks completed worker chapter commits onto `main` in canonical order and records merge state. |
 | `dashboard_server.py` | implemented | Serves a local live dashboard showing active queue workers, claimed chapters, progress percentages, ready-to-merge jobs, and recent commits. |
+| `transcribe_source.py` | implemented | Transcribes Swete Greek and Schechter Hebrew source pages from archival scans via Azure GPT-5.4 vision, writing UTF-8 text plus provenance sidecars. |
+| `review_transcription.py` | implemented | Reviews an existing Swete transcription against the scan image via Azure GPT-5.4, returning structured corrections-only function output and per-page review metadata. |
+| `summarize_transcription_reviews.py` | implemented | Aggregates Azure and Claude review outputs, reports parseability, correction counts, and high-risk pages for adjudication. |
+| `review_phase8_swete.sh` | implemented | Convenience launcher for the full 572-page Phase 8 Swete Azure review run, with resumable `--skip-existing` behavior and per-volume logs. |
 
 ## Prerequisites
 
