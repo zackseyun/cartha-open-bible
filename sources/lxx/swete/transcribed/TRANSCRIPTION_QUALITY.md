@@ -245,3 +245,95 @@ BODY pages and apparatus-heavy pages.
 
 See `sources/lxx/swete/reviews/azure/REVIEW_SUMMARY.md` for the aggregate
 counts and the highest-risk pages surfaced by the reviewer.
+
+
+---
+
+## 7. 2026-04-19 Tiered review application + pass-2 verification
+
+The Azure review worklist from §6 has now been reconciled back into the
+source text via `tools/apply_transcription_reviews.py`. The applier is
+conservative by construction:
+
+- Only applies corrections with `confidence: "high"`.
+- Only applies corrections whose `current` span matches the transcript
+  **exactly once** (unique-match requirement — no ambiguous anchors).
+- Skips `apparatus-merge`-category flags on the Tobit B/S dual-recension
+  page range (`vol2_p0832`–`vol2_p0862`), where the reviewer repeatedly
+  misread one recension as a corruption of the other.
+- Writes a one-time `<stem>.txt.bak` before the first edit to each page,
+  and a per-page `<stem>.applied.json` audit trail under
+  `sources/lxx/swete/reviews/applied/`.
+- Everything not auto-applied is captured in
+  `sources/lxx/swete/reviews/HUMAN_REVIEW_WORKLIST.md` for later
+  adjudication.
+
+### Application results
+
+| Tier | Count applied |
+|---|---:|
+| Cosmetic (accent, breathing, punctuation, missing-letter, siglum-decode, etc.) | 2,611 |
+| Grammatical | 400 |
+| BODY meaning-altering (non-apparatus-merge, unique-match) | 406 |
+| APPARATUS meaning-altering | 678 |
+| **Total auto-applied** | **4,095** |
+| Deferred to human review | 1,945 |
+
+Pages touched: 561 / 572. Eleven pages had no high-confidence,
+unique-match corrections and were left unchanged.
+
+### Pass-2 verification sample (top 30 highest-impact pages)
+
+A second Azure GPT-5.4 review pass was run over the 30 pages with the
+most corrections applied, producing outputs in
+`sources/lxx/swete/reviews/azure_pass2/`. Aggregate counts on that
+sample:
+
+| Severity | Pass 1 (before applying) | Pass 2 (after applying) | Delta |
+|---|---:|---:|---:|
+| Meaning-altering (all sections) | 125 | 91 | −27% |
+| Grammatical | 33 | 30 | −9% |
+| Cosmetic | 680 | 335 | **−51%** |
+| BODY meaning-altering only | 25 | 31 | +24% |
+
+The cosmetic drop is the unambiguous win: the applier removed roughly
+half of the surface-level noise (missing breathings, misread ligatures,
+line-number-as-verse leaks, punctuation marks) on these high-density
+pages.
+
+The BODY meaning-altering count on this sample ticked up from 25 to 31,
+but this is dominated by reviewer variance: pass 2 surfaces slightly
+different items than pass 1 on the same page because the reviewer is
+probabilistic. Per-page deltas are ±1–3 in both directions. Nothing in
+the sample looked like a regression introduced by auto-application —
+the pass-2 flags are mostly genuinely new finds (e.g. compound-verb
+prefixes the first pass missed) rather than newly broken text.
+
+### Known caveats
+
+- **Tobit dual-recension pages** (`vol2_p0832`–`vol2_p0862`): the
+  reviewer's `apparatus-merge` verdicts on these pages are unreliable
+  because Swete prints both B-text (Vaticanus) and S-text (Sinaiticus)
+  of Tobit on the same page. The applier correctly skips those flags,
+  but any future human review of Tobit should expect many of the
+  reviewer's "body is wrong" claims to actually be the reviewer
+  mistaking one recension for a corruption of the other.
+- **`line-number-captured-as-verse` category** (597 auto-applied): in
+  Swete's 1 Esdras especially, inline verse markers are visually
+  similar to left-margin line numbers. A subset of the stripped digits
+  may turn out to have been real verse markers. Verse-numbering
+  integrity should be re-audited before translation.
+- **Not yet remeasured:** the §3 headline "0.97% WER" figure was from
+  a small adjudicated sample before any corrections were applied. A
+  fresh WER measurement would require a new human-adjudicated sample
+  against the post-apply text; that is future work.
+
+### Reversibility
+
+All changes are reversible. For any page:
+```bash
+mv sources/lxx/swete/transcribed/<stem>.txt.bak \
+   sources/lxx/swete/transcribed/<stem>.txt
+```
+The per-page `.applied.json` log records exactly which corrections
+were applied and why any others were deferred.
