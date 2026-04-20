@@ -92,3 +92,27 @@ These are the best pages to inspect first for translation-impacting source issue
 The first batch completed 548/572 pages, with 24 transient network/image-fetch
 failures. A targeted retry pass cleared the remaining 24 pages, bringing the
 review corpus to full coverage.
+
+## 2026-04-19 — worklist reconciliation
+
+Results of running `tools/apply_transcription_reviews.py --tier all` over
+this review corpus and into `sources/lxx/swete/transcribed/`:
+
+- Pages touched: **561 / 572**
+- Corrections auto-applied: **4,095**
+  - cosmetic: 2,611 · grammatical: 400 · body-meaning: 406 · apparatus-meaning: 678
+- Corrections deferred for human review: **1,945**
+  - `confidence=medium`: 929
+  - `no-op` (current already equals correct): 340
+  - `match=no-match` (anchor not found in transcript): 304
+  - `confidence=low`: 220
+  - `match=ambiguous` (anchor non-unique): 141
+  - `tobit-dual-recension-false-positive`: 11
+
+The deferred items are captured in
+`sources/lxx/swete/reviews/HUMAN_REVIEW_WORKLIST.md`, and every applied
+page has an audit trail under `sources/lxx/swete/reviews/applied/`.
+Pass-2 verification on the 30 highest-impact pages shows cosmetic flags
+dropping by **51%** and total meaning-altering flags dropping by **27%**.
+See `sources/lxx/swete/transcribed/TRANSCRIPTION_QUALITY.md` §7 for the
+full before/after table.

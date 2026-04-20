@@ -16,6 +16,15 @@ env/
 drafts/raw/
 state/
 
+# Per-page transcription backups from apply_transcription_reviews.py.
+# Restorable by `mv <f>.bak <f>`; not committed to avoid ~2x storage bloat.
+sources/lxx/swete/transcribed/*.txt.bak
+
+# Claude Opus review artifacts from the superseded Opus cross-read run.
+# The parseable subset was folded into the Azure pass; the rest were
+# limit/stop messages and are not worth tracking.
+sources/lxx/swete/transcribed/*.opus-review.json
+
 # Reviewer private keys must never be committed
 *.key
 *_private.pem
