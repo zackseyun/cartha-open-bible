@@ -124,6 +124,17 @@ def apply_to_page(
                 reason = f"confidence={c.get('confidence')}"
             elif is_tobit and c.get("category") == "apparatus-merge":
                 reason = "tobit-dual-recension-false-positive"
+            elif is_tobit and c.get("section") == "BODY" and c.get("severity") == "meaning-altering":
+                # Tobit B/S parallel layout fools even non-apparatus-merge
+                # corrections when the reviewer compares one recension to the
+                # other and calls the delta a "missing-phrase". Defer ALL big
+                # BODY-replacing corrections on Tobit pages for human review.
+                cur_len = len(c.get("current", "") or "")
+                cor_len = len(c.get("correct", "") or "")
+                if cor_len > cur_len + 20:
+                    reason = "tobit-body-large-replacement-defer"
+            if reason:
+                pass  # reason already set above; fall through
             else:
                 status, _ = classify_match(text, c.get("current", ""))
                 if status != "unique":
