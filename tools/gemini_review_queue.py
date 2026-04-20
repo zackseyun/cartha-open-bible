@@ -60,6 +60,8 @@ STATUS_SKIPPED = "skipped"
 STRATEGY_HIGH_SCRUTINY = "high_scrutiny"
 STRATEGY_WEIGHTED_VOCAB = "weighted_vocab"
 STRATEGY_RANDOM_SAMPLE = "random_sample"
+STRATEGY_LOW_AGREEMENT_RECHECK = "low_agreement_recheck"  # v2 prompt + context
+STRATEGY_ENHANCED_REVIEW = "enhanced_review"               # v2 prompt + context
 
 # Books drawn in the "high-scrutiny" strategy. Book slugs match the
 # `translation/<testament>/<slug>/` directory structure.
@@ -288,6 +290,64 @@ def submit_weighted_vocab(conn: sqlite3.Connection, model: str) -> dict[str, int
     return dict(added)
 
 
+def submit_low_agreement_recheck(
+    conn: sqlite3.Connection, model: str, threshold: float = 0.9
+) -> dict[str, int]:
+    """Re-review every Pass-1 verse that scored below `threshold` using the
+    v2 enhanced prompt (chapter context + project doctrine).
+    """
+    added = Counter()
+    rows = conn.execute(
+        """
+        SELECT testament, book_slug, chapter, verse
+        FROM review_jobs
+        WHERE status='completed'
+          AND agreement_score IS NOT NULL
+          AND agreement_score < ?
+        """,
+        (threshold,),
+    ).fetchall()
+    for r in rows:
+        if insert_job(
+            conn,
+            strategy=STRATEGY_LOW_AGREEMENT_RECHECK,
+            testament=r["testament"],
+            book_slug=r["book_slug"],
+            chapter=r["chapter"],
+            verse=r["verse"],
+            model=model,
+        ):
+            added[r["book_slug"]] += 1
+    conn.commit()
+    return dict(added)
+
+
+def submit_enhanced_review_for_books(
+    conn: sqlite3.Connection, model: str, books: list[tuple[str, str]]
+) -> dict[str, int]:
+    """Submit v2 enhanced review for every verse in the given (testament,
+    book_slug) pairs. Use for targeted deep-review of key books."""
+    added = Counter()
+    for testament, book_slug in books:
+        for yaml_path in iter_verse_yamls(testament, book_slug):
+            parsed = parse_verse_id(yaml_path)
+            if not parsed:
+                continue
+            chapter, verse = parsed
+            if insert_job(
+                conn,
+                strategy=STRATEGY_ENHANCED_REVIEW,
+                testament=testament,
+                book_slug=book_slug,
+                chapter=chapter,
+                verse=verse,
+                model=model,
+            ):
+                added[book_slug] += 1
+    conn.commit()
+    return dict(added)
+
+
 def submit_random_sample(conn: sqlite3.Connection, model: str) -> dict[str, int]:
     rng = random.Random(RANDOM_SAMPLE_SEED)
     all_verses: list[tuple[str, str, int, int]] = []
@@ -366,9 +426,25 @@ def main() -> int:
     p_submit.add_argument(
         "--strategy",
         required=True,
-        choices=[STRATEGY_HIGH_SCRUTINY, STRATEGY_WEIGHTED_VOCAB, STRATEGY_RANDOM_SAMPLE],
+        choices=[
+            STRATEGY_HIGH_SCRUTINY,
+            STRATEGY_WEIGHTED_VOCAB,
+            STRATEGY_RANDOM_SAMPLE,
+            STRATEGY_LOW_AGREEMENT_RECHECK,
+            STRATEGY_ENHANCED_REVIEW,
+        ],
     )
     p_submit.add_argument("--model", default="gemini-2.5-pro")
+    p_submit.add_argument(
+        "--threshold",
+        type=float,
+        default=0.9,
+        help="For low_agreement_recheck: rereview every verse below this Pass-1 score.",
+    )
+    p_submit.add_argument(
+        "--books",
+        help="For enhanced_review: comma-separated testament:slug list, e.g. 'nt:matthew,ot:genesis'",
+    )
 
     sub.add_parser("status", help="Show review-queue summary.")
 
@@ -389,6 +465,16 @@ def main() -> int:
                 added = submit_weighted_vocab(conn, args.model)
             elif args.strategy == STRATEGY_RANDOM_SAMPLE:
                 added = submit_random_sample(conn, args.model)
+            elif args.strategy == STRATEGY_LOW_AGREEMENT_RECHECK:
+                added = submit_low_agreement_recheck(conn, args.model, args.threshold)
+            elif args.strategy == STRATEGY_ENHANCED_REVIEW:
+                if not args.books:
+                    raise SystemExit("--books required for enhanced_review, e.g. 'nt:matthew,ot:genesis'")
+                book_list: list[tuple[str, str]] = []
+                for tok in args.books.split(","):
+                    t, s = tok.split(":")
+                    book_list.append((t.strip(), s.strip()))
+                added = submit_enhanced_review_for_books(conn, args.model, book_list)
             else:
                 raise AssertionError(args.strategy)
             total = sum(added.values())
