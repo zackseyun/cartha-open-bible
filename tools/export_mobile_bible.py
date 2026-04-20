@@ -65,12 +65,77 @@ CANONICAL_BOOK_ORDER: list[str] = [
     "JUD", "REV",
 ]
 
+# Deuterocanonical / Apocrypha export. Walks `translation/apocrypha/<slug>/`
+# directly instead of going through `draft.iter_source_verses(...)` because
+# these books have no SBLGNT or WLC entry — their source is the LXX (and
+# in a few cases Latin / Syriac witnesses). The canonical export still
+# needs the source files for completeness checks; Apocrypha instead uses
+# whatever verse YAMLs are published and requires a contiguous 1..N
+# sequence per chapter.
+#
+# Book codes, titles, and directory slugs are kept in sync with the
+# cartha.website and cartha.ai.mobile canonical book lists. If you add
+# a new Apocryphal book here, also extend:
+#   - cartha.ai.mobile/lib/screens/bible/bible_catalog.dart (canonicalBibleBooks)
+#   - cartha.website/src/app/(main)/cartha-open-bible/bibleData.js (CANONICAL_BOOKS + APOCRYPHA_NORMALIZED)
+# so the frontends partition and render the new book correctly.
+APOCRYPHA_ROOT = TRANSLATION_ROOT / "apocrypha"
+
+APOCRYPHA_BOOK_ORDER: list[str] = [
+    "TOB", "JDT", "ESG", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL",
+    "1MA", "2MA", "3MA", "4MA", "1ES", "2ES", "MAN", "PS2",
+]
+
+APOCRYPHA_BOOK_TITLES: dict[str, str] = {
+    "TOB": "Tobit",
+    "JDT": "Judith",
+    "ESG": "Additions to Esther",
+    "WIS": "Wisdom of Solomon",
+    "SIR": "Sirach",
+    "BAR": "Baruch",
+    "LJE": "Letter of Jeremiah",
+    "PAZ": "Prayer of Azariah",
+    "SUS": "Susanna",
+    "BEL": "Bel and the Dragon",
+    "1MA": "1 Maccabees",
+    "2MA": "2 Maccabees",
+    "3MA": "3 Maccabees",
+    "4MA": "4 Maccabees",
+    "1ES": "1 Esdras",
+    "2ES": "2 Esdras",
+    "MAN": "Prayer of Manasseh",
+    "PS2": "Psalm 151",
+}
+
+APOCRYPHA_BOOK_SLUGS: dict[str, str] = {
+    "TOB": "tobit",
+    "JDT": "judith",
+    "ESG": "additions_to_esther",
+    "WIS": "wisdom_of_solomon",
+    "SIR": "sirach",
+    "BAR": "baruch",
+    "LJE": "letter_of_jeremiah",
+    "PAZ": "prayer_of_azariah",
+    "SUS": "susanna",
+    "BEL": "bel_and_the_dragon",
+    "1MA": "1_maccabees",
+    "2MA": "2_maccabees",
+    "3MA": "3_maccabees",
+    "4MA": "4_maccabees",
+    "1ES": "1_esdras",
+    "2ES": "2_esdras",
+    "MAN": "prayer_of_manasseh",
+    "PS2": "psalm_151",
+}
+
 
 def book_title(book_code: str) -> str:
     if book_code in sblgnt.BOOK_TITLES:
         return sblgnt.BOOK_TITLES[book_code]
     if book_code in wlc.OT_BOOKS:
         return wlc.OT_BOOKS[book_code][2]
+    if book_code in APOCRYPHA_BOOK_TITLES:
+        return APOCRYPHA_BOOK_TITLES[book_code]
     raise ValueError(f"Unknown book code: {book_code}")
 
 
@@ -141,10 +206,81 @@ def export_book(book_code: str) -> dict[str, Any] | None:
     }
 
 
+def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
+    """Walk `translation/apocrypha/<slug>/<NNN>/<VVV>.yaml` directly.
+    Apocrypha books have no SBLGNT/WLC source to validate completeness
+    against, so `expected_chapter_map` can't be used. Instead we include
+    each chapter whose published verse YAMLs form a contiguous 1..N
+    sequence — any gap mid-chapter disqualifies that chapter, but later
+    chapters with gaps are still skipped individually (a gap in chapter
+    2 doesn't withhold chapter 3). This mirrors the canonical export's
+    policy that partial chapters never ship to the reader."""
+    slug = APOCRYPHA_BOOK_SLUGS.get(book_code)
+    if slug is None:
+        return None
+    book_dir = APOCRYPHA_ROOT / slug
+    if not book_dir.exists():
+        return None
+
+    by_chapter: dict[int, dict[int, str]] = defaultdict(dict)
+    for chapter_dir in sorted(book_dir.iterdir()):
+        if not chapter_dir.is_dir():
+            continue
+        try:
+            chapter_num = int(chapter_dir.name)
+        except ValueError:
+            continue
+        for verse_file in sorted(chapter_dir.glob("*.yaml")):
+            try:
+                verse_num = int(verse_file.stem)
+            except ValueError:
+                continue
+            record = yaml.safe_load(verse_file.read_text(encoding="utf-8")) or {}
+            text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
+            if not text:
+                continue
+            by_chapter[chapter_num][verse_num] = text
+
+    chapters_out: list[dict[str, Any]] = []
+    for chapter in sorted(by_chapter):
+        verses = by_chapter[chapter]
+        verse_nums = sorted(verses)
+        if not verse_nums:
+            continue
+        # Contiguous 1..N required — a missing verse mid-chapter leaves
+        # the reader staring at a misnumbered body.
+        expected = list(range(1, verse_nums[-1] + 1))
+        if verse_nums != expected:
+            continue
+        chapters_out.append({
+            "chapter": chapter,
+            "verses": [
+                {"verse": verse_num, "text": verses[verse_num]}
+                for verse_num in verse_nums
+            ],
+        })
+
+    if not chapters_out:
+        return None
+
+    return {
+        "name": APOCRYPHA_BOOK_TITLES[book_code],
+        "chapters": chapters_out,
+    }
+
+
 def export_translation() -> dict[str, Any]:
     books: list[dict[str, Any]] = []
     for book_code in CANONICAL_BOOK_ORDER:
         exported = export_book(book_code)
+        if exported is not None:
+            books.append(exported)
+    # Apocrypha appended after the 66-book canon so every consumer's
+    # OT/NT ordering assumption stays intact. Frontends partition these
+    # into a dedicated Apocrypha section by book name, so position
+    # in this list is purely a sort key.
+    for book_code in APOCRYPHA_BOOK_ORDER:
+        exported = export_apocrypha_book(book_code)
         if exported is not None:
             books.append(exported)
 
