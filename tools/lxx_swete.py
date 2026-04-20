@@ -75,8 +75,8 @@ DEUTEROCANONICAL_BOOKS: dict[str, tuple[int, int, int, str, str]] = {
     # parallel pages. Pr Azariah + Song of Three are embedded in Daniel 3
     # (pages within Daniel); Susanna and Bel are separately paged.
     "ADA":   (3, 542, 615, "Greek Additions to Daniel",        "greek_daniel"),
-    "1MA":   (3, 617, 680, "1 Maccabees",                      "1_maccabees"),
-    "2MA":   (3, 681, 733, "2 Maccabees",                      "2_maccabees"),
+    "1MA":   (3, 617, 684, "1 Maccabees",                      "1_maccabees"),
+    "2MA":   (3, 685, 733, "2 Maccabees",                      "2_maccabees"),
     "3MA":   (3, 734, 752, "3 Maccabees",                      "3_maccabees"),
     "4MA":   (3, 752, 789, "4 Maccabees",                      "4_maccabees"),
     "LJE":   (3, 895, 904, "Letter of Jeremiah",               "letter_of_jeremiah"),
@@ -149,7 +149,13 @@ def transcribed_page_path(vol: int, scan_page: int) -> pathlib.Path:
     return TRANSCRIBED_DIR / f"vol{vol}_p{scan_page:04d}.txt"
 
 
-_BODY_RE = re.compile(r"\[BODY\]\s*\n(.*?)(?=\n\[(?:APPARATUS|MARGINALIA|RUNNING HEAD|PLATE|BLANK)\]|\Z)", re.DOTALL)
+# Stop at any section tag, INCLUDING another [BODY] tag (Tobit pages
+# occasionally print B-text and S-text blocks each with their own [BODY]
+# header, and the second one must start a new match, not be body content).
+_BODY_RE = re.compile(
+    r"\[BODY\]\s*\n(.*?)(?=\n\[(?:BODY|APPARATUS|MARGINALIA|RUNNING HEAD|PLATE|BLANK)\]|\Z)",
+    re.DOTALL,
+)
 
 
 def extract_body(page_text: str) -> str:
@@ -280,10 +286,19 @@ def parse_running_head_chapter(page_text: str) -> int | None:
     # Running heads often have the chapter number appearing once as a
     # bare Roman (in the "verse" position the Roman took over from the
     # usual "Roman + Arabic" pair).
+    #
+    # NOTE: No Apocryphal book has more than ~51 chapters (Sirach); cap
+    # at 30 to reject spurious matches where single Latin letters C or D
+    # get read as Roman 100 / 500 (Greek Esther's chapter-letter labels
+    # A, B, C, D, E, F are the canonical case).
     best = 0
     for rm2 in _RUNNING_HEAD_ROMAN_ONLY_RE.finditer(head):
-        v = roman_to_int(rm2.group(1))
-        if v and v < 100:  # skip anything absurd
+        roman = rm2.group(1)
+        # Reject bare single-letter C or D (chapter letters in Greek Esther).
+        if roman in ("C", "D"):
+            continue
+        v = roman_to_int(roman)
+        if v and 1 <= v <= 30:
             best = max(best, v)
     return best or None
 
@@ -347,24 +362,77 @@ _TOBIT_S_TEXT_SIGNALS = ("Τωβειθ", "Τωβιθ", "\u05D0", "ℵ")
 
 
 def split_tobit_b_text(body: str) -> str:
-    """Drop Tobit's S-text (Sinaiticus) block and return only B-text."""
-    # Split on one-or-more blank lines
+    """Drop Tobit's S-text (Sinaiticus) block and return only B-text.
+
+    Swete consistently prints B-text ABOVE S-text on Tobit pages with a
+    blank line between. Discriminators, in order of specificity:
+
+      1. **Content signals** (Τωβειθ, Hebrew ALEF א, ℵ) — distinctive
+         Sinaiticus spellings/sigla. Drop any block that has them.
+      2. **Verse-number restart** — if block B's first verse marker is
+         substantially lower than block A's last verse marker, block B
+         is an S-text restart (same content, different recension).
+      3. **B-text continuation across blocks** — if block B's first
+         verse marker continues smoothly from block A's last, the two
+         are both B-text (just a paragraph break). Keep both.
+    """
     blocks = re.split(r"\n\s*\n+", body)
     if len(blocks) == 1:
-        # No blank-line separator — assume pure B-text continuation
         return body
-    kept = []
+
+    # Pass 1: content signals
+    kept: list[str] = []
     for b in blocks:
-        # An S-text block contains a distinctive signal word/char. Drop it.
-        if any(sig in b for sig in _TOBIT_S_TEXT_SIGNALS):
+        if not any(sig in b for sig in _TOBIT_S_TEXT_SIGNALS):
+            kept.append(b)
+    # If content filter dropped any blocks, we trust it.
+    if len(kept) < len(blocks) and kept:
+        return "\n\n".join(kept)
+
+    # Pass 2: verse-number-restart detection on consecutive block pairs.
+    # Walk blocks in order; stop when we detect an S-text restart UNLESS
+    # the new block opens with an explicit chapter-start marker (Roman
+    # numeral), which indicates a within-page chapter transition
+    # (legitimate B-text continuation in a new chapter).
+    def first_verse(block: str) -> int | None:
+        m = _VERSE_MARKER_RE.search(block[:200])
+        return int(m.group("num")) if m else None
+
+    def last_verse(block: str) -> int | None:
+        matches = list(_VERSE_MARKER_RE.finditer(block))
+        return int(matches[-1].group("num")) if matches else None
+
+    def opens_with_chapter_marker(block: str) -> bool:
+        # Matches patterns like "IV 1 Ἐν", "IV (1,2) 1 Ἐν", "V Ἀλλʼ",
+        # or bare "I " followed by capital Greek word (implicit verse 1).
+        stripped = block.lstrip()
+        # Strip Β siglum if present
+        if stripped.startswith("Β ") or stripped.startswith("Β\n"):
+            stripped = stripped[2:]
+        stripped = stripped.lstrip()
+        pat = re.compile(r"^[IVXLCDMΙΧ]{1,6}\s+(?:\(\d+(?:,\s*\d+)?\)\s*)?(?:\d+\s+)?[Α-Ω]")
+        return bool(pat.match(stripped))
+
+    b_text_blocks = [blocks[0]]
+    for b in blocks[1:]:
+        prev_last = last_verse(b_text_blocks[-1])
+        this_first = first_verse(b)
+        # If block opens with an explicit chapter marker, it's new-chapter
+        # B-text. Keep it.
+        if opens_with_chapter_marker(b):
+            b_text_blocks.append(b)
             continue
-        kept.append(b)
-    if not kept:
-        # All blocks matched — fall back to the first (most likely B-text
-        # on a page where the whole section happens to contain `ℵ` in
-        # apparatus-like form). Safer to return something than nothing.
-        return blocks[0]
-    return "\n\n".join(kept)
+        if prev_last is None or this_first is None:
+            # Can't determine; conservatively drop.
+            break
+        # If this block's first verse is materially lower than the prev's
+        # last verse, it's an S-text restart. Drop.
+        if this_first < prev_last - 3:
+            break
+        # Otherwise, B-text continuation. Keep.
+        b_text_blocks.append(b)
+
+    return "\n\n".join(b_text_blocks)
 
 
 def _scan_chapter_boundaries(
@@ -455,14 +523,30 @@ def _scan_chapter_boundaries(
     page_list = pages
     last_rh: int | None = None
     last_page_idx: int | None = None
+
+    # --- Chapter-1 seeding ---
+    # Many Apocryphal books in Swete have a title-only first page, so no
+    # running head ever shows chapter 1. Seed chapter 1 at position 0 of
+    # the first page with content, so the walk starts there.
+    first_content_page = None
+    for idx, (sp, rh, cl) in enumerate(page_list):
+        if cl:
+            first_content_page = (idx, sp, rh, cl)
+            break
+    if first_content_page is not None:
+        _idx, _sp, _rh, _cl = first_content_page
+        # Try explicit/implicit marker for chapter 1 first
+        pos = find_explicit(_cl, 1) or find_implicit(_cl, 1)
+        if pos is None:
+            # No marker — seed at position 0
+            pos = 0
+        boundaries.append((_sp, pos, 1, pos > 0))  # implicit if seeded
+
     for idx, (scan_page, rh_chap, cleaned) in enumerate(page_list):
         if rh_chap is None:
             continue
 
         if last_rh is None:
-            pos = find_explicit(cleaned, 1) or find_implicit(cleaned, 1)
-            if pos is not None and rh_chap == 1:
-                boundaries.append((scan_page, pos, 1, False))
             last_rh = rh_chap
             last_page_idx = idx
             continue
@@ -611,7 +695,13 @@ def parse_pages_to_verses(
         if current_verse is None or not current_text:
             return None
         txt = " ".join(current_text).strip()
+        # Rejoin hyphens that were left across page-block boundaries
+        # (e.g. "πορευ- θεὶς" → "πορευθεὶς").
+        txt = re.sub(r"([Α-Ωα-ωἀ-ῼ])[-‐]\s+([Α-Ωα-ωἀ-ῼ])", r"\1\2", txt)
+        # Collapse whitespace before punctuation
         txt = re.sub(r"\s+([·,.;])", r"\1", txt)
+        # Normalize multiple spaces
+        txt = re.sub(r"\s+", " ", txt)
         return SwtVerse(
             book_code=book_code,
             chapter=current_chapter,
@@ -774,16 +864,57 @@ def parse_pages_to_verses(
         yield v
 
 
+FINAL_CORPUS_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "final_corpus"
+
+
+def _load_final_corpus(book_code: str) -> list[SwtVerse] | None:
+    """Load the book's verses from the hybrid final corpus (JSONL) if
+    available. Returns None if the book isn't in the final corpus."""
+    import json as _json
+    path = FINAL_CORPUS_DIR / f"{book_code}.jsonl"
+    if not path.exists():
+        return None
+    out: list[SwtVerse] = []
+    with path.open("r", encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            rec = _json.loads(line)
+            out.append(
+                SwtVerse(
+                    book_code=rec["book"],
+                    chapter=int(rec["chapter"]),
+                    verse=int(rec["verse"]),
+                    greek_text=rec["greek"],
+                    source_page=rec.get("source_page"),
+                    # Keep the translation label distinguishable: "ours"
+                    # = our OCR+parser pipeline; "first1kgreek" = First
+                    # Thousand Years of Greek TEI-XML source.
+                    translation=(
+                        "swete-1909-ocr" if rec.get("source") == "ours"
+                        else "swete-1909-first1kgreek"
+                    ),
+                )
+            )
+    return out
+
+
 def iter_source_verses(book_code: str) -> Iterator[SwtVerse]:
     """Yield SwtVerse instances for the whole book, in chapter/verse order.
 
-    This is the entry point consumed by chapter_queue and chapter_worker,
-    mirroring the sblgnt/wlc readers. The underlying parser walks the
-    transcribed Swete pages, handles Swete-specific layout features
-    (hyphenated line breaks, parenthesized marginal line numbers, B-text
-    sigla), and emits one `SwtVerse` per (chapter, verse).
+    Uses the hybrid final corpus (our OCR + First1KGreek calibration)
+    when available; falls back to the raw OCR parser otherwise.
+
+    Consumed by chapter_queue and chapter_worker, mirroring the
+    sblgnt/wlc readers.
     """
-    return parse_pages_to_verses(book_code)
+    final = _load_final_corpus(book_code)
+    if final is not None:
+        for v in final:
+            yield v
+        return
+    yield from parse_pages_to_verses(book_code)
 
 
 def load_verse(book_code: str, chapter: int, verse: int) -> SwtVerse:
