@@ -197,18 +197,42 @@ def call_azure_parse(
         "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
         "tools": [PARSE_TOOL],
     }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"api-key": api_key, "Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=300) as resp:
-            body = json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"Azure HTTP {exc.code}: {detail[:600]}") from exc
+    # Retry up to 10 times with exponential backoff on 429 rate limits
+    # and transient network errors. Caps each wait at 120s; total budget
+    # ~15 min per chapter in the worst case.
+    last_exc: Exception | None = None
+    for attempt in range(10):
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"api-key": api_key, "Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                body = json.loads(resp.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            if exc.code == 429 and attempt < 9:
+                retry_after = exc.headers.get("Retry-After")
+                try:
+                    wait_s = float(retry_after) if retry_after else 10 * (2 ** min(attempt, 4))
+                except (TypeError, ValueError):
+                    wait_s = 10 * (2 ** min(attempt, 4))
+                wait_s = min(max(wait_s, 10), 120)
+                time.sleep(wait_s)
+                last_exc = RuntimeError(f"Azure HTTP 429 (retry {attempt+1}): {detail[:200]}")
+                continue
+            raise RuntimeError(f"Azure HTTP {exc.code}: {detail[:600]}") from exc
+        except (TimeoutError, urllib.error.URLError) as exc:
+            if attempt < 9:
+                time.sleep(10 * (2 ** min(attempt, 4)))
+                last_exc = exc
+                continue
+            raise RuntimeError(f"Azure request failed: {exc}") from exc
+    else:
+        raise last_exc or RuntimeError("Azure request failed after retries")
 
     choices = body.get("choices") or []
     if len(choices) != 1:

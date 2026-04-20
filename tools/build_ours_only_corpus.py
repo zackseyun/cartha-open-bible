@@ -197,9 +197,9 @@ def format_health_report(per_book: list[dict]) -> str:
     ])
     for r in rows:
         lines.append(
-            f"| {r['book']} | {r['total']} | {r['ai_vision']} | {r['regex_parse']} | "
-            f"{r['val_agree']} | {r['val_minor_mismatch']} | {r['val_major_mismatch']} | "
-            f"{r['val_no_reference']} | {r['missing_vs_first1k']} |"
+            f"| {r['book']} | {r.get('total',0)} | {r.get('ai_vision',0)} | {r.get('regex_parse',0)} | "
+            f"{r.get('val_agree',0)} | {r.get('val_minor_mismatch',0)} | {r.get('val_major_mismatch',0)} | "
+            f"{r.get('val_no_reference',0)} | {r.get('missing_vs_first1k',0)} |"
         )
     lines.extend([
         "",

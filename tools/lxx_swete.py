@@ -79,7 +79,7 @@ DEUTEROCANONICAL_BOOKS: dict[str, tuple[int, int, int, str, str]] = {
     "2MA":   (3, 685, 733, "2 Maccabees",                      "2_maccabees"),
     "3MA":   (3, 734, 752, "3 Maccabees",                      "3_maccabees"),
     "4MA":   (3, 752, 789, "4 Maccabees",                      "4_maccabees"),
-    "LJE":   (3, 895, 904, "Letter of Jeremiah",               "letter_of_jeremiah"),
+    "LJE":   (3, 401, 407, "Letter of Jeremiah",               "letter_of_jeremiah"),
     # Prayer of Manasseh + Psalm 151 are very small (a few verses each)
     # and live in the Odes appendix. Scan pages TBD — probe before
     # enqueueing drafts.
