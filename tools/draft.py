@@ -354,6 +354,11 @@ def source_edition_for_book(book_code: str) -> str:
         return "SBLGNT"
     if book_code in wlc.OT_BOOKS:
         return "WLC"
+    # Prayer of Manasseh is not in Codex Vaticanus, so not in Swete 1909.
+    # Its Greek text comes from Charles 1913 APOT Vol 1 (PD) — see
+    # sources/lxx/prayer_of_manasseh/README.md.
+    if book_code == "MAN":
+        return "charles-1913-apot-vol1"
     if book_code in lxx_swete.DEUTEROCANONICAL_BOOKS:
         return "lxx-swete-1909"
     raise ValueError(f"Unknown book code: {book_code}")
