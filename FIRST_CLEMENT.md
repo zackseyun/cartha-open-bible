@@ -10,10 +10,13 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/1_clement/README.md`](sources/1_clement/README.md)
 
-> **Status: source-acquisition phase.** Public-domain Greek source
+> **Status: source-acquisition + active OCR phase.** Public-domain Greek source
 > editions are now vendored locally (gitignored + manifest-tracked).
 > 1 Clement is a Greek-source Phase 13 text and reuses the same family
-> of tooling as other Group A works.
+> of tooling as other Group A works. An initial OCR pass is now underway
+> from **Funk 1901**, and the opening Greek sequence of *1 Clement I*
+> has been captured from PDF pages **261, 263, 265, 267, 269, 271,
+> 273**.
 
 ## Why 1 Clement
 
@@ -43,7 +46,7 @@ Zone 1 source layer.
 | Edition | Role | Status |
 |---|---|---|
 | Lightfoot, *The Apostolic Fathers* (1889) | major PD Greek/English critical source for 1 Clement | vendored locally |
-| Funk, *Patres Apostolici* (1901) | PD Greek critical source | vendored locally |
+| Funk, *Patres Apostolici* (1901) | PD Greek critical source | vendored locally; active OCR source |
 
 ## Zone 2 consult
 
@@ -64,9 +67,21 @@ These remain consult-only under the normal COB source policy.
 The shared local-PDF OCR tool for this track is
 [`tools/greek_extra_pdf_ocr.py`](tools/greek_extra_pdf_ocr.py).
 
+The helper scaffold for the current raw layer is
+[`tools/first_clement.py`](tools/first_clement.py).
+
+## Current source-layout note
+
+The current OCR work shows that **Funk 1901** is the cleanest practical
+starting source for 1 Clement. In the PDF:
+
+- page **260** is the transition into 1 Clement
+- odd-numbered pages from **261** onward carry the Greek text
+- adjacent even-numbered pages carry the Latin translation / notes
+
 ## Immediate next steps
 
-1. OCR the vendored Greek pages from the local PDFs
+1. Continue OCR from the Funk 1901 Greek pages
 2. Structure the 65 chapters cleanly
 3. Build the 1 Clement prompt builder
 4. Draft + revise

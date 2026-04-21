@@ -83,6 +83,14 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
   - `sources/1_clement/README.md` + `MANIFEST.md`
   - `.gitignore` updated so the local source PDFs stay out of git while
     their hashes and edition metadata remain documented
+- **1 Clement OCR pilot started**:
+  - Funk 1901 selected as the practical first OCR source
+  - page `260` confirmed the transition into 1 Clement
+  - pages `261, 263, 265, 267, 269, 271, 273` captured the ongoing
+    Greek text for the opening of *1 Clement I*
+  - adjacent even pages confirmed the source layout as interleaved
+    Latin translation / notes
+  - helper scaffold added at `tools/first_clement.py`
 - **Didache OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
   on Hitchcock & Brown 1884 pages 16 and 20, writing initial raw OCR
   outputs into `sources/didache/transcribed/raw/`
