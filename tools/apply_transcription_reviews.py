@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """apply_transcription_reviews.py — tiered applier for Azure GPT-5.4 reviews.
 
-Reads the structured corrections in sources/lxx/swete/reviews/azure/*.review.json
+Reads the structured corrections in sources/lxx/swete/reviews/gpt54/*.review.json
 and applies them to sources/lxx/swete/transcribed/*.txt in tiers.
 
 Safety rules:
@@ -35,7 +35,7 @@ from typing import Any
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSCRIBED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
-REVIEWS_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "azure"
+REVIEWS_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "gpt54"
 APPLIED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "applied"
 WORKLIST_PATH = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "HUMAN_REVIEW_WORKLIST.md"
 

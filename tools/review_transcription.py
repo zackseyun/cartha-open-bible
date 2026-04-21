@@ -11,7 +11,7 @@ Outputs:
 - <stem>.review.meta.json provenance + runtime metadata
 
 Default output directory:
-  sources/lxx/swete/reviews/azure/
+  sources/lxx/swete/reviews/gpt54/
 
 Usage:
   python3 tools/review_transcription.py --vol 2 --page 650
@@ -41,7 +41,7 @@ except ImportError as exc:  # pragma: no cover
 REPO_ROOT = transcribe_source.REPO_ROOT
 PROMPTS_DIR = REPO_ROOT / "tools" / "prompts"
 TRANSCRIBED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
-DEFAULT_OUTPUT_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "azure"
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "gpt54"
 PROMPT_VERSION = "review_v1_2026-04-19"
 TOOL_NAME = "submit_transcription_review"
 
@@ -152,7 +152,7 @@ def azure_api_version() -> str:
 
 
 def load_prompt() -> str:
-    return (PROMPTS_DIR / "review_greek_swete_azure.md").read_text(encoding="utf-8")
+    return (PROMPTS_DIR / "review_greek_swete_gpt54.md").read_text(encoding="utf-8")
 
 
 def review_output_dir(override: str | None) -> pathlib.Path:
