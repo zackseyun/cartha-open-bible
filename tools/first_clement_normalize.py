@@ -23,6 +23,7 @@ import first_clement
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 RAW_DIR = REPO_ROOT / "sources" / "1_clement" / "transcribed" / "raw"
 OUT_DIR = REPO_ROOT / "sources" / "1_clement" / "transcribed"
+SUPPLEMENT_DIR = OUT_DIR / "supplemental"
 
 BODY_RE = re.compile(
     r"\[BODY\]\s*\n(.*?)(?=\n\[(?:RUNNING HEAD|APPARATUS|FOOTNOTES|MARGINALIA|BLANK|PLATE)\]|\n---END-PAGE---|\Z)",
@@ -222,6 +223,29 @@ def write_outputs(chapters: dict[int, ChapterBuffer], missing: list[int]) -> dic
         "missing_chapters": missing,
         "chapters": chapter_map,
     }
+
+    # Overlay any explicit chapter supplements last.
+    for sup in sorted(SUPPLEMENT_DIR.glob("ch*.txt")):
+        m = re.fullmatch(r"ch(\d{2})\.txt", sup.name)
+        if not m:
+            continue
+        chapter = int(m.group(1))
+        lines = sup.read_text(encoding="utf-8").splitlines()
+        body = " ".join(line.strip() for line in lines if line.strip() and not line.startswith("#"))
+        out_path = OUT_DIR / f"ch{chapter:02d}.txt"
+        out_path.write_text(sup.read_text(encoding="utf-8"), encoding="utf-8")
+        notes = [f"Supplemented from {sup.relative_to(REPO_ROOT)} pending direct source-layer recovery."]
+        chapter_map[f"{chapter:02d}"] = {
+            "chapter": chapter,
+            "source_pages": [],
+            "chars": len(body),
+            "path": str(out_path.relative_to(REPO_ROOT)),
+            "notes": notes,
+        }
+        if chapter in missing:
+            missing.remove(chapter)
+
+    payload["chapter_count_present"] = len(chapter_map)
     (OUT_DIR / "chapter_map.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

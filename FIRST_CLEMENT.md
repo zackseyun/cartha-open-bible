@@ -10,15 +10,17 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/1_clement/README.md`](sources/1_clement/README.md)
 
-> **Status: source-acquisition + normalized-Greek phase.** Public-domain Greek source
+> **Status: source-acquisition + draft-ready normalized phase.** Public-domain Greek source
 > editions are now vendored locally (gitignored + manifest-tracked).
 > 1 Clement is a Greek-source Phase 13 text and reuses the same family
 > of tooling as other Group A works. An initial OCR pass is now underway
 > from **Funk 1901**, and the opening Greek sequence of *1 Clement I*
 > has been captured from PDF pages **261, 263, 265, 267, 269, 271,
 > 273**. That OCR pass has now been extended through the Greek 1 Clement
-> span in Funk and normalized into chapter files, with one explicit
-> unresolved source gap at **chapter 42**.
+> span in Funk and normalized into chapter files. The one OCR gap
+> (**chapter 42**, with chapter 43 start also affected) is now filled
+> provisionally from a public digital Greek supplement so the book is
+> structurally complete and prompt-ready.
 
 ## Why 1 Clement
 
@@ -96,13 +98,15 @@ The current normalization pass now produces:
 - `sources/1_clement/transcribed/ch01.txt` … `ch65.txt`
 - `sources/1_clement/transcribed/chapter_map.json`
 
-with one explicit unresolved gap:
+The current caveat is now narrower:
 
-- **chapter 42** is still missing from the normalized Greek layer and
-  needs a targeted recovery pass
+- **chapters 42 and 43** are currently supplied by a documented
+  supplemental public digital Greek recovery rather than directly from
+  the OCRed Funk page stream, pending a future direct-source recovery
 
 ## Immediate next steps
 
-1. Recover the missing chapter-42 Greek source span
-2. Begin drafting from the normalized chapter files
-3. Revise + audit
+1. Begin drafting from the normalized chapter files
+2. Revise + audit
+3. Optionally replace supplemental chapter-42/43 recovery with direct
+   source-layer OCR later
