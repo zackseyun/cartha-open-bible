@@ -93,8 +93,11 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
   - helper scaffold added at `tools/first_clement.py`
   - normalization tooling added at `tools/first_clement_normalize.py`
   - prompt builder added at `tools/build_first_clement_prompt.py`
-  - normalized chapter files now exist with one explicit unresolved
-    source gap: chapter `42`
+  - normalized chapter files now exist for chapters `1–65`
+  - chapter `42` and the full start of chapter `43` are currently
+    filled from a documented supplemental public digital Greek source,
+    pending future direct OCR recovery
+  - helper fetcher added at `tools/fetch_first_clement_supplements.py`
 - **Didache OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
   on Hitchcock & Brown 1884 pages 16 and 20, writing initial raw OCR
   outputs into `sources/didache/transcribed/raw/`
