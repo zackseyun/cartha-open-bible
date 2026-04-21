@@ -1,6 +1,6 @@
 # Residual uncertainty — medium/low-confidence verses
 
-**Generated:** 2026-04-21 13:43 UTC
+**Generated:** 2026-04-21 14:26 UTC
 
 After the Phase 8 pipeline (raw OCR → AI-vision re-parse → scan-grounded
 adjudication → rescue passes), this document enumerates every verse
@@ -9,8 +9,8 @@ that did NOT reach high confidence in the current final corpus.
 ## Summary
 
 - **Total adjudicated verses:** 6337
-- **High confidence:** 6336 (100.0%)
-- **Medium confidence:** 1 (0.02%)
+- **High confidence:** 6337 (100.0%)
+- **Medium confidence:** 0 (0.00%)
 - **Low confidence:** 0 (0.00%)
 
 ## What medium/low confidence means
@@ -32,7 +32,7 @@ that did NOT reach high confidence in the current final corpus.
 | 4MA | 0 | 0 |
 | ADA | 0 | 0 |
 | ADE | 0 | 0 |
-| BAR | 1 | 0 |
+| BAR | 0 | 0 |
 | JDT | 0 | 0 |
 | LJE | 0 | 0 |
 | SIR | 0 | 0 |
@@ -41,10 +41,7 @@ that did NOT reach high confidence in the current final corpus.
 
 ## Per-verse detail
 
-### BAR
-
-- **BAR 1:1** — *medium*, verdict: `neither`
-  > On p. 374 at the superscript 1, Swete prints ΚΑΙ ... Ἀσαδίου with smooth breathing and a final comma. This differs from Amicarelli’s rough-breathed Ἁσαδίου and from the others’ formatting/orthography.
+No medium- or low-confidence verses remain in the current final corpus.
 
 ## Remediation pathway
 

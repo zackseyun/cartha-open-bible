@@ -69,10 +69,12 @@ is Ethiopic (Ge'ez) and the OCR backend differs.
   cross-check oracle — same pattern as First1KGreek for LXX Swete.
 - **OCR pipeline decision**: Azure GPT-5 **fails** on Ge'ez script
   despite handling Greek/Hebrew/Latin reliably. **Gemini 2.5 Flash
-  succeeds** (validated on Dillmann 1851 page 15 — correct Ethiopic
-  Unicode output with word separators, sentence terminators, and
-  Ge'ez numerals preserved). The Enoch OCR pipeline therefore uses
-  Gemini 2.5; Azure GPT-5 remains primary for LXX + 2 Esdras.
+  also fails** — it emits Ethiopic characters but hallucinates the
+  underlying content. **Gemini 2.5 Pro in plaintext mode succeeds**
+  (validated on Dillmann 1851 against the Beta maṣāḥǝft oracle, with
+  correct Ethiopic Unicode, word separators, sentence terminators,
+  and strong line-level agreement). The Enoch pipeline therefore uses
+  Gemini 2.5 Pro; Azure GPT-5 remains primary for LXX + 2 Esdras.
 - **Scope doc** at `ENOCH.md`: per-chapter witness coverage,
   compositional structure (Book of Watchers + Parables +
   Astronomical + Dreams + Epistle), canonicity, translation
@@ -130,11 +132,13 @@ Phase 8 release.
   chapter 9. The fix was applied to `parsed_ai/1ES_009.json`, stale
   adjudications for that mis-keyed span were discarded, and the 1ES
   corpus was rebuilt from the corrected source.
-- **Residual state after rescue**: **6,336 high**, **1 medium**,
+- **BAR 1:1 resolved by micro-crop check**: the final breathing-mark
+  ambiguity around `Ἀσαδίου / Ἁσαδίου` was resolved by re-fetching the
+  page at higher resolution and checking an enlarged crop of the word
+  directly. The smooth breathing was legible enough to promote the
+  verse to `high`.
+- **Residual state after rescue**: **6,337 high**, **0 medium**,
   **0 low** in the current final corpus.
-- **Remaining honest residuals**:
-  - `BAR 1:1` — breathing/orthography-level ambiguity still too small to
-    promote beyond `medium`
 - **Method now documented**: see
   `docs/PHASE8_CORPUS_QUALITY_RESCUE.md` for the repeatable rescue loop
   used to make these improvements.

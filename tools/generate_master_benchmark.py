@@ -143,7 +143,11 @@ def format_md(data):
         f"- **Medium** (minor scan uncertainty): {conf_tot['medium']} ({conf_tot['medium']/max(1,total_conf)*100:.1f}%)",
         f"- **Low** (scan is damaged/illegible; best-guess reading): {conf_tot['low']} ({conf_tot['low']/max(1,total_conf)*100:.1f}%)",
         "",
-        f"The {high_pct:.1f}% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. Any remaining residual uncertainty is concentrated in a very small set of edge-case verses.",
+        (
+            f"The {high_pct:.1f}% high-confidence rate means that Azure GPT-5.4 vision was able to read every adjudicated Swete verse in the current corpus unambiguously enough to assign high confidence."
+            if conf_tot["medium"] == 0 and conf_tot["low"] == 0
+            else f"The {high_pct:.1f}% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. Any remaining residual uncertainty is concentrated in a very small set of edge-case verses."
+        ),
         "",
         "## Sources consulted (cross-validation, not text)",
         "",
@@ -218,9 +222,13 @@ def format_md(data):
         "| E | 1ES, BAR, ADE | Most challenging; recommend extra translator review. |",
         "",
         (
-            "The corpus is translation-ready for all 13 books. No low-confidence verses remain; the small number of medium-confidence verses should still get translator attention."
-            if conf_tot["low"] == 0
-            else "The corpus is translation-ready for all 13 books. Remaining low-confidence verses (listed above) should get translator attention but are not blockers."
+            "The corpus is translation-ready for all 13 books. No medium- or low-confidence verses remain in the current final corpus."
+            if conf_tot["medium"] == 0 and conf_tot["low"] == 0
+            else (
+                "The corpus is translation-ready for all 13 books. No low-confidence verses remain; the small number of medium-confidence verses should still get translator attention."
+                if conf_tot["low"] == 0
+                else "The corpus is translation-ready for all 13 books. Remaining low-confidence verses (listed above) should get translator attention but are not blockers."
+            )
         ),
     ])
     return "\n".join(lines) + "\n"
