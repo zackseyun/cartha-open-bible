@@ -27,6 +27,7 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import subprocess
 import tempfile
 import time
@@ -45,6 +46,30 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-pro"
 DEFAULT_VERTEX_SECRET_ID = "/cartha/openclaw/gemini_api_key_2"
 DEFAULT_VERTEX_LOCATION = "global"
 _VERTEX_CACHE: dict[str, object] = {"token": "", "expiry": 0.0, "project": ""}
+_FENCE_RE = re.compile(r"^```[a-zA-Z0-9_-]*\s*|\s*```$", re.MULTILINE)
+
+
+def sanitize_gemini_text(text: str) -> str:
+    text = text.strip()
+    text = _FENCE_RE.sub("", text).strip()
+    lines = text.splitlines()
+    if lines and lines[0].startswith("```"):
+        lines = lines[1:]
+    if lines and lines[-1].strip() == "```":
+        lines = lines[:-1]
+    # Strip obvious commentary/debug prefixes occasionally emitted by preview models.
+    cleaned: list[str] = []
+    skip_markers = (
+        "Wait, line ",
+        "Here is the transcription",
+        "Transcription:",
+        "```text",
+    )
+    for line in lines:
+        if any(line.startswith(marker) for marker in skip_markers):
+            continue
+        cleaned.append(line)
+    return "\n".join(cleaned).strip()
 
 
 def azure_endpoint() -> str:
@@ -251,14 +276,16 @@ def call_gemini_vision(
     for slot, api_key in enumerate(ordered, start=1):
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
         payload = {
+            "systemInstruction": {"parts": [{"text": system_prompt}]},
             "contents": [{
                 "parts": [
-                    {"text": system_prompt + "\n\nTranscribe this page following the instructions exactly."},
+                    {"text": "Transcribe this page following the instructions exactly."},
                     {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(image_bytes).decode("ascii")}},
                 ]
             }],
             "generationConfig": {
                 "temperature": 0.0,
+                "responseMimeType": "text/plain",
                 "maxOutputTokens": max_tokens,
             },
         }
@@ -282,7 +309,7 @@ def call_gemini_vision(
         if not cand:
             raise RuntimeError(f"Gemini returned no candidates; promptFeedback={body.get('promptFeedback')}")
         parts = cand.get("content", {}).get("parts") or []
-        text = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
+        text = sanitize_gemini_text("".join(part.get("text", "") for part in parts if isinstance(part, dict)))
         if not text:
             raise RuntimeError("Gemini returned empty text")
         return text, body.get("modelVersion", model)
@@ -305,15 +332,17 @@ def call_gemini_vertex_vision(
         f"publishers/google/models/{model}:generateContent"
     )
     payload = {
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
         "contents": [{
             "role": "user",
             "parts": [
-                {"text": system_prompt + "\n\nTranscribe this page following the instructions exactly."},
+                {"text": "Transcribe this page following the instructions exactly."},
                 {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(image_bytes).decode("ascii")}},
             ],
         }],
         "generationConfig": {
             "temperature": 0.0,
+            "responseMimeType": "text/plain",
             "maxOutputTokens": max_tokens,
         },
     }
@@ -333,7 +362,7 @@ def call_gemini_vertex_vision(
     if not cand:
         raise RuntimeError(f"Gemini Vertex returned no candidates; promptFeedback={body.get('promptFeedback')}")
     parts = cand.get("content", {}).get("parts") or []
-    text = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
+    text = sanitize_gemini_text("".join(part.get("text", "") for part in parts if isinstance(part, dict)))
     if not text:
         raise RuntimeError("Gemini Vertex returned empty text")
     return text, body.get("modelVersion", model)
