@@ -13,6 +13,7 @@ extra-canonical Greek prompt.
 Backends:
   - Azure GPT-5.4 vision (default)
   - Gemini Pro via the global AI Studio endpoint
+  - Gemini Pro via Vertex AI (global)
 
 Gemini keys can be supplied directly via `GEMINI_API_KEY` or resolved
 from AWS Secrets Manager (`/cartha/openclaw/gemini_api_key`, us-west-2).
@@ -41,6 +42,9 @@ PROMPT_PATH = REPO_ROOT / "tools" / "prompts" / "transcribe_greek_extra_generic.
 PROMPT_VERSION = "greek_extra_generic_v1_2026-04-21"
 DEFAULT_GEMINI_SECRET_ID = "/cartha/openclaw/gemini_api_key"
 DEFAULT_GEMINI_MODEL = "gemini-2.5-pro"
+DEFAULT_VERTEX_SECRET_ID = "/cartha/openclaw/gemini_api_key_2"
+DEFAULT_VERTEX_LOCATION = "global"
+_VERTEX_CACHE: dict[str, object] = {"token": "", "expiry": 0.0, "project": ""}
 
 
 def azure_endpoint() -> str:
@@ -109,6 +113,41 @@ def resolve_gemini_api_key(index: int = 1) -> str:
     if index < 1 or index > len(deduped):
         raise RuntimeError(f"Requested Gemini key index {index} out of range 1..{len(deduped)}")
     return deduped[index - 1]
+
+
+def resolve_vertex_service_account_info() -> dict[str, object]:
+    raw = os.environ.get("VERTEX_SA_JSON", "").strip()
+    if not raw:
+        sm = boto3.client("secretsmanager", region_name="us-west-2")
+        raw = sm.get_secret_value(
+            SecretId=os.environ.get("VERTEX_SECRET_ID", DEFAULT_VERTEX_SECRET_ID)
+        )["SecretString"].strip()
+    obj = json.loads(raw)
+    if not isinstance(obj, dict) or not obj.get("project_id"):
+        raise RuntimeError("Vertex service-account secret is not a valid service-account JSON object")
+    return obj
+
+
+def vertex_access_token() -> tuple[str, str]:
+    now = time.time()
+    if _VERTEX_CACHE["token"] and isinstance(_VERTEX_CACHE["expiry"], float) and _VERTEX_CACHE["expiry"] > now + 300:
+        return str(_VERTEX_CACHE["token"]), str(_VERTEX_CACHE["project"])
+
+    from google.oauth2 import service_account  # type: ignore
+    from google.auth.transport.requests import Request  # type: ignore
+
+    info = resolve_vertex_service_account_info()
+    creds = service_account.Credentials.from_service_account_info(
+        info,
+        scopes=["https://www.googleapis.com/auth/cloud-platform"],
+    )
+    creds.refresh(Request())
+    token = creds.token
+    expiry = creds.expiry.timestamp() if getattr(creds, "expiry", None) else (now + 3000)
+    _VERTEX_CACHE["token"] = token or ""
+    _VERTEX_CACHE["expiry"] = float(expiry)
+    _VERTEX_CACHE["project"] = str(info["project_id"])
+    return str(token), str(info["project_id"])
 
 
 def parse_pages(page_arg: int | None, pages_arg: str | None) -> list[int]:
@@ -251,6 +290,55 @@ def call_gemini_vision(
     raise last_err or RuntimeError("Gemini call failed on all configured keys")
 
 
+def call_gemini_vertex_vision(
+    image_bytes: bytes,
+    system_prompt: str,
+    *,
+    max_tokens: int,
+    model: str,
+) -> tuple[str, str]:
+    token, project_id = vertex_access_token()
+    location = os.environ.get("VERTEX_LOCATION", DEFAULT_VERTEX_LOCATION)
+    api_host = "aiplatform.googleapis.com" if location == "global" else f"{location}-aiplatform.googleapis.com"
+    url = (
+        f"https://{api_host}/v1/projects/{project_id}/locations/{location}/"
+        f"publishers/google/models/{model}:generateContent"
+    )
+    payload = {
+        "contents": [{
+            "role": "user",
+            "parts": [
+                {"text": system_prompt + "\n\nTranscribe this page following the instructions exactly."},
+                {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(image_bytes).decode("ascii")}},
+            ],
+        }],
+        "generationConfig": {
+            "temperature": 0.0,
+            "maxOutputTokens": max_tokens,
+        },
+    }
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=300) as r:
+            body = json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"Gemini Vertex HTTP {exc.code}: {detail[:500]}") from exc
+    cand = (body.get("candidates") or [None])[0]
+    if not cand:
+        raise RuntimeError(f"Gemini Vertex returned no candidates; promptFeedback={body.get('promptFeedback')}")
+    parts = cand.get("content", {}).get("parts") or []
+    text = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
+    if not text:
+        raise RuntimeError("Gemini Vertex returned empty text")
+    return text, body.get("modelVersion", model)
+
+
 def output_stem(prefix: str, page: int) -> str:
     safe = "".join(ch if ch.isalnum() or ch in {"-", "_"} else "_" for ch in prefix).strip("_")
     return f"{safe or 'greek_extra'}_p{page:04d}"
@@ -280,6 +368,13 @@ def process_page(
             max_tokens=max_tokens,
             model=gemini_model,
             key_index=gemini_key_index,
+        )
+    elif backend == "gemini-vertex":
+        text, model_id = call_gemini_vertex_vision(
+            image_bytes,
+            prompt,
+            max_tokens=max_tokens,
+            model=gemini_model,
         )
     else:
         text, model_id = call_azure_vision(image_bytes, prompt, max_tokens=max_tokens)
@@ -323,7 +418,7 @@ def main() -> int:
     p.add_argument("--dpi", type=int, default=300, help="Render DPI (default 300)")
     p.add_argument("--concurrency", type=int, default=1)
     p.add_argument("--max-completion-tokens", type=int, default=7000)
-    p.add_argument("--backend", choices=["azure", "gemini"], default="azure")
+    p.add_argument("--backend", choices=["azure", "gemini", "gemini-vertex"], default="azure")
     p.add_argument("--gemini-model", default=DEFAULT_GEMINI_MODEL)
     p.add_argument("--gemini-key-index", type=int, default=1)
     p.add_argument("--skip-existing", action="store_true")
@@ -354,7 +449,13 @@ def main() -> int:
     print(f"📄 pdf:    {pdf_path}")
     print(f"📂 out:    {out_dir}")
     print(f"📑 pages:  {', '.join(str(pg) for pg in pages)}")
-    print(f"🤖 backend:{args.backend}{f' ({args.gemini_model}, key #{args.gemini_key_index})' if args.backend == 'gemini' else ''}")
+    if args.backend == "gemini":
+        backend_label = f"{args.backend} ({args.gemini_model}, key #{args.gemini_key_index})"
+    elif args.backend == "gemini-vertex":
+        backend_label = f"{args.backend} ({args.gemini_model}, secret {os.environ.get('VERTEX_SECRET_ID', DEFAULT_VERTEX_SECRET_ID)})"
+    else:
+        backend_label = args.backend
+    print(f"🤖 backend:{backend_label}")
     if skipped:
         print(f"↷ skipping {skipped} page(s) already on disk")
     if args.dry_run:
