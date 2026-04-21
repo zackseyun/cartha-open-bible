@@ -43,6 +43,31 @@ later, the ~20% of Tobit verses those fragments cover will be
 upgraded transparently. Until then, every verse is translated from
 the Greek with its provenance clearly marked.
 
+### Licensing confirmed blocked — 2026-04-20
+
+Re-checked the IAA Leon Levy Dead Sea Scrolls Digital Library
+terms: text and images "may not be reproduced, displayed, modified
+or distributed in any form" without written permission. Same
+situation as Masada Sirach. The principal scholarly transcription
+(Fitzmyer, DJD XIX, 1995) is likewise under commercial copyright.
+**No clean-licensed path to the Qumran Aramaic Tobit exists as of
+this date.** We continue with Swete Greek (Long Recension via
+TOB_S / Codex Sinaiticus) as the working source.
+
+### Fallback Hebrew witness now vendored
+
+Adolf Neubauer's *The Book of Tobit: A Chaldee Text...* (Oxford:
+Clarendon, 1878) includes a Hebrew back-translation from the
+Aramaic Munich MS he edited. It is Public Domain (Neubauer d.
+1907) and is hosted by Sefaria. We have vendored it at
+`../../lxx/hebrew_parallels/sefaria_tobit.json` (76 verses,
+100% Hebrew coverage). This is **not an ancient witness** — it is
+a 19th-century scholarly reconstruction — and it is marked
+accordingly by `tools/hebrew_parallels.py` as `kind:
+indirect_hebrew`. Use it for proper names, idiom checks, and
+Semitic-flavor phrasing during the translation phase; do NOT
+treat it as a Vorlage.
+
 ## Reconstruction caveat
 
 The Qumran Tobit fragments are small and heavily reconstructed by
