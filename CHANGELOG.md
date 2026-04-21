@@ -159,6 +159,23 @@ text survives only via Latin + 6 daughter translations.
 - **Scaffolding** at `tools/2esdras/` with `multi_witness.py` exposing
   the target shape of the per-verse witness aggregator. OCR and
   per-witness transcription pipelines are next.
+- **OCR scaffold** at `tools/2esdras/ocr_pipeline.py`:
+  - source-aware CLI for `bensly1895`, `bensly1875`,
+    `violet1910-vol1`, and `violet1910-vol2`
+  - renders local PDF pages via `pdftocairo`
+  - calls Azure GPT-5 vision with source-specific transcription
+    prompts
+  - writes per-page `.txt` plus `.meta.json` provenance sidecars into
+    `sources/2esdras/raw_ocr/<source>/`
+- **Latin loader scaffold** at `tools/2esdras/latin_bensly.py`:
+  - defines the stable `latin/transcribed/chNN.txt` file format
+  - exposes `load_chapter()` / `load_verse()` for cleaned Latin input
+  - lets `tools/2esdras/multi_witness.py` become partially live as
+    soon as Latin chapter files exist, even before daughter witnesses
+    are finished
+- **Prompts added**:
+  - `tools/prompts/transcribe_2esdras_bensly_latin.md`
+  - `tools/prompts/transcribe_2esdras_violet_parallel.md`
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 
