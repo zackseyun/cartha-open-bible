@@ -1,0 +1,52 @@
+name: Regenerate status.json
+
+# Keeps the public translation-progress dashboard (powered by status.json,
+# which cartha.website fetches live from raw.githubusercontent.com on every
+# page load) in sync with the actual contents of translation/. Any drafting
+# commit to main triggers a regeneration; an hourly cron picks up anything
+# the path filter misses.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'translation/**'
+      - 'tools/build_status.py'
+  schedule:
+    - cron: '17 * * * *'  # hourly, off the hour to avoid contention
+  workflow_dispatch: {}
+
+concurrency:
+  group: regen-status
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # build_status.py uses git log, needs full history
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate status.json
+        run: python3 tools/build_status.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet status.json; then
+            echo "status.json unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status.json
+          git commit -m 'status: regenerate snapshot [skip ci]'
+          git push
