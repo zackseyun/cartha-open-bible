@@ -77,15 +77,52 @@ OT_BOOKS: list[tuple[str, str, int, int]] = [
     ("Malachi", "MAL", 4, 55),
 ]
 
+# Deuterocanonical (Apocrypha) targets. Verse totals are the standard
+# LXX / NRSV reference counts so the progress page has a meaningful
+# denominator even before we drill into per-chapter verse parity.
+# Slugs must match the directories under ``translation/deuterocanon/``
+# (see ``lxx_swete.DEUTEROCANONICAL_BOOKS``).
+DEUTEROCANON_BOOKS: list[tuple[str, str, int, int, str]] = [
+    ("Tobit", "TOB", 14, 244, "tobit"),
+    ("Judith", "JDT", 16, 339, "judith"),
+    ("Additions to Esther", "ESG", 6, 107, "additions_to_esther"),
+    ("Wisdom of Solomon", "WIS", 19, 436, "wisdom_of_solomon"),
+    ("Sirach", "SIR", 51, 1467, "sirach"),
+    ("Baruch", "BAR", 5, 213, "baruch"),
+    ("Letter of Jeremiah", "LJE", 1, 72, "letter_of_jeremiah"),
+    ("Prayer of Azariah and Song of the Three", "PAZ", 1, 68, "prayer_of_azariah"),
+    ("Susanna", "SUS", 1, 64, "susanna"),
+    ("Bel and the Dragon", "BEL", 1, 42, "bel_and_the_dragon"),
+    ("1 Maccabees", "1MA", 16, 924, "1_maccabees"),
+    ("2 Maccabees", "2MA", 15, 555, "2_maccabees"),
+    ("3 Maccabees", "3MA", 7, 228, "3_maccabees"),
+    ("4 Maccabees", "4MA", 18, 482, "4_maccabees"),
+    ("1 Esdras", "1ES", 9, 439, "1_esdras"),
+    ("Prayer of Manasseh", "MAN", 1, 15, "prayer_of_manasseh"),
+    ("Psalm 151", "PS151", 1, 7, "psalm_151"),
+]
+
 
 def book_slug(name: str) -> str:
     return name.lower().replace(" ", "_")
 
 
-def count_book(testament: str, book: str, chapter_count: int) -> dict[str, int]:
-    """Count chapters + verses drafted for a single book."""
-    slug = book_slug(book)
-    book_dir = TRANSLATION_ROOT / testament / slug
+def count_book(
+    testament: str,
+    book: str,
+    chapter_count: int,
+    slug: str | None = None,
+) -> dict[str, int]:
+    """Count chapters + verses drafted for a single book.
+
+    OT / NT directory names are derivable from the book title, but the
+    deuterocanonical catalog carries its own slug (e.g. ``1_maccabees``
+    isn't a lower+underscore transform of the title since the display
+    form is ``1 Maccabees``). Callers pass ``slug`` explicitly when the
+    on-disk directory name diverges from ``book_slug(book)``.
+    """
+    resolved_slug = slug or book_slug(book)
+    book_dir = TRANSLATION_ROOT / testament / resolved_slug
     if not book_dir.is_dir():
         return {"chapters_drafted": 0, "verses_drafted": 0}
     chapter_dirs = [p for p in book_dir.iterdir() if p.is_dir() and p.name.isdigit()]
@@ -154,6 +191,24 @@ def build_books(testament: str, catalog: list[tuple[str, str, int, int]]) -> lis
     return rows
 
 
+def build_deuterocanon_books(
+    catalog: list[tuple[str, str, int, int, str]],
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for name, code, chapters_total, verses_total, slug in catalog:
+        counts = count_book("deuterocanon", name, chapters_total, slug=slug)
+        rows.append({
+            "book": name,
+            "code": code,
+            "testament": "deuterocanon",
+            "slug": slug,
+            "chapters_total": chapters_total,
+            "verses_total": verses_total,
+            **counts,
+        })
+    return rows
+
+
 def testament_totals(books: list[dict[str, Any]]) -> dict[str, int]:
     books_drafted = sum(1 for b in books if b["chapters_drafted"] > 0)
     chapters_drafted = sum(b["chapters_drafted"] for b in books)
@@ -183,10 +238,17 @@ def git_head() -> tuple[str, str]:
 def main() -> int:
     nt = build_books("nt", NT_BOOKS)
     ot = build_books("ot", OT_BOOKS)
-    all_books = nt + ot
+    deuterocanon = build_deuterocanon_books(DEUTEROCANON_BOOKS)
+    all_books = nt + ot + deuterocanon
 
     nt_totals = testament_totals(nt)
     ot_totals = testament_totals(ot)
+    dc_totals = testament_totals(deuterocanon)
+    # Top-line ``books_total`` / ``verses_total`` stay pinned to the
+    # 66-book Protestant canon so the "% of the canon" hint on the
+    # progress page keeps its original meaning. Deuterocanonical
+    # progress is reported as its own sibling block so readers can see
+    # it without the main percentage jumping around as DC books land.
     totals = {
         "books_drafted": nt_totals["books_drafted"] + ot_totals["books_drafted"],
         "books_total": nt_totals["books_total"] + ot_totals["books_total"],
@@ -196,6 +258,7 @@ def main() -> int:
         "verses_total": nt_totals["verses_total"] + ot_totals["verses_total"],
         "nt": nt_totals,
         "ot": ot_totals,
+        "deuterocanon": dc_totals,
     }
 
     full_sha, short_sha = git_head()
