@@ -104,6 +104,37 @@ APOCRYPHA_BOOK_SLUGS: dict[str, str] = {
 }
 
 
+# Extra-canonical export. Walks `translation/extra_canonical/<slug>/`
+# directly. Unlike deuterocanon (verse-level YAMLs), most
+# extra-canonical texts are drafted as chapter-level YAMLs -- each
+# chapter YAML carries a single continuous translation block that
+# matches how these texts are historically read and rendered.
+# For those, we emit the whole chapter as a single synthetic "verse"
+# so the mobile reader gets one continuous-prose chapter unit.
+EXTRA_CANONICAL_ROOT = TRANSLATION_ROOT / "extra_canonical"
+
+EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
+    "DID",     # Didache
+    "1CLEM",   # 1 Clement
+]
+
+EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
+    "DID":   "Didache",
+    "1CLEM": "1 Clement",
+}
+
+EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
+    "DID":   "didache",
+    "1CLEM": "1_clement",
+}
+
+# Extra-canonical books that have chapter-level YAMLs (single text
+# block per chapter) rather than per-verse YAMLs. Export emits each
+# chapter as one synthetic verse because these texts aren't
+# verse-subdivided in standard reading editions.
+EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = {"DID", "1CLEM"}
+
+
 def book_title(book_code: str) -> str:
     if book_code in sblgnt.BOOK_TITLES:
         return sblgnt.BOOK_TITLES[book_code]
@@ -244,6 +275,92 @@ def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
     }
 
 
+def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
+    """Walk `translation/extra_canonical/<slug>/<NNN>.yaml` for
+    chapter-level books (Didache, 1 Clement, etc.), or the nested
+    chapter/verse layout for any future verse-level extra-canonical
+    books. Chapter-level YAMLs emit each chapter as a single synthetic
+    verse-1 block — these texts aren't verse-subdivided in standard
+    reading editions, so this matches the reader expectation.
+
+    A missing or empty chapter file is skipped; the export is
+    complete-chapters-only (same policy as canonical and apocrypha
+    exports).
+    """
+    slug = EXTRA_CANONICAL_BOOK_SLUGS.get(book_code)
+    if slug is None:
+        return None
+    book_dir = EXTRA_CANONICAL_ROOT / slug
+    if not book_dir.exists():
+        return None
+
+    chapters_out: list[dict[str, Any]] = []
+
+    if book_code in EXTRA_CANONICAL_CHAPTER_LEVEL:
+        # Chapter-level YAMLs: translation/extra_canonical/<slug>/NNN.yaml
+        for chapter_file in sorted(book_dir.glob("*.yaml")):
+            try:
+                chapter_num = int(chapter_file.stem)
+            except ValueError:
+                continue
+            record = yaml.safe_load(chapter_file.read_text(encoding="utf-8")) or {}
+            text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
+            if not text:
+                continue
+            # Emit as a single synthetic verse-1 block so the reader gets
+            # the whole chapter as a continuous prose unit.
+            chapters_out.append({
+                "chapter": chapter_num,
+                "verses": [
+                    {"verse": 1, "text": text},
+                ],
+            })
+    else:
+        # Verse-level nested layout: translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml
+        by_chapter: dict[int, dict[int, str]] = defaultdict(dict)
+        for chapter_dir in sorted(book_dir.iterdir()):
+            if not chapter_dir.is_dir():
+                continue
+            try:
+                chapter_num = int(chapter_dir.name)
+            except ValueError:
+                continue
+            for verse_file in sorted(chapter_dir.glob("*.yaml")):
+                try:
+                    verse_num = int(verse_file.stem)
+                except ValueError:
+                    continue
+                record = yaml.safe_load(verse_file.read_text(encoding="utf-8")) or {}
+                text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
+                if not text:
+                    continue
+                by_chapter[chapter_num][verse_num] = text
+
+        for chapter in sorted(by_chapter):
+            verses = by_chapter[chapter]
+            verse_nums = sorted(verses)
+            if not verse_nums:
+                continue
+            expected = list(range(1, verse_nums[-1] + 1))
+            if verse_nums != expected:
+                continue
+            chapters_out.append({
+                "chapter": chapter,
+                "verses": [
+                    {"verse": verse_num, "text": verses[verse_num]}
+                    for verse_num in verse_nums
+                ],
+            })
+
+    if not chapters_out:
+        return None
+
+    return {
+        "name": EXTRA_CANONICAL_BOOK_TITLES[book_code],
+        "chapters": chapters_out,
+    }
+
+
 def export_translation() -> dict[str, Any]:
     books: list[dict[str, Any]] = []
     for book_code in CANONICAL_BOOK_ORDER:
@@ -256,6 +373,14 @@ def export_translation() -> dict[str, Any]:
     # in this list is purely a sort key.
     for book_code in APOCRYPHA_BOOK_ORDER:
         exported = export_apocrypha_book(book_code)
+        if exported is not None:
+            books.append(exported)
+    # Extra-canonical (Apostolic Fathers etc.) after deuterocanon.
+    # Labeled in the reader as a separate "Extra-canonical writings"
+    # section by the frontend. First-pass translations only; subject
+    # to further review.
+    for book_code in EXTRA_CANONICAL_BOOK_ORDER:
+        exported = export_extra_canonical_book(book_code)
         if exported is not None:
             books.append(exported)
 
