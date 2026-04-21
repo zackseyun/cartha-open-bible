@@ -150,6 +150,13 @@ Current canonical loader coverage:
 - `latin/transcribed/ch14.txt` — explicit-marker partial publication
 - `latin/transcribed/ch16.txt` — explicit-marker partial publication
 
+As of the current automation pass, **all 16 chapters** now exist under
+`latin/transcribed/`, but many are intentionally partial rather than
+claimed-complete. For an honest per-chapter breakdown, see:
+
+- `latin/transcribed/COVERAGE.md`
+- `latin/transcribed/COVERAGE.json`
+
 Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
 OCR output and therefore yield no `[BODY]` extraction, which is the
 expected result rather than a failed parse.
