@@ -280,6 +280,20 @@ text survives only via Latin + 6 daughter translations.
     `sources/2esdras/latin/intermediate/bensly1875_fragment_verses/ch07_036_105.txt`
   - chapter VII now has a single hybrid working file at
     `sources/2esdras/latin/intermediate/bensly_ch07_hybrid_working.txt`
+- **Canonical loader path partially activated**:
+  - `sources/2esdras/latin/transcribed/ch07.txt` now carries verses
+    36–105 from the Missing Fragment
+  - `sources/2esdras/latin/transcribed/ch12.txt` now carries a
+    complete explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch02.txt` now carries a partial
+    explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch06.txt` now carries a partial
+    explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch16.txt` now carries a partial
+    explicit-marker publication
+  - `tools/2esdras/publish_explicit_chapter_candidates.py` added so
+    additional explicit-marker chapters can be promoted in the same
+    conservative way
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 

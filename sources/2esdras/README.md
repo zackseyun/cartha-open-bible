@@ -132,6 +132,19 @@ Next cleanup substrate:
 - `../../tools/2esdras/build_ch07_hybrid.py` assembles a single
   chapter-VII hybrid working file at
   `latin/intermediate/bensly_ch07_hybrid_working.txt`
+- `../../tools/2esdras/publish_ch07_fragment.py` and
+  `../../tools/2esdras/publish_explicit_chapter_candidates.py`
+  promote trusted working layers into the canonical loader path under
+  `latin/transcribed/`
+
+Current canonical loader coverage:
+
+- `latin/transcribed/ch02.txt` — explicit-marker partial publication
+- `latin/transcribed/ch06.txt` — explicit-marker partial publication
+- `latin/transcribed/ch07.txt` — verses **36–105** from the Missing
+  Fragment
+- `latin/transcribed/ch12.txt` — explicit-marker publication
+- `latin/transcribed/ch16.txt` — explicit-marker partial publication
 
 Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
 OCR output and therefore yield no `[BODY]` extraction, which is the

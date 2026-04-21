@@ -14,6 +14,11 @@ Modules (planned):
                       a verse-indexed VII 36–105 working file
   - build_ch07_hybrid — assemble a single cleanup-oriented chapter VII
                       working file from 1895 + 1875 materials
+  - publish_ch07_fragment — promote VII 36–105 into the canonical
+                      latin/transcribed/ch07.txt loader path
+  - publish_explicit_chapter_candidates — conservatively promote
+                      explicit-marker chapter candidates into partial or
+                      complete transcribed chapter files
   - latin_bensly    — chapter/verse loader for cleaned Bensly Latin
   - multi_witness   — aggregator returning all 6 daughter-translation
                       readings per verse for the adjudicator/translator
