@@ -72,7 +72,7 @@ CANONICAL_BOOK_ORDER: list[str] = [
 APOCRYPHA_ROOT = TRANSLATION_ROOT / "deuterocanon"
 
 APOCRYPHA_BOOK_ORDER: list[str] = [
-    "TOB", "JDT", "ESG", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL", "ADA",
+    "TOB", "JDT", "ESG", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL",
     "1MA", "2MA", "3MA", "4MA", "1ES", "MAN", "PS151",
 ]
 

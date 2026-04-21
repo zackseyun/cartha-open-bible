@@ -34,6 +34,15 @@ Our source position across the deuterocanonical corpus, as of
 | **Greek Additions to Esther** (ADE) | Greek | **Optimal** | Greek is the original for the additions proper. Swete LXX (PD). |
 | **Greek Additions to Daniel** (ADA — Susanna, Bel, Prayer of Azariah, Song of Three) | Greek | **Optimal** | Greek is the original. Swete LXX (PD). |
 
+**Operational note.** `ADE` and `ADA` are now best thought of as
+aggregate source-stream labels. The active translation units are:
+
+- `ESG` for the Esther additions (A–F)
+- `PAZ`, `SUS`, and `BEL` for the Daniel additions
+
+This keeps the source-preparation history auditable while giving Phase 9
+clean reader-facing drafting targets.
+
 **Net assessment:** We are at optimal — or within a hair of it — for
 the entire deuterocanonical corpus. The only meaningful original-
 language gap is Tobit's ~20% Qumran coverage, and the consulted-

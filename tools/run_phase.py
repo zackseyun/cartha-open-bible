@@ -110,12 +110,14 @@ PHASES: dict[str, dict[str, Any]] = {
         "books": [
             "TOB",    # Tobit
             "JDT",    # Judith
-            "ADE",    # Greek Esther (with additions)
+            "ESG",    # Additions to Esther (standalone A-F stream; draft this, not monolithic ADE)
             "WIS",    # Wisdom of Solomon
             "SIR",    # Sirach (Ecclesiasticus) — Hebrew MSS A/B primary, Swete Greek fallback
             "BAR",    # Baruch
             "LJE",    # Letter of Jeremiah (Swete prints separately, not as Baruch 6)
-            "ADA",    # Greek Additions to Daniel (Pr Azariah, Song of Three, Susanna, Bel)
+            "PAZ",    # Prayer of Azariah + Song of the Three (standalone partition)
+            "SUS",    # Susanna (standalone partition)
+            "BEL",    # Bel and the Dragon (standalone partition)
             "1ES",    # 1 Esdras
             "MAN",    # Prayer of Manasseh (pending source-page discovery)
             "PS151",  # Psalm 151 (pending source-page discovery)
