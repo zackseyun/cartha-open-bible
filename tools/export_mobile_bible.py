@@ -72,7 +72,7 @@ CANONICAL_BOOK_ORDER: list[str] = [
 APOCRYPHA_ROOT = TRANSLATION_ROOT / "deuterocanon"
 
 APOCRYPHA_BOOK_ORDER: list[str] = [
-    "TOB", "JDT", "ADE", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL", "ADA",
+    "TOB", "JDT", "ESG", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL", "ADA",
     "1MA", "2MA", "3MA", "4MA", "1ES", "MAN", "PS151",
 ]
 
@@ -80,6 +80,7 @@ APOCRYPHA_BOOK_TITLES: dict[str, str] = {
     "TOB": "Tobit",
     "JDT": "Judith",
     "ADE": "Greek Esther",
+    "ESG": "Additions to Esther",
     "WIS": "Wisdom of Solomon",
     "SIR": "Sirach",
     "BAR": "Baruch",

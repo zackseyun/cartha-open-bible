@@ -383,6 +383,13 @@ The raw adjudicated corpus remains untouched for audit. The translation layer pr
 - Note: Standalone extraction currently follows the Theodotion stream because it is the cleanest complete extract in the current corpus.
 
 
+## ESG
+
+- Normalized verses: **104**
+- Chapter counts after normalization: `{1: 17, 2: 7, 3: 29, 4: 16, 5: 24, 6: 11}`
+- Note: Standalone additions-only Esther stream (A-F) segmented from the Swete pages, with First1KGreek used only as a verse-anchor map where needed.
+
+
 ## Still not emitted
 
-- ESG (Additions to Esther) is intentionally still blocked. The outer boundaries are now understood, but Addition E 1-16 still needs a fuller additions-only verse segmentation pass before we should draft from it safely.
+- ADE (the monolithic Greek Esther stream) remains intentionally blocked for drafting. Use `ESG` for the additions-only Esther stream instead.
