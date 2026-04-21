@@ -1,0 +1,134 @@
+id: SIR.11.18
+reference: Sirach 11:18
+source:
+  edition: sefaria-ben-sira-kahana
+  text: חָכְמָה וְשֶׂכֶל וְהָבִין דָּבָר מֵיי הוּא, חֵטְא וּדְרָכִים יְשָׁרִים מֵיי
+    הוּא.
+  language: Hebrew
+  pages:
+  - 680
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἔστιν πλουτῶν ἀπὸ προσοχῆς καὶ σφιγγίας αὐτοῦ· καὶ αὕτη ἡ μερὶς τοῦ μισθοῦ
+      αὐτοῦ·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 11:18
+translation:
+  text: 'There is one who grows rich by care and stinginess, and this is the share
+    of his reward:'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The supplied Cairo Geniza Hebrew line in Zone 1 reads a different saying:
+      ''Wisdom and understanding and discerning a matter are from the LORD; sin and
+      upright ways are from the LORD.'' Because it does not align with the Greek wording
+      for Sirach 11:18, the main translation follows the Greek parallel here.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: ἔστιν πλουτῶν
+  chosen: There is one who grows rich
+  alternatives:
+  - There is a man who becomes rich
+  - Someone becomes wealthy
+  lexicon: BDAG
+  rationale: The Hebrew in Zone 1 appears to reflect a different saying and does not
+    align with the Greek parallel; for this verse the Greek provides the coherent
+    wording matching Sirach 11:18 in known sequence. πλουτῶν is rendered as an ongoing/resultative
+    expression, 'grows rich,' which is natural English and preserves the sense of
+    acquiring wealth.
+- source_word: ἀπὸ προσοχῆς
+  chosen: by care
+  alternatives:
+  - through diligence
+  - from carefulness
+  - by attentiveness
+  lexicon: BDAG
+  rationale: προσοχή can denote attention or carefulness. 'By care' keeps the concise
+    causal force of ἀπό while preserving the moral ambiguity of the term in context;
+    the following phrase supplies the negative coloring.
+- source_word: καὶ σφιγγίας αὐτοῦ
+  chosen: and stinginess
+  alternatives:
+  - and miserliness
+  - and frugality
+  - and tightfistedness
+  lexicon: LSJ
+  rationale: The noun conveys tightness or parsimony. 'Stinginess' is clear modern
+    English and appropriately negative in this wisdom context. 'Frugality' would be
+    too positive; 'miserliness' is possible but slightly more interpretive and archaic
+    in tone.
+- source_word: καὶ αὕτη ἡ μερὶς
+  chosen: and this is the share
+  alternatives:
+  - and this is the portion
+  - and this is his lot
+  lexicon: BDAG
+  rationale: μερὶς commonly means 'share' or 'portion.' 'Share' is idiomatic and readable
+    while retaining the metaphor of allotted outcome.
+- source_word: τοῦ μισθοῦ αὐτοῦ
+  chosen: of his reward
+  alternatives:
+  - of his wages
+  - of his recompense
+  lexicon: BDAG
+  rationale: μισθός can mean wages or reward. In wisdom literature here it points
+    to what he gets as the outcome of his conduct; 'reward' reads naturally without
+    implying a formal employer-employee setting.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 551c5fc08852d41ed0edebb7825ebed25a9bc5d861c3b4efac71dcd25b6c324b
+  timestamp: '2026-04-21T20:31:12Z'
+  output_hash: e07022d0acb634e6a7a1ff5c81cba0a0961bc0ba4cea29ff1722c48643eb4765
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1a548e2f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1a548e2f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 11:18 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Primary-source alignment between the supplied Hebrew and Greek parallel
+  chosen_reading: Translate the Greek sense for this verse while documenting the divergent
+    Hebrew line in a footnote.
+  alternative_readings:
+  - 'Translate the supplied Hebrew as a separate saying: ''Wisdom and understanding
+    and discerning a matter are from the Lord; sin and upright ways are from the Lord.'''
+  rationale: The supplied Hebrew does not correspond to Sirach 11:18 as represented
+    by the Greek parallel and appears to reflect a different textual line. Because
+    the task requires using the parallel source as actual translation input and remaining
+    anchored to Zone 1, the coherent verse-level translation is taken from the Greek,
+    with the Hebrew divergence preserved transparently in a footnote rather than silently
+    ignored.
+  doctrine_reference: 'PHILOSOPHY.md: translate from the most-original witness available
+    for Sirach using Hebrew where it survives, but use parallel source as actual translation
+    input and preserve source uncertainty honestly.'

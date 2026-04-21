@@ -1,0 +1,138 @@
+id: SIR.11.14
+reference: Sirach 11:14
+source:
+  edition: sefaria-ben-sira-kahana
+  text: יֵשׁ רֹשֵׁשׁ וְאֹבֵד מְהַלֵּךְ, חֲסַר כֹּל וְיוֹתֵר אִישׁ עָנִי.
+  language: Hebrew
+  pages:
+  - 680
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἀγαθὰ καὶ κακά, ζωὴ καὶ θάνατος, πτωχεία καὶ πλοῦτος παρὰ Κυρίου ἐστίν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 11:14
+translation:
+  text: Good and evil, life and death, poverty and wealth are from the Lord.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Hebrew line in the primary witness appears to reflect a different
+      wording, while the Greek parallel reads 'Good and evil, life and death, poverty
+      and wealth are from the Lord.' Because the Hebrew here is marked with minor
+      mismatch and does not align with the verse reference, the translation follows
+      the Greek parallel as the stable source for this verse.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ἀγαθὰ
+  chosen: good
+  alternatives:
+  - good things
+  lexicon: BDAG
+  rationale: The Greek parallel gives a clear paired abstraction with κακά. English
+    singular collective 'good' reads naturally and preserves the proverb-like balance
+    better than 'good things.' The extant Hebrew line in Zone 1 appears mismatched
+    to this verse, so the Greek provides the stable basis for the translation while
+    remaining alert to source uncertainty.
+- source_word: κακά
+  chosen: evil
+  alternatives:
+  - bad things
+  - harm
+  lexicon: BDAG
+  rationale: Chosen to preserve the moral and experiential breadth of the Greek antithesis
+    with 'good.' 'Bad things' is flatter; 'harm' is narrower than the pair likely
+    intends.
+- source_word: ζωὴ
+  chosen: life
+  lexicon: BDAG
+  rationale: Direct and standard rendering in the fixed pair 'life and death.'
+- source_word: θάνατος
+  chosen: death
+  lexicon: BDAG
+  rationale: Direct and standard rendering paired with 'life.'
+- source_word: πτωχεία
+  chosen: poverty
+  alternatives:
+  - need
+  lexicon: BDAG
+  rationale: Best matches the socioeconomic contrast with πλοῦτος. 'Need' is possible
+    but less exact.
+- source_word: πλοῦτος
+  chosen: wealth
+  alternatives:
+  - riches
+  lexicon: BDAG
+  rationale: Modern, readable English that preserves the material sense. 'Riches'
+    is more traditional but less natural in contemporary prose.
+- source_word: παρὰ Κυρίου
+  chosen: from the Lord
+  alternatives:
+  - come from the Lord
+  - are from the Lord
+  lexicon: BDAG
+  rationale: The prepositional phrase marks source/origin. In the full clause, 'are
+    from the Lord' is the most natural English expression and preserves divine agency
+    without overinterpreting mechanism.
+- source_word: Κυρίου
+  chosen: Lord
+  alternatives:
+  - the LORD
+  lexicon: BDAG
+  rationale: Per doctrine, κύριος defaults to 'Lord.' In this deuterocanonical Greek
+    context, 'the Lord' is the natural English rendering.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: dcb1e1381466044e47fcb25e360258f955bacc28ef790699f373d71d97bfbb3c
+  timestamp: '2026-04-21T20:29:59Z'
+  output_hash: 01b083f2845fa38589493e5a956d5dc0ac4501681bb9a47c75ff2113cedf17e4
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1a548e2f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1a548e2f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 11:14 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divine source of both favorable and unfavorable conditions
+  chosen_reading: The verse states that good and evil, life and death, poverty and
+    wealth are from the Lord.
+  alternative_readings:
+  - The verse refers to prosperity and adversity rather than moral good and evil.
+  - The verse speaks of divine sovereignty over circumstances without making God the
+    author of moral evil.
+  rationale: The Greek text explicitly pairs ἀγαθὰ and κακά and attributes them to
+    the Lord. The translation preserves that tension rather than softening κακά to
+    avoid theological discomfort. At the same time, the wording does not expand the
+    claim beyond what the text says.
+  doctrine_reference: Preserve theological tension rather than resolve it; κύριος
+    -> Lord

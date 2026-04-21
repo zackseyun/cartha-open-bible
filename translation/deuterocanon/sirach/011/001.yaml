@@ -1,0 +1,131 @@
+id: SIR.11.1
+reference: Sirach 11:1
+source:
+  edition: sefaria-ben-sira-kahana
+  text: חָכְמַת דַּל תִּשָּׂא רֹאשׁוֹ, וּבֵין נְדִיבִים תּוֹשִׁיבֶנּוּ.
+  language: Hebrew
+  pages:
+  - 680
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: σοφία ταπεινοῦ ἀνύψωσεν κεφαλήν, καὶ ἐν μέσῳ μεγιστάνων καθίσει αὐτόν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 11:1
+translation:
+  text: The wisdom of the poor lifts up his head, and seats him among nobles.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Or 'the lowly' or 'the humble'; the Hebrew says 'the poor,' while the Greek
+      parallel can suggest low status more broadly.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: חָכְמַת
+  chosen: The wisdom of
+  alternatives:
+  - wisdom
+  - wise conduct of
+  lexicon: HALOT
+  rationale: Construct form with דל, naturally rendered 'the wisdom of ...'. A more
+    abstract 'wisdom' alone would underrepresent the genitival relationship.
+- source_word: דַּל
+  chosen: the poor
+  alternatives:
+  - the lowly
+  - the weak
+  - the humble
+  lexicon: HALOT
+  rationale: Hebrew דל commonly denotes one who is poor, weak, or socially low. The
+    Greek parallel ταπεινοῦ points toward low status/humility, but the Hebrew witness
+    is primary here and most plainly supports 'the poor.' This keeps the socioeconomic
+    sense while still allowing overlap with lowliness.
+- source_word: תִּשָּׂא רֹאשׁוֹ
+  chosen: lifts up his head
+  alternatives:
+  - raises his head
+  - exalts him
+  lexicon: HALOT
+  rationale: This Hebrew idiom is well represented by the literal English expression
+    'lift up the head,' conveying elevation in status or restored dignity. The Greek
+    ἀνύψωσεν κεφαλήν confirms the image. A more interpretive 'exalts him' is possible
+    but less transparent to the source metaphor.
+- source_word: וּבֵין
+  chosen: among
+  alternatives:
+  - between
+  - in the midst of
+  lexicon: HALOT
+  rationale: With a plural noun, English 'among' is the natural idiomatic rendering.
+- source_word: נְדִיבִים
+  chosen: nobles
+  alternatives:
+  - princes
+  - generous men
+  - the great
+  lexicon: HALOT
+  rationale: In context this refers to socially elevated persons. Although נדיב can
+    carry the sense 'noble' or 'generous,' the parallel Greek μεγιστάνων points to
+    leading men or magnates. 'Nobles' best captures rank without overstating monarchy-specific
+    status.
+- source_word: תּוֹשִׁיבֶנּוּ
+  chosen: seats him
+  alternatives:
+  - causes him to sit
+  - sets him
+  - makes him dwell
+  lexicon: HALOT
+  rationale: Hiphil of ישב here means to cause someone to sit, i.e., to give him a
+    place. 'Seats him' is concise, natural, and preserves the social-honor imagery.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: a49f1eb1ae8f9f8e57666f2f0ae6b666124d6b9d170068944adef44016eb5f7b
+  timestamp: '2026-04-21T20:26:32Z'
+  output_hash: 1feb4ae2624c4a78e3319885cf482e77f6203db27521bb149f65139d0d94f833
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1a548e2f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1a548e2f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 11:1 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Whether דל should be rendered primarily in socioeconomic or moral-humility
+    terms
+  chosen_reading: the poor
+  alternative_readings:
+  - the lowly
+  - the humble
+  rationale: The Hebrew witness is primary and favors a concrete social descriptor,
+    while the Greek parallel supports the broader notion of low status. The main text
+    keeps the socioeconomic sense; alternatives are preserved in a footnote because
+    the verse can also be heard more generally as referring to the lowly.
+  doctrine_reference: Translation philosophy §§1, 3, 6

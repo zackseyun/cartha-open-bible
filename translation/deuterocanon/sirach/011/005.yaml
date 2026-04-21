@@ -1,0 +1,140 @@
+id: SIR.11.5
+reference: Sirach 11:5
+source:
+  edition: sefaria-ben-sira-kahana
+  text: כִּי פְלָאוֹת מַעֲשֵׂי יי, וְנֶעְלָם מֵאָדָם פָּעֳלוֹ.
+  language: Hebrew
+  pages:
+  - 680
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πολλοὶ τύραννοι ἐκάθισαν ἐπὶ ἐδάφους, ὁ δὲ ἀνυπονόητος ἐφόρεσεν διάδημα·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 11:5
+translation:
+  text: For the works of the Lord are wondrous, and his work is hidden from man.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Or 'from humankind.' Hebrew 'from man' uses a singular generic term for
+      humanity.
+    reason: lexical_alternative
+  - marker: b
+    text: 'The Greek parallel for this verse differs substantially: ''Many tyrants
+      sat on the ground, but the unimagined one wore a crown.'' The Hebrew and Greek
+      witnesses appear to reflect different textual forms at this point.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: פְלָאוֹת
+  chosen: wondrous
+  alternatives:
+  - wonderful
+  - marvelous
+  lexicon: HALOT
+  rationale: From the root פלא, denoting what is extraordinary or marvelous. 'Wondrous'
+    preserves the elevated sense while fitting the predicate construction in English.
+- source_word: מַעֲשֵׂי
+  chosen: the works of
+  alternatives:
+  - deeds of
+  - acts of
+  lexicon: HALOT
+  rationale: Plural construct of מעשה. 'Works' is a natural and sufficiently formal
+    rendering for God's actions or productions here.
+- source_word: יי
+  chosen: the Lord
+  alternatives:
+  - YHWH
+  - the LORD
+  rationale: The Hebrew writes the divine name reverentially. Per project doctrine,
+    the default English rendering for YHWH is 'the LORD'; however, because the source
+    here uses the abbreviated reverential form יי rather than full יהוה, 'the Lord'
+    is used as a natural equivalent while still signaling the divine title.
+- source_word: וְנֶעְלָם
+  chosen: is hidden
+  alternatives:
+  - is concealed
+  - remains hidden
+  lexicon: HALOT
+  rationale: Passive/Nifal sense of עלם, indicating that something is not accessible
+    to human perception. 'Is hidden' is direct and idiomatic.
+- source_word: מֵאָדָם
+  chosen: from man
+  alternatives:
+  - from humankind
+  - from a person
+  lexicon: HALOT
+  rationale: אָדָם here has generic human reference. Per doctrine, gender-accurate
+    rendering is preferred; 'man' preserves the singular generic force of the Hebrew,
+    though the sense is humanity generally.
+- source_word: פָּעֳלוֹ
+  chosen: his work
+  alternatives:
+  - his deed
+  - what he does
+  lexicon: HALOT
+  rationale: From פֹּעַל/פעל, referring to an act or working. Although close in sense
+    to מַעֲשֵׂי, the singular here is retained as 'his work' rather than flattened,
+    preserving the Hebrew's shift from plural to singular.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 67c88fb2b246abdbdc8a6e2c817753c2ea48657f305e89c1e67590aa003a7ef4
+  timestamp: '2026-04-21T20:27:33Z'
+  output_hash: 7a317f6b00230fb5efc9674df232eed4e0e2a78e9f2fd46ab2f9f9d6c491e37f
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1a548e2f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1a548e2f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 11:5 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Rendering the divine name in a deuterocanonical Hebrew witness written as
+    יי
+  chosen_reading: the Lord
+  alternative_readings:
+  - the LORD
+  - YHWH
+  rationale: The project default for YHWH is 'the LORD.' This verse's Hebrew witness
+    uses the reverential written form יי. 'The Lord' preserves the sense without overclaiming
+    the exact orthography, while the alternative project-standard capitalization is
+    preserved in the decision record.
+  doctrine_reference: 'DOCTRINE.md: Contested terms table, יְהוָה YHWH → the LORD'
+- issue: Generic אָדָם
+  chosen_reading: from man
+  alternative_readings:
+  - from humankind
+  rationale: The Hebrew is singular and generic. Following the project's gender-accurate
+    principle, 'man' best matches the source form and traditional anthropological
+    sense, while the more explicitly inclusive alternative is preserved as an option.
+  doctrine_reference: 'DOCTRINE.md: Gender-accurate over gender-neutral; Contested
+    terms table, אָדָם *adam* → man / humankind (context)'

@@ -1,0 +1,149 @@
+id: SIR.11.26
+reference: Sirach 11:26
+source:
+  edition: sefaria-ben-sira-kahana
+  text: כִּי נֹכַח בְּעֵינֵי יי, בְּפֶתַע פִּתְאֹם לְהַעֲשִׁיר דָּל.
+  language: Hebrew
+  pages:
+  - 680
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ὅτι κοῦφον ἔναντι Κυρίου ἐν ἡμέρᾳ τελευτῆς ἀποδοῦναι ἀνθρώπῳ κατὰ τὰς ὁδοὺς
+      αὐτοῦ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 11:26
+translation:
+  text: For it is easy in the eyes of the Lord, in a sudden moment, to make a poor
+    man rich.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: ''For it is easy before the Lord, on the day of death, to repay
+      a man according to his ways.'' The Greek reflects a substantially different
+      form of the verse than the extant Hebrew.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: נֹכַח
+  chosen: easy
+  alternatives:
+  - plain
+  - straightforward
+  - light
+  lexicon: HALOT
+  rationale: In context with בְּעֵינֵי יי and the Greek parallel κοῦφον ('light/easy'),
+    the sense is that the action is effortless for the Lord, not merely visible or
+    direct.
+- source_word: בְּעֵינֵי יי
+  chosen: in the eyes of the Lord
+  alternatives:
+  - before the Lord
+  - in the sight of the Lord
+  lexicon: HALOT
+  rationale: A fairly literal rendering preserves the Hebrew idiom while remaining
+    natural in English. 'Lord' follows the project's default for the divine name.
+- source_word: בְּפֶתַע פִּתְאֹם
+  chosen: in a sudden moment
+  alternatives:
+  - suddenly
+  - in an instant
+  - all at once
+  lexicon: HALOT
+  rationale: The doubled expression intensifies suddenness. 'In a sudden moment' keeps
+    the temporal force and some of the emphatic feel without sounding wooden.
+- source_word: לְהַעֲשִׁיר
+  chosen: to make ... rich
+  alternatives:
+  - to enrich
+  lexicon: HALOT
+  rationale: The Hiphil causative is best represented by 'to make rich'; this is slightly
+    more transparent than the more abstract 'to enrich'.
+- source_word: דָּל
+  chosen: poor man
+  alternatives:
+  - the poor
+  - a poor person
+  lexicon: HALOT
+  rationale: The singular adjective/noun refers to an impoverished individual. 'Poor
+    man' is gender-accurate to the Hebrew's singular personal reference and fits the
+    wisdom-style generic usage.
+- source_word: ὅτι κοῦφον ἔναντι Κυρίου
+  chosen: For it is easy in the eyes of the Lord
+  alternatives:
+  - For it is light before the Lord
+  - For it is easy before the Lord
+  lexicon: BDAG
+  rationale: The Greek parallel confirms the Hebrew sense of ease/effortlessness and
+    supports the causal opening 'For'.
+- source_word: ἐν ἡμέρᾳ τελευτῆς ἀποδοῦναι ἀνθρώπῳ κατὰ τὰς ὁδοὺς αὐτοῦ
+  chosen: not adopted in main text
+  alternatives:
+  - on the day of death to repay a man according to his ways
+  lexicon: BDAG
+  rationale: The Greek parallel diverges substantially from the extant Hebrew, likely
+    reflecting a different Vorlage or textual development. Because the Hebrew survives
+    here and is the primary witness for Sirach where extant, the main text follows
+    the Hebrew, while the Greek alternative is preserved in a footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: c53d915f9aa817f75b045212e8d3885d89ba8c63f531205a8e51fbf7e2244bba
+  timestamp: '2026-04-21T20:33:44Z'
+  output_hash: 18ac40e7e50109b5cb691b73d58d5439c70f5da40ec2efbd26e88e8ce4ad604f
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1a548e2f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1a548e2f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 11:26 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divine name rendering
+  chosen_reading: the Lord
+  alternative_readings:
+  - Yahweh
+  - the LORD
+  rationale: The Hebrew has יי as a reverential writing of the divine name. Per project
+    doctrine, the default English rendering is 'the Lord' in deuterocanonical contexts
+    as well.
+  doctrine_reference: 'DOCTRINE.md: Contested terms — יְהוָה YHWH | the LORD'
+- issue: Competing Hebrew and Greek forms of the verse
+  chosen_reading: Follow the extant Hebrew as main text, with the Greek as an alternative
+    footnote
+  alternative_readings:
+  - For it is easy before the Lord, on the day of death, to repay a man according
+    to his ways.
+  rationale: Zone 1 provides a high-confidence Hebrew witness for this verse, and
+    project philosophy gives primacy to Hebrew for Sirach where it survives. The Greek
+    is still used as a real input and reveals a materially different form of the verse,
+    so it should be preserved for transparency rather than ignored.
+  doctrine_reference: 'PHILOSOPHY.md: Sefaria Ben Sira ... we translate from the Hebrew
+    where it survives and from the Greek where it does not.'

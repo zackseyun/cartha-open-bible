@@ -1,0 +1,121 @@
+id: SIR.11.23
+reference: Sirach 11:23
+source:
+  edition: sefaria-ben-sira-kahana
+  text: לֹא יָדַע מָה כִּי בָא חֲלֹף, וַעֲזָבוֹ לְאַחֵר וּמֵת.
+  language: Hebrew
+  pages:
+  - 680
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ εἴπῃς Τίς ἐστίν μου χρεία, καὶ τίνα ἀπὸ τοῦ νῦν ἔσται μου τὰ ἀγαθά;
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 11:23
+translation:
+  text: Do not say, “What do I need, and what good things will be mine from now on?”
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The extant Hebrew witness here differs sharply: ''He did not know what
+      was coming next, and he left it to another and died,'' or similar. The Greek
+      parallel instead reads as an admonition, which is followed in the main text
+      because the Hebrew appears textually mismatched at this point.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: לֹא יָדַע / μὴ εἴπῃς
+  chosen: Do not say
+  alternatives:
+  - He did not know
+  - Do not think
+  lexicon: HALOT; LSJ
+  rationale: 'The Hebrew in Kahana reads לֹא יָדַע (''he did not know''), followed
+    by a difficult clause about what comes and leaving possessions to another before
+    death. The Greek parallel, however, gives a coherent imperative matching the surrounding
+    admonitory context: μὴ εἴπῃς, ''do not say.'' Because the task requires using
+    the Greek parallel as actual translation input while translating from the most
+    original witness available, and because the Hebrew here appears textually mismatched/corrupt
+    (noted by ''minor_mismatch''), the main rendering follows the Greek sense, with
+    the Hebrew difficulty preserved in a footnote.'
+- source_word: Τίς ἐστίν μου χρεία
+  chosen: What do I need
+  alternatives:
+  - What is my need
+  - Who is my need
+  lexicon: LSJ
+  rationale: χρεία means 'need' or 'necessity.' English idiom favors 'What do I need'
+    over the more wooden 'What is my need,' while preserving the self-satisfied rhetorical
+    question.
+- source_word: τίνα ... ἔσται μου τὰ ἀγαθά
+  chosen: what good things will be mine
+  alternatives:
+  - what benefits will belong to me
+  - what goods will I have
+  lexicon: LSJ
+  rationale: τὰ ἀγαθά can denote 'good things,' 'goods,' or 'benefits.' 'Good things'
+    preserves the broad sense without narrowing it only to material property, fitting
+    wisdom-language about prosperity.
+- source_word: ἀπὸ τοῦ νῦν
+  chosen: from now on
+  alternatives:
+  - hereafter
+  - from this time
+  lexicon: LSJ
+  rationale: A straightforward temporal phrase; 'from now on' is natural modern English
+    and adequately formal.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b2bbee552ff57e76860321eb6ea862279cfd37d1f10e8d2897735799e68b1602
+  timestamp: '2026-04-21T20:32:43Z'
+  output_hash: 62a88e0a6b13e0fe4beee7f95f7212919cb8800103a7d4fb57a6734625fe66f7
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1a548e2f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1a548e2f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 11:23 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Primary-text weighting where Hebrew and Greek diverge
+  chosen_reading: Main text follows the Greek admonition rather than the extant Hebrew
+    wording
+  alternative_readings:
+  - 'A literal rendering of the Hebrew would be something like: ''He did not know
+    what was coming next, and he left it to another and died.'''
+  rationale: For Sirach, surviving Hebrew is normally primary where extant, but this
+    verse's Hebrew witness appears substantially out of alignment with the Greek and
+    is marked with minor mismatch. The Greek yields a coherent warning that fits the
+    immediate context, while the Hebrew likely reflects corruption, displacement,
+    or a different line. To preserve transparency, the Greek-based main text is used
+    and the Hebrew-based alternative is footnoted rather than suppressed.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives, but
+    use Greek parallel as actual input and preserve source uncertainty honestly.'
