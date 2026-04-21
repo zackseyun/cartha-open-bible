@@ -98,6 +98,36 @@ def _parse_verse_range(s: str) -> list[tuple[int, int]]:
     return out
 
 
+def _expand_range_fully(start: tuple[int, int], end: tuple[int, int]) -> list[tuple[int, int]]:
+    """Expand a (ch,vs) range into every (ch,vs) tuple it contains,
+    using a generous upper bound for intermediate-chapter verse counts.
+    We don't need exact chapter lengths — over-indexing a non-existent
+    verse is fine; missing a real verse is not.
+    """
+    s_ch, s_vs = start
+    e_ch, e_vs = end
+    if (e_ch, e_vs) < (s_ch, s_vs):
+        return [(s_ch, s_vs)]
+    out: list[tuple[int, int]] = []
+    # Cap per-chapter verses at 99 (Sirach max chapter length is ~51)
+    for ch in range(s_ch, e_ch + 1):
+        if ch == s_ch and ch == e_ch:
+            for v in range(s_vs, e_vs + 1):
+                out.append((ch, v))
+        elif ch == s_ch:
+            for v in range(s_vs, 80):
+                out.append((ch, v))
+        elif ch == e_ch:
+            for v in range(1, e_vs + 1):
+                out.append((ch, v))
+        else:
+            for v in range(1, 80):
+                out.append((ch, v))
+        if len(out) > 2000:
+            break
+    return out
+
+
 def _build_index() -> dict[tuple[int, int], dict]:
     """Walk the per-page JSON files and build (ch,vs) -> page-info."""
     idx: dict[tuple[int, int], dict] = {}
@@ -110,9 +140,30 @@ def _build_index() -> dict[tuple[int, int], dict]:
         vr = data.get("verse_range")
         if not vr:
             continue
-        for ch, vs in _parse_verse_range(vr):
-            # Keep the first page that attests this verse; additional
-            # pages covering the same verse are noted as `also_on`.
+        # Split on ";" or "," for verse ranges that list multiple pieces
+        # (e.g. "Sir 44:11-15; 44:18-22")
+        pieces = re.split(r"[;,]", vr)
+        anchors: list[tuple[int, int]] = []
+        for piece in pieces:
+            anchors.extend(_parse_verse_range(piece.strip()))
+        # Expand multi-chapter ranges fully. _parse_verse_range only
+        # returned endpoints for cross-chapter; we need the inner verses.
+        expanded: list[tuple[int, int]] = []
+        # Heuristic: if we got exactly 2 anchors in the same piece
+        # and they span multiple chapters, fill in the middle.
+        for piece in pieces:
+            pts = _parse_verse_range(piece.strip())
+            if len(pts) >= 2 and pts[0][0] != pts[-1][0]:
+                expanded.extend(_expand_range_fully(pts[0], pts[-1]))
+            else:
+                expanded.extend(pts)
+        # Same-chapter single range: _parse_verse_range already expanded.
+        # Deduplicate.
+        seen = set()
+        for ch, vs in expanded:
+            if (ch, vs) in seen:
+                continue
+            seen.add((ch, vs))
             if (ch, vs) not in idx:
                 idx[(ch, vs)] = {
                     "page_in_yadin": page_num,
@@ -122,7 +173,8 @@ def _build_index() -> dict[tuple[int, int], dict]:
                     "also_on": [],
                 }
             else:
-                idx[(ch, vs)]["also_on"].append(page_num)
+                if page_num not in idx[(ch, vs)]["also_on"] and page_num != idx[(ch, vs)]["page_in_yadin"]:
+                    idx[(ch, vs)]["also_on"].append(page_num)
     return idx
 
 

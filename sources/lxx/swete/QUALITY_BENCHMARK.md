@@ -1,6 +1,6 @@
 # Cartha Open Bible — Phase 8 corpus quality benchmark
 
-**Generated:** 2026-04-21 01:19 UTC
+**Generated:** 2026-04-21 01:47 UTC
 
 ## Pipeline stages
 
@@ -19,7 +19,7 @@ validation oracle (NOT as a source of our text).
 
 | Book | Ours | First1K | Agree | Functional | Major | Missing |
 |---|---:|---:|---:|---:|---:|---:|
-| 1ES | 496 | 430 | 68.4% | 78.8% | 91 | 0 |
+| 1ES | 496 | 430 | 68.8% | 78.8% | 91 | 0 |
 | 1MA | 940 | 921 | 92.8% | 98.3% | 16 | 0 |
 | 2MA | 583 | 553 | 80.7% | 85.4% | 81 | 0 |
 | 3MA | 232 | 227 | 85.5% | 88.5% | 26 | 0 |
@@ -29,7 +29,7 @@ validation oracle (NOT as a source of our text).
 | BAR | 207 | 141 | 92.9% | 100.0% | 0 | 0 |
 | JDT | 343 | 339 | 85.8% | 92.3% | 26 | 1 |
 | LJE | 72 | 72 | 87.5% | 98.6% | 1 | 0 |
-| SIR | 1439 | 1400 | 44.9% | 78.6% | 298 | 7 |
+| SIR | 1439 | 1400 | 45.0% | 78.6% | 298 | 7 |
 | TOB | 255 | 243 | 85.6% | 95.5% | 11 | 0 |
 | WIS | 472 | 424 | 72.9% | 78.6% | 90 | 4 |
 
@@ -57,7 +57,7 @@ mean:
   - Legitimate textual-tradition difference (both valid, our
     choice is explicit)
 
-The adjudicator pass (final stage) uses GPT-5.4 vision to
+The adjudicator pass (final stage) uses Azure GPT-5.4 vision to
 look at the actual Swete scan and decide per-verse what the
 printed page ACTUALLY says. That's the ground-truth layer on
 top of both transcriptions.
