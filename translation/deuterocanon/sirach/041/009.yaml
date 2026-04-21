@@ -1,0 +1,127 @@
+id: SIR.41.9
+reference: Sirach 41:9
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אם תפרו על ידי אסון, ואם תולידו לאנחה.<br><small>(ט)</small> אם תכשלו לשמחת
+    עולם, ואם תמותו לקללה.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 746
+  - 747
+  - 748
+  - 749
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: καὶ ἐὰν γεννηθῆτε, εἰς κατάραν γεννηθήσεσθε, καὶ ἐὰν ἀποθάνητε, εἰς κατάραν
+      μερισθήσεσθε.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 41:9
+translation:
+  text: And if you are born, you will be born for a curse; and if you die, you will
+    be allotted to a curse.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Hebrew for this verse is somewhat difficult and differs in detail
+      from the Greek. The Greek parallel reads, 'if you are born, you will be born
+      for a curse, and if you die, you will be allotted to a curse,' which guides
+      the sense here.
+    reason: textual_variant
+lexical_decisions:
+- source_word: תולידו / γεννηθῆτε ... γεννηθήσεσθε
+  chosen: you are born / you will be born
+  alternatives:
+  - you beget / you give birth
+  - you are brought forth
+  lexicon: HALOT; BDAG
+  rationale: The Hebrew in Zone 1 appears to read a form from ילד that could suggest
+    'beget/give birth,' but the Greek parallel clearly has passive 'if you are born
+    ... you will be born.' Given the verse's sense and the parallelism with death,
+    the passive birth sense is most likely intended and yields coherent English.
+- source_word: לקללה / εἰς κατάραν
+  chosen: for a curse
+  alternatives:
+  - into a curse
+  - for cursing
+  lexicon: HALOT; BDAG
+  rationale: Both Hebrew and Greek point to the noun 'curse.' 'For a curse' is idiomatic
+    in English and preserves the telic/resultative force of the preposition.
+- source_word: תמותו / ἀποθάνητε
+  chosen: you die
+  alternatives:
+  - you should die
+  - you perish
+  lexicon: HALOT; BDAG
+  rationale: Simple conditional future-oriented sense in parallel with 'if you are
+    born.' 'Die' is the plain lexical equivalent.
+- source_word: μερισθήσεσθε
+  chosen: you will be allotted
+  alternatives:
+  - you will be assigned
+  - you will have as your portion
+  - you will be divided
+  lexicon: BDAG; LSJ
+  rationale: The Greek supplies a more specific predicate for the second colon than
+    the extant Hebrew, indicating being assigned or apportioned to a curse. 'Allotted'
+    preserves the passive and the notion of assigned portion without sounding overly
+    technical.
+- source_word: אם ... ואם
+  chosen: And if ... and if
+  alternatives:
+  - If ... and if
+  - Whether ... or
+  lexicon: HALOT
+  rationale: The repeated conditional structure is emphatic. Retaining 'And if ...
+    and if' reflects the Hebrew-Greek parallelism and the cumulative force of the
+    denunciation.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 08b9c682e29ec35f203e84ff8135f05d30f7b2c595f47368349fef726efcfc48
+  timestamp: '2026-04-21T20:39:59Z'
+  output_hash: 9baf6b9baf8187c89f71770edb7c9f5aa137dac7fcba4d35c872afa6498dd19c
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @b09d13b0
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @b09d13b0
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  revision_candidates:
+  - reason: SIR 41:9 is in the Masada Ben Sira coverage range; if IAA image access
+      opens, upgrade the Masada witness from Zone 2 consult to Zone 1.
+    trigger: iaa_masada_access_granted
+status: draft
+theological_decisions:
+- issue: Use of Hebrew with Greek parallel where the Hebrew wording is somewhat unstable
+    or mismatched
+  chosen_reading: Follow the Hebrew witness as primary, but let the Greek clarify
+    the sense and complete the second colon's meaning.
+  alternative_readings:
+  - Translate the Hebrew alone more literally, even if awkward
+  - Prefer the Greek entirely for this verse
+  rationale: The project philosophy gives primacy to the Hebrew where it survives
+    in Sirach, but the Zone 1 note marks a minor mismatch and the Greek parallel is
+    explicitly provided as translation input. The Greek helps resolve the birth clause
+    and the final predicate with minimal intrusion beyond what the Hebrew likely intends.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives in Sirach;
+    use Greek parallel as actual input when present.'
