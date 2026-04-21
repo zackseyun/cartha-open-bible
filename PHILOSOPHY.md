@@ -41,14 +41,45 @@ That is the Cartha Open Bible.
 
 ## What we are translating
 
-We translate directly from the openly-licensed scholarly critical editions of
-the original-language texts:
+We translate directly from public-domain and openly-licensed scholarly
+editions of the original-language texts, across all three canonical sections
+of the Christian Bible.
+
+**New Testament** (27 books):
 
 - **SBLGNT** (Greek New Testament, ed. Michael W. Holmes) — the closest
   legally-available approximation to the autographs the NT authors wrote.
+
+**Old Testament — Protestant canon** (39 books):
+
 - **Westminster Leningrad Codex** and **unfoldingWord Hebrew Bible** — based
   on the Leningrad Codex (1008 AD), the oldest complete Hebrew Bible
   manuscript in existence.
+
+**Deuterocanonical / Apocrypha** (14 books — Tobit, Judith, Wisdom of
+Solomon, Sirach, Baruch, Letter of Jeremiah, Additions to Esther, Additions
+to Daniel, 1 Maccabees, 2 Maccabees, 3 Maccabees, 4 Maccabees, 1 Esdras,
+Prayer of Manasseh, Psalm 151. See [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)
+for why we include these and which Christian traditions receive each as
+canonical):
+
+- **Swete LXX** (Henry Barclay Swete, *The Old Testament in Greek According
+  to the Septuagint*, Cambridge, 1909–1930) — a public-domain diplomatic
+  edition of Codex Vaticanus. This is our Greek source for every
+  deuterocanonical book. We transcribe it ourselves from the archival page
+  scans using AI vision and release the transcription under CC-BY 4.0.
+- **Sefaria Ben Sira (Kahana edition, CC0)** and **Schechter 1899** — the
+  public-domain Cairo Geniza Hebrew witness to Sirach. Roughly two-thirds of
+  Sirach survives in Hebrew; we translate from the Hebrew where it survives
+  and from the Greek where it does not.
+- **Neubauer 1878 Hebrew Tobit** (via Sefaria, Public Domain) — a Hebrew
+  back-translation of Tobit, used as a Semitic-phrasing reference alongside
+  the Greek Long Recension (Codex Sinaiticus).
+- **WLC MT parallels for 1 Esdras** — 1 Esdras is a Greek recomposition of
+  2 Chronicles 35–36, Ezra, and Nehemiah 7–8. We cross-reference each 1
+  Esdras verse to its Hebrew parallel in our WLC corpus, with the "Story of
+  the Three Youths" (3:1–5:6) treated as Greek-only material with no Hebrew
+  parallel.
 
 We are not paraphrasing or smoothing an existing English translation. We are
 translating from the same sources the scholarly community works from — the
