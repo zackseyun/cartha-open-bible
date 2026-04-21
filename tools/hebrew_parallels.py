@@ -62,6 +62,9 @@ ESDRAS_ALIGNMENT = PARALLELS_DIR / "1esdras_mt_alignment.json"
 
 CONSULT_REGISTRY: dict[str, list[dict]] = {
     "SIR": [
+        {"name": "Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)",
+         "verse_range": "Sir 39:27-44:17 and 51:13-30",
+         "guidance": "Editio princeps of the Masada scroll (1st c. BC Hebrew). When a local extraction is present, tools/yadin_masada.py surfaces the Masada Hebrew + Yadin's apparatus per verse via live_zone2_entries. For Sir 39:27-44:17 and the 51 acrostic: compare Masada against the Kahana Zone 1 Hebrew; where they disagree, Masada usually wins on textual-critical grounds (older witness). Do NOT reproduce Yadin's English translation. Footnote fact-level: 'Masada scroll reads X where Cairo Geniza MS B reads Y'."},
         {"name": "Beentjes 1997, The Book of Ben Sira in Hebrew",
          "guidance": "Critical edition of all recovered Hebrew Sirach MSS (A-F). Consult when the Kahana reading seems wrong or when the verse falls in a Kahana gap (common: ch 17, 22-24, 26-29, 36). Do not reproduce its text."},
         {"name": "Skehan & Di Lella 1987, Anchor Bible 39",
