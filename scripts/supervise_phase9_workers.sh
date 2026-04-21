@@ -48,10 +48,18 @@ declare -a SLOTS=(
 )
 is_alive() {
   local wid="$1"
-  pgrep -f "tools/chapter_worker.py .*--worker-id $wid .*--phase $PHASE" >/dev/null 2>&1
+  local matches
+  matches="$(pgrep -af "scripts/supervise_worker.sh ${wid} ${PHASE} " || true)"
+  [[ -n "${matches//[[:space:]]/}" ]]
 }
 count_alive() {
-  pgrep -af "tools/chapter_worker.py .*--phase $PHASE" | wc -l | tr -d ' '
+  local matches
+  matches="$(pgrep -af "scripts/supervise_worker.sh .* ${PHASE} " || true)"
+  if [[ -z "${matches//[[:space:]]/}" ]]; then
+    echo 0
+  else
+    printf '%s\n' "$matches" | wc -l | tr -d ' '
+  fi
 }
 spawn_slot() {
   local wid="$1"
@@ -63,14 +71,12 @@ spawn_slot() {
     AZURE_OPENAI_ENDPOINT="$AZURE_OPENAI_ENDPOINT" \
     AZURE_OPENAI_DEPLOYMENT_ID="$AZURE_OPENAI_DEPLOYMENT_ID" \
     AZURE_OPENAI_API_VERSION="$AZURE_OPENAI_API_VERSION" \
-    "$PYTHON_BIN" "$REPO_ROOT/tools/chapter_worker.py" \
-      --coord-root "$REPO_ROOT" \
-      --worker-id "$wid" \
-      --phase "$PHASE" \
-      --backend azure-openai \
-      --model "$MODEL" \
-      --max-jobs 100000 \
-      --stop-when-empty \
+    COORD="$REPO_ROOT" \
+    PYTHON_BIN="$PYTHON_BIN" \
+    "$REPO_ROOT/scripts/supervise_worker.sh" \
+      "$wid" \
+      "$PHASE" \
+      "$wt" \
     > "$LOG_DIR/$wid.log" 2>&1 &
   echo "[$(date +%H:%M:%S)] spawned $wid -> $wt"
 }
@@ -92,6 +98,7 @@ while true; do
       if is_alive "$wid"; then
         continue
       fi
+      "$PYTHON_BIN" "$REPO_ROOT/tools/chapter_queue.py" release --phase "$PHASE" --worker-id "$wid" >/dev/null
       spawn_slot "$wid" "$wt"
       need=$((need - 1))
       [[ $need -le 0 ]] && break
