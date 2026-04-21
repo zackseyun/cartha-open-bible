@@ -49,3 +49,6 @@ python3 tools/greek_extra_pdf_ocr.py \
   --book-hint "Didache — Hitchcock & Brown 1884" \
   --stem-prefix didache_hb1884
 ```
+
+Pilot output already exists for pages 16 and 20 in
+`sources/didache/transcribed/raw/`.

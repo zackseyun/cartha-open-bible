@@ -83,6 +83,9 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
   - `sources/1_clement/README.md` + `MANIFEST.md`
   - `.gitignore` updated so the local source PDFs stay out of git while
     their hashes and edition metadata remain documented
+- **Didache OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
+  on Hitchcock & Brown 1884 pages 16 and 20, writing initial raw OCR
+  outputs into `sources/didache/transcribed/raw/`
 
 ## Phase 8d — Jubilees pipeline + Ge'ez OCR correction (2026-04-21)
 

@@ -11,10 +11,12 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/didache/README.md`](sources/didache/README.md)
 
-> **Status: source-acquisition phase.** Public-domain Greek source
-> editions are now vendored locally (gitignored + manifest-tracked).
+> **Status: source-acquisition + pilot OCR phase.** Public-domain Greek
+> source editions are now vendored locally (gitignored + manifest-tracked).
 > The Didache reuses the existing Greek OCR / drafting stack; no new
-> language pipeline is needed.
+> language pipeline is needed. A first OCR pilot on Hitchcock & Brown
+> pages 16 and 20 has already been produced under
+> `sources/didache/transcribed/raw/`.
 
 ## Why the Didache
 
