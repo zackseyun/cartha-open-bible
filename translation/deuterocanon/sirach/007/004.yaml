@@ -1,0 +1,123 @@
+id: SIR.7.4
+reference: Sirach 7:4
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תִּצְטַדֵּק לִפְנֵי מֶלֶךְ, וּמִפְּנֵי מֶלֶךְ אַל תִּתְבּוֹנֵן.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ ζήτει παρὰ Κυρίου ἡγεμονίαν, μηδὲ παρὰ βασιλέως καθέδραν δόξης.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:4
+translation:
+  text: Do not justify yourself before a king, and do not show understanding in the
+    presence of a king.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Greek reads, 'Do not seek rulership from the Lord, nor a seat of glory from
+      a king.' The Hebrew witness followed here differs substantially.
+    reason: textual_variant
+lexical_decisions:
+- source_word: אַל
+  chosen: Do not
+  alternatives:
+  - Do not seek to
+  - Never
+  lexicon: HALOT
+  rationale: Standard negative imperative particle introducing prohibition.
+- source_word: תִּצְטַדֵּק
+  chosen: justify yourself
+  alternatives:
+  - make yourself righteous
+  - act self-righteously
+  - vindicate yourself
+  lexicon: HALOT
+  rationale: Hitpael of צדק naturally carries a reflexive sense, 'show oneself righteous'
+    or 'justify oneself.' 'Justify yourself' preserves the reflexive force and the
+    warning against self-assertion before royal authority better than the more interpretive
+    'act self-righteously.'
+- source_word: לִפְנֵי מֶלֶךְ
+  chosen: before a king
+  alternatives:
+  - in the presence of a king
+  - before the king
+  lexicon: HALOT
+  rationale: The Hebrew lacks the article, so 'a king' is preferable to 'the king.'
+    'Before' is the natural rendering of לִפְנֵי here.
+- source_word: וּמִפְּנֵי מֶלֶךְ
+  chosen: and in the presence of a king
+  alternatives:
+  - and before a king
+  - and because of a king
+  lexicon: HALOT
+  rationale: The prepositional phrase is closely parallel to the first colon. Rendering
+    with 'in the presence of' gives slight variation in English while preserving the
+    same situational sense.
+- source_word: תִּתְבּוֹנֵן
+  chosen: show understanding
+  alternatives:
+  - be clever
+  - display discernment
+  - consider carefully
+  lexicon: HALOT
+  rationale: From בין in the hitbonen form, the sense here is not merely inward reflection
+    but presenting oneself as discerning or clever. 'Show understanding' best fits
+    the social warning of the line. The Greek parallel points in a related direction
+    of aspiring to status, but the Hebrew wording is retained as primary.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: fe6fb5c7ae73089575dbcab670f38c112acd6b622035300144df1d32111e9ee4
+  timestamp: '2026-04-21T20:18:45Z'
+  output_hash: 25d16f841ae352acc695a3605d491be99ce5f9adf240ce86c70ae2c33d6be1ce
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:4 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew and Greek witnesses
+  chosen_reading: 'Translate the extant Hebrew as primary: a warning against self-justifying
+    or displaying understanding before a king.'
+  alternative_readings:
+  - 'Greek: ''Do not seek rulership from the Lord, nor a seat of glory from a king.'''
+  rationale: For Sirach, where Hebrew survives, project policy gives Hebrew primacy.
+    The Greek parallel here reflects a substantially different line, so it is preserved
+    in a footnote rather than allowed to override the Hebrew. This is a textual/translation
+    decision rather than a doctrinal one, but it materially affects meaning and must
+    be documented.
+  doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives;
+    use Greek as actual input/check'

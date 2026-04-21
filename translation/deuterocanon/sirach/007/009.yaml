@@ -1,0 +1,130 @@
+id: SIR.7.9
+reference: Sirach 7:9
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תָּאִיץ בַּצָּבָא, מְלֶאכֶת עֲבֹדָה הִיא מֵאֵל נֶחֱלָקָה.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ εἴπῃς Τῷ πλήθει τῶν δώρων μου ἐπόψεται, καὶ ἐν τῷ προσενέγκαι με θεῷ
+      ὑψίστῳ προσδέξεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:9
+translation:
+  text: Do not be hasty in the army, for laborious work is allotted by God.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel reads: ''Do not say, “He will look upon the multitude of
+      my gifts, and when I offer to God Most High, he will accept them.”'' This reflects
+      a substantially different textual tradition from the extant Hebrew.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: אַל תָּאִיץ
+  chosen: Do not be hasty
+  alternatives:
+  - Do not press forward
+  - Do not rush
+  - Do not be eager
+  lexicon: HALOT
+  rationale: The negative imperative with תאיץ conveys urging oneself on or acting
+    hastily. 'Do not be hasty' gives natural English while preserving the warning
+    against impulsive action.
+- source_word: בַּצָּבָא
+  chosen: in the army
+  alternatives:
+  - in military service
+  - in the host
+  lexicon: HALOT
+  rationale: The Hebrew צבא ordinarily denotes army/host/service. In this Hebrew witness
+    the plain sense is military context, so 'in the army' is the most direct rendering.
+    The Greek parallel reflects a substantially different text and does not support
+    replacing the Hebrew with a cultic-gift saying.
+- source_word: מְלֶאכֶת עֲבֹדָה
+  chosen: laborious work
+  alternatives:
+  - hard labor
+  - work of service
+  - toilsome labor
+  lexicon: HALOT
+  rationale: The collocation combines 'work' and 'service/labor,' intensifying the
+    sense of burdensome toil. 'Laborious work' preserves the doubled idea without
+    becoming too wooden.
+- source_word: הִיא
+  chosen: is
+  lexicon: HALOT
+  rationale: Simple copular force linking the subject phrase to what follows.
+- source_word: מֵאֵל
+  chosen: by God
+  alternatives:
+  - from God
+  - by the Mighty One
+  lexicon: HALOT
+  rationale: The preposition marks source or agency. 'By God' reads naturally in English
+    and preserves divine source. 'God' is preferable to the more literal 'Mighty One'
+    here for clarity.
+- source_word: נֶחֱלָקָה
+  chosen: is allotted
+  alternatives:
+  - is apportioned
+  - is assigned
+  - is divided
+  lexicon: HALOT
+  rationale: The passive form from חלק suggests something apportioned or assigned.
+    'Is allotted' fits the sense that such burdensome work is assigned by God.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 43cc108dcef22e1be47c21292071e41cc4339bc2ab3ff0af1f4c7408087c8bc5
+  timestamp: '2026-04-21T20:20:04Z'
+  output_hash: 9eb7dd79ffba0b1b8e7ebd40be9fcfa84395aeccfc97d7c01cc743d0f5533228
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:9 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the Hebrew witness and the Greek parallel
+  chosen_reading: Translate the extant Hebrew as the primary text
+  alternative_readings:
+  - 'Greek parallel: ''Do not say, "He will look upon the multitude of my gifts, and
+    when I offer to God Most High, he will accept them."'''
+  rationale: Project policy gives primacy to the surviving Hebrew of Sirach where
+    it exists. Here the Greek parallel appears to reflect a different Vorlage or a
+    major textual divergence, not a minor lexical variation. Therefore the main text
+    follows the Hebrew, while the Greek alternative is preserved in a footnote for
+    transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach survives;
+    preserve source uncertainty honestly'

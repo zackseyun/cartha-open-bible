@@ -1,0 +1,132 @@
+id: SIR.7.7
+reference: Sirach 7:7
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תַּרְשִׁיעֲךָ בַּעֲדַת שַׁעֲרֵי אֵל, וְאַל תַּפִּילְךָ בַּקְּהִלָּה.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ ἁμάρτανε εἰς πλῆθος πόλεως, καὶ μὴ καταβάλῃς σεαυτὸν ἐν ὄχλῳ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:7
+translation:
+  text: Do not make yourself guilty in the assembly at the gates of God, and do not
+    cast yourself down in the congregation.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''Do not sin in the multitude of the city, and do not cast
+      yourself down in a crowd.'' This may reflect a different Hebrew reading or an
+      interpretive smoothing of the Hebrew phrase ''gates of God.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אַל תַּרְשִׁיעֲךָ
+  chosen: Do not make yourself guilty
+  alternatives:
+  - Do not act wickedly
+  - Do not condemn yourself
+  - Do not sin
+  lexicon: HALOT
+  rationale: The Hiphil of רשע can mean to declare guilty or to make guilty/wicked.
+    With the reflexive object suffix, the sense is best taken as bringing guilt upon
+    oneself. The Greek parallel μὴ ἁμάρτανε supports a moral-fault sense ('do not
+    sin'), but the Hebrew more specifically points to incurring guilt rather than
+    generic sinning.
+- source_word: בַּעֲדַת
+  chosen: in the assembly
+  alternatives:
+  - among the assembly
+  - in the council
+  lexicon: HALOT
+  rationale: עֵדָה commonly denotes an assembled group or congregation. 'Assembly'
+    is natural English and preserves the corporate/public setting.
+- source_word: שַׁעֲרֵי אֵל
+  chosen: at the gates of God
+  alternatives:
+  - of the gates of God
+  - in the city crowd
+  - before God's gates
+  lexicon: HALOT
+  rationale: The Hebrew text literally reads 'gates of God,' an unusual phrase. It
+    likely evokes the public/judicial setting of the city gates under divine oversight.
+    The Greek has 'multitude of a city,' which may reflect a different Vorlage or
+    interpretive rendering, but the Hebrew witness is primary here and should be represented
+    in the main text.
+- source_word: וְאַל תַּפִּילְךָ
+  chosen: and do not cast yourself down
+  alternatives:
+  - and do not bring yourself down
+  - and do not throw yourself away
+  - and do not abase yourself
+  lexicon: HALOT
+  rationale: From נפל in Hiphil/reflexive-like usage, the phrase suggests causing
+    oneself to fall or be brought low. 'Cast yourself down' preserves the metaphor
+    of self-ruin without overinterpreting.
+- source_word: בַּקְּהִלָּה
+  chosen: in the congregation
+  alternatives:
+  - in the assembly
+  - in the crowd
+  lexicon: HALOT
+  rationale: קְהִלָּה denotes an assembled community. 'Congregation' distinguishes
+    it slightly from the first colon's עֵדָה while retaining the public communal sense.
+    The Greek ἐν ὄχλῳ ('in a crowd') confirms a public-group setting.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 11fc009ecb2b045b47dab90703e97fbe6ebcb45bf6f8c5ae6b50cfb5b807e9c2
+  timestamp: '2026-04-21T20:19:34Z'
+  output_hash: 01a8b8c92abe9176e9924b7237aaf6bf32f03b7c6793dd2b62d93af6a6063c2c
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:7 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Whether to follow the Hebrew's unusual 'gates of God' or the Greek parallel's
+    'multitude of a city' in the main text
+  chosen_reading: Retain the Hebrew-oriented rendering 'assembly at the gates of God'
+    in the main text
+  alternative_readings:
+  - Do not sin in the multitude of the city
+  rationale: The project philosophy gives primacy to the surviving Hebrew of Sirach
+    where available, while also using the Greek as a real input. Here the Hebrew is
+    extant and high-confidence, though somewhat difficult. The Greek likely reflects
+    either a variant Vorlage or an interpretive smoothing toward the familiar public
+    setting of the city crowd. Because the Hebrew is the more original witness available
+    for this verse, its wording is preserved in the main text, with the Greek-based
+    alternative noted in a footnote.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach survives;
+    preserve source uncertainty honestly'

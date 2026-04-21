@@ -1,0 +1,109 @@
+id: SIR.7.17
+reference: Sirach 7:17
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תָּאִיץ לֵאמֹר לִי - פָרֶץ, גֹּל אֶל אֵל וּרְצֵה דַרְכּוֹ.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ταπείνωσον σφόδρα τὴν ψυχήν σου.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:17
+translation:
+  text: Humble your soul greatly.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Hebrew line in the supplied Kahana text is difficult and does
+      not align clearly with the Greek; the translation therefore follows the Greek
+      reading here.
+    reason: textual_variant
+  - marker: b
+    text: Or 'Humble yourself greatly.' The phrase 'your soul' can function idiomatically
+      for the person.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ταπείνωσον
+  chosen: Humble
+  alternatives:
+  - Bring low
+  - Afflict
+  lexicon: BDAG
+  rationale: The Hebrew in Zone 1 is textually difficult and appears mismatched, while
+    the Greek parallel offers a clear imperative. 'Humble' best captures the ethical
+    sense of lowering oneself rather than merely external abasement.
+- source_word: σφόδρα
+  chosen: greatly
+  alternatives:
+  - very much
+  - exceedingly
+  lexicon: BDAG
+  rationale: This adverb intensifies the command. 'Greatly' is natural modern English
+    and preserves the strong degree without sounding archaic.
+- source_word: τὴν ψυχήν σου
+  chosen: your soul
+  alternatives:
+  - yourself
+  - your life
+  lexicon: BDAG
+  rationale: Although ψυχή can sometimes mean 'self' or 'life,' 'soul' fits wisdom-language
+    here and preserves the inward, personal dimension of the exhortation. It also
+    aligns with the likely ethical thrust of self-humbling.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b40e8a647fb109d788f359c4bfcf450515da0b485c67cda088e132882d5dc540
+  timestamp: '2026-04-21T20:22:07Z'
+  output_hash: 7a727cffb7c0c14f29b67853c93a496b1894905d49e4fe5d7b716d39f570bf00
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:17 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Primary-source basis where Hebrew witness is extant but textually problematic
+  chosen_reading: Translate the clear Greek imperative as the main text while acknowledging
+    the Hebrew witness is difficult and likely corrupt or mismatched in this extraction.
+  alternative_readings:
+  - Attempt a translation from the Hebrew line as transmitted in Kahana
+  rationale: The supplied Hebrew ('Do not hasten to say to me—breach; roll to God
+    and favor his way') does not correspond naturally to the Greek and appears affected
+    by the noted minor mismatch. Because the task requires using the parallel Greek
+    as actual translation input, and because the Greek gives a coherent reading for
+    this verse, the English draft follows the Greek while documenting the source uncertainty
+    honestly.
+  doctrine_reference: 'PHILOSOPHY.md: translate from the most-original witness available,
+    using parallel sources as actual translation input; preserve source uncertainty
+    honestly.'

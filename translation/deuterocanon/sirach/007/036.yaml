@@ -1,0 +1,139 @@
+id: SIR.7.36
+reference: Sirach 7:36
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תִּשָּׂא לֵב מֵאוֹהֵב, כִּי מִמֶּנוּ תֵּאָהֵב.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἐν πᾶσι τοῖς λόγοις σου μιμνήσκου τὰ ἔσχατά σου, καὶ εἰς τὸν αἰῶνα οὐχ ἁμαρτήσεις.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:36
+translation:
+  text: In all your words remember your end, and you will never sin.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew witness (Kahana, Cairo Geniza composite) reads approximately, 'Do
+      not turn your heart away from one who loves, for from him you will be loved.'
+      The Hebrew here appears substantially different from the Greek tradition, so
+      the main text follows the Greek parallel.
+    reason: alternative_reading
+lexical_decisions:
+- source_word: ἐν πᾶσι τοῖς λόγοις σου
+  chosen: In all your words
+  alternatives:
+  - In all your matters
+  - In everything you say
+  lexicon: LSJ
+  rationale: The Hebrew witness is difficult and appears semantically divergent, while
+    the Greek parallel gives a coherent admonition. λόγοι can mean words/speeches
+    or matters; 'words' stays closer to the Greek while remaining natural English.
+- source_word: μιμνήσκου
+  chosen: remember
+  alternatives:
+  - be mindful of
+  - keep in mind
+  lexicon: BDAG
+  rationale: An imperative of remembering; 'remember' is the most direct and idiomatic
+    rendering.
+- source_word: τὰ ἔσχατά σου
+  chosen: your end
+  alternatives:
+  - your last things
+  - your latter end
+  - your final destiny
+  lexicon: LSJ
+  rationale: Literally 'your last things/end.' 'Your end' is concise and preserves
+    the gravity and ambiguity of mortality/final outcome without importing later doctrinal
+    specificity.
+- source_word: καὶ εἰς τὸν αἰῶνα
+  chosen: never
+  alternatives:
+  - forever
+  - for eternity
+  lexicon: LSJ
+  rationale: In this idiom with a negated future verb, the sense is effectively 'never.'
+    This is a natural optimal-equivalence rendering.
+- source_word: οὐχ ἁμαρτήσεις
+  chosen: you will never sin
+  alternatives:
+  - you will not sin
+  - you will never go wrong
+  lexicon: BDAG
+  rationale: ἁμαρτάνω is the standard verb 'to sin.' The future after the imperative
+    expresses the result of heeding the instruction.
+- source_word: אַל תִּשָּׂא לֵב מֵאוֹהֵב, כִּי מִמֶּנוּ תֵּאָהֵב
+  chosen: treated as a corrupt or substantially variant Hebrew witness; not followed
+    in the main text
+  alternatives:
+  - Do not lift up your heart from one who loves, for from him you will be loved
+  - Do not turn your heart away from a friend/lover, for by him you will be loved
+  lexicon: HALOT
+  rationale: The extant Hebrew as given in Kahana does not align with the Greek and
+    yields a difficult sense. Because the Greek parallel is coherent and the Hebrew
+    wording may reflect corruption or a different recension, the main translation
+    follows the Greek while preserving the Hebrew-based alternative in a footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: eb59e1526a6bfc6d25bfde600c25baa789cf3e86a3e5f2c9d68e0481c1ade74d
+  timestamp: '2026-04-21T20:28:46Z'
+  output_hash: 7af462bf5ff7386cdec96d556ab205820d61026ea60e6abade897f1f103bd3a0
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:36 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Whether 'your end' should be made explicitly eschatological or moralized
+  chosen_reading: your end
+  alternative_readings:
+  - your final destiny
+  - your last things
+  rationale: The text urges remembrance of one's end without specifying a developed
+    doctrine of afterlife or judgment. 'Your end' preserves the theological breadth
+    and tension rather than narrowing it.
+  doctrine_reference: DOCTRINE.md §Translation philosophy 3
+- issue: Choice of base text where Hebrew and Greek diverge sharply
+  chosen_reading: Main text follows the Greek parallel while noting the Hebrew alternative
+  alternative_readings:
+  - Main text could follow the extant Hebrew despite its difficulty
+  rationale: For Sirach, Hebrew has primacy where it survives, but the task explicitly
+    instructs that the Greek parallel be used as actual translation input. Here the
+    Hebrew is semantically problematic and sharply divergent, while the Greek is stable
+    and coherent; transparency requires preserving the Hebrew in a footnote rather
+    than silently ignoring it.
+  doctrine_reference: PHILOSOPHY.md 'What we are translating' and transparency principles

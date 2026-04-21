@@ -1,0 +1,116 @@
+id: SIR.7.23
+reference: Sirach 7:23
+source:
+  edition: sefaria-ben-sira-kahana
+  text: בָּנִים לְךָ יַסֵּר אוֹתָם, וְשָׂא לָהֶם נָשִׁים בִּנְעוּרֵיהֶם.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: τέκνα σοί ἐστιν; παίδευσον αὐτά, καὶ κάμψον ἐκ νεότητος τὸν τράχηλον αὐτῶν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:23
+translation:
+  text: Do you have sons? Discipline them, and get wives for them in their youth.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''Do you have children? Discipline them, and bend their
+      neck from youth.'' The Hebrew witness instead reads, ''...and get wives for
+      them in their youth.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: בָּנִים
+  chosen: sons
+  alternatives:
+  - children
+  lexicon: HALOT
+  rationale: The Hebrew masculine plural ordinarily means 'sons' here, and the following
+    instruction about getting wives for them confirms male children specifically rather
+    than children in general. This follows the gender-accurate principle.
+- source_word: יַסֵּר
+  chosen: discipline
+  alternatives:
+  - chasten
+  - correct
+  - train
+  lexicon: HALOT
+  rationale: The verb יסר carries the sense of corrective instruction or discipline.
+    'Discipline' preserves both correction and training without sounding archaic like
+    'chasten'.
+- source_word: וְשָׂא לָהֶם נָשִׁים
+  chosen: get wives for them
+  alternatives:
+  - marry wives to them
+  - take wives for them
+  - arrange wives for them
+  lexicon: HALOT
+  rationale: The Hebrew idiom with נשׂא plus נשים refers to securing marriage. In
+    English, 'get wives for them' best captures the parental arranging function implied
+    by the Hebrew. The Greek parallel instead reads 'bend their neck from youth,'
+    showing a different Vorlage or interpretive tradition, but the extant Hebrew witness
+    is the primary source here.
+- source_word: בִּנְעוּרֵיהֶם
+  chosen: in their youth
+  alternatives:
+  - while they are young
+  - from their youth
+  lexicon: HALOT
+  rationale: The phrase naturally means during their youthful years. 'In their youth'
+    is concise and idiomatic. The Greek parallel has 'from youth' attached to the
+    neck-bending clause, but with the Hebrew wording this phrase modifies the marriage
+    instruction.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 08e7488cc3c6f8e899deb5c7c668c2d975c39be9ad0dcaef46a965bc46f15bce
+  timestamp: '2026-04-21T20:23:37Z'
+  output_hash: 2729af0462cbf113b8e23f1217ce173e387c2bb9b613b9a0933313a4f09e6ac3
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:23 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew and Greek parallel in the second colon
+  chosen_reading: 'Follow the Hebrew: ''get wives for them in their youth'''
+  alternative_readings:
+  - 'Follow the Greek: ''and bend their neck from youth'''
+  rationale: For Sirach, where Hebrew survives, project policy gives primacy to the
+    Hebrew witness. The Greek is still used as a translation input and consistency
+    check, but here it reflects a substantially different second colon. Because the
+    Hebrew reading is well attested in Zone 1 and coherent in context, it is translated
+    in the main text, while the Greek alternative is preserved in a footnote for transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; DOCTRINE.md:
+    preserve theological/interpretive tension rather than resolve it silently.'

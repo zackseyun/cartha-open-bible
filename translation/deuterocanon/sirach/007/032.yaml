@@ -1,0 +1,125 @@
+id: SIR.7.32
+reference: Sirach 7:32
+source:
+  edition: sefaria-ben-sira-kahana
+  text: לֶחֶם אַבִּירִים וּתְרוּמַת יָד, זִבְחֵי צֶדֶק וּתְרוּמַת קֹדֶשׁ.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: καὶ πτωχῷ ἔκτεινον τὴν χεῖρά σου, ἵνα τελειωθῇ ἡ εὐλογία σου.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:32
+translation:
+  text: Bread for the mighty and an offering of the hand, righteous sacrifices and
+    a holy contribution.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''And stretch out your hand to the poor, so that your blessing
+      may be complete.'' The Hebrew and Greek differ substantially here, suggesting
+      a variant textual tradition or corruption.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: לֶחֶם
+  chosen: Bread
+  alternatives:
+  - food
+  - bread
+  lexicon: HALOT
+  rationale: The basic sense is literal 'bread,' and there is no clear contextual
+    warrant to generalize it to 'food' in the main text.
+- source_word: אַבִּירִים
+  chosen: the mighty
+  alternatives:
+  - strong ones
+  - nobles
+  - bulls
+  lexicon: HALOT
+  rationale: Hebrew אבירים can denote mighty ones/strong ones and in some contexts
+    bulls. Here, with sacrificial language in the cola that follow, the phrase is
+    difficult. 'The mighty' preserves the Hebrew form without over-resolving the referent.
+    The Greek parallel points in a very different direction ('to the poor stretch
+    out your hand'), suggesting textual instability, so a conservative rendering is
+    preferable.
+- source_word: וּתְרוּמַת יָד
+  chosen: and an offering of the hand
+  alternatives:
+  - and a hand-offering
+  - and a contribution from your hand
+  lexicon: HALOT
+  rationale: תרומה is a contribution/heave offering; with יד it likely means an offering
+    given by one's hand. The more literal phrasing keeps the Hebrew imagery and avoids
+    importing a specific cultic technical term beyond the text.
+- source_word: זִבְחֵי צֶדֶק
+  chosen: righteous sacrifices
+  alternatives:
+  - just sacrifices
+  - sacrifices of righteousness
+  lexicon: HALOT
+  rationale: The construct can be rendered formally as 'sacrifices of righteousness,'
+    but 'righteous sacrifices' is clearer modern English while preserving the moral/cultic
+    sense of צדק.
+- source_word: וּתְרוּמַת קֹדֶשׁ
+  chosen: and a holy contribution
+  alternatives:
+  - and a sacred offering
+  - and a contribution of holiness
+  lexicon: HALOT
+  rationale: תרומת קדש denotes a consecrated contribution. 'Holy contribution' is
+    concise and preserves the cultic register.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: a6bf3156be6a69317a8e4c906ac5597c4b5d81534384d125ff294f08ea6661e9
+  timestamp: '2026-04-21T20:25:54Z'
+  output_hash: b58ce88611816012579ec060ad5317a96cfc4516580dfb9f70cfd250e4c0ef78
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:32 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the extant Hebrew and Greek parallel
+  chosen_reading: Translate the surviving Hebrew as the primary witness, while preserving
+    the Greek's substantially different sense in a footnote.
+  alternative_readings:
+  - And stretch out your hand to the poor, so that your blessing may be complete.
+  rationale: For Sirach, where Hebrew survives, project policy gives Hebrew primacy.
+    Here the Greek parallel is not merely stylistic but substantially different, indicating
+    either a variant Vorlage or corruption in one line of transmission. The main text
+    therefore follows the Hebrew witness, but the Greek alternative is important enough
+    to preserve for auditability.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach Hebrew survives;
+    preserve ambiguity/alternatives in footnotes where significant.'

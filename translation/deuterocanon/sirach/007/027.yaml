@@ -1,0 +1,139 @@
+id: SIR.7.27
+reference: Sirach 7:27
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[בְּכָל לִבְּךָ כַּבֵּד לְאָבִיךָ, וְאֵם יוֹלַדְתְּךָ אַל תִּשֶּׁה.'
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἐν ὅλῃ καρδίᾳ δόξασον τὸν πατέρα σου, καὶ μητρὸς ὠδῖνας μὴ ἐπιλάθῃ·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:27
+translation:
+  text: With all your heart honor your father, and do not forget the labor pains of
+    your mother.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew is terse in the second line ('and the mother who bore you, do not
+      ...'); the Greek parallel clarifies the sense as 'do not forget your mother's
+      labor pains.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: בְּכָל לִבְּךָ
+  chosen: With all your heart
+  alternatives:
+  - With your whole heart
+  - With your entire heart
+  lexicon: HALOT
+  rationale: A straightforward idiom for wholehearted devotion or sincerity. 'With
+    all your heart' is natural modern English and preserves the Hebrew expression
+    closely.
+- source_word: כַּבֵּד
+  chosen: honor
+  alternatives:
+  - glorify
+  - give weight to
+  - show honor to
+  lexicon: HALOT
+  rationale: The verb from כבד in this relational context means to honor or treat
+    with due weight/respect, matching common biblical usage for honoring parents.
+    'Honor' is both accurate and idiomatic.
+- source_word: לְאָבִיךָ
+  chosen: your father
+  lexicon: HALOT
+  rationale: Direct object of the imperative; no reason to generalize or neutralize
+    the familial term.
+- source_word: וְאֵם
+  chosen: and ... your mother
+  alternatives:
+  - and mother
+  lexicon: HALOT
+  rationale: The Hebrew lacks an explicit pronominal suffix here, but the following
+    verb 'who bore you' makes the referent definite and personal. English naturally
+    supplies 'your mother'.
+- source_word: יוֹלַדְתְּךָ
+  chosen: your mother
+  alternatives:
+  - who bore you
+  - who gave birth to you
+  lexicon: HALOT
+  rationale: The Hebrew phrase literally says 'mother who bore you.' In the final
+    English line, the maternal relation is expressed explicitly and the birthing imagery
+    is carried by the next clause via the Greek-supported phrase 'labor pains,' avoiding
+    awkward repetition while preserving sense.
+- source_word: אַל תִּשֶּׁה
+  chosen: do not forget
+  alternatives:
+  - do not neglect
+  - do not disregard
+  lexicon: HALOT
+  rationale: The Greek parallel reads μὴ ἐπιλάθῃ, 'do not forget,' which clarifies
+    the Hebrew sense here. Given the parallel source and the likely semantic force
+    in context, 'do not forget' is the best rendering.
+- source_word: μητρὸς ὠδῖνας
+  chosen: the labor pains of your mother
+  alternatives:
+  - your mother's birth pangs
+  - the travail of your mother
+  lexicon: BDAG
+  rationale: 'The Greek parallel makes explicit what is only compressed in the Hebrew
+    wording: the son is to remember the mother''s suffering in childbirth. ''Labor
+    pains'' is clear, contemporary, and faithful without being clinical or archaic.'
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 1273ff1d8b0503f15f5f20754d65131892092d60ed62b17f7ce3a52d3a6fc464
+  timestamp: '2026-04-21T20:24:39Z'
+  output_hash: 216b56903734d4969d913a35636fab3739f502eec245bd625f4f7074b449b489
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:27 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Use of Hebrew primary witness with Greek parallel expansion
+  chosen_reading: Translate from the Hebrew as primary, while allowing the Greek parallel
+    to clarify the compressed final clause as a call not to forget the mother's labor
+    pains.
+  alternative_readings:
+  - A more formally literal rendering of the Hebrew alone, such as 'and do not ...
+    the mother who bore you,' leaving the final verb more opaque
+  rationale: For Sirach, surviving Hebrew is primary where extant, but the prompt
+    explicitly requires the Greek parallel to be used as actual translation input.
+    Here the Greek provides a coherent and likely authentic clarification of the terse
+    Hebrew ending, yielding a readable and auditable translation.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    parallel Greek in view'

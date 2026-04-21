@@ -1,0 +1,103 @@
+id: SIR.7.10
+reference: Sirach 7:10
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תִּתְקַצֵּר בַּתְּפִלָּה וּבִצְדָקָה אַל תִּתְעַבָּר.
+  language: Hebrew
+  pages:
+  - 672
+  - 673
+  - 674
+  - 675
+  - 676
+  - 677
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ ὀλιγοψυχήσῃς ἐν τῇ προσευχῇ σου, καὶ ἐλεημοσύνην ποιῆσαι μὴ παρίδῃς.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 7:10
+translation:
+  text: Do not be fainthearted in your prayer, and do not neglect to give alms.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew צדקה can also mean 'righteousness,' but here the Greek parallel explicitly
+      reads 'to do almsgiving,' supporting the sense 'give alms.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: אַל תִּתְקַצֵּר
+  chosen: Do not be fainthearted
+  alternatives:
+  - Do not be discouraged
+  - Do not be short/patientless
+  - Do not be small-souled
+  lexicon: HALOT
+  rationale: The Hebrew form is difficult in isolation, but the Greek parallel μὴ
+    ὀλιγοψυχήσῃς strongly supports the sense of losing heart or becoming fainthearted
+    rather than merely shortening the prayer. Using the Greek as an actual input helps
+    clarify the Hebrew composite reading.
+- source_word: בַּתְּפִלָּה
+  chosen: in your prayer
+  alternatives:
+  - in prayer
+  lexicon: HALOT
+  rationale: The noun means 'prayer.' The Greek has ἐν τῇ προσευχῇ σου ('in your prayer'),
+    which supports supplying the possessive in English for naturalness and alignment
+    with the parallel witness.
+- source_word: וּבִצְדָקָה
+  chosen: and ... to give alms
+  alternatives:
+  - and in righteousness
+  - and charitable giving
+  - and mercy
+  lexicon: HALOT
+  rationale: Although צדקה can mean 'righteousness,' in later Hebrew and in this context
+    it commonly denotes almsgiving/charity. The Greek parallel ἐλεημοσύνην ποιῆσαι
+    explicitly interprets it as almsgiving, so 'give alms' best reflects the sense
+    here.
+- source_word: אַל תִּתְעַבָּר
+  chosen: do not neglect
+  alternatives:
+  - do not pass by
+  - do not omit
+  - do not disregard
+  lexicon: HALOT
+  rationale: The verb literally suggests passing over or overlooking. The Greek μὴ
+    παρίδῃς confirms the sense 'do not neglect/overlook.' 'Neglect' is idiomatic modern
+    English in this exhortation.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b59118f8a21cda9a06f18ee6350e79a3df75ab0e7d13e51c1fc33a6be6badfc2
+  timestamp: '2026-04-21T20:20:15Z'
+  output_hash: 82873dd0ab637bef5f57b4e425490f4e428e1cd6bc40c6396bb66975da5d8b9b
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @a90a565b
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 7:10 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
