@@ -292,7 +292,7 @@ is lost or damaged), and its overall readiness to enter Phase C
 | Judith | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
 | Greek Additions to Esther | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
 | Wisdom of Solomon | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
-| **Sirach (Ecclesiasticus)** | **Hebrew** (≈ ⅔ recovered) | **Sefaria/Kahana Hebrew composite** (Zone 1, 1018 verses) + Schechter 1899 MSS A–B (Zone 1, in pipeline); Swete LXX for Kahana gaps and lost passages | Swete LXX for lost portions and Kahana gaps | ✓ Zone 1 Hebrew vendored; ✓ Swete transcribed; ready for Phase C; Schechter facsimile depth upgrade in progress |
+| **Sirach (Ecclesiasticus)** | **Hebrew** (≈ ⅔ recovered) | **Sefaria/Kahana Hebrew composite** (Zone 1, 1018/1019 verses) + Schechter 1899 MSS A–B (Zone 1, in pipeline); Swete LXX for Kahana gaps and lost passages | Swete LXX for lost portions and Kahana gaps | ✓ Zone 1 Hebrew vendored; ✓ Swete transcribed; ready for Phase C; Schechter facsimile depth upgrade in progress |
 | Baruch + Letter of Jeremiah | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
 | Additions to Daniel (Susanna, Bel & the Dragon, Prayer of Azariah, Song of the Three) | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
 | 1 Maccabees | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
