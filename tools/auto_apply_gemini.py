@@ -17,7 +17,7 @@ Tiering rules:
     - current & suggested both non-empty, distinct, and the current span
       actually appears in the verse's English text
 
-  TIER 2 (CLAUDE-ADJUDICATED AUTO-APPLY — strong source-grounded wins):
+  TIER 2 (SOURCE-GROUNDED AUTO-APPLY — strong source-grounded wins):
     - severity == major
     - category in {mistranslation, lexical, grammar} — actual source
       fidelity issues
@@ -26,7 +26,7 @@ Tiering rules:
     - current span uniquely present in verse English
     - Suggested rewrite materially changes meaning in a source-faithful
       direction
-    - Applied with `adjudicator = "claude-opus-4-7"` for auditability
+    - Applied with an explicit auto-apply adjudicator label for auditability
 
   TIER 3 (LOG-ONLY — escalate for human review later):
     - theological_weight  (policy decisions deserve a person)
@@ -110,15 +110,113 @@ def word_overlap(a: str, b: str) -> float:
 
 
 # ---------------------------------------------------------------------------
-# DB schema extension: `applied` flag on review_jobs
+# DB schema extensions: `applied` flag + processing disposition on review_jobs
 # ---------------------------------------------------------------------------
 
-def ensure_applied_column(conn: sqlite3.Connection) -> None:
+PROCESS_STATUS_PENDING = "pending"
+PROCESS_STATUS_APPLIED = "applied"
+PROCESS_STATUS_ESCALATED = "escalated"
+PROCESS_STATUS_NOOP = "noop"
+PROCESS_STATUS_ERROR = "error"
+
+NON_TEXT_TARGETS = {
+    "footnote",
+    "lexical_decision",
+    "theological_note",
+    "metadata",
+    "notes_only",
+}
+
+
+def ensure_processing_columns(conn: sqlite3.Connection) -> None:
     cols = [r[1] for r in conn.execute("PRAGMA table_info(review_jobs)")]
     if "applied" not in cols:
         conn.execute("ALTER TABLE review_jobs ADD COLUMN applied INTEGER DEFAULT 0")
     if "apply_summary" not in cols:
         conn.execute("ALTER TABLE review_jobs ADD COLUMN apply_summary TEXT")
+    if "process_status" not in cols:
+        conn.execute("ALTER TABLE review_jobs ADD COLUMN process_status TEXT")
+    if "processed_at" not in cols:
+        conn.execute("ALTER TABLE review_jobs ADD COLUMN processed_at TEXT")
+    conn.commit()
+    migrate_legacy_processing_state(conn)
+
+
+def migrate_legacy_processing_state(conn: sqlite3.Connection) -> None:
+    """Normalize old rows where `applied=1` meant 'processed somehow'."""
+    conn.execute(
+        """
+        UPDATE review_jobs
+        SET applied=0
+        WHERE applied=1
+          AND apply_summary IS NOT NULL
+          AND (apply_summary='escalated=0' OR apply_summary GLOB 'escalated=*')
+        """
+    )
+    conn.execute(
+        """
+        UPDATE review_jobs
+        SET process_status=?, processed_at=COALESCE(processed_at, updated_at)
+        WHERE process_status IS NULL
+          AND apply_summary IS NOT NULL
+          AND apply_summary='escalated=0'
+        """,
+        (PROCESS_STATUS_NOOP,),
+    )
+    conn.execute(
+        """
+        UPDATE review_jobs
+        SET process_status=?, processed_at=COALESCE(processed_at, updated_at)
+        WHERE process_status IS NULL
+          AND apply_summary IS NOT NULL
+          AND apply_summary GLOB 'escalated=*'
+          AND apply_summary!='escalated=0'
+        """,
+        (PROCESS_STATUS_ESCALATED,),
+    )
+    conn.execute(
+        """
+        UPDATE review_jobs
+        SET process_status=?, processed_at=COALESCE(processed_at, updated_at)
+        WHERE process_status IS NULL
+          AND apply_summary LIKE 'error:%'
+        """,
+        (PROCESS_STATUS_ERROR,),
+    )
+    conn.execute(
+        """
+        UPDATE review_jobs
+        SET process_status=?, processed_at=COALESCE(processed_at, updated_at)
+        WHERE process_status IS NULL
+          AND applied=1
+        """,
+        (PROCESS_STATUS_APPLIED,),
+    )
+    conn.commit()
+
+
+def update_processing_state(
+    conn: sqlite3.Connection,
+    job_id: int,
+    *,
+    process_status: str,
+    apply_summary: str,
+    applied: int,
+) -> None:
+    conn.execute(
+        """
+        UPDATE review_jobs
+        SET applied=?, process_status=?, processed_at=?, apply_summary=?
+        WHERE id=?
+        """,
+        (
+            applied,
+            process_status,
+            dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            apply_summary[:500],
+            job_id,
+        ),
+    )
     conn.commit()
 
 
@@ -186,7 +284,7 @@ def apply_revision_to_yaml(
     revisions = data.setdefault("revisions", [])
     revisions.append({
         "timestamp": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "adjudicator": "claude-opus-4-7" if tier == 2 else "auto_apply_tier1",
+        "adjudicator": "auto_apply_tier2_source_grounded" if tier == 2 else "auto_apply_tier1",
         "reviewer_model": reviewer_model,
         "source_review": review_path,
         "category": category,
@@ -210,11 +308,15 @@ def classify_issue(
     verse_yaml: dict[str, Any] | None,
 ) -> tuple[int, str]:
     """Return (tier, reason). Tier 0 means skip entirely."""
+    target = (issue.get("target") or "translation_text").lower()
     severity = (issue.get("severity") or "").lower()
     category = (issue.get("category") or "").lower()
     current = issue.get("current_rendering") or ""
     suggested = issue.get("suggested_rewrite") or ""
     rationale = issue.get("rationale") or ""
+
+    if target in NON_TEXT_TARGETS:
+        return 3, f"non-text-target:{target}"
 
     if not current or not suggested or current == suggested:
         return 0, "empty-or-noop"
@@ -265,10 +367,26 @@ def process_review_job(
     """Process one completed review_job. Return a dict of what was done."""
     review_path = REPO_ROOT / row["review_path"] if row["review_path"] else None
     if not review_path or not review_path.exists():
+        if not dry_run:
+            update_processing_state(
+                conn,
+                int(row["id"]),
+                process_status=PROCESS_STATUS_ERROR,
+                apply_summary="error:missing-review-file",
+                applied=0,
+            )
         return {"skipped": "no-review-file"}
     try:
         review = json.loads(review_path.read_text(encoding="utf-8"))
     except Exception as exc:
+        if not dry_run:
+            update_processing_state(
+                conn,
+                int(row["id"]),
+                process_status=PROCESS_STATUS_ERROR,
+                apply_summary=f"error:bad-json:{type(exc).__name__}:{str(exc)[:80]}",
+                applied=0,
+            )
         return {"skipped": f"bad-json:{exc}"}
 
     issues = review.get("issues") or []
@@ -283,14 +401,17 @@ def process_review_job(
 
     applied = 0
     escalated = 0
+    skipped_noop = 0
     errors = 0
     summaries: list[str] = []
 
     for issue in issues:
         tier, reason = classify_issue(issue, verse_yaml)
         if tier == 0:
+            skipped_noop += 1
             continue
         if tier == 3 or tier not in enabled_tiers:
+            summaries.append(f"escalate:{reason}:{issue.get('span','')[:40]}")
             escalated += 1
             continue
         # Apply tier 1 or 2
@@ -320,22 +441,44 @@ def process_review_job(
 
     # Mark as processed in DB
     apply_summary = "; ".join(summaries[:5])
-    if applied and not dry_run:
-        conn.execute(
-            "UPDATE review_jobs SET applied=1, apply_summary=? WHERE id=?",
-            (apply_summary[:500], row["id"]),
-        )
-    elif not applied:
-        # Even when nothing applies (all escalated), mark so we don't re-scan
-        conn.execute(
-            "UPDATE review_jobs SET applied=1, apply_summary=? WHERE id=?",
-            (f"escalated={escalated}"[:500], row["id"]),
-        )
-    conn.commit()
+    if not dry_run:
+        if applied:
+            update_processing_state(
+                conn,
+                int(row["id"]),
+                process_status=PROCESS_STATUS_APPLIED,
+                apply_summary=apply_summary or f"applied={applied}",
+                applied=1,
+            )
+        elif escalated:
+            update_processing_state(
+                conn,
+                int(row["id"]),
+                process_status=PROCESS_STATUS_ESCALATED,
+                apply_summary=apply_summary or f"escalated={escalated}",
+                applied=0,
+            )
+        elif errors:
+            update_processing_state(
+                conn,
+                int(row["id"]),
+                process_status=PROCESS_STATUS_ERROR,
+                apply_summary=apply_summary or f"errors={errors}",
+                applied=0,
+            )
+        else:
+            update_processing_state(
+                conn,
+                int(row["id"]),
+                process_status=PROCESS_STATUS_NOOP,
+                apply_summary=apply_summary or f"noop={skipped_noop}",
+                applied=0,
+            )
 
     return {
         "applied": applied,
         "escalated": escalated,
+        "skipped_noop": skipped_noop,
         "errors": errors,
         "summary": apply_summary,
     }
@@ -348,7 +491,7 @@ def backlog_query(conn: sqlite3.Connection, limit: int) -> list[sqlite3.Row]:
                issues_found, review_path, strategy
         FROM review_jobs
         WHERE status='completed'
-          AND (applied IS NULL OR applied=0)
+          AND COALESCE(process_status, 'pending')='pending'
           AND issues_found > 0
           AND agreement_score < 1.0
         ORDER BY agreement_score ASC
@@ -361,7 +504,7 @@ def backlog_query(conn: sqlite3.Connection, limit: int) -> list[sqlite3.Row]:
 def run_once(enabled_tiers: set[int], dry_run: bool, limit: int) -> dict[str, int]:
     with chapter_queue.connect(DB_PATH) as conn:
         gemini_review_queue.ensure_schema(conn)
-        ensure_applied_column(conn)
+        ensure_processing_columns(conn)
         conn.row_factory = sqlite3.Row
         rows = backlog_query(conn, limit)
         totals = Counter()
@@ -369,6 +512,7 @@ def run_once(enabled_tiers: set[int], dry_run: bool, limit: int) -> dict[str, in
             result = process_review_job(conn, row, enabled_tiers=enabled_tiers, dry_run=dry_run)
             totals["applied"] += result.get("applied", 0)
             totals["escalated"] += result.get("escalated", 0)
+            totals["skipped_noop"] += result.get("skipped_noop", 0)
             totals["errors"] += result.get("errors", 0)
             totals["verses"] += 1
             if result.get("applied"):

@@ -96,13 +96,17 @@ Hebrew/Greek evidence in its rationale.
 
 ## How to express your judgment
 
-Call `submit_review` once with a structured response. For each issue
+Return one JSON object matching the provided schema. For each issue
 you flag:
 
-- **category**: `mistranslation, lexical, awkward_english,
-  theological_weight, consistency, missing_nuance, other`
+- **target**: `translation_text, footnote, lexical_decision,
+  theological_note, metadata, notes_only`
+- **category**: `mistranslation, lexical, grammar,
+  awkward_english, theological_weight, consistency,
+  missing_nuance, other`
 - **severity**: `major` (meaning changes), `minor` (clarity/nuance
   loss), `suggestion` (defensible improvement but current is OK)
+- **confidence**: number from `0.0` to `1.0`
 - **span**: the exact Hebrew/Greek span or English span the issue
   attaches to
 - **current_rendering**: what GPT-5.4 wrote
@@ -111,6 +115,14 @@ you flag:
   lexicon evidence. Mentioning that published translations
   corroborate your judgment is fine — but the argument must be
   from the source.
+
+If the concern is only about a footnote, lexical-decision note,
+theological-decision note, or metadata, set `target` accordingly and
+do **not** attach it to the main translation text. Do not suggest a
+main-text rewrite for a footnote-only concern.
+
+Prefer **0–2 issues total**. If the draft is defensible, return no
+issues and explain briefly in `notes`.
 
 ## Agreement score
 

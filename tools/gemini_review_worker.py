@@ -5,8 +5,8 @@ Parallel to chapter_worker.py (drafting worker). Claims rows from the
 `review_jobs` table, runs a Gemini 2.5 Pro call against the verse YAML,
 saves a structured review report, and updates the job row.
 
-Output: one review JSON per verse under
-  state/reviews/gemini/<testament>/<book_slug>/<NNN>/<VVV>.json
+Output: one immutable review JSON per review job under
+  state/reviews/gemini/<strategy>/<testament>/<book_slug>/<NNN>/<VVV>.job-<id>.json
 
 Each review contains:
   - verse ref, source Greek/Hebrew, current English
@@ -54,9 +54,9 @@ REVIEWS_DIR = REPO_ROOT / "state" / "reviews" / "gemini"
 AI_STUDIO_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 _PROMPTS_DIR = pathlib.Path(__file__).resolve().parent / "prompts"
 CONTEXT_WINDOW_VERSES = 5  # ±5 verses around target for Pass 2
-VERTEX_LOCATION = os.environ.get("GCP_LOCATION", "us-central1")
-PROMPT_VERSION = "gemini_translation_review_v1_2026-04-20"
-PROMPT_VERSION_V2 = "gemini_translation_review_v2_enhanced_2026-04-20"
+VERTEX_LOCATION = (os.environ.get("GCP_LOCATION", "global") or "global").strip()
+PROMPT_VERSION = "gemini_translation_review_v1_2026-04-21"
+PROMPT_VERSION_V2 = "gemini_translation_review_v2_enhanced_2026-04-21"
 
 # Strategies that should use the v2 (enhanced, context-rich) prompt.
 V2_STRATEGIES = {"enhanced_review", "low_agreement_recheck"}
@@ -119,9 +119,11 @@ def _vertex_access_token(force_refresh: bool = False) -> tuple[str, str]:
 def _vertex_endpoint(model: str, force_refresh: bool = False) -> tuple[str, dict[str, str]]:
     """Return (URL, headers) for a Vertex AI generateContent call."""
     token, project_id = _vertex_access_token(force_refresh=force_refresh)
+    location = VERTEX_LOCATION or "global"
+    api_host = "aiplatform.googleapis.com" if location == "global" else f"{location}-aiplatform.googleapis.com"
     url = (
-        f"https://{VERTEX_LOCATION}-aiplatform.googleapis.com/v1/"
-        f"projects/{project_id}/locations/{VERTEX_LOCATION}/"
+        f"https://{api_host}/v1/"
+        f"projects/{project_id}/locations/{location}/"
         f"publishers/google/models/{model}:generateContent"
     )
     headers = {
@@ -158,12 +160,13 @@ You will receive:
   - Footnotes + alternatives already attached to the verse.
   - The drafter's translation philosophy ("optimal-equivalence" — a balance between formal and dynamic).
 
-Your job is to flag REAL issues — not stylistic preferences. The current draft is allowed to stand as-is unless you can point to a specific improvement.
+Your job is to flag REAL issues — not stylistic preferences. The current draft is allowed to stand as-is unless you can point to a specific improvement grounded in the source text.
 
 Flag if:
   - The English meaning does not match the Greek/Hebrew (mistranslation).
   - A lexical choice is defensible in isolation but wrong given this context.
   - An English construction is awkward in a way that obscures the meaning.
+  - Grammar/syntax force is lost in a meaning-affecting way.
   - A theologically weighted word is rendered in a way that loses the source's force.
   - Verse-internal consistency is broken (the same Greek word is rendered two ways in a way that misleads).
 
@@ -171,10 +174,14 @@ Do NOT flag:
   - Style preferences where the current reading is defensible.
   - Paraphrase-vs-literal balance, unless the current rendering is wrong.
   - Footnote gloss choices already present as lexical alternatives.
+  - Settled project doctrine decisions unless this specific verse applies them incorrectly.
 
-Return a single JSON object matching the schema: agreement_score (0-1), issues[] (each with category, severity, span, current_rendering, suggested_rewrite, rationale), and an overall `notes` field.
+Prefer 0–2 issues. If a concern is only about a footnote, lexical-decision note, or metadata, set `target` accordingly and do NOT attach it to the main translation text.
 
-Categories: mistranslation, lexical, awkward_english, theological_weight, consistency, missing_nuance, other.
+Return a single JSON object matching the schema: agreement_score (0-1), issues[] (each with target, category, severity, confidence, span, current_rendering, suggested_rewrite, rationale), and an overall `notes` field.
+
+Targets: translation_text, footnote, lexical_decision, theological_note, metadata, notes_only.
+Categories: mistranslation, lexical, grammar, awkward_english, theological_weight, consistency, missing_nuance, other.
 Severities: major, minor, suggestion.
 """
 
@@ -186,13 +193,25 @@ RESPONSE_SCHEMA: dict[str, Any] = {
         "verdict": {"type": "string", "enum": ["agree", "minor-issues", "major-issues"]},
         "issues": {
             "type": "array",
+            "maxItems": 4,
             "items": {
                 "type": "object",
                 "properties": {
+                    "target": {
+                        "type": "string",
+                        "enum": [
+                            "translation_text",
+                            "footnote",
+                            "lexical_decision",
+                            "theological_note",
+                            "metadata",
+                            "notes_only",
+                        ],
+                    },
                     "category": {
                         "type": "string",
                         "enum": [
-                            "mistranslation", "lexical", "awkward_english",
+                            "mistranslation", "lexical", "grammar", "awkward_english",
                             "theological_weight", "consistency",
                             "missing_nuance", "other",
                         ],
@@ -201,17 +220,18 @@ RESPONSE_SCHEMA: dict[str, Any] = {
                         "type": "string",
                         "enum": ["major", "minor", "suggestion"],
                     },
+                    "confidence": {"type": "number"},
                     "span": {"type": "string"},
                     "current_rendering": {"type": "string"},
                     "suggested_rewrite": {"type": "string"},
                     "rationale": {"type": "string"},
                 },
                 "required": [
-                    "category", "severity", "span",
+                    "target", "category", "severity", "confidence", "span",
                     "current_rendering", "suggested_rewrite", "rationale",
                 ],
                 "propertyOrdering": [
-                    "category", "severity", "span",
+                    "target", "category", "severity", "confidence", "span",
                     "current_rendering", "suggested_rewrite", "rationale",
                 ],
             },
@@ -237,8 +257,23 @@ def gemini_api_key() -> str:
     return key
 
 
-def review_output_path(testament: str, book_slug: str, chapter: int, verse: int) -> pathlib.Path:
-    return REVIEWS_DIR / testament / book_slug / f"{chapter:03d}" / f"{verse:03d}.json"
+def review_output_path(
+    *,
+    job_id: int,
+    strategy: str,
+    testament: str,
+    book_slug: str,
+    chapter: int,
+    verse: int,
+) -> pathlib.Path:
+    return (
+        REVIEWS_DIR
+        / strategy
+        / testament
+        / book_slug
+        / f"{chapter:03d}"
+        / f"{verse:03d}.job-{job_id}.json"
+    )
 
 
 def read_verse_yaml(testament: str, book_slug: str, chapter: int, verse: int) -> str:
@@ -503,13 +538,16 @@ def mark_failed(conn: sqlite3.Connection, job_id: int, err: str) -> None:
     conn.commit()
 
 
-def run_job(conn: sqlite3.Connection, job: dict[str, Any], model_override: str | None = None) -> None:
+def run_job(
+    conn: sqlite3.Connection, job: dict[str, Any], model_override: str | None = None
+) -> dict[str, Any]:
     testament = job["testament"]
     book_slug = job["book_slug"]
     chapter = int(job["chapter"])
     verse = int(job["verse"])
     model = model_override or job["model"]
     strategy = job["strategy"]
+    job_id = int(job["id"])
 
     verse_yaml = read_verse_yaml(testament, book_slug, chapter, verse)
 
@@ -531,9 +569,17 @@ def run_job(conn: sqlite3.Connection, job: dict[str, Any], model_override: str |
     agreement = float(review.get("agreement_score") or 0.0)
     issues = review.get("issues") or []
 
-    out_path = review_output_path(testament, book_slug, chapter, verse)
+    out_path = review_output_path(
+        job_id=job_id,
+        strategy=strategy,
+        testament=testament,
+        book_slug=book_slug,
+        chapter=chapter,
+        verse=verse,
+    )
     out_path.parent.mkdir(parents=True, exist_ok=True)
     record = {
+        "review_job_id": job_id,
         "id": f"{book_slug}.{chapter}.{verse}",
         "strategy": strategy,
         "testament": testament,
@@ -542,6 +588,7 @@ def run_job(conn: sqlite3.Connection, job: dict[str, Any], model_override: str |
         "verse": verse,
         "reviewer_model": model_id,
         "prompt_version": prompt_version,
+        "vertex_location": VERTEX_LOCATION,
         "context_window_verses": CONTEXT_WINDOW_VERSES if is_v2 else 0,
         "reviewed_at": utc_now(),
         "duration_seconds": duration,
@@ -554,11 +601,12 @@ def run_job(conn: sqlite3.Connection, job: dict[str, Any], model_override: str |
 
     mark_complete(
         conn,
-        int(job["id"]),
+        job_id,
         review_path=str(out_path.relative_to(REPO_ROOT)),
         agreement_score=agreement,
         issues_found=len(issues),
     )
+    return record
 
 
 def main() -> int:
@@ -590,11 +638,12 @@ def main() -> int:
                 time.sleep(10)
                 continue
             try:
-                run_job(conn, job, model_override=args.model_override)
+                record = run_job(conn, job, model_override=args.model_override)
                 done += 1
                 print(
                     f"[{args.worker_id}] ✓ {job['strategy']} {job['book_slug']} {job['chapter']}:{job['verse']} "
-                    f"(agreement={job.get('agreement_score','—')}, issues={job.get('issues_found','—')})",
+                    f"(agreement={record.get('agreement_score','—')}, issues={len(record.get('issues') or [])}, "
+                    f"location={record.get('vertex_location')})",
                     flush=True,
                 )
             except Exception as exc:
