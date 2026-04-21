@@ -7,7 +7,7 @@
 ## Witness status
 
 - **mattison_zinner_coptic** — fetched (primary_coptic)
-- **nhc_xii_2_fragments** — pending_input (overlap_coptic_fragments)
+- **nhc_xii_2_fragments** — queued (overlap_coptic_fragments)
 
 ## Guardrails
 
@@ -17,4 +17,4 @@
 
 ## Next actions
 
-- Register OCR input for nhc_xii_2_fragments
+- No immediate blockers recorded in the scaffold.

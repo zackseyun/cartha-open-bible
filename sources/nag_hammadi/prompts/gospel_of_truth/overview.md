@@ -5,8 +5,8 @@ Goal: Accuracy-first translation prep that preserves poetic theology and Valenti
 
 ## Witness posture
 
-- **mattison_zinner_coptic** (primary_coptic) — fetched; source: https://gospels.net/truth
-- **nhc_xii_2_fragments** (overlap_coptic_fragments) — pending_input; source: local source pending
+- **mattison_zinner_coptic** (primary_coptic) — fetched; source: sources/nag_hammadi/raw/gospel_of_truth/mattison_zinner_coptic.txt
+- **nhc_xii_2_fragments** (overlap_coptic_fragments) — queued; source: sources/nag_hammadi/staging/gospel_of_truth/nhc_xii_2_fragments
 
 ## Guardrails
 
@@ -36,4 +36,4 @@ Goal: Accuracy-first translation prep that preserves poetic theology and Valenti
 
 ## Current scaffold status
 
-- Register OCR input for nhc_xii_2_fragments
+- No immediate scaffold gaps recorded.

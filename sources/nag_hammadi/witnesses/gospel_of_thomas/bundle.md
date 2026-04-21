@@ -8,6 +8,7 @@
 
 - **mattison_zinner_coptic** — fetched (primary_coptic)
 - **gebhardt_klein_2024_coptic** — pending_input (cross_check_coptic)
+- **grondin_interlinear_2002** — queued (cross_check_coptic)
 - **poxy654_greek** — fetched (greek_overlap_witness) — Sayings 1–7
 - **poxy1_greek** — fetched (greek_overlap_witness) — Sayings 26–33
 - **poxy655_greek** — fetched (greek_overlap_witness) — Sayings 24 and 36–39

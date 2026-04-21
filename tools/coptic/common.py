@@ -87,3 +87,10 @@ def load_segments(manifest: dict[str, Any]) -> list[dict[str, Any]]:
 
 def rel(path: Path) -> str:
     return str(path.relative_to(REPO_ROOT))
+
+
+def best_rel(path: Path) -> str:
+    try:
+        return rel(path.resolve())
+    except Exception:
+        return str(path.resolve())
