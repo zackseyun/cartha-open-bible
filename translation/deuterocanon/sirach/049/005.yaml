@@ -1,0 +1,141 @@
+id: SIR.49.5
+reference: Sirach 49:5
+source:
+  edition: sefaria-ben-sira-kahana
+  text: ויתן קרנם לאחור, וכבודם לגוי נבל נכרי.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 762
+  - 763
+  - 764
+  - 765
+  - 766
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἔδωκαν γὰρ τὸ κέρας αὐτῶν ἑτέροις καὶ τὴν δόξαν αὐτῶν ἔθνει ἀλλοτρίῳ·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 49:5
+translation:
+  text: For they gave their horn to others, and their glory to a foolish foreign nation.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew reads an unusual form here ('backward' or similar), but the Greek
+      parallel supports the sense 'to others.'
+    reason: textual_variant
+  - marker: b
+    text: Or 'their strength' for 'their horn'; the Hebrew and Greek both preserve
+      the horn metaphor for power.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: קרנם
+  chosen: their horn
+  alternatives:
+  - their strength
+  - their power
+  lexicon: HALOT
+  rationale: Hebrew קֶרֶן literally means 'horn' and commonly functions metaphorically
+    for strength, might, or royal power. The Greek parallel κέρας confirms the literal-metaphorical
+    image. 'Horn' is retained in the main text to preserve the biblical metaphor rather
+    than flattening it to interpretation.
+- source_word: לאחור
+  chosen: to others
+  alternatives:
+  - backward
+  - to another
+  - to strangers
+  lexicon: HALOT
+  rationale: The Hebrew form is somewhat awkward in this witness, but the Greek parallel
+    ἑτέροις strongly supports the sense 'to others.' Given the source validation note
+    of minor mismatch and the clear Greek consistency check, 'to others' best reflects
+    the likely sense without overreaching.
+- source_word: כבודם
+  chosen: their glory
+  alternatives:
+  - their honor
+  lexicon: HALOT
+  rationale: כָּבוֹד often denotes glory, honor, or splendor. 'Glory' fits the elevated
+    poetic register and matches the Greek δόξα.
+- source_word: גוי
+  chosen: nation
+  alternatives:
+  - people
+  - gentile nation
+  lexicon: HALOT
+  rationale: גּוֹי is most straightforwardly 'nation.' 'Nation' preserves the political-collective
+    sense in context.
+- source_word: נבל
+  chosen: foolish
+  alternatives:
+  - senseless
+  - base
+  - godless
+  lexicon: HALOT
+  rationale: נָבָל can denote folly with moral overtones. 'Foolish' is the most accessible
+    rendering and preserves the evaluative force without importing a more specific
+    theological category than the text states.
+- source_word: נכרי
+  chosen: foreign
+  alternatives:
+  - alien
+  - strange
+  lexicon: HALOT
+  rationale: נָכְרִי means foreign or alien. 'Foreign' is natural modern English and
+    aligns with the Greek ἀλλότριος.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b60f6706456a08d131f9ef83f28fc58e64ca0ed2419e2fb0b0453b8147fdd51e
+  timestamp: '2026-04-21T20:05:26Z'
+  output_hash: 4d73278b36bcb4b84e48edaad5d2956e99193ef4c8b4be087af1ef5962415ae0
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @e577bfbc
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @e577bfbc
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Metaphorical force of 'horn'
+  chosen_reading: Retain 'horn' in the main text rather than interpretively rendering
+    it as 'power.'
+  alternative_readings:
+  - their strength
+  - their power
+  rationale: The verse laments the surrender of Israel/Judah's strength and honor,
+    but the source expresses this through the established biblical image of the horn.
+    Preserving the metaphor maintains literary and theological texture while remaining
+    understandable.
+  doctrine_reference: DOCTRINE.md §Translation philosophy 1, 5
+- issue: Handling a likely Hebrew textual irregularity in לאחור
+  chosen_reading: 'Translate according to the sense supported by the Greek parallel:
+    ''to others.'''
+  alternative_readings:
+  - backward
+  - to the rear
+  rationale: Because the Hebrew witness appears slightly irregular here and the prompt
+    explicitly instructs that the Greek parallel be used as actual translation input,
+    the translation follows the best recoverable sense rather than a wooden but likely
+    misleading rendering.
+  doctrine_reference: 'PHILOSOPHY.md: Hebrew Sirach translated from Hebrew where it
+    survives, with Greek kept in view; user task requirement on parallel source'
