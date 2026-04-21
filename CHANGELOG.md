@@ -9,6 +9,55 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## v0.9-apostolic-fathers-preview — 2026-04-22
+
+**First-pass preview release of the Apostolic Fathers extra-canonical
+section.** Marked explicitly as a first-pass draft — subject to full
+revision-methodology pass, consistency lint, and secondary-source
+audit before any locked-final release. Published so readers can
+engage with the text now rather than wait on the complete review
+cycle.
+
+### What ships in this release
+
+- **Didache** — all 16 chapters drafted + 3-round Gemini 2.5 Pro
+  review. Greek source from Hitchcock & Brown 1884 (normalized OCR).
+  Per-chapter YAMLs with lexical decisions, theological decisions,
+  footnotes, and AI-draft provenance.
+- **1 Clement** — all 65 chapters drafted + Gemini review. Greek
+  source from Funk 1901 (normalized OCR). Same per-chapter YAML
+  structure.
+
+### What is NOT yet done (explicit first-pass disclosure)
+
+- Not yet consistency-linted (`tools/consistency_lint.py`).
+- Not yet through the full `REVISION_METHODOLOGY.md` human-audited
+  revision pass.
+- Schaff 1885 secondary-source cross-check vendored but not ingested
+  as a systematic review layer.
+- `lint_reports/phase8f-apostolic-fathers.md` to be generated during
+  the revision cycle.
+
+### Pipeline additions
+
+- `tools/export_mobile_bible.py` extended to walk
+  `translation/extra_canonical/<slug>/<NNN>.yaml` chapter-level
+  YAMLs. Chapter-level texts (Didache, 1 Clement) emit as
+  single-synthetic-verse chapter units since these texts aren't
+  verse-subdivided in standard reading editions.
+- `tools/build_status.py` adds an `extra_canonical` testament block
+  parallel to the existing `deuterocanon` block; `status.json` now
+  reports Apostolic Fathers progress alongside canonical and
+  deuterocanonical progress.
+
+### Versioning rationale
+
+Tagged as `v0.9-apostolic-fathers-preview` to slot between the
+Phase 1-8 canonical work and the eventual `v1.0-complete` full-Bible
+release. Uses the `-preview` suffix to match the `v0.1-preview-
+philippians` precedent for work that has shipped for reader access
+but is still subject to further revision cycles.
+
 ## Extra-canonical corpus scope commitment — 2026-04-21
 
 Scope-expansion document committing the Cartha Open Bible to

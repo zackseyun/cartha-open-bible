@@ -82,6 +82,18 @@ OT_BOOKS: list[tuple[str, str, int, int]] = [
 # denominator even before we drill into per-chapter verse parity.
 # Slugs must match the directories under ``translation/deuterocanon/``
 # (see ``lxx_swete.DEUTEROCANONICAL_BOOKS``).
+# Extra-canonical (Apostolic Fathers + pseudepigrapha + Nag Hammadi)
+# target books. Chapter-level layout: translation/extra_canonical/
+# <slug>/<NNN>.yaml — one YAML per chapter, continuous-prose
+# translation block. Verse totals here are "number of chapters" for
+# consistency with the mobile export (each chapter ships as a single
+# synthetic verse).
+EXTRA_CANONICAL_BOOKS: list[tuple[str, str, int, int, str]] = [
+    ("Didache", "DID", 16, 16, "didache"),
+    ("1 Clement", "1CLEM", 65, 65, "1_clement"),
+]
+
+
 DEUTEROCANON_BOOKS: list[tuple[str, str, int, int, str]] = [
     ("Tobit", "TOB", 14, 244, "tobit"),
     ("Judith", "JDT", 16, 339, "judith"),
@@ -209,6 +221,42 @@ def build_deuterocanon_books(
     return rows
 
 
+def count_extra_canonical_book(slug: str) -> dict[str, int]:
+    """Chapter-level layout counter: translation/extra_canonical/
+    <slug>/<NNN>.yaml, each yaml carrying a single chapter. Verse
+    count mirrors chapter count (one synthetic verse per chapter in
+    the mobile export, matching how these texts are rendered)."""
+    book_dir = TRANSLATION_ROOT / "extra_canonical" / slug
+    if not book_dir.is_dir():
+        return {"chapters_drafted": 0, "verses_drafted": 0}
+    chapter_files = [
+        p for p in book_dir.iterdir()
+        if p.is_file() and p.suffix == ".yaml" and p.stem.isdigit()
+    ]
+    return {
+        "chapters_drafted": len(chapter_files),
+        "verses_drafted": len(chapter_files),
+    }
+
+
+def build_extra_canonical_books(
+    catalog: list[tuple[str, str, int, int, str]],
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for name, code, chapters_total, verses_total, slug in catalog:
+        counts = count_extra_canonical_book(slug)
+        rows.append({
+            "book": name,
+            "code": code,
+            "testament": "extra_canonical",
+            "slug": slug,
+            "chapters_total": chapters_total,
+            "verses_total": verses_total,
+            **counts,
+        })
+    return rows
+
+
 def testament_totals(books: list[dict[str, Any]]) -> dict[str, int]:
     books_drafted = sum(1 for b in books if b["chapters_drafted"] > 0)
     chapters_drafted = sum(b["chapters_drafted"] for b in books)
@@ -239,16 +287,19 @@ def main() -> int:
     nt = build_books("nt", NT_BOOKS)
     ot = build_books("ot", OT_BOOKS)
     deuterocanon = build_deuterocanon_books(DEUTEROCANON_BOOKS)
-    all_books = nt + ot + deuterocanon
+    extra_canonical = build_extra_canonical_books(EXTRA_CANONICAL_BOOKS)
+    all_books = nt + ot + deuterocanon + extra_canonical
 
     nt_totals = testament_totals(nt)
     ot_totals = testament_totals(ot)
     dc_totals = testament_totals(deuterocanon)
+    ec_totals = testament_totals(extra_canonical)
     # Top-line ``books_total`` / ``verses_total`` stay pinned to the
     # 66-book Protestant canon so the "% of the canon" hint on the
-    # progress page keeps its original meaning. Deuterocanonical
-    # progress is reported as its own sibling block so readers can see
-    # it without the main percentage jumping around as DC books land.
+    # progress page keeps its original meaning. Deuterocanonical and
+    # extra-canonical progress are reported as their own sibling
+    # blocks so readers can see them without the main percentage
+    # jumping around as those books land.
     totals = {
         "books_drafted": nt_totals["books_drafted"] + ot_totals["books_drafted"],
         "books_total": nt_totals["books_total"] + ot_totals["books_total"],
@@ -259,6 +310,7 @@ def main() -> int:
         "nt": nt_totals,
         "ot": ot_totals,
         "deuterocanon": dc_totals,
+        "extra_canonical": ec_totals,
     }
 
     full_sha, short_sha = git_head()
