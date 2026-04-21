@@ -173,6 +173,12 @@ manual Bensly-grounded segmentation. So far:
 
 - **Chapter 1** manual rescue complete for verses **1–11, 23, 25–26**
 - **Chapter 2** manual rescue complete for verses **1–17, 44–45**
+- **Chapter 3** manual rescue complete for verses **2–12**
+- **Chapter 4** manual rescue complete for verses **1–9**
+- **Chapter 8** manual rescue complete for verses **1–8**
+- **Chapter 11** manual rescue complete for verses **1–13**
+- **Chapter 12** manual rescue complete for verses **49–51**
+- **Chapter 14** manual rescue complete for verses **1–14**
 
 The remaining queue is explicitly tracked in
 `SCAN_GROUNDING_QUEUE.md`.

@@ -364,6 +364,13 @@ text survives only via Latin + 6 daughter translations.
   - first manual Bensly-grounded rescue pass completed for:
     - chapter 1 verses 1–11, 23, 25–26
     - chapter 2 verses 1–17, 44–45
+  - second manual Bensly-grounded rescue pass completed for:
+    - chapter 3 verses 2–12
+    - chapter 4 verses 1–9
+    - chapter 8 verses 1–8
+    - chapter 11 verses 1–13
+    - chapter 12 verses 49–51
+    - chapter 14 verses 1–14
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 
