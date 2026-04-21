@@ -1,0 +1,133 @@
+id: SIR.47.13
+reference: Sirach 47:13
+source:
+  edition: sefaria-ben-sira-kahana
+  text: שְׁלֹמֹה מלך בימי שלוה, ואל הניח לו מסביב.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 758
+  - 759
+  - 760
+  - 761
+  - 762
+  - 763
+  - 764
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: Σαλωμὼν ἐβασίλευσεν ἐν ἡμέραις εἰρήνης, ᾧ ὁ θεὸς κατέπαυσεν κυκλόθεν, ἵνα
+      στήσῃ οἶκον ἐπʼ ὀνόματι αὐτοῦ καὶ ἑτοιμάσῃ ἁγίασμα εἰς τὸν αἰῶνα.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 47:13
+translation:
+  text: Solomon reigned in days of peace, and God gave him rest on every side, so
+    that he might build a house for his name and prepare a sanctuary forever.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The extant Hebrew line is shorter: ''Solomon reigned in days of peace,
+      and God gave him rest on every side.'' The Greek parallel adds the purpose clause
+      about building a house for God''s name and preparing a sanctuary forever.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: שְׁלֹמֹה
+  chosen: Solomon
+  lexicon: HALOT
+  rationale: Standard English transliteration of the personal name.
+- source_word: מלך
+  chosen: reigned
+  alternatives:
+  - was king
+  lexicon: HALOT
+  rationale: Verbal form is best rendered as an action, 'reigned,' in natural English.
+- source_word: בימי שלוה
+  chosen: in days of peace
+  alternatives:
+  - in peaceful days
+  - in days of tranquility
+  lexicon: HALOT
+  rationale: The Hebrew phrase denotes a period characterized by peace or tranquility.
+    'Days of peace' is clear and preserves the temporal idiom.
+- source_word: ואל הניח לו מסביב
+  chosen: and God gave him rest on every side
+  alternatives:
+  - and God let him rest all around
+  - and God granted him quiet on every side
+  lexicon: HALOT; LSJ
+  rationale: The Hebrew as transmitted appears slightly irregular ('ואל'), but the
+    Greek parallel explicitly reads 'to whom God gave rest all around' (ᾧ ὁ θεὸς κατέπαυσεν
+    κυκλόθεν). Because the task requires using the Greek parallel as actual translation
+    input, the subject 'God' is made explicit in English. 'On every side' is idiomatic
+    for מסביב / κυκλόθεν.
+- source_word: ᾧ ὁ θεὸς κατέπαυσεν κυκλόθεν
+  chosen: God gave him rest on every side
+  alternatives:
+  - God caused him to rest all around
+  lexicon: LSJ
+  rationale: The Greek confirms the likely sense of the Hebrew line and clarifies
+    the subject. 'Gave him rest' is idiomatic and fits biblical usage.
+- source_word: ἵνα στήσῃ οἶκον ἐπʼ ὀνόματι αὐτοῦ
+  chosen: so that he might build a house for his name
+  alternatives:
+  - so that he might establish a house for his name
+  lexicon: LSJ
+  rationale: This clause is present in the Greek parallel but absent from the extant
+    Hebrew line in Zone 1. Since the prompt instructs that the Greek parallel be used
+    as actual translation input, it is included in the main text. 'Build a house for
+    his name' reflects temple-building language naturally in English.
+- source_word: καὶ ἑτοιμάσῃ ἁγίασμα εἰς τὸν αἰῶνα
+  chosen: and prepare a sanctuary forever
+  alternatives:
+  - and prepare a holy place forever
+  - and make ready a sanctuary for eternity
+  lexicon: LSJ
+  rationale: The Greek continues the purpose clause. 'Sanctuary' is the most natural
+    rendering of ἁγίασμα here. 'Forever' preserves εἰς τὸν αἰῶνα without over-expansion.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 892fd805d3fd1375fc6fb3dfa8ff717df07d65051f188877b0376d619e0ead99
+  timestamp: '2026-04-21T20:39:30Z'
+  output_hash: f37c06cf915faea1b92198090f0a667aa5d86a3775485f36e07e905d7337f023
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f543552d
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f543552d
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Inclusion of the temple-purpose clause found in the Greek parallel but not
+    in the extant Hebrew line
+  chosen_reading: Include the Greek clause in the main text
+  alternative_readings:
+  - 'Translate only the extant Hebrew: ''Solomon reigned in days of peace, and God
+    gave him rest on every side.'''
+  rationale: For Sirach, the project translates from Hebrew where it survives, but
+    the prompt explicitly requires using the Greek parallel as actual translation
+    input. Here the Hebrew witness is shorter, while the Greek supplies a coherent
+    continuation that fits the context of Solomon and the temple. Because the Hebrew
+    line is marked with minor mismatch and the Greek is a direct parallel witness,
+    the fuller sense is included, with the shorter Hebrew preserved in a footnote
+    for transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; Task
+    requirement: use parallel Greek as actual translation input.'
