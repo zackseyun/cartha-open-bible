@@ -76,6 +76,11 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
 - **Planned source tree** documented at `sources/greek_extra/README.md`
   for Didache, 1 Clement, Shepherd of Hermas, and Testaments of the
   Twelve Patriarchs.
+- **Didache + 1 Clement source manifests** added:
+  - `sources/didache/README.md` + `MANIFEST.md`
+  - `sources/1_clement/README.md` + `MANIFEST.md`
+  - `.gitignore` updated so the local source PDFs stay out of git while
+    their hashes and edition metadata remain documented
 
 ## Phase 8d — Jubilees pipeline + Ge'ez OCR correction (2026-04-21)
 

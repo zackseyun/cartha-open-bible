@@ -98,3 +98,7 @@ and Phase 14.
 2. run the shared local-PDF Greek OCR pipeline on pilot pages
 3. create one parser per book once page transcription stabilizes
 4. begin drafting in the order above
+
+Current note: Didache and 1 Clement already have local source PDFs in
+place, so they are the natural first non-Swete books to exercise the
+generic local-PDF OCR path.

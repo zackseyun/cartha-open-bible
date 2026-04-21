@@ -46,3 +46,10 @@ sources/greek_extra/
 
 The shared OCR tool for these directories is
 [`../../tools/greek_extra_pdf_ocr.py`](../../tools/greek_extra_pdf_ocr.py).
+
+## Current state
+
+- **Didache** — local scans already present; README + manifest now in place
+- **1 Clement** — local scans already present; README + manifest now in place
+- **Shepherd of Hermas** — source acquisition still pending
+- **Testaments of the Twelve Patriarchs** — source acquisition still pending
