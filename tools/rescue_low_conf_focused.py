@@ -53,11 +53,38 @@ Rules:
   - Our OCR text of the page is given ONLY as a guide to where on the page the verse sits — use it to orient yourself, don't trust it for the final Greek.
   - If the verse is genuinely not on the page (e.g. chapter ended earlier, or the numbering scheme differs), set confidence=low and verdict=neither and explain.
 
+EXPLICIT CONFIDENCE RUBRIC (apply strictly):
+
+  HIGH:
+    - You can clearly read every character of the verse in the scan,
+      including all diacritics (accents, breathings, iota subscripts).
+    - The reading you output exactly matches what is printed, or
+      matches one of the 4 candidates exactly.
+    - No visible smudging, faded ink, torn paper, or ambiguous letterforms
+      in the verse area.
+
+  MEDIUM:
+    - You can read the verse substantively, but there is ambiguity about
+      specific characters (e.g. ε vs ω on a worn letter, a diacritic
+      that could be acute or circumflex, a letter that could be α or δ).
+    - You have made a best-guess call but acknowledge the scan permits
+      an alternative reading a specialist might prefer.
+    - Verse boundary or punctuation placement is genuinely ambiguous.
+
+  LOW:
+    - The verse is not legibly on the provided scan page.
+    - Severe damage, ink bleed, or missing text.
+    - You are essentially relying on the candidate readings alone,
+      without visual verification.
+
+Calibrate honestly: it is better to mark MEDIUM and be correct about
+your uncertainty than to mark HIGH and be overconfident.
+
 Per verse, output via submit_focused_adjudication:
   - verse: int
   - verdict_greek: the definitive Greek text as printed
   - verdict: "ours" | "first1k" | "amicarelli" | "rahlfs_match" | "neither" | "swete_consensus" | "both_ok"
-  - reasoning: 1-2 sentences
+  - reasoning: 1-2 sentences explaining what you saw on the scan and why you made this confidence call
   - confidence: "high" | "medium" | "low"
 """
 
@@ -311,19 +338,27 @@ def process_verse(book: str, chapter: int, verse: int, image_width: int = 3000) 
             "confidence": result["confidence"], "page": pages[0]}
 
 
-def build_worklist() -> list[tuple[str, int, int]]:
+def build_worklist(target_confs: set[str] = frozenset({"low"})) -> list[tuple[str, int, int]]:
     wl = []
     for p in sorted(ADJ_DIR.glob("*.json")):
         data = json.loads(p.read_text())
         for v in data.get("verdicts", []):
-            if v.get("confidence") == "low":
+            if v.get("confidence") in target_confs:
                 wl.append((data.get("book"), data.get("chapter"), v.get("verse")))
     return wl
 
 
 def main():
-    wl = build_worklist()
-    print(f"Focused worklist: {len(wl)} low-conf verses")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--include-medium", action="store_true",
+                        help="Also re-run on medium-confidence verses")
+    parser.add_argument("--image-width", type=int, default=3000)
+    args = parser.parse_args()
+
+    target = {"low", "medium"} if args.include_medium else {"low"}
+    wl = build_worklist(target_confs=target)
+    print(f"Focused worklist: {len(wl)} verses (confidences={sorted(target)}, image_width={args.image_width}px)")
     for b, c, v in wl:
         print(f"  {b} {c}:{v}")
 
@@ -332,7 +367,7 @@ def main():
 
     ok = failed = 0
     with ThreadPoolExecutor(max_workers=3) as pool:
-        futs = {pool.submit(process_verse, b, c, v): (b, c, v) for b, c, v in wl}
+        futs = {pool.submit(process_verse, b, c, v, args.image_width): (b, c, v) for b, c, v in wl}
         for fut in as_completed(futs):
             b, c, v = futs[fut]
             try:

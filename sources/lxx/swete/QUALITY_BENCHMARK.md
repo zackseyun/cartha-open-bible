@@ -1,6 +1,6 @@
 # Cartha Open Bible — Phase 8 corpus quality benchmark
 
-**Generated:** 2026-04-21 02:44 UTC
+**Generated:** 2026-04-21 03:11 UTC
 
 ## Pipeline stages
 
@@ -13,7 +13,7 @@ validation oracle (NOT as a source of our text).
 | Stage | Verses | Coverage | Agree | Agree+Minor | Major | Missing |
 |---|---:|---:|---:|---:|---:|---:|
 | 4. AI-vision re-parse (our-OCR-only) | 6074 | 104.2% | 59.4% | 77.8% | 1231 | 275 |
-| 5. Scan-adjudicated (final) | 6337 | 108.7% | 72.3% | 86.1% | 806 | 12 |
+| 5. Scan-adjudicated (final) | 6337 | 108.7% | 72.3% | 86.2% | 805 | 12 |
 
 ## Final stage — per-book detail (5. Scan-adjudicated (final))
 
@@ -26,10 +26,10 @@ validation oracle (NOT as a source of our text).
 | 4MA | 503 | 481 | 80.7% | 95.4% | 22 | 0 |
 | ADA | 551 | 408 | 64.5% | 76.2% | 97 | 0 |
 | ADE | 244 | 190 | 72.6% | 75.8% | 46 | 0 |
-| BAR | 207 | 141 | 92.9% | 100.0% | 0 | 0 |
+| BAR | 207 | 141 | 92.2% | 99.3% | 1 | 0 |
 | JDT | 343 | 339 | 85.8% | 92.3% | 26 | 1 |
 | LJE | 72 | 72 | 87.5% | 98.6% | 1 | 0 |
-| SIR | 1439 | 1400 | 45.0% | 78.6% | 298 | 7 |
+| SIR | 1439 | 1400 | 45.0% | 78.8% | 296 | 7 |
 | TOB | 255 | 243 | 85.6% | 95.5% | 11 | 0 |
 | WIS | 472 | 424 | 72.9% | 78.6% | 90 | 4 |
 

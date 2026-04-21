@@ -2,20 +2,20 @@
 
 Total verses: **6337**
 Verses left unchanged (already agreed): **3674**
-Verses adjudicated against scan: **2285**
+Verses adjudicated against scan: **2286**
 
 ## Adjudication outcomes
 
 - Our OCR matched scan (kept ours): **1292**
-- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **506**
+- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **505**
 - Both equivalent (minor orthography): **66**
-- Neither matched scan (fresh scan-based reading): **421**
+- Neither matched scan (fresh scan-based reading): **423**
 
 ## Adjudicator confidence
 
-- High: **2649**
-- Medium: **14**
-- Low (may warrant human review): **0**
+- High: **2652**
+- Medium: **9**
+- Low (may warrant human review): **2**
 
 ## Per-book breakdown
 
@@ -30,8 +30,8 @@ Verses adjudicated against scan: **2285**
 | 3MA | 232 | 135 | 14 | 36 | 13 | 18 | 97 |
 | 4MA | 503 | 272 | 67 | 79 | 7 | 53 | 231 |
 | WIS | 472 | 280 | 127 | 24 | 3 | 22 | 192 |
-| SIR | 1439 | 533 | 595 | 76 | 18 | 126 | 896 |
-| BAR | 207 | 106 | 9 | 26 | 1 | 2 | 99 |
+| SIR | 1439 | 533 | 595 | 75 | 18 | 127 | 899 |
+| BAR | 207 | 106 | 9 | 26 | 1 | 3 | 99 |
 | LJE | 72 | 56 | 7 | 5 | 0 | 3 | 16 |
 | ADA | 551 | 232 | 134 | 65 | 0 | 51 | 319 |
 

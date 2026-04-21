@@ -215,6 +215,40 @@ exactly what shaped each rendering.
 declared once per source; translator prompts assemble automatically;
 derivative-work checks are explicit. No ad-hoc judgment per verse.
 
+## Confidence rubric for corpus adjudication
+
+Every verse in the scan-adjudicated corpus carries a confidence
+level. The rubric below is applied strictly by the adjudicator
+(AI or human):
+
+**HIGH** — reading can be defended rigorously:
+- Every character of the verse is clearly readable in the scan,
+  including all diacritics (accents, breathings, iota subscripts)
+- The reading output exactly matches what is printed, or matches
+  one of the independent transcription candidates exactly
+- No visible smudging, faded ink, torn paper, or ambiguous
+  letterforms in the verse area
+
+**MEDIUM** — reading is defensible but has known ambiguity:
+- Verse is substantively readable, but specific characters are
+  ambiguous (e.g. ε vs ω on a worn letter, acute vs circumflex,
+  α vs δ)
+- A best-guess call has been made but the scan permits an
+  alternative reading a specialist might prefer
+- Verse boundary or punctuation placement is genuinely ambiguous
+
+**LOW** — reading cannot be visually verified:
+- Verse is not legibly visible on the provided scan page
+- Severe damage, ink bleed, or missing text
+- Reading relies on candidates alone, without visual verification
+
+Calibration principle: **it is better to mark MEDIUM and be correct
+about uncertainty than to mark HIGH and be overconfident.** Medium
+is a disclosure layer, not a defect. A published verse with
+`source_confidence: medium` is a trust signal to readers that the
+source-text reading has a specific, documented uncertainty the
+translator and reviewer were aware of.
+
 ## Per-book Zone 2 registry
 
 (Maintained alongside this document; may grow as scholarship is
