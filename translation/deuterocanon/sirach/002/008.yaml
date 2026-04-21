@@ -1,0 +1,127 @@
+id: SIR.2.8
+reference: Sirach 2:8
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[יִרְאֵי יְהֹוָה הַאֲמִינוּ בּוֹ, וְהוּא לֹא יָלִין שְׂכַרְכֶם.]'
+  language: Hebrew
+  pages:
+  - 666
+  - 667
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: οἱ φοβούμενοι Κύριον, πιστεύσατε αὐτῷ, καὶ οὐ μὴ ἀπολέσητε τὸν μισθὸν ὑμῶν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 2:8
+translation:
+  text: You who fear the LORD, trust in him, and your reward will not be lost.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew literally, 'and he will not let your reward remain overnight,' an
+      idiom that is difficult in English; the Greek parallel reads, 'and you will
+      certainly not lose your reward.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: יִרְאֵי יְהֹוָה
+  chosen: You who fear the LORD
+  alternatives:
+  - Those who fear the LORD
+  - Fearers of the LORD
+  lexicon: HALOT
+  rationale: The Hebrew is a masculine plural participial expression, vocative in
+    context. English direct address is best conveyed with 'You who fear the LORD.'
+    'The LORD' follows the project's default for יְהוָה.
+- source_word: הַאֲמִינוּ בּוֹ
+  chosen: trust in him
+  alternatives:
+  - believe him
+  - have faith in him
+  lexicon: HALOT
+  rationale: The imperative of אמן with ב conveys reliance/trust. 'Trust in him' is
+    more natural and contextually apt in exhortation than the more cognitive 'believe
+    him,' while remaining faithful to the Hebrew sense. The Greek πιστεύσατε αὐτῷ
+    supports the semantic field of trust/belief.
+- source_word: וְהוּא
+  chosen: and
+  alternatives:
+  - and he
+  - for he
+  lexicon: HALOT
+  rationale: The Hebrew explicitly has 'and he,' but idiomatic English expresses the
+    result more naturally as 'and your reward will not be lost.' The subject is still
+    understood from the clause. This is a modest optimal-equivalence smoothing supported
+    by the Greek's shift in construction.
+- source_word: לֹא יָלִין
+  chosen: will not be lost
+  alternatives:
+  - will not tarry overnight
+  - will not remain overnight
+  - will not fail to remain
+  lexicon: HALOT
+  rationale: The Hebrew verb לין ordinarily means 'lodge/remain overnight,' which
+    is difficult with 'your reward' as subject/object in English. The Greek parallel
+    reads 'you will certainly not lose your reward' (οὐ μὴ ἀπολέσητε τὸν μισθὸν ὑμῶν),
+    indicating the sense that the reward will not fail or disappear. 'Will not be
+    lost' captures the likely intended meaning while honestly reflecting the Hebrew-Greek
+    tension.
+- source_word: שְׂכַרְכֶם
+  chosen: your reward
+  alternatives:
+  - your wages
+  - your recompense
+  lexicon: HALOT
+  rationale: שכר can mean wages or reward. In wisdom exhortation about divine recompense,
+    'reward' is the clearest and most natural English choice.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 0453d3af1a123d0768993b3a181c3d9172074155ce05d6d3c1020aa2f8a70d61
+  timestamp: '2026-04-21T20:19:00Z'
+  output_hash: 45e66e492f9c8e00fd8fa47452a59b3d5906d1fe5b942f5620c6ea92e3625b24
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @ad3e9c4c
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @ad3e9c4c
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Rendering the divine name יְהֹוָה
+  chosen_reading: the LORD
+  alternative_readings:
+  - Yahweh
+  - Jehovah
+  rationale: Follows the project's stated default for the Tetragrammaton and aligns
+    with Jewish reverence tradition and LXX usage.
+  doctrine_reference: 'DOCTRINE.md contested terms: יְהוָה YHWH → the LORD'
+- issue: Reconciling Hebrew and Greek clause sense in the final colon
+  chosen_reading: your reward will not be lost
+  alternative_readings:
+  - he will not let your reward remain overnight
+  - you will certainly not lose your reward
+  rationale: The Hebrew wording is somewhat awkward literally, while the Greek gives
+    a clear sense about not losing reward. The main text preserves the likely sense
+    shared by both witnesses without overcommitting to a wooden literalism that obscures
+    meaning.
+  doctrine_reference: 'Translation philosophy: optimal equivalence; preserve source
+    uncertainty honestly'
