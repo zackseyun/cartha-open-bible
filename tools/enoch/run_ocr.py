@@ -19,6 +19,7 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(REPO_ROOT / "tools" / "ethiopic"))
 import ocr_geez  # type: ignore
 import verse_parser  # type: ignore
+import mask_superscripts  # type: ignore
 
 PAGE_MAP = REPO_ROOT / "sources" / "enoch" / "ethiopic" / "page_map.json"
 OUT_ROOT = REPO_ROOT / "sources" / "enoch" / "ethiopic" / "transcribed"
@@ -28,9 +29,15 @@ def load_map() -> dict[str, Any]:
     return json.loads(PAGE_MAP.read_text(encoding="utf-8"))
 
 
-def transcribe_page(pdf_path: pathlib.Path, page_number: int, *, book_hint: str, chapter_hint: str, opening_hint: str) -> tuple[str, dict[str, Any]]:
+def transcribe_page(pdf_path: pathlib.Path, page_number: int, *, book_hint: str, chapter_hint: str, opening_hint: str, preprocess: str = 'none') -> tuple[str, dict[str, Any]]:
     started = time.time()
-    image = ocr_geez.render_page_png(pdf_path, page_number, dpi=400)
+    if preprocess == 'mask_superscripts':
+        masked = mask_superscripts.mask_page(pdf_path, page_number)
+        buf = __import__('io').BytesIO()
+        masked['image'].save(buf, format='PNG')
+        image = buf.getvalue()
+    else:
+        image = ocr_geez.render_page_png(pdf_path, page_number, dpi=400)
     result = ocr_geez.call_gemini_pro_geez(
         image,
         book_hint=book_hint,
@@ -49,11 +56,12 @@ def transcribe_page(pdf_path: pathlib.Path, page_number: int, *, book_hint: str,
         "tokens_thinking": result.tokens_thinking,
         "error": result.error,
         "duration_seconds": round(time.time() - started, 2),
+        "preprocess": preprocess,
     }
     return result.geez_text, meta
 
 
-def run_chapter(edition: str, chapter: int, *, force: bool = False, split_verses: bool = False) -> dict[str, Any]:
+def run_chapter(edition: str, chapter: int, *, force: bool = False, split_verses: bool = False, preprocess: str = 'none') -> dict[str, Any]:
     mapping = load_map()["editions"][edition]
     chapter_key = f"{chapter:03d}"
     chapter_meta = mapping["chapters"][chapter_key]
@@ -83,6 +91,7 @@ def run_chapter(edition: str, chapter: int, *, force: bool = False, split_verses
                 book_hint=f"1 Enoch {edition}",
                 chapter_hint=chapter_meta.get("chapter_hint", ""),
                 opening_hint=chapter_meta.get("opening_hint", "") if idx == 0 else "",
+                preprocess=preprocess,
             )
             txt_path.write_text(text + ("\n" if text and not text.endswith("\n") else ""), encoding="utf-8")
             meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -107,6 +116,7 @@ def run_chapter(edition: str, chapter: int, *, force: bool = False, split_verses
         "page_count": len(pages),
         "chars": len(chapter_text.strip()),
         "page_meta": page_metas,
+        "preprocess": preprocess,
     }
     (edition_dir / f"ch{chapter:02d}.json").write_text(json.dumps(chapter_summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -132,12 +142,13 @@ def main() -> int:
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--split-verses", action="store_true")
     ap.add_argument("--promote-primary", action="store_true")
+    ap.add_argument("--preprocess", choices=["none", "mask_superscripts"], default="none")
     args = ap.parse_args()
 
     if not os.environ.get("GEMINI_API_KEY"):
         raise SystemExit("GEMINI_API_KEY not set")
 
-    summary = run_chapter(args.edition, args.chapter, force=args.force, split_verses=args.split_verses)
+    summary = run_chapter(args.edition, args.chapter, force=args.force, split_verses=args.split_verses, preprocess=args.preprocess)
     if args.promote_primary:
         promote_primary_chapter(args.chapter)
     print(json.dumps(summary, ensure_ascii=False, indent=2))

@@ -4,29 +4,35 @@
 
 | Method | Accuracy | Notes |
 |---|---:|---|
-| Full-page OCR | **63.07%** | Best of the tested methods so far |
-| Apparatus-masked body-only OCR | **60.27%** | Slightly worse than baseline, but better than the coarse segmented pass |
+| Full-page OCR (original baseline) | **63.07%** | Previous best baseline |
+| Full-page OCR, temperature 0 | **54.02%** | More repeatable, but clearly worse |
+| 3-run consensus sample (best single sampled run) | **59.30%** | Did not beat the original baseline |
+| 3-run consensus sample (medoid run) | **55.28%** | Stable-ish center run, but worse than baseline |
+| Apparatus-masked body-only OCR | **60.27%** | Better than coarse segmentation, but below baseline |
 | Segmented bands (`bands_v1`) | **57.54%** | Coarse bands did not help |
-| Automatic line-region OCR | **20.85%** | Very poor; current line-by-line approach is not usable |
+| Automatic line-region OCR | **20.85%** | Not usable in current form |
+| Masked superscripts (run 1) | **67.69%** | **Current best tested method** |
+| Masked superscripts (run 2) | **66.10%** | Also beats the old full-page baseline |
 
 ## Practical reading of the result
 
-- The old Beta maṣāḥǝft comparison overstated failure because it mixed in edition variance.
-- But once we switched to scan-grounded truth, the rescue experiments still did **not** beat the plain full-page baseline.
-- Apparatus masking is the closest alternative, but it still trails the baseline.
-- Automatic line-region OCR is currently much worse than all other methods.
+- The old Beta maṣāḥǝft comparison overstated OCR failure because it mixed in edition variance.
+- Deterministic full-page OCR did not help; it reduced accuracy.
+- A small 3-run consensus sweep also did not beat the original baseline.
+- The strongest improvement so far comes from **masking tiny superscript note markers inside the body text before OCR**.
+- Apparatus masking alone helps less than superscript masking.
+- Coarse segmentation and automatic line-region OCR both underperform.
 
 ## Current decision
 
-For now, **full-page OCR remains the best-performing method among the tested variants**.
+**Best current direction: superscript-masked full-page OCR.**
 
-That does **not** mean it is good enough for bulk Ethiopic OCR yet — only that the tested rescue methods did not improve it.
+It is still not perfect, and reruns are not perfectly identical, but it is the best-performing approach we have measured so far.
 
 ## If work continues from here
 
-The next promising direction is probably **not** more coarse segmentation. Better candidates would be:
+The next promising direction is probably:
 
-1. consensus / multi-run reconciliation on the same page,
-2. specialized masking of superscript note markers before OCR,
-3. fine-grained line detection tied to explicit verse-start anchors,
-4. a second model used as a checker rather than as a parallel OCR source.
+1. apply superscript masking by default to Charles-style Ethiopic pages,
+2. combine superscript masking with light apparatus masking if needed,
+3. use extra Gemini capacity only if we want a larger consensus / re-ranking sweep after masking.

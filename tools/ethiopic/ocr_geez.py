@@ -149,6 +149,7 @@ def call_gemini_pro_geez(
             {"inline_data": {"mime_type": "image/png", "data": b64}},
         ]}],
         "generationConfig": {
+            "temperature": 0.0,
             "max_output_tokens": max_output_tokens,
             "thinkingConfig": {"thinkingBudget": thinking_budget},
         },

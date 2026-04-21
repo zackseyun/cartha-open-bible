@@ -36,6 +36,7 @@ def _gemini_plaintext(image_bytes: bytes, prompt: str, *, thinking_budget: int =
             {'inline_data': {'mime_type': 'image/png', 'data': base64.b64encode(image_bytes).decode()}}
         ]}],
         'generationConfig': {
+            'temperature': 0.0,
             'thinkingConfig': {'thinkingBudget': thinking_budget},
             'maxOutputTokens': max_output_tokens,
         },
