@@ -93,6 +93,13 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
 - **Didache Hitchcock Greek span pushed much further**:
   raw OCR now exists for pages 16, 18, 20, 22, 24, 26, 28, 30, 32,
   34, 36, 38, 40, and 42
+- **Normalization tooling added and exercised**:
+  - `tools/didache_normalize.py` assembles the raw OCR into chapter
+    files
+  - `tools/didache.py` loads the normalized chapter files
+  - normalized outputs now exist at
+    `sources/didache/transcribed/ch01.txt` … `ch16.txt` plus
+    `chapter_map.json`
 - **Shepherd of Hermas + Testaments source trees** added:
   - `sources/shepherd_of_hermas/README.md` + `MANIFEST.md`
   - `sources/testaments_twelve_patriarchs/README.md` + `MANIFEST.md`

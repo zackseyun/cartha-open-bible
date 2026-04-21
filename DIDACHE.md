@@ -11,7 +11,7 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/didache/README.md`](sources/didache/README.md)
 
-> **Status: source-acquisition + active OCR phase.** Public-domain Greek
+> **Status: source-acquisition + normalized-Greek phase.** Public-domain Greek
 > source editions are now vendored locally (gitignored + manifest-tracked).
 > The Didache reuses the existing Greek OCR / drafting stack; no new
 > language pipeline is needed. The Greek text pages from Hitchcock &
@@ -20,7 +20,8 @@ It complements:
 > `sources/didache/transcribed/raw/`. A quick Azure-vs-Gemini comparison
 > on those pilot pages favored **Azure GPT-5.4 as the cleaner primary
 > OCR path** for this source; Gemini Pro remains useful as a spot-check
-> reviewer.
+> reviewer. That raw OCR has now been normalized into chapter files
+> (`ch01.txt` … `ch16.txt`) plus `chapter_map.json`.
 
 ## Why the Didache
 
@@ -75,7 +76,5 @@ The shared local-PDF OCR tool for this track is
 
 ## Immediate next steps
 
-1. OCR the vendored Greek pages from the local PDFs
-2. Normalize the chapter structure
-3. Build the Didache prompt builder
-4. Draft + revise
+1. Build the Didache prompt builder on top of the normalized chapter files
+2. Draft + revise
