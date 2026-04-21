@@ -1,0 +1,128 @@
+id: SIR.3.22
+reference: Sirach 3:22
+source:
+  edition: sefaria-ben-sira-kahana
+  text: בַּמֶּה שֶׁהוּרְשֵׁיתָ הִתְבּוֹנֵן, וְאֵין לְךָ עֵסֶק בְּנִסְתָּרוֹת.
+  language: Hebrew
+  pages:
+  - 666
+  - 667
+  - 668
+  - 669
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἃ προσετάγη σοι, ταῦτα διανοοῦ· οὐ γάρ ἐστί σοι χρεία τῶν κρυπτῶν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 3:22
+translation:
+  text: Consider what you have been commanded, and you have no business with hidden
+    things.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Hebrew: ''what you have been permitted/authorized''; the Greek parallel
+      reads ''what was commanded to you.'' The main text follows the Greek-supported
+      sense of what has been assigned to your concern.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: בַּמֶּה
+  chosen: what
+  alternatives:
+  - that which
+  - in what
+  lexicon: HALOT
+  rationale: Introduces the object of reflection. In context, idiomatic English is
+    better served by 'what' rather than a more wooden 'in what.'
+- source_word: הוּרְשֵׁיתָ
+  chosen: you have been commanded
+  alternatives:
+  - you have been permitted
+  - you have been authorized
+  - you have been assigned
+  lexicon: HALOT
+  rationale: The Hebrew form could suggest 'you were permitted/authorized,' but the
+    Greek parallel προσετάγη ('was commanded/ordered') strongly supports a sense of
+    what has been laid upon the hearer as an obligation. Given the minor mismatch
+    note and the instruction to use the Greek as actual translation input, 'commanded'
+    best reflects the recoverable sense.
+- source_word: הִתְבּוֹנֵן
+  chosen: consider
+  alternatives:
+  - reflect on
+  - give thought to
+  - understand
+  lexicon: HALOT
+  rationale: The verb calls for thoughtful attention. 'Consider' is concise, natural
+    English and matches the wisdom context better than the more cognitive 'understand'
+    or the more expansive 'reflect on.'
+- source_word: וְאֵין לְךָ עֵסֶק
+  chosen: you have no business
+  alternatives:
+  - you have no concern
+  - you have no need
+  - it is not for you to deal with
+  lexicon: HALOT
+  rationale: The Hebrew idiom means that such matters are not the hearer's proper
+    domain. 'You have no business' preserves the admonitory force. The Greek χρεία
+    would support 'need,' but the Hebrew עֵסֶק points more toward involvement or occupation
+    than mere necessity.
+- source_word: בְּנִסְתָּרוֹת
+  chosen: with hidden things
+  alternatives:
+  - with secret things
+  - with mysteries
+  lexicon: HALOT
+  rationale: The plural refers to matters concealed from human inquiry. 'Hidden things'
+    is clear and direct; 'secret things' is possible, and 'mysteries' risks importing
+    later theological associations not required by the text.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 270a821590be83d11e1b6090700d749bdc899af50d637cb9f0ade9d27b96cce7
+  timestamp: '2026-04-21T20:19:54Z'
+  output_hash: 9af9bdbd75a1c8acea128683cce8c8c5c507638cdd31cf5adc4627e63b8c6a20
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1697e25f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1697e25f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 3:22 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Reconciling the Hebrew הוּרְשֵׁיתָ with the Greek parallel προσετάγη
+  chosen_reading: Render the clause as obligation ('what you have been commanded')
+  alternative_readings:
+  - what you have been permitted
+  - what you have been entrusted with
+  rationale: Zone 1 gives a Hebrew reading that, taken alone, could suggest permission
+    or authorization, but the Greek parallel explicitly reads 'what was commanded
+    to you.' Because the task requires using the Greek as actual translation input
+    and the source is marked minor_mismatch, the main text follows the stronger convergent
+    sense of an assigned or commanded sphere of concern, while preserving the Hebrew-based
+    alternative in a footnote.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives, using
+    the Greek parallel as actual translation input when present; preserve source uncertainty
+    honestly.'

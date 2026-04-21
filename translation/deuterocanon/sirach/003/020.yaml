@@ -1,0 +1,129 @@
+id: SIR.3.20
+reference: Sirach 3:20
+source:
+  edition: sefaria-ben-sira-kahana
+  text: כִּי רַבִּים רַחֲמֵי אֱלֹהִים, וְלַעֲנָוִים יְגַלֶּה סוֹדוֹ.
+  language: Hebrew
+  pages:
+  - 666
+  - 667
+  - 668
+  - 669
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ὅτι μεγάλη ἡ δυναστεία τοῦ κυρίου καὶ ὑπὸ τῶν ταπεινῶν δοξάζεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 3:20
+translation:
+  text: For the mercies of God are many, and to the humble he reveals his secret.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''For great is the dominion of the Lord, and he is glorified
+      by the humble.'' The Hebrew witness here differs substantially from the Greek.'
+    reason: alternative_reading
+  - marker: b
+    text: Or 'his counsel.' The Hebrew word can mean a secret shared in intimate confidence,
+      not only hidden information.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: רַבִּים
+  chosen: many
+  alternatives:
+  - great
+  - numerous
+  lexicon: HALOT
+  rationale: The Hebrew predicate adjective naturally yields 'are many' with רַחֲמֵי.
+    Although the Greek parallel reflects a different reading ('great is the dominion/power
+    of the Lord'), the Hebrew witness is primary here and is high-confidence.
+- source_word: רַחֲמֵי
+  chosen: mercies
+  alternatives:
+  - compassion
+  - acts of mercy
+  lexicon: HALOT
+  rationale: Plural 'mercies' preserves the Hebrew plural form and conveys repeated
+    or abundant compassionate dealings. 'Compassion' is possible, but 'mercies' better
+    matches the concrete plural nuance.
+- source_word: אֱלֹהִים
+  chosen: God
+  lexicon: HALOT
+  rationale: The Hebrew explicitly has 'God,' not 'the Lord.' The Greek parallel reads
+    κυρίου ('Lord'), but the main text should follow the extant Hebrew witness.
+- source_word: וְלַעֲנָוִים
+  chosen: to the humble
+  alternatives:
+  - to the lowly
+  - to the meek
+  lexicon: HALOT
+  rationale: '''The humble'' best captures the ethical and social sense of ענוים in
+    wisdom literature. ''Meek'' is possible but sounds narrower and more tradition-laden
+    in modern English.'
+- source_word: יְגַלֶּה
+  chosen: he reveals
+  alternatives:
+  - he uncovers
+  - he makes known
+  lexicon: HALOT
+  rationale: '''Reveals'' is the most natural English equivalent for גלה with an object
+    like סוד, preserving the sense of disclosure without over-paraphrase.'
+- source_word: סוֹדוֹ
+  chosen: his secret
+  alternatives:
+  - his counsel
+  - his confidential plan
+  lexicon: HALOT
+  rationale: סוד can denote secret, confidential counsel, or intimate counsel. 'His
+    secret' is the most direct rendering; the broader nuance of 'counsel' is worth
+    preserving in a footnote because the term can imply divine confidential counsel
+    rather than merely hidden information.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 8130d1f278a2a311fb2c0c7f42a9c2d34a9df728553bfd111e343bd157e5b03f
+  timestamp: '2026-04-21T20:19:23Z'
+  output_hash: 0f0acec384fec3a2e775207a70683aa74f2fa7466b32b04029e44479c6ce1a75
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1697e25f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1697e25f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 3:20 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the Hebrew Ben Sira witness and the Greek parallel
+  chosen_reading: 'Follow the Hebrew main text: ''For the mercies of God are many,
+    and to the humble he reveals his secret.'''
+  alternative_readings:
+  - 'Greek parallel: ''For great is the dominion of the Lord, and he is glorified
+    by the humble.'''
+  rationale: For Sirach, where Hebrew survives, project policy gives primacy to the
+    Hebrew witness. The Greek is still used as a real input and shows that this verse
+    circulated in a substantially different form in Greek tradition; because the difference
+    affects the sense of the whole verse, it should be preserved in a footnote as
+    an alternative reading rather than silently ignored.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; DOCTRINE.md:
+    preserve theological tension rather than resolve it silently.'

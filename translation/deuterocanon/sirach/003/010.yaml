@@ -1,0 +1,110 @@
+id: SIR.3.10
+reference: Sirach 3:10
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תִּתְכַּבֵּד בְּקְלוֹן אָבִיךָ, כִּי לֹא כָבוֹד הוּא לָךְ.
+  language: Hebrew
+  pages:
+  - 666
+  - 667
+  - 668
+  - 669
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ δόξαζε ἐν ἀτιμίᾳ πατρός σου, οὐ γάρ ἐστίν σοι δόξα πρὸς ἀτιμίαν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 3:10
+translation:
+  text: Do not honor yourself in your father's disgrace, for it is no honor to you.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Or, 'Do not glorify yourself through your father's disgrace.' The Hebrew
+      reflexive verb can suggest seeking honor for oneself, and the Greek parallel
+      likewise uses language of glory/honor.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: אַל
+  chosen: Do not
+  alternatives:
+  - Do not ever
+  - You must not
+  lexicon: HALOT
+  rationale: Standard negative prohibition introducing the imperative.
+- source_word: תִּתְכַּבֵּד
+  chosen: honor yourself
+  alternatives:
+  - glorify yourself
+  - boast
+  - make yourself important
+  lexicon: HALOT
+  rationale: Hitpael of כבד carries a reflexive sense, 'make oneself honored' or 'gain
+    honor for oneself.' 'Honor yourself' preserves the reflexive force better than
+    the more interpretive 'boast.' The Greek δόξαζε likewise supports the sense of
+    seeking glory/honor.
+- source_word: בְּקְלוֹן
+  chosen: in ... disgrace
+  alternatives:
+  - through ... shame
+  - by means of ... dishonor
+  lexicon: HALOT
+  rationale: קלון denotes shame, disgrace, dishonor. The preposition ב here is best
+    rendered idiomatically as 'in' or instrumentally 'through/by.' 'In your father's
+    disgrace' keeps the Hebrew structure while remaining natural enough in English.
+- source_word: אָבִיךָ
+  chosen: your father
+  lexicon: HALOT
+  rationale: Straightforward possessive noun; singular should be preserved.
+- source_word: כִּי
+  chosen: for
+  alternatives:
+  - because
+  - since
+  lexicon: HALOT
+  rationale: Introduces the reason for the prohibition; 'for' is concise and natural
+    in wisdom style.
+- source_word: לֹא כָבוֹד הוּא לָךְ
+  chosen: it is no honor to you
+  alternatives:
+  - it is not glory for you
+  - it brings you no honor
+  lexicon: HALOT
+  rationale: כבוד here means honor/glory/repute. 'It is no honor to you' is a clear
+    English rendering that preserves the nominal structure and the moral point. The
+    Greek οὐ γάρ ἐστίν σοι δόξα confirms the sense.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 3a9e0fac087ebe7f3b49c37a352711b04151601cbeb0d50d21404b1334aa2efc
+  timestamp: '2026-04-21T20:16:37Z'
+  output_hash: a472d505da0884d427b961d01b7ae414b94cdec36fa71ab3d61bcd16711b3813
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1697e25f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1697e25f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 3:10 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft

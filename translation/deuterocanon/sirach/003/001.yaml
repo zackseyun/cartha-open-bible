@@ -1,0 +1,132 @@
+id: SIR.3.1
+reference: Sirach 3:1
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[שִׁמְעוּ בָנִים מִשְׁפַט אָב, וַעֲשׂוּ לְמַעַן תִּחְיוּ.]'
+  language: Hebrew
+  pages: []
+  confidence: high
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: Ἐμοῦ τοῦ πατρὸς ἀκούσατε, τέκνα, καὶ οὕτως ποιήσατε, ἵνα σωθῆτε.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 3:1
+translation:
+  text: Listen, children, to a father's instruction, and act accordingly so that you
+    may live.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: ''Listen to me, your father ... so that you may be saved.'' The
+      Hebrew witness reads more generically, ''to a father''s instruction ... so that
+      you may live.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: שִׁמְעוּ
+  chosen: Listen
+  alternatives:
+  - Hear
+  - Obey
+  lexicon: HALOT
+  rationale: Imperative plural of שמע. 'Listen' preserves the call to attentive hearing
+    without prematurely collapsing it into 'obey,' though obedience is implied by
+    the following command to act.
+- source_word: בָנִים
+  chosen: children
+  alternatives:
+  - sons
+  lexicon: HALOT
+  rationale: Though formally masculine plural, the address is representative/generic
+    in wisdom instruction. 'Children' communicates the intended filial audience in
+    natural English while avoiding an unnecessarily male-restricted sense.
+- source_word: מִשְׁפַט
+  chosen: instruction
+  alternatives:
+  - judgment
+  - ordinance
+  - rule
+  lexicon: HALOT
+  rationale: In this context 'mishpat of a father' refers not to a legal verdict but
+    to the father's authoritative directive or disciplined instruction. The Greek
+    ἀκούσατε ... τοῦ πατρὸς supports an exhortational sense rather than courtroom
+    language.
+- source_word: אָב
+  chosen: a father's
+  alternatives:
+  - your father’s
+  - of a father
+  lexicon: HALOT
+  rationale: The Hebrew lacks an explicit pronominal suffix, unlike the Greek Ἐμοῦ
+    τοῦ πατρὸς ('of me, the father'). Because the Hebrew is the primary witness here,
+    the English should not import 'my' or 'your' into the main text. 'A father's'
+    preserves the generic wisdom address while remaining idiomatic.
+- source_word: וַעֲשׂוּ
+  chosen: act accordingly
+  alternatives:
+  - do
+  - act
+  - put it into practice
+  lexicon: HALOT
+  rationale: A simple imperative of עשה, but in English bare 'do' is too vague. 'Act
+    accordingly' captures the sense of carrying out the father's instruction and fits
+    the parallel with 'listen.'
+- source_word: לְמַעַן
+  chosen: so that
+  alternatives:
+  - in order that
+  - for the sake that
+  lexicon: HALOT
+  rationale: Standard purpose clause marker; 'so that' is clear modern English.
+- source_word: תִּחְיוּ
+  chosen: you may live
+  alternatives:
+  - you may survive
+  - you may be saved
+  lexicon: HALOT
+  rationale: From חיה, 'live.' The Greek σωθῆτε suggests 'be saved' in the extant
+    Greek tradition, but the Hebrew witness here supports the more concrete 'live.'
+    The main text follows the Hebrew while preserving the Greek alternative in a footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 0351d4dde73a36e9268a6f9f2ff2f9854cd5d6c18cf7261e4c97b5234926e961
+  timestamp: '2026-04-21T20:14:27Z'
+  output_hash: eb4e613a212344ae53cb2a3675cddce7594d263d78430065922815955a13eb50
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1697e25f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1697e25f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Primary-witness divergence between Hebrew and Greek in the father's self-reference
+  chosen_reading: Follow the Hebrew's generic 'a father' in the main text
+  alternative_readings:
+  - '''my father'' / ''of me, the father'' reflected in the Greek'
+  rationale: The project prioritizes the Hebrew for Sirach where extant. The Greek
+    parallel is used as an input and consistency check, but its explicit first-person
+    framing is not imported into the main text against the Hebrew wording.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; original-language
+    primacy over translation tradition'
+- issue: 'Outcome clause: ''live'' versus Greek ''be saved'''
+  chosen_reading: Render the Hebrew as 'so that you may live'
+  alternative_readings:
+  - '''so that you may be saved'''
+  rationale: The Hebrew text clearly reads תחיו ('you may live'). The Greek σωθῆτε
+    is a meaningful alternative witness and may reflect interpretive expansion or
+    a different Vorlage, so it is preserved in a footnote rather than adopted into
+    the main text.
+  doctrine_reference: 'DOCTRINE.md: preserve theological tension rather than resolve
+    it; PHILOSOPHY.md: Hebrew primacy in Sirach where extant'
