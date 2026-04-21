@@ -165,7 +165,7 @@ verse. It is extended to also list the Zone 2 sources applicable to
 each book, so a translation-phase prompt builder can assemble the
 context block mechanically without per-book special-casing.
 
-The translator-prompt builder itself (Phase 9 work, not yet written)
+The translator-prompt builder itself (Phase 8-C deuterocanon drafting work, not yet written)
 will:
 
 1. Load the Greek verse from `sources/lxx/swete/final_corpus_adjudicated/`

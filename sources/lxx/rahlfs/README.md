@@ -1,25 +1,48 @@
-# Rahlfs Septuagint (LXX)
+# Rahlfs Septuagint (LXX) — Zone 2 consultation only
 
-**Status: not yet vendored.** To be added in a future commit.
+**Status: NOT vendored. Used as Zone 2 consult-only reference.**
 
-The Rahlfs LXX is used as a cross-reference source: where NT authors quote
-the OT, they frequently quote the LXX, not the Masoretic Hebrew. Including
-the LXX lets translators flag cases where NT-quoted OT passages match LXX
-readings that diverge from the Hebrew (e.g., Matthew 1:23 / Isaiah 7:14 —
-"virgin" follows LXX παρθένος where MT has עַלְמָה "young woman").
+This directory is intentionally empty of source text. Earlier plans
+called for vendoring a CC-BY digital transcription of the 1935
+Rahlfs Septuagint here; that plan was abandoned in Phase 8 after
+field research (2026-04-18) confirmed that every digital Rahlfs
+edition is either CC-BY-NC, CC-BY-SA-derived-from-NC, or restrictive
+(CCAT). No CC-BY-compatible Rahlfs exists.
 
-The LXX is **not** a primary translation source. Primary OT translation
-is from WLC/UHB. The LXX is consulted only for NT cross-reference.
+## What we do instead
 
-## Planned source
+Our LXX source is **Swete 1909–1930** (fully public domain;
+[`../swete/`](../swete/)), which we transcribe ourselves via AI
+vision and release under CC-BY 4.0. Swete covers every LXX book
+we need, including the entire deuterocanon.
 
-The 1935 Rahlfs edition is in the public domain. Clean digital
-transcriptions are available from several projects — this directory will
-be populated from whichever has the cleanest license provenance.
+**Rahlfs is still consulted as a Zone 2 reference** during
+adjudication of uncertain readings — see
+[`../../../REFERENCE_SOURCES.md`](../../../REFERENCE_SOURCES.md)
+for the three-zone policy, and
+[`../../../tools/rahlfs.py`](../../../tools/rahlfs.py) for the
+consultation parser (which reads Eliran Wong's NC-licensed
+digitization from `/tmp/rahlfs-ref/`, never committed to this
+repo). The adjudicator (`tools/adjudicate_corpus.py`) compares our
+Swete OCR against Rahlfs among several other witnesses; Rahlfs
+readings never flow into our corpus output, only into our
+confidence judgments.
 
-Candidate sources:
-- STEPBible data (https://github.com/STEPBible/STEPBible-Data)
-- CCAT-derived digital editions
-- Various scholarly repositories
+## NT cross-reference use case
 
-Tracking: open issue to be filed for vendoring decision.
+An earlier version of this README described a planned NT
+cross-reference use case (flagging LXX-vs-MT differences in NT
+quotations, e.g. Matthew 1:23 / Isaiah 7:14 παρθένος vs עַלְמָה).
+That use case is still valid in principle, but for translation
+purposes it is handled by fact-level citation in footnotes
+(*Feist v. Rural* 1991 — facts aren't copyrightable), not by
+vendoring a full Rahlfs text. Footnote form:
+*"The NT quotation follows the LXX reading, which differs from the
+Hebrew here."*
+
+## If a clean Rahlfs ever appears
+
+If STEPBible's announced TAGOT ships with a CC-BY license, or if
+another clean-licensed Rahlfs appears, this directory can be
+populated and the policy re-evaluated. Until then: Swete is
+primary, Rahlfs is consultation-only.
