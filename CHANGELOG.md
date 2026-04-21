@@ -139,6 +139,10 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
     plus secondary Schaff witness
   - review audit summary recorded in
     `sources/didache/REVISION_AUDIT_2026-04-21.md`
+- **1 Clement drafting started**:
+  - `tools/draft_first_clement.py`
+  - first chapter draft written to
+    `translation/extra_canonical/1_clement/001.yaml`
 - **Shepherd of Hermas + Testaments source trees** added:
   - `sources/shepherd_of_hermas/README.md` + `MANIFEST.md`
   - `sources/testaments_twelve_patriarchs/README.md` + `MANIFEST.md`
