@@ -63,6 +63,14 @@ AI_STUDIO_URL = (
     f"{AI_STUDIO_MODEL}:generateContent"
 )
 
+# Vertex AI backend defaults — used when --backend=vertex is passed.
+# Vertex bills Gemini calls against the GCP project tied to the service
+# account in `/cartha/openclaw/gemini_api_key_2`, bypassing AI Studio's
+# 250 req/model/day free-tier cap.
+VERTEX_LOCATION_DEFAULT = "us-central1"
+VERTEX_MODEL_DEFAULT = "gemini-2.5-pro"
+VERTEX_OAUTH_SCOPES = ["https://www.googleapis.com/auth/cloud-platform"]
+
 
 # ── ported verbatim from Go ────────────────────────────────────────────
 
@@ -533,6 +541,127 @@ def call_gemini(api_key: str, system_prompt: str, user_prompt: str, max_tokens: 
     raise last_err or RuntimeError("unknown call_gemini failure")
 
 
+# ── Vertex AI backend ──────────────────────────────────────────────────
+#
+# Routes through `<location>-aiplatform.googleapis.com` with OAuth bearer
+# auth. One authed `VertexClient` holds a refreshable credential (service
+# account JSON -> Google access token) and reuses it across workers.
+# Token refresh is threadsafe under a lock; workers past the lock grab
+# the cached token.
+
+class VertexClient:
+    def __init__(self, service_account_json: dict, project_id: str,
+                 location: str = VERTEX_LOCATION_DEFAULT,
+                 model: str = VERTEX_MODEL_DEFAULT):
+        from google.oauth2 import service_account as sa
+        from google.auth.transport.requests import Request as GoogleAuthRequest
+        self._request_cls = GoogleAuthRequest
+        self._creds = sa.Credentials.from_service_account_info(
+            service_account_json, scopes=VERTEX_OAUTH_SCOPES,
+        )
+        self._project_id = project_id
+        self._location = location
+        self._model = model
+        self._url = (
+            f"https://{location}-aiplatform.googleapis.com/v1/"
+            f"projects/{project_id}/locations/{location}/publishers/"
+            f"google/models/{model}:generateContent"
+        )
+        self._lock = threading.Lock()
+
+    def _token(self) -> str:
+        with self._lock:
+            if not self._creds.valid:
+                self._creds.refresh(self._request_cls())
+            return self._creds.token
+
+    @property
+    def describe(self) -> str:
+        return f"vertex://{self._project_id}/{self._location}/{self._model}"
+
+    def generate(self, system_prompt: str, user_prompt: str,
+                 max_tokens: int = 2048, timeout: int = 90,
+                 retries: int = 5) -> str:
+        payload = {
+            "systemInstruction": {"parts": [{"text": system_prompt}]},
+            "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
+            "generationConfig": {
+                "temperature": 0.2,
+                "maxOutputTokens": max_tokens,
+                "thinkingConfig": {"thinkingBudget": 1024},
+            },
+        }
+        backoff = [2, 5, 15, 30, 60]
+        last_err = None
+        for attempt in range(retries):
+            try:
+                token = self._token()
+            except Exception as exc:
+                raise RuntimeError(f"vertex token refresh failed: {exc}")
+            req = urllib.request.Request(
+                self._url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {token}",
+                },
+                method="POST",
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    body = json.loads(resp.read().decode("utf-8"))
+                candidates = body.get("candidates") or []
+                if not candidates:
+                    raise RuntimeError(f"no candidates: {json.dumps(body)[:400]}")
+                parts = candidates[0].get("content", {}).get("parts") or []
+                text = "".join(p.get("text", "") for p in parts).strip()
+                if not text:
+                    raise RuntimeError(f"empty text response: {json.dumps(body)[:400]}")
+                return text
+            except urllib.error.HTTPError as exc:
+                detail = exc.read().decode("utf-8", errors="replace")[:400]
+                last_err = RuntimeError(f"HTTP {exc.code}: {detail}")
+                if exc.code == 401:
+                    # Force a refresh on the next loop iteration.
+                    with self._lock:
+                        self._creds.expiry = None
+                if exc.code in (401, 429, 500, 502, 503, 504) and attempt < retries - 1:
+                    wait = backoff[min(attempt, len(backoff) - 1)] + random.uniform(0, 2)
+                    time.sleep(wait)
+                    continue
+                raise last_err
+            except (urllib.error.URLError, TimeoutError, ConnectionResetError) as exc:
+                last_err = RuntimeError(f"{type(exc).__name__}: {exc}")
+                if attempt < retries - 1:
+                    time.sleep(backoff[min(attempt, len(backoff) - 1)])
+                    continue
+                raise last_err
+        raise last_err or RuntimeError("unknown vertex call failure")
+
+
+def load_vertex_client(secret_id: str, location: str, model: str) -> "VertexClient":
+    """Pull a service account JSON from Secrets Manager and build a Vertex
+    client. Raises if the secret isn't a valid SA JSON so the caller can
+    decide whether to fall back to AI Studio."""
+    sm = boto3.client("secretsmanager", region_name="us-west-2")
+    raw = sm.get_secret_value(SecretId=secret_id)["SecretString"]
+    sa_json = json.loads(raw)
+    if sa_json.get("type") != "service_account":
+        raise RuntimeError(
+            f"secret {secret_id} isn't a Google service-account JSON "
+            f"(type={sa_json.get('type')!r})"
+        )
+    project = sa_json.get("project_id")
+    if not project:
+        raise RuntimeError(f"secret {secret_id} missing project_id")
+    return VertexClient(
+        service_account_json=sa_json,
+        project_id=project,
+        location=location,
+        model=model,
+    )
+
+
 # ── DynamoDB helpers ───────────────────────────────────────────────────
 
 _ddb_lock = threading.Lock()
@@ -679,18 +808,25 @@ def fetch_existing_chapter_output(ddb, table: str, book: str, chapter: int, tool
     return None
 
 
+def _generate_via_backend(backend, system_prompt: str, user_prompt: str,
+                          max_tokens: int) -> str:
+    """Dispatch to either the AI Studio key pool or a VertexClient."""
+    if isinstance(backend, VertexClient):
+        return backend.generate(system_prompt, user_prompt, max_tokens=max_tokens)
+    if isinstance(backend, list):
+        key = pick_key(backend)
+    else:
+        key = backend
+    return call_gemini(key, system_prompt, user_prompt, max_tokens=max_tokens)
+
+
 def generate_chapter(ddb, table: str, api_key_or_keys, chapter_data: dict, tool: str) -> str:
     book = chapter_data["book_label"]
     chap = chapter_data["chapter"]
     verses = chapter_data["verses"]
     sys_prompt = summary_system_prompt(tool, SCOPE_CHAPTER, book)
     user_prompt = format_chapter_passage("COB", book, chap, verses)
-    key_for_call = (
-        pick_key(api_key_or_keys)
-        if isinstance(api_key_or_keys, list)
-        else api_key_or_keys
-    )
-    text = call_gemini(key_for_call, sys_prompt, user_prompt, max_tokens=2048)
+    text = _generate_via_backend(api_key_or_keys, sys_prompt, user_prompt, max_tokens=2048)
     key = summary_key("COB", "unspecified", SCOPE_CHAPTER, book, chap, tool,
                       PROMPT_VERSION, GEMINI_MODEL_VERSION)
     entry = {
@@ -724,12 +860,7 @@ def generate_book(ddb, table: str, api_key_or_keys, chapters_of_book: list[dict]
         chapter_summaries.append((ch["chapter"], out))
     sys_prompt = summary_system_prompt(tool, SCOPE_BOOK, book)
     user_prompt = format_book_passage("COB", book, chapter_summaries)
-    key_for_call = (
-        pick_key(api_key_or_keys)
-        if isinstance(api_key_or_keys, list)
-        else api_key_or_keys
-    )
-    text = call_gemini(key_for_call, sys_prompt, user_prompt, max_tokens=2560)
+    text = _generate_via_backend(api_key_or_keys, sys_prompt, user_prompt, max_tokens=2560)
     key = summary_key("COB", "unspecified", SCOPE_BOOK, book, 0, tool,
                       PROMPT_VERSION, GEMINI_MODEL_VERSION)
     # source_hash for book scope: hash of the concatenated chapter summaries
@@ -773,6 +904,32 @@ def main() -> int:
             "round-robin across every key that resolves."
         ),
     )
+    ap.add_argument(
+        "--backend",
+        choices=["studio", "vertex"],
+        default="studio",
+        help=(
+            "Which Gemini endpoint to call. 'studio' = AI Studio raw "
+            "?key=<> endpoint (daily per-key quota applies). 'vertex' = "
+            "Vertex AI endpoint authed via a service-account JSON; uses the "
+            "project's billed Vertex quota instead of the AI Studio cap."
+        ),
+    )
+    ap.add_argument(
+        "--vertex-secret-id",
+        default="/cartha/openclaw/gemini_api_key_2",
+        help="Secrets Manager ID holding the Google service-account JSON for Vertex.",
+    )
+    ap.add_argument(
+        "--vertex-location",
+        default=VERTEX_LOCATION_DEFAULT,
+        help="Vertex region, e.g. us-central1.",
+    )
+    ap.add_argument(
+        "--vertex-model",
+        default=VERTEX_MODEL_DEFAULT,
+        help="Vertex model id, e.g. gemini-2.5-pro.",
+    )
     args = ap.parse_args()
 
     table = f"BibleSummaryCache-{args.stage}"
@@ -815,17 +972,27 @@ def main() -> int:
             print(f"  {g[0]} {g[2]}")
         return 0
 
-    # Fetch API keys from one or more Secrets Manager entries so we can
-    # spread the load across both the paid and free-tier accounts.
-    secret_ids = [s.strip() for s in args.secret_ids.split(",") if s.strip()]
-    api_keys = get_api_keys(secret_ids)
-    print(
-        f"got {len(api_keys)} AI Studio key(s) across {len(secret_ids)} secret(s): "
-        + ", ".join(f"len={len(k)}" for k in api_keys)
-    )
-    # Downstream helpers accept a list and round-robin; a single-key run
-    # still passes a list of one for the same code path.
-    api_key = api_keys
+    # Resolve the generation backend. Vertex sidesteps the AI Studio
+    # daily per-key quota by authing against a service-account JSON and
+    # billing Gemini calls to our GCP project. AI Studio mode stays the
+    # fallback when the user doesn't have a Vertex project wired up.
+    if args.backend == "vertex":
+        backend = load_vertex_client(
+            secret_id=args.vertex_secret_id,
+            location=args.vertex_location,
+            model=args.vertex_model,
+        )
+        print(f"using Vertex backend: {backend.describe}")
+    else:
+        secret_ids = [s.strip() for s in args.secret_ids.split(",") if s.strip()]
+        api_keys = get_api_keys(secret_ids)
+        print(
+            f"got {len(api_keys)} AI Studio key(s) across {len(secret_ids)} secret(s): "
+            + ", ".join(f"len={len(k)}" for k in api_keys)
+        )
+        backend = api_keys
+    # generate_chapter / generate_book accept the backend polymorphically.
+    api_key = backend
 
     # Index chapters by (book, chapter) for fast lookup
     ch_index = {(c["book_label"], c["chapter"]): c for c in chapters}
