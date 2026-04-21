@@ -48,6 +48,7 @@ def load_adjudications(book: str) -> dict[tuple[int, int], dict]:
                 "reasoning": v.get("reasoning", ""),
                 "confidence": v.get("confidence", ""),
                 "prompt_version": data.get("prompt_version", ""),
+                "page_used": v.get("manual_page_used") or v.get("page_used"),
             }
     return out
 
@@ -102,6 +103,13 @@ def apply_book(book: str) -> dict:
             "confidence": adj["confidence"],
             "prompt_version": adj["prompt_version"],
         }
+        page_used = adj.get("page_used")
+        if page_used:
+            pages = list(v.get("source_pages") or [])
+            if page_used not in pages:
+                pages.append(page_used)
+                pages.sort()
+            v["source_pages"] = pages
         # Surface confidence at top level so downstream translators can
         # read v["confidence"] without reaching into the adjudication block.
         v["confidence"] = adj["confidence"]
@@ -129,13 +137,24 @@ def format_summary(per_book: list[dict]) -> str:
             "adj_first1k": s["adj_first1k"],
             "adj_both_ok": s["adj_both_ok"],
             "adj_neither": s["adj_neither"],
+            "adj_rahlfs_match": s["adj_rahlfs_match"],
+            "adj_swete_consensus": s["adj_swete_consensus"],
+            "adj_amicarelli": s["adj_amicarelli"],
             "conf_high": s["conf_high"],
             "conf_medium": s["conf_medium"],
             "conf_low": s["conf_low"],
         })
 
     total_verses = sum(r["total"] for r in rows)
-    total_adj = agg["adj_ours"] + agg["adj_first1k"] + agg["adj_both_ok"] + agg["adj_neither"]
+    total_adj = (
+        agg["adj_ours"]
+        + agg["adj_first1k"]
+        + agg["adj_both_ok"]
+        + agg["adj_neither"]
+        + agg["adj_rahlfs_match"]
+        + agg["adj_swete_consensus"]
+        + agg["adj_amicarelli"]
+    )
     lines = [
         "# Adjudicated corpus — final pass summary",
         "",
@@ -149,6 +168,9 @@ def format_summary(per_book: list[dict]) -> str:
         f"- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **{agg['adj_first1k']}**",
         f"- Both equivalent (minor orthography): **{agg['adj_both_ok']}**",
         f"- Neither matched scan (fresh scan-based reading): **{agg['adj_neither']}**",
+        f"- Rahlfs also matched the visible Swete reading: **{agg['adj_rahlfs_match']}**",
+        f"- Amicarelli rescue matched scan best: **{agg['adj_amicarelli']}**",
+        f"- Swete-family rescue consensus: **{agg['adj_swete_consensus']}**",
         "",
         "## Adjudicator confidence",
         "",
@@ -158,13 +180,22 @@ def format_summary(per_book: list[dict]) -> str:
         "",
         "## Per-book breakdown",
         "",
-        "| Book | Total | Unchanged | ours→kept | first1k→used | both_ok | neither | High conf |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        "| Book | Total | Unchanged | ours→kept | first1k→used | both_ok | neither | Adjudicated | High conf |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for r in rows:
+        adjudicated = (
+            r["adj_ours"]
+            + r["adj_first1k"]
+            + r["adj_both_ok"]
+            + r["adj_neither"]
+            + r["adj_rahlfs_match"]
+            + r["adj_swete_consensus"]
+            + r["adj_amicarelli"]
+        )
         lines.append(
             f"| {r['book']} | {r['total']} | {r['unchanged']} | {r['adj_ours']} "
-            f"| {r['adj_first1k']} | {r['adj_both_ok']} | {r['adj_neither']} | {r['conf_high']} |"
+            f"| {r['adj_first1k']} | {r['adj_both_ok']} | {r['adj_neither']} | {adjudicated} | {r['conf_high']} |"
         )
     lines.extend([
         "",
@@ -199,7 +230,15 @@ def main() -> int:
             for v in result["verses"]:
                 fh.write(json.dumps(v, ensure_ascii=False) + "\n")
         s = result["stats"]
-        total_adj = s["adj_ours"] + s["adj_first1k"] + s["adj_both_ok"] + s["adj_neither"]
+        total_adj = (
+            s["adj_ours"]
+            + s["adj_first1k"]
+            + s["adj_both_ok"]
+            + s["adj_neither"]
+            + s["adj_rahlfs_match"]
+            + s["adj_swete_consensus"]
+            + s["adj_amicarelli"]
+        )
         print(
             f"{book}: {len(result['verses'])}v  unchanged={s['unchanged']}  "
             f"adjudicated={total_adj}  ours={s['adj_ours']}  "

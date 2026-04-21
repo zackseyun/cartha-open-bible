@@ -106,6 +106,7 @@ def format_md(data):
 
     total_adj = sum(adj_tot.values())
     total_conf = sum(conf_tot.values())
+    high_pct = conf_tot["high"] / max(1, total_conf) * 100
 
     lines = [
         "# Cartha Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health",
@@ -138,11 +139,11 @@ def format_md(data):
         "",
         "## Adjudicator confidence",
         "",
-        f"- **High** (unambiguous scan reading): {conf_tot['high']} ({conf_tot['high']/max(1,total_conf)*100:.1f}%)",
+        f"- **High** (unambiguous scan reading): {conf_tot['high']} ({high_pct:.1f}%)",
         f"- **Medium** (minor scan uncertainty): {conf_tot['medium']} ({conf_tot['medium']/max(1,total_conf)*100:.1f}%)",
         f"- **Low** (scan is damaged/illegible; best-guess reading): {conf_tot['low']} ({conf_tot['low']/max(1,total_conf)*100:.1f}%)",
         "",
-        "The 94.8% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. The medium/low residual is concentrated in books with known typographic complexity (Baruch, Greek Esther additions, Daniel additions, Tobit S-text).",
+        f"The {high_pct:.1f}% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. Any remaining residual uncertainty is concentrated in a very small set of edge-case verses.",
         "",
         "## Sources consulted (cross-validation, not text)",
         "",
@@ -177,7 +178,11 @@ def format_md(data):
         "",
         "## Remaining low-confidence verses",
         "",
-        f"**{conf_tot['low']} verses** where the scan itself is damaged/illegible and no scholarly consensus could be triangulated. These should get translator attention (human review of the Swete scan image) before translation is finalized.",
+        (
+            "No low-confidence verses remain in the current final corpus."
+            if conf_tot["low"] == 0
+            else f"**{conf_tot['low']} verses** where the scan itself is damaged/illegible and no scholarly consensus could be triangulated. These should get translator attention (human review of the Swete scan image) before translation is finalized."
+        ),
         "",
     ])
     for book, verses in sorted(low_conf_by_book.items()):
@@ -212,7 +217,11 @@ def format_md(data):
         "| D | ADA | Some residual complexity (Greek Daniel OG/Theodotion parallel texts). Ready with translator attention. |",
         "| E | 1ES, BAR, ADE | Most challenging; recommend extra translator review. |",
         "",
-        "The corpus is translation-ready for all 13 books. Remaining low-confidence verses (listed above) should get translator attention but are not blockers.",
+        (
+            "The corpus is translation-ready for all 13 books. No low-confidence verses remain; the small number of medium-confidence verses should still get translator attention."
+            if conf_tot["low"] == 0
+            else "The corpus is translation-ready for all 13 books. Remaining low-confidence verses (listed above) should get translator attention but are not blockers."
+        ),
     ])
     return "\n".join(lines) + "\n"
 
