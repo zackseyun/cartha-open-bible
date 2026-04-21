@@ -143,6 +143,11 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
   - `tools/draft_first_clement.py`
   - first chapter draft written to
     `translation/extra_canonical/1_clement/001.yaml`
+- **1 Clement first-pass draft completed**:
+  - chapters `001.yaml` through `065.yaml` now exist under
+    `translation/extra_canonical/1_clement/`
+  - current source layer remains Funk 1901 normalized OCR, with the
+    known supplemental recovery for chapters 42–43 still documented
 - **Shepherd of Hermas + Testaments source trees** added:
   - `sources/shepherd_of_hermas/README.md` + `MANIFEST.md`
   - `sources/testaments_twelve_patriarchs/README.md` + `MANIFEST.md`
