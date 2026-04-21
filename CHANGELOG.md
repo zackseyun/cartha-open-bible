@@ -39,6 +39,48 @@ rollout (Phases 10-16 after Phase 9) documented in
 README and DEUTEROCANONICAL.md updated with the new extra-canonical
 section and cross-links between scope docs.
 
+## Phase 8d — Jubilees pipeline + Ge'ez OCR correction (2026-04-21)
+
+Extends the Ethiopic track started in Phase 8c to include Jubilees
+alongside Enoch. Also records a significant OCR finding that changes
+our earlier Enoch conclusion.
+
+**OCR correction (Ge'ez)** — proper accuracy test against Beta maṣāḥǝft
+ground truth shows the earlier "Flash succeeds" claim was premature:
+
+- Azure GPT-5: fails (unchanged)
+- **Gemini 2.5 Flash: produces Ge'ez Unicode but hallucinates content.**
+  Not usable for production.
+- Gemini 2.5 Pro in JSON mode: hits MAX_TOKENS at 32K (Unicode-escape
+  overhead). Not usable as-is.
+- **Gemini 2.5 Pro in plaintext mode with 512 thinking budget:
+  SUCCEEDS at scholarly quality.** Enoch ch 1 test matched Beta
+  maṣāḥǝft character-accurately, with remaining differences tracking
+  real Dillmann-vs-Jerabek manuscript-family variants. ~1,200 output
+  tokens per page.
+
+JSON-mode escaping inflates each 3-byte Ethiopic character to 6
+response tokens; a single dense page overflows Pro's 32K output
+budget. Plaintext fits comfortably.
+
+**Jubilees source PDFs vendored** in `sources/jubilees/` (gitignored,
+MANIFEST tracks SHA-256):
+  - Charles 1895 Ethiopic (PD, critical, 4 MSS) -- Zone 1 primary
+  - Charles 1902 English (PD) -- reference
+  - Dillmann & Rönsch 1874 (PD) -- German translation + Rönsch's
+    recovered Latin fragments (chs 13-49) as second witness
+
+**Shared Ethiopic pipeline** `tools/ethiopic/` with `ocr_geez.py`
+(Gemini Pro plaintext OCR, retry logic, render_page_png helper).
+Consumed by `tools/enoch/` and `tools/jubilees/`.
+
+**Scope doc** JUBILEES.md covers canonicity, textual situation,
+translation strategy, Phase 12 timeline.
+
+**DEUTEROCANONICAL.md** Pseudepigrapha section: adds Jubilees row and
+documents the shared Ethiopic-pipeline rationale for sequencing
+(Enoch first establishes the pipeline; Jubilees reuses it).
+
 ## Phase 8c — 1 Enoch pipeline setup (in progress, 2026-04-21)
 
 Pseudepigrapha track — adds a second dedicated pipeline for the Book

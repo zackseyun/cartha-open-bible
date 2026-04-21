@@ -186,7 +186,7 @@ the model that actually passes validation.
 | `sources/enoch/scans/` | ✓ vendored | PDFs of all Zone 1 editions (gitignored; manifest + rehydrate) |
 | `sources/enoch/ethiopic/transcribed/` | ⏳ pending | Our Gemini 2.5 Pro plaintext-mode OCR of Charles 1906 + Dillmann 1851, chapter-indexed |
 | `sources/enoch/greek/transcribed/` | ⏳ pending | OCR of Bouriant 1892 + Flemming 1901 Greek fragments |
-| `tools/enoch/ocr_ethiopic.py` | ⏳ pending | Gemini 2.5 Pro plaintext-mode OCR pipeline for Ge'ez |
+| `tools/ethiopic/ocr_geez.py` | ✓ scaffold | **Shared** Gemini 2.5 Pro plaintext-mode OCR for Ge'ez. Used by both Enoch and [Jubilees](JUBILEES.md). |
 | `tools/enoch/validate_vs_betamasaheft.py` | ⏳ pending | Cross-check our OCR against Beta maṣāḥǝft oracle |
 | `tools/enoch/multi_witness.py` | ⏳ pending | Per-verse witness aggregator (Ge'ez + Greek where available + Qumran Zone 2 registry) |
 | `tools/enoch/build_translation_prompt.py` | ⏳ pending | Phase 11 translator prompt |

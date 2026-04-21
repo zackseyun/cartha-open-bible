@@ -696,13 +696,29 @@ Why we approach them separately:
 |---|---|---|---|
 | **2 Esdras (4 Ezra)** | KJV Apocrypha; Vulgate appendix; canonical in some Slavonic Orthodox Bibles | [2ESDRAS.md](2ESDRAS.md) | Phase 10 (post-Phase-9 drafting) |
 | **1 Enoch (Mashafa Henok)** | Canonical in Ethiopian Orthodox Tewahedo; quoted in Jude 14-15 | [ENOCH.md](ENOCH.md) | Phase 11 (post-Phase-10) |
+| **Jubilees (Mashafa Kufale)** | Canonical in Ethiopian Orthodox Tewahedo; Qumran Hebrew fragments preserved (4Q216-228) | [JUBILEES.md](JUBILEES.md) | Phase 12 (shares Ethiopic pipeline with Enoch) |
+
+### Shared Ethiopic pipeline
+
+Enoch and Jubilees share a single Ge'ez OCR pipeline at
+`tools/ethiopic/`. Both use Gemini 2.5 Pro in plaintext mode with low
+thinking budget — the only combination we've validated for Ethiopic
+script. Azure GPT-5 fails entirely on Ge'ez despite handling Greek /
+Hebrew / Latin at 98%+ confidence; Gemini 2.5 Flash hallucinates Ge'ez
+content. Pro in plaintext mode produces character-accurate Ge'ez
+validated against the Beta maṣāḥǝft ground-truth digital text.
+
+Building Phase 11 (Enoch) establishes the pipeline; Phase 12
+(Jubilees) reuses it by feeding different source scans. This is why
+the Pseudepigrapha track sequences Enoch before Jubilees — not
+because Jubilees is less important, but because the shared
+infrastructure is built during Enoch and reused for Jubilees.
 
 ### Works under consideration for later phases
 
 If and when the above complete successfully, natural extensions in
 the Ethiopian broader canon include:
 
-- **Jubilees** (Ge'ez primary + Qumran Hebrew fragments)
 - **Meqabyan 1–3** (Ge'ez-only, Ethiopian Orthodox canonical)
 - **4 Baruch / Paraleipomena Jeremiou** (Greek + Ge'ez witnesses)
 - **2 Baruch** (Syriac primary)
