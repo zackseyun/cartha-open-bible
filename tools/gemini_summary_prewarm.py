@@ -124,7 +124,53 @@ def canonical_source_hash(verses: list[dict]) -> str:
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
-def summary_system_prompt(tool: str, scope: str) -> str:
+# ── corpus-aware prompt dispatch ───────────────────────────────────────
+# Mirrors internal/bible/summary_cache.go: bookCorpus + three prompt variants.
+# Default is "biblical" — that covers the 66-book canon plus the deuterocanon
+# (Tobit, Wisdom of Solomon, Sirach, Maccabees, etc.), which are framed as
+# Scripture in Catholic/Orthodox traditions. Patristic and pseudepigraphal
+# corpora get distinct framing so summaries don't imply they're Scripture.
+
+CORPUS_BIBLICAL = "biblical"
+CORPUS_PATRISTIC = "patristic"
+CORPUS_PSEUDEPIGRAPHAL = "pseudepigraphal"
+
+_PATRISTIC_BOOKS = {
+    "DIDACHE", "1 CLEMENT", "2 CLEMENT",
+    "SHEPHERD OF HERMAS",
+    "BARNABAS", "EPISTLE OF BARNABAS",
+    "IGNATIUS", "POLYCARP", "MARTYRDOM OF POLYCARP", "DIOGNETUS",
+}
+_PSEUDEPIGRAPHAL_BOOKS = {
+    "ENOCH", "1 ENOCH", "2 ENOCH", "3 ENOCH",
+    "JUBILEES",
+    "TESTAMENTS OF THE TWELVE PATRIARCHS", "TESTAMENTS",
+    "2 ESDRAS", "4 EZRA",
+    "ASCENSION OF ISAIAH",
+    "ASSUMPTION OF MOSES",
+    "APOCALYPSE OF ABRAHAM",
+}
+
+
+def book_corpus(book: str) -> str:
+    key = normalize_token(book)
+    if key in _PATRISTIC_BOOKS:
+        return CORPUS_PATRISTIC
+    if key in _PSEUDEPIGRAPHAL_BOOKS:
+        return CORPUS_PSEUDEPIGRAPHAL
+    return CORPUS_BIBLICAL
+
+
+def summary_system_prompt(tool: str, scope: str, book: str = "") -> str:
+    corpus = book_corpus(book) if book else CORPUS_BIBLICAL
+    if corpus == CORPUS_PATRISTIC:
+        return _patristic_prompt(tool, scope)
+    if corpus == CORPUS_PSEUDEPIGRAPHAL:
+        return _pseudepigraphal_prompt(tool, scope)
+    return _biblical_prompt(tool, scope)
+
+
+def _biblical_prompt(tool: str, scope: str) -> str:
     if scope == SCOPE_BOOK:
         if tool == TOOL_SIMPLIFY:
             return (
@@ -178,6 +224,139 @@ def summary_system_prompt(tool: str, scope: str) -> str:
         "that most helps modern readers hear this chapter well. Surface one to three "
         "original-language words or concepts only when they materially change "
         "understanding. Respond in flowing prose only."
+    )
+
+
+def _patristic_prompt(tool: str, scope: str) -> str:
+    if scope == SCOPE_BOOK:
+        if tool == TOOL_SIMPLIFY:
+            return (
+                "You are a Bible-study assistant in the Cartha app. A shared book-level "
+                "summary is being generated for all users.\n\n"
+                "Summarize this entire early Christian document in clear, modern English. "
+                "Use 4 to 8 sentences. The text is from the Apostolic Fathers or an adjacent "
+                "post-apostolic writing — not Scripture, but a primary witness to first- and "
+                "second-century Christian teaching and practice. Highlight the main argument, "
+                "major turning points, and key emphases. Do not frame it as Scripture. "
+                "Do not use headers, bullets, or preamble."
+            )
+        if tool == TOOL_RECONTEXTUALIZE_BIBLE:
+            return (
+                "You are a Bible-study assistant in the Cartha app. A shared book-level "
+                "in-Bible context summary is being generated for all users.\n\n"
+                "Explain how this early Christian document relates to Scripture and to the "
+                "apostolic witness. It is not part of the biblical canon. In under 250 words, "
+                "cover the document's audience, its relationship to New Testament teaching, "
+                "two to five important biblical echoes or parallels (cite them like "
+                '"Book C:V"), and any distinctive emphases that go beyond what the New '
+                "Testament explicitly teaches. Respond in flowing prose only."
+            )
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared book-level "
+            "original-context summary is being generated for all users.\n\n"
+            "Explain the original historical, cultural, and linguistic context of this "
+            "early Christian document. In under 250 words, cover the likely date, audience, "
+            "setting, and the most important original-language themes or terminology that "
+            "shape how the work should be heard. Be specific about which early Christian "
+            "community produced or received it. Respond in flowing prose only."
+        )
+    if tool == TOOL_SIMPLIFY:
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared chapter summary "
+            "is being generated for all users.\n\n"
+            "This chapter is from an early Christian document — not Scripture, but a primary "
+            "witness to post-apostolic Christian teaching and practice. Restate the whole "
+            "chapter in plain, modern, accessible English in 3 to 6 sentences. Preserve the "
+            "theological weight and major movement of the passage. Do not flatten difficult "
+            "sayings or add doctrine the text does not make explicit. Do not frame it as "
+            "Scripture. Respond with the summary only."
+        )
+    if tool == TOOL_RECONTEXTUALIZE_BIBLE:
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared chapter "
+            "in-Bible context summary is being generated for all users.\n\n"
+            "This chapter is from an early Christian document outside the biblical canon. "
+            "In under 220 words, explain where the chapter sits in its text's argument, "
+            "identify two to four meaningful echoes of or references to Scripture (cite "
+            'them like "Book C:V"), and note any distinctive points of emphasis beyond what '
+            "the New Testament explicitly teaches. Respond in flowing prose only."
+        )
+    return (
+        "You are a Bible-study assistant in the Cartha app. A shared chapter "
+        "original-context summary is being generated for all users.\n\n"
+        "This chapter is from an early Christian document, likely composed in the first or "
+        "second century. In under 220 words, explain the historical, cultural, and ecclesial "
+        "context that most helps modern readers hear it well. Surface one to three Greek "
+        "words or concepts only when they materially change understanding. Be specific about "
+        "the era, community, and circumstances the text likely addresses. Respond in flowing "
+        "prose only."
+    )
+
+
+def _pseudepigraphal_prompt(tool: str, scope: str) -> str:
+    if scope == SCOPE_BOOK:
+        if tool == TOOL_SIMPLIFY:
+            return (
+                "You are a Bible-study assistant in the Cartha app. A shared book-level "
+                "summary is being generated for all users.\n\n"
+                "Summarize this entire Second Temple Jewish text in clear, modern English. "
+                "Use 4 to 8 sentences. The text is not part of the biblical canon, but it "
+                "preserves important apocalyptic, ethical, or historical material from the "
+                "intertestamental period. Highlight the main argument, major turning points, "
+                "and key emphases. Do not frame it as Scripture. Do not use headers, bullets, "
+                "or preamble."
+            )
+        if tool == TOOL_RECONTEXTUALIZE_BIBLE:
+            return (
+                "You are a Bible-study assistant in the Cartha app. A shared book-level "
+                "in-Bible context summary is being generated for all users.\n\n"
+                "Explain how this Second Temple Jewish text relates to the biblical canon. "
+                "It is not Scripture. In under 250 words, cover the work's audience, its "
+                "relationship to canonical books (including places where New Testament "
+                "writers appear to draw on similar material), two to five important "
+                'parallels or echoes (cite them like "Book C:V"), and any distinctive '
+                "teachings that the biblical canon does not affirm. Respond in flowing prose only."
+            )
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared book-level "
+            "original-context summary is being generated for all users.\n\n"
+            "Explain the historical, cultural, and linguistic context of this Second Temple "
+            "Jewish text. In under 250 words, cover the likely date and setting, the "
+            "community that produced or preserved it, and the most important original-"
+            "language themes or apocalyptic concepts. Be specific about what part of the "
+            "intertestamental Jewish world it reflects. Respond in flowing prose only."
+        )
+    if tool == TOOL_SIMPLIFY:
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared chapter summary "
+            "is being generated for all users.\n\n"
+            "This chapter is from a Second Temple Jewish text outside the biblical canon — "
+            "it helps illuminate the world of the intertestamental period but is not "
+            "Scripture. Restate the whole chapter in plain, modern, accessible English in 3 "
+            "to 6 sentences. Preserve the theological or apocalyptic weight of the passage. "
+            "Do not flatten difficult passages. Respond with the summary only."
+        )
+    if tool == TOOL_RECONTEXTUALIZE_BIBLE:
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared chapter "
+            "in-Bible context summary is being generated for all users.\n\n"
+            "This chapter is from a Second Temple Jewish text outside the biblical canon. "
+            "In under 220 words, explain where it sits in its text's argument and identify "
+            "two to four meaningful connections to biblical books — parallels, allusions, or "
+            'themes the New Testament also takes up (cite them like "Book C:V"). Note '
+            "distinctive points that the biblical canon does not affirm. Respond in flowing "
+            "prose only."
+        )
+    return (
+        "You are a Bible-study assistant in the Cartha app. A shared chapter "
+        "original-context summary is being generated for all users.\n\n"
+        "This chapter is from an intertestamental Jewish text likely composed between the "
+        "third century BC and the first century AD. In under 220 words, explain the "
+        "historical, cultural, and linguistic context that most helps modern readers hear "
+        "it well. Surface one to three original-language words or apocalyptic concepts only "
+        "when they materially change understanding. Be specific about the community and "
+        "moment in Second Temple Judaism the text likely addresses. Respond in flowing prose "
+        "only."
     )
 
 
@@ -249,7 +428,11 @@ def slug_to_label(slug: str) -> str:
 def load_chapters(translation_code: str) -> list[dict]:
     """Return list of {book_label, chapter, verses:[{book,chapter,verse,text,translation}]}."""
     chapters = []
-    for testament in ("nt", "ot"):
+    # Include canonical testaments + deuterocanon (LXX-only Scripture in Catholic/
+    # Orthodox traditions) + extra_canonical (Apostolic Fathers, Second Temple
+    # pseudepigrapha, etc.). Corpus-aware prompt dispatch in summary_system_prompt
+    # picks the right framing per book.
+    for testament in ("nt", "ot", "deuterocanon", "extra_canonical"):
         base = REPO_ROOT / "translation" / testament
         if not base.exists():
             continue
@@ -451,7 +634,7 @@ def generate_chapter(ddb, table: str, api_key: str, chapter_data: dict, tool: st
     book = chapter_data["book_label"]
     chap = chapter_data["chapter"]
     verses = chapter_data["verses"]
-    sys_prompt = summary_system_prompt(tool, SCOPE_CHAPTER)
+    sys_prompt = summary_system_prompt(tool, SCOPE_CHAPTER, book)
     user_prompt = format_chapter_passage("COB", book, chap, verses)
     text = call_gemini(api_key, sys_prompt, user_prompt, max_tokens=2048)
     key = summary_key("COB", "unspecified", SCOPE_CHAPTER, book, chap, tool,
@@ -485,7 +668,7 @@ def generate_book(ddb, table: str, api_key: str, chapters_of_book: list[dict], b
         if not out:
             raise RuntimeError(f"missing chapter summary {book} {ch['chapter']} ({tool}) — chapter must be filled first")
         chapter_summaries.append((ch["chapter"], out))
-    sys_prompt = summary_system_prompt(tool, SCOPE_BOOK)
+    sys_prompt = summary_system_prompt(tool, SCOPE_BOOK, book)
     user_prompt = format_book_passage("COB", book, chapter_summaries)
     text = call_gemini(api_key, sys_prompt, user_prompt, max_tokens=2560)
     key = summary_key("COB", "unspecified", SCOPE_BOOK, book, 0, tool,
