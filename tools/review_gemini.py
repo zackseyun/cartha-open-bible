@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""review_gemini.py — Gemini 2.5 Pro cross-reviewer for Swete transcriptions.
+"""review_gemini.py — Gemini 3.1 Pro cross-reviewer for Swete transcriptions.
 
 Parallel to tools/review_transcription.py (Azure GPT-5.4), but uses Gemini
-2.5 Pro as a *different-family* vision model so its independent judgments
+3.1 Pro as a *different-family* vision model so its independent judgments
 complement the Azure reviewer's. The on-disk JSON schema is identical to
 the Azure reviewer so outputs merge cleanly downstream.
 
@@ -63,7 +63,7 @@ PROMPTS_DIR = REPO_ROOT / "tools" / "prompts"
 TRANSCRIBED_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "gemini"
 
-MODEL = "gemini-2.5-pro"
+MODEL = "gemini-3.1-pro-preview"
 PROMPT_VERSION = "gemini_review_v1_2026-04-19"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 

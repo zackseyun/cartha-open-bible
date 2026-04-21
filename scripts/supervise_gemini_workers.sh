@@ -25,6 +25,7 @@ SPAWN_STAGGER_SECONDS="${SPAWN_STAGGER_SECONDS:-3}"
 WORKER_SLEEP_SECONDS="${WORKER_SLEEP_SECONDS:-0.75}"
 LOCATION_MODE="${LOCATION_MODE:-global}"
 PROVIDER_MODE="${PROVIDER_MODE:-aistudio}"
+GEMINI_MODEL="${GEMINI_MODEL:-gemini-3.1-pro-preview}"
 
 REGIONS=(us-central1 us-east1 us-west1 us-west4 europe-west4)
 declare -a GEMINI_KEYS=()
@@ -177,10 +178,11 @@ spawn_worker() {
       GCP_LOCATION="global" \
       python3 "$REPO_ROOT/tools/gemini_review_worker.py" \
         --worker-id "w$wid" \
+        --model-override "$GEMINI_MODEL" \
         --max-jobs 100000 \
         --sleep "$WORKER_SLEEP_SECONDS" \
       > "$LOG_DIR/worker-w$wid.log" 2>&1 &
-    echo "  spawned w$wid @ global (aistudio key ${key_slot}/${#GEMINI_KEYS[@]})"
+    echo "  spawned w$wid @ global (aistudio key ${key_slot}/${#GEMINI_KEYS[@]} model=$GEMINI_MODEL)"
   elif [[ "$PROVIDER_MODE" == "vertex_pool" ]]; then
     load_vertex_key_paths
     local vertex_key_path
@@ -192,26 +194,28 @@ spawn_worker() {
       GCP_LOCATION="$location" \
       python3 "$REPO_ROOT/tools/gemini_review_worker.py" \
         --worker-id "w$wid" \
+        --model-override "$GEMINI_MODEL" \
         --max-jobs 100000 \
         --sleep "$WORKER_SLEEP_SECONDS" \
       > "$LOG_DIR/worker-w$wid.log" 2>&1 &
-    echo "  spawned w$wid @ $location (vertex key ${key_slot}/${#VERTEX_KEY_PATHS[@]})"
+    echo "  spawned w$wid @ $location (vertex key ${key_slot}/${#VERTEX_KEY_PATHS[@]} model=$GEMINI_MODEL)"
   else
     nohup env \
       GOOGLE_APPLICATION_CREDENTIALS="$KEY_PATH" \
       GCP_LOCATION="$location" \
       python3 "$REPO_ROOT/tools/gemini_review_worker.py" \
         --worker-id "w$wid" \
+        --model-override "$GEMINI_MODEL" \
         --max-jobs 100000 \
         --sleep "$WORKER_SLEEP_SECONDS" \
       > "$LOG_DIR/worker-w$wid.log" 2>&1 &
-    echo "  spawned w$wid @ $location (vertex)"
+    echo "  spawned w$wid @ $location (vertex model=$GEMINI_MODEL)"
   fi
 }
 
 echo "[$(date +%H:%M:%S)] supervise_gemini_workers starting; target=$TARGET"
 echo "   stop with: touch $STOP_FLAG"
-echo "   provider_mode=$PROVIDER_MODE location_mode=$LOCATION_MODE stagger=${SPAWN_STAGGER_SECONDS}s max_spawn_per_cycle=$MAX_SPAWN_PER_CYCLE"
+echo "   provider_mode=$PROVIDER_MODE model=$GEMINI_MODEL location_mode=$LOCATION_MODE stagger=${SPAWN_STAGGER_SECONDS}s max_spawn_per_cycle=$MAX_SPAWN_PER_CYCLE"
 
 while true; do
   if [[ -f "$STOP_FLAG" ]]; then
