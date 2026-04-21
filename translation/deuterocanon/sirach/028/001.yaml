@@ -1,0 +1,125 @@
+id: SIR.28.1
+reference: Sirach 28:1
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תֵּצַר צָרַת מָחָר, כִּי לֹא תֵדַע מַה יֵּלֶד יוֹם.
+  language: Hebrew
+  pages:
+  - 681
+  - 716
+  - 717
+  - 718
+  - 719
+  - 720
+  - 721
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ὁ ἐκδικῶν παρὰ Κυρίου εὑρήσει ἐκδίκησιν, καὶ τὰς ἁμαρτίας αὐτοῦ διατηρῶν
+      διατηρήσει.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 28:1
+translation:
+  text: The one who takes vengeance will find vengeance from the Lord, and he will
+    surely keep his sins in mind.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Hebrew line supplied for this verse reads, 'Do not dread tomorrow's
+      trouble, for you do not know what a day will bring forth,' which does not match
+      the Greek Sirach text here and appears to reflect a different verse or a transmission
+      mismatch. The translation therefore follows the Greek witness for Sirach 28:1.
+    reason: textual_variant
+  - marker: b
+    text: Or 'he will keep his sins stored up.' The Greek repeats the same verb for
+      emphasis.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ὁ ἐκδικῶν
+  chosen: the one who takes vengeance
+  alternatives:
+  - the avenger
+  - whoever exacts revenge
+  lexicon: BDAG
+  rationale: Zone 1 Hebrew appears to reflect a different text (matching Prov 27:1)
+    and is marked minor_mismatch, while the Greek parallel provides the actual Sirach
+    28:1 wording. The participial construction is rendered generically as 'the one
+    who...' for readable modern English while preserving the habitual sense.
+- source_word: παρὰ Κυρίου
+  chosen: from the Lord
+  alternatives:
+  - from the LORD
+  - at the hands of the Lord
+  lexicon: BDAG
+  rationale: παρά with genitive here indicates source. 'Lord' follows project default
+    for κύριος.
+- source_word: εὑρήσει ἐκδίκησιν
+  chosen: will find vengeance
+  alternatives:
+  - will receive vengeance
+  - will encounter punishment
+  lexicon: BDAG
+  rationale: Keeps the lexical repetition with ἐκδικῶν/ἐκδίκησιν visible in English.
+    'Find' is slightly idiomatic but still close to the Greek.
+- source_word: τὰς ἁμαρτίας αὐτοῦ
+  chosen: his sins
+  alternatives:
+  - his offenses
+  lexicon: BDAG
+  rationale: Standard rendering of ἁμαρτίαι; no need to weaken the moral force.
+- source_word: διατηρῶν διατηρήσει
+  chosen: he will surely keep his sins in mind
+  alternatives:
+  - he will keep them stored up
+  - he will preserve them
+  - he will keep them
+  lexicon: BDAG
+  rationale: The Greek repeats the same verb for emphasis. In context, the sense is
+    that his sins are retained against him, not merely remembered mentally. 'Keep
+    ... in mind' communicates ongoing retention in accessible English, while 'surely'
+    reflects the emphatic repetition.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: dbc9a1e77064e0485c4d6d0fd73688ad77326ad0db2409b25dbb1fc4d83796fa
+  timestamp: '2026-04-21T20:43:24Z'
+  output_hash: 801963e90e2c0bddbd936ceb509eba7b7caae7dc69554ee6b7d096eab75dcbbd
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2d342f9e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2d342f9e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Primary-source divergence between Hebrew and Greek witnesses
+  chosen_reading: Translate from the Greek Sirach text rather than the mismatching
+    Hebrew line
+  alternative_readings:
+  - 'Translate the Hebrew line: ''Do not dread tomorrow''s trouble, for you do not
+    know what a day will bring forth.'''
+  rationale: For Sirach we normally prefer surviving Hebrew, but here the supplied
+    Hebrew is a clear mismatch to Sirach 28:1 and instead corresponds to a proverb-like
+    line. Because the Hebrew witness does not represent this verse's content, the
+    Greek parallel must govern the translation. The mismatch should be preserved transparently
+    in a footnote rather than silently harmonized.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and
+    from Greek where it does not; preserve source uncertainty honestly'
