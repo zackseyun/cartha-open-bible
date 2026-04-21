@@ -1,0 +1,123 @@
+id: SIR.13.8
+reference: Sirach 13:8
+source:
+  edition: sefaria-ben-sira-kahana
+  text: הִשָּׁמֵר אַל תִּרְהַב מְאֹד, וְאַל תִּדְמֶה בַּחֲסֵירֵי מַדָּע.
+  language: Hebrew
+  pages:
+  - 681
+  - 684
+  - 685
+  - 686
+  - 687
+  - 688
+  - 689
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πρόσεχε μὴ ἀποπλανηθῇς, καὶ μὴ ταπεινωθῇς ἐν εὐφροσύνῃ σου.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 13:8
+translation:
+  text: Be careful not to be too bold, and do not make yourself like those who lack
+    understanding.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''Take care lest you be led astray, and do not be humbled
+      in your gladness.'' The Hebrew and Greek differ substantially in this verse.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: הִשָּׁמֵר
+  chosen: Be careful
+  alternatives:
+  - Guard yourself
+  - Take care
+  - Beware
+  lexicon: HALOT
+  rationale: The Niphal imperative of שׁמר here functions as a warning or caution.
+    'Be careful' is idiomatic modern English and preserves the admonitory force without
+    sounding archaic. The Greek πρόσεχε supports a sense of attentive caution.
+- source_word: אַל תִּרְהַב מְאֹד
+  chosen: not to be too bold
+  alternatives:
+  - do not be very bold
+  - do not act too proudly
+  - do not be overconfident
+  lexicon: HALOT
+  rationale: The Hebrew רהב can carry the sense of acting arrogantly, presumptuously,
+    or boldly. In this context, paired with a warning against resembling the ignorant,
+    'be too bold' best captures excessive self-assertion without overreading into
+    explicit pride. 'Too' reflects מְאֹד. The Greek parallel differs here, reading
+    'lest you be led astray,' which suggests some textual instability, but the Hebrew
+    witness is the primary source and is translated directly.
+- source_word: וְאַל תִּדְמֶה
+  chosen: do not make yourself like
+  alternatives:
+  - do not resemble
+  - do not become like
+  - do not compare yourself with
+  lexicon: HALOT
+  rationale: 'The verb דמה in this stem/context is best taken as ''be like, resemble.''
+    ''Make yourself like'' brings out the reflexive or volitional nuance in natural
+    English: the warning is against adopting the likeness or manner of a certain group.'
+- source_word: בַּחֲסֵירֵי מַדָּע
+  chosen: those who lack understanding
+  alternatives:
+  - the ignorant
+  - those deficient in knowledge
+  - those lacking sense
+  lexicon: HALOT
+  rationale: חסירי מדע is literally 'those lacking knowledge/understanding.' 'Those
+    who lack understanding' is readable and preserves the moral-intellectual sense.
+    'Knowledge' is possible, but in English 'understanding' better fits wisdom literature
+    context. The Greek's second colon instead reads 'in your gladness,' indicating
+    a divergent Vorlage or free rendering; the Hebrew phrase is therefore retained
+    in the main text as the more original witness available.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 089d65fa5066bca22e925e99091c1dcf6334f8c0111bbfad789f69bb542be6f7
+  timestamp: '2026-04-21T20:23:10Z'
+  output_hash: 8af166f07b1ff9381de612173de383ca3c6db2ca26d894f092c48055d721d819
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8c4a7c3c
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8c4a7c3c
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 13:8 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew and Greek parallel in both cola
+  chosen_reading: Translate the extant Hebrew as the main text while documenting the
+    Greek alternative in a footnote.
+  alternative_readings:
+  - 'Greek: ''Take care lest you be led astray, and do not be humbled in your gladness.'''
+  rationale: For Sirach, where Hebrew survives, project policy gives primacy to the
+    Hebrew witness. Here the Greek is not merely stylistically different but substantially
+    divergent, so the main text follows the Hebrew while preserving the Greek as an
+    auditable alternative. This is a textual-critical rather than doctrinal issue,
+    but it materially affects translation.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    Greek parallel as actual input and preserve uncertainty honestly.'

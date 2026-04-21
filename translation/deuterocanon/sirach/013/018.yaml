@@ -1,0 +1,140 @@
+id: SIR.13.18
+reference: Sirach 13:18
+source:
+  edition: sefaria-ben-sira-kahana
+  text: מַאֲכַל אֲרִי פִּרְאֵי מִדְבָּר, כֵּן מַרְעִית עָשִׁיר דַּלִּים.
+  language: Hebrew
+  pages:
+  - 681
+  - 684
+  - 685
+  - 686
+  - 687
+  - 688
+  - 689
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: τίς εἰρήνη ὕαινῃ πρὸς κύνα; καὶ τίς εἰρήνη πλουσίῳ πρὸς πένητα;
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 13:18
+translation:
+  text: The wild beasts of the wilderness are food for the lion; so the poor are the
+    pasture of the rich.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: “What peace has a hyena with a dog? And what peace has a rich man
+      with a poor man?” The Greek parallel preserves a different proverb with the
+      same social point of hostility between rich and poor.'
+    reason: alternative_reading
+  - marker: b
+    text: Or possibly “wild donkeys of the wilderness,” if the Hebrew term is taken
+      more narrowly rather than as wild animals generally.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: מַאֲכַל
+  chosen: food for
+  alternatives:
+  - prey of
+  - something eaten by
+  lexicon: HALOT
+  rationale: The noun denotes what is eaten. 'Food for' is natural English and preserves
+    the predatory image without over-specifying the mode of capture. 'Prey of' is
+    possible but slightly narrower than the Hebrew.
+- source_word: אֲרִי
+  chosen: lion
+  lexicon: HALOT
+  rationale: Standard rendering of the animal term.
+- source_word: פִּרְאֵי מִדְבָּר
+  chosen: the wild beasts of the wilderness
+  alternatives:
+  - the wild animals of the desert
+  - the wild donkeys of the wilderness
+  lexicon: HALOT
+  rationale: The phrase most naturally refers broadly to wild creatures of the open
+    country/desert. Because פרא can in some contexts point to a wild ass, an alternative
+    is worth preserving, but the plural construct with 'wilderness' here works well
+    as a collective for wild animals generally, matching the proverb's broad predatory
+    comparison.
+- source_word: כֵּן
+  chosen: so
+  alternatives:
+  - thus
+  - likewise
+  lexicon: HALOT
+  rationale: Introduces the comparison in straightforward proverbial style.
+- source_word: מַרְעִית
+  chosen: the pasture of
+  alternatives:
+  - grazing place for
+  - prey of
+  lexicon: HALOT
+  rationale: 'Literally a pasture/grazing place. In context it is metaphorical: the
+    poor are what the rich feed upon. ''The pasture of'' preserves the Hebrew image
+    more closely than flattening it to ''prey,'' while still making sense in English.'
+- source_word: עָשִׁיר
+  chosen: the rich
+  alternatives:
+  - a rich man
+  lexicon: HALOT
+  rationale: Used generically as a class in proverbial contrast with the poor; English
+    plural best conveys the representative force.
+- source_word: דַּלִּים
+  chosen: the poor
+  alternatives:
+  - poor people
+  - the weak
+  lexicon: HALOT
+  rationale: The term denotes the poor/needy and fits the social contrast in the verse.
+    'The weak' is possible in some contexts, but here economic and social vulnerability
+    is primary, reinforced by the Greek πένητα.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b4fb7115da0bbcb832d5f273883b8bb1b5fd77f6c9d434eb3a6c138dd9ab0634
+  timestamp: '2026-04-21T20:25:42Z'
+  output_hash: ff0a87826da1dcf4d659575ad026de2aa937c51a6bb6f89d4709705393ecf198
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8c4a7c3c
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8c4a7c3c
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 13:18 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between surviving Hebrew and Greek parallel
+  chosen_reading: Translate the Hebrew proverb as the primary witness while keeping
+    the Greek in view as a consistency check.
+  alternative_readings:
+  - What peace has a hyena with a dog? And what peace has a rich man with a poor man?
+  rationale: 'For Sirach, where Hebrew survives, project policy gives Hebrew primacy.
+    Here the Hebrew and Greek reflect substantially different proverbial imagery:
+    Hebrew speaks of predation/feeding, while the Greek speaks of irreconcilable hostility.
+    Because the Hebrew witness is extant and high-confidence, the main text follows
+    it; the Greek alternative is preserved in a footnote due to the notable difference
+    in sense.'
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    Greek parallel as actual input without displacing Hebrew primacy.'

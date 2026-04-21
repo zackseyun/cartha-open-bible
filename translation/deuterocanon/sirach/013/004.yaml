@@ -1,0 +1,134 @@
+id: SIR.13.4
+reference: Sirach 13:4
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אִם תִּכְשַׁר לוֹ יַעֲבֹד בָּךְ, וְאִם תִּכְרַע לֹא יַחְמֹל עָלֶיךָ.
+  language: Hebrew
+  pages:
+  - 681
+  - 684
+  - 685
+  - 686
+  - 687
+  - 688
+  - 689
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πλούσιος ἠδίκησεν, καὶ αὐτὸς προσενεβριμήσατο· πτωχὸς ἠδίκηται, καὶ αὐτὸς
+      προσδεηθήσεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 13:4
+translation:
+  text: If you are useful to him, he will make use of you; and if you fall low, he
+    will not spare you.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek tradition: ''The rich man does wrong, and he even blusters; the poor
+      man is wronged, and he must even beg.'' The Hebrew witness preserved here gives
+      a different warning about how a powerful person uses you when you are useful
+      and shows no pity when you are brought low.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אִם תִּכְשַׁר לוֹ
+  chosen: if you are useful to him
+  alternatives:
+  - if you succeed with him
+  - if you are fit for him
+  - if you prosper for him
+  lexicon: HALOT
+  rationale: The Hebrew root כשר here carries the sense of being suitable, fit, or
+    advantageous. In context with the following verb יַעֲבֹד בָּךְ, the point is not
+    moral uprightness but practical usefulness to a powerful person. 'Useful to him'
+    best captures the exploitative social sense and aligns with the Greek parallel's
+    rich/poor dynamic.
+- source_word: יַעֲבֹד בָּךְ
+  chosen: he will make use of you
+  alternatives:
+  - he will work you
+  - he will exploit you
+  - he will employ you
+  lexicon: HALOT
+  rationale: Literally 'he will work in/with you' or 'he will use you.' 'Make use
+    of you' preserves the idiomatic force without overcommitting to the stronger interpretive
+    gloss 'exploit,' though exploitation is clearly implied by context.
+- source_word: וְאִם תִּכְרַע
+  chosen: if you fall low
+  alternatives:
+  - if you bow down
+  - if you collapse
+  - if you are brought low
+  lexicon: HALOT
+  rationale: The verb כרע literally means to bend, kneel, or collapse. In this wisdom
+    context, it likely refers to being reduced, weakened, or humbled in status. 'Fall
+    low' communicates social and personal decline in readable English while retaining
+    the metaphorical force.
+- source_word: לֹא יַחְמֹל עָלֶיךָ
+  chosen: he will not spare you
+  alternatives:
+  - he will not pity you
+  - he will show you no compassion
+  - he will not have mercy on you
+  lexicon: HALOT
+  rationale: חמל denotes sparing or showing pity/compassion. 'He will not spare you'
+    is concise, idiomatic, and fits the warning tone; it also leaves room for both
+    emotional hardness and practical ruthlessness.
+- source_word: πλούσιος / πτωχός (Greek parallel)
+  chosen: kept implicit in the English rather than explicit
+  alternatives:
+  - the rich man ... the poor man
+  lexicon: BDAG
+  rationale: The Greek parallel frames the saying through rich and poor, but the primary
+    Hebrew witness expresses the principle in direct second-person address. Since
+    the task prioritizes the Hebrew where extant, the English follows the Hebrew syntax
+    while allowing the Greek to confirm the social-exploitative sense of the verse.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: cf53639c8a6a94e93e3a7d48d60ded9c06b5f0a83f885d3de85432082f4ee440
+  timestamp: '2026-04-21T20:21:57Z'
+  output_hash: b9b3d01379b7c0cf5132fc8c39b849c32e1272e3c03105a5813737bf2832e054
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8c4a7c3c
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8c4a7c3c
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 13:4 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Use of Hebrew primary witness despite major mismatch flag and divergent Greek
+    parallel
+  chosen_reading: Translate the extant Hebrew directly, with the Greek used as a control
+    on sense rather than as the main text
+  alternative_readings:
+  - 'Translate from the Greek as: ''The rich man does wrong, and he even growls; the
+    poor man is wronged, and he must even plead.'''
+  rationale: Project policy for Sirach gives primacy to the Hebrew where it survives.
+    Here the Hebrew and Greek differ substantially, so the Greek is treated as a genuine
+    parallel input and interpretive check, especially for the social setting, but
+    not as the base text. A footnote preserves the major alternative represented by
+    the Greek tradition.
+  doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives;
+    use Swete LXX alongside it'
