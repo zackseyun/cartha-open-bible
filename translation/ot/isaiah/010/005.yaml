@@ -4,14 +4,15 @@ source:
   edition: WLC
   text: ה֥וֹי אַשּׁ֖וּר שֵׁ֣בֶט אַפִּ֑/י וּ/מַטֶּה ה֥וּא בְ/יָדָ֖/ם זַעְמִֽ/י־׃
 translation:
-  text: Woe to Assyria, the rod of my anger; the staff in their hand is my wrath.
+  text: Woe to Assyria, the rod of my anger; the staff in their hands is my wrath.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Hebrew: ''in their hand.'' Some translations render the phrase with a singular
-      pronoun (''in his hand'' or ''in its hand'') to smooth the imagery, but the
-      Masoretic Text here reads plural.'
+    text: 'Hebrew: ''in their hand.'' Some translations render the phrase with a singular pronoun (''in his hand'' or ''in its hand'') to smooth the imagery, but the Masoretic Text here reads plural.'
     reason: textual_variant
+  - marker: b
+    text: Or 'in their hand'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: הוֹי
   chosen: Woe
@@ -19,66 +20,53 @@ lexical_decisions:
   - Ah
   - Alas
   lexicon: HALOT
-  rationale: An interjection of lament/threat introducing an oracle of judgment. 'Woe'
-    is the standard concise English equivalent and preserves the prophetic force better
-    than the softer 'Ah' or 'Alas'.
+  rationale: An interjection of lament/threat introducing an oracle of judgment. 'Woe' is the standard concise English equivalent and preserves the prophetic force better than the softer 'Ah' or 'Alas'.
 - source_word: אַשּׁוּר
   chosen: Assyria
   lexicon: HALOT
-  rationale: Proper national name; transliterated by standard English convention as
-    the nation addressed in the oracle.
+  rationale: Proper national name; transliterated by standard English convention as the nation addressed in the oracle.
 - source_word: שֵׁבֶט
   chosen: rod
   alternatives:
   - scepter
   - club
   lexicon: HALOT
-  rationale: Here the image is an instrument used for striking in parallel with 'staff.'
-    'Rod' best preserves the metaphor of Assyria as the instrument of divine anger;
-    'scepter' would overemphasize royal authority.
+  rationale: Here the image is an instrument used for striking in parallel with 'staff.' 'Rod' best preserves the metaphor of Assyria as the instrument of divine anger; 'scepter' would overemphasize royal authority.
 - source_word: אַפִּי
   chosen: my anger
   alternatives:
   - my nose
   - my wrath
   lexicon: HALOT
-  rationale: Though literally 'my nose,' the Hebrew idiom denotes anger. 'My anger'
-    is clear modern English and fits the poetic parallelism with 'my wrath.'
+  rationale: Though literally 'my nose,' the Hebrew idiom denotes anger. 'My anger' is clear modern English and fits the poetic parallelism with 'my wrath.'
 - source_word: וּמַטֶּה
   chosen: the staff
   alternatives:
   - and the staff
   - and a staff
   lexicon: HALOT
-  rationale: Rendered with the article in English for natural parallelism with 'the
-    rod.' The conjunction is retained in sense through the semicolon-linked second
-    line.
+  rationale: Rendered with the article in English for natural parallelism with 'the rod.' The conjunction is retained in sense through the semicolon-linked second line.
 - source_word: הוּא
   chosen: is
   alternatives:
   - it is
   - he is
   lexicon: HALOT
-  rationale: The pronoun functions as a copular element in the clause. English expresses
-    this most naturally with 'is' rather than an explicit pronoun.
+  rationale: The pronoun functions as a copular element in the clause. English expresses this most naturally with 'is' rather than an explicit pronoun.
 - source_word: בְיָדָם
   chosen: in their hand
   alternatives:
   - in his hand
   - in its hand
   lexicon: HALOT
-  rationale: The Masoretic form is 3mp ('their hand'), and the translation follows
-    the provided Hebrew text directly. Because the singular imagery might suggest
-    'his hand' in some renderings or textual discussions, the plural should be preserved
-    in the main text as the source reading.
+  rationale: The Masoretic form is 3mp ('their hand'), and the translation follows the provided Hebrew text directly. Because the singular imagery might suggest 'his hand' in some renderings or textual discussions, the plural should be preserved in the main text as the source reading.
 - source_word: זַעְמִי
   chosen: my wrath
   alternatives:
   - my indignation
   - my fury
   lexicon: HALOT
-  rationale: A strong term for divine anger. 'Wrath' preserves the theological weight
-    and poetic intensification alongside 'my anger' in the first colon.
+  rationale: A strong term for divine anger. 'Wrath' preserves the theological weight and poetic intensification alongside 'my anger' in the first colon.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -90,14 +78,19 @@ ai_draft:
 status: draft
 theological_decisions:
 - issue: Divine agency and Assyria as instrument of judgment
-  chosen_reading: Assyria is presented as the instrument of God's anger and wrath,
-    without softening the metaphor.
+  chosen_reading: Assyria is presented as the instrument of God's anger and wrath, without softening the metaphor.
   alternative_readings:
   - Assyria as merely coincidental agent of judgment
   - Assyria as independent actor only
-  rationale: The verse explicitly identifies Assyria as 'the rod of my anger' and
-    the staff as 'my wrath.' The translation preserves the tension that God uses a
-    pagan empire as an instrument of judgment without importing further doctrinal
-    explanation.
-  doctrine_reference: Translation philosophy §3 (preserve theological tension rather
-    than resolve it)
+  rationale: The verse explicitly identifies Assyria as 'the rod of my anger' and the staff as 'my wrath.' The translation preserves the tension that God uses a pagan empire as an instrument of judgment without importing further doctrinal explanation.
+  doctrine_reference: Translation philosophy §3 (preserve theological tension rather than resolve it)
+revisions:
+- timestamp: '2026-04-21T19:59:24Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/random_sample/ot/isaiah/010/005.job-19029.json
+  category: awkward_english
+  tier: 1
+  from: in their hand
+  to: in their hands
+  rationale: The Hebrew phrase בְיָדָם (bəyādām) uses a singular noun for 'hand' (יָד) with a plural suffix (-ָם). While 'in their hand' is a literal rendering of the form, the sense is plural ('in the hands of them'). The current rendering creates a slight grammatical awkwardness in English by pairing a plural possessive ('their') with a singular noun ('hand'), which can be distracting. Changing to 'in their hands' is more idiomatic English, is supported by other major translations (e.g., NIV, NRSV), and remains a faithful rendering of the Hebrew sense.
