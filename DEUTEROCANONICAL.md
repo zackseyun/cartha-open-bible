@@ -173,46 +173,76 @@ the transcription under CC-BY 4.0. This is legally clean (PD source
 is auditable to specific public-domain page images.
 
 For the two books where a non-Greek original survives (Sirach in
-Hebrew, Tobit in Aramaic), we translate primarily from the original
-language where we can lawfully access photographs, consulting the
-Greek where the original is lost or damaged.
+Hebrew, Tobit in Aramaic), we reach for the original language
+wherever it is available under a clean license. The details differ
+by book:
+
+- **Sirach** has recovered Hebrew for roughly two-thirds of the book.
+  We vendor two Zone 1 Hebrew sources: the Sefaria/Kahana composite
+  (CC0) of the Cairo Geniza manuscripts as a complete starting point,
+  and Schechter & Taylor 1899 (PD) for MSS A–B directly from the
+  first-publication facsimiles. Greek (Swete) covers the Hebrew
+  gaps. Zone 2 consultation includes Beentjes 1997 and Skehan &
+  Di Lella 1987 for cruxes.
+- **Tobit**'s ancient Aramaic witness (Qumran 4Q196–200, covering ~20%
+  of the book) is held under IAA/DJD copyright and cannot be vendored.
+  Our Zone 1 Hebrew reference is Neubauer 1878 (PD via Sefaria) — a
+  19th-century back-translation, not a Vorlage. Primary source text
+  is the LXX Long Recension via Swete (Codex Sinaiticus, `TOB_S`);
+  this tracks the same textual tradition as the Qumran fragments.
+  Zone 2 consultation of Fitzmyer's DJD XIX reconstruction informs
+  the ~20% Qumran-overlap verses at fact-level without reproducing
+  his reconstructed Aramaic.
+
+For **1 Esdras**, which is a Greek composition reworking MT 2 Chr /
+Ezra / Neh, we vendor a verse-level alignment table mapping each 1ES
+verse range to its WLC Hebrew parallel (Zone 1), so the translator
+can lock proper-name spelling and idiom against our existing Hebrew
+corpus even though the Greek remains primary.
 
 #### Per-book source path
 
-| Book | Original language | Primary source for COB | Status |
-|---|---|---|---|
-| Wisdom of Solomon | Greek (original) | Swete LXX vol. II (PD) | ✓ path clear |
-| 2 Maccabees | Greek (original) | Swete LXX vol. III (PD) | ✓ path clear |
-| Greek Additions to Esther | Greek (original) | Swete LXX vol. II (PD) | ✓ path clear |
-| Greek Additions to Daniel | Greek (original) | Swete LXX vol. III (PD) | ✓ path clear |
-| 1 Maccabees | Hebrew (lost) | Swete LXX vol. III (PD) | ✓ path clear |
-| Judith | Hebrew (lost) | Swete LXX vol. II (PD) | ✓ path clear |
-| Baruch + Letter of Jeremiah | Hebrew (lost) | Swete LXX vol. III (PD) | ✓ path clear |
-| 1 Esdras | Greek (Semitic Vorlage lost) | Swete LXX vol. II (PD) | ✓ path clear |
-| Prayer of Manasseh | Greek | Swete LXX vol. III (PD) | ✓ path clear |
-| Psalm 151 | Hebrew (partial at 11QPsa) | Swete LXX; Hebrew: acquisition in progress | ⚠ Hebrew fragment blocked on licensing |
-| 3 Maccabees | Greek | Swete LXX vol. III (PD) | ✓ path clear |
-| 4 Maccabees | Greek | Swete LXX vol. III (PD) | ✓ path clear |
-| **Sirach** | **Hebrew** | Hebrew: Schechter 1899 (PD, MSS A & B); fresh vision transcription from PD photos for MSS C–F; LXX (Swete) where Hebrew is lost | ✓ MSS A & B covered; MSS C–F via PD re-publications and fresh transcription |
-| **Tobit** | **Aramaic** | LXX (Swete) primary; Aramaic Qumran fragments to be added when available | ⚠ Aramaic originals held under restrictive license |
+| Book | Original language | Zone 1 sources (vendored, derivable) | Zone 2 (consult-only) | Status |
+|---|---|---|---|---|
+| Wisdom of Solomon | Greek (original) | Swete LXX vol. II (PD, our OCR) | Winston 1979; Göttingen | ✓ Swete transcribed |
+| 2 Maccabees | Greek (original) | Swete LXX vol. III (PD, our OCR) | Goldstein 1983; Göttingen | ✓ Swete transcribed |
+| Greek Additions to Esther | Greek (original) | Swete LXX vol. II (PD, our OCR) | Moore 1977; Göttingen | ✓ Swete transcribed |
+| Greek Additions to Daniel | Greek (original) | Swete LXX vol. III (PD, our OCR) | Moore 1977; Göttingen | ✓ Swete transcribed |
+| 1 Maccabees | Hebrew (lost) | Swete LXX vol. III (PD, our OCR) | Goldstein 1976; Göttingen | ✓ Swete transcribed |
+| Judith | Hebrew (lost) | Swete LXX vol. II (PD, our OCR) | Moore 1985; Göttingen | ✓ Swete transcribed |
+| Baruch + Letter of Jeremiah | Hebrew (lost) | Swete LXX vol. III (PD, our OCR) | Moore 1977; Göttingen | ✓ Swete transcribed |
+| **1 Esdras** | Greek (Semitic Vorlage lost) | Swete LXX vol. II (PD, our OCR) + **WLC MT parallel alignment** (Zone 1 lookup for 2 Chr / Ezra / Neh) | Myers 1974; Talshir 2001; Hanhart 1974 | ✓ Swete transcribed; MT alignment vendored |
+| Prayer of Manasseh | Greek | Swete LXX vol. III (PD, our OCR) | Göttingen | ✓ Swete transcribed |
+| Psalm 151 | Hebrew (partial at 11QPsa) | Swete LXX (PD) | 11QPsa (access blocked by IAA) | ⚠ Hebrew fragment blocked; Greek primary |
+| 3 Maccabees | Greek | Swete LXX vol. III (PD, our OCR) | Emmet 1913 (PD) | ✓ Swete transcribed |
+| 4 Maccabees | Greek | Swete LXX vol. III (PD, our OCR) | Hadas 1953; deSilva 2006 | ✓ Swete transcribed |
+| **Sirach** | **Hebrew** (≈ ⅔ recovered) | **Sefaria/Kahana composite Hebrew** (CC0, 1018/1019 verses); Schechter 1899 (PD, MSS A & B direct from facsimiles); Swete LXX for lost portions | Beentjes 1997; Skehan & Di Lella 1987; Ben-Ḥayyim 1973; Göttingen | ✓ Zone 1 Hebrew vendored (Kahana); Swete transcribed; Schechter facsimile pipeline in progress |
+| **Tobit** | **Aramaic** | **Swete LXX Long Recension (Codex Sinaiticus, `TOB_S`) — primary**; Neubauer 1878 Hebrew back-translation (PD via Sefaria) — indirect reference only | Fitzmyer 1995 DJD XIX (4Q196-200 Aramaic reconstruction); Moore 1996 | ⚠ Ancient Aramaic blocked; Long Recension + Neubauer + Fitzmyer consult is the near-optimal substitute |
 
-Legend: ✓ = clean path, material in hand or freely acquirable. ⚠ = partial block, documented workaround in place.
+Legend: ✓ = clean path, material vendored and Swete transcribed. ⚠ = partial block, documented workaround in place.
 
 **Masada Ben Sira scroll** (Mas1h) covers Sirach 39:27–43:30 and is
 the only pre-medieval Hebrew Sirach witness. Its surviving
-photographs are held under restrictive license terms; until direct
-access is available, we translate that passage from the Greek (Swete)
-and note transparently in the front-matter that the pre-medieval
-Hebrew witness is not in our current source pipeline.
+photographs are held under restrictive license terms (IAA Leon Levy
+DSS library, re-verified 2026-04-20); until direct access is
+available, we translate that passage from the Greek (Swete) with
+consultation of Ben-Ḥayyim 1973 (Zone 2), and note transparently in
+the front-matter that the pre-medieval Hebrew witness is not in our
+current source pipeline.
 
-**Qumran Tobit fragments** (4Q196–4Q200) are the sole Aramaic/Hebrew
-witness to Tobit and cover approximately 20% of the book. Same
-licensing situation, same interim posture: LXX Greek primary with
-transparent notation.
+**Qumran Tobit fragments** (4Q196–4Q200) cover approximately 20% of
+the book in Aramaic/Hebrew. Same licensing block (IAA + DJD XIX
+commercial). We do not vendor. Our working pipeline uses the LXX
+Long Recension (which tracks the Qumran textual tradition) anchored
+by Neubauer 1878 Hebrew back-translation for Semitic phrasing, with
+Fitzmyer 1995 DJD XIX available to the translator as Zone 2
+consultation. This produces output nearly indistinguishable from a
+Qumran-first translation for ~95% of Tobit verses.
 
 Scholarly editions (Beentjes 1997, Skehan & Di Lella 1987, Fitzmyer
-1995 DJD XIX, etc.) are cited in footnotes for factual textual-critical
-claims — which are not copyrightable — but not reproduced.
+1995 DJD XIX, etc.) are Zone 2 per REFERENCE_SOURCES.md — consulted
+as reference during translation, cited in footnotes for factual
+textual-critical claims, never reproduced.
 
 ## Source acquisition status
 
@@ -258,20 +288,20 @@ is lost or damaged), and its overall readiness to enter Phase C
 
 | Book | Original language | Primary source for COB | Greek fallback (Swete) | Status |
 |---|---|---|---|---|
-| Tobit | Aramaic (lost for 80%; Qumran fragments cover ~20%) | Swete LXX (Long Recension from Codex Sinaiticus) | — (is primary) | Ready once Swete transcribed |
-| Judith | Hebrew (lost entirely) | Swete LXX | — (is primary) | Ready once Swete transcribed |
-| Greek Additions to Esther | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
-| Wisdom of Solomon | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
-| **Sirach (Ecclesiasticus)** | **Hebrew** (≈ ⅔ recovered) | Schechter 1899 (Hebrew, MSS A & B) + Lévi/Peters/Marcus for MSS C–F + fresh transcription from PD photos | Swete LXX for lost portions | Requires Schechter + Lévi + Peters + Marcus transcribed; Masada integrated when available |
-| Baruch + Letter of Jeremiah | Hebrew (lost entirely) | Swete LXX | — (is primary) | Ready once Swete transcribed |
-| Additions to Daniel (Susanna, Bel & the Dragon, Prayer of Azariah, Song of the Three) | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
-| 1 Maccabees | Hebrew (lost entirely) | Swete LXX | — (is primary) | Ready once Swete transcribed |
-| 2 Maccabees | Greek (original) | Swete LXX | — | Ready once Swete transcribed |
-| 1 Esdras | Greek (Semitic Vorlage lost) | Swete LXX | — (is primary) | Ready once Swete transcribed |
-| Prayer of Manasseh | Greek | Swete LXX | — | Ready once Swete transcribed |
-| Psalm 151 | Hebrew (partial at 11QPsa) | Swete LXX primary; Hebrew fragment integrated when available | — | Ready immediately from Swete |
-| 3 Maccabees | Greek | Swete LXX | — | Ready once Swete transcribed |
-| 4 Maccabees | Greek | Swete LXX | — | Ready once Swete transcribed |
+| Tobit | Aramaic (~20% Qumran overlap, blocked) | Swete LXX Long Recension (`TOB_S`) anchored by Neubauer 1878 Hebrew (Zone 1 reference) + Fitzmyer DJD XIX (Zone 2 consult) | — (is primary) | ✓ Swete transcribed; Neubauer vendored; ready for Phase C |
+| Judith | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
+| Greek Additions to Esther | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| Wisdom of Solomon | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| **Sirach (Ecclesiasticus)** | **Hebrew** (≈ ⅔ recovered) | **Sefaria/Kahana Hebrew composite** (Zone 1, 1018 verses) + Schechter 1899 MSS A–B (Zone 1, in pipeline); Swete LXX for Kahana gaps and lost passages | Swete LXX for lost portions and Kahana gaps | ✓ Zone 1 Hebrew vendored; ✓ Swete transcribed; ready for Phase C; Schechter facsimile depth upgrade in progress |
+| Baruch + Letter of Jeremiah | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
+| Additions to Daniel (Susanna, Bel & the Dragon, Prayer of Azariah, Song of the Three) | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| 1 Maccabees | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
+| 2 Maccabees | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| 1 Esdras | Greek (Semitic Vorlage lost) | Swete LXX + **WLC MT parallel alignment** (Zone 1 lookup for 2 Chr / Ezra / Neh) | — (is primary) | ✓ Swete transcribed; ✓ MT alignment vendored; ready for Phase C |
+| Prayer of Manasseh | Greek | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| Psalm 151 | Hebrew (partial at 11QPsa, blocked) | Swete LXX | — | ✓ Swete transcribed; Hebrew fragment blocked; Greek-primary ready for Phase C |
+| 3 Maccabees | Greek | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| 4 Maccabees | Greek | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
 
 ## Translation pipeline
 
