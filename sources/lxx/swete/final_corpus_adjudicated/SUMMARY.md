@@ -7,17 +7,17 @@ Verses adjudicated against scan: **2663**
 ## Adjudication outcomes
 
 - Our OCR matched scan (kept ours): **1293**
-- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **504**
+- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **505**
 - Both equivalent (minor orthography): **69**
-- Neither matched scan (fresh scan-based reading): **424**
+- Neither matched scan (fresh scan-based reading): **423**
 - Rahlfs also matched the visible Swete reading: **156**
 - Amicarelli rescue matched scan best: **172**
 - Swete-family rescue consensus: **45**
 
 ## Adjudicator confidence
 
-- High: **2660**
-- Medium: **3**
+- High: **2661**
+- Medium: **2**
 - Low (may warrant human review): **0**
 
 ## Per-book breakdown
@@ -25,7 +25,7 @@ Verses adjudicated against scan: **2663**
 | Book | Total | Unchanged | ours→kept | first1k→used | both_ok | neither | Adjudicated | High conf |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | 1ES | 496 | 258 | 99 | 66 | 14 | 47 | 238 | 237 |
-| ADE | 244 | 123 | 38 | 41 | 3 | 11 | 121 | 120 |
+| ADE | 244 | 123 | 38 | 42 | 3 | 10 | 121 | 121 |
 | JDT | 343 | 260 | 33 | 16 | 1 | 26 | 83 | 83 |
 | TOB | 255 | 180 | 33 | 16 | 0 | 11 | 75 | 75 |
 | 1MA | 940 | 813 | 51 | 22 | 4 | 32 | 127 | 127 |
