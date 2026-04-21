@@ -34,17 +34,21 @@ ADJ_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "adjudications"
 # Hand-curated (book, chapter, verse, [pages]) targets.
 # Pages were verified by direct visual inspection of the scans.
 MANUAL_TARGETS: list[tuple[str, int, int, list[int]]] = [
-    # SIR 3:5, 3:7 — Sirach ch3 is on vol2 p666-667
-    ("SIR", 3, 5, [666, 667]),
-    ("SIR", 3, 7, [666, 667]),
+    # SIR 3:5, 3:7 — these are visible on vol2 p665 (not 666-667).
+    ("SIR", 3, 5, [665]),
+    ("SIR", 3, 7, [665]),
 
-    # SIR 33:11-17 — Sirach uses Swete's rearranged chapter numbering.
-    # Modern Sir 33 = Swete's chapter XXXVI (see system prompt note).
-    # Printed verse labels on the scans will say "XXXVI N".
-    ("SIR", 33, 14, [733, 734]),
-    ("SIR", 33, 15, [733, 734]),
-    ("SIR", 33, 16, [733, 734]),
-    ("SIR", 33, 17, [733, 734]),
+    # SIR 33:14-16 — visible on vol2 p728, where Swete's alternate
+    # Sirach numbering prints these content-lines in the XXX / XXXIII
+    # overlap section. Prior rescue runs were pointed at 733-734, which
+    # is why they honestly stayed LOW.
+    ("SIR", 33, 14, [728]),
+    ("SIR", 33, 15, [728]),
+    ("SIR", 33, 16, [728]),
+
+    # SIR 33:17 — current corpus maps this verse to the prayer section
+    # visible on vol2 p734.
+    ("SIR", 33, 17, [734]),
 ]
 
 
