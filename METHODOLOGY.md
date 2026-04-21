@@ -70,6 +70,12 @@ running in parallel:
 - GPT (OpenAI)
 - Gemini (Google)
 
+The specific model versions are recorded per-draft in the YAML
+`ai_draft.model_id` field, and the current phase's versions are named
+in [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md). This doc stays
+model-version-agnostic so the pipeline description does not churn with
+each model release.
+
 Agreement is scored by normalized edit distance on the English rendering
 and by overlap of lexical decisions. Thresholds:
 
