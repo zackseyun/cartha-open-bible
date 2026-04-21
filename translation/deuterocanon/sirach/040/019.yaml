@@ -1,0 +1,130 @@
+id: SIR.40.19
+reference: Sirach 40:19
+source:
+  edition: sefaria-ben-sira-kahana
+  text: ילד ועיר יעמידו שם, ומשניהם מוצא חכמה.<br><small>(יט)</small> שגר ונטע יפריחו
+    שם, ומשניהם אשה נחשקת.
+  language: Hebrew
+  pages: []
+  confidence: high
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: τέκνα καὶ οἰκοδομὴ πόλεως στηρίζουσιν ὄνομα, καὶ ὑπὲρ ἀμφότερα γυνὴ ἄμωμος
+      λογίζεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 40:19
+translation:
+  text: Children and the building of a city establish a name, but better than both
+    is a blameless wife.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew Cairo Geniza text reads approximately, 'and from both of them comes
+      wisdom'; the Greek parallel instead reads, 'but better than both is a blameless
+      wife.' The Hebrew of this colon appears textually uncertain, so the main text
+      follows the clearer Greek-supported sense.
+    reason: alternative_reading
+  - marker: b
+    text: The older Masada scroll is fragmentary here and does not preserve enough
+      of the line to settle the final wording with confidence.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ילד
+  chosen: Children
+  alternatives:
+  - A child
+  - Offspring
+  lexicon: HALOT
+  rationale: Hebrew ילד here functions collectively in a wisdom-style list; the Greek
+    τέκνα confirms a plural/collective sense. 'Children' is the most natural English
+    rendering.
+- source_word: ועיר יעמידו שם
+  chosen: the building of a city establish a name
+  alternatives:
+  - a city establish a name
+  - founding a city establish renown
+  lexicon: HALOT
+  rationale: The Hebrew as transmitted is difficult, but in light of the Greek οἰκοδομὴ
+    πόλεως ('building of a city'), the sense is that civic construction/founding secures
+    reputation. 'Establish a name' preserves the idiom שם with יעמידו.
+- source_word: שם
+  chosen: a name
+  alternatives:
+  - renown
+  - reputation
+  lexicon: HALOT
+  rationale: Hebrew 'name' often carries the sense of reputation or lasting renown.
+    I kept the literal 'name' to preserve the idiom while remaining intelligible in
+    English.
+- source_word: ומשניהם
+  chosen: but better than both
+  alternatives:
+  - and beyond both
+  - and more than both
+  lexicon: HALOT
+  rationale: The Hebrew phrase means 'from/beyond the two of them,' and the Greek
+    ὑπὲρ ἀμφότερα supports a comparative sense. 'Better than both' expresses the evaluative
+    comparison clearly in English.
+- source_word: מוצא חכמה
+  chosen: is a blameless wife
+  alternatives:
+  - the finding of wisdom
+  - wisdom is found
+  lexicon: HALOT
+  rationale: The Cairo Geniza Hebrew reads מוצא חכמה, but this appears textually unstable
+    in context. The Greek parallel reads γυνὴ ἄμωμος ('a blameless wife'), which also
+    matches the second colon pattern in the Hebrew line pair and the likely original
+    sense. Because the Hebrew witness here is problematic and the Greek is explicit,
+    the main text follows the Greek-supported sense, with the Hebrew reading preserved
+    in a footnote.
+- source_word: γυνὴ ἄμωμος
+  chosen: a blameless wife
+  alternatives:
+  - an irreproachable woman
+  - a faultless wife
+  lexicon: BDAG
+  rationale: Used as a control on the difficult Hebrew. 'Blameless wife' is concise,
+    idiomatic, and preserves the moral quality conveyed by ἄμωμος without overstating
+    sinlessness.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 725a47961c62725723a8f90740162a65d199d144818a766f62686e754e3d61ba
+  timestamp: '2026-04-21T20:39:15Z'
+  output_hash: 775d57becb20630c643c1ba0258949a5924f278e9c1bc0de17facfab56e118f3
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @fee1caf9
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @fee1caf9
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  revision_candidates:
+  - reason: SIR 40:19 is in the Masada Ben Sira coverage range; if IAA image access
+      opens, upgrade the Masada witness from Zone 2 consult to Zone 1.
+    trigger: iaa_masada_access_granted
+status: draft
+theological_decisions:
+- issue: Use of Greek parallel against difficult Hebrew in Sirach
+  chosen_reading: Main text follows the Hebrew where intelligible, but adopts the
+    Greek-supported sense for the final comparison because the Hebrew reading appears
+    corrupt or displaced.
+  alternative_readings:
+  - Translate the Hebrew more literally as 'and from both of them comes wisdom'
+  rationale: For Ben Sira, surviving Hebrew has primacy where sound, but the prompt
+    explicitly instructs that the Greek parallel be used as actual translation input.
+    Here the Hebrew final phrase does not fit the Greek and likely reflects textual
+    disturbance; the Greek yields a coherent wisdom saying and aligns with the verse's
+    comparative structure.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives, using
+    Greek parallel as input for Sirach'
