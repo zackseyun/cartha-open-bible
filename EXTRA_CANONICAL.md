@@ -77,7 +77,7 @@ Apocrypha, Vulgate appendix).
 |---|---|---|---|---|
 | **2 Esdras (4 Ezra)** | Hebrew (lost) → Greek (lost) → Latin | Latin (Bensly 1895) + 6 daughter translations | 16 chapters | See [`2ESDRAS.md`](2ESDRAS.md) |
 | **1 Enoch** | Aramaic (fragments at Qumran) → Greek (partial) → Ge'ez | Ethiopic (Charles 1906) | 108 chapters | Charles 1906, Charles 1912, Flemming 1902. **Pipeline setup already in progress as Phase 8c** — see [`ENOCH.md`](ENOCH.md) |
-| **Jubilees** | Hebrew (fragments at Qumran) → Greek (fragments) → Ge'ez | Ethiopic (Charles 1895) | 50 chapters | Charles 1895, Charles 1902, Rönsch 1874 (Latin fragments) |
+| **Jubilees** | Hebrew (fragments at Qumran) → Greek (fragments) → Ge'ez | Ethiopic (Charles 1895) | 50 chapters | Charles 1895, Charles 1902, Rönsch 1874 (Latin fragments). **Shared Ethiopic pipeline setup now documented** — see [`JUBILEES.md`](JUBILEES.md) |
 | **Psalms of Solomon** | Hebrew (lost) → Greek → (Syriac partial) | Greek | 18 psalms | Ryle & James 1891; may already be in Swete vol III |
 
 ### Tier 2 — Apostolic Fathers, Jewish apocalyptic, and pseudepigrapha
@@ -189,6 +189,7 @@ after Phase 9 (LXX deuterocanon) completes:
 |---|---|---|---|
 | **8b** | 2 Esdras — source + pipeline setup | B (Latin + 6 daughters) | ✓ source PDFs vendored, scope doc written, scaffolding in place |
 | **8c** | 1 Enoch — source + pipeline setup | C (new Ethiopic pipeline) | ✓ source PDFs vendored, OCR backend selected (Gemini 2.5 Pro plaintext mode; Azure GPT-5 and Gemini Flash fail on Ge'ez), scope doc, scaffolding |
+| **8d** | Jubilees — source + shared Ethiopic pipeline setup | C (reuses/shared with Enoch) | ✓ source PDFs vendored, scope doc written, shared `tools/ethiopic/ocr_geez.py` batch CLI in place, scaffolding added |
 | **Phase 9** | LXX deuterocanon drafting | Existing LXX infra | Ready to begin |
 | **Phase 10** | 2 Esdras drafting | B | Gated on Phase 9 |
 | **Phase 11** | 1 Enoch drafting | C | Gated on Phase 9 |

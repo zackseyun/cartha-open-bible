@@ -70,12 +70,19 @@ MANIFEST tracks SHA-256):
   - Dillmann & Rönsch 1874 (PD) -- German translation + Rönsch's
     recovered Latin fragments (chs 13-49) as second witness
 
-**Shared Ethiopic pipeline** `tools/ethiopic/` with `ocr_geez.py`
-(Gemini Pro plaintext OCR, retry logic, render_page_png helper).
-Consumed by `tools/enoch/` and `tools/jubilees/`.
+**Shared Ethiopic pipeline** `tools/ethiopic/` now includes
+`ocr_geez.py`, a resumable batch OCR CLI that renders PDF pages,
+calls Gemini Pro in plaintext mode, and writes per-page UTF-8 Ge'ez
+`.txt` plus sidecar metadata `.json` files. Consumed by
+`tools/enoch/` and `tools/jubilees/`.
 
-**Scope doc** JUBILEES.md covers canonicity, textual situation,
-translation strategy, Phase 12 timeline.
+**Scope doc** `JUBILEES.md` covers canonicity, witness coverage,
+translation strategy, and the Phase 12 timeline.
+
+**Jubilees scaffold** at `tools/jubilees/multi_witness.py` defines the
+Phase 12 witness model (Charles 1895 Ge'ez primary, Dillmann-Rönsch
+1874 Ge'ez cross-check, Rönsch 1874 Latin fragments, plus Zone 2
+Qumran consult registry).
 
 **DEUTEROCANONICAL.md** Pseudepigrapha section: adds Jubilees row and
 documents the shared Ethiopic-pipeline rationale for sequencing
