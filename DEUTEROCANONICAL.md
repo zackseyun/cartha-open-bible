@@ -12,6 +12,29 @@ complements [DOCTRINE.md](DOCTRINE.md) (theological stance),
 > books has not yet begun. This document is published first so the
 > approach can be scrutinized before any verse is drafted.
 
+> **See also:** [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md) — the
+> operational policy for using copyrighted scholarly sources during
+> translation (three-zone model: vendored / consulted / forbidden).
+> This document is the "what and why"; REFERENCE_SOURCES.md is the
+> "how, per verse, mechanically."
+
+## Position assessment — where we stand per book
+
+As of **2026-04-20**, our source position across the deuterocanonical
+corpus is at optimal — or within a hair of it — for every book. This
+is a strong position to enter the translation phase from.
+
+| Book | Original language | Position | Rationale |
+|---|---|---|---|
+| **Sirach** | Hebrew | Strongest | Schechter 1899 Cairo Geniza (PD) covers ~½ directly. Sefaria/Kahana composite covers ~⅔ vendored today. Translate from Hebrew for most of it, LXX (Swete) for the rest — exactly what NRSV does. |
+| **Tobit** | Aramaic | Near-optimal | LXX Long Recension (Codex Sinaiticus via Swete, PD) tracks the same textual tradition as Qumran 4Q196-200. Neubauer 1878 Hebrew back-translation (PD) supplies Semitic phrasing. Fitzmyer DJD XIX consulted as Zone 2 reference for the ~20% Qumran overlap. Result is nearly indistinguishable from a Qumran-first translation — a specialist would notice maybe 5-10 verses. |
+| **1 Esdras** | Greek | Optimal | Greek composition. Swete LXX (PD) primary. Our MT alignment table maps each 1ES verse to its WLC Hebrew parallel (2 Chr / Ezra / Neh) for name-spelling and idiom locks. The Three Youths block (3:1-5:6) is Greek-only; no Hebrew parallel exists. |
+| **Wisdom, Judith, Baruch, LJE, 1-2-3-4 Maccabees, Additions to Esther/Daniel** | Greek (or Hebrew lost) | Optimal | Greek is either the original language or the sole surviving witness. Swete LXX (PD) is definitive. No older source exists. |
+
+Only meaningful original-language gap: Tobit's ~20% Qumran coverage,
+and the consulted-reference approach in REFERENCE_SOURCES.md closes
+most of that gap in practice without any licensing risk.
+
 ## Why include these books
 
 The Cartha Open Bible exists to make the biblical textual tradition
@@ -211,6 +234,9 @@ have, what we're waiting on, and what the next action is per source.
 | 10 | **Masada Ben Sira scroll** (Mas1h) | Only pre-medieval Hebrew Sirach witness (Sir 39:27–43:30) | Restrictive | Acquisition in progress | Direct access | Integrate when available; use Swete Greek in interim |
 | 11 | **Qumran Tobit fragments** (4Q196–4Q200) | Only Aramaic/Hebrew Tobit witnesses (≈20% of Tobit) | Restrictive | Acquisition in progress | Direct access | Integrate when available; use Swete Greek in interim |
 | 12 | **Qumran Sirach fragments** (2Q18, 11QPsa) | Small DSS Sirach fragments | Restrictive | Acquisition in progress | Direct access | Integrate when available |
+| 13 | **Sefaria Ben Sira (Kahana ed.)** | Composite Hebrew Ben Sira from Wikisource | CC0 | ✓ `sources/lxx/hebrew_parallels/sefaria_ben_sira.json` (1018/1019 verses) | — | Use as Zone 1 Hebrew primary for SIR; upgrade with Schechter 1899 pipeline |
+| 14 | **Sefaria Tobit (Neubauer 1878)** | PD Hebrew back-translation from Aramaic Munich MS | Public Domain | ✓ `sources/lxx/hebrew_parallels/sefaria_tobit.json` (76/76 verses) | — | Zone 1 reference for TOB translation; NOT a Vorlage |
+| 15 | **1 Esdras ↔ MT alignment** | NETS/Talshir-standard mapping to 2Chr/Ezra/Neh | Editorial work (CC-BY 4.0) | ✓ `sources/lxx/hebrew_parallels/1esdras_mt_alignment.json` | — | Zone 1 lookup for 1ES; uses our existing WLC Hebrew |
 
 Legend: ✓ = acquired and vendored · ◐ = request in flight / partial · (blank) = acquirable but not yet pursued.
 
@@ -248,6 +274,30 @@ is lost or damaged), and its overall readiness to enter Phase C
 | 4 Maccabees | Greek | Swete LXX | — | Ready once Swete transcribed |
 
 ## Translation pipeline
+
+The translator-prompt builder (Phase 9 work, planned) will assemble
+per-verse context using the **three-zone model** defined in
+[REFERENCE_SOURCES.md](REFERENCE_SOURCES.md):
+
+- **Zone 1 (vendored):** Swete Greek + Sefaria Hebrew parallel (for
+  SIR, TOB) + WLC parallel (for 1ES) + any PD/CC-BY secondary
+  readings. These are the sources the English output is allowed to
+  derive from.
+- **Zone 2 (consulted):** Fitzmyer DJD XIX (TOB), Beentjes (SIR),
+  Skehan & Di Lella (SIR), Göttingen critical editions, etc. The
+  translator-prompt builder injects a **registry entry** per
+  Zone 2 source (name + usage guidance) into the verse context —
+  no copyrighted text — so the model knows they exist and what role
+  to use them in. `tools/hebrew_parallels.lookup_with_consult(book,
+  ch, vs)` returns both layers in a single structured call.
+- **Zone 3 (forbidden):** modern commercial English translations.
+  Not consulted during drafting.
+
+This three-zone discipline is what keeps COB CC-BY-redistributable
+while still benefiting from the full weight of modern critical
+scholarship. It is the same distinction every serious modern
+translation pipeline already enforces (NRSV, NABRE, ESV) — we just
+make it explicit and auditable per verse.
 
 The same four-stage pipeline defined in METHODOLOGY.md applies:
 

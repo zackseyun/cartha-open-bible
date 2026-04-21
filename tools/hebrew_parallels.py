@@ -53,6 +53,89 @@ SEFARIA_TOBIT = PARALLELS_DIR / "sefaria_tobit.json"
 ESDRAS_ALIGNMENT = PARALLELS_DIR / "1esdras_mt_alignment.json"
 
 
+# ---- Zone 2 (consult-only) scholarly-reference registry --------------------
+# See REFERENCE_SOURCES.md for the policy. These sources MAY be consulted by
+# a human or AI translator as reference, but their creative expression MUST
+# NOT appear in COB output. The translator prompt builder injects these into
+# the verse context so the model knows they exist and what to use them for;
+# it does not -- and cannot -- include their text.
+
+CONSULT_REGISTRY: dict[str, list[dict]] = {
+    "SIR": [
+        {"name": "Beentjes 1997, The Book of Ben Sira in Hebrew",
+         "guidance": "Critical edition of all recovered Hebrew Sirach MSS (A-F). Consult when the Kahana reading seems wrong or when the verse falls in a Kahana gap (common: ch 17, 22-24, 26-29, 36). Do not reproduce its text."},
+        {"name": "Skehan & Di Lella 1987, Anchor Bible 39",
+         "guidance": "English Sirach with full critical apparatus. Consult for argued interpretive cruxes. Do NOT track their English phrasing -- we are producing our own English."},
+        {"name": "Ben-Hayyim 1973, Academy of the Hebrew Language",
+         "guidance": "Scholarly diplomatic edition. Consult for Masada-scroll portions (39:27-43:30) where our PD Hebrew access is blocked."},
+    ],
+    "TOB": [
+        {"name": "Fitzmyer 1995, Discoveries in the Judaean Desert XIX",
+         "guidance": "Reconstructed Aramaic of Qumran 4Q196-200 (~20% of Tobit). The Qumran evidence tracks the Long Recension (Codex Sinaiticus, our TOB_S). Consult for verses where your Greek-based draft seems to flatten a Semitic idiom, and for proper-name spelling. Footnote fact-level conclusions ('4Q196 attests the Long Recension here'); do NOT reproduce the reconstructed Aramaic or follow its bracketed fill-ins word-for-word."},
+        {"name": "Moore 1996, Anchor Bible 40A",
+         "guidance": "English Tobit with critical apparatus. Consult for interpretive cruxes."},
+    ],
+    "1ES": [
+        {"name": "Myers 1974, Anchor Bible 42",
+         "guidance": "English 1 Esdras with critical apparatus. Consult for interpretive cruxes."},
+        {"name": "Talshir 2001, SBL Commentary",
+         "guidance": "Standard 1 Esdras critical commentary. Canonical source of the MT-alignment table we vendor. Consult for questions about where 1ES expands or compresses its MT parallel."},
+        {"name": "Hanhart 1974, Göttingen LXX -- Esdrae liber I",
+         "guidance": "Critical Greek edition. Consult for textual variants."},
+    ],
+    "JDT": [
+        {"name": "Moore 1985, Anchor Bible 40",
+         "guidance": "English Judith with critical apparatus."},
+    ],
+    "WIS": [
+        {"name": "Winston 1979, Anchor Bible 43",
+         "guidance": "English Wisdom of Solomon with philosophical-historical commentary."},
+    ],
+    "BAR": [
+        {"name": "Moore 1977, Anchor Bible 44",
+         "guidance": "English Baruch + Letter of Jeremiah + Additions."},
+    ],
+    "LJE": [
+        {"name": "Moore 1977, Anchor Bible 44", "guidance": "English LJE."},
+    ],
+    "1MA": [
+        {"name": "Goldstein 1976, Anchor Bible 41", "guidance": "English 1 Maccabees."},
+    ],
+    "2MA": [
+        {"name": "Goldstein 1983, Anchor Bible 41A", "guidance": "English 2 Maccabees."},
+    ],
+    "3MA": [
+        {"name": "Emmet 1913 (in Charles, APOT vol II)", "guidance": "Classic English with notes. Public Domain."},
+    ],
+    "4MA": [
+        {"name": "Hadas 1953, Dropsie College edition", "guidance": "Classic critical edition of 4 Maccabees."},
+        {"name": "deSilva 2006, Commentary", "guidance": "Modern English-language commentary."},
+    ],
+    "ADE": [
+        {"name": "Moore 1977, Anchor Bible 44", "guidance": "English Additions to Esther."},
+    ],
+    "ADA": [
+        {"name": "Moore 1977, Anchor Bible 44", "guidance": "English Susanna / Bel / Pr Azariah / Song of Three."},
+    ],
+}
+
+UNIVERSAL_CONSULT: list[dict] = [
+    {"name": "Gottingen LXX critical editions",
+     "guidance": "Critical-text apparatus for every LXX book with a completed Gottingen volume. Consult for textual variants and apparatus-level conclusions."},
+    {"name": "Rahlfs-Hanhart 2006, Stuttgart revised LXX",
+     "guidance": "Modern reading text. Useful for cross-checking Swete when Swete's Codex-Vaticanus diplomatic reading is hard to parse. Do not copy text."},
+]
+
+
+def consult_sources(book_code: str) -> list[dict]:
+    """Return Zone 2 scholarly reference list for a book.
+
+    These sources may be consulted by the translator; their text must
+    NOT appear in COB output. See REFERENCE_SOURCES.md for policy.
+    """
+    return list(UNIVERSAL_CONSULT) + CONSULT_REGISTRY.get(book_code, [])
+
+
 # ---- caches -----------------------------------------------------------------
 
 _SIR_CACHE: Optional[dict] = None
@@ -434,6 +517,23 @@ def lookup(book_code: str, chapter: int, verse: int) -> Optional[dict]:
     if book_code == "1ES":
         return _lookup_1es(chapter, verse)
     return None
+
+
+def lookup_with_consult(book_code: str, chapter: int, verse: int) -> dict:
+    """Like lookup(), but ALWAYS returns a dict that also lists the Zone 2
+    consult registry for the book. Use this from the translation prompt
+    builder so the model sees which scholarly sources the translator may
+    privately consult even on books that have no Zone 1 Hebrew parallel.
+    """
+    zone1 = lookup(book_code, chapter, verse)
+    return {
+        "book_code": book_code,
+        "chapter": chapter,
+        "verse": verse,
+        "zone_1_parallel": zone1,
+        "zone_2_consult": consult_sources(book_code),
+        "policy_ref": "REFERENCE_SOURCES.md",
+    }
 
 
 def is_available() -> bool:

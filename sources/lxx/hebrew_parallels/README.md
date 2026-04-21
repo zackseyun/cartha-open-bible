@@ -5,6 +5,14 @@ predates the Greek and must be consulted during translation. This
 directory vendors **clean-licensed** Hebrew witnesses and the
 mapping tables the translator needs to find them.
 
+**See also:** [`REFERENCE_SOURCES.md`](../../../REFERENCE_SOURCES.md) —
+the repo-root operational policy for using reference sources during
+translation. This directory holds only **Zone 1** (vendored, safe as
+both reference and Vorlage). Zone 2 consulted-reference sources
+(Fitzmyer DJD XIX, Beentjes, Skehan/Di Lella, Göttingen) are named
+in that policy and are surfaced per-verse by
+`tools/hebrew_parallels.py::lookup_with_consult`.
+
 ## Contents
 
 | File | Book | Verses | License | Use as |
