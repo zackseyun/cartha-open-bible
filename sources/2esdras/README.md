@@ -156,6 +156,8 @@ claimed-complete. For an honest per-chapter breakdown, see:
 
 - `latin/transcribed/COVERAGE.md`
 - `latin/transcribed/COVERAGE.json`
+- `latin/transcribed/QUALITY_CHECK.md`
+- `latin/transcribed/QUALITY_CHECK.json`
 
 Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
 OCR output and therefore yield no `[BODY]` extraction, which is the
