@@ -72,8 +72,10 @@ Talshir's SBL commentary; the Hebrew text itself comes from our
 
 ## What is NOT in this directory
 
-- **Masada Ben Sira scroll** (Sir 39:27–43:30) — IAA-licensed,
-  pending a formal permissions request.
+- **Masada Ben Sira scroll** (Sir 39:27–43:30 + 51:13–30) — IAA-licensed
+  photographs, pending a formal permissions request. Yadin's 1965
+  editio princeps is consulted locally as Zone 2 via
+  `tools/yadin_masada.py` (see below).
 - **Qumran Tobit (4Q196-200)** — IAA-licensed, blocked.
 - **Scholarly critical editions** (Beentjes, Skehan/Di Lella,
   Hanhart, Fitzmyer) — commercial copyright; cited in footnotes
@@ -82,3 +84,17 @@ Talshir's SBL commentary; the Hebrew text itself comes from our
 These remain referenceable via footnotes under fact-level citation
 (*Feist v. Rural*, 1991). If any of them becomes available under
 a compatible license later, they can be vendored here.
+
+## Zone 2 live consult — Yadin 1965 Masada scroll
+
+For the 150 verses of Sir 39:27–44:17 and the ~18-verse acrostic at
+Sir 51:13–30, `tools/hebrew_parallels.lookup_with_consult` surfaces a
+**live Zone 2 entry** carrying the Masada-scroll Hebrew that Yadin
+transcribed, plus his column-level scholarly notes, whenever the
+local extraction exists at `~/cartha-reference-local/yadin_1965/`.
+On clean checkouts (no local reference library) this silently
+returns empty — exactly the intended behavior.
+
+The scaffold is in `tools/yadin_masada.py`. Mechanics are documented
+in `sources/hebrew_sirach/masada/README.md`. Translator-prompt
+integration is documented in `REFERENCE_SOURCES.md`.
