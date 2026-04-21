@@ -172,8 +172,8 @@ To move back toward fuller **scan-grounded provenance**, see:
 
 That queue now tracks which verses still depend on the PD supplement
 rather than having been manually re-segmented from the Bensly page
-text. Chapters 1 and 2 have already received the first manual
-scan-grounded rescue pass.
+text. Chapters 1, 2, 3, 4, 8, 11, 12, and 14 have now received
+manual scan-grounded rescue passes.
 
 Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
 OCR output and therefore yield no `[BODY]` extraction, which is the
