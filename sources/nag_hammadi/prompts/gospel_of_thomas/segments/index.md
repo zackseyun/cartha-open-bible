@@ -1,0 +1,118 @@
+# Gospel of Thomas — segment prompts
+
+Total segments: 114
+
+- `001` — Saying 1 — True Meaning
+- `002` — Saying 2 — Seek and Find
+- `003` — Saying 3 — Seeking Within
+- `004` — Saying 4 — First and Last
+- `005` — Saying 5 — Hidden and Revealed
+- `006` — Saying 6 — Public Ritual
+- `007` — Saying 7 — The Lion and the Human
+- `008` — Saying 8 — The Parable of the Fish
+- `009` — Saying 9 — The Parable of the Sower
+- `010` — Saying 10 — Jesus and Fire (1)
+- `011` — Saying 11 — Those Who Are Living Won't Die (1)
+- `012` — Saying 12 — James the Just
+- `013` — Saying 13 — Thomas' Confession
+- `014` — Saying 14 — Public Ministry
+- `015` — Saying 15 — Worship
+- `016` — Saying 16 — Not Peace, but War
+- `017` — Saying 17 — Divine Gift
+- `018` — Saying 18 — Beginning and End
+- `019` — Saying 19 — Five Trees in Paradise
+- `020` — Saying 20 — The Parable of the Mustard Seed
+- `021` — Saying 21 — The Parables of the Field, the Bandits, and the Reaper
+- `022` — Saying 22 — Making the Two into One
+- `023` — Saying 23 — Those Who are Chosen (1)
+- `024` — Saying 24 — Light
+- `025` — Saying 25 — Love and Protect
+- `026` — Saying 26 — Speck and Beam
+- `027` — Saying 27 — Fasting and Sabbath
+- `028` — Saying 28 — The World is Drunk
+- `029` — Saying 29 — Spirit and Body
+- `030` — Saying 30 — Divine Presence
+- `031` — Saying 31 — Prophet and Doctor
+- `032` — Saying 32 — The Parable of the Fortified City
+- `033` — Saying 33 — The Parable of the Lamp
+- `034` — Saying 34 — The Parable of Those Who Can't See
+- `035` — Saying 35 — The Parable of Binding the Strong
+- `036` — Saying 36 — Anxiety
+- `037` — Saying 37 — Seeing Jesus
+- `038` — Saying 38 — Finding Jesus
+- `039` — Saying 39 — The Keys of Knowledge
+- `040` — Saying 40 — A Grapevine
+- `041` — Saying 41 — More and Less
+- `042` — Saying 42 — Passing By
+- `043` — Saying 43 — The Tree and the Fruit
+- `044` — Saying 44 — Blasphemy
+- `045` — Saying 45 — Good and Evil
+- `046` — Saying 46 — Greater than John the Baptizer
+- `047` — Saying 47 — The Parables of Divided Loyalties,
+- `048` — Saying 48 — Unity (1)
+- `049` — Saying 49 — Those Who Are Chosen (2)
+- `050` — Saying 50 — Our Origin and Identity
+- `051` — Saying 51 — The New World
+- `052` — Saying 52 — Twenty-Four Prophets
+- `053` — Saying 53 — True Circumcision
+- `054` — Saying 54 — Those Who Are Poor
+- `055` — Saying 55 — Discipleship (1)
+- `056` — Saying 56 — The World is a Corpse
+- `057` — Saying 57 — The Parable of the Weeds
+- `058` — Saying 58 — Finding Life
+- `059` — Saying 59 — The Living One
+- `060` — Saying 60 — Don't Become a Corpse
+- `061` — Saying 61 — Jesus and Salome
+- `062` — Saying 62 — Mysteries
+- `063` — Saying 63 — The Parable of the Rich Fool
+- `064` — Saying 64 — The Parable of the Dinner Party
+- `065` — Saying 65 — The Parable of the Sharecroppers
+- `066` — Saying 66 — The Rejected Cornerstone
+- `067` — Saying 67 — Knowing Isn't Everything
+- `068` — Saying 68 — Persecution
+- `069` — Saying 69 — Those Who Are Persecuted
+- `070` — Saying 70 — Salvation is Within
+- `071` — Saying 71 — Destroying the Temple
+- `072` — Saying 72 — Not a Divider
+- `073` — Saying 73 — Workers for the Harvest
+- `074` — Saying 74 — The Empty Well
+- `075` — Saying 75 — The Bridal Chamber
+- `076` — Saying 76 — The Parable of the Pearl
+- `077` — Saying 77 — Jesus is the All
+- `078` — Saying 78 — Into the Desert
+- `079` — Saying 79 — Listening to the Message
+- `080` — Saying 80 — The World is a Body
+- `081` — Saying 81 — Riches and Renunciation (1)
+- `082` — Saying 82 — Jesus and Fire (2)
+- `083` — Saying 83 — Light and Images
+- `084` — Saying 84 — Our Previous Images
+- `085` — Saying 85 — Adam Wasn't Worthy
+- `086` — Saying 86 — Foxes and Birds
+- `087` — Saying 87 — Body and Soul
+- `088` — Saying 88 — Angels and Prophets
+- `089` — Saying 89 — Inside and Outside
+- `090` — Saying 90 — Jesus' Yoke is Easy
+- `091` — Saying 91 — Reading the Signs
+- `092` — Saying 92 — Look and Find
+- `093` — Saying 93 — Don't Throw Pearls to Pigs
+- `094` — Saying 94 — Knock and It Will Be Opened
+- `095` — Saying 95 — Giving Money
+- `096` — Saying 96 — The Parable of the Yeast
+- `097` — Saying 97 — The Parable of the Jar of Flour
+- `098` — Saying 98 — The Parable of the Assassin
+- `099` — Saying 99 — Jesus' True Family
+- `100` — Saying 100 — Give to Caesar What Belongs to Caesar
+- `101` — Saying 101 — Discipleship (2)
+- `102` — Saying 102 — The Dog in the Feeding Trough
+- `103` — Saying 103 — The Parable of the Bandits
+- `104` — Saying 104 — Prayer and Fasting
+- `105` — Saying 105 — Knowing Father and Mother
+- `106` — Saying 106 — Unity (2)
+- `107` — Saying 107 — The Parable of the Lost Sheep
+- `108` — Saying 108 — Becoming Like Jesus
+- `109` — Saying 109 — The Parable of the Hidden Treasure
+- `110` — Saying 110 — Riches and Renunciation (2)
+- `111` — Saying 111 — Those Who are Living Won't Die (2)
+- `112` — Saying 112 — Flesh and Soul
+- `113` — Saying 113 — The Kingdom is Already Present
+- `114` — Saying 114 — Peter and Mary

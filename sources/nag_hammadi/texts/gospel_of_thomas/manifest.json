@@ -1,0 +1,70 @@
+{
+  "text_id": "gospel_of_thomas",
+  "title": "Gospel of Thomas",
+  "phase": "E",
+  "goal": "Accuracy-first translation prep with Coptic primary, Greek overlap, and Synoptic parallel awareness.",
+  "segment_unit": "saying",
+  "segment_index_path": "sources/nag_hammadi/segment_index/gospel_of_thomas.csv",
+  "accuracy_profile": "thomas",
+  "cross_reference_strategy": {
+    "nt_synoptic_lookup": true,
+    "notes": "Surface already-rendered Synoptic parallels later so Thomas can intentionally echo or diverge."
+  },
+  "primary_witnesses": [
+    {
+      "witness_id": "mattison_zinner_coptic",
+      "role": "primary_coptic",
+      "provider": "mattison_zinner",
+      "format": "html_page",
+      "status": "ready_to_fetch",
+      "url": "https://gospels.net/thomas",
+      "notes": "Primary online Coptic/translation witness for Phase E bootstrapping."
+    },
+    {
+      "witness_id": "gebhardt_klein_2024_coptic",
+      "role": "cross_check_coptic",
+      "provider": "gebhardt_klein",
+      "format": "pdf_ocr",
+      "status": "ocr_planned",
+      "notes": "Independent Coptic transcription to catch disagreements and confirm tricky readings."
+    },
+    {
+      "witness_id": "poxy654_greek",
+      "role": "greek_overlap_witness",
+      "provider": "agraphos",
+      "format": "html_page",
+      "status": "ready_to_fetch",
+      "url": "http://www.agraphos.com/thomas/greek/poxy654/",
+      "notes": "Greek overlap witness for logia 1–7 from Agraphos."
+    },
+    {
+      "witness_id": "poxy1_greek",
+      "role": "greek_overlap_witness",
+      "provider": "agraphos",
+      "format": "html_page",
+      "status": "ready_to_fetch",
+      "url": "http://www.agraphos.com/thomas/greek/poxy1/",
+      "notes": "Greek overlap witness for logia 26–33 from Agraphos."
+    },
+    {
+      "witness_id": "poxy655_greek",
+      "role": "greek_overlap_witness",
+      "provider": "agraphos",
+      "format": "html_page",
+      "status": "ready_to_fetch",
+      "url": "http://www.agraphos.com/thomas/greek/poxy655/",
+      "notes": "Greek overlap witness for logia 24 and 36–39 from Agraphos."
+    }
+  ],
+  "consult_sources": [
+    "layton_nhs_20",
+    "plisch_2008",
+    "deconick_2007",
+    "meyer_2007"
+  ],
+  "guardrails": [
+    "If a Greek fragment overlaps a saying and differs meaningfully from the Coptic, record both readings and defend the decision.",
+    "Treat Synoptic parallels as context, not as pressure to harmonize Thomas into the canonical gospels.",
+    "Keep odd or sharp Thomasine diction when the witness supports it instead of smoothing it into familiar church English."
+  ]
+}

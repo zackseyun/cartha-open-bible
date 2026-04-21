@@ -1,0 +1,127 @@
+# Thunder, Perfect Mind — segment prompts
+
+Total segments: 123
+
+- `001` — Introduction — 1
+- `002` — Introduction — 2
+- `003` — Introduction — 3
+- `004` — Introduction — 4
+- `005` — Introduction — 5
+- `006` — First “I Am” Speech — 1
+- `007` — First “I Am” Speech — 2
+- `008` — First “I Am” Speech — 3
+- `009` — First “I Am” Speech — 4
+- `010` — First “I Am” Speech — 5
+- `011` — First “I Am” Speech — 6
+- `012` — First “I Am” Speech — 7
+- `013` — First “I Am” Speech — 8
+- `014` — First “I Am” Speech — 9
+- `015` — First “I Am” Speech — 10
+- `016` — First “I Am” Speech — 11
+- `017` — First “I Am” Speech — 12
+- `018` — First “I Am” Speech — 13
+- `019` — First “I Am” Speech — 14
+- `020` — First “I Am” Speech — 15
+- `021` — First “I Am” Speech — 16
+- `022` — First “I Am” Speech — 17
+- `023` — Heed Me — 1
+- `024` — Heed Me — 2
+- `025` — Heed Me — 3
+- `026` — Heed Me — 4
+- `027` — Heed Me — 5
+- `028` — Heed Me — 6
+- `029` — Heed Me — 7
+- `030` — Heed Me — 8
+- `031` — Heed Me — 9
+- `032` — Heed Me — 10
+- `033` — Heed Me — 11
+- `034` — Heed Me — 12
+- `035` — Heed Me — 13
+- `036` — Why Do You Hate Me? — 1
+- `037` — Why Do You Hate Me? — 2
+- `038` — Why Do You Hate Me? — 3
+- `039` — Why Do You Hate Me? — 4
+- `040` — Why Do You Hate Me? — 5
+- `041` — Why Do You Hate Me? — 6
+- `042` — Why Do You Hate Me? — 7
+- `043` — Why Do You Hate Me? — 8
+- `044` — Why Do You Hate Me? — 9
+- `045` — Why Do You Hate Me? — 10
+- `046` — Second “I Am” Speech — 1
+- `047` — Second “I Am” Speech — 2
+- `048` — Second “I Am” Speech — 3
+- `049` — Second “I Am” Speech — 4
+- `050` — Second “I Am” Speech — 5
+- `051` — Second “I Am” Speech — 6
+- `052` — Second “I Am” Speech — 7
+- `053` — Second “I Am” Speech — 8
+- `054` — Second “I Am” Speech — 9
+- `055` — Second “I Am” Speech — 10
+- `056` — Second “I Am” Speech — 11
+- `057` — Second “I Am” Speech — 12
+- `058` — Second “I Am” Speech — 13
+- `059` — Second “I Am” Speech — 14
+- `060` — Second “I Am” Speech — 15
+- `061` — Second “I Am” Speech — 16
+- `062` — Second “I Am” Speech — 17
+- `063` — Second “I Am” Speech — 18
+- `064` — Embrace Me — 1
+- `065` — Embrace Me — 2
+- `066` — Embrace Me — 3
+- `067` — Embrace Me — 4
+- `068` — Embrace Me — 5
+- `069` — Embrace Me — 6
+- `070` — Embrace Me — 7
+- `071` — Embrace Me — 8
+- `072` — Embrace Me — 9
+- `073` — Embrace Me — 10
+- `074` — Embrace Me — 11
+- `075` — Embrace Me — 12
+- `076` — Third “I Am” Speech — 1
+- `077` — Third “I Am” Speech — 2
+- `078` — Third “I Am” Speech — 3
+- `079` — Third “I Am” Speech — 4
+- `080` — Third “I Am” Speech — 5
+- `081` — Third “I Am” Speech — 6
+- `082` — Third “I Am” Speech — 7
+- `083` — Third “I Am” Speech — 8
+- `084` — Third “I Am” Speech — 9
+- `085` — I Am the Call — 1
+- `086` — I Am the Call — 2
+- `087` — I Am the Call — 3
+- `088` — I Am the Call — 4
+- `089` — I Am the Call — 5
+- `090` — I Am the Call — 6
+- `091` — I Am the Call — 7
+- `092` — I Am the Call — 8
+- `093` — I Am the Call — 9
+- `094` — I Am the Call — 10
+- `095` — I Am the Call — 11
+- `096` — I Am the Call — 12
+- `097` — I Am the Call — 13
+- `098` — I Am the Call — 14
+- `099` — I Am the Call — 15
+- `100` — I Am the Call — 16
+- `101` — I Am the Call — 17
+- `102` — I Am the Call — 18
+- `103` — I am Justice — 1
+- `104` — I am Justice — 2
+- `105` — I am Justice — 3
+- `106` — I am Justice — 4
+- `107` — I am Justice — 5
+- `108` — I am Justice — 6
+- `109` — I am Justice — 7
+- `110` — Obey Me and Live Forever — 1
+- `111` — Obey Me and Live Forever — 2
+- `112` — Obey Me and Live Forever — 3
+- `113` — Obey Me and Live Forever — 4
+- `114` — Obey Me and Live Forever — 5
+- `115` — Obey Me and Live Forever — 6
+- `116` — Obey Me and Live Forever — 7
+- `117` — Heed His Words — 1
+- `118` — Heed His Words — 2
+- `119` — Heed His Words — 3
+- `120` — Heed His Words — 4
+- `121` — Heed His Words — 5
+- `122` — Heed His Words — 6
+- `123` — Heed His Words — 7
