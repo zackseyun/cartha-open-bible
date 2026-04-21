@@ -1,0 +1,130 @@
+id: SIR.10.25
+reference: Sirach 10:25
+source:
+  edition: sefaria-ben-sira-kahana
+  text: עֶבֶד מַשְׂכּיל הוּרָם, וְעֶבֶד סָכָל לֹא יִתְאוֹנֵן.
+  language: Hebrew
+  pages:
+  - 678
+  - 679
+  - 680
+  - 681
+  - 682
+  - 683
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: Μὴ σοφίζου ποιῆσαι τὸ ἔργον σου, καὶ μὴ δοξάζου ἐν καιρῷ στενοχωρίας σου.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 10:25
+translation:
+  text: Do not act wisely in doing your work, and do not boast in a time of distress.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The extant Hebrew witness here differs substantially: ''A prudent slave
+      is exalted, and a foolish slave will not complain'' (the final verb is uncertain
+      and may carry a nuance such as ''murmur'' or ''find pretext'').'
+    reason: textual_variant
+lexical_decisions:
+- source_word: Μὴ σοφίζου
+  chosen: Do not act wisely
+  alternatives:
+  - Do not be clever
+  - Do not show yourself wise
+  - Do not play the wise man
+  lexicon: LSJ
+  rationale: The Hebrew and Greek witnesses diverge sharply; given the major mismatch
+    and the instruction to use the Greek parallel as actual input, the Greek imperative
+    is translated directly. σοφίζου here is middle/passive in sense, warning against
+    self-display of wisdom or overwise behavior. 'Act wisely' preserves the verbal
+    force without importing a positive commendation.
+- source_word: ποιῆσαι τὸ ἔργον σου
+  chosen: in doing your work
+  alternatives:
+  - to do your work
+  - in carrying out your task
+  lexicon: LSJ
+  rationale: This infinitival phrase expresses the sphere or action in view. 'In doing
+    your work' is idiomatic English and keeps the connection to one's task or labor.
+- source_word: μὴ δοξάζου
+  chosen: do not boast
+  alternatives:
+  - do not glorify yourself
+  - do not pride yourself
+  lexicon: LSJ
+  rationale: The verb can mean 'glorify' or 'take pride/boast.' In this admonitory
+    context, 'boast' is the most natural modern English and captures the reflexive
+    sense implied by context.
+- source_word: ἐν καιρῷ στενοχωρίας σου
+  chosen: in a time of distress
+  alternatives:
+  - in the time of your hardship
+  - when you are in trouble
+  - in your affliction
+  lexicon: LSJ
+  rationale: στενοχωρία denotes distress, affliction, or hardship. 'In a time of distress'
+    is clear, natural, and preserves the temporal force of καιρός.
+- source_word: עֶבֶד מַשְׂכּיל הוּרָם, וְעֶבֶד סָכָל לֹא יִתְאוֹנֵן
+  chosen: not followed in main text
+  alternatives:
+  - A prudent slave is exalted, and a foolish slave will not complain/escape blame
+  lexicon: HALOT
+  rationale: The extant Hebrew in Kahana is a major mismatch with the Greek witness
+    for this verse. Because the project uses the Greek source for deuterocanonical
+    books and the prompt flags the Hebrew as major_mismatch while instructing that
+    the Greek parallel be used as actual translation input, the main text follows
+    the Greek. The Hebrew is preserved in a footnote as a significant alternative
+    witness.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 6784d000a16a3a43fb55f0e99ca9c9b32f43945bd89a07c3f686cbfee51e6952
+  timestamp: '2026-04-21T20:28:29Z'
+  output_hash: 651d6489f8a8773dd147241060e319034b7680300ac4f81ae5db0e8488c3e0c7
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8ed0b3d9
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8ed0b3d9
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 10:25 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergent Hebrew and Greek witnesses for Sirach 10:25
+  chosen_reading: Main text follows the Greek admonition about not acting wisely or
+    boasting in distress.
+  alternative_readings:
+  - 'Hebrew witness: ''A prudent slave is exalted, and a foolish slave will not complain''
+    (or similar, depending on how יתאונן is construed).'
+  rationale: This is primarily a textual-critical rather than doctrinal issue, but
+    it materially affects translation. The project's deuterocanonical base text is
+    Greek, while Hebrew Sirach is used where it survives. Here the supplied Hebrew
+    and Greek are not parallel in sense, and the source metadata marks the Hebrew
+    as 'major_mismatch.' To avoid presenting a conflated text, the translation follows
+    the Greek and documents the Hebrew as an alternative witness.
+  doctrine_reference: 'PHILOSOPHY.md: Swete LXX is the Greek source for every deuterocanonical
+    book; Sefaria Ben Sira Hebrew is used where it survives, with source uncertainty
+    preserved honestly.'

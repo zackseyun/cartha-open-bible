@@ -1,0 +1,137 @@
+id: SIR.10.28
+reference: Sirach 10:28
+source:
+  edition: sefaria-ben-sira-kahana
+  text: בְּנִי בַּעֲנָוָה כַּבֵּד נַפְשֶׁךָ, וְיִתֶּן לְךָ טַעַם וְכָבוֹד אָבַדְתָּ.
+  language: Hebrew
+  pages:
+  - 678
+  - 679
+  - 680
+  - 681
+  - 682
+  - 683
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: τὸν ἁμαρτάνοντα εἰς τὴν ψυχὴν αὐτοῦ τίς δικαιώσει; καὶ τίς δοξάσει τὸν ἀτιμάζοντα
+      τὴν ζωὴν αὐτοῦ;
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 10:28
+translation:
+  text: Who will justify the one who sins against his own soul, and who will honor
+    the one who dishonors his own life?
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The extant Cairo Geniza Hebrew for this verse differs sharply from the
+      Greek and is difficult: approximately, ''My son, in humility honor yourself,
+      and he will give you discernment and lost honor.'' The main text follows the
+      Greek here because the Hebrew witness appears textually unstable at this point.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: τὸν ἁμαρτάνοντα
+  chosen: the one who sins
+  alternatives:
+  - the sinner
+  - the one who is sinning
+  lexicon: BDAG
+  rationale: The Hebrew in Zone 1 appears corrupt or substantially divergent ('My
+    son, in humility honor yourself...'), while the Greek parallel provides a coherent
+    reading. The present participle is best rendered generically as 'the one who sins,'
+    preserving the verbal force without over-literal awkwardness.
+- source_word: εἰς τὴν ψυχὴν αὐτοῦ
+  chosen: against his own soul
+  alternatives:
+  - against himself
+  - against his own life
+  lexicon: BDAG
+  rationale: ψυχή can mean 'soul,' 'self,' or 'life.' Here the verse then uses ζωή
+    in the second clause, so rendering ψυχή as 'soul' preserves the distinction between
+    the two Greek terms. 'Against' captures the idiom of sin directed toward one's
+    own person.
+- source_word: τίς δικαιώσει
+  chosen: Who will justify
+  alternatives:
+  - Who will vindicate
+  - Who will declare righteous
+  lexicon: BDAG
+  rationale: δικαιόω here asks who could pronounce such a person in the right. 'Justify'
+    is concise and preserves the moral-forensic sense; 'vindicate' is possible but
+    slightly weaker in theological resonance.
+- source_word: δοξάσει
+  chosen: will honor
+  alternatives:
+  - will glorify
+  - will esteem
+  lexicon: BDAG
+  rationale: In this wisdom context, 'honor' fits natural English and matches the
+    social valuation in parallel with 'dishonors.' 'Glorify' would sound too elevated
+    for the immediate ethical contrast.
+- source_word: τὸν ἀτιμάζοντα
+  chosen: the one who dishonors
+  alternatives:
+  - the one who despises
+  - the one who shames
+  lexicon: BDAG
+  rationale: ἀτιμάζω denotes treating as without honor or with contempt. 'Dishonors'
+    creates a clear antithesis with 'honor' in the same clause.
+- source_word: τὴν ζωὴν αὐτοῦ
+  chosen: his own life
+  alternatives:
+  - his life
+  - his own living being
+  lexicon: BDAG
+  rationale: ζωή is naturally 'life.' Using 'his own life' mirrors the reflexive force
+    and distinguishes it from ψυχή in the first clause.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 7b458ea03f9df1a57b308863a9a0737989e66db43a016b7a06709672758c4967
+  timestamp: '2026-04-21T20:29:21Z'
+  output_hash: 604b5d660601d3a31b7a9d9c9c306dd4e38cb2d6ddbdd18876d30218ca1ebe17
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8ed0b3d9
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8ed0b3d9
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 10:28 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Primary-source divergence between the extant Hebrew and the Greek parallel
+  chosen_reading: Translate the Greek sense in the main text
+  alternative_readings:
+  - 'Translate the extant Hebrew: ''My son, in humility honor yourself, and he will
+    give you discernment and lost honor'' (approximate, highly uncertain)'
+  rationale: The Zone 1 Hebrew and Greek are in major mismatch, and the Hebrew line
+    as given is difficult and likely corrupt or from a divergent recension. Per project
+    philosophy, the Hebrew is primary where it survives, but the prompt explicitly
+    requires using the Greek parallel as actual translation input. Because the Greek
+    yields a coherent bicola and the Hebrew is materially uncertain here, the draft
+    follows the Greek while preserving the Hebrew-based alternative in a footnote.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives in Sirach,
+    but use Swete Greek as source for deuterocanonical books and preserve source uncertainty
+    honestly.'
