@@ -23,6 +23,8 @@ import pathlib
 from dataclasses import dataclass
 from typing import Optional
 
+import latin_bensly
+
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 SOURCES_ROOT = REPO_ROOT / "sources" / "2esdras"
 
@@ -103,8 +105,7 @@ def consult_sources() -> list[dict]:
 
 def is_available() -> bool:
     """True iff per-witness transcribed text files are present on disk."""
-    latin_txt = SOURCES_ROOT / "latin" / "transcribed" / "ch01.txt"
-    return latin_txt.exists()
+    return latin_bensly.is_available()
 
 
 def load_verse(chapter: int, verse: int) -> Optional[VerseWitnessSet]:
@@ -115,20 +116,31 @@ def load_verse(chapter: int, verse: int) -> Optional[VerseWitnessSet]:
     per-witness transcription is complete. The interface is frozen
     so Phase 10 drafting code can be written against it now.
     """
-    if not is_available():
+    latin = latin_bensly.load_verse(chapter, verse)
+    if latin is None:
         return None
-    # TODO(phase8c): implement per-witness loaders from the
-    # transcribed/ subdirectories.
-    return None
+    # TODO(phase8c): load daughter witnesses from their transcribed/
+    # subdirectories once OCR + normalization completes.
+    return VerseWitnessSet(
+        chapter=chapter,
+        verse=verse,
+        latin=WitnessReading(
+            witness="latin",
+            text=latin.text,
+            source_edition=latin.source_edition,
+            confidence="high",
+            note="Primary Latin witness loaded from chapter-indexed cleaned transcription.",
+        ),
+    )
 
 
 def summary() -> dict:
     """Diagnostic summary of what's currently loadable."""
     out = {
         "pipeline": "2esdras_multi_witness",
-        "status": "scaffold",
-        "latin_transcribed": (SOURCES_ROOT / "latin" / "transcribed").exists()
-            and any((SOURCES_ROOT / "latin" / "transcribed").iterdir()),
+        "status": "latin_ready_scaffold",
+        "latin_transcribed": latin_bensly.is_available(),
+        "latin_chapters_available": latin_bensly.available_chapters(),
         "syriac_transcribed": (SOURCES_ROOT / "syriac" / "transcribed").exists()
             and any((SOURCES_ROOT / "syriac" / "transcribed").iterdir()),
         "ethiopic_transcribed": (SOURCES_ROOT / "ethiopic" / "transcribed").exists()

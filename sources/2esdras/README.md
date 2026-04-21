@@ -35,7 +35,7 @@ sources/2esdras/
 │   └── textsandstudies_v3.pdf
 ├── latin/
 │   ├── bensly_1875_missing_fragment.pdf
-│   └── transcribed/          (pending) per-chapter UTF-8 Latin text
+│   └── transcribed/          (pending) per-chapter UTF-8 Latin text (`ch01.txt`, `ch02.txt`, ...)
 ├── syriac/
 │   └── transcribed/          (pending) per-chapter UTF-8 Syriac text
 ├── ethiopic/
@@ -100,7 +100,15 @@ analogous to the SIR/TOB/1ES registries in `tools/hebrew_parallels.py`.
 
 ## Status
 
-**2026-04-21: source acquisition phase.** PDFs vendored. OCR and
-per-witness transcription pipelines not yet built. Translation
-drafting begins after Phase 9 (LXX deuterocanon) completes —
-see `2ESDRAS.md` for the full phased plan.
+**2026-04-21: source acquisition phase.** PDFs vendored. OCR scaffold
+now exists at [`../../tools/2esdras/ocr_pipeline.py`](../../tools/2esdras/ocr_pipeline.py),
+with source-specific prompts for Bensly Latin pages and Violet's
+parallel-column witness pages. Cleaned per-witness transcription and
+verse indexing are still pending. Translation drafting begins after
+Phase 9 (LXX deuterocanon) completes — see `2ESDRAS.md` for the full
+phased plan.
+
+When the Latin cleanup pass begins, the normalized hand-checked output
+should land in `latin/transcribed/chNN.txt`. The loader at
+[`../../tools/2esdras/latin_bensly.py`](../../tools/2esdras/latin_bensly.py)
+already targets that stable format.

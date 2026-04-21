@@ -145,14 +145,14 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 | `sources/2esdras/scans/` | ✓ vendored | PDFs of Bensly 1875, Bensly 1895 (via Texts & Studies v3), Violet 1910 vols 1-2 |
 | `sources/2esdras/latin/` | ⏳ pending | Clean UTF-8 Latin text from Bensly 1895, per-verse-indexed |
 | `sources/2esdras/syriac/`, `/ethiopic/`, `/arabic_armenian/` | ⏳ pending | Clean UTF-8 for each witness, per-verse-indexed |
-| `tools/2esdras/ocr_pipeline.py` | ⏳ pending | Azure GPT-5 vision OCR of Violet 1910 scans, per-page, multi-script |
-| `tools/2esdras/latin_bensly.py` | ⏳ pending | Parser for the Latin critical edition; exposes `load_verse(ch, vs)` |
-| `tools/2esdras/multi_witness.py` | ⏳ pending | Per-verse witness aggregator; returns all 6 daughter readings for adjudication context |
+| `tools/2esdras/ocr_pipeline.py` | ✓ scaffold | Azure GPT-5 vision OCR of local Bensly/Violet PDFs, per-page, with source-specific prompts + `.meta.json` provenance |
+| `tools/2esdras/latin_bensly.py` | ✓ scaffold | Loader for chapter-indexed cleaned Latin (`ch01.txt`, etc.); exposes `load_verse(ch, vs)` |
+| `tools/2esdras/multi_witness.py` | ✓ partial scaffold | Per-verse witness aggregator; Latin path is wired, daughter witnesses still pending |
 | `tools/2esdras/build_translation_prompt.py` | ⏳ pending | Phase 10 prompt builder (Latin primary + witnesses + Zone 2) |
 
 ## Timeline (indicative)
 
-- **Phase 8b (source acquisition):** this week — vendor PDFs, build OCR pipeline. ≈ 3–4 days.
+- **Phase 8b (source acquisition):** this week — vendor PDFs, build OCR pipeline. ≈ 3–4 days. **OCR scaffold now in place.**
 - **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week.
 - **Phase 10 (drafting):** after Phase 9 completes — translate ~400 verses across 16 chapters with multi-witness context. ≈ 2 weeks.
 - **Phase 10 (revision):** Claude Opus reviser per `REVISION_METHODOLOGY.md`. ≈ 1 week.
