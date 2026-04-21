@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """validate_vs_betamasaheft.py — compare OCR'd Enoch against Beta maṣāḥǝft.
 
-Current focus: chapter-level pilot metrics for chapter 1.
+This is an edition-comparison/apparatus tool, not the primary OCR-accuracy
+metric. OCR quality should be measured against hand-corrected scan truth.
 """
 from __future__ import annotations
 
