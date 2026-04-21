@@ -256,7 +256,17 @@ def rescue_chapter_batch(book: str, chapter: int, verses: list[int], image_width
             "pages": src_pages,
         })
 
-    # Fall back: if no pages, use chapter-location lookup
+    # Merge in the adjudication file's own pages list (this is the
+    # authoritative hand-curated page set, possibly patched to include
+    # Additions/overflow pages the running-head parser misses).
+    adj_path = ADJ_DIR / f"{book}_{chapter:03d}.json"
+    if adj_path.exists():
+        adj_data = json.loads(adj_path.read_text())
+        for p in adj_data.get("pages", []):
+            if p:
+                pages_needed.add(p)
+
+    # Fall back: if still no pages, use chapter-location lookup
     if not pages_needed:
         import lxx_swete_ai
         pages_needed = set(lxx_swete_ai.locate_chapter_pages(book, chapter))
