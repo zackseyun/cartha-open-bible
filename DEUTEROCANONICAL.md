@@ -627,3 +627,87 @@ early Jewish religious literature for those who do not. It refuses
 the shortcut of deciding for the reader what counts.
 
 That refusal is the whole point of the Cartha Open Bible.
+
+## The Pseudepigrapha and expanded canon
+
+Beyond the 13-book LXX deuterocanonical core covered above, several
+works are received as Scripture by specific Christian traditions (or
+are cited directly by New Testament writers) and warrant the same
+scan-grounded, multi-witness, CC-BY-4.0 treatment we applied to the
+LXX books. These are **not** in our deuterocanonical phase — each has
+its own source-acquisition pipeline because the textual situation
+differs substantially between books and between the LXX tradition.
+
+Why include them:
+
+- **2 Esdras / 4 Ezra** is in the KJV 1611 Apocrypha, appears in the
+  Vulgate appendix, is accepted by some Slavonic Orthodox traditions,
+  and is a major text of early Jewish apocalyptic.
+- **1 Enoch** is **canonical in the Ethiopian Orthodox Tewahedo and
+  Eritrean Orthodox churches** (part of their 81-book canon) and is
+  **quoted by name** in Jude 14-15 of the New Testament. Readers of
+  Jude benefit from direct access to the cited source; Ethiopian
+  Orthodox readers have had no permissively-licensed modern English
+  translation.
+
+Why we approach them separately:
+
+- **Different primary languages.** LXX work is Greek-based and uses
+  our Swete + First1KGreek + Rahlfs + Amicarelli adjudication pipeline.
+  2 Esdras is Latin-primary with 6 daughter translations as witnesses.
+  1 Enoch is Ge'ez-primary with Greek fragments and (Zone 2) Qumran
+  Aramaic fragments as witnesses.
+- **Different OCR backends.** Azure GPT-5 handles Greek, Hebrew, and
+  Latin at ≥98% high-confidence. It **fails on Ge'ez** (validated
+  2026-04-21). The Enoch pipeline therefore uses Gemini 2.5 for OCR,
+  while LXX and 2 Esdras continue to use Azure GPT-5. We choose the
+  tool that works for each script.
+- **Different textual-critical logic.** LXX is "which of these Greek
+  transcriptions matches the scan?" 2 Esdras is "do the daughter
+  translations agree or disagree with the Latin?" Enoch is "does our
+  Ge'ez OCR agree with the Beta maṣāḥǝft oracle, and where Greek
+  fragments exist, do they corroborate?"
+
+### Works currently pursued
+
+| Work | Canonical status | Scope doc | Phase |
+|---|---|---|---|
+| **2 Esdras (4 Ezra)** | KJV Apocrypha; Vulgate appendix; canonical in some Slavonic Orthodox Bibles | [2ESDRAS.md](2ESDRAS.md) | Phase 10 (post-Phase-9 drafting) |
+| **1 Enoch (Mashafa Henok)** | Canonical in Ethiopian Orthodox Tewahedo; quoted in Jude 14-15 | [ENOCH.md](ENOCH.md) | Phase 11 (post-Phase-10) |
+
+### Works under consideration for later phases
+
+If and when the above complete successfully, natural extensions in
+the Ethiopian broader canon include:
+
+- **Jubilees** (Ge'ez primary + Qumran Hebrew fragments)
+- **Meqabyan 1–3** (Ge'ez-only, Ethiopian Orthodox canonical)
+- **4 Baruch / Paraleipomena Jeremiou** (Greek + Ge'ez witnesses)
+- **2 Baruch** (Syriac primary)
+- **Testaments of the Twelve Patriarchs** (Greek primary)
+
+None are committed to. Each would need its own scope document before
+entering the pipeline. They are named here only to keep the long-term
+trajectory visible.
+
+### What "pursue" means here
+
+For each of these works our standards remain identical to the LXX
+deuterocanon:
+
+- **Primary source** under a clean, permissive license (PD or
+  compatible), OCR'd by us or vendored directly where a clean
+  edition exists.
+- **Secondary witnesses** where the textual tradition provides them,
+  integrated as per-verse apparatus in the YAML.
+- **Zone 2 scholarship** (Milik, Nickelsburg, etc.) consulted
+  actively but never reproduced — standard scholarly practice.
+- **Per-verse provenance**, auditable on the public reader, with
+  every translation decision documented at the same granularity as
+  the LXX books.
+- **CC-BY 4.0 output**, free to redistribute.
+
+We do not pronounce on whether any of these works are Scripture for
+any reader. We make them available carefully, transparently, and under
+a free license, and let each tradition and each reader judge for
+themselves.
