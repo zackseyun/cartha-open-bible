@@ -377,6 +377,24 @@ def run_once(enabled_tiers: set[int], dry_run: bool, limit: int) -> dict[str, in
         return dict(totals)
 
 
+def regenerate_revisions_index() -> None:
+    """Regenerate revisions.json so the public revisions page stays fresh."""
+    import subprocess
+    script = REPO_ROOT / "tools" / "build_revisions_index.py"
+    if not script.exists():
+        return
+    try:
+        subprocess.run(
+            [sys.executable, str(script)],
+            cwd=REPO_ROOT,
+            check=False,
+            capture_output=True,
+            timeout=120,
+        )
+    except Exception as exc:
+        print(f"[auto-apply] revisions.json regen skipped: {exc}", flush=True)
+
+
 def run_daemon(enabled_tiers: set[int], dry_run: bool, poll_seconds: int = 60) -> int:
     print(f"[auto-apply] starting daemon; tiers={sorted(enabled_tiers)} dry={dry_run} poll={poll_seconds}s", flush=True)
     totals = Counter()
@@ -385,6 +403,8 @@ def run_daemon(enabled_tiers: set[int], dry_run: bool, poll_seconds: int = 60) -
             batch = run_once(enabled_tiers, dry_run, limit=200)
             for k, v in batch.items():
                 totals[k] += v
+            if batch.get("applied") and not dry_run:
+                regenerate_revisions_index()
             if batch.get("verses"):
                 print(f"[auto-apply] cycle: {batch}  totals: {dict(totals)}", flush=True)
             time.sleep(poll_seconds)
