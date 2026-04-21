@@ -25,6 +25,9 @@ Modules (planned):
                       verse-number bleed artifacts in published files
   - check_latin_quality — quality report over the published Latin
                       chapter files
+  - supplement_from_vulgate_org — complete remaining gaps from a
+                      public-domain digital Latin 4 Esdras text while
+                      preserving OCR-derived verses where present
   - latin_bensly    — chapter/verse loader for cleaned Bensly Latin
   - multi_witness   — aggregator returning all 6 daughter-translation
                       readings per verse for the adjudicator/translator

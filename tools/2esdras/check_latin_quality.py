@@ -38,6 +38,7 @@ def parse_missing(raw: str) -> list[int]:
 def chapter_metrics(path: pathlib.Path) -> dict:
     text = path.read_text(encoding="utf-8")
     header_lines = [ln for ln in text.splitlines() if ln.startswith("#")]
+    body_text = "\n".join(ln for ln in text.splitlines() if not ln.startswith("#"))
     verse_lines = [(int(m.group(1)), m.group(2)) for m in VERSE_LINE_RE.finditer(text)]
 
     opening_missing: list[int] = []
@@ -56,10 +57,10 @@ def chapter_metrics(path: pathlib.Path) -> dict:
         "path": str(path.relative_to(REPO_ROOT)),
         "verse_count": len(verse_lines),
         "empty_verses": [v for v, t in verse_lines if not t.strip()],
-        "crop_markers": len(CROP_RE.findall(text)),
-        "ellipsis_markers": len(ELLIPSIS_RE.findall(text)),
-        "digit_bleed_artifacts": len(BLEED_RE.findall(text)),
-        "hyphen_break_artifacts": len(HYPHEN_BREAK_RE.findall(text)),
+        "crop_markers": len(CROP_RE.findall(body_text)),
+        "ellipsis_markers": len(ELLIPSIS_RE.findall(body_text)),
+        "digit_bleed_artifacts": len(BLEED_RE.findall(body_text)),
+        "hyphen_break_artifacts": len(HYPHEN_BREAK_RE.findall(body_text)),
         "opening_missing": opening_missing,
         "internal_missing": internal_missing,
     }

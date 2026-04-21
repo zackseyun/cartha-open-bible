@@ -154,6 +154,7 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 | `tools/2esdras/publish_explicit_chapter_candidates.py` | ✓ scaffold | Conservatively promotes explicit-marker chapter candidates into partial or complete `latin/transcribed/chNN.txt` files |
 | `tools/2esdras/editorial_cleanup_latin_transcribed.py` | ✓ scaffold | Conservative editorial cleanup pass for verse-number bleed and obvious split-word artifacts |
 | `tools/2esdras/check_latin_quality.py` | ✓ scaffold | Generates a quality report over the current Latin transcribed files |
+| `tools/2esdras/supplement_from_vulgate_org.py` | ✓ scaffold | Completes missing verses from the public-domain digital Latin 4 Esdras text while preserving OCR-derived text where present |
 | `tools/2esdras/latin_bensly.py` | ✓ active scaffold | Loader for chapter-indexed cleaned Latin (`ch01.txt`, etc.); currently live across all 16 chapters via partial and fragment-backed publications |
 | `tools/2esdras/multi_witness.py` | ✓ partial scaffold | Per-verse witness aggregator; Latin path is wired, daughter witnesses still pending |
 | `tools/2esdras/build_translation_prompt.py` | ⏳ pending | Phase 10 prompt builder (Latin primary + witnesses + Zone 2) |
@@ -161,7 +162,9 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 ## Timeline (indicative)
 
 - **Phase 8b (source acquisition):** this week — vendor PDFs, build OCR pipeline. ≈ 3–4 days. **OCR scaffold now in place.**
-- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.** The canonical loader path is now live across **all 16 chapters**, with chapter 7 specifically strengthened by the Missing Fragment (36–105). Coverage is intentionally uneven; see `sources/2esdras/latin/transcribed/COVERAGE.md`. A conservative editorial cleanup pass plus QC report now lives in `sources/2esdras/latin/transcribed/QUALITY_CHECK.md`.
+- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.** The canonical loader path is now live across **all 16 chapters**, with chapter 7 specifically strengthened by the Missing Fragment (36–105). The remaining publication gaps were then completed from the **public-domain digital Latin 4 Esdras text** at `vulgate.org`, with the source URL recorded per chapter header. The final coverage and QC reports now live at:
+  - `sources/2esdras/latin/transcribed/COVERAGE.md`
+  - `sources/2esdras/latin/transcribed/QUALITY_CHECK.md`
 - **Phase 10 (drafting):** after Phase 9 completes — translate ~400 verses across 16 chapters with multi-witness context. ≈ 2 weeks.
 - **Phase 10 (revision):** Claude Opus reviser per `REVISION_METHODOLOGY.md`. ≈ 1 week.
 

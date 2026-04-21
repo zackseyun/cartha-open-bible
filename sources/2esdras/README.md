@@ -159,6 +159,12 @@ claimed-complete. For an honest per-chapter breakdown, see:
 - `latin/transcribed/QUALITY_CHECK.md`
 - `latin/transcribed/QUALITY_CHECK.json`
 
+Follow-up note: the final remaining publication gaps were completed
+from the **public-domain digital Latin 4 Esdras text** at
+`vulgate.org`, and each chapter header records the exact chapter URL
+used for supplementation. OCR-derived / fragment-derived text was
+retained wherever already present.
+
 Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
 OCR output and therefore yield no `[BODY]` extraction, which is the
 expected result rather than a failed parse.

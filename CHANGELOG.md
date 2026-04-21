@@ -331,6 +331,12 @@ text survives only via Latin + 6 daughter translations.
     report (for example: chapter 10 verse 47 still empty, chapter 12
     contains one surviving ellipsis marker, chapter 16 still carries
     one crop marker)
+  - final remaining coverage gaps were completed from the
+    **public-domain digital Latin 4 Esdras text** at `vulgate.org`
+  - the final QC pass now reports:
+    **0 missing-opening gaps, 0 internal gaps, 0 empty verses,
+    0 crop markers, 0 ellipsis markers, 0 digit-bleed artifacts,
+    0 hyphen-break artifacts**
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 
