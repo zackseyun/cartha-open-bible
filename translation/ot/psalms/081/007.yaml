@@ -4,13 +4,18 @@ source:
   edition: WLC
   text: הֲסִיר֣וֹתִי מִ/סֵּ֣בֶל שִׁכְמ֑/וֹ כַּ֝פָּ֗י/ו מִ/דּ֥וּד תַּעֲבֹֽרְנָה׃
 translation:
-  text: I removed his shoulder from the burden; his hands passed away from the basket.
+  text: I took the burden from his shoulder; his hands were freed from the basket.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'pot' or 'kettle' for 'basket'; the Hebrew noun is rare and its precise
-      referent is uncertain.
+    text: Or 'pot' or 'kettle' for 'basket'; the Hebrew noun is rare and its precise referent is uncertain.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'passed away from the basket'.
+    reason: previous_rendering
+  - marker: c
+    text: Or 'I removed his shoulder from the burden'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: הֲסִירוֹתִי
   chosen: I removed
@@ -18,49 +23,40 @@ lexical_decisions:
   - I took away
   - I turned aside
   lexicon: HALOT
-  rationale: Hiphil perfect 1cs of סור/הסיר conveys causative removal. First-person
-    singular fits divine speech in the psalm.
+  rationale: Hiphil perfect 1cs of סור/הסיר conveys causative removal. First-person singular fits divine speech in the psalm.
 - source_word: מִסֵּבֶל
   chosen: from the burden
   alternatives:
   - from the load
   - from the carrying-basket
   lexicon: HALOT
-  rationale: סֵבֶל commonly denotes burden/load. 'Burden' is the most natural English
-    rendering here and pairs well with 'shoulder.'
+  rationale: סֵבֶל commonly denotes burden/load. 'Burden' is the most natural English rendering here and pairs well with 'shoulder.'
 - source_word: שִׁכְמוֹ
   chosen: his shoulder
   alternatives:
   - his back
   lexicon: HALOT
-  rationale: שׁכם is literally 'shoulder.' Singular is retained because the Hebrew
-    is singular.
+  rationale: שׁכם is literally 'shoulder.' Singular is retained because the Hebrew is singular.
 - source_word: כַּפָּיו
   chosen: his hands
   alternatives:
   - his palms
   lexicon: HALOT
-  rationale: Though כף can mean 'palm,' in this labor context 'hands' is the idiomatic
-    English equivalent.
+  rationale: Though כף can mean 'palm,' in this labor context 'hands' is the idiomatic English equivalent.
 - source_word: מִדּוּד
   chosen: from the basket
   alternatives:
   - from the pot
   - from the kettle
   lexicon: HALOT
-  rationale: דּוּד can denote a pot or kettle, but in this verse's parallel labor
-    imagery and traditional understanding of Israel's forced labor, 'basket' best
-    fits the sense of burdensome manual work. Because the noun is lexically difficult
-    and alternatives remain plausible, they are preserved in a footnote.
+  rationale: דּוּד can denote a pot or kettle, but in this verse's parallel labor imagery and traditional understanding of Israel's forced labor, 'basket' best fits the sense of burdensome manual work. Because the noun is lexically difficult and alternatives remain plausible, they are preserved in a footnote.
 - source_word: תַּעֲבֹרְנָה
   chosen: passed away from
   alternatives:
   - moved away from
   - were removed from
   lexicon: HALOT
-  rationale: Qal imperfect 3fp of עבר means 'pass over/by.' With feminine plural subject
-    'hands,' the sense is that his hands no longer had to handle the object. English
-    past tense is used to match the surrounding past reference.
+  rationale: Qal imperfect 3fp of עבר means 'pass over/by.' With feminine plural subject 'hands,' the sense is that his hands no longer had to handle the object. English past tense is used to match the surrounding past reference.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -70,3 +66,22 @@ ai_draft:
   output_hash: 46487d95b0de7cdb1b5db82ce3828aa4f3e653b17119656f082f124dfd79e0e9
   temperature: 0.2
 status: draft
+revisions:
+- timestamp: '2026-04-21T01:49:49Z'
+  adjudicator: claude-opus-4-7
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/ot/psalms/081/007.json
+  category: mistranslation
+  tier: 2
+  from: passed away from the basket
+  to: were freed from the basket
+  rationale: The phrase 'passed away' is a very common English euphemism for dying. This creates a significant and unintended misreading. The Hebrew verb תַּעֲבֹרְנָה (from עבר, 'to pass') here signifies that the hands were released from the task of carrying the basket. 'Were freed from' or 'passed from' accurately conveys this sense of liberation without the misleading connotation of death.
+- timestamp: '2026-04-21T01:49:49Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/ot/psalms/081/007.json
+  category: awkward_english
+  tier: 1
+  from: I removed his shoulder from the burden
+  to: I took the burden from his shoulder
+  rationale: The current rendering is a very literal translation of the Hebrew syntax (verb + object 'shoulder' + prepositional phrase 'from the burden'), but it is awkward in English. One typically removes a burden 'from' a shoulder, not a shoulder 'from' a burden. Rephrasing to 'I took the burden from his shoulder' reverses the grammatical object and prepositional phrase to match natural English idiom, significantly improving clarity while preserving the meaning.
