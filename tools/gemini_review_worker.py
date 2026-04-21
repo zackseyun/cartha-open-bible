@@ -422,11 +422,31 @@ def claim_next(
     conn: sqlite3.Connection, worker_id: str, strategy: str | None, book_slug: str | None
 ) -> dict[str, Any] | None:
     conn.execute("BEGIN IMMEDIATE")
-    query = "SELECT * FROM review_jobs WHERE status=?"
-    params: list[Any] = [rq.STATUS_PENDING]
+    # Pick a strategy weighted by sqrt(pending_count) + 1. This gives the
+    # largest strategy more workers (proportional-ish) without completely
+    # starving tiny strategies like random_sample. The sqrt softens extreme
+    # ratios so even a 1-job-left strategy still gets occasional picks.
     if strategy:
-        query += " AND strategy=?"
-        params.append(strategy)
+        strategy_candidates: list[tuple[str, int]] = [(strategy, 1)]
+    else:
+        strategy_rows = conn.execute(
+            "SELECT strategy, COUNT(*) AS cnt FROM review_jobs WHERE status=? GROUP BY strategy",
+            (rq.STATUS_PENDING,),
+        ).fetchall()
+        strategy_candidates = [(r["strategy"], r["cnt"]) for r in strategy_rows]
+    if not strategy_candidates:
+        conn.commit()
+        return None
+
+    # Weights ~ sqrt(pending) + 1 so big pools get more but small ones
+    # aren't starved.
+    import math
+    weights = [math.sqrt(n) + 1 for _, n in strategy_candidates]
+    strategy_names = [s for s, _ in strategy_candidates]
+    chosen_strategy = random.choices(strategy_names, weights=weights, k=1)[0]
+
+    query = "SELECT * FROM review_jobs WHERE status=? AND strategy=?"
+    params: list[Any] = [rq.STATUS_PENDING, chosen_strategy]
     if book_slug:
         query += " AND book_slug=?"
         params.append(book_slug)
@@ -483,12 +503,12 @@ def mark_failed(conn: sqlite3.Connection, job_id: int, err: str) -> None:
     conn.commit()
 
 
-def run_job(conn: sqlite3.Connection, job: dict[str, Any]) -> None:
+def run_job(conn: sqlite3.Connection, job: dict[str, Any], model_override: str | None = None) -> None:
     testament = job["testament"]
     book_slug = job["book_slug"]
     chapter = int(job["chapter"])
     verse = int(job["verse"])
-    model = job["model"]
+    model = model_override or job["model"]
     strategy = job["strategy"]
 
     verse_yaml = read_verse_yaml(testament, book_slug, chapter, verse)
@@ -549,6 +569,11 @@ def main() -> int:
     ap.add_argument("--max-jobs", type=int, default=100)
     ap.add_argument("--stop-when-empty", action="store_true")
     ap.add_argument("--sleep", type=float, default=1.0, help="Sleep between jobs (s)")
+    ap.add_argument(
+        "--model-override",
+        default=None,
+        help="If set, ignore job['model'] and use this model id (e.g. gemini-2.5-flash). Reviewer_model in output JSON reflects the override.",
+    )
     args = ap.parse_args()
 
     done = 0
@@ -565,7 +590,7 @@ def main() -> int:
                 time.sleep(10)
                 continue
             try:
-                run_job(conn, job)
+                run_job(conn, job, model_override=args.model_override)
                 done += 1
                 print(
                     f"[{args.worker_id}] ✓ {job['strategy']} {job['book_slug']} {job['chapter']}:{job['verse']} "
