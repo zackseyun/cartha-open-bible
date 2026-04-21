@@ -1,6 +1,6 @@
 # Cartha Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health
 
-**Generated:** 2026-04-21 12:23 UTC
+**Generated:** 2026-04-21 12:43 UTC
 
 ## Corpus composition
 
@@ -21,18 +21,18 @@ The Greek text in every verse was produced by reading Swete's 1909 printed scan,
 - `ours` (our OCR confirmed by scan): 1293 (48.6%)
 - `first1k` (scan matched First1KGreek better than ours): 504 (18.9%)
 - `neither` (both were off; fresh scan-grounded reading): 424 (15.9%)
-- `rahlfs_match` (3-way triangulation across different edition): 159
+- `rahlfs_match` (3-way triangulation across different edition): 156
 - `swete_consensus` (rescue pass — all 3 Swete transcriptions agree): 45
 - `amicarelli` (rescue pass — Amicarelli's Swete transcription matched scan best): 172
-- `both_ok` (minor orthographic differences): 66
+- `both_ok` (minor orthographic differences): 69
 
 ## Adjudicator confidence
 
-- **High** (unambiguous scan reading): 2654 (99.7%)
-- **Medium** (minor scan uncertainty): 4 (0.2%)
-- **Low** (scan is damaged/illegible; best-guess reading): 5 (0.2%)
+- **High** (unambiguous scan reading): 2660 (99.9%)
+- **Medium** (minor scan uncertainty): 3 (0.1%)
+- **Low** (scan is damaged/illegible; best-guess reading): 0 (0.0%)
 
-The 94.8% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. The medium/low residual is concentrated in books with known typographic complexity (Baruch, Greek Esther additions, Daniel additions, Tobit S-text).
+The 99.9% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. Any remaining residual uncertainty is concentrated in a very small set of edge-case verses.
 
 ## Sources consulted (cross-validation, not text)
 
@@ -56,7 +56,7 @@ The 94.8% high-confidence rate means that for nearly every adjudicated verse, Az
 | 3MA | C | 232 | 97 | 97 | 0 | 0 | 227 | 0 | 5 |
 | 4MA | C | 503 | 231 | 231 | 0 | 0 | 481 | 0 | 22 |
 | WIS | C | 472 | 192 | 192 | 0 | 0 | 424 | 4 | 52 |
-| SIR | C | 1439 | 906 | 900 | 1 | 5 | 1400 | 7 | 46 |
+| SIR | C | 1439 | 906 | 906 | 0 | 0 | 1400 | 7 | 46 |
 | ADA | D | 551 | 319 | 319 | 0 | 0 | 408 | 0 | 143 |
 | 1ES | E | 496 | 238 | 237 | 1 | 0 | 430 | 0 | 66 |
 | BAR | E | 207 | 101 | 100 | 1 | 0 | 141 | 0 | 66 |
@@ -66,12 +66,7 @@ The 94.8% high-confidence rate means that for nearly every adjudicated verse, Az
 
 ## Remaining low-confidence verses
 
-**5 verses** where the scan itself is damaged/illegible and no scholarly consensus could be triangulated. These should get translator attention (human review of the Swete scan image) before translation is finalized.
-
-### SIR (5 verses)
-
-- Ch 3: verses [5, 7]
-- Ch 33: verses [14, 15, 16]
+No low-confidence verses remain in the current final corpus.
 
 
 ## Methodology (pipeline stages)
@@ -93,4 +88,4 @@ The 94.8% high-confidence rate means that for nearly every adjudicated verse, Az
 | D | ADA | Some residual complexity (Greek Daniel OG/Theodotion parallel texts). Ready with translator attention. |
 | E | 1ES, BAR, ADE | Most challenging; recommend extra translator review. |
 
-The corpus is translation-ready for all 13 books. Remaining low-confidence verses (listed above) should get translator attention but are not blockers.
+The corpus is translation-ready for all 13 books. No low-confidence verses remain; the small number of medium-confidence verses should still get translator attention.
