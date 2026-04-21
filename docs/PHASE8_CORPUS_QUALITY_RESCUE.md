@@ -14,8 +14,7 @@ The short version is simple:
 5. only promote confidence if the printed form is actually legible.
 
 That was the method used to eliminate the last Phase 8 `low` verses and
-to reduce the residual set to only the genuinely stubborn `medium`
-cases.
+eventually to eliminate the last `medium` verses as well.
 
 ## Why this doc exists
 
@@ -151,14 +150,22 @@ The lesson is important: when a residual exposes a whole mis-numbered
 span, the right fix is to repair the chapter source and rebuild — not to
 paper over one verse at a time.
 
-### Baruch 1:1: the final real remaining ambiguity
+### Baruch 1:1: final micro-check to 100% high
 
-`BAR 1:1` stayed `medium` even after direct exact-page inspection on
-**vol3 p374**. The remaining issue is not page targeting; it is the tiny
-orthographic / breathing-level distinction around `Ἀσαδίου`.
+`BAR 1:1` was the very last remaining `medium` verse. The issue was the
+tiny breathing-mark distinction between `Ἀσαδίου` and `Ἁσαδίου`.
 
-That is the kind of residual that should stay `medium` until there is a
-better image or stronger direct evidence.
+The resolution came from a **micro-paleographic crop check** on
+**vol3 p374**:
+
+- the page was fetched again at higher resolution,
+- the ambiguous word was cropped and enlarged,
+- the crop was inspected directly rather than through the full-page
+  context alone,
+- and the breathing mark proved legible enough to call as smooth.
+
+That promoted `BAR 1:1` from `medium` to `high` and brought the final
+corpus to **100% high confidence**.
 
 ## Files involved in the rescue loop
 

@@ -1,22 +1,22 @@
 # Adjudicated corpus — final pass summary
 
-Total verses: **496**
-Verses left unchanged (already agreed): **294**
-Verses adjudicated against scan: **202**
+Total verses: **207**
+Verses left unchanged (already agreed): **106**
+Verses adjudicated against scan: **101**
 
 ## Adjudication outcomes
 
-- Our OCR matched scan (kept ours): **86**
-- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **60**
-- Both equivalent (minor orthography): **12**
-- Neither matched scan (fresh scan-based reading): **35**
-- Rahlfs also matched the visible Swete reading: **2**
-- Amicarelli rescue matched scan best: **5**
-- Swete-family rescue consensus: **2**
+- Our OCR matched scan (kept ours): **10**
+- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **26**
+- Both equivalent (minor orthography): **1**
+- Neither matched scan (fresh scan-based reading): **3**
+- Rahlfs also matched the visible Swete reading: **6**
+- Amicarelli rescue matched scan best: **48**
+- Swete-family rescue consensus: **7**
 
 ## Adjudicator confidence
 
-- High: **202**
+- High: **101**
 - Medium: **0**
 - Low (may warrant human review): **0**
 
@@ -24,7 +24,7 @@ Verses adjudicated against scan: **202**
 
 | Book | Total | Unchanged | ours→kept | first1k→used | both_ok | neither | Adjudicated | High conf |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1ES | 496 | 294 | 86 | 60 | 12 | 35 | 202 | 202 |
+| BAR | 207 | 106 | 10 | 26 | 1 | 3 | 101 | 101 |
 
 ## Attribution note
 

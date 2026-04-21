@@ -1,6 +1,6 @@
 # Cartha Open Bible — Phase 8 corpus quality benchmark
 
-**Generated:** 2026-04-21 13:43 UTC
+**Generated:** 2026-04-21 14:26 UTC
 
 ## Pipeline stages
 

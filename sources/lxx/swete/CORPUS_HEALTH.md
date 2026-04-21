@@ -1,6 +1,6 @@
 # Cartha Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health
 
-**Generated:** 2026-04-21 13:43 UTC
+**Generated:** 2026-04-21 14:30 UTC
 
 ## Corpus composition
 
@@ -18,9 +18,9 @@ The Greek text in every verse was produced by reading Swete's 1909 printed scan,
 
 ## Adjudicator verdict distribution (for verses that were re-examined)
 
-- `ours` (our OCR confirmed by scan): 1280 (48.7%)
+- `ours` (our OCR confirmed by scan): 1281 (48.8%)
 - `first1k` (scan matched First1KGreek better than ours): 499 (19.0%)
-- `neither` (both were off; fresh scan-grounded reading): 411 (15.6%)
+- `neither` (both were off; fresh scan-grounded reading): 410 (15.6%)
 - `rahlfs_match` (3-way triangulation across different edition): 156
 - `swete_consensus` (rescue pass — all 3 Swete transcriptions agree): 45
 - `amicarelli` (rescue pass — Amicarelli's Swete transcription matched scan best): 169
@@ -28,11 +28,11 @@ The Greek text in every verse was produced by reading Swete's 1909 printed scan,
 
 ## Adjudicator confidence
 
-- **High** (unambiguous scan reading): 2626 (100.0%)
-- **Medium** (minor scan uncertainty): 1 (0.0%)
+- **High** (unambiguous scan reading): 2627 (100.0%)
+- **Medium** (minor scan uncertainty): 0 (0.0%)
 - **Low** (scan is damaged/illegible; best-guess reading): 0 (0.0%)
 
-The 100.0% high-confidence rate means that for nearly every adjudicated verse, Azure GPT-5.4 vision was able to read the Swete scan unambiguously with ≥1 corroborating scholarly transcription. Any remaining residual uncertainty is concentrated in a very small set of edge-case verses.
+The 100.0% high-confidence rate means that Azure GPT-5.4 vision was able to read every adjudicated Swete verse in the current corpus unambiguously enough to assign high confidence.
 
 ## Sources consulted (cross-validation, not text)
 
@@ -59,7 +59,7 @@ The 100.0% high-confidence rate means that for nearly every adjudicated verse, A
 | SIR | C | 1439 | 906 | 906 | 0 | 0 | 1400 | 7 | 46 |
 | ADA | D | 551 | 319 | 319 | 0 | 0 | 408 | 0 | 143 |
 | 1ES | E | 496 | 202 | 202 | 0 | 0 | 430 | 0 | 66 |
-| BAR | E | 207 | 101 | 100 | 1 | 0 | 141 | 0 | 66 |
+| BAR | E | 207 | 101 | 101 | 0 | 0 | 141 | 0 | 66 |
 | ADE | E | 244 | 121 | 121 | 0 | 0 | 190 | 0 | 54 |
 
 **Tier meanings**: A = cleanest (ship translation first), B = good, C = solid, D = some complexity, E = most challenging typography.
@@ -88,4 +88,4 @@ No low-confidence verses remain in the current final corpus.
 | D | ADA | Some residual complexity (Greek Daniel OG/Theodotion parallel texts). Ready with translator attention. |
 | E | 1ES, BAR, ADE | Most challenging; recommend extra translator review. |
 
-The corpus is translation-ready for all 13 books. No low-confidence verses remain; the small number of medium-confidence verses should still get translator attention.
+The corpus is translation-ready for all 13 books. No medium- or low-confidence verses remain in the current final corpus.
