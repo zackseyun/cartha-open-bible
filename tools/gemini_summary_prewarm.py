@@ -538,22 +538,71 @@ def call_gemini(api_key: str, system_prompt: str, user_prompt: str, max_tokens: 
 _ddb_lock = threading.Lock()
 
 
-def get_api_key() -> str:
-    sm = boto3.client("secretsmanager", region_name="us-west-2")
-    raw = sm.get_secret_value(SecretId="/cartha/openclaw/gemini_api_key")["SecretString"].strip()
-    # Value may be the raw string or a JSON object with a field
+def _extract_keys_from_secret(raw: str) -> list[str]:
+    """Parse a Secrets Manager value — raw string OR JSON with api_key /
+    api_keys — into the list of API keys it carries."""
+    raw = raw.strip()
+    if not raw:
+        return []
     if raw.startswith("{"):
         j = json.loads(raw)
         keys = j.get("api_keys")
         if isinstance(keys, list):
-            for key in keys:
-                if isinstance(key, str) and key.strip():
-                    return key.strip()
-        for k in ("api_key", "apiKey", "key", "GEMINI_API_KEY"):
-            if k in j:
-                return j[k]
+            out = [k.strip() for k in keys if isinstance(k, str) and k.strip()]
+            if out:
+                return out
+        for field in ("api_key", "apiKey", "key", "GEMINI_API_KEY"):
+            v = j.get(field)
+            if isinstance(v, str) and v.strip():
+                return [v.strip()]
         raise RuntimeError(f"no known key field in secret JSON: {list(j.keys())}")
-    return raw
+    return [raw]
+
+
+def get_api_key() -> str:
+    """Back-compat: return the first key from the primary secret."""
+    return get_api_keys(["/cartha/openclaw/gemini_api_key"])[0]
+
+
+def get_api_keys(secret_ids: list[str]) -> list[str]:
+    """Fetch and flatten keys across multiple Secrets Manager entries.
+    Missing/invalid secrets are skipped with a warning so one broken
+    secret doesn't block a run. Dedupes while preserving order so
+    round-robin stays balanced across the unique keys we actually have."""
+    sm = boto3.client("secretsmanager", region_name="us-west-2")
+    seen: set[str] = set()
+    collected: list[str] = []
+    for sid in secret_ids:
+        try:
+            raw = sm.get_secret_value(SecretId=sid)["SecretString"]
+            keys = _extract_keys_from_secret(raw)
+        except Exception as exc:
+            print(f"[warn] could not load {sid}: {exc}")
+            continue
+        for k in keys:
+            if k in seen:
+                continue
+            seen.add(k)
+            collected.append(k)
+    if not collected:
+        raise RuntimeError(f"no Gemini API keys resolved from {secret_ids}")
+    return collected
+
+
+# Atomic counter for round-robin key selection — threadsafe and
+# avoids the GIL-fighting + mod-cache races a plain int would have.
+_key_cursor = threading.Lock()
+_key_idx = [0]
+
+def pick_key(keys: list[str]) -> str:
+    """Round-robin the key pool so every concurrent worker spreads
+    its calls evenly across both AI Studio accounts."""
+    if len(keys) == 1:
+        return keys[0]
+    with _key_cursor:
+        i = _key_idx[0] % len(keys)
+        _key_idx[0] = (i + 1) % len(keys)
+    return keys[i]
 
 
 def batch_check_existence(ddb, table: str, keys: list[str]) -> set[str]:
@@ -630,13 +679,18 @@ def fetch_existing_chapter_output(ddb, table: str, book: str, chapter: int, tool
     return None
 
 
-def generate_chapter(ddb, table: str, api_key: str, chapter_data: dict, tool: str) -> str:
+def generate_chapter(ddb, table: str, api_key_or_keys, chapter_data: dict, tool: str) -> str:
     book = chapter_data["book_label"]
     chap = chapter_data["chapter"]
     verses = chapter_data["verses"]
     sys_prompt = summary_system_prompt(tool, SCOPE_CHAPTER, book)
     user_prompt = format_chapter_passage("COB", book, chap, verses)
-    text = call_gemini(api_key, sys_prompt, user_prompt, max_tokens=2048)
+    key_for_call = (
+        pick_key(api_key_or_keys)
+        if isinstance(api_key_or_keys, list)
+        else api_key_or_keys
+    )
+    text = call_gemini(key_for_call, sys_prompt, user_prompt, max_tokens=2048)
     key = summary_key("COB", "unspecified", SCOPE_CHAPTER, book, chap, tool,
                       PROMPT_VERSION, GEMINI_MODEL_VERSION)
     entry = {
@@ -660,7 +714,7 @@ def generate_chapter(ddb, table: str, api_key: str, chapter_data: dict, tool: st
     return key
 
 
-def generate_book(ddb, table: str, api_key: str, chapters_of_book: list[dict], book: str, tool: str) -> str:
+def generate_book(ddb, table: str, api_key_or_keys, chapters_of_book: list[dict], book: str, tool: str) -> str:
     # Collect chapter summaries from cache (either key)
     chapter_summaries = []
     for ch in chapters_of_book:
@@ -670,7 +724,12 @@ def generate_book(ddb, table: str, api_key: str, chapters_of_book: list[dict], b
         chapter_summaries.append((ch["chapter"], out))
     sys_prompt = summary_system_prompt(tool, SCOPE_BOOK, book)
     user_prompt = format_book_passage("COB", book, chapter_summaries)
-    text = call_gemini(api_key, sys_prompt, user_prompt, max_tokens=2560)
+    key_for_call = (
+        pick_key(api_key_or_keys)
+        if isinstance(api_key_or_keys, list)
+        else api_key_or_keys
+    )
+    text = call_gemini(key_for_call, sys_prompt, user_prompt, max_tokens=2560)
     key = summary_key("COB", "unspecified", SCOPE_BOOK, book, 0, tool,
                       PROMPT_VERSION, GEMINI_MODEL_VERSION)
     # source_hash for book scope: hash of the concatenated chapter summaries
@@ -705,6 +764,15 @@ def main() -> int:
     ap.add_argument("--chapters-only", action="store_true", help="skip book-level summaries")
     ap.add_argument("--limit", type=int, default=0, help="cap on entries to generate (0=all)")
     ap.add_argument("--book", default=None, help="restrict to one book (canonical label)")
+    ap.add_argument(
+        "--secret-ids",
+        default="/cartha/openclaw/gemini_api_key,/cartha/openclaw/gemini_api_key_2",
+        help=(
+            "Comma-separated Secrets Manager IDs to pull Gemini keys from. "
+            "Defaults to both the paid and free-tier Cartha keys; workers "
+            "round-robin across every key that resolves."
+        ),
+    )
     args = ap.parse_args()
 
     table = f"BibleSummaryCache-{args.stage}"
@@ -747,9 +815,17 @@ def main() -> int:
             print(f"  {g[0]} {g[2]}")
         return 0
 
-    # Fetch API key
-    api_key = get_api_key()
-    print(f"got AI Studio key (len={len(api_key)})")
+    # Fetch API keys from one or more Secrets Manager entries so we can
+    # spread the load across both the paid and free-tier accounts.
+    secret_ids = [s.strip() for s in args.secret_ids.split(",") if s.strip()]
+    api_keys = get_api_keys(secret_ids)
+    print(
+        f"got {len(api_keys)} AI Studio key(s) across {len(secret_ids)} secret(s): "
+        + ", ".join(f"len={len(k)}" for k in api_keys)
+    )
+    # Downstream helpers accept a list and round-robin; a single-key run
+    # still passes a list of one for the same code path.
+    api_key = api_keys
 
     # Index chapters by (book, chapter) for fast lookup
     ch_index = {(c["book_label"], c["chapter"]): c for c in chapters}
