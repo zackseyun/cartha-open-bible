@@ -87,9 +87,13 @@ def build_first_clement_prompt(chapter_num: int) -> PromptBundle:
     source_warnings: list[str] = []
     if chapter_num in missing:
         source_warnings.append("This chapter is still marked missing in the normalized source layer.")
-    if chapter_num in {22, 43}:
+    chapter_meta = (chapter_map.get("chapters") or {}).get(f"{chapter_num:02d}", {})
+    notes = chapter_meta.get("notes") or []
+    for note in notes:
+        source_warnings.append(str(note))
+    if not chapter.source_pages:
         source_warnings.append(
-            "This chapter was reconstructed from pre-heading body flow where the raw OCR missed the chapter marker; review before final drafting."
+            "This chapter currently comes from a supplemental digital Greek recovery rather than directly from the OCRed Funk page sequence."
         )
 
     source_payload = {

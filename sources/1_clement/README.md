@@ -71,5 +71,6 @@ Normalization / draft-ready tooling:
 - [`../../tools/build_first_clement_prompt.py`](../../tools/build_first_clement_prompt.py)
 
 Normalized outputs now exist in `sources/1_clement/transcribed/`.
-Current caveat: **chapter 42** is still marked missing in the normalized
-Greek layer and needs a targeted recovery pass.
+Current caveat: **chapters 42 and 43** are currently supplied by a
+documented supplemental public digital Greek recovery pending a future
+direct-source recovery pass.
