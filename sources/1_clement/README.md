@@ -47,3 +47,18 @@ python3 tools/greek_extra_pdf_ocr.py \
   --book-hint "1 Clement — Lightfoot 1889" \
   --stem-prefix 1c_lightfoot1889
 ```
+
+## Current pilot result
+
+An initial OCR pass has now been run against **Funk 1901** and has
+already located the beginning of **1 Clement I**:
+
+- page **260** = transition into 1 Clement
+- pages **261, 263, 265, 267, 269, 271, 273** = Greek text
+- adjacent even-numbered pages = Latin translation / notes
+
+Raw pilot outputs now live in `sources/1_clement/transcribed/raw/`.
+
+Helper scaffold:
+
+- [`../../tools/first_clement.py`](../../tools/first_clement.py)
