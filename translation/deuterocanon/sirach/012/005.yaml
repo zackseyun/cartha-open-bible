@@ -1,0 +1,139 @@
+id: SIR.12.5
+reference: Sirach 12:5
+source:
+  edition: sefaria-ben-sira-kahana
+  text: כְּלֵי לָחֶם אַל תִּתֵּן לוֹ, לָמָּה בָם יַקְבִּיל אֵלֶיךָ.
+  language: Hebrew
+  pages:
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 686
+  - 687
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: εὖ ποίησον τῷ ταπεινῷ καὶ μὴ δῷς ἀσεβεῖ· ἐμπόδισον τοὺς ἄρτους αὐτοῦ καὶ
+      μὴ δῷς αὐτῷ, ἵνα μὴ ἐν αὐτοῖς σε δυναστεύσῃ· διπλάσια γὰρ κακὰ εὑρήσεις ἐν πᾶσιν
+      ἀγαθοῖς οἷς ἂν ποιήσῃς αὐτῷ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 12:5
+translation:
+  text: Do not give him your bread, lest by it he set himself against you.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Hebrew: ''bread-vessels/items of bread''; the wording is difficult. The
+      Greek parallel more clearly supports the sense ''bread'' or ''food.'''
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'lest by them he dominate you.' The Greek parallel reads more strongly
+      in the sense of gaining power over you.
+    reason: alternative_reading
+lexical_decisions:
+- source_word: כְּלֵי לָחֶם
+  chosen: your bread
+  alternatives:
+  - food
+  - provisions
+  - bread
+  lexicon: HALOT
+  rationale: The Hebrew phrase is textually difficult. Literally it appears to involve
+    'vessels/items of bread,' but in context and in light of the Greek parallel ἐμπόδισον
+    τοὺς ἄρτους αὐτοῦ ('withhold his breads/food'), the sense is plainly food or bread
+    given to the wicked person. 'Your bread' gives clear English while staying close
+    to the concrete imagery.
+- source_word: אַל תִּתֵּן לוֹ
+  chosen: Do not give him
+  alternatives:
+  - you shall not give to him
+  - do not give to him
+  lexicon: HALOT
+  rationale: Straightforward prohibition. English drops the explicit preposition before
+    the pronoun for natural style.
+- source_word: לָמָּה
+  chosen: lest
+  alternatives:
+  - why
+  - for why
+  - otherwise
+  lexicon: HALOT
+  rationale: Although לָמָּה normally means 'why,' the clause as transmitted is awkward
+    in Hebrew. The Greek parallel has ἵνα μὴ ('lest'), which likely reflects the intended
+    sense of warning/result. Given the minor mismatch note and the coherence of the
+    Greek, 'lest' best represents the verse's force without over-paraphrase.
+- source_word: בָם
+  chosen: by it
+  alternatives:
+  - by them
+  - through them
+  lexicon: HALOT
+  rationale: The Hebrew pronoun is plural ('by them'), matching the difficult plural
+    expression at the start; English smooths to singular because 'bread' is a mass
+    noun in the main rendering. The instrumental sense is retained.
+- source_word: יַקְבִּיל אֵלֶיךָ
+  chosen: he set himself against you
+  alternatives:
+  - he oppose you
+  - he confront you
+  - he prevail over you
+  - he dominate you
+  lexicon: HALOT
+  rationale: The Hebrew verb here likely carries the sense of coming against or opposing.
+    The Greek parallel δυναστεύσῃ ('dominate, tyrannize over') suggests hostile advantage
+    gained through the gift. 'Set himself against you' preserves the adversarial sense
+    without overstating beyond the Hebrew witness.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 073c50067d705ce36686152cb052f2b96cda966eb2a174a56ee68b801c52917c
+  timestamp: '2026-04-21T20:22:54Z'
+  output_hash: 471ef82fa2b06cf939294705cf32ce0f019cf030b74e46a71ef3a919cb874584
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @98baaf27
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @98baaf27
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 12:5 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Use of the Hebrew witness with a difficult clause and Greek parallel
+  chosen_reading: Translate primarily from the extant Hebrew, but allow the Greek
+    parallel to clarify the awkward לָמָּה clause and the hostile-result sense of
+    the final verb.
+  alternative_readings:
+  - 'A more literal but obscure rendering: ''Items of bread do not give him; why,
+    by them he will meet you/opposite you.'''
+  - 'A Greek-leaning rendering: ''Withhold his bread from him, lest by it he dominate
+    you.'''
+  rationale: The project philosophy gives primacy to the original-language witness
+    available for Sirach, which here is Hebrew, but explicitly instructs that the
+    Greek parallel be used as actual translation input. Because the Hebrew is marked
+    with minor mismatch and contains a syntactically awkward phrase, the Greek helps
+    establish the intended warning without replacing the Hebrew entirely.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    parallel Greek as actual translation input.'

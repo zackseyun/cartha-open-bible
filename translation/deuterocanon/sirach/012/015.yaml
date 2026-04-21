@@ -1,0 +1,141 @@
+id: SIR.12.15
+reference: Sirach 12:15
+source:
+  edition: sefaria-ben-sira-kahana
+  text: וּלְאָחוֹר תַּשִּׂיג אֲמָרַי, וּלְאַחְוָתִי תִּתְאַנָּח.
+  language: Hebrew
+  pages:
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 686
+  - 687
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ὥραν μετὰ σοῦ διαμενεῖ, καὶ ἐὰν ἐκκλίνῃς, οὐ μὴ καρτερήσῃ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 12:15
+translation:
+  text: Afterward you will attain my words, and for my sister you will sigh.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Hebrew is difficult here, especially the phrase rendered ''for my sister.''
+      The Greek witness reads instead: ''He will remain with you for an hour, and
+      if you turn aside, he will not endure,'' reflecting a substantially different
+      text or interpretation.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: וּלְאָחוֹר
+  chosen: Afterward
+  alternatives:
+  - later
+  - in the end
+  - afterward
+  lexicon: HALOT
+  rationale: The phrase marks a later point in time. 'Afterward' is concise and preserves
+    the temporal sense without overinterpreting whether it means 'too late' or simply
+    'later.'
+- source_word: תַּשִּׂיג
+  chosen: you will attain
+  alternatives:
+  - you will reach
+  - you will overtake
+  - you will grasp
+  lexicon: HALOT
+  rationale: From נשׂג, the basic sense is to reach or overtake. With 'my words' as
+    object, 'attain' best conveys coming to understand or appreciate them, while still
+    reflecting the literal idea of reaching them. The Greek parallel supports a sense
+    of delayed realization rather than physical pursuit.
+- source_word: אֲמָרַי
+  chosen: my words
+  alternatives:
+  - my sayings
+  - what I said
+  lexicon: HALOT
+  rationale: A straightforward rendering of the plural noun with first-person suffix.
+    'My words' is more direct and less stylized than 'my sayings.'
+- source_word: וּלְאַחְוָתִי
+  chosen: for my sister
+  alternatives:
+  - for my kin
+  - for my companion
+  - for my brotherhood
+  lexicon: HALOT
+  rationale: The Hebrew form is difficult and may reflect a noun related to 'sister/brotherhood/companionship.'
+    The consonantal form most naturally suggests 'my sister,' so the main text preserves
+    the Hebrew witness as transmitted. Because the line is textually difficult and
+    the Greek parallel differs substantially, the uncertainty is preserved in a footnote.
+- source_word: תִּתְאַנָּח
+  chosen: you will sigh
+  alternatives:
+  - you will groan
+  - you will lament
+  lexicon: HALOT
+  rationale: The verb denotes sighing or groaning. 'You will sigh' is the most natural
+    modern English equivalent and leaves the emotional force understated rather than
+    interpretively heightened.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: da5b9080c71862b3a1009d8bb76b5b454fa14bae08948647d8470e21c82e6f5a
+  timestamp: '2026-04-21T20:29:42Z'
+  output_hash: d2fbe28137fb090f5ad2cd6ac3a4494ec431a831170194de2157a3e6d03d7f11
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @98baaf27
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @98baaf27
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 12:15 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Use of Hebrew as primary witness despite a divergent Greek parallel
+  chosen_reading: Main text follows the extant Hebrew, with the Greek informing the
+    sense of delayed regret but not replacing the Hebrew wording.
+  alternative_readings:
+  - 'Translate primarily from the Greek: ''He will remain with you for an hour, and
+    if you turn aside, he will not endure.'''
+  rationale: For Sirach, where Hebrew survives, project policy gives Hebrew primacy.
+    Here the Hebrew and Greek are notably divergent, and the Hebrew includes a difficult
+    phrase. The translation therefore stays anchored to the Hebrew while documenting
+    the Greek as a substantial alternative witness.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    Greek parallel as actual input'
+- issue: Handling a textually uncertain Hebrew phrase
+  chosen_reading: Retain the more literal rendering 'for my sister' in the main text
+    and preserve the Greek alternative in a footnote.
+  alternative_readings:
+  - Emend the Hebrew toward a more idiomatic sense such as 'for companionship' or
+    replace the line with the Greek sense of brief loyalty
+  rationale: The Hebrew wording is high-confidence as transmitted in Zone 1 but marked
+    by minor mismatch and is semantically difficult. Transparency requires preserving
+    the difficult reading rather than silently normalizing it. The divergent Greek
+    is important enough to footnote.
+  doctrine_reference: 'DOCTRINE.md: preserve theological/interpretive tension rather
+    than resolve it silently'

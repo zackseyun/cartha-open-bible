@@ -1,0 +1,144 @@
+id: SIR.12.2
+reference: Sirach 12:2
+source:
+  edition: sefaria-ben-sira-kahana
+  text: הֵיטִב לַצַּדִּיק תִּמְצָא תַשְׁלוּמַת, אִם לֹא מִמֶּנוּ מֵיְהֹוָה.
+  language: Hebrew
+  pages:
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 686
+  - 687
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: εὖ ποίησον εὐσεβεῖ, καὶ εὑρήσεις ἀνταπόδομα, καὶ εἰ μὴ παρ' αὐτοῦ, ἀλλὰ
+      παρὰ Ὑψίστου.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 12:2
+translation:
+  text: Do good to the righteous, and you will find repayment—if not from him, then
+    from the LORD.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: ''if not from him, then from the Most High.'' The Hebrew witness
+      reads ''from the LORD.'''
+    reason: textual_variant
+lexical_decisions:
+- source_word: הֵיטִב
+  chosen: Do good
+  alternatives:
+  - Be good
+  - Act kindly
+  - Benefit
+  lexicon: HALOT
+  rationale: Hiphil imperative of יטב here calls for active beneficence toward another
+    person. 'Do good' is idiomatic, direct, and matches the parallel Greek εὖ ποίησον.
+- source_word: לַצַּדִּיק
+  chosen: to the righteous
+  alternatives:
+  - to the just
+  - to the righteous man
+  - to the godly
+  lexicon: HALOT
+  rationale: The Hebrew points to 'the righteous' as the recipient of beneficence.
+    The Greek parallel has εὐσεβεῖ ('the godly/pious'), which supports an ethically/religiously
+    upright person. 'The righteous' stays closer to the Hebrew while remaining natural
+    English.
+- source_word: תִּמְצָא
+  chosen: you will find
+  alternatives:
+  - you will receive
+  - you will obtain
+  lexicon: HALOT
+  rationale: The verb literally means 'find.' In context it introduces the result
+    of doing good. Retaining 'find' preserves the Hebrew idiom while still communicating
+    expected outcome.
+- source_word: תַשְׁלוּמַת
+  chosen: repayment
+  alternatives:
+  - recompense
+  - reward
+  - return
+  lexicon: HALOT
+  rationale: The noun denotes repayment or recompense. 'Repayment' is clear modern
+    English and fits both the Hebrew and the Greek ἀνταπόδομα. 'Reward' is possible
+    but can sound more positive and less reciprocal than the source term.
+- source_word: אִם לֹא מִמֶּנוּ
+  chosen: if not from him
+  alternatives:
+  - if not from that person
+  - if not from him personally
+  lexicon: HALOT
+  rationale: The Hebrew explicitly uses a masculine singular pronominal form, matching
+    the singular righteous recipient. Per project philosophy, the masculine singular
+    is preserved rather than neutralized.
+- source_word: מֵיְהֹוָה
+  chosen: from the LORD
+  alternatives:
+  - from Yahweh
+  - from the Lord
+  lexicon: HALOT
+  rationale: The Hebrew divine name is rendered 'the LORD' per doctrine. The Greek
+    parallel reads 'from the Most High' (παρὰ Ὑψίστου), but since the primary witness
+    here is Hebrew, the main text follows YHWH while preserving the Greek alternative
+    in a footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 92d038f074450bf3f32b1b746c7b8a4ed4a2a1dd0ba9db212a77f0b73f3a0993
+  timestamp: '2026-04-21T20:22:01Z'
+  output_hash: 082889527a0e092f6ae3cb6e318dfd69c34f531b872d44e78b3c9a84033d61b7
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @98baaf27
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @98baaf27
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 12:2 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divine title in the final clause differs between Hebrew and Greek witnesses
+  chosen_reading: from the LORD
+  alternative_readings:
+  - from the Most High
+  rationale: Because Hebrew survives for this verse and is the primary witness for
+    extant Hebrew Sirach, the main text follows מֵיְהֹוָה. The Greek parallel's 'from
+    the Most High' is a meaningful variant and is preserved in a footnote rather than
+    silently harmonized.
+  doctrine_reference: 'DOCTRINE.md: Original-language primacy over translation tradition;
+    Contested terms table for יְהוָה YHWH → the LORD'
+- issue: Gendered singular pronoun for the righteous recipient
+  chosen_reading: him
+  alternative_readings:
+  - that person
+  - them
+  rationale: The Hebrew singular masculine suffix and the Greek singular αὐτοῦ both
+    point to a singular male grammatical referent. Per gender-accurate policy, the
+    translation preserves 'him' rather than flattening to a neutral plural.
+  doctrine_reference: 'DOCTRINE.md: Gender-accurate over gender-neutral'
