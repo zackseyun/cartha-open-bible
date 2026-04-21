@@ -188,7 +188,7 @@ after Phase 9 (LXX deuterocanon) completes:
 | Phase | Texts | Pipeline | Status |
 |---|---|---|---|
 | **8b** | 2 Esdras — source + pipeline setup | B (Latin + 6 daughters) | ✓ source PDFs vendored, scope doc written, scaffolding in place |
-| **8c** | 1 Enoch — source + pipeline setup | C (new Ethiopic pipeline) | ✓ source PDFs vendored, OCR backend selected (Gemini 2.5; Azure GPT-5 fails on Ge'ez), scope doc, scaffolding |
+| **8c** | 1 Enoch — source + pipeline setup | C (new Ethiopic pipeline) | ✓ source PDFs vendored, OCR backend selected (Gemini 2.5 Pro plaintext mode; Azure GPT-5 and Gemini Flash fail on Ge'ez), scope doc, scaffolding |
 | **Phase 9** | LXX deuterocanon drafting | Existing LXX infra | Ready to begin |
 | **Phase 10** | 2 Esdras drafting | B | Gated on Phase 9 |
 | **Phase 11** | 1 Enoch drafting | C | Gated on Phase 9 |

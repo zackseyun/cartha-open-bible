@@ -31,7 +31,7 @@ sources/enoch/
 │   ├── schodde_1882_english.pdf
 │   └── apot_vol2_1913.pdf
 ├── ethiopic/
-│   └── transcribed/  (pending) per-chapter UTF-8 Ge'ez text from our Gemini OCR
+│   └── transcribed/  (pending) per-chapter UTF-8 Ge'ez text from our Gemini 2.5 Pro OCR
 ├── greek/
 │   └── transcribed/  (pending) per-chapter Greek text from OCR of Bouriant + Flemming
 └── english_reference/
@@ -63,7 +63,7 @@ divisions, ~179,000 Ethiopic characters covering all 108 chapters.
 License is ambiguous (CC-BY-SA 4.0 wrapper / NC inner attribution),
 so we do NOT vendor it here and do NOT derive our output from it.
 
-**Role**: validation oracle for our own Gemini-OCR of Charles 1906
+**Role**: validation oracle for our own Gemini 2.5 Pro OCR of Charles 1906
 and Dillmann 1851, analogous to First1KGreek's role for LXX Swete.
 A local copy is kept at `~/cartha-reference-local/enoch_betamasaheft/`
 on the drafter's workstation.
@@ -87,10 +87,11 @@ the Zone 2 registry for the Phase 11 translator prompt.
 
 Critical validation result (2026-04-21): **Azure GPT-5 fails on
 Ge'ez script** despite handling Greek, Hebrew, and Latin at 98%+
-accuracy. **Gemini 2.5 Flash succeeds** on the same pages. The
-Enoch OCR pipeline therefore uses Gemini (Flash for bulk, Pro for
-rescue/disambiguation), which is different from the LXX / 2 Esdras
-pipelines that use Azure GPT-5.
+accuracy. **Gemini 2.5 Flash also fails** — it emits Ethiopic script
+but hallucinates the content. **Gemini 2.5 Pro in plaintext mode
+succeeds** on the same pages and is the actual Enoch OCR backend.
+This is different from the LXX / 2 Esdras pipelines, which use Azure
+GPT-5.
 
 This is a pipeline-level decision, not a quality compromise —
 choosing the tool that works for each script.
@@ -98,6 +99,7 @@ choosing the tool that works for each script.
 ## Status
 
 **2026-04-21: source acquisition phase.** PDFs vendored, Ge'ez OCR
-validated (Gemini 2.5 Flash), Beta maṣāḥǝft oracle archived locally.
+validated (Gemini 2.5 Pro plaintext mode), Beta maṣāḥǝft oracle
+archived locally.
 Transcription pipeline not yet built. Translation begins after
 Phase 10 (2 Esdras) — see `ENOCH.md` for the full phased plan.
