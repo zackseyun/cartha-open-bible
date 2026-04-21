@@ -11,12 +11,16 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/didache/README.md`](sources/didache/README.md)
 
-> **Status: source-acquisition + pilot OCR phase.** Public-domain Greek
+> **Status: source-acquisition + active OCR phase.** Public-domain Greek
 > source editions are now vendored locally (gitignored + manifest-tracked).
 > The Didache reuses the existing Greek OCR / drafting stack; no new
-> language pipeline is needed. A first OCR pilot on Hitchcock & Brown
-> pages 16 and 20 has already been produced under
-> `sources/didache/transcribed/raw/`.
+> language pipeline is needed. The Greek text pages from Hitchcock &
+> Brown 1884 have now been OCRed across the main Didache span
+> (pp. 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42) into
+> `sources/didache/transcribed/raw/`. A quick Azure-vs-Gemini comparison
+> on those pilot pages favored **Azure GPT-5.4 as the cleaner primary
+> OCR path** for this source; Gemini Pro remains useful as a spot-check
+> reviewer.
 
 ## Why the Didache
 
