@@ -9,7 +9,8 @@ applies the three-zone scholarly-source policy from
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
 > **Status: source-acquisition phase.** PDFs vendored, Ge'ez OCR
-> validated (Gemini 2.5 Flash handles Ethiopic script; GPT-5 does not).
+> validated (Gemini 2.5 Pro in plaintext mode handles Ethiopic script;
+> GPT-5 and Gemini 2.5 Flash do not).
 > Translation drafting begins after Phase 10 (2 Esdras) completes.
 
 ## Why Enoch
@@ -164,24 +165,28 @@ Critical finding during setup:
 - **GPT-5** (Azure deployment we've used for Greek and Hebrew) **fails on
   Ge'ez**. Multiple attempts returned "cannot read" errors even at 4000px
   resolution on clean Dillmann 1851 pages.
-- **Gemini 2.5 Flash succeeds.** Smoke test on Dillmann 1851 page 15
-  produced legitimate Ethiopic Unicode output with word separators
-  (፡), sentence terminators (።), and Ge'ez numerals (፱ ፲ ፲፩ etc.)
-  correctly preserved.
+- **Gemini 2.5 Flash fails.** It can emit real Ethiopic Unicode, but
+  it hallucinates the content and cannot be trusted for scholarly OCR.
+- **Gemini 2.5 Pro in plaintext mode succeeds.** Validated against
+  the Beta maṣāḥǝft chapter-1 oracle on Dillmann 1851: strong
+  line-level agreement, real word separators (፡), sentence
+  terminators (።), and Ge'ez numerals preserved, with the remaining
+  disagreements largely traceable to witness variation rather than
+  obvious OCR garbage.
 
-**Operational implication**: our Enoch OCR pipeline uses Gemini 2.5
-(Flash for bulk, Pro for rescue / low-confidence) rather than Azure
-GPT-5. Azure GPT-5 remains primary for Greek + Latin books. The
-multi-script capability of Gemini is the right tool for Ge'ez.
+**Operational implication**: our Enoch OCR pipeline uses **Gemini 2.5
+Pro in plaintext mode** rather than Azure GPT-5 or Gemini Flash.
+Azure GPT-5 remains primary for Greek + Latin books. For Ge'ez, Pro is
+the model that actually passes validation.
 
 ## Pipeline components (planned)
 
 | Component | Status | Purpose |
 |---|---|---|
 | `sources/enoch/scans/` | ✓ vendored | PDFs of all Zone 1 editions (gitignored; manifest + rehydrate) |
-| `sources/enoch/ethiopic/transcribed/` | ⏳ pending | Our Gemini-OCR of Charles 1906 + Dillmann 1851, chapter-indexed |
+| `sources/enoch/ethiopic/transcribed/` | ⏳ pending | Our Gemini 2.5 Pro plaintext-mode OCR of Charles 1906 + Dillmann 1851, chapter-indexed |
 | `sources/enoch/greek/transcribed/` | ⏳ pending | OCR of Bouriant 1892 + Flemming 1901 Greek fragments |
-| `tools/enoch/ocr_ethiopic.py` | ⏳ pending | Gemini-based OCR pipeline for Ge'ez |
+| `tools/enoch/ocr_ethiopic.py` | ⏳ pending | Gemini 2.5 Pro plaintext-mode OCR pipeline for Ge'ez |
 | `tools/enoch/validate_vs_betamasaheft.py` | ⏳ pending | Cross-check our OCR against Beta maṣāḥǝft oracle |
 | `tools/enoch/multi_witness.py` | ⏳ pending | Per-verse witness aggregator (Ge'ez + Greek where available + Qumran Zone 2 registry) |
 | `tools/enoch/build_translation_prompt.py` | ⏳ pending | Phase 11 translator prompt |
@@ -190,8 +195,8 @@ multi-script capability of Gemini is the right tool for Ge'ez.
 
 | Phase | Work | Effort | Dependencies |
 |---|---|---|---|
-| **11a — source acquisition** | ✓ PDFs vendored, Gemini Ge'ez OCR validated, Beta maṣāḥǝft oracle archived | Done 2026-04-21 | — |
-| **11b — transcription** | Gemini OCR of Charles 1906 + Dillmann 1851 Ge'ez (~250 pages each). Cross-validate against Beta maṣāḥǝft. OCR Bouriant 1892 + Flemming 1901 Greek. | 1-2 weeks | Phase 9 (LXX) + Phase 10 (2 Esdras) complete |
+| **11a — source acquisition** | ✓ PDFs vendored, Gemini 2.5 Pro Ge'ez OCR validated, Beta maṣāḥǝft oracle archived | Done 2026-04-21 | — |
+| **11b — transcription** | Gemini 2.5 Pro plaintext-mode OCR of Charles 1906 + Dillmann 1851 Ge'ez (~250 pages each). Cross-validate against Beta maṣāḥǝft. OCR Bouriant 1892 + Flemming 1901 Greek. | 1-2 weeks | Phase 9 (LXX) + Phase 10 (2 Esdras) complete |
 | **11c — translation** | ~1,100 verses across 108 chapters, multi-witness context, three-zone prompt | 2-3 weeks | 11b complete |
 | **11d — revision** | Reviser pass per REVISION_METHODOLOGY.md | 1 week | 11c complete |
 | **11e — release** | Tagged release, CHANGELOG entry, update status.json | 1 day | 11d complete |

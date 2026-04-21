@@ -680,9 +680,10 @@ Why we approach them separately:
   Aramaic fragments as witnesses.
 - **Different OCR backends.** Azure GPT-5 handles Greek, Hebrew, and
   Latin at ≥98% high-confidence. It **fails on Ge'ez** (validated
-  2026-04-21). The Enoch pipeline therefore uses Gemini 2.5 for OCR,
-  while LXX and 2 Esdras continue to use Azure GPT-5. We choose the
-  tool that works for each script.
+  2026-04-21), and Gemini 2.5 Flash hallucinates Ge'ez content. The
+  Enoch pipeline therefore uses **Gemini 2.5 Pro in plaintext mode**
+  for OCR, while LXX and 2 Esdras continue to use Azure GPT-5. We
+  choose the tool that actually works for each script.
 - **Different textual-critical logic.** LXX is "which of these Greek
   transcriptions matches the scan?" 2 Esdras is "do the daughter
   translations agree or disagree with the Latin?" Enoch is "does our
