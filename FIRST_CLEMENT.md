@@ -112,3 +112,10 @@ The current caveat is now narrower:
 2. Optionally replace supplemental chapter-42/43 recovery with direct
    source-layer OCR later
 3. Prepare the book for export / downstream publishing
+
+## Export / publishing readiness
+
+1 Clement can now be exported through the chapter-based extra-canonical
+export path:
+
+- [`tools/export_extra_canonical_chapter_books.py`](tools/export_extra_canonical_chapter_books.py)
