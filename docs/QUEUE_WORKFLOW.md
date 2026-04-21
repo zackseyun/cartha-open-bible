@@ -92,8 +92,8 @@ python tools/chapter_queue.py ready
 - One worker owns one chapter at a time.
 - Use separate worktrees for concurrent workers.
 - Keep `main` as the merge branch only.
-- Let Azure GPT-5.4 be the primary model path.
-- Use OpenRouter GPT-5.4 only for narrow fallback cases when Azure false-positives on scripture.
+- Let GPT-5.4 be the primary model path.
+- Use OpenRouter GPT-5.4 only for narrow fallback cases when GPT-5.4 false-positives on scripture.
 - Keep revisions out of the drafting queue until the first pass is complete.
 
 ## Practical recommendation

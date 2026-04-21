@@ -1,32 +1,32 @@
-# Merged Azure + Gemini review summary
+# Merged GPT-5.4 + Gemini review summary
 
 **Generated:** 2026-04-20 04:50 UTC
 
-Pages with both Azure + Gemini reviews: **99**
+Pages with both GPT-5.4 + Gemini reviews: **99**
 
 ## Cross-model agreement
 
 - **Agreed corrections (high signal):** 503
-- **Azure-only (Gemini did not flag):** 650
-- **Gemini-only (Azure did not flag):** 1903
+- **GPT-5.4-only (Gemini did not flag):** 650
+- **Gemini-only (GPT-5.4 did not flag):** 1903
 
 Agreed corrections are the highest-confidence items: two independent
 vision models (GPT-5.4, Gemini 2.5 Pro) flagged essentially the same
 fix. These should be auto-applied.
 
-Azure-only and Gemini-only items represent *possible* real errors
+GPT-5.4-only and Gemini-only items represent *possible* real errors
 that one model missed. These need human adjudication or a 
 third-opinion pass.
 
 ## By Gemini scope
 
-| Scope | Pages | Azure items | Gemini items | Agreed | Azure-only | Gemini-only |
+| Scope | Pages | GPT-5.4 items | Gemini items | Agreed | GPT-5.4-only | Gemini-only |
 |---|---:|---:|---:|---:|---:|---:|
 | `gemini_esdras` | 44 | 568 | 1261 | 255 | 313 | 1006 |
 | `gemini_tobit` | 31 | 337 | 627 | 128 | 209 | 499 |
 | `gemini_wer` | 24 | 248 | 518 | 120 | 128 | 398 |
 
-## Pages with most Gemini-only flags (possible Azure misses)
+## Pages with most Gemini-only flags (possible GPT-5.4 misses)
 
 - `vol3_p0902` — gemini_only=74 (azure_total=5, gemini_total=77)
 - `vol2_p0160` — gemini_only=58 (azure_total=27, gemini_total=72)

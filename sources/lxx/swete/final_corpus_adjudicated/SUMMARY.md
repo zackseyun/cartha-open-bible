@@ -7,7 +7,7 @@ Verses adjudicated against scan: **2295**
 ## Adjudication outcomes
 
 - Our OCR matched scan (kept ours): **1291**
-- First1KGreek matched scan (Azure verified; we use scan-grounded reading): **512**
+- First1KGreek matched scan (GPT-5.4 verified; we use scan-grounded reading): **512**
 - Both equivalent (minor orthography): **66**
 - Neither matched scan (fresh scan-based reading): **426**
 
@@ -39,7 +39,7 @@ Verses adjudicated against scan: **2295**
 
 Every `greek` text in the final corpus is either (a) our original
 AI-vision OCR (unchanged from the scan), or (b) a scan-grounded
-reading produced by Azure GPT-5.4 looking at the printed Swete
+reading produced by GPT-5.4 looking at the printed Swete
 page directly.  First1KGreek's transcription was used only as a
 secondary pointer to help the adjudicator focus; no First1KGreek
 text was copied into the corpus.  The `pre_adjudication_greek`

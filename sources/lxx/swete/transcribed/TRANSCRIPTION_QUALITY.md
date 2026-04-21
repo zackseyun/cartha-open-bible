@@ -3,7 +3,7 @@
 **Report date:** 2026-04-18
 **Scope:** 572 scan pages covering the Phase 8 deuterocanonical corpus
 across Swete vols II and III (see `page_index.json`).
-**Methodology:** Azure GPT-5.4 vision (deployment `gpt-5-4-deployment`,
+**Methodology:** GPT-5.4 vision (deployment `gpt-5-4-deployment`,
 model `gpt-5.4-2026-03-05`) applied to archive.org scan JPEGs at 1500
 px width, prompted per `tools/prompts/transcribe_greek_swete.md`
 (prompt version `transcribe_v1_2026-04-18`). Every output page has a
@@ -229,9 +229,9 @@ visible and auditable.
 
 ---
 
-## 6. 2026-04-19 Azure reviewer pass (corrections discovery, not yet applied)
+## 6. 2026-04-19 GPT-5.4 reviewer pass (corrections discovery, not yet applied)
 
-A full Azure GPT-5.4 corrections-only review pass has now been completed
+A full GPT-5.4 corrections-only review pass has now been completed
 across the same 572-page Phase 8 Swete corpus. The outputs live under
 `sources/lxx/swete/reviews/azure/` as per-page `.review.json` and
 `.review.meta.json` files.
@@ -251,7 +251,7 @@ counts and the highest-risk pages surfaced by the reviewer.
 
 ## 7. 2026-04-19 Tiered review application + pass-2 verification
 
-The Azure review worklist from §6 has now been reconciled back into the
+The GPT-5.4 review worklist from §6 has now been reconciled back into the
 source text via `tools/apply_transcription_reviews.py`. The applier is
 conservative by construction:
 
@@ -284,7 +284,7 @@ unique-match corrections and were left unchanged.
 
 ### Pass-2 verification sample (top 30 highest-impact pages)
 
-A second Azure GPT-5.4 review pass was run over the 30 pages with the
+A second GPT-5.4 review pass was run over the 30 pages with the
 most corrections applied, producing outputs in
 `sources/lxx/swete/reviews/azure_pass2/`. Aggregate counts on that
 sample:
@@ -366,21 +366,21 @@ pages needed a retry at a higher output-token limit (40,000).
 
 ### Cross-model merge
 
-`tools/merge_reviews.py` pairs each page's Azure and Gemini reviews
+`tools/merge_reviews.py` pairs each page's GPT-5.4 and Gemini reviews
 and classifies each correction as:
 
 - **Agreed** — both models flagged essentially the same fix
   (target-string match or location+category match after normalization)
-- **Azure-only** — Azure flagged, Gemini doesn't see it (typically
+- **GPT-5.4-only** — GPT-5.4 flagged, Gemini doesn't see it (typically
   already-applied items; Gemini reviews the post-§7 text)
-- **Gemini-only** — Gemini surfaces an item Azure missed
+- **Gemini-only** — Gemini surfaces an item GPT-5.4 missed
 
 Aggregate over the 99 pages with both reviews:
 
 | Bucket | Count |
 |---|---:|
 | Agreed corrections | 503 |
-| Azure-only (mostly already applied in §7) | 650 |
+| GPT-5.4-only (mostly already applied in §7) | 650 |
 | Gemini-only (possible new signal) | 1,903 |
 
 Per-page merged worklists live under
@@ -393,7 +393,7 @@ additional corrections across 99 pages:
 
 | Provenance | Count |
 |---|---:|
-| Agreed (both Azure + Gemini) | 402 |
+| Agreed (both GPT-5.4 + Gemini) | 402 |
 | Gemini-only, BODY, translation-critical categories | 337 |
 
 Top categories among the Gemini-augmented apply:
@@ -409,25 +409,25 @@ Top categories among the Gemini-augmented apply:
 | punctuation | 39 |
 
 The 110 `line-number-captured-as-verse` applies are specifically the
-1 Esdras verse numbers that §7's Azure-driven pass stripped. They've
+1 Esdras verse numbers that §7's GPT-5.4-driven pass stripped. They've
 now been **restored** as Unicode superscript digits (e.g. ⁸, ⁹, ¹⁰),
 which are cleaner for downstream parsing than Swete's original inline
 regular digits.
 
 ### Combined corpus-wide corrections
 
-After §7 (Azure) + §8 (Gemini-augmented merge):
+After §7 (GPT-5.4) + §8 (Gemini-augmented merge):
 
 | Pass | Corrections applied |
 |---|---:|
-| Azure tiered apply (§7) | 4,095 |
+| GPT-5.4 tiered apply (§7) | 4,095 |
 | Gemini-augmented merge apply (§8) | 739 |
 | **Total** | **4,834** |
 
 ### Tobit-specific regression caught and fixed
 
 Audit of the Tobit pages turned up one bad apply on `vol2_p0838`:
-Azure had flagged the page's B-text opening line as a "missing-phrase"
+GPT-5.4 had flagged the page's B-text opening line as a "missing-phrase"
 (bypassing the `apparatus-merge` filter) because it was implicitly
 comparing against the S-text that sits beneath it on the same page.
 The S-text had leaked into the B-text body. This was reverted
@@ -439,7 +439,7 @@ recension-swap false positive.
 
 ### Known caveats still open
 
-- **Corpus-wide WER not yet human-remeasured.** The pass-2 Azure
+- **Corpus-wide WER not yet human-remeasured.** The pass-2 GPT-5.4
   verification in §7 was a proxy. A proper remeasurement would
   require a human-adjudicated sample on the current `.txt` state.
   The uniform ~50% drop in cosmetic flags and the successful 1 Esdras
@@ -495,7 +495,7 @@ Ba²) — those must remain as-is.
 
 ### 9.3 Measured WER (first real remeasurement)
 
-A 25-page reproducible random sample was adjudicated by Azure GPT-5.4
+A 25-page reproducible random sample was adjudicated by GPT-5.4
 using a purpose-built WER-counting prompt (`prompts/wer_adjudicator_azure.md`).
 Sample covers Phase 8 scope (vol 2 + vol 3 Apocrypha pages, seed=7).
 Results on the current post-normalization corpus:
@@ -531,7 +531,7 @@ Results on the current post-normalization corpus:
 | Pass | BODY WER (meaning-altering only) |
 |---|---:|
 | §3 original Opus-adjudicated baseline (pre-any-apply) | **0.97%** |
-| §9 current (post-Azure + Gemini + normalize) | **1.46%** |
+| §9 current (post-GPT-5.4 + Gemini + normalize) | **1.46%** |
 
 The post-apply meaning-altering WER appears *higher* than the
 pre-apply baseline. This is not a regression — it's a **different

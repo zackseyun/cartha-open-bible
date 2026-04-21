@@ -263,12 +263,24 @@ def rescue_chapter_batch(book: str, chapter: int, verses: list[int], image_width
 
     pages_sorted = sorted(pages_needed)
     images = []
+    missing_pages = []
     for p in pages_sorted:
-        try:
-            img, _ = transcribe_source.fetch_swete_image(vol, p, image_width)
+        img = None
+        last_err = None
+        for attempt in range(4):
+            try:
+                img, _ = transcribe_source.fetch_swete_image(vol, p, image_width)
+                break
+            except Exception as e:
+                last_err = e
+                time.sleep(2 + attempt * 3)
+        if img is not None:
             images.append(img)
-        except Exception:
-            pass
+        else:
+            missing_pages.append(p)
+            print(f"    WARN: failed to fetch scan page {p} for {book} ch{chapter} after 4 attempts: {last_err}", flush=True)
+    if not images:
+        raise RuntimeError(f"No scan images fetched for {book} ch{chapter} (pages {pages_sorted}) — aborting batch")
 
     book_title = lxx_swete.DEUTEROCANONICAL_BOOKS[book][3]
     lines = [

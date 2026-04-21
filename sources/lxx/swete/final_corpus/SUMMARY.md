@@ -13,7 +13,7 @@ Total verses: **6110**
 
 ## Attribution
 
-- Our OCR-derived verses are from Swete's _The Old Testament in Greek_ (Cambridge, 1896-1905) scans on Internet Archive, transcribed via Azure GPT-5.4 vision, cross-reviewed against Gemini 2.5 Pro.
+- Our OCR-derived verses are from Swete's _The Old Testament in Greek_ (Cambridge, 1896-1905) scans on Internet Archive, transcribed via GPT-5.4 vision, cross-reviewed against Gemini 2.5 Pro.
 - First1KGreek-sourced verses are from `https://github.com/OpenGreekAndLatin/First1KGreek` TEI-XML (CC-BY-SA 4.0), a separately encoded edition of the same Swete text, published by Harvard College Library with funding from the Arcadia Fund.
 - Both paths trace to the same underlying scholarly edition (Swete 1909). The First1KGreek-sourced verses are effectively a re-encoding of the same text we OCR'd; they're used here to fill gaps where our vision pipeline had OCR errors or missed verses.
 

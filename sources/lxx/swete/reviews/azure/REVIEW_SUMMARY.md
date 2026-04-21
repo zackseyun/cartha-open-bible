@@ -1,8 +1,8 @@
-# Azure Swete review summary
+# GPT-5.4 Swete review summary
 
 **Generated:** 2026-04-20 00:45 UTC  
 **Scope:** Phase 8 Swete deuterocanonical review corpus  
-**Model:** Azure GPT-5.4 (`gpt-5-4-deployment`)  
+**Model:** GPT-5.4 (`gpt-5-4-deployment`)  
 **Status:** 572/572 page reviews completed; zero unparseable outputs.
 
 ## What this is

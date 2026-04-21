@@ -1,7 +1,7 @@
 # Swete LXX — Vision-transcribed working text
 
 Clean UTF-8 polytonic Greek transcribed from the Swete 1909–1930 scan
-pages on Internet Archive via Azure GPT-5.4 vision
+pages on Internet Archive via GPT-5.4 vision
 (`tools/transcribe_source.py`).
 
 ## Files

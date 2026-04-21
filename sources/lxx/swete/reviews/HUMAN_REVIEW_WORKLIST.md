@@ -1,8 +1,8 @@
-# Human-review worklist — Azure Swete review
+# Human-review worklist — GPT-5.4 Swete review
 
 **Generated:** 2026-04-20 03:35 UTC
 
-Corrections that were flagged by Azure GPT-5.4 but *not* auto-applied.
+Corrections that were flagged by GPT-5.4 but *not* auto-applied.
 Reasons include: non-unique transcript match, missing anchor, non-`high` confidence,
 or apparatus-merge flags on Tobit dual-recension pages (false positives).
 
