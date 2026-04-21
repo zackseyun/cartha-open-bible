@@ -74,3 +74,7 @@ Normalized outputs now exist in `sources/1_clement/transcribed/`.
 Current caveat: **chapters 42 and 43** are currently supplied by a
 documented supplemental public digital Greek recovery pending a future
 direct-source recovery pass.
+
+The first-pass draft now exists at:
+
+- `translation/extra_canonical/1_clement/001.yaml` … `065.yaml`

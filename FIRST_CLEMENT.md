@@ -10,7 +10,7 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/1_clement/README.md`](sources/1_clement/README.md)
 
-> **Status: initial drafting phase.** Public-domain Greek source
+> **Status: first-pass drafting complete.** Public-domain Greek source
 > editions are now vendored locally (gitignored + manifest-tracked).
 > 1 Clement is a Greek-source Phase 13 text and reuses the same family
 > of tooling as other Group A works. An initial OCR pass is now underway
@@ -20,8 +20,9 @@ It complements:
 > span in Funk and normalized into chapter files. The one OCR gap
 > (**chapter 42**, with chapter 43 start also affected) is now filled
 > provisionally from a public digital Greek supplement so the book is
-> structurally complete and prompt-ready. The first chapter draft now
-> exists at `translation/extra_canonical/1_clement/001.yaml`.
+> structurally complete and prompt-ready. A full first-pass draft now
+> exists at `translation/extra_canonical/1_clement/001.yaml` through
+> `065.yaml`.
 
 ## Why 1 Clement
 
@@ -107,7 +108,7 @@ The current caveat is now narrower:
 
 ## Immediate next steps
 
-1. Continue drafting the remaining chapters from the normalized source layer
-2. Revise + audit
-3. Optionally replace supplemental chapter-42/43 recovery with direct
+1. Revise + audit the full first-pass draft
+2. Optionally replace supplemental chapter-42/43 recovery with direct
    source-layer OCR later
+3. Prepare the book for export / downstream publishing
