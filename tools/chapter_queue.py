@@ -108,14 +108,21 @@ def existing_chapter_complete(testament: str, book_code: str, chapter: int, vers
     return len(list(chapter_dir.glob("*.yaml"))) >= verse_count
 
 
-def all_phase_jobs(phases: list[str] | None = None) -> list[dict[str, Any]]:
+def all_phase_jobs(phases: list[str] | None = None, books: list[str] | None = None) -> list[dict[str, Any]]:
     selected = phases or list(run_phase.PHASES.keys())
+    selected_books = {book.upper() for book in books} if books else None
     jobs: list[dict[str, Any]] = []
     for phase_order, phase_name in enumerate(selected):
         phase = run_phase.PHASES[phase_name]
         for book_order, book_code in enumerate(phase["books"]):
+            if selected_books is not None and book_code not in selected_books:
+                continue
             slug = draft.book_slug_for_code(book_code)
-            for chapter, verse_count in chapter_verse_counts(book_code).items():
+            try:
+                chapter_counts = chapter_verse_counts(book_code)
+            except Exception:
+                continue
+            for chapter, verse_count in chapter_counts.items():
                 jobs.append(
                     {
                         "phase": phase_name,
@@ -138,12 +145,12 @@ def append_event(conn: sqlite3.Connection, job_id: int | None, event_type: str, 
     )
 
 
-def init_queue(*, db_path: pathlib.Path, phases: list[str] | None = None, repo_root: pathlib.Path = REPO_ROOT, reset_failed: bool = False) -> dict[str, int]:
+def init_queue(*, db_path: pathlib.Path, phases: list[str] | None = None, books: list[str] | None = None, repo_root: pathlib.Path = REPO_ROOT, reset_failed: bool = False) -> dict[str, int]:
     with contextlib.closing(connect(db_path)) as conn:
         ensure_schema(conn)
         created = 0
         updated = 0
-        for job in all_phase_jobs(phases):
+        for job in all_phase_jobs(phases, books):
             now = utc_now()
             complete = existing_chapter_complete(job["testament"], job["book_code"], job["chapter"], job["verse_count"], repo_root)
             status = STATUS_COMPLETED if complete else STATUS_PENDING

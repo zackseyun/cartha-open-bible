@@ -72,7 +72,7 @@ def main() -> int:
 
     coord_root = pathlib.Path(args.coord_root).resolve()
     db_path = chapter_queue.db_path_from(coord_root)
-    chapter_queue.init_queue(db_path=db_path, phases=args.phases, repo_root=coord_root)
+    chapter_queue.init_queue(db_path=db_path, phases=args.phases, books=args.books, repo_root=coord_root)
 
     completed = 0
     while completed < args.max_jobs:
