@@ -721,12 +721,12 @@ the Ethiopian broader canon include:
 
 - **Meqabyan 1–3** (Ge'ez-only, Ethiopian Orthodox canonical)
 - **4 Baruch / Paraleipomena Jeremiou** (Greek + Ge'ez witnesses)
-- **2 Baruch** (Syriac primary)
 - **Testaments of the Twelve Patriarchs** (Greek primary)
 
-None are committed to. Each would need its own scope document before
-entering the pipeline. They are named here only to keep the long-term
-trajectory visible.
+None of the works listed here are committed to in this document.
+(`2 Baruch` is now tracked separately in [2BARUCH.md](2BARUCH.md) as
+part of the broader extra-canonical roadmap.) They are named here only
+to keep the long-term trajectory visible.
 
 ### What "pursue" means here
 

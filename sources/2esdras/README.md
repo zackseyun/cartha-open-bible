@@ -103,10 +103,18 @@ analogous to the SIR/TOB/1ES registries in `tools/hebrew_parallels.py`.
 **2026-04-21: source acquisition phase.** PDFs vendored. OCR scaffold
 now exists at [`../../tools/2esdras/ocr_pipeline.py`](../../tools/2esdras/ocr_pipeline.py),
 with source-specific prompts for Bensly Latin pages and Violet's
-parallel-column witness pages. Cleaned per-witness transcription and
-verse indexing are still pending. Translation drafting begins after
-Phase 9 (LXX deuterocanon) completes — see `2ESDRAS.md` for the full
-phased plan.
+parallel-column witness pages.
+
+Current OCR status:
+
+- **Bensly 1895 main-text span (PDF pages 97–178)**: raw OCR complete
+  into `raw_ocr/bensly1895/`
+- **Violet 1910 vol. 1**: initial pilot pages OCR'd into
+  `raw_ocr/violet1910-vol1/`
+
+Cleaned per-witness transcription and verse indexing are still
+pending. Translation drafting begins after Phase 9 (LXX
+deuterocanon) completes — see `2ESDRAS.md` for the full phased plan.
 
 When the Latin cleanup pass begins, the normalized hand-checked output
 should land in `latin/transcribed/chNN.txt`. The loader at

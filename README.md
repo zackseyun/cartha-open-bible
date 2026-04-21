@@ -342,9 +342,11 @@ reconsidering.
 ### How this gets built
 
 Extra-canonical translation follows Phase 9 (LXX deuterocanon
-drafting) in a phased rollout by shared pipeline. 2 Esdras gets its
-own Latin-primary + 6-daughter-translation pipeline (see
-[2ESDRAS.md](2ESDRAS.md)) which then amortizes to 2 Baruch. The
+drafting) in a phased rollout by shared pipeline. 2 Esdras and
+2 Baruch now sit in the same **Semitic apocalypse multi-witness**
+family (see [2ESDRAS.md](2ESDRAS.md) and [2BARUCH.md](2BARUCH.md)):
+2 Esdras is Latin-primary, 2 Baruch is Syriac-primary, but the
+architecture is intentionally shared. The
 Apostolic Fathers (Didache, 1 Clement, Shepherd of Hermas) reuse our
 existing LXX Greek-primary infrastructure. 1 Enoch and Jubilees
 require a new Ethiopic (Ge'ez) pipeline. The Nag Hammadi group
