@@ -51,5 +51,5 @@ The shared OCR tool for these directories is
 
 - **Didache** — local scans already present; README + manifest now in place
 - **1 Clement** — local scans already present; README + manifest now in place
-- **Shepherd of Hermas** — source acquisition still pending
-- **Testaments of the Twelve Patriarchs** — source acquisition still pending
+- **Shepherd of Hermas** — local scan present; README + manifest now in place, first raw OCR pilot completed
+- **Testaments of the Twelve Patriarchs** — source tree now in place; Greek-primary candidate + English reference recorded, first raw Greek OCR pilot completed

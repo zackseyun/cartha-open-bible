@@ -103,4 +103,6 @@ and Phase 14.
 
 Current note: Didache and 1 Clement already have local source PDFs in
 place, so they are the natural first non-Swete books to exercise the
-generic local-PDF OCR path.
+generic local-PDF OCR path. Shepherd of Hermas and the Testaments of
+the Twelve Patriarchs now also have source trees in place, and both
+have already been exercised on initial raw Greek OCR pilots.

@@ -86,6 +86,19 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
 - **Didache OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
   on Hitchcock & Brown 1884 pages 16 and 20, writing initial raw OCR
   outputs into `sources/didache/transcribed/raw/`
+- **Shepherd of Hermas + Testaments source trees** added:
+  - `sources/shepherd_of_hermas/README.md` + `MANIFEST.md`
+  - `sources/testaments_twelve_patriarchs/README.md` + `MANIFEST.md`
+  - `.gitignore` updated to keep these local source PDFs out of git
+  - local PDFs fetched / recorded for Hermas and for a Greek-primary
+    Testaments candidate plus English reference
+- **Hermas OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
+  on Lightfoot 1891 pages 314–315, writing initial raw Greek OCR into
+  `sources/shepherd_of_hermas/transcribed/raw/`
+- **Testaments OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
+  on Sinker 1879 page 50, confirming the Greek-primary candidate is
+  usable for raw OCR work and writing initial output into
+  `sources/testaments_twelve_patriarchs/transcribed/raw/`
 
 ## Phase 8d — Jubilees pipeline + Ge'ez OCR correction (2026-04-21)
 
