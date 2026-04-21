@@ -9,7 +9,7 @@ summaries via Gemini 2.5 Pro through the AI Studio endpoint (separate
 quota pool from Vertex, so it doesn't compete with the review pass).
 
 Cache keys follow the Go pipeline's scheme verbatim, but written with an
-honest `model_version="gemini-2.5-pro-2026-04"` so the provenance of each
+honest `model_version="gemini-3.1-pro-preview-2026-04"` so the provenance of each
 record is recoverable. The Go `SummaryCache.GetOrGenerate` needs a small
 change to try the Gemini model_version on cache miss — see the companion
 change in internal/bible/summary_cache.go.
@@ -47,7 +47,7 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 # Constants that MUST match internal/bible/summary_cache.go
 PROMPT_VERSION = "bible_shared_summary_v1"
 PRIMARY_MODEL_VERSION = "gpt-5.4-2026-03-05"
-GEMINI_MODEL_VERSION = "gemini-2.5-pro-2026-04"
+GEMINI_MODEL_VERSION = "gemini-3.1-pro-preview-2026-04"
 
 SCOPE_CHAPTER = "chapter"
 SCOPE_BOOK = "book"
@@ -57,7 +57,7 @@ TOOL_RECONTEXTUALIZE_BIBLE = "recontextualize_bible"
 TOOL_RECONTEXTUALIZE_HIST = "recontextualize_historical"
 TOOLS = [TOOL_SIMPLIFY, TOOL_RECONTEXTUALIZE_BIBLE, TOOL_RECONTEXTUALIZE_HIST]
 
-AI_STUDIO_MODEL = "gemini-2.5-pro"
+AI_STUDIO_MODEL = "gemini-3.1-pro-preview"
 AI_STUDIO_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     f"{AI_STUDIO_MODEL}:generateContent"

@@ -434,7 +434,7 @@ def main() -> int:
             STRATEGY_ENHANCED_REVIEW,
         ],
     )
-    p_submit.add_argument("--model", default="gemini-2.5-pro")
+    p_submit.add_argument("--model", default="gemini-3.1-pro-preview")
     p_submit.add_argument(
         "--threshold",
         type=float,
