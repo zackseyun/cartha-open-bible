@@ -1,0 +1,133 @@
+id: SIR.16.7
+reference: Sirach 16:7
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אֲשֶׁר לֹא נָשָׁא לֲנְסִיכֵי קֶדֶם, הַמּוֹרִים עוֹלָם בִּגְבוּרָתָם.
+  language: Hebrew
+  pages:
+  - 681
+  - 690
+  - 691
+  - 692
+  - 693
+  - 694
+  - 695
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: οὐκ ἐξιλάσατο περὶ τῶν ἀρχαίων γιγάντων, οἳ ἀπέστησαν τῇ ἰσχύϊ αὐτῶν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 16:7
+translation:
+  text: He did not spare the princes of old, who rebelled in their might.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: ''the ancient giants,'' identifying the ''princes of old'' as the
+      primeval rebels.'
+    reason: alternative_reading
+  - marker: b
+    text: The Hebrew line is textually difficult at 'עוֹלָם'; the Greek parallel supports
+      the sense 'in their might.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: לֹא נָשָׁא
+  chosen: did not spare
+  alternatives:
+  - did not forgive
+  - did not show favor to
+  - did not lift up
+  lexicon: HALOT
+  rationale: In this context נשא with a negative and personal object is best taken
+    idiomatically as withholding pardon or leniency. The Greek parallel οὐκ ἐξιλάσατο
+    supports the sense of not sparing or not relenting rather than a literal 'did
+    not lift.' 'Did not spare' is concise, natural English and fits the judgment context.
+- source_word: לֲנְסִיכֵי קֶדֶם
+  chosen: the princes of old
+  alternatives:
+  - the ancient princes
+  - the rulers of old
+  - the ancient giants
+  lexicon: HALOT
+  rationale: The Hebrew witness reads נסיכי קדם, literally 'princes/rulers of old.'
+    This should govern the main text because Hebrew is primary where extant. The Greek
+    parallel interprets the referent as 'ancient giants,' likely identifying these
+    rulers with the primeval rebels. To preserve both, the Hebrew wording is kept
+    in the text and the Greek interpretive equivalent is noted in a footnote.
+- source_word: הַמּוֹרִים
+  chosen: who rebelled
+  alternatives:
+  - who were rebellious
+  - the rebels
+  - who turned away
+  lexicon: HALOT
+  rationale: From מרה, 'to be rebellious, disobey.' The participial form describes
+    their defining action. 'Who rebelled' is idiomatic and captures the moral force.
+- source_word: עוֹלָם
+  chosen: in their might
+  alternatives:
+  - forever
+  - of old
+  - eternally
+  lexicon: HALOT
+  rationale: The Hebrew as transmitted is difficult here, since עולם normally means
+    'forever' or 'antiquity,' but the Greek parallel has τῇ ἰσχύϊ αὐτῶν, 'in their
+    strength/might.' Given the source validation note of minor mismatch and the strong
+    contextual support from the Greek, the clause is rendered according to the likely
+    intended sense reflected in the parallel rather than forcing an opaque 'forever.'
+- source_word: בִּגְבוּרָתָם
+  chosen: in their might
+  alternatives:
+  - by their strength
+  - through their power
+  lexicon: HALOT
+  rationale: גבורה denotes strength, might, power. 'In their might' matches the preposition
+    and aligns well with the Greek τῇ ἰσχύϊ αὐτῶν.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 055edb3ea120656575506eff6888926e0f4db9205061c7edee505dff842ae081
+  timestamp: '2026-04-21T20:24:09Z'
+  output_hash: f8690c352b6d3fb998e21bf17cd7a7ce4caac1f762f8844b536dd6cc396ad77a
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @00bba239
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @00bba239
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 16:7 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Identification of the judged group
+  chosen_reading: The main text follows the Hebrew 'princes of old' while allowing
+    the Greek to clarify that these are the primeval rebels understood as giants.
+  alternative_readings:
+  - He did not spare the ancient giants, who rebelled in their might.
+  rationale: The Hebrew witness is primary for Sirach where extant, but the Greek
+    parallel is an actual translation input and likely preserves an interpretive tradition
+    or clarifies a difficult Hebrew line. To avoid overruling the Hebrew while still
+    preserving the Greek's identification, the Hebrew-based rendering is used in the
+    main text and the Greek-based alternative is footnoted.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    Greek parallel as actual translation input; preserve ambiguity/tension rather
+    than over-resolve.'
