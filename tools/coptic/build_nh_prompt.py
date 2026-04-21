@@ -69,6 +69,10 @@ def relevant_witness_paths(bundle: dict, segment_id: str) -> list[str]:
             value = files.get(key)
             if value and value not in paths:
                 paths.append(value)
+        ocr_job = witness.get('ocr_job') or {}
+        queued = ocr_job.get('registered_input_path')
+        if queued and queued not in paths:
+            paths.append(queued)
     return paths
 
 
@@ -78,6 +82,16 @@ def greek_overlap_summary(bundle: dict, segment_id: str) -> str | None:
         return None
     labels = [w.get('coverage_label') or w['witness_id'] for w in overlaps]
     return '; '.join(labels)
+
+
+def witness_source_label(witness: dict) -> str:
+    files = witness.get('files') or {}
+    if files.get('text_path'):
+        return files['text_path']
+    ocr_job = witness.get('ocr_job') or {}
+    if ocr_job.get('registered_input_path'):
+        return ocr_job['registered_input_path']
+    return witness.get('url') or 'local source pending'
 
 
 def build_overview(text_id: str) -> str:
@@ -94,7 +108,7 @@ def build_overview(text_id: str) -> str:
         '',
     ]
     for witness in bundle['witnesses']:
-        source = witness.get('url') or witness.get('files', {}).get('text_path') or 'local source pending'
+        source = witness_source_label(witness)
         coverage = f" ({witness['coverage_label']})" if witness.get('coverage_label') else ''
         lines.append(f"- **{witness['witness_id']}** ({witness['role']}) — {witness['status']}{coverage}; source: {source}")
     lines.extend(['', '## Guardrails', ''])

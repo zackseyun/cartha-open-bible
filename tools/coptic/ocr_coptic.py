@@ -3,12 +3,11 @@ from __future__ import annotations
 
 import argparse
 import mimetypes
-import os
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from common import OCR_JOBS_ROOT, OCR_OUTPUT_ROOT, STAGING_ROOT, ensure_dir, load_json, load_manifest, rel, resolve_text_ids, utc_now, write_json
+from common import OCR_JOBS_ROOT, OCR_OUTPUT_ROOT, REPO_ROOT, STAGING_ROOT, best_rel, ensure_dir, load_json, load_manifest, rel, resolve_text_ids, utc_now, write_json
 
 OCR_FORMATS = {'pdf_ocr', 'image_ocr'}
 USER_AGENT = 'Mozilla/5.0 (compatible; Phase-E-Nag-Hammadi-Scaffold/1.0)'
@@ -58,13 +57,42 @@ def prepare_jobs(text_ids: list[str]) -> list[Path]:
     return created
 
 
+def discover_source_urls(input_path: Path) -> list[str]:
+    candidates = []
+    if input_path.is_dir():
+        candidates.append(input_path / 'sources.txt')
+    else:
+        candidates.append(input_path.parent / 'sources.txt')
+
+    urls: list[str] = []
+    for candidate in candidates:
+        if not candidate.exists():
+            continue
+        for line in candidate.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            if '<-' in line:
+                _, rhs = line.split('<-', 1)
+                url = rhs.strip()
+            else:
+                url = line
+            if url and url not in urls:
+                urls.append(url)
+    return urls
+
+
 def update_job(text_id: str, witness_id: str, *, input_path: Path, remote_source_url: str | None = None) -> Path:
     path = job_path(text_id, witness_id)
     if not path.exists():
         raise SystemExit(f'No OCR job scaffold exists yet for {text_id}/{witness_id}. Run prepare first.')
     payload = load_json(path)
-    payload['registered_input_path'] = str(input_path.resolve())
-    payload['remote_source_url'] = remote_source_url
+    discovered_urls = discover_source_urls(input_path)
+    if remote_source_url and remote_source_url not in discovered_urls:
+        discovered_urls.insert(0, remote_source_url)
+    payload['registered_input_path'] = best_rel(input_path)
+    payload['remote_source_url'] = remote_source_url or (discovered_urls[0] if len(discovered_urls) == 1 else None)
+    payload['remote_source_urls'] = discovered_urls or None
     payload['status'] = 'queued'
     payload['updated_at'] = utc_now()
     write_json(path, payload)
@@ -113,7 +141,7 @@ def main() -> None:
     register = subparsers.add_parser('register', help='Register a local input file for an OCR job.')
     register.add_argument('--text', required=True, help='Text id.')
     register.add_argument('--witness', required=True, help='Witness id.')
-    register.add_argument('--input', required=True, help='Absolute or relative path to the local PDF/image.')
+    register.add_argument('--input', required=True, help='Absolute or relative path to the local PDF/image/directory.')
 
     register_url = subparsers.add_parser('register-url', help='Download a remote PDF/image into staging and register it for OCR.')
     register_url.add_argument('--text', required=True, help='Text id.')
@@ -134,6 +162,8 @@ def main() -> None:
 
     if args.command == 'register':
         input_path = Path(args.input).expanduser()
+        if not input_path.is_absolute():
+            input_path = (REPO_ROOT / input_path).resolve()
         if not input_path.exists():
             raise SystemExit(f'Input path does not exist: {input_path}')
         path = register_input(args.text, args.witness, input_path)

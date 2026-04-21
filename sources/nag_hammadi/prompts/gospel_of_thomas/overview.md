@@ -5,11 +5,12 @@ Goal: Accuracy-first translation prep with Coptic primary, Greek overlap, and Sy
 
 ## Witness posture
 
-- **mattison_zinner_coptic** (primary_coptic) — fetched; source: https://gospels.net/thomas
+- **mattison_zinner_coptic** (primary_coptic) — fetched; source: sources/nag_hammadi/raw/gospel_of_thomas/mattison_zinner_coptic.txt
 - **gebhardt_klein_2024_coptic** (cross_check_coptic) — pending_input; source: local source pending
-- **poxy654_greek** (greek_overlap_witness) — fetched (Sayings 1–7); source: http://www.agraphos.com/thomas/greek/poxy654/
-- **poxy1_greek** (greek_overlap_witness) — fetched (Sayings 26–33); source: http://www.agraphos.com/thomas/greek/poxy1/
-- **poxy655_greek** (greek_overlap_witness) — fetched (Sayings 24 and 36–39); source: http://www.agraphos.com/thomas/greek/poxy655/
+- **grondin_interlinear_2002** (cross_check_coptic) — queued; source: sources/nag_hammadi/staging/gospel_of_thomas/grondin_interlinear_2002/gtbypage_112702.pdf
+- **poxy654_greek** (greek_overlap_witness) — fetched (Sayings 1–7); source: sources/nag_hammadi/raw/gospel_of_thomas/poxy654_greek.txt
+- **poxy1_greek** (greek_overlap_witness) — fetched (Sayings 26–33); source: sources/nag_hammadi/raw/gospel_of_thomas/poxy1_greek.txt
+- **poxy655_greek** (greek_overlap_witness) — fetched (Sayings 24 and 36–39); source: sources/nag_hammadi/raw/gospel_of_thomas/poxy655_greek.txt
 
 ## Guardrails
 
