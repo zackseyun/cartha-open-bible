@@ -9,6 +9,54 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## Phase 8c — 1 Enoch pipeline setup (in progress, 2026-04-21)
+
+Pseudepigrapha track — adds a second dedicated pipeline for the Book
+of Enoch (Mashafa Henok / መጽሐፈ፡ ሄኖክ), canonical in Ethiopian Orthodox
+and quoted in Jude 14-15. Architecturally separate from both the LXX
+pipeline and the 2 Esdras Latin pipeline because the primary source
+is Ethiopic (Ge'ez) and the OCR backend differs.
+
+- **Source PDFs vendored** in `sources/enoch/` (gitignored; manifest
+  with SHA-256 hashes):
+  - Charles 1906, *The Ethiopic Version of the Book of Enoch*
+    (Anecdota Oxoniensia Semitic Series I.vii) — PD, critical edition
+    based on 23 MSS, **our Zone 1 primary**.
+  - Dillmann 1851, *Liber Henoch, Aethiopice* — PD, earliest critical
+    edition with clean layout (cross-check secondary).
+  - Bouriant 1892, *Fragments grecs du livre d'Hénoch* — PD, Codex
+    Panopolitanus (chs 1-32 + some 97-107).
+  - Flemming & Radermacher 1901, *Das Buch Henoch* (GCS 5) — PD,
+    Greek edition with Syncellus fragments and Chester Beatty
+    chs 97-107 + German translation.
+  - Schodde 1882 English + Charles APOT vol 2 1913 — PD English
+    reference.
+- **Zone 1 validation oracle (not vendored)**: Beta maṣāḥǝft digital
+  Ge'ez TEI XML (`LIT1340EnochE.xml`, Hiob Ludolf Centre, University
+  of Hamburg, based on Jerabek 1995). 179,000 Ethiopic characters,
+  216 chapter divisions. Mixed CC-BY-SA / NC licensing so not
+  redistributed; kept local to the drafter's workspace as a
+  cross-check oracle — same pattern as First1KGreek for LXX Swete.
+- **OCR pipeline decision**: Azure GPT-5 **fails** on Ge'ez script
+  despite handling Greek/Hebrew/Latin reliably. **Gemini 2.5 Flash
+  succeeds** (validated on Dillmann 1851 page 15 — correct Ethiopic
+  Unicode output with word separators, sentence terminators, and
+  Ge'ez numerals preserved). The Enoch OCR pipeline therefore uses
+  Gemini 2.5; Azure GPT-5 remains primary for LXX + 2 Esdras.
+- **Scope doc** at `ENOCH.md`: per-chapter witness coverage,
+  compositional structure (Book of Watchers + Parables +
+  Astronomical + Dreams + Epistle), canonicity, translation
+  strategy, phased timeline.
+- **Scaffolding** at `tools/enoch/multi_witness.py` with the target
+  interface for per-verse witness aggregation plus Zone 2 consult
+  registry (Milik DJD XXXVI for Qumran Aramaic; Nickelsburg
+  Hermeneia; Knibb; Black; Isaac in OTP).
+- **DEUTEROCANONICAL.md** updated with a new "Pseudepigrapha and
+  expanded canon" section covering both 2 Esdras (Phase 10) and
+  1 Enoch (Phase 11) with per-work scope docs linked.
+- **Translation drafting deferred** until after Phase 9 (LXX
+  deuterocanon) and Phase 10 (2 Esdras) complete.
+
 ## Phase 8b — 2 Esdras pipeline setup (in progress, 2026-04-21)
 
 Separate-pipeline setup for 2 Esdras (4 Ezra) — which falls outside
