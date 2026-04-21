@@ -26,7 +26,7 @@ is a strong position to enter the translation phase from.
 
 | Book | Original language | Position | Rationale |
 |---|---|---|---|
-| **Sirach** | Hebrew | Strongest | Schechter 1899 Cairo Geniza (PD) covers ~½ directly. Sefaria/Kahana composite covers ~⅔ vendored today. Translate from Hebrew for most of it, LXX (Swete) for the rest — exactly what NRSV does. |
+| **Sirach** | Hebrew | Strongest | Schechter 1899 Cairo Geniza (PD) covers ~½ directly. Sefaria/Kahana composite covers ~⅔ vendored today. Yadin 1965 Masada scroll (Zone 2 consult, local-only) adds pre-medieval Hebrew for Sir 39:27–44:17 and 51:13–30 (~168 verses). Translate from Hebrew for most of it, LXX (Swete) for the rest — exactly what NRSV does. |
 | **Tobit** | Aramaic | Near-optimal | LXX Long Recension (Codex Sinaiticus via Swete, PD) tracks the same textual tradition as Qumran 4Q196-200. Neubauer 1878 Hebrew back-translation (PD) supplies Semitic phrasing. Fitzmyer DJD XIX consulted as Zone 2 reference for the ~20% Qumran overlap. Result is nearly indistinguishable from a Qumran-first translation — a specialist would notice maybe 5-10 verses. |
 | **1 Esdras** | Greek | Optimal | Greek composition. Swete LXX (PD) primary. Our MT alignment table maps each 1ES verse to its WLC Hebrew parallel (2 Chr / Ezra / Neh) for name-spelling and idiom locks. The Three Youths block (3:1-5:6) is Greek-only; no Hebrew parallel exists. |
 | **Wisdom, Judith, Baruch, LJE, 1-2-3-4 Maccabees, Additions to Esther/Daniel** | Greek (or Hebrew lost) | Optimal | Greek is either the original language or the sole surviving witness. Swete LXX (PD) is definitive. No older source exists. |
