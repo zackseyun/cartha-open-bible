@@ -1,0 +1,129 @@
+id: SIR.32.24
+reference: Sirach 32:24
+source:
+  edition: sefaria-ben-sira-kahana
+  text: נוצר תורה שומר נפשו, ובוטח ביהוה לא יבוש.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 730
+  - 731
+  - 732
+  - 733
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἕως ἀνταποδῷ ἀνθρώπῳ κατὰ τὰς πράξεις αὐτοῦ, καὶ τὰ ἔργα τῶν ἀνθρώπων κατὰ
+      τὰ ἐνθυμήματα αὐτῶν·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 32:24
+translation:
+  text: He who keeps the law guards his life, and he who trusts in the LORD will not
+    be put to shame.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The Greek parallel at this verse differs substantially: ''until he repays
+      a man according to his deeds, and the works of men according to their thoughts.''
+      The main text follows the extant Hebrew witness here.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: נוצר
+  chosen: keeps
+  alternatives:
+  - guards
+  - observes
+  lexicon: HALOT
+  rationale: The participle from נצר can mean guard/keep/watch. With תורה as object,
+    idiomatic English favors 'keeps the law' while still preserving the sense of careful
+    observance.
+- source_word: תורה
+  chosen: the law
+  alternatives:
+  - instruction
+  - teaching
+  lexicon: HALOT
+  rationale: Torah can mean instruction broadly, but in wisdom literature with covenantal-religious
+    force it commonly refers to the law/instruction of God. 'The law' is concise and
+    natural here, while the parallel mention of trusting in the LORD supports a covenantal
+    sense.
+- source_word: שומר נפשו
+  chosen: guards his life
+  alternatives:
+  - keeps his soul
+  - preserves himself
+  lexicon: HALOT
+  rationale: נפש here is best rendered by 'life' rather than the more misleading modern
+    English 'soul.' The phrase expresses self-preservation, and 'guards his life'
+    preserves the Hebrew imagery and parallel with נוצר/שומר.
+- source_word: ובוטח ביהוה
+  chosen: and he who trusts in the LORD
+  alternatives:
+  - and one trusting in the LORD
+  - and whoever trusts in the LORD
+  lexicon: HALOT
+  rationale: The participial construction is rendered with a generic singular English
+    clause for readability. יהוה follows project doctrine as 'the LORD.' 'Trusts'
+    best captures בטח in this context.
+- source_word: לא יבוש
+  chosen: will not be put to shame
+  alternatives:
+  - will not be ashamed
+  - will not be disappointed
+  lexicon: HALOT
+  rationale: בוש often carries the sense of being shamed or disappointed through failed
+    reliance. 'Will not be put to shame' preserves both the passive/resultative nuance
+    and the common biblical idiom, especially fitting after 'trusts in the LORD.'
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 91698daaed18f874bf38f77b936a9f8b5adee3c5486df9b18927d357eaad8cb8
+  timestamp: '2026-04-21T20:43:39Z'
+  output_hash: a5e597b2d8fd12d90a178545623b3ef356f30120c821d3cae4752ade689e3cef
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @51b122ee
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @51b122ee
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Rendering of יהוה
+  chosen_reading: the LORD
+  alternative_readings:
+  - Yahweh
+  - Jehovah
+  rationale: Project doctrine specifies 'the LORD' as the default rendering of YHWH,
+    following Jewish reverence tradition and the Septuagintal pattern.
+  doctrine_reference: 'DOCTRINE.md Contested terms: יְהוָה YHWH'
+- issue: Primary-source tension between Hebrew and Greek parallel
+  chosen_reading: Translate the extant Hebrew as primary while noting the Greek parallel
+    reflects a substantially different line.
+  alternative_readings:
+  - 'Greek: ''until he repays a man according to his deeds, and the works of men according
+    to their thoughts'''
+  rationale: For Sirach, surviving Hebrew is primary where extant, but the prompt
+    notes a major mismatch and requires the Greek parallel to remain in view. Because
+    the Greek here is not a minor variant but a different saying, the main text follows
+    the Hebrew witness and the Greek is preserved in a textual footnote rather than
+    harmonized into the translation.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    parallel Greek as actual input'
