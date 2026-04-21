@@ -548,6 +548,11 @@ def content_word_count(verse: Any) -> int:
     function_tags = {"ART", "CONJ", "PREP", "PRT"}
     function_prefixes = ("C-", "I-", "P-", "T-")
 
+    if not hasattr(verse, "words"):
+        text = source_text_for_verse(verse)
+        tokens = re.findall(r"[A-Za-zΑ-Ωα-ωἀ-ῼΆ-ώΐΰς֐-׿]+", text)
+        return sum(1 for token in tokens if any(ch.isalpha() for ch in token))
+
     count = 0
     for word in verse.words:
         word_text = getattr(word, "word", getattr(word, "text", ""))
@@ -620,39 +625,40 @@ def validate_tool_input(verse: Any, tool_input: dict[str, Any]) -> None:
                 if reason not in TOOL_REASON_VALUES:
                     errors.append(f"footnotes[{index}].reason must be one of {sorted(TOOL_REASON_VALUES)}")
 
-    contested_terms = load_contested_terms()
-    verse_surface_forms: dict[str, list[str]] = {}
-    for word in verse.words:
-        lemma_norm = normalize_term(word.lemma)
-        if lemma_norm in contested_terms:
-            verse_surface_forms.setdefault(lemma_norm, []).append(word.word)
+    if hasattr(verse, "words"):
+        contested_terms = load_contested_terms()
+        verse_surface_forms: dict[str, list[str]] = {}
+        for word in verse.words:
+            lemma_norm = normalize_term(word.lemma)
+            if lemma_norm in contested_terms:
+                verse_surface_forms.setdefault(lemma_norm, []).append(word.word)
 
-    for lemma_norm, surface_forms in verse_surface_forms.items():
-        term = contested_terms[lemma_norm]
-        matches = [
-            decision for decision in lexical_decisions
-            if isinstance(decision, dict)
-            and decision_matches_lemma(
-                str(decision.get("source_word", "")),
-                term["lemma"],
-                surface_forms=surface_forms,
-            )
-        ]
-        if not matches:
-            errors.append(
-                f"contested lemma {term['lemma']} appears in {verse.reference} but has no lexical_decisions entry"
-            )
-            continue
+        for lemma_norm, surface_forms in verse_surface_forms.items():
+            term = contested_terms[lemma_norm]
+            matches = [
+                decision for decision in lexical_decisions
+                if isinstance(decision, dict)
+                and decision_matches_lemma(
+                    str(decision.get("source_word", "")),
+                    term["lemma"],
+                    surface_forms=surface_forms,
+                )
+            ]
+            if not matches:
+                errors.append(
+                    f"contested lemma {term['lemma']} appears in {verse.reference} but has no lexical_decisions entry"
+                )
+                continue
 
-        default_options = set(term.get("default_options", []))
-        if not any(
-            normalize_term(str(match.get("chosen", ""))) in default_options
-            or explicit_override_rationale(str(match.get("rationale", "")))
-            for match in matches
-        ):
-            errors.append(
-                f"contested lemma {term['lemma']} lacks default rendering or explicit override rationale"
-            )
+            default_options = set(term.get("default_options", []))
+            if not any(
+                normalize_term(str(match.get("chosen", ""))) in default_options
+                or explicit_override_rationale(str(match.get("rationale", "")))
+                for match in matches
+            ):
+                errors.append(
+                    f"contested lemma {term['lemma']} lacks default rendering or explicit override rationale"
+                )
 
     if errors:
         raise ValueError("Validation failed for function-call args: " + "; ".join(errors))
