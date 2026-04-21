@@ -12,11 +12,19 @@ complements [DOCTRINE.md](DOCTRINE.md) (theological stance),
 > books has not yet begun. This document is published first so the
 > approach can be scrutinized before any verse is drafted.
 
-> **See also:** [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md) — the
-> operational policy for using copyrighted scholarly sources during
-> translation (three-zone model: vendored / consulted / forbidden).
-> This document is the "what and why"; REFERENCE_SOURCES.md is the
-> "how, per verse, mechanically."
+> **See also:**
+> - [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md) — the operational
+>   policy for using copyrighted scholarly sources during translation
+>   (three-zone model: vendored / consulted / forbidden).
+> - [EXTRA_CANONICAL.md](EXTRA_CANONICAL.md) — the scope document
+>   for texts *beyond* the 13 LXX deuterocanonical books (2 Esdras,
+>   1 Enoch, Didache, etc.) that the Cartha Open Bible is committed
+>   to translating under CC-BY in phases after Phase 9.
+> - [2ESDRAS.md](2ESDRAS.md) — 2 Esdras (4 Ezra) sub-phase strategy.
+>
+> This document is the "what and why" for the 13 LXX deuterocanonical
+> books specifically. REFERENCE_SOURCES.md is the "how, per verse,
+> mechanically" for all our translation work.
 
 ## Position assessment — where we stand per book
 

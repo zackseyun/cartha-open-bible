@@ -280,6 +280,79 @@ shortcut of deciding for the reader what counts.
 
 That refusal is the whole point of the Cartha Open Bible.
 
+## Extra-canonical scripture
+
+Beyond the 13 LXX-based deuterocanonical books (Phase 8), the Cartha
+Open Bible is committed to translating a further corpus of
+extra-canonical texts under CC-BY 4.0. See
+[EXTRA_CANONICAL.md](EXTRA_CANONICAL.md) for the complete scope
+document.
+
+The rationale is the same as for the deuterocanon, extended:
+
+- **Some of these texts are canonical in other Christian traditions.**
+  1 Enoch and Jubilees are received as Scripture by the Ethiopian
+  and Eritrean Orthodox Tewahedo Churches. A Bible that silently
+  excludes them is a Bible shaped by Western publishing history,
+  not by the historical breadth of Christian reception.
+- **Some are quoted explicitly in the New Testament.** Jude 14-15
+  quotes 1 Enoch 1:9 directly.
+- **Some shaped how the New Testament canon formed.** The Didache,
+  1 Clement, and the Shepherd of Hermas were included in early NT
+  codices (Sinaiticus includes Hermas; Alexandrinus includes 1
+  Clement). Understanding canon formation requires access to the
+  works that were weighed alongside the canonical ones.
+- **Every existing modern English translation is under restrictive
+  copyright.** No current open-license, modern-register translation
+  of 1 Enoch, 2 Esdras, 2 Baruch, or the Didache exists.
+
+### Scope
+
+Three tiers, by reception status rather than by scholarly quality.
+Every text ships with explicit canonical-status labeling across
+traditions, and for the third tier, with explicit framing of its
+date, manuscript provenance, and theological-literary character.
+
+**Tier 1 — extra-canonical with historical canonical status somewhere:**
+2 Esdras (KJV Apocrypha; Vulgate appendix), 1 Enoch (Ethiopian
+Orthodox canonical), Jubilees (Ethiopian Orthodox canonical),
+Psalms of Solomon (in some early LXX manuscripts).
+
+**Tier 2 — Apostolic Fathers and pseudepigrapha:** Didache, 1 Clement,
+Shepherd of Hermas, 2 Baruch, Testaments of the Twelve Patriarchs.
+
+**Tier 3 — early Christian mystical and contemplative texts (Nag
+Hammadi, with framing):** Gospel of Thomas, Gospel of Truth,
+Thunder Perfect Mind. We include these three because none of them
+articulates a cosmologically disruptive Gnostic framework: Thomas
+is a sayings collection, Truth is Valentinian contemplation without
+demiurge cosmology, and Thunder is a paradoxical divine-feminine
+monologue that resists categorization. We translate them with
+unambiguous framing as 4th-century Christian mystical literature —
+not canonical Scripture, but historically important.
+
+### What we are holding out
+
+**Apocryphon of John** and **Gospel of Philip** are not currently in
+scope. Both articulate explicit Gnostic cosmological or sacramental
+frameworks that we consider too theologically disruptive to include
+without further work on responsible framing. We are open to
+reconsidering.
+
+### How this gets built
+
+Extra-canonical translation follows Phase 9 (LXX deuterocanon
+drafting) in a phased rollout by shared pipeline. 2 Esdras gets its
+own Latin-primary + 6-daughter-translation pipeline (see
+[2ESDRAS.md](2ESDRAS.md)) which then amortizes to 2 Baruch. The
+Apostolic Fathers (Didache, 1 Clement, Shepherd of Hermas) reuse our
+existing LXX Greek-primary infrastructure. 1 Enoch and Jubilees
+require a new Ethiopic (Ge'ez) pipeline. The Nag Hammadi group
+requires a new Coptic pipeline plus per-codex license research.
+
+See [EXTRA_CANONICAL.md](EXTRA_CANONICAL.md) for per-text source
+editions, phase sequencing, and the per-text license situation.
+
 ## Current status
 
 The project is in its initial AI-drafting phase. Every verse in this

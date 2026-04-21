@@ -9,6 +9,36 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## Extra-canonical corpus scope commitment — 2026-04-21
+
+Scope-expansion document committing the Cartha Open Bible to
+translating 11 extra-canonical texts under CC-BY 4.0 beyond the
+13 LXX deuterocanonical books of Phase 8. New master scope doc
+`EXTRA_CANONICAL.md` catalogs:
+
+- **Tier 1 (historical canonical status somewhere)**: 2 Esdras,
+  1 Enoch, Jubilees, Psalms of Solomon.
+- **Tier 2 (Apostolic Fathers + pseudepigrapha)**: Didache,
+  1 Clement, Shepherd of Hermas, 2 Baruch, Testaments of the
+  Twelve Patriarchs.
+- **Tier 3 (early Christian mystical/contemplative, with framing)**:
+  Gospel of Thomas, Gospel of Truth, Thunder Perfect Mind. Three
+  Nag Hammadi texts that do not articulate a cosmologically
+  disruptive Gnostic framework: Thomas is a sayings collection,
+  Truth is Valentinian contemplation without demiurge cosmology,
+  Thunder is a paradoxical divine-feminine monologue.
+- **Explicitly held out (open to reconsider)**: Apocryphon of John
+  and Gospel of Philip, on account of their explicit demiurge /
+  Valentinian sacramental frameworks.
+
+Pipeline groupings (A = LXX Greek infra reuse, B = 2 Esdras
+multi-witness reuse, C = new Ethiopic, D = new Coptic) and phased
+rollout (Phases 10-16 after Phase 9) documented in
+`EXTRA_CANONICAL.md`.
+
+README and DEUTEROCANONICAL.md updated with the new extra-canonical
+section and cross-links between scope docs.
+
 ## Phase 8c — 1 Enoch pipeline setup (in progress, 2026-04-21)
 
 Pseudepigrapha track — adds a second dedicated pipeline for the Book
