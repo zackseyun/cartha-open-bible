@@ -1,0 +1,141 @@
+id: SIR.12.3
+reference: Sirach 12:3
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אֵין טוֹבָה לִמְנֹחַ רָשָׁע, וְגַם צְדָקָה לאֹ עָשָׂה.
+  language: Hebrew
+  pages:
+  - 681
+  - 682
+  - 683
+  - 684
+  - 685
+  - 686
+  - 687
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: οὐκ ἔστιν ἀγαθὰ τῷ ἐνδελεχίζοντι εἰς κακὰ καὶ τῷ ἐλεημοσύνην μὴ χαριζομένῳ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 12:3
+translation:
+  text: No good comes to one who persists in wickedness, nor to one who does not show
+    mercy.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew 'does not do ṣedaqah'; the Greek parallel reads 'does not grant almsgiving/mercy.'
+    reason: lexical_alternative
+  - marker: b
+    text: The Hebrew wording behind 'persists in wickedness' is difficult; the Greek
+      parallel supports the sense of continuing in evil.
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אֵין טוֹבָה
+  chosen: No good comes
+  alternatives:
+  - There is no good
+  - No benefit is
+  lexicon: HALOT
+  rationale: The Hebrew idiom literally states 'there is no good,' but in English
+    'No good comes' better conveys the predicative sense in context without over-paraphrasing.
+    The Greek οὐκ ἔστιν ἀγαθὰ supports the basic sense of absence of good.
+- source_word: לִמְנֹחַ
+  chosen: to one who persists
+  alternatives:
+  - to the one at rest
+  - to one who settles into
+  - to one who continues
+  lexicon: HALOT
+  rationale: The Hebrew form is difficult in context and the source is marked minor_mismatch.
+    Read woodenly, it could suggest 'to rest' or 'to settle,' but the Greek parallel
+    τῷ ἐνδελεχίζοντι ('the one persisting/continuing') indicates the sense is durative
+    persistence. 'Persists' captures that likely underlying meaning while remaining
+    anchored to the Hebrew witness.
+- source_word: רָשָׁע
+  chosen: in wickedness
+  alternatives:
+  - for the wicked man
+  - to the wicked
+  - to an evil person
+  lexicon: HALOT
+  rationale: The Hebrew adjective/noun can denote 'wicked' as a person, but with the
+    uncertain לִמְנֹחַ phrase and the Greek εἰς κακά ('in evils/into bad things'),
+    rendering the clause verbally as 'persists in wickedness' best reflects the combined
+    evidence.
+- source_word: וְגַם
+  chosen: nor
+  alternatives:
+  - and also
+  - and even
+  lexicon: HALOT
+  rationale: Though literally additive ('and also'), in English the second negative
+    clause is most naturally coordinated as 'nor,' preserving the parallel negation.
+- source_word: צְדָקָה
+  chosen: mercy
+  alternatives:
+  - charity
+  - almsgiving
+  - righteousness
+  lexicon: HALOT
+  rationale: In later Hebrew this term can mean charitable giving or benevolence,
+    and the Greek parallel ἐλεημοσύνην strongly points to 'almsgiving/mercy' rather
+    than abstract 'righteousness.' 'Mercy' is broader and more natural English here,
+    while still matching the ethical sense.
+- source_word: לֹא עָשָׂה
+  chosen: does not show
+  alternatives:
+  - has not done
+  - does not do
+  - does not practice
+  lexicon: HALOT
+  rationale: The Hebrew literally says 'has not done,' but with 'mercy' as the object,
+    idiomatic English prefers 'show' or 'practice.' 'Does not show' is clear and natural,
+    and aligns with the Greek μὴ χαριζομένῳ ('not granting/showing').
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 08f181b95c8e12cb3e50f2c01ba99a068474b096f2d97d605f1734e6d7d897fe
+  timestamp: '2026-04-21T20:22:20Z'
+  output_hash: ddae4ba103fd619f745a41090958b25a7ba9a6582f06964d18bdd309291784a4
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @98baaf27
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @98baaf27
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 12:3 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Meaning of צְדָקָה in this wisdom context
+  chosen_reading: ethical mercy/charity rather than abstract righteousness
+  alternative_readings:
+  - righteousness
+  - almsgiving
+  rationale: Although צְדָקָה often means 'righteousness,' the Greek parallel explicitly
+    interprets the term as ἐλεημοσύνη ('mercy/almsgiving'). To avoid importing a more
+    abstract theological category than the context warrants, the main text uses 'mercy,'
+    with 'almsgiving' preserved as a lexical alternative.
+  doctrine_reference: 'DOCTRINE.md: original-language primacy; consistency of key
+    terms or documented exception'
