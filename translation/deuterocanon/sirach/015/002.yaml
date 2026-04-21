@@ -1,0 +1,111 @@
+id: SIR.15.2
+reference: Sirach 15:2
+source:
+  edition: sefaria-ben-sira-kahana
+  text: וְקִדְּמַתְהוּ כָאֵם, וּכְאֵשֶׁת נְעוּרִים תְּקַבְּלֶנּוּ.
+  language: Hebrew
+  pages:
+  - 690
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: καὶ ὑπαντήσεται αὐτῷ ὡς μήτηρ, καὶ ὡς γυνὴ παρθενείας προσδέξεται αὐτόν·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 15:2
+translation:
+  text: She will meet him like a mother, and receive him like a wife of his youth.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: ''like a woman of virginity,'' that is, like a young bride or virginal
+      wife.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: וְקִדְּמַתְהוּ
+  chosen: will meet him
+  alternatives:
+  - will come before him
+  - will greet him
+  - will go to meet him
+  lexicon: HALOT
+  rationale: From קדם in the sense of coming before or meeting someone. The Greek
+    ὑπαντήσεται confirms an active sense of going to meet. 'Will meet him' is natural
+    English and preserves the initiative of Wisdom.
+- source_word: כָאֵם
+  chosen: like a mother
+  alternatives:
+  - as a mother
+  lexicon: HALOT
+  rationale: Straightforward comparison. 'Like a mother' keeps the simile explicit
+    and matches the Hebrew כ and Greek ὡς.
+- source_word: וּכְאֵשֶׁת נְעוּרִים
+  chosen: like a wife of his youth
+  alternatives:
+  - like a youthful wife
+  - like the wife of his youth
+  - like a bride of youth
+  lexicon: HALOT
+  rationale: The Hebrew idiom אֵשֶׁת נְעוּרִים naturally means a wife associated with
+    one's youth, often implying early-marriage affection and intimacy. The Greek γυνὴ
+    παρθενείας points toward a youthful/virginal bride, but since the Hebrew witness
+    is primary here, 'wife of his youth' best reflects the source while remaining
+    intelligible. The possessive 'his' is supplied idiomatically in English from the
+    Hebrew construction.
+- source_word: תְּקַבְּלֶנּוּ
+  chosen: receive him
+  alternatives:
+  - welcome him
+  - accept him
+  lexicon: HALOT
+  rationale: From קבל, 'receive/accept.' The Greek προσδέξεται supports 'receive'
+    or 'welcome.' 'Receive him' is slightly more formal and parallels the first colon
+    well.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 73ff9c31f18e26ec4e8127a9d4b64b5f618cdb79538688c786bcd60ec9c7c604
+  timestamp: '2026-04-21T20:24:45Z'
+  output_hash: fbcf4373aa76bea441ed0a38e9de944ce8623560f4a39a68fc7db88ee977c09c
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @24d5eb76
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @24d5eb76
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 15:2 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Personification of Wisdom as female in maternal and marital imagery
+  chosen_reading: 'Retain feminine personal imagery: ''She will meet... receive...'''
+  alternative_readings:
+  - Use impersonal 'it' for wisdom
+  - Abstract the imagery into non-personal language
+  rationale: The Hebrew verbs are feminine and the verse explicitly compares Wisdom
+    to a mother and a wife. Preserving the feminine personification is faithful to
+    the source and avoids flattening the poetic theology of Wisdom.
+  doctrine_reference: Translation philosophy §§1, 3, 6
+- issue: Rendering אֵשֶׁת נְעוּרִים in light of Greek γυνὴ παρθενείας
+  chosen_reading: 'Main text follows the Hebrew: ''wife of his youth'''
+  alternative_readings:
+  - wife in her virginity
+  - virginal wife
+  - young bride
+  rationale: Because Hebrew survives for this verse, it has primacy. The Greek suggests
+    a nuance of virginity or bridal youth worth preserving in a footnote, but the
+    main text should reflect the Hebrew idiom rather than harmonize fully to the Greek.
+  doctrine_reference: Translation philosophy §1; PHILOSOPHY.md on Hebrew primacy for
+    extant Sirach Hebrew

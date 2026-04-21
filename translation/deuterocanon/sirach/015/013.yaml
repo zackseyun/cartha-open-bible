@@ -1,0 +1,123 @@
+id: SIR.15.13
+reference: Sirach 15:13
+source:
+  edition: sefaria-ben-sira-kahana
+  text: רָעָה וְתוֹעֵבָה שָׂנֵא יְהֹוָה, וְלֹא יְאַנֶּנָּה לִירֵאָיו.
+  language: Hebrew
+  pages:
+  - 690
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πᾶν βδέλυγμα ἐμίσησεν Κύριος, καὶ οὐκ ἔστιν ἀγαπητὸν τοῖς φοβουμένοις αὐτόν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 15:13
+translation:
+  text: The LORD hates evil and abomination, and he will not let it happen to those
+    who fear him.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''and it is not beloved/acceptable to those who fear him.''
+      The Hebrew witness instead reads, ''and he will not let it happen to those who
+      fear him.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: רָעָה
+  chosen: evil
+  alternatives:
+  - calamity
+  - wickedness
+  lexicon: HALOT
+  rationale: In this pairing with תוֹעֵבָה ('abomination'), the sense is moral evil
+    rather than misfortune. The Greek parallel's πᾶν βδέλυγμα focuses on what is detestable,
+    supporting a moral category here.
+- source_word: תוֹעֵבָה
+  chosen: abomination
+  alternatives:
+  - detestable thing
+  - abhorrence
+  lexicon: HALOT
+  rationale: A strong term for what is ritually or morally detestable. 'Abomination'
+    preserves the gravity and traditional semantic range, while the Greek βδέλυγμα
+    confirms the sense of something loathed by God.
+- source_word: שָׂנֵא
+  chosen: hates
+  alternatives:
+  - has hated
+  - detests
+  lexicon: HALOT
+  rationale: A straightforward verbal rendering. Present tense works naturally in
+    English for a general truth and matches the gnomic force of the Hebrew.
+- source_word: יְהֹוָה
+  chosen: the LORD
+  alternatives:
+  - Yahweh
+  - Jehovah
+  lexicon: HALOT
+  rationale: Per doctrine, the Tetragrammaton is rendered 'the LORD' rather than transliterated.
+- source_word: וְלֹא יְאַנֶּנָּה
+  chosen: he will not let it happen
+  alternatives:
+  - he will not permit it
+  - it is not beloved
+  - it is not acceptable
+  lexicon: HALOT
+  rationale: The Hebrew points to a verbal idea of allowing or causing 'it' to occur,
+    with the feminine suffix referring back to the evil/abomination just mentioned.
+    The Greek parallel differs substantially ('it is not beloved/acceptable to those
+    who fear him'), but because the Hebrew is the primary witness where extant, the
+    main text follows the Hebrew while preserving the Greek-aligned alternative in
+    a footnote.
+- source_word: לִירֵאָיו
+  chosen: to those who fear him
+  alternatives:
+  - for his fearers
+  - among those who fear him
+  lexicon: HALOT
+  rationale: Idiomatic English for the common biblical expression denoting those who
+    revere God. This preserves the relational and covenantal sense without flattening
+    it to mere terror.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 8a53a1fcaae52c7e5a2adcbb9213b36f91e5811b70b9dcb65575f8c414596c34
+  timestamp: '2026-04-21T20:27:49Z'
+  output_hash: f865c009d7002d05e3e5dc85047212131fd4ffd5bc0d68672591ce6ef6a0df16
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @24d5eb76
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @24d5eb76
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 15:13 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the extant Hebrew and Greek parallel in the second colon
+  chosen_reading: 'Follow the Hebrew main text: ''he will not let it happen to those
+    who fear him'''
+  alternative_readings:
+  - 'Follow the Greek sense: ''and it is not beloved/acceptable to those who fear
+    him'''
+  rationale: The project's philosophy gives primacy to the Hebrew witness for Sirach
+    where it survives. Here the Hebrew and Greek do not merely vary in wording but
+    present different predicates in the second colon. Since the Hebrew is extant and
+    confidence is high, the main translation follows it; the Greek-based alternative
+    is preserved in a footnote for transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives;
+    use Greek parallel as actual input and preserve uncertainty honestly.'
