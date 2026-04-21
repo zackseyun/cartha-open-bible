@@ -1,0 +1,134 @@
+id: SIR.43.10
+reference: Sirach 43:10
+source:
+  edition: sefaria-ben-sira-kahana
+  text: בדבר אל יעמד חק, ולא ישח באשמרותם.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 748
+  - 749
+  - 750
+  - 751
+  - 752
+  - 753
+  - 754
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἐν λόγοις ἁγίοις στήσονται κατὰ κρίμα, καὶ οὐ μὴ ἐκλυθῶσιν ἐν φυλακαῖς αὐτῶν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 43:10
+translation:
+  text: At his word the decree stands, and they do not fail in their watches.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Masada reads 'At the word of the Lord the decree stands,' making the divine
+      subject explicit where the Cairo Geniza text is less explicit.
+    reason: textual_variant
+  - marker: b
+    text: Or 'they do not grow weak in their stations'; the Hebrew verb is uncertain
+      here, and the Greek parallel supports the sense of not slackening or failing.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: בדבר
+  chosen: At his word
+  alternatives:
+  - By a word
+  - At the word
+  lexicon: HALOT
+  rationale: The Hebrew preposition ב with דבר can indicate instrument or occasion.
+    The parallel Greek ἐν λόγοις/likely reflecting 'by/at word' supports a concise
+    causal-instrumental sense. Masada explicitly reads 'בדבר אדני' ('at the word of
+    the Lord'), while the Cairo Geniza text lacks 'אדני'; because Zone 1 is primary,
+    the main text keeps the pronoun implicit rather than supplying 'the Lord' in the
+    line itself.
+- source_word: יעמד
+  chosen: stands
+  alternatives:
+  - is established
+  - holds firm
+  lexicon: HALOT
+  rationale: The verb עמד commonly means 'stand' or 'remain standing.' 'Stands' is
+    vivid and natural English, while still allowing the sense of fixed establishment
+    in context.
+- source_word: חק
+  chosen: the decree
+  alternatives:
+  - statute
+  - fixed order
+  - ordinance
+  lexicon: HALOT
+  rationale: In this cosmic context, חק refers to an appointed fixed order or ordinance.
+    'Decree' communicates an authoritative appointment without sounding overly legalistic;
+    'statute' is too legislative in English, and 'fixed order' is possible but less
+    idiomatic here.
+- source_word: ולא ישח
+  chosen: and they do not fail
+  alternatives:
+  - and they do not sink
+  - and they do not droop
+  - and they do not slacken
+  lexicon: HALOT
+  rationale: The Hebrew form is somewhat uncertain in this witness, but in context
+    with the Greek οὐ μὴ ἐκλυθῶσιν ('they will certainly not grow weak/relax') and
+    Masada's 'ולא ייעפו' ('they do not grow weary'), the sense is steadfast non-failure.
+    'Do not fail' captures the functional meaning in readable English while acknowledging
+    textual uncertainty.
+- source_word: באשמרותם
+  chosen: in their watches
+  alternatives:
+  - in their stations
+  - in their guard-posts
+  - during their watches
+  lexicon: HALOT
+  rationale: אשמרות normally denotes watches, guard periods, or watch-posts. The Greek
+    ἐν φυλακαῖς αὐτῶν supports 'in their watches/guard-posts.' 'In their watches'
+    preserves the image of appointed heavenly stations or courses.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 979040462e149b3398cb06290c758f08155fbe89ed8dbb531bcc8f0352c6d1c4
+  timestamp: '2026-04-21T20:38:30Z'
+  output_hash: d3e095276fcfc22f660a3e04077be6467736d7279ae3508ed4a020cb6b666c2e
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @585f57ef
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @585f57ef
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  revision_candidates:
+  - reason: SIR 43:10 is in the Masada Ben Sira coverage range; if IAA image access
+      opens, upgrade the Masada witness from Zone 2 consult to Zone 1.
+    trigger: iaa_masada_access_granted
+status: draft
+theological_decisions:
+- issue: Whether to include an explicit divine subject ('the Lord') in the main text
+  chosen_reading: 'Keep the subject implicit in the main text: ''At his word'''
+  alternative_readings:
+  - At the word of the Lord the decree stands
+  rationale: The primary Zone 1 Hebrew reads 'בדבר אל' with a minor mismatch and no
+    explicit אדני in the line as presented, while the older Masada witness reads 'בדבר
+    אדני יעמד חק.' Since the task requires anchoring in Zone 1 while using parallels
+    as real input, the translation preserves the implicit divine reference with 'his'
+    rather than importing 'the Lord' directly into the main text. The stronger explicit
+    reading is preserved in a footnote.
