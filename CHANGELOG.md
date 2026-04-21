@@ -289,6 +289,12 @@ text survives only via Latin + 6 daughter translations.
     explicit-marker publication
   - `sources/2esdras/latin/transcribed/ch06.txt` now carries a partial
     explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch08.txt` now carries a partial
+    explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch11.txt` now carries a partial
+    explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch14.txt` now carries a partial
+    explicit-marker publication
   - `sources/2esdras/latin/transcribed/ch16.txt` now carries a partial
     explicit-marker publication
   - `tools/2esdras/publish_explicit_chapter_candidates.py` added so
