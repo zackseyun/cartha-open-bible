@@ -70,3 +70,7 @@ into:
 
 That normalization pass is now complete for the current Hitchcock raw
 OCR set.
+
+The Didache also now has a complete **first-pass chapter draft** at:
+
+- `translation/extra_canonical/didache/001.yaml` … `016.yaml`
