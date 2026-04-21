@@ -109,6 +109,8 @@ Current OCR status:
 
 - **Bensly 1895 main-text span (PDF pages 97–178)**: raw OCR complete
   into `raw_ocr/bensly1895/`
+- **Bensly 1875 Missing Fragment (PDF pages 65–83)**: raw OCR complete
+  into `raw_ocr/bensly1875/`
 - **Violet 1910 vol. 1**: initial pilot pages OCR'd into
   `raw_ocr/violet1910-vol1/`
 
@@ -118,6 +120,16 @@ Next cleanup substrate:
   `[BODY]` sections from the raw Bensly OCR into
   `latin/intermediate/bensly1895_body_pages/` plus a combined
   `latin/intermediate/bensly1895_body_main_text.txt`
+  and, for the missing fragment, into
+  `latin/intermediate/bensly1875_body_pages/` plus
+  `latin/intermediate/bensly1875_body_main_text.txt`
+- `../../tools/2esdras/segment_bensly_chapters.py` then splits the
+  1895 combined working text into chapter candidate files under
+  `latin/intermediate/bensly1895_chapter_candidates/`
+
+Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
+OCR output and therefore yield no `[BODY]` extraction, which is the
+expected result rather than a failed parse.
 
 Cleaned per-witness transcription and verse indexing are still
 pending. Translation drafting begins after Phase 9 (LXX

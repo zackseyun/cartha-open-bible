@@ -3,10 +3,13 @@
 
 Input:
   sources/2esdras/raw_ocr/bensly1895/bensly1895_pNNNN.txt
+  sources/2esdras/raw_ocr/bensly1875/bensly1875_pNNNN.txt
 
 Output:
   sources/2esdras/latin/intermediate/bensly1895_body_pages/pNNNN.txt
   sources/2esdras/latin/intermediate/bensly1895_body_main_text.txt
+  sources/2esdras/latin/intermediate/bensly1875_body_pages/pNNNN.txt
+  sources/2esdras/latin/intermediate/bensly1875_body_main_text.txt
 
 This is the bridge between:
   1. page-level OCR dumps with apparatus and headers, and
@@ -18,16 +21,27 @@ working text for the human / script cleanup pass.
 """
 from __future__ import annotations
 
+import argparse
 import pathlib
 import re
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-RAW_DIR = REPO_ROOT / "sources" / "2esdras" / "raw_ocr" / "bensly1895"
-OUT_DIR = REPO_ROOT / "sources" / "2esdras" / "latin" / "intermediate" / "bensly1895_body_pages"
-COMBINED_PATH = REPO_ROOT / "sources" / "2esdras" / "latin" / "intermediate" / "bensly1895_body_main_text.txt"
-
-PAGE_RE = re.compile(r"bensly1895_p(\d{4})\.txt$")
+LATIN_INTERMEDIATE = REPO_ROOT / "sources" / "2esdras" / "latin" / "intermediate"
+SOURCE_CONFIG = {
+    "bensly1895": {
+        "raw_dir": REPO_ROOT / "sources" / "2esdras" / "raw_ocr" / "bensly1895",
+        "out_dir": LATIN_INTERMEDIATE / "bensly1895_body_pages",
+        "combined_path": LATIN_INTERMEDIATE / "bensly1895_body_main_text.txt",
+        "page_re": re.compile(r"bensly1895_p(\d{4})\.txt$"),
+    },
+    "bensly1875": {
+        "raw_dir": REPO_ROOT / "sources" / "2esdras" / "raw_ocr" / "bensly1875",
+        "out_dir": LATIN_INTERMEDIATE / "bensly1875_body_pages",
+        "combined_path": LATIN_INTERMEDIATE / "bensly1875_body_main_text.txt",
+        "page_re": re.compile(r"bensly1875_p(\d{4})\.txt$"),
+    },
+}
 
 
 def extract_body(text: str) -> str:
@@ -47,12 +61,12 @@ def extract_body(text: str) -> str:
     return "\n".join(out).strip()
 
 
-def iter_raw_pages() -> list[tuple[int, pathlib.Path]]:
+def iter_raw_pages(raw_dir: pathlib.Path, page_re: re.Pattern[str]) -> list[tuple[int, pathlib.Path]]:
     items: list[tuple[int, pathlib.Path]] = []
-    if not RAW_DIR.exists():
+    if not raw_dir.exists():
         return items
-    for path in sorted(RAW_DIR.glob("bensly1895_p*.txt")):
-        m = PAGE_RE.fullmatch(path.name)
+    for path in sorted(raw_dir.glob("*.txt")):
+        m = page_re.fullmatch(path.name)
         if not m:
             continue
         items.append((int(m.group(1)), path))
@@ -60,13 +74,28 @@ def iter_raw_pages() -> list[tuple[int, pathlib.Path]]:
 
 
 def main() -> int:
-    pages = iter_raw_pages()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--source",
+        default="bensly1895",
+        choices=sorted(SOURCE_CONFIG),
+        help="Which Bensly OCR source to process (default: bensly1895)",
+    )
+    args = parser.parse_args()
+
+    cfg = SOURCE_CONFIG[args.source]
+    raw_dir = cfg["raw_dir"]
+    out_dir = cfg["out_dir"]
+    combined_path = cfg["combined_path"]
+    page_re = cfg["page_re"]
+
+    pages = iter_raw_pages(raw_dir, page_re)
     if not pages:
-        print(f"no raw OCR pages found in {RAW_DIR}")
+        print(f"no raw OCR pages found in {raw_dir}")
         return 1
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    COMBINED_PATH.parent.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    combined_path.parent.mkdir(parents=True, exist_ok=True)
 
     combined_chunks: list[str] = []
     count = 0
@@ -75,14 +104,14 @@ def main() -> int:
         if not body:
             print(f"warning: no [BODY] section found in {path.name}")
             continue
-        out_path = OUT_DIR / f"p{page_num:04d}.txt"
+        out_path = out_dir / f"p{page_num:04d}.txt"
         out_path.write_text(body + "\n", encoding="utf-8")
         combined_chunks.append(f"=== PAGE {page_num} ===\n{body}")
         count += 1
 
-    COMBINED_PATH.write_text("\n\n".join(combined_chunks) + "\n", encoding="utf-8")
-    print(f"wrote {count} page body files to {OUT_DIR}")
-    print(f"wrote combined body text to {COMBINED_PATH}")
+    combined_path.write_text("\n\n".join(combined_chunks) + "\n", encoding="utf-8")
+    print(f"wrote {count} page body files to {out_dir}")
+    print(f"wrote combined body text to {combined_path}")
     return 0
 
 

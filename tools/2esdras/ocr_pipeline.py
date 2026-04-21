@@ -215,6 +215,7 @@ def process_page(
     duration = round(time.time() - started, 2)
 
     stem = output_stem(source, page)
+    out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / f"{stem}.txt").write_text(text, encoding="utf-8")
     meta = {
         "source": source,

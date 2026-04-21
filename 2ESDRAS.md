@@ -144,10 +144,10 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 | Component | Status | Purpose |
 |---|---|---|
 | `sources/2esdras/scans/` | ✓ vendored | PDFs of Bensly 1875, Bensly 1895 (via Texts & Studies v3), Violet 1910 vols 1-2 |
-| `sources/2esdras/latin/` | 🔄 in progress | Clean UTF-8 Latin text from Bensly 1895, per-verse-indexed |
+| `sources/2esdras/latin/` | 🔄 in progress | Clean UTF-8 Latin text from Bensly 1895 + 1875 Missing Fragment, per-verse-indexed |
 | `sources/2esdras/syriac/`, `/ethiopic/`, `/arabic_armenian/` | ⏳ pending | Clean UTF-8 for each witness, per-verse-indexed |
 | `tools/2esdras/ocr_pipeline.py` | ✓ scaffold | Azure GPT-5 vision OCR of local Bensly/Violet PDFs, per-page, with source-specific prompts + `.meta.json` provenance |
-| `tools/2esdras/extract_bensly_body.py` | ✓ scaffold | Extracts `[BODY]` from Bensly raw OCR into a cleaner Latin working text for chapter cleanup |
+| `tools/2esdras/extract_bensly_body.py` | ✓ scaffold | Extracts `[BODY]` from Bensly 1895 / 1875 raw OCR into cleaner Latin working text files for cleanup |
 | `tools/2esdras/latin_bensly.py` | ✓ scaffold | Loader for chapter-indexed cleaned Latin (`ch01.txt`, etc.); exposes `load_verse(ch, vs)` |
 | `tools/2esdras/multi_witness.py` | ✓ partial scaffold | Per-verse witness aggregator; Latin path is wired, daughter witnesses still pending |
 | `tools/2esdras/build_translation_prompt.py` | ⏳ pending | Phase 10 prompt builder (Latin primary + witnesses + Zone 2) |
@@ -155,7 +155,7 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 ## Timeline (indicative)
 
 - **Phase 8b (source acquisition):** this week — vendor PDFs, build OCR pipeline. ≈ 3–4 days. **OCR scaffold now in place.**
-- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly main-text raw OCR (pages 97–178) now complete.**
+- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.**
 - **Phase 10 (drafting):** after Phase 9 completes — translate ~400 verses across 16 chapters with multi-witness context. ≈ 2 weeks.
 - **Phase 10 (revision):** Claude Opus reviser per `REVISION_METHODOLOGY.md`. ≈ 1 week.
 
