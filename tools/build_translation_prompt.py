@@ -193,6 +193,11 @@ def _build_source_payload(
             (source_payload.get("note", "") + " " if source_payload.get("note") else "")
             + "This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus."
         ).strip()
+    if verse.source_note:
+        source_payload["note"] = (
+            (source_payload.get("note", "") + " " if source_payload.get("note") else "")
+            + verse.source_note
+        ).strip()
 
     return source_payload, labels
 

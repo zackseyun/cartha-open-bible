@@ -114,3 +114,275 @@ The raw adjudicated corpus remains untouched for audit. The translation layer pr
   - BAR 5:64 — raw chapter-5 tail spills into Lamentations material
   - BAR 5:65 — raw chapter-5 tail spills into Lamentations material
   - BAR 5:66 — raw chapter-5 tail spills into Lamentations material
+
+## PAZ
+
+- Raw verses: **551**
+- Normalized verses: **67**
+- Dropped contaminated / duplicate refs: **484**
+- Chapter counts after normalization: `{1: 67}`
+- Note: Standalone extraction from Daniel 3:24-90.
+
+  - ADA 1:1 — outside PAZ extraction window
+  - ADA 1:2 — outside PAZ extraction window
+  - ADA 1:3 — outside PAZ extraction window
+  - ADA 1:4 — outside PAZ extraction window
+  - ADA 1:5 — outside PAZ extraction window
+  - ADA 1:6 — outside PAZ extraction window
+  - ADA 1:7 — outside PAZ extraction window
+  - ADA 1:8 — outside PAZ extraction window
+  - ADA 1:9 — outside PAZ extraction window
+  - ADA 1:10 — outside PAZ extraction window
+  - ADA 1:11 — outside PAZ extraction window
+  - ADA 1:12 — outside PAZ extraction window
+  - ADA 1:13 — outside PAZ extraction window
+  - ADA 1:14 — outside PAZ extraction window
+  - ADA 1:15 — outside PAZ extraction window
+  - ADA 1:16 — outside PAZ extraction window
+  - ADA 1:17 — outside PAZ extraction window
+  - ADA 1:18 — outside PAZ extraction window
+  - ADA 1:19 — outside PAZ extraction window
+  - ADA 1:20 — outside PAZ extraction window
+  - ADA 1:21 — outside PAZ extraction window
+  - ADA 1:22 — outside PAZ extraction window
+  - ADA 1:23 — outside PAZ extraction window
+  - ADA 1:24 — outside PAZ extraction window
+  - ADA 1:25 — outside PAZ extraction window
+  - ADA 1:26 — outside PAZ extraction window
+  - ADA 1:27 — outside PAZ extraction window
+  - ADA 1:28 — outside PAZ extraction window
+  - ADA 1:29 — outside PAZ extraction window
+  - ADA 1:30 — outside PAZ extraction window
+  - ADA 1:31 — outside PAZ extraction window
+  - ADA 1:32 — outside PAZ extraction window
+  - ADA 1:33 — outside PAZ extraction window
+  - ADA 1:34 — outside PAZ extraction window
+  - ADA 1:35 — outside PAZ extraction window
+  - ADA 1:36 — outside PAZ extraction window
+  - ADA 1:37 — outside PAZ extraction window
+  - ADA 1:38 — outside PAZ extraction window
+  - ADA 1:39 — outside PAZ extraction window
+  - ADA 1:40 — outside PAZ extraction window
+  - ADA 1:41 — outside PAZ extraction window
+  - ADA 1:42 — outside PAZ extraction window
+  - ADA 1:43 — outside PAZ extraction window
+  - ADA 1:44 — outside PAZ extraction window
+  - ADA 1:45 — outside PAZ extraction window
+  - ADA 1:46 — outside PAZ extraction window
+  - ADA 1:47 — outside PAZ extraction window
+  - ADA 1:48 — outside PAZ extraction window
+  - ADA 1:49 — outside PAZ extraction window
+  - ADA 1:50 — outside PAZ extraction window
+  - ADA 1:51 — outside PAZ extraction window
+  - ADA 1:52 — outside PAZ extraction window
+  - ADA 1:53 — outside PAZ extraction window
+  - ADA 1:54 — outside PAZ extraction window
+  - ADA 1:55 — outside PAZ extraction window
+  - ADA 1:56 — outside PAZ extraction window
+  - ADA 1:57 — outside PAZ extraction window
+  - ADA 1:58 — outside PAZ extraction window
+  - ADA 1:59 — outside PAZ extraction window
+  - ADA 1:60 — outside PAZ extraction window
+  - ADA 1:61 — outside PAZ extraction window
+  - ADA 1:62 — outside PAZ extraction window
+  - ADA 1:63 — outside PAZ extraction window
+  - ADA 1:64 — outside PAZ extraction window
+  - ADA 1:65 — outside PAZ extraction window
+  - ADA 1:66 — outside PAZ extraction window
+  - ADA 1:67 — outside PAZ extraction window
+  - ADA 1:68 — outside PAZ extraction window
+  - ADA 1:69 — outside PAZ extraction window
+  - ADA 1:70 — outside PAZ extraction window
+  - ADA 1:71 — outside PAZ extraction window
+  - ADA 1:72 — outside PAZ extraction window
+  - ADA 1:73 — outside PAZ extraction window
+  - ADA 1:74 — outside PAZ extraction window
+  - ADA 1:75 — outside PAZ extraction window
+  - ADA 1:76 — outside PAZ extraction window
+  - ADA 1:77 — outside PAZ extraction window
+  - ADA 1:78 — outside PAZ extraction window
+  - ADA 1:79 — outside PAZ extraction window
+  - ADA 1:80 — outside PAZ extraction window
+  - ADA 1:81 — outside PAZ extraction window
+  - ADA 1:82 — outside PAZ extraction window
+  - ADA 1:83 — outside PAZ extraction window
+  - ADA 1:84 — outside PAZ extraction window
+  - ADA 1:85 — outside PAZ extraction window
+  - ADA 1:86 — outside PAZ extraction window
+  - ADA 1:87 — outside PAZ extraction window
+  - ADA 1:88 — outside PAZ extraction window
+  - ADA 1:89 — outside PAZ extraction window
+  - ADA 1:90 — outside PAZ extraction window
+  - ADA 1:91 — outside PAZ extraction window
+  - ADA 1:92 — outside PAZ extraction window
+  - ADA 1:93 — outside PAZ extraction window
+  - ADA 1:94 — outside PAZ extraction window
+  - ADA 1:95 — outside PAZ extraction window
+  - ADA 1:96 — outside PAZ extraction window
+  - ADA 1:97 — outside PAZ extraction window
+  - ADA 1:98 — outside PAZ extraction window
+  - ADA 1:99 — outside PAZ extraction window
+  - ADA 1:100 — outside PAZ extraction window
+  - ADA 2:1 — outside PAZ extraction window
+  - ADA 2:2 — outside PAZ extraction window
+  - ADA 2:3 — outside PAZ extraction window
+  - ADA 2:4 — outside PAZ extraction window
+  - ADA 2:5 — outside PAZ extraction window
+  - ADA 2:6 — outside PAZ extraction window
+  - ADA 2:7 — outside PAZ extraction window
+  - ADA 2:8 — outside PAZ extraction window
+  - ADA 2:9 — outside PAZ extraction window
+  - ADA 2:10 — outside PAZ extraction window
+  - ADA 2:11 — outside PAZ extraction window
+  - ADA 2:12 — outside PAZ extraction window
+  - ADA 2:13 — outside PAZ extraction window
+  - ADA 2:14 — outside PAZ extraction window
+  - ADA 2:15 — outside PAZ extraction window
+  - ADA 2:16 — outside PAZ extraction window
+  - ADA 2:17 — outside PAZ extraction window
+  - ADA 2:18 — outside PAZ extraction window
+  - ADA 2:19 — outside PAZ extraction window
+  - ADA 2:20 — outside PAZ extraction window
+  - … 364 more omitted from this summary
+
+## SUS
+
+- Raw verses: **551**
+- Normalized verses: **64**
+- Dropped contaminated / duplicate refs: **501**
+- Chapter counts after normalization: `{1: 64}`
+- Note: Standalone extraction currently follows the Theodotion stream because it is the cleanest complete extract in the current corpus.
+
+  - ADA 1:51 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:52 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:53 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:54 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:55 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:56 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:57 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:58 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:59 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:60 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:61 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:62 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:63 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:64 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:65 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:66 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:67 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:68 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:69 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:70 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:71 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:72 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:73 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:74 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:75 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:76 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:77 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:78 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:79 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:80 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:81 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:82 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:83 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:84 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:85 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:86 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:87 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:88 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:89 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:90 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:91 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:92 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:93 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:94 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:95 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:96 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:97 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:98 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:99 — outside Susanna 1:1-50 carry-over window
+  - ADA 1:100 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:1 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:2 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:3 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:4 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:5 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:6 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:7 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:8 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:9 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:10 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:11 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:12 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:13 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:14 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:15 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:16 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:17 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:18 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:19 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:20 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:21 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:22 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:23 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:24 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:25 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:26 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:27 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:28 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:29 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:30 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:31 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:32 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:33 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:34 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:35 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:36 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:37 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:38 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:39 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:40 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:41 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:42 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:43 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:44 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:45 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:46 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:47 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:48 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:49 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:50 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:51 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:52 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:53 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:54 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:55 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:56 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:57 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:58 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:59 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:60 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:61 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:62 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:63 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:64 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:65 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:66 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:67 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:68 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:69 — outside Susanna 1:1-50 carry-over window
+  - ADA 2:70 — outside Susanna 1:1-50 carry-over window
+  - … 381 more omitted from this summary
+
+## BEL
+
+- Normalized verses: **42**
+- Dropped contaminated / duplicate refs: **0**
+- Chapter counts after normalization: `{1: 42}`
+- Note: Standalone extraction currently follows the Theodotion stream because it is the cleanest complete extract in the current corpus.
+
+
+## Still not emitted
+
+- ESG (Additions to Esther) is intentionally still blocked. The outer boundaries are now understood, but Addition E 1-16 still needs a fuller additions-only verse segmentation pass before we should draft from it safely.

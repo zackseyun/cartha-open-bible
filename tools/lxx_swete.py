@@ -68,6 +68,7 @@ DEUTEROCANONICAL_BOOKS: dict[str, tuple[int, int, int, str, str]] = {
     "WIS":   (2, 621, 665, "Wisdom of Solomon",                "wisdom_of_solomon"),
     "SIR":   (2, 666, 771, "Sirach",                           "sirach"),
     "ADE":   (2, 772, 797, "Greek Esther",                     "greek_esther"),
+    "ESG":   (0, 0, 0, "Additions to Esther",                  "additions_to_esther"),
     "JDT":   (2, 798, 831, "Judith",                           "judith"),
     "TOB":   (2, 832, 862, "Tobit",                            "tobit"),
     "BAR":   (3, 379, 397, "Baruch",                           "baruch"),
@@ -75,6 +76,9 @@ DEUTEROCANONICAL_BOOKS: dict[str, tuple[int, int, int, str, str]] = {
     # parallel pages. Pr Azariah + Song of Three are embedded in Daniel 3
     # (pages within Daniel); Susanna and Bel are separately paged.
     "ADA":   (3, 542, 615, "Greek Additions to Daniel",        "greek_daniel"),
+    "PAZ":   (0, 0, 0, "Prayer of Azariah and Song of the Three", "prayer_of_azariah"),
+    "SUS":   (0, 0, 0, "Susanna",                              "susanna"),
+    "BEL":   (0, 0, 0, "Bel and the Dragon",                   "bel_and_the_dragon"),
     "1MA":   (3, 617, 684, "1 Maccabees",                      "1_maccabees"),
     "2MA":   (3, 685, 733, "2 Maccabees",                      "2_maccabees"),
     "3MA":   (3, 734, 752, "3 Maccabees",                      "3_maccabees"),
@@ -96,12 +100,16 @@ BOOK_CHAPTER_COUNT: dict[str, int] = {
     "JDT": 16,
     "ADE": 10,     # includes Greek additions A-F as chapters 10-16 or
                    # inline; Swete uses Roman chapter numbers
+    "ESG": 6,
     "WIS": 19,
     "SIR": 51,
     "BAR": 5,
     "LJE": 1,      # single chapter (70 verses)
     "ADA": 1,      # Pr Azariah/Song of Three/Susanna/Bel — numbered as
                    # one continuous block in many editions
+    "PAZ": 1,
+    "SUS": 1,
+    "BEL": 1,
     "1MA": 16,
     "2MA": 15,
     "3MA": 7,
@@ -123,6 +131,7 @@ class SwtVerse:
     source_confidence: str | None = None
     source_validation: str | None = None
     source_warnings: list[str] = field(default_factory=list)
+    source_note: str | None = None
     translation: str = "lxx-swete-1909"
 
     @property
@@ -911,6 +920,10 @@ def _load_final_corpus(book_code: str) -> list[SwtVerse] | None:
                     ),
                     source_validation=rec.get("validation"),
                     source_warnings=_source_warnings_for_record(rec),
+                    source_note=(
+                        rec.get("source_note")
+                        or (rec.get("normalization") or {}).get("note")
+                    ),
                     translation=translation_label,
                 )
             )
