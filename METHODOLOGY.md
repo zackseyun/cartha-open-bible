@@ -10,7 +10,7 @@ making the entire process auditable after the fact.
   source text  ──▶  AI draft  ──▶  cross-check  ──▶  publication
   (SBLGNT,         (primary     (compare across     (commit +
    WLC, UHB,        LLM +        Claude + GPT +      tagged
-   Rahlfs LXX)      prompt)      Gemini)             release)
+   Swete LXX)      prompt)      Gemini)             release)
 ```
 
 Each stage is described below.
@@ -26,7 +26,13 @@ verifiable provenance:
   (1008 AD).
 - **unfoldingWord Hebrew Bible** (CC-BY-SA 4.0) — morphologically tagged
   Hebrew OT.
-- **Rahlfs Septuagint** (public domain) — Alfred Rahlfs, ed., 1935.
+- **Swete LXX** (public domain) — Henry Barclay Swete, ed., *The Old
+  Testament in Greek According to the Septuagint*, 3 vols. (Cambridge
+  University Press, 1909–1930). Vendored as our own OCR transcription
+  under CC-BY 4.0 at `sources/lxx/swete/`. Rahlfs-Hanhart 1935/2006 is
+  consulted only as a Zone 2 reference (no CC-BY digitization exists);
+  see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md) and
+  [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md) for the full rationale.
 
 Each verse references its source by stable identifier (book, chapter, verse)
 and records any consulted variant apparatus.

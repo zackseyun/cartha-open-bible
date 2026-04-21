@@ -305,7 +305,7 @@ is lost or damaged), and its overall readiness to enter Phase C
 
 ## Translation pipeline
 
-The translator-prompt builder (Phase 9 work, planned) will assemble
+The translator-prompt builder (part of Phase 8-C — deuterocanon drafting) will assemble
 per-verse context using the **three-zone model** defined in
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md):
 
@@ -331,9 +331,14 @@ make it explicit and auditable per verse.
 
 The same four-stage pipeline defined in METHODOLOGY.md applies:
 
-1. **Source preparation** — vendored Rahlfs LXX under
-   `sources/lxx/rahlfs/`. Textual variants noted in the per-verse
-   YAML `source.text` and in footnotes where material.
+1. **Source preparation** — vendored Swete LXX under
+   `sources/lxx/swete/` (our own OCR, CC-BY 4.0), with Zone 1 Hebrew
+   parallels under `sources/lxx/hebrew_parallels/` for SIR, TOB, and
+   1ES. Textual variants noted in the per-verse YAML `source.text`
+   and in footnotes where material. Rahlfs-Hanhart and other Zone 2
+   references are consulted via
+   `tools/hebrew_parallels.lookup_with_consult()`; see
+   [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 2. **AI draft** — GPT-5.4 with the same prompt family used for the
    Protestant canon, adapted only in the source-edition field.
    Per-verse YAML emitted with full provenance (`ai_draft` block).
