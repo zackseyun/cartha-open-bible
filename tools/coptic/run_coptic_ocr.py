@@ -17,7 +17,7 @@ import requests
 
 from common import OCR_JOBS_ROOT, REPO_ROOT, load_json, rel, utc_now, write_json
 
-MODEL = 'gemini-2.5-pro'
+DEFAULT_MODEL = 'gemini-3-pro-preview'
 AI_STUDIO_BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
 USER_AGENT = 'Mozilla/5.0 (compatible; Phase-E-Coptic-OCR/1.0)'
 IMAGE_EXTS = {'.png', '.jpg', '.jpeg', '.webp', '.gif', '.tif', '.tiff'}
@@ -109,10 +109,10 @@ def resolve_gemini_api_key() -> str:
     return raw
 
 
-def call_gemini(image_bytes: bytes, *, prompt: str, thinking_budget: int = 512, max_output_tokens: int = 20000) -> OcrResult:
+def call_gemini(image_bytes: bytes, *, prompt: str, model: str, thinking_budget: int = 512, max_output_tokens: int = 20000) -> OcrResult:
     api_key = resolve_gemini_api_key()
     b64 = base64.b64encode(image_bytes).decode('ascii')
-    url = f'{AI_STUDIO_BASE}/{MODEL}:generateContent?key={api_key}'
+    url = f'{AI_STUDIO_BASE}/{model}:generateContent?key={api_key}'
     body = {
         'contents': [{'parts': [
             {'text': prompt},
@@ -152,7 +152,7 @@ def call_gemini(image_bytes: bytes, *, prompt: str, thinking_budget: int = 512, 
     return OcrResult('', '', 'error', 0, 0, 0, error='retries exhausted')
 
 
-def write_result(out_dir: pathlib.Path, unit_id: str, result: OcrResult, meta: dict[str, Any]) -> None:
+def write_result(out_dir: pathlib.Path, unit_id: str, result: OcrResult, meta: dict[str, Any], *, model: str) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     txt_path = out_dir / f'{unit_id}.txt'
     json_path = out_dir / f'{unit_id}.json'
@@ -165,18 +165,19 @@ def write_result(out_dir: pathlib.Path, unit_id: str, result: OcrResult, meta: d
         'tokens_out': result.tokens_out,
         'tokens_thinking': result.tokens_thinking,
         'error': result.error or None,
+        'model': model,
         'source_meta': meta,
     }
     write_json(json_path, payload)
 
 
-def run_pdf(job: dict[str, Any], pages: list[int]) -> None:
+def run_pdf(job: dict[str, Any], pages: list[int], *, model: str) -> None:
     pdf_path = job['_input_path']
     out_dir = REPO_ROOT / job['output_dir']
     prompt = build_prompt(text_id=job['text_id'], witness_id=job['witness_id'], notes=job.get('notes', ''))
     for page_num in pages:
         image_bytes = render_pdf_page_png(pdf_path, page_num)
-        result = call_gemini(image_bytes, prompt=prompt)
+        result = call_gemini(image_bytes, prompt=prompt, model=model)
         unit_id = f'p{page_num:04d}'
         result.unit_id = unit_id
         write_result(out_dir, unit_id, result, {
@@ -185,11 +186,11 @@ def run_pdf(job: dict[str, Any], pages: list[int]) -> None:
             'source_path': job['registered_input_path'],
             'remote_source_url': job.get('remote_source_url'),
             'remote_source_urls': job.get('remote_source_urls'),
-        })
+        }, model=model)
         print(f'[ocr] {job["witness_id"]} {unit_id} finish={result.finish_reason} out={result.tokens_out} err={result.error or "-"}')
 
 
-def run_image_dir(job: dict[str, Any], limit: int | None) -> None:
+def run_image_dir(job: dict[str, Any], limit: int | None, *, model: str) -> None:
     input_dir = job['_input_path']
     out_dir = REPO_ROOT / job['output_dir']
     prompt = build_prompt(text_id=job['text_id'], witness_id=job['witness_id'], notes=job.get('notes', ''))
@@ -198,7 +199,7 @@ def run_image_dir(job: dict[str, Any], limit: int | None) -> None:
         units = units[:limit]
     for unit_id, path in units:
         image_bytes = path.read_bytes()
-        result = call_gemini(image_bytes, prompt=prompt)
+        result = call_gemini(image_bytes, prompt=prompt, model=model)
         result.unit_id = unit_id
         write_result(out_dir, unit_id, result, {
             'type': 'image_file',
@@ -206,7 +207,7 @@ def run_image_dir(job: dict[str, Any], limit: int | None) -> None:
             'registered_input_path': job['registered_input_path'],
             'remote_source_url': job.get('remote_source_url'),
             'remote_source_urls': job.get('remote_source_urls'),
-        })
+        }, model=model)
         print(f'[ocr] {job["witness_id"]} {unit_id} finish={result.finish_reason} out={result.tokens_out} err={result.error or "-"}')
 
 
@@ -230,6 +231,7 @@ def main() -> None:
     parser.add_argument('--witness', required=True, help='Witness id')
     parser.add_argument('--pages', help='PDF page spec like 1,3-5')
     parser.add_argument('--limit', type=int, help='Limit number of image files from a directory witness')
+    parser.add_argument('--model', default=os.environ.get('GEMINI_MODEL', DEFAULT_MODEL), help='Gemini model code to use for OCR')
     args = parser.parse_args()
 
     job = resolve_job(args.text, args.witness)
@@ -239,13 +241,13 @@ def main() -> None:
             pages = parse_page_spec(args.pages)
         else:
             pages = [1]
-        run_pdf(job, pages)
+        run_pdf(job, pages, model=args.model)
         return
     if input_path.is_dir():
-        run_image_dir(job, args.limit)
+        run_image_dir(job, args.limit, model=args.model)
         return
     if input_path.is_file() and input_path.suffix.lower() in IMAGE_EXTS:
-        run_image_dir({**job, '_input_path': input_path.parent}, limit=1)
+        run_image_dir({**job, '_input_path': input_path.parent}, limit=1, model=args.model)
         return
     raise SystemExit(f'Unsupported registered input path: {input_path}')
 
