@@ -1,0 +1,145 @@
+id: SIR.44.2
+reference: Sirach 44:2
+source:
+  edition: sefaria-ben-sira-kahana
+  text: רב כבוד חלק עליון, וגדלו מימות עולם.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 750
+  - 751
+  - 752
+  - 753
+  - 754
+  - 755
+  - 756
+  - 757
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πολλὴν δόξαν ἔκτισεν ὁ κύριος, τὴν μεγαλωσύνην αὐτοῦ ἀπʼ αἰῶνος.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 44:2
+translation:
+  text: The Most High apportioned abundant honor, and his greatness is from everlasting.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew Cairo Geniza reads חלק עליון, while the older Masada scroll reads
+      חולק עליון, supporting the sense 'the Most High apportioned/distributed.' The
+      Greek parallel reads 'The Lord created much glory.'
+    reason: textual_variant
+  - marker: b
+    text: Or 'abundant glory.' Hebrew כבוד and Greek δόξα can denote either 'honor'
+      or 'glory' depending on context.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'from of old' or 'from eternity.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: רב
+  chosen: abundant
+  alternatives:
+  - great
+  - much
+  lexicon: HALOT
+  rationale: In the phrase רב כבוד, the adjective/intensifier modifies 'honor' quantitatively/qualitatively.
+    'Abundant honor' is natural English and preserves the sense of largeness without
+    awkwardness.
+- source_word: כבוד
+  chosen: honor
+  alternatives:
+  - glory
+  lexicon: HALOT
+  rationale: Hebrew כבוד can mean 'glory' or 'honor.' Here, with חלק/חולק and in a
+    context introducing the praise of famous men, 'honor' fits the distributive sense
+    better, while the Greek δόξαν confirms the semantic field. 'Glory' remains possible
+    and is preserved in a footnote.
+- source_word: חלק / חולק
+  chosen: apportioned
+  alternatives:
+  - divided
+  - distributed
+  - allotted
+  lexicon: HALOT
+  rationale: Zone 1 Cairo Geniza reads חלק עליון, while the older Masada witness has
+    חולק עליון. The Masada reading points to a verbal idea, 'the Most High apportions/apportioned.'
+    'Apportioned' captures the distributive nuance in idiomatic English and explains
+    the syntax better than taking חלק as a noun. The Greek ἔκτισεν diverges, but the
+    Hebrew is primary where extant.
+- source_word: עליון
+  chosen: the Most High
+  alternatives:
+  - Most High
+  lexicon: HALOT
+  rationale: Divine title; translated rather than transliterated, in keeping with
+    project philosophy. The article is supplied for natural English.
+- source_word: וגדלו
+  chosen: and his greatness
+  alternatives:
+  - and his majesty
+  - and he made him great
+  lexicon: HALOT
+  rationale: The suffix naturally yields 'his greatness.' The Greek τὴν μεγαλωσύνην
+    αὐτοῦ supports this reading. 'Majesty' is possible, but 'greatness' stays closer
+    to both Hebrew and Greek.
+- source_word: מימות עולם
+  chosen: is from everlasting
+  alternatives:
+  - from ancient days
+  - from eternity
+  - from of old
+  lexicon: HALOT
+  rationale: The phrase denotes remote antiquity or eternity. Because the subject
+    is God's greatness, 'from everlasting' best conveys the theological weight in
+    idiomatic English. The copula is supplied in English.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: f2a8bcce90d62a5842707a99aa833b9d0580bdd01bbec281f709873cc73de3a9
+  timestamp: '2026-04-21T20:04:24Z'
+  output_hash: 18f1e59799dc86d2e5dd7e8edd6b6824b5997ed64c7a58767372f9b2553bc01f
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @e577bfbc
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @e577bfbc
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  revision_candidates:
+  - reason: SIR 44:2 is in the Masada Ben Sira coverage range; if IAA image access
+      opens, upgrade the Masada witness from Zone 2 consult to Zone 1.
+    trigger: iaa_masada_access_granted
+status: draft
+theological_decisions:
+- issue: Subject and syntax of the first colon
+  chosen_reading: 'The Most High is the subject: ''The Most High apportioned abundant
+    honor.'''
+  alternative_readings:
+  - The Lord created much glory
+  - A great honor is the portion of the Most High
+  rationale: The Hebrew witness is primary for Sirach where extant, and the older
+    Masada reading חולק strongly supports a verbal clause with 'the Most High' as
+    subject. The Greek parallel has a different verb ('created'), likely reflecting
+    a variant or interpretive rendering, but does not overturn the Hebrew-based translation.
+    The English keeps the Hebrew distributive sense while acknowledging the Greek
+    in a footnote.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach survives;
+    use Greek as actual input/consistency check'

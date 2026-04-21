@@ -1,0 +1,120 @@
+id: SIR.44.1
+reference: Sirach 44:1
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אהללה נא אנשי חסד, אבותינו בדורותם.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 750
+  - 751
+  - 752
+  - 753
+  - 754
+  - 755
+  - 756
+  - 757
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: Αἰνέσωμεν δὴ ἄνδρας ἐνδόξους καὶ τοὺς πατέρας ἡμῶν τῇ γενέσει.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 44:1
+translation:
+  text: Let us now praise men of faithful love, our fathers in their generations.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: ''Let us now praise glorious men, and our fathers in their generation.''
+      The Hebrew reads ''men of faithful love.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אהללה נא
+  chosen: Let us now praise
+  alternatives:
+  - I will now praise
+  - Let me now praise
+  lexicon: HALOT
+  rationale: The Hebrew form as transmitted can be read as first-person cohortative/singular
+    ('I will praise'), but the Greek parallel has the hortatory plural Αἰνέσωμεν δὴ
+    ('let us praise now'). Given the minor mismatch note and the strong parallel support,
+    the English follows the likely communal exhortation while preserving 'now' for
+    נא.
+- source_word: אנשי חסד
+  chosen: men of faithful love
+  alternatives:
+  - godly men
+  - men of kindness
+  - men of mercy
+  - glorious men
+  lexicon: HALOT
+  rationale: Hebrew אנשי חסד is best anchored in חסד, a rich covenantal term involving
+    loyalty, kindness, and faithful love. 'Men of faithful love' preserves the Hebrew
+    witness rather than assimilating to the Greek ἄνδρας ἐνδόξους ('glorious men').
+    'Godly men' is interpretive; 'kind men' is too thin. Because the Greek differs
+    materially, the alternative is preserved in a footnote.
+- source_word: אבותינו
+  chosen: our fathers
+  alternatives:
+  - our ancestors
+  lexicon: HALOT
+  rationale: The Hebrew explicitly says 'our fathers.' Per gender-accurate philosophy,
+    the masculine familial term is retained rather than neutralized to 'ancestors,'
+    though the latter is a possible contextual gloss.
+- source_word: בדורותם
+  chosen: in their generations
+  alternatives:
+  - in their generation
+  - throughout their generations
+  lexicon: HALOT
+  rationale: A straightforward rendering of the beth + plural noun with pronominal
+    suffix. The plural 'generations' matches the Hebrew form and idiomatically conveys
+    successive historical eras.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: be4a9cddc11678e93a74f555b7421080014858dd6bc6171cbbe7b083934c62a1
+  timestamp: '2026-04-21T20:04:07Z'
+  output_hash: 24d4caef9b39715ada9e3f011dafdebbf22871a6ed61fc164f553e6bb2add02d
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @e577bfbc
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @e577bfbc
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  revision_candidates:
+  - reason: SIR 44:1 is in the Masada Ben Sira coverage range; if IAA image access
+      opens, upgrade the Masada witness from Zone 2 consult to Zone 1.
+    trigger: iaa_masada_access_granted
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew and Greek opening description of the honored figures
+  chosen_reading: Follow the extant Hebrew 'men of faithful love' in the main text,
+    while preserving the Greek 'glorious men' in a footnote.
+  alternative_readings:
+  - glorious men
+  rationale: For Sirach, where Hebrew survives, the project gives primacy to the Hebrew
+    witness. The Greek parallel is still an actual translation input and likely reflects
+    either a variant Vorlage or interpretive rendering. Because the difference affects
+    the characterization of the ancestors, the Greek alternative is preserved transparently
+    in a footnote.
+  doctrine_reference: 'DOCTRINE.md: Original-language primacy over translation tradition;
+    preserve theological tension rather than resolve it silently.'
