@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: χάρις ὑμῖν καὶ εἰρήνη ἀπὸ θεοῦ πατρὸς ἡμῶν καὶ κυρίου Ἰησοῦ Χριστοῦ.
 translation:
-  text: Grace to you and peace from God our Father and the Lord Jesus the Messiah.
+  text: Grace to you and peace from God our Father and the Lord Jesus Messiah.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -13,6 +13,9 @@ translation:
   - marker: b
     text: Or Master.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'the Lord Jesus the Messiah'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: χάρις
   chosen: Grace
@@ -20,22 +23,19 @@ lexical_decisions:
   - favor
   - gracious gift
   lexicon: BDAG
-  rationale: '"Grace" is the standard Pauline greeting term and preserves both the
-    relational and theological weight of χάρις without over-paraphrasing.'
+  rationale: '"Grace" is the standard Pauline greeting term and preserves both the relational and theological weight of χάρις without over-paraphrasing.'
 - source_word: ὑμῖν
   chosen: to you
   alternatives:
   - for you
   lexicon: BDAG
-  rationale: The dative is idiomatically rendered "to you" in epistolary blessings
-    and greetings.
+  rationale: The dative is idiomatically rendered "to you" in epistolary blessings and greetings.
 - source_word: εἰρήνη
   chosen: peace
   alternatives:
   - well-being
   lexicon: BDAG
-  rationale: '"Peace" is the natural English equivalent and preserves the greeting
-    formula''s resonance with both Greek and Jewish usage.'
+  rationale: '"Peace" is the natural English equivalent and preserves the greeting formula''s resonance with both Greek and Jewish usage.'
 - source_word: ἀπό
   chosen: from
   alternatives:
@@ -47,26 +47,20 @@ lexical_decisions:
   alternatives:
   - our God and Father
   lexicon: BDAG
-  rationale: 'The genitive construction is most naturally taken appositionally here:
-    God, who is our Father. "God our Father" is clear, idiomatic, and faithful to
-    the greeting formula.'
+  rationale: 'The genitive construction is most naturally taken appositionally here: God, who is our Father. "God our Father" is clear, idiomatic, and faithful to the greeting formula.'
 - source_word: κυρίου
   chosen: Lord
   alternatives:
   - Master
   lexicon: BDAG
-  rationale: Per doctrine defaults, κύριος is rendered "Lord" to preserve its established
-    christological force in New Testament usage.
+  rationale: Per doctrine defaults, κύριος is rendered "Lord" to preserve its established christological force in New Testament usage.
 - source_word: Ἰησοῦ Χριστοῦ
   chosen: Jesus Messiah
   alternatives:
   - Jesus Christ
   - Jesus the Messiah
   lexicon: BDAG
-  rationale: Per doctrine defaults, Χριστός is translated "Messiah" when functioning
-    as a title. In this greeting formula, the title sense remains intelligible and
-    preserves the meaning of the Greek more transparently than the traditional transliteration
-    "Christ".
+  rationale: Per doctrine defaults, Χριστός is translated "Messiah" when functioning as a title. In this greeting formula, the title sense remains intelligible and preserves the meaning of the Greek more transparently than the traditional transliteration "Christ".
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4
@@ -79,9 +73,15 @@ theological_decisions:
   chosen_reading: Messiah
   alternative_readings:
   - Christ
-  rationale: Although "Christ" is traditional in English and can function almost name-like
-    in Paul, the doctrine excerpt directs that Χριστός be rendered "Messiah" where
-    title sense is supportable. Here the title remains transparent enough to preserve
-    in the main text.
-  doctrine_reference: 'Contested terms: Χριστός → Messiah (where title; Christ where
-    name-like)'
+  rationale: Although "Christ" is traditional in English and can function almost name-like in Paul, the doctrine excerpt directs that Χριστός be rendered "Messiah" where title sense is supportable. Here the title remains transparent enough to preserve in the main text.
+  doctrine_reference: 'Contested terms: Χριστός → Messiah (where title; Christ where name-like)'
+revisions:
+- timestamp: '2026-04-21T05:23:38Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/nt/philippians/001/002.json
+  category: awkward_english
+  tier: 1
+  from: the Lord Jesus the Messiah
+  to: the Lord Jesus Messiah
+  rationale: The current rendering with two definite articles ('the Lord... the Messiah') is slightly cumbersome and creates a separation between 'Jesus' and 'Messiah' that is not present in the unified Greek phrase 'Ἰησοῦ Χριστοῦ'. The Greek does not have an article before Χριστοῦ. While English sometimes supplies articles, omitting the second 'the' here ('the Lord Jesus Messiah') creates a more natural and fluid name-title construction, analogous to the traditional 'the Lord Jesus Christ', while still honoring the project's choice to use 'Messiah'.
