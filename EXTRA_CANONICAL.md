@@ -162,25 +162,90 @@ verse-index data model. Both texts amortize the pipeline investment.
 - Thunder, Perfect Mind
 
 **What's new:** vision OCR for Coptic script (Unicode block
-U+2C80–U+2CFF), and case-by-case license research per codex. The
-Coptic manuscripts themselves are PD by age (4th c.); the Facsimile
-Edition (Robinson 1972-77) has a complicated licensing history
-(UNESCO-funded, Egyptian State holdings) that needs per-source
-clearance. Where the Facsimile Edition photos are not clean, we
-rely on:
+U+2C80–U+2CFF) plus **substantive licensing research**, because the
+Coptic primary-source situation is fundamentally different from
+Groups A/B/C. The 4th-century codices are themselves public domain
+by age, but we don't have physical access to them; every scholarly
+transcription is a copyrighted reconstruction.
 
-- **PD Greek fragments** for Thomas (P.Oxy. 1, 654, 655 — Grenfell
-  & Hunt, fully PD)
-- **Scholarly consultation** of Layton, Meyer, DeConick critical
-  editions as **Zone 2** (reference only, not reproduced)
-- **Fresh transcription from cleanly-licensed photographs** where
-  we can obtain them — some facsimile page images are available
-  under Creative Commons via institutional repositories
+#### Licensing research — findings (2026-04-21)
 
-For any Tier 3 text where clean primary-source access cannot be
-secured under CC-BY-compatible terms, we document the blocker
-publicly and translate from what we can legitimately source, with
-transparent notes on the source situation per verse.
+Unlike for 2 Esdras (Bensly 1895 is cleanly PD) or 1 Enoch (Charles
+1906 is cleanly PD), for Nag Hammadi **there is no pre-1929
+published Coptic transcription** of any of the three target texts.
+The codices were discovered in 1945 and first published by Pahor
+Labib starting in 1956. Every Coptic transcription in existence is
+post-1929 and therefore potentially under copyright.
+
+Full survey of accessible Coptic primary sources:
+
+| Source | License | Usable as Zone 1? |
+|---|---|---|
+| **UNESCO / Brill Facsimile Edition** (Robinson et al., 1972-1984) | Commercial Brill copyright; UNESCO's 2013 open-access policy does not retroactively cover this title; Egyptian state claims reproduction rights over photographs. | **No** — would require licensing negotiation with Brill + Egyptian Supreme Council of Antiquities. |
+| **Coptic Scriptorium** (Georgetown, copticscriptorium.org) | CC-BY 4.0 project-wide | **No** — Nag Hammadi expansion is on their 2016 NEH roadmap but not yet released as of 2026. |
+| **Mark Mattison / Samuel Zinner Nag Hammadi Initiative** (gospels.net, othergospels.com) | **Explicit PD dedication covers English translations only.** The "our versings and alterations" language in the site-wide dedication does not unambiguously extend to Coptic transcriptions. | **Ambiguous — pending direct clarification.** |
+| **Gebhardt-Klein 2024, "A New Coptic Transcription of the Gospel of Thomas"** (academia.edu/145273282) | No explicit license statement | **Ambiguous — would require author contact for written CC-BY permission.** |
+| **Linssen, Nag Hammadi Library Complete Transcription** (academia.edu/122868314) | CC BY-NC-SA 4.0 | **No** — NonCommercial + ShareAlike clauses block re-release under CC-BY 4.0. |
+| **Grenfell & Hunt, *P.Oxy. I, IV*** (1897, 1904) — Greek fragments of Thomas | Public Domain by age | **Yes** — covers ~20% of Thomas sayings only. |
+| **Claremont Colleges Digital Library — Nag Hammadi Archive** (ccdl.claremont.edu/digital/collection/nha) | "Copyright retained per U.S. Copyright law" — no CC dedication | **No** — reference-only use. |
+| **Egyptian Coptic Museum photographs** | Restrictive (Law 117/1983, 82/2002) | **No** without formal SCA application. |
+
+#### Pragmatic path forward for Phase 16
+
+Because the cleanest candidate (Mattison/Zinner) is ambiguous on the
+Coptic specifically, Phase 16 begins with a **licensing-clarification
+step** rather than jumping to OCR:
+
+1. **Email Mark Mattison and Rachel Bousfield (Other Gospels)**
+   requesting a written CC0 or CC-BY 4.0 statement covering the
+   Zinner Coptic transcriptions specifically (not only the
+   translations). If granted, all three texts have a clean Zone 1
+   primary and Phase 16 proceeds normally.
+2. **Email Joseph Gebhardt-Klein** (U. Nevada Reno) requesting CC-BY
+   release of his 2024 Thomas transcription. Fallback if Mattison/
+   Bousfield can't grant.
+3. **For Gospel of Thomas regardless of (1)/(2)**: use the Grenfell
+   & Hunt Greek P.Oxy. fragments as definitively-PD Zone 1 for the
+   ~20% of sayings they cover.
+4. **If both (1) and (2) fail**: pursue either (a) a formal SCA
+   licensing application for direct manuscript photograph access,
+   or (b) a Coptic Scriptorium partnership to accelerate their
+   Nag Hammadi roadmap for the three specific texts we need. Both
+   are months-scale processes.
+5. **Until Zone 1 is cleanly established, do not begin OCR or
+   drafting for the three texts.** Unlike the Yadin case, there is
+   no LXX-pipeline-style workaround — without a PD Coptic primary,
+   a translation from Zone 2 scholarly transcriptions would be a
+   derivative work of that scholarship.
+
+This explicit gate is why Group D is the last pipeline in the
+phased rollout. We do not want the project to ship Gnostic texts
+under muddy provenance.
+
+#### Zone 2 consult registry for Group D (common across all three)
+
+When Zone 1 is established and translation begins, the following
+copyrighted works will be named in the translator-prompt registry
+as consulted references (not reproduced, per the standard three-zone
+policy):
+
+- Bentley Layton, *Nag Hammadi Codex II,2-7 together with XIII,2*,
+  *Brit. Lib. Or. 4926(1)*, *P.Oxy. 1, 654, 655* (Brill NHS 20-21,
+  1989) — critical edition of Codex II including Gospel of Thomas.
+- Harold W. Attridge (ed.), *Nag Hammadi Codex I (The Jung Codex)*
+  (Brill NHS 22-23, 1985) — critical edition of Codex I including
+  Gospel of Truth.
+- Douglas M. Parrott (ed.), *Nag Hammadi Codices V,2-5 and VI*
+  (Brill NHS 11, 1979) — critical edition of Codex VI including
+  Thunder Perfect Mind.
+- Marvin Meyer, *The Gnostic Scriptures: Introductions, Translations,
+  Annotations, Indexes* (HarperOne, 2007) — English translations and
+  introductions.
+- April D. DeConick, *The Original Gospel of Thomas in Translation*
+  (T&T Clark, 2007) — reconstruction-oriented scholarship on Thomas.
+- Elaine Pagels, *The Gnostic Gospels* (Random House, 1979) — Pulitzer-
+  winning framing/context, not a critical edition.
+- Samuel Zinner's published essays on Thunder Perfect Mind.
 
 ## Phased rollout
 
@@ -208,6 +273,61 @@ Phases after 10 are parallelizable by pipeline group. Phase 13 is
 where we can produce the largest volume of newly-translated
 extra-canonical material relative to effort — Greek is what our
 stack handles best.
+
+## Independent work sessions (operational note)
+
+> This section is operational rather than reader-facing and may be
+> removed once the roadmap becomes stable. It documents which parallel
+> work-streams can run without stepping on each other, so distinct
+> sessions (whether separate people, separate Claude sessions, or
+> separate worktrees) can proceed in parallel.
+
+Because each pipeline group touches a different source tree and
+different tools, the groups can proceed independently. The mapping
+of pipeline groups to independent work sessions:
+
+| Session | Owns | Directories | Phase(s) | Status |
+|---|---|---|---|---|
+| **A — LXX deuterocanon drafting** | 13 LXX-based deuterocanonical books | `sources/lxx/`, `sources/lxx/hebrew_parallels/`, `tools/` (main LXX stack) | Phase 9 | Drafting in flight in a dedicated session |
+| **B — Latin + multi-witness** | 2 Esdras, then 2 Baruch | `sources/2esdras/`, `sources/2baruch/` (pending), `tools/2esdras/` (+ future `tools/2baruch/`) | 8b → 10 → 15 | Source PDFs vendored for 2 Esdras; OCR pipeline scaffolded; 2 Baruch reuses Violet 1924 on the same pipeline |
+| **C — Ethiopic / Ge'ez** | 1 Enoch, then Jubilees | `sources/enoch/`, `sources/jubilees/`, shared `tools/ethiopic/`, per-book `tools/enoch/`, `tools/jubilees/` | 8c → 8d → 11 → 12 | Source PDFs vendored; OCR backend decided (Gemini 2.5 Pro plaintext); Jubilees sharing pipeline |
+| **D — Apostolic Fathers + Greek extras** | Didache, 1 Clement, Shepherd of Hermas, Testaments, Psalms of Solomon | `sources/apostolic_fathers/` (pending), `tools/greek_extra_*` | 8e → 8f → 13 → 14 | Psalms of Solomon setup via Swete reuse; remaining Greek sources in scope-doc stage |
+| **E — Coptic / Nag Hammadi** | Gospel of Thomas, Gospel of Truth, Thunder Perfect Mind | `sources/nag_hammadi/` (pending), `tools/coptic/` (pending) | 16 | **Licensing clarification pending** before any code or source work — see Group D research above |
+
+### Why these groupings (and not finer splits)
+
+- **B stays together** because Violet 1910 (2 Esdras) and Violet 1924
+  (2 Baruch) are the same GCS series with identical typesetting
+  conventions. One OCR-prompt engineering pass serves both.
+- **C stays together** because the Ge'ez OCR backend decision and
+  typesetting-prompt work applies equally to Enoch and Jubilees, both
+  edited by Charles in similar editions.
+- **D stays together** because every text in the group fits the same
+  Greek-OCR + 4-source-adjudication pattern we already use for LXX.
+  The Apostolic Fathers editions (Lightfoot, Bryennios, Funk) cover
+  multiple texts per source acquisition.
+- **E is alone** because Coptic is a new script, the OCR work is
+  genuinely different, and the licensing research (documented above)
+  is a blocker that must be resolved before any code or OCR work
+  starts.
+
+### Which sessions are live right now
+
+- **A** — Phase 9 drafting, separate dedicated session.
+- **B** — 2 Esdras setup, this session or a dedicated 2 Esdras session.
+- **C** — Enoch + Jubilees setup, separate dedicated session.
+- **D and E are not started.** D can begin any time (lowest risk, highest
+  volume per unit effort). E is gated on the Mattison/Zinner
+  Coptic-licensing clarification step documented in the Group D
+  research above.
+
+### When to remove this section
+
+Once all sessions have run at least one full phase cycle, the
+grouping will have stabilized into normal Phase-N entries in the
+CHANGELOG. At that point, this operational notes section becomes
+redundant and can be deleted. Until then, it serves as a
+cross-session contract of who-owns-what.
 
 ## Labeling and framing principles
 
