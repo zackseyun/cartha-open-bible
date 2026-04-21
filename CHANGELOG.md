@@ -9,6 +9,31 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## Phase 8 corpus rescue update — 2026-04-21
+
+Follow-up quality work on the deuterocanonical corpus after the first
+Phase 8 release.
+
+- **Sirach rescue completed**: the final `low` verses were not true
+  paleographic dead ends; they were page-targeting / numbering failures.
+  The rescue was corrected to the actual scan pages:
+  - `SIR 3:5, 3:7` → vol2 p665
+  - `SIR 33:14–16` → vol2 p728
+  - `SIR 33:17` → vol2 p734
+- **ADE 4:28 corrected from the scan**: direct page recheck showed that
+  Swete prints the line **without** `ἐπὶ` before `τράπεζαν Ἁμάν`; the
+  verse was promoted from `medium` to `high`.
+- **Residual state after rescue**: **6,335 high**, **2 medium**,
+  **0 low** in the current final corpus.
+- **Remaining honest residuals**:
+  - `BAR 1:1` — breathing/orthography-level ambiguity still too small to
+    promote beyond `medium`
+  - `1ES 9:35` — exposed as part of a wider tail-block verse-numbering
+    drift in 1 Esdras 9, not just an isolated one-verse uncertainty
+- **Method now documented**: see
+  `docs/PHASE8_CORPUS_QUALITY_RESCUE.md` for the repeatable rescue loop
+  used to make these improvements.
+
 ## Phase 8 corpus milestone — 2026-04-20
 
 LXX deuterocanonical source text ready for Phase 9 drafting. This is
@@ -82,4 +107,3 @@ from Phase 8 itself.
 - `v0.7-writings` — Psalms, Proverbs, Job, Ruth, Song of Songs, Ecclesiastes, Lamentations, Esther, Daniel, Ezra-Nehemiah, Chronicles
 - `v0.8-latter-prophets` — Isaiah, Jeremiah, Ezekiel, the Twelve
 - `v1.0-complete` — Full Bible, all phases re-reviewed and re-linted
-

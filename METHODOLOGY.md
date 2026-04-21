@@ -37,6 +37,29 @@ verifiable provenance:
 Each verse references its source by stable identifier (book, chapter, verse)
 and records any consulted variant apparatus.
 
+### Stage 1A — Corpus quality rescue for the deuterocanon
+
+For the deuterocanonical corpus, source preparation did not end when the
+first OCR finished. Phase 8 added a **scan-rescue loop** for any verse
+that remained medium/low confidence after the broad adjudication pass:
+
+1. start from the residual list,
+2. inspect the exact local transcription and exact scan page,
+3. determine whether the issue is OCR, wrong page targeting, or verse-
+   numbering drift,
+4. run a targeted rescue against the real page,
+5. only promote confidence if the printed form is truly legible.
+
+This mattered especially for Swete LXX pages with awkward running heads,
+Sirach’s alternate numbering, and late-chapter blocks where a verse tail
+had drifted out of alignment.
+
+The operational write-up for that loop lives in
+[docs/PHASE8_CORPUS_QUALITY_RESCUE.md](docs/PHASE8_CORPUS_QUALITY_RESCUE.md).
+That document records the exact rescue method used to eliminate the last
+Phase 8 `low` verses and to distinguish infrastructure errors from
+genuine remaining uncertainty.
+
 ## Stage 2 — AI draft
 
 A primary LLM produces the draft using a prompt anchored in

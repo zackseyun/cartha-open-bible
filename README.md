@@ -99,7 +99,10 @@ output against our stated commitments rather than guessing at hidden biases.
 ## Methodology
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the drafting pipeline, cross-check
-protocol, and reproducibility verification.
+protocol, and reproducibility verification. For the deuterocanonical
+source-text rescue work specifically — how the Swete corpus was improved,
+rescued, and confidence-promoted from direct scan inspection — see
+[docs/PHASE8_CORPUS_QUALITY_RESCUE.md](docs/PHASE8_CORPUS_QUALITY_RESCUE.md).
 
 ## The Deuterocanonical Books (Apocrypha)
 
