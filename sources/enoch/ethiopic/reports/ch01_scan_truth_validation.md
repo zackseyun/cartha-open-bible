@@ -1,4 +1,4 @@
-# 1 Enoch chapter 1 — scan-truth validation
+# 1 Enoch chapter 1 — scan-truth validation (scan_truth_validation)
 
 - Edition: **charles_1906**
 - OCR source page: **40**

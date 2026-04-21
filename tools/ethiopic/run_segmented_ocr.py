@@ -28,9 +28,7 @@ OUTPUT_ROOT = REPO_ROOT / 'sources' / 'enoch' / 'ethiopic' / 'transcribed' / 'se
 
 
 def _gemini_plaintext(image_bytes: bytes, prompt: str, *, thinking_budget: int = 512, max_output_tokens: int = 3000) -> dict[str, Any]:
-    api_key = os.environ.get('GEMINI_API_KEY', '')
-    if not api_key:
-        raise RuntimeError('GEMINI_API_KEY not set')
+    api_key = ocr_geez.resolve_gemini_api_key()
     url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key={api_key}'
     body = {
         'contents': [{'parts': [

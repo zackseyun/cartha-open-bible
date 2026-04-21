@@ -68,7 +68,9 @@ def load_truth(edition: str, chapter: int, verses: list[int]) -> tuple[dict[int,
     return truth, manifest
 
 
-def load_ocr_page(edition: str, page: int) -> str:
+def load_ocr_text(edition: str, page: int, ocr_path: str | None) -> str:
+    if ocr_path:
+        return pathlib.Path(ocr_path).read_text(encoding='utf-8')
     path = TRANSCRIBED_ROOT / edition / 'pages' / f'p{page:04d}.txt'
     return path.read_text(encoding='utf-8')
 
@@ -113,6 +115,8 @@ def main() -> int:
     ap.add_argument('--chapter', type=int, default=1)
     ap.add_argument('--page', type=int, default=40)
     ap.add_argument('--verses', default='1-5')
+    ap.add_argument('--ocr-path', default=None, help='Optional path to OCR text to validate instead of the default page transcript')
+    ap.add_argument('--report-suffix', default='scan_truth_validation', help='Suffix for output report filenames')
     args = ap.parse_args()
 
     start, end = [int(x) for x in args.verses.split('-', 1)]
@@ -120,9 +124,12 @@ def main() -> int:
     truth_by_verse, manifest = load_truth(args.edition, args.chapter, wanted)
     truth_joined = '\n'.join(truth_by_verse[v] for v in wanted)
 
-    ocr_page = load_ocr_page(args.edition, args.page)
+    ocr_page = load_ocr_text(args.edition, args.page, args.ocr_path)
     ocr_by_verse = extract_ocr_verses(ocr_page)
-    ocr_joined = '\n'.join(ocr_by_verse[v] for v in wanted if v in ocr_by_verse)
+    if any(v in ocr_by_verse for v in wanted):
+        ocr_joined = '\n'.join(ocr_by_verse[v] for v in wanted if v in ocr_by_verse)
+    else:
+        ocr_joined = ocr_page.strip()
 
     ocr_norm = normalize_for_comparison(ocr_joined)
     truth_norm = normalize_for_comparison(truth_joined)
@@ -136,6 +143,7 @@ def main() -> int:
         'edition': args.edition,
         'chapter': args.chapter,
         'page': args.page,
+        'ocr_path': args.ocr_path,
         'verse_scope': wanted,
         'truth_manifest': manifest,
         'ocr_verse_keys_found': sorted(ocr_by_verse.keys()),
@@ -151,12 +159,12 @@ def main() -> int:
     }
 
     REPORTS_ROOT.mkdir(parents=True, exist_ok=True)
-    json_path = REPORTS_ROOT / f'ch{args.chapter:02d}_scan_truth_validation.json'
-    md_path = REPORTS_ROOT / f'ch{args.chapter:02d}_scan_truth_validation.md'
+    json_path = REPORTS_ROOT / f'ch{args.chapter:02d}_{args.report_suffix}.json'
+    md_path = REPORTS_ROOT / f'ch{args.chapter:02d}_{args.report_suffix}.md'
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
     lines = [
-        f'# 1 Enoch chapter {args.chapter} — scan-truth validation',
+        f'# 1 Enoch chapter {args.chapter} — scan-truth validation ({args.report_suffix})',
         '',
         f'- Edition: **{args.edition}**',
         f'- OCR source page: **{args.page}**',

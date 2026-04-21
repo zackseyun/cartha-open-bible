@@ -45,6 +45,26 @@ from dataclasses import dataclass
 from typing import Any
 
 
+def resolve_gemini_api_key() -> str:
+    raw = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not raw:
+        raise RuntimeError("GEMINI_API_KEY not set")
+    if raw.startswith("{"):
+        try:
+            obj = json.loads(raw)
+            if isinstance(obj, dict):
+                if isinstance(obj.get("api_key"), str) and obj["api_key"].strip():
+                    return obj["api_key"].strip()
+                keys = obj.get("api_keys")
+                if isinstance(keys, list):
+                    for item in keys:
+                        if isinstance(item, str) and item.strip():
+                            return item.strip()
+        except Exception:
+            pass
+    return raw
+
+
 @dataclass
 class OcrResult:
     page_number: int
@@ -100,9 +120,7 @@ def call_gemini_pro_geez(
     - chapter_hint: e.g. "chapter 1 (ምዕራፍ ፩)"
     - opening_hint: first few words of expected Geʿez to anchor the model
     """
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if not api_key:
-        raise RuntimeError("GEMINI_API_KEY not set")
+    api_key = resolve_gemini_api_key()
 
     b64 = base64.b64encode(image_bytes).decode("ascii")
     prompt_parts = [
