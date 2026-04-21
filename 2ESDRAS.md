@@ -159,7 +159,7 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 ## Timeline (indicative)
 
 - **Phase 8b (source acquisition):** this week — vendor PDFs, build OCR pipeline. ≈ 3–4 days. **OCR scaffold now in place.**
-- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.** The canonical loader path is now live for **chapters 2, 6, 7, 8, 11, 12, 14, and 16**, with chapter 7 specifically strengthened by the Missing Fragment (36–105).
+- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.** The canonical loader path is now live for **chapters 2, 6, 7, 8, 9, 11, 12, 14, and 16**, with chapter 7 specifically strengthened by the Missing Fragment (36–105).
 - **Phase 10 (drafting):** after Phase 9 completes — translate ~400 verses across 16 chapters with multi-witness context. ≈ 2 weeks.
 - **Phase 10 (revision):** Claude Opus reviser per `REVISION_METHODOLOGY.md`. ≈ 1 week.
 

@@ -144,6 +144,7 @@ Current canonical loader coverage:
 - `latin/transcribed/ch07.txt` — verses **36–105** from the Missing
   Fragment
 - `latin/transcribed/ch08.txt` — explicit-marker partial publication
+- `latin/transcribed/ch09.txt` — explicit-marker partial publication
 - `latin/transcribed/ch11.txt` — explicit-marker partial publication
 - `latin/transcribed/ch12.txt` — explicit-marker publication
 - `latin/transcribed/ch14.txt` — explicit-marker partial publication

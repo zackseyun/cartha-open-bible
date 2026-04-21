@@ -291,6 +291,8 @@ text survives only via Latin + 6 daughter translations.
     explicit-marker publication
   - `sources/2esdras/latin/transcribed/ch08.txt` now carries a partial
     explicit-marker publication
+  - `sources/2esdras/latin/transcribed/ch09.txt` now carries a partial
+    explicit-marker publication
   - `sources/2esdras/latin/transcribed/ch11.txt` now carries a partial
     explicit-marker publication
   - `sources/2esdras/latin/transcribed/ch14.txt` now carries a partial
