@@ -88,6 +88,9 @@ def apply_book(book: str) -> dict:
         key = (v["chapter"], v["verse"])
         adj = adjs.get(key)
         if not adj:
+            # Non-adjudicated verses are the agree-at-≥0.85-similarity cases
+            # preserved from our original OCR; high confidence by construction.
+            v["confidence"] = "high"
             stats["unchanged"] += 1
             continue
         # Record pre-adjudication reading
@@ -99,6 +102,9 @@ def apply_book(book: str) -> dict:
             "confidence": adj["confidence"],
             "prompt_version": adj["prompt_version"],
         }
+        # Surface confidence at top level so downstream translators can
+        # read v["confidence"] without reaching into the adjudication block.
+        v["confidence"] = adj["confidence"]
         stats[f"adj_{adj['verdict']}"] += 1
         stats[f"conf_{adj['confidence']}"] += 1
 
