@@ -152,7 +152,6 @@ def call_azure_rescue(images: list[bytes], user_text: str, max_tokens: int = 160
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_parts},
         ],
-        "temperature": 0.0,
         "max_completion_tokens": max_tokens,
         "parallel_tool_calls": False,
         "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},

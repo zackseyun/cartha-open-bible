@@ -136,6 +136,41 @@ def consult_sources(book_code: str) -> list[dict]:
     return list(UNIVERSAL_CONSULT) + CONSULT_REGISTRY.get(book_code, [])
 
 
+def live_zone2_entries(book_code: str, chapter: int, verse: int) -> list[dict]:
+    """Return Zone 2 sources for this specific verse that have a LIVE
+    local extraction available (text actually loadable on this machine).
+
+    Currently covers: Yadin 1965 Masada scroll for Sir 39:27-44:17,
+    if the local extraction at ~/cartha-reference-local/yadin_1965/
+    exists. Silently returns [] when no live local source applies.
+
+    These entries are distinct from the static CONSULT_REGISTRY: the
+    registry names sources that a translator MAY consult externally,
+    while live entries carry the actual text excerpt (Hebrew only,
+    never English per Zone 2 policy) ready for inclusion in the
+    translator prompt's reference block.
+    """
+    out: list[dict] = []
+    if book_code == "SIR":
+        try:
+            import yadin_masada  # noqa: I001
+            hit = yadin_masada.lookup(chapter, verse)
+            if hit and hit.get("available"):
+                out.append({
+                    "source_name": hit["source"],
+                    "zone": 2,
+                    "text_kind": "hebrew_only",
+                    "hebrew_text": hit.get("hebrew_text_masada", ""),
+                    "scholarly_notes": hit.get("scholarly_notes", ""),
+                    "page_reference": f"p. {hit.get('page_in_yadin')}",
+                    "guidance": hit["guidance"],
+                    "policy": hit["policy"],
+                })
+        except ImportError:
+            pass
+    return out
+
+
 # ---- caches -----------------------------------------------------------------
 
 _SIR_CACHE: Optional[dict] = None
@@ -531,7 +566,8 @@ def lookup_with_consult(book_code: str, chapter: int, verse: int) -> dict:
         "chapter": chapter,
         "verse": verse,
         "zone_1_parallel": zone1,
-        "zone_2_consult": consult_sources(book_code),
+        "zone_2_registry": consult_sources(book_code),
+        "zone_2_live": live_zone2_entries(book_code, chapter, verse),
         "policy_ref": "REFERENCE_SOURCES.md",
     }
 
