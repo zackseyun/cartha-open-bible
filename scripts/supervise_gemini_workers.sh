@@ -18,7 +18,7 @@ LOG_DIR="/tmp/cob-gemini-review"
 KEY_PATH="${GOOGLE_APPLICATION_CREDENTIALS:-$HOME/.config/cartha/gemini-vertex-sa.json}"
 CHECK_INTERVAL_SECONDS=30
 
-REGIONS=(us-central1 us-central1 us-central1 us-east1 us-east1 us-west1 us-west1 us-west4 us-west4 europe-west4 europe-west4)
+REGIONS=(us-central1 us-east1 us-west1 us-west4 europe-west4)
 
 mkdir -p "$LOG_DIR"
 cd "$REPO_ROOT"
