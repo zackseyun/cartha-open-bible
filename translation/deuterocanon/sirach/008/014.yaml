@@ -1,0 +1,125 @@
+id: SIR.8.14
+reference: Sirach 8:14
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תִּצְלַח בְּנַחֲלַת רָשָׁע, פֶּן תְּבֹעַר בִּשְׁבִיב אִשּׁוֹ.
+  language: Hebrew
+  pages:
+  - 677
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ δικάζου μετὰ κριτοῦ· κατὰ γὰρ τὴν δόξαν αὐτοῦ κρινοῦσιν αὐτῷ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:14
+translation:
+  text: Do not prosper in the inheritance of a wicked man, lest you be burned by the
+    sparks of his fire.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek witness (Swete/LXX) reads a different saying here: ''Do not litigate
+      with a judge, for they will judge for him according to his standing.'' The Hebrew
+      Cairo Geniza text instead warns against involvement in the inheritance of a
+      wicked man.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: אַל תִּצְלַח
+  chosen: Do not prosper
+  alternatives:
+  - Do not succeed
+  - Do not thrive
+  lexicon: HALOT
+  rationale: The Hebrew verb צלח commonly denotes succeeding or prospering. In this
+    admonitory context, 'Do not prosper' preserves the Hebrew wording's unusual force
+    rather than smoothing it into a looser paraphrase. It likely warns against seeking
+    advancement through association with a wicked person's estate or legacy.
+- source_word: בְּנַחֲלַת
+  chosen: in the inheritance of
+  alternatives:
+  - by the inheritance of
+  - through the estate of
+  - in the possession of
+  lexicon: HALOT
+  rationale: נחלה ordinarily means inheritance, estate, or hereditary possession.
+    'Inheritance' is the most direct rendering and keeps the concrete social-economic
+    image. The preposition בְּ is rendered 'in' to reflect involvement within that
+    sphere rather than merely proximity.
+- source_word: רָשָׁע
+  chosen: a wicked man
+  alternatives:
+  - the wicked
+  - a wicked person
+  lexicon: HALOT
+  rationale: The singular noun is rendered with a singular English expression. 'Wicked
+    man' is gender-accurate to the masculine singular form and fits the wisdom-literature
+    style of warning against a representative evildoer.
+- source_word: פֶּן תְּבֹעַר
+  chosen: lest you be burned
+  alternatives:
+  - lest you burn
+  - or you may be consumed
+  lexicon: HALOT
+  rationale: בער in the passive-like sense here conveys being set ablaze or consumed.
+    'Be burned' is idiomatic and preserves the warning's vivid consequence.
+- source_word: בִּשְׁבִיב
+  chosen: by the sparks of
+  alternatives:
+  - in the flame of
+  - by the blaze of
+  - by the embers of
+  lexicon: HALOT
+  rationale: שביב denotes spark, flame, or fiery flash. 'Sparks' best matches the
+    plural-like collective sense in context and explains how even a secondary effect
+    of the wicked person's fire can harm the hearer.
+- source_word: אִשּׁוֹ
+  chosen: his fire
+  alternatives:
+  - its fire
+  lexicon: HALOT
+  rationale: The suffix is masculine singular, naturally referring back to the wicked
+    man. 'His fire' preserves the metaphor of destructive danger issuing from him
+    or from what belongs to him.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: a981542a173fe8e9a5b3ccc9fe79c6047e26fc10a6fde3819641580e8b096d15
+  timestamp: '2026-04-21T20:24:13Z'
+  output_hash: e90add9e3e3e77216de818687836fc707af84cd135ff0ea0a19ee89f1626cfe1
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:14 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew and Greek witnesses
+  chosen_reading: Translate from the extant Hebrew witness as primary, while allowing
+    the Greek parallel to confirm the verse's admonitory character without controlling
+    the wording.
+  alternative_readings:
+  - 'Greek witness: ''Do not litigate with a judge, for they will judge for him according
+    to his standing/glory.'''
+  rationale: For Sirach, where Hebrew survives, project policy gives Hebrew primacy.
+    Here the Greek parallel reflects a substantially different saying, so it cannot
+    simply be harmonized into the Hebrew line. The English therefore follows the Hebrew
+    directly, with the Greek divergence preserved as a textual-variant footnote for
+    transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach Hebrew survives;
+    use Greek parallel as actual input while keeping Hebrew primacy.'

@@ -1,0 +1,106 @@
+id: SIR.8.18
+reference: Sirach 8:18
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תּשָּׁפֵט עִם שׁוֹפֵט, כִּי כִּרְצוֹנוֹ יִשְׁפֹּט.
+  language: Hebrew
+  pages:
+  - 677
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἐνώπιον ἀλλοτρίου μὴ ποιήσῃς κρυπτόν, οὐ γὰρ γινώσκεις τί τέξεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:18
+translation:
+  text: Do not contend with a judge, for he will judge according to his own will.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek has a different saying here: ''Before a stranger do not do anything
+      secret, for you do not know what it will bring forth.'' The Hebrew Cairo Geniza
+      witness is followed for the main text because Hebrew survives for this verse,
+      but the divergence is substantial and should be noted.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: אַל
+  chosen: Do not
+  alternatives:
+  - Do not ever
+  - You shall not
+  lexicon: HALOT
+  rationale: Standard negative prohibition introducing wisdom instruction; simple
+    imperative English best matches the concise Hebrew warning.
+- source_word: תּשָּׁפֵט
+  chosen: contend
+  alternatives:
+  - litigate
+  - enter into judgment
+  - dispute
+  lexicon: HALOT
+  rationale: Although the root שפט often means 'judge,' with עִם plus 'a judge' the
+    sense is adversarial legal contention rather than the act of judging. 'Contend'
+    preserves the warning against taking a case up against a judicial authority without
+    over-specifying courtroom procedure.
+- source_word: עִם שׁוֹפֵט
+  chosen: with a judge
+  alternatives:
+  - against a judge
+  lexicon: HALOT
+  rationale: The preposition is literally 'with,' but in English the adversarial sense
+    is carried by 'contend with.' This keeps the Hebrew construction visible while
+    yielding natural English.
+- source_word: כִּי
+  chosen: for
+  alternatives:
+  - because
+  - since
+  lexicon: HALOT
+  rationale: Introduces the reason for the prohibition; 'for' is concise and fits
+    wisdom style.
+- source_word: כִּרְצוֹנוֹ
+  chosen: according to his own will
+  alternatives:
+  - as he pleases
+  - according to his desire
+  lexicon: HALOT
+  rationale: רָצוֹן here denotes personal will or pleasure. 'According to his own
+    will' preserves the warning that the judge's decision follows his own preference
+    or authority. 'As he pleases' is possible but slightly more idiomatic and less
+    transparent.
+- source_word: יִשְׁפֹּט
+  chosen: he will judge
+  alternatives:
+  - he will decide
+  - he will render judgment
+  lexicon: HALOT
+  rationale: The same root as earlier is retained for consistency. 'Judge' keeps the
+    legal frame explicit.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 5aa30c5d2ca61fbf53a90aa4e227cdca1f64a307656ba2feada38d252c2287af
+  timestamp: '2026-04-21T20:25:11Z'
+  output_hash: f9d027521130ba6340a48e2df0b192032e4299cd6fdb7818579a156ff53b47af
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:18 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft

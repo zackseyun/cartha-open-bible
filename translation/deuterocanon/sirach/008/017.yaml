@@ -1,0 +1,94 @@
+id: SIR.8.17
+reference: Sirach 8:17
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תַּעֲרֹב יָתֵר מִמְּךָ, וְאִם עָרַבְתָּ כִּמְשַׁלֵּם.
+  language: Hebrew
+  pages:
+  - 677
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μετὰ μωροῦ μὴ συμβουλεύου, οὐ γὰρ δυνήσεται λόγον στέξαι.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:17
+translation:
+  text: Do not pledge yourself for one stronger than you; and if you have pledged
+    yourself, act as one who must pay.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Hebrew ''for one greater than you'' or ''for one beyond you''; the sense
+      is someone whose obligation exceeds your capacity or standing. The Greek parallel
+      reads differently: ''Do not take counsel with a fool, for he will not be able
+      to keep a matter.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אַל תַּעֲרֹב
+  chosen: Do not pledge yourself
+  alternatives:
+  - Do not become surety
+  - Do not give security
+  - Do not go guarantor
+  lexicon: HALOT
+  rationale: The verb ערב in this stem commonly refers to giving surety or becoming
+    a guarantor for another. 'Pledge yourself' communicates the financial/legal sense
+    in readable modern English while preserving the reflexive force implied by the
+    context.
+- source_word: יָתֵר מִמְּךָ
+  chosen: for one stronger than you
+  alternatives:
+  - for one greater than you
+  - for one beyond your means
+  - for one superior to you
+  lexicon: HALOT
+  rationale: יתר can denote excess, superiority, or greater status/power. In this
+    warning about suretyship, the sense is someone beyond one's capacity or standing.
+    'Stronger than you' captures the practical imbalance more naturally than the more
+    wooden 'greater than you.'
+- source_word: וְאִם עָרַבְתָּ
+  chosen: and if you have pledged yourself
+  alternatives:
+  - and if you have become surety
+  - and if you have given security
+  lexicon: HALOT
+  rationale: Repeats the same legal-financial verb as the first clause, so the English
+    should remain correspondingly consistent.
+- source_word: כִּמְשַׁלֵּם
+  chosen: act as one who must pay
+  alternatives:
+  - as one paying
+  - like a payer
+  - as though you were paying in full
+  lexicon: HALOT
+  rationale: 'The prefixed כ marks comparison: one should regard oneself as effectively
+    liable for payment. ''Act as one who must pay'' makes the implied obligation explicit
+    in idiomatic English without overparaphrasing.'
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 46c773f2796ed595469f841d10a159f3a95c2910862c6a03d667be9489b920bc
+  timestamp: '2026-04-21T20:25:00Z'
+  output_hash: 84155e45babc78a20df2320f69f338000d2ebd6d0746c058f84e2e58c9915bac
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:17 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft

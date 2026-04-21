@@ -1,0 +1,130 @@
+id: SIR.8.12
+reference: Sirach 8:12
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תִּמְאַס בִּשְׁמִיעַת שָׁבִים, אֲשֶׁר שָׁמְעוּ מֵאֲבֹתָם.
+  language: Hebrew
+  pages:
+  - 677
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ δανίσῃς ἀνθρώπῳ ἰσχυροτέρῳ σου, καὶ ἐὰν δανίσῃς, ὡς ἀπολωλεκὼς γίνου.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:12
+translation:
+  text: Do not despise hearing from those who return, who have heard from their fathers.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek tradition reads: ''Do not lend to a man stronger than you, and if
+      you do lend, regard it as lost.'' This appears to reflect a different textual
+      tradition for this verse.'
+    reason: textual_variant
+  - marker: b
+    text: Or 'those who repent' / 'returnees'; the Hebrew word can denote people who
+      turn back, but its exact nuance here is uncertain.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: אַל
+  chosen: Do not
+  alternatives:
+  - You shall not
+  lexicon: HALOT
+  rationale: Standard negative prohibition in direct instructional style; 'Do not'
+    fits readable modern English while preserving imperative force.
+- source_word: תִּמְאַס
+  chosen: despise
+  alternatives:
+  - reject
+  - spurn
+  lexicon: HALOT
+  rationale: The verb conveys treating something with contempt or disdain. 'Despise'
+    preserves the moral weight better than the flatter 'reject'.
+- source_word: בִּשְׁמִיעַת
+  chosen: hearing
+  alternatives:
+  - listening to
+  - the report of
+  lexicon: HALOT
+  rationale: The noun from שמע can denote hearing/listening. 'Hearing' stays close
+    to the Hebrew construction, though in idiomatic English it functions as 'hearing
+    from' in context.
+- source_word: שָׁבִים
+  chosen: those who return
+  alternatives:
+  - returnees
+  - those who repent
+  - captives who return
+  lexicon: HALOT
+  rationale: The Hebrew most naturally means 'those who return.' Because the form
+    is contextually ambiguous, it could suggest returnees or repentant persons, but
+    the plain lexical sense is broader. The Greek parallel in Swete reads a wholly
+    different line about lending to a stronger man, indicating a divergent textual
+    tradition rather than clarifying this Hebrew word; therefore the Hebrew witness
+    remains primary here.
+- source_word: אֲשֶׁר
+  chosen: who
+  alternatives:
+  - that
+  lexicon: HALOT
+  rationale: Simple relative pronoun introducing the description of the preceding
+    group.
+- source_word: שָׁמְעוּ
+  chosen: have heard
+  alternatives:
+  - heard
+  - received by hearing
+  lexicon: HALOT
+  rationale: The perfect can be rendered simply as past, but 'have heard' works naturally
+    in English and highlights received tradition continuing into the present exhortation.
+- source_word: מֵאֲבֹתָם
+  chosen: from their fathers
+  alternatives:
+  - from their ancestors
+  lexicon: HALOT
+  rationale: The Hebrew explicitly says 'their fathers.' In wisdom literature this
+    often refers to ancestral tradition. Per project philosophy, the gendered term
+    is retained rather than neutralized, though 'ancestors' is a possible interpretive
+    alternative.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 18b30730530aa77813d5aa3c15cef869edb21a359b95b06b17b94aca715ad545
+  timestamp: '2026-04-21T20:21:34Z'
+  output_hash: df4197891830b191aac5bbe9ad3cd3af18b6f7c0f7dee49df3d7c8e6456673f7
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:12 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the surviving Hebrew and the Greek parallel for Sirach
+    8:12
+  chosen_reading: Translate the extant Hebrew line as the main text.
+  alternative_readings:
+  - 'Greek tradition: ''Do not lend to a man stronger than you, and if you do lend,
+    count it as lost.'''
+  rationale: For Sirach, where Hebrew survives, project policy gives primacy to the
+    Hebrew witness. Here the Greek is not a minor variant but an entirely different
+    saying, so it is preserved as an alternative textual tradition in a footnote rather
+    than harmonized into the main text.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach Hebrew survives;
+    use Greek parallel as actual input while keeping Hebrew primary.'

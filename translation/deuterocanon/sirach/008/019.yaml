@@ -1,0 +1,116 @@
+id: SIR.8.19
+reference: Sirach 8:19
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אִם אַכְזָרִי אַל תֵּלֵךְ, פֶּן תַּכְבִּיד אֶת רָעָתֶךָ.
+  language: Hebrew
+  pages:
+  - 677
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: παντὶ ἀνθρώπῳ μὴ ἔκφαινε σὴν καρδίαν, καὶ μὴ ἀναφερέτω σοι χάριν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:19
+translation:
+  text: Do not go with a cruel man, lest you add weight to your own trouble.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''Do not reveal your heart to every man, and do not let
+      him repay you with favor.'' The Hebrew and Greek witnesses differ substantially
+      here.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אִם אַכְזָרִי
+  chosen: a cruel man
+  alternatives:
+  - with a cruel person
+  - with the cruel
+  lexicon: HALOT
+  rationale: The Hebrew adjective/noun אַכְזָרִי denotes a cruel or merciless person.
+    The singular masculine is best represented as 'man' under the project's gender-accurate
+    policy, while still conveying a representative type rather than one specific individual.
+- source_word: אַל תֵּלֵךְ
+  chosen: Do not go with
+  alternatives:
+  - do not walk with
+  - do not associate with
+  lexicon: HALOT
+  rationale: הלך literally means 'go/walk.' In wisdom context with a person as object,
+    English 'go with' naturally conveys keeping company or accompanying someone without
+    over-paraphrasing to the more interpretive 'associate with.'
+- source_word: פֶּן
+  chosen: lest
+  alternatives:
+  - or else
+  - so that not
+  lexicon: HALOT
+  rationale: פֶּן introduces a warning of undesirable consequence. 'Lest' is concise
+    and preserves the admonitory force.
+- source_word: תַּכְבִּיד
+  chosen: you add weight to
+  alternatives:
+  - you make heavier
+  - you increase
+  - you burden
+  lexicon: HALOT
+  rationale: From כבד in the Hiphil, the sense is to make heavy or increase the burden.
+    'Add weight to' keeps the metaphor of heaviness present in the Hebrew while remaining
+    idiomatic English.
+- source_word: אֶת רָעָתֶךָ
+  chosen: your own trouble
+  alternatives:
+  - your evil
+  - your harm
+  - your misfortune
+  lexicon: HALOT
+  rationale: רעה can mean evil, harm, or calamity/trouble depending on context. Here
+    the warning concerns the damage that comes upon the addressee from keeping company
+    with a cruel person, so 'trouble' best captures the consequential sense. 'Your
+    own' makes explicit the 2ms suffix. The Greek parallel points in a different textual
+    direction, so the Hebrew sense is retained in the main text.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b8a12cf32eb23246df17b0664b631e8653f94131a587f1b607209fe04d46e17a
+  timestamp: '2026-04-21T20:25:26Z'
+  output_hash: bdc0a6021b5faad08c55dbb46e9a516ab6c7e2760a07672de07aeca9106e6e36
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:19 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the surviving Hebrew and the Greek parallel for Sirach
+    8:19
+  chosen_reading: Translate the extant Hebrew as the primary witness for this verse,
+    while preserving the Greek as an alternative reading in a footnote.
+  alternative_readings:
+  - 'Greek: ''Do not reveal your heart to every man, and do not let him repay you
+    with favor.'''
+  rationale: For Sirach, where Hebrew survives, the project translates from the Hebrew
+    witness as primary. This verse shows a substantial mismatch between the Cairo
+    Geniza Hebrew and the Greek tradition, not merely a stylistic difference. Because
+    the Hebrew witness is present and marked high confidence, the main text follows
+    it; because the Greek is materially different and may reflect another Vorlage
+    or textual development, it should be preserved in a footnote for transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve
+    source uncertainty honestly'

@@ -1,0 +1,124 @@
+id: SIR.8.6
+reference: Sirach 8:6
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תְּרַגִּיל אִישׁ אֱוִיל, פֶּן יָבוּז לִנְדִיבִים
+  language: Hebrew
+  pages:
+  - 676
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μὴ ἀτιμάσῃς ἄνθρωπον ἐν γήρει αὐτοῦ, καὶ γὰρ ἐξ ἡμῶν γηράσκουσιν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:6
+translation:
+  text: Do not grow accustomed to a foolish man, lest he show contempt for nobles.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''Do not dishonor a man in his old age, for some of us
+      too are growing old.'' The Greek differs substantially from the extant Hebrew
+      in this verse.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: אַל
+  chosen: Do not
+  alternatives:
+  - Do not ever
+  - You shall not
+  lexicon: HALOT
+  rationale: Standard negative prohibition introducing the admonition.
+- source_word: תְּרַגִּיל
+  chosen: grow accustomed to
+  alternatives:
+  - associate with regularly
+  - make familiar
+  - train
+  lexicon: HALOT
+  rationale: From רגל in the causative/intensive sense of making habitual or becoming
+    familiar with. 'Grow accustomed to' preserves the warning against habitual association
+    better than a flatter 'associate with.'
+- source_word: אִישׁ
+  chosen: man
+  alternatives:
+  - person
+  - someone
+  lexicon: HALOT
+  rationale: The Hebrew is singular masculine. Per project philosophy, a gender-accurate
+    rendering is preferred unless context clearly universalizes beyond the masculine
+    form.
+- source_word: אֱוִיל
+  chosen: foolish
+  alternatives:
+  - fool
+  - stupid
+  lexicon: HALOT
+  rationale: Used adjectivally with אִישׁ. 'Foolish man' is natural English and preserves
+    the wisdom-literature moral category without the harshness or modern connotations
+    of 'stupid.'
+- source_word: פֶּן
+  chosen: lest
+  alternatives:
+  - or else
+  - so that not
+  lexicon: HALOT
+  rationale: Introduces the negative consequence clause succinctly and idiomatically.
+- source_word: יָבוּז
+  chosen: he show contempt
+  alternatives:
+  - he despise
+  - he scorn
+  lexicon: HALOT
+  rationale: בוז denotes contempt or despising. 'Show contempt' makes the social action
+    explicit in contemporary English while remaining close to the Hebrew sense.
+- source_word: לִנְדִיבִים
+  chosen: for nobles
+  alternatives:
+  - for the generous
+  - for princes
+  - for honorable people
+  lexicon: HALOT
+  rationale: נדיבים can denote nobles/princely persons, though the root also carries
+    the sense of generosity. Given the social setting of wisdom instruction and the
+    Greek parallel's different reading, 'nobles' best fits the Hebrew witness while
+    preserving the likely class/status nuance.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: bb59467d46e170452097596825333ed57adb2dfcff67d5dad39036fc394ea7d3
+  timestamp: '2026-04-21T20:19:55Z'
+  output_hash: eba7e2aac63f40b91ce9203eda02d5dff1811b1562740488314e8a82242d9902
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:6 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the surviving Hebrew and the Greek parallel
+  chosen_reading: Translate the Hebrew as the primary witness, while preserving the
+    Greek as an alternative in a footnote.
+  alternative_readings:
+  - Do not dishonor a man in his old age, for some of us too are growing old.
+  rationale: For Sirach, where Hebrew survives, project policy gives primacy to the
+    Hebrew witness. However, the Greek parallel here differs substantially rather
+    than merely stylistically, so the alternative should be exposed for auditability.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
+    Greek parallel as actual input and preserve meaningful alternatives transparently.'

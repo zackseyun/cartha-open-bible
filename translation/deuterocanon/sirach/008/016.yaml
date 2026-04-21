@@ -1,0 +1,122 @@
+id: SIR.8.16
+reference: Sirach 8:16
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אַל תַּלְוֶה אִישׁ חָזָק מִמְּךָ, וְאִם הִלְוִיתָ כִּמְאַבֵּד.
+  language: Hebrew
+  pages:
+  - 677
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μετὰ θυμώδους μὴ ποιήσῃς μάχην, καὶ μὴ διαπορεύου μετʼ αὐτοῦ τὴν ἔρημον·
+      ὅτι ὡς οὐδὲν ἐν ὀφθαλμοῖς αὐτοῦ αἷμα, καὶ ὅπου οὐκ ἔστιν βοήθεια καταβαλεῖ σε.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 8:16
+translation:
+  text: Do not lend to a man stronger than you; and if you do lend, regard it as lost.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The Greek witness here reads a different warning: ''Do not fight with a
+      hot-tempered man, and do not travel through the wilderness with him ... where
+      there is no help, he will strike you down.'' The surviving Hebrew instead warns
+      against lending to someone stronger than you.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: אַל
+  chosen: Do not
+  alternatives:
+  - You shall not
+  - Never
+  lexicon: HALOT
+  rationale: Standard negative prohibition in wisdom instruction; 'Do not' gives clear,
+    natural English without adding force beyond the Hebrew.
+- source_word: תַּלְוֶה
+  chosen: lend
+  alternatives:
+  - make a loan to
+  - become surety for
+  lexicon: HALOT
+  rationale: From the root לוה in the Hiphil, the plain sense here is to lend or extend
+    a loan. 'Lend' is the most direct and idiomatic rendering. The following clause
+    about loss confirms a financial-loan context.
+- source_word: אִישׁ חָזָק מִמְּךָ
+  chosen: a man stronger than you
+  alternatives:
+  - a powerful man above you
+  - someone stronger than you
+  lexicon: HALOT
+  rationale: The Hebrew is gendered singular ('man') and the project prefers gender-accurate
+    renderings where the source is masculine. חָזָק with מִמְּךָ denotes one stronger
+    or more powerful than the addressee; 'stronger than you' preserves the comparative
+    force naturally.
+- source_word: וְאִם הִלְוִיתָ
+  chosen: and if you do lend
+  alternatives:
+  - but if you have lent
+  - and if you lend
+  lexicon: HALOT
+  rationale: The clause is conditional and practical, moving from prohibition to contingency.
+    'If you do lend' captures the concessive sense in smooth English.
+- source_word: כִּמְאַבֵּד
+  chosen: regard it as lost
+  alternatives:
+  - as one destroying
+  - as though you had lost it
+  - consider it gone
+  lexicon: HALOT
+  rationale: 'The prefixed כ marks comparison: treat the loan as something lost. Because
+    the Hebrew expression is elliptical, ''regard it as lost'' makes the implied object
+    explicit in English while staying close to the sense. This also fits the wisdom
+    warning about inability to recover a loan from a stronger person.'
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 09236a078df18f9f5cd0984c94e478ab27e443dd521a74403293147aafefe801
+  timestamp: '2026-04-21T20:24:49Z'
+  output_hash: d404867d1e411263a950afa87bac9d78ed766bd98126eb2b4f24500b5d2eee2f
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @f45dd70e
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @f45dd70e
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 8:16 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Gendered wording of אִישׁ in wisdom instruction
+  chosen_reading: a man stronger than you
+  alternative_readings:
+  - someone stronger than you
+  rationale: The source uses the masculine singular noun אִישׁ. Per doctrine, gender-accurate
+    rendering is preferred unless context clearly demands neutralization. Here the
+    saying is framed as masculine wisdom address, so 'man' is retained in the main
+    text.
+  doctrine_reference: DOCTRINE.md § Translation philosophy, point 4
+- issue: Use of Hebrew as primary witness with Greek parallel in view
+  chosen_reading: Translate the Hebrew loan-warning directly, without importing the
+    divergent Greek wording about quarreling with a hot-tempered man.
+  alternative_readings:
+  - Translate from the Greek parallel instead
+  - Conflate Hebrew and Greek into a generalized warning
+  rationale: For Sirach, surviving Hebrew is primary where available. The Greek parallel
+    here reflects a substantially different saying, so it serves as a consistency
+    check and evidence of textual divergence, not as wording to be merged into the
+    main translation. The divergence is significant enough to preserve in a footnote.
+  doctrine_reference: PHILOSOPHY.md 'What we are translating' and task requirement
+    to use the parallel as actual input while keeping the Hebrew primary
