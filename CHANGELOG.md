@@ -9,6 +9,30 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## Phase 8b — 2 Esdras pipeline setup (in progress, 2026-04-21)
+
+Separate-pipeline setup for 2 Esdras (4 Ezra) — which falls outside
+the LXX infrastructure because its Greek source is lost and the
+text survives only via Latin + 6 daughter translations.
+
+- **Source PDFs vendored** in `sources/2esdras/`:
+  - Bensly 1875, *The Missing Fragment of the Latin Translation of
+    the Fourth Book of Ezra* (PD, the Amiens Codex 7:36-140 recovery).
+  - Bensly (ed. James) 1895, *The Fourth Book of Ezra: The Latin
+    Version Edited from the MSS*, in *Texts and Studies III.2* (PD,
+    the critical Latin edition — our primary source-of-truth).
+  - Violet 1910, *Die Esra-Apokalypse (IV. Esra) I: Die Überlieferung*
+    and vol. 2 (GCS 18, PD, parallel-column Latin + Syriac + Ethiopic
+    + Arabic + Armenian + Georgian — our multi-witness edition).
+- **Scope doc** at `2ESDRAS.md`: per-witness coverage, translation
+  strategy (Latin primary with 6 daughter translations as apparatus),
+  timeline.
+- **Scaffolding** at `tools/2esdras/` with `multi_witness.py` exposing
+  the target shape of the per-verse witness aggregator. OCR and
+  per-witness transcription pipelines are next.
+- **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
+  completes. 2 Esdras work is setup/preparation only until then.
+
 ## Phase 8 corpus rescue update — 2026-04-21
 
 Follow-up quality work on the deuterocanonical corpus after the first
