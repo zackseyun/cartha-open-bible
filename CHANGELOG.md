@@ -272,6 +272,10 @@ text survives only via Latin + 6 daughter translations.
     `sources/2esdras/latin/intermediate/bensly1875_body_*`
   - Bensly 1895 chapter-candidate segmentation now lives in
     `sources/2esdras/latin/intermediate/bensly1895_chapter_candidates/`
+  - the 1875 Missing Fragment is now verse-indexed as
+    `sources/2esdras/latin/intermediate/bensly1875_fragment_verses/ch07_036_105.txt`
+  - chapter VII now has a single hybrid working file at
+    `sources/2esdras/latin/intermediate/bensly_ch07_hybrid_working.txt`
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 

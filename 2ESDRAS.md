@@ -148,6 +148,8 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 | `sources/2esdras/syriac/`, `/ethiopic/`, `/arabic_armenian/` | ⏳ pending | Clean UTF-8 for each witness, per-verse-indexed |
 | `tools/2esdras/ocr_pipeline.py` | ✓ scaffold | Azure GPT-5 vision OCR of local Bensly/Violet PDFs, per-page, with source-specific prompts + `.meta.json` provenance |
 | `tools/2esdras/extract_bensly_body.py` | ✓ scaffold | Extracts `[BODY]` from Bensly 1895 / 1875 raw OCR into cleaner Latin working text files for cleanup |
+| `tools/2esdras/build_missing_fragment_verses.py` | ✓ scaffold | Builds a verse-indexed working file for the 1875 Missing Fragment (VII 36–105) |
+| `tools/2esdras/build_ch07_hybrid.py` | ✓ scaffold | Assembles a chapter VII hybrid working file from 1895 pre/post material plus the 1875 fragment |
 | `tools/2esdras/latin_bensly.py` | ✓ scaffold | Loader for chapter-indexed cleaned Latin (`ch01.txt`, etc.); exposes `load_verse(ch, vs)` |
 | `tools/2esdras/multi_witness.py` | ✓ partial scaffold | Per-verse witness aggregator; Latin path is wired, daughter witnesses still pending |
 | `tools/2esdras/build_translation_prompt.py` | ⏳ pending | Phase 10 prompt builder (Latin primary + witnesses + Zone 2) |

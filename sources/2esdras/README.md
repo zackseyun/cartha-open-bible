@@ -126,6 +126,12 @@ Next cleanup substrate:
 - `../../tools/2esdras/segment_bensly_chapters.py` then splits the
   1895 combined working text into chapter candidate files under
   `latin/intermediate/bensly1895_chapter_candidates/`
+- `../../tools/2esdras/build_missing_fragment_verses.py` builds a
+  verse-indexed working file for VII 36–105 at
+  `latin/intermediate/bensly1875_fragment_verses/ch07_036_105.txt`
+- `../../tools/2esdras/build_ch07_hybrid.py` assembles a single
+  chapter-VII hybrid working file at
+  `latin/intermediate/bensly_ch07_hybrid_working.txt`
 
 Note: in the 1875 run, pages **75–76** are notes/apparatus-only in our
 OCR output and therefore yield no `[BODY]` extraction, which is the
