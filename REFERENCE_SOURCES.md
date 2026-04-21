@@ -169,7 +169,9 @@ context block mechanically without per-book special-casing.
 The translator-prompt builder itself (Phase 8-C deuterocanon drafting work, not yet written)
 will:
 
-1. Load the Greek verse from `sources/lxx/swete/final_corpus_adjudicated/`
+1. Load the Greek verse from `sources/lxx/swete/final_corpus_adjudicated/`,
+   with translation-ready overrides from `sources/lxx/swete/final_corpus_normalized/`
+   when a known numbering contamination has been formally normalized
 2. Call `hebrew_parallels.lookup(book, ch, vs)` for Zone 1 Hebrew/MT
 3. Pull Zone 1 secondary reference readings where available
 4. Inject the Zone 2 "consult" block from the book's Zone 2 registry

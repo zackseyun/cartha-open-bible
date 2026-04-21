@@ -156,7 +156,12 @@ def _build_source_payload(
         "confidence": verse.source_confidence,
         "validation": verse.source_validation,
     }
-    labels = [_snapshot_label("Swete LXX (scan-adjudicated corpus)")]
+    primary_label = (
+        "Swete LXX (normalized translation corpus)"
+        if verse.translation == "swete-1909-normalized"
+        else "Swete LXX (scan-adjudicated corpus)"
+    )
+    labels = [_snapshot_label(primary_label)]
 
     parallel_sources, parallel_labels = _parallel_source_payload(zone1_parallel)
     labels.extend(parallel_labels)
@@ -183,6 +188,11 @@ def _build_source_payload(
     numbering_note = _numbering_note(verse.book_code)
     if numbering_note:
         source_payload["numbering_note"] = numbering_note
+    if verse.translation == "swete-1909-normalized":
+        source_payload["note"] = (
+            (source_payload.get("note", "") + " " if source_payload.get("note") else "")
+            + "This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus."
+        ).strip()
 
     return source_payload, labels
 

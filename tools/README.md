@@ -23,6 +23,7 @@ Cartha Open Bible.
 | `review_transcription.py` | implemented | Reviews an existing Swete transcription against the scan image via GPT-5.4, returning structured corrections-only function output and per-page review metadata. |
 | `summarize_transcription_reviews.py` | implemented | Aggregates GPT-5.4 and Claude review outputs, reports parseability, correction counts, and high-risk pages for adjudication. |
 | `review_phase8_swete.sh` | implemented | Convenience launcher for the full 572-page Phase 8 Swete GPT-5.4 review run, with resumable `--skip-existing` behavior and per-volume logs. |
+| `build_normalized_deuterocanon_corpus.py` | implemented | Builds translation-ready override files for deuterocanonical books whose raw adjudicated stream still contains known numbering contamination. The translation layer prefers these normalized overrides when present. |
 
 ## Prerequisites
 

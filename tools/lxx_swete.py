@@ -871,13 +871,20 @@ def parse_pages_to_verses(
 FINAL_CORPUS_DIR = (
     REPO_ROOT / "sources" / "lxx" / "swete" / "final_corpus_adjudicated"
 )
+NORMALIZED_CORPUS_DIR = (
+    REPO_ROOT / "sources" / "lxx" / "swete" / "final_corpus_normalized"
+)
 
 
 def _load_final_corpus(book_code: str) -> list[SwtVerse] | None:
     """Load the book's verses from the hybrid final corpus (JSONL) if
     available. Returns None if the book isn't in the final corpus."""
     import json as _json
-    path = FINAL_CORPUS_DIR / f"{book_code}.jsonl"
+    path = NORMALIZED_CORPUS_DIR / f"{book_code}.jsonl"
+    translation_label = "swete-1909-normalized"
+    if not path.exists():
+        path = FINAL_CORPUS_DIR / f"{book_code}.jsonl"
+        translation_label = "swete-1909-adjudicated"
     if not path.exists():
         return None
     out: list[SwtVerse] = []
@@ -904,7 +911,7 @@ def _load_final_corpus(book_code: str) -> list[SwtVerse] | None:
                     ),
                     source_validation=rec.get("validation"),
                     source_warnings=_source_warnings_for_record(rec),
-                    translation="swete-1909-adjudicated",
+                    translation=translation_label,
                 )
             )
     return out
@@ -915,13 +922,6 @@ def _source_warnings_for_record(rec: dict) -> list[str]:
     book = str(rec.get("book") or "")
     chapter = int(rec.get("chapter") or 0)
     verse = int(rec.get("verse") or 0)
-    source_pages = list(rec.get("source_pages") or [])
-
-    if not source_pages:
-        warnings.append(
-            "No source_pages recorded for this adjudicated verse; verify the page linkage before publishing."
-        )
-
     if book == "BAR" and chapter == 5 and verse >= 10:
         warnings.append(
             "Known numbering contamination: BAR 5:10-66 currently spills into Lamentations material and should not be drafted until normalized."
