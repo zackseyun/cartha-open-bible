@@ -314,6 +314,18 @@ text survives only via Latin + 6 daughter translations.
   - `tools/2esdras/report_latin_transcribed_coverage.py` now generates
     `sources/2esdras/latin/transcribed/COVERAGE.md` and
     `COVERAGE.json` so the remaining cleanup debt is explicit
+  - `tools/2esdras/editorial_cleanup_latin_transcribed.py` applies a
+    conservative cleanup pass over the published Latin files
+  - `tools/2esdras/check_latin_quality.py` generates
+    `sources/2esdras/latin/transcribed/QUALITY_CHECK.md` and
+    `QUALITY_CHECK.json`
+  - editorial cleanup removed **37 verse-number bleed artifacts** and
+    the follow-up pass reduced **digit-bleed and hyphen-break counts to
+    zero** across the published Latin files
+  - the remaining flagged issues are now explicit in the quality
+    report (for example: chapter 10 verse 47 still empty, chapter 12
+    contains one surviving ellipsis marker, chapter 16 still carries
+    one crop marker)
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 
