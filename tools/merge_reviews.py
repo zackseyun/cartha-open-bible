@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""merge_reviews.py — cross-reference Azure + Gemini reviews.
+"""merge_reviews.py — cross-reference GPT-5.4 + Gemini reviews.
 
-For each page with both an Azure review and a Gemini review, this
+For each page with both a GPT-5.4 review and a Gemini review, this
 compares the two reviewers' correction lists and emits:
 
   1. `<stem>.merged.json` — one-per-page merged worklist with provenance:
@@ -9,8 +9,8 @@ compares the two reviewers' correction lists and emits:
      {
        "stem": "vol2_p0155",
        "agreed": [...],      # both reviewers flagged essentially the same fix
-       "azure_only": [...],  # Azure flagged, Gemini did not
-       "gemini_only": [...], # Gemini flagged, Azure did not
+       "gpt54_only": [...],  # GPT-5.4 flagged, Gemini did not
+       "gemini_only": [...], # Gemini flagged, GPT-5.4 did not
        "counts": {...},
      }
 
@@ -43,7 +43,7 @@ from typing import Any
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 REVIEWS_ROOT = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews"
-AZURE_DIR = REVIEWS_ROOT / "azure"
+GPT54_DIR = REVIEWS_ROOT / "gpt54"
 DEFAULT_GEMINI_DIRS = ["gemini", "gemini_tobit", "gemini_esdras", "gemini_wer", "gemini_wer_v3"]
 MERGED_DIR = REVIEWS_ROOT / "merged"
 SUMMARY_PATH = REVIEWS_ROOT / "MERGED_SUMMARY.md"
@@ -139,15 +139,15 @@ def reviews_for_stem(gemini_dirs: list[pathlib.Path], stem: str) -> dict[str, An
     return None
 
 
-def merge_page(stem: str, azure: dict[str, Any], gemini_info: dict[str, Any]) -> dict[str, Any]:
-    azure_corrs = azure.get("corrections", []) or []
+def merge_page(stem: str, gpt54: dict[str, Any], gemini_info: dict[str, Any]) -> dict[str, Any]:
+    gpt54_corrs = gpt54.get("corrections", []) or []
     gemini_corrs = gemini_info["data"].get("corrections", []) or []
 
     matched_g: set[int] = set()
     agreed: list[dict[str, Any]] = []
-    azure_only: list[dict[str, Any]] = []
+    gpt54_only: list[dict[str, Any]] = []
 
-    for a in azure_corrs:
+    for a in gpt54_corrs:
         matched = False
         for gi, g in enumerate(gemini_corrs):
             if gi in matched_g:
@@ -157,10 +157,10 @@ def merge_page(stem: str, azure: dict[str, Any], gemini_info: dict[str, Any]) ->
                     {
                         "section": a.get("section"),
                         "location": a.get("location"),
-                        "azure": a,
+                        "gpt54": a,
                         "gemini": g,
                         # For application: prefer Gemini's correct text if available
-                        # (Gemini tends to have more accurate spelling), else Azure's.
+                        # (Gemini tends to have more accurate spelling), else GPT-5.4's.
                         "current": g.get("current") or a.get("current"),
                         "correct": g.get("correct") or a.get("correct"),
                         "severity": a.get("severity"),
@@ -172,7 +172,7 @@ def merge_page(stem: str, azure: dict[str, Any], gemini_info: dict[str, Any]) ->
                 matched = True
                 break
         if not matched:
-            azure_only.append(a)
+            gpt54_only.append(a)
 
     gemini_only = [g for gi, g in enumerate(gemini_corrs) if gi not in matched_g]
 
@@ -180,14 +180,14 @@ def merge_page(stem: str, azure: dict[str, Any], gemini_info: dict[str, Any]) ->
         "stem": stem,
         "source_gemini_dir": gemini_info["source_dir"],
         "counts": {
-            "azure_total": len(azure_corrs),
+            "gpt54_total": len(gpt54_corrs),
             "gemini_total": len(gemini_corrs),
             "agreed": len(agreed),
-            "azure_only": len(azure_only),
+            "gpt54_only": len(gpt54_only),
             "gemini_only": len(gemini_only),
         },
         "agreed": agreed,
-        "azure_only": azure_only,
+        "gpt54_only": gpt54_only,
         "gemini_only": gemini_only,
     }
 
@@ -198,7 +198,7 @@ def build_summary(per_page: list[dict[str, Any]]) -> str:
     for p in per_page:
         total["pages"] += 1
         total["agreed"] += p["counts"]["agreed"]
-        total["azure_only"] += p["counts"]["azure_only"]
+        total["gpt54_only"] += p["counts"]["gpt54_only"]
         total["gemini_only"] += p["counts"]["gemini_only"]
         by_dir[p["source_gemini_dir"]] += 1
 
@@ -208,59 +208,59 @@ def build_summary(per_page: list[dict[str, Any]]) -> str:
         agreement_rate_by_dir.setdefault(d, Counter())
         agreement_rate_by_dir[d]["pages"] += 1
         agreement_rate_by_dir[d]["agreed"] += p["counts"]["agreed"]
-        agreement_rate_by_dir[d]["azure_only"] += p["counts"]["azure_only"]
+        agreement_rate_by_dir[d]["gpt54_only"] += p["counts"]["gpt54_only"]
         agreement_rate_by_dir[d]["gemini_only"] += p["counts"]["gemini_only"]
-        agreement_rate_by_dir[d]["azure_total"] += p["counts"]["azure_total"]
+        agreement_rate_by_dir[d]["gpt54_total"] += p["counts"]["gpt54_total"]
         agreement_rate_by_dir[d]["gemini_total"] += p["counts"]["gemini_total"]
 
-    # Top pages with most Gemini-only (new) flags — likely hidden errors Azure missed
+    # Top pages with most Gemini-only (new) flags — likely hidden errors GPT-5.4 missed
     gemini_new = sorted(
         per_page,
         key=lambda p: -p["counts"]["gemini_only"],
     )[:15]
 
     lines = [
-        "# Merged Azure + Gemini review summary",
+        "# Merged GPT-5.4 + Gemini review summary",
         "",
         f"**Generated:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         "",
-        f"Pages with both Azure + Gemini reviews: **{total['pages']}**",
+        f"Pages with both GPT-5.4 + Gemini reviews: **{total['pages']}**",
         "",
         "## Cross-model agreement",
         "",
         f"- **Agreed corrections (high signal):** {total['agreed']}",
-        f"- **Azure-only (Gemini did not flag):** {total['azure_only']}",
-        f"- **Gemini-only (Azure did not flag):** {total['gemini_only']}",
+        f"- **GPT-5.4-only (Gemini did not flag):** {total['gpt54_only']}",
+        f"- **Gemini-only (GPT-5.4 did not flag):** {total['gemini_only']}",
         "",
         "Agreed corrections are the highest-confidence items: two independent",
         "vision models (GPT-5.4, Gemini 2.5 Pro) flagged essentially the same",
         "fix. These should be auto-applied.",
         "",
-        "Azure-only and Gemini-only items represent *possible* real errors",
+        "GPT-5.4-only and Gemini-only items represent *possible* real errors",
         "that one model missed. These need human adjudication or a ",
         "third-opinion pass.",
         "",
         "## By Gemini scope",
         "",
-        "| Scope | Pages | Azure items | Gemini items | Agreed | Azure-only | Gemini-only |",
+        "| Scope | Pages | GPT-5.4 items | Gemini items | Agreed | GPT-5.4-only | Gemini-only |",
         "|---|---:|---:|---:|---:|---:|---:|",
     ]
     for d, c in sorted(agreement_rate_by_dir.items()):
         lines.append(
-            f"| `{d}` | {c['pages']} | {c['azure_total']} | {c['gemini_total']} "
-            f"| {c['agreed']} | {c['azure_only']} | {c['gemini_only']} |"
+            f"| `{d}` | {c['pages']} | {c['gpt54_total']} | {c['gemini_total']} "
+            f"| {c['agreed']} | {c['gpt54_only']} | {c['gemini_only']} |"
         )
     lines.extend(
         [
             "",
-            "## Pages with most Gemini-only flags (possible Azure misses)",
+            "## Pages with most Gemini-only flags (possible GPT-5.4 misses)",
             "",
         ]
     )
     for p in gemini_new:
         lines.append(
             f"- `{p['stem']}` — gemini_only={p['counts']['gemini_only']} "
-            f"(azure_total={p['counts']['azure_total']}, gemini_total={p['counts']['gemini_total']})"
+            f"(gpt54_total={p['counts']['gpt54_total']}, gemini_total={p['counts']['gemini_total']})"
         )
     return "\n".join(lines) + "\n"
 
@@ -291,28 +291,28 @@ def main() -> int:
     if args.page:
         stems_to_process = [args.page]
     else:
-        # Any stem that has BOTH an Azure review and a Gemini review somewhere
-        azure_stems = {
-            p.stem.replace(".review", "") for p in AZURE_DIR.glob("*.review.json")
+        # Any stem that has BOTH a GPT-5.4 review and a Gemini review somewhere
+        gpt54_stems = {
+            p.stem.replace(".review", "") for p in GPT54_DIR.glob("*.review.json")
         }
         gemini_stems: set[str] = set()
         for d in gemini_dirs:
             gemini_stems.update(
                 p.stem.replace(".review", "") for p in d.glob("*.review.json")
             )
-        stems_to_process = sorted(azure_stems & gemini_stems)
+        stems_to_process = sorted(gpt54_stems & gemini_stems)
 
     for stem in stems_to_process:
-        azure_path = AZURE_DIR / f"{stem}.review.json"
-        if not azure_path.exists():
+        gpt54_path = GPT54_DIR / f"{stem}.review.json"
+        if not gpt54_path.exists():
             continue
-        azure = load_review(azure_path)
-        if azure is None:
+        gpt54 = load_review(gpt54_path)
+        if gpt54 is None:
             continue
         gemini_info = reviews_for_stem(gemini_dirs, stem)
         if gemini_info is None:
             continue
-        merged = merge_page(stem, azure, gemini_info)
+        merged = merge_page(stem, gpt54, gemini_info)
         per_page.append(merged)
         out_path = MERGED_DIR / f"{stem}.merged.json"
         out_path.write_text(
@@ -325,7 +325,7 @@ def main() -> int:
     total_agreed = sum(p["counts"]["agreed"] for p in per_page)
     print(f"Merged {len(per_page)} page(s).")
     print(f"  agreed corrections: {total_agreed}")
-    print(f"  azure-only:         {sum(p['counts']['azure_only'] for p in per_page)}")
+    print(f"  gpt54-only:         {sum(p['counts']['gpt54_only'] for p in per_page)}")
     print(f"  gemini-only:        {sum(p['counts']['gemini_only'] for p in per_page)}")
     print(f"Summary: {SUMMARY_PATH}")
     print(f"Per-page merged dir: {MERGED_DIR}")

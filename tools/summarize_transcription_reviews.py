@@ -20,7 +20,7 @@ from collections import Counter
 from typing import Any
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
-DEFAULT_AZURE_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "azure"
+DEFAULT_GPT54_DIR = REPO_ROOT / "sources" / "lxx" / "swete" / "reviews" / "gpt54"
 DEFAULT_OPUS_GLOB = REPO_ROOT / "sources" / "lxx" / "swete" / "transcribed"
 KNOWN_SEVERITIES = {"meaning-altering", "grammatical", "cosmetic"}
 KNOWN_SECTIONS = {"BODY", "APPARATUS", "RUNNING HEAD", "MARGINALIA"}
@@ -125,7 +125,7 @@ def main() -> int:
     parser.add_argument("--top", type=int, default=20, help="How many high-risk pages to print")
     args = parser.parse_args()
 
-    scan_paths = args.paths or [DEFAULT_AZURE_DIR, DEFAULT_OPUS_GLOB]
+    scan_paths = args.paths or [DEFAULT_GPT54_DIR, DEFAULT_OPUS_GLOB]
     files = iter_review_files(scan_paths)
     if not files:
         print("No review files found.")
@@ -145,7 +145,7 @@ def main() -> int:
             parse_status[status or "invalid"] += 1
             continue
         parse_status["ok"] += 1
-        family = "opus" if path.name.endswith(".opus-review.json") else "azure"
+        family = "opus" if path.name.endswith(".opus-review.json") else "gpt54"
         model_family[family] += 1
         corrections = data.get("corrections") or []
         uncertain = data.get("uncertain") or []
