@@ -1,0 +1,126 @@
+id: SIR.34.12
+reference: Sirach 34:12
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אל תשחד כי לא יקח, ואל תבטח על זבח מעשק.<br><small>(יב)</small> כי אלהי משפט
+    הוא, ואין עמו משוא פנים.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 724
+  - 725
+  - 726
+  - 727
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πλεονάκις ἕως θανάτου ἐκινδύνευσα, καὶ διεσώθην τούτων χάριν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 34:12
+translation:
+  text: For he is a God of justice, and with him there is no partiality.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The supplied Greek parallel for this verse in Swete reads a different sentence
+      ('Many times I was in danger unto death, and I was delivered because of these
+      things'), indicating a textual or versification mismatch at this location. The
+      translation here follows the surviving Hebrew witness.
+    reason: textual_variant
+lexical_decisions:
+- source_word: כי
+  chosen: For
+  alternatives:
+  - because
+  - indeed
+  lexicon: HALOT
+  rationale: Introduces the reason for the preceding prohibition in the Hebrew context.
+    'For' is natural English and preserves the causal force.
+- source_word: אלהי
+  chosen: God of
+  alternatives:
+  - God, a God of
+  - the God of
+  lexicon: HALOT
+  rationale: Construct form with משפט. Since the Hebrew lacks the article here, 'a
+    God of justice' would be possible, but in English 'he is a God of justice' best
+    reflects the predicative sense without overdefining.
+- source_word: משפט
+  chosen: justice
+  alternatives:
+  - judgment
+  - justice
+  lexicon: HALOT
+  rationale: In this context the sense is God's just judicial character, grounding
+    the claim that bribery and exploitative sacrifice are unacceptable. 'Justice'
+    communicates the ethical-judicial force more idiomatically than 'judgment'.
+- source_word: אין עמו
+  chosen: with him there is no
+  alternatives:
+  - there is not with him
+  - he has no
+  lexicon: HALOT
+  rationale: This idiom expresses what is absent in God's presence or character. 'With
+    him there is no' is a clear, fairly literal English rendering.
+- source_word: משוא פנים
+  chosen: partiality
+  alternatives:
+  - favoritism
+  - respect of persons
+  - lifting up of face
+  lexicon: HALOT
+  rationale: Standard Hebrew idiom for showing favoritism or accepting persons based
+    on status. 'Partiality' is concise, natural, and preserves the judicial setting.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: b5666efa5fe783b7d0e432efd83129f54dafc7c9668e91a105eff7587a68632d
+  timestamp: '2026-04-21T21:19:56Z'
+  output_hash: 6c2199df81a4d247f93132e4510eac02cb7a0cc3b565b94334e7db39695ccdf8
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @db03867c
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @db03867c
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Rendering of משפט in a statement about God's character
+  chosen_reading: justice
+  alternative_readings:
+  - judgment
+  rationale: The verse describes God's moral-judicial nature as the basis for rejecting
+    bribery and oppression. 'Justice' best conveys this in contemporary English while
+    preserving the theological claim that God judges rightly.
+  doctrine_reference: 'DOCTRINE.md: consistency of key terms, or documented exception'
+- issue: Whether to preserve the Hebrew contextual link despite the Greek parallel
+    being unrelated in Swete
+  chosen_reading: Translate from the surviving Hebrew witness and note the Greek mismatch
+    as a textual issue
+  alternative_readings:
+  - Translate the extant Greek parallel instead
+  - Conflate Hebrew and Greek into a harmonized text
+  rationale: 'Zone 1 marks the Hebrew as the primary witness for surviving Hebrew
+    Sirach, but also flags a major mismatch: the supplied Greek parallel corresponds
+    to a different line entirely. The English draft therefore follows the Hebrew text
+    while honestly preserving the mismatch in a footnote.'
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve
+    source uncertainty honestly'
