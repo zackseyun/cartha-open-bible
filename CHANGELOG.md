@@ -9,6 +9,52 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## Phase 8 corpus milestone — 2026-04-20
+
+LXX deuterocanonical source text ready for Phase 9 drafting. This is
+a corpus release, not a translation release — no English verses ship
+from Phase 8 itself.
+
+- **Scope**: 13 deuterocanonical books, 6,337 verses total.
+- **Transcription**: our own OCR of Swete 1909 (Public Domain) via
+  Azure GPT-5 vision, released under CC-BY 4.0.
+- **Adjudication**: scan-grounded verdicts against 4 independent
+  transcriptions (ours, First1KGreek, Rahlfs-Hanhart, Amicarelli) for
+  3,464 verses where our OCR disagreed with at least one witness.
+- **Confidence after all rescue passes**: **98.9% high** (3,425), 1.1%
+  medium (39), **0% low** — no verses left in an unverified state.
+- **Rescue passes** (iteratively):
+  1. `rescue_low_conf.py` — 4-source re-adjudication at 3000px scan
+     resolution for every initially low/medium verse.
+  2. Fixed image-fetch silent-failure bug and a page-metadata bug
+     affecting Greek Esther Additions and Tobit chapter 14.
+  3. `rescue_hebrew_parallel.py` — 5-source rescue adding Hebrew
+     witness (Sefaria Kahana for SIR, Neubauer 1878 for TOB, WLC MT
+     parallel for 1ES) to 14 verses in 1ES 5/6/8/9 + SIR 3/40.
+  4. `rescue_low_conf_focused.py` — content-based per-verse page
+     identification, targeting the final 32 low-conf verses in
+     ADE/TOB with a single focused scan per verse. All 32 promoted
+     to high with 0 failures.
+- **Quality benchmark** (vs First1KGreek as independent validation
+  oracle): 72.3% strict agreement, 86.1% functional agreement. 806
+  "major" differences verified by the scan adjudicator as legitimate
+  Swete (diplomatic Vaticanus) vs First1KGreek (eclectic) textual-
+  tradition divergences, not OCR errors. Published in
+  `sources/lxx/swete/QUALITY_BENCHMARK.md`.
+- **Per-book 100%-high**: WIS, 3MA, 4MA, LJE, ADA. All other books ≥ 97%.
+- **Hebrew/MT parallels vendored** (`sources/lxx/hebrew_parallels/`):
+  Sefaria Ben Sira (CC0, 1,018/1,019 verses), Sefaria Tobit Neubauer
+  1878 (PD, 76/76 verses), 1 Esdras → MT alignment table. Accessible
+  via `tools/hebrew_parallels.py::lookup_with_consult`.
+- **Yadin 1965 Masada Ben Sira scroll** (Zone 2 consult, per
+  REFERENCE_SOURCES.md): a copy of the editio princeps is consulted
+  during Sirach drafting. 413 Sirach verses indexed across chs
+  4, 39-44, 49, 51 with 100% coverage of the Sir 39:27-44:17 scroll
+  range. Consulted via `tools/yadin_masada.py::lookup`; nothing from
+  this work appears in COB output or is committed to the repository.
+- **Three-zone reference policy** formalized in REFERENCE_SOURCES.md;
+  deferred-source integration documented in REVISION_LATER.md.
+
 ## v0.2-pauline — 2026-04-18
 
 - Phase: Phase 1 — Pauline epistles

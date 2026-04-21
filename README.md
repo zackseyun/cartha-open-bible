@@ -244,7 +244,7 @@ set of complete books (not partial books):
 - Phase 5: Former Prophets (Joshua through 2 Kings)
 - Phase 6: Writings (Psalms, Proverbs, Job, Chronicles, etc.)
 - Phase 7: Latter Prophets (Isaiah, Jeremiah, Ezekiel, Twelve)
-- Phase 8: Deuterocanonical books (Tobit through 4 Maccabees, from LXX) — see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)
+- Phase 8: Deuterocanonical books (Tobit through 4 Maccabees, from LXX). Corpus complete as of 2026-04-20 (13 books, 6,337 verses, 98.9% high-confidence scan-adjudicated transcription). Translation drafting begins in Phase 9. See [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md), [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md) (three-zone scholarly-source policy), and [REVISION_LATER.md](REVISION_LATER.md) (deferred-source integration).
 
 Tagged releases follow the `vMAJOR.MINOR.PATCH` convention. The first public
 release is `v0.1-preview`.

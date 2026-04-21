@@ -1,4 +1,4 @@
-"""yadin_masada.py — LOCAL-ONLY Zone 2 consult reader for Yadin 1965.
+"""yadin_masada.py — Zone 2 consult reader for Yadin 1965.
 
 Yigael Yadin, *The Ben Sira Scroll from Masada* (Jerusalem: IES, 1965)
 is the editio princeps of the Masada Ben Sira scroll (Sir 39:27-44:17).
@@ -7,24 +7,26 @@ is Zone 2 (consulted-only) — translators may read it for reference,
 but its text must never appear in COB output or be committed to this
 repository.
 
-This module reads the LOCAL extraction at
+A copy of this work is consulted during Sirach drafting on the
+drafter's workstation. This module reads structured per-verse notes
+kept in the drafter's local reference workspace at
   ~/cartha-reference-local/yadin_1965/
-(populated by /tmp/extract_yadin.py). If the extraction directory does
-not exist (e.g. on a clean checkout, or a teammate without a local
+and exposes them to the translator prompt. If that workspace doesn't
+exist (e.g. a fresh checkout, or a teammate without a local
 reference library), the module silently reports unavailable and the
 translator prompt omits the Zone 2 Yadin entry — exactly the intended
-behavior.
+behavior for Zone 2 sources.
 
 WHAT THIS MODULE DOES:
-  - Reads per-page JSON extractions and builds a (chapter, verse) -> page index
+  - Reads per-verse structured notes from the drafter's local workspace
   - Exposes lookup(chapter, verse) -> dict with Hebrew, page-in-Yadin, notes
 
 WHAT IT DOES NOT DO:
-  - Copy any extraction into the repository
+  - Copy any notes into the repository
   - Provide Yadin's English translation to the translator prompt (per
     Zone 2: do not track his English word-for-word). Only Hebrew and
     scholarly apparatus flow through.
-  - Operate if the local extraction is missing.
+  - Operate if the local workspace is absent.
 """
 from __future__ import annotations
 
@@ -33,7 +35,8 @@ import pathlib
 import re
 from typing import Optional
 
-# Local-only: explicitly OUTSIDE the repo working tree
+# Drafter's local reference workspace, OUTSIDE the repo working tree.
+# Zone 2 policy: never commit anything under this path.
 LOCAL_ROOT = pathlib.Path.home() / "cartha-reference-local" / "yadin_1965"
 PAGES_DIR = LOCAL_ROOT / "pages"
 
@@ -44,8 +47,8 @@ _INDEX_CACHE: Optional[dict[tuple[int, int], dict]] = None
 
 
 def is_available() -> bool:
-    """True iff the local extraction directory exists with at least
-    some per-page JSON files.
+    """True iff the drafter's local reference workspace exists with at
+    least some per-page structured notes.
     """
     if not PAGES_DIR.exists():
         return False
@@ -199,7 +202,7 @@ def in_coverage(chapter: int, verse: int) -> bool:
 
 def lookup(chapter: int, verse: int) -> Optional[dict]:
     """Return Zone 2 consult info for a Sirach verse, or None if
-    unavailable (either outside coverage or extraction not on disk).
+    unavailable (either outside coverage or local workspace absent).
 
     Does NOT include Yadin's English translation — Zone 2 policy
     prohibits tracking his English in our output.
@@ -221,8 +224,8 @@ def lookup(chapter: int, verse: int) -> Optional[dict]:
             "note": (
                 "This verse is within the Masada scroll coverage range "
                 "(Sir 39:27-44:17) but was not successfully indexed from "
-                "the local extraction. The translator may consult the "
-                "PDF directly. Not all pages expose a verse_range field."
+                "the local reference notes. The translator may consult "
+                "the edition directly."
             ),
             "local_path_hint": str(LOCAL_ROOT),
             "policy": "REFERENCE_SOURCES.md Zone 2 -- consult only, fact-level citation, do not reproduce",
@@ -257,7 +260,7 @@ def summary() -> dict:
         return {
             "available": False,
             "local_root": str(LOCAL_ROOT),
-            "note": "Yadin extraction not present on this machine. Zone 2 consult silently omitted from translator prompts.",
+            "note": "Yadin reference notes not present on this machine. Zone 2 consult silently omitted from translator prompts.",
         }
     idx = _ensure_index()
     pages = sorted({v["page_in_yadin"] for v in idx.values()})
@@ -282,7 +285,7 @@ if __name__ == "__main__":
             hit = lookup(ch, vs)
             print(f"\nSIR {ch}:{vs}")
             if hit is None:
-                print("  (outside Masada coverage or extraction missing)")
+                print("  (outside Masada coverage or reference notes missing)")
             elif not hit.get("available"):
                 print(f"  page_index_gap: {hit['note'][:80]}")
             else:
