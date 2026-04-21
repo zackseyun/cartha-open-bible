@@ -1,0 +1,133 @@
+id: SIR.13.1
+reference: Sirach 13:1
+source:
+  edition: sefaria-ben-sira-kahana
+  text: נוֹגֵעַ בְּזֶפֶת תִּדְבַּק יָדוֹ, וְחוֹבֵר אֶל לֵץ יִלְמַד דַּרְכּוֹ.
+  language: Hebrew
+  pages:
+  - 681
+  - 684
+  - 685
+  - 686
+  - 687
+  - 688
+  - 689
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: Ὁ ἁπτόμενος πίσσης μολυνθήσεται, καὶ ὁ κοινωνῶν ὑπερηφάνῳ ὁμοιωθήσεται αὐτῷ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 13:1
+translation:
+  text: Whoever touches pitch will have his hand stick to it, and whoever associates
+    with a scoffer will learn his way.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''He who touches pitch will be defiled, and he who has
+      fellowship with a proud man will become like him.'' The Hebrew witness instead
+      reads ''a scoffer'' and ''will learn his way.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: נוֹגֵעַ
+  chosen: Whoever touches
+  alternatives:
+  - He who touches
+  - The one touching
+  lexicon: HALOT
+  rationale: The participle introduces a general proverbial subject. 'Whoever touches'
+    gives natural English while preserving the generic force of the Hebrew.
+- source_word: בְּזֶפֶת
+  chosen: pitch
+  alternatives:
+  - tar
+  - bitumen
+  lexicon: HALOT
+  rationale: '''Pitch'' best fits the sticky black substance in proverbial usage and
+    matches the image of defilement/adhesion also reflected by the Greek πίσσα.'
+- source_word: תִּדְבַּק יָדוֹ
+  chosen: will have his hand stick to it
+  alternatives:
+  - his hand will cling
+  - his hand will be stuck
+  lexicon: HALOT
+  rationale: The Hebrew literally says 'his hand will stick/cling.' Adding 'to it'
+    makes the English idiomatic and clarifies the object implied by the context. 'Stick'
+    preserves the concrete image better than the more abstract Greek-based 'be defiled.'
+- source_word: וְחוֹבֵר
+  chosen: and whoever associates with
+  alternatives:
+  - and he who joins himself to
+  - and whoever keeps company with
+  lexicon: HALOT
+  rationale: The Hebrew verb conveys joining or associating oneself with someone.
+    'Associates with' is clear modern English and preserves the relational sense without
+    over-paraphrase.
+- source_word: לֵץ
+  chosen: a scoffer
+  alternatives:
+  - a mocker
+  - an arrogant man
+  lexicon: HALOT
+  rationale: In Hebrew wisdom literature לֵץ commonly denotes a scoffer or mocker.
+    Although the Greek parallel has 'the proud man' (ὑπερήφανος), the primary Hebrew
+    witness supports 'scoffer'; this better fits the wisdom-category vocabulary of
+    Ben Sira's Hebrew.
+- source_word: יִלְמַד דַּרְכּוֹ
+  chosen: will learn his way
+  alternatives:
+  - will learn his ways
+  - will become like him
+  lexicon: HALOT
+  rationale: The Hebrew explicitly says 'will learn his way.' This is more precise
+    than the Greek parallel's interpretive 'will become like him,' while still conveying
+    moral imitation.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: c0f5957a36924c30b04300d34d6d182cb0eb860fb1883b6bd5feefa1689feb10
+  timestamp: '2026-04-21T20:21:09Z'
+  output_hash: 9b38a13ea904b27ee39596c1d109fa6633019c2f3a7fe1e38a2e927d0c8c98c2
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8c4a7c3c
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8c4a7c3c
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 13:1 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Primary-source alignment between Hebrew and Greek parallel
+  chosen_reading: Follow the extant Hebrew wording as primary, while checking the
+    Greek as a consistency control.
+  alternative_readings:
+  - 'Render from the Greek parallel: ''He who touches pitch will be defiled, and he
+    who has fellowship with a proud man will become like him.'''
+  rationale: 'For Sirach, where Hebrew survives, project policy gives Hebrew primacy.
+    Here the Hebrew and Greek convey the same proverb broadly, but differ in nuance:
+    Hebrew emphasizes sticking and learning a scoffer''s way; Greek emphasizes defilement
+    and becoming like a proud person. The main text therefore follows the Hebrew while
+    preserving the Greek-shaped alternative in a footnote.'
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; DOCTRINE.md:
+    preserve theological tension/alternatives in footnotes rather than silently resolving
+    them.'
