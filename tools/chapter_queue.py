@@ -242,6 +242,42 @@ def mark_failed(*, db_path: pathlib.Path, job_id: int, error_text: str) -> None:
         conn.commit()
 
 
+def release_running(*, db_path: pathlib.Path, worker_ids: list[str] | None = None, phases: list[str] | None = None) -> list[dict[str, Any]]:
+    with contextlib.closing(connect(db_path)) as conn:
+        ensure_schema(conn)
+        query = "SELECT * FROM jobs WHERE status=?"
+        params: list[Any] = [STATUS_RUNNING]
+        if worker_ids:
+            query += " AND worker_id IN ({})".format(",".join("?" for _ in worker_ids))
+            params.extend(worker_ids)
+        if phases:
+            query += " AND phase IN ({})".format(",".join("?" for _ in phases))
+            params.extend(phases)
+        rows = conn.execute(query, params).fetchall()
+        if not rows:
+            return []
+        now = utc_now()
+        released: list[dict[str, Any]] = []
+        for row in rows:
+            conn.execute(
+                """
+                UPDATE jobs
+                SET status=?, worker_id=NULL, worktree_path=NULL, claimed_at=NULL, updated_at=?
+                WHERE id=?
+                """,
+                (STATUS_PENDING, now, row["id"]),
+            )
+            append_event(
+                conn,
+                row["id"],
+                "release",
+                {"worker_id": row["worker_id"], "worktree_path": row["worktree_path"]},
+            )
+            released.append(dict(row))
+        conn.commit()
+        return released
+
+
 def mark_merged(*, db_path: pathlib.Path, job_id: int, merge_commit_sha: str) -> None:
     with contextlib.closing(connect(db_path)) as conn:
         ensure_schema(conn)
@@ -298,6 +334,10 @@ def main() -> int:
     p_fail.add_argument("job_id", type=int)
     p_fail.add_argument("--error", required=True)
 
+    p_release = sub.add_parser("release")
+    p_release.add_argument("--worker-id", action="append", dest="worker_ids")
+    p_release.add_argument("--phase", action="append", dest="phases")
+
     p_merge = sub.add_parser("merge")
     p_merge.add_argument("job_id", type=int)
     p_merge.add_argument("--merge-commit-sha", required=True)
@@ -321,6 +361,9 @@ def main() -> int:
         return 0
     if args.cmd == "fail":
         mark_failed(db_path=db_path, job_id=args.job_id, error_text=args.error)
+        return 0
+    if args.cmd == "release":
+        print(json.dumps(release_running(db_path=db_path, worker_ids=args.worker_ids, phases=args.phases), indent=2, ensure_ascii=False))
         return 0
     if args.cmd == "merge":
         mark_merged(db_path=db_path, job_id=args.job_id, merge_commit_sha=args.merge_commit_sha)
