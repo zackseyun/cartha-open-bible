@@ -1,0 +1,142 @@
+id: SIR.10.15
+reference: Sirach 10:15
+source:
+  edition: sefaria-ben-sira-kahana
+  text: כִּסֵּא גֵאִים הָפַך אֱלֹהִים, וַיֹּשֶׁב עֲנָוִים תַּחְתָּם.
+  language: Hebrew
+  pages:
+  - 678
+  - 679
+  - 680
+  - 681
+  - 682
+  - 683
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: θρόνους ἀρχόντων καθεῖλεν ὁ κύριος, καὶ ἐκάθισεν πραεῖς ἀντʼ αὐτῶν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 10:15
+translation:
+  text: God overturned the thrones of the proud, and seated the humble in their place.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''the Lord'' instead of ''God.'''
+    reason: alternative_reading
+lexical_decisions:
+- source_word: כִּסֵּא
+  chosen: thrones
+  alternatives:
+  - seat
+  - chair
+  - throne
+  lexicon: HALOT
+  rationale: Although the Hebrew form is singular ('throne/seat'), the parallel Greek
+    has plural θρόνους, and the singular in Hebrew can function collectively here.
+    'Thrones' best reflects the sense of positions of rule and aligns with the parallel
+    witness without over-translating.
+- source_word: גֵאִים
+  chosen: the proud
+  alternatives:
+  - the arrogant
+  - the exalted ones
+  lexicon: HALOT
+  rationale: The Hebrew denotes haughty or proud people. 'The proud' is idiomatic
+    and preserves the moral sense of arrogance rather than merely social elevation.
+- source_word: הָפַך
+  chosen: overturned
+  alternatives:
+  - cast down
+  - reversed
+  - upturned
+  lexicon: HALOT
+  rationale: The verb means to turn over or overturn. 'Overturned' preserves the concrete
+    image from the Hebrew; 'cast down' is influenced by the Greek but is slightly
+    more interpretive.
+- source_word: אֱלֹהִים
+  chosen: God
+  alternatives:
+  - the Lord
+  lexicon: HALOT
+  rationale: The Hebrew explicitly reads 'God' (אֱלֹהִים), while the Greek parallel
+    has 'the Lord.' Since the Hebrew is the primary witness where extant, 'God' should
+    stand in the main text.
+- source_word: וַיֹּשֶׁב
+  chosen: seated
+  alternatives:
+  - caused to sit
+  - set
+  - enthroned
+  lexicon: HALOT
+  rationale: The verb means to cause to sit or to seat. 'Seated' is natural English
+    and keeps the reversal imagery. 'Enthroned' would be too specific, since the object
+    is people rather than explicitly kings.
+- source_word: עֲנָוִים
+  chosen: the humble
+  alternatives:
+  - the meek
+  - the lowly
+  lexicon: HALOT
+  rationale: The Hebrew refers to humble or lowly people. The Greek πραεῖς could support
+    'meek,' but 'humble' better matches the Hebrew witness and the pride/humility
+    contrast in context.
+- source_word: תַּחְתָּם
+  chosen: in their place
+  alternatives:
+  - under them
+  - instead of them
+  - beneath them
+  lexicon: HALOT
+  rationale: 'Literally ''under them,'' but in this context of replacing rulers, the
+    idiomatic sense is substitution: the humble are seated where the proud had been.
+    The Greek ἀντʼ αὐτῶν confirms the replacement sense.'
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: ed131b559b0449b62a97b842e49ddda416e29c64367724efd385a586481ae477
+  timestamp: '2026-04-21T20:23:55Z'
+  output_hash: f2fff5b1e0d3835d83d2053f2986c123f193ebdd7b4284565ab6baff221ad4b1
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8ed0b3d9
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8ed0b3d9
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 10:15 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew divine title and Greek parallel
+  chosen_reading: Use 'God' in the main text from the Hebrew witness
+  alternative_readings:
+  - the Lord
+  rationale: For Sirach, the project translates from the Hebrew where it survives,
+    while using the Greek parallel as a real input and consistency check. Here the
+    Hebrew has אֱלֹהִים ('God') and the Greek has ὁ κύριος ('the Lord'). Because the
+    Hebrew is extant and high-confidence, the main text follows 'God,' while the Greek-based
+    alternative is preserved in a footnote.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; DOCTRINE.md
+    contested terms table for κύριος/YHWH is not directly controlling here because
+    the Hebrew source reads אֱלֹהִים, not YHWH.'

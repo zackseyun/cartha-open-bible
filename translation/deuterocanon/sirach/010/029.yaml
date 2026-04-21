@@ -1,0 +1,128 @@
+id: SIR.10.29
+reference: Sirach 10:29
+source:
+  edition: sefaria-ben-sira-kahana
+  text: מַרְשִׁיעַ נַפְשׁוֹ מִי יַצְדִיקֶנּוּ, וּמִי יְכַבֵּד מַקְלֶה נַפְשׁוֹ.
+  language: Hebrew
+  pages:
+  - 678
+  - 679
+  - 680
+  - 681
+  - 682
+  - 683
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: πτωχὸς δοξάζεται διʼ ἐπιστήμην αὐτοῦ, καὶ πλούσιος δοξάζεται διὰ τὸν πλοῦτον
+      αὐτοῦ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 10:29
+translation:
+  text: Who will declare righteous the one who condemns himself, and who will honor
+    the one who dishonors himself?
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek witness: ''A poor man is honored for his knowledge, and a rich man
+      is honored for his wealth.'' The Hebrew and Greek here preserve substantially
+      different sayings.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: מַרְשִׁיעַ
+  chosen: condemns
+  alternatives:
+  - declares guilty
+  - brings guilt on
+  lexicon: HALOT
+  rationale: Hiphil of רשע commonly means 'declare guilty/condemn.' In this wisdom
+    context with reflexive object 'his soul/self,' the sense is that a person treats
+    himself as blameworthy or ruins his own standing. 'Condemns' is concise and idiomatic
+    in English while preserving the judicial coloring.
+- source_word: נַפְשׁוֹ
+  chosen: himself
+  alternatives:
+  - his soul
+  - his life
+  - his very self
+  lexicon: HALOT
+  rationale: 'נפש can mean soul, life, or self. In both cola the reflexive sense fits
+    best in English: the person is acting against himself. Rendering literally as
+    ''his soul'' would sound unnatural and could over-spiritualize the Hebrew.'
+- source_word: יַצְדִיקֶנּוּ
+  chosen: declare righteous
+  alternatives:
+  - justify
+  - vindicate
+  lexicon: HALOT
+  rationale: 'Hiphil of צדק is forensic: ''declare righteous/justify.'' ''Declare
+    righteous'' makes the judicial sense explicit and avoids importing later doctrinal
+    freight that ''justify'' can carry, while still matching the Hebrew.'
+- source_word: יְכַבֵּד
+  chosen: honor
+  alternatives:
+  - glorify
+  - esteem
+  lexicon: HALOT
+  rationale: כבד in the piel commonly means 'honor.' This fits the social valuation
+    parallel to the first colon's judicial valuation.
+- source_word: מַקְלֶה
+  chosen: dishonors
+  alternatives:
+  - treats lightly
+  - despises
+  - disgraces
+  lexicon: HALOT
+  rationale: From קלל in a causative/intensive sense, the idea is making light of
+    or dishonoring. 'Dishonors' gives a clean antithesis with 'honor' and suits the
+    parallelism.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 3ad924c3f858a66206093aa4c66f7d8f562631481c2016bb8f2e7bcaa3f6f5a6
+  timestamp: '2026-04-21T20:29:36Z'
+  output_hash: 649367bfb92b61dab628b37c644d495215c66b472df1e44357cddc70c5555ad8
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8ed0b3d9
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8ed0b3d9
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 10:29 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between Hebrew and Greek witnesses
+  chosen_reading: Translate the extant Hebrew as the primary witness for this verse,
+    while noting the Greek preserves a substantially different saying.
+  alternative_readings:
+  - 'Greek: ''A poor man is honored for his knowledge, and a rich man is honored for
+    his wealth.'''
+  rationale: Project policy gives primacy to the Hebrew of Sirach where it survives,
+    but the prompt flags a major mismatch and supplies a Greek parallel with wholly
+    different content. The main text therefore follows the Hebrew witness, and the
+    Greek is preserved in a footnote as a significant alternative tradition rather
+    than harmonized into the translation.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach survives;
+    use Greek parallel as actual input and preserve uncertainty honestly.'

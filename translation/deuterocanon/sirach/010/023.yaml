@@ -1,0 +1,141 @@
+id: SIR.10.23
+reference: Sirach 10:23
+source:
+  edition: sefaria-ben-sira-kahana
+  text: אֵין לִבְזוֹת דַּל מַשְׁכִּיל, וְאֵין לְכַבֵּד עַוָּל אֲשֶׁר הוּרָם.
+  language: Hebrew
+  pages:
+  - 678
+  - 679
+  - 680
+  - 681
+  - 682
+  - 683
+  - 722
+  - 729
+  - 744
+  - 745
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μεγιστὰν κριτὴς καὶ δυνάστης δοξασθήσεται, καὶ οὐκ ἔστιν αὐτῶν τις μείζων
+      τοῦ φοβουμένου τὸν κύριον.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 10:23
+translation:
+  text: One should not despise an intelligent poor man, nor honor a wrongdoer who
+    has been exalted.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek tradition reads very differently here: ''A great man, a judge, and
+      a ruler will be honored, and none of them is greater than the one who fears
+      the Lord.'' The Hebrew witness behind the main text instead gives an ethical
+      maxim about not despising a poor but intelligent man and not honoring an exalted
+      wrongdoer.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: אֵין לִבְזוֹת
+  chosen: One should not despise
+  alternatives:
+  - there is no despising
+  - do not despise
+  lexicon: HALOT
+  rationale: The Hebrew construction with אֵין + infinitive functions idiomatically
+    as a prohibition or statement of impropriety. English 'One should not despise'
+    captures the gnomic, wisdom-style force better than a wooden 'there is no despising.'
+- source_word: דַּל
+  chosen: poor man
+  alternatives:
+  - poor person
+  - lowly man
+  - the poor
+  lexicon: HALOT
+  rationale: דַּל denotes one who is poor, weak, or of low status. Because the Hebrew
+    is singular masculine and proverbial, 'poor man' preserves the gendered singular
+    form per project philosophy, while still functioning generically.
+- source_word: מַשְׁכִּיל
+  chosen: intelligent
+  alternatives:
+  - wise
+  - prudent
+  - discerning
+  lexicon: HALOT
+  rationale: 'מַשְׁכִּיל points to understanding or prudence. ''Intelligent'' fits
+    the immediate contrast with social status: poverty does not negate real understanding.
+    ''Wise'' is possible, but ''intelligent'' better reflects the participial sense
+    of being insightful.'
+- source_word: לְכַבֵּד
+  chosen: honor
+  alternatives:
+  - glorify
+  - show respect to
+  lexicon: HALOT
+  rationale: כבד in the piel commonly means to honor or give weight to. 'Honor' is
+    the most natural English equivalent in this ethical maxim.
+- source_word: עַוָּל
+  chosen: wrongdoer
+  alternatives:
+  - unjust man
+  - evildoer
+  - wicked man
+  lexicon: HALOT
+  rationale: עַוָּל denotes one characterized by injustice or wrongdoing. 'Wrongdoer'
+    is clear modern English and avoids over-specifying the moral category beyond the
+    Hebrew.
+- source_word: אֲשֶׁר הוּרָם
+  chosen: who has been exalted
+  alternatives:
+  - though he has been raised high
+  - who has been elevated
+  lexicon: HALOT
+  rationale: The passive perfect indicates someone elevated in status. 'Who has been
+    exalted' preserves the passive and the social-status nuance. The Greek parallel
+    likewise reflects public honor/status, supporting this sense.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: cf3c776fcd509042f8f1c2e41a1ffa3590bf967487d746554927c01ada952650
+  timestamp: '2026-04-21T20:26:10Z'
+  output_hash: 55baf7069595c178853f56926ff8e0c542dae2c9dbdfded49aee46fc118e8ab9
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @8ed0b3d9
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @8ed0b3d9
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 10:23 falls in the Schechter facsimile range; when direct MSS A/B
+      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
+      witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Use of Hebrew Geniza text versus divergent Greek parallel
+  chosen_reading: Translate the extant Hebrew maxim directly, while allowing the Greek
+    to confirm the status/honor theme rather than override the Hebrew wording.
+  alternative_readings:
+  - 'A Greek-based rendering emphasizing rulers and the God-fearer: ''A great man,
+    judge, and ruler will be honored, but none of them is greater than the one who
+    fears the Lord.'''
+  rationale: Zone 1 provides a high-confidence Hebrew witness, which has primacy for
+    extant Hebrew Sirach under project policy. However, the validation flag 'major_mismatch'
+    and the Greek parallel show that the traditions diverge substantially at this
+    verse. The main text therefore follows the Hebrew, and the Greek is preserved
+    in a footnote as a significant alternative textual tradition.
+  doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives;
+    use Greek parallel as actual input without displacing Hebrew primacy.'
