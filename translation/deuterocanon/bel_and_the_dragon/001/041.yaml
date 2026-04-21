@@ -1,0 +1,98 @@
+id: BEL.1.41
+reference: Bel and the Dragon 1:41
+source:
+  edition: lxx-swete-1909
+  text: καὶ ἀναβοήσας φωνῇ μεγάλῃ εἶπεν Μέγας εἶ, Κύριε ὁ θεὸς τοῦ
+  language: Greek
+  pages:
+  - 616
+  confidence: high
+  validation: normalized_direct_extract
+  note: This verse is being loaded from the normalized translation-ready override
+    layer derived from the adjudicated corpus. Standalone Bel extraction currently
+    follows the complete Theodotion stream in Swete, because that stream is the cleanest
+    fully numbered extract available in the current corpus.
+translation:
+  text: And crying out with a loud voice, he said, “Great are you, Lord God of the
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The Greek source provided for this verse ends with 'of the' (τοῦ), so the
+      English line is necessarily incomplete here rather than reconstructed from context.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ἀναβοήσας
+  chosen: crying out
+  alternatives:
+  - shouting
+  - calling out
+  lexicon: BDAG
+  rationale: Aorist participle from ἀναβοάω denotes a forceful vocal outcry. 'Crying
+    out' preserves the intensity without over-specifying the emotional tone.
+- source_word: φωνῇ μεγάλῃ
+  chosen: with a loud voice
+  alternatives:
+  - in a loud voice
+  - loudly
+  lexicon: BDAG
+  rationale: This is a common idiom meaning audible intensity. 'With a loud voice'
+    stays close to the Greek form while remaining natural English.
+- source_word: Μέγας εἶ
+  chosen: Great are you
+  alternatives:
+  - You are great
+  - Great are you indeed
+  lexicon: BDAG
+  rationale: The predicate adjective placed first gives emphasis. 'Great are you'
+    preserves the elevated, exclamatory tone better than the flatter 'You are great.'
+- source_word: Κύριε
+  chosen: Lord
+  alternatives:
+  - Master
+  lexicon: BDAG
+  rationale: Per doctrine, κύριος defaults to 'Lord.' In direct address here it functions
+    as a divine title.
+- source_word: ὁ θεὸς
+  chosen: God
+  lexicon: BDAG
+  rationale: Standard rendering of θεός. The article is not separately represented
+    in English because 'Lord God' is the natural idiomatic form in direct address.
+- source_word: τοῦ
+  chosen: of the
+  lexicon: BDAG
+  rationale: The surviving source text ends with the genitive article τοῦ, indicating
+    the phrase continues into the next verse or line. It should be translated as 'of
+    the' rather than omitted, despite the resulting incompleteness in English, because
+    the Zone 1 witness for this verse is itself truncated.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 770827789b7a4e2cf9cd5f71b3100f062a7b098247ca647443dbddc34c63eadb
+  timestamp: '2026-04-21T20:53:16Z'
+  output_hash: c077b9e88c800ef231c675dfe8105c0366dd0975a04d521593908d1aebe47d71
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (normalized translation corpus) @c9de0570
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Moore 1977, Anchor Bible 44
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Rendering κύριος in a divine address
+  chosen_reading: Lord
+  alternative_readings:
+  - Master
+  rationale: The address is to Israel's God, and the project's default for κύριος
+    is 'Lord.' No stronger contextual reason exists here to depart from that standard.
+  doctrine_reference: 'DOCTRINE.md Contested terms: κύριος → Lord'
+- issue: Handling the incomplete source text ending at τοῦ
+  chosen_reading: Preserve the verse as an incomplete clause in English
+  alternative_readings:
+  - Supply the likely continuation from context or adjacent verse tradition
+  rationale: The provided Zone 1 text for this verse is incomplete. Transparency requires
+    reflecting the extant wording rather than reconstructing missing words without
+    direct source support in the prompt.
+  doctrine_reference: 'PHILOSOPHY.md: original-language primacy and transparency'
