@@ -9,6 +9,13 @@ This is the Group A companion to:
 Unlike those, this tool is intentionally generic: it OCRs *any* local
 Greek PDF page range into `.txt` + `.meta.json` files using the shared
 extra-canonical Greek prompt.
+
+Backends:
+  - Azure GPT-5.4 vision (default)
+  - Gemini Pro via the global AI Studio endpoint
+
+Gemini keys can be supplied directly via `GEMINI_API_KEY` or resolved
+from AWS Secrets Manager (`/cartha/openclaw/gemini_api_key`, us-west-2).
 """
 from __future__ import annotations
 
@@ -26,10 +33,14 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+import boto3
+
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 PROMPT_PATH = REPO_ROOT / "tools" / "prompts" / "transcribe_greek_extra_generic.md"
 PROMPT_VERSION = "greek_extra_generic_v1_2026-04-21"
+DEFAULT_GEMINI_SECRET_ID = "/cartha/openclaw/gemini_api_key"
+DEFAULT_GEMINI_MODEL = "gemini-2.5-pro"
 
 
 def azure_endpoint() -> str:
@@ -51,6 +62,53 @@ def azure_api_version() -> str:
         "AZURE_OPENAI_API_VERSION",
         "2025-04-01-preview",
     )
+
+
+def resolve_gemini_api_keys() -> list[str]:
+    env_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if env_key:
+        return [env_key]
+    sm = boto3.client("secretsmanager", region_name="us-west-2")
+    raw = sm.get_secret_value(
+        SecretId=os.environ.get("GEMINI_SECRET_ID", DEFAULT_GEMINI_SECRET_ID)
+    )["SecretString"].strip()
+
+    keys: list[str] = []
+    try:
+        obj = json.loads(raw)
+    except Exception:
+        if raw:
+            keys = [raw]
+    else:
+        if isinstance(obj, dict):
+            vals = obj.get("api_keys")
+            if isinstance(vals, list):
+                keys.extend(str(v).strip() for v in vals if str(v).strip())
+            for k in ("api_key", "apiKey", "key", "GEMINI_API_KEY"):
+                v = obj.get(k)
+                if isinstance(v, str) and v.strip():
+                    keys.append(v.strip())
+                    break
+        elif isinstance(obj, list):
+            keys.extend(str(v).strip() for v in obj if str(v).strip())
+
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for key in keys:
+        if key and key not in seen:
+            seen.add(key)
+            deduped.append(key)
+
+    if not deduped:
+        raise RuntimeError("No Gemini API keys resolved from secret")
+    return deduped
+
+
+def resolve_gemini_api_key(index: int = 1) -> str:
+    deduped = resolve_gemini_api_keys()
+    if index < 1 or index > len(deduped):
+        raise RuntimeError(f"Requested Gemini key index {index} out of range 1..{len(deduped)}")
+    return deduped[index - 1]
 
 
 def parse_pages(page_arg: int | None, pages_arg: str | None) -> list[int]:
@@ -136,6 +194,63 @@ def call_azure_vision(image_bytes: bytes, system_prompt: str, *, max_tokens: int
     return body["choices"][0]["message"]["content"], body.get("model", azure_deployment())
 
 
+def call_gemini_vision(
+    image_bytes: bytes,
+    system_prompt: str,
+    *,
+    max_tokens: int,
+    model: str,
+    key_index: int,
+) -> tuple[str, str]:
+    keys = resolve_gemini_api_keys()
+    if not keys:
+        raise RuntimeError("No Gemini keys available")
+    start = max(0, key_index - 1)
+    ordered = keys[start:] + keys[:start]
+
+    last_err: RuntimeError | None = None
+    for slot, api_key in enumerate(ordered, start=1):
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        payload = {
+            "contents": [{
+                "parts": [
+                    {"text": system_prompt + "\n\nTranscribe this page following the instructions exactly."},
+                    {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(image_bytes).decode("ascii")}},
+                ]
+            }],
+            "generationConfig": {
+                "temperature": 0.0,
+                "maxOutputTokens": max_tokens,
+            },
+        }
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                body = json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            if exc.code == 429 and ("RESOURCE_EXHAUSTED" in detail or "depleted" in detail.lower()) and slot < len(ordered):
+                last_err = RuntimeError(f"Gemini key slot exhausted; trying fallback key {slot + 1}/{len(ordered)}")
+                continue
+            raise RuntimeError(f"Gemini HTTP {exc.code}: {detail[:500]}") from exc
+
+        cand = (body.get("candidates") or [None])[0]
+        if not cand:
+            raise RuntimeError(f"Gemini returned no candidates; promptFeedback={body.get('promptFeedback')}")
+        parts = cand.get("content", {}).get("parts") or []
+        text = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
+        if not text:
+            raise RuntimeError("Gemini returned empty text")
+        return text, body.get("modelVersion", model)
+
+    raise last_err or RuntimeError("Gemini call failed on all configured keys")
+
+
 def output_stem(prefix: str, page: int) -> str:
     safe = "".join(ch if ch.isalnum() or ch in {"-", "_"} else "_" for ch in prefix).strip("_")
     return f"{safe or 'greek_extra'}_p{page:04d}"
@@ -151,17 +266,30 @@ def process_page(
     max_tokens: int,
     stem_prefix: str,
     book_hint: str,
+    backend: str,
+    gemini_model: str,
+    gemini_key_index: int,
 ) -> dict:
     image_bytes = render_pdf_page(pdf_path, page, dpi=dpi)
     image_sha = hashlib.sha256(image_bytes).hexdigest()
     started = time.time()
-    text, model_id = call_azure_vision(image_bytes, prompt, max_tokens=max_tokens)
+    if backend == "gemini":
+        text, model_id = call_gemini_vision(
+            image_bytes,
+            prompt,
+            max_tokens=max_tokens,
+            model=gemini_model,
+            key_index=gemini_key_index,
+        )
+    else:
+        text, model_id = call_azure_vision(image_bytes, prompt, max_tokens=max_tokens)
     duration = round(time.time() - started, 2)
 
     stem = output_stem(stem_prefix, page)
     (out_dir / f"{stem}.txt").write_text(text, encoding="utf-8")
     meta = {
         "source": "greek_extra_pdf",
+        "backend": backend,
         "book_hint": book_hint,
         "pdf_path": str(pdf_path),
         "page": page,
@@ -170,7 +298,8 @@ def process_page(
         "image_bytes": len(image_bytes),
         "provenance_url": f"file://{pdf_path}#page={page}",
         "model": model_id,
-        "deployment": azure_deployment(),
+        "deployment": azure_deployment() if backend == "azure" else "",
+        "gemini_key_index": gemini_key_index if backend == "gemini" else None,
         "prompt_version": PROMPT_VERSION,
         "transcribed_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "duration_seconds": duration,
@@ -194,6 +323,9 @@ def main() -> int:
     p.add_argument("--dpi", type=int, default=300, help="Render DPI (default 300)")
     p.add_argument("--concurrency", type=int, default=1)
     p.add_argument("--max-completion-tokens", type=int, default=7000)
+    p.add_argument("--backend", choices=["azure", "gemini"], default="azure")
+    p.add_argument("--gemini-model", default=DEFAULT_GEMINI_MODEL)
+    p.add_argument("--gemini-key-index", type=int, default=1)
     p.add_argument("--skip-existing", action="store_true")
     p.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
@@ -222,6 +354,7 @@ def main() -> int:
     print(f"📄 pdf:    {pdf_path}")
     print(f"📂 out:    {out_dir}")
     print(f"📑 pages:  {', '.join(str(pg) for pg in pages)}")
+    print(f"🤖 backend:{args.backend}{f' ({args.gemini_model}, key #{args.gemini_key_index})' if args.backend == 'gemini' else ''}")
     if skipped:
         print(f"↷ skipping {skipped} page(s) already on disk")
     if args.dry_run:
@@ -241,6 +374,9 @@ def main() -> int:
                 max_tokens=args.max_completion_tokens,
                 stem_prefix=args.stem_prefix,
                 book_hint=args.book_hint,
+                backend=args.backend,
+                gemini_model=args.gemini_model,
+                gemini_key_index=args.gemini_key_index,
             )
             return page, meta, None
         except Exception as exc:  # noqa: BLE001
