@@ -19,6 +19,8 @@ Modules (planned):
   - publish_explicit_chapter_candidates — conservatively promote
                       explicit-marker chapter candidates into partial or
                       complete transcribed chapter files
+  - report_latin_transcribed_coverage — generate a machine-readable /
+                      human-readable summary of current loader coverage
   - latin_bensly    — chapter/verse loader for cleaned Bensly Latin
   - multi_witness   — aggregator returning all 6 daughter-translation
                       readings per verse for the adjudicator/translator

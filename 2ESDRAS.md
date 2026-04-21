@@ -152,14 +152,14 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
 | `tools/2esdras/build_ch07_hybrid.py` | ✓ scaffold | Assembles a chapter VII hybrid working file from 1895 pre/post material plus the 1875 fragment |
 | `tools/2esdras/publish_ch07_fragment.py` | ✓ scaffold | Publishes VII 36–105 into `latin/transcribed/ch07.txt`, activating loader coverage for the fragment immediately |
 | `tools/2esdras/publish_explicit_chapter_candidates.py` | ✓ scaffold | Conservatively promotes explicit-marker chapter candidates into partial or complete `latin/transcribed/chNN.txt` files |
-| `tools/2esdras/latin_bensly.py` | ✓ scaffold | Loader for chapter-indexed cleaned Latin (`ch01.txt`, etc.); exposes `load_verse(ch, vs)` |
+| `tools/2esdras/latin_bensly.py` | ✓ active scaffold | Loader for chapter-indexed cleaned Latin (`ch01.txt`, etc.); currently live across all 16 chapters via partial and fragment-backed publications |
 | `tools/2esdras/multi_witness.py` | ✓ partial scaffold | Per-verse witness aggregator; Latin path is wired, daughter witnesses still pending |
 | `tools/2esdras/build_translation_prompt.py` | ⏳ pending | Phase 10 prompt builder (Latin primary + witnesses + Zone 2) |
 
 ## Timeline (indicative)
 
 - **Phase 8b (source acquisition):** this week — vendor PDFs, build OCR pipeline. ≈ 3–4 days. **OCR scaffold now in place.**
-- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.** The canonical loader path is now live for **chapters 2, 6, 7, 8, 9, 11, 12, 14, and 16**, with chapter 7 specifically strengthened by the Missing Fragment (36–105).
+- **Phase 8c (transcription):** OCR + hand-verify Latin + primary witnesses. ≈ 1 week. **Bensly 1895 main-text raw OCR (pages 97–178) and Bensly 1875 Missing Fragment raw OCR (pages 65–83) now complete.** The canonical loader path is now live across **all 16 chapters**, with chapter 7 specifically strengthened by the Missing Fragment (36–105). Coverage is intentionally uneven; see `sources/2esdras/latin/transcribed/COVERAGE.md`.
 - **Phase 10 (drafting):** after Phase 9 completes — translate ~400 verses across 16 chapters with multi-witness context. ≈ 2 weeks.
 - **Phase 10 (revision):** Claude Opus reviser per `REVISION_METHODOLOGY.md`. ≈ 1 week.
 

@@ -310,6 +310,10 @@ text survives only via Latin + 6 daughter translations.
   - `tools/2esdras/publish_explicit_chapter_candidates.py` added so
     additional explicit-marker chapters can be promoted in the same
     conservative way
+  - the canonical Latin loader path now spans **all 16 chapters**
+  - `tools/2esdras/report_latin_transcribed_coverage.py` now generates
+    `sources/2esdras/latin/transcribed/COVERAGE.md` and
+    `COVERAGE.json` so the remaining cleanup debt is explicit
 - **Translation drafting deferred** until Phase 9 (LXX deuterocanon)
   completes. 2 Esdras work is setup/preparation only until then.
 
