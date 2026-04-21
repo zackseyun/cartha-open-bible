@@ -129,6 +129,16 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
     `translation/extra_canonical/didache/`
   - first-pass quality skim completed during drafting against the
     normalized Greek source layer
+- **Didache secondary-source cross-check obtained**:
+  - `tools/didache_secondary.py`
+  - Schaff 1885 extracted into chapter-mapped witness files under
+    `sources/didache/secondary/schaff_1885/`
+- **Didache sophisticated revision pass completed**:
+  - `tools/review_didache.py`
+  - all 16 Didache chapter drafts reviewed against the primary Greek
+    plus secondary Schaff witness
+  - review audit summary recorded in
+    `sources/didache/REVISION_AUDIT_2026-04-21.md`
 - **Shepherd of Hermas + Testaments source trees** added:
   - `sources/shepherd_of_hermas/README.md` + `MANIFEST.md`
   - `sources/testaments_twelve_patriarchs/README.md` + `MANIFEST.md`

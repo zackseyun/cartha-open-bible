@@ -11,7 +11,7 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/didache/README.md`](sources/didache/README.md)
 
-> **Status: first-pass drafting complete.** Public-domain Greek
+> **Status: reviewed first-pass draft complete.** Public-domain Greek
 > source editions are now vendored locally (gitignored + manifest-tracked).
 > The Didache reuses the existing Greek OCR / drafting stack; no new
 > language pipeline is needed. The Greek text pages from Hitchcock &
@@ -21,9 +21,11 @@ It complements:
 > on those pilot pages favored **Azure GPT-5.4 as the cleaner primary
 > OCR path** for this source; Gemini Pro remains useful as a spot-check
 > reviewer. That raw OCR has now been normalized into chapter files
-> (`ch01.txt` … `ch16.txt`) plus `chapter_map.json`. A complete first-pass
-> draft now exists at
-> `translation/extra_canonical/didache/001.yaml` through `016.yaml`.
+> (`ch01.txt` … `ch16.txt`) plus `chapter_map.json`. A complete
+> first-pass draft now exists at
+> `translation/extra_canonical/didache/001.yaml` through `016.yaml`,
+> and a full Gemini-based review pass has been run across the book using
+> a chapter-mapped Schaff 1885 secondary witness.
 
 ## Why the Didache
 
@@ -55,6 +57,16 @@ that 2 Esdras, Enoch, or Jubilees require.
 | Hitchcock & Brown, *Teaching of the Twelve Apostles* (1884) | Greek base text + translation apparatus | vendored locally |
 | Schaff, *The Oldest Church Manual* (1885) | Greek text, translation, facsimiles, discussion | vendored locally |
 
+## Secondary-source cross-checking
+
+Schaff 1885 has now been extracted into chapter-mapped secondary files:
+
+- `sources/didache/secondary/schaff_1885/chapter_map.json`
+- `sources/didache/secondary/schaff_1885/chapters/ch01.txt` … `ch16.txt`
+
+These are used for revision / audit, not as the primary translation
+anchor.
+
 ## Zone 2 consult
 
 - Later Apostolic Fathers critical editions / translations
@@ -78,6 +90,6 @@ The shared local-PDF OCR tool for this track is
 
 ## Immediate next steps
 
-1. Run a fuller revision / audit pass across all 16 drafted chapters
-2. Cross-check difficult clauses against the secondary Didache source edition(s)
-3. Prepare the book for export / downstream publishing
+1. Manual editorial pass on the trickiest clauses
+2. Prepare the book for export / downstream publishing
+3. Fold any later secondary-source discoveries into a targeted revision, not a fresh full sweep
