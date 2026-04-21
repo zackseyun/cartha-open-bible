@@ -1,0 +1,144 @@
+id: SIR.1.25
+reference: Sirach 1:25
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[מַלְאֲכֵי אֱלֹהִים יִשְׂמְחוּ בָּהּ, וִיסַפְּרוּ כָּל תְּהִלַּת יְהֹוָה.]'
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἐπιθυμήσας σοφίαν διατήρησον ἐντολάς, καὶ Κύριος χορηγήσει σοι αὐτήν.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:25
+translation:
+  text: Desire wisdom, keep the commandments, and the Lord will supply her to you.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Hebrew line supplied for this verse does not match Sirach 1:25;
+      the translation therefore follows the Greek witness here.
+    reason: textual_variant
+  - marker: b
+    text: Or 'If you desire wisdom, keep the commandments, and the Lord will grant
+      her to you.' The opening participle may be taken conditionally, and 'grant'
+      is a possible alternative to 'supply.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: ἐπιθυμήσας
+  chosen: Desire
+  alternatives:
+  - If you desire
+  - Set your desire on
+  - Long for
+  lexicon: BDAG
+  rationale: The extant Hebrew in Zone 1 is clearly mismatched to this verse, so the
+    Greek parallel must function as the actual translation base. The aorist participle
+    can be rendered conditionally ('if you desire') or imperativally in context. Given
+    the sequence of exhortations in the verse, an English imperative is the most natural
+    optimal-equivalence rendering.
+- source_word: σοφίαν
+  chosen: wisdom
+  lexicon: BDAG
+  rationale: Standard rendering; personified as feminine later in the verse, which
+    supports retaining 'her' for αὐτήν.
+- source_word: διατήρησον
+  chosen: keep
+  alternatives:
+  - observe
+  - guard
+  lexicon: BDAG
+  rationale: In commandment contexts, 'keep' is idiomatic modern English and preserves
+    the covenantal-obediential sense without sounding overly technical.
+- source_word: ἐντολάς
+  chosen: the commandments
+  alternatives:
+  - commandments
+  - the commands
+  lexicon: BDAG
+  rationale: The article is represented in English for naturalness and specificity.
+    'Commandments' better matches biblical ethical-religious diction than the flatter
+    'commands'.
+- source_word: Κύριος
+  chosen: the Lord
+  alternatives:
+  - Lord
+  lexicon: BDAG
+  rationale: Follows project default for κύριος. The article is retained for natural
+    English syntax.
+- source_word: χορηγήσει
+  chosen: will supply
+  alternatives:
+  - will give
+  - will grant
+  - will furnish
+  lexicon: BDAG
+  rationale: '''Supply'' preserves the sense of generously providing, which is stronger
+    than a bare ''give'' and fits the verb''s nuance.'
+- source_word: σοι
+  chosen: to you
+  alternatives:
+  - you
+  lexicon: BDAG
+  rationale: Explicit dative rendering keeps the clause clear and natural.
+- source_word: αὐτήν
+  chosen: her
+  alternatives:
+  - it
+  lexicon: BDAG
+  rationale: Because σοφία is grammatically feminine and personified throughout wisdom
+    literature, 'her' better preserves the literary-theological texture than the impersonal
+    'it'.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 929f63ead5ba63ff878a4b6a161bff4ee5308aec4f790674e25b7f60647f3d8b
+  timestamp: '2026-04-21T20:19:10Z'
+  output_hash: c6b26e87a3b03e0357cd496c8d343f93f3e7434cf73101a3ef09c0af072a509f
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Primary source selection for this verse
+  chosen_reading: Translate from the Greek parallel rather than the mismatched Hebrew
+    line in Zone 1.
+  alternative_readings:
+  - Attempt to translate the supplied Hebrew text as the verse
+  rationale: The Hebrew given ('The angels of God will rejoice in her...') does not
+    correspond to Sirach 1:25, while the Greek parallel does. Per project philosophy,
+    translation should be anchored in the most original available witness, but source
+    uncertainty must be stated honestly. Here the Hebrew witness as supplied is unusable
+    for this verse, so the Greek serves as the effective base text.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and
+    from Greek where it does not; preserve source uncertainty honestly.'
+- issue: Gendered reference to wisdom
+  chosen_reading: Use 'her' for wisdom.
+  alternative_readings:
+  - Use 'it' for wisdom
+  rationale: This preserves the feminine personification of wisdom in the source and
+    aligns with the project's gender-accurate philosophy rather than flattening the
+    imagery into an abstract neuter.
+  doctrine_reference: DOCTRINE.md §4 Gender-accurate over gender-neutral

@@ -1,0 +1,148 @@
+id: SIR.1.14
+reference: Sirach 1:14
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[רֵאשִׁית חָכְמָה יִרְאַת יְהֹוָה, וְעִם נֶאֱמָנִים נוֹצְרָה בַבָּטֶן.]'
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: μετὰ ἀνθρώπων θεμέλιον αἰῶνος ἐνόσσευσε, καὶ μετὰ τοῦ σπέρματος αὐτῶν ἐμπιστευθήσεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:14
+translation:
+  text: The beginning of wisdom is the fear of the LORD, and with the faithful she
+    was formed in the womb.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek reads quite differently: ''Among men she nested as an eternal foundation,
+      and with their offspring she will be entrusted.'' The Hebrew and Greek witnesses
+      diverge substantially here.'
+    reason: alternative_reading
+  - marker: b
+    text: Or possibly 'was preserved in the womb,' if the Hebrew verb is taken from
+      a root meaning 'guard' rather than understood in a formation/birth sense.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: רֵאשִׁית
+  chosen: the beginning of
+  alternatives:
+  - first part of
+  - chief part of
+  lexicon: HALOT
+  rationale: 'In construct with ''wisdom,'' the most natural sense is temporal/origin
+    language: ''the beginning of wisdom.'' This also aligns with common Hebrew usage
+    and the broader sapiential motif.'
+- source_word: חָכְמָה
+  chosen: wisdom
+  lexicon: HALOT
+  rationale: Standard rendering in wisdom literature; no contextual pressure suggests
+    a narrower gloss such as 'skill' or 'prudence' here.
+- source_word: יִרְאַת יְהֹוָה
+  chosen: the fear of the LORD
+  alternatives:
+  - fear of Yahweh
+  - reverence for the LORD
+  lexicon: HALOT
+  rationale: This is a fixed wisdom expression. 'Fear' preserves the lexical force
+    better than the softer 'reverence,' while 'the LORD' follows project policy for
+    YHWH.
+- source_word: יְהֹוָה
+  chosen: the LORD
+  alternatives:
+  - Yahweh
+  - Jehovah
+  lexicon: HALOT
+  rationale: Required by doctrine for the divine name.
+- source_word: וְעִם
+  chosen: and with
+  alternatives:
+  - and among
+  - and alongside
+  lexicon: HALOT
+  rationale: The preposition most directly means 'with.' 'Among' is possible interpretively,
+    but the Hebrew wording is straightforwardly relational.
+- source_word: נֶאֱמָנִים
+  chosen: the faithful
+  alternatives:
+  - the trustworthy
+  - the faithful ones
+  lexicon: HALOT
+  rationale: The adjective/substantive likely refers to faithful people. 'The faithful'
+    is idiomatic English and preserves the moral-religious sense.
+- source_word: נוֹצְרָה
+  chosen: was formed
+  alternatives:
+  - was guarded
+  - was preserved
+  - was created
+  lexicon: HALOT
+  rationale: The Hebrew consonants could suggest a verb from נצר ('guard/preserve'),
+    but in this context with 'in the womb' the sense 'was formed' best fits the Hebrew
+    line as transmitted and coheres with the Greek parallel's imagery of being established
+    from the beginning. Because the source validation flags a major mismatch and the
+    Greek differs substantially, this choice is made with caution and preserved as
+    auditable.
+- source_word: בַבָּטֶן
+  chosen: in the womb
+  alternatives:
+  - in the belly
+  lexicon: HALOT
+  rationale: '''Womb'' is the natural English rendering in this context and better
+    conveys prenatal imagery than the more literal but less idiomatic ''belly''.'
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 98a1c59f4ccbb103209ef681bc20a9a2940e777a3ba274a3a38861116b343af3
+  timestamp: '2026-04-21T20:16:05Z'
+  output_hash: e7f6b3378d82bb98d28e61fb2fe06204afff3d769d8ccd16ea2f47a5d085edb5
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Divine name rendering
+  chosen_reading: the LORD
+  alternative_readings:
+  - Yahweh
+  - Jehovah
+  rationale: Project doctrine specifies 'the LORD' for יְהוָה, following Jewish reverence
+    tradition and LXX pattern.
+  doctrine_reference: 'DOCTRINE.md Contested terms: יְהוָה YHWH'
+- issue: Handling the Hebrew-Greek divergence in Sirach 1:14
+  chosen_reading: Translate the extant Hebrew as the primary witness while preserving
+    the substantially different Greek in a footnote.
+  alternative_readings:
+  - 'Translate from the Greek main text: ''Among men she nested as an eternal foundation,
+    and with their offspring she will be entrusted.'''
+  rationale: For Sirach, the project translates from Hebrew where it survives, but
+    the prompt requires the Greek parallel to be used as actual input. Here the Hebrew
+    and Greek are not close equivalents, and the source is flagged 'major_mismatch.'
+    Therefore the main text follows the Hebrew witness, while the Greek reading is
+    preserved in a footnote to reflect the material uncertainty honestly.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve
+    source uncertainty honestly'

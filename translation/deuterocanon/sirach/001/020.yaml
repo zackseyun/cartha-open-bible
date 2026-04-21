@@ -1,0 +1,116 @@
+id: SIR.1.20
+reference: Sirach 1:20
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[שָׁרְשֶׁיהָ לְעוֹלָם, וַעֲנָפֶיהָ אֹרֶך יָמִים.]'
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: οὐ δυνήσεται θυμώδης ἀνὴρ δικαιωθῆναι·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:20
+translation:
+  text: Its roots are forever, and its branches are length of days.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Greek reads, 'An angry man cannot be justified.' The Hebrew and Greek witnesses
+      diverge substantially at this verse.
+    reason: textual_variant
+  - marker: b
+    text: Or 'long life' for 'length of days.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: שָׁרְשֶׁיהָ
+  chosen: its roots
+  alternatives:
+  - her roots
+  lexicon: HALOT
+  rationale: From שֹׁרֶשׁ with 3fs suffix, referring back to wisdom/fear of the Lord
+    as a feminine antecedent in context. English 'its' is more natural for an abstract
+    noun, while preserving the image.
+- source_word: לְעוֹלָם
+  chosen: forever
+  alternatives:
+  - for eternity
+  - everlasting
+  lexicon: HALOT
+  rationale: The phrase indicates enduring permanence. 'Forever' is idiomatic modern
+    English and preserves the temporal force without overformal stiffness.
+- source_word: וַעֲנָפֶיהָ
+  chosen: and its branches
+  alternatives:
+  - and her branches
+  - and its boughs
+  lexicon: HALOT
+  rationale: ענף denotes branches/boughs. 'Branches' is the clearest common English
+    equivalent and keeps the botanical parallel with 'roots.'
+- source_word: אֹרֶךְ יָמִים
+  chosen: length of days
+  alternatives:
+  - long life
+  - many days
+  lexicon: HALOT
+  rationale: A Hebrew idiom for longevity. I retained the more literal 'length of
+    days' because the verse is highly poetic and parallel, and this preserves the
+    idiomatic biblical resonance while remaining understandable.
+- source_word: '[שָׁרְשֶׁיהָ לְעוֹלָם, וַעֲנָפֶיהָ אֹרֶך יָמִים.]'
+  chosen: Its roots are forever, and its branches are length of days.
+  alternatives:
+  - Its roots are eternal, and its branches are long life.
+  - Its roots endure forever, and its branches are long life.
+  lexicon: HALOT
+  rationale: The Hebrew witness in Zone 1 is a short poetic bicola, but the parallel
+    Greek for this verse reads a substantially different line ('An angry man cannot
+    be justified'), indicating a major source mismatch. Per project philosophy, the
+    translation is anchored in the extant Hebrew where available, while the Greek
+    is treated as a real input showing that the textual tradition here is unstable.
+    I therefore translated the Hebrew directly and preserved the Greek-based alternative
+    in a footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 791d258c1d1593ac57cc55e7b8526b76ade3c90474935cb9d45cd53f0baa90fa
+  timestamp: '2026-04-21T20:17:47Z'
+  output_hash: d719a4b793461f81fa29c98f288c31002321e4a65e6c43ab16002b4a9a7c0a0d
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Major divergence between the surviving Hebrew and the Greek parallel for
+    Sirach 1:20
+  chosen_reading: Translate the extant Hebrew poetic line in the main text
+  alternative_readings:
+  - 'Translate the Greek line: ''An angry man cannot be justified'''
+  rationale: The project's Sirach policy gives primacy to the Hebrew where it survives.
+    However, the prompt flags this verse as 'major_mismatch,' and the Greek parallel
+    is not a minor variant but a different sentence. To preserve transparency and
+    avoid overstating certainty, the Hebrew is used for the main text and the Greek
+    reading is preserved in a footnote as a textual variant of substantial scope.
+  doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives;
+    use Greek in view and preserve uncertainty honestly.'

@@ -1,0 +1,129 @@
+id: SIR.1.22
+reference: Sirach 1:22
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[אַשְׁרֵי אֱנוֹשׁ יִקְרַב אֵלֶיהָ, וּפְקוּדֶיהָ יִשְׁתַּעֲשַׁע.]'
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἕως καιροῦ ἀνέξεται μακρόθυμος, καὶ ὕστερον αὐτῷ ἀναδώσει εὐφροσύνη.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:22
+translation:
+  text: Until the appointed time, the patient one will endure, and afterward joy will
+    be repaid to him.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The supplied Hebrew witness in Zone 1 appears mismatched at this verse;
+      the English here follows the Greek text: ''Until the appointed time, the patient
+      one will endure, and afterward joy will be repaid to him.'''
+    reason: textual_variant
+  - marker: b
+    text: Or 'the long-suffering one' for 'the patient one.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ἕως καιροῦ
+  chosen: Until the appointed time
+  alternatives:
+  - until a time
+  - until the right time
+  lexicon: LSJ
+  rationale: The extant Zone 1 Hebrew given is clearly mismatched to this verse, so
+    the Greek parallel must carry the translation. καιρός commonly denotes a fitting
+    or appointed time, not merely time in general; 'appointed time' preserves that
+    nuance without overinterpreting.
+- source_word: ἀνέξεται
+  chosen: will endure
+  alternatives:
+  - will bear up
+  - will be patient
+  - will hold out
+  lexicon: BDAG
+  rationale: Future middle of ἀνέχω here conveys enduring or bearing with difficulty.
+    'Will endure' is idiomatic and fits the context of delayed reward.
+- source_word: μακρόθυμος
+  chosen: the patient one
+  alternatives:
+  - the long-suffering one
+  - the forbearing one
+  - the patient man
+  lexicon: BDAG
+  rationale: The adjective functions substantivally. 'The patient one' preserves the
+    singular and avoids importing a specifically male referent where the Greek adjective
+    is generic. This also avoids flattening the ethical nuance into a mere abstract
+    quality.
+- source_word: ὕστερον
+  chosen: afterward
+  alternatives:
+  - later
+  - in the end
+  lexicon: LSJ
+  rationale: A straightforward temporal adverb; 'afterward' keeps the sequence clear
+    and slightly more formal than 'later'.
+- source_word: ἀναδώσει
+  chosen: will be repaid
+  alternatives:
+  - will give back
+  - will render
+  - will repay
+  lexicon: BDAG
+  rationale: The verb means to give back or repay. Rendering it passively in English
+    ('will be repaid to him') best captures the sense with εὐφροσύνη as the thing
+    granted, while preserving the implied divine agency without adding an explicit
+    subject absent from the Greek.
+- source_word: εὐφροσύνη
+  chosen: joy
+  alternatives:
+  - gladness
+  - cheerfulness
+  lexicon: BDAG
+  rationale: The noun denotes gladness or joy. 'Joy' is the most natural modern English
+    equivalent and carries the positive reward sense well.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 0e5a751cc34b7d999dfe056f0158d92294947025be402a3e9426f4cf6d519a2b
+  timestamp: '2026-04-21T20:18:21Z'
+  output_hash: 6d5f05577f9c6350f83359af43d888985c973f69e7aa06228ffe38ef78cef467
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Primary-source mismatch between Hebrew and Greek for this verse
+  chosen_reading: Translate from the Greek parallel as the operative source for this
+    verse, while noting the Hebrew line appears to belong to a different context.
+  alternative_readings:
+  - Translate the supplied Hebrew line instead
+  rationale: Zone 1 marks the Hebrew witness with 'major_mismatch.' The supplied Hebrew
+    ('Blessed is the man who draws near to her...') does not correspond semantically
+    to the Greek verse. Per project philosophy, the translation must remain anchored
+    in the most defensible original-language witness available; here that is the Greek
+    parallel in Zone 1.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and
+    from Greek where it does not; preserve source uncertainty honestly'

@@ -1,0 +1,135 @@
+id: SIR.1.12
+reference: Sirach 1:12
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[יִרְאַת יְהֹוָה מְשַׂמַּחַת לֵב, וְנוֹתֶנֶת שִׂמְחָה וְחֵן וְאֹרֶךְ יָמִים.]'
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: τῷ φοβουμένῳ τὸν κύριον εὖ ἔσται ἐπ’ ἐσχάτων, καὶ ἐν ἡμέρᾳ τελευτῆς αὐτοῦ
+      εὐλογηθήσεται.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:12
+translation:
+  text: The fear of the LORD gladdens the heart, and gives joy and favor and length
+    of days.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek: “For the one who fears the Lord, it will be well in the end, and
+      on the day of his death he will be blessed.” The Greek parallel preserves a
+      substantially different form of this verse.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: יִרְאַת יְהֹוָה
+  chosen: the fear of the LORD
+  alternatives:
+  - fear of Yahweh
+  - reverence for the LORD
+  lexicon: HALOT
+  rationale: The Hebrew witness is primary where extant. יִרְאָה with the divine name
+    commonly denotes reverent fear directed toward God. Per doctrine, יְהוָה is rendered
+    'the LORD.' 'Fear' is retained rather than softened to 'reverence' because the
+    Hebrew term naturally carries that fuller weight, though reverential nuance is
+    included in context.
+- source_word: מְשַׂמַּחַת
+  chosen: gladdens
+  alternatives:
+  - makes glad
+  - rejoices
+  lexicon: HALOT
+  rationale: '''Gladdens'' gives a natural English verbal rendering of the causative
+    sense, with לֵב as its object. It is slightly more literary than ''makes glad''
+    while remaining clear.'
+- source_word: לֵב
+  chosen: the heart
+  alternatives:
+  - the mind
+  - the inner self
+  lexicon: HALOT
+  rationale: Hebrew לֵב regularly denotes the inner person, including thought and
+    emotion, but 'heart' is the standard and sufficiently transparent rendering here.
+- source_word: וְנוֹתֶנֶת
+  chosen: and gives
+  alternatives:
+  - and grants
+  - and bestows
+  lexicon: HALOT
+  rationale: A straightforward rendering of the participial verb that matches the
+    coordinate structure of the verse. 'Gives' is idiomatic and avoids over-elevating
+    the diction.
+- source_word: שִׂמְחָה
+  chosen: joy
+  alternatives:
+  - gladness
+  lexicon: HALOT
+  rationale: The noun overlaps semantically with the preceding verb, but the Hebrew
+    intentionally piles up benefits. 'Joy' is concise and idiomatic.
+- source_word: חֵן
+  chosen: favor
+  alternatives:
+  - grace
+  - charm
+  lexicon: HALOT
+  rationale: חֵן can mean favor, grace, or attractiveness. 'Favor' best fits a wisdom
+    context listing benefits bestowed by fearing the LORD, without importing later
+    theological freight often attached to 'grace.'
+- source_word: אֹרֶךְ יָמִים
+  chosen: length of days
+  alternatives:
+  - long life
+  - length of life
+  lexicon: HALOT
+  rationale: This is a common Hebrew idiom for longevity. 'Length of days' preserves
+    the Hebrew flavor while remaining understandable; 'long life' is possible but
+    less formally transparent.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: d273c1674c8672fbaf32746c1dac430905190043e7a901aa9ab156bbfe5301bc
+  timestamp: '2026-04-21T20:15:30Z'
+  output_hash: b2dbbf7737d329000237d4423db855bb5b112d50dfb45b57d1b698e9011ed2a9
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Divergence between the Hebrew witness and the Greek parallel
+  chosen_reading: Translate the extant Hebrew text as primary, while noting the Greek
+    preserves a substantially different saying about the one who fears the Lord being
+    blessed at the end and on the day of death.
+  alternative_readings:
+  - The one who fears the Lord will fare well in the end, and on the day of his death
+    he will be blessed.
+  rationale: Project policy gives primacy to the Hebrew Ben Sira where it survives,
+    but the prompt flags a major mismatch and instructs that the Greek parallel be
+    used as actual translation input. The Hebrew line is coherent and well-formed,
+    so it is translated in the main text; the Greek's distinct form is preserved in
+    a footnote as a significant alternative witness rather than harmonized into the
+    main text.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve
+    source uncertainty honestly.'

@@ -1,0 +1,123 @@
+id: SIR.1.31
+reference: Sirach 1:31
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[בְּנִי אַל תְּכַזֵּב בְּיִרְאַת יְהֹוָה, וְאַל תִּקְרַב אֵלָיו בְּלֵב וָלֵב.]'
+  language: Hebrew
+  pages:
+  - 667
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ὁ ἀνταποδιδοὺς χάριτας μέμνηται εἰς τὰ μετὰ ταῦτα, καὶ ἐν καιρῷ πτώσεως
+      εὑρήσει στήριγμα.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:31
+translation:
+  text: My son, do not be false in the fear of the LORD, and do not draw near to him
+    with a divided heart.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Hebrew witness reads, 'My son, do not be false in the fear of the LORD,
+      and do not draw near to him with a divided heart.' The Greek parallel at this
+      verse instead reads, 'He who repays acts of kindness remembers for what comes
+      afterward, and in a time of falling he will find support.'
+    reason: textual_variant
+  - marker: b
+    text: Literally, 'with heart and heart,' a Hebrew idiom for inner duplicity or
+      a divided heart.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: בְּנִי
+  chosen: My son
+  alternatives:
+  - My child
+  lexicon: HALOT
+  rationale: Vocative address from בן with 1cs suffix. 'My son' preserves the masculine
+    singular form and the instructional father-to-son framing typical of wisdom literature;
+    this follows the project's gender-accurate principle.
+- source_word: אַל תְּכַזֵּב
+  chosen: do not be false
+  alternatives:
+  - do not lie
+  - do not deceive
+  - do not prove false
+  lexicon: HALOT
+  rationale: From כזב, conveying falsehood/deception. In this context with בְּיִרְאַת
+    יְהוָה, the warning is not merely against speaking a lie but against falseness
+    or hypocrisy in relation to reverence for God. 'Be false' best captures the broader
+    ethical sense.
+- source_word: בְּיִרְאַת יְהֹוָה
+  chosen: in the fear of the LORD
+  alternatives:
+  - in reverence for the LORD
+  - regarding the fear of the LORD
+  lexicon: HALOT
+  rationale: יראה here is the standard wisdom term 'fear' in covenantal/religious
+    sense. The project default renders יְהוָה as 'the LORD.' 'Fear of the LORD' preserves
+    the established biblical idiom without flattening it to mere respect.
+- source_word: וְאַל תִּקְרַב אֵלָיו
+  chosen: and do not draw near to him
+  alternatives:
+  - and do not approach him
+  lexicon: HALOT
+  rationale: קרב with אֶל marks approach/drawing near. 'Draw near' preserves the relational
+    and potentially cultic resonance better than the more generic 'approach.'
+- source_word: בְּלֵב וָלֵב
+  chosen: with a divided heart
+  alternatives:
+  - with a double heart
+  - with a duplicitous heart
+  - with two hearts
+  lexicon: HALOT
+  rationale: Literally 'with heart and heart,' an idiom for duplicity or inner division.
+    'Divided heart' is idiomatic modern English and communicates the sense clearly
+    while remaining close to the Hebrew image.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 522f9abe2a146e4d181f1cd6f614d7879f6b299333e818b9a6c4bac9c575f929
+  timestamp: '2026-04-21T20:20:52Z'
+  output_hash: 392a1bda204a1b007cdab1cc634e77bfab71b69a405494c47de00f19ce317db6
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Rendering the divine name יְהוָה
+  chosen_reading: the LORD
+  alternative_readings:
+  - Yahweh
+  - Jehovah
+  rationale: The project's doctrinal standard specifies 'the LORD' for YHWH, following
+    Jewish reverence tradition and common biblical English usage.
+  doctrine_reference: 'DOCTRINE.md contested terms: יְהוָה YHWH → the LORD'
+- issue: Handling the Hebrew/Greek mismatch for this verse
+  chosen_reading: Translate the extant Hebrew as the primary witness, while noting
+    the Greek parallel preserves a substantially different saying.
+  alternative_readings:
+  - Translate the Greek verse instead
+  - Conflate Hebrew and Greek into a harmonized rendering
+  rationale: The task specifies original-language primacy and directs that surviving
+    Hebrew Sirach be translated from Hebrew while keeping the Greek in view. Because
+    the Zone 1 validation flags a major mismatch and the Greek parallel is materially
+    different, the main text should reflect the Hebrew witness and the Greek should
+    be preserved in a footnote rather than harmonized into the translation.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve
+    source uncertainty honestly'

@@ -1,0 +1,119 @@
+id: SIR.1.29
+reference: Sirach 1:29
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[אֱהַב יִרְאַת יְהֹוָה, וְאַשֵּׁר בָּהּ לִבְּךָ וְאַל תִּירָא.]'
+  language: Hebrew
+  pages:
+  - 667
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: καρδία συνετοῦ διανοηθήσεται παραβολήν, καὶ οὖς ἀκροατοῦ ἐπιθυμία σοφοῦ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:29
+translation:
+  text: Love the fear of the LORD, and bless your heart in it; and do not fear.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The Greek parallel has a substantially different text: ''The heart of the
+      intelligent will ponder a proverb, and the ear of a hearer is the desire of
+      a wise man.'' This verse is text-critically uncertain.'
+    reason: alternative_reading
+  - marker: b
+    text: Hebrew 'bless your heart in it' is idiomatic and uncertain; it may carry
+      the sense of esteeming one's heart blessed in the fear of the LORD.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: אֱהַב
+  chosen: Love
+  alternatives:
+  - Embrace
+  - Cherish
+  lexicon: HALOT
+  rationale: Imperative of אהב, straightforwardly 'love.' 'Love' preserves the direct
+    volitional force better than softer paraphrases.
+- source_word: יִרְאַת יְהֹוָה
+  chosen: the fear of the LORD
+  alternatives:
+  - fear of Yahweh
+  - reverence for the LORD
+  lexicon: HALOT
+  rationale: Construct phrase meaning reverent fear directed toward YHWH. Following
+    doctrine, יְהוָה is rendered 'the LORD.' 'Fear' is retained rather than reduced
+    to 'reverence' so as not to flatten the wisdom theme.
+- source_word: וְאַשֵּׁר
+  chosen: bless
+  alternatives:
+  - make happy
+  - count blessed
+  - esteem blessed
+  lexicon: HALOT
+  rationale: From אשר in the Piel/Hiphil-like usage, the sense is to pronounce or
+    regard as blessed/happy. Because the object is 'your heart,' the idiom is difficult;
+    'bless your heart in it' stays close to the Hebrew while remaining intelligible.
+    The Greek parallel points elsewhere, so the Hebrew wording is likely unstable;
+    this rendering preserves the extant Hebrew rather than overcorrecting.
+- source_word: לִבְּךָ
+  chosen: your heart
+  alternatives:
+  - your mind
+  - your inner self
+  lexicon: HALOT
+  rationale: לב commonly denotes the inner person, including thought and will. 'Heart'
+    is the standard and preserves the Hebrew anthropology.
+- source_word: בָּהּ
+  chosen: in it
+  alternatives:
+  - by it
+  - through it
+  lexicon: HALOT
+  rationale: Feminine singular pronominal suffix most naturally refers back to 'fear'
+    as a feminine noun. 'In it' is the most literal and least interpretively loaded
+    rendering.
+- source_word: וְאַל תִּירָא
+  chosen: and do not fear
+  alternatives:
+  - and do not be afraid
+  lexicon: HALOT
+  rationale: Negative imperative from ירא. Rendering it with the same English root
+    'fear' preserves the wordplay/tension with 'fear of the LORD' earlier in the verse.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 0602a0ba032d82caff384d63fa57b39ee0a8ddd70b724f106164a4d3824106f3
+  timestamp: '2026-04-21T20:20:14Z'
+  output_hash: 0b0124def561529e08b5f9f89ab5575f3d4608ce2cd2c58e854c8404853e0c48
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Primary witness divergence between Hebrew and Greek parallel
+  chosen_reading: Translate the extant Hebrew as the primary text, while acknowledging
+    that the Greek parallel reflects a substantially different verse.
+  alternative_readings:
+  - A Greek-based rendering such as 'The heart of the intelligent will ponder a proverb,
+    and the ear of a hearer is the desire of a wise man.'
+  rationale: Per project philosophy for Sirach, Hebrew is primary where it survives.
+    However, the validation flag 'major_mismatch' and the Greek parallel show this
+    verse is text-critically unstable. The main text therefore follows the Hebrew
+    witness, but the alternative Greek form is preserved in a footnote for transparency.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve
+    source uncertainty honestly'

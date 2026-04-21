@@ -1,0 +1,136 @@
+id: SIR.1.26
+reference: Sirach 1:26
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[הַסֵּפֶר הַזֶּה כֻּלּוֹ מָלֵא מִמֶּנָּה, אַשְׁרֵי אֱנוֹשׁ יִשְׁמַע וְיַעֲשֶׂה.]'
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: major_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: σοφία γὰρ καὶ παιδεία φόβος κυρίου, καὶ ἡ εὐδοκία αὐτοῦ πίστις καὶ πρᾳότης.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 1:26
+translation:
+  text: For wisdom and instruction are fear of the Lord, and his good pleasure is
+    faith and meekness.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Hebrew witness supplied here is marked as a major mismatch and
+      does not correspond to this verse's wording; the translation therefore follows
+      the Greek text for Sirach 1:26.
+    reason: textual_variant
+  - marker: b
+    text: Or 'his favor is faithfulness and gentleness.' The Greek πίστις can also
+      mean 'faithfulness' or 'trust,' and πρᾳότης can also be rendered 'gentleness.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: σοφία
+  chosen: wisdom
+  alternatives:
+  - skill
+  - wise insight
+  lexicon: BDAG
+  rationale: The Hebrew witness in Zone 1 is not usable for this verse's wording and
+    appears mismatched, so the Greek parallel functions as the actual source text.
+    σοφία in Sirach consistently denotes wisdom in the broad moral and practical sense.
+- source_word: παιδεία
+  chosen: instruction
+  alternatives:
+  - discipline
+  - training
+  lexicon: BDAG
+  rationale: παιδεία can mean discipline or training, but 'instruction' best fits
+    an abstract pairing with 'wisdom' and avoids over-specifying punitive discipline
+    where the verse states a general principle.
+- source_word: φόβος κυρίου
+  chosen: fear of the Lord
+  alternatives:
+  - reverence for the Lord
+  lexicon: BDAG
+  rationale: This is a key sapiential expression and should be preserved in its traditional
+    and source-near form. 'Fear' retains the theological weight better than the softer
+    'reverence,' though reverential awe is included in the sense.
+- source_word: εὐδοκία
+  chosen: good pleasure
+  alternatives:
+  - favor
+  - approval
+  lexicon: BDAG
+  rationale: The phrase ἡ εὐδοκία αὐτοῦ most naturally refers to what pleases the
+    Lord. 'Good pleasure' is slightly formal but transparent and keeps the genitive
+    relation clear without importing the stronger covenantal nuance of 'favor'.
+- source_word: πίστις
+  chosen: faith
+  alternatives:
+  - faithfulness
+  - trust
+  lexicon: BDAG
+  rationale: Per doctrine default, πίστις is rendered 'faith' in the main text. In
+    this wisdom context, 'faithfulness' is also plausible, so that alternative is
+    preserved in a footnote rather than silently excluded.
+- source_word: πρᾳότης
+  chosen: meekness
+  alternatives:
+  - gentleness
+  - humility
+  lexicon: BDAG
+  rationale: πρᾳότης often denotes gentle humility. 'Meekness' preserves the traditional
+    ethical term and pairs well with 'faith,' though 'gentleness' is a viable modern
+    alternative and is noted in the footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 03dc711ed28dce5ec3780dcf3b4937cfeb2d0ae678723cb17e2e6b3ff21d4543
+  timestamp: '2026-04-21T20:19:27Z'
+  output_hash: 133256888fdf8bad87af9aaf6b5e71d9a448a9cc905a02edd1cbb7cb20b2b2a0
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @2f083879
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @2f083879
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Primary-source selection for a verse with mismatched Hebrew witness
+  chosen_reading: Translate from the Greek text for this verse while noting the Hebrew
+    mismatch.
+  alternative_readings:
+  - Attempt a translation from the extant Hebrew line despite its mismatch
+  rationale: Zone 1 marks the Hebrew as 'major_mismatch' and the supplied Hebrew sentence
+    does not correspond to the Greek verse. Following source integrity and original-language
+    primacy, the Greek parallel must serve as the operative source for this verse,
+    with the uncertainty documented honestly.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and
+    from Greek where it does not; source uncertainty must be preserved honestly.'
+- issue: Rendering of πίστις
+  chosen_reading: faith
+  alternative_readings:
+  - faithfulness
+  - trust
+  rationale: The doctrine table gives 'faith' as the default rendering for πίστις,
+    while preserving alternatives in a footnote where context leaves room for them.
+    This wisdom context could support 'faithfulness,' so the alternative is documented
+    rather than resolved dogmatically.
+  doctrine_reference: 'DOCTRINE.md Contested terms: πίστις → faith; alternatives preserved
+    in footnotes where contested.'
