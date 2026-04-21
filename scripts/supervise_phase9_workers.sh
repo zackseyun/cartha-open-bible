@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-TARGET="${TARGET:-12}"
+TARGET="${TARGET:-24}"
 STOP_FLAG="/tmp/cob-phase9-stop"
 LOG_DIR="/tmp/cob-phase9-workers"
 CHECK_INTERVAL_SECONDS="${CHECK_INTERVAL_SECONDS:-20}"
@@ -27,24 +27,30 @@ fetch_azure_key() {
   fi
 }
 declare -a SLOTS=(
-  "phase9-wis-w1 /private/tmp/cartha-translation-phase9-wis-w1"
-  "phase9-wis-w2 /private/tmp/cartha-translation-phase9-wis-w2"
-  "phase9-wis-w3 /private/tmp/cartha-translation-phase9-wis-w3"
-  "phase9-wis-w9 /private/tmp/cartha-translation-phase9-wis-w9"
-  "phase9-wis-w10 /private/tmp/cartha-translation-phase9-wis-w10"
-  "phase9-wis-w11 /private/tmp/cartha-translation-phase9-wis-w11"
-  "phase9-deut-w4 /private/tmp/cartha-translation-phase9-deut-w4"
-  "phase9-deut-w5 /private/tmp/cartha-translation-phase9-deut-w5"
-  "phase9-deut-w6 /private/tmp/cartha-translation-phase9-deut-w6"
-  "phase9-wis-w4 /private/tmp/cartha-translation-phase9-wis-w4"
-  "phase9-wis-w5 /private/tmp/cartha-translation-phase9-wis-w5"
-  "phase9-wis-w6 /private/tmp/cartha-translation-phase9-wis-w6"
-  "phase9-wis-w7 /private/tmp/cartha-translation-phase9-wis-w7"
-  "phase9-wis-w8 /private/tmp/cartha-translation-phase9-wis-w8"
-  "phase9-wis-w12 /private/tmp/cartha-translation-phase9-wis-w12"
-  "phase9-wis-w13 /private/tmp/cartha-translation-phase9-wis-w13"
-  "phase9-wis-w14 /private/tmp/cartha-translation-phase9-wis-w14"
-  "phase9-wis-w15 /private/tmp/cartha-translation-phase9-wis-w15"
+  "phase9-wis-w1 /private/tmp/cartha-translation-phase9-wis-w1 gpt-5-4-deployment"
+  "phase9-wis-w2 /private/tmp/cartha-translation-phase9-wis-w2 gpt-5-4-translation-b"
+  "phase9-wis-w3 /private/tmp/cartha-translation-phase9-wis-w3 gpt-5-4-translation-c"
+  "phase9-wis-w9 /private/tmp/cartha-translation-phase9-wis-w9 gpt-5-4-deployment"
+  "phase9-wis-w10 /private/tmp/cartha-translation-phase9-wis-w10 gpt-5-4-translation-b"
+  "phase9-wis-w11 /private/tmp/cartha-translation-phase9-wis-w11 gpt-5-4-translation-c"
+  "phase9-deut-w4 /private/tmp/cartha-translation-phase9-deut-w4 gpt-5-4-deployment"
+  "phase9-deut-w5 /private/tmp/cartha-translation-phase9-deut-w5 gpt-5-4-translation-b"
+  "phase9-deut-w6 /private/tmp/cartha-translation-phase9-deut-w6 gpt-5-4-translation-c"
+  "phase9-wis-w4 /private/tmp/cartha-translation-phase9-wis-w4 gpt-5-4-deployment"
+  "phase9-wis-w5 /private/tmp/cartha-translation-phase9-wis-w5 gpt-5-4-translation-b"
+  "phase9-wis-w6 /private/tmp/cartha-translation-phase9-wis-w6 gpt-5-4-translation-c"
+  "phase9-wis-w7 /private/tmp/cartha-translation-phase9-wis-w7 gpt-5-4-deployment"
+  "phase9-wis-w8 /private/tmp/cartha-translation-phase9-wis-w8 gpt-5-4-translation-b"
+  "phase9-wis-w12 /private/tmp/cartha-translation-phase9-wis-w12 gpt-5-4-translation-c"
+  "phase9-wis-w13 /private/tmp/cartha-translation-phase9-wis-w13 gpt-5-4-deployment"
+  "phase9-wis-w14 /private/tmp/cartha-translation-phase9-wis-w14 gpt-5-4-translation-b"
+  "phase9-wis-w15 /private/tmp/cartha-translation-phase9-wis-w15 gpt-5-4-translation-c"
+  "phase9-wis-w16 /private/tmp/cartha-translation-phase9-wis-w16 gpt-5-4-deployment"
+  "phase9-wis-w17 /private/tmp/cartha-translation-phase9-wis-w17 gpt-5-4-translation-b"
+  "phase9-wis-w18 /private/tmp/cartha-translation-phase9-wis-w18 gpt-5-4-translation-c"
+  "phase9-deut-w13 /private/tmp/cartha-translation-phase9-deut-w13 gpt-5-4-deployment"
+  "phase9-deut-w14 /private/tmp/cartha-translation-phase9-deut-w14 gpt-5-4-translation-b"
+  "phase9-deut-w15 /private/tmp/cartha-translation-phase9-deut-w15 gpt-5-4-translation-c"
 )
 is_alive() {
   local wid="$1"
@@ -64,6 +70,7 @@ count_alive() {
 spawn_slot() {
   local wid="$1"
   local wt="$2"
+  local deployment="$3"
   [[ -d "$wt" ]] || return 0
   fetch_azure_key
   nohup env \
@@ -77,8 +84,9 @@ spawn_slot() {
       "$wid" \
       "$PHASE" \
       "$wt" \
+      "$deployment" \
     > "$LOG_DIR/$wid.log" 2>&1 &
-  echo "[$(date +%H:%M:%S)] spawned $wid -> $wt"
+  echo "[$(date +%H:%M:%S)] spawned $wid -> $wt (deployment=$deployment)"
 }
 echo "[$(date +%H:%M:%S)] supervise_phase9_workers starting; target=$TARGET phase=$PHASE"
 echo " stop with: touch $STOP_FLAG"
@@ -88,18 +96,18 @@ while true; do
     rm -f "$STOP_FLAG"
     exit 0
   fi
+  "$PYTHON_BIN" "$REPO_ROOT/tools/chapter_queue.py" init --phase "$PHASE" --reset-failed >/dev/null
   alive="$(count_alive)"
   if (( alive < TARGET )); then
     need=$((TARGET - alive))
     echo "[$(date +%H:%M:%S)] alive=$alive target=$TARGET; need=$need"
     for slot in "${SLOTS[@]}"; do
-      wid="${slot%% *}"
-      wt="${slot#* }"
+      read -r wid wt deployment <<< "$slot"
       if is_alive "$wid"; then
         continue
       fi
       "$PYTHON_BIN" "$REPO_ROOT/tools/chapter_queue.py" release --phase "$PHASE" --worker-id "$wid" >/dev/null
-      spawn_slot "$wid" "$wt"
+      spawn_slot "$wid" "$wt" "$deployment"
       need=$((need - 1))
       [[ $need -le 0 ]] && break
       sleep "$SPAWN_STAGGER_SECONDS"
