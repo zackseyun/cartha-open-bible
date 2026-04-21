@@ -26,6 +26,11 @@ Cartha Open Bible.
 | `build_normalized_deuterocanon_corpus.py` | implemented | Builds translation-ready override files for deuterocanonical books whose raw adjudicated stream still contains known numbering contamination. The translation layer prefers these normalized overrides when present. |
 | `build_esther_additions_corpus.py` | implemented | Emits the standalone ESG (Additions to Esther) normalized corpus from the Swete pages, using First1KGreek only as a verse-boundary anchor map where needed. |
 
+**Deuterocanon drafting contract:** use the standalone units `ESG`,
+`PAZ`, `SUS`, and `BEL` for Phase 9 drafting. The older aggregate
+stream labels `ADE` and `ADA` remain in the repo for source/audit
+purposes, but are intentionally blocked in the drafting path.
+
 ## Prerequisites
 
 ```bash

@@ -272,11 +272,11 @@ def integrity_issues_for_verse(verse: lxx_swete.SwtVerse) -> list[str]:
     issues = list(verse.source_warnings)
     if verse.book_code == "ADE":
         issues.append(
-            "ADE is still stored as the full Greek Esther stream with embedded addition material. Draft against it only after an additions-only partitioning pass (or with an explicit override for manual source inspection)."
+            "ADE is the aggregate Greek Esther source stream. Draft the reader-facing Esther additions from ESG instead; use ADE only for aggregate audit/manual inspection."
         )
     if verse.book_code == "ADA":
         issues.append(
-            "ADA is still stored as a monolithic Swete-derived stream rather than the reader-facing PAZ / SUS / BEL split. Draft against it only with explicit source-reference disclosure."
+            "ADA is the aggregate Daniel-additions source stream. Draft the reader-facing units from PAZ / SUS / BEL instead; use ADA only for aggregate audit/manual inspection."
         )
     return issues
 

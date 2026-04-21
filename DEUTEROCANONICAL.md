@@ -298,11 +298,11 @@ is lost or damaged), and its overall readiness to enter Phase C
 |---|---|---|---|---|
 | Tobit | Aramaic (~20% Qumran overlap, blocked) | Swete LXX Long Recension (`TOB_S`) anchored by Neubauer 1878 Hebrew (Zone 1 reference) + Fitzmyer DJD XIX (Zone 2 consult) | — (is primary) | ✓ Swete transcribed; Neubauer vendored; ready for Phase C |
 | Judith | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
-| Greek Additions to Esther | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| Greek Additions to Esther | Greek (original) | Swete LXX | — | ✓ Swete transcribed; drafting now targets the standalone `ESG` additions-only stream (`ADE` retained as aggregate audit source) |
 | Wisdom of Solomon | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
 | **Sirach (Ecclesiasticus)** | **Hebrew** (≈ ⅔ recovered) | **Sefaria/Kahana Hebrew composite** (Zone 1, 1018/1019 verses) + Schechter 1899 MSS A–B (Zone 1, in pipeline); Swete LXX for Kahana gaps and lost passages | Swete LXX for lost portions and Kahana gaps | ✓ Zone 1 Hebrew vendored; ✓ Swete transcribed; ready for Phase C; Schechter facsimile depth upgrade in progress |
 | Baruch + Letter of Jeremiah | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
-| Additions to Daniel (Susanna, Bel & the Dragon, Prayer of Azariah, Song of the Three) | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
+| Additions to Daniel (Susanna, Bel & the Dragon, Prayer of Azariah, Song of the Three) | Greek (original) | Swete LXX | — | ✓ Swete transcribed; drafting now targets standalone `PAZ` / `SUS` / `BEL` streams (`ADA` retained as aggregate audit source) |
 | 1 Maccabees | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
 | 2 Maccabees | Greek (original) | Swete LXX | — | ✓ Swete transcribed; ready for Phase C |
 | 1 Esdras | Greek (Semitic Vorlage lost) | Swete LXX + **WLC MT parallel alignment** (Zone 1 lookup for 2 Chr / Ezra / Neh) | — (is primary) | ✓ Swete transcribed; ✓ MT alignment vendored; ready for Phase C |
@@ -316,6 +316,19 @@ is lost or damaged), and its overall readiness to enter Phase C
 The translator-prompt builder (part of Phase 8-C — deuterocanon drafting) will assemble
 per-verse context using the **three-zone model** defined in
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md):
+
+**Important contract note.** In the source-prep/history layer we still
+refer to the aggregate Swete containers `ADE` (Greek Esther stream) and
+`ADA` (Greek Daniel-additions stream). In the actual translation layer,
+the draftable units are now:
+
+- `ESG` — Additions to Esther (A–F)
+- `PAZ` — Prayer of Azariah and Song of the Three
+- `SUS` — Susanna
+- `BEL` — Bel and the Dragon
+
+`ADE` and `ADA` remain useful as audit/source buckets, but they are no
+longer the preferred Phase 9 drafting targets.
 
 - **Zone 1 (vendored):** Swete Greek + Sefaria Hebrew parallel (for
   SIR, TOB) + WLC parallel (for 1ES) + any PD/CC-BY secondary
