@@ -86,6 +86,13 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
 - **Didache OCR pilot completed** via `tools/greek_extra_pdf_ocr.py`
   on Hitchcock & Brown 1884 pages 16 and 20, writing initial raw OCR
   outputs into `sources/didache/transcribed/raw/`
+- **Didache OCR model choice tested** on the same pilot pages:
+  Azure GPT-5.4 produced the cleaner primary OCR output; Gemini Pro is
+  retained as a useful reviewer / spot-checker rather than the primary
+  pass
+- **Didache Hitchcock Greek span pushed much further**:
+  raw OCR now exists for pages 16, 18, 20, 22, 24, 26, 28, 30, 32,
+  34, 36, 38, 40, and 42
 - **Shepherd of Hermas + Testaments source trees** added:
   - `sources/shepherd_of_hermas/README.md` + `MANIFEST.md`
   - `sources/testaments_twelve_patriarchs/README.md` + `MANIFEST.md`

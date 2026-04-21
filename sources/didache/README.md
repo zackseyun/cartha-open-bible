@@ -50,5 +50,13 @@ python3 tools/greek_extra_pdf_ocr.py \
   --stem-prefix didache_hb1884
 ```
 
-Pilot output already exists for pages 16 and 20 in
-`sources/didache/transcribed/raw/`.
+Raw OCR output now exists for the main Hitchcock Greek page span:
+
+- 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42
+
+under `sources/didache/transcribed/raw/`.
+
+After a small page-level comparison on the same Hitchcock pages,
+**Azure GPT-5.4** was kept as the primary OCR engine for this source:
+Gemini Pro was close, but it leaked markdown / line-number noise more
+often. Gemini is still useful as a later reviewer.
