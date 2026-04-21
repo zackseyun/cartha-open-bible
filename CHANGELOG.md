@@ -77,6 +77,8 @@ Psalms of Solomon as the already-exercised Swete-side pilot.
   for Didache, 1 Clement, Shepherd of Hermas, and Testaments of the
   Twelve Patriarchs.
 - **Didache + 1 Clement source manifests** added:
+  - `DIDACHE.md`
+  - `FIRST_CLEMENT.md`
   - `sources/didache/README.md` + `MANIFEST.md`
   - `sources/1_clement/README.md` + `MANIFEST.md`
   - `.gitignore` updated so the local source PDFs stay out of git while

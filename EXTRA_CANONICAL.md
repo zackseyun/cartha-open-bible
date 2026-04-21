@@ -90,8 +90,8 @@ historical-context reading by scholars.
 
 | Text | Original lang | Primary witness | Scope | PD source edition |
 |---|---|---|---|---|
-| **Didache** (*Teaching of the Twelve Apostles*) | Greek | Codex Hierosolymitanus H54 (Bryennios 1873) | 16 chapters | Lightfoot *Apostolic Fathers*; Bryennios 1883; Harnack 1884 |
-| **1 Clement** | Greek | Codex Alexandrinus + H54 | 65 chapters | Lightfoot *Apostolic Fathers*; Funk 1901 |
+| **Didache** (*Teaching of the Twelve Apostles*) | Greek | Codex Hierosolymitanus H54 (Bryennios 1873) | 16 chapters | Hitchcock & Brown 1884; Schaff 1885. See [`DIDACHE.md`](DIDACHE.md) |
+| **1 Clement** | Greek | Codex Alexandrinus + H54 | 65 chapters | Lightfoot 1889; Funk 1901. See [`FIRST_CLEMENT.md`](FIRST_CLEMENT.md) |
 | **Shepherd of Hermas** | Greek (+ Latin + Ethiopic versions) | Codex Sinaiticus (partial) + Athous | Visions + Mandates + Similitudes | Lightfoot *Apostolic Fathers*; Gebhardt & Harnack 1877 |
 | **2 Baruch (Syriac Apocalypse of Baruch)** | Hebrew (lost) → Greek (mostly lost) → Syriac | Syriac (Ceriani 1871) | 87 chapters | Ceriani 1871; Violet 1924 (GCS 32); Charles 1896 |
 | **Testaments of the Twelve Patriarchs** | Greek primary; Armenian + Slavonic + Hebrew fragments | Greek | 12 testaments | Charles 1908 critical edition |

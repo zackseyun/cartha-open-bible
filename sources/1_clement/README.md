@@ -3,14 +3,18 @@
 Public-domain source editions for the Cartha Open Bible's Greek
 extra-canonical pipeline for **1 Clement**.
 
-Shared scope doc: [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL.md)
+Scope docs:
+
+- [`../../FIRST_CLEMENT.md`](../../FIRST_CLEMENT.md) — dedicated 1 Clement track
+- [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL.md) —
+  shared Group A Greek pipeline
 
 ## Textual situation
 
-1 Clement survives in **Greek**, with the most important early witness
-traditions associated with Codex Alexandrinus and Codex Hierosolymitanus.
-For COB's first pass, the translation anchor will be Greek from
-public-domain scholarly editions.
+1 Clement survives in Greek and is one of the most important early
+Christian writings outside the New Testament. For COB's source setup,
+public-domain Greek printed editions are enough to establish the OCR /
+transcription layer.
 
 ## Local layout
 
@@ -18,16 +22,18 @@ public-domain scholarly editions.
 sources/1_clement/
 ├── README.md
 ├── MANIFEST.md
-├── scans/          local PDFs (gitignored)
-└── transcribed/    future OCR / cleaned UTF-8 output
+├── scans/                  (gitignored PDFs)
+│   ├── lightfoot_1889_1clement.pdf
+│   └── funk_1901_patres_apostolici.pdf
+└── transcribed/
+    └── raw/                future OCR output from the shared Greek tool
 ```
 
-## Current local PDFs
+## Vendored editions
 
-- `scans/lightfoot_1889_1clement.pdf`
-- `scans/funk_1901_patres_apostolici.pdf`
-
-These are tracked by hash in [`MANIFEST.md`](MANIFEST.md), not in git.
+- **Lightfoot (1889)** — major PD Apostolic Fathers source including
+  1 Clement
+- **Funk (1901)** — *Patres Apostolici* Greek critical source
 
 ## OCR tool
 

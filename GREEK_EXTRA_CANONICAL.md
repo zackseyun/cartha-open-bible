@@ -9,6 +9,8 @@ It complements:
 - [`EXTRA_CANONICAL.md`](EXTRA_CANONICAL.md) — the full roadmap
 - [`PSALMS_OF_SOLOMON.md`](PSALMS_OF_SOLOMON.md) — the first exercised
   book in this group
+- [`DIDACHE.md`](DIDACHE.md) — dedicated Didache track
+- [`FIRST_CLEMENT.md`](FIRST_CLEMENT.md) — dedicated 1 Clement track
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md) — source-policy rules
 
 > **Status: pipeline-setup phase.** Psalms of Solomon has already
