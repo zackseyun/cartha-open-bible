@@ -1,0 +1,196 @@
+{
+  "run_id": "2026-04-22",
+  "captured_at": "2026-04-21T23:03:35Z",
+  "scan": {
+    "pdf": "sources/enoch/scans/charles_1906_ethiopic.pdf",
+    "page": 40,
+    "dpi": 400,
+    "image_sha256": "098623998a493a8be0e0d4840029e97970a1904d095d1b2b70e02264dfab1282",
+    "image_bytes": 1685982
+  },
+  "truth": {
+    "edition": "charles_1906",
+    "chapter": 1,
+    "verses": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "manifest": {
+      "edition": "charles_1906",
+      "chapter": 1,
+      "source_pdf_page": 40,
+      "truth_scope": "verses_1_5",
+      "method": "manual scan transcription, OCR-assisted, using the printed Charles 1906 page as the authority",
+      "notes": [
+        "This is a provisional pilot truth set for OCR measurement, not a full critical transcription.",
+        "Verse 1 was corrected directly from the scan with high confidence.",
+        "Verse 2 was corrected from the scan with OCR assistance; a few characters remain medium-confidence where the print is tight or superscripts crowd the line.",
+        "Verses 3-5 are scan-grounded pilot truth lines intended for OCR measurement, not final publication text."
+      ],
+      "verse_confidence": {
+        "1": "high",
+        "2": "medium",
+        "3": "medium",
+        "4": "medium",
+        "5": "medium"
+      }
+    },
+    "truth_chars_normalized": 398
+  },
+  "prompt": "This is a page from Charles 1906 Ethiopic Enoch (Anecdota Oxoniensia Semitic Series I.vii). It shows chapter 1 (ምዕራፍ ፩). It begins: \"ቃለ ፡ በረከት ፡ ዘሄኖክ\". Transcribe every Ge'ez character on this page verbatim using Ethiopic Unicode (U+1200–U+137F). Preserve the word separator ፡ and the sentence terminator ። (or ፡፡). Preserve Ge'ez numerals (፩ ፪ ፫ ፬ ፭ ፮ ፯ ፰ ፱ ፲ ፳ ፴ ፵ ፶ ፷ ፸ ፹ ፺ ፻ ፼). Preserve Arabic verse numbers (1., 2., 3., ...) when they appear at the start of a Ge'ez line. Skip any running head that repeats on every page. Skip any English, German, or Latin critical apparatus at the bottom of the page. Output ONLY the verbatim Ge'ez transcription, nothing else — no prose, no explanation, no markdown fences.",
+  "scoreboard": [
+    {
+      "label": "azure-gpt-5.4",
+      "engine": "azure-gpt-5.4",
+      "model_id": "gpt-5.4-2026-03-05",
+      "accuracy": 0.464824,
+      "distance": 213,
+      "length_delta": -16,
+      "duration_seconds": 21.67,
+      "tokens_out": 873,
+      "tokens_thinking": 0,
+      "finish_reason": "stop",
+      "error": "",
+      "samples": [
+        {
+          "tag": "replace",
+          "ocr": "በ",
+          "truth": "ዘ",
+          "ocr_context": "ቃለ፡በረከት፡ዘሄኖክ፡በከመ፡ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ",
+          "truth_context": "ቃለ፡በረከት፡ዘሄኖክ፡ዘከመ፡ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ይከው",
+          "truth": "ሀለው፡ይኩ",
+          "ocr_context": "መ፡ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ፡ይከውኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሎ",
+          "truth_context": "መ፡ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ፡ሀለው፡ይኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሉ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ሎ፡ኃጥኣ",
+          "truth": "ሉ፡እኩያ",
+          "ocr_context": "ውኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሎ፡ኃጥኣን፡ወረሱዓን።ወአንሥአ፡ምሳሌ፡ወእ",
+          "truth_context": "ኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ሱ",
+          "truth": "ሲ",
+          "ocr_context": "ንዳቤ፡ለአሰስሎ፡ኵሎ፡ኃጥኣን፡ወረሱዓን።ወአንሥአ፡ምሳሌ፡ወእምከ፡እቤ",
+          "truth_context": "ንዳቤ፡ለአሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖክ፡ብእሲ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ን",
+          "truth": "ው",
+          "ocr_context": "ሰስሎ፡ኵሎ፡ኃጥኣን፡ወረሱዓን።ወአንሥአ፡ምሳሌ፡ወእምከ፡እቤለ፡ርኢኩ፡",
+          "truth_context": "ሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘ"
+        }
+      ]
+    },
+    {
+      "label": "gemini-3.1-pro",
+      "engine": "gemini::gemini-3.1-pro-preview",
+      "model_id": "gemini-3.1-pro-preview",
+      "accuracy": 0.801508,
+      "distance": 79,
+      "length_delta": -7,
+      "duration_seconds": 7.23,
+      "tokens_out": 421,
+      "tokens_thinking": 0,
+      "finish_reason": "STOP",
+      "error": "",
+      "samples": [
+        {
+          "tag": "replace",
+          "ocr": "በ",
+          "truth": "ዘ",
+          "ocr_context": "ቃለ፡በረከት፡ዘሄኖክ፡በከመ፡ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ",
+          "truth_context": "ቃለ፡በረከት፡ዘሄኖክ፡ዘከመ፡ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ዉ",
+          "truth": "ው",
+          "ocr_context": "ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ፡ሀለዉ፡ይኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ",
+          "truth_context": "ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ፡ሀለው፡ይኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ሎ፡እኩያነ",
+          "truth": "ሉ፡እኩያን",
+          "ocr_context": "ኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሎ፡እኩያነ፡ወረሲዓነ፡ወአውሥአ፡ወይቤ፡ሄኖክ",
+          "truth_context": "ኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖክ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ነ፡",
+          "truth": "ን።",
+          "ocr_context": "ቤ፡ለአሰስሎ፡ኵሎ፡እኩያነ፡ወረሲዓነ፡ወአውሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድ",
+          "truth_context": "ቤ፡ለአሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "እምኀበ",
+          "truth": "አንሥኦ",
+          "ocr_context": "ሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘእምኀበ፡እግዚአብሔር፡እንዘ፡አዕይንቲሁ፡",
+          "truth_context": "ሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘአንሥኦ፡እግዚአብሔር፡እንዘ፡አዕይንቲሁ፡"
+        }
+      ]
+    },
+    {
+      "label": "gemini-2.5-pro",
+      "engine": "gemini::gemini-2.5-pro",
+      "model_id": "gemini-2.5-pro",
+      "accuracy": 0.653266,
+      "distance": 138,
+      "length_delta": -5,
+      "duration_seconds": 13.23,
+      "tokens_out": 489,
+      "tokens_thinking": 561,
+      "finish_reason": "STOP",
+      "error": "",
+      "samples": [
+        {
+          "tag": "replace",
+          "ocr": "ዉ፡ይከዉ",
+          "truth": "ው፡ይኩ",
+          "ocr_context": "ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ፡ሀለዉ፡ይከዉኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሉ",
+          "truth_context": "ባረከ፡ኅሩያነ፡ወጻድቃነ፡እለ፡ሀለው፡ይኩኑ፡በዕለተ፡ምንዳቤ፡ለአሰስሎ፡ኵሉ"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ን",
+          "truth": "ው",
+          "ocr_context": "ሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአንሥአ፡ምሳሌሁ፡ወይቤ፡ሄኖክ፡ብእሲ፡",
+          "truth_context": "ሰስሎ፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘ"
+        },
+        {
+          "tag": "delete",
+          "ocr": "፡ምሳሌሁ",
+          "truth": "",
+          "ocr_context": "፡ኵሉ፡እኩያን፡ወረሲዓን።ወአንሥአ፡ምሳሌሁ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘኀበ",
+          "truth_context": "፡ኵሉ፡እኩያን፡ወረሲዓን።ወአውሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘአን"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ኀበ",
+          "truth": "አንሥኦ",
+          "ocr_context": "ሌሁ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘኀበ፡እግዚአብሔር፡እግዚእ፡አዕይንቲሁ",
+          "truth_context": "ሥአ፡ወይቤ፡ሄኖክ፡ብእሲ፡ጻድቅ፡ዘአንሥኦ፡እግዚአብሔር፡እንዘ፡አዕይንቲሁ፡"
+        },
+        {
+          "tag": "replace",
+          "ocr": "ግዚእ",
+          "truth": "ንዘ",
+          "ocr_context": "እሲ፡ጻድቅ፡ዘኀበ፡እግዚአብሔር፡እግዚእ፡አዕይንቲሁ፡ተከሥታ፡ወርእየ፡ራእ",
+          "truth_context": "፡ጻድቅ፡ዘአንሥኦ፡እግዚአብሔር፡እንዘ፡አዕይንቲሁ፡ወርእየ፡ራእየ፡ቅዱሰ"
+        }
+      ]
+    }
+  ]
+}
