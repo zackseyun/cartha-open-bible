@@ -1,0 +1,109 @@
+id: SIR.3.6
+reference: Sirach 3:6
+source:
+  edition: sefaria-ben-sira-kahana
+  text: '[מְכַבֵּד אָבִיו יִרְבּוּ יָמָיו, וּגְמוּל אֱלֹהִים עַל] מְכַבֵּד אִמּוֹ.'
+  language: Hebrew
+  pages: []
+  confidence: high
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ὁ δοξάζων πατέρα μακροημερεύσει, καὶ ὁ εἰσακούων κυρίου ἀναπαύσει μητέρα
+      αὐτοῦ.
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 3:6
+translation:
+  text: Whoever honors his father will have long days, and whoever honors his mother
+    is repaying God.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Greek parallel: ''and whoever obeys the Lord will give rest to his mother.''
+      The Hebrew and Greek differ substantially in the second line.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: מְכַבֵּד
+  chosen: honors
+  alternatives:
+  - glorifies
+  - esteems
+  lexicon: HALOT
+  rationale: The participle from כבד in this ethical context denotes giving due honor
+    or respect to a parent. 'Honors' is idiomatic English and aligns with the commandment
+    tradition without sounding archaic.
+- source_word: אָבִיו
+  chosen: his father
+  alternatives:
+  - father
+  lexicon: HALOT
+  rationale: The Hebrew has the singular noun with 3ms suffix. 'His father' preserves
+    the individualizing force of the participial construction.
+- source_word: יִרְבּוּ יָמָיו
+  chosen: will have long days
+  alternatives:
+  - his days will be many
+  - will live long
+  lexicon: HALOT
+  rationale: Literally, 'his days will be many.' 'Will have long days' keeps the Hebrew
+    imagery more closely than the smoother 'will live long,' while remaining understandable
+    in English.
+- source_word: וּגְמוּל אֱלֹהִים עַל
+  chosen: is repaying God
+  alternatives:
+  - is a recompense to God
+  - renders repayment before God
+  - receives God's reward
+  lexicon: HALOT
+  rationale: The Hebrew phrase is compressed and somewhat awkward as transmitted,
+    but in context it most naturally means that honoring one's mother counts as repayment
+    directed toward God. The Greek parallel reads differently ('whoever obeys the
+    Lord will give rest to his mother'), but the Hebrew is the primary witness here
+    and is sufficiently coherent to translate. 'Is repaying God' expresses the predicative
+    sense concisely.
+- source_word: אִמּוֹ
+  chosen: his mother
+  alternatives:
+  - mother
+  lexicon: HALOT
+  rationale: The 3ms suffix should be represented in English for consistency with
+    the first colon and the Hebrew syntax.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: ee3aac52e901baf5355510cc0e336d3c2ffcfff7b599850655fc92582b27212a
+  timestamp: '2026-04-21T20:15:44Z'
+  output_hash: 82f85892e9d405585507011f6346ec2d09b424905c8cf7856441667cb3b3d513
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @1697e25f
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @1697e25f
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates:
+  - reason: SIR 3:6 falls in the Schechter facsimile range; when direct MSS A/B transcription
+      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+    trigger: schechter_pipeline_completes
+status: draft
+theological_decisions:
+- issue: Divergence between the Hebrew second colon and the Greek parallel
+  chosen_reading: 'Translate the extant Hebrew as primary: honoring one''s mother
+    is described in relation to repaying God.'
+  alternative_readings:
+  - 'Translate with the Greek: ''whoever obeys the Lord will give rest to his mother'''
+  rationale: PHILOSOPHY gives original-language primacy to the Hebrew for Sirach where
+    Hebrew survives, while also requiring the Greek parallel to be used as a real
+    input. Here the Hebrew and Greek differ substantially in the second colon. Because
+    the Hebrew witness is present and high-confidence, the main text follows it; the
+    Greek alternative is preserved in a footnote due to the significance of the divergence.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; DOCTRINE.md:
+    preserve theological tension rather than resolve it silently'
