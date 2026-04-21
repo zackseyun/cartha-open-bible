@@ -48,17 +48,28 @@ python3 tools/greek_extra_pdf_ocr.py \
   --stem-prefix 1c_lightfoot1889
 ```
 
-## Current pilot result
+## Current OCR / normalization result
 
-An initial OCR pass has now been run against **Funk 1901** and has
-already located the beginning of **1 Clement I**:
+The current Funk 1901 pass now covers:
 
 - page **260** = transition into 1 Clement
-- pages **261, 263, 265, 267, 269, 271, 273** = Greek text
+- pages **261, 263, 265, …, 343** = Greek text
 - adjacent even-numbered pages = Latin translation / notes
 
-Raw pilot outputs now live in `sources/1_clement/transcribed/raw/`.
+Page **345** begins **2 Clement** and is excluded from the 1 Clement
+normalized layer.
+
+Raw OCR outputs live in `sources/1_clement/transcribed/raw/`.
 
 Helper scaffold:
 
 - [`../../tools/first_clement.py`](../../tools/first_clement.py)
+
+Normalization / draft-ready tooling:
+
+- [`../../tools/first_clement_normalize.py`](../../tools/first_clement_normalize.py)
+- [`../../tools/build_first_clement_prompt.py`](../../tools/build_first_clement_prompt.py)
+
+Normalized outputs now exist in `sources/1_clement/transcribed/`.
+Current caveat: **chapter 42** is still marked missing in the normalized
+Greek layer and needs a targeted recovery pass.

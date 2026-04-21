@@ -10,13 +10,15 @@ It complements:
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md)
 - [`sources/1_clement/README.md`](sources/1_clement/README.md)
 
-> **Status: source-acquisition + active OCR phase.** Public-domain Greek source
+> **Status: source-acquisition + normalized-Greek phase.** Public-domain Greek source
 > editions are now vendored locally (gitignored + manifest-tracked).
 > 1 Clement is a Greek-source Phase 13 text and reuses the same family
 > of tooling as other Group A works. An initial OCR pass is now underway
 > from **Funk 1901**, and the opening Greek sequence of *1 Clement I*
 > has been captured from PDF pages **261, 263, 265, 267, 269, 271,
-> 273**.
+> 273**. That OCR pass has now been extended through the Greek 1 Clement
+> span in Funk and normalized into chapter files, with one explicit
+> unresolved source gap at **chapter 42**.
 
 ## Why 1 Clement
 
@@ -70,18 +72,37 @@ The shared local-PDF OCR tool for this track is
 The helper scaffold for the current raw layer is
 [`tools/first_clement.py`](tools/first_clement.py).
 
+Normalization / draft-ready tools:
+
+- [`tools/first_clement_normalize.py`](tools/first_clement_normalize.py)
+- [`tools/build_first_clement_prompt.py`](tools/build_first_clement_prompt.py)
+
 ## Current source-layout note
 
 The current OCR work shows that **Funk 1901** is the cleanest practical
 starting source for 1 Clement. In the PDF:
 
 - page **260** is the transition into 1 Clement
-- odd-numbered pages from **261** onward carry the Greek text
+- odd-numbered pages from **261** through **343** carry the Greek text
 - adjacent even-numbered pages carry the Latin translation / notes
+
+Page **345** begins **2 Clement** and is excluded from the normalized
+1 Clement layer.
+
+## Normalized status
+
+The current normalization pass now produces:
+
+- `sources/1_clement/transcribed/ch01.txt` … `ch65.txt`
+- `sources/1_clement/transcribed/chapter_map.json`
+
+with one explicit unresolved gap:
+
+- **chapter 42** is still missing from the normalized Greek layer and
+  needs a targeted recovery pass
 
 ## Immediate next steps
 
-1. Continue OCR from the Funk 1901 Greek pages
-2. Structure the 65 chapters cleanly
-3. Build the 1 Clement prompt builder
-4. Draft + revise
+1. Recover the missing chapter-42 Greek source span
+2. Begin drafting from the normalized chapter files
+3. Revise + audit
