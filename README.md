@@ -199,6 +199,67 @@ citation — is exactly how the NRSV, NABRE, and Orthodox Study
 Bible produce their Apocrypha sections. It's how serious
 translation actually works.
 
+### What we bring to this corner of the canon
+
+English translations of the Apocrypha already exist — NRSV, NABRE,
+Orthodox Study Bible, NETS, the Lexham English Septuagint. Each was
+produced by a specialist committee with years of scholarly work.
+We are not trying to replace them. We are contributing something
+adjacent that has not existed before:
+
+- **The first freely-redistributable deuterocanonical translation
+  from a scan-grounded corpus.** Brenton's 1851 LXX translation is
+  public-domain but 175 years old; every scholarly translation since
+  is under a restrictive license. The Cartha Open Bible Apocrypha
+  is released under **CC-BY 4.0** — use it, quote it, remix it,
+  ship it in your app. This is a substantive contribution on its own.
+
+- **A translation grounded in Swete's diplomatic Codex Vaticanus.**
+  NETS uses Rahlfs-Hanhart (eclectic). NRSV and NABRE use the
+  Göttingen critical editions (also eclectic). No current English
+  translation takes **Swete's diplomatic Vaticanus** as its primary
+  source. For readers who want "what Codex Vaticanus actually prints"
+  rather than "what modern editors reconstruct," this fills a real
+  gap — and we are transparent that this is the choice we made and
+  why.
+
+- **Per-verse provenance, publicly auditable.** Every verse traces
+  back to the specific scan pages it was drawn from, which independent
+  transcriptions agreed or disagreed, which Hebrew or Aramaic parallels
+  were consulted, which scholarly references informed the judgment,
+  and at what confidence level the source-text reading was adjudicated.
+  This level of auditability per verse is, to our knowledge,
+  unprecedented for an English Bible translation. You don't have to
+  trust our committee; you can read the receipts.
+
+- **Multi-witness triangulation at scale.** For every deuterocanonical
+  verse we cross-checked four independent Greek transcriptions
+  (our own OCR, First1KGreek TEI, Rahlfs, and Amicarelli) against the
+  actual scanned page image — and where Hebrew witnesses survive, we
+  add them as additional evidence (Cairo Geniza Hebrew Sirach, the
+  Masada scroll, Neubauer Tobit, the WLC Hebrew for 1 Esdras
+  parallels). This kind of systematic multi-source grounding, applied
+  per verse with a documented rubric, is harder for human committees
+  to do at scale.
+
+On English-translation accuracy in the specialist-committee sense —
+theological word choices, consensus interpretation of difficult
+passages, century-of-accumulated-scholar-revisions — existing
+translations like the NRSV have advantages our first release cannot
+match. We will be competitive at the top tier, likely with specific
+strengths (Sirach's recovered Hebrew is a standout), but we are not
+claiming definitive superiority. That is for peer review to judge
+once the work is in readers' hands.
+
+What we **can** credibly claim, from the engineering and textual-
+criticism side, is that this will be the most transparent, the most
+auditable, the most permissively-licensed, and (for Sirach specifically)
+among the most Hebrew-grounded Apocrypha translations available in
+English today. That's the contribution, stated plainly.
+
+For the full scholarly-source policy (three-zone model: vendored /
+consulted / forbidden), see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
+
 ### Why this honors the texts
 
 These books are read as Scripture by **hundreds of millions of
