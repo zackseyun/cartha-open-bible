@@ -108,6 +108,26 @@ targeted revision pass runs.
 - **Expected delta:** Moderate for affected verses; no change for
   verses where the additional MSS agree with what we already had.
 
+### `page_metadata_corrected`
+
+- **Effect:** The authoritative `pages` list in an adjudication JSON
+  gets corrected to include pages the running-head parser missed.
+  Most commonly affects books with named sections that break
+  running-head parsing (Greek Esther Additions A-F, Tobit B-text /
+  S-text recension columns, Psalm of Manasseh appendix).
+- **Affects:** any verse whose scan-adjudication was produced without
+  the correct page image attached (the adjudicator will typically have
+  defaulted to `verdict: first1k` with `confidence: low` and a
+  reasoning like "verse not in provided scans").
+- **Revision action:** once the page metadata is fixed, re-run
+  `tools/rescue_low_conf_focused.py` to target those verses with
+  content-based per-verse page identification. Each verse gets a
+  focused single-page adjudication.
+- **Expected delta:** direct promotion to high confidence; the
+  adjudicator was never denying the verse, it simply didn't have
+  the image. First observed and resolved during Phase 8 for ADE
+  Additions (pages 783-785) and TOB 14:3-15 (pages 863-865).
+
 ### `community_correction`
 - **Effect:** A GitHub issue or pull request identifies a specific
   verse where our rendering is clearly wrong or where better Zone 1
