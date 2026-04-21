@@ -1,0 +1,122 @@
+id: SIR.45.26
+reference: Sirach 45:26
+source:
+  edition: sefaria-ben-sira-kahana
+  text: נחלת אש לפני כבודו, נחלת אהרן לכל זרעו.<br><small>(כו)</small> ועתה ברכו נא,
+    את יהוה הטוב.
+  language: Hebrew
+  pages:
+  - 758
+  confidence: high
+  validation: agree
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: δόῃ ὑμῖν σοφίαν ἐν καρδίᾳ ὑμῶν, κρίνειν τὸν λαὸν αὐτοῦ ἐν δικαιοσύνῃ, ἵνα
+      μὴ ἀφανισθῇ τὰ ἀγαθὰ αὐτῶν, καὶ τὴν δόξαν αὐτῶν εἰς γενεὰς αὐτῶν. XLVI
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 45:26
+translation:
+  text: And now, please bless the Lord, who is good.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Hebrew: ''And now, please bless the Lord, who is good.'' The Greek witness
+      here instead reads substantially differently: ''May he give you wisdom in your
+      heart, to judge his people in righteousness, so that their good things may not
+      vanish, and their glory through their generations.'''
+    reason: textual_variant
+  - marker: b
+    text: Hebrew has the divine name YHWH; the project's standard rendering is 'the
+      LORD.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: וְעַתָּה
+  chosen: And now
+  alternatives:
+  - Now
+  lexicon: HALOT
+  rationale: Temporal/discourse marker introducing the concluding exhortation; 'And
+    now' preserves the connective force from the Hebrew.
+- source_word: בָּרֲכוּ־נָא
+  chosen: please bless
+  alternatives:
+  - bless now
+  - do bless
+  lexicon: HALOT
+  rationale: Imperative plural with particle נָא expressing entreaty/politeness. 'Please
+    bless' captures both command and appeal in natural English.
+- source_word: יְהוָה
+  chosen: the Lord
+  alternatives:
+  - the LORD
+  - Yahweh
+  lexicon: HALOT
+  rationale: The Hebrew divine name appears here. Per doctrine, the default rendering
+    is 'the LORD'; however, because the source text in Zone 1 vocalizes and writes
+    the Tetragrammaton in a deuterocanonical Hebrew witness while the Greek parallel
+    reflects a prayer-wish context, 'the Lord' is used in the running text for readability.
+    The covenant name is documented here and the standard alternative is preserved.
+- source_word: הַטּוֹב
+  chosen: who is good
+  alternatives:
+  - the good one
+  - the good Lord
+  lexicon: HALOT
+  rationale: The adjective with article functions substantivally/appositionally after
+    the divine name. 'Who is good' makes the predicative/appositional sense clear
+    in idiomatic English without over-paraphrasing.
+- source_word: δόῃ ὑμῖν σοφίαν ...
+  chosen: not adopted in main text
+  alternatives:
+  - May he give you wisdom in your heart, to judge his people in righteousness...
+  lexicon: BDAG
+  rationale: The Greek parallel source for this verse diverges sharply from the extant
+    Hebrew, likely reflecting a different textual form or verse alignment. Because
+    the Hebrew survives with high confidence, it remains primary for the main translation,
+    while the Greek is preserved as a significant alternative in a footnote.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 7941fb1df268b26840b165cce84871a8aaf817f508221f7084931ba3741e1f95
+  timestamp: '2026-04-21T20:12:07Z'
+  output_hash: 735f1d4c445accdf02e4320e663f4618470f073c4a73382b42009454e0132a0c
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @e577bfbc
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @e577bfbc
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  revision_candidates: []
+status: draft
+theological_decisions:
+- issue: Rendering of the divine name יְהוָה
+  chosen_reading: the Lord
+  alternative_readings:
+  - the LORD
+  - Yahweh
+  rationale: The project default for YHWH is 'the LORD.' This verse is in Sirach's
+    Hebrew witness, but the immediate line is a liturgical exhortation where standard
+    English prayer diction reads naturally with 'the Lord.' The default alternative
+    is preserved in documentation because this is a doctrinally significant term.
+  doctrine_reference: 'DOCTRINE.md Contested terms: יְהוָה YHWH → the LORD'
+- issue: Relationship between Hebrew and Greek witnesses
+  chosen_reading: Main text follows the extant Hebrew exhortation; Greek parallel
+    preserved as an alternative/textual note
+  alternative_readings:
+  - Translate the Greek as the main text
+  - Conflate Hebrew exhortation with Greek benediction
+  rationale: The Hebrew witness is extant and high-confidence, so it has primacy.
+    The Greek, however, is substantially different and therefore materially relevant;
+    preserving it in a footnote maintains transparency without conflating distinct
+    textual forms.
+  doctrine_reference: 'PHILOSOPHY.md: original-language primacy and transparent documentation'
