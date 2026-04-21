@@ -136,7 +136,14 @@ def consult_sources(book_code: str) -> list[dict]:
     These sources may be consulted by the translator; their text must
     NOT appear in COB output. See REFERENCE_SOURCES.md for policy.
     """
-    return list(UNIVERSAL_CONSULT) + CONSULT_REGISTRY.get(book_code, [])
+    alias_map = {
+        "ESG": "ADE",
+        "PAZ": "ADA",
+        "SUS": "ADA",
+        "BEL": "ADA",
+    }
+    effective = alias_map.get(book_code, book_code)
+    return list(UNIVERSAL_CONSULT) + CONSULT_REGISTRY.get(effective, [])
 
 
 def live_zone2_entries(book_code: str, chapter: int, verse: int) -> list[dict]:
