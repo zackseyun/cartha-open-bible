@@ -7,12 +7,25 @@ from pathlib import Path
 from common import OCR_JOBS_ROOT, RAW_ROOT, WITNESSES_ROOT, ensure_dir, load_consult_registry, load_json, load_manifest, load_segments, rel, resolve_text_ids, utc_now, write_json
 
 
+def expand_coverage_ranges(ranges: list[str] | None) -> list[str]:
+    segment_ids: list[str] = []
+    for token in ranges or []:
+        if '-' in token:
+            start, end = token.split('-', 1)
+        else:
+            start = end = token
+        for number in range(int(start), int(end) + 1):
+            segment_ids.append(f'{number:03d}')
+    return segment_ids
+
+
 def witness_files(text_id: str, witness_id: str) -> dict[str, object] | None:
     base = RAW_ROOT / text_id / witness_id
     html_path = base.with_suffix('.html')
     text_path = base.with_suffix('.txt')
     meta_path = base.with_suffix('.meta.json')
-    if not any(path.exists() for path in [html_path, text_path, meta_path]):
+    json_path = base.with_suffix('.json')
+    if not any(path.exists() for path in [html_path, text_path, meta_path, json_path]):
         return None
 
     payload: dict[str, object] = {}
@@ -21,6 +34,8 @@ def witness_files(text_id: str, witness_id: str) -> dict[str, object] | None:
     if text_path.exists():
         payload['text_path'] = rel(text_path)
         payload['preview'] = text_path.read_text(encoding='utf-8')[:1200].strip()
+    if json_path.exists():
+        payload['json_path'] = rel(json_path)
     if meta_path.exists():
         payload['meta_path'] = rel(meta_path)
         payload['meta'] = load_json(meta_path)
@@ -54,6 +69,11 @@ def build_bundle(text_id: str) -> Path:
             'notes': witness.get('notes'),
             'url': witness.get('url'),
         }
+        coverage_ranges = witness.get('coverage_ranges')
+        if coverage_ranges:
+            entry['coverage_ranges'] = coverage_ranges
+            entry['coverage_label'] = witness.get('coverage_label')
+            entry['coverage_segment_ids'] = expand_coverage_ranges(coverage_ranges)
         files = witness_files(text_id, witness['witness_id'])
         if files:
             entry['status'] = 'fetched'
@@ -104,7 +124,8 @@ def build_bundle(text_id: str) -> Path:
         '',
     ]
     for witness in witnesses:
-        lines.append(f"- **{witness['witness_id']}** — {witness['status']} ({witness['role']})")
+        coverage = f" — {witness['coverage_label']}" if witness.get('coverage_label') else ''
+        lines.append(f"- **{witness['witness_id']}** — {witness['status']} ({witness['role']}){coverage}")
     lines.extend(['', '## Guardrails', ''])
     for rule in bundle['guardrails']:
         lines.append(f'- {rule}')

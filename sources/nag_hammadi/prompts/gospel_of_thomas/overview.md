@@ -7,9 +7,9 @@ Goal: Accuracy-first translation prep with Coptic primary, Greek overlap, and Sy
 
 - **mattison_zinner_coptic** (primary_coptic) — fetched; source: https://gospels.net/thomas
 - **gebhardt_klein_2024_coptic** (cross_check_coptic) — pending_input; source: local source pending
-- **poxy654_greek** (greek_overlap_witness) — fetched; source: http://www.agraphos.com/thomas/greek/poxy654/
-- **poxy1_greek** (greek_overlap_witness) — fetched; source: http://www.agraphos.com/thomas/greek/poxy1/
-- **poxy655_greek** (greek_overlap_witness) — fetched; source: http://www.agraphos.com/thomas/greek/poxy655/
+- **poxy654_greek** (greek_overlap_witness) — fetched (Sayings 1–7); source: http://www.agraphos.com/thomas/greek/poxy654/
+- **poxy1_greek** (greek_overlap_witness) — fetched (Sayings 26–33); source: http://www.agraphos.com/thomas/greek/poxy1/
+- **poxy655_greek** (greek_overlap_witness) — fetched (Sayings 24 and 36–39); source: http://www.agraphos.com/thomas/greek/poxy655/
 
 ## Guardrails
 
