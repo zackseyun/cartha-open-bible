@@ -1,0 +1,129 @@
+id: SIR.44.10
+reference: Sirach 44:10
+source:
+  edition: sefaria-ben-sira-kahana
+  text: כאשר לא היו היו, ובניהם מאחריהם.
+  language: Hebrew
+  pages:
+  - 681
+  - 722
+  - 729
+  - 744
+  - 750
+  - 751
+  - 752
+  - 753
+  - 754
+  - 755
+  - 756
+  - 757
+  - 767
+  - 768
+  - 769
+  confidence: high
+  validation: minor_mismatch
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
+    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
+    in sources/hebrew_sirach/README.md.
+  parallel_sources:
+  - edition: lxx-swete-1909
+    text: ἀλλʼ ἢ οὗτοι ἄνδρες ἐλέους, ὧν αἱ δικαιοσύναι οὐκ ἐπελήσθησαν·
+    kind: greek_parallel
+    note: Greek fallback / consistency check alongside the Hebrew Vorlage.
+    reference: Sirach 44:10
+translation:
+  text: But these were men of mercy, whose righteous deeds were not forgotten;
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The extant Cairo Geniza Hebrew for this line is difficult and appears mismatched
+      here; taken more literally, it reads something like, 'As though they had not
+      been, they were, and their children after them.' The main text follows the coherent
+      Greek parallel for this verse.
+    reason: textual_variant
+  - marker: b
+    text: Or 'acts of justice' for 'righteous deeds.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ἀλλʼ ἢ / כאשר
+  chosen: But these
+  alternatives:
+  - Rather, these
+  - As if they had not been
+  lexicon: LSJ / HALOT
+  rationale: The Hebrew in Zone 1 is difficult and likely mismatched or corrupt in
+    this line ('כאשר לא היו היו'), while the Greek parallel provides a coherent adversative
+    transition from the previous verse's mention of those without memorial. The translation
+    therefore follows the Greek sense for the clause opening, while keeping the Hebrew
+    witness in view as uncertain.
+- source_word: ἄνδρες
+  chosen: men
+  alternatives:
+  - people
+  - menfolk
+  lexicon: BDAG / LSJ
+  rationale: The Greek explicitly uses the masculine plural 'men.' Per project philosophy,
+    gender-accurate language is preferred where the source is masculine and representative.
+- source_word: ἐλέους
+  chosen: of mercy
+  alternatives:
+  - merciful
+  - of compassion
+  lexicon: BDAG / LSJ
+  rationale: The genitive construction is well represented by 'men of mercy,' preserving
+    the Hebrew-style characterization reflected in the Greek.
+- source_word: δικαιοσύναι
+  chosen: righteous deeds
+  alternatives:
+  - righteousnesses
+  - acts of justice
+  lexicon: BDAG / LSJ
+  rationale: The plural points to concrete expressions of righteousness rather than
+    an abstract quality alone. 'Righteous deeds' is natural English and preserves
+    the plural's practical force.
+- source_word: οὐκ ἐπελήσθησαν
+  chosen: were not forgotten
+  alternatives:
+  - were not neglected
+  - did not pass from memory
+  lexicon: BDAG / LSJ
+  rationale: This is the plain sense of the Greek verb. It also fits the immediate
+    contrast with the previous verse's loss of remembrance.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: deuterocanon_draft_v1
+  prompt_sha256: 716252637852b12f9c82aa8948941c36974f950594be8dc16361593d3c9bd49b
+  timestamp: '2026-04-21T20:06:22Z'
+  output_hash: b43fe5a8754094ebfc5f6f649616f7954814807c6274648333de1f7dc85ce26e
+  temperature: 0.2
+  zone1_sources_at_draft:
+  - Swete LXX (scan-adjudicated corpus) @e577bfbc
+  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @e577bfbc
+  zone2_consults_known:
+  - Gottingen LXX critical editions
+  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  - Beentjes 1997, The Book of Ben Sira in Hebrew
+  - Skehan & Di Lella 1987, Anchor Bible 39
+  - Ben-Hayyim 1973, Academy of the Hebrew Language
+  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
+  revision_candidates:
+  - reason: SIR 44:10 is in the Masada Ben Sira coverage range; if IAA image access
+      opens, upgrade the Masada witness from Zone 2 consult to Zone 1.
+    trigger: iaa_masada_access_granted
+status: draft
+theological_decisions:
+- issue: Primary-source tension between extant Hebrew and Greek parallel
+  chosen_reading: Translate the verse from the coherent Greek parallel while acknowledging
+    the Hebrew line in Zone 1 is uncertain/mismatched for this location.
+  alternative_readings:
+  - 'A more literal rendering of the extant Hebrew fragment: ''As though they had
+    not been, they were, and their children after them'''
+  rationale: For Sirach, Hebrew has primacy where it survives, but the supplied Hebrew
+    here appears textually problematic and does not align with the verse sequence,
+    whereas the Greek parallel gives a stable and contextually fitting reading that
+    continues the contrast from v. 9. Because the source validation is 'minor_mismatch,'
+    the draft should not pretend the Hebrew wording is secure.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives, but
+    use Greek parallel as actual translation input and preserve uncertainty honestly.'
