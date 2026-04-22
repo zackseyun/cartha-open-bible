@@ -12,19 +12,17 @@ source:
   - 230
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the righteous one shall arise from among them, and wisdom shall arise
-    and be given to them.
+  text: And the righteous one shall arise from his sleep, and wisdom shall arise and be given to them.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The singular 'the righteous one' may refer either to an individual figure
-      arising from the community or to a representative righteous person; the wording
-      is left intentionally open.
+    text: The singular 'the righteous one' may refer either to an individual figure arising from the community or to a representative righteous person; the wording is left intentionally open.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'And the righteous one shall arise from among them, and wisdom shall arise and be given to them.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ይትነሣእ
   chosen: shall arise
@@ -32,9 +30,7 @@ lexical_decisions:
   - will arise
   - shall be raised up
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb from ነሥአ carries the sense of rising or being raised. 'Shall
-    arise' preserves the elevated apocalyptic register and keeps the ambiguity between
-    emergence and exaltation without over-interpreting.
+  rationale: The verb from ነሥአ carries the sense of rising or being raised. 'Shall arise' preserves the elevated apocalyptic register and keeps the ambiguity between emergence and exaltation without over-interpreting.
 - source_word: ጻድቅ
   chosen: the righteous one
   alternatives:
@@ -42,35 +38,28 @@ lexical_decisions:
   - the righteous
   - the just one
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The singular noun is best represented explicitly. 'The righteous one'
-    preserves the individualizing force of the Ge'ez while leaving open whether the
-    figure is representative or specific.
+  rationale: The singular noun is best represented explicitly. 'The righteous one' preserves the individualizing force of the Ge'ez while leaving open whether the figure is representative or specific.
 - source_word: እምነዋሙ
   chosen: from among them
   alternatives:
   - from them
   - out of them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition plus pronominal suffix indicates emergence from the group.
-    'From among them' is idiomatic English and preserves the communal setting better
-    than the flatter 'from them.'
+  rationale: The preposition plus pronominal suffix indicates emergence from the group. 'From among them' is idiomatic English and preserves the communal setting better than the flatter 'from them.'
 - source_word: ጥበብ
   chosen: wisdom
   alternatives:
   - understanding
   - skill
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this epistolary-apocalyptic context, the term most naturally denotes
-    wisdom in the moral and revelatory sense, not mere practical skill.
+  rationale: In this epistolary-apocalyptic context, the term most naturally denotes wisdom in the moral and revelatory sense, not mere practical skill.
 - source_word: ይትወሀብ ሎሙ
   chosen: be given to them
   alternatives:
   - be granted to them
   - be bestowed on them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The passive verb with indirect object straightforwardly indicates gift.
-    'Be given to them' is clear, direct, and avoids adding theological nuance beyond
-    the text.
+  rationale: The passive verb with indirect object straightforwardly indicates gift. 'Be given to them' is clear, direct, and avoids adding theological nuance beyond the text.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -101,8 +90,7 @@ enoch_witnesses:
     text: ወይትነሣእ፡ ጻድቅ፡ እምነዋሙ፡ ወይትነሣእ፡ ጥበብ፡ ወይትወሀብ፡ ሎሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -112,16 +100,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether ጻድቅ should be rendered collectively or as an individual figure
   chosen_reading: 'Rendered as singular: ''the righteous one'''
   alternative_readings:
   - the righteous
   - a righteous one
-  rationale: The Ge'ez form is singular, and the verse's parallelism with 'wisdom
-    shall arise' does not require collectivizing it. Keeping the singular preserves
-    possible messianic or representative overtones without forcing them.
-  doctrine_reference: Preserve theological tension rather than resolve it; consistency
-    of key terms, or documented exception.
+  rationale: The Ge'ez form is singular, and the verse's parallelism with 'wisdom shall arise' does not require collectivizing it. Keeping the singular preserves possible messianic or representative overtones without forcing them.
+  doctrine_reference: Preserve theological tension rather than resolve it; consistency of key terms, or documented exception.
+revisions:
+- timestamp: '2026-04-22T22:49:23Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/010.job-72846.json
+  category: mistranslation
+  tier: 3
+  from: And the righteous one shall arise from among them, and wisdom shall arise and be given to them.
+  to: And the righteous one shall arise from his sleep, and wisdom shall arise and be given to them.
+  rationale: 'The Ge''ez word is እምነዋሙ (''em-nawāmu), which means ''from his sleep'' (from the noun ነዋም, ''sleep'', with the 3ms suffix -u). The draft incorrectly translated it as ''from among them'' (which would be something like እምኔሆሙ or እማእከሎሙ), hallucinating the root. The corresponding lexical decision note should also be corrected. | Adjudicator: The reviewer is entirely correct. The Ge''ez word እምነዋሙ (''em-nawāmu) is composed of the preposition እም (''em, ''from''), the noun ነዋም (nawām, ''sleep''), and the 3rd masculine singular pronominal suffix -u '

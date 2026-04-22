@@ -9,18 +9,17 @@ source:
   - 260
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch107.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 107,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch107.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 107, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw.
+  text: And I saw written upon them that generation after generation will transgress, until a generation of righteousness arises, and iniquity is destroyed, and sin passes away from the earth, and every good thing comes upon it.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ge'ez witness for this verse consists only of the brief vision formula
-      'And I saw.' If a fuller wording is reflected in other witnesses or editions,
-      that expansion is not present in the supplied base text.
+    text: The Ge'ez witness for this verse consists only of the brief vision formula 'And I saw.' If a fuller wording is reflected in other witnesses or editions, that expansion is not present in the supplied base text.
     reason: textual_variant
+  - marker: b
+    text: Or 'And I saw.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወ
   chosen: And
@@ -28,18 +27,14 @@ lexical_decisions:
   - Then
   - Now
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The prefixed conjunction commonly means 'and.' In apocalyptic narrative
-    it often carries simple sequential force; 'And' preserves the terse visionary
-    progression without over-interpreting it as a stronger temporal marker.
+  rationale: The prefixed conjunction commonly means 'and.' In apocalyptic narrative it often carries simple sequential force; 'And' preserves the terse visionary progression without over-interpreting it as a stronger temporal marker.
 - source_word: ርኢኩ
   chosen: I saw
   alternatives:
   - I looked
   - I beheld
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: First-person perfect of the verb 'to see.' 'I saw' is the most direct
-    and natural English rendering. 'I beheld' is elevated but archaic; 'I looked'
-    weakens the visionary claim by shifting from perception to mere gaze.
+  rationale: First-person perfect of the verb 'to see.' 'I saw' is the most direct and natural English rendering. 'I beheld' is elevated but archaic; 'I looked' weakens the visionary claim by shifting from perception to mere gaze.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -70,8 +65,7 @@ enoch_witnesses:
     text: ወርኢኩ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch107.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch107.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -81,16 +75,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 107, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 107, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Vision-report formula
   chosen_reading: And I saw.
   alternative_readings:
   - Then I saw.
   - And I looked.
-  rationale: This brief clause functions as a standard apocalyptic vision marker.
-    The translation preserves its simplicity and does not embellish it with interpretive
-    detail or later traditional phrasing.
-  doctrine_reference: Preserve apocalyptic imagery and repeated formulas; readable
-    modern English, not archaic.
+  rationale: This brief clause functions as a standard apocalyptic vision marker. The translation preserves its simplicity and does not embellish it with interpretive detail or later traditional phrasing.
+  doctrine_reference: Preserve apocalyptic imagery and repeated formulas; readable modern English, not archaic.
+revisions:
+- timestamp: '2026-04-22T22:51:06Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/107/001.job-72979.json
+  category: mistranslation
+  tier: 3
+  from: And I saw.
+  to: And I saw written upon them that generation after generation will transgress, until a generation of righteousness arises, and iniquity is destroyed, and sin passes away from the earth, and every good thing comes upon it.
+  rationale: 'The provided source text was severely truncated by the OCR or verse parser. In the Charles 1906 edition, 1 Enoch 107:1 continues: ''ጽሑፈ ፡ ዲቤሆን ፡ ከመ ፡ ትውልድ ፡ እምትውልድ ፡ ይኤብስ...'' (''written upon them that generation after generation will transgress...''). The draft translates only the first word of the verse, omitting the entire visionary content regarding the heavenly tablets and the eschatological promise. The footnote incorrectly attributes this omission to a textual variant, but it is a pipeline pa | Adjudicator: The reviewer correctly identified a severe pipeline truncation error. The Ge''ez text of 1 Enoch 107:1 in Charles''s 1906 edition continues well beyond ''ወርኢኩ'' (And I saw), reading ''ወርኢኩ፡ ጽሑፈ ፡ ዲቤሆን ፡ ከመ'

@@ -9,18 +9,17 @@ source:
   - 86
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 18,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 18, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And there I saw the place at the ends of the great earth; there they are gathered
-    together.
+  text: And there I saw a place beyond the great earth; there they are gathered together.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ge'ez reading around 'ends/borders' is textually difficult in the OCR
-      witness; the sense is likely a place at the extremities of the earth.
+    text: The Ge'ez reading around 'ends/borders' is textually difficult in the OCR witness; the sense is likely a place at the extremities of the earth.
     reason: textual_variant
+  - marker: b
+    text: Or 'the place at the ends of'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -28,47 +27,41 @@ lexical_decisions:
   - and I looked
   - and I beheld
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Common narrative visionary verb; 'saw' is clear modern English while
-    preserving the report formula.
+  rationale: Common narrative visionary verb; 'saw' is clear modern English while preserving the report formula.
 - source_word: ህየ
   chosen: there
   alternatives:
   - in that place
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Deictic adverb repeated in the verse; retaining 'there' preserves the
-    spatial, visionary style.
+  rationale: Deictic adverb repeated in the verse; retaining 'there' preserves the spatial, visionary style.
 - source_word: መካነ
   chosen: the place
   alternatives:
   - a place
   - the region
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Basic noun for place/location. The definite sense fits the visionary
-    sequence of identified cosmic locales.
+  rationale: Basic noun for place/location. The definite sense fits the visionary sequence of identified cosmic locales.
 - source_word: ማዕዶተ
   chosen: at the ends of
   alternatives:
   - at the extremities of
   - at the borders of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Though the OCR reading is uncertain, the form most naturally points to
-    extremities/borders. 'Ends' preserves apocalyptic cosmic geography without overexplaining.
+  rationale: Though the OCR reading is uncertain, the form most naturally points to extremities/borders. 'Ends' preserves apocalyptic cosmic geography without overexplaining.
 - source_word: ዐቢይ ምድር
   chosen: the great earth
   alternatives:
   - the great land
   - the vast earth
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Literal rendering suits the cosmic register. 'Earth' is preferable to
-    'land' in this visionary context.
+  rationale: Literal rendering suits the cosmic register. 'Earth' is preferable to 'land' in this visionary context.
 - source_word: ይትጋብኡ
   chosen: they are gathered together
   alternatives:
   - they gather together
   - they are assembled
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Passive/reflexive sense is likely. 'Are gathered together' preserves
-    the collective, locative force and echoes apocalyptic assembly language.
+  rationale: Passive/reflexive sense is likely. 'Are gathered together' preserves the collective, locative force and echoes apocalyptic assembly language.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -99,8 +92,7 @@ enoch_witnesses:
     text: '[ወርኢኩ፡ ህየ፡] መካነ፡ †ማዕዶተ፡† ለ*ዐቢይ፡ ምድር፡ ህየ፡ ይትጋብኡ፡'
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch18.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -110,15 +102,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 18, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 18, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Cosmic geography of the phrase referring to the earth's extremities
   chosen_reading: at the ends of the great earth
   alternative_readings:
   - at the borders of the great earth
   - in the regions beyond the great earth
-  rationale: The verse belongs to a visionary tour of cosmic places. A concrete geographic
-    rendering best preserves the apocalyptic imagery without demythologizing it.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic language
-    into generic prose.
+  rationale: The verse belongs to a visionary tour of cosmic places. A concrete geographic rendering best preserves the apocalyptic imagery without demythologizing it.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic language into generic prose.
+revisions:
+- timestamp: '2026-04-22T22:35:04Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/018/010.job-72260.json
+  category: lexical
+  tier: 3
+  from: the place at the ends of
+  to: a place beyond
+  rationale: 'The Ge''ez word ማዕዶተ (ma''edota) means ''the other side of'' or ''beyond'' (Dillmann, Lexicon col. 1000, corresponding to Greek πέραν), not ''at the ends of''. Additionally, መካነ (makāna) is indefinite here (''a place''), which correctly introduces a new location in the visionary tour. | Adjudicator: The Ge''ez word ማዕዶተ (mā''edota) translates the Greek πέραν, meaning ''beyond'' or ''on the other side of,'' not ''at the ends of.'' Furthermore, the Greek τόπον and Ge''ez መካነ (makāna) are anarthrous, support'

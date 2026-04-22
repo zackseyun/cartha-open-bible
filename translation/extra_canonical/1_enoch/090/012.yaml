@@ -16,22 +16,20 @@ source:
   - 226
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And those ravens fought and battled with him, and they wanted to lay low his
-    horn, but they did not prevail against him.
+  text: And those ravens fought and battled with him, and they wanted to remove his horn, but they did not prevail against him.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'against him' for 'with him'; the Ge'ez preposition is literally 'with,'
-      but the context is hostile conflict.
+    text: Or 'against him' for 'with him'; the Ge'ez preposition is literally 'with,' but the context is hostile conflict.
     reason: lexical_alternative
   - marker: b
-    text: '''Horn'' is kept literally as part of the vision''s symbolic imagery, rather
-      than rendered interpretively as ''power'' or ''strength.'''
+    text: '''Horn'' is kept literally as part of the vision''s symbolic imagery, rather than rendered interpretively as ''power'' or ''strength.'''
     reason: cultural_note
+  - marker: c
+    text: Or 'to lay low'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እልኩ
   chosen: those ravens
@@ -39,42 +37,34 @@ lexical_decisions:
   - those crows
   - those birds
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Animal Apocalypse, bird species function symbolically and should
-    be preserved concretely. The term here is commonly understood as ravens/corvids
-    rather than generic birds; 'ravens' keeps the apocalyptic imagery vivid.
+  rationale: In the Animal Apocalypse, bird species function symbolically and should be preserved concretely. The term here is commonly understood as ravens/corvids rather than generic birds; 'ravens' keeps the apocalyptic imagery vivid.
 - source_word: ቋዓት
   chosen: fought
   alternatives:
   - made war
   - attacked
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This verb conveys active conflict. 'Fought' is concise and natural, while
-    retaining the martial sense.
+  rationale: This verb conveys active conflict. 'Fought' is concise and natural, while retaining the martial sense.
 - source_word: ይትጋደሉ
   chosen: battled
   alternatives:
   - contended
   - strove
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Paired with the previous conflict verb, this preserves the repetitive
-    intensification typical of apocalyptic narration rather than collapsing both into
-    one English term.
+  rationale: Paired with the previous conflict verb, this preserves the repetitive intensification typical of apocalyptic narration rather than collapsing both into one English term.
 - source_word: ይትባአሱ ምስሌሁ
   chosen: with him
   alternatives:
   - against him
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition literally indicates association 'with,' but in a combat
-    context English can imply hostile engagement. The main text keeps 'with him' close
-    to the Ge'ez sequence while the surrounding verbs make the hostility clear.
+  rationale: The preposition literally indicates association 'with,' but in a combat context English can imply hostile engagement. The main text keeps 'with him' close to the Ge'ez sequence while the surrounding verbs make the hostility clear.
 - source_word: ፈቀዱ
   chosen: they wanted
   alternatives:
   - they desired
   - they intended
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This expresses volition or intent. 'Wanted' is readable modern English
-    and does not overstate certainty beyond the Ge'ez.
+  rationale: This expresses volition or intent. 'Wanted' is readable modern English and does not overstate certainty beyond the Ge'ez.
 - source_word: ያእትቱ
   chosen: to lay low
   alternatives:
@@ -82,25 +72,21 @@ lexical_decisions:
   - to strike down
   - to bring down
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The sense is to bring down or overthrow. 'Lay low' fits the violent animal-vision
-    imagery without becoming colloquial in context.
+  rationale: The sense is to bring down or overthrow. 'Lay low' fits the violent animal-vision imagery without becoming colloquial in context.
 - source_word: ቀርኖ
   chosen: his horn
   alternatives:
   - his power
   - his horn of strength
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Horn imagery is symbolically important in apocalyptic literature and
-    should be preserved literally rather than interpreted away as abstract power.
+  rationale: Horn imagery is symbolically important in apocalyptic literature and should be preserved literally rather than interpreted away as abstract power.
 - source_word: አእህሉዎ
   chosen: they did not prevail against him
   alternatives:
   - they could not do so
   - they did not overcome him
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The closing verb indicates failure to accomplish their aim. 'They did
-    not prevail against him' makes explicit the unsuccessful attack while remaining
-    faithful to the narrative sense.
+  rationale: The closing verb indicates failure to accomplish their aim. 'They did not prevail against him' makes explicit the unsuccessful attack while remaining faithful to the narrative sense.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -131,8 +117,7 @@ enoch_witnesses:
     text: ወ*እልኩ፡ ቋዓት፡ ይትጋደሉ፡ ወይትባአሱ፡ ምስሌሁ፡ ወፈቀዱ፡ *ያእትቱ፡ ቀርኖ፡ ወ*አእህሉዎ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -142,8 +127,7 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to interpret 'horn' symbolically in the main text
   chosen_reading: Retain literal 'horn'
@@ -151,8 +135,16 @@ theological_decisions:
   - his strength
   - his rule
   - his power
-  rationale: The Animal Apocalypse communicates through sustained symbolic imagery.
-    Interpreting the symbol in the translation would flatten the vision and exceed
-    the wording of the Ge'ez witness.
-  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not
-    paraphrase beyond the witness.'
+  rationale: The Animal Apocalypse communicates through sustained symbolic imagery. Interpreting the symbol in the translation would flatten the vision and exceed the wording of the Ge'ez witness.
+  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not paraphrase beyond the witness.'
+revisions:
+- timestamp: '2026-04-22T22:48:51Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/012.job-72810.json
+  category: lexical
+  tier: 3
+  from: to lay low
+  to: to remove
+  rationale: 'The Ge''ez verb ያእትቱ (from the causative of አተተ, ''a''tata) specifically means ''to remove,'' ''to take away,'' or ''to deprive'' (Dillmann, col. 768). ''Lay low'' is an English idiom that slightly alters the specific physical action described in the vision. | Adjudicator: The Ge''ez verb አእተተ (''a''tata) literally means ''to remove,'' ''to take away,'' or ''to eliminate'' (Leslau, CDG 46; Dillmann, col. 768). In the context of the Animal Apocalypse, the ravens are attempting to'

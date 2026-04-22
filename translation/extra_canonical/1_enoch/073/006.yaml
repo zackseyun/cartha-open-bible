@@ -10,23 +10,20 @@ source:
   - 176
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on the day she rises, she takes seven parts from half of her light, and
-    her light becomes seven parts and one half.
+  text: And on the day it takes a seventh part of half of its light, and its light becomes one seventh part and a half.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The underlying expression is literally 'seven hands,' an idiom for measured
-      portions or units in this astronomical context.
+    text: The underlying expression is literally 'seven hands,' an idiom for measured portions or units in this astronomical context.
     reason: lexical_alternative
   - marker: b
-    text: The final numbers are difficult in English. The Ge'ez reads literally along
-      the lines of 'seven parts, one and a half,' so the verse likely describes a
-      fractional increase in the moon's light.
+    text: The final numbers are difficult in English. The Ge'ez reads literally along the lines of 'seven parts, one and a half,' so the verse likely describes a fractional increase in the moon's light.
     reason: textual_variant
+  - marker: c
+    text: Or 'she rises, she takes seven parts from half of her light, and her light becomes seven parts and one half'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: በዕለተ
   chosen: on the day
@@ -34,61 +31,49 @@ lexical_decisions:
   - in the day
   - at the time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Temporal prepositional phrase; 'on the day' is the most natural English
-    equivalent while preserving the concrete calendrical sense of the astronomical
-    discourse.
+  rationale: Temporal prepositional phrase; 'on the day' is the most natural English equivalent while preserving the concrete calendrical sense of the astronomical discourse.
 - source_word: ትነሥእ
   chosen: she rises
   alternatives:
   - it rises
   - she ascends
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb denotes rising/ascending. In this context the referent is the
-    moon, treated grammatically as feminine in the surrounding luminary material,
-    so 'she rises' preserves the personified astronomical style.
+  rationale: The verb denotes rising/ascending. In this context the referent is the moon, treated grammatically as feminine in the surrounding luminary material, so 'she rises' preserves the personified astronomical style.
 - source_word: ሳብዐተ እደ
   chosen: seven parts
   alternatives:
   - seven portions
   - seven measures
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The expression literally involves 'seven hands,' but in this astronomical
-    context it functions as a unit or fraction of measure. 'Seven parts' communicates
-    the technical sense without importing an overly literal idiom that would confuse
-    English readers.
+  rationale: The expression literally involves 'seven hands,' but in this astronomical context it functions as a unit or fraction of measure. 'Seven parts' communicates the technical sense without importing an overly literal idiom that would confuse English readers.
 - source_word: መንፈቀ
   chosen: half
   alternatives:
   - a half-portion
   - midpoint
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard rendering for a fractional half. Here it modifies the measure
-    of light in a numerical description.
+  rationale: Standard rendering for a fractional half. Here it modifies the measure of light in a numerical description.
 - source_word: ብርሃኑ
   chosen: her light
   alternatives:
   - its light
   - brightness
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun means light/brightness. 'Her light' matches the feminine personification
-    of the moon in context and keeps the repeated term explicit.
+  rationale: The noun means light/brightness. 'Her light' matches the feminine personification of the moon in context and keeps the repeated term explicit.
 - source_word: ይከውን
   chosen: becomes
   alternatives:
   - is
   - comes to be
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb marks resulting state. 'Becomes' best reflects the transition
-    in measured luminosity described in the verse.
+  rationale: The verb marks resulting state. 'Becomes' best reflects the transition in measured luminosity described in the verse.
 - source_word: አሐተ ወመንፈቃ
   chosen: one half
   alternatives:
   - one and a half
   - a single half
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase is numerically awkward in English if rendered too literally.
-    Given the sequence 'seven parts and one half,' this likely denotes an added half-part;
-    the main text preserves the measured style while remaining readable.
+  rationale: The phrase is numerically awkward in English if rendered too literally. Given the sequence 'seven parts and one half,' this likely denotes an added half-part; the main text preserves the measured style while remaining readable.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -119,8 +104,7 @@ enoch_witnesses:
     text: ወበዕለተ፡ ትነሥእ፡ ሳብዐተ፡ እደ፡ መንፈቀ፡ ብርሃኑ፡ ወይከውን፡ ብርሃኑ፡ ሳብዐተ፡ እደ፡ አሐተ፡ ወመንፈቃ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -130,15 +114,22 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Personification of the luminary
   chosen_reading: Use feminine pronouns ('she,' 'her') for the rising luminary
   alternative_readings:
   - Use neuter pronouns ('it,' 'its')
-  rationale: The Astronomical Book often treats heavenly bodies in vivid, quasi-personified
-    terms. Retaining the feminine reference preserves the literary texture of the
-    Ge'ez rather than flattening it into impersonal scientific prose.
-  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not
-    flatten cosmic imagery into generic modern prose.'
+  rationale: The Astronomical Book often treats heavenly bodies in vivid, quasi-personified terms. Retaining the feminine reference preserves the literary texture of the Ge'ez rather than flattening it into impersonal scientific prose.
+  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not flatten cosmic imagery into generic modern prose.'
+revisions:
+- timestamp: '2026-04-22T22:46:11Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/006.job-72607.json
+  category: mistranslation
+  tier: 3
+  from: she rises, she takes seven parts from half of her light, and her light becomes seven parts and one half
+  to: it takes a seventh part of half of its light, and its light becomes one seventh part and a half
+  rationale: 'Multiple major errors: 1) The Ge''ez has only one verb, ትነሥእ (tənaśśə'', ''it takes/receives''); ''she rises'' is a hallucinated double-translation. 2) ''ሳብዐተ፡ እደ'' (sāb`ata ''eda) means ''a seventh part'' (1/7), not ''seven parts'' (7), which breaks the astronomical math. 3) The moon is grammatically masculine in Ge''ez, as shown by the masculine suffix in ብርሃኑ (bərhānu, ''its light''); the feminine pronouns are incorrect. | Adjudicator: The reviewer is correct on all counts. The Ge''ez text contains only one verb (ትነሥእ, ''it takes'' or ''it receives''), making ''she rises, she takes'' a double-translation hallucination. Furthermore, ሳብዐተ፡ እ'

@@ -11,23 +11,20 @@ source:
   - 76
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Its ceiling was like the path of the stars and the flashes of lightning, and
-    among them were fiery cherubim, and their heaven was water.
+  text: Its ceiling was like the course of the stars and the lightnings, and among them were fiery cherubim, and their heaven was water.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The phrase rendered 'path of the stars' could also be understood as 'course
-      of the stars' or more literally 'running of the stars.'
+    text: The phrase rendered 'path of the stars' could also be understood as 'course of the stars' or more literally 'running of the stars.'
     reason: lexical_alternative
   - marker: b
-    text: '''Their heaven was water'' is a difficult phrase. It may refer to the watery
-      heaven associated with the fiery cherubim or with the upper region of the visionary
-      structure.'
+    text: '''Their heaven was water'' is a difficult phrase. It may refer to the watery heaven associated with the fiery cherubim or with the upper region of the visionary structure.'
     reason: alternative_reading
+  - marker: c
+    text: Or 'path of the stars and the flashes of lightning'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ጠፈሩ
   chosen: its ceiling
@@ -35,18 +32,14 @@ lexical_decisions:
   - its roof
   - its firmament
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun refers to the upper covering of the house/structure seen in
-    the vision. 'Ceiling' fits the immediate architectural context better than the
-    more cosmic 'firmament,' while preserving elevated imagery.
+  rationale: The noun refers to the upper covering of the house/structure seen in the vision. 'Ceiling' fits the immediate architectural context better than the more cosmic 'firmament,' while preserving elevated imagery.
 - source_word: ሩጸተ
   chosen: path
   alternatives:
   - course
   - running
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term is connected with movement or course. In context with stars,
-    'path' communicates their visible track without over-literalizing the verbal idea
-    of running.
+  rationale: The term is connected with movement or course. In context with stars, 'path' communicates their visible track without over-literalizing the verbal idea of running.
 - source_word: ከዋክብት
   chosen: stars
   alternatives: []
@@ -58,46 +51,39 @@ lexical_decisions:
   - lightnings
   - lightning
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The plural-like force suits the visionary description of repeated luminous
-    phenomena. 'Flashes of lightning' is vivid and natural English.
+  rationale: The plural-like force suits the visionary description of repeated luminous phenomena. 'Flashes of lightning' is vivid and natural English.
 - source_word: ማእከሎሙ
   chosen: among them
   alternatives:
   - in their midst
   - between them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase locates the cherubim within the celestial-light imagery. 'Among
-    them' is clear modern English while retaining the spatial relation.
+  rationale: The phrase locates the cherubim within the celestial-light imagery. 'Among them' is clear modern English while retaining the spatial relation.
 - source_word: ኪሩቤን
   chosen: cherubim
   alternatives:
   - kerubim
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This is the recognizable angelic being. 'Cherubim' preserves the traditional
-    transliterated form and the apocalyptic register.
+  rationale: This is the recognizable angelic being. 'Cherubim' preserves the traditional transliterated form and the apocalyptic register.
 - source_word: ዘእሳት
   chosen: fiery
   alternatives:
   - of fire
   - made of fire
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The genitival construction describes the cherubim by fire. 'Fiery' is
-    concise and idiomatic without weakening the image.
+  rationale: The genitival construction describes the cherubim by fire. 'Fiery' is concise and idiomatic without weakening the image.
 - source_word: ሰማዮሙ
   chosen: their heaven
   alternatives:
   - their sky
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The possessive is retained because the Ge'ez appears to specify a heaven/sky
-    associated with the cherubim or the phenomena just described. 'Heaven' better
-    matches the visionary-cosmic setting than 'sky.'
+  rationale: The possessive is retained because the Ge'ez appears to specify a heaven/sky associated with the cherubim or the phenomena just described. 'Heaven' better matches the visionary-cosmic setting than 'sky.'
 - source_word: ማይ
   chosen: water
   alternatives:
   - waters
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The singular mass noun is natural in English. The image likely evokes
-    the heavenly waters above, but the base rendering should remain simple and direct.
+  rationale: The singular mass noun is natural in English. The image likely evokes the heavenly waters above, but the base rendering should remain simple and direct.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -128,8 +114,7 @@ enoch_witnesses:
     text: ጠፈሩ፡ ከመ፡ ሩጸተ፡ ከዋክብት፡ ወ*መበርቅት፡ ወማእከሎሙ፡ ኪሩቤን፡ ዘእሳት፡ ወሰማዮሙ፡ ማይ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -139,17 +124,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether to render ሰማዮሙ literally as 'their heaven' despite the strangeness
-    of the image
+- issue: Whether to render ሰማዮሙ literally as 'their heaven' despite the strangeness of the image
   chosen_reading: their heaven was water
   alternative_readings:
   - the heaven above them was water
   - their sky was like water
-  rationale: The Ge'ez witness as given includes a possessive form that should be
-    preserved rather than normalized away. The resulting image is apocalyptic and
-    unusual, and the translation should let that strangeness stand.
-  doctrine_reference: Preserve theological tension rather than resolve it; when wording
-    is uncertain or strange, prefer transparent English over smoothing.
+  rationale: The Ge'ez witness as given includes a possessive form that should be preserved rather than normalized away. The resulting image is apocalyptic and unusual, and the translation should let that strangeness stand.
+  doctrine_reference: Preserve theological tension rather than resolve it; when wording is uncertain or strange, prefer transparent English over smoothing.
+revisions:
+- timestamp: '2026-04-22T22:28:25Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/014/011.job-72225.json
+  category: consistency
+  tier: 3
+  from: path of the stars and the flashes of lightning
+  to: course of the stars and the lightnings
+  rationale: 'The author uses the exact same phrase (ሩጸተ፡ ከዋክብት፡ ወመበርቅት) in 14:8, which the draft correctly translated as ''course of the stars and the lightnings''. Translating it differently here breaks the author''s deliberate repetition of the visionary imagery. | Adjudicator: The reviewer correctly identifies that the Ge''ez phrase `ሩጸተ፡ ከዋክብት፡ ወመበርቅት` (ruṣata kawākəbt wamabārqət) is identical to the phrase used just three verses earlier in 14:8. Apocalyptic visionary repor'

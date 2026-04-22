@@ -10,18 +10,17 @@ source:
   - 176
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after this command I saw another command for the lesser light, whose name
-    is the moon.
+  text: And after this law I saw another law for the lesser light, whose name is the moon.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'ordinance' or 'order' for both occurrences of 'command'; the Ge'ez term
-      can denote a prescribed arrangement or directive.
+    text: Or 'ordinance' or 'order' for both occurrences of 'command'; the Ge'ez term can denote a prescribed arrangement or directive.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'And after this command I saw another command'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወድኅሬሁ
   chosen: And after this
@@ -29,8 +28,7 @@ lexical_decisions:
   - And afterward
   - And after it
   lexicon: Dillmann
-  rationale: Temporal transition formula linking this unit to the preceding solar
-    ordinance; 'after this' is natural English while preserving sequence.
+  rationale: Temporal transition formula linking this unit to the preceding solar ordinance; 'after this' is natural English while preserving sequence.
 - source_word: ትእዛዝ
   chosen: command
   alternatives:
@@ -38,33 +36,26 @@ lexical_decisions:
   - order
   - regulation
   lexicon: Dillmann
-  rationale: The noun appears twice in the verse and likely denotes a prescribed cosmic
-    arrangement. 'Command' preserves the sense of an imposed directive without over-specifying
-    legal or cultic nuance. Because repetition is present in the Ge'ez, it is retained
-    in English.
+  rationale: The noun appears twice in the verse and likely denotes a prescribed cosmic arrangement. 'Command' preserves the sense of an imposed directive without over-specifying legal or cultic nuance. Because repetition is present in the Ge'ez, it is retained in English.
 - source_word: ርኢኩ
   chosen: I saw
   alternatives:
   - I beheld
   lexicon: Dillmann
-  rationale: Straightforward visionary report; 'I saw' is clear modern English and
-    preserves the apocalyptic first-person observation.
+  rationale: Straightforward visionary report; 'I saw' is clear modern English and preserves the apocalyptic first-person observation.
 - source_word: ካልአ
   chosen: another
   alternatives:
   - a second
   lexicon: Dillmann
-  rationale: Marks a further corresponding ordinance after the previous one; 'another'
-    is the most idiomatic rendering here.
+  rationale: Marks a further corresponding ordinance after the previous one; 'another' is the most idiomatic rendering here.
 - source_word: ለብርሃን ንኡስ
   chosen: for the lesser light
   alternatives:
   - concerning the lesser luminary
   - for the smaller light
   lexicon: Dillmann
-  rationale: The phrase identifies the moon by its status relative to the sun. 'Lesser
-    light' preserves the cosmic imagery and echoes ordinary luminary language without
-    importing later doctrinal phrasing.
+  rationale: The phrase identifies the moon by its status relative to the sun. 'Lesser light' preserves the cosmic imagery and echoes ordinary luminary language without importing later doctrinal phrasing.
 - source_word: ዘስሙ
   chosen: whose name is
   alternatives:
@@ -77,8 +68,7 @@ lexical_decisions:
   alternatives:
   - moon
   lexicon: Dillmann
-  rationale: Standard Ge'ez term for the moon. The article is supplied in English
-    for naturalness in apposition to 'the lesser light'.
+  rationale: Standard Ge'ez term for the moon. The article is supplied in English for naturalness in apposition to 'the lesser light'.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -109,8 +99,7 @@ enoch_witnesses:
     text: ወድኅሬሁ፡ ለዝ፡ ትእዛዝ፡ ርኢኩ፡ ካልአ፡ ትእዛዘ፡ ለብርሃን፡ ንኡስ፡ ዘስሙ፡ ወርኅ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -120,17 +109,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Nature of ትእዛዝ in the Astronomical Book
   chosen_reading: command
   alternative_readings:
   - ordinance
   - order
-  rationale: In this context the luminaries operate according to divinely imposed
-    arrangements. 'Command' keeps the sense of authority and prescription while avoiding
-    overly technical astronomical language. The repeated wording also suits the revelatory
-    style of the passage.
-  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery and repeated
-    formulas; optimal equivalence.'
+  rationale: In this context the luminaries operate according to divinely imposed arrangements. 'Command' keeps the sense of authority and prescription while avoiding overly technical astronomical language. The repeated wording also suits the revelatory style of the passage.
+  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery and repeated formulas; optimal equivalence.'
+revisions:
+- timestamp: '2026-04-22T22:45:48Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/001.job-72602.json
+  category: lexical
+  tier: 3
+  from: And after this command I saw another command
+  to: And after this law I saw another law
+  rationale: 'In the Astronomical Book, ትእዛዝ (tə''zāz) functions as a technical term for the cosmic ''laws'' or ''ordinances'' governing the heavenly bodies (likely reflecting Aramaic חוק or Greek νόμος/τάξις). ''Law'' or ''ordinance'' accurately conveys an ongoing astronomical system, whereas ''command'' implies a singular spoken directive. | Adjudicator: In the Astronomical Book of 1 Enoch, the Ge''ez term ትእዛዝ (tə''zāz) functions as a technical term for the regular, cyclical ''laws'' or ''ordinances'' governing the heavenly bodies (likely reflecting Aramai'

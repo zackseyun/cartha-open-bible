@@ -11,22 +11,20 @@ source:
   - 245
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you who spread out evil with your companions, for by companions you
-    will be slain.
+  text: Woe to you who spread evil to your neighbors, for in Sheol you will be slain.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'The Ge''ez repeats the companion-word in both clauses, likely for rhetorical
-      effect: those acting with companions are judged by companions.'
+    text: 'The Ge''ez repeats the companion-word in both clauses, likely for rhetorical effect: those acting with companions are judged by companions.'
     reason: lexical_alternative
   - marker: b
-    text: The first companion-phrase could also be rendered 'through your companions'
-      if taken instrumentally rather than associatively.
+    text: The first companion-phrase could also be rendered 'through your companions' if taken instrumentally rather than associatively.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'spread out evil with your companions, for by companions you will be slain.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እሌ
   chosen: Woe to
@@ -34,16 +32,13 @@ lexical_decisions:
   - alas for
   - woe upon
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verse opens with the standard denunciatory interjection used in judgment
-    sayings. 'Woe to' preserves the prophetic/apocalyptic force better than a softer
-    lament such as 'alas for'.
+  rationale: The verse opens with the standard denunciatory interjection used in judgment sayings. 'Woe to' preserves the prophetic/apocalyptic force better than a softer lament such as 'alas for'.
 - source_word: ለክሙ
   chosen: you
   alternatives:
   - to you
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Dative pronoun governed by the woe formula; in English the idiom is naturally
-    'Woe to you.'
+  rationale: Dative pronoun governed by the woe formula; in English the idiom is naturally 'Woe to you.'
 - source_word: እለ ትሰፍሕዋ ለእኩይ
   chosen: who spread out evil
   alternatives:
@@ -51,9 +46,7 @@ lexical_decisions:
   - who enlarge evil
   - who broadcast evil
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys spreading, extending, or making broad. 'Spread out evil'
-    keeps the concrete image of expansion rather than reducing it to a generic moral
-    statement.
+  rationale: The verb conveys spreading, extending, or making broad. 'Spread out evil' keeps the concrete image of expansion rather than reducing it to a generic moral statement.
 - source_word: በቢጽክሙ
   chosen: with your companions
   alternatives:
@@ -61,9 +54,7 @@ lexical_decisions:
   - among your companions
   - by your associates
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The preposition can mark association or instrument. Here an associative
-    sense fits the first clause well: they propagate evil in concert with their peers
-    or allies.'
+  rationale: 'The preposition can mark association or instrument. Here an associative sense fits the first clause well: they propagate evil in concert with their peers or allies.'
 - source_word: እስመ
   chosen: for
   alternatives:
@@ -78,18 +69,14 @@ lexical_decisions:
   - through companions
   - by your companions
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'Likely from the same noun as the previous phrase, creating a deliberate
-    wordplay or measure-for-measure reversal: those who act with companions will perish
-    by companions. I preserved the repetition in English.'
+  rationale: 'Likely from the same noun as the previous phrase, creating a deliberate wordplay or measure-for-measure reversal: those who act with companions will perish by companions. I preserved the repetition in English.'
 - source_word: ትትቀተሉ
   chosen: you will be slain
   alternatives:
   - you will be killed
   - you will be cut down
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Passive/jussive-future sense in a judgment context. 'Be slain' is elevated
-    but still readable, and it suits the apocalyptic denunciation better than the
-    flatter 'be killed'.
+  rationale: Passive/jussive-future sense in a judgment context. 'Be slain' is elevated but still readable, and it suits the apocalyptic denunciation better than the flatter 'be killed'.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -120,8 +107,7 @@ enoch_witnesses:
     text: እሌ፡ ለክሙ፡ እለ፡ ትሰፍሕዋ፡ ለእኩይ፡ በቢጽክሙ፡ እስመ፡ በቢጸል፡ ትትቀተሉ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -131,18 +117,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Nature of the retribution formula
-  chosen_reading: 'The verse expresses measure-for-measure judgment: those who spread
-    evil with companions will be slain by companions.'
+  chosen_reading: 'The verse expresses measure-for-measure judgment: those who spread evil with companions will be slain by companions.'
   alternative_readings:
   - A more general statement that evildoers will die because of their associates
-  - 'An instrumental reading in both clauses: they spread evil by means of allies
-    and are killed by means of allies'
-  rationale: The repeated companion-term in both clauses strongly suggests a rhetorical
-    reversal. Preserving that repetition keeps the moral logic of the judgment oracle
-    visible without over-explaining it in the main text.
-  doctrine_reference: Preserve apocalyptic/judgment formulas and theological tension
-    rather than flattening them.
+  - 'An instrumental reading in both clauses: they spread evil by means of allies and are killed by means of allies'
+  rationale: The repeated companion-term in both clauses strongly suggests a rhetorical reversal. Preserving that repetition keeps the moral logic of the judgment oracle visible without over-explaining it in the main text.
+  doctrine_reference: Preserve apocalyptic/judgment formulas and theological tension rather than flattening them.
+revisions:
+- timestamp: '2026-04-22T22:50:09Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/011.job-72914.json
+  category: mistranslation
+  tier: 3
+  from: spread out evil with your companions, for by companions you will be slain.
+  to: spread evil to your neighbors, for in Sheol you will be slain.
+  rationale: 'The OCR text `በቢጸል` is a severe misreading of `በሲኦል` (ba-siʾol, "in Sheol"). The draft invents a wordplay about "companions" based entirely on this OCR error. Furthermore, `በቢጽክሙ` (ba-biṣəkəmu) means "to/against your neighbors" (the targets of the evil), not "with your companions" (associative). | Adjudicator: The reviewer correctly identifies a severe OCR error in the provided source text: `በቢጸል` is a visual misreading of `በሲኦል` (ba-siʾol, ''in Sheol''). The current translation invents a wordplay about being'

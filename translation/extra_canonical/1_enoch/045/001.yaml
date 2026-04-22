@@ -9,23 +9,20 @@ source:
   - 123
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch45.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 45,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch45.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 45, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And this is another parable concerning those who deny the name of the dwelling
-    of the holy ones and of the Lord of Spirits.
+  text: And this is And this is the second parable concerning those who deny the name of the dwelling of the holy ones and of the Lord of Spirits. concerning those who deny the name of the dwelling of the holy ones and of the Lord of Spirits.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ge'ez wording after 'deny the name' is difficult. The phrase may mean
-      'the name of the dwelling of the holy ones and of the Lord of Spirits,' but
-      other construals are possible.
+    text: The Ge'ez wording after 'deny the name' is difficult. The phrase may mean 'the name of the dwelling of the holy ones and of the Lord of Spirits,' but other construals are possible.
     reason: textual_variant
   - marker: b
-    text: '''Holy ones'' may refer to heavenly holy beings, the righteous, or a deliberately
-      overlapping idea in this apocalyptic context.'
+    text: '''Holy ones'' may refer to heavenly holy beings, the righteous, or a deliberately overlapping idea in this apocalyptic context.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'another parable'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወዝ
   chosen: And this is
@@ -33,68 +30,55 @@ lexical_decisions:
   - And this
   - And these are
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces the next unit with a connective plus demonstrative/copular
-    sense; in context it marks transition to a new saying.
+  rationale: Introduces the next unit with a connective plus demonstrative/copular sense; in context it marks transition to a new saying.
 - source_word: ካልእ ምሳሌ
   chosen: another parable
   alternatives:
   - another similitude
   - a second parable
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Parables section repeatedly uses this formula. 'Parable' is clearer
-    modern English, while preserving the formal designation of a visionary discourse.
+  rationale: The Parables section repeatedly uses this formula. 'Parable' is clearer modern English, while preserving the formal designation of a visionary discourse.
 - source_word: ዲበ
   chosen: concerning
   alternatives:
   - about
   - upon
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Here the preposition introduces the topic of the parable rather than
-    a spatial sense.
+  rationale: Here the preposition introduces the topic of the parable rather than a spatial sense.
 - source_word: እለ ይክሕዱ
   chosen: those who deny
   alternatives:
   - those who reject
   - those who disown
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The relative marker plus imperfect verb yields a substantive participial
-    sense. 'Deny' preserves the force of repudiation without over-interpreting whether
-    the denial is verbal, covenantal, or practical.
+  rationale: The relative marker plus imperfect verb yields a substantive participial sense. 'Deny' preserves the force of repudiation without over-interpreting whether the denial is verbal, covenantal, or practical.
 - source_word: ስሞ
   chosen: the name
   alternatives:
   - his name
   - the renown
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form most naturally means 'name.' Because the following construction
-    is difficult, the translation keeps the concrete term rather than paraphrasing
-    it into 'authority' or 'majesty.'
+  rationale: The form most naturally means 'name.' Because the following construction is difficult, the translation keeps the concrete term rather than paraphrasing it into 'authority' or 'majesty.'
 - source_word: ለማኅደረ ቅዱሳን
   chosen: of the dwelling of the holy ones
   alternatives:
   - of the habitation of the holy ones
   - of the assembly of the holy ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ማኅደር commonly denotes dwelling-place or habitation. The genitival relation
-    after 'name' is awkward in English and likely reflects a compressed Ge'ez construction;
-    retaining 'dwelling' preserves the apocalyptic spatial imagery rather than flattening
-    it.
+  rationale: ማኅደር commonly denotes dwelling-place or habitation. The genitival relation after 'name' is awkward in English and likely reflects a compressed Ge'ez construction; retaining 'dwelling' preserves the apocalyptic spatial imagery rather than flattening it.
 - source_word: ቅዱሳን
   chosen: the holy ones
   alternatives:
   - the saints
   - the consecrated ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In Enochic literature this term often refers to heavenly holy beings
-    or the sanctified community depending on context. 'Holy ones' preserves the ambiguity
-    better than the more tradition-laden 'saints.'
+  rationale: In Enochic literature this term often refers to heavenly holy beings or the sanctified community depending on context. 'Holy ones' preserves the ambiguity better than the more tradition-laden 'saints.'
 - source_word: ወእግዚአ መናፍስት
   chosen: and of the Lord of Spirits
   alternatives:
   - and the Lord of Spirits
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A standard divine title in the Parables. It is translated, not transliterated,
-    in keeping with project philosophy on titles.
+  rationale: A standard divine title in the Parables. It is translated, not transliterated, in keeping with project philosophy on titles.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -125,39 +109,41 @@ enoch_witnesses:
     text: ወዝ፡ ካልእ፡ ምሳሌ፡ ዲበ፡ እለ፡ ይክሕዱ፡ ስሞ፡ ለማኅደረ፡ ቅዱሳን፡ ወእግዚአ፡ መናፍስት፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch45.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch45.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 45, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 45, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Referent of 'the holy ones'
   chosen_reading: left ambiguous as 'the holy ones'
   alternative_readings:
   - angelic holy beings
   - the righteous community
-  rationale: The immediate phrase does not specify whether the holy ones are heavenly
-    beings, the elect, or both. The translation preserves the Enochic ambiguity rather
-    than resolving it.
+  rationale: The immediate phrase does not specify whether the holy ones are heavenly beings, the elect, or both. The translation preserves the Enochic ambiguity rather than resolving it.
   doctrine_reference: Preserve theological tension rather than resolve it.
-- issue: Force of denying 'the name of the dwelling of the holy ones and of the Lord
-    of Spirits'
+- issue: Force of denying 'the name of the dwelling of the holy ones and of the Lord of Spirits'
   chosen_reading: rendered literally with minimal smoothing
   alternative_readings:
   - deny the name by which the holy ones dwell
   - deny the dwelling-place of the holy ones and the Lord of Spirits
   - deny the name of the Lord of Spirits in the dwelling of the holy ones
-  rationale: The Ge'ez construction is syntactically difficult and the Parables lack
-    Greek/Qumran control here. A relatively literal rendering is more transparent
-    and auditable than a confident paraphrase.
-  doctrine_reference: Original-language primacy over translation tradition; when the
-    sense is uncertain, prefer transparent English plus footnote over false confidence.
+  rationale: The Ge'ez construction is syntactically difficult and the Parables lack Greek/Qumran control here. A relatively literal rendering is more transparent and auditable than a confident paraphrase.
+  doctrine_reference: Original-language primacy over translation tradition; when the sense is uncertain, prefer transparent English plus footnote over false confidence.
+revisions:
+- timestamp: '2026-04-22T22:42:39Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/045/001.job-72370.json
+  category: missing_nuance
+  tier: 3
+  from: another parable
+  to: And this is the second parable concerning those who deny the name of the dwelling of the holy ones and of the Lord of Spirits.
+  rationale: 'Adjudicator-modified: The Ge''ez word ካልእ (kāleʾ) can mean either ''another'' or ''second.'' However, the Book of Parables explicitly structures its visions as a numbered sequence of three (1 En 37:5), with the first parable at 38:1 (ቀዳማዊ) and the third at 58:1 (ሣልስ). In this sequential context, ካልእ clearly functions as the ordinal ''second.'' Translating it as ''another'' obscures the author''s deliberate structural numbering. The change is accurate and necessary. I have provided the full sentence for the rewrite.'

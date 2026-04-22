@@ -20,22 +20,23 @@ source:
   - 218
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I sent many other sheep to those sheep, that they might hear and cry out
-    over them.
+  text: And he sent many other sheep to those sheep, And he sent many other sheep to those sheep, that they might testify and cry out over them. and cry out over them.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The clause rendered 'that they might hear' is difficult; the underlying
-      verb may carry a causative nuance ('make hear' / 'proclaim so as to be heard').
+    text: The clause rendered 'that they might hear' is difficult; the underlying verb may carry a causative nuance ('make hear' / 'proclaim so as to be heard').
     reason: lexical_alternative
   - marker: b
-    text: '''Cry out over them'' could also be understood as ''cry out concerning
-      them'' or, less likely, ''cry out against them.'''
+    text: '''Cry out over them'' could also be understood as ''cry out concerning them'' or, less likely, ''cry out against them.'''
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And I sent'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'that they might hear'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ካልኣነ
   chosen: other
@@ -43,72 +44,61 @@ lexical_decisions:
   - another
   - the rest of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form marks distinction from a previously mentioned group. 'Other'
-    fits the plural noun that follows better than singular 'another.'
+  rationale: The form marks distinction from a previously mentioned group. 'Other' fits the plural noun that follows better than singular 'another.'
 - source_word: አባግዕ
   chosen: sheep
   alternatives:
   - flock
   - ewes
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Animal Apocalypse, sheep is the stable image for the covenant
-    people or a subgroup within them. 'Sheep' preserves the visionary symbolism better
-    than the collective 'flock.'
+  rationale: In the Animal Apocalypse, sheep is the stable image for the covenant people or a subgroup within them. 'Sheep' preserves the visionary symbolism better than the collective 'flock.'
 - source_word: ብዙኃነ
   chosen: many
   alternatives:
   - numerous
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward quantitative adjective; 'many' is natural English and
-    keeps the emphasis on the size of the group sent.
+  rationale: A straightforward quantitative adjective; 'many' is natural English and keeps the emphasis on the size of the group sent.
 - source_word: ፈነወ
   chosen: I sent
   alternatives:
   - I dispatched
   - I released
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb denotes sending or dispatching. 'I sent' is the plainest rendering
-    and suits the narrative sequence.
+  rationale: The verb denotes sending or dispatching. 'I sent' is the plainest rendering and suits the narrative sequence.
 - source_word: ኀቤሆሙ
   chosen: to them
   alternatives:
   - toward them
   - unto them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Directional preposition with pronominal suffix. In context it refers
-    to the previously mentioned sheep, so 'to them' is idiomatic.
+  rationale: Directional preposition with pronominal suffix. In context it refers to the previously mentioned sheep, so 'to them' is idiomatic.
 - source_word: ለዝኩ አባግዕ
   chosen: to those sheep
   alternatives:
   - unto those sheep
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The demonstrative specifies the recipient group. Rendering the phrase
-    explicitly avoids ambiguity in English.
+  rationale: The demonstrative specifies the recipient group. Rendering the phrase explicitly avoids ambiguity in English.
 - source_word: ያስምዑ
   chosen: that they might hear
   alternatives:
   - that they might listen
   - that they might make hear
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form is somewhat difficult, but in context the sense is best taken
-    as hearing/listening rather than causative 'make hear.' This yields a coherent
-    sequence with the following verb.
+  rationale: The form is somewhat difficult, but in context the sense is best taken as hearing/listening rather than causative 'make hear.' This yields a coherent sequence with the following verb.
 - source_word: የአውይዉ
   chosen: cry out
   alternatives:
   - lament
   - wail
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys a loud cry, often of distress or protest. 'Cry out'
-    preserves the force without over-specifying whether the tone is lament or alarm.
+  rationale: The verb conveys a loud cry, often of distress or protest. 'Cry out' preserves the force without over-specifying whether the tone is lament or alarm.
 - source_word: ዲቤሆሙ
   chosen: over them
   alternatives:
   - concerning them
   - against them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition can indicate relation toward or over someone. 'Over them'
-    keeps the image broad enough for either lament or protest in the vision.
+  rationale: The preposition can indicate relation toward or over someone. 'Over them' keeps the image broad enough for either lament or protest in the vision.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -139,8 +129,7 @@ enoch_witnesses:
     text: ወ*ካልኣነ፡ አባግዕ፡ ብዙኃነ፡ ፈነወ፡ ኀቤሆሙ፡ ለዝኩ፡ አባግዕ፡ ያስምዑ፡ ወ*የአውይዉ፡ ዲቤሆሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -150,18 +139,34 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Identity of the 'other sheep' within the Animal Apocalypse symbolism
-  chosen_reading: Retain the literal visionary image 'other sheep' without identifying
-    them in the translation.
+  chosen_reading: Retain the literal visionary image 'other sheep' without identifying them in the translation.
   alternative_readings:
   - prophets
   - faithful leaders
   - reforming group within Israel
-  rationale: The verse operates within symbolic dream imagery. The translation should
-    preserve the animal symbolism rather than resolve it into a historical referent
-    in the main text.
-  doctrine_reference: Preserve theological tension rather than resolve it; preserve
-    apocalyptic imagery.
+  rationale: The verse operates within symbolic dream imagery. The translation should preserve the animal symbolism rather than resolve it into a historical referent in the main text.
+  doctrine_reference: Preserve theological tension rather than resolve it; preserve apocalyptic imagery.
+revisions:
+- timestamp: '2026-04-22T22:48:16Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/053.job-72779.json
+  category: mistranslation
+  tier: 3
+  from: And I sent
+  to: And he sent
+  rationale: 'The verb ፈነወ (fannawa) is the 3rd person masculine singular perfect (''he sent''), not the 1st person singular (''I sent'', which would be ፈነውኩ). The subject is the Lord of the sheep, continuing the narrative action from the previous verse. | Adjudicator: The reviewer is factually correct about the Ge''ez grammar. The verb ፈነወ (fannawa) is the third-person masculine singular perfect form (''he sent''), whereas the first-person singular (''I sent'') would be'
+- timestamp: '2026-04-22T22:48:30Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/053.job-72779.json
+  category: mistranslation
+  tier: 3
+  from: that they might hear
+  to: And he sent many other sheep to those sheep, that they might testify and cry out over them.
+  rationale: 'Adjudicator-modified: The reviewer is entirely correct about the grammar of ያስምዑ (yāsməʿu). It is the causative (A-stem) subjunctive of ሰምዐ (samʿa, ''to hear''), meaning ''to cause to hear,'' ''to proclaim,'' or ''to testify.'' The basic G-stem subjunctive ''that they might hear'' would be ይስምዑ (yəsməʿu). In the context of the Animal Apocalypse, these sheep represent the prophets sent to testify to the erring flock. I am modifying the rewrite slightly to also correct the main verb ፈነወ (fanawa), which is third-person singular ('

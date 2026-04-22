@@ -9,18 +9,17 @@ source:
   - 201
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw that black wild boar, and it came.
+  text: And that black calf grew up, and she came
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ethiopic wording is terse. The animal term is rendered 'wild boar' to
-      preserve the specific zoomorphic imagery of the vision; 'boar' is a possible
-      simpler alternative.
+    text: The Ethiopic wording is terse. The animal term is rendered 'wild boar' to preserve the specific zoomorphic imagery of the vision; 'boar' is a possible simpler alternative.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'And I saw that black wild boar, and it came.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወዝኩ
   chosen: And I saw
@@ -28,39 +27,33 @@ lexical_decisions:
   - And I looked
   - Then I saw
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form introduces Enoch’s visionary perception. 'And I saw' preserves
-    the recurring dream-vision reporting formula without unnecessary expansion.
+  rationale: The form introduces Enoch’s visionary perception. 'And I saw' preserves the recurring dream-vision reporting formula without unnecessary expansion.
 - source_word: ጸሊም
   chosen: black
   alternatives:
   - dark
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective denotes blackness/dark coloration. 'Black' is the straightforward
-    rendering and preserves the symbolic color imagery of the Animal Apocalypse.
+  rationale: The adjective denotes blackness/dark coloration. 'Black' is the straightforward rendering and preserves the symbolic color imagery of the Animal Apocalypse.
 - source_word: ጣዕዋ
   chosen: wild boar
   alternatives:
   - boar
   - swine
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Animal Apocalypse the animal imagery is specific and should not
-    be flattened. 'Wild boar' best captures an untamed male swine rather than generic
-    'swine.'
+  rationale: In the Animal Apocalypse the animal imagery is specific and should not be flattened. 'Wild boar' best captures an untamed male swine rather than generic 'swine.'
 - source_word: ላህቀ
   chosen: that
   alternatives:
   - the
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Taken as a demonstrative/determining element pointing to a specific animal
-    in the vision. 'That' preserves the deictic force better than a simple article.
+  rationale: Taken as a demonstrative/determining element pointing to a specific animal in the vision. 'That' preserves the deictic force better than a simple article.
 - source_word: ወመጽአት
   chosen: and it came
   alternatives:
   - and it arrived
   - and it approached
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb is from 'to come.' 'And it came' is formally close and keeps
-    the terse, sequential movement of the vision.
+  rationale: The verb is from 'to come.' 'And it came' is formally close and keeps the terse, sequential movement of the vision.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -91,8 +84,7 @@ enoch_witnesses:
     text: ወዝኩ፡ *ጸሊም፡ ጣዕዋ፡ ላህቀ፡ ወ*መጽአት፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -102,17 +94,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Symbolic animal imagery in the Animal Apocalypse
-  chosen_reading: Retain the concrete animal image 'black wild boar' rather than interpret
-    it as a people-group or historical figure in the translation line.
+  chosen_reading: Retain the concrete animal image 'black wild boar' rather than interpret it as a people-group or historical figure in the translation line.
   alternative_readings:
   - Translate interpretively as a hostile nation or ruler
   - Use a more generic 'black pig'
-  rationale: The passage belongs to a symbolic dream vision whose imagery should remain
-    visible in translation. Historical identification belongs in commentary, not in
-    the main text.
-  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not
-    flatten symbolic language into generic prose.'
+  rationale: The passage belongs to a symbolic dream vision whose imagery should remain visible in translation. Historical identification belongs in commentary, not in the main text.
+  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not flatten symbolic language into generic prose.'
+revisions:
+- timestamp: '2026-04-22T22:47:22Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/085/005.job-72714.json
+  category: mistranslation
+  tier: 3
+  from: And I saw that black wild boar, and it came.
+  to: And that black calf grew up, and she came
+  rationale: 'The draft contains multiple severe lexical hallucinations. `ወዝኩ` (wa-zəku) means "And that", not "And I saw". `ጣዕዋ` (ṭaʿwa) means "calf" or "young bull", not "wild boar". `ላህቀ` (lahqa) is a verb meaning "to grow up" or "become large", not a demonstrative pronoun. `ወመጽአት` (wa-maṣʾat) is a 3rd person feminine singular verb ("and she came"). | Adjudicator: The reviewer is entirely correct. The Ge''ez text reads `ወዝኩ` (and that) `ጸሊም` (black) `ጣዕዋ` (calf) `ላህቀ` (grew up) `ወመጽአት` (and she came). The current translation hallucinates ''I saw'' and ''wild boar'' '

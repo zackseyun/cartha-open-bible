@@ -10,18 +10,17 @@ source:
   - 242
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 98,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And now I declare to you, to the wise and to the foolish: for you will see
-    much upon the earth.'
+  text: 'And now I swear to you, to the wise and to the foolish: for you will see much upon the earth.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'many things.' The Ge'ez expression emphasizes abundance in what the
-      hearers are about to witness.
+    text: Or 'many things.' The Ge'ez expression emphasizes abundance in what the hearers are about to witness.
     reason: lexical_alternative
+  - marker: b
+    text: 'Or ''And now I declare to you, to the wise and to the foolish: for you will see much upon the earth.''.'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወይእዜኒ
   chosen: And now
@@ -29,8 +28,7 @@ lexical_decisions:
   - And at this time
   - And now then
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The conjunction plus temporal adverb introduces a fresh admonitory statement.
-    'And now' preserves the discourse shift without sounding overly stiff.
+  rationale: The conjunction plus temporal adverb introduces a fresh admonitory statement. 'And now' preserves the discourse shift without sounding overly stiff.
 - source_word: እኔ
   chosen: I
   alternatives: []
@@ -43,8 +41,7 @@ lexical_decisions:
   - speak
   - tell
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb introduces solemn direct address. 'Declare' better fits the
-    elevated admonitory tone of the Epistle than the flatter 'say' or 'tell'.
+  rationale: The verb introduces solemn direct address. 'Declare' better fits the elevated admonitory tone of the Epistle than the flatter 'say' or 'tell'.
 - source_word: ለክሙ
   chosen: to you
   alternatives:
@@ -57,49 +54,42 @@ lexical_decisions:
   - to wise ones
   - to the sages
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective/substantive denotes those characterized by wisdom. 'The
-    wise' is idiomatic and preserves the moral-wisdom contrast.
+  rationale: The adjective/substantive denotes those characterized by wisdom. 'The wise' is idiomatic and preserves the moral-wisdom contrast.
 - source_word: ወለአብዳን
   chosen: and to the foolish
   alternatives:
   - and to fools
   - and to the senseless
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Chosen to mirror 'the wise' with a balanced contrast. 'Foolish' is slightly
-    less harsh than 'fools' while still conveying moral and intellectual lack.
+  rationale: Chosen to mirror 'the wise' with a balanced contrast. 'Foolish' is slightly less harsh than 'fools' while still conveying moral and intellectual lack.
 - source_word: እስመ
   chosen: for
   alternatives:
   - because
   - since
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces the reason for the address. 'For' suits the elevated register
-    and keeps the causal link concise.
+  rationale: Introduces the reason for the address. 'For' suits the elevated register and keeps the causal link concise.
 - source_word: ብዙኅ
   chosen: much
   alternatives:
   - many things
   - a great deal
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term indicates abundance. 'Much' works naturally with the following
-    verb 'see' in English.
+  rationale: The term indicates abundance. 'Much' works naturally with the following verb 'see' in English.
 - source_word: ትሬእዩ
   chosen: you will see
   alternatives:
   - you shall see
   - you are about to see
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Future sense is appropriate in this warning context. 'You will see' is
-    clear and avoids unnecessary archaism.
+  rationale: Future sense is appropriate in this warning context. 'You will see' is clear and avoids unnecessary archaism.
 - source_word: ዲበ ምድር
   chosen: upon the earth
   alternatives:
   - on the earth
   - in the land
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase is spatial and broad in scope. 'Upon the earth' preserves
-    the elevated apocalyptic register better than 'on the earth,' while 'in the land'
-    would narrow the reference too much.
+  rationale: The phrase is spatial and broad in scope. 'Upon the earth' preserves the elevated apocalyptic register better than 'on the earth,' while 'in the land' would narrow the reference too much.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -130,8 +120,7 @@ enoch_witnesses:
     text: ወይእዜኒ፡ እኔ፡ እምሕል፡ ለክሙ፡ ለጠቢባን፡ ወለአብዳን፡ እስመ፡ ብዙኅ፡ ትሬእዩ፡ ዲበ፡ ምድር።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -141,16 +130,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Scope of the addressees 'the wise and the foolish'
-  chosen_reading: A universalized moral address including both discerning and undiscerning
-    hearers
+  chosen_reading: A universalized moral address including both discerning and undiscerning hearers
   alternative_readings:
   - A narrower address to two classes within Israel
   - An ironic address aimed primarily at the wicked
-  rationale: The verse itself sets up a broad contrast without further qualification.
-    Rendering the terms straightforwardly preserves the tension and leaves later context
-    to specify the warning's target.
+  rationale: The verse itself sets up a broad contrast without further qualification. Rendering the terms straightforwardly preserves the tension and leaves later context to specify the warning's target.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:49:49Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/098/001.job-72894.json
+  category: mistranslation
+  tier: 3
+  from: 'And now I declare to you, to the wise and to the foolish: for you will see much upon the earth.'
+  to: 'And now I swear to you, to the wise and to the foolish: for you will see much upon the earth.'
+  rationale: 'The Ge''ez verb እምሕል (emḥel) is the first-person imperfect of መሐለ (maḥala), meaning ''to swear'' or ''to take an oath'' (Dillmann col. 158). It is not a generic verb of speaking (''declare''). The explicit oath formula (''I swear to you'') is a central rhetorical feature of the Epistle of Enoch, appearing repeatedly in this very chapter (cf. 98:4, 98:6). Translating it as ''declare'' obscures the author''s deliberate use of a solemn oath. | Adjudicator: The Ge''ez verb እምሕል (emḥel) is the first-person singular imperfect of መሐለ (maḥala), which specifically means ''to swear'' or ''to take an oath'' (Leslau, CDG 336; Dillmann 158). The Epistle of Enoch is ch'

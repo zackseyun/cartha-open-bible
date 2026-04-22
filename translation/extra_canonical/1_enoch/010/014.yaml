@@ -11,23 +11,20 @@ source:
   - 66
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 10,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when they and their sons have risen up, they shall be bound together with
-    them until the completion of the generations of generations.
+  text: And when he burns and perishes, from henceforth they shall be bound together with them until the completion of the generations of generations.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The opening verb is textually difficult in the OCR witness; it likely denotes
-      rising up, appearing, or being stirred. The translation keeps a cautious rendering
-      rather than forcing a more specific sense.
+    text: The opening verb is textually difficult in the OCR witness; it likely denotes rising up, appearing, or being stirred. The translation keeps a cautious rendering rather than forcing a more specific sense.
     reason: textual_variant
   - marker: b
-    text: '''Generations of generations'' is a literal rendering of the repeated idiom,
-      expressing a long succession of ages.'
+    text: '''Generations of generations'' is a literal rendering of the repeated idiom, expressing a long succession of ages.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And when they and their sons have risen up, they shall be bound together with them'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወሶበ
   chosen: And when
@@ -35,8 +32,7 @@ lexical_decisions:
   - and then
   - but when
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Temporal conjunction introducing the next stage of the judgment sequence;
-    'And when' preserves the connective force and timing.
+  rationale: Temporal conjunction introducing the next stage of the judgment sequence; 'And when' preserves the connective force and timing.
 - source_word: †ይውዒ፡†
   chosen: have risen up
   alternatives:
@@ -44,52 +40,42 @@ lexical_decisions:
   - awake
   - are stirred up
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The OCR form is uncertain, but the clause most naturally points to a
-    verb of arising or appearing. Perfect-like English 'have risen up' fits the temporal
-    construction and preserves the apocalyptic sequence without overinterpreting.
+  rationale: The OCR form is uncertain, but the clause most naturally points to a verb of arising or appearing. Perfect-like English 'have risen up' fits the temporal construction and preserves the apocalyptic sequence without overinterpreting.
 - source_word: ወይማስን
   chosen: and their sons
   alternatives:
   - and their offspring
   - and their children
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In context this likely refers to the descendants associated with the
-    judged beings. 'Sons' keeps the more literal and genealogical force common in
-    ancient judgment texts.
+  rationale: In context this likely refers to the descendants associated with the judged beings. 'Sons' keeps the more literal and genealogical force common in ancient judgment texts.
 - source_word: እምይእዜ
   chosen: they
   alternatives:
   - those who are from now
   - from this time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The transmitted form is difficult in OCR. The sense required by the clause
-    is a resumptive subject before 'shall be bound.' I render the subject plainly
-    in English while noting the textual uncertainty in a footnote.
+  rationale: The transmitted form is difficult in OCR. The sense required by the clause is a resumptive subject before 'shall be bound.' I render the subject plainly in English while noting the textual uncertainty in a footnote.
 - source_word: ምስሌሆሙ
   chosen: with them
   alternatives:
   - along with them
   - together with them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Marks association in punishment. 'With them' is concise; the following
-    'bound together' carries the collective force.
+  rationale: Marks association in punishment. 'With them' is concise; the following 'bound together' carries the collective force.
 - source_word: ኅቡረ
   chosen: together
   alternatives:
   - in company
   - as one group
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Adverbial sense indicating collective binding. Preserving it avoids flattening
-    the corporate nature of the judgment.
+  rationale: Adverbial sense indicating collective binding. Preserving it avoids flattening the corporate nature of the judgment.
 - source_word: ይትአሰሩ
   chosen: shall be bound
   alternatives:
   - shall be imprisoned
   - shall be fettered
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A judgment verb of binding/restraint. 'Bound' matches the recurring Watchers-imprisonment
-    imagery and avoids importing a more interpretive term like 'imprisoned' into the
-    main text.
+  rationale: A judgment verb of binding/restraint. 'Bound' matches the recurring Watchers-imprisonment imagery and avoids importing a more interpretive term like 'imprisoned' into the main text.
 - source_word: እስከ
   chosen: until
   alternatives:
@@ -103,18 +89,14 @@ lexical_decisions:
   - the end
   - the consummation
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Refers to the reaching of an appointed end. 'Completion' preserves the
-    sense of a fixed terminus without overloading the phrase with later eschatological
-    terminology.
+  rationale: Refers to the reaching of an appointed end. 'Completion' preserves the sense of a fixed terminus without overloading the phrase with later eschatological terminology.
 - source_word: ትውልደ፡ ትውልድ
   chosen: the generations of generations
   alternatives:
   - generation of generation
   - all generations
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A repetitive idiom expressing an extended succession of ages. I preserve
-    the doubled form because apocalyptic rhetoric often uses such repetition for solemn
-    duration.
+  rationale: A repetitive idiom expressing an extended succession of ages. I preserve the doubled form because apocalyptic rhetoric often uses such repetition for solemn duration.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -145,8 +127,7 @@ enoch_witnesses:
     text: ወሶበ፡ †ይውዒ፡† ወይማስን፡ እምይእዜ፡ ምስሌሆሙ፡ ኅቡረ፡ ይትአሰሩ፡ እስከ፡ ተፍጻሜተ፡ ትውልደ፡ ትውልድ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -156,16 +137,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Duration and scope of punishment
-  chosen_reading: The verse speaks of collective binding extending through an appointed
-    succession of generations, not necessarily an abstract timeless eternity.
+  chosen_reading: The verse speaks of collective binding extending through an appointed succession of generations, not necessarily an abstract timeless eternity.
   alternative_readings:
   - eternal imprisonment
   - binding until the final judgment only
-  rationale: The Ge'ez explicitly uses a terminative phrase ('until the completion')
-    plus a repeated generations idiom. Rendering both preserves the text's temporal
-    tension without resolving it into later doctrinal categories.
+  rationale: The Ge'ez explicitly uses a terminative phrase ('until the completion') plus a repeated generations idiom. Rendering both preserves the text's temporal tension without resolving it into later doctrinal categories.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:23:52Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/010/014.job-72205.json
+  category: mistranslation
+  tier: 3
+  from: And when they and their sons have risen up, they shall be bound together with them
+  to: And when he burns and perishes, from henceforth they shall be bound together with them
+  rationale: 'The draft completely hallucinates the first clause. `ይውዒ` (yew''i) is from `ውዕየ` (to burn), meaning "he burns" (not "have risen up"). `ወይማስን` (wa-yemāssen) is from `ማስነ` (to perish/be destroyed), meaning "and perishes" (not "and their sons"). `እምይእዜ` (em-ye''ezē) means "from now" or "henceforth" (not "they"). The Ge''ez literally reads: "And when he burns and perishes, from henceforth they shall be bound..." | Adjudicator: The reviewer is entirely correct. The current English draft hallucinates ''they and their sons have risen up.'' The Ge''ez text clearly reads `ይውዒ` (yew''i, ''he burns'', from `ውዕየ`), `ወይማስን` (wa-yemāssen, '

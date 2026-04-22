@@ -9,18 +9,17 @@ source:
   - 104
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 27,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: At that time I said, “For what reason is this blessed land, wholly filled
-    with trees, and this accursed valley in their midst?”
+  text: At that time I said, “For what reason is this blessed land, and all of it filled with trees, and this accursed valley in their midst?”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The vegetation phrase is textually difficult in this OCR witness; the sense
-      is that the land is abundantly covered with trees or growth.
+    text: The vegetation phrase is textually difficult in this OCR witness; the sense is that the land is abundantly covered with trees or growth.
     reason: textual_variant
+  - marker: b
+    text: Or 'this blessed land, wholly filled with trees,'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ውእቱ ጊዜ
   chosen: At that time
@@ -28,67 +27,55 @@ lexical_decisions:
   - Then
   - In that time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard temporal formula in narrative/vision reporting; 'At that time'
-    preserves the elevated apocalyptic register without sounding archaic.
+  rationale: Standard temporal formula in narrative/vision reporting; 'At that time' preserves the elevated apocalyptic register without sounding archaic.
 - source_word: እቤ
   chosen: I said
   alternatives:
   - I spoke
   - I asked
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form introduces Enoch's speech. Because the following clause is an
-    inquiry, English could use 'asked,' but 'said' stays closer to the Ge'ez speech
-    formula and preserves the direct-question structure.
+  rationale: The form introduces Enoch's speech. Because the following clause is an inquiry, English could use 'asked,' but 'said' stays closer to the Ge'ez speech formula and preserves the direct-question structure.
 - source_word: በእንተ ምንት
   chosen: For what reason
   alternatives:
   - Why
   - Concerning what
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This phrase marks inquiry about cause or purpose. 'For what reason' is
-    slightly more formal than 'why' and fits the solemn visionary dialogue.
+  rationale: This phrase marks inquiry about cause or purpose. 'For what reason' is slightly more formal than 'why' and fits the solemn visionary dialogue.
 - source_word: ዛቲ ምድር ቡርክት
   chosen: this blessed land
   alternatives:
   - this blessed الأرض/ground
   - this blessed region
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ምድር commonly means 'land/earth/ground.' Here 'land' best suits a localized
-    visionary landscape. ቡርክት is rendered 'blessed,' preserving the evaluative contrast
-    with 'accursed' later in the verse.
+  rationale: ምድር commonly means 'land/earth/ground.' Here 'land' best suits a localized visionary landscape. ቡርክት is rendered 'blessed,' preserving the evaluative contrast with 'accursed' later in the verse.
 - source_word: ወኵለንታሃ ምልእት
   chosen: wholly filled
   alternatives:
   - entirely full
   - all of it filled
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase intensifies the completeness of the land's being full. 'Wholly
-    filled' is concise and keeps the descriptive force.
+  rationale: The phrase intensifies the completeness of the land's being full. 'Wholly filled' is concise and keeps the descriptive force.
 - source_word: ዕፀወ ወዛ፡ ቈላ
   chosen: with trees
   alternatives:
   - with trees and plants
   - with wood and vegetation
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The sequence appears to denote arboreal/vegetative growth. Because the
-    OCR is somewhat uncertain and the broader sense is a luxuriant landscape, 'with
-    trees' captures the main image without over-specifying uncertain subcategories;
-    the fuller alternative is noted in a footnote.
+  rationale: The sequence appears to denote arboreal/vegetative growth. Because the OCR is somewhat uncertain and the broader sense is a luxuriant landscape, 'with trees' captures the main image without over-specifying uncertain subcategories; the fuller alternative is noted in a footnote.
 - source_word: ርጉምት
   chosen: accursed
   alternatives:
   - cursed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective stands in deliberate contrast to 'blessed.' 'Accursed'
-    preserves the heightened, judicial-apocalyptic tone better than the flatter 'cursed.'
+  rationale: The adjective stands in deliberate contrast to 'blessed.' 'Accursed' preserves the heightened, judicial-apocalyptic tone better than the flatter 'cursed.'
 - source_word: ማእከሎሙ
   chosen: in their midst
   alternatives:
   - among them
   - in the middle of them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This locates the valley centrally within the blessed landscape. 'In their
-    midst' preserves both spatial vividness and elevated style.
+  rationale: This locates the valley centrally within the blessed landscape. 'In their midst' preserves both spatial vividness and elevated style.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -116,12 +103,10 @@ enoch_witnesses:
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ውእቱ፡ ጊዜ፡ እቤ፡ በእንተ፡ ምንት፡ ዛቲ፡ ምድር፡ ቡርክት፡ ወኵለንታሃ፡ ምልእት፡ ዕፀወ፡ ወዛ፡ ቈላ፡ ርጉምት፡
-      ማእከሎሙ።
+    text: ውእቱ፡ ጊዜ፡ እቤ፡ በእንተ፡ ምንት፡ ዛቲ፡ ምድር፡ ቡርክት፡ ወኵለንታሃ፡ ምልእት፡ ዕፀወ፡ ወዛ፡ ቈላ፡ ርጉምት፡ ማእከሎሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -131,16 +116,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Value-laden contrast between the surrounding land and the valley
   chosen_reading: Render ቡርክት / ርጉምት as 'blessed' / 'accursed'
   alternative_readings:
   - fertile / barren
   - favored / cursed
-  rationale: The verse sets up a moral-sacral contrast, not merely an agricultural
-    one. 'Blessed' and 'accursed' preserve the theological polarity of sacred space
-    and judgment imagery in the Watchers context.
-  doctrine_reference: Preserve apocalyptic imagery and theological tension rather
-    than reducing to generic landscape description.
+  rationale: The verse sets up a moral-sacral contrast, not merely an agricultural one. 'Blessed' and 'accursed' preserve the theological polarity of sacred space and judgment imagery in the Watchers context.
+  doctrine_reference: Preserve apocalyptic imagery and theological tension rather than reducing to generic landscape description.
+revisions:
+- timestamp: '2026-04-22T22:42:02Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.9
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/027/001.job-72310.json
+  category: grammar
+  tier: 3
+  from: this blessed land, wholly filled with trees,
+  to: this blessed land, and all of it filled with trees,
+  rationale: 'The draft omits the conjunction ወ (and) before ኵለንታሃ (all of it). Preserving ''and all of it filled with trees'' matches the paratactic structure of the Ge''ez (ወኵለንታሃ፡ ምልእት፡ ዕፀወ) and the surviving Greek (καὶ πᾶσα πλήρης δένδρων). | Adjudicator: The proposed rewrite correctly restores the paratactic conjunction ''ወ'' (and) and accurately renders ''ኵለንታሃ'' as ''all of it'' (or ''its entirety'') rather than the adverbial ''wholly''. This aligns the Engli'

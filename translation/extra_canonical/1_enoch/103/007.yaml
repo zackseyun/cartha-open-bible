@@ -11,21 +11,26 @@ source:
   - 253
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Know them, for he will bring your souls down to Sheol, and evil shall be their
-    recompense—great indeed.
+  text: Know that they will bring your souls down to Sheol, and they will be wretched, and their tribulation will be great.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: Or 'your spirits.' The Ge'ez term can denote either souls or spirits.
     reason: lexical_alternative
   - marker: b
-    text: Sheol is the realm of the dead in Jewish tradition; the text preserves that
-      term rather than reducing it to 'grave.'
+    text: Sheol is the realm of the dead in Jewish tradition; the text preserves that term rather than reducing it to 'grave.'
     reason: cultural_note
+  - marker: c
+    text: Or 'he will bring your souls down'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'and evil shall be their recompense—great indeed.'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'Know them, for'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ታእምርዎሙ
   chosen: Know them
@@ -33,43 +38,34 @@ lexical_decisions:
   - Recognize them
   - Take note of them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Imperative plural from the verb 'to know/recognize.' 'Know them' preserves
-    the direct force of the warning without over-interpreting whether the sense is
-    cognitive recognition or moral discernment.
+  rationale: Imperative plural from the verb 'to know/recognize.' 'Know them' preserves the direct force of the warning without over-interpreting whether the sense is cognitive recognition or moral discernment.
 - source_word: ለሲኦል
   chosen: to Sheol
   alternatives:
   - to the underworld
   - to the grave
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ge'ez form reflects the proper name/concept Sheol. Retaining 'Sheol'
-    preserves the apocalyptic and Second Temple Jewish register better than flattening
-    it to 'grave' or generic 'underworld.'
+  rationale: The Ge'ez form reflects the proper name/concept Sheol. Retaining 'Sheol' preserves the apocalyptic and Second Temple Jewish register better than flattening it to 'grave' or generic 'underworld.'
 - source_word: ያወርዶዎሙ
   chosen: he will bring ... down
   alternatives:
   - he will cast ... down
   - he will lead ... down
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb clearly carries downward motion. 'Bring down' is a balanced
-    rendering that preserves the descent imagery without overstating violence where
-    the Ge'ez itself does not require 'cast down.'
+  rationale: The verb clearly carries downward motion. 'Bring down' is a balanced rendering that preserves the descent imagery without overstating violence where the Ge'ez itself does not require 'cast down.'
 - source_word: ለመናፍስቲክሙ
   chosen: your souls
   alternatives:
   - your spirits
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: መናፍስት can denote spirits/souls. In this judgment context with descent
-    to Sheol, 'souls' better conveys the fate of the persons' inner life after death,
-    while 'spirits' remains a viable alternative.
+  rationale: መናፍስት can denote spirits/souls. In this judgment context with descent to Sheol, 'souls' better conveys the fate of the persons' inner life after death, while 'spirits' remains a viable alternative.
 - source_word: እኩያተ
   chosen: evil
   alternatives:
   - wickedness
   - harm
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: An adjective/substantive denoting what is evil or bad. Rendered simply
-    as 'evil' to preserve the terse judgment formula.
+  rationale: An adjective/substantive denoting what is evil or bad. Rendered simply as 'evil' to preserve the terse judgment formula.
 - source_word: ምንዳቤሆሙ
   chosen: their recompense
   alternatives:
@@ -77,18 +73,14 @@ lexical_decisions:
   - their punishment
   - their reward
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun denotes requital or recompense and can be positive or negative
-    by context. Because the surrounding clause is explicitly negative, 'recompense'
-    preserves the formal sense of repayment without prematurely narrowing it to 'punishment'
-    alone.
+  rationale: The noun denotes requital or recompense and can be positive or negative by context. Because the surrounding clause is explicitly negative, 'recompense' preserves the formal sense of repayment without prematurely narrowing it to 'punishment' alone.
 - source_word: ዐቢየ
   chosen: great indeed
   alternatives:
   - very great
   - great
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: An emphatic adjective meaning great. 'Great indeed' preserves the climactic
-    emphasis at the end of the verse.
+  rationale: An emphatic adjective meaning great. 'Great indeed' preserves the climactic emphasis at the end of the verse.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -119,8 +111,7 @@ enoch_witnesses:
     text: '*ታእምርዎሙ፡ እስመ፡ ለሲኦል፡ ያወርዶዎሙ፡ ለመናፍስቲክሙ፡ ወእኩያተ፡ ይከውና፡ ምንዳቤሆሙ፡ ዐቢየ።'
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -130,25 +121,49 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to render ሲኦል as a common noun or retain the Jewish underworld term
   chosen_reading: Sheol
   alternative_readings:
   - the grave
   - the underworld
-  rationale: The project philosophy favors preserving source-world theological texture.
-    In apocalyptic judgment language, 'Sheol' is more precise and less flattening
-    than 'grave.'
-  doctrine_reference: 'Translation philosophy: original-language primacy; preserve
-    theological tension and imagery'
+  rationale: The project philosophy favors preserving source-world theological texture. In apocalyptic judgment language, 'Sheol' is more precise and less flattening than 'grave.'
+  doctrine_reference: 'Translation philosophy: original-language primacy; preserve theological tension and imagery'
 - issue: Whether መናፍስት here should be 'souls' or 'spirits'
   chosen_reading: souls
   alternative_readings:
   - spirits
-  rationale: The immediate context is postmortem descent and recompense. 'Souls' reads
-    more naturally in English while still preserving the anthropological seriousness
-    of the Ge'ez term; the alternative is preserved in a footnote.
-  doctrine_reference: 'Translation philosophy: preserve ambiguity with footnoted alternatives
-    where needed'
+  rationale: The immediate context is postmortem descent and recompense. 'Souls' reads more naturally in English while still preserving the anthropological seriousness of the Ge'ez term; the alternative is preserved in a footnote.
+  doctrine_reference: 'Translation philosophy: preserve ambiguity with footnoted alternatives where needed'
+revisions:
+- timestamp: '2026-04-22T22:50:43Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/103/007.job-72948.json
+  category: grammar
+  tier: 3
+  from: he will bring your souls down
+  to: they will bring your souls down
+  rationale: 'The verb ያወርዶዎሙ (yawardowomu) is a 3rd person plural imperfect (''they will bring down'') with a 3rd person plural object suffix (''them''), not a 3rd person singular. The subject is the implied angels of punishment. | Adjudicator: The reviewer is correct. The Ge''ez verb ያወርድዎሙ (yawardəwomu) is a 3rd person plural imperfect causative (''they will bring down'') with a 3rd person plural object suffix (''them'', anticipating the object'
+- timestamp: '2026-04-22T22:50:59Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/103/007.job-72948.json
+  category: mistranslation
+  tier: 3
+  from: and evil shall be their recompense—great indeed.
+  to: and they will be wretched, and their tribulation will be great.
+  rationale: 'The noun ምንዳቤ (məndabe) means ''tribulation, distress, or affliction,'' not ''recompense'' (Dillmann col. 699). Additionally, ይከውና (yəkawna) is a 3rd feminine plural verb agreeing with ''souls'' (መናፍስት), meaning ''they will be evil/wretched,'' followed by ''their tribulation (being) great'' (ዐቢየ). The draft mistranslates the noun and flattens the syntax. | Adjudicator: The reviewer is correct on both lexical and grammatical grounds. The Ge''ez noun ምንዳቤ (məndabe) means ''tribulation'' or ''distress,'' not ''recompense.'' Furthermore, the verb ይከውና (yəkawna) is a third-pers'
+- timestamp: '2026-04-22T22:51:13Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/103/007.job-72948.json
+  category: awkward_english
+  tier: 3
+  from: Know them, for
+  to: Know that
+  rationale: 'The 3rd plural object suffix on ታእምርዎሙ (ta''emrəwomu) is pleonastic, anticipating the object clause (''Know concerning them, that...''). Translating it literally as ''Know them'' is awkward and obscures the meaning. Furthermore, እስመ (esma) here introduces the content of the knowledge (''that''), rather than a causal clause (''for''). | Adjudicator: The reviewer is correct about Ge''ez syntax. Verbs of knowing frequently take a proleptic object suffix that anticipates the subject or object of the following subordinate clause (e.g., ''know them, tha'

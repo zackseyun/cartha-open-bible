@@ -11,22 +11,20 @@ source:
   - 179
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For the single month, its days come to one thousand and sixty-two for three
-    years, and for five years.
+  text: As for the moon alone, its days come to one thousand and sixty-two days for three years, and for five years., and for five years.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The final phrase, 'and for five years,' appears incomplete in the provided
-      Ge'ez OCR witness; a number or further wording may be missing in this line.
+    text: The final phrase, 'and for five years,' appears incomplete in the provided Ge'ez OCR witness; a number or further wording may be missing in this line.
     reason: textual_variant
   - marker: b
-    text: The verse is part of a calendrical calculation in the Astronomical Book;
-      'its days come to' means 'its total number of days amounts to.'
+    text: The verse is part of a calendrical calculation in the Astronomical Book; 'its days come to' means 'its total number of days amounts to.'
     reason: cultural_note
+  - marker: c
+    text: Or 'For the single month, its days come to one thousand and sixty-two for three years'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ለወርኅ
   chosen: for the month
@@ -34,9 +32,7 @@ lexical_decisions:
   - for a month
   - to the month
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The prefixed ለ commonly marks relation or measure here; in this astronomical
-    context it introduces the time unit under calculation, best rendered 'for the
-    month.'
+  rationale: The prefixed ለ commonly marks relation or measure here; in this astronomical context it introduces the time unit under calculation, best rendered 'for the month.'
 - source_word: ለባሕቲቱ
   chosen: single
   alternatives:
@@ -44,48 +40,40 @@ lexical_decisions:
   - one only
   - solitary
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ባሕቲት commonly carries the sense of 'single' or 'alone.' With 'month'
-    it likely distinguishes one individual month as a unit, not a class of months
-    in general.
+  rationale: ባሕቲት commonly carries the sense of 'single' or 'alone.' With 'month' it likely distinguishes one individual month as a unit, not a class of months in general.
 - source_word: ይበጽሕ
   chosen: come to
   alternatives:
   - reach
   - amount to
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In numerical statements this verb naturally means 'reach' or 'amount
-    to.' 'Come to' is idiomatic English while preserving the quantitative force.
+  rationale: In numerical statements this verb naturally means 'reach' or 'amount to.' 'Come to' is idiomatic English while preserving the quantitative force.
 - source_word: መዋዕሊሁ
   chosen: its days
   alternatives:
   - its day-count
   - the days of it
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The plural noun means 'days' with a pronominal suffix referring back
-    to the month. 'Its days' is the most direct rendering.
+  rationale: The plural noun means 'days' with a pronominal suffix referring back to the month. 'Its days' is the most direct rendering.
 - source_word: ለ፫ዓም
   chosen: for three years
   alternatives:
   - in three years
   - over three years
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The numeral phrase is straightforward. 'For three years' keeps the same
-    relational force as the Ge'ez construction.
+  rationale: The numeral phrase is straightforward. 'For three years' keeps the same relational force as the Ge'ez construction.
 - source_word: ፲፻ ወ፷ወ፪ መዋዕለ
   chosen: one thousand and sixty-two
   alternatives:
   - 1062 days
   lexicon: Ge'ez numeral system
-  rationale: The numeral sequence is read literally as 1000 + 60 + 2. Because መዋዕለ
-    follows, the sense is 'one thousand and sixty-two days.'
+  rationale: The numeral sequence is read literally as 1000 + 60 + 2. Because መዋዕለ follows, the sense is 'one thousand and sixty-two days.'
 - source_word: ወለ፭ ዓም
   chosen: and for five years
   alternatives:
   - and in five years
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The conjunction plus preposition introduces a second time span. The surviving
-    OCR does not preserve an accompanying numeral total after this phrase, so the
-    English reflects the extant wording without supplying missing content.
+  rationale: The conjunction plus preposition introduces a second time span. The surviving OCR does not preserve an accompanying numeral total after this phrase, so the English reflects the extant wording without supplying missing content.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -116,8 +104,7 @@ enoch_witnesses:
     text: ለወርኅ፡ ለባሕቲቱ፡ ይበጽሕ፡ መዋዕሊሁ፡ ለ፫ዓም፡ ፲፻፡ ወ፷ወ፪መዋዕለ፡ *ወለ፭፡ ዓም፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -127,18 +114,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Astronomical/calendrical statement with apparently incomplete or corrupt
-    final clause
-  chosen_reading: Translate the extant Ge'ez wording conservatively and leave the
-    five-year clause incomplete in sense.
+- issue: Astronomical/calendrical statement with apparently incomplete or corrupt final clause
+  chosen_reading: Translate the extant Ge'ez wording conservatively and leave the five-year clause incomplete in sense.
   alternative_readings:
   - Emend the verse from other editions to supply a missing total for five years
   - Smooth the line into a generalized calendrical statement
-  rationale: This verse belongs to a technical astronomical section, and the OCR witness
-    appears truncated or corrupt at the end. Transparency is preferable to conjectural
-    completion in the main text.
-  doctrine_reference: Preserve theological tension rather than resolve it; when the
-    wording is uncertain, prefer transparent English plus a footnote over false confidence.
+  rationale: This verse belongs to a technical astronomical section, and the OCR witness appears truncated or corrupt at the end. Transparency is preferable to conjectural completion in the main text.
+  doctrine_reference: Preserve theological tension rather than resolve it; when the wording is uncertain, prefer transparent English plus a footnote over false confidence.
+revisions:
+- timestamp: '2026-04-22T22:46:09Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/014.job-72623.json
+  category: mistranslation
+  tier: 3
+  from: For the single month, its days come to one thousand and sixty-two for three years
+  to: As for the moon alone, its days come to one thousand and sixty-two days for three years, and for five years.
+  rationale: 'Adjudicator-modified: The reviewer is entirely correct on the lexical and contextual evidence. The Ge''ez word ወርኅ (warḫ) can mean ''month'' or ''moon'', but the calculation (354 days × 3 = 1062 days) definitively identifies this as the lunar year, so ''moon'' is required. Furthermore, ለባሕቲቱ (la-bāḥtitu) means ''alone'' or ''by itself'', and the second instance of መዋዕለ (''days'') should be translated. However, the reviewer''s proposed rewrite accidentally truncated the final phrase of the verse (''and for five years''). I have modif'

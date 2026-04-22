@@ -24,13 +24,21 @@ source:
   alignment_confidence: medium
   warnings: []
 translation:
-  text: I am the utterance of my name.
+  text: 'Those who speak the truth about me, lie about me,
+
+    and those who have lied about me, speak the truth about me.
+
+    Those who know me, be ignorant of me,
+
+    and those who have not known me, let them know me.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: ϫⲓϭⲟⲗ can also be rendered "cry" or "proclamation." We choose "utterance"
-      to preserve the formal, self-defining tone.
+    text: ϫⲓϭⲟⲗ can also be rendered "cry" or "proclamation." We choose "utterance" to preserve the formal, self-defining tone.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'I am the utterance of my name.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ϫⲓϭⲟⲗ
   chosen: utterance
@@ -39,9 +47,7 @@ lexical_decisions:
   - proclamation
   - voice
   lexicon: Crum, Coptic Dictionary (s.v. ϭⲟⲗ/ϫⲓϭⲟⲗ)
-  rationale: ϫⲓϭⲟⲗ denotes producing a sound/cry; in this self-revelatory series,
-    a concrete yet slightly formal "utterance" best preserves the sharp, paradox-voiced
-    tone without domesticating it to generic "speech."
+  rationale: ϫⲓϭⲟⲗ denotes producing a sound/cry; in this self-revelatory series, a concrete yet slightly formal "utterance" best preserves the sharp, paradox-voiced tone without domesticating it to generic "speech."
 - source_word: ⲙⲃⲉ (prepositional cluster as OCR’d)
   chosen: of
   alternatives:
@@ -49,29 +55,17 @@ lexical_decisions:
   - for the sake of
   - about
   lexicon: Layton, Coptic Grammar (on ⲙⲃⲉ/ⲙⲡⲉ as "on account of / concerning")
-  rationale: Idiomatically compressed to "of" in English to fit the fixed collocation
-    "utterance of my name," while the underlying sense is "utterance concerning my
-    name."
+  rationale: Idiomatically compressed to "of" in English to fit the fixed collocation "utterance of my name," while the underlying sense is "utterance concerning my name."
 - source_word: ⲟⲉⲓⲭⲉⲧⲙⲃⲉⲓⲟⲉⲓ (as OCR’d; token cluster)
   chosen: my name
   alternatives:
   - about me
   - my reputation
-  lexicon: Alignment/tradition within Thunder; name typically ⲣⲁ (Coptic) or loan
-    of Gk. ὄνομα; OCR here likely corrupt.
-  rationale: Given the known parallel line "knowledge of my name" in adjacent cola,
-    and the expected formulaic pattern, the target here is most plausibly "my name."
-parallelism_check: Maintains the serial "I am the X of my name" pattern that pairs
-  with the preceding "I am the knowledge of my name." The parallel keeps the compact,
-  formulaic cadence and does not dilute the starkness with explanatory smoothing.
-voice_check: First-person declarative "I am" preserved; diction remains terse and
-  oracular, matching the speaker’s paradoxical self-revelation without paraphrastic
-  softening.
-alignment_risk_note: Alignment confidence is medium and the OCR for the second line
-  is noisy (ⲟⲉⲓⲭⲉⲧⲙⲃⲉⲓⲟⲉⲓ). The following lines in the OCR (“those who know me… and
-  those who do not…”) appear to spill into an adjacent cola, suggesting segmentation
-  bleed. The opening clause, however, clearly includes ϫⲓϭⲟⲗ (utterance/cry) and a
-  prepositional phrase likely "concerning my name," which supports this rendering.
+  lexicon: Alignment/tradition within Thunder; name typically ⲣⲁ (Coptic) or loan of Gk. ὄνομα; OCR here likely corrupt.
+  rationale: Given the known parallel line "knowledge of my name" in adjacent cola, and the expected formulaic pattern, the target here is most plausibly "my name."
+parallelism_check: Maintains the serial "I am the X of my name" pattern that pairs with the preceding "I am the knowledge of my name." The parallel keeps the compact, formulaic cadence and does not dilute the starkness with explanatory smoothing.
+voice_check: First-person declarative "I am" preserved; diction remains terse and oracular, matching the speaker’s paradoxical self-revelation without paraphrastic softening.
+alignment_risk_note: Alignment confidence is medium and the OCR for the second line is noisy (ⲟⲉⲓⲭⲉⲧⲙⲃⲉⲓⲟⲉⲓ). The following lines in the OCR (“those who know me… and those who do not…”) appear to spill into an adjacent cola, suggesting segmentation bleed. The opening clause, however, clearly includes ϫⲓϭⲟⲗ (utterance/cry) and a prepositional phrase likely "concerning my name," which supports this rendering.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5-2025-08-07
@@ -87,8 +81,21 @@ ai_draft:
   - MacRae — consult only
   - Poirier 1995 — consult only
   - OtherGospels / Zinner consult text — English comprehension only
-revision_risk_note: If a cleaner diplomatic text clarifies the noun and preposition,
-  "utterance" may be revised to "cry" or "proclamation," and the prepositional relation
-  could be expanded to "concerning my name." If the segment boundary shifts, the trailing
-  "those who know me…" material would be moved to the next line block rather than
-  folded in here.
+revision_risk_note: If a cleaner diplomatic text clarifies the noun and preposition, "utterance" may be revised to "cry" or "proclamation," and the prepositional relation could be expanded to "concerning my name." If the segment boundary shifts, the trailing "those who know me…" material would be moved to the next line block rather than folded in here.
+revisions:
+- timestamp: '2026-04-22T22:55:18Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_coptic_gnostic/extra_canonical/thunder_perfect_mind/001/022.job-73425.json
+  category: mistranslation
+  tier: 3
+  from: I am the utterance of my name.
+  to: 'Those who speak the truth about me, lie about me,
+
+    and those who have lied about me, speak the truth about me.
+
+    Those who know me, be ignorant of me,
+
+    and those who have not known me, let them know me.'
+  rationale: 'Adjudicator-modified: The reviewer correctly identifies that the draft has hallucinated ''I am the utterance of my name'' (which appears elsewhere in the text) over a span whose OCR clearly contains the vocabulary for ''truth'' (ⲙⲉ) and ''lie'' (ϫⲓ ϭⲟⲗ). This corresponds to the famous paradoxical sequence in Thunder 14:22-28. However, the reviewer''s proposed rewrite is cut off mid-sentence (''and those who have not'') and misreads the imperative ⲁⲣⲓⲁⲧⲥⲟⲟⲩⲛ (''be ignorant'') as a future indicative (''will know''). The rewrite mus'

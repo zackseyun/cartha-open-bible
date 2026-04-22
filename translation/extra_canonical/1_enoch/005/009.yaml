@@ -10,22 +10,20 @@ source:
   - 48
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And they shall not again commit sin, and they shall not be condemned all the
-    days of their life.
+  text: And they shall not again sin, and they shall not be condemned all the days of their life.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'they will no longer sin.' The Ge'ez wording includes the sense of repetition/continuance
-      ('again').
+    text: Or 'they will no longer sin.' The Ge'ez wording includes the sense of repetition/continuance ('again').
     reason: lexical_alternative
   - marker: b
-    text: Or 'all the days of their lives.' The source uses a singular 'life' in an
-      idiomatic expression with plural possessors.
+    text: Or 'all the days of their lives.' The source uses a singular 'life' in an idiomatic expression with plural possessors.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And they shall not again commit sin, and they shall not be condemned all the days of their life.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ኢይደግሙ
   chosen: they shall not again
@@ -33,34 +31,28 @@ lexical_decisions:
   - they will no longer
   - they shall not repeat
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Negative imperfect/plural with the sense of repetition or continuation.
-    'Again' preserves the iterative force more transparently than the smoother 'no
-    longer.'
+  rationale: Negative imperfect/plural with the sense of repetition or continuation. 'Again' preserves the iterative force more transparently than the smoother 'no longer.'
 - source_word: አብሶ
   chosen: commit sin
   alternatives:
   - sin
   - do wrong
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form is commonly used for sin/offense. 'Commit sin' makes explicit
-    the verbal force in idiomatic English without flattening it to generic wrongdoing.
+  rationale: The form is commonly used for sin/offense. 'Commit sin' makes explicit the verbal force in idiomatic English without flattening it to generic wrongdoing.
 - source_word: ኢይትኴነኑ
   chosen: they shall not be condemned
   alternatives:
   - they shall not be judged guilty
   - they shall not be punished
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Passive/judicial sense fits the context of blessing and judgment in this
-    section. 'Condemned' preserves the forensic force better than the broader 'punished.'
+  rationale: Passive/judicial sense fits the context of blessing and judgment in this section. 'Condemned' preserves the forensic force better than the broader 'punished.'
 - source_word: ኵሎ መዋዕለ ሕይወቶሙ
   chosen: all the days of their life
   alternatives:
   - all the days of their lives
   - throughout their lifetime
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A standard Semitic-style temporal expression. Singular 'life' after a
-    plural possessive is retained as a close rendering of the idiom, though English
-    also permits 'lives.'
+  rationale: A standard Semitic-style temporal expression. Singular 'life' after a plural possessive is retained as a close rendering of the idiom, though English also permits 'lives.'
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -91,8 +83,7 @@ enoch_witnesses:
     text: ወኢይደግሙ፡ አብሶ፡ ወኢይትኴነኑ፡ ኵሎ፡ መዋዕለ፡ ሕይወቶሙ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -102,17 +93,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is
-    not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether the line promises moral transformation or merely cessation of punishment-worthy
-    acts
-  chosen_reading: The verse is rendered as a promise that they will not again commit
-    sin, followed by the judicial result that they will not be condemned.
+- issue: Whether the line promises moral transformation or merely cessation of punishment-worthy acts
+  chosen_reading: The verse is rendered as a promise that they will not again commit sin, followed by the judicial result that they will not be condemned.
   alternative_readings:
   - The first clause could be softened to 'they will do wrong no more'
   - The second clause could be taken more consequentially as 'they will not be punished'
-  rationale: The paired clauses in Ge'ez distinguish conduct ('commit sin') from verdict
-    ('be condemned'). Preserving both keeps the text's ethical and judicial tension
-    without collapsing one into the other.
+  rationale: The paired clauses in Ge'ez distinguish conduct ('commit sin') from verdict ('be condemned'). Preserving both keeps the text's ethical and judicial tension without collapsing one into the other.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:17:42Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/005/009.job-72174.json
+  category: consistency
+  tier: 3
+  from: And they shall not again commit sin, and they shall not be condemned all the days of their life.
+  to: And they shall not again sin, and they shall not be condemned all the days of their life.
+  rationale: 'The exact same Ge''ez phrase (ወኢይደግሙ፡ አብሶ) appears in the preceding verse (5:8), where it is rendered ''will not again sin.'' Adding ''commit'' here introduces an unnecessary variation that obscures the author''s deliberate repetition. | Adjudicator: The Ge''ez phrase ወኢይደግሙ፡ አብሶ (wa-ʾi-yedagmu ʾabso, literally ''and they will not repeat sinning'') is used in both 5:8 and 5:9. Translating it consistently as ''sin'' rather than varying with ''commit sin'''

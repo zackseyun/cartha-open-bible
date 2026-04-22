@@ -9,22 +9,20 @@ source:
   - 84
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw great rivers, and I reached as far as the great darkness, and I
-    went to where all flesh wanders.
+  text: And I saw great rivers, and I reached as far as the great darkness, and I went to where no flesh walks.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The final verb is textually uncertain in the OCR witness. It likely denotes
-      movement or roaming; 'wanders' is a cautious rendering.
+    text: The final verb is textually uncertain in the OCR witness. It likely denotes movement or roaming; 'wanders' is a cautious rendering.
     reason: textual_variant
   - marker: b
-    text: '''All flesh'' is a traditional Semitic expression that may refer to humankind
-      broadly or to living creatures more generally.'
+    text: '''All flesh'' is a traditional Semitic expression that may refer to humankind broadly or to living creatures more generally.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'where all flesh wanders'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: and I saw
@@ -32,72 +30,63 @@ lexical_decisions:
   - and I looked
   - and I beheld
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The common Ge'ez verb of seeing in narrative vision reports. 'Saw' is
-    clear modern English and preserves the visionary sequence.
+  rationale: The common Ge'ez verb of seeing in narrative vision reports. 'Saw' is clear modern English and preserves the visionary sequence.
 - source_word: ዐበይተ
   chosen: great
   alternatives:
   - large
   - mighty
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: An adjective of magnitude/intensity. 'Great' fits apocalyptic register
-    better than the flatter 'large'.
+  rationale: An adjective of magnitude/intensity. 'Great' fits apocalyptic register better than the flatter 'large'.
 - source_word: አፍላገ
   chosen: rivers
   alternatives:
   - streams
   - watercourses
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Best taken as 'rivers' or major flowing waters. 'Rivers' preserves the
-    cosmic-geographical imagery.
+  rationale: Best taken as 'rivers' or major flowing waters. 'Rivers' preserves the cosmic-geographical imagery.
 - source_word: እስከ
   chosen: as far as
   alternatives:
   - until
   - up to
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Marks extent of travel rather than merely time. 'As far as' suits the
-    journey motif.
+  rationale: Marks extent of travel rather than merely time. 'As far as' suits the journey motif.
 - source_word: ዐቢይ ጽልመት
   chosen: the great darkness
   alternatives:
   - deep darkness
   - vast darkness
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A weighty apocalyptic expression. Retaining 'darkness' rather than interpreting
-    it metaphorically preserves the visionary topography.
+  rationale: A weighty apocalyptic expression. Retaining 'darkness' rather than interpreting it metaphorically preserves the visionary topography.
 - source_word: በጻሕኩ
   chosen: I reached
   alternatives:
   - I arrived
   - I came
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Conveys arrival at a destination in the travel report. 'Reached' works
-    well with 'as far as'.
+  rationale: Conveys arrival at a destination in the travel report. 'Reached' works well with 'as far as'.
 - source_word: ወሖርኩ
   chosen: and I went
   alternatives:
   - and I traveled
   - and I proceeded
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward motion verb; keeping it simple preserves the repetitive
-    cadence of the vision narrative.
+  rationale: A straightforward motion verb; keeping it simple preserves the repetitive cadence of the vision narrative.
 - source_word: ኀበ
   chosen: to where
   alternatives:
   - to
   - toward the place where
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces destination. 'To where' is idiomatic in English and reflects
-    the following clause.
+  rationale: Introduces destination. 'To where' is idiomatic in English and reflects the following clause.
 - source_word: ኵሉ ሥጋ
   chosen: all flesh
   alternatives:
   - every living being
   - all mortal creatures
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A semitic expression for living creatures or embodied beings. 'All flesh'
-    should be retained because of its biblical resonance and breadth.
+  rationale: A semitic expression for living creatures or embodied beings. 'All flesh' should be retained because of its biblical resonance and breadth.
 - source_word: (አ)ያንሶሱ
   chosen: wanders
   alternatives:
@@ -105,9 +94,7 @@ lexical_decisions:
   - goes to and fro
   - trembles
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The OCR is uncertain, but the sense appears to be movement/restless going
-    about. 'Wanders' best fits the travel/cosmic setting without overcommitting to
-    a more specific nuance.
+  rationale: The OCR is uncertain, but the sense appears to be movement/restless going about. 'Wanders' best fits the travel/cosmic setting without overcommitting to a more specific nuance.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -138,8 +125,7 @@ enoch_witnesses:
     text: ወርኢኩ፡ ዐበይተ፡ አፍላገ፡ ወእስከ፡ ዐቢይ፡ ጽልመት፡ በጻሕኩ፡ ወሖርኩ፡ ኀበ፡ ኵሉ፡ ሥጋ፡ (አ)ያንሶሱ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -149,17 +135,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether 'all flesh' should be interpreted narrowly as humanity or broadly
-    as all living creatures
+- issue: Whether 'all flesh' should be interpreted narrowly as humanity or broadly as all living creatures
   chosen_reading: all flesh
   alternative_readings:
   - all people
   - all living creatures
-  rationale: The Ge'ez phrase is broad and traditional. Preserving 'all flesh' avoids
-    prematurely narrowing the scope and keeps the apocalyptic universality of the
-    expression.
-  doctrine_reference: Preserve theological tension rather than resolve it; consistency
-    of key terms, or documented exception.
+  rationale: The Ge'ez phrase is broad and traditional. Preserving 'all flesh' avoids prematurely narrowing the scope and keeps the apocalyptic universality of the expression.
+  doctrine_reference: Preserve theological tension rather than resolve it; consistency of key terms, or documented exception.
+revisions:
+- timestamp: '2026-04-22T22:33:12Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/017/006.job-72249.json
+  category: mistranslation
+  tier: 3
+  from: where all flesh wanders
+  to: where no flesh walks
+  rationale: 'The Ge''ez OCR `(አ)ያንሶሱ` is a misreading of the negative verb `ኢያንሶሱ` (ʾiyansosu, ''does not walk''). The Greek witness confirms the negative (ὅπου πᾶσα σὰρξ οὐ περιπατεῖ). The idiom ''all flesh does not walk'' means ''no flesh walks''. By missing the negative particle, the draft completely reverses the author''s meaning that this is a cosmic realm beyond mortal access. | Adjudicator: The reviewer correctly identifies an OCR error in the Ge''ez text where the negative prefix `ኢ` (ʾi) was misread as `አ` (ʾa). The Greek witness (ὅπου πᾶσα σὰρξ οὐ περιπατεῖ) confirms the negative. The '

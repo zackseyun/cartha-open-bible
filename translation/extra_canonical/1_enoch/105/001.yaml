@@ -10,20 +10,17 @@ source:
   - 256
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch105.txt via
-    tools/enoch/verse_parser.py | Could not locate Roman chapter header CV. in chapter
-    file; using full cleaned file. | Dillmann 1851 chapter OCR exists for chapter
-    105, but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch105.txt via tools/enoch/verse_parser.py | Could not locate Roman chapter header CV. in chapter file; using full cleaned file. | Dillmann 1851 chapter OCR exists for chapter 105, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: His glory is great, and your names shall be written before the glory of the
-    Great One.
+  text: The glory of the Great One, and your names shall be written before the glory of the Great One.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ge'ez repeats 'his glory ... before the glory of the Great One.' The
-      repetition is retained because it appears deliberate and heightens the solemnity
-      of the promise.
+    text: The Ge'ez repeats 'his glory ... before the glory of the Great One.' The repetition is retained because it appears deliberate and heightens the solemnity of the promise.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'His glory is great, and your names shall be written before the glory of the Great One.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ስብሐቲሁ
   chosen: his glory
@@ -31,44 +28,34 @@ lexical_decisions:
   - his praise
   - his splendor
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun commonly denotes glory, praise, or splendor. In this verse it
-    frames the sentence twice and functions as the sphere or presence before which
-    the names are written. 'Glory' best preserves the elevated apocalyptic sense without
-    reducing it to mere spoken praise.
+  rationale: The noun commonly denotes glory, praise, or splendor. In this verse it frames the sentence twice and functions as the sphere or presence before which the names are written. 'Glory' best preserves the elevated apocalyptic sense without reducing it to mere spoken praise.
 - source_word: ለዐቢይ
   chosen: of the Great One
   alternatives:
   - of the Great
   - for the Great One
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective/noun means 'great' and here, with the prefixed particle,
-    functions substantivally as a divine title. 'The Great One' preserves the reverential
-    force better than the bare adjective 'the Great.'
+  rationale: The adjective/noun means 'great' and here, with the prefixed particle, functions substantivally as a divine title. 'The Great One' preserves the reverential force better than the bare adjective 'the Great.'
 - source_word: ወእስማቲከሙ
   chosen: and your names
   alternatives:
   - and your name
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form is plural with second person plural suffix. The plural should
-    be retained because the address is to a group.
+  rationale: The form is plural with second person plural suffix. The plural should be retained because the address is to a group.
 - source_word: ይጸሐፍ
   chosen: shall be written
   alternatives:
   - is written
   - will be inscribed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb means 'to write.' Given the epistolary-promissory context, an
-    English future best conveys the assurance. 'Written' is preferred over 'inscribed'
-    as the more neutral rendering.
+  rationale: The verb means 'to write.' Given the epistolary-promissory context, an English future best conveys the assurance. 'Written' is preferred over 'inscribed' as the more neutral rendering.
 - source_word: በቅድመ
   chosen: before
   alternatives:
   - in the presence of
   - before the face of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition denotes being before or in the presence of. 'Before'
-    is concise and preserves the solemn register; the fuller idiom can be noted as
-    an alternative nuance.
+  rationale: The preposition denotes being before or in the presence of. 'Before' is concise and preserves the solemn register; the fuller idiom can be noted as an alternative nuance.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -99,8 +86,7 @@ enoch_witnesses:
     text: ስብሐቲሁ፡ ለዐቢይ፡ ወእስማቲከሙ፡ ይጸሐፍ፡ በቅድመ፡ ስብሐቲሁ፡ ለዐቢይ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch105.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch105.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -110,18 +96,24 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Could not locate Roman chapter header CV. in chapter file; using full cleaned
-    file.
-  - Dillmann 1851 chapter OCR exists for chapter 105, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Could not locate Roman chapter header CV. in chapter file; using full cleaned file.
+  - Dillmann 1851 chapter OCR exists for chapter 105, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether the repeated phrase should be rendered as 'glory' or 'praise'
   chosen_reading: glory
   alternative_readings:
   - praise
   - splendor
-  rationale: The verse speaks of names being written before this reality, which suggests
-    a heavenly presence or majesty rather than an act of praise. 'Glory' best fits
-    the apocalyptic setting and avoids flattening the line into liturgical language.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten into generic religious
-    prose.
+  rationale: The verse speaks of names being written before this reality, which suggests a heavenly presence or majesty rather than an act of praise. 'Glory' best fits the apocalyptic setting and avoids flattening the line into liturgical language.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten into generic religious prose.
+revisions:
+- timestamp: '2026-04-22T22:50:50Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/105/001.job-72954.json
+  category: grammar
+  tier: 3
+  from: His glory is great, and your names shall be written before the glory of the Great One.
+  to: The glory of the Great One, and your names shall be written before the glory of the Great One.
+  rationale: 'The phrase `ስብሐቲሁ፡ ለዐቢይ` (sebḥatihu la-ʿabiy) uses the standard Ge''ez anticipatory pronoun construction for the genitive (''his-glory of-the-Great-One''), meaning ''the glory of the Great One.'' The draft misconstrues `ለዐቢይ` as a predicate adjective (''is great''), ignoring the preposition `la-`. Note that the draft correctly translates the exact same phrase at the end of the verse as ''the glory of the Great One''. | Adjudicator: The reviewer is entirely correct regarding Ge''ez grammar. The phrase `ስብሐቲሁ፡ ለዐቢይ` (sebḥatihu la-ʿabiy) employs the standard anticipatory pronoun construction for the genitive (''his-glory of-the-Great'

@@ -13,22 +13,20 @@ source:
   - 164
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'For men were not born for this: to strengthen their faith by ink and by the
-    water of gall.'
+  text: 'For men were not born for this: to confirm their good faith with pen and ink.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Literally, 'by ink and by the water of gall.' The imagery is difficult;
-      it may point to written means joined with bitterness or poison, but the Ge'ez
-      wording is kept transparent here.
+    text: Literally, 'by ink and by the water of gall.' The imagery is difficult; it may point to written means joined with bitterness or poison, but the Ge'ez wording is kept transparent here.
     reason: cultural_note
   - marker: b
     text: '''Men'' here means humankind collectively, not males only.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'to strengthen their faith by ink and by the water of gall'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እስመ
   chosen: For
@@ -36,51 +34,42 @@ lexical_decisions:
   - because
   - indeed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces the reason or explanation for the preceding statement; 'For'
-    preserves the connective force in elevated but readable English.
+  rationale: Introduces the reason or explanation for the preceding statement; 'For' preserves the connective force in elevated but readable English.
 - source_word: ኢተወልዱ
   chosen: were not born
   alternatives:
   - were not begotten
   - did not come into being
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Passive negative form from 'to beget/be born.' 'Were not born' is the
-    most natural English equivalent and preserves the anthropological force of origin/purpose.
+  rationale: Passive negative form from 'to beget/be born.' 'Were not born' is the most natural English equivalent and preserves the anthropological force of origin/purpose.
 - source_word: ሰብእ
   chosen: men
   alternatives:
   - human beings
   - people
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term denotes human beings. 'Men' keeps the concise, elevated register
-    common in apocalyptic discourse, though the sense is collective humanity rather
-    than males only.
+  rationale: The term denotes human beings. 'Men' keeps the concise, elevated register common in apocalyptic discourse, though the sense is collective humanity rather than males only.
 - source_word: በዘ ከመዝ
   chosen: for this
   alternatives:
   - for such a thing
   - for this purpose
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This construction points to purpose or intended end. 'For this' is concise
-    and leaves the implied purpose relation intact; the fuller sense 'for this purpose'
-    is possible but slightly more interpretive.
+  rationale: This construction points to purpose or intended end. 'For this' is concise and leaves the implied purpose relation intact; the fuller sense 'for this purpose' is possible but slightly more interpretive.
 - source_word: በቀለም
   chosen: by ink
   alternatives:
   - with ink
   - through writing ink
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun refers to ink or writing fluid. 'By ink' preserves the instrumental
-    sense and the concrete imagery of written means rather than abstract doctrine.
+  rationale: The noun refers to ink or writing fluid. 'By ink' preserves the instrumental sense and the concrete imagery of written means rather than abstract doctrine.
 - source_word: ወበማየ ሐመት
   chosen: and by the water of gall
   alternatives:
   - and by bitter water
   - and by gall-water
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Literally 'and by water of gall/bitterness.' Retaining 'gall' preserves
-    the sharp apocalyptic image and avoids flattening it into a generic 'bitterness,'
-    while still being intelligible in English.
+  rationale: Literally 'and by water of gall/bitterness.' Retaining 'gall' preserves the sharp apocalyptic image and avoids flattening it into a generic 'bitterness,' while still being intelligible in English.
 - source_word: ያጽንዑ
   chosen: to strengthen
   alternatives:
@@ -88,8 +77,7 @@ lexical_decisions:
   - to establish
   - to confirm
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys making firm or strong. 'To strengthen' fits the infinitive-like
-    purposive sense in context and reads naturally with 'faith.'
+  rationale: The verb conveys making firm or strong. 'To strengthen' fits the infinitive-like purposive sense in context and reads naturally with 'faith.'
 - source_word: ሃይማኖቶሙ
   chosen: their faith
   alternatives:
@@ -97,9 +85,7 @@ lexical_decisions:
   - their religion
   - their fidelity
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun can denote faith, religion, or belief. 'Faith' best fits the
-    immediate collocation with 'strengthen' and preserves the moral-religious sense
-    without over-specifying institutional religion.
+  rationale: The noun can denote faith, religion, or belief. 'Faith' best fits the immediate collocation with 'strengthen' and preserves the moral-religious sense without over-specifying institutional religion.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -130,31 +116,33 @@ enoch_witnesses:
     text: እስመ፡ ኢተወልዱ፡ ሰብእ፡ በዘ፡ ከመዝ፡ በቀለም፡ ወበማየ፡ ሐመት፡ ያጽንዑ፡ ሃይማኖቶሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Meaning of the phrase involving ink and water of gall
-  chosen_reading: The verse criticizes reliance on written or bitterly mediated means
-    to make faith firm, rather than describing a positive sacramental or medicinal
-    act.
+  chosen_reading: The verse criticizes reliance on written or bitterly mediated means to make faith firm, rather than describing a positive sacramental or medicinal act.
   alternative_readings:
   - A reference to deceptive written teaching and poisonous doctrine
-  - A more general statement about humans not being created to secure belief through
-    external substances or documents
-  rationale: The concrete imagery of 'ink' and 'water of gall' is unusual and likely
-    polemical. Because the Parables are effectively Ge'ez-only here, the translation
-    preserves the imagery rather than resolving it into a doctrinal paraphrase.
-  doctrine_reference: Preserve theological tension rather than resolve it; Parables
-    deserve extra restraint and transparency.
+  - A more general statement about humans not being created to secure belief through external substances or documents
+  rationale: The concrete imagery of 'ink' and 'water of gall' is unusual and likely polemical. Because the Parables are effectively Ge'ez-only here, the translation preserves the imagery rather than resolving it into a doctrinal paraphrase.
+  doctrine_reference: Preserve theological tension rather than resolve it; Parables deserve extra restraint and transparency.
+revisions:
+- timestamp: '2026-04-22T22:45:14Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/010.job-72537.json
+  category: mistranslation
+  tier: 3
+  from: to strengthen their faith by ink and by the water of gall
+  to: to confirm their good faith with pen and ink
+  rationale: 'Ge''ez ''qalam'' (from Greek κάλαμος) means ''reed'' or ''pen'', while ''māya ḥamat'' (literally ''water of gall'') refers to iron gall ink. The draft misses this standard idiom for ''pen and ink''. Furthermore, in the context of written contracts and oaths, ''yaṣnəʿu hāymānotomu'' means ''to confirm their good faith'' or ''trust'', rather than ''strengthen their faith'' in a religious sense. | Adjudicator: The reviewer correctly identifies the idiomatic meaning of the Ge''ez terms in this context. The word ''qäläm'' (derived from the Greek ''kalamos'') refers to a reed pen, and ''mayä ḥamät'' (literally ''water'

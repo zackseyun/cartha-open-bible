@@ -9,18 +9,17 @@ source:
   - 68
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch12.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 12,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch12.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 12, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Before these things, he spoke.
+  text: Before these things, Enoch was hidden.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The supplied Ethiopic witness preserves only a brief clause here. The fuller
-      verse is likely longer in complete editions, but this draft translates only
-      the words attested in the provided text.
+    text: The supplied Ethiopic witness preserves only a brief clause here. The fuller verse is likely longer in complete editions, but this draft translates only the words attested in the provided text.
     reason: textual_variant
+  - marker: b
+    text: Or 'Before these things, he spoke.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምቅድመ
   chosen: before
@@ -29,17 +28,14 @@ lexical_decisions:
   - previously
   - in the presence of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The prepositional form most naturally marks temporal priority here. Given
-    the fragmentary witness, a simple temporal 'before' is the least interpretively
-    loaded rendering.
+  rationale: The prepositional form most naturally marks temporal priority here. Given the fragmentary witness, a simple temporal 'before' is the least interpretively loaded rendering.
 - source_word: እሉ
   chosen: these things
   alternatives:
   - these
   - those things
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The demonstrative can stand substantivally. 'These things' gives idiomatic
-    English while preserving the likely referential force better than a bare 'these'.
+  rationale: The demonstrative can stand substantivally. 'These things' gives idiomatic English while preserving the likely referential force better than a bare 'these'.
 - source_word: ነገረ
   chosen: he spoke
   alternatives:
@@ -47,9 +43,7 @@ lexical_decisions:
   - he told
   - he declared
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb commonly denotes speaking or saying. 'He spoke' preserves a
-    slightly elevated narrative register and avoids over-specifying an object not
-    explicit in the surviving text.
+  rationale: The verb commonly denotes speaking or saying. 'He spoke' preserves a slightly elevated narrative register and avoids over-specifying an object not explicit in the surviving text.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -80,8 +74,7 @@ enoch_witnesses:
     text: እምቅድመ፡ እሉ፡ ነገረ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch12.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch12.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -91,17 +84,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 12, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 12, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Extent of the verse in the surviving OCR witness
-  chosen_reading: Translate only the extant clause as a short narrative statement
-    without importing the fuller traditional verse from other editions.
+  chosen_reading: Translate only the extant clause as a short narrative statement without importing the fuller traditional verse from other editions.
   alternative_readings:
   - Reconstruct the commonly known fuller verse from broader textual tradition
   - Treat the fragment as too incomplete to translate
-  rationale: The project requires anchoring the draft in the provided Ge'ez witness
-    and forbids silently replacing it with later English tradition. A minimal translation
-    of the extant clause is therefore preferable, with uncertainty noted.
-  doctrine_reference: Original-language primacy over translation tradition; preserve
-    ambiguity rather than resolve it
+  rationale: The project requires anchoring the draft in the provided Ge'ez witness and forbids silently replacing it with later English tradition. A minimal translation of the extant clause is therefore preferable, with uncertainty noted.
+  doctrine_reference: Original-language primacy over translation tradition; preserve ambiguity rather than resolve it
+revisions:
+- timestamp: '2026-04-22T22:25:46Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/012/001.job-72210.json
+  category: mistranslation
+  tier: 3
+  from: Before these things, he spoke.
+  to: Before these things, Enoch was hidden.
+  rationale: 'Adjudicator-modified: The reviewer correctly identifies that ''he spoke'' is a phantom verb resulting from an OCR error, and that 1 Enoch 12:1 actually describes Enoch being hidden (ተኅብአ, taḫbəʾa). However, the OCR error ነገረ (nagara) is almost certainly a visual misreading of ግብር (gəbr, ''deeds/things'') from the standard phrase እምቅድመ እሉ ኵሉ ግብር (''before all these things''), rather than a misreading of ተኅብአ. The actual verb and subject were simply truncated from the source snippet. To faithfully restore the author''s intend'

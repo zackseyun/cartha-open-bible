@@ -20,21 +20,23 @@ source:
   - 218
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And beyond their number they kept killing and destroying; and I, while I was
-    sleeping, wept and cried out because of those sheep.
+  text: And beyond their prescribed measure they kept killing and destroying; and I, was weeping and crying out because of those sheep.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'beyond their appointed measure/order.' The Ge'ez term may refer to a
-      fixed arrangement or allotted number.
+    text: Or 'beyond their appointed measure/order.' The Ge'ez term may refer to a fixed arrangement or allotted number.
     reason: lexical_alternative
   - marker: b
     text: The clause 'while I was sleeping' keeps the dream-vision frame explicit.
     reason: cultural_note
+  - marker: c
+    text: Or 'while I was sleeping, wept and cried out'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'beyond their number'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ፈድፋደ
   chosen: beyond
@@ -42,9 +44,7 @@ lexical_decisions:
   - in excess of
   - more than
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form conveys addition or excess. In context with እም + ሥርዓቶሙ it describes
-    action exceeding a set measure or number, so 'beyond' preserves the comparative
-    force without overinterpreting.
+  rationale: The form conveys addition or excess. In context with እም + ሥርዓቶሙ it describes action exceeding a set measure or number, so 'beyond' preserves the comparative force without overinterpreting.
 - source_word: እምሥርዓቶሙ
   chosen: their number
   alternatives:
@@ -52,17 +52,14 @@ lexical_decisions:
   - their measure
   - their appointed amount
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ሥርዓት can mean order, arrangement, rule, or fixed measure. In this slaughter
-    context, 'their number' best fits the sense of exceeding an allotted count, while
-    'order' would be too abstract.
+  rationale: ሥርዓት can mean order, arrangement, rule, or fixed measure. In this slaughter context, 'their number' best fits the sense of exceeding an allotted count, while 'order' would be too abstract.
 - source_word: ይቀትል
   chosen: they kept killing
   alternatives:
   - they killed
   - they were killing
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The imperfect form in a visionary narrative can carry iterative or ongoing
-    force. 'Kept killing' reflects repeated violence in the Animal Apocalypse.
+  rationale: The imperfect form in a visionary narrative can carry iterative or ongoing force. 'Kept killing' reflects repeated violence in the Animal Apocalypse.
 - source_word: ያሐጕል
   chosen: destroying
   alternatives:
@@ -70,41 +67,34 @@ lexical_decisions:
   - ravaging
   - laying waste
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb is difficult in OCR but appears to denote ruin or destructive
-    treatment. 'Destroying' is broad enough to preserve the violence without pretending
-    greater precision than the witness allows.
+  rationale: The verb is difficult in OCR but appears to denote ruin or destructive treatment. 'Destroying' is broad enough to preserve the violence without pretending greater precision than the witness allows.
 - source_word: እንዝኩ
   chosen: while I was sleeping
   alternatives:
   - as I slept
   - in my sleep
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Dream Visions setting, the participial expression naturally marks
-    the dream state. 'While I was sleeping' makes the narrative frame explicit.
+  rationale: In the Dream Visions setting, the participial expression naturally marks the dream state. 'While I was sleeping' makes the narrative frame explicit.
 - source_word: እብኪ
   chosen: wept
   alternatives:
   - was weeping
   - lamented
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward rendering of the lament verb; 'wept' keeps the emotional
-    force concise.
+  rationale: A straightforward rendering of the lament verb; 'wept' keeps the emotional force concise.
 - source_word: አዐውዩ
   chosen: cried out
   alternatives:
   - wailed
   - called aloud
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This intensifies the lament beyond silent tears. 'Cried out' preserves
-    the audible distress without narrowing it to ritual lament.
+  rationale: This intensifies the lament beyond silent tears. 'Cried out' preserves the audible distress without narrowing it to ritual lament.
 - source_word: አባግዕ
   chosen: sheep
   alternatives:
   - flock
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Animal Apocalypse consistently uses animal imagery symbolically.
-    'Sheep' should be retained rather than interpreted as 'people' or 'Israel' in
-    the main text.
+  rationale: The Animal Apocalypse consistently uses animal imagery symbolically. 'Sheep' should be retained rather than interpreted as 'people' or 'Israel' in the main text.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -135,8 +125,7 @@ enoch_witnesses:
     text: ወፈድፋደ፡ እምሥርዓቶሙ፡ ፷፻ይቀትል፡ ወ*ያሐጕል፡ ወአነ፡ እንዝኩ፡ እብኪ፡ ወ*አዐውዩ፡ በእንተ፡ ዝኩ፡ አባግዕ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -146,16 +135,33 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to interpret the sheep explicitly as Israel/Judah in the main text
   chosen_reading: Retain 'sheep' as the vision's imagery
   alternative_readings:
   - those people
   - Israel
-  rationale: The translation philosophy requires preserving apocalyptic imagery rather
-    than flattening symbolic animals into their referents. The symbolic identification
-    belongs in interpretation, not in the main line of translation.
-  doctrine_reference: 'Book context: preserve visionary and apocalyptic prose; do
-    not flatten imagery.'
+  rationale: The translation philosophy requires preserving apocalyptic imagery rather than flattening symbolic animals into their referents. The symbolic identification belongs in interpretation, not in the main line of translation.
+  doctrine_reference: 'Book context: preserve visionary and apocalyptic prose; do not flatten imagery.'
+revisions:
+- timestamp: '2026-04-22T22:48:52Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/069.job-72795.json
+  category: mistranslation
+  tier: 3
+  from: while I was sleeping, wept and cried out
+  to: was weeping and crying out
+  rationale: 'The Ge''ez እንዘ (enza, OCR''d here as እንዝኩ) means ''while'', and when paired with the imperfect verbs እብኪ (I weep) and አዐውዩ (I cry out), it forms a past continuous construction (''I was weeping and crying out''). The drafter hallucinated ''sleeping'' based on the broader dream-vision context, but there is no Ge''ez word for sleep here. | Adjudicator: The reviewer is entirely correct. The Ge''ez text reads `ወአነ፡ እንዘ፡ እብኪ፡ ወአዐውዩ` (wa-''ana ''enza ''ebki wa-''a''awweyu; the OCR''s `እንዝኩ` is a slight misreading of `እንዘ`). The particle `እንዘ` (''while'') paired '
+- timestamp: '2026-04-22T22:49:47Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/069.job-72795.json
+  category: lexical
+  tier: 3
+  from: beyond their number
+  to: beyond their prescribed measure
+  rationale: 'The Ge''ez ሥርዓት (ser''at) means order, ordinance, rule, or prescribed measure. While the context involves a numerical quota of sheep, translating it simply as ''number'' loses the legal and authoritative force of the command the shepherds are violating. | Adjudicator: The Ge''ez word ሥርዓት (śer''āt) fundamentally means ''order, rule, ordinance, regulation, or prescribed measure'' (from ሠርዐ, ''to arrange, ordain, decree''). In the context of the Animal Apocalypse (1 Enoch '

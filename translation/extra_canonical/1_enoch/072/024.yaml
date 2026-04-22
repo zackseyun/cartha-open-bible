@@ -14,17 +14,17 @@ source:
   - 174
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night will be eleven parts, and the day seven parts.
+  text: And on that day the night becomes eleven parts, and the day seven parts.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The verse measures night and day by numbered 'parts,' a technical feature
-      of the Astronomical Book's schematic calendar rather than ordinary clock-hours.
+    text: The verse measures night and day by numbered 'parts,' a technical feature of the Astronomical Book's schematic calendar rather than ordinary clock-hours.
     reason: cultural_note
+  - marker: b
+    text: Or 'will be'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወበይእቲ፡ ዕለት
   chosen: And on that day
@@ -32,43 +32,34 @@ lexical_decisions:
   - And in that day
   - And on that same day
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Temporal formula introducing a specific point in the luminary cycle.
-    'On that day' is idiomatic English and preserves the demonstrative force without
-    unnecessary stiffness.
+  rationale: Temporal formula introducing a specific point in the luminary cycle. 'On that day' is idiomatic English and preserves the demonstrative force without unnecessary stiffness.
 - source_word: ትከውን
   chosen: will be
   alternatives:
   - becomes
   - comes to be
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Future/copular sense fits the astronomical description of what the proportions
-    of night and day amount to at this stage.
+  rationale: Future/copular sense fits the astronomical description of what the proportions of night and day amount to at this stage.
 - source_word: ሌሊት
   chosen: the night
   alternatives:
   - night
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Rendered with the article in English because the verse contrasts the
-    two measured periods, night and day, as defined components of the calendrical
-    scheme.
+  rationale: Rendered with the article in English because the verse contrasts the two measured periods, night and day, as defined components of the calendrical scheme.
 - source_word: ዓሠርተ፡ ወአሐደ፡ ክፍለ፡
   chosen: eleven parts
   alternatives:
   - eleven portions
   - eleven divisions
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The numeral phrase literally gives 'ten and one' with 'part.' 'Parts'
-    best preserves the technical, schematic division used throughout the Astronomical
-    Book.
+  rationale: The numeral phrase literally gives 'ten and one' with 'part.' 'Parts' best preserves the technical, schematic division used throughout the Astronomical Book.
 - source_word: ወዕለት፡ ሰብዓተ፡ ክፍለ
   chosen: and the day seven parts
   alternatives:
   - and the day seven portions
   - while the day is seven parts
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Maintains the parallel structure of the Ge'ez. 'Parts' is kept consistent
-    with the preceding measurement and with the chapter's recurring reckoning of day
-    and night by numbered divisions.
+  rationale: Maintains the parallel structure of the Ge'ez. 'Parts' is kept consistent with the preceding measurement and with the chapter's recurring reckoning of day and night by numbered divisions.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -99,8 +90,7 @@ enoch_witnesses:
     text: ወበይእቲ፡ ዕለት፡ ትከውን፡ ሌሊት፡ ዓሠርተ፡ ወአሐደ፡ ክፍለ፡ ወዕለት፡ ሰብዓተ፡ ክፍለ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -110,5 +100,15 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
+revisions:
+- timestamp: '2026-04-22T22:45:44Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/024.job-72593.json
+  category: consistency
+  tier: 3
+  from: will be
+  to: becomes
+  rationale: 'For consistency with the surrounding verses (72:20, 72:22, 72:26), which correctly render the imperfect ትከውን (tekkawwen) as ''becomes'' to describe the progressive lengthening and shortening of the day and night in the astronomical cycle. | Adjudicator: The Astronomical Book relies heavily on formulaic repetition to describe the changing lengths of day and night. The Ge''ez verb ትከውን (tekkawwen, imperfect of ኮነ) is used consistently in these formulas.'

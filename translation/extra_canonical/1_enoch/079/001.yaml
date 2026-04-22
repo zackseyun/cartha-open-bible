@@ -9,19 +9,17 @@ source:
   - 189
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch79.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 79,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch79.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 79, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And now, my son, I have shown you everything, and the whole ordering of all
-    the stars of heaven has been completed.
+  text: And now, my son, I have shown you everything, and the ordering of all the stars of heaven has been completed.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'the whole order/arrangement of all the stars of heaven has been accomplished.'
-      The Ge'ez can be heard as either the completion of the description or the fulfillment
-      of the heavenly order itself.
+    text: Or 'the whole order/arrangement of all the stars of heaven has been accomplished.' The Ge'ez can be heard as either the completion of the description or the fulfillment of the heavenly order itself.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'the whole ordering of all the stars of heaven'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወይእዜኒ
   chosen: And now
@@ -29,33 +27,27 @@ lexical_decisions:
   - And at this time
   - And now then
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Discourse marker introducing a concluding or transitional statement.
-    'And now' preserves the direct address and narrative flow without overloading
-    the particle.
+  rationale: Discourse marker introducing a concluding or transitional statement. 'And now' preserves the direct address and narrative flow without overloading the particle.
 - source_word: ወልድየ
   chosen: my son
   alternatives:
   - my child
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Direct filial address in revelatory instruction. 'My son' preserves the
-    familial-teaching register common in wisdom/apocalyptic discourse.
+  rationale: Direct filial address in revelatory instruction. 'My son' preserves the familial-teaching register common in wisdom/apocalyptic discourse.
 - source_word: ኵሎ
   chosen: everything
   alternatives:
   - all things
   - the whole
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Object of 'I have shown you'; idiomatic English prefers 'everything'
-    here while retaining totality.
+  rationale: Object of 'I have shown you'; idiomatic English prefers 'everything' here while retaining totality.
 - source_word: አርአይኩከ
   chosen: I have shown you
   alternatives:
   - I showed you
   - I made you see
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb of showing/revealing suits the instructional vision context.
-    Present perfect in English fits the summary force of the statement better than
-    a simple past.
+  rationale: The verb of showing/revealing suits the instructional vision context. Present perfect in English fits the summary force of the statement better than a simple past.
 - source_word: ተፈጸመት
   chosen: has been completed
   alternatives:
@@ -63,9 +55,7 @@ lexical_decisions:
   - has been accomplished
   - has come to an end
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The passive/completive sense best fits a summary statement about the
-    exposition reaching its end. 'Completed' avoids implying destruction or cessation
-    of the stars themselves.
+  rationale: The passive/completive sense best fits a summary statement about the exposition reaching its end. 'Completed' avoids implying destruction or cessation of the stars themselves.
 - source_word: ሥርዓተ
   chosen: ordering
   alternatives:
@@ -73,17 +63,14 @@ lexical_decisions:
   - arrangement
   - ordinance
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Astronomical Book this term refers to the structured arrangement
-    or regulated system of heavenly bodies. 'Ordering' preserves both structure and
-    process better than the flatter 'order.'
+  rationale: In the Astronomical Book this term refers to the structured arrangement or regulated system of heavenly bodies. 'Ordering' preserves both structure and process better than the flatter 'order.'
 - source_word: ኵሉ ከዋክብተ ሰማያት
   chosen: all the stars of heaven
   alternatives:
   - all the stars of the heavens
   - every star of heaven
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A cosmic expression typical of the section. 'Stars of heaven' keeps the
-    elevated apocalyptic register without unnecessary archaism.
+  rationale: A cosmic expression typical of the section. 'Stars of heaven' keeps the elevated apocalyptic register without unnecessary archaism.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -114,8 +101,7 @@ enoch_witnesses:
     text: ወይእዜኒ፡ ወልድየ፡ ኵሎ፡ አርአይኩከ፡ ወ*ተፈጸመት፡ *ሥርዓተ፡ ኵሉ፡ ከዋክብተ፡ ሰማያት።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch79.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch79.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -125,19 +111,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 79, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 79, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether the clause means the heavenly order itself has ended or that the
-    explanation of it has been brought to completion
-  chosen_reading: 'The statement summarizes the completion of the revealed account:
-    ''the whole ordering of all the stars of heaven has been completed.'''
+- issue: Whether the clause means the heavenly order itself has ended or that the explanation of it has been brought to completion
+  chosen_reading: 'The statement summarizes the completion of the revealed account: ''the whole ordering of all the stars of heaven has been completed.'''
   alternative_readings:
   - '''the whole order of the stars of heaven is fulfilled'''
   - '''I have completed the account of the order of all the stars of heaven'''
-  rationale: Given the instructional frame ('I have shown you everything'), the verse
-    most naturally closes a section of revelation. The English keeps the Ge'ez passive
-    wording while allowing readers to hear the completion of the exposition rather
-    than cosmic termination.
-  doctrine_reference: Preserve theological tension rather than resolve it; retain
-    ambiguity where possible while choosing the reading most natural in context.
+  rationale: Given the instructional frame ('I have shown you everything'), the verse most naturally closes a section of revelation. The English keeps the Ge'ez passive wording while allowing readers to hear the completion of the exposition rather than cosmic termination.
+  doctrine_reference: Preserve theological tension rather than resolve it; retain ambiguity where possible while choosing the reading most natural in context.
+revisions:
+- timestamp: '2026-04-22T22:46:33Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/079/001.job-72662.json
+  category: mistranslation
+  tier: 3
+  from: the whole ordering of all the stars of heaven
+  to: the ordering of all the stars of heaven
+  rationale: 'The Ge''ez `ሥርዓተ፡ ኵሉ፡ ከዋክብተ፡ ሰማያት` (śer''āta kwellu kawākebta samāyāt) translates to ''the order(ing) of all the stars of heaven.'' The draft adds ''whole'' before ''ordering,'' which has no corresponding word in the source text, effectively double-translating `ኵሉ` (all). | Adjudicator: The reviewer correctly identifies that the Ge''ez text `ሥርዓተ፡ ኵሉ፡ ከዋክብተ፡ ሰማያት` (śer''āta kwellu kawākebta samāyāt) means ''the ordering of all the stars of heaven.'' The word `ኵሉ` (kwellu, ''all'') modifies'

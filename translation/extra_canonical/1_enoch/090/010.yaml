@@ -16,23 +16,20 @@ source:
   - 226
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw among them that [their eyes were opened], and it cried out to the
-    sheep and said to them, “Look!” And all of them ran to it.
+  text: And it looked at them, [and their eyes were opened,] and it cried out to the sheep, and the rams saw it, and they all ran to it.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The clause 'their eyes were opened' is bracketed because the supplied Ethiopic
-      witness marks it as uncertain or textually unstable, though it fits a recurring
-      motif in this vision cycle.
+    text: The clause 'their eyes were opened' is bracketed because the supplied Ethiopic witness marks it as uncertain or textually unstable, though it fits a recurring motif in this vision cycle.
     reason: textual_variant
   - marker: b
-    text: The final pronoun could also be rendered 'him' if the singular figure is
-      understood as a personalized leader within the animal vision.
+    text: The final pronoun could also be rendered 'him' if the singular figure is understood as a personalized leader within the animal vision.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And I saw among them that [their eyes were opened], and it cried out to the sheep and said to them, “Look!” And all of them ran to it.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርእየ
   chosen: And I saw
@@ -40,60 +37,49 @@ lexical_decisions:
   - And I looked
   - Then I saw
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard first-person visionary narrative formula in Enoch; 'And I saw'
-    preserves the repeated apocalyptic reporting style.
+  rationale: Standard first-person visionary narrative formula in Enoch; 'And I saw' preserves the repeated apocalyptic reporting style.
 - source_word: ቦሙ
   chosen: among them
   alternatives:
   - in them
   - there among them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'Best taken locatively in context: the seer observes something appearing
-    within the group of animals.'
+  rationale: 'Best taken locatively in context: the seer observes something appearing within the group of animals.'
 - source_word: ወተፈትሐ አዕይንቲሆሙ
   chosen: '[their eyes were opened]'
   alternatives:
   - their eyes were opened
   - the eyes of them were opened
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase is bracketed in the supplied witness, signaling textual uncertainty.
-    It is retained in translation but marked with brackets rather than omitted, since
-    it gives coherent sense in the Animal Apocalypse's recurring motif of opened eyes
-    signifying perception or awakening.
+  rationale: The phrase is bracketed in the supplied witness, signaling textual uncertainty. It is retained in translation but marked with brackets rather than omitted, since it gives coherent sense in the Animal Apocalypse's recurring motif of opened eyes signifying perception or awakening.
 - source_word: ወጸርኀ
   chosen: it cried out
   alternatives:
   - it shouted
   - it called out
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A strong vocal verb fits the urgent visionary scene better than a softer
-    'said' alone. The singular subject is left as 'it' because the antecedent in the
-    immediate Ge'ez line is not explicitly restated.
+  rationale: A strong vocal verb fits the urgent visionary scene better than a softer 'said' alone. The singular subject is left as 'it' because the antecedent in the immediate Ge'ez line is not explicitly restated.
 - source_word: ሎሙ ለአባግዕ
   chosen: to the sheep
   alternatives:
   - to those sheep
   - to the flock
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The dative plus noun directly indicates address to the sheep; 'the flock'
-    would smooth the animal imagery too much.
+  rationale: The dative plus noun directly indicates address to the sheep; 'the flock' would smooth the animal imagery too much.
 - source_word: ወይቤላት ርእይዎ
   chosen: and said to them, 'Look!'
   alternatives:
   - and said to them, 'See!'
   - and told them, 'Look at it!'
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Imperative force is clear. 'Look!' is idiomatic modern English while
-    preserving the abrupt summons to perception.
+  rationale: Imperative force is clear. 'Look!' is idiomatic modern English while preserving the abrupt summons to perception.
 - source_word: ወሮጹ ኵሎሙ ኀቤሁ
   chosen: And all of them ran to it
   alternatives:
   - and they all ran to him
   - and all of them hurried toward it
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb denotes running. The final pronoun may be rendered 'it' because
-    the antecedent is an animal figure in the vision; 'him' is possible if the figure
-    is personalized, but 'it' better matches the immediate animal-symbolic register.
+  rationale: The verb denotes running. The final pronoun may be rendered 'it' because the antecedent is an animal figure in the vision; 'him' is possible if the figure is personalized, but 'it' better matches the immediate animal-symbolic register.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -124,8 +110,7 @@ enoch_witnesses:
     text: ወርእየ፡ ቦሙ፡ [ወተፈትሐ፡ አዕይንቲሆሙ፡] ወ*ጸርኀ፡ ሎሙ፡ ለአባግዕ፡ ወይቤላት፡ ርእይዎ፡ ወሮጹ፡ *ኵሎሙ፡ ኀቤሁ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -135,15 +120,22 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to personalize the singular figure addressed by the sheep imagery
   chosen_reading: Use the pronoun 'it' rather than 'him' in the main text
   alternative_readings:
   - him
-  rationale: In the Animal Apocalypse, figures are presented under animal symbolism.
-    Using 'it' preserves the vision's symbolic surface and avoids prematurely resolving
-    the figure into a human referent, while a footnote can preserve the alternative.
-  doctrine_reference: Preserve theological tension rather than resolve it; keep imagery
-    locally grounded in the passage.
+  rationale: In the Animal Apocalypse, figures are presented under animal symbolism. Using 'it' preserves the vision's symbolic surface and avoids prematurely resolving the figure into a human referent, while a footnote can preserve the alternative.
+  doctrine_reference: Preserve theological tension rather than resolve it; keep imagery locally grounded in the passage.
+revisions:
+- timestamp: '2026-04-22T22:48:50Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/010.job-72808.json
+  category: mistranslation
+  tier: 3
+  from: And I saw among them that [their eyes were opened], and it cried out to the sheep and said to them, “Look!” And all of them ran to it.
+  to: And it looked at them, [and their eyes were opened,] and it cried out to the sheep, and the rams saw it, and they all ran to it.
+  rationale: 'Multiple parsing errors distort the verse. `ወርእየ` (wa-rə''əya) is the 3rd person singular perfect (''and it/he looked''), not the 1st person `ርኢኩ` (''I saw'') used elsewhere for the visionary formula. `ቦሙ` (bomu) means ''at them''. `ወይቤላት` (wa-yəbelat) is the plural noun ''and the rams'' (from `ይቤላ`, ram/buck, cf. 90:13), not the verb ''said to them''. `ርእይዎ` (rə''əyəwo) is the 3rd person plural perfect with a 3rd singular object suffix (''they saw it/him''), not an imperative (''Look!''). | Adjudicator: The reviewer correctly identifies multiple parsing errors in the current translation. `ወርእየ` (wa-rə''əya) is the 3rd person singular perfect (''and it looked''), not the 1st person `ርኢኩ` (''I saw''). `ወይቤላ'

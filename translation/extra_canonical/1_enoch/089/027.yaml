@@ -20,19 +20,17 @@ source:
   - 218
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until all the beasts that had turned away from those sheep were
-    swallowed up.
+  text: And I saw until all the wolves that pursued those sheep perished and were drowned.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ethiopic wording is difficult at the end of the verse. The sense is
-      that the beasts who had turned away from the sheep were engulfed or swallowed
-      up in judgment.
+    text: The Ethiopic wording is difficult at the end of the verse. The sense is that the beasts who had turned away from the sheep were engulfed or swallowed up in judgment.
     reason: textual_variant
+  - marker: b
+    text: Or 'all the beasts that had turned away from those sheep were swallowed up.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -40,16 +38,14 @@ lexical_decisions:
   - And I looked
   - And I kept seeing
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard visionary narrative opening; simple past fits the sequence while
-    preserving the first-person apocalyptic report.
+  rationale: Standard visionary narrative opening; simple past fits the sequence while preserving the first-person apocalyptic report.
 - source_word: እስከ
   chosen: until
   alternatives:
   - as far as
   - up to the point that
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'In Dream Visions this particle commonly marks the continuation of the
-    vision up to a resulting event: ''I saw until ...''.'
+  rationale: 'In Dream Visions this particle commonly marks the continuation of the vision up to a resulting event: ''I saw until ...''.'
 - source_word: ተሐጕሉ
   chosen: were swallowed up
   alternatives:
@@ -57,17 +53,14 @@ lexical_decisions:
   - perished
   - were consumed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb suggests being swallowed or engulfed rather than merely dying.
-    'Were swallowed up' preserves the vivid judgment imagery without over-specifying
-    the agent.
+  rationale: The verb suggests being swallowed or engulfed rather than merely dying. 'Were swallowed up' preserves the vivid judgment imagery without over-specifying the agent.
 - source_word: ኵሎሙ አዝእብት
   chosen: all the beasts
   alternatives:
   - all the wild beasts
   - all those beasts
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Animal Apocalypse, animal terms are symbolic but should remain
-    literal in wording. 'Beasts' preserves the imagery and avoids interpretive expansion.
+  rationale: In the Animal Apocalypse, animal terms are symbolic but should remain literal in wording. 'Beasts' preserves the imagery and avoids interpretive expansion.
 - source_word: እለ ተለውዎሙ
   chosen: that had turned away from
   alternatives:
@@ -75,26 +68,21 @@ lexical_decisions:
   - that had separated themselves from
   - that had apostatized from
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase indicates movement away or defection from the sheep. 'Turned
-    away from' is readable and preserves the relational breach without importing later
-    doctrinal terminology.
+  rationale: The phrase indicates movement away or defection from the sheep. 'Turned away from' is readable and preserves the relational breach without importing later doctrinal terminology.
 - source_word: ለዝኩ አባግዕ
   chosen: those sheep
   alternatives:
   - these sheep
   - the sheep
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The demonstrative points back to the sheep already in view in the vision.
-    'Those sheep' reflects the deictic force better than a bare noun.
+  rationale: The demonstrative points back to the sheep already in view in the vision. 'Those sheep' reflects the deictic force better than a bare noun.
 - source_word: ወተሠጥሙ
   chosen: were swallowed up
   alternatives:
   - sank down
   - were submerged
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This final verb appears to reinforce the image of engulfment/submergence.
-    Because the OCR line is difficult, the English keeps the core image of being swallowed
-    up rather than forcing a more technical nuance.
+  rationale: This final verb appears to reinforce the image of engulfment/submergence. Because the OCR line is difficult, the English keeps the core image of being swallowed up rather than forcing a more technical nuance.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -125,8 +113,7 @@ enoch_witnesses:
     text: ወርኢኩ፡ እስከ፡ ተሐጕሉ፡ ኵሎሙ፡ አዝእብት፡ እለ፡ ተለውዎሙ፡ *ለዝኩ፡ አባግዕ፡ ወተሠጥሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -136,16 +123,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to make the symbolic referent explicit
   chosen_reading: Keep the animal imagery literal ('beasts' and 'sheep')
   alternative_readings:
   - Translate interpretively as nations/leaders and Israel
   - Explain the symbolism in the main text
-  rationale: The Animal Apocalypse communicates through sustained symbolic imagery.
-    The project philosophy requires preserving apocalyptic imagery rather than flattening
-    it into explanatory prose.
-  doctrine_reference: 'Book context: Dream Visions / Animal Apocalypse imagery should
-    be preserved'
+  rationale: The Animal Apocalypse communicates through sustained symbolic imagery. The project philosophy requires preserving apocalyptic imagery rather than flattening it into explanatory prose.
+  doctrine_reference: 'Book context: Dream Visions / Animal Apocalypse imagery should be preserved'
+revisions:
+- timestamp: '2026-04-22T22:47:55Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/027.job-72753.json
+  category: mistranslation
+  tier: 3
+  from: all the beasts that had turned away from those sheep were swallowed up.
+  to: all the wolves that pursued those sheep perished and were drowned.
+  rationale: 'The draft contains multiple severe mistranslations. ''አዝእብት'' (az''əbt) means ''wolves'', not ''beasts'' (consistent with the preceding verses). ''ተለውዎሙ'' (talawwomu, from ተለወ) means ''pursued them'' or ''followed them'', not ''turned away from''. ''ተሐጕሉ'' (taḥagwlu) means ''perished'' or ''were destroyed'', and ''ተሠጥሙ'' (taśaṭmu) means ''were drowned'' or ''sank''. The draft conflates the two verbs and reverses the meaning of the wolves'' action. | Adjudicator: The reviewer''s rationale is entirely correct and grounded in the Ge''ez lexicon. The word ''አዝእብት'' (az''əbt) specifically means ''wolves'' (representing the Egyptians in the Animal Apocalypse), not generic'

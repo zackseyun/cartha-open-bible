@@ -9,17 +9,17 @@ source:
   - 104
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch28.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 28,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch28.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 28, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And from there I went along the way.
+  text: And from there I went toward...
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The surviving excerpt is very short and may be incomplete in isolation.
-      The final phrase could also be rendered 'on the road' or 'by the path.'
+    text: The surviving excerpt is very short and may be incomplete in isolation. The final phrase could also be rendered 'on the road' or 'by the path.'
     reason: lexical_alternative
+  - marker: b
+    text: Or 'along the way.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምህየ
   chosen: from there
@@ -27,18 +27,14 @@ lexical_decisions:
   - thence
   - from that place
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The prepositional form marks movement away from a previously mentioned
-    location. 'From there' is clear modern English; 'thence' is more archaic than
-    the project style prefers.
+  rationale: The prepositional form marks movement away from a previously mentioned location. 'From there' is clear modern English; 'thence' is more archaic than the project style prefers.
 - source_word: ሖርኩ
   chosen: I went
   alternatives:
   - I traveled
   - I journeyed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: First-person singular perfect of the common verb of going/traveling.
-    'I went' preserves the simple narrative motion without adding more color than
-    the Ge'ez requires.
+  rationale: First-person singular perfect of the common verb of going/traveling. 'I went' preserves the simple narrative motion without adding more color than the Ge'ez requires.
 - source_word: መንገለ
   chosen: along the way
   alternatives:
@@ -46,10 +42,7 @@ lexical_decisions:
   - by the path
   - toward the way
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun denotes way, road, or path. Because the verse is fragmentary
-    in the supplied witness and lacks an explicit destination in the excerpt, 'along
-    the way' best preserves the sense of movement without over-specifying a route
-    or endpoint.
+  rationale: The noun denotes way, road, or path. Because the verse is fragmentary in the supplied witness and lacks an explicit destination in the excerpt, 'along the way' best preserves the sense of movement without over-specifying a route or endpoint.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -80,8 +73,7 @@ enoch_witnesses:
     text: ወ*እምህየ፡ ሖርኩ፡ *መንገለ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch28.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch28.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -91,5 +83,14 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 28, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 28, but verse-aligned extraction is not yet implemented in this prompt builder.
+revisions:
+- timestamp: '2026-04-22T18:54:22Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/028/001.job-72315.json
+  category: mistranslation
+  tier: 2
+  from: along the way.
+  to: toward...
+  rationale: The Ge'ez word መንገለ (mangala) is a preposition meaning 'toward' or 'in the direction of' (Leslau, CDG 350; Dillmann, Lex. 165), not a noun meaning 'the way'. The verse parser has severely truncated the source text here (the full verse continues with ጽባሕ, 'the east'), but the visible word must still be translated accurately as a preposition, not converted into a noun to force a complete sentence.

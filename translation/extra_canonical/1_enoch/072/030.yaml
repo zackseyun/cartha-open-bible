@@ -14,19 +14,17 @@ source:
   - 174
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night is shortened from its length, and the night becomes
-    twelve parts, and the day eight parts.
+  text: And on that day the night is shortened from its length, and the night becomes ten parts, and the day eight parts.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The verse uses the Astronomical Book's schematic division of day and night
-      into numbered 'parts,' a technical way of describing seasonal change rather
-      than clock-hours.
+    text: The verse uses the Astronomical Book's schematic division of day and night into numbered 'parts,' a technical way of describing seasonal change rather than clock-hours.
     reason: cultural_note
+  - marker: b
+    text: Or 'twelve parts'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: on that day
@@ -34,42 +32,35 @@ lexical_decisions:
   - in that day
   - at that time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Temporal demonstrative phrase; 'on that day' is the most natural English
-    equivalent while preserving the deictic force of the Ge'ez.
+  rationale: Temporal demonstrative phrase; 'on that day' is the most natural English equivalent while preserving the deictic force of the Ge'ez.
 - source_word: ተኃጽጸ ሌሊት
   chosen: the night is shortened
   alternatives:
   - the night decreases
   - the night is diminished
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys reduction or cutting short. 'Is shortened' fits the
-    astronomical context of changing seasonal proportions better than the more generic
-    'decreases.'
+  rationale: The verb conveys reduction or cutting short. 'Is shortened' fits the astronomical context of changing seasonal proportions better than the more generic 'decreases.'
 - source_word: እምኑኃ
   chosen: from its length
   alternatives:
   - from its measure
   - from its extent
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase marks the point from which the night is reduced. 'Length'
-    is idiomatic in English for duration and suits the context of night/day proportions.
+  rationale: The phrase marks the point from which the night is reduced. 'Length' is idiomatic in English for duration and suits the context of night/day proportions.
 - source_word: ትከውን ሌሊት ፲ወ፪ተ ክፍለ
   chosen: the night becomes twelve parts
   alternatives:
   - the night amounts to twelve parts
   - the night is twelve parts
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb 'becomes/is' introduces the resulting measured state. 'Becomes
-    twelve parts' preserves the process/result sense in this calendrical description.
+  rationale: The verb 'becomes/is' introduces the resulting measured state. 'Becomes twelve parts' preserves the process/result sense in this calendrical description.
 - source_word: ማዓልት ፰ ክፍለ
   chosen: the day eight parts
   alternatives:
   - the day becomes eight parts
   - the day is eight parts
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verse contrasts the measured portions of night and day. English supplies
-    'the day' with an implied copular sense; this keeps the compact enumerative style
-    of the source.
+  rationale: The verse contrasts the measured portions of night and day. English supplies 'the day' with an implied copular sense; this keeps the compact enumerative style of the source.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -100,8 +91,7 @@ enoch_witnesses:
     text: ወበይእቲ፡ ዕለት፡ ተኃጽጸ፡ ሌሊት፡ እምኑኃ፡ ወትከውን፡ ሌሊት፡ ፲ወ፪ተ፡ ክፍለ፡ ወማዓልት፡ ፰ክፍለ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -111,5 +101,14 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
+revisions:
+- timestamp: '2026-04-22T19:26:32Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/030.job-72599.json
+  category: mistranslation
+  tier: 2
+  from: twelve parts
+  to: ten parts
+  rationale: The Ge'ez OCR incorrectly reads ፲ወ፪ተ (12) instead of ፲ (10). The Astronomical Book operates on a strict 18-part day, and the sequence of months dictates that the night decreases from 11 parts (v. 28) to 10 parts here, while the day increases to 8 parts (10 + 8 = 18). Translating 'twelve parts' breaks the mathematical and calendrical system of the text.

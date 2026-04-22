@@ -10,19 +10,17 @@ source:
   - 249
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Are not those mariners afraid of the sea, while sinners do not fear the Most
-    High?
+  text: Do not those kings of the ships fear the sea, while sinners do not fear the Most High?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The phrase rendered 'those mariners' is textually difficult in the OCR'd
-      Ge'ez. It likely refers to people who go down to the sea in ships; 'sailors'
-      or 'seafarers' are possible alternatives.
+    text: The phrase rendered 'those mariners' is textually difficult in the OCR'd Ge'ez. It likely refers to people who go down to the sea in ships; 'sailors' or 'seafarers' are possible alternatives.
     reason: textual_variant
+  - marker: b
+    text: Or 'Are not those mariners afraid of the sea, while sinners do not fear'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: አኮኑ
   chosen: Are not
@@ -30,58 +28,49 @@ lexical_decisions:
   - Are they not
   - Is it not
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces a rhetorical question expecting agreement; preserving the
-    interrogative force fits the verse's contrastive admonition.
+  rationale: Introduces a rhetorical question expecting agreement; preserving the interrogative force fits the verse's contrastive admonition.
 - source_word: ውእቶሙ
   chosen: those
   alternatives:
   - they
   - these
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Used demonstratively with the following noun; 'those' preserves the deictic
-    sense better than a bare pronoun.
+  rationale: Used demonstratively with the following noun; 'those' preserves the deictic sense better than a bare pronoun.
 - source_word: ተነገሥተ አሕማር
   chosen: mariners
   alternatives:
   - sailors
   - seafarers
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase appears to denote people associated with ships/sea travel.
-    'Mariners' keeps the elevated register and suits the sea imagery. Because the
-    OCR is somewhat uncertain, a more generic alternative is noted in a footnote.
+  rationale: The phrase appears to denote people associated with ships/sea travel. 'Mariners' keeps the elevated register and suits the sea imagery. Because the OCR is somewhat uncertain, a more generic alternative is noted in a footnote.
 - source_word: ይፈርህዋ ለባሕር
   chosen: are afraid of the sea
   alternatives:
   - fear the sea
   - dread the sea
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb is the common term for fear. 'Are afraid of the sea' is idiomatic
-    English while preserving the concrete object of fear.
+  rationale: The verb is the common term for fear. 'Are afraid of the sea' is idiomatic English while preserving the concrete object of fear.
 - source_word: ወኃጥኣን
   chosen: while sinners
   alternatives:
   - and sinners
   - but sinners
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The conjunction here functions contrastively in context. 'While sinners'
-    brings out the rhetorical contrast between ordinary human fear and impious fearlessness.
+  rationale: The conjunction here functions contrastively in context. 'While sinners' brings out the rhetorical contrast between ordinary human fear and impious fearlessness.
 - source_word: ለልዑል
   chosen: the Most High
   alternatives:
   - the Exalted One
   - the Highest
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A divine title meaning 'Most High' is well established in biblical and
-    Second Temple usage. It preserves the elevated theological register without importing
-    later doctrinal phrasing.
+  rationale: A divine title meaning 'Most High' is well established in biblical and Second Temple usage. It preserves the elevated theological register without importing later doctrinal phrasing.
 - source_word: ኢይፈርህዎ
   chosen: do not fear
   alternatives:
   - are not afraid of
   - do not revere
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The same fear verb is repeated negatively; keeping 'fear' in both halves
-    preserves the deliberate contrast of the verse.
+  rationale: The same fear verb is repeated negatively; keeping 'fear' in both halves preserves the deliberate contrast of the verse.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -112,8 +101,7 @@ enoch_witnesses:
     text: አኮኑ፡ ውእቶሙ፡ ተነገሥተ፡ አሕማር፡ ይፈርህዋ፡ ለባሕር፡ ወኃጥኣን፡ ለልዑል፡ ኢይፈርህዎ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -123,16 +111,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Rendering ልዑል as a divine title
   chosen_reading: the Most High
   alternative_readings:
   - the Exalted One
   - the Highest
-  rationale: In this context the term functions as a title for God, and 'the Most
-    High' is the clearest idiomatic English equivalent that preserves Second Temple
-    Jewish diction.
-  doctrine_reference: Preserve theological tension rather than resolve it; translate
-    titles for meaning rather than transliterating.
+  rationale: In this context the term functions as a title for God, and 'the Most High' is the clearest idiomatic English equivalent that preserves Second Temple Jewish diction.
+  doctrine_reference: Preserve theological tension rather than resolve it; translate titles for meaning rather than transliterating.
+revisions:
+- timestamp: '2026-04-22T22:50:32Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/009.job-72935.json
+  category: consistency
+  tier: 3
+  from: Are not those mariners afraid of the sea, while sinners do not fear
+  to: Do not those kings of the ships fear the sea, while sinners do not fear
+  rationale: '1) The Ge''ez phrase ተነገሥተ አሕማር literally means ''kings of the ships'' and was translated exactly this way in 101:4. Translating it here as ''mariners'' breaks the author''s deliberate repetition. 2) The Ge''ez uses the exact same verb (ፈሪሀ) for both actions. Using ''fear'' for both halves (''fear the sea'' / ''do not fear the Most High'') restores the author''s deliberate rhetorical parallel, which the draft''s own notes intended to do but failed to execute. | Adjudicator: The Ge''ez text uses the exact same phrase (ነገሥተ አሕማር, ''kings of the ships''—with a minor OCR/spelling variant here) as in 101:4, and the same verb (ፈሪሀ, ''to fear'') for both the mariners'' fear of the se'

@@ -9,17 +9,17 @@ source:
   - 201
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after this I saw another dream, and I will show you every dream, my son.
+  text: And after this I saw another dream, and I will show you the whole dream, my son.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'the whole dream.' The Ge'ez expression may refer either to the entirety
-      of the dream account or to each dream in the sequence.
+    text: Or 'the whole dream.' The Ge'ez expression may refer either to the entirety of the dream account or to each dream in the sequence.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'every dream'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምድኅረዝ
   chosen: after this
@@ -27,55 +27,46 @@ lexical_decisions:
   - after these things
   - afterward
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Temporal transition formula introducing the next visionary scene. 'After
-    this' preserves the apocalyptic narrative cadence without sounding overly wooden.
+  rationale: Temporal transition formula introducing the next visionary scene. 'After this' preserves the apocalyptic narrative cadence without sounding overly wooden.
 - source_word: ካልአ
   chosen: another
   alternatives:
   - a second
   - other
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Marks a further dream distinct from the previous one. 'Another' is the
-    most natural English equivalent here.
+  rationale: Marks a further dream distinct from the previous one. 'Another' is the most natural English equivalent here.
 - source_word: ሕለመ
   chosen: dream
   alternatives:
   - vision in sleep
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The ordinary term for a dream; retaining 'dream' preserves the text's
-    own framing before the symbolic animal vision unfolds.
+  rationale: The ordinary term for a dream; retaining 'dream' preserves the text's own framing before the symbolic animal vision unfolds.
 - source_word: ርኢኩ
   chosen: I saw
   alternatives:
   - I beheld
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard first-person visionary report. 'I saw' is clear modern English
-    and keeps the directness of the Ge'ez.
+  rationale: Standard first-person visionary report. 'I saw' is clear modern English and keeps the directness of the Ge'ez.
 - source_word: ኵሎ ሕልመ
   chosen: every dream
   alternatives:
   - the whole dream
   - all the dream
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'Taken distributively as ''every dream,'' matching the plural-like force
-    of the expression in context: Enoch is about to recount the full sequence of dream
-    revelations to his son.'
+  rationale: 'Taken distributively as ''every dream,'' matching the plural-like force of the expression in context: Enoch is about to recount the full sequence of dream revelations to his son.'
 - source_word: አርእየከ
   chosen: I will show you
   alternatives:
   - I will make you see
   - I will recount to you
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Future/causative sense from the verb 'to show, make see.' 'I will show
-    you' preserves the vividness of mediated revelation better than the flatter 'tell'
-    or 'recount.'
+  rationale: Future/causative sense from the verb 'to show, make see.' 'I will show you' preserves the vividness of mediated revelation better than the flatter 'tell' or 'recount.'
 - source_word: ወልድየ
   chosen: my son
   alternatives:
   - O my son
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Direct filial address. 'My son' preserves the intimate instructional
-    frame of Enoch speaking to his son.
+  rationale: Direct filial address. 'My son' preserves the intimate instructional frame of Enoch speaking to his son.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -106,8 +97,7 @@ enoch_witnesses:
     text: ወእምድኅረዝ፡ ካልአ፡ ሕለመ፡ ርኢኩ፡ ወኵሎ፡ ሕልመ፡ አርእየከ፡ ወልድየ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -117,17 +107,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Scope of ኵሎ ሕልመ
   chosen_reading: every dream
   alternative_readings:
   - the whole dream
   - all the dream
-  rationale: The Ge'ez can be heard either as a collective singular ('the whole dream')
-    or as a distributive expression ('every dream'). Because the verse introduces
-    a sequence of dream material and promises disclosure to the son, 'every dream'
-    best captures the forward-looking scope while remaining faithful to the wording.
-  doctrine_reference: Preserve theological tension rather than resolve it; document
-    ambiguity rather than smoothing it away.
+  rationale: The Ge'ez can be heard either as a collective singular ('the whole dream') or as a distributive expression ('every dream'). Because the verse introduces a sequence of dream material and promises disclosure to the son, 'every dream' best captures the forward-looking scope while remaining faithful to the wording.
+  doctrine_reference: Preserve theological tension rather than resolve it; document ambiguity rather than smoothing it away.
+revisions:
+- timestamp: '2026-04-22T22:47:17Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/085/001.job-72710.json
+  category: lexical
+  tier: 3
+  from: every dream
+  to: the whole dream
+  rationale: 'The phrase ኵሎ ሕልመ (kʷello ḥelma) refers directly back to the singular ''another dream'' (ካልአ ሕለመ) just introduced in the same clause. Translating it as ''every dream'' breaks the immediate antecedent; Enoch is promising to recount the entirety of this specific second dream (the Animal Apocalypse) to his son, not all of his dreams distributively. | Adjudicator: The Ge''ez phrase ኵሎ ሕልመ (kʷəllo ḥəlma) uses the accusative of ኵል (kʷəll, ''all, whole'') to modify the singular noun ሕልም (ḥəlm, ''dream''). In this context, immediately following the introduction of ''anot'

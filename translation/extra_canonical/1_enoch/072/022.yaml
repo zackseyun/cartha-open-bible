@@ -3,8 +3,7 @@ reference: 1 Enoch 72:22
 book: 1 Enoch
 source:
   edition: charles-1906-enoch
-  text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ እምዕለት፡ *ወሌሊት፡ እምሌሊት፡ ትነሡኅ፡ ወተሐጽር፡ ዕለት፡ እምዕለት፡ እስከ፡
-    ሠላሳ፡ ጸባሕ፡ ወትከውን፡ ሌሊት፡ ዐሠርተ፡ ክፍለ፡ ጥንቁቀ፡ ወመዓልት፡ ስመንተ፡ ክፍለ።
+  text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ እምዕለት፡ *ወሌሊት፡ እምሌሊት፡ ትነሡኅ፡ ወተሐጽር፡ ዕለት፡ እምዕለት፡ እስከ፡ ሠላሳ፡ ጸባሕ፡ ወትከውን፡ ሌሊት፡ ዐሠርተ፡ ክፍለ፡ ጥንቁቀ፡ ወመዓልት፡ ስመንተ፡ ክፍለ።
   language: Geez
   pages:
   - 169
@@ -15,28 +14,26 @@ source:
   - 174
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night increases beyond the day, and night increases beyond
-    night, and the day grows shorter than day by day, until thirty mornings, and the
-    night becomes ten parts, and the day eight parts.
+  text: And on that day the night increases beyond the day, and the night increases from night to night, and the day grows shorter from day to day, until thirty mornings, and the night becomes exactly ten parts, and the day eight parts.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The repeated phrase 'night increases beyond night' is awkward in English
-      but likely means 'the night increases from night to night.'
+    text: The repeated phrase 'night increases beyond night' is awkward in English but likely means 'the night increases from night to night.'
     reason: lexical_alternative
   - marker: b
-    text: '''Thirty mornings'' may function as a count of successive days or dawns
-      in the seasonal cycle; the Ge''ez wording is literally ''thirty mornings.'''
+    text: '''Thirty mornings'' may function as a count of successive days or dawns in the seasonal cycle; the Ge''ez wording is literally ''thirty mornings.'''
     reason: cultural_note
   - marker: c
-    text: The word following 'ten parts' is textually or lexically difficult in this
-      OCR witness and may mean 'complete,' 'exact,' or a similar qualifier of the
-      measure.
+    text: The word following 'ten parts' is textually or lexically difficult in this OCR witness and may mean 'complete,' 'exact,' or a similar qualifier of the measure.
     reason: textual_variant
+  - marker: d
+    text: Or 'and night increases beyond night, and the day grows shorter than day by day'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'becomes ten parts'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: on that day
@@ -44,60 +41,49 @@ lexical_decisions:
   - in that day
   - at that time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard temporal phrase; 'on that day' preserves the narrative-astronomical
-    sequence without sounding overly idiomatic.
+  rationale: Standard temporal phrase; 'on that day' preserves the narrative-astronomical sequence without sounding overly idiomatic.
 - source_word: ትነሡኅ
   chosen: increases
   alternatives:
   - becomes longer
   - is added to
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this luminary context the verb denotes increase in extent or duration.
-    'Increases' preserves the repeated verbal pattern and allows the following part-language
-    to specify the measure.
+  rationale: In this luminary context the verb denotes increase in extent or duration. 'Increases' preserves the repeated verbal pattern and allows the following part-language to specify the measure.
 - source_word: ሌሊት እምዕለት
   chosen: the night beyond the day
   alternatives:
   - the night more than the day
   - the night from the day
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition እም here marks comparison/separation. English smooths
-    this as 'beyond the day' to retain the comparative force without overparaphrasing.
+  rationale: The preposition እም here marks comparison/separation. English smooths this as 'beyond the day' to retain the comparative force without overparaphrasing.
 - source_word: ወሌሊት እምሌሊት ትነሡኅ
   chosen: and night increases beyond night
   alternatives:
   - and the night increases from night to night
   - and night grows more than night
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The repeated noun with እም likely expresses progressive increase from
-    one night to the next. The literal repetition is preserved for auditability, though
-    somewhat unusual in English.
+  rationale: The repeated noun with እም likely expresses progressive increase from one night to the next. The literal repetition is preserved for auditability, though somewhat unusual in English.
 - source_word: ወተሐጽር ዕለት እምዕለት
   chosen: and the day grows shorter than day by day
   alternatives:
   - and the day is diminished from day to day
   - and the day becomes shorter than the day
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb clearly indicates shortening/diminishing. Because the repeated
-    'day from day' is idiomatic for progression, 'day by day' best conveys the sense
-    while keeping the repetition visible.
+  rationale: The verb clearly indicates shortening/diminishing. Because the repeated 'day from day' is idiomatic for progression, 'day by day' best conveys the sense while keeping the repetition visible.
 - source_word: እስከ ሠላሳ ጸባሕ
   chosen: until thirty mornings
   alternatives:
   - until thirty dawns
   - for thirty mornings
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ጸባሕ is literally 'morning/dawn.' 'Mornings' is retained rather than converting
-    to 'days' because the astronomical text often counts by dawns and preserves its
-    observational texture.
+  rationale: ጸባሕ is literally 'morning/dawn.' 'Mornings' is retained rather than converting to 'days' because the astronomical text often counts by dawns and preserves its observational texture.
 - source_word: ዐሠርተ ክፍለ
   chosen: ten parts
   alternatives:
   - ten portions
   - ten divisions
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Astronomical Book regularly measures day and night in numbered parts.
-    'Parts' is the most transparent and least interpretively loaded rendering.
+  rationale: The Astronomical Book regularly measures day and night in numbered parts. 'Parts' is the most transparent and least interpretively loaded rendering.
 - source_word: ጥንቁቀ
   chosen: full measure
   alternatives:
@@ -105,18 +91,14 @@ lexical_decisions:
   - complete
   - regular
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term is difficult in this OCR context. It appears to qualify the
-    ten parts as complete or exact. Rendering it in the main line would overburden
-    the sentence, so the translation leaves the measure implicit and explains the
-    uncertainty in a footnote.
+  rationale: The term is difficult in this OCR context. It appears to qualify the ten parts as complete or exact. Rendering it in the main line would overburden the sentence, so the translation leaves the measure implicit and explains the uncertainty in a footnote.
 - source_word: ስመንተ ክፍለ
   chosen: eight parts
   alternatives:
   - eight portions
   - eight divisions
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Matches the technical part-language of the surrounding astronomical schema
-    and balances 'ten parts' for the night.
+  rationale: Matches the technical part-language of the surrounding astronomical schema and balances 'ten parts' for the night.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -144,12 +126,10 @@ enoch_witnesses:
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ እምዕለት፡ *ወሌሊት፡ እምሌሊት፡ ትነሡኅ፡ ወተሐጽር፡ ዕለት፡ እምዕለት፡ እስከ፡
-      ሠላሳ፡ ጸባሕ፡ ወትከውን፡ ሌሊት፡ ዐሠርተ፡ ክፍለ፡ ጥንቁቀ፡ ወመዓልት፡ ስመንተ፡ ክፍለ።
+    text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ እምዕለት፡ *ወሌሊት፡ እምሌሊት፡ ትነሡኅ፡ ወተሐጽር፡ ዕለት፡ እምዕለት፡ እስከ፡ ሠላሳ፡ ጸባሕ፡ ወትከውን፡ ሌሊት፡ ዐሠርተ፡ ክፍለ፡ ጥንቁቀ፡ ወመዓልት፡ ስመንተ፡ ክፍለ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -159,17 +139,33 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Astronomical measurement language
-  chosen_reading: Retain the technical 'parts' of night and day rather than converting
-    into hours or a paraphrastic seasonal statement.
+  chosen_reading: Retain the technical 'parts' of night and day rather than converting into hours or a paraphrastic seasonal statement.
   alternative_readings:
   - the nights become longer and the days shorter
   - the night is ten hours and the day eight hours
-  rationale: The passage belongs to the Astronomical Book and uses schematic cosmological
-    measurement. Preserving 'parts' respects the source's worldview and avoids importing
-    modern clock-based precision.
-  doctrine_reference: 'Translation philosophy: preserve original-language primacy
-    and do not flatten apocalyptic/cosmic imagery.'
+  rationale: The passage belongs to the Astronomical Book and uses schematic cosmological measurement. Preserving 'parts' respects the source's worldview and avoids importing modern clock-based precision.
+  doctrine_reference: 'Translation philosophy: preserve original-language primacy and do not flatten apocalyptic/cosmic imagery.'
+revisions:
+- timestamp: '2026-04-22T22:45:49Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/022.job-72591.json
+  category: grammar
+  tier: 3
+  from: and night increases beyond night, and the day grows shorter than day by day
+  to: and the night increases from night to night, and the day grows shorter from day to day
+  rationale: 'The Ge''ez construction ''noun + እም + noun'' (ሌሊት እምሌሊት, ዕለት እምዕለት) expresses progression (''from night to night'', ''from day to day''). The draft treats the first as a comparative (''beyond night'') and the second as a confused mix (''shorter than day by day''). The progressive idiom should be translated clearly rather than rendered as an awkward literalism. | Adjudicator: The Ge''ez preposition እም (em) combined with a repeated noun (e.g., ዕለት እምዕለት) is a standard idiom for distributive progression, meaning "day by day" or "from day to day" (see Dillmann, Lexicon Linguae'
+- timestamp: '2026-04-22T22:46:01Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/022.job-72591.json
+  category: missing_nuance
+  tier: 3
+  from: becomes ten parts
+  to: becomes exactly ten parts
+  rationale: 'The source text includes ''ጥንቁቀ'' (ṭənquqa, accusative of ṭənquq), meaning ''exactly'' or ''precisely''. The Astronomical Book relies heavily on exact mathematical measurement; omitting this word (as the lexical decision notes) unnecessarily loses the author''s technical precision. It does not overburden the English to include it. | Adjudicator: The reviewer is correct. The Ge''ez text explicitly includes the adverbial accusative ጥንቁቀ (ṭənquqa), meaning ''exactly'' or ''precisely,'' modifying the ten parts of the night. The Astronomical Book''s pol'

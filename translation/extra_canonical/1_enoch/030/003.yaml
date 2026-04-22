@@ -9,22 +9,20 @@ source:
   - 108
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch30.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 30,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch30.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 30, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And by the side of those valleys I saw fragrant cinnamon, and beyond them
-    I came near toward the east.
+  text: And by the edges of those valleys I saw fragrant cinnamon, and beyond them I advanced toward the east.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The opening expression is literally something like 'by the side/flank of
-      those valleys.'
+    text: The opening expression is literally something like 'by the side/flank of those valleys.'
     reason: lexical_alternative
   - marker: b
-    text: The preposition rendered 'beyond them' can also be understood more generally
-      as 'past them' or 'in the direction beyond them.'
+    text: The preposition rendered 'beyond them' can also be understood more generally as 'past them' or 'in the direction beyond them.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And by the side of those valleys I saw fragrant cinnamon, and beyond them I came near toward the east.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: መንገለ
   chosen: by the side of / beyond / toward
@@ -33,11 +31,7 @@ lexical_decisions:
   - alongside
   - in the direction of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The prepositional form recurs three times with slightly different local
-    force in the verse: first spatial adjacency (''by the side of those valleys''),
-    then extension past a landmark (''beyond them''), then directional movement (''toward
-    the east''). Rendering each by one rigid English gloss would sound unnatural and
-    obscure the scene.'
+  rationale: 'The prepositional form recurs three times with slightly different local force in the verse: first spatial adjacency (''by the side of those valleys''), then extension past a landmark (''beyond them''), then directional movement (''toward the east''). Rendering each by one rigid English gloss would sound unnatural and obscure the scene.'
 - source_word: ክንፈሩ
   chosen: side
   alternatives:
@@ -45,54 +39,47 @@ lexical_decisions:
   - border
   - wing
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Literally related to 'wing/side,' but in this topographical context it
-    describes the flank or side of the valleys, not a literal wing.
+  rationale: Literally related to 'wing/side,' but in this topographical context it describes the flank or side of the valleys, not a literal wing.
 - source_word: ቈላት
   chosen: valleys
   alternatives:
   - wadis
   - ravines
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A terrain term; 'valleys' is the most natural elevated English equivalent
-    and fits the visionary geography.
+  rationale: A terrain term; 'valleys' is the most natural elevated English equivalent and fits the visionary geography.
 - source_word: ርኢኩ
   chosen: I saw
   alternatives:
   - I beheld
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard first-person visionary report; 'I saw' preserves the directness
-    of the apocalyptic narration.
+  rationale: Standard first-person visionary report; 'I saw' preserves the directness of the apocalyptic narration.
 - source_word: ቀናንሞስ
   chosen: cinnamon
   alternatives:
   - qenanemos/cinnamon plant
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The loanword clearly denotes cinnamon/cassia-type aromatic spice. 'Cinnamon'
-    is the clearest English rendering without unnecessary transliteration.
+  rationale: The loanword clearly denotes cinnamon/cassia-type aromatic spice. 'Cinnamon' is the clearest English rendering without unnecessary transliteration.
 - source_word: ዘመዓዛ
   chosen: fragrant
   alternatives:
   - sweet-smelling
   - aromatic
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This adjectival phrase marks the cinnamon by its scent. 'Fragrant' is
-    concise and preserves the sensory quality of the vision.
+  rationale: This adjectival phrase marks the cinnamon by its scent. 'Fragrant' is concise and preserves the sensory quality of the vision.
 - source_word: ቀረብኩ
   chosen: I came near
   alternatives:
   - I approached
   - I drew near
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A movement verb indicating approach rather than arrival. 'I came near'
-    keeps the narrative motion and slightly elevated register.
+  rationale: A movement verb indicating approach rather than arrival. 'I came near' keeps the narrative motion and slightly elevated register.
 - source_word: ጽባሕ
   chosen: the east
   alternatives:
   - eastward
   - the sunrise
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In geographical context this denotes the eastern direction/region. 'Toward
-    the east' is idiomatic and preserves the directional sense.
+  rationale: In geographical context this denotes the eastern direction/region. 'Toward the east' is idiomatic and preserves the directional sense.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -123,8 +110,7 @@ enoch_witnesses:
     text: ወ*መንገለ፡ ክንፈሩ፡ ለቈላት፡ እሎንቱ፡ ርኢኩ፡ *ቀናንሞስ፡ ዘመዓዛ፡ ወ*ዲበ፡ እልንቱ፡ ቀረብኩ፡ መንገለ፡ ጽባሕ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch30.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch30.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -134,16 +120,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 30, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 30, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Rendering of the aromatic plant term in an apocalyptic landscape
   chosen_reading: cinnamon
   alternative_readings:
   - cassia
   - an aromatic reed/spice plant
-  rationale: The Ge'ez loanword points to a known aromatic spice, and 'cinnamon' is
-    the most straightforward English equivalent. Because the verse catalogs wondrous
-    landscape features, a concrete plant name is preferable to a vague generic term.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten concrete visionary
-    details into generic prose.
+  rationale: The Ge'ez loanword points to a known aromatic spice, and 'cinnamon' is the most straightforward English equivalent. Because the verse catalogs wondrous landscape features, a concrete plant name is preferable to a vague generic term.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten concrete visionary details into generic prose.
+revisions:
+- timestamp: '2026-04-22T22:42:11Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/030/003.job-72320.json
+  category: lexical
+  tier: 3
+  from: And by the side of those valleys I saw fragrant cinnamon, and beyond them I came near toward the east.
+  to: And by the edges of those valleys I saw fragrant cinnamon, and beyond them I advanced toward the east.
+  rationale: 'The drafter''s lexical note confuses `ክንፈር` (kenfar, "lip, edge, border", Dillmann col. 868) with `ክንፍ` (kenf, "wing"), leading to the rendering "side/flank". The text refers to the edges of the valleys. Additionally, "I came near toward the east" is awkward English for `ቀረብኩ መንገለ ጽባሕ`; "I advanced toward the east" better conveys the visionary''s onward movement. | Adjudicator: The reviewer correctly identifies that `ክንፈር` (kenfar) literally means "lip" or "edge" (Dillmann col. 868), making "edges" a more precise rendering than "side" (which would typically translate a word '

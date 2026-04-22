@@ -9,19 +9,17 @@ source:
   - 155
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch65.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 65,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch65.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 65, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And Enoch came from my dwelling-place and stood beside me, and he said to
-    me, “Why have you cried out to me with a bitter cry and weeping?”
+  text: And my grandfather Enoch came and stood beside me, and he said to me, “Why have you cried out to me with a bitter cry and weeping?”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The source text here is somewhat uncertain in the phrase rendered 'from
-      my dwelling-place' because the OCR reading is not fully secure. 'From my habitation'
-      or 'from my house' are possible depending on the underlying Ge'ez form.
+    text: The source text here is somewhat uncertain in the phrase rendered 'from my dwelling-place' because the OCR reading is not fully secure. 'From my habitation' or 'from my house' are possible depending on the underlying Ge'ez form.
     reason: textual_variant
+  - marker: b
+    text: Or 'And Enoch came from my dwelling-place'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: መጽአ
   chosen: came
@@ -29,26 +27,21 @@ lexical_decisions:
   - arrived
   - approached
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Basic motion verb; 'came' is the most direct and natural rendering in
-    narrative sequence.
+  rationale: Basic motion verb; 'came' is the most direct and natural rendering in narrative sequence.
 - source_word: እምሐው*የ
   chosen: from my dwelling-place
   alternatives:
   - from my habitation
   - from my house
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The OCR form is uncertain, but the phrase with እም- clearly indicates
-    origin 'from,' and the underlying noun appears to denote a place of dwelling or
-    abode. 'Dwelling-place' preserves the locative sense without overcommitting to
-    a more domestic 'house' where the reading is not fully secure.
+  rationale: The OCR form is uncertain, but the phrase with እም- clearly indicates origin 'from,' and the underlying noun appears to denote a place of dwelling or abode. 'Dwelling-place' preserves the locative sense without overcommitting to a more domestic 'house' where the reading is not fully secure.
 - source_word: ቆመ ኀቤየ
   chosen: stood beside me
   alternatives:
   - stood by me
   - stood near me
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The idiom combines 'stood' with a preposition meaning proximity. 'Beside
-    me' is idiomatic English and preserves the physical immediacy of the encounter.
+  rationale: The idiom combines 'stood' with a preposition meaning proximity. 'Beside me' is idiomatic English and preserves the physical immediacy of the encounter.
 - source_word: በምንት
   chosen: why
   alternatives:
@@ -62,24 +55,21 @@ lexical_decisions:
   - did you cry out
   - have you called out
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb denotes a loud cry or outcry, stronger than a simple 'say' or
-    'call.' Present perfect English fits the immediate-result question in dialogue.
+  rationale: The verb denotes a loud cry or outcry, stronger than a simple 'say' or 'call.' Present perfect English fits the immediate-result question in dialogue.
 - source_word: ጽራኀ መሪረ
   chosen: with a bitter cry
   alternatives:
   - a bitter outcry
   - a grievous cry
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun and adjective form an emphatic expression of anguished lament.
-    'Bitter cry' preserves both emotional intensity and compactness.
+  rationale: The noun and adjective form an emphatic expression of anguished lament. 'Bitter cry' preserves both emotional intensity and compactness.
 - source_word: ብካየ
   chosen: weeping
   alternatives:
   - lamentation
   - crying
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Refers to weeping or lamenting. 'Weeping' pairs well with 'bitter cry'
-    and preserves the verse's doubled expression of distress.
+  rationale: Refers to weeping or lamenting. 'Weeping' pairs well with 'bitter cry' and preserves the verse's doubled expression of distress.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -110,29 +100,33 @@ enoch_witnesses:
     text: ወመጽአ፡ ሄኖክ፡ እምሐው*የ፡ ወቆመ፡ ኀቤየ፡ ወይቤለኒ፡ በምንት፡ ጸራሕከ፡ ኀቤየ፡ ጽራኀ፡ መሪረ፡ ወብካየ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch65.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch65.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 65, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 65, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Identity of the speaker's location in the phrase 'from my dwelling-place'
-  chosen_reading: Translate the first-person suffix straightforwardly as the speaker's
-    own dwelling-place, without resolving whether the speaker is Noah or another visionary
-    figure beyond the immediate verse.
+  chosen_reading: Translate the first-person suffix straightforwardly as the speaker's own dwelling-place, without resolving whether the speaker is Noah or another visionary figure beyond the immediate verse.
   alternative_readings:
   - from the dwelling-place
   - from his dwelling-place
-  rationale: The Ge'ez as given points to a first-person possessive, but the broader
-    narrative identification should not be forced into the verse translation itself.
-    Transparency is preferable to harmonization.
+  rationale: The Ge'ez as given points to a first-person possessive, but the broader narrative identification should not be forced into the verse translation itself. Transparency is preferable to harmonization.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:44:11Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/065/005.job-72507.json
+  category: mistranslation
+  tier: 3
+  from: And Enoch came from my dwelling-place
+  to: And my grandfather Enoch came
+  rationale: 'The OCR reading `እምሐው*የ` is a misrecognition of `አምኄውየ` (ʾamḥewəya, "my grandfather"), which appears correctly in verse 2 (`ለአምኄው፡ ሄኖክ`). The draft incorrectly parsed the first syllable as the preposition `እም-` ("from") and guessed "dwelling-place" for the remainder. The text should read "my grandfather Enoch came", which also resolves the narrative impossibility of Enoch coming from Noah''s dwelling-place. The accompanying footnote and theological note based on this error should be discarded. | Adjudicator: The reviewer is entirely correct. The Ge''ez word for ''grandfather'' is እምሔው (ʾəmḥew), which with the first-person suffix is እምሔውየ (ʾəmḥewəya). The OCR misread this as እምሐው*የ, causing the previous trans'

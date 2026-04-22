@@ -9,22 +9,20 @@ source:
   - 88
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch19.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 19,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch19.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 19, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the women of those who went astray will become like the angels, peaceful
-    ones.
+  text: And the women of the angels who went astray will become like peaceful ones.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: Or 'their wives'; the Ge'ez term can denote women generally or wives specifically.
     reason: lexical_alternative
   - marker: b
-    text: The phrase 'like the angels, peaceful ones' is difficult. The comparison
-      is clear, but 'peaceful ones' may either describe the angels or indicate a state
-      of peace into which the women enter.
+    text: The phrase 'like the angels, peaceful ones' is difficult. The comparison is clear, but 'peaceful ones' may either describe the angels or indicate a state of peace into which the women enter.
     reason: alternative_reading
+  - marker: c
+    text: Or 'And the women of those who went astray will become like the angels, peaceful ones.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: አንስትያሆሙኒ
   chosen: the women of those
@@ -32,10 +30,7 @@ lexical_decisions:
   - their women
   - their wives
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form is built on the Ge'ez word for 'women/wives' with a pronominal
-    suffix. Because the suffix refers back to the preceding group in context, 'the
-    women of those' keeps the relation explicit without overcommitting to 'wives'
-    if the text means women associated with them more broadly.
+  rationale: The form is built on the Ge'ez word for 'women/wives' with a pronominal suffix. Because the suffix refers back to the preceding group in context, 'the women of those' keeps the relation explicit without overcommitting to 'wives' if the text means women associated with them more broadly.
 - source_word: ስሑታን
   chosen: who went astray
   alternatives:
@@ -43,24 +38,20 @@ lexical_decisions:
   - the sinners
   - the fallen ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term denotes those who have strayed or erred. 'Who went astray' preserves
-    the moral and directional force of the root better than the more generalized 'sinners.'
-    In context it refers to the offending angelic beings already under discussion.
+  rationale: The term denotes those who have strayed or erred. 'Who went astray' preserves the moral and directional force of the root better than the more generalized 'sinners.' In context it refers to the offending angelic beings already under discussion.
 - source_word: መላእክት
   chosen: angels
   alternatives:
   - messengers
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this apocalyptic context the referent is clearly heavenly beings,
-    so 'angels' is the natural English rendering rather than the more generic 'messengers.'
+  rationale: In this apocalyptic context the referent is clearly heavenly beings, so 'angels' is the natural English rendering rather than the more generic 'messengers.'
 - source_word: ተከመ
   chosen: like
   alternatives:
   - as
   - in the manner of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This comparative particle introduces likeness, not identity. 'Like' avoids
-    implying that the women literally become angels in essence.
+  rationale: This comparative particle introduces likeness, not identity. 'Like' avoids implying that the women literally become angels in essence.
 - source_word: ሰላማዊያት
   chosen: peaceful ones
   alternatives:
@@ -68,17 +59,14 @@ lexical_decisions:
   - in peace
   - peaceable ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective is derived from 'peace.' Rendering it substantivally as
-    'peaceful ones' matches the plural form and preserves the elevated, descriptive
-    tone of the vision. It may characterize the angels as beings in a state of peace.
+  rationale: The adjective is derived from 'peace.' Rendering it substantivally as 'peaceful ones' matches the plural form and preserves the elevated, descriptive tone of the vision. It may characterize the angels as beings in a state of peace.
 - source_word: ይከውና
   chosen: will become
   alternatives:
   - will be
   - shall come to be
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb expresses becoming or coming to be. 'Will become' fits the future
-    transformation implied by the vision better than the flatter 'will be.'
+  rationale: The verb expresses becoming or coming to be. 'Will become' fits the future transformation implied by the vision better than the flatter 'will be.'
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -109,8 +97,7 @@ enoch_witnesses:
     text: ወአንስትያሆሙኒ፡ ለስሑታን፡ መላእክት፡ ተከመ፡ ሰላማዊያት፡ ይከውና፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch19.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch19.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -120,18 +107,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 19, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 19, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Nature of the women's transformation
-  chosen_reading: 'comparative transformation: they will become like angels, not literally
-    be identified as angels'
+  chosen_reading: 'comparative transformation: they will become like angels, not literally be identified as angels'
   alternative_readings:
   - they will be angels
   - they will dwell in peace with the angels
-  rationale: The comparative marker supports likeness rather than ontological identity.
-    The verse presents an apocalyptic reversal of the women associated with the erring
-    beings, but the Ge'ez as given does not require a full statement that they themselves
-    are angels.
-  doctrine_reference: Preserve theological tension rather than resolve it; do not
-    over-harmonize beyond the local passage.
+  rationale: The comparative marker supports likeness rather than ontological identity. The verse presents an apocalyptic reversal of the women associated with the erring beings, but the Ge'ez as given does not require a full statement that they themselves are angels.
+  doctrine_reference: Preserve theological tension rather than resolve it; do not over-harmonize beyond the local passage.
+revisions:
+- timestamp: '2026-04-22T22:35:39Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/019/002.job-72262.json
+  category: grammar
+  tier: 3
+  from: And the women of those who went astray will become like the angels, peaceful ones.
+  to: And the women of the angels who went astray will become like peaceful ones.
+  rationale: 'The draft misparses the syntax. In the Ge''ez, `ለስሑታን፡ መላእክት` (la-seḥutān malā''ekt) is a single genitive phrase meaning "of the angels who went astray," modifying "the women." The draft incorrectly splits this phrase, taking "angels" as the object of comparison ("like the angels"). The text should read "the women of the angels who went astray will become like peaceful ones." | Adjudicator: The reviewer correctly identifies the Ge''ez syntax. The phrase `ለስሑታን፡ መላእክት` (la-seḥutān malā''ekt) is a single genitive construction meaning ''of the angels who went astray,'' which modifies ''the women'

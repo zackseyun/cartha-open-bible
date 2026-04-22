@@ -3,8 +3,7 @@ reference: 1 Enoch 72:26
 book: 1 Enoch
 source:
   edition: charles-1906-enoch
-  text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ ወትከውን፡ ፵ዕበታ፡ ለማዓልት፡ ወትከውን፡ ሌሊት፡ ፲ወ፪ተ፡ ወ፪እቲ፡ ክፍለ፡ ጥንቅቀ፡
-    ወማዓልት፡ ስድስተ፡ ክፍለ።
+  text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ ወትከውን፡ ፵ዕበታ፡ ለማዓልት፡ ወትከውን፡ ሌሊት፡ ፲ወ፪ተ፡ ወ፪እቲ፡ ክፍለ፡ ጥንቅቀ፡ ወማዓልት፡ ስድስተ፡ ክፍለ።
   language: Geez
   pages:
   - 169
@@ -15,24 +14,23 @@ source:
   - 174
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night decreases and becomes nine parts of the day, and
-    the night becomes twelve parts and two parts of a division, and the day six parts.
+  text: And on that day the night increases and becomes nine parts of the day, and the night becomes twelve parts and two parts exactly, and the day six parts.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The numerical wording in this verse is difficult in the Ethiopic witness.
-      The text appears to preserve a schematic measurement of day and night in parts,
-      but the arithmetic and syntax are awkward; some interpreters would normalize
-      the numbers from the surrounding context.
+    text: The numerical wording in this verse is difficult in the Ethiopic witness. The text appears to preserve a schematic measurement of day and night in parts, but the arithmetic and syntax are awkward; some interpreters would normalize the numbers from the surrounding context.
     reason: textual_variant
   - marker: b
-    text: The phrase rendered 'of a division' may also mean 'of the measure' or 'of
-      the reckoning.'
+    text: The phrase rendered 'of a division' may also mean 'of the measure' or 'of the reckoning.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'decreases'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'of a division'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: on that day
@@ -40,33 +38,28 @@ lexical_decisions:
   - in that day
   - at that time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard temporal phrase; 'on that day' preserves the demonstrative force
-    and the repetitive astronomical-report style.
+  rationale: Standard temporal phrase; 'on that day' preserves the demonstrative force and the repetitive astronomical-report style.
 - source_word: ትነሡኅ ሌሊት
   chosen: the night decreases
   alternatives:
   - the night diminishes
   - the night is shortened
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb indicates reduction or lessening. 'Decreases' is clear modern
-    English and fits the measured calendrical context without paraphrase.
+  rationale: The verb indicates reduction or lessening. 'Decreases' is clear modern English and fits the measured calendrical context without paraphrase.
 - source_word: ፵ዕበታ ለማዓልት
   chosen: nine parts of the day
   alternatives:
   - nine portions of the day
   - nine parts relative to the day
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Astronomical Book, day and night are regularly measured in numbered
-    parts. 'Parts' preserves the technical schematic language.
+  rationale: In the Astronomical Book, day and night are regularly measured in numbered parts. 'Parts' preserves the technical schematic language.
 - source_word: ፲ወ፪ተ ወ፪እቲ
   chosen: twelve parts and two parts
   alternatives:
   - twelve and two parts
   - fourteen parts
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ethiopic wording is awkward and appears to preserve an additive numerical
-    expression. I retain the explicit numbers rather than collapsing them into 'fourteen,'
-    because the source presents them separately and the line is textually difficult.
+  rationale: The Ethiopic wording is awkward and appears to preserve an additive numerical expression. I retain the explicit numbers rather than collapsing them into 'fourteen,' because the source presents them separately and the line is textually difficult.
 - source_word: ክፍለ ጥንቅቀ
   chosen: of a division
   alternatives:
@@ -74,18 +67,14 @@ lexical_decisions:
   - of the measure
   - of the exact measure
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ክፍል is 'part/division'; the following term is difficult and may intensify
-    the idea of measured precision. 'Of a division' keeps the syntax visible while
-    avoiding overconfident interpretation.
+  rationale: ክፍል is 'part/division'; the following term is difficult and may intensify the idea of measured precision. 'Of a division' keeps the syntax visible while avoiding overconfident interpretation.
 - source_word: ማዓልት ስድስተ ክፍለ
   chosen: the day six parts
   alternatives:
   - the day is six parts
   - the day becomes six parts
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The clause is terse and likely elliptical in this numerical schema. I
-    preserve the compact style, though English requires slight smoothing in the full
-    sentence.
+  rationale: The clause is terse and likely elliptical in this numerical schema. I preserve the compact style, though English requires slight smoothing in the full sentence.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -113,12 +102,10 @@ enoch_witnesses:
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ ወትከውን፡ ፵ዕበታ፡ ለማዓልት፡ ወትከውን፡ ሌሊት፡ ፲ወ፪ተ፡ ወ፪እቲ፡ ክፍለ፡
-      ጥንቅቀ፡ ወማዓልት፡ ስድስተ፡ ክፍለ።
+    text: ወበይእቲ፡ ዕለት፡ ትነሡኅ፡ ሌሊት፡ ወትከውን፡ ፵ዕበታ፡ ለማዓልት፡ ወትከውን፡ ሌሊት፡ ፲ወ፪ተ፡ ወ፪እቲ፡ ክፍለ፡ ጥንቅቀ፡ ወማዓልት፡ ስድስተ፡ ክፍለ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -128,17 +115,33 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to smooth the astronomical arithmetic into a harmonized statement
-  chosen_reading: Retain the awkward numerical sequence as transmitted in the Ge'ez,
-    with minimal smoothing
+  chosen_reading: Retain the awkward numerical sequence as transmitted in the Ge'ez, with minimal smoothing
   alternative_readings:
   - Normalize the numbers to a presumed fourteen-part night and shorter day
   - Emend the verse from parallel context
-  rationale: This is not a theological crux in the doctrinal sense, but it is an interpretive
-    decision affecting transparency. The project philosophy prefers source-text primacy
-    and preserving tension/uncertainty rather than silently harmonizing a difficult
-    line.
+  rationale: This is not a theological crux in the doctrinal sense, but it is an interpretive decision affecting transparency. The project philosophy prefers source-text primacy and preserving tension/uncertainty rather than silently harmonizing a difficult line.
   doctrine_reference: Translation philosophy §§1, 3, 5
+revisions:
+- timestamp: '2026-04-22T22:46:13Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/026.job-72595.json
+  category: mistranslation
+  tier: 3
+  from: decreases
+  to: increases
+  rationale: 'The verb ነሡኀ (naśuḫa) means ''to be long, to increase, to lengthen'' (Dillmann, Lexicon Linguae Aethiopicae, col. 685). The draft translates it as ''decreases'', which is the exact opposite of its meaning and contradicts the correct rendering of the same verb in 72:22. | Adjudicator: The reviewer is correct. The Ge''ez verb in the source text (`ትነሡኅ`) is an OCR error for `ትነውኅ` (tənawwəḫ, from the root `ነውኀ`, Dillmann col. 685), which means ''to be long'' or ''to increase.'' Furthermor'
+- timestamp: '2026-04-22T22:46:52Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/026.job-72595.json
+  category: lexical
+  tier: 3
+  from: of a division
+  to: exactly
+  rationale: 'The word ጥንቅቀ (ṭenquqa) is an adverb meaning ''exactly, precisely'' (from ጠነቀቀ), frequently used in the Astronomical Book to denote exact measurements. It does not mean ''of a division.'' The phrase ''ክፍለ ጥንቅቀ'' means ''parts exactly.'' | Adjudicator: The reviewer is entirely correct. The Ge''ez word ጥንቅቀ (ṭenquqa) is an adverb derived from the root ጠነቀቀ (to be exact, precise) and translates to ''exactly,'' ''precisely,'' or ''accurately'' (Leslau CDG 593'

@@ -13,22 +13,23 @@ source:
   - 145
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And a great trembling seized me, and fear took hold of me; and my loins were
-    loosened, and my kidneys were dissolved, and I fell on my face.
+  text: And as for me, a great trembling seized me, and fear took hold of me; and my loins were broken, and my kidneys were dissolved, and I fell on my face.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Literally 'my kidneys were dissolved.' In ancient Semitic-style bodily language,
-      the kidneys can represent the inner self or deep emotions.
+    text: Literally 'my kidneys were dissolved.' In ancient Semitic-style bodily language, the kidneys can represent the inner self or deep emotions.
     reason: cultural_note
   - marker: b
-    text: The clause about the loins may also be rendered 'my hips gave way' or 'my
-      loins collapsed.'
+    text: The clause about the loins may also be rendered 'my hips gave way' or 'my loins collapsed.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And a great trembling seized me'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'my loins were loosened'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ረዓድ ዐቢይ
   chosen: a great trembling
@@ -36,9 +37,7 @@ lexical_decisions:
   - a great shaking
   - great terror
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase denotes intense bodily trembling or shaking. 'Trembling' preserves
-    the physical, visionary reaction better than the more interpretive 'terror,' while
-    'great' keeps the emphatic modifier.
+  rationale: The phrase denotes intense bodily trembling or shaking. 'Trembling' preserves the physical, visionary reaction better than the more interpretive 'terror,' while 'great' keeps the emphatic modifier.
 - source_word: ነሥአኒ
   chosen: seized me
   alternatives:
@@ -46,43 +45,35 @@ lexical_decisions:
   - carried me
   - came upon me
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In context with trembling as subject, the sense is that the trembling
-    overtook or seized Enoch. 'Lifted me' would be a possible bare lexical sense elsewhere,
-    but does not fit the fear reaction sequence here.
+  rationale: In context with trembling as subject, the sense is that the trembling overtook or seized Enoch. 'Lifted me' would be a possible bare lexical sense elsewhere, but does not fit the fear reaction sequence here.
 - source_word: ፍርሃት አሐዘኒ
   chosen: fear took hold of me
   alternatives:
   - fear seized me
   - I was afraid
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This keeps the concrete idiom of fear grasping the speaker, preserving
-    the apocalyptic bodily force rather than reducing it to a simple emotional statement.
+  rationale: This keeps the concrete idiom of fear grasping the speaker, preserving the apocalyptic bodily force rather than reducing it to a simple emotional statement.
 - source_word: ሐቌየ ተቀጽዐ
   chosen: my loins were loosened
   alternatives:
   - my hips gave way
   - my strength in the loins collapsed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun refers to the loins/hip region, a common seat of bodily strength.
-    'Were loosened' reflects collapse or giving way without over-paraphrasing.
+  rationale: The noun refers to the loins/hip region, a common seat of bodily strength. 'Were loosened' reflects collapse or giving way without over-paraphrasing.
 - source_word: ኵልያትየ ተፈትሑ
   chosen: my kidneys were dissolved
   alternatives:
   - my inward parts melted
   - my reins were loosed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ge'ez term literally denotes kidneys. Because ancient anthropological
-    language often uses kidneys as the seat of inner emotion, the literal rendering
-    is kept for transparency, while 'were dissolved' conveys the image of inner collapse.
+  rationale: The Ge'ez term literally denotes kidneys. Because ancient anthropological language often uses kidneys as the seat of inner emotion, the literal rendering is kept for transparency, while 'were dissolved' conveys the image of inner collapse.
 - source_word: ወወደቁ በገጽየ
   chosen: and I fell on my face
   alternatives:
   - and they fell before me
   - and I fell upon my face
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase is a standard bodily posture of collapse/prostration. Given
-    the first-person sequence throughout the verse, the sense is best rendered as
-    Enoch himself falling face-down.
+  rationale: The phrase is a standard bodily posture of collapse/prostration. Given the first-person sequence throughout the verse, the sense is best rendered as Enoch himself falling face-down.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -113,29 +104,43 @@ enoch_witnesses:
     text: ወሊተ፡ ረዓድ፡ ዐቢይ፡ ነሥአኒ፡ ወፍርሃት፡ አሐዘኒ፡ ወሐቌየ፡ *ተቀጽዐ፡ ወ*ተፈትሑ፡ ኵልያትየ፡ ወወደቁ፡ በገጽየ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether to preserve the literal anthropological term 'kidneys' or replace
-    it with a modern idiom such as 'heart' or 'inward parts'
+- issue: Whether to preserve the literal anthropological term 'kidneys' or replace it with a modern idiom such as 'heart' or 'inward parts'
   chosen_reading: Retain 'kidneys' in the main text
   alternative_readings:
   - my inward parts were dissolved
   - my heart melted
-  rationale: The project philosophy favors transparency to the source over smoothing
-    inherited bodily imagery. In apocalyptic literature, bodily disintegration imagery
-    should remain vivid and strange where the source warrants it.
-  doctrine_reference: 'Translation philosophy: Original-language primacy over translation
-    tradition; preserve theological tension rather than resolve it.'
+  rationale: The project philosophy favors transparency to the source over smoothing inherited bodily imagery. In apocalyptic literature, bodily disintegration imagery should remain vivid and strange where the source warrants it.
+  doctrine_reference: 'Translation philosophy: Original-language primacy over translation tradition; preserve theological tension rather than resolve it.'
+revisions:
+- timestamp: '2026-04-22T22:43:25Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/003.job-72446.json
+  category: missing_nuance
+  tier: 3
+  from: And a great trembling seized me
+  to: And as for me, a great trembling seized me
+  rationale: 'The Ge''ez begins with the topicalized pronoun ወሊተ (wa-lita, ''And to me'' / ''And as for me''), which emphatically shifts the focus from the heavenly throne scene in v. 2 back to Enoch''s personal physical reaction. The draft flattens this by omitting the pronoun. | Adjudicator: The Ge''ez text explicitly includes the prepositional phrase ወሊተ (wa-lita, "and to me") before the verb ነሥአኒ (naš''ani, "seized me"). This construction serves to topicalize the pronoun, emphasizing the '
+- timestamp: '2026-04-22T22:43:39Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/003.job-72446.json
+  category: lexical
+  tier: 3
+  from: my loins were loosened
+  to: my loins were broken
+  rationale: 'Adjudicator-modified: The reviewer is correct that the Ge''ez verb ተቀጽዐ (taqaṣṣe''a) means ''to be broken, crushed, or shattered,'' and the current rendering ''were loosened'' improperly borrows from the following verb ተፈትሑ (tafatḥu). However, ''were broken'' is a more precise and literal rendering of the passive verb than the proposed ''collapsed,'' and it maintains the parallel passive structure with ''were dissolved'' in the following clause.'

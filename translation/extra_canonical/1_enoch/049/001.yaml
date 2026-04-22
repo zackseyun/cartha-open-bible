@@ -9,22 +9,20 @@ source:
   - 130
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch49.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 49,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch49.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 49, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For wisdom will be poured out like water, and glory will not fail before him
-    forever and ever.
+  text: For wisdom has been poured out like water, and glory will not fail before him forever and ever.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The pronoun 'him' is left unspecified in the Ge'ez here; the wider context
-      may point to a previously mentioned exalted figure, but the verse itself does
-      not name the referent.
+    text: The pronoun 'him' is left unspecified in the Ge'ez here; the wider context may point to a previously mentioned exalted figure, but the verse itself does not name the referent.
     reason: alternative_reading
   - marker: b
     text: Or 'glory will not come to an end before him.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'will be poured out'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እስመ
   chosen: For
@@ -32,23 +30,20 @@ lexical_decisions:
   - because
   - for indeed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces the ground or explanation for the preceding context; 'For'
-    preserves the connective force in elevated but natural English.
+  rationale: Introduces the ground or explanation for the preceding context; 'For' preserves the connective force in elevated but natural English.
 - source_word: ጥበብ
   chosen: wisdom
   alternatives:
   - understanding
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The standard sense is 'wisdom'; this fits the revelatory and sapiential
-    tone of the Parables without overinterpreting.
+  rationale: The standard sense is 'wisdom'; this fits the revelatory and sapiential tone of the Parables without overinterpreting.
 - source_word: ክዕወ
   chosen: will be poured out
   alternatives:
   - will flow
   - will gush forth
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In context with 'like water,' the verb suggests effusive outpouring rather
-    than mere existence or motion. 'Poured out' preserves the vivid apocalyptic image.
+  rationale: In context with 'like water,' the verb suggests effusive outpouring rather than mere existence or motion. 'Poured out' preserves the vivid apocalyptic image.
 - source_word: ከመ ማይ
   chosen: like water
   alternatives:
@@ -61,32 +56,28 @@ lexical_decisions:
   - and splendor
   - and praise
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun can overlap with splendor/praise, but 'glory' best fits the
-    exalted, heavenly register and the parallel with wisdom in this enthronement context.
+  rationale: The noun can overlap with splendor/praise, but 'glory' best fits the exalted, heavenly register and the parallel with wisdom in this enthronement context.
 - source_word: ኢትኃልቅ
   chosen: will not fail
   alternatives:
   - will not come to an end
   - will not perish
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The negated verb denotes not ceasing or being exhausted. 'Will not fail'
-    is concise, idiomatic, and preserves the durative sense.
+  rationale: The negated verb denotes not ceasing or being exhausted. 'Will not fail' is concise, idiomatic, and preserves the durative sense.
 - source_word: ቅድሜሁ
   chosen: before him
   alternatives:
   - in his presence
   - before his face
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Literally 'before him.' This keeps the spatial-relational sense and leaves
-    the referent transparent rather than interpretively expanding it.
+  rationale: Literally 'before him.' This keeps the spatial-relational sense and leaves the referent transparent rather than interpretively expanding it.
 - source_word: ለዓለመ ዓለም
   chosen: forever and ever
   alternatives:
   - for the age of ages
   - for ever
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: An idiomatic rendering of the emphatic eternal formula; elevated and
-    readable while preserving the superlative duration.
+  rationale: An idiomatic rendering of the emphatic eternal formula; elevated and readable while preserving the superlative duration.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -117,29 +108,33 @@ enoch_witnesses:
     text: እስመ፡ ጥበብ፡ ክዕወ፡ ከመ፡ ማይ፡ ወስብሐት፡ ኢትኃልቅ፡ ቅድሜሁ፡ ለዓለመ፡ ዓለም።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch49.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch49.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 49, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 49, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Referent of 'him' in 'before him'
-  chosen_reading: Retain the pronoun as 'him' without specifying the antecedent in
-    the main text.
+  chosen_reading: Retain the pronoun as 'him' without specifying the antecedent in the main text.
   alternative_readings:
   - before the Lord of Spirits
   - before the Chosen One / Son of Man
-  rationale: The immediate Ge'ez verse gives only the pronoun. In the Parables, antecedents
-    can shift across nearby verses, and this section lacks external textual controls.
-    Preserving the pronoun maintains the source's ambiguity rather than resolving
-    it by theological expectation.
+  rationale: The immediate Ge'ez verse gives only the pronoun. In the Parables, antecedents can shift across nearby verses, and this section lacks external textual controls. Preserving the pronoun maintains the source's ambiguity rather than resolving it by theological expectation.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:43:00Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/049/001.job-72396.json
+  category: grammar
+  tier: 3
+  from: will be poured out
+  to: has been poured out
+  rationale: 'The Ge''ez verb ክዕወ (kəʿwa) is in the perfect tense, denoting a completed action or established state (''has been poured out'' or ''is poured out''), not the future tense. Translating it as future flattens the aspectual distinction between this perfect verb and the subsequent imperfect verb ኢትኃልቅ (''will not fail''). | Adjudicator: The rationale correctly identifies the grammatical form of the Ge''ez verb ክዕወ (kəʿwa). It is in the perfect tense, indicating a completed action or established state, whereas the current translation r'

@@ -9,21 +9,20 @@ source:
   - 118
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch40.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 40,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch40.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 40, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I heard the voices of those four presences as they gave praise before
-    the Lord of glory.
+  text: And I heard the voices of those four faces as they gave praise before the Lord of glory.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Literally, 'those four faces.' The phrase likely refers to the four heavenly
-      figures seen in the vision rather than to faces in isolation.
+    text: Literally, 'those four faces.' The phrase likely refers to the four heavenly figures seen in the vision rather than to faces in isolation.
     reason: lexical_alternative
   - marker: b
     text: The title can also be rendered 'Lord of splendor.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'those four presences'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወሰማዕኩ
   chosen: And I heard
@@ -31,8 +30,7 @@ lexical_decisions:
   - And I listened to
   - And I heard the sound of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Straightforward first-person preterite of hearing; 'heard' preserves
-    the visionary report style without expansion.
+  rationale: Straightforward first-person preterite of hearing; 'heard' preserves the visionary report style without expansion.
 - source_word: ቃሎሙ
   chosen: the voices of them
   alternatives:
@@ -40,8 +38,7 @@ lexical_decisions:
   - their words
   - their sound
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun can denote voice/sound/word. In this context of heavenly praise,
-    'voices' best fits the audible scene better than 'words,' while avoiding over-interpretation.
+  rationale: The noun can denote voice/sound/word. In this context of heavenly praise, 'voices' best fits the audible scene better than 'words,' while avoiding over-interpretation.
 - source_word: እልኩ ገጽ አርባዕቱ
   chosen: those four presences
   alternatives:
@@ -49,11 +46,7 @@ lexical_decisions:
   - those four figures
   - those four beings
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Ge'ez ገጽ literally means 'face,' but in this context the verse refers
-    back to the four heavenly beings seen around the Lord of Spirits/Glory. Rendering
-    it woodenly as 'faces' is possible but awkward and potentially misleading in English.
-    'Presences' preserves the sense of distinct heavenly personages appearing before
-    God while remaining transparent to the underlying imagery.
+  rationale: Ge'ez ገጽ literally means 'face,' but in this context the verse refers back to the four heavenly beings seen around the Lord of Spirits/Glory. Rendering it woodenly as 'faces' is possible but awkward and potentially misleading in English. 'Presences' preserves the sense of distinct heavenly personages appearing before God while remaining transparent to the underlying imagery.
 - source_word: እንዘ ይሴብሑ
   chosen: as they gave praise
   alternatives:
@@ -61,26 +54,21 @@ lexical_decisions:
   - as they praised
   - while blessing
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The construction marks contemporaneous action. 'As they gave praise'
-    is elevated but readable and suits liturgical heavenly speech.
+  rationale: The construction marks contemporaneous action. 'As they gave praise' is elevated but readable and suits liturgical heavenly speech.
 - source_word: ቅድመ
   chosen: before
   alternatives:
   - in the presence of
   - before the face of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard preposition meaning 'before/in the presence of.' 'Before' is
-    concise and preserves the courtly heavenly setting.
+  rationale: Standard preposition meaning 'before/in the presence of.' 'Before' is concise and preserves the courtly heavenly setting.
 - source_word: እግዚአ ስብሐት
   chosen: the Lord of glory
   alternatives:
   - the Lord of splendor
   - the Master of glory
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A divine title. 'Lord of glory' is the most natural rendering of the
-    Ge'ez components and preserves the elevated apocalyptic register. 'Master' is
-    possible for እግዚአ but 'Lord' better matches the project's title policy and biblical-theological
-    diction.
+  rationale: A divine title. 'Lord of glory' is the most natural rendering of the Ge'ez components and preserves the elevated apocalyptic register. 'Master' is possible for እግዚአ but 'Lord' better matches the project's title policy and biblical-theological diction.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -111,31 +99,33 @@ enoch_witnesses:
     text: ወሰማዕኩ፡ ቃሎሙ፡ ለ*እልኩ፡ ገጽ፡ አርባዕቱ፡ እንዘ፡ ይሴብሑ፡ ቅድመ፡ እግዚአ፡ ስብሐት።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch40.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch40.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 40, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 40, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether to render ገጽ literally as 'faces' or contextually as a term for the
-    four heavenly beings
+- issue: Whether to render ገጽ literally as 'faces' or contextually as a term for the four heavenly beings
   chosen_reading: those four presences
   alternative_readings:
   - those four faces
   - those four beings
-  rationale: The immediate context in 1 Enoch 40 concerns four heavenly figures standing
-    before God. A strictly literal 'faces' would preserve the lexical form but sound
-    opaque or misleading in English, as though only disembodied faces were in view.
-    'Presences' keeps the visionary and courtly sense without flattening them into
-    generic 'angels.'
-  doctrine_reference: Preserve apocalyptic imagery while using readable modern English;
-    document exceptions to strict consistency.
+  rationale: The immediate context in 1 Enoch 40 concerns four heavenly figures standing before God. A strictly literal 'faces' would preserve the lexical form but sound opaque or misleading in English, as though only disembodied faces were in view. 'Presences' keeps the visionary and courtly sense without flattening them into generic 'angels.'
+  doctrine_reference: Preserve apocalyptic imagery while using readable modern English; document exceptions to strict consistency.
+revisions:
+- timestamp: '2026-04-22T22:42:30Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/040/003.job-72357.json
+  category: consistency
+  tier: 3
+  from: those four presences
+  to: those four faces
+  rationale: 'The author uses the exact same word (ገጽ, gaṣ) here as in 40:2 (ገጸ, gaṣa). The draft translates it as ''faces'' in 40:2 but switches to ''presences'' in 40:3. In apocalyptic visionary reports, ''faces'' is a standard designation for these beings, and preserving the lexical chain is crucial for the anaphoric reference (''*those* four faces''). | Adjudicator: The Ge''ez word ገጽ (gaṣ) primarily means ''face'' and is used in both 40:2 and 40:3. Since the draft translates it as ''faces'' in 40:2, switching to ''presences'' in 40:3 breaks the explicit anaphoric link '

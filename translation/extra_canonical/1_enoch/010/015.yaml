@@ -11,22 +11,23 @@ source:
   - 66
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 10,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And destroy the spirits of the bastards and the children of the Watchers,
-    because they have wronged humankind.
+  text: And destroy these spirits of the bastards and the children of the Watchers, because they have oppressed humankind.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'illegitimate offspring.' The Ge'ez term is severe and likely refers
-      to the unlawful mixed progeny produced by the Watchers.
+    text: Or 'illegitimate offspring.' The Ge'ez term is severe and likely refers to the unlawful mixed progeny produced by the Watchers.
     reason: lexical_alternative
   - marker: b
-    text: Or 'have done violence to humankind.' The verb can carry a stronger sense
-      than simple moral wrongdoing.
+    text: Or 'have done violence to humankind.' The verb can carry a stronger sense than simple moral wrongdoing.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'destroy the spirits'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'have wronged'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: አኅጕሎሙ
   chosen: destroy them
@@ -34,42 +35,34 @@ lexical_decisions:
   - wipe them out
   - bring them to an end
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Imperative/jussive force in context of divine judgment. 'Destroy' preserves
-    the severity of the command without over-specifying the manner.
+  rationale: Imperative/jussive force in context of divine judgment. 'Destroy' preserves the severity of the command without over-specifying the manner.
 - source_word: መናፍስተ
   chosen: spirits
   alternatives:
   - souls
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this apocalyptic context the term refers to disembodied spiritual
-    beings rather than merely 'souls' in a generalized sense.
+  rationale: In this apocalyptic context the term refers to disembodied spiritual beings rather than merely 'souls' in a generalized sense.
 - source_word: ተውኔት
   chosen: bastards
   alternatives:
   - illegitimate offspring
   - mongrels
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term denotes illegitimate or mixed offspring. 'Bastards' is harsh
-    but matches the polemical force of the judgment context; a softer alternative
-    is noted in a footnote because modern English can hear the term primarily as an
-    insult.
+  rationale: The term denotes illegitimate or mixed offspring. 'Bastards' is harsh but matches the polemical force of the judgment context; a softer alternative is noted in a footnote because modern English can hear the term primarily as an insult.
 - source_word: ውሉዶሙ
   chosen: their children
   alternatives:
   - their offspring
   - their sons
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Straightforward filial term. 'Children' is broad and natural English,
-    while still allowing the appositional relation to the Watchers in context.
+  rationale: Straightforward filial term. 'Children' is broad and natural English, while still allowing the appositional relation to the Watchers in context.
 - source_word: ትጉሃን
   chosen: the Watchers
   alternatives:
   - the wakeful ones
   - the vigilant ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This is the established apocalyptic designation for the angelic beings
-    of this section. Translating it here would weaken the literary linkage within
-    the Book of the Watchers.
+  rationale: This is the established apocalyptic designation for the angelic beings of this section. Translating it here would weaken the literary linkage within the Book of the Watchers.
 - source_word: ገፍዕዎሙ
   chosen: have wronged
   alternatives:
@@ -77,9 +70,7 @@ lexical_decisions:
   - have done violence to
   - have afflicted
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys harmful, violent mistreatment. 'Have wronged' is broad
-    enough to cover the violence done to humanity in the chapter, while a stronger
-    alternative is preserved in a footnote.
+  rationale: The verb conveys harmful, violent mistreatment. 'Have wronged' is broad enough to cover the violence done to humanity in the chapter, while a stronger alternative is preserved in a footnote.
 - source_word: ሰብእ
   chosen: humankind
   alternatives:
@@ -87,8 +78,7 @@ lexical_decisions:
   - humanity
   - people
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Inclusive rendering fits the collective sense of the Ge'ez and avoids
-    the misleadingly male-specific sense of older English 'men'.
+  rationale: Inclusive rendering fits the collective sense of the Ge'ez and avoids the misleadingly male-specific sense of older English 'men'.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -119,8 +109,7 @@ enoch_witnesses:
     text: ወአኅጕሎሙ፡ ለእሉ፡ *መናፍስተ፡ ተውኔት፡ ወለውሉዶሙ፡ ለትጉሃን፡ እስመ፡ ገፍዕዎሙ፡ ለሰብእ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -130,18 +119,33 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Identity of the judged beings as spirits rather than embodied giants
-  chosen_reading: The verse is rendered as referring to the spirits of the illicit
-    offspring, alongside the children of the Watchers.
+  chosen_reading: The verse is rendered as referring to the spirits of the illicit offspring, alongside the children of the Watchers.
   alternative_readings:
-  - 'The phrase could be taken as two labels for the same group: ''the spirits of
-    the bastards, that is, the children of the Watchers'''
-  - The line may reflect a compressed tradition about the postmortem spirits of the
-    giants
-  rationale: The Ge'ez presents both 'spirits' and 'children of the Watchers.' Given
-    the wider context of 1 Enoch 10 and 15, preserving both elements keeps the text's
-    theological tension rather than collapsing it into a single explanatory gloss.
+  - 'The phrase could be taken as two labels for the same group: ''the spirits of the bastards, that is, the children of the Watchers'''
+  - The line may reflect a compressed tradition about the postmortem spirits of the giants
+  rationale: The Ge'ez presents both 'spirits' and 'children of the Watchers.' Given the wider context of 1 Enoch 10 and 15, preserving both elements keeps the text's theological tension rather than collapsing it into a single explanatory gloss.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:24:01Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/010/015.job-72206.json
+  category: mistranslation
+  tier: 3
+  from: destroy the spirits
+  to: destroy these spirits
+  rationale: 'The Ge''ez text includes the demonstrative pronoun እሉ (ʾəllu, ''these'') in the phrase ለእሉ፡ መናፍስተ (la-ʾəllu manāfəsta, ''these spirits''). The draft omits it. | Adjudicator: The Ge''ez text explicitly includes the plural demonstrative pronoun እሉ (ʾəllu, ''these'') modifying ''spirits'' (መናፍስተ, manāfəsta). The current translation omits it, while the proposed rewrite accurately '
+- timestamp: '2026-04-22T22:24:11Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.9
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/010/015.job-72206.json
+  category: missing_nuance
+  tier: 3
+  from: have wronged
+  to: have oppressed
+  rationale: 'The verb ገፍዐ (gafʿa) means to oppress, afflict, or do violence to. Given the context of the giants'' physical devastation and slaughter of humanity (chs. 7–9), ''wronged'' is too weak and flattens the severity of their actions into a mere moral or legal infraction. ''Oppressed'' or ''done violence to'' better captures the author''s intended force. | Adjudicator: The Ge''ez verb ገፍዐ (gafʿa) carries the primary meaning of ''to oppress, treat with violence, or maltreat'' (Leslau, p. 183; Dillmann, col. 1188). In the context of the Book of the Watchers, where the gi'

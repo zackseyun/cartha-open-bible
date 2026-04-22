@@ -16,22 +16,20 @@ source:
   - 226
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw that those elephants were judged and became sinners, and they were
-    cast into that deep abyss of fire.
+  text: And those shepherds were judged and were found to be sinners, and they were cast into that abyss of fire.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The animal term in the Ethiopic OCR is textually uncertain in form, but
-      the context of the Animal Apocalypse strongly suggests the referent is the elephants.
+    text: The animal term in the Ethiopic OCR is textually uncertain in form, but the context of the Animal Apocalypse strongly suggests the referent is the elephants.
     reason: textual_variant
   - marker: b
-    text: Or 'were found guilty'; the phrase 'became sinners' may function as a judicial
-      declaration in context.
+    text: Or 'were found guilty'; the phrase 'became sinners' may function as a judicial declaration in context.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And I saw that those elephants were judged and became sinners, and they were cast into that deep abyss of fire.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወዝኩ
   chosen: and I saw
@@ -39,52 +37,42 @@ lexical_decisions:
   - and I looked
   - then I saw
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The narrative formula introduces a visionary observation. 'And I saw'
-    preserves the apocalyptic report style without unnecessary expansion.
+  rationale: The narrative formula introduces a visionary observation. 'And I saw' preserves the apocalyptic report style without unnecessary expansion.
 - source_word: ሮ*ኖላዊያን
   chosen: those elephants
   alternatives:
   - the elephants
   - the elephant-like ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Animal Apocalypse, symbolic animal identities should be preserved
-    as animals rather than interpreted in the translation. The OCR form is corrupt,
-    but the contextual referent in this scene is the elephants; 'those elephants'
-    reflects the likely demonstrative force while keeping the imagery intact.
+  rationale: In the Animal Apocalypse, symbolic animal identities should be preserved as animals rather than interpreted in the translation. The OCR form is corrupt, but the contextual referent in this scene is the elephants; 'those elephants' reflects the likely demonstrative force while keeping the imagery intact.
 - source_word: ተኰነኑ
   chosen: were judged
   alternatives:
   - were condemned
   - were sentenced
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A judicial passive fits the judgment scene. 'Were judged' preserves the
-    formal apocalyptic courtroom sense and leaves open whether the emphasis is verdict
-    or sentencing.
+  rationale: A judicial passive fits the judgment scene. 'Were judged' preserves the formal apocalyptic courtroom sense and leaves open whether the emphasis is verdict or sentencing.
 - source_word: ወኮኑ ኃጥኣነ
   chosen: became sinners
   alternatives:
   - were found guilty
   - became guilty ones
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ge'ez wording is more literally 'became sinners/sinful ones.' Although
-    in context this may function like a declaration of guilt, the more literal rendering
-    better preserves the text's stark moral-judicial language.
+  rationale: The Ge'ez wording is more literally 'became sinners/sinful ones.' Although in context this may function like a declaration of guilt, the more literal rendering better preserves the text's stark moral-judicial language.
 - source_word: ወተወድዩ
   chosen: were cast
   alternatives:
   - were thrown
   - were hurled
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A passive of forcible expulsion suits the judgment imagery. 'Were cast'
-    is vivid but not overly interpretive.
+  rationale: A passive of forcible expulsion suits the judgment imagery. 'Were cast' is vivid but not overly interpretive.
 - source_word: እሙንቱ
   chosen: they
   alternatives:
   - those ones
   - them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The pronoun resumes the judged group. English idiom prefers 'they' in
-    the clause.
+  rationale: The pronoun resumes the judged group. English idiom prefers 'they' in the clause.
 - source_word: ውስተ'ዛ ማዕምቀ እሳት
   chosen: into that deep abyss of fire
   alternatives:
@@ -92,9 +80,7 @@ lexical_decisions:
   - into that fiery abyss
   - into that deep place of fire
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase combines depth/abyss imagery with fire. 'Deep abyss of fire'
-    preserves both the vertical, chthonic image and the punitive fire without flattening
-    it to merely 'hell' or 'pit.'
+  rationale: The phrase combines depth/abyss imagery with fire. 'Deep abyss of fire' preserves both the vertical, chthonic image and the punitive fire without flattening it to merely 'hell' or 'pit.'
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -125,8 +111,7 @@ enoch_witnesses:
     text: ወዝኩ፡ ሮ*ኖላዊያን፡ ተኰነኑ፡ *ወኮኑ፡ ኃጥኣነ፡ ወተወድዩ፡ እሙንቱ፡ *ውስተ'ዛ፡ ማዕምቀ፡ እሳት።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -136,26 +121,30 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to interpret the animal symbol in historical terms in the main text
   chosen_reading: Retain the symbolic animal reference as 'those elephants'
   alternative_readings:
   - Translate the historical referent instead of the animal image
   - Use a generic term like 'those beasts' if the OCR is uncertain
-  rationale: The Animal Apocalypse communicates through sustained symbolic zoological
-    imagery. The translation philosophy forbids flattening apocalyptic imagery into
-    generic prose or silently replacing symbols with interpretations. Even with OCR
-    uncertainty, the contextual animal symbol should remain in the text.
-  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; original-language
-    primacy over translation tradition.'
+  rationale: The Animal Apocalypse communicates through sustained symbolic zoological imagery. The translation philosophy forbids flattening apocalyptic imagery into generic prose or silently replacing symbols with interpretations. Even with OCR uncertainty, the contextual animal symbol should remain in the text.
+  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; original-language primacy over translation tradition.'
 - issue: Whether ኃጥኣነ should be rendered morally ('sinners') or juridically ('guilty')
   chosen_reading: Render as 'sinners' in the main text
   alternative_readings:
   - guilty ones
   - were found guilty
-  rationale: The lexical sense is moral-religious, though in context it overlaps with
-    judicial condemnation. Preserving 'sinners' keeps the theological force of the
-    text's judgment language, while the footnote can note the juridical nuance.
+  rationale: The lexical sense is moral-religious, though in context it overlaps with judicial condemnation. Preserving 'sinners' keeps the theological force of the text's judgment language, while the footnote can note the juridical nuance.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:49:02Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/025.job-72823.json
+  category: mistranslation
+  tier: 3
+  from: And I saw that those elephants were judged and became sinners, and they were cast into that deep abyss of fire.
+  to: And those shepherds were judged and were found to be sinners, and they were cast into that abyss of fire.
+  rationale: 'The Ge''ez reads ወዝኩ ኖላዊያን (wa-zəku nolawiyan). ወዝኩ is the demonstrative ''and those'', not the verb ''and I saw'' (ወርኢኩ). ኖላዊያን means ''shepherds'' (referring to the 70 shepherds in v. 22), not ''elephants''. Additionally, in this judicial context, ወኮኑ ኃጥኣነ means ''were found to be sinners'' (as the draft correctly rendered in 90:24), rather than ''became sinners''. Finally, ማዕምቀ እሳት is simply ''abyss of fire'', without the redundant ''deep''. | Adjudicator: The reviewer is entirely correct. The Ge''ez ኖላዊያን (nolawiyan) means ''shepherds,'' referring to the seventy angelic shepherds of the Animal Apocalypse, not ''elephants.'' Furthermore, ወዝኩ (wa-zəku) is the'

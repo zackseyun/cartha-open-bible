@@ -9,23 +9,20 @@ source:
   - 134
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch53.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 53,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch53.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 53, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For I saw all the angels of punishment lodging there and preparing instruments
-    of Satan.
+  text: For I saw all the angels of punishment lodging there and preparing all the instruments of Satan.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ethiopic OCR for this verse appears incomplete after 'and preparing.'
-      The phrase 'instruments of Satan' is supplied from the immediate context of
-      the chapter and should be treated as a cautious reconstruction.
+    text: The Ethiopic OCR for this verse appears incomplete after 'and preparing.' The phrase 'instruments of Satan' is supplied from the immediate context of the chapter and should be treated as a cautious reconstruction.
     reason: textual_variant
   - marker: b
-    text: Or 'dwelling there' instead of 'lodging there.' The underlying Ge'ez verb
-      suggests remaining or staying in a place.
+    text: Or 'dwelling there' instead of 'lodging there.' The underlying Ge'ez verb suggests remaining or staying in a place.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'preparing instruments of Satan'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እስመ
   chosen: For
@@ -33,15 +30,13 @@ lexical_decisions:
   - because
   - for indeed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces the explanation for the preceding statement; 'For' preserves
-    the connective force in elevated but natural English.
+  rationale: Introduces the explanation for the preceding statement; 'For' preserves the connective force in elevated but natural English.
 - source_word: ርኢክዎሙ
   chosen: I saw them
   alternatives:
   - I beheld them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: First-person visionary report from the root 'to see'; rendered simply
-    as 'I saw them,' with the object specified by the following phrase.
+  rationale: First-person visionary report from the root 'to see'; rendered simply as 'I saw them,' with the object specified by the following phrase.
 - source_word: ኵሎሙ
   chosen: all
   alternatives:
@@ -54,9 +49,7 @@ lexical_decisions:
   - the angels of chastisement
   - the punishing angels
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This genitival phrase denotes angels associated with punitive judgment.
-    'Punishment' is the clearest English equivalent in this apocalyptic context and
-    preserves the judicial force.
+  rationale: This genitival phrase denotes angels associated with punitive judgment. 'Punishment' is the clearest English equivalent in this apocalyptic context and preserves the judicial force.
 - source_word: እንዘ የኃድሩ
   chosen: lodging there
   alternatives:
@@ -64,18 +57,14 @@ lexical_decisions:
   - encamping there
   - resting there
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verbal form indicates remaining/staying in a place. 'Lodging there'
-    preserves the concrete sense of being stationed in that location without overinterpreting
-    permanence.
+  rationale: The verbal form indicates remaining/staying in a place. 'Lodging there' preserves the concrete sense of being stationed in that location without overinterpreting permanence.
 - source_word: ወያስተዴ
   chosen: and preparing
   alternatives:
   - and making ready
   - and arranging
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form appears to indicate preparation or arrangement. 'Preparing'
-    is broad enough to respect the uncertain OCR while fitting the immediate context
-    of punitive agents making something ready.
+  rationale: The form appears to indicate preparation or arrangement. 'Preparing' is broad enough to respect the uncertain OCR while fitting the immediate context of punitive agents making something ready.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -106,30 +95,33 @@ enoch_witnesses:
     text: እስመ፡ ርኢክዎሙ፡ ለ*ኵሎሙ፡ መላእክተ፡ መቅሠፍት፡ እንዘ፡ *የኃድሩ፡ ወያስተዴ
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch53.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch53.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 53, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 53, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Object of the angels' preparation is not explicit in the surviving OCR line
   chosen_reading: supplying 'instruments of Satan' in the main text
   alternative_readings:
   - 'leaving the object unstated: ''and preparing'''
   - '''and preparing chains/instruments'' if reconstructed from broader context'
-  rationale: The verse as transmitted in the OCR is truncated after the verb, but
-    the immediate context in this chapter concerns angels preparing punitive implements
-    associated with the kings and mighty ones and with Satanic judgment. Because the
-    line appears incomplete, the supplied object is context-based rather than directly
-    visible in the provided Ge'ez; this is therefore flagged in a footnote.
-  doctrine_reference: Preserve theological tension rather than resolve it; when the
-    sense is uncertain, prefer transparency.
+  rationale: The verse as transmitted in the OCR is truncated after the verb, but the immediate context in this chapter concerns angels preparing punitive implements associated with the kings and mighty ones and with Satanic judgment. Because the line appears incomplete, the supplied object is context-based rather than directly visible in the provided Ge'ez; this is therefore flagged in a footnote.
+  doctrine_reference: Preserve theological tension rather than resolve it; when the sense is uncertain, prefer transparency.
+revisions:
+- timestamp: '2026-04-22T22:43:07Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/053/003.job-72412.json
+  category: missing_nuance
+  tier: 3
+  from: preparing instruments of Satan
+  to: preparing all the instruments of Satan
+  rationale: 'The full Ge''ez text of this verse (truncated by the OCR but present in the critical editions) reads ወያስተዴልዉ ኵሎ ንዋየ ሰይጣን (''and preparing all the instruments of Satan''). The draft omits ''all'' (ኵሎ). | Adjudicator: The reviewer correctly identifies that the Ge''ez text includes the accusative quantifier ኵሎ (kwellō, "all") modifying "instruments of Satan" (ንዋየ ሰይጣን). The current English rendering omits this word, '

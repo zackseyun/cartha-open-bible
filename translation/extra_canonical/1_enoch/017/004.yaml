@@ -9,23 +9,20 @@ source:
   - 84
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And they took me as far as the waters of life, and as far as the fire of the
-    west, which receives every setting of the sun.
+  text: And they took me as far as the living waters, and as far as the fire of the west, which receives every setting of the sun.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The bracketed Ethiopic word after 'waters of life' is uncertain in this
-      witness and may mean 'that speak' or reflect a corrupt reading; it is not represented
-      in the main text.
+    text: The bracketed Ethiopic word after 'waters of life' is uncertain in this witness and may mean 'that speak' or reflect a corrupt reading; it is not represented in the main text.
     reason: textual_variant
   - marker: b
-    text: Or 'living waters.' The Ethiopic expression can be understood either as
-      waters characterized by life or as life-giving waters.
+    text: Or 'living waters.' The Ethiopic expression can be understood either as waters characterized by life or as life-giving waters.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'the waters of life'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወነሥኡኒ
   chosen: and they took me
@@ -33,56 +30,42 @@ lexical_decisions:
   - and they carried me
   - and they led me
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb from ነሥአ commonly means 'take, carry, bring up.' In this visionary
-    travel context, 'took me' is natural English and preserves the passive-guided
-    movement without over-specifying whether the motion was by carrying or leading.
+  rationale: The verb from ነሥአ commonly means 'take, carry, bring up.' In this visionary travel context, 'took me' is natural English and preserves the passive-guided movement without over-specifying whether the motion was by carrying or leading.
 - source_word: እስከ
   chosen: as far as
   alternatives:
   - to
   - up to
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Repeated እስከ marks extent or destination. 'As far as' preserves the sense
-    of being brought to successive visionary locations more clearly than the flatter
-    'to'.
+  rationale: Repeated እስከ marks extent or destination. 'As far as' preserves the sense of being brought to successive visionary locations more clearly than the flatter 'to'.
 - source_word: ማያት ሕያዋን
   chosen: the waters of life
   alternatives:
   - living waters
   - the living waters
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Literally 'waters living/alive.' 'Waters of life' keeps the elevated
-    apocalyptic register and avoids importing later idiomatic resonance from 'living
-    water' traditions. The phrase still conveys life-giving or living waters.
+  rationale: Literally 'waters living/alive.' 'Waters of life' keeps the elevated apocalyptic register and avoids importing later idiomatic resonance from 'living water' traditions. The phrase still conveys life-giving or living waters.
 - source_word: '[ዘይትናገር፡]'
   chosen: omitted from main text
   alternatives:
   - that speak
   - that are spoken of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The bracketed form signals uncertainty in the OCR/witness. A literal
-    sense like 'that speaks' is difficult in context after 'waters of life' and may
-    reflect corruption or intrusion. Because the verse reads coherently without it,
-    it is better handled as a textual note than forced into the main translation.
+  rationale: The bracketed form signals uncertainty in the OCR/witness. A literal sense like 'that speaks' is difficult in context after 'waters of life' and may reflect corruption or intrusion. Because the verse reads coherently without it, it is better handled as a textual note than forced into the main translation.
 - source_word: እሳት ዐረብ
   chosen: the fire of the west
   alternatives:
   - the western fire
   - the fire of sunset
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ዐረብ here is best taken in the sense of west/evening region rather than
-    the abstract time 'evening' alone. 'Fire of the west' preserves the cosmic-geographical
-    imagery of the visionary scene.
+  rationale: ዐረብ here is best taken in the sense of west/evening region rather than the abstract time 'evening' alone. 'Fire of the west' preserves the cosmic-geographical imagery of the visionary scene.
 - source_word: ዘውእቱ ይነሥእ ኵሎ ዕርበተ ፀሐይ
   chosen: which receives every setting of the sun
   alternatives:
   - which takes up every sunset of the sun
   - which gathers in every westering of the sun
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The relative clause describes the western fire as receiving or taking
-    in the sun at its setting. 'Receives every setting of the sun' is idiomatic while
-    preserving the vivid cosmological image. 'Setting' is preferred over 'sunset'
-    because the Ge'ez phrase is more literally the act/event of the sun's going down.
+  rationale: The relative clause describes the western fire as receiving or taking in the sun at its setting. 'Receives every setting of the sun' is idiomatic while preserving the vivid cosmological image. 'Setting' is preferred over 'sunset' because the Ge'ez phrase is more literally the act/event of the sun's going down.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -113,8 +96,7 @@ enoch_witnesses:
     text: ወነሥኡኒ፡ እስከ፡ ማያት፡ ሕያዋን፡ [ዘይትናገር፡] ወእስከ፡ እሳት፡ ዐረብ፡ ዘውእቱ፡ ይነሥእ፡ ኵሎ፡ ዕርበተ፡ ፀሐይ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -124,17 +106,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Rendering of cosmic imagery in Enoch's visionary journey
-  chosen_reading: Preserve the concrete imagery of 'waters of life' and 'fire of the
-    west' as visionary locations
+  chosen_reading: Preserve the concrete imagery of 'waters of life' and 'fire of the west' as visionary locations
   alternative_readings:
   - Interpret the phrases symbolically in the main text
   - Modernize to generic natural phenomena
-  rationale: The Book of the Watchers presents revealed cosmic geography. The translation
-    should retain the strangeness and specificity of the vision rather than reducing
-    it to ordinary landscape description.
-  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not
-    flatten visionary prose.'
+  rationale: The Book of the Watchers presents revealed cosmic geography. The translation should retain the strangeness and specificity of the vision rather than reducing it to ordinary landscape description.
+  doctrine_reference: 'Translation philosophy: preserve apocalyptic imagery; do not flatten visionary prose.'
+revisions:
+- timestamp: '2026-04-22T22:33:04Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/017/004.job-72247.json
+  category: lexical
+  tier: 3
+  from: the waters of life
+  to: the living waters
+  rationale: 'The Ge''ez ማያት ሕያዋን (māyāt ḥəyāwān) is a noun-adjective phrase literally meaning ''living waters,'' not a genitive construction ''waters of life'' (which would be ማያተ ሕይወት). The draft''s rationale to avoid ''living water'' to prevent later NT resonance is misguided; the NT inherits this exact Second Temple idiom, and the translation should preserve the author''s precise phrasing. | Adjudicator: The reviewer is factually correct about the Ge''ez grammar. The phrase ማያት ሕያዋን (māyāt ḥəyāwān) is a noun-adjective construction meaning ''living waters,'' whereas ''waters of life'' would require a geniti'

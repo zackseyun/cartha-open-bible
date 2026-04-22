@@ -3,8 +3,7 @@ reference: 1 Enoch 78:11
 book: 1 Enoch
 source:
   edition: charles-1906-enoch
-  text: ኵሎ፡ ዘመነ፡ ዘተነሡር፡ ወርኅ፡ ብርሃነ፡ ዚአሃ፡ ትወዲ፡ በቅድመ፡ ፀሐይ፡ እስከ፡ ፲ወ፬መዋዕል፡ [ይትፌጸም፡ ብርሃና፡]
-    ወሶበ፡ ይውዒ፡ ኵሉ፡ ይትፌጸም፡ ብርሃኑ፡ ውስተ፡ ሰማይ።
+  text: ኵሎ፡ ዘመነ፡ ዘተነሡር፡ ወርኅ፡ ብርሃነ፡ ዚአሃ፡ ትወዲ፡ በቅድመ፡ ፀሐይ፡ እስከ፡ ፲ወ፬መዋዕል፡ [ይትፌጸም፡ ብርሃና፡] ወሶበ፡ ይውዒ፡ ኵሉ፡ ይትፌጸም፡ ብርሃኑ፡ ውስተ፡ ሰማይ።
   language: Geez
   pages:
   - 186
@@ -12,24 +11,23 @@ source:
   - 188
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And throughout the time when the moon is waning, its light diminishes before
-    the sun until fourteen days are completed; and when it is extinguished, all its
-    light is completed in the sky.
+  text: And throughout the time when the moon is waning, it transfers its light before the sun until fourteen days [its light is completed]; and when it is extinguished, all its light is completed in the sky.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The clause around 'until fourteen days are completed' is textually difficult
-      in the Ethiopic OCR, and the bracketed words likely repeat the idea that the
-      moon's light reaches its completion or end over that period.
+    text: The clause around 'until fourteen days are completed' is textually difficult in the Ethiopic OCR, and the bracketed words likely repeat the idea that the moon's light reaches its completion or end over that period.
     reason: textual_variant
   - marker: b
-    text: '''Before the sun'' is kept literally. In context it may mean in the sun''s
-      presence or in relation to the sun''s course.'
+    text: '''Before the sun'' is kept literally. In context it may mean in the sun''s presence or in relation to the sun''s course.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'its light diminishes before the sun'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'until fourteen days are completed'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ኵሎ፡ ዘመነ፡
   chosen: throughout the time
@@ -37,27 +35,21 @@ lexical_decisions:
   - all the time
   - the whole period
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase marks the entirety of a period rather than a punctual moment.
-    'Throughout the time' preserves the distributive force of ኵሎ with the temporal
-    noun.
+  rationale: The phrase marks the entirety of a period rather than a punctual moment. 'Throughout the time' preserves the distributive force of ኵሎ with the temporal noun.
 - source_word: ዘተነሡር፡ ወርኅ፡
   chosen: when the moon is waning
   alternatives:
   - of the moon's decrease
   - when the moon declines
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The participial form with ወርኅ refers to the moon in its diminishing phase.
-    'Waning' is idiomatic English for the lunar context and preserves the astronomical
-    sense.
+  rationale: The participial form with ወርኅ refers to the moon in its diminishing phase. 'Waning' is idiomatic English for the lunar context and preserves the astronomical sense.
 - source_word: ብርሃነ፡ ዚአሃ፡
   chosen: its light
   alternatives:
   - her light
   - the light of it
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The construct phrase denotes the moon's own light. 'Its' fits modern
-    English style for a celestial body without importing personification into the
-    main text.
+  rationale: The construct phrase denotes the moon's own light. 'Its' fits modern English style for a celestial body without importing personification into the main text.
 - source_word: ትወዲ፡
   chosen: diminishes
   alternatives:
@@ -65,60 +57,48 @@ lexical_decisions:
   - is reduced
   - wanes
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb describes the lessening of the moon's light. 'Diminishes' avoids
-    redundancy with the earlier 'waning' while keeping the progressive loss of brightness.
+  rationale: The verb describes the lessening of the moon's light. 'Diminishes' avoids redundancy with the earlier 'waning' while keeping the progressive loss of brightness.
 - source_word: በቅድመ፡ ፀሐይ፡
   chosen: before the sun
   alternatives:
   - in front of the sun
   - in the presence of the sun
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Literally 'before the sun.' In this astronomical context it likely means
-    in relation to or in the presence of the sun; the more literal 'before the sun'
-    preserves the imagery and leaves the exact cosmological nuance open.
+  rationale: Literally 'before the sun.' In this astronomical context it likely means in relation to or in the presence of the sun; the more literal 'before the sun' preserves the imagery and leaves the exact cosmological nuance open.
 - source_word: እስከ፡ ፲ወ፬መዋዕል፡
   chosen: until fourteen days are completed
   alternatives:
   - until fourteen days
   - as far as fourteen days
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase gives the duration of the waning process. Supplying 'are completed'
-    in English reflects the following completion language and yields a natural temporal
-    clause.
+  rationale: The phrase gives the duration of the waning process. Supplying 'are completed' in English reflects the following completion language and yields a natural temporal clause.
 - source_word: '[ይትፌጸም፡ ብርሃና፡]'
   chosen: are completed
   alternatives:
   - its light is finished
   - its light comes to an end
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The bracketed text appears uncertain in the OCR but likely contains the
-    completion formula. I have reflected its sense in the temporal clause rather than
-    repeating 'light' awkwardly twice in English.
+  rationale: The bracketed text appears uncertain in the OCR but likely contains the completion formula. I have reflected its sense in the temporal clause rather than repeating 'light' awkwardly twice in English.
 - source_word: ወሶበ፡ ይውዒ፡
   chosen: and when it is extinguished
   alternatives:
   - and when it sets
   - and when it becomes dark
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb appears to denote going out or being quenched, fitting the moon's
-    light reaching darkness at the end of waning. 'Extinguished' preserves the vivid
-    luminary imagery.
+  rationale: The verb appears to denote going out or being quenched, fitting the moon's light reaching darkness at the end of waning. 'Extinguished' preserves the vivid luminary imagery.
 - source_word: ኵሉ፡ ይትፌጸም፡ ብርሃኑ፡
   chosen: all its light is completed
   alternatives:
   - its whole light is finished
   - all its light comes to an end
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ge'ez uses completion language rather than a simple verb of disappearance.
-    'Is completed' keeps the formal, schematic style of the Astronomical Book, even
-    if slightly unusual in English.
+  rationale: The Ge'ez uses completion language rather than a simple verb of disappearance. 'Is completed' keeps the formal, schematic style of the Astronomical Book, even if slightly unusual in English.
 - source_word: ውስተ፡ ሰማይ።
   chosen: in the sky
   alternatives:
   - in heaven
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this astronomical context, 'sky' better communicates the visible celestial
-    sphere, while 'heaven' could sound overly theological in English.
+  rationale: In this astronomical context, 'sky' better communicates the visible celestial sphere, while 'heaven' could sound overly theological in English.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -146,12 +126,10 @@ enoch_witnesses:
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ኵሎ፡ ዘመነ፡ ዘተነሡር፡ ወርኅ፡ ብርሃነ፡ ዚአሃ፡ ትወዲ፡ በቅድመ፡ ፀሐይ፡ እስከ፡ ፲ወ፬መዋዕል፡ [ይትፌጸም፡ ብርሃና፡]
-      ወሶበ፡ ይውዒ፡ ኵሉ፡ ይትፌጸም፡ ብርሃኑ፡ ውስተ፡ ሰማይ።
+    text: ኵሎ፡ ዘመነ፡ ዘተነሡር፡ ወርኅ፡ ብርሃነ፡ ዚአሃ፡ ትወዲ፡ በቅድመ፡ ፀሐይ፡ እስከ፡ ፲ወ፬መዋዕል፡ [ይትፌጸም፡ ብርሃና፡] ወሶበ፡ ይውዒ፡ ኵሉ፡ ይትፌጸም፡ ብርሃኑ፡ ውስተ፡ ሰማይ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -161,17 +139,33 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether to render the moon's final state with ordinary astronomical language
-    or preserve the text's vivid luminary imagery
+- issue: Whether to render the moon's final state with ordinary astronomical language or preserve the text's vivid luminary imagery
   chosen_reading: when it is extinguished
   alternative_readings:
   - when it sets
   - when it grows dark
-  rationale: The Astronomical Book often describes celestial processes in concrete,
-    almost mechanical imagery. 'Extinguished' preserves that apocalyptic-cosmic register
-    without paraphrasing it into modern scientific prose.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic language
-    into generic modern prose.
+  rationale: The Astronomical Book often describes celestial processes in concrete, almost mechanical imagery. 'Extinguished' preserves that apocalyptic-cosmic register without paraphrasing it into modern scientific prose.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic language into generic modern prose.
+revisions:
+- timestamp: '2026-04-22T22:46:36Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/011.job-72657.json
+  category: mistranslation
+  tier: 3
+  from: its light diminishes before the sun
+  to: it transfers its light before the sun
+  rationale: 'The verb ትወዲ (təwaddi) is the 3fs imperfect of ወድየ (wadya), meaning ''to put, place, cast, transfer'' (cf. the passive ይትወደይ in 78:10). It does not mean ''diminishes''. The author''s specific astronomical model involves the literal transfer of light between the sun and the moon, which is lost by rendering it as ''diminishes''. | Adjudicator: The reviewer is correct. The Ge''ez verb ትወዲ (təwaddi) is the 3fs imperfect of ወድየ (wadya), which means ''to put, place, cast, or transfer,'' not ''to diminish.'' In the specific cosmological model of the '
+- timestamp: '2026-04-22T22:46:53Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/011.job-72657.json
+  category: grammar
+  tier: 3
+  from: until fourteen days are completed
+  to: until fourteen days [its light is completed]
+  rationale: 'Adjudicator-modified: The reviewer correctly identifies that the Ge''ez verb ይትፌጸም (is completed) takes ብርሃና (its light) as its explicit subject, not the fourteen days (፲ወ፬መዋዕል). The current English mistranslates this by applying the verb to the days and omitting ''its light.'' The proposed rewrite correctly restores the subject, though the added ''when'' is unnecessary. A more direct rendering of the bracketed phrase is simply ''[its light is completed].'''

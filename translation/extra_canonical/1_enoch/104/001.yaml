@@ -9,25 +9,20 @@ source:
   - 254
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch104.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 104,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch104.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 104, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Do not think in your spirit that your complaint is not heard, for your memorial
-    is written down before the glory of the Great One.
+  text: I swear to you, that in heaven the angels remember you for good before the glory of the Great One.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ethiopic OCR for this verse is incomplete and difficult. The visible
-      words include 'in heaven,' 'remembered,' and 'angels,' but the line appears
-      truncated. The translation therefore reflects the probable sense of heavenly
-      remembrance in context rather than a mechanically literal rendering of the damaged
-      OCR alone.
+    text: The Ethiopic OCR for this verse is incomplete and difficult. The visible words include 'in heaven,' 'remembered,' and 'angels,' but the line appears truncated. The translation therefore reflects the probable sense of heavenly remembrance in context rather than a mechanically literal rendering of the damaged OCR alone.
     reason: textual_variant
   - marker: b
-    text: 'An alternative, closer to the visible Ethiopic forms, would be: ''...for
-      in heaven the angels remember you for good before ...'''
+    text: 'An alternative, closer to the visible Ethiopic forms, would be: ''...for in heaven the angels remember you for good before ...'''
     reason: alternative_reading
+  - marker: c
+    text: Or 'Do not think in your spirit that your complaint is not heard, for your memorial is written down before the glory of the Great One.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምሕል፡ ለክሙ፡
   chosen: Do not think
@@ -35,50 +30,35 @@ lexical_decisions:
   - Do not suppose
   - Do not imagine
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The opening is best taken as a prohibitive exhortation addressed to the
-    audience. Because the OCR is difficult, the exact verbal form is somewhat uncertain,
-    but the sense of warning against a mistaken assumption fits the clause that follows.
+  rationale: The opening is best taken as a prohibitive exhortation addressed to the audience. Because the OCR is difficult, the exact verbal form is somewhat uncertain, but the sense of warning against a mistaken assumption fits the clause that follows.
 - source_word: በሰማይ፡
   chosen: before the glory of the Great One
   alternatives:
   - in heaven
   - before heaven
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The OCR line appears truncated at the end, and the surviving phrase 'in
-    heaven' likely belongs to a fuller idiom known in this context about remembrance
-    before the heavenly court. Since the verse in this section commonly speaks of
-    a memorial before the divine glory, the English reflects that fuller sense while
-    noting uncertainty in footnotes.
+  rationale: The OCR line appears truncated at the end, and the surviving phrase 'in heaven' likely belongs to a fuller idiom known in this context about remembrance before the heavenly court. Since the verse in this section commonly speaks of a memorial before the divine glory, the English reflects that fuller sense while noting uncertainty in footnotes.
 - source_word: ይዜከሩ፡
   chosen: is written down
   alternatives:
   - is remembered
   - is recorded
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The root concerns remembrance or memorialization. In apocalyptic judicial
-    context, 'written down' makes explicit the forensic nuance of heavenly record
-    while preserving the memorial idea.
+  rationale: The root concerns remembrance or memorialization. In apocalyptic judicial context, 'written down' makes explicit the forensic nuance of heavenly record while preserving the memorial idea.
 - source_word: መላእክት፡
   chosen: your memorial
   alternatives:
   - the angels
   - messengers
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The OCR is unstable here. Although the visible form resembles 'angels,'
-    the broader verse context in the Epistle of Enoch concerns the righteous being
-    remembered before God. Because the surviving line is incomplete, the translation
-    adopts the memorial motif that coheres with the judicial-heavenly setting and
-    flags the uncertainty below.
+  rationale: The OCR is unstable here. Although the visible form resembles 'angels,' the broader verse context in the Epistle of Enoch concerns the righteous being remembered before God. Because the surviving line is incomplete, the translation adopts the memorial motif that coheres with the judicial-heavenly setting and flags the uncertainty below.
 - source_word: በእንቲአክሙ፡ ለሠናይ፡
   chosen: your complaint is not heard
   alternatives:
   - your cause is not for good
   - your case is not favorable
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'This segment is textually difficult in the OCR. The chosen rendering
-    reflects the likely legal-prayer setting of the verse: the righteous are assured
-    that their case is known in heaven. Because the exact segmentation is uncertain,
-    this decision is documented rather than hidden.'
+  rationale: 'This segment is textually difficult in the OCR. The chosen rendering reflects the likely legal-prayer setting of the verse: the righteous are assured that their case is known in heaven. Because the exact segmentation is uncertain, this decision is documented rather than hidden.'
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -109,8 +89,7 @@ enoch_witnesses:
     text: እምሕል፡ ለክሙ፡ እስመ፡ በሰማይ፡ ይዜከሩ፡ መላእክት፡ በእንቲአክሙ፡ ለሠናይ፡ በ*ቅድመ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch104.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch104.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -120,17 +99,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 104, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 104, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Heavenly remembrance as judicial record
-  chosen_reading: The verse speaks of the righteous being remembered/recorded before
-    God in the heavenly court.
+  chosen_reading: The verse speaks of the righteous being remembered/recorded before God in the heavenly court.
   alternative_readings:
   - A simpler statement that angels remember the righteous in heaven
   - A statement about prayer being heard without explicit record-book imagery
-  rationale: In 1 Enoch's epistolary judgment context, heavenly remembrance often
-    carries forensic force rather than mere mental recollection. The translation preserves
-    that apocalyptic courtroom atmosphere.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten judgment formulas
-    into generic prose.
+  rationale: In 1 Enoch's epistolary judgment context, heavenly remembrance often carries forensic force rather than mere mental recollection. The translation preserves that apocalyptic courtroom atmosphere.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten judgment formulas into generic prose.
+revisions:
+- timestamp: '2026-04-22T22:50:41Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/104/001.job-72953.json
+  category: mistranslation
+  tier: 3
+  from: Do not think in your spirit that your complaint is not heard, for your memorial is written down before the glory of the Great One.
+  to: I swear to you, that in heaven the angels remember you for good before the glory of the Great One.
+  rationale: 'The draft completely ignores the clear Ge''ez text. እምሕል፡ ለክሙ፡ means ''I swear to you'' (a standard formula in the Epistle of Enoch), not ''Do not think in your spirit''. መላእክት፡ means ''angels'', not ''your memorial''. ይዜከሩ፡ means ''they remember'', not ''is written down''. በእንቲአክሙ፡ ለሠናይ፡ means ''concerning you for good'', not ''your complaint is not heard''. The OCR is not ''unstable''; it perfectly matches the known Greek text (Ὄμνυμι ὑμῖν, ὅτι ἐν οὐρανῷ μιμνήσκονται οἱ ἄγγελοι ὑμῶν εἰς ἀγαθὸν ἐνώπιον τῆς δόξης  | Adjudicator: The current English rendering is a complete mistranslation that ignores the provided Ge''ez text. The Ge''ez clearly reads `እምሕል፡ ለክሙ፡` (''I swear to you''), `በሰማይ፡ ይዜከሩ፡ መላእክት፡` (''in heaven the angels re'

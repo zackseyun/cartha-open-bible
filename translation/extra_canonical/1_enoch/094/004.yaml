@@ -10,22 +10,20 @@ source:
   - 236
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Love righteousness and choose for yourselves a good life, and walk in the
-    paths of peace, so that you may live and prosper.
+  text: But seek and choose for yourselves righteousness and a good life, and walk in the paths of peace, so that you may live and prosper.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ethiopic wording around 'a good life' is somewhat difficult in this
-      OCR witness; the sense is an exhortation to choose life characterized by goodness
-      or uprightness.
+    text: The Ethiopic wording around 'a good life' is somewhat difficult in this OCR witness; the sense is an exhortation to choose life characterized by goodness or uprightness.
     reason: textual_variant
   - marker: b
     text: Or 'walk in the ways of peace.'
     reason: lexical_alternative
+  - marker: c
+    text: Or 'Love righteousness and choose for yourselves a good life'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እላ
   chosen: love
@@ -33,44 +31,35 @@ lexical_decisions:
   - desire
   - be pleased with
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Imperative-like exhortation in context; 'love' best preserves the moral-volitional
-    force without weakening it to mere preference.
+  rationale: Imperative-like exhortation in context; 'love' best preserves the moral-volitional force without weakening it to mere preference.
 - source_word: ፍቅዱ
   chosen: righteousness
   alternatives:
   - justice
   - what is right
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ge'ez phrase points to the standard ethical-religious concept of
-    righteousness. 'Righteousness' preserves the wisdom/apocalyptic moral register
-    better than the flatter 'what is right,' while 'justice' is possible but too narrow
-    here.
+  rationale: The Ge'ez phrase points to the standard ethical-religious concept of righteousness. 'Righteousness' preserves the wisdom/apocalyptic moral register better than the flatter 'what is right,' while 'justice' is possible but too narrow here.
 - source_word: ወኀረዩ
   chosen: choose
   alternatives:
   - elect
   - prefer
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A direct exhortation to deliberate moral selection; 'choose' is idiomatic
-    and sufficiently formal.
+  rationale: A direct exhortation to deliberate moral selection; 'choose' is idiomatic and sufficiently formal.
 - source_word: ለክሙ
   chosen: for yourselves
   alternatives:
   - for you
   - to yourselves
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Reflexive-benefactive sense is best brought out by 'for yourselves,'
-    matching the exhortational tone.
+  rationale: Reflexive-benefactive sense is best brought out by 'for yourselves,' matching the exhortational tone.
 - source_word: ጽድቀ
   chosen: a good life
   alternatives:
   - uprightness
   - righteousness
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this collocation with ወሕይወተ and ኄራተ, the phrase appears to point not
-    to a second abstract noun parallel to righteousness but to life characterized
-    as good. Because the OCR segmentation is uncertain, the rendering is slightly
-    contextualized in English.
+  rationale: In this collocation with ወሕይወተ and ኄራተ, the phrase appears to point not to a second abstract noun parallel to righteousness but to life characterized as good. Because the OCR segmentation is uncertain, the rendering is slightly contextualized in English.
 - source_word: ወሕይወተ ኄራተ
   chosen: a good life
   alternatives:
@@ -78,16 +67,14 @@ lexical_decisions:
   - good living
   - life of goodness
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Taken together as 'good life' or 'life that is good.' This keeps the
-    ethical sense while remaining readable.
+  rationale: Taken together as 'good life' or 'life that is good.' This keeps the ethical sense while remaining readable.
 - source_word: ወሖሩ
   chosen: walk
   alternatives:
   - go
   - proceed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Biblical ethical metaphor of conduct should be preserved; 'walk' is the
-    natural equivalent.
+  rationale: Biblical ethical metaphor of conduct should be preserved; 'walk' is the natural equivalent.
 - source_word: በፍኖዋተ ሰላም
   chosen: in the paths of peace
   alternatives:
@@ -101,16 +88,14 @@ lexical_decisions:
   - and live
   - that you may be preserved
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The closing pair appears to express the result of the exhortation. 'So
-    that you may live' makes the purposive/resultative force clear in English.
+  rationale: The closing pair appears to express the result of the exhortation. 'So that you may live' makes the purposive/resultative force clear in English.
 - source_word: ወትደለዉ
   chosen: and prosper
   alternatives:
   - and succeed
   - and flourish
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A common wisdom-style outcome term. 'Prosper' fits the ethical exhortation
-    without implying purely material wealth.
+  rationale: A common wisdom-style outcome term. 'Prosper' fits the ethical exhortation without implying purely material wealth.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -141,8 +126,7 @@ enoch_witnesses:
     text: '*እላ፡ ፍቅዱ፡ ወኀረዩ፡ ለክሙ፡ ጽድቀ፡ *ወሕይወተ፡ ኄራተ፡ ወ*ሖሩ፡ በ*ፍኖዋተ፡ ሰላም፡ ወተሐደዉ፡ ወትደለዉ።'
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -152,15 +136,22 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to render the opening ethical object as 'righteousness' or 'justice'
   chosen_reading: righteousness
   alternative_readings:
   - justice
-  rationale: The verse belongs to paraenetic wisdom material where personal moral
-    rectitude is foregrounded. 'Righteousness' better preserves the broader covenantal-ethical
-    sense.
-  doctrine_reference: 'Translation philosophy: contested terms default δικαιοσύνη-like
-    language to ''righteousness'' unless context demands otherwise.'
+  rationale: The verse belongs to paraenetic wisdom material where personal moral rectitude is foregrounded. 'Righteousness' better preserves the broader covenantal-ethical sense.
+  doctrine_reference: 'Translation philosophy: contested terms default δικαιοσύνη-like language to ''righteousness'' unless context demands otherwise.'
+revisions:
+- timestamp: '2026-04-22T22:49:40Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/094/004.job-72871.json
+  category: mistranslation
+  tier: 3
+  from: Love righteousness and choose for yourselves a good life
+  to: But seek and choose for yourselves righteousness and a good life
+  rationale: 'The draft hallucinates ''Love'' and omits the actual first verb. The Ge''ez `እላ` (an OCR error for `አላ`, ''but'') and `ፍቅዱ` (imperative of `ፈቀደ`, ''seek'' or ''desire'') are missed. The text reads `አላ ፍቅዱ ወኀረዩ ለክሙ ጽድቀ` (''But seek and choose for yourselves righteousness''). | Adjudicator: The reviewer is correct. The Ge''ez verb `ፍቅዱ` is the imperative plural of `ፈቀደ` (''to seek, desire''), not `አፍቀረ` (''to love''). The current translation likely confused the roots. Additionally, the initia'

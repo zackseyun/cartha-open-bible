@@ -9,18 +9,17 @@ source:
   - 104
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 27,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In the days of their judgment he will bless them with mercy, according as
-    he has apportioned to them.
+  text: In the days of their judgment In the days of their judgment they will bless him for the mercy, according as he has apportioned to them., according as he has apportioned to them.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The final clause leaves the object of 'has apportioned' implicit; it may
-      refer to a measured share, lot, or portion of mercy/blessing.
+    text: The final clause leaves the object of 'has apportioned' implicit; it may refer to a measured share, lot, or portion of mercy/blessing.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'he will bless them with mercy'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: መዋዕለ
   chosen: days
@@ -28,42 +27,35 @@ lexical_decisions:
   - time
   - season
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The plural temporal noun most naturally means 'days' here, preserving
-    the apocalyptic time-marker rather than generalizing to 'time.'
+  rationale: The plural temporal noun most naturally means 'days' here, preserving the apocalyptic time-marker rather than generalizing to 'time.'
 - source_word: ኵነኔሆሙ
   chosen: their judgment
   alternatives:
   - their condemnation
   - their punishment
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun denotes judicial decision or judgment. 'Judgment' preserves
-    the formal ambiguity of a judicial event that may include either condemnation
-    or vindication, which fits the immediate context better than the narrower 'punishment.'
+  rationale: The noun denotes judicial decision or judgment. 'Judgment' preserves the formal ambiguity of a judicial event that may include either condemnation or vindication, which fits the immediate context better than the narrower 'punishment.'
 - source_word: ይባርክዎ
   chosen: he will bless them
   alternatives:
   - he blesses them
   - he shall show favor to them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verbal form is best represented as a future/jussive-like narrative
-    future in context. 'Bless' is the direct lexical equivalent and should not be
-    weakened to generic favor.
+  rationale: The verbal form is best represented as a future/jussive-like narrative future in context. 'Bless' is the direct lexical equivalent and should not be weakened to generic favor.
 - source_word: በምሕረት
   chosen: with mercy
   alternatives:
   - in mercy
   - mercifully
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition plus noun is rendered instrumentally or adverbially.
-    'With mercy' keeps the noun explicit and preserves the theological weight of mercy.
+  rationale: The preposition plus noun is rendered instrumentally or adverbially. 'With mercy' keeps the noun explicit and preserves the theological weight of mercy.
 - source_word: በከመ
   chosen: according as
   alternatives:
   - as
   - according to how
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This comparative conjunction introduces measure or manner. 'According
-    as' preserves the formal relation between mercy shown and prior apportionment.
+  rationale: This comparative conjunction introduces measure or manner. 'According as' preserves the formal relation between mercy shown and prior apportionment.
 - source_word: ከፈሎሙ
   chosen: he has apportioned to them
   alternatives:
@@ -71,9 +63,7 @@ lexical_decisions:
   - he assigned to them
   - he granted them their portion
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb commonly carries the sense of dividing or allotting. 'Apportioned'
-    fits the judicial-distributive context and avoids over-interpreting the object,
-    which is left implicit in the Ge'ez.
+  rationale: The verb commonly carries the sense of dividing or allotting. 'Apportioned' fits the judicial-distributive context and avoids over-interpreting the object, which is left implicit in the Ge'ez.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -104,8 +94,7 @@ enoch_witnesses:
     text: በመዋዕለ፡ ኵነኔሆሙ፡ ይባርክዎ፡ በምሕረት፡ በከመ፡ ከፈሎሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch27.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -115,18 +104,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 27, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether the verse speaks of punitive judgment or a judicial moment that includes
-    mercy toward the righteous
-  chosen_reading: Retain the broader 'judgment' while allowing the following blessing
-    and mercy to define its positive outcome for this group.
+- issue: Whether the verse speaks of punitive judgment or a judicial moment that includes mercy toward the righteous
+  chosen_reading: Retain the broader 'judgment' while allowing the following blessing and mercy to define its positive outcome for this group.
   alternative_readings:
   - their condemnation
   - their punishment
-  rationale: Because the verse immediately speaks of blessing and mercy, a narrower
-    punitive term would create unnecessary tension unless the text explicitly required
-    it. The broader judicial term preserves apocalyptic courtroom imagery without
-    resolving more than the Ge'ez does.
+  rationale: Because the verse immediately speaks of blessing and mercy, a narrower punitive term would create unnecessary tension unless the text explicitly required it. The broader judicial term preserves apocalyptic courtroom imagery without resolving more than the Ge'ez does.
   doctrine_reference: Preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:42:03Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/027/004.job-72313.json
+  category: mistranslation
+  tier: 3
+  from: he will bless them with mercy
+  to: In the days of their judgment they will bless him for the mercy, according as he has apportioned to them.
+  rationale: 'Adjudicator-modified: The reviewer is entirely correct regarding the Ge''ez morphology. The verb ይባርክዎ (yebārekwō) is the third-person plural imperfect with a third-person masculine singular object suffix (''they will bless him''). A translation of ''he will bless them'' would require a third-person singular subject with a third-person plural object suffix, such as ይባርኮሙ (yebārekomu). The context of the preceding verse also establishes that the righteous are blessing the Lord. I am modifying the suggestion only to provide'

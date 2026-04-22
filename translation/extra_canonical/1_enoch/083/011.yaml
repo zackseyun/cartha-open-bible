@@ -10,21 +10,20 @@ source:
   - 198
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 83,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when I went out below, I saw him.
+  text: And when I went out below and saw the heaven, and the sun rising in the east, and the moon setting in the west, and a few stars, and the whole earth, and everything as He had known it in the beginning, then I blessed the Lord of judgment and extolled Him, because He had brought forth the sun from the windows of the east, and it ascended and rose on the face of the heaven, and set out and followed the path which He showed it.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The phrase 'below' translates a spatial term that could also be rendered
-      'down' or 'beneath'; the exact reference depends on the larger dream setting.
+    text: The phrase 'below' translates a spatial term that could also be rendered 'down' or 'beneath'; the exact reference depends on the larger dream setting.
     reason: lexical_alternative
   - marker: b
-    text: The object is simply 'him' in the Ge'ez; the verse itself does not restate
-      the figure's identity.
+    text: The object is simply 'him' in the Ge'ez; the verse itself does not restate the figure's identity.
     reason: alternative_reading
+  - marker: c
+    text: Or 'And when I went out below, I saw him.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ሶበ
   chosen: when
@@ -32,18 +31,14 @@ lexical_decisions:
   - and when
   - at the time when
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Temporal conjunction introducing the action sequence; in English the
-    temporal sense is best carried by 'when,' while the preceding waw supplies the
-    connective 'and'.
+  rationale: Temporal conjunction introducing the action sequence; in English the temporal sense is best carried by 'when,' while the preceding waw supplies the connective 'and'.
 - source_word: ወፃእኩ
   chosen: I went out
   alternatives:
   - I came out
   - I departed
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: First-person singular perfect of 'to go/come out.' 'Went out' preserves
-    the motion away from an interior or prior location without overinterpreting the
-    scene.
+  rationale: First-person singular perfect of 'to go/come out.' 'Went out' preserves the motion away from an interior or prior location without overinterpreting the scene.
 - source_word: ታሕተ
   chosen: below
   alternatives:
@@ -51,17 +46,14 @@ lexical_decisions:
   - beneath
   - down
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Locative/adverbial term meaning 'below' or 'beneath.' 'Below' keeps the
-    spatial imagery concise and apocalyptic without forcing a more specific destination.
+  rationale: Locative/adverbial term meaning 'below' or 'beneath.' 'Below' keeps the spatial imagery concise and apocalyptic without forcing a more specific destination.
 - source_word: ወርኢክዎ
   chosen: I saw him
   alternatives:
   - and I saw him
   - I looked at him
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb is the common verb 'to see,' with object suffix likely masculine
-    singular. 'I saw him' is the most direct rendering; the masculine object is retained
-    rather than neutralized.
+  rationale: The verb is the common verb 'to see,' with object suffix likely masculine singular. 'I saw him' is the most direct rendering; the masculine object is retained rather than neutralized.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -92,8 +84,7 @@ enoch_witnesses:
     text: ወ*ሶበ፡ ወፃእኩ፡ ታሕተ፡ ወርኢክዎ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -103,17 +94,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Gender/identity of the pronominal object
   chosen_reading: 'Render the suffix as masculine singular: ''him.'''
   alternative_readings:
   - '''it'' if the antecedent were impersonal or obscured in context'
   - '''him/it'' in a footnoted ambiguous rendering'
-  rationale: The Ge'ez object suffix in the supplied form points most naturally to
-    a masculine singular referent. Since the immediate verse does not identify the
-    antecedent, the translation preserves the pronoun without resolving who the figure
-    is.
-  doctrine_reference: Preserve theological tension rather than resolve it; original-language
-    primacy over translation tradition.
+  rationale: The Ge'ez object suffix in the supplied form points most naturally to a masculine singular referent. Since the immediate verse does not identify the antecedent, the translation preserves the pronoun without resolving who the figure is.
+  doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
+revisions:
+- timestamp: '2026-04-22T22:47:13Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/083/011.job-72704.json
+  category: mistranslation
+  tier: 3
+  from: And when I went out below, I saw him.
+  to: And when I went out below and saw the heaven, and the sun rising in the east, and the moon setting in the west, and a few stars, and the whole earth, and everything as He had known it in the beginning, then I blessed the Lord of judgment and extolled Him, because He had brought forth the sun from the windows of the east, and it ascended and rose on the face of the heaven, and set out and followed the path which He showed it.
+  rationale: 'The provided Ge''ez source text is severely truncated due to a parsing error. In Charles 1906, the verse continues after ወርኢክዎ with ለሰማይ፡ ወለፀሐይ... (''the heaven, and the sun...''). The object suffix in ወርኢክዎ is an anticipatory pronoun meaning ''and I saw it [the heaven]'', continuing the protasis (''And when I went out below and saw the heaven...''). The draft incorrectly treats it as the apodosis (''I saw him''). The entire remainder of the verse must be restored and translated. | Adjudicator: The reviewer is correct that the provided Ge''ez text is truncated and the current translation reflects this error. The suffix ''-o'' on ''wärə''ikəwo'' is an anticipatory object pronoun pointing to ''lä-säm'

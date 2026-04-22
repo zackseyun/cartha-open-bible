@@ -9,23 +9,20 @@ source:
   - 237
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 95,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 95, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you who weigh out silver so that you may be judged, and healing is
-    far from you because of your sins.
+  text: Woe to you who pronounce anathemas that cannot be loosed, and healing is far from you because of your sins.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The phrase rendered 'weigh out silver' is difficult. It may refer to measuring
-      out money in a legal or corrupt setting; some interpreters understand an allusion
-      to bribery.
+    text: The phrase rendered 'weigh out silver' is difficult. It may refer to measuring out money in a legal or corrupt setting; some interpreters understand an allusion to bribery.
     reason: lexical_alternative
   - marker: b
-    text: The clause 'so that you may be judged' is syntactically uncertain and could
-      also be understood more specifically as the execution of sentence.
+    text: The clause 'so that you may be judged' is syntactically uncertain and could also be understood more specifically as the execution of sentence.
     reason: alternative_reading
+  - marker: c
+    text: Or 'who weigh out silver so that you may be judged'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -33,58 +30,48 @@ lexical_decisions:
   - Alas
   - Ah
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces a prophetic denunciation formula; 'Woe' best preserves the
-    judgment-oracle force in apocalyptic context.
+  rationale: Introduces a prophetic denunciation formula; 'Woe' best preserves the judgment-oracle force in apocalyptic context.
 - source_word: ለክሙ
   chosen: to you
   alternatives:
   - for you
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard dative address after an interjection of denunciation; idiomatic
-    in English as 'Woe to you'.
+  rationale: Standard dative address after an interjection of denunciation; idiomatic in English as 'Woe to you'.
 - source_word: እለ ታወግዙ ግዘታተ
   chosen: who weigh out silver
   alternatives:
   - who assess silver
   - who measure out money
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verbal idea appears to be weighing/assessing, and ግዘት here most naturally
-    refers to silver/money. In this woe context it likely points to mercenary or corrupt
-    economic practice; 'weigh out silver' keeps the concrete image rather than paraphrasing
-    it as bribery.
+  rationale: The verbal idea appears to be weighing/assessing, and ግዘት here most naturally refers to silver/money. In this woe context it likely points to mercenary or corrupt economic practice; 'weigh out silver' keeps the concrete image rather than paraphrasing it as bribery.
 - source_word: ከመ እ ይትፈትሑ
   chosen: so that you may be judged
   alternatives:
   - so that judgment may be executed on you
   - that you may be condemned
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The passive/reflexive judicial sense of the verb is best represented
-    by 'be judged.' This preserves ambiguity between legal process and adverse sentence
-    without over-specifying condemnation.
+  rationale: The passive/reflexive judicial sense of the verb is best represented by 'be judged.' This preserves ambiguity between legal process and adverse sentence without over-specifying condemnation.
 - source_word: ወፈውስ
   chosen: and healing
   alternatives:
   - and remedy
   - and cure
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: ፈውስ commonly denotes healing or remedy. 'Healing' preserves both bodily
-    and moral-restorative resonance in wisdom/apocalyptic admonition.
+  rationale: ፈውስ commonly denotes healing or remedy. 'Healing' preserves both bodily and moral-restorative resonance in wisdom/apocalyptic admonition.
 - source_word: ርኁቅ እምኔክሙ
   chosen: is far from you
   alternatives:
   - has been removed from you
   - stands distant from you
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward spatial metaphor for withheld restoration; 'is far
-    from you' is natural English and preserves the image.
+  rationale: A straightforward spatial metaphor for withheld restoration; 'is far from you' is natural English and preserves the image.
 - source_word: በእንተ ኃጢአተ ዚአክሙ
   chosen: because of your sins
   alternatives:
   - on account of your sins
   - for your sins
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Causal phrase explaining why healing is distant. The plural 'sins' reflects
-    the collective wrongdoing addressed in the woe.
+  rationale: Causal phrase explaining why healing is distant. The plural 'sins' reflects the collective wrongdoing addressed in the woe.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -115,8 +102,7 @@ enoch_witnesses:
     text: አሌ፡ ለክሙ፡ እለ፡ ታወግዙ፡ ግዘታተ፡ ከመ፡ እ ይትፈትሑ፡ ወ*ፈውስ፡ ርኁቅ፡ እምኔክሙ፡ በእንተ፡ ኃጢአተ፡ ዚአክሙ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -126,28 +112,30 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 95, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 95, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether the economic image should be interpreted explicitly as bribery or
-    corruption
+- issue: Whether the economic image should be interpreted explicitly as bribery or corruption
   chosen_reading: Retain the concrete wording 'weigh out silver' in the main text
   alternative_readings:
   - '''who take bribes'''
   - '''who deal out money for judgment'''
-  rationale: The Ge'ez wording points concretely to silver/money and weighing or assessing.
-    Since the exact social practice is not fully explicit in the provided witness,
-    the translation preserves the image rather than collapsing it into an interpretive
-    paraphrase.
-  doctrine_reference: Preserve theological tension rather than resolve it; original-language
-    primacy over translation tradition.
+  rationale: The Ge'ez wording points concretely to silver/money and weighing or assessing. Since the exact social practice is not fully explicit in the provided witness, the translation preserves the image rather than collapsing it into an interpretive paraphrase.
+  doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
 - issue: Sense of the judicial verb in relation to the silver phrase
   chosen_reading: Translate broadly as 'so that you may be judged'
   alternative_readings:
   - '''so that sentence may be passed on you'''
   - '''so that you may secure judgment'''
-  rationale: The syntax is difficult, and the passive judicial sense is the least
-    over-interpreted option. It leaves open whether the line means corrupt legal dealings
-    that result in judgment against them or a more general statement of coming judgment.
-  doctrine_reference: When the sense is uncertain, prefer transparent English plus
-    a footnote over false confidence.
+  rationale: The syntax is difficult, and the passive judicial sense is the least over-interpreted option. It leaves open whether the line means corrupt legal dealings that result in judgment against them or a more general statement of coming judgment.
+  doctrine_reference: When the sense is uncertain, prefer transparent English plus a footnote over false confidence.
+revisions:
+- timestamp: '2026-04-22T22:49:45Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/095/004.job-72880.json
+  category: mistranslation
+  tier: 3
+  from: who weigh out silver so that you may be judged
+  to: who pronounce anathemas that cannot be loosed
+  rationale: 'The draft completely mistranslates the Ge''ez. The verb `ታወግዙ` (from `አወገዘ`) means ''to anathematize'' or ''bind by oath'', and `ግዘታተ` (plural of `ግዘት`) means ''anathemas'' or ''oaths'', not ''silver''. Furthermore, `ከመ፡ እ ይትፈትሑ` contains an OCR error for `ኢይትፈትሑ` (the negative particle `ኢ` + the passive of `ፈትሐ`, ''to loose/absolve''). The phrase means ''anathemas that cannot be loosed'', not ''so that you may be judged''. | Adjudicator: The reviewer correctly identifies a severe mistranslation. The Ge''ez verb `ታወግዙ` (from `አወገዘ`) means ''to anathematize'' or ''bind by oath,'' and its cognate object `ግዘታተ` means ''anathemas'' or ''oaths.'' Th'

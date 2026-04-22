@@ -11,18 +11,17 @@ source:
   - 76
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And from beneath his throne there came forth.
+  text: And from beneath the throne there came forth.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The verse is a short clause in Ge'ez and leaves unstated what came forth;
-      the next line in context supplies the imagery. English retains the open-ended
-      emergence rather than filling in an object.
+    text: The verse is a short clause in Ge'ez and leaves unstated what came forth; the next line in context supplies the imagery. English retains the open-ended emergence rather than filling in an object.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'And from beneath his throne there came forth.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምታሕተ
   chosen: from beneath
@@ -30,18 +29,14 @@ lexical_decisions:
   - from under
   - below
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The prepositional form combines the ablative sense ('from') with ታሕተ
-    ('beneath/under'). 'From beneath' preserves the spatial imagery more vividly than
-    the flatter 'below.'
+  rationale: The prepositional form combines the ablative sense ('from') with ታሕተ ('beneath/under'). 'From beneath' preserves the spatial imagery more vividly than the flatter 'below.'
 - source_word: መንበሩ
   chosen: his throne
   alternatives:
   - the throne
   - his seat
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: መንበር commonly denotes a throne or seat. In this heavenly-vision context,
-    'throne' is the theologically and imagistically appropriate rendering. The suffixed
-    pronoun requires 'his.'
+  rationale: መንበር commonly denotes a throne or seat. In this heavenly-vision context, 'throne' is the theologically and imagistically appropriate rendering. The suffixed pronoun requires 'his.'
 - source_word: ይወፅእ
   chosen: there came forth
   alternatives:
@@ -49,10 +44,7 @@ lexical_decisions:
   - went out
   - issued forth
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb means to go out or come forth. Because the clause describes
-    visionary emergence from beneath the throne, 'came forth' preserves elevated apocalyptic
-    register without over-paraphrasing. The English existential 'there' is supplied
-    for natural style in a verbless-objectless clause.
+  rationale: The verb means to go out or come forth. Because the clause describes visionary emergence from beneath the throne, 'came forth' preserves elevated apocalyptic register without over-paraphrasing. The English existential 'there' is supplied for natural style in a verbless-objectless clause.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -83,8 +75,7 @@ enoch_witnesses:
     text: ወእምታሕተ፡ መንበሩ፡ ይወፅእ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -94,18 +85,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Referent of the pronoun in 'his throne'
-  chosen_reading: Retain the masculine singular pronoun without explicating the referent
-    in the verse itself.
+  chosen_reading: Retain the masculine singular pronoun without explicating the referent in the verse itself.
   alternative_readings:
   - Interpret explicitly as 'the Great Glory's throne'
   - Interpret explicitly as God's throne
-  rationale: The immediate Ge'ez text only gives the suffixed pronoun. Since the wider
-    context identifies the enthroned heavenly figure, but this verse itself does not
-    restate the name/title, the translation preserves the local wording and avoids
-    importing an explanatory gloss into the main text.
-  doctrine_reference: Preserve theological tension rather than resolve it; original-language
-    primacy over translation tradition.
+  rationale: The immediate Ge'ez text only gives the suffixed pronoun. Since the wider context identifies the enthroned heavenly figure, but this verse itself does not restate the name/title, the translation preserves the local wording and avoids importing an explanatory gloss into the main text.
+  doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
+revisions:
+- timestamp: '2026-04-22T22:30:14Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.99
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/014/019.job-72233.json
+  category: grammar
+  tier: 3
+  from: And from beneath his throne there came forth.
+  to: And from beneath the throne there came forth.
+  rationale: 'In Ge''ez, the 3rd masculine singular suffix (-u) frequently functions as a definite article referring to a previously mentioned noun. Here, መንበሩ (manbaru) refers back to the ''lofty throne'' introduced in verse 18. Translating it as a possessive pronoun (''his throne'') is contextually premature, as the occupant of the throne (the Great Glory) is not introduced until verse 20. | Adjudicator: The reviewer is correct about Ge''ez grammar: the third-person masculine singular suffix (-u) is routinely used as a definite article to refer back to a previously mentioned noun. Furthermore, the exta'

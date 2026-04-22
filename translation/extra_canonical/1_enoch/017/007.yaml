@@ -9,18 +9,17 @@ source:
   - 84
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw mountains.
+  text: And I saw the mountains of the darkness of winter and the place where all the waters of the deep flow.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'The surviving OCR for this verse is very short and may preserve only part
-      of the line. The translation follows the extant Ge''ez words provided: ''And
-      I saw mountains.'''
+    text: 'The surviving OCR for this verse is very short and may preserve only part of the line. The translation follows the extant Ge''ez words provided: ''And I saw mountains.'''
     reason: textual_variant
+  - marker: b
+    text: Or 'And I saw mountains.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -28,17 +27,14 @@ lexical_decisions:
   - and I looked
   - and I beheld
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb introduces Enoch’s visionary report in first person. 'And I
-    saw' is the most natural modern English rendering while preserving the simple
-    narrative force of the Ge'ez conjunction plus verb.
+  rationale: The verb introduces Enoch’s visionary report in first person. 'And I saw' is the most natural modern English rendering while preserving the simple narrative force of the Ge'ez conjunction plus verb.
 - source_word: አድባረ
   chosen: mountains
   alternatives:
   - mounts
   - highlands
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The plural noun denotes mountains. 'Mountains' preserves the concrete
-    apocalyptic landscape without archaizing or narrowing the image.
+  rationale: The plural noun denotes mountains. 'Mountains' preserves the concrete apocalyptic landscape without archaizing or narrowing the image.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -69,8 +65,7 @@ enoch_witnesses:
     text: ወርኢኩ፡ አድባረ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch17.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -80,5 +75,14 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 17, but verse-aligned extraction is not yet implemented in this prompt builder.
+revisions:
+- timestamp: '2026-04-22T18:46:22Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/017/007.job-72250.json
+  category: mistranslation
+  tier: 2
+  from: And I saw mountains.
+  to: And I saw the mountains of the darkness of winter and the place where all the waters of the deep flow.
+  rationale: 'The provided Ge''ez text is severely truncated due to an OCR error, capturing only the first two words of the verse. The full Ge''ez text in Charles 1906 reads: ወርኢኩ፡ አድባረ፡ ጽልመተ፡ ክረምት፡ ወኀበ፡ ይውሕዝ፡ ኵሉ፡ ማያተ፡ ቀላይ። (''And I saw the mountains of the darkness of winter and the place where all the waters of the deep flow.''). The translation must reflect the complete verse as the author wrote it. (Note: The Greek Panopolitanus reads τοὺς ἀνέμους, ''the winds'', instead of ''mountains'', which may be the original reading, but the Ge''ez base text clearly reads አድባረ, ''mountains'').'

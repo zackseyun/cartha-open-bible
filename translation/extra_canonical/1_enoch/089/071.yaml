@@ -20,24 +20,20 @@ source:
   - 218
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the book was opened before the Lord of the sheep, and he took the book
-    from his hand and read it, and sealed it, and set it down.
+  text: And the book was read before the Lord of the sheep, and he took the book from his hand and read it, and sealed it, and set it down., and he took the book from his hand and read it, and sealed it, and set it down.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The passive verb rendered 'was opened' is somewhat uncertain in the OCR
-      witness; 'was read' or 'was revealed' are possible, but the following clause
-      already states explicitly that the book was read, so 'was opened' best fits
-      the sequence.
+    text: The passive verb rendered 'was opened' is somewhat uncertain in the OCR witness; 'was read' or 'was revealed' are possible, but the following clause already states explicitly that the book was read, so 'was opened' best fits the sequence.
     reason: lexical_alternative
   - marker: b
-    text: The pronoun in 'from his hand' is ambiguous in this witness; the text does
-      not explicitly restate whose hand held the book.
+    text: The pronoun in 'from his hand' is ambiguous in this witness; the text does not explicitly restate whose hand held the book.
     reason: alternative_reading
+  - marker: c
+    text: Or 'And the book was opened before the Lord of the sheep'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: መጽሐፍ
   chosen: book
@@ -45,73 +41,59 @@ lexical_decisions:
   - scroll
   - document
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The common Ge'ez term for a written book/document. 'Book' is the most
-    natural default in English and does not over-specify material form; 'scroll' is
-    possible in ancient context but not demanded by the word itself.
+  rationale: The common Ge'ez term for a written book/document. 'Book' is the most natural default in English and does not over-specify material form; 'scroll' is possible in ancient context but not demanded by the word itself.
 - source_word: ተነበ
   chosen: was opened
   alternatives:
   - was revealed
   - was read
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'In context the passive sense fits the narrative sequence: the book is
-    first opened before the Lord of the sheep, then taken and read. Rendering it as
-    ''was read'' would duplicate the later explicit verb ''read.'' ''Was opened''
-    best preserves the procedural imagery of a heavenly record.'
+  rationale: 'In context the passive sense fits the narrative sequence: the book is first opened before the Lord of the sheep, then taken and read. Rendering it as ''was read'' would duplicate the later explicit verb ''read.'' ''Was opened'' best preserves the procedural imagery of a heavenly record.'
 - source_word: በቅድመ
   chosen: before
   alternatives:
   - in the presence of
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A standard preposition of presence. 'Before' is concise and preserves
-    the courtroom/visionary setting.
+  rationale: A standard preposition of presence. 'Before' is concise and preserves the courtroom/visionary setting.
 - source_word: እግዚአ አባግዕ
   chosen: the Lord of the sheep
   alternatives:
   - the master of the sheep
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Animal Apocalypse consistently uses sheep imagery for Israel and
-    their divine overseer. 'Lord' preserves the elevated register and matches the
-    title force of እግዚአ without flattening the metaphor.
+  rationale: The Animal Apocalypse consistently uses sheep imagery for Israel and their divine overseer. 'Lord' preserves the elevated register and matches the title force of እግዚአ without flattening the metaphor.
 - source_word: ነሥአ
   chosen: took
   alternatives:
   - received
   - lifted
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The straightforward narrative verb indicates taking the book into possession
-    from another hand.
+  rationale: The straightforward narrative verb indicates taking the book into possession from another hand.
 - source_word: እምእዱ
   chosen: from his hand
   alternatives:
   - out of his hand
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A literal rendering preserves the concrete courtroom/bookkeeping imagery.
-    The antecedent of 'his' is not re-specified in the Ge'ez, so the English keeps
-    the same ambiguity.
+  rationale: A literal rendering preserves the concrete courtroom/bookkeeping imagery. The antecedent of 'his' is not re-specified in the Ge'ez, so the English keeps the same ambiguity.
 - source_word: አንበበ
   chosen: read
   alternatives:
   - recited
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The ordinary sense in this context is reading the written record. 'Recited'
-    is possible but less direct.
+  rationale: The ordinary sense in this context is reading the written record. 'Recited' is possible but less direct.
 - source_word: ኀተማ
   chosen: sealed
   alternatives:
   - closed with a seal
   - authenticated
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb naturally evokes sealing a document. This preserves the legal/judicial
-    force of the heavenly book imagery.
+  rationale: The verb naturally evokes sealing a document. This preserves the legal/judicial force of the heavenly book imagery.
 - source_word: አንበረ
   chosen: set it down
   alternatives:
   - placed it
   - laid it down
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb indicates placing or setting. 'Set it down' reads naturally
-    while retaining the concrete action after reading and sealing.
+  rationale: The verb indicates placing or setting. 'Set it down' reads naturally while retaining the concrete action after reading and sealing.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -142,8 +124,7 @@ enoch_witnesses:
     text: '*ወመጽሐፍ፡ ተነበ፡ በቅድመ፡ እግዚአ፡ አባግዕ፡ ወነሥአ፡ መጽሐፈ፡ እምእዱ፡ *ወአንበበ፡ ወኀተማ፡ ወአንበረ።'
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -153,15 +134,22 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Rendering of እግዚአ አባግዕ in the Animal Apocalypse
   chosen_reading: the Lord of the sheep
   alternative_readings:
   - the master of the sheep
-  rationale: The title refers to God within the sustained animal vision. 'Lord' preserves
-    both the authority of the figure and the elevated apocalyptic register, while
-    keeping the sheep metaphor explicit.
-  doctrine_reference: Translate titles; preserve apocalyptic imagery; do not flatten
-    into generic prose.
+  rationale: The title refers to God within the sustained animal vision. 'Lord' preserves both the authority of the figure and the elevated apocalyptic register, while keeping the sheep metaphor explicit.
+  doctrine_reference: Translate titles; preserve apocalyptic imagery; do not flatten into generic prose.
+revisions:
+- timestamp: '2026-04-22T22:48:42Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/071.job-72797.json
+  category: mistranslation
+  tier: 3
+  from: And the book was opened before the Lord of the sheep
+  to: And the book was read before the Lord of the sheep, and he took the book from his hand and read it, and sealed it, and set it down.
+  rationale: 'Adjudicator-modified: The reviewer is correct that the Ge''ez verb underlying the OCR error `ተነበ` is `ተነበበ` (tanababa), which means ''was read,'' not ''was opened.'' The narrative sequence deliberately repeats the action of reading: the scribe reads the book aloud, and then the Lord of the sheep takes it and reads it Himself (`ወአንበበ`, wa-ʾanbaba). Translating the first verb as ''was opened'' obscures this sequence and departs from the Ge''ez text. I have modified the rewrite to include the full verse to ensure no text is los'

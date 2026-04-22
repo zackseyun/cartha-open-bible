@@ -9,18 +9,17 @@ source:
   - 102
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch26.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 26,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch26.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 26, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the path of the west was for this other one.
+  text: And toward the west of this was another,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ge'ez is terse and does not explicitly name what 'the other one' refers
-      to; the broader context may imply a feature in the vision, but the noun is not
-      supplied here.
+    text: The Ge'ez is terse and does not explicitly name what 'the other one' refers to; the broader context may imply a feature in the vision, but the noun is not supplied here.
     reason: alternative_reading
+  - marker: b
+    text: Or 'And the path of the west was for this other one.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: መንገለ
   chosen: path
@@ -28,33 +27,28 @@ lexical_decisions:
   - way
   - road
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun commonly denotes a way, road, or path. 'Path' preserves the
-    concrete spatial imagery of the visionary landscape without sounding overly prosaic.
+  rationale: The noun commonly denotes a way, road, or path. 'Path' preserves the concrete spatial imagery of the visionary landscape without sounding overly prosaic.
 - source_word: ዐረቡ
   chosen: the west
   alternatives:
   - westward region
   - the setting place
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The term refers to the west/western side. In this topographical vision,
-    the cardinal direction should remain explicit.
+  rationale: The term refers to the west/western side. In this topographical vision, the cardinal direction should remain explicit.
 - source_word: ለዝ
   chosen: for this
   alternatives:
   - to this
   - belonging to this
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The preposition with demonstrative most naturally marks relation or
-    assignment: the western path belongs to or is for ''this'' one/object in the scene.'
+  rationale: 'The preposition with demonstrative most naturally marks relation or assignment: the western path belongs to or is for ''this'' one/object in the scene.'
 - source_word: ካልእ
   chosen: other one
   alternatives:
   - another
   - the other
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective/substantive means 'other' or 'another.' Because the verse
-    is elliptical and likely contrasts one object with another in the vision, 'other
-    one' preserves the substantival force without over-specifying the referent.
+  rationale: The adjective/substantive means 'other' or 'another.' Because the verse is elliptical and likely contrasts one object with another in the vision, 'other one' preserves the substantival force without over-specifying the referent.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -85,8 +79,7 @@ enoch_witnesses:
     text: ወመንገለ፡ ዐረቡ፡ ለዝ፡ ካልእ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch26.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch26.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -96,18 +89,24 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 26, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 26, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Elliptical referent in the visionary description
-  chosen_reading: Retain the indefinite substantive 'other one' rather than supplying
-    a noun such as 'mountain' or 'tree.'
+  chosen_reading: Retain the indefinite substantive 'other one' rather than supplying a noun such as 'mountain' or 'tree.'
   alternative_readings:
   - the other
   - another mountain
   - another place
-  rationale: The surviving Ge'ez snippet does not explicitly state the referent. Supplying
-    a noun from context would go beyond the witness. The translation therefore preserves
-    the ambiguity in the main text.
-  doctrine_reference: Preserve theological tension rather than resolve it; original-language
-    primacy over translation tradition.
+  rationale: The surviving Ge'ez snippet does not explicitly state the referent. Supplying a noun from context would go beyond the witness. The translation therefore preserves the ambiguity in the main text.
+  doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
+revisions:
+- timestamp: '2026-04-22T22:42:00Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/026/004.job-72309.json
+  category: mistranslation
+  tier: 3
+  from: And the path of the west was for this other one.
+  to: And toward the west of this was another,
+  rationale: 'The draft completely misconstrues the syntax. The word መንገለ (mangala) functions here as a preposition meaning ''toward'' or ''on the side of'' (exactly as it does in 26:2 and 26:3), not the noun ''path''. The phrase መንገለ፡ ዐረቡ፡ ለዝ means ''toward the west of this'' (matching the Greek πρὸς δυσμὰς τούτου), and ካልእ (another) is the subject. The text is describing the location of another mountain, not assigning a path to someone/something. | Adjudicator: The reviewer is entirely correct. The Ge''ez word መንገለ (mangala) functions here as a directional preposition (''toward'' or ''in the direction of''), parallel to its use in the preceding verses (e.g., 26:3'

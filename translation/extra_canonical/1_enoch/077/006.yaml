@@ -10,22 +10,23 @@ source:
   - 185
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the two of them come from noon as far as the sea, and they pour out their
-    waters into the eastern sea.
+  text: And the two of them come from the north as far as the sea, and they pour out their waters into the Erythraean Sea in the east.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Literally 'from noon'; in geographical description this likely means 'from
-      the south.'
+    text: Literally 'from noon'; in geographical description this likely means 'from the south.'
     reason: lexical_alternative
   - marker: b
-    text: The Ge'ez reads 'the sea of Erythra/Red Sea, east.' This may refer to the
-      Red Sea or a broader 'Erythraean Sea' conception in ancient geography.
+    text: The Ge'ez reads 'the sea of Erythra/Red Sea, east.' This may refer to the Red Sea or a broader 'Erythraean Sea' conception in ancient geography.
     reason: cultural_note
+  - marker: c
+    text: Or 'from noon'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'into the eastern sea'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ክልኤቱ፡ ክልኤ፡
   chosen: the two of them
@@ -33,50 +34,41 @@ lexical_decisions:
   - the two
   - both of them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The doubled form emphasizes a pair. English 'the two of them' preserves
-    the explicit dual sense without overloading the line.
+  rationale: The doubled form emphasizes a pair. English 'the two of them' preserves the explicit dual sense without overloading the line.
 - source_word: ይመጽኡ፡
   chosen: come
   alternatives:
   - arrive
   - go forth
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward motion verb is most natural here. 'Come' fits the narrative
-    description of the rivers' course.
+  rationale: A straightforward motion verb is most natural here. 'Come' fits the narrative description of the rivers' course.
 - source_word: እመስዕ፡
   chosen: from noon
   alternatives:
   - from the south
   - from midday
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The Ge'ez term can denote midday/noon and by extension the south. In
-    cosmographic description, cardinal direction is likely intended, but 'noon' reflects
-    the literal sense and preserves the traditional directional idiom.
+  rationale: The Ge'ez term can denote midday/noon and by extension the south. In cosmographic description, cardinal direction is likely intended, but 'noon' reflects the literal sense and preserves the traditional directional idiom.
 - source_word: እስከ፡ ባሕር፡
   chosen: as far as the sea
   alternatives:
   - to the sea
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition marks extent or destination. 'As far as the sea' keeps
-    the sense of reaching the sea.
+  rationale: The preposition marks extent or destination. 'As far as the sea' keeps the sense of reaching the sea.
 - source_word: ወይከዕዉ፡ ማዮሙ፡
   chosen: they pour out their waters
   alternatives:
   - they empty their waters
   - their waters flow
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb suggests casting or pouring out. 'Pour out' preserves the vivid
-    hydrological imagery better than the flatter 'flow.'
+  rationale: The verb suggests casting or pouring out. 'Pour out' preserves the vivid hydrological imagery better than the flatter 'flow.'
 - source_word: በባሕረ፡ ኤርትራ፡ እምሥራቅ።
   chosen: into the eastern sea
   alternatives:
   - into the Red Sea in the east
   - into the Erythraean Sea, eastward
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase literally names the Erythraean/Red Sea with an eastern qualifier.
-    Because the cosmographic reference may not map neatly onto modern geography, 'the
-    eastern sea' gives a clear main text rendering while preserving the directional
-    force; the more specific identification is noted in a footnote.
+  rationale: The phrase literally names the Erythraean/Red Sea with an eastern qualifier. Because the cosmographic reference may not map neatly onto modern geography, 'the eastern sea' gives a clear main text rendering while preserving the directional force; the more specific identification is noted in a footnote.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -107,8 +99,7 @@ enoch_witnesses:
     text: ወ*ክልኤቱ፡ ክልኤ፡ ይመጽኡ፡ እመስዕ፡ *እስከ፡ ባሕር፡ ወይከዕዉ፡ ማዮሙ፡ በ*ባሕረ፡ ኤርትራ፡ እምሥራቅ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -118,5 +109,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
+revisions:
+- timestamp: '2026-04-22T19:31:51Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/077/006.job-72645.json
+  category: mistranslation
+  tier: 2
+  from: from noon
+  to: from the north
+  rationale: The Ge'ez word መስዕ (mas'e) means 'north', not 'noon' or 'south'. The draft has confused the cardinal directions. In 1 Enoch 77:1-3, the four winds are East, South, West, and Mes'e (North).
+- timestamp: '2026-04-22T19:31:51Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/077/006.job-72645.json
+  category: mistranslation
+  tier: 2
+  from: into the eastern sea
+  to: into the Erythraean Sea in the east
+  rationale: The Ge'ez explicitly names the 'Erythraean Sea' (በባሕረ፡ ኤርትራ). The draft omits this proper noun from the main text, replacing it with 'the eastern sea', which flattens the specific geographical reference intended by the author.

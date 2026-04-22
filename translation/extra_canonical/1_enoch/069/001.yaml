@@ -13,25 +13,23 @@ source:
   - 164
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And after this, the judgment will terrify them and drive them away, because
-    they showed this to those who dwell upon the dry land.
+  text: And after this judgment, they will terrify them and oppress them, because they showed this to those who dwell upon the dry land.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: Or 'after these things.' The Ge'ez transition marks sequence in the vision.
     reason: lexical_alternative
   - marker: b
-    text: '''Dry land'' is more literal than ''earth'' here and may preserve a cosmological
-      contrast rather than simply meaning humanity in general.'
+    text: '''Dry land'' is more literal than ''earth'' here and may preserve a cosmological contrast rather than simply meaning humanity in general.'
     reason: lexical_alternative
   - marker: c
-    text: The referent of 'this' is left implicit in the verse and likely points back
-      to the preceding revealed matter; the Ge'ez does not specify it here.
+    text: The referent of 'this' is left implicit in the verse and likely points back to the preceding revealed matter; the Ge'ez does not specify it here.
     reason: alternative_reading
+  - marker: d
+    text: Or 'And after this, the judgment will terrify them and drive them away'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምድኅረ ዝ
   chosen: after this
@@ -39,8 +37,7 @@ lexical_decisions:
   - after these things
   - afterward
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Standard temporal transition in narrative/apocalyptic sequence; 'after
-    this' preserves the visionary progression without sounding overly wooden.
+  rationale: Standard temporal transition in narrative/apocalyptic sequence; 'after this' preserves the visionary progression without sounding overly wooden.
 - source_word: ኵነኔ
   chosen: the judgment
   alternatives:
@@ -48,9 +45,7 @@ lexical_decisions:
   - condemnation
   - sentence
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun denotes judicial action or sentence. With the article-like force
-    in context, 'the judgment' fits apocalyptic courtroom imagery better than the
-    more abstract 'judgment' alone.
+  rationale: The noun denotes judicial action or sentence. With the article-like force in context, 'the judgment' fits apocalyptic courtroom imagery better than the more abstract 'judgment' alone.
 - source_word: ያደነገፅዎሙ
   chosen: will terrify them
   alternatives:
@@ -58,8 +53,7 @@ lexical_decisions:
   - will make them tremble
   - will confound them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys causing fear or shock. 'Will terrify them' preserves
-    the force of eschatological dread more clearly than the milder 'alarm'.
+  rationale: The verb conveys causing fear or shock. 'Will terrify them' preserves the force of eschatological dread more clearly than the milder 'alarm'.
 - source_word: ያምዕፅዎሙ
   chosen: drive them away
   alternatives:
@@ -67,17 +61,14 @@ lexical_decisions:
   - cast them out
   - scatter them
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb suggests thrusting away or forcing off. 'Drive them away' is
-    vivid and readable, while leaving open whether the action is judicial expulsion
-    or panicked flight.
+  rationale: The verb suggests thrusting away or forcing off. 'Drive them away' is vivid and readable, while leaving open whether the action is judicial expulsion or panicked flight.
 - source_word: እስመ
   chosen: because
   alternatives:
   - for
   - since
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Introduces the reason for the coming judgment; 'because' is the clearest
-    modern English causal connector.
+  rationale: Introduces the reason for the coming judgment; 'because' is the clearest modern English causal connector.
 - source_word: ዘንተ አርአዩ
   chosen: they showed this
   alternatives:
@@ -85,17 +76,14 @@ lexical_decisions:
   - they made this seen
   - they disclosed this
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase literally involves showing or making visible. 'Showed this'
-    is simple and close to the Ge'ez, while allowing the referent 'this' to remain
-    as undefined in English as in the source.
+  rationale: The phrase literally involves showing or making visible. 'Showed this' is simple and close to the Ge'ez, while allowing the referent 'this' to remain as undefined in English as in the source.
 - source_word: ለእለ የኀድሩ
   chosen: to those who dwell
   alternatives:
   - to those who live
   - to the inhabitants who remain
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A participial expression for inhabitants or dwellers. 'Those who dwell'
-    preserves the elevated register suitable to apocalyptic prose.
+  rationale: A participial expression for inhabitants or dwellers. 'Those who dwell' preserves the elevated register suitable to apocalyptic prose.
 - source_word: ዲበ የብስ
   chosen: upon the dry land
   alternatives:
@@ -103,9 +91,7 @@ lexical_decisions:
   - upon the land
   - on dry ground
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: የብስ commonly denotes dry land as opposed to sea/waters. 'Upon the dry
-    land' keeps the concrete cosmological image rather than flattening it to the generic
-    'earth'.
+  rationale: የብስ commonly denotes dry land as opposed to sea/waters. 'Upon the dry land' keeps the concrete cosmological image rather than flattening it to the generic 'earth'.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -136,20 +122,17 @@ enoch_witnesses:
     text: ወእምድኅረ*ዝ፡ ኵነኔ፡ ያደነገፅዎሙ፡ ወ*ያምዕፅዎሙ፡ እስመ፡ ዘንተ፡ አርአዩ፡ ለእለ፡ የኀድሩ፡ ዲበ፡ የብስ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Force of ኵነኔ in an apocalyptic context
   chosen_reading: the judgment
@@ -157,8 +140,16 @@ theological_decisions:
   - judgment
   - the sentence
   - condemnation
-  rationale: The verse depicts a specific eschatological judicial event rather than
-    a general moral evaluation. 'The judgment' preserves that apocalyptic specificity
-    without overinterpreting the exact legal nuance.
-  doctrine_reference: Preserve apocalyptic imagery and judgment formulas; do not flatten
-    into generic prose.
+  rationale: The verse depicts a specific eschatological judicial event rather than a general moral evaluation. 'The judgment' preserves that apocalyptic specificity without overinterpreting the exact legal nuance.
+  doctrine_reference: Preserve apocalyptic imagery and judgment formulas; do not flatten into generic prose.
+revisions:
+- timestamp: '2026-04-22T22:45:10Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/001.job-72528.json
+  category: mistranslation
+  tier: 3
+  from: And after this, the judgment will terrify them and drive them away
+  to: And after this judgment, they will terrify them and oppress them
+  rationale: 'The phrase እምድኅረ ዝ ኵነኔ (ʾəm-dəḫra zə kʷənnane) means ''after this judgment.'' The draft incorrectly splits this phrase, making ''judgment'' the subject of the following verbs. However, the verbs ያደነገፅዎሙ (yādannagəṣəwwomu) and ያምዕፅዎሙ (yāmʿəṣəwwomu) both carry the 3rd-person plural subject suffix (-wwomu), meaning ''they will [verb] them.'' The singular ''judgment'' cannot be the subject. Furthermore, the root of ያምዕፅዎሙ is መዐፀ (maʿaṣa), which means ''to oppress, do violence, act unjustly'' (Dillmann), not '' | Adjudicator: The reviewer is correct on both grammatical and lexical grounds. The phrase `እምድኅረ ዝ ኵነኔ` (ʾəm-dəḫra zə kʷənnane) translates as ''after this judgment,'' not ''after this, the judgment.'' Furthermore, the '

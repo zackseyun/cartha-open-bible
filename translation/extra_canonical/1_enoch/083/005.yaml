@@ -10,26 +10,23 @@ source:
   - 198
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 83,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And because of it a word fell into my mouth, and I lifted up a cry and said,
-    “The earth is swallowed up.”
+  text: And because of it a word fell into my mouth, and I lifted up a cry and said, “And because of it a word fell into my mouth, and I lifted up a cry and said, “The earth is destroyed.””
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'from it' or 'thereupon'; the opening phrase may mark source, cause,
-      or sequence from the preceding vision.
+    text: Or 'from it' or 'thereupon'; the opening phrase may mark source, cause, or sequence from the preceding vision.
     reason: lexical_alternative
   - marker: b
-    text: Literally, 'a word fell into my mouth,' an idiom for an utterance that came
-      upon the speaker.
+    text: Literally, 'a word fell into my mouth,' an idiom for an utterance that came upon the speaker.
     reason: cultural_note
   - marker: c
-    text: The verb behind 'is swallowed up' may also be understood more generally
-      as 'is overwhelmed' or 'has perished.'
+    text: The verb behind 'is swallowed up' may also be understood more generally as 'is overwhelmed' or 'has perished.'
     reason: lexical_alternative
+  - marker: d
+    text: Or 'The earth is swallowed up.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምኔሁ
   chosen: because of it
@@ -37,34 +34,28 @@ lexical_decisions:
   - from it
   - thereupon/from this
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The preposition with pronominal suffix can denote source or cause. In
-    this dream-report context, the sense is best taken causally/resultatively: what
-    Enoch saw prompted the utterance that follows.'
+  rationale: 'The preposition with pronominal suffix can denote source or cause. In this dream-report context, the sense is best taken causally/resultatively: what Enoch saw prompted the utterance that follows.'
 - source_word: ወድቀ ነገር ውስተ አፉየ
   chosen: a word fell into my mouth
   alternatives:
   - speech came into my mouth
   - a matter fell into my mouth
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The idiom is preserved rather than flattened to a generic 'I spoke,'
-    since the visionary setting suggests an involuntary or inspired utterance. 'Word'
-    is more transparent than 'matter' here.
+  rationale: The idiom is preserved rather than flattened to a generic 'I spoke,' since the visionary setting suggests an involuntary or inspired utterance. 'Word' is more transparent than 'matter' here.
 - source_word: አንሣእኩ
   chosen: I lifted up
   alternatives:
   - I raised
   - I uttered
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward rendering of the verb of raising/lifting, retained
-    because it governs the following cry and preserves the vividness of the report.
+  rationale: A straightforward rendering of the verb of raising/lifting, retained because it governs the following cry and preserves the vividness of the report.
 - source_word: እጽራሕ
   chosen: a cry
   alternatives:
   - my voice
   - an outcry
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The noun/verb complex relates to crying out loudly. 'A cry' keeps the
-    emotional force without overinterpreting whether it is lament, alarm, or proclamation.
+  rationale: The noun/verb complex relates to crying out loudly. 'A cry' keeps the emotional force without overinterpreting whether it is lament, alarm, or proclamation.
 - source_word: ተሐጕለት
   chosen: is swallowed up
   alternatives:
@@ -72,16 +63,13 @@ lexical_decisions:
   - has perished
   - has sunk down
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb appears to convey being engulfed or swallowed. In the flood-vision
-    context, 'is swallowed up' preserves the catastrophic imagery better than a flatter
-    'perished.'
+  rationale: The verb appears to convey being engulfed or swallowed. In the flood-vision context, 'is swallowed up' preserves the catastrophic imagery better than a flatter 'perished.'
 - source_word: ምድር
   chosen: the earth
   alternatives:
   - the land
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this cosmic-dream setting, 'earth' better matches the scale of the
-    vision, though 'land' remains a possible narrower alternative.
+  rationale: In this cosmic-dream setting, 'earth' better matches the scale of the vision, though 'land' remains a possible narrower alternative.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -112,8 +100,7 @@ enoch_witnesses:
     text: ወ*እምኔሁ፡ ወድቀ፡ ነገር፡ ውስተ፡ አፉየ፡ ወ*አንሣእኩ፡ እጽራሕ፡ ወእቤ፡ ተሐጕለት፡ ምድር።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -123,14 +110,22 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Scope of ምድር in an apocalyptic flood vision
   chosen_reading: the earth
   alternative_readings:
   - the land
-  rationale: Dream Visions often operate on a cosmic scale. Rendering the term as
-    'earth' preserves that breadth while still allowing readers to understand the
-    flood imagery as world-encompassing within the vision.
+  rationale: Dream Visions often operate on a cosmic scale. Rendering the term as 'earth' preserves that breadth while still allowing readers to understand the flood imagery as world-encompassing within the vision.
   doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic language.
+revisions:
+- timestamp: '2026-04-22T22:47:05Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/083/005.job-72698.json
+  category: lexical
+  tier: 3
+  from: The earth is swallowed up.
+  to: And because of it a word fell into my mouth, and I lifted up a cry and said, “The earth is destroyed.”
+  rationale: 'Adjudicator-modified: The reviewer is entirely correct about the Ge''ez lexicon. The verb ተሐጕለ (taḥagʷla) means ''to be destroyed'' or ''to perish,'' whereas ''to be swallowed up'' would require a form of ዋሐጠ (wāḥaṭa), which the author indeed used in the preceding verse. Translating both as ''swallowed up'' obscures the author''s deliberate lexical shift. I am modifying the rewrite only to supply the full verse text rather than just the corrected clause.'

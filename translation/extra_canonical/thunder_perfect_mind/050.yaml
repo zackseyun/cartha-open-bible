@@ -28,57 +28,43 @@ source:
   alignment_confidence: medium
   warnings: []
 translation:
-  text: 'I am she who is hated in every place,
-
-    and I am she who is loved in every place.'
+  text: '...outwardly, and you knew me inwardly. I am she before whom you were ashamed, and you were shameless. I, I am godless, and I am the virgin, her God.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The OCR lines in this slot read with imperatives (e.g., ‘do not be ignorant’)
-      and a claim like ‘I, I am one goddess,’ which do not surface the ‘hated/loved
-      everywhere’ pair. Segment mapping appears heuristic; this translation reflects
-      the expected pair for 050 while flagging the mismatch.
+    text: The OCR lines in this slot read with imperatives (e.g., ‘do not be ignorant’) and a claim like ‘I, I am one goddess,’ which do not surface the ‘hated/loved everywhere’ pair. Segment mapping appears heuristic; this translation reflects the expected pair for 050 while flagging the mismatch.
     reason: alignment_note
+  - marker: b
+    text: Or 'I am she who is hated in every place,\nand I am she who is loved in every place.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ
   chosen: I am
   alternatives:
   - It is I
   - I
-  rationale: Maintain the repeated first-person self-identification formula that structures
-    the poem; do not compress to a simple pronoun.
+  rationale: Maintain the repeated first-person self-identification formula that structures the poem; do not compress to a simple pronoun.
 - source_word: '[alignment-mapped lexeme for ‘hate’ (not visible in this OCR slice)]'
   chosen: hated
   alternatives:
   - despised
   - detested
-  rationale: Paradox requires a strong antonym to ‘loved.’ ‘Hated’ is the most neutral,
-    symmetric English counterpart likely matching a Coptic verb of enmity.
+  rationale: Paradox requires a strong antonym to ‘loved.’ ‘Hated’ is the most neutral, symmetric English counterpart likely matching a Coptic verb of enmity.
 - source_word: '[alignment-mapped lexeme for ‘love’ (not visible in this OCR slice)]'
   chosen: loved
   alternatives:
   - beloved
   - cherished
-  rationale: Plain ‘loved’ mirrors the stark polarity with ‘hated’ and preserves the
-    poem’s sharp antithesis without softening.
-- source_word: '[alignment-mapped distributive ‘everywhere’ (not visible in this OCR
-    slice)]'
+  rationale: Plain ‘loved’ mirrors the stark polarity with ‘hated’ and preserves the poem’s sharp antithesis without softening.
+- source_word: '[alignment-mapped distributive ‘everywhere’ (not visible in this OCR slice)]'
   chosen: in every place
   alternatives:
   - everywhere
   - in every land
-  rationale: Likely reflects a Coptic distributive/locative construction; ‘in every
-    place’ keeps the parallel cadence and concreteness.
-parallelism_check: 'Two cola with strict symmetry: I am + she who is + [hated/loved]
-  + in every place. The antithetical pair is preserved without mediation, and the
-  distributive phrase is repeated for rhythmic balance.'
-voice_check: First-person, feminine-voiced self-revelation maintained with explicit
-  ‘I am’ and ‘she who is,’ matching Thunder’s authoritative, paradox-declaring register.
-alignment_risk_note: Mapped alignment confidence is only medium, and the provided
-  OCR excerpt for this segment does not visibly contain clear lexemes for ‘hate/love’
-  or ‘everywhere.’ This rendering follows the segment’s widely attested parallel line
-  in Thunder’s ‘Second I Am’ sequence, keeping the paradox intact, but precise word-level
-  alignment to this OCR slice cannot be confirmed.
+  rationale: Likely reflects a Coptic distributive/locative construction; ‘in every place’ keeps the parallel cadence and concreteness.
+parallelism_check: 'Two cola with strict symmetry: I am + she who is + [hated/loved] + in every place. The antithetical pair is preserved without mediation, and the distributive phrase is repeated for rhythmic balance.'
+voice_check: First-person, feminine-voiced self-revelation maintained with explicit ‘I am’ and ‘she who is,’ matching Thunder’s authoritative, paradox-declaring register.
+alignment_risk_note: Mapped alignment confidence is only medium, and the provided OCR excerpt for this segment does not visibly contain clear lexemes for ‘hate/love’ or ‘everywhere.’ This rendering follows the segment’s widely attested parallel line in Thunder’s ‘Second I Am’ sequence, keeping the paradox intact, but precise word-level alignment to this OCR slice cannot be confirmed.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5-2025-08-07
@@ -94,8 +80,17 @@ ai_draft:
   - MacRae — consult only
   - Poirier 1995 — consult only
   - OtherGospels / Zinner consult text — English comprehension only
-revision_risk_note: If subsequent collation shows this slice corresponds to a different
-  line (the OCR includes imperatives and a ‘goddess’ claim), we may need to relocate
-  this translation and retranslate the correct content for 050. Lexical choices like
-  ‘in every place’ vs ‘everywhere,’ and ‘hated’ vs ‘despised,’ may be adjusted to
-  match the verified Coptic lexemes.
+revision_risk_note: If subsequent collation shows this slice corresponds to a different line (the OCR includes imperatives and a ‘goddess’ claim), we may need to relocate this translation and retranslate the correct content for 050. Lexical choices like ‘in every place’ vs ‘everywhere,’ and ‘hated’ vs ‘despised,’ may be adjusted to match the verified Coptic lexemes.
+revisions:
+- timestamp: '2026-04-22T22:55:10Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_coptic_gnostic/extra_canonical/thunder_perfect_mind/001/050.job-73453.json
+  category: mistranslation
+  tier: 3
+  from: 'I am she who is hated in every place,
+
+    and I am she who is loved in every place.'
+  to: '...outwardly, and you knew me inwardly. I am she before whom you were ashamed, and you were shameless. I, I am godless, and I am the virgin, her God.'
+  rationale: 'Adjudicator-modified: The reviewer correctly identifies a severe misalignment where the draft translated an expected text rather than the actual Coptic text provided for this segment. The Coptic `ⲟⲩⲁⲧⲛⲟⲩⲧⲉ` is indeed ''a godless one'' (the alpha privative `ⲁⲧ-` + `ⲛⲟⲩⲧⲉ`), not ''one goddess'', and `ⲁⲧⲉⲧⲛⲥⲟⲟⲩⲛ` is the Perfect I ''you knew''. I have modified the rewrite slightly to include the direct object ''me'' (`ⲙⲙⲟⲓ`) which follows ''you knew'' in the standard text, and to use the more standard ''virgin'' for `ⲧⲡⲁⲣⲑⲉⲛⲟⲥ`.'

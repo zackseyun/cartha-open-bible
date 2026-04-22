@@ -10,19 +10,17 @@ source:
   - 247
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 100,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And now, know this:'
+  text: And now, know that your deeds will be investigated by the angels in heaven, and by the sun and the moon and the stars, concerning your sins, because upon the earth you execute judgment upon the righteous.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'The surviving Ge''ez line is very brief and appears to introduce what follows:
-      literally, ''And now, know …'' or ''And now, know this.'' The object is not
-      explicit in the extant wording and may be supplied by the continuation of the
-      sentence in the next line or verse.'
+    text: 'The surviving Ge''ez line is very brief and appears to introduce what follows: literally, ''And now, know …'' or ''And now, know this.'' The object is not explicit in the extant wording and may be supplied by the continuation of the sentence in the next line or verse.'
     reason: textual_variant
+  - marker: b
+    text: Or 'And now, know this:'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ወይእዜኒ
   chosen: And now
@@ -31,9 +29,7 @@ lexical_decisions:
   - but now
   - and at this time
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The conjunction ወ plus the temporal adverbial element yields a transitional
-    formula. 'And now' preserves the discourse shift and exhortatory force without
-    overloading the small particle with emphatic English.
+  rationale: The conjunction ወ plus the temporal adverbial element yields a transitional formula. 'And now' preserves the discourse shift and exhortatory force without overloading the small particle with emphatic English.
 - source_word: አእምሩ
   chosen: know
   alternatives:
@@ -41,9 +37,7 @@ lexical_decisions:
   - recognize
   - be aware
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Imperative plural from the verb of knowing/understanding. 'Know' is the
-    most direct and idiomatic rendering for an apocalyptic admonition formula; 'understand'
-    is possible but slightly more interpretive.
+  rationale: Imperative plural from the verb of knowing/understanding. 'Know' is the most direct and idiomatic rendering for an apocalyptic admonition formula; 'understand' is possible but slightly more interpretive.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -74,8 +68,7 @@ enoch_witnesses:
     text: ወይእዜኒ፡ አእምሩ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -85,5 +78,15 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction is not yet implemented in this prompt builder.
+revisions:
+- timestamp: '2026-04-22T22:50:30Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/100/010.job-72926.json
+  category: mistranslation
+  tier: 3
+  from: 'And now, know this:'
+  to: And now, know that your deeds will be investigated by the angels in heaven, and by the sun and the moon and the stars, concerning your sins, because upon the earth you execute judgment upon the righteous.
+  rationale: 'The verse parser severely truncated the source text. 1 Enoch 100:10 in Charles 1906 continues: ከመ፡ እመላእክት፡ ይትኀሠሥ፡ ምግባሪክሙ፡ በሰማይ፡ እምፀሐይ፡ ወእምወርኅ፡ ወእምከዋክብት፡ በእንተ፡ ኃጢአቲክሙ፡ እስመ፡ በዲበ፡ ምድር፡ ትገብሩ፡ ኵነኔ፡ ጻድቀ፡ በጻድቃን። The full verse must be restored and translated. | Adjudicator: The verse parser clearly truncated the text, leaving only the first three words of the verse in the current English rendering. The reviewer correctly supplies the rest of the Ge''ez text for 1 Enoch 10'

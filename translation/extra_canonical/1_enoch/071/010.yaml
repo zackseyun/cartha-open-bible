@@ -11,23 +11,20 @@ source:
   - 168
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch71.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 71,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch71.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 71, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And among them was the Head of Days, and his head was like white and pure
-    wool, and his garment is beyond description.
+  text: And with them was the Head of Days, and his head was like white and pure wool, and his garment is beyond description.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'the Ancient of Days.' The traditional rendering reflects the likely
-      Danielic resonance of the title, but the Ge'ez here reads more literally 'Head
-      of Days.'
+    text: Or 'the Ancient of Days.' The traditional rendering reflects the likely Danielic resonance of the title, but the Ge'ez here reads more literally 'Head of Days.'
     reason: lexical_alternative
   - marker: b
-    text: The final phrase may also be understood as 'cannot be explained/interpreted.'
-      The sense is that the garment surpasses ordinary description.
+    text: The final phrase may also be understood as 'cannot be explained/interpreted.' The sense is that the garment surpasses ordinary description.
     reason: lexical_alternative
+  - marker: c
+    text: Or 'And among them'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ርእሰ መዋዕል
   chosen: the Head of Days
@@ -35,43 +32,35 @@ lexical_decisions:
   - the Head of the Days
   - the Ancient of Days
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A literal rendering of the Ge'ez expression preserves the title as it
-    stands in this Enochic context. 'Ancient of Days' is a familiar interpretive equivalent
-    influenced by Danielic tradition, but the project prefers translating from the
-    local wording rather than importing a more traditional title.
+  rationale: A literal rendering of the Ge'ez expression preserves the title as it stands in this Enochic context. 'Ancient of Days' is a familiar interpretive equivalent influenced by Danielic tradition, but the project prefers translating from the local wording rather than importing a more traditional title.
 - source_word: ፀምር
   chosen: wool
   alternatives:
   - hair
   - fleece
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The comparison introduced by ከመ (''like/as'') points to wool as the
-    object of comparison, not to hair itself. This keeps the image concrete: the head
-    was like white, pure wool.'
+  rationale: 'The comparison introduced by ከመ (''like/as'') points to wool as the object of comparison, not to hair itself. This keeps the image concrete: the head was like white, pure wool.'
 - source_word: ጻዕዳ
   chosen: white
   alternatives:
   - bright
   - shining
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The adjective most naturally denotes whiteness here, fitting the visual
-    purity imagery of the vision.
+  rationale: The adjective most naturally denotes whiteness here, fitting the visual purity imagery of the vision.
 - source_word: ንጹሕ
   chosen: pure
   alternatives:
   - clean
   - spotless
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: '''Pure'' preserves both the visual and symbolic force of the adjective
-    without over-interpreting it as ritual or moral purity alone.'
+  rationale: '''Pure'' preserves both the visual and symbolic force of the adjective without over-interpreting it as ritual or moral purity alone.'
 - source_word: ልብሱ
   chosen: his garment
   alternatives:
   - his clothing
   - his robe
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A straightforward rendering of the noun for clothing. 'Garment' suits
-    the elevated register and avoids specifying a robe where the Ge'ez is broader.
+  rationale: A straightforward rendering of the noun for clothing. 'Garment' suits the elevated register and avoids specifying a robe where the Ge'ez is broader.
 - source_word: ዘኢይትረጐም
   chosen: is beyond description
   alternatives:
@@ -79,10 +68,7 @@ lexical_decisions:
   - cannot be interpreted
   - cannot be translated
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb can carry senses related to explaining or interpreting. In this
-    visionary context, the phrase most naturally means that the garment defies adequate
-    description. This avoids the misleadingly technical sense 'cannot be translated'
-    in English while preserving the idea of inexpressibility.
+  rationale: The verb can carry senses related to explaining or interpreting. In this visionary context, the phrase most naturally means that the garment defies adequate description. This avoids the misleadingly technical sense 'cannot be translated' in English while preserving the idea of inexpressibility.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -113,28 +99,32 @@ enoch_witnesses:
     text: ወምስሌሆሙ፡ ርእሰ፡ መዋዕል። ወርእሱ፡ ኮነ፡ ከመ፡ ፀምር፡ ጻዕዳ፡ ወንጹሕ፡ ወልብሱ፡ ዘኢይትረጐም።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch71.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch71.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 71, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 71, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Whether to render ርእሰ መዋዕል with the traditional title 'Ancient of Days'
   chosen_reading: the Head of Days
   alternative_readings:
   - the Ancient of Days
-  rationale: The Ge'ez wording is translated directly to preserve transparency and
-    avoid automatic harmonization with Daniel 7 or later tradition. The allusion may
-    still be recognized by readers, but the main text remains anchored in the witness
-    at hand.
-  doctrine_reference: Translation philosophy §Original-language primacy over translation
-    tradition; preserve theological tension rather than resolve it.
+  rationale: The Ge'ez wording is translated directly to preserve transparency and avoid automatic harmonization with Daniel 7 or later tradition. The allusion may still be recognized by readers, but the main text remains anchored in the witness at hand.
+  doctrine_reference: Translation philosophy §Original-language primacy over translation tradition; preserve theological tension rather than resolve it.
+revisions:
+- timestamp: '2026-04-22T22:45:27Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.95
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/071/010.job-72566.json
+  category: lexical
+  tier: 3
+  from: And among them
+  to: And with them
+  rationale: 'The Ge''ez preposition ምስለ (mesla) specifically means ''with'', whereas ''among'' would typically be expressed by ማእከለ (māʾəkala). Translating it as ''with them'' preserves the exact spatial and relational phrasing of the source. | Adjudicator: The Ge''ez preposition ምስለ (mesla) primarily means ''with'' (alongside, in the company of), whereas ''among'' would typically be expressed by ማእከለ (māʾəkala) or ውስተ (westa). The proposed change accurately '

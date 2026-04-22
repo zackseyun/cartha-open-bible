@@ -10,22 +10,20 @@ source:
   - 136
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch54.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 54,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch54.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 54, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And they were measured.
+  text: And they will be joined.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The Ge'ez clause is very brief and isolated in the supplied witness. The
-      verb may also be understood as 'were counted' or 'were numbered.'
+    text: The Ge'ez clause is very brief and isolated in the supplied witness. The verb may also be understood as 'were counted' or 'were numbered.'
     reason: lexical_alternative
   - marker: b
-    text: Because 1 Enoch 54 belongs to the Parables, this passage lacks the Qumran
-      and effectively lacks Greek control available for other sections; the Ethiopic
-      wording therefore deserves extra caution.
+    text: Because 1 Enoch 54 belongs to the Parables, this passage lacks the Qumran and effectively lacks Greek control available for other sections; the Ethiopic wording therefore deserves extra caution.
     reason: textual_variant
+  - marker: c
+    text: Or 'And they were measured.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ይዴመሩ
   chosen: were measured
@@ -34,20 +32,14 @@ lexical_decisions:
   - were numbered
   - were apportioned
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The form appears to derive from a Ge'ez verb in the semantic range of
-    measuring, counting, or reckoning. Given the passive/plural sense signaled by
-    the prefixed conjunction and verbal form, 'were measured' preserves the likely
-    literal image without over-paraphrasing. Because the witness is extremely short
-    and context is limited, alternatives are noted.
+  rationale: The form appears to derive from a Ge'ez verb in the semantic range of measuring, counting, or reckoning. Given the passive/plural sense signaled by the prefixed conjunction and verbal form, 'were measured' preserves the likely literal image without over-paraphrasing. Because the witness is extremely short and context is limited, alternatives are noted.
 - source_word: ወ
   chosen: and
   alternatives:
   - then
   - so
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The prefixed conjunction is most naturally rendered 'and.' In apocalyptic
-    narrative it can also carry sequential force, but the minimal surviving text does
-    not justify a stronger connective.
+  rationale: The prefixed conjunction is most naturally rendered 'and.' In apocalyptic narrative it can also carry sequential force, but the minimal surviving text does not justify a stronger connective.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -78,20 +70,17 @@ enoch_witnesses:
     text: ወይዴመሩ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch54.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch54.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
       status: no known Greek witness for this chapter in current pipeline notes
     aramaic:
       zone2_consult_possible: false
-      status: No Qumran Aramaic consultation expected for this chapter range in current
-        notes
+      status: No Qumran Aramaic consultation expected for this chapter range in current notes
   geez_only_zone1: true
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 54, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 54, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: How confidently to render an isolated, very short Ge'ez clause in the Parables
   chosen_reading: 'A restrained literal rendering: ''And they were measured.'''
@@ -99,9 +88,16 @@ theological_decisions:
   - And they were counted.
   - And they were numbered.
   - And they were apportioned.
-  rationale: Because this section is effectively Ge'ez-only for this workflow and
-    the supplied witness contains only a brief clause, transparency and restraint
-    are preferable to reconstructive paraphrase. The line is rendered in a way that
-    preserves apocalyptic concreteness while acknowledging lexical uncertainty.
-  doctrine_reference: Preserve theological tension rather than resolve it; when the
-    sense is uncertain, prefer transparent English plus a footnote over false confidence.
+  rationale: Because this section is effectively Ge'ez-only for this workflow and the supplied witness contains only a brief clause, transparency and restraint are preferable to reconstructive paraphrase. The line is rendered in a way that preserves apocalyptic concreteness while acknowledging lexical uncertainty.
+  doctrine_reference: Preserve theological tension rather than resolve it; when the sense is uncertain, prefer transparent English plus a footnote over false confidence.
+revisions:
+- timestamp: '2026-04-22T22:43:09Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/054/008.job-72420.json
+  category: mistranslation
+  tier: 3
+  from: And they were measured.
+  to: And they will be joined.
+  rationale: 'The Ge''ez verb is ''damara'' (to join, unite, add), here in the imperfect passive/reflexive plural (''yeddämaru''), meaning ''they will be joined'' or ''they shall be united.'' The context (v. 7) refers to the waters above and below the earth being opened, which are then joined together. ''Measured'' is a mistranslation, and the past tense ''were'' ignores the imperfect form. (Note: The source text provided here appears severely truncated by the parser; the full verse in the manuscript continues with ''all t | Adjudicator: The reviewer is entirely correct. The Ge''ez verb is from ''damara'' (to join, unite), and the form ''yeddämaru'' is the imperfect passive/reflexive plural, meaning ''they will be joined'' or ''they shall be '

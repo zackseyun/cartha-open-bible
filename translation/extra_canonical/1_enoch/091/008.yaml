@@ -12,26 +12,23 @@ source:
   - 230
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in it days shall be cut off, and lawlessness shall be removed from its
-    roots, together with deceit, from beneath heaven.
+  text: In those days, violence shall be cut off from its roots, and iniquity together with deceit from under heaven.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The opening 'in it' likely refers back to the numbered period or 'week'
-      in the surrounding vision.
+    text: The opening 'in it' likely refers back to the numbered period or 'week' in the surrounding vision.
     reason: cross_reference
   - marker: b
-    text: The verb rendered 'shall be cut off' may also be understood as 'shall be
-      shortened' or 'shall come to an end.'
+    text: The verb rendered 'shall be cut off' may also be understood as 'shall be shortened' or 'shall come to an end.'
     reason: lexical_alternative
   - marker: c
-    text: The vice-term rendered 'deceit' is uncertain in this OCR witness; 'transgression,'
-      'rebellion,' or 'guile' are possible depending on how the Ge'ez phrase is divided.
+    text: The vice-term rendered 'deceit' is uncertain in this OCR witness; 'transgression,' 'rebellion,' or 'guile' are possible depending on how the Ge'ez phrase is divided.
     reason: textual_variant
+  - marker: d
+    text: Or 'And in it days shall be cut off, and lawlessness shall be removed from its roots, together with deceit, from beneath heaven.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: በአማንቱ
   chosen: And in it
@@ -39,26 +36,21 @@ lexical_decisions:
   - and then
   - and therein
   lexicon: Dillmann
-  rationale: The preposition plus pronominal element points back to the epoch or week
-    in the surrounding context. 'In it' preserves the temporal-reference linkage without
-    over-specifying 'week' in the English line itself.
+  rationale: The preposition plus pronominal element points back to the epoch or week in the surrounding context. 'In it' preserves the temporal-reference linkage without over-specifying 'week' in the English line itself.
 - source_word: መዋዕል
   chosen: days
   alternatives:
   - times
   - periods
   lexicon: Dillmann
-  rationale: A common temporal noun meaning 'days' or 'times.' 'Days' keeps the concrete
-    apocalyptic idiom and fits the passive verbal phrase that follows.
+  rationale: A common temporal noun meaning 'days' or 'times.' 'Days' keeps the concrete apocalyptic idiom and fits the passive verbal phrase that follows.
 - source_word: ትትገዘም
   chosen: shall be cut off
   alternatives:
   - shall be shortened
   - shall be ended
   lexicon: Dillmann
-  rationale: The verb carries the sense of cutting, cutting short, or terminating.
-    'Shall be cut off' preserves the judgment-like force and the vivid imagery better
-    than the smoother 'ended.'
+  rationale: The verb carries the sense of cutting, cutting short, or terminating. 'Shall be cut off' preserves the judgment-like force and the vivid imagery better than the smoother 'ended.'
 - source_word: ግፍዕ
   chosen: lawlessness
   alternatives:
@@ -66,18 +58,14 @@ lexical_decisions:
   - wickedness
   - oppression
   lexicon: Dillmann
-  rationale: The term can overlap with violence or injustice, but in this context
-    of moral purgation from the earth, 'lawlessness' best captures broad rebellious
-    evil without narrowing it to physical brutality alone.
+  rationale: The term can overlap with violence or injustice, but in this context of moral purgation from the earth, 'lawlessness' best captures broad rebellious evil without narrowing it to physical brutality alone.
 - source_word: እምነ ሥረዊሃ
   chosen: from its roots
   alternatives:
   - from its root
   - from its foundation
   lexicon: Dillmann
-  rationale: 'The phrase is spatial-metaphorical: evil is removed at the root. The
-    plural ''roots'' sounds natural in English and preserves the image of eradication
-    at the source.'
+  rationale: 'The phrase is spatial-metaphorical: evil is removed at the root. The plural ''roots'' sounds natural in English and preserves the image of eradication at the source.'
 - source_word: ወዓመፃ
   chosen: together with deceit
   alternatives:
@@ -85,28 +73,21 @@ lexical_decisions:
   - and rebellion
   - and fraud
   lexicon: Dillmann
-  rationale: The conjunction joins a second evil to the first. Given the uncertain
-    OCR and semantic range, 'deceit' is a cautious rendering that fits the paired
-    vice-list context; the alternatives are preserved because the exact nuance may
-    be disputed.
+  rationale: The conjunction joins a second evil to the first. Given the uncertain OCR and semantic range, 'deceit' is a cautious rendering that fits the paired vice-list context; the alternatives are preserved because the exact nuance may be disputed.
 - source_word: ምስለ ጕሕሉት
   chosen: together with deceit
   alternatives:
   - with guile
   - with corruption
   lexicon: Dillmann
-  rationale: This phrase likely expresses accompaniment ('with/together with') plus
-    a noun of guile or corruption. Because the OCR segmentation is difficult, the
-    English compresses the phrase into a natural vice-pair while preserving the sense
-    of associated evil.
+  rationale: This phrase likely expresses accompaniment ('with/together with') plus a noun of guile or corruption. Because the OCR segmentation is difficult, the English compresses the phrase into a natural vice-pair while preserving the sense of associated evil.
 - source_word: እምታሕተ ሰማይ
   chosen: from beneath heaven
   alternatives:
   - from under heaven
   - from beneath the sky
   lexicon: Dillmann
-  rationale: A standard cosmic expression for the inhabited world. 'From beneath heaven'
-    keeps the elevated apocalyptic register and avoids flattening the imagery.
+  rationale: A standard cosmic expression for the inhabited world. 'From beneath heaven' keeps the elevated apocalyptic register and avoids flattening the imagery.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -137,8 +118,7 @@ enoch_witnesses:
     text: በአማንቱ፡ መዋዕል፡ ትትገዘም፡ ግፍዕ፡ *እምነ፡ ሥረዊሃ፡ ወዓመፃ፡ *ምስለ፡ ጕሕሉት፡ እምታሕተ፡ ሰማይ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: false
@@ -148,16 +128,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Scope of the purgation
-  chosen_reading: The verse describes a cosmic removal of evil from the world order,
-    not merely a local social reform.
+  chosen_reading: The verse describes a cosmic removal of evil from the world order, not merely a local social reform.
   alternative_readings:
   - a shortening of human lifespan because of wickedness
   - a regional cleansing of the land
-  rationale: The phrase 'from beneath heaven' broadens the scope beyond a single community,
-    and the root-eradication imagery suggests eschatological judgment.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten judgment formulas
-    into generic prose.
+  rationale: The phrase 'from beneath heaven' broadens the scope beyond a single community, and the root-eradication imagery suggests eschatological judgment.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten judgment formulas into generic prose.
+revisions:
+- timestamp: '2026-04-22T22:49:20Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/008.job-72844.json
+  category: mistranslation
+  tier: 3
+  from: And in it days shall be cut off, and lawlessness shall be removed from its roots, together with deceit, from beneath heaven.
+  to: In those days, violence shall be cut off from its roots, and iniquity together with deceit from under heaven.
+  rationale: 'The draft severely mistranslates the syntax and vocabulary. ''በአማንቱ መዋዕል'' is the standard idiom ''in those days,'' not ''in it days.'' The verb ''ትትገዘም'' (shall be cut off) governs ''ግፍዕ'' (violence), not ''days.'' Furthermore, the draft conflates ''ግፍዕ'' (violence) and ''ዓመፃ'' (iniquity), omitting one of the nouns and supplying an extra verb (''shall be removed'') not present in the Ge''ez. | Adjudicator: The reviewer''s rationale is entirely correct. The current rendering severely misparses the Ge''ez syntax. ''በአማንቱ፡ መዋዕል'' (ba-''amāntu mawā''el) is the standard demonstrative phrase ''in those days,'' not ''i'

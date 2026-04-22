@@ -10,19 +10,17 @@ source:
   - 176
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that seventh day he turns back by that eastern opening, and he goes
-    out.
+  text: And on that day it rises with exactly seven parts, and it comes out.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The underlying phrase may also be rendered 'through that eastern gate/portal.'
-      The Ge'ez OCR is somewhat uncertain at this point, but the sense is of a specific
-      horizon-opening used in the luminary's course.
+    text: The underlying phrase may also be rendered 'through that eastern gate/portal.' The Ge'ez OCR is somewhat uncertain at this point, but the sense is of a specific horizon-opening used in the luminary's course.
     reason: lexical_alternative
+  - marker: b
+    text: Or 'And on that seventh day he turns back by that eastern opening, and he goes out.'.
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ይሠርቅ
   chosen: turns back
@@ -31,45 +29,35 @@ lexical_decisions:
   - recedes
   - goes back
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In the Astronomical Book's schematic movement language, the verb appears
-    to denote reversal/return in the luminary's course rather than 'steal' or another
-    unrelated sense. 'Turns back' preserves the sense of directional change in elevated
-    but readable English.
+  rationale: In the Astronomical Book's schematic movement language, the verb appears to denote reversal/return in the luminary's course rather than 'steal' or another unrelated sense. 'Turns back' preserves the sense of directional change in elevated but readable English.
 - source_word: በይእቲ
   chosen: by that
   alternatives:
   - through that
   - in that
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The preposition with the demonstrative points to a specific previously
-    described gate/opening. 'By that' is concise in English, while the footnote preserves
-    the possible spatial nuance 'through that'.
+  rationale: The preposition with the demonstrative points to a specific previously described gate/opening. 'By that' is concise in English, while the footnote preserves the possible spatial nuance 'through that'.
 - source_word: ዕለት ሳብዐተ
   chosen: seventh day
   alternatives:
   - day seven
   - the seventh day
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This is the temporal marker in the recurring calendrical sequence. 'Seventh
-    day' is natural English and keeps the schematic counting pattern.
+  rationale: This is the temporal marker in the recurring calendrical sequence. 'Seventh day' is natural English and keeps the schematic counting pattern.
 - source_word: እደ ጥንቁቀ
   chosen: eastern opening
   alternatives:
   - eastern gate
   - that eastern portal
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase likely points to one of the numbered openings/gates of the
-    horizon in the Astronomical Book. Because the OCR is somewhat uncertain and the
-    exact noun is difficult, 'opening' is a cautious rendering that preserves the
-    cosmological imagery without overcommitting to 'gate' in the main text.
+  rationale: The phrase likely points to one of the numbered openings/gates of the horizon in the Astronomical Book. Because the OCR is somewhat uncertain and the exact noun is difficult, 'opening' is a cautious rendering that preserves the cosmological imagery without overcommitting to 'gate' in the main text.
 - source_word: ይወፅእ
   chosen: he goes out
   alternatives:
   - he comes out
   - he emerges
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: A standard motion verb for exiting/emerging. 'Goes out' fits the repeated
-    astronomical description of the luminary's movement through the horizon openings.
+  rationale: A standard motion verb for exiting/emerging. 'Goes out' fits the repeated astronomical description of the luminary's movement through the horizon openings.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -100,8 +88,7 @@ enoch_witnesses:
     text: ወይሠርቅ፡ በይእቲ፡ ዕለት፡ ሳብዐተ፡ እደ፡ ጥንቁቀ፡ ወይወፅእ፡
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -111,18 +98,23 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
 - issue: Referent of the masculine verbs
-  chosen_reading: Render with singular masculine 'he,' referring to the luminary described
-    in context (the moon in this section's sequence).
+  chosen_reading: Render with singular masculine 'he,' referring to the luminary described in context (the moon in this section's sequence).
   alternative_readings:
   - Use 'it' for an impersonal celestial body
   - Leave the subject implicit
-  rationale: The Ge'ez verbal forms are masculine singular, and the Astronomical Book
-    often personifies celestial bodies in patterned motion reports. Retaining 'he'
-    preserves the text's idiom and apocalyptic-cosmological style rather than flattening
-    it into modern impersonal description.
-  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic imagery
-    into generic modern prose.
+  rationale: The Ge'ez verbal forms are masculine singular, and the Astronomical Book often personifies celestial bodies in patterned motion reports. Retaining 'he' preserves the text's idiom and apocalyptic-cosmological style rather than flattening it into modern impersonal description.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic imagery into generic modern prose.
+revisions:
+- timestamp: '2026-04-22T22:45:53Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/073/008.job-72609.json
+  category: mistranslation
+  tier: 3
+  from: And on that seventh day he turns back by that eastern opening, and he goes out.
+  to: And on that day it rises with exactly seven parts, and it comes out.
+  rationale: 'The draft completely misidentifies the vocabulary. ይሠርቅ (śaraqa) means ''it rises'' (of celestial bodies), not ''turns back''. በይእቲ ዕለት means ''on that day''. ሳብዐተ እደ means ''seven parts'' (እደ is the plural of እዴ ''hand/portion''), not ''seventh day'' or ''eastern''. ጥንቁቀ means ''exactly'' or ''precisely'', not ''opening''. The text describes the moon rising with exactly seven parts of light. | Adjudicator: The reviewer is entirely correct about the Ge''ez vocabulary. The verb `śaraqa` (ይሠርቅ) means ''to rise'' (specifically of celestial bodies), not ''to turn back.'' The phrase `ba-ye''eti ''elat` means ''on tha'
