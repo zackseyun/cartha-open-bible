@@ -155,7 +155,7 @@ def call_gemini_draft(
     user_prompt: str,
     *,
     model: str = MODEL_ID,
-    timeout: int = 90,
+    timeout: int = 300,
     max_retries: int = 4,
 ) -> dict[str, Any]:
     key = _fetch_gemini_key()
@@ -168,7 +168,7 @@ def call_gemini_draft(
         "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
         "generationConfig": {
             "temperature": TEMPERATURE,
-            "maxOutputTokens": 16384,
+            "maxOutputTokens": 32000,
             "responseMimeType": "application/json",
             "responseSchema": RESPONSE_SCHEMA,
         },
