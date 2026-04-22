@@ -37,15 +37,16 @@ try: print(json.loads(raw).get('api_key', raw))
 except: print(raw)")}"
 
 # Run in parallel with xargs — each process handles one saying
+export REPO_ROOT LOG_DIR DRY_RUN GEMINI_API_KEY
 printf '%s\n' "$SAYINGS" | sed '/^$/d' | xargs -n1 -P "$CONCURRENCY" -I{} bash -c '
   saying="$1"
   log="$LOG_DIR/saying$(printf "%03d" "$saying").log"
   echo "[saying $saying] starting $(date -u +%FT%TZ)" >> "$log"
-  if python3 '"$REPO_ROOT"'/tools/draft_gospel_of_thomas.py --saying "$saying" '"$DRY_RUN"' >> "$log" 2>&1; then
+  if python3 "$REPO_ROOT/tools/draft_gospel_of_thomas.py" --saying "$saying" $DRY_RUN >> "$log" 2>&1; then
     echo "[saying $saying] OK" >> "$log"
   else
     echo "[saying $saying] FAILED (exit=$?)" >> "$log"
   fi
-' -- {} "$LOG_DIR"
+' -- {}
 
 echo "Done. Logs in $LOG_DIR/"
