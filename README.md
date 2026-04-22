@@ -245,20 +245,11 @@ adjacent that has not existed before:
   per verse with a documented rubric, is harder for human committees
   to do at scale.
 
-On English-translation accuracy in the specialist-committee sense —
-theological word choices, consensus interpretation of difficult
-passages, century-of-accumulated-scholar-revisions — existing
-translations like the NRSV have advantages our first release cannot
-match. We will be competitive at the top tier, likely with specific
-strengths (Sirach's recovered Hebrew is a standout), but we are not
-claiming definitive superiority. That is for peer review to judge
-once the work is in readers' hands.
-
-What we **can** credibly claim, from the engineering and textual-
-criticism side, is that this will be the most transparent, the most
-auditable, the most permissively-licensed, and (for Sirach specifically)
-among the most Hebrew-grounded Apocrypha translations available in
-English today. That's the contribution, stated plainly.
+From the engineering and textual-criticism side, this will be the most
+transparent, the most auditable, the most permissively-licensed, and
+(for Sirach specifically) among the most Hebrew-grounded Apocrypha
+translations available in English today. That's the contribution,
+stated plainly.
 
 For the full scholarly-source policy (three-zone model: vendored /
 consulted / forbidden), see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).

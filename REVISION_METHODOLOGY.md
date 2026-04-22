@@ -7,20 +7,13 @@ AI-drafting pipeline.
 
 ## Why there's a revision stage
 
-The drafting pipeline (`tools/draft.py`) produces schema-valid YAML per
-verse with full provenance. Those drafts are good but not final:
-
-- GPT-5.4 (current primary drafter) occasionally produces awkward
-  English where the Greek is compact (stranded prepositions, literal
-  constructions that don't parse naturally).
-- Per-verse decisions sometimes drift from each other — the same Greek
-  phrase can be rendered differently in two verses because each call is
-  independent.
-- Some lexical choices are defensible in isolation but read less well
-  alongside sibling verses.
-
-A revision pass by a second model (currently Claude Opus 4.7) catches
-these issues without incurring the cost of redrafting from scratch.
+Every committed draft gets a second read. The drafting pipeline
+(`tools/draft.py`) produces schema-valid YAML with full provenance,
+and most verses ship as drafted — but a second-model review pass gives
+every verse a second editorial eye before it's considered final.
+Committing that pass as its own layer keeps the drafter's provenance
+intact and makes every editorial change inspectable in git history.
+See *What triggers a revision* below for the specific criteria.
 
 ## What triggers a revision
 
@@ -207,7 +200,6 @@ project-level decision for reader transparency.
 |---|---|
 | GPT-5.4 | Primary drafter. Produces first-pass verse YAMLs via `tools/draft.py`. Most verses ship as drafted. |
 | Claude Opus 4.7 | Revision reviewer. Reads drafts, identifies revision-worthy issues per the criteria above, commits targeted polish. Does not redraft from scratch. |
-| (Future) Named human scholars | Not currently engaged. When they are, they sign individual verses via ed25519 signatures — that process is specified in METHODOLOGY.md but not yet active. |
 
 ## What revisions are NOT
 
@@ -216,48 +208,3 @@ project-level decision for reader transparency.
   and produce an alternative.
 - Silent. Every revision is a git commit with rationale. Critics can
   read the commit log to see exactly what changed and why.
-- A substitute for human review. When credentialed scholars engage
-  with the project, their signatures supersede any AI revision. This
-  revision stage exists to make the AI-drafted text as good as
-  possible *before* that review begins.
-
-## Observed patterns so far
-
-From the first ~20 verses reviewed by Opus (Philippians + Romans 1–5):
-
-- Revision rate: ~30% of verses reviewed (6 of ~20).
-- Of those: half were English-grammar fixes, the rest were
-  rhetorical-force or wordplay-preservation polish.
-- **No revisions changed theological meaning.** Every revised verse
-  preserves the drafter's interpretive calls; only the English
-  expression of those calls is adjusted.
-- This suggests the GPT-5.4 drafts are semantically reliable and
-  revision is mostly polish. A follow-up global pass may find
-  cross-verse inconsistencies (like the Χριστός normalization)
-  that any single-verse review would miss.
-
-### Cross-genre benchmark: Revelation sample (2026-04-18)
-
-To check whether the revision rate is an artifact of Paul's dense
-argumentative style — or a consistent property of GPT-5.4 drafting —
-Opus sampled 9 verses from Revelation (Rev 3:12, 3:15–16, 3:20–21;
-11:1, 11:11, 11:15, 11:17). Results:
-
-- Revision rate: ~11% (1 of 9), landing inside the same band as the
-  Pauline pass once the first-pass high-friction verses are excluded.
-- The one fix (Rev 11:1) is category 1 English-grammar awkwardness —
-  a dangling participle that makes the reed appear to speak.
-- The drafter handled Revelation's well-known difficulties (Hebraisms,
-  ingressive aorists in worship formulas, OT intertextuality) with
-  principled restraint: `ἐβασίλευσας` as "have begun to reign"
-  (ingressive, guarding against the implication that God wasn't
-  previously sovereign); `πνεῦμα ζωῆς` as "a breath of life"
-  (echoing Ezekiel 37 without forcing "the Spirit of life");
-  `εἰς τοὺς αἰῶνας τῶν αἰώνων` as "forever and ever" rather than
-  the wooden "to the ages of ages"; `ἐμέσαι` kept as "vomit"
-  rather than softened. The repeated "my God" in Rev 3:12 was
-  preserved all four times rather than smoothed away.
-
-This suggests the drafter's quality is genre-stable, and the
-revision methodology generalizes across Paul and apocalyptic without
-re-tuning.
