@@ -160,11 +160,12 @@ Several things it helps to say explicitly:
   centuries of Greek and Hebrew lexicography, textual criticism, and
   theological scholarship. Every lexical decision cites the lexicons
   (BDAG, HALOT, LSJ, Louw-Nida) the academy already uses.
-- **Not a denominational product.** Translation decisions operate within
-  historic ecumenical Christian orthodoxy (Apostles' Creed, Nicene Creed,
-  Chalcedonian Definition). Within that, we do not promote one
-  denomination's distinctives over another's — contested readings are
-  preserved in footnotes, not smoothed away.
+- **Not a denominational product.** COB does not commit to a specific
+  denominational or creedal stance. Where the source texts presuppose
+  theological claims, the translation reflects those claims as the
+  texts present them, not as imposed commitments. Contested readings
+  are preserved in footnotes, not smoothed away. See
+  [DOCTRINE.md](DOCTRINE.md) for the full translation-stance document.
 - **Not a study Bible.** Footnotes document translation decisions, not
   devotional application.
 - **Not finished.** This is an ongoing project. We ship phase-by-phase,
