@@ -96,7 +96,7 @@ EXTRA_CANONICAL_BOOKS: list[tuple[str, str, int, int, str]] = [
     ("Didache", "DID", 16, 100, "didache"),
     ("1 Clement", "1CLEM", 65, 395, "1_clement"),
     ("1 Enoch", "ENO", 108, 843, "1_enoch"),
-    ("Shepherd of Hermas", "HERM", 63, 63, "shepherd_of_hermas"),
+    ("Jubilees", "JUB", 50, 1023, "jubilees"),
     ("2 Esdras", "2ES", 16, 942, "2_esdras"),
 ]
 
