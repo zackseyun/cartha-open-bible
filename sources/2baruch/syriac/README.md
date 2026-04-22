@@ -17,9 +17,10 @@ Important design choice:
 
 - The current committed OCR now covers the **full Ceriani primary sweep** for
   PDF pages 162–228.
-- This bridge still stays **page-level on purpose**. It preserves stable, cleaned
-  Syriac page text in logical reading order while deferring chapter/verse mapping
-  until the next dedicated segmentation pass.
+- That page corpus has now been tightened into a **chapter-ready source layer** with
+  expanded Kmosko control support and no remaining anchorless chapters.
+- Some boundary pages are still only medium-confidence (especially inside the epistle
+  ladder), but the corpus is now strong enough for chapter-level drafting.
 
 Reading order note:
 
@@ -35,5 +36,6 @@ Reading order note:
 - tentative chapter buckets under `transcribed/ceriani1871/chapters/`
 - chapter YAML draft landing zone under `translation/extra_canonical/2_baruch/`
 
-This means 2 Baruch is now **translation-ready at the chapter level**, even
-though later control review and finer verse alignment still remain ahead.
+This means 2 Baruch is now **translation-ready at the chapter level**, with the
+remaining work narrowed to later spot-checking and finer verse alignment rather than
+basic OCR or chapter recovery.
