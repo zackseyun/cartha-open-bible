@@ -6,7 +6,8 @@
 
 ## Witness status
 
-- **mattison_zinner_coptic** — fetched (primary_coptic)
+- **nhc_i_3_facsimile_primary** — completed (primary_coptic)
+- **mattison_zinner_coptic** — fetched (consult_english)
 - **nhc_xii_2_fragments** — completed (overlap_coptic_fragments) — Approximate overlap: Book of the Living (seg 004), Return to Unity (seg 005), Parable of the Jars (seg 006), Coming into Being (seg 007)
 
 ## Guardrails

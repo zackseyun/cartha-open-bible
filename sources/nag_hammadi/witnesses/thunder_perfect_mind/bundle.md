@@ -6,7 +6,8 @@
 
 ## Witness status
 
-- **othergospels_thunder_primary** — fetched (primary_coptic)
+- **nhc_vi_2_facsimile_primary** — completed (primary_coptic)
+- **othergospels_thunder_primary** — fetched (consult_english)
 
 ## Guardrails
 
