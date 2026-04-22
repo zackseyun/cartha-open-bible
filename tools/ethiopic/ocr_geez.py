@@ -45,7 +45,7 @@ from dataclasses import dataclass
 from typing import Any
 
 
-def resolve_gemini_api_key() -> str:
+def resolve_gemini_api_keys() -> list[str]:
     raw = os.environ.get("GEMINI_API_KEY", "").strip()
     if not raw:
         raise RuntimeError("GEMINI_API_KEY not set")
@@ -53,16 +53,25 @@ def resolve_gemini_api_key() -> str:
         try:
             obj = json.loads(raw)
             if isinstance(obj, dict):
+                keys_out: list[str] = []
                 if isinstance(obj.get("api_key"), str) and obj["api_key"].strip():
-                    return obj["api_key"].strip()
+                    keys_out.append(obj["api_key"].strip())
                 keys = obj.get("api_keys")
                 if isinstance(keys, list):
                     for item in keys:
                         if isinstance(item, str) and item.strip():
-                            return item.strip()
+                            candidate = item.strip()
+                            if candidate not in keys_out:
+                                keys_out.append(candidate)
+                if keys_out:
+                    return keys_out
         except Exception:
             pass
-    return raw
+    return [raw]
+
+
+def resolve_gemini_api_key() -> str:
+    return resolve_gemini_api_keys()[0]
 
 
 @dataclass
@@ -279,6 +288,29 @@ def output_paths(out_dir: pathlib.Path, pdf_path: pathlib.Path, page_num: int) -
     return out_dir / f"{stem}.txt", out_dir / f"{stem}.json"
 
 
+def prior_output_is_successful(txt_path: pathlib.Path, meta_path: pathlib.Path) -> bool:
+    """Return True only for prior OCR outputs that look genuinely usable.
+
+    We intentionally do NOT treat "files exist" as success, because failed OCR
+    attempts still write an empty `.txt` plus metadata with `error` populated.
+    `--resume` should retry those pages instead of silently skipping them.
+    """
+    if not (txt_path.exists() and meta_path.exists()):
+        return False
+    try:
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except Exception:
+        return False
+    if meta.get("error"):
+        return False
+    if str(meta.get("finish_reason", "")).lower() == "error":
+        return False
+    try:
+        return bool(txt_path.read_text(encoding="utf-8").strip())
+    except Exception:
+        return False
+
+
 def result_to_dict(
     result: OcrResult,
     *,
@@ -451,10 +483,12 @@ if __name__ == "__main__":
         hints = hints_map.get(page_num, fallback_hints)
         if out_dir is not None and args.resume:
             txt_path, meta_path = output_paths(out_dir, pdf, page_num)
-            if txt_path.exists() and meta_path.exists():
+            if prior_output_is_successful(txt_path, meta_path):
                 print(f"↷ [{idx}/{len(pages)}] page {page_num}: already present, skipping")
                 skipped += 1
                 continue
+            if txt_path.exists() or meta_path.exists():
+                print(f"↻ [{idx}/{len(pages)}] page {page_num}: prior failed/incomplete output detected, retrying")
 
         print(f"→ [{idx}/{len(pages)}] page {page_num}: rendering + OCR…", flush=True)
         try:

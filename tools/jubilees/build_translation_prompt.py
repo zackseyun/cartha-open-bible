@@ -42,6 +42,7 @@ PAGE_MAP_PATH = JUBILEES_ROOT / "page_map.json"
 CHARLES_1895_ROOT = JUBILEES_ROOT / "ethiopic" / "transcribed" / "charles_1895"
 BODY_DIR = CHARLES_1895_ROOT / "body"
 PILOT_CH1_DIR = CHARLES_1895_ROOT / "pilot_ch01_3p1_run1"
+LEGACY_PILOT_CH1_DIR = CHARLES_1895_ROOT / "pilot_ch01"
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import verse_parser  # noqa: E402  (sibling module)
@@ -134,15 +135,25 @@ def _chapter_pages(chapter: int) -> tuple[list[int], list[str]]:
     return [approx_printed, approx_printed + 1, approx_printed + 2, approx_printed + 3], warnings
 
 
-def _candidate_source_dir(chapter: int) -> tuple[pathlib.Path, str]:
-    """Prefer the full-book `body/` directory; fall back to the ch1 pilot."""
+def _candidate_source_dirs(chapter: int) -> list[tuple[pathlib.Path, str]]:
+    """Return OCR source dirs in preference order.
+
+    During a full-book OCR rerun, `body/` may exist but still be only partially
+    populated. For chapter 1 we keep the validated pilot directory as a
+    fallback so prompt-building remains stable until the body run is complete.
+    """
+    out: list[tuple[pathlib.Path, str]] = []
     if BODY_DIR.exists():
-        return BODY_DIR, "body"
+        out.append((BODY_DIR, "body"))
     if chapter == 1 and PILOT_CH1_DIR.exists():
-        return PILOT_CH1_DIR, "pilot_ch01_3p1_run1"
-    raise FileNotFoundError(
-        f"No OCR source directory found for chapter {chapter}. Looked at {BODY_DIR} and {PILOT_CH1_DIR}."
-    )
+        out.append((PILOT_CH1_DIR, "pilot_ch01_3p1_run1"))
+    if chapter == 1 and LEGACY_PILOT_CH1_DIR.exists():
+        out.append((LEGACY_PILOT_CH1_DIR, "pilot_ch01_legacy"))
+    if not out:
+        raise FileNotFoundError(
+            f"No OCR source directory found for chapter {chapter}. Looked at {BODY_DIR}, {PILOT_CH1_DIR}, and {LEGACY_PILOT_CH1_DIR}."
+        )
+    return out
 
 
 def _load_charles_1895_verse_geez(
@@ -156,23 +167,39 @@ def _load_charles_1895_verse_geez(
     verse record).
     """
     pages, warnings = _chapter_pages(chapter)
-    src_dir, src_label = _candidate_source_dir(chapter)
-
     page_texts: list[tuple[int, str]] = []
     missing_pages: list[int] = []
+    labels_used: list[str] = []
     for p in pages:
-        path = src_dir / f"charles_1895_ethiopic_p{p:04d}.txt"
-        if path.exists():
+        chosen = False
+        for candidate_dir, candidate_label in _candidate_source_dirs(chapter):
+            path = candidate_dir / f"charles_1895_ethiopic_p{p:04d}.txt"
+            if not path.exists():
+                continue
             page_texts.append((p, path.read_text(encoding="utf-8")))
-        else:
+            if candidate_label not in labels_used:
+                labels_used.append(candidate_label)
+            chosen = True
+            break
+        if not chosen:
             missing_pages.append(p)
+    src_label = labels_used[0] if len(labels_used) == 1 else f"mixed:{','.join(labels_used)}"
     if missing_pages:
         warnings.append(
             f"OCR pages missing from {src_label}: {missing_pages}. Continuing with available pages."
         )
+    if len(labels_used) > 1:
+        warnings.append(
+            f"Mixed OCR source directories used for chapter {chapter}: {labels_used}. "
+            "This is expected while the full-body OCR rerun is still incomplete."
+        )
+    if "pilot_ch01_legacy" in labels_used:
+        warnings.append(
+            "Using legacy `pilot_ch01` fallback pages where newer body/3.1 pages are not yet present."
+        )
     if not page_texts:
         raise FileNotFoundError(
-            f"No OCR text files for chapter {chapter} (pages={pages}) in {src_dir}."
+            f"No OCR text files for chapter {chapter} (pages={pages}) in any configured source dir."
         )
 
     rows = verse_parser.parse_chapter_pages(page_texts)
@@ -206,7 +233,11 @@ def _load_charles_1895_verse_geez(
             "marker_raw": target.marker_raw,
             "pages": pages,
             "source_page": target.source_page,
-            "confidence": "high" if src_label == "body" else "high_pilot",
+            "confidence": (
+                "high" if src_label == "body"
+                else "high_pilot" if src_label == "pilot_ch01_3p1_run1"
+                else "mixed_fallback"
+            ),
             "validation": "verse_parser_ok",
         },
         warnings,

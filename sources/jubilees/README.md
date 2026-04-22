@@ -27,7 +27,7 @@ sources/jubilees/
 │   ├── charles_1902_english.pdf
 │   └── dillmann_ronsch_1874_composite.pdf
 ├── ethiopic/
-│   └── transcribed/  (pending) per-chapter UTF-8 Ge'ez from our Gemini Pro OCR
+│   └── transcribed/  per-page UTF-8 Ge'ez from our Gemini 3.1 Pro OCR
 ├── latin/
 │   └── transcribed/  (pending) Rönsch 1874 Latin fragments (chs 13-49)
 └── english_reference/
@@ -58,11 +58,11 @@ Consulted during translation; never reproduced.
 
 ## OCR pipeline
 
-Same Ge'ez pipeline as Enoch: Gemini 2.5 Pro in plaintext mode with
-low thinking budget. Validated on Enoch ch 1 (2026-04-21) at
-character-level accuracy matching Beta maṣāḥǝft's ground-truth
-digital text. Azure GPT-5 (our LXX backend) fails on Ge'ez;
-Gemini 2.5 Flash hallucinates content.
+Same Ge'ez pipeline as Enoch, now pinned to **Gemini 3.1 Pro
+preview** in plaintext mode with low thinking budget. Validated on
+Jubilees ch 1 (2026-04-22) with byte-identical 3-run consistency and
+correct title/prologue/verse structure. Azure GPT-5 (our LXX backend)
+fails on Ge'ez; Gemini 2.5 Flash hallucinates content.
 
 No Beta maṣāḥǝft-style digital Ge'ez oracle exists for Jubilees
 specifically, so our OCR cross-check relies on the two PD scholarly
@@ -70,7 +70,7 @@ editions (Charles 1895 + Dillmann-Rönsch 1874) as mutual checks.
 
 ## Status
 
-**2026-04-21: source acquisition phase.** PDFs vendored, OCR pipeline
-validated (from Enoch work). Transcription begins after Phase 11
-(Enoch) is underway — the shared `tools/ethiopic/` infrastructure
-gets built during Enoch and reused here.
+**2026-04-22: transcription in progress.** PDFs vendored, OCR
+benchmark closed, verse parser + translator prompt builder implemented.
+Remaining intermediate steps are full-body OCR regeneration, full
+chapter page-map completion, and then corpus assembly.
