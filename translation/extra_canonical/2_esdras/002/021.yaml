@@ -5,19 +5,17 @@ book: 2 Esdras
 appendix: true
 compositional_layer: 5 Ezra
 source:
-  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned
-    Latin
-  text: inridere noli, tutare mancum et caecum ad uisionem claritatis meae admitte,
-    Senem et iuuenem intra muros tuos serua,
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: inridere noli, tutare mancum et caecum ad uisionem claritatis meae admitte, Senem et iuuenem intra muros tuos serua,
   language: Latin
 translation:
-  text: Care for the broken and the weak; do not mock the lame; shelter the maimed,
-    and admit the blind to the sight of my glory.
+  text: do not mock the lame; shelter the maimed, and admit the blind to the sight of my glory. Keep the old and the young within your walls.
   philosophy: optimal-equivalence
-note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/02.yaml
-  by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative
-  draft/revision record; these verse YAMLs exist for reading surfaces, deep links,
-  and per-verse provenance.
+  footnotes:
+  - marker: a
+    text: Or 'Care for the broken and the weak; do not mock the lame; shelter the maimed, and admit the blind to the sight of my glory.'.
+    reason: previous_rendering
+note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/02.yaml by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative draft/revision record; these verse YAMLs exist for reading surfaces, deep links, and per-verse provenance.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -31,15 +29,18 @@ ai_draft_provenance:
   - Bensly 1875, Missing Fragment of the Latin Translation @b76f45354
   - Violet 1910, Die Esra-Apokalypse (GCS 18) — parallel witness apparatus @b76f45354
   zone2_consults_known:
-  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus
-    informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce
-    text.
-  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English
-    translation with introduction. Consult for interpretive context. Do NOT track
-    English phrasing -- we produce our own.
-  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly
-    commentary. Consult for cruxes.'
-  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical
-    Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
-  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible
-    commentary.
+  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce text.
+  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English translation with introduction. Consult for interpretive context. Do NOT track English phrasing -- we produce our own.
+  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly commentary. Consult for cruxes.'
+  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
+  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible commentary.
+revisions:
+- timestamp: '2026-04-22T06:50:45Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase9_latin_multiwitness/extra_canonical/2_esdras/002/021.job-71988.json
+  category: mistranslation
+  tier: 2
+  from: Care for the broken and the weak; do not mock the lame; shelter the maimed, and admit the blind to the sight of my glory.
+  to: do not mock the lame; shelter the maimed, and admit the blind to the sight of my glory. Keep the old and the young within your walls.
+  rationale: 'The English draft is misaligned with the Latin verse boundaries provided in the source text. It includes ''Care for the broken and the weak'' (translating *Confractum et debilem cura*, which is in 2:20) and omits *Senem et iuuenem intra muros tuos serua* (which the draft pushed to 2:22). To match the provided Latin for 2:21, the English must be adjusted. (Note: *claudum* is at the end of 2:20, so ''the lame'' is supplied here as the object of *inridere noli*).'

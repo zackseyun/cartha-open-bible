@@ -5,17 +5,17 @@ book: 2 Esdras
 appendix: true
 compositional_layer: 4 Ezra
 source:
-  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned
-    Latin
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
   text: Haec mulier quam uidisti haec est Sion, quam nunc conspicis
   language: Latin
 translation:
-  text: 'And as for her telling you about the misfortune of her son, this is the interpretation:'
+  text: This woman whom you saw, this is Zion, whom you now see
   philosophy: optimal-equivalence
-note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/10.yaml
-  by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative
-  draft/revision record; these verse YAMLs exist for reading surfaces, deep links,
-  and per-verse provenance.
+  footnotes:
+  - marker: a
+    text: Or 'And as for her telling you about the misfortune of her son, this is the interpretation:'.
+    reason: previous_rendering
+note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/10.yaml by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative draft/revision record; these verse YAMLs exist for reading surfaces, deep links, and per-verse provenance.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -29,15 +29,18 @@ ai_draft_provenance:
   - Bensly 1875, Missing Fragment of the Latin Translation @dc0e7d6da
   - Violet 1910, Die Esra-Apokalypse (GCS 18) — parallel witness apparatus @dc0e7d6da
   zone2_consults_known:
-  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus
-    informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce
-    text.
-  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English
-    translation with introduction. Consult for interpretive context. Do NOT track
-    English phrasing -- we produce our own.
-  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly
-    commentary. Consult for cruxes.'
-  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical
-    Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
-  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible
-    commentary.
+  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce text.
+  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English translation with introduction. Consult for interpretive context. Do NOT track English phrasing -- we produce our own.
+  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly commentary. Consult for cruxes.'
+  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
+  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible commentary.
+revisions:
+- timestamp: '2026-04-22T06:50:45Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase9_latin_multiwitness/extra_canonical/2_esdras/010/043.job-71796.json
+  category: mistranslation
+  tier: 2
+  from: 'And as for her telling you about the misfortune of her son, this is the interpretation:'
+  to: This woman whom you saw, this is Zion, whom you now see
+  rationale: The English draft is misaligned with the Latin verse divisions. The current English translates the second half of Latin verse 42 (`Et quoniam enarrabat tibi de casu filii sui, haec absolutio est:`). The Latin for verse 43 is `Haec mulier quam uidisti haec est Sion, quam nunc conspicis`, which means "This woman whom you saw, this is Zion, whom you now see".

@@ -5,19 +5,17 @@ book: 2 Esdras
 appendix: true
 compositional_layer: 6 Ezra
 source:
-  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned
-    Latin
-  text: 'omnia opera hominis et adinuentiones illorum et cogitatum illorum et corda
-    illorum. Qui dixit: fiat terra, et facta est :'
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'omnia opera hominis et adinuentiones illorum et cogitatum illorum et corda illorum. Qui dixit: fiat terra, et facta est :'
   language: Latin
 translation:
-  text: Behold, the Lord knows all the works of men and their devices and their thoughts
-    and their hearts.
+  text: all the works of men and their devices and their thoughts and their hearts. He who said, “Let the earth be made,” and it was made;
   philosophy: optimal-equivalence
-note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/16.yaml
-  by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative
-  draft/revision record; these verse YAMLs exist for reading surfaces, deep links,
-  and per-verse provenance.
+  footnotes:
+  - marker: a
+    text: Or 'Behold, the Lord knows all the works of men and their devices and their thoughts and their hearts.'.
+    reason: previous_rendering
+note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/16.yaml by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative draft/revision record; these verse YAMLs exist for reading surfaces, deep links, and per-verse provenance.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -31,15 +29,18 @@ ai_draft_provenance:
   - Bensly 1875, Missing Fragment of the Latin Translation @dc0e7d6da
   - Violet 1910, Die Esra-Apokalypse (GCS 18) — parallel witness apparatus @dc0e7d6da
   zone2_consults_known:
-  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus
-    informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce
-    text.
-  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English
-    translation with introduction. Consult for interpretive context. Do NOT track
-    English phrasing -- we produce our own.
-  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly
-    commentary. Consult for cruxes.'
-  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical
-    Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
-  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible
-    commentary.
+  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce text.
+  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English translation with introduction. Consult for interpretive context. Do NOT track English phrasing -- we produce our own.
+  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly commentary. Consult for cruxes.'
+  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
+  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible commentary.
+revisions:
+- timestamp: '2026-04-22T06:50:45Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase9_latin_multiwitness/extra_canonical/2_esdras/016/055.job-71728.json
+  category: mistranslation
+  tier: 2
+  from: Behold, the Lord knows all the works of men and their devices and their thoughts and their hearts.
+  to: all the works of men and their devices and their thoughts and their hearts. He who said, “Let the earth be made,” and it was made;
+  rationale: 'The English draft is misaligned with the Latin source chunk provided for this verse. It includes ''Behold, the Lord knows'' (which belongs to the end of the 16:54 source chunk: ''Ecce dominus cognoscit'') and completely omits ''He who said, "Let the earth be made," and it was made'' (which is explicitly present in the 16:55 source chunk: ''Qui dixit: fiat terra, et facta est :''). The translation must match the exact source text boundaries provided for the verse.'

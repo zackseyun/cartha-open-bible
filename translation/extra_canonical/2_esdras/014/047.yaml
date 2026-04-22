@@ -5,19 +5,17 @@ book: 2 Esdras
 appendix: true
 compositional_layer: 4 Ezra
 source:
-  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned
-    Latin
-  text: tradas eos sapientibus de populo tuo; In his enim est uena intellectus et
-    sapientiae fons et scientiae flumen.
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: tradas eos sapientibus de populo tuo; In his enim est uena intellectus et sapientiae fons et scientiae flumen.
   language: Latin
 translation:
-  text: For in them is the spring of understanding, the fountain of wisdom, and the
-    river of knowledge.”
+  text: you may hand them over to the wise among your people. For in them is the spring of understanding, the fountain of wisdom, and the river of knowledge.”
   philosophy: optimal-equivalence
-note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/14.yaml
-  by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative
-  draft/revision record; these verse YAMLs exist for reading surfaces, deep links,
-  and per-verse provenance.
+  footnotes:
+  - marker: a
+    text: Or 'For in them is the spring of understanding, the fountain of wisdom, and the river of knowledge.”'.
+    reason: previous_rendering
+note: Derived mechanically from the chapter-level draft at translation/extra_canonical/2_esdras/14.yaml by tools/2esdras/split_into_verses.py. The chapter-level YAML remains the authoritative draft/revision record; these verse YAMLs exist for reading surfaces, deep links, and per-verse provenance.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -31,15 +29,18 @@ ai_draft_provenance:
   - Bensly 1875, Missing Fragment of the Latin Translation @dc0e7d6da
   - Violet 1910, Die Esra-Apokalypse (GCS 18) — parallel witness apparatus @dc0e7d6da
   zone2_consults_known:
-  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus
-    informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce
-    text.
-  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English
-    translation with introduction. Consult for interpretive context. Do NOT track
-    English phrasing -- we produce our own.
-  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly
-    commentary. Consult for cruxes.'
-  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical
-    Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
-  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible
-    commentary.
+  - Weber-Gryson, Biblia Sacra Vulgata 5th ed. (2007) — Modern critical Latin. Apparatus informs adjudication where Bensly 1895 reading is uncertain. Do not reproduce text.
+  - Metzger, 'The Fourth Book of Ezra' in OT Pseudepigrapha vol. 1 (1983) — English translation with introduction. Consult for interpretive context. Do NOT track English phrasing -- we produce our own.
+  - 'Stone, Fourth Ezra: A Commentary (Hermeneia) (1990) — Verse-by-verse scholarly commentary. Consult for cruxes.'
+  - Bidawid, The Syriac Apocalypse of Ezra (Peshitta Institute) (1973) — Modern critical Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
+  - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible commentary.
+revisions:
+- timestamp: '2026-04-22T06:50:45Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-2.5-pro
+  source_review: state/reviews/gemini/phase9_latin_multiwitness/extra_canonical/2_esdras/014/047.job-71256.json
+  category: mistranslation
+  tier: 2
+  from: For in them is the spring of understanding, the fountain of wisdom, and the river of knowledge.”
+  to: you may hand them over to the wise among your people. For in them is the spring of understanding, the fountain of wisdom, and the river of knowledge.”
+  rationale: The Latin source for verse 47 begins with 'tradas eos sapientibus de populo tuo;' (the verb dependent on 'ut' at the end of verse 46). The draft absorbed this clause into verse 46, leaving verse 47 missing its first half. It must be restored here to match the Latin verse boundaries.

@@ -84,13 +84,47 @@ STRONG_WIN_CATEGORIES_TIER2 = {"mistranslation", "lexical", "grammar"}
 ESCALATE_ONLY_CATEGORIES = {"theological_weight", "consistency"}
 
 SOURCE_EVIDENCE_PATTERNS = [
+    # Lexicon citations
     r"\bBDAG\b", r"\bHALOT\b", r"\bBDB\b", r"\bTDNT\b", r"\bLSJ\b",
-    r"\b[\u0370-\u03FF\u1F00-\u1FFF]+\b",                # Greek letters
-    r"\b[\u0590-\u05FF]+\b",                             # Hebrew letters
-    r"\bMT\b", r"\bKetiv\b", r"\bQere\b", r"\bpiel\b", r"\bqal\b", r"\bhiphil\b",
+    r"\bCrum\b",                                          # Coptic — Crum's dictionary
+    r"\bLewis\s*&\s*Short\b", r"\bL\.?\s*&\s*S\b",        # Latin
+    r"\bSouter\b", r"\bOLD\b",                            # Latin (Late Latin / Oxford Latin Dict.)
+    r"\bDillmann\b", r"\bLeslau\b",                       # Geʿez
+    r"\bPayne\s*Smith\b", r"\bThesaurus\s*Syriacus\b",    # Syriac
+    r"\bLampe\b",                                         # Patristic Greek
+    # Critical-edition / witness names (cite-the-source)
+    r"\bBensly\b", r"\bViolet\b", r"\bCeriani\b", r"\bKmosk[oó]\b",   # 2 Esdras / 2 Baruch
+    r"\bCharles\b", r"\bFlemming\b", r"\bDillmann\b",                  # Enoch / Jubilees
+    r"\bLightfoot\b", r"\bBryennios\b", r"\bGebhardt\b", r"\bHarnack\b",  # Apostolic Fathers
+    r"\bSwete\b", r"\bRahlfs\b", r"\bNETS\b",                         # LXX
+    r"\bSchechter\b", r"\bKahana\b", r"\bYadin\b",                    # Hebrew Sirach
+    r"\bSinaiticus\b", r"\bVaticanus\b", r"\bAlexandrinus\b",         # Codices
+    r"\bP\.?Oxy\.?\s*\d+\b",                                          # Oxyrhynchus papyri
+    r"\bNHC\s*[IVXLCDM]+\.\d+\b",                                     # Nag Hammadi codex refs
+    # Source-language scripts (presence of the actual letters in the rationale)
+    r"[\u0370-\u03FF\u1F00-\u1FFF]+",   # Greek + extended Greek (no \b — works on bare letters)
+    r"[\u0590-\u05FF]+",                # Hebrew block
+    r"[\u2C80-\u2CFF\u03E2-\u03EF]+",   # Coptic (dedicated block + the Coptic-in-Greek-block letters)
+    r"[\u1200-\u137F]+",                # Geʿez / Ethiopic
+    r"[\u0700-\u074F]+",                # Syriac
+    # Hebrew grammatical terms
+    r"\bMT\b", r"\bKetiv\b", r"\bQere\b",
+    r"\bpiel\b", r"\bqal\b", r"\bhiphil\b", r"\bniphal\b", r"\bhophal\b",
+    r"\bhitpael\b", r"\bpual\b", r"\bwaw\s*consecutive\b",
+    # Greek / Latin / general grammatical terms
     r"\bperfect\b", r"\bimperfect\b", r"\baorist\b", r"\bparticiple\b",
     r"\binfinitive\b", r"\bimperative\b", r"\bhendiadys\b",
     r"\bvocative\b", r"\bemphatic\b",
+    r"\bablative\b", r"\bdative\b", r"\bgenitive\b", r"\baccusative\b", r"\bnominative\b",
+    r"\bsubjunctive\b", r"\bgerund\b", r"\bgerundive\b", r"\bsupine\b",
+    r"\bdeponent\b", r"\bperiphrastic\b",
+    # Coptic grammatical terms
+    r"\bcircumstantial\b", r"\bcausative\b", r"\bconjunctive\b",
+    r"\bfocalizing\b", r"\brelative\s*converter\b", r"\bSahidic\b",
+    r"\bBohairic\b", r"\bSubakhmimic\b", r"\bAchmimic\b", r"\bLycopolitan\b",
+    # Geʿez / Syriac / Latin script families
+    r"\bGe[\u02bbʿ\']ez\b", r"\bEthiopic\b", r"\bSyriac\b",
+    r"\bLatin\b", r"\bVulgate\b", r"\bOld\s*Latin\b",
 ]
 SOURCE_EVIDENCE_RE = re.compile("|".join(SOURCE_EVIDENCE_PATTERNS), re.IGNORECASE)
 
