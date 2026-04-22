@@ -132,7 +132,7 @@ ROMAN_NUMERALS: dict[str, int] = {
     "XXVI": 26,
 }
 ROMAN_HEADING_RE = re.compile(
-    r"^\s*(?:[A-Za-zΑ-Ωα-ωβγδεζηθικλμνξοπρστυφχψω,\-· ]{0,20}\s+)?(?P<num>[IVXLCDMΙ]+)\.\s*",
+    r"^\s*(?:[A-Za-zΑ-Ωα-ωβγδεζηθικλμνξοπρστυφχψω,\-· ]{0,20}\s+)?(?P<num>[IVXLCDMΙΧ]+)[⁰¹²³⁴⁵⁶⁷⁸⁹0-9]*\.\s*",
     re.MULTILINE,
 )
 
@@ -144,7 +144,7 @@ def _normalize_heading_token(token: str) -> str:
     ``I`` inside Roman numerals (e.g. ``Ι.`` or ``ΙΙ.``). For heading parsing
     those are equivalent.
     """
-    return token.replace("Ι", "I")
+    return token.replace("Ι", "I").replace("Χ", "X")
 
 
 def _strip_diacritics(text: str) -> str:
