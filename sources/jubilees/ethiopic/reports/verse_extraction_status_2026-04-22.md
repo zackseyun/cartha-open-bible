@@ -26,7 +26,7 @@ Scripts involved:
 ## Coverage snapshot
 
 - chapters represented: **50 / 50**
-- current extracted verse records: **1090**
+- current extracted verse records: **1123**
 - deterministic chapters: **17**
 - Vertex-fallback chapters: **33**
 
@@ -70,8 +70,9 @@ Even with those caveats, the project is in a much better place:
 
 ## Current QA note
 
-Most chapter counts now look plausible. The main obviously low outliers still worth
-chapter-specific review are:
+Most chapter counts now look plausible. The previously weakest obvious outliers were chapter 23 and chapter 39. Both were then re-extracted with targeted Vertex prompts using explicit running-head constraints:
 
-- chapter 23 (`9` extracted verses)
-- chapter 39 (`5` extracted verses)
+- chapter 23: `9` -> `30` extracted verses
+- chapter 39: `5` -> `17` extracted verses
+
+After those targeted repairs, there are no remaining chapters under 10 extracted verses in the current working corpus.
