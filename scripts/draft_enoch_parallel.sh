@@ -78,7 +78,7 @@ if [[ "$DRY_RUN" == "1" ]]; then
   exit 0
 fi
 
-printf '%s\n' "$TASKS" | xargs -n2 -P "$CONCURRENCY" -I{} bash -lc '
+printf '%s\n' "$TASKS" | xargs -n2 -P "$CONCURRENCY" bash -lc '
   chapter="$1"
   verse="$2"
   log="$LOG_DIR/ch$(printf "%03d" "$chapter")_v$(printf "%03d" "$verse").log"
