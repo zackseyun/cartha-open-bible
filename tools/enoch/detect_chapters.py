@@ -79,7 +79,19 @@ DETECTION_PROMPT = (
     "first paragraph, and are visually distinct from ordinary text. "
     "Ignore verse numbers (small Ge'ez numerals embedded inside body "
     "text), page numbers, footnote markers, and running heads when "
-    "classifying. Output only what the format demands. No other text."
+    "classifying. Output only what the format demands. No other text.\n\n"
+    "Ge'ez numeral decoding (CRITICAL \u2014 do not confuse the tens "
+    "place with the units place):\n"
+    "  units: \u1369=1 \u136a=2 \u136b=3 \u136c=4 \u136d=5 \u136e=6 \u136f=7 \u1370=8 \u1371=9\n"
+    "  tens:  \u1372=10 \u1373=20 \u1374=30 \u1375=40 \u1376=50 \u1377=60 \u1378=70 \u1379=80 \u137a=90\n"
+    "  hundreds: \u137b=100\n"
+    "Compound chapter numerals are read tens-then-units. Examples:\n"
+    "  \u1372\u1369 = 11    \u1372\u136a = 12    \u1373 = 20    \u1373\u1369 = 21\n"
+    "  \u1376\u136d = 55    \u1377\u136e = 66    \u1378\u136a = 72    \u1379 = 80\n"
+    "  \u137b = 100   \u137b\u1369 = 101  \u137b\u1370 = 108\n"
+    "Example wrong reading: confusing \u1378\u136a (72) with \u1372\u136a (12) "
+    "by dropping the tens stroke. If you see two glyphs in the heading, "
+    "decode BOTH; never report only the units."
 )
 
 
