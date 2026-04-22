@@ -46,6 +46,7 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-pro"
 DEFAULT_VERTEX_SECRET_ID = "/cartha/openclaw/gemini_api_key_2"
 DEFAULT_VERTEX_LOCATION = "global"
 _VERTEX_CACHE: dict[str, object] = {"token": "", "expiry": 0.0, "project": ""}
+_GEMINI_KEYS_CACHE: list[str] | None = None
 _FENCE_RE = re.compile(r"^```[a-zA-Z0-9_-]*\s*|\s*```$", re.MULTILINE)
 
 
@@ -94,9 +95,14 @@ def azure_api_version() -> str:
 
 
 def resolve_gemini_api_keys() -> list[str]:
+    global _GEMINI_KEYS_CACHE
+    if _GEMINI_KEYS_CACHE is not None:
+        return _GEMINI_KEYS_CACHE
+
     env_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if env_key:
-        return [env_key]
+        _GEMINI_KEYS_CACHE = [env_key]
+        return _GEMINI_KEYS_CACHE
     sm = boto3.client("secretsmanager", region_name="us-west-2")
     raw = sm.get_secret_value(
         SecretId=os.environ.get("GEMINI_SECRET_ID", DEFAULT_GEMINI_SECRET_ID)
@@ -130,7 +136,8 @@ def resolve_gemini_api_keys() -> list[str]:
 
     if not deduped:
         raise RuntimeError("No Gemini API keys resolved from secret")
-    return deduped
+    _GEMINI_KEYS_CACHE = deduped
+    return _GEMINI_KEYS_CACHE
 
 
 def resolve_gemini_api_key(index: int = 1) -> str:
