@@ -12,13 +12,31 @@
   },
   "primary_witnesses": [
     {
-      "witness_id": "mattison_zinner_coptic",
+      "witness_id": "coptic_scriptorium_thomas_dilley_2025",
       "role": "primary_coptic",
+      "provider": "coptic_scriptorium",
+      "format": "tei_xml",
+      "status": "fetched",
+      "url": "https://raw.githubusercontent.com/CopticScriptorium/corpora/master/thomas-gospel/thomas.gospel_TEI/thomas_gospel.xml",
+      "license": "CC-BY 4.0",
+      "urn": "urn:cts:copticLit:nh.thomas.NHAM02:0-114",
+      "edition": "Paul Dilley, 2025 (Coptic Scriptorium v6.2.0)",
+      "manuscript": "Nag Hammadi Codex II (NHAM 02), pp. 32–51",
+      "notes": "Born-digital CC-BY Coptic edition based on Brill Facsimile Edition Codex II scans. Sahidic with Lycopolitan features. Attribute Dilley 2025 + Coptic Scriptorium when used.",
+      "files": {
+        "tei_xml": "sources/nag_hammadi/raw/gospel_of_thomas/coptic_scriptorium_thomas.tei.xml",
+        "tt": "sources/nag_hammadi/raw/gospel_of_thomas/coptic_scriptorium_thomas.tt",
+        "parsed_jsonl": "sources/nag_hammadi/texts/gospel_of_thomas/coptic.jsonl"
+      }
+    },
+    {
+      "witness_id": "mattison_zinner_coptic",
+      "role": "consult_english",
       "provider": "mattison_zinner",
       "format": "html_page",
-      "status": "ready_to_fetch",
+      "status": "fetched",
       "url": "https://gospels.net/thomas",
-      "notes": "Primary online Coptic/translation witness for Phase E bootstrapping."
+      "notes": "OGV English rendering (Mattison/Zinner). Comprehension cross-check only, never a source of Coptic text. Re-classified from primary_coptic once the Coptic Scriptorium TEI was sourced."
     },
     {
       "witness_id": "gebhardt_klein_2024_coptic",
@@ -41,9 +59,14 @@
       "role": "greek_overlap_witness",
       "provider": "agraphos",
       "format": "html_page",
-      "status": "ready_to_fetch",
+      "status": "fetched",
       "url": "http://www.agraphos.com/thomas/greek/poxy654/",
-      "notes": "Greek overlap witness for logia 1–7 from Agraphos.",
+      "notes": "Agraphos page capture for the POxy 654 overlap witness (Sayings 1–7). The on-disk capture contains translation-layer overlap summaries and fragment metadata, not a diplomatic Greek-script transcription.",
+      "files": {
+        "html": "sources/nag_hammadi/raw/gospel_of_thomas/poxy654_greek.html",
+        "text": "sources/nag_hammadi/raw/gospel_of_thomas/poxy654_greek.txt",
+        "meta": "sources/nag_hammadi/raw/gospel_of_thomas/poxy654_greek.meta.json"
+      },
       "coverage_ranges": [
         "001-007"
       ],
@@ -54,9 +77,14 @@
       "role": "greek_overlap_witness",
       "provider": "agraphos",
       "format": "html_page",
-      "status": "ready_to_fetch",
+      "status": "fetched",
       "url": "http://www.agraphos.com/thomas/greek/poxy1/",
-      "notes": "Greek overlap witness for logia 26–33 from Agraphos.",
+      "notes": "Agraphos page capture for the POxy 1 overlap witness (Sayings 26–33). The on-disk capture contains translation-layer overlap summaries and fragment metadata, not a diplomatic Greek-script transcription.",
+      "files": {
+        "html": "sources/nag_hammadi/raw/gospel_of_thomas/poxy1_greek.html",
+        "text": "sources/nag_hammadi/raw/gospel_of_thomas/poxy1_greek.txt",
+        "meta": "sources/nag_hammadi/raw/gospel_of_thomas/poxy1_greek.meta.json"
+      },
       "coverage_ranges": [
         "026-033"
       ],
@@ -67,9 +95,14 @@
       "role": "greek_overlap_witness",
       "provider": "agraphos",
       "format": "html_page",
-      "status": "ready_to_fetch",
+      "status": "fetched",
       "url": "http://www.agraphos.com/thomas/greek/poxy655/",
-      "notes": "Greek overlap witness for logia 24 and 36–39 from Agraphos.",
+      "notes": "Agraphos page capture for the POxy 655 overlap witness (Sayings 24 and 36–39). The on-disk capture contains translation-layer overlap summaries and fragment metadata, not a diplomatic Greek-script transcription.",
+      "files": {
+        "html": "sources/nag_hammadi/raw/gospel_of_thomas/poxy655_greek.html",
+        "text": "sources/nag_hammadi/raw/gospel_of_thomas/poxy655_greek.txt",
+        "meta": "sources/nag_hammadi/raw/gospel_of_thomas/poxy655_greek.meta.json"
+      },
       "coverage_ranges": [
         "024-024",
         "036-039"
@@ -81,8 +114,10 @@
     "layton_nhs_20",
     "plisch_2008",
     "deconick_2007",
-    "meyer_2007"
+    "meyer_2007",
+    "bethge_et_al_1996"
   ],
+  "primary_coptic_source_jsonl": "sources/nag_hammadi/texts/gospel_of_thomas/coptic.jsonl",
   "guardrails": [
     "If a Greek fragment overlaps a saying and differs meaningfully from the Coptic, record both readings and defend the decision.",
     "Treat Synoptic parallels as context, not as pressure to harmonize Thomas into the canonical gospels.",
