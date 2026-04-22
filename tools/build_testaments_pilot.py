@@ -57,15 +57,15 @@ def running_head_chapter(running_head: str) -> int | None:
     return t12p.ROMAN_NUMERALS.get(token)
 
 
-def build_page_bodies(prefix: str, pages: list[int], testament_slug: str) -> list[tuple[int, str, str]]:
+def build_page_bodies(prefix: str, pages: list[int], testament_slug: str) -> tuple[list[tuple[int, str, str]], list[str]]:
     """Return ordered `(page, running_head, body)` tuples with obvious duplicates removed."""
     chunks: list[tuple[int, str, str]] = []
-    missing: list[int] = []
+    warnings: list[str] = []
     last_running_head_num: int | None = None
     for page in pages:
         path = raw_page_file(prefix, page)
         if not path.exists():
-            missing.append(page)
+            warnings.append(f"Missing raw OCR file for page {page}; continuing with remaining pages.")
             continue
         page_text = path.read_text(encoding="utf-8")
         running_head = t12p.extract_running_head(page_text)
@@ -80,15 +80,12 @@ def build_page_bodies(prefix: str, pages: list[int], testament_slug: str) -> lis
             body = t12p._trim_before_testament_title(body, testament_slug)
         if body.strip():
             chunks.append((page, running_head, body.strip()))
-    if missing:
-        raise FileNotFoundError(f"Missing raw OCR files for pages: {missing}")
-    return chunks
+    return chunks, warnings
 
 
 def build_chapter_map(prefix: str, pages: list[int], testament_slug: str) -> tuple[dict[int, list[str]], list[str]]:
-    page_bodies = build_page_bodies(prefix, pages, testament_slug)
+    page_bodies, warnings = build_page_bodies(prefix, pages, testament_slug)
     chapter_map: dict[int, list[str]] = collections.defaultdict(list)
-    warnings: list[str] = []
     current_chapter: int | None = None
 
     for page, running_head, body in page_bodies:
