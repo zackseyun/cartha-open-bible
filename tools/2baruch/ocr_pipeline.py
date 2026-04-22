@@ -44,7 +44,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import boto3
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
@@ -193,6 +193,18 @@ def png_bytes_from_image(img: Image.Image) -> bytes:
     return buf.getvalue()
 
 
+def trim_to_ink(img: Image.Image, *, threshold: int = 40, margin: int = 20) -> Image.Image:
+    inv = ImageOps.invert(img)
+    mask = inv.point(lambda p: 255 if p > threshold else 0)
+    bbox = mask.getbbox()
+    if not bbox:
+        return img
+    trimmed = img.crop(bbox)
+    canvas = Image.new("L", (trimmed.size[0] + (2 * margin), trimmed.size[1] + (2 * margin)), 255)
+    canvas.paste(trimmed, (margin, margin))
+    return canvas
+
+
 def crop_ceriani_regions(image_bytes: bytes) -> dict[str, bytes]:
     with Image.open(io.BytesIO(image_bytes)) as img:
         img = img.convert("L")
@@ -207,13 +219,18 @@ def crop_ceriani_regions(image_bytes: bytes) -> dict[str, bytes]:
             )
 
         regions = {
-            "running_head": img.crop(box(0.28, 0.00, 0.72, 0.09)),
+            "running_head": img.crop(box(0.28, 0.00, 0.72, 0.055)),
             "column1": img.crop(box(0.16, 0.05, 0.53, 0.81)),
             "column2": img.crop(box(0.53, 0.05, 0.92, 0.81)),
             "apparatus1": img.crop(box(0.03, 0.78, 0.52, 0.99)),
             "apparatus2": img.crop(box(0.50, 0.78, 0.98, 0.99)),
         }
-        return {name: png_bytes_from_image(region) for name, region in regions.items()}
+        trimmed_names = {"apparatus1", "apparatus2"}
+        out: dict[str, bytes] = {}
+        for name, region in regions.items():
+            region_img = trim_to_ink(region) if name in trimmed_names else region
+            out[name] = png_bytes_from_image(region_img)
+        return out
 
 
 def resolve_gemini_api_keys() -> list[str]:
@@ -449,7 +466,8 @@ def output_stem(source: str, page: int) -> str:
 
 
 def assemble_ceriani_page(regions_text: dict[str, str]) -> str:
-    head = regions_text.get("running_head", "").strip() or "[BLANK]"
+    raw_head = regions_text.get("running_head", "").strip()
+    head = raw_head if re.search(r"\d", raw_head) else "[BLANK]"
     col1 = regions_text.get("column1", "").strip() or "[BLANK]"
     col2 = regions_text.get("column2", "").strip() or "[BLANK]"
     app_left = regions_text.get("apparatus1", "").strip()
