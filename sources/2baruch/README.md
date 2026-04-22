@@ -25,7 +25,7 @@ sources/2baruch/
 │   └── violet_1924_gcs32_wbc.zip
 ├── reference/
 │   └── charles_1896_apocalypse_of_baruch.pdf
-├── raw_ocr/                      (pending) page-level OCR dumps
+├── raw_ocr/                      page-level OCR dumps (Ceriani full sweep now present)
 └── syriac/
     ├── README.md                  bridge-layer notes for the primary Syriac witness
     ├── transcribed/              cleaned page-level Ceriani text + page index
@@ -77,8 +77,8 @@ pass:
 
 So the practical start sequence is:
 
-1. Ceriani calibration pages
-2. Kmosko control pages
+1. Ceriani full primary sweep
+2. Kmosko targeted control pages
 3. Violet structural / numbering extraction
 
 ## Zone 2 consult (not reproduced)
@@ -90,14 +90,23 @@ layer.
 
 ## Status
 
-**2026-04-22: OCR-to-corpus bridge landed for the Ceriani calibration set.**
-The initial five-page Ceriani OCR batch now flows through `tools/2baruch/build_corpus.py`
+**2026-04-22: full Ceriani primary OCR sweep + bridge layer landed.**
+The local source files are rehydrated and pinned in `MANIFEST.md`, the
+Ceriani OCR pipeline is working, and `raw_ocr/ceriani1871/` now covers
+the full primary-text span at **PDF pages 162–228 inclusive**. The
+pilot-page apparatus rescue was retained inside that full sweep, and the
+resulting page corpus now also flows through `tools/2baruch/build_corpus.py`
 into a committed Syriac bridge layer:
 
 - `sources/2baruch/syriac/transcribed/ceriani1871/pages/`
 - `sources/2baruch/syriac/transcribed/ceriani1871/page_index.json`
 - `sources/2baruch/syriac/corpus/CERIANI_WORKING.jsonl`
 
-That bridge keeps the text page-level on purpose: the current OCR on disk is still
-a sparse calibration set, so the clean intermediate object is a stable primary-witness
-page corpus rather than a pretend full chapter-aligned edition.
+That bridge intentionally stays page-level for now: the OCR substrate is
+now complete, but chapter alignment is still the next real task rather
+than something to pretend is already done.
+
+See also:
+- [`raw_ocr/ceriani1871/COVERAGE.md`](raw_ocr/ceriani1871/COVERAGE.md)
+- [`raw_ocr/ceriani1871/SPOTCHECK_QUEUE.md`](raw_ocr/ceriani1871/SPOTCHECK_QUEUE.md)
+- [`CONTROL_WITNESSES.md`](CONTROL_WITNESSES.md)

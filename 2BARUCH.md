@@ -11,11 +11,13 @@ It complements [EXTRA_CANONICAL.md](EXTRA_CANONICAL.md) (overall
 roadmap) and applies the three-zone source policy in
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
-> **Status: source-acquisition scaffold now landed.** The repo now has
-> `sources/2baruch/` with a README, MANIFEST, pinned local source
-> files (Ceriani, Kmosko, Charles, Violet 1924 WBC export), and
-> initial OCR prompt docs. Transcription and loader modules have not
-> started yet, but 2 Baruch is no longer only a paper plan.
+> **Status: full Ceriani primary OCR sweep now landed.** The repo now
+> has `sources/2baruch/` with pinned source files, an executable OCR
+> pipeline, the full Ceriani primary sweep at
+> `sources/2baruch/raw_ocr/ceriani1871/`, and comparison / spot-check
+> notes for the next segmentation stage. Loader modules and translation
+> drafting still remain ahead, but 2 Baruch is now past the source-only
+> stage.
 
 ## Why 2 Baruch belongs in the same family as 2 Esdras
 
@@ -112,9 +114,9 @@ These are intentionally parallel to the 2 Esdras track:
 | Component | Status | Purpose |
 |---|---|---|
 | `sources/2baruch/` | ✅ scaffolded | README + MANIFEST + pinned local source files + OCR prompt docs |
-| `tools/2baruch/ocr_pipeline.py` | ✅ calibration landed | Executable OCR pipeline exists; first five Ceriani pages calibrated into `sources/2baruch/raw_ocr/ceriani1871/` |
+| `tools/2baruch/ocr_pipeline.py` | ✅ primary sweep landed | Executable OCR pipeline now exists; Ceriani primary OCR covers PDF pages 162–228 with coverage + spot-check notes |
 | `tools/2baruch/build_corpus.py` | ✅ landed | Bridges raw Ceriani OCR into committed page-level Syriac corpus artifacts |
-| `tools/2baruch/syriac_primary.py` | 🟡 page-level loader landed | Loads the bridged Ceriani page corpus; chapter/verse alignment still pending |
+| `tools/2baruch/syriac_primary.py` | 🟡 page-level loader landed | Loads the bridged Ceriani page corpus; chapter / verse alignment still pending |
 | `tools/2baruch/multi_witness.py` | ⏳ pending | Aggregator returning Syriac + Greek/Latin fragment data |
 | `tools/2baruch/build_translation_prompt.py` | ⏳ pending | Phase-15 translator prompt assembly |
 
@@ -135,6 +137,7 @@ even if its own transcription / loader work still starts later.
 
 - `sources/2baruch/README.md` — source layout + witness roles + OCR notes
 - `sources/2baruch/MANIFEST.md` — rehydration commands + pinned SHA-256 hashes
+- `sources/2baruch/CONTROL_WITNESSES.md` — control-witness order + truth-check plan
 - `tools/prompts/transcribe_2baruch_ceriani_syriac.md` — primary Syriac OCR prompt
 - `tools/prompts/transcribe_2baruch_kmosko_syriac_latin.md` — secondary witness OCR prompt
 - `tools/prompts/transcribe_2baruch_violet1924_gcs32.md` — German-form orientation / structure prompt
@@ -142,10 +145,11 @@ even if its own transcription / loader work still starts later.
 ## Tentative timing
 
 - **Now**: source acquisition scaffolded locally, with manifest +
-  README + prompt docs in place, and a first five-page Ceriani OCR
-  calibration on disk
-- **Next**: extend the Ceriani calibration from the current sample pages into a fuller sweep,
-  then layer chapter/verse alignment on top of the new page corpus
+  README + prompt docs in place, and the full Ceriani primary OCR sweep
+  on disk
+- **Next**: segment the Ceriani page corpus into chapter buckets, add
+  targeted Kmosko control pages, and tighten chapter / verse alignment
+  on top of the new bridge layer
 - **Drafting phase**: after earlier higher-priority phases complete,
   using the already-proven family tooling
 

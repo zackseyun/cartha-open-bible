@@ -193,6 +193,15 @@ def png_bytes_from_image(img: Image.Image) -> bytes:
     return buf.getvalue()
 
 
+def dark_pixel_stats(img: Image.Image, *, threshold: int = 40) -> tuple[int, float]:
+    total = img.size[0] * img.size[1]
+    hist = img.histogram()
+    cutoff = max(0, 255 - threshold)
+    dark = sum(hist[:cutoff])
+    ratio = (dark / total) if total else 0.0
+    return dark, ratio
+
+
 def trim_to_ink(img: Image.Image, *, threshold: int = 40, margin: int = 20) -> Image.Image:
     inv = ImageOps.invert(img)
     mask = inv.point(lambda p: 255 if p > threshold else 0)
@@ -205,7 +214,7 @@ def trim_to_ink(img: Image.Image, *, threshold: int = 40, margin: int = 20) -> I
     return canvas
 
 
-def crop_ceriani_regions(image_bytes: bytes) -> dict[str, bytes]:
+def crop_ceriani_regions(image_bytes: bytes) -> dict[str, dict[str, object]]:
     with Image.open(io.BytesIO(image_bytes)) as img:
         img = img.convert("L")
         w, h = img.size
@@ -226,10 +235,19 @@ def crop_ceriani_regions(image_bytes: bytes) -> dict[str, bytes]:
             "apparatus2": img.crop(box(0.50, 0.78, 0.98, 0.99)),
         }
         trimmed_names = {"apparatus1", "apparatus2"}
-        out: dict[str, bytes] = {}
+        out: dict[str, dict[str, object]] = {}
         for name, region in regions.items():
             region_img = trim_to_ink(region) if name in trimmed_names else region
-            out[name] = png_bytes_from_image(region_img)
+            dark_pixels, dark_ratio = dark_pixel_stats(region_img)
+            out[name] = {
+                "bytes": png_bytes_from_image(region_img),
+                "dark_pixels": dark_pixels,
+                "dark_ratio": dark_ratio,
+                "blankish": (
+                    (name == "running_head" and dark_pixels < 150)
+                    or (name.startswith("apparatus") and dark_pixels < 350)
+                ),
+            }
         return out
 
 
@@ -550,22 +568,44 @@ def process_page(
         }
         for region_name in ("running_head", "column1", "column2", "apparatus1", "apparatus2"):
             region_prompt_key = "running_head" if region_name == "running_head" else ("apparatus" if region_name.startswith("apparatus") else "column")
+            crop_info = crops[region_name]
+            crop_bytes = crop_info["bytes"]
             region_started = time.time()
-            region_text, region_model_id = call_backend(
-                backend=backend,
-                image_bytes=crops[region_name],
-                mime_type="image/png",
-                prompt=CERIANI_REGION_PROMPTS[region_prompt_key],
-                max_tokens=region_budgets[region_name],
-                gemini_model=gemini_model,
-                gemini_key_index=gemini_key_index,
-            )
+            if crop_info["blankish"]:
+                region_text = ""
+                region_model_id = model_id or ""
+            else:
+                try:
+                    region_text, region_model_id = call_backend(
+                        backend=backend,
+                        image_bytes=crop_bytes,
+                        mime_type="image/png",
+                        prompt=CERIANI_REGION_PROMPTS[region_prompt_key],
+                        max_tokens=region_budgets[region_name],
+                        gemini_model=gemini_model,
+                        gemini_key_index=gemini_key_index,
+                    )
+                except Exception:
+                    if region_name == "running_head":
+                        region_text = ""
+                        region_model_id = model_id or ""
+                    elif region_name.startswith("apparatus"):
+                        # Apparatus may genuinely be absent on some edge pages;
+                        # keep the sweep moving and let later control witnesses
+                        # fill any real gaps.
+                        region_text = ""
+                        region_model_id = model_id or ""
+                    else:
+                        raise
             regions_text[region_name] = region_text.strip()
             model_id = model_id or region_model_id
             region_meta.append({
                 "region": region_name,
-                "image_sha256": hashlib.sha256(crops[region_name]).hexdigest(),
-                "image_bytes": len(crops[region_name]),
+                "image_sha256": hashlib.sha256(crop_bytes).hexdigest(),
+                "image_bytes": len(crop_bytes),
+                "dark_pixels": crop_info["dark_pixels"],
+                "dark_ratio": crop_info["dark_ratio"],
+                "blankish": crop_info["blankish"],
                 "duration_seconds": round(time.time() - region_started, 2),
                 "output_chars": len(region_text),
             })

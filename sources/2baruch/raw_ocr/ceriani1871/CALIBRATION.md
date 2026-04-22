@@ -1,11 +1,11 @@
-# Ceriani 1871 — initial 5-page OCR calibration
+# Ceriani 1871 — calibration and full primary sweep
 
 Date: **2026-04-21**
 Backend: **Gemini 3.1 Pro preview**
 Pipeline: [`../../../../tools/2baruch/ocr_pipeline.py`](../../../../tools/2baruch/ocr_pipeline.py)
 Layout mode: **ceriani_region_assembled**
 
-## Pages
+## Pilot pages
 
 | PDF page | TXT | Meta | Output chars | Duration (s) |
 |---:|---|---|---:|---:|
@@ -44,3 +44,8 @@ reintroducing column-level regressions.
   the first-pass OCR.
 - Natural next step: add another Ceriani batch plus a small Kmosko
   control batch for witness comparison.
+
+## Full sweep status
+
+- The full Ceriani primary OCR sweep now covers **PDF pages 162–228 inclusive** with no missing pages.
+- See `COVERAGE.md` for the full page list and `SPOTCHECK_QUEUE.md` for the first cleanup / control-witness targets.
