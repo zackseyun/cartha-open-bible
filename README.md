@@ -31,6 +31,36 @@ commitments.**
    and verify our documented draft. No other English Bible in history has
    offered this.
 
+## Why we built this
+
+The Cartha Open Bible started with a simple need: a Bible we could ship
+in our own apps without licensing friction. Most modern English
+translations ship under a commercial trademark — free to read, but not
+free to quote at length, fork, adapt, or include in a commercial
+product. The openly-licensed alternatives are almost all older
+translations that don't reflect modern scholarship.
+
+Building one surfaced two gaps in the existing English Bible ecosystem
+worth addressing at once:
+
+- **A free translation that modern reasoning could strengthen.**
+  Frontier AI models can now work carefully through the Greek and
+  Hebrew — not to replace scholars, but to surface the hard choices and
+  document them at a scale no single committee could.
+- **Transparent reasoning.** Most translations happen behind closed
+  doors. A reader who disagrees with a rendering has no way to see why
+  the committee chose it. We wanted every decision visible: source
+  word, alternatives considered, rationale, the model that drafted it,
+  the reviewer that revised it.
+
+So we translate directly from the original Greek and Hebrew, reason
+across multiple frontier models, and document every decision publicly.
+Released under CC-BY 4.0 — free to read, quote, fork, adapt, or ship
+inside a commercial product, with no trademark and no royalty. For the
+Deuterocanonical books, where no modern openly-licensed scan-grounded
+corpus existed, we transcribed the source text from photographs of the
+manuscripts first.
+
 ## Why this is possible now
 
 Open-source infrastructure, frontier AI models as drafting tools, and modern

@@ -203,5 +203,3 @@ We commit to:
 
 The Word belongs to the church. We are stewards of a process, not owners of
 a text.
-
-*Soli Deo gloria.*
