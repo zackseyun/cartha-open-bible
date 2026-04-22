@@ -14,6 +14,8 @@ import argparse
 import json
 import pathlib
 import re
+import os
+import time
 import urllib.request
 from typing import Any
 
@@ -51,13 +53,10 @@ Rules:
 
 
 def call_vertex_json(user_text: str, *, model: str) -> str:
-    token, project_id = ocr_geez.vertex_access_token()
-    location = ocr_geez.DEFAULT_VERTEX_LOCATION
-    api_host = "aiplatform.googleapis.com" if location == "global" else f"{location}-aiplatform.googleapis.com"
-    url = (
-        f"https://{api_host}/v1/projects/{project_id}/locations/{location}/"
-        f"publishers/google/models/{model}:generateContent"
-    )
+    secret_ids = [s.strip() for s in os.environ.get(
+        "VERTEX_SECRET_IDS",
+        "/cartha/vertex/gemini-sa,/cartha/openclaw/gemini_api_key_2",
+    ).split(",") if s.strip()]
     body = {
         "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT}]},
         "contents": [{"role": "user", "parts": [{"text": user_text}]}],
@@ -68,22 +67,41 @@ def call_vertex_json(user_text: str, *, model: str) -> str:
             "thinkingConfig": {"thinkingBudget": 512},
         },
     }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(body).encode("utf-8"),
-        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=300) as r:
-        resp = json.loads(r.read().decode("utf-8"))
-    cand = (resp.get("candidates") or [None])[0]
-    if not cand:
-        raise RuntimeError(f"no candidates: {resp}")
-    parts = cand.get("content", {}).get("parts") or []
-    text = "".join(p.get("text", "") for p in parts if isinstance(p, dict)).strip()
-    if not text:
-        raise RuntimeError("empty response")
-    return text
+    last_err: Exception | None = None
+    for secret_id in secret_ids:
+        try:
+            os.environ["VERTEX_SECRET_ID"] = secret_id
+            ocr_geez._VERTEX_CACHE["token"] = ""
+            ocr_geez._VERTEX_CACHE["expiry"] = 0.0
+            ocr_geez._VERTEX_CACHE["project"] = ""
+            token, project_id = ocr_geez.vertex_access_token()
+            location = ocr_geez.DEFAULT_VERTEX_LOCATION
+            api_host = "aiplatform.googleapis.com" if location == "global" else f"{location}-aiplatform.googleapis.com"
+            url = (
+                f"https://{api_host}/v1/projects/{project_id}/locations/{location}/"
+                f"publishers/google/models/{model}:generateContent"
+            )
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(body).encode("utf-8"),
+                headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+                method="POST",
+            )
+            with urllib.request.urlopen(req, timeout=300) as r:
+                resp = json.loads(r.read().decode("utf-8"))
+            cand = (resp.get("candidates") or [None])[0]
+            if not cand:
+                raise RuntimeError(f"no candidates: {resp}")
+            parts = cand.get("content", {}).get("parts") or []
+            text = "".join(p.get("text", "") for p in parts if isinstance(p, dict)).strip()
+            if not text:
+                raise RuntimeError("empty response")
+            return text
+        except Exception as exc:
+            last_err = exc
+            time.sleep(2)
+            continue
+    raise last_err or RuntimeError("vertex call failed across all configured secrets")
 
 
 def llm_extract_chapter(
@@ -189,12 +207,36 @@ def main() -> int:
     ap.add_argument("--out", type=pathlib.Path, default=REPO_ROOT / "sources" / "jubilees" / "ethiopic" / "corpus" / "JUBILEES.vertex.jsonl")
     ap.add_argument("--low-threshold", type=int, default=5)
     ap.add_argument("--model", default="gemini-3.1-pro-preview")
+    ap.add_argument("--chapters", default="all")
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
 
     page_map = jub_corpus.load_page_map(args.page_map)
-    records: list[dict[str, Any]] = []
+    chapters = list(range(1, 51)) if args.chapters == "all" else []
+    if args.chapters != "all":
+        for part in args.chapters.split(","):
+            token = part.strip()
+            if not token:
+                continue
+            if "-" in token:
+                a, b = token.split("-", 1)
+                chapters.extend(range(int(a), int(b) + 1))
+            else:
+                chapters.append(int(token))
+        chapters = sorted(set(ch for ch in chapters if 1 <= ch <= 50))
+
+    existing: list[dict[str, Any]] = []
+    completed: set[int] = set()
+    if args.resume and args.out.exists():
+        existing = [json.loads(line) for line in args.out.read_text(encoding="utf-8").splitlines() if line.strip()]
+        completed = {int(r["chapter"]) for r in existing}
+
+    records: list[dict[str, Any]] = list(existing)
     modes: dict[str, int] = {"deterministic": 0, "vertex_fallback": 0}
-    for chapter in range(1, 51):
+    for chapter in chapters:
+        if chapter in completed:
+            print(f"ch {chapter:02d}: resume skip", flush=True)
+            continue
         chapter_recs, mode = chapter_records(
             chapter=chapter,
             page_map=page_map,
@@ -203,11 +245,11 @@ def main() -> int:
         )
         modes[mode] = modes.get(mode, 0) + 1
         records.extend(chapter_recs)
-
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    with args.out.open("w", encoding="utf-8") as fh:
-        for rec in records:
-            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        print(f"ch {chapter:02d}: {mode} -> {len(chapter_recs)} verses", flush=True)
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        with args.out.open("w", encoding="utf-8") as fh:
+            for rec in records:
+                fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
     print(f"wrote {args.out}")
     print(f"records={len(records)}")

@@ -92,6 +92,10 @@ def assemble_chapters(classifications: dict[int, dict[str, Any]], *, edition: st
             if not chapters:
                 warnings.append(f"{edition} p{page}: chapter_start with empty chapters")
                 continue
+            if current_chapter is not None and current_chapter < chapters[0] and current_chapter not in chapters:
+                chapter_pages.setdefault(current_chapter, [])
+                if page not in chapter_pages[current_chapter]:
+                    chapter_pages[current_chapter].append(page)
             usable = [c for c in chapters if c >= last_seen_chapter]
             if not usable and chapters:
                 warnings.append(
