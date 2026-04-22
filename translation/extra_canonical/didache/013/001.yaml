@@ -5,35 +5,15 @@ book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
   text: Πᾶς δὲ προφήτης ἀληθινός, θέλων καθῆσαι πρὸς ὑμᾶς, ἄξιός ἐστι τῆς τροφῆς αὐτοῦ.
-    Ὡσαύτως διδάσκαλος ἀληθινός ἐστιν ἄξιος καὶ αὐτός, ὥσπερ ὁ ἐργάτης, τῆς τροφῆς
-    αὐτοῦ. Πᾶσαν οὖν ἀπαρχὴν γεννημάτων ληνοῦ καὶ ἅλωνος, βοῶν τε καὶ προβάτων λαβὼν
-    δώσεις τοῖς προφήταις· αὐτοὶ γάρ εἰσιν οἱ ἀρχιερεῖς ὑμῶν. Ἐὰν δὲ μὴ ἔχητε προφήτην,
-    δότε τοῖς πτωχοῖς. Ἐὰν σιτιαυτοῖς, τὴν ἀπαρχὴν λαβὼν δὸς κατὰ τὴν ἐντολήν. Ὡσαύτως
-    κεράμιον οἴνου ἢ ἐλαίου ἀνοίξας, τὴν ἀπαρχὴν λαβὼν δὸς τοῖς προφήταις· ἀργυρίου
-    δὲ καὶ ἱματισμοῦ καὶ παντὸς κτήματος λαβὼν τὴν ἀπαρχὴν ὡς ἂν σοὶ δοξῇ, δὸς κατὰ
-    τὴν ἐντολήν.
   language: Greek
-  pages:
-  - 38
-  note: This chapter comes from the normalized Hitchcock & Brown 1884 OCR layer. Line-number
-    noise and page segmentation were cleaned, but the translation must stay anchored
-    in the Greek wording.
 translation:
   text: But every true prophet who wishes to settle among you is worthy of his food.
-    Likewise a true teacher is himself also worthy, like the worker, of his food.
-    Therefore, taking every firstfruit of the produce of winepress and threshing floor,
-    and of cattle and sheep, you shall give it to the prophets, for they are your
-    high priests. But if you do not have a prophet, give it to the poor. If you make
-    bread,a take the firstfruit and give it according to the commandment. Likewise,
-    when you open a jar of wine or oil, take the firstfruit and give it to the prophets.
-    And of silver and clothing and every possession, take the firstfruit,b as it seems
-    good to you, and give it according to the commandment.
   philosophy: optimal-equivalence
-note: Synthetic single-verse mirror of the chapter-level authoritative YAML. Generated
-  by tools/mirror_extra_canonical_for_cdn.py so the cob-publisher Lambda (which expects
-  nested verse-level paths) picks up this book. Drafting and review both operate on
-  the flat chapter-level file at translation/extra_canonical/didache/013.yaml.
-ai_draft:
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/013.yaml
+  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
+  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
+  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
   prompt_id: didache_chapter_draft_v1
@@ -47,7 +27,7 @@ ai_draft:
   zone2_consults_known:
   - Later Apostolic Fathers critical editions (consult only)
   - Modern Didache commentary / translation literature (consult only)
-review_passes:
+ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:51:00Z'
   prompt_sha256: c49f0786972c2561eb54b652e1d929980149b31554cb74ae87428de0cf97a2a2
@@ -61,123 +41,3 @@ review_passes:
   - A footnote regarding a textual variant could be more precise about the manuscript
     reading.
   - Minor inconsistency in translating implied objects in the English text was corrected.
-lexical_decisions:
-- source_word: καθῆσαι πρὸς ὑμᾶς
-  chosen: to settle among you
-  rationale: The phrase indicates more than a brief visit; in context it refers to
-    a prophet taking up ongoing residence within the community. 'Settle among you'
-    preserves that durative sense without sounding overly formal.
-  alternatives:
-  - to stay with you
-  - to reside with you
-  entry: κάθημαι
-  lexicon: LSJ
-- source_word: τροφῆς
-  chosen: food
-  rationale: τροφῆς is literally 'food' or 'provision.' Because the chapter speaks
-    concretely of firstfruits and material support, 'food' keeps the bodily, practical
-    sense while still implying livelihood.
-  alternatives:
-  - nourishment
-  - support
-  - maintenance
-  entry: τροφή
-  lexicon: BDAG
-- source_word: ἀπαρχὴν
-  chosen: firstfruit
-  rationale: The singular is used repeatedly for the offering taken from various goods.
-    'Firstfruit' preserves the cultic and scriptural resonance of consecrated first
-    portions better than a generic 'first portion.'
-  alternatives:
-  - firstfruits
-  - first portion
-  entry: ἀπαρχή
-  lexicon: BDAG
-- source_word: γεννημάτων
-  chosen: produce
-  rationale: A broad term covering what is produced from the land. 'Produce' fits
-    the agricultural context and works naturally with winepress and threshing floor.
-  alternatives:
-  - fruits
-  - yield
-  - crops
-  entry: γέννημα
-  lexicon: LSJ
-- source_word: ἀρχιερεῖς
-  chosen: high priests
-  rationale: The Greek is explicitly the intensified priestly title. Rendering it
-    'high priests' preserves the striking ecclesial analogy in the Didache rather
-    than softening it to 'priests.'
-  alternatives:
-  - chief priests
-  - priests
-  entry: ἀρχιερεύς
-  lexicon: BDAG
-- source_word: Ἐὰν σιτιαυτοῖς
-  chosen: If you make bread
-  rationale: The normalized OCR form is unusual, but the manuscript reading is likely
-    Ἐὰν σιτίαν ποιῇς ('If you make a batch of bread'). The translation follows this
-    contextually sound reading.
-  alternatives:
-  - If you prepare food from grain
-  - If you bake
-  entry: σιτίον
-  lexicon: LSJ
-- source_word: κεράμιον
-  chosen: jar
-  rationale: A ceramic container is in view. 'Jar' is natural modern English and suitably
-    concrete for household provisions.
-  alternatives:
-  - vessel
-  - jug
-  entry: κεράμιον
-  lexicon: BDAG
-- source_word: κτήματος
-  chosen: possession
-  rationale: A broad term for owned property. 'Possession' keeps the singular collective
-    force of παντὸς κτήματος ('every possession') and fits the list of material goods.
-  alternatives:
-  - property
-  - goods
-  entry: κτῆμα
-  lexicon: BDAG
-- source_word: ὡς ἂν σοὶ δοξῇ
-  chosen: as it seems good to you
-  rationale: The phrase grants discretion in the amount or manner of giving. 'As it
-    seems good to you' is close to the Greek while remaining readable.
-  alternatives:
-  - as you think best
-  - as seems fitting to you
-  entry: δοκέω
-  lexicon: BDAG
-- source_word: κατὰ τὴν ἐντολήν
-  chosen: according to the commandment
-  rationale: ἐντολή carries the sense of an authoritative command. 'According to the
-    commandment' preserves the formal, rule-governed tone of church order and echoes
-    scriptural usage.
-  alternatives:
-  - according to the ordinance
-  - as commanded
-  entry: ἐντολή
-  lexicon: BDAG
-theological_decisions:
-- issue: Status of prophets as 'your high priests'
-  chosen_reading: Retain the direct statement 'for they are your high priests' in
-    the main text.
-  rationale: The Greek uses an unqualified identification (εἰσιν οἱ ἀρχιερεῖς ὑμῶν),
-    not merely a comparison. Preserving the stronger wording maintains the Didache's
-    early-Christian ecclesial and cultic self-understanding without interpretive softening.
-  alternative_readings:
-  - for they serve as your priests
-  - for they are like your high priests
-  doctrine_reference: Ecclesiology, Ministry
-- issue: Material support for resident ministers
-  chosen_reading: Render τροφή concretely as 'food' while allowing the context to
-    imply livelihood.
-  rationale: The chapter grounds ministerial support in actual firstfruits and household
-    goods (produce, bread, wine, oil). A more abstract term like 'support' would flatten
-    the concrete economic and liturgical texture of the passage.
-  alternative_readings:
-  - support
-  - maintenance
-  doctrine_reference: Ecclesiology, Stewardship

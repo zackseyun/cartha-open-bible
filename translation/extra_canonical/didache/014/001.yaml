@@ -5,31 +5,18 @@ book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
   text: Κατὰ κυριακὴν δὲ Κυρίου συναχθέντες κλάσατε ἄρτον καὶ εὐχαριστήσατε προεξομολογησάμενοι
-    τὰ παραπτώματα ὑμῶν, ὅπως καθαρὰ ἡ θυσία ὑμῶν ᾖ. Πᾶς δὲ ἔχων τὴν ἀμφιβολίαν μετὰ
-    τοῦ ἑταίρου αὐτοῦ μὴ συνελθέτω ὑμῖν, ἕως οὗ διαλλαγῶσιν, ἵνα μὴ κοινωθῇ ἡ θυσία
-    ὑμῶν· αὕτη γάρ ἐστιν ἡ ῥηθεῖσα ὑπὸ Κυρίου· Ἐν παντὶ τόπῳ καὶ χρόνῳ προσφέρειν
-    μοι θυσίαν καθαράν· ὅτι βασιλεὺς μέγας εἰμί, λέγει Κύριος, καὶ τὸ ὄνομά μου θαυμαστὸν
-    ἐν τοῖς ἔθνεσι.
+    τὰ παραπτώματα ὑμῶν, ὅπως καθαρὰ ἡ θυσία ὑμῶν ᾖ.
   language: Greek
-  pages:
-  - 38
-  note: This chapter comes from the normalized Hitchcock & Brown 1884 OCR layer. Line-number
-    noise and page segmentation were cleaned, but the translation must stay anchored
-    in the Greek wording.
 translation:
-  text: 'But on the Lord’s own day, after you have gathered together, break bread
-    and give thanks, after first confessing your transgressions, so that your sacrifice
-    may be pure. But let no one who has a dispute with his companion come together
-    with you until they are reconciled, so that your sacrifice may not be defiled.
-    For this is what was spoken by the Lord: “In every place and time offer me a pure
-    sacrifice, because I am a great King,” says the Lord, “and my name is marvelous
-    among the nations.”'
+  text: But on the Lord’s own day, after you have gathered together, break bread and
+    give thanks, after first confessing your transgressions, so that your sacrifice
+    may be pure.
   philosophy: optimal-equivalence
-note: Synthetic single-verse mirror of the chapter-level authoritative YAML. Generated
-  by tools/mirror_extra_canonical_for_cdn.py so the cob-publisher Lambda (which expects
-  nested verse-level paths) picks up this book. Drafting and review both operate on
-  the flat chapter-level file at translation/extra_canonical/didache/014.yaml.
-ai_draft:
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/014.yaml
+  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
+  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
+  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
   prompt_id: didache_chapter_draft_v1
@@ -43,7 +30,7 @@ ai_draft:
   zone2_consults_known:
   - Later Apostolic Fathers critical editions (consult only)
   - Modern Didache commentary / translation literature (consult only)
-review_passes:
+ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:51:58Z'
   prompt_sha256: c2422541bac34fb97973f12633914c46200f683a7e51ef6853ea865b7ecb4823
@@ -56,192 +43,3 @@ review_passes:
   issues_found:
   - Footnotes could be more precise.
   - Lexical rationales could be slightly more detailed in a few cases.
-lexical_decisions:
-- source_word: Κατὰ κυριακὴν δὲ Κυρίου
-  chosen: But on the Lord’s own day
-  rationale: The phrase is somewhat idiomatic and liturgical. Rendering it 'on the
-    Lord’s own day' preserves the doubled κυριακή / Κυρίου emphasis without collapsing
-    it into a later ecclesiastical title too quickly, while still reading naturally
-    in English.
-  alternatives:
-  - On the Lord's Day
-  - According to the Lord's day
-  entry: κυριακός
-  lexicon: LSJ
-- source_word: συναχθέντες
-  chosen: after you have gathered together
-  rationale: An aorist participle preceding the main imperatives; 'after you have
-    gathered together' preserves sequence and communal assembly language appropriate
-    to church order.
-  alternatives:
-  - having assembled
-  - when you come together
-  entry: συνάγω
-  lexicon: BDAG
-- source_word: κλάσατε ἄρτον
-  chosen: break bread
-  rationale: A standard early-Christian meal and Eucharistic expression. 'Break bread'
-    preserves the liturgical resonance without over-specifying beyond the Greek anarthrous
-    ἄρτον.
-  alternatives:
-  - break the bread
-  - break a loaf
-  entry: κλάω
-  lexicon: BDAG
-- source_word: εὐχαριστήσατε
-  chosen: give thanks
-  rationale: The verb plainly means 'give thanks.' Although Eucharistic overtones
-    are likely, translating it as 'celebrate the Eucharist' would import later technical
-    phrasing beyond the immediate Greek.
-  alternatives:
-  - offer thanksgiving
-  - celebrate the Eucharist
-  entry: εὐχαριστέω
-  lexicon: BDAG
-- source_word: προεξομολογησάμενοι
-  chosen: after first confessing
-  rationale: The compound verb carries the sense of prior/open confession. 'After
-    first confessing' captures both the temporal priority and penitential setting
-    in clear English.
-  alternatives:
-  - having confessed beforehand
-  - after openly acknowledging
-  entry: προεξομολογέομαι
-  lexicon: LSJ
-- source_word: τὰ παραπτώματα ὑμῶν
-  chosen: your transgressions
-  rationale: παραπτώματα often denotes moral lapses or offenses. 'Transgressions'
-    preserves moral gravity and liturgical seriousness better than the lighter 'offenses,'
-    while avoiding flattening everything to the broader term 'sins.'
-  alternatives:
-  - your trespasses
-  - your offenses
-  - your sins
-  entry: παράπτωμα
-  lexicon: BDAG
-- source_word: θυσία
-  chosen: sacrifice
-  rationale: The chapter explicitly frames the community's act in sacrificial language
-    and then cites prophetic sacrificial language. 'Sacrifice' should be retained
-    rather than softened to 'offering.'
-  alternatives:
-  - offering
-  entry: θυσία
-  lexicon: BDAG
-- source_word: ἔχων τὴν ἀμφιβολίαν
-  chosen: who has a dispute
-  rationale: The word *amphibolia* literally means 'a throwing both ways,' suggesting
-    doubt or wavering. However, in context with 'companion' and 'reconciled,' it clearly
-    means an interpersonal 'dispute' or 'controversy.' 'Has a dispute' is a natural
-    English rendering of this state of conflict.
-  alternatives:
-  - who has a quarrel
-  - who is at odds
-  - who has a grievance
-  entry: ἀμφιβολία
-  lexicon: LSJ
-- source_word: μετὰ τοῦ ἑταίρου αὐτοῦ
-  chosen: with his companion
-  rationale: ἑταῖρος is 'companion' or 'associate.' 'Companion' preserves the interpersonal
-    and communal sense without importing the more specifically ecclesial 'brother,'
-    which the Greek does not use here.
-  alternatives:
-  - with his fellow
-  - with his brother
-  entry: ἑταῖρος
-  lexicon: LSJ
-- source_word: μὴ συνελθέτω ὑμῖν
-  chosen: let no one ... come together with you
-  rationale: The prohibition concerns participation in the gathered assembly. 'Come
-    together with you' is idiomatic and keeps the communal-action focus.
-  alternatives:
-  - let him not join your assembly
-  - let him not assemble with you
-  entry: συνέρχομαι
-  lexicon: BDAG
-- source_word: διαλλαγῶσιν
-  chosen: they are reconciled
-  rationale: The passive/subjunctive sense points to reconciliation as the needed
-    resolution. 'They are reconciled' is the clearest ecclesial and relational rendering.
-  alternatives:
-  - they make peace
-  - they are restored to one another
-  entry: διαλλάσσω
-  lexicon: BDAG
-- source_word: κοινωθῇ
-  chosen: be defiled
-  rationale: In this cultic context, the concern is that the sacrifice lose its consecrated
-    purity. 'Be defiled' communicates the purity/impurity contrast established by
-    καθαρά.
-  alternatives:
-  - be profaned
-  - be made common
-  entry: κοινόω
-  lexicon: BDAG
-- source_word: ἡ ῥηθεῖσα ὑπὸ Κυρίου
-  chosen: what was spoken by the Lord
-  rationale: This preserves the formal citation style introducing the prophetic quotation.
-  alternatives:
-  - the thing spoken by the Lord
-  - what the Lord said
-  entry: λέγω
-  lexicon: BDAG
-- source_word: Ἐν παντὶ τόπῳ καὶ χρόνῳ
-  chosen: In every place and time
-  rationale: A close rendering that preserves the universal scope of the citation.
-    'Everywhere and always' is smoother but less textually transparent.
-  alternatives:
-  - In every place and at every time
-  - Everywhere and always
-  entry: πᾶς
-  lexicon: LSJ
-- source_word: προσφέρειν μοι θυσίαν καθαράν
-  chosen: offer me a pure sacrifice
-  rationale: The infinitive in citation form is naturally rendered as an imperative
-    in English quotation context. 'Pure sacrifice' preserves the cultic and moral
-    force of καθαράν.
-  alternatives:
-  - bring me a clean sacrifice
-  - present to me a pure offering
-  entry: προσφέρω
-  lexicon: BDAG
-- source_word: βασιλεὺς μέγας
-  chosen: a great King
-  rationale: The anarthrous Greek is well represented by 'a great King,' though the
-    sense is still exalted and absolute in context.
-  alternatives:
-  - the great King
-  entry: βασιλεύς
-  lexicon: BDAG
-- source_word: θαυμαστὸν ἐν τοῖς ἔθνεσι
-  chosen: marvelous among the nations
-  rationale: '''Marvelous'' preserves the sense of wonder and renown. ''Nations''
-    is preferred over ''Gentiles'' here because the citation from Malachi has a broad,
-    universal scope concerning all peoples.'
-  alternatives:
-  - wonderful among the nations
-  - held in awe among the Gentiles
-  entry: θαυμαστός
-  lexicon: LSJ
-theological_decisions:
-- issue: Whether κυριακὴν ... Κυρίου should be rendered as the technical title 'the
-    Lord’s Day' or more literally
-  chosen_reading: Rendered as 'the Lord’s own day'
-  rationale: The Greek wording is unusual and emphatic. The chosen rendering preserves
-    the liturgical reference to the community's stated day of gathering while avoiding
-    overconfidence that the text uses the later fixed title in exactly the same way.
-  alternative_readings:
-  - the Lord's Day
-  - the day of the Lord
-  doctrine_reference: 'Translation philosophy: original-language primacy; preserve
-    ambiguity where real.'
-- issue: Whether θυσία refers metaphorically to prayer/thanksgiving only or to the
-    Eucharistic act in sacrificial terms
-  chosen_reading: Retained 'sacrifice' in the main text without reduction
-  rationale: The text itself uses sacrificial language repeatedly and grounds it in
-    a prophetic citation. The translation should preserve that theological texture
-    without narrowing it to a later doctrinal formula.
-  alternative_readings:
-  - offering
-  - Eucharistic offering
-  doctrine_reference: Preserve theological tension rather than resolve it.

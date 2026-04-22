@@ -128,11 +128,20 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
     "1CLEM": "1_clement",
 }
 
-# Extra-canonical books that have chapter-level YAMLs (single text
-# block per chapter) rather than per-verse YAMLs. Export emits each
-# chapter as one synthetic verse because these texts aren't
-# verse-subdivided in standard reading editions.
-EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = {"DID", "1CLEM"}
+# Extra-canonical books that only have chapter-level YAMLs (single
+# text block per chapter) rather than per-verse YAMLs.
+#
+# Didache and 1 Clement started here, but their chapter-level drafts
+# have since been split into per-verse YAMLs at
+# translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml (via
+# tools/split_extra_canonical_into_verses.py — 116 Didache verses and
+# 460 1 Clement verses at the scholarly-standard divisions). They are
+# now treated as verse-level books.
+#
+# Left in place so future books drafted as pure chapter-level prose
+# can be added here for single-synthetic-verse emission without
+# invoking the verse splitter.
+EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = set()
 
 
 def book_title(book_code: str) -> str:
@@ -341,9 +350,15 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
             verse_nums = sorted(verses)
             if not verse_nums:
                 continue
-            expected = list(range(1, verse_nums[-1] + 1))
-            if verse_nums != expected:
-                continue
+            # Extra-canonical scholarly editions legitimately skip
+            # verse numbers in some chapters (e.g. 1 Clement 16's Isaiah
+            # 53 quotation, where the Greek source per Funk 1901 simply
+            # doesn't carry markers for verses 3 and 9). Unlike the
+            # canonical NT/OT where textual criticism is the only reason
+            # for gaps, here gaps reflect the source editions' own
+            # numbering conventions. We emit what we have and preserve
+            # the verse numbers so the reader sees the scholarly numbering
+            # even when it skips.
             chapters_out.append({
                 "chapter": chapter,
                 "verses": [

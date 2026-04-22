@@ -7,40 +7,20 @@ source:
   text: Ἡ δὲ τοῦ θανάτου ὁδός ἐστιν αὕτη· πρῶτον πάντων πονηρά ἐστι καὶ κατάρας μεστή·
     φόνοι, μοιχεῖαι, ἐπιθυμίαι, πορνεῖαι, κλοπαί, εἰδωλολατρεῖαι, μαγεῖαι, φαρμακεῖαι,
     ἁρπαγαί, ψευδομαρτυρίαι, ὑποκρίσεις, διπλοκαρδία, δόλος, ὑπερηφανία, κακία, αὐθάδεια,
-    πλεονεξία, αἰσχρολογία, ζηλοτυπία, θρασύτης, ὕψος, ἀλαζονεία· διῶκται ἀγαθῶν,
-    μισοῦντες ἀλήθειαν, ἀγαπῶντες ψεῦδος, οὐ γινώσκοντες μισθὸν δικαιοσύνης, οὐ κολλώμενοι
-    ἀγαθῷ οὐδὲ κρίσει δικαίᾳ, ἀγρυπνοῦντες οὐκ εἰς τὸ ἀγαθὸν, ἀλλ’ εἰς τὸ πονηρόν·
-    ὧν μακρὰν πραΰτης καὶ ὑπομονή, μάταια ἀγαπῶντες, διώκοντες ἀνταπόδομα, οὐκ ἐλεοῦντες
-    πτωχόν, οὐ πονοῦντες ἐπὶ καταπονουμένῳ, οὐ γινώσκοντες τὸν ποιήσαντα αὐτούς, φονεῖς
-    τέκνων, φθορεῖς πλάσματος Θεοῦ, ἀποστρεφόμενοι τὸν δεόμενον, καταπονοῦντες τὸν
-    θλιβόμενον, πλουσίων παράκλητοι, πενήτων ἄνομοι κριταί, πανθαμάρτητοι· ῥυσθείητε,
-    τέκνα, ἀπὸ τούτων ἁπάντων.
+    πλεονεξία, αἰσχρολογία, ζηλοτυπία, θρασύτης, ὕψος, ἀλαζονεία·
   language: Greek
-  pages:
-  - 26
-  note: This chapter comes from the normalized Hitchcock & Brown 1884 OCR layer. Line-number
-    noise and page segmentation were cleaned, but the translation must stay anchored
-    in the Greek wording.
 translation:
   text: 'But the way of death is this: first of all, it is evil and full of curse:
     murders, adulteries, lusts, sexual immoralities, thefts, idolatries, sorceries,
     magic arts, robberies, false testimonies, hypocrisies, double-heartedness, deceit,
     arrogance, malice, self-will, greed, foul speech, jealousy, audacity, haughtiness,
-    boastfulness; persecutors of the good, hating truth, loving falsehood, not knowing
-    the reward of righteousness, not cleaving to what is good nor to righteous judgment,
-    keeping watch not for what is good but for what is evil; from whom gentleness
-    and patience are far, loving vain things, pursuing recompense, not showing mercy
-    to a poor man, not laboring on behalf of one who is oppressed, not knowing the
-    one who made them, murderers of children, destroyers of God''s handiwork, turning
-    away from the one in need, oppressing the one under affliction, advocates of the
-    rich, lawless judges of the poor, altogether sinful. Be delivered, children, from
-    all these things.'
+    boastfulness;'
   philosophy: optimal-equivalence
-note: Synthetic single-verse mirror of the chapter-level authoritative YAML. Generated
-  by tools/mirror_extra_canonical_for_cdn.py so the cob-publisher Lambda (which expects
-  nested verse-level paths) picks up this book. Drafting and review both operate on
-  the flat chapter-level file at translation/extra_canonical/didache/005.yaml.
-ai_draft:
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/005.yaml
+  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
+  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
+  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
   prompt_id: didache_chapter_draft_v1
@@ -54,7 +34,7 @@ ai_draft:
   zone2_consults_known:
   - Later Apostolic Fathers critical editions (consult only)
   - Modern Didache commentary / translation literature (consult only)
-review_passes:
+ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:41:52Z'
   prompt_sha256: b11c42a25869ac2cb6a0804dc87de280451c12f665fb472000d15c66f9b408aa
@@ -84,116 +64,3 @@ review_passes:
   - The translation of ἀνταπόδομα as 'repayment' was slightly ambiguous. It has been
     revised to 'recompense' to better capture the sense of seeking reward or payback
     in a vice list.
-lexical_decisions:
-- source_word: δὲ
-  chosen: But
-  rationale: The conjunction connects this chapter, 'The Way of Death,' in direct
-    contrast to the preceding 'Way of Life.' 'But' captures this adversative sense
-    more effectively than 'And'.
-- source_word: κατάρας μεστή
-  chosen: full of curse
-  rationale: The genitive can suggest being filled with curse/cursing. 'Full of curse'
-    preserves the stark, weighty moral-religious sense without over-specifying whether
-    spoken curses or accursed character is primary.
-  alternatives:
-  - full of cursing
-  - full of accursedness
-- source_word: μαγεῖαι
-  chosen: sorceries
-  rationale: Chosen to preserve the religiously charged vice-list register; paired
-    with φαρμακεῖαι as a related but distinct term.
-  alternatives:
-  - magic arts
-- source_word: φαρμακεῖαι
-  chosen: magic arts
-  rationale: Used distinctly from μαγεῖαι in the source, so a differentiated English
-    rendering helps preserve the doublet rather than collapsing both into one term.
-    The term is related to drugs and potions, but 'magic arts' is a suitable general
-    term in this context.
-  alternatives:
-  - sorceries
-  - potion-making
-  - witchcraft
-- source_word: διπλοκαρδία
-  chosen: double-heartedness
-  rationale: A more literal rendering preserves the anthropological and moral texture
-    of the Greek better than the smoother 'duplicity.'
-  alternatives:
-  - duplicity
-  - double-mindedness
-- source_word: αὐθάδεια
-  chosen: self-will
-  rationale: Captures the vice of obstinate self-assertion and arrogance in concise
-    English without paraphrase.
-  alternatives:
-  - stubbornness
-  - self-pleasing
-- source_word: ὧν μακρὰν
-  chosen: from whom... are far
-  rationale: This phrasing preserves the formal tone and accurately reflects the Greek
-    construction, where the virtues are distant from the people described.
-  alternatives:
-  - far from whom are
-- source_word: ἀνταπόδομα
-  chosen: recompense
-  rationale: In this vice list, the term refers to the self-serving pursuit of reward
-    or payback. 'Recompense' captures this sense of demanding what is owed, fitting
-    the context between 'loving vain things' and 'not showing mercy.' It is less ambiguous
-    than 'repayment.'
-  alternatives:
-  - repayment
-  - reward
-  - retribution
-  entry: ἀνταπόδομα
-  lexicon: BDAG
-- source_word: οὐ πονοῦντες ἐπὶ καταπονουμένῳ
-  chosen: not laboring on behalf of one who is oppressed
-  rationale: The verb πονέω denotes toil or suffering, not merely emotion. This rendering
-    preserves the sense of active concern (or lack thereof) for the one worn down
-    by toil or affliction, rather than only inward sympathy.
-  alternatives:
-  - not grieving over the afflicted
-  - not taking pains for the downtrodden
-- source_word: φθορεῖς πλάσματος Θεοῦ
-  chosen: destroyers of God's handiwork
-  rationale: πλάσμα suggests something formed or fashioned. 'Handiwork' preserves
-    this sense of a creature's formedness and its theological weight. 'Destroyers'
-    (φθορεῖς) parallels the preceding 'murderers' (φονεῖς).
-  alternatives:
-  - corrupters of God's creature
-  - destroyers of God's creation
-- source_word: πανθαμάρτητοι
-  chosen: altogether sinful
-  rationale: A concise rendering of this rare compound adjective, which conveys a
-    comprehensive moral indictment at the close of the list.
-  alternatives:
-  - utterly sinful
-  - sinful in every way
-- source_word: ῥυσθείητε
-  chosen: Be delivered
-  rationale: The aorist passive optative form expresses a strong wish or exhortation.
-    The passive voice points toward deliverance by an outside agent (God) rather than
-    autonomous self-rescue. 'Be delivered' preserves this solemn, hortatory tone.
-  alternatives:
-  - Be rescued
-  - May you be delivered
-theological_decisions:
-- issue: Vice-list terms μαγεῖαι and φαρμακεῖαι overlap semantically
-  chosen_reading: Render them distinctly as 'sorceries' and 'magic arts'
-  rationale: The source preserves two separate terms in sequence. Distinct English
-    renderings maintain auditability and avoid erasing the rhetorical accumulation,
-    while not forcing an overly narrow technical distinction unsupported by the immediate
-    context.
-  alternative_readings:
-  - Render both as 'sorcery'
-  - Render as 'magic' and 'poisonings'
-- issue: Final exhortation ῥυσθείητε may be heard as a prayer for divine action or
-    a general moral imperative
-  chosen_reading: Be delivered, children, from all these things.
-  rationale: The passive optative form supports an exhortation toward deliverance
-    without specifying the agent. 'Be delivered' preserves this theological openness,
-    accommodating both divine grace and human response, and avoids overstating human
-    self-rescue.
-  alternative_readings:
-  - Deliver yourselves, children, from all these things.
-  - May God deliver you, children, from all these things.

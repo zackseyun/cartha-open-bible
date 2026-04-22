@@ -5,33 +5,18 @@ book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
   text: Περὶ δὲ τοῦ βαπτίσματος, οὕτω βαπτίσατε· ταῦτα πάντα προειπόντες, βαπτίσατε
-    εἰς τὸ ὄνομα τοῦ Πατρὸς καὶ τοῦ Υἱοῦ καὶ τοῦ ἁγίου Πνεύματος ἐν ὕδατι ζῶντι. Ἐὰν
-    δὲ μὴ ἔχῃς ὕδωρ ζῶν, εἰς ἄλλο ὕδωρ βάπτισον· εἰ δʼ οὐ δύνασαι ἐν ψυχρῷ, ἐν θερμῷ.
-    Ἐὰν δὲ ἀμφότερα μὴ ἔχῃς, ἔκχεον εἰς τὴν κεφαλὴν τρὶς ὕδωρ εἰς ὄνομα Πατρὸς καὶ
-    Υἱοῦ καὶ ἁγίου Πνεύματος. Πρὸ δὲ τοῦ βαπτίσματος προνηστευσάτω ὁ βαπτίζων καὶ
-    ὁ βαπτιζόμενος καὶ εἴ τινες ἄλλοι δύνανται· κελεύσεις δὲ νηστεῦσαι τὸν βαπτιζόμενον
-    πρὸ μιᾶς ἢ δύο.
+    εἰς τὸ ὄνομα τοῦ Πατρὸς καὶ τοῦ Υἱοῦ καὶ τοῦ ἁγίου Πνεύματος ἐν ὕδατι ζῶντι.
   language: Greek
-  pages:
-  - 28
-  note: This chapter comes from the normalized Hitchcock & Brown 1884 OCR layer. Line-number
-    noise and page segmentation were cleaned, but the translation must stay anchored
-    in the Greek wording.
 translation:
   text: 'Now concerning baptism, baptize in this way: Having first proclaimed all
     these things, baptize into the name of the Father and of the Son and of the Holy
-    Spirit in living water. But if you do not have living water, baptize into other
-    water; and if you cannot in cold, then in warm. But if you have neither, pour
-    water on the head three times into the name of Father and Son and Holy Spirit.
-    But before the baptism, let the one baptizing and the one being baptized fast
-    beforehand, and any others who are able; and you shall command the one being baptized
-    to fast beforehand for one or two days.'
+    Spirit in living water.'
   philosophy: optimal-equivalence
-note: Synthetic single-verse mirror of the chapter-level authoritative YAML. Generated
-  by tools/mirror_extra_canonical_for_cdn.py so the cob-publisher Lambda (which expects
-  nested verse-level paths) picks up this book. Drafting and review both operate on
-  the flat chapter-level file at translation/extra_canonical/didache/007.yaml.
-ai_draft:
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/007.yaml
+  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
+  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
+  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
   prompt_id: didache_chapter_draft_v1
@@ -45,7 +30,7 @@ ai_draft:
   zone2_consults_known:
   - Later Apostolic Fathers critical editions (consult only)
   - Modern Didache commentary / translation literature (consult only)
-review_passes:
+ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:44:00Z'
   prompt_sha256: 93a9029af02f40e8f9ad3338a792eb052c3046d6aaa836510331415907eaffc0
@@ -78,124 +63,3 @@ review_passes:
   issues_found:
   - The word order in the final clause ('to fast for one or two days beforehand')
     was slightly less natural in English; reversing it improves readability.
-lexical_decisions:
-- source_word: βαπτίσματος / βαπτίσατε / βάπτισον
-  chosen: baptism / baptize
-  rationale: Retains the established early-Christian ritual term without reducing
-    it to a generic washing. The chapter is church-order instruction, and the transliterated
-    ecclesial term best preserves its liturgical force.
-  alternatives:
-  - washing
-  - immerse
-  entry: βαπτίζω
-  lexicon: BDAG
-- source_word: ταῦτα πάντα προειπόντες
-  chosen: Having first proclaimed all these things
-  rationale: The aorist participle indicates prior action, and the verb προλέγω suggests
-    a formal proclamation or announcement, fitting for pre-baptismal instruction.
-    This is stronger than 'saying' and less interpretive than 'taught.'
-  alternatives:
-  - after first saying all these things beforehand
-  - having first taught all these things
-  entry: προλέγω
-  lexicon: LSJ
-- source_word: εἰς τὸ ὄνομα
-  chosen: into the name
-  rationale: The preposition εἰς is kept as 'into' to reflect the Greek more closely
-    and preserve the initiatory, incorporative sense, while remaining intelligible
-    in English. This avoids conforming the text to the more traditional English rendering
-    'in the name.'
-  alternatives:
-  - in the name
-  - with reference to the name
-  entry: εἰς
-  lexicon: BDAG
-- source_word: ἐν ὕδατι ζῶντι
-  chosen: in living water
-  rationale: The literal phrase 'living water' preserves the scriptural and symbolic
-    resonance of flowing water (e.g., from a spring or river). A more explanatory
-    gloss like 'running water' is possible but would flatten the theological texture.
-  alternatives:
-  - in running water
-  - in fresh water
-  entry: ζάω
-  lexicon: LSJ
-- source_word: ἔκχεον
-  chosen: pour
-  rationale: A straightforward imperative matching the fallback mode of baptism when
-    immersion is not possible due to a lack of water.
-  alternatives:
-  - pour out
-  entry: ἐκχέω
-  lexicon: BDAG
-- source_word: Πρὸ δὲ τοῦ βαπτίσματος προνηστευσάτω
-  chosen: before the baptism, let ... fast beforehand
-  rationale: Preserves the preparatory force of προνηστεύω and the formal third-person
-    imperative. The repetition of 'before' (Πρὸ) and 'beforehand' (προ-) in the Greek
-    is intentionally mirrored to reflect the source text's emphasis.
-  alternatives:
-  - let ... fast in preparation beforehand
-  - let ... keep a fast before the baptism
-  entry: προνηστεύω
-  lexicon: LSJ
-- source_word: ὁ βαπτίζων καὶ ὁ βαπτιζόμενος
-  chosen: the one baptizing and the one being baptized
-  rationale: Closely reflects the Greek present participial forms without importing
-    later, more technical ecclesial terminology like 'baptizer' or 'candidate.'
-  alternatives:
-  - the baptizer and the candidate for baptism
-  - the baptizer and the baptized
-  entry: βαπτίζω
-  lexicon: BDAG
-- source_word: κελεύσεις
-  chosen: you shall command
-  rationale: The future indicative has an imperatival force. The verb κελεύω primarily
-    means 'to command' or 'to order,' which fits the authoritative tone of these instructions
-    better than the softer 'instruct.'
-  alternatives:
-  - you shall instruct
-  - you shall direct
-  entry: κελεύω
-  lexicon: BDAG
-- source_word: πρὸ μιᾶς ἢ δύο
-  chosen: beforehand for one or two days
-  rationale: The Greek is elliptical. This phrasing clarifies that the fast is for
-    a duration of one or two days immediately preceding the baptism, which is the
-    clear intent. The word order is chosen for better English flow.
-  alternatives:
-  - for one or two days before
-  entry: πρό
-  lexicon: LSJ
-theological_decisions:
-- issue: Rendering εἰς τὸ ὄνομα / εἰς ὄνομα in the baptismal formula
-  chosen_reading: into the name
-  rationale: The Greek uses εἰς rather than ἐν. Rendering it 'into' preserves the
-    text's wording and possible initiatory force, while readers can still recognize
-    the baptismal formula. This avoids silently conforming the text to later English
-    liturgical convention.
-  alternative_readings:
-  - in the name
-  doctrine_reference: 'DOCTRINE.md: Original-language primacy over translation tradition;
-    preserve theological tension rather than resolve it.'
-- issue: Meaning of ὕδωρ ζῶν
-  chosen_reading: living water
-  rationale: The literal rendering preserves both practical and symbolic dimensions.
-    Because the phrase can denote flowing water while also carrying scriptural resonance,
-    the main text keeps the ambiguity rather than collapsing it into a purely functional
-    gloss.
-  alternative_readings:
-  - running water
-  - fresh water
-  doctrine_reference: 'DOCTRINE.md: Preserve theological tension rather than resolve
-    it.'
-- issue: Mode of baptism implied by the chapter
-  chosen_reading: Main text preserves both immersion-compatible language and the explicit
-    allowance of pouring
-  rationale: The chapter directs baptism in living or other water, with cold/warm
-    preferences, and explicitly permits pouring on the head three times if necessary.
-    The translation should not force a later sacramental polemic onto the text.
-  alternative_readings:
-  - Translate in a way that implies only immersion
-  - Translate in a way that implies only affusion
-  doctrine_reference: 'DOCTRINE.md: Original-language primacy; preserve theological
-    tension.'

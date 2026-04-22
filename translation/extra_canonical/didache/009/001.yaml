@@ -4,64 +4,16 @@ unit: verse
 book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
-  text: Περὶ δὲ τῆς εὐχαριστίας, οὕτως εὐχαριστήσατε· πρῶτον περὶ τοῦ ποτηρίου· Εὐχαριστοῦμέν
-    σοι, Πάτερ ἡμῶν, ὑπὲρ τῆς ἁγίας ἀμπέλου Δαβὶδ τοῦ παιδός σου, ἧς ἐγνώρισας ἡμῖν
-    διὰ Ἰησοῦ τοῦ παιδός σου· σοὶ ἡ δόξα εἰς τοὺς αἰῶνας. Περὶ δὲ τοῦ κλάσματος· Εὐχαριστοῦμέν
-    σοι, Πάτερ ἡμῶν, ὑπὲρ τῆς ζωῆς καὶ γνώσεως, ἧς ἐγνώρισας ἡμῖν διὰ Ἰησοῦ τοῦ παιδός
-    σου· σοὶ ἡ δόξα εἰς τοὺς αἰῶνας. Ὥσπερ ἦν τοῦτο κλάσμα διεσκορπισμένον ἐπάνω τῶν
-    ὀρέων καὶ συναχθὲν ἐγένετο ἕν, οὕτω συναχθήτω σου ἡ ἐκκλησία ἀπὸ τῶν περάτων τῆς
-    γῆς εἰς τὴν σὴν βασιλείαν· ὅτι σοῦ ἐστιν ἡ δόξα καὶ ἡ δύναμις διὰ Ἰησοῦ Χριστοῦ
-    εἰς τοὺς αἰῶνας. Μηδεὶς δὲ φαγέτω μηδὲ πιέτω ἀπὸ τῆς εὐχαριστίας ὑμῶν, ἀλλ' οἱ
-    βαπτισθέντες εἰς ὄνομα Κυρίου· καὶ γὰρ περὶ τούτου εἴρηκεν ὁ Κύριος· Μὴ δῶτε τὸ
-    ἅγιον τοῖς κυσί.
+  text: Περὶ δὲ τῆς εὐχαριστίας, οὕτως εὐχαριστήσατε·
   language: Greek
-  pages:
-  - 30
-  - 32
-  note: This chapter comes from the normalized Hitchcock & Brown 1884 OCR layer. Line-number
-    noise and page segmentation were cleaned, but the translation must stay anchored
-    in the Greek wording.
 translation:
-  text: 'Now concerning the thanksgiving, give thanks in this way. First, concerning
-    the cup:
-
-
-    We give thanks to you, our Father,
-
-    for the holy vine of David your servant,
-
-    which you made known to us through Jesus your servant.
-
-    To you be the glory forever.
-
-
-    And concerning the broken bread:
-
-
-    We give thanks to you, our Father,
-
-    for the life and knowledge
-
-    which you made known to us through Jesus your servant.
-
-    To you be the glory forever.
-
-
-    Just as this broken piece was scattered upon the mountains and, when gathered
-    together, became one, so let your assembly be gathered together from the ends
-    of the earth into your kingdom. For yours is the glory and the power through Jesus
-    the Messiah forever.
-
-
-    But let no one eat or drink from your thanksgiving except those who have been
-    baptized into the name of the Lord. For also concerning this, the Lord has said:
-    “Do not give what is holy to the dogs.”'
+  text: Now concerning the thanksgiving, give thanks in this way.
   philosophy: optimal-equivalence
-note: Synthetic single-verse mirror of the chapter-level authoritative YAML. Generated
-  by tools/mirror_extra_canonical_for_cdn.py so the cob-publisher Lambda (which expects
-  nested verse-level paths) picks up this book. Drafting and review both operate on
-  the flat chapter-level file at translation/extra_canonical/didache/009.yaml.
-ai_draft:
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/009.yaml
+  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
+  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
+  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
   prompt_id: didache_chapter_draft_v1
@@ -75,7 +27,7 @@ ai_draft:
   zone2_consults_known:
   - Later Apostolic Fathers critical editions (consult only)
   - Modern Didache commentary / translation literature (consult only)
-review_passes:
+ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:46:45Z'
   prompt_sha256: 098faa0c83cb0bad71db1d433df4c27a3e08d2b8cf4b484eae1161ab36b9eba6
@@ -86,154 +38,3 @@ review_passes:
     Lord has said,' to 'For also concerning this, the Lord has said:'.
   issues_found:
   - Minor syntactical awkwardness in the final sentence.
-lexical_decisions:
-- source_word: εὐχαριστία / εὐχαριστήσατε
-  chosen: thanksgiving / give thanks
-  rationale: The noun and verb are cognate and in this chapter retain the concrete
-    sense of thanksgiving-prayer over cup and bread. Rendering with 'thanksgiving'
-    and 'give thanks' preserves the Greek meaning while allowing the liturgical force
-    to remain visible. A capitalized technical term 'Eucharist' would import later
-    ecclesial terminology more strongly than the Greek itself requires here.
-  alternatives:
-  - Eucharist / celebrate the Eucharist
-  entry: εὐχαριστία
-  lexicon: LSJ; BDAG
-- source_word: ποτήριον
-  chosen: cup
-  rationale: The ordinary Greek word means 'cup.' 'Chalice' would sound more ecclesiastical
-    and later-liturgical than the source warrants.
-  alternatives:
-  - chalice
-  entry: ποτήριον
-  lexicon: LSJ; BDAG
-- source_word: ἁγίας ἀμπέλου Δαβὶδ
-  chosen: the holy vine of David
-  rationale: ἀμπέλος is 'vine,' not 'wine.' The phrase is unusual and likely symbolic,
-    but the translation should preserve the image rather than interpret it away.
-  alternatives:
-  - the holy vineyard of David
-  - the sacred vine of David
-  entry: ἄμπελος
-  lexicon: LSJ; BDAG
-- source_word: παιδός
-  chosen: servant
-  rationale: In both references ('David your παιδός' and 'Jesus your παιδός'), the
-    term can mean child/servant. 'Servant' best fits the biblical-liturgical register
-    and avoids prematurely resolving the christological nuance into 'son,' which the
-    Greek does not say here.
-  alternatives:
-  - child
-  - son
-  entry: παῖς
-  lexicon: BDAG; LSJ
-- source_word: κλάσματος
-  chosen: the broken bread
-  rationale: The noun denotes something broken, here in parallel with the eucharistic
-    bread. 'Broken bread' makes the referent clear in English while preserving the
-    concrete image.
-  alternatives:
-  - the fragment
-  - the breaking
-  entry: κλάσμα
-  lexicon: LSJ; BDAG
-- source_word: ζωῆς καὶ γνώσεως
-  chosen: life and knowledge
-  rationale: A straightforward rendering preserves the theological density of the
-    pair without interpretive expansion.
-  alternatives:
-  - life and understanding
-  entry: ζωή
-  lexicon: LSJ; BDAG
-- source_word: κλάσμα
-  chosen: broken piece
-  rationale: The demonstrative phrase refers back to the bread as a broken piece.
-    'Broken piece' keeps the singular image and avoids over-specifying beyond the
-    Greek, while still sounding natural in context.
-  alternatives:
-  - fragment
-  - piece of bread
-  entry: κλάσμα
-  lexicon: LSJ; BDAG
-- source_word: ἐκκλησία
-  chosen: assembly
-  rationale: The core sense is an assembled community. 'Assembly' preserves the literal
-    force and early-Christian texture without importing all later institutional associations
-    of 'church.'
-  alternatives:
-  - church
-  - congregation
-  entry: ἐκκλησία
-  lexicon: LSJ; BDAG
-- source_word: βασιλείαν
-  chosen: kingdom
-  rationale: '''Kingdom'' remains the most recognizable and suitably weighty rendering
-    in early-Christian liturgical context.'
-  alternatives:
-  - reign
-  - royal rule
-  entry: βασιλεία
-  lexicon: LSJ; BDAG
-- source_word: Χριστοῦ
-  chosen: the Messiah
-  rationale: Per project philosophy, titles are translated where context supports.
-    Here the title remains meaningful rather than merely name-like.
-  alternatives:
-  - Christ
-  entry: Χριστός
-  lexicon: BDAG
-- source_word: βαπτισθέντες εἰς ὄνομα Κυρίου
-  chosen: have been baptized into the name of the Lord
-  rationale: εἰς is best preserved as 'into,' reflecting incorporation/entry rather
-    than mere formulaic wording. 'Lord' follows the project's default for Κύριος.
-  alternatives:
-  - in the name of the Lord
-  - unto the name of the Lord
-  entry: βαπτίζω
-  lexicon: BDAG; LSJ
-- source_word: τὸ ἅγιον
-  chosen: what is holy
-  rationale: The neuter singular is idiomatic in English as 'what is holy.' This preserves
-    the allusive saying without awkwardness.
-  alternatives:
-  - the holy thing
-  - the sacred thing
-  entry: ἅγιος
-  lexicon: LSJ; BDAG
-- source_word: κυσί
-  chosen: the dogs
-  rationale: The article in the cited saying is naturally represented in English as
-    'the dogs,' preserving the proverbial force of the quotation.
-  alternatives:
-  - dogs
-  entry: κύων
-  lexicon: LSJ; BDAG
-theological_decisions:
-- issue: Whether to render εὐχαριστία as the technical term 'Eucharist'
-  chosen_reading: Rendered as 'thanksgiving' in the main text
-  rationale: The chapter certainly concerns the meal/prayer later known as the Eucharist,
-    but the Greek wording itself foregrounds thanksgiving. Using 'thanksgiving' keeps
-    the translation anchored in the text while leaving later sacramental interpretation
-    available to readers and notes.
-  alternative_readings:
-  - Eucharist
-  doctrine_reference: 'DOCTRINE.md: original-language primacy; readable modern English'
-- issue: How to render παιδός σου with reference to Jesus
-  chosen_reading: Rendered as 'your servant'
-  rationale: The Greek term is semantically broader than 'son.' In this liturgical
-    setting, 'servant' preserves the wording's resonance with scriptural servant language
-    and avoids importing a stronger filial term not present in the text.
-  alternative_readings:
-  - your child
-  - your son
-  doctrine_reference: 'DOCTRINE.md: preserve theological tension rather than resolve
-    it'
-- issue: Whether ἐκκλησία should be translated 'church'
-  chosen_reading: Rendered as 'assembly'
-  rationale: The literal communal sense is prominent in the image of scattered pieces
-    gathered into one. 'Assembly' preserves that sense and avoids overloading the
-    line with later institutional connotations, while still fitting early-Christian
-    usage.
-  alternative_readings:
-  - church
-  - congregation
-  doctrine_reference: 'DOCTRINE.md: consistency of key terms, or documented exception'
