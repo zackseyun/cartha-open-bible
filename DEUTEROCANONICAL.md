@@ -152,14 +152,6 @@ major Christian tradition with a stable textual history:
 | 3 Maccabees | — | ✓ | — | LXX |
 | 4 Maccabees | — | appendix | — | LXX |
 
-**2 Esdras (4 Ezra)** is deferred. Its main body survives only in
-Latin (from a lost Greek translation of a lost Hebrew/Aramaic
-original) and a handful of Eastern-language witnesses (Syriac,
-Ethiopic, Armenian, Georgian). Including it responsibly requires a
-separate source-acquisition phase for the Latin text and a different
-textual apparatus than the LXX-based books. We will revisit after
-Phase 1 ships.
-
 ### Source editions — per-book, most-original extant text
 
 We translate each book from the **most-original surviving text we can
