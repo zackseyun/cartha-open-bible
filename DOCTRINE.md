@@ -61,25 +61,14 @@ Specifically:
    preserve the alternative in a footnote, documenting the
    decision in the per-verse YAML.
 
-4. **Gender-inclusive where the original audience clearly
-   included both.** Where Greek or Hebrew uses grammatically
-   masculine plurals (*adelphoi*, "brothers") to address mixed-
-   gender groups — which was standard in biblical-era usage — we
-   render in modern English forms that match the audience the
-   source author was actually addressing ("brothers and sisters").
-   Where the reference is specifically to male persons (e.g., "the
-   brothers of Jesus" meaning his male siblings), the masculine
-   form is retained. The goal is audience-accuracy in the English,
-   not gender erasure from the text.
-
-5. **Consistency of key terms, or documented exception.** A given
+4. **Consistency of key terms, or documented exception.** A given
    Greek or Hebrew word should receive a consistent English gloss
    across the translation, unless context demands variance — in
    which case the variance is documented per-verse with a
    rationale. The `consistency_lint.py` tool enforces this at
    commit time.
 
-6. **Readable modern English, not archaic or academic.** The
+5. **Readable modern English, not archaic or academic.** The
    target reader is a literate 18–35-year-old English speaker.
    Vocabulary should be accessible without flattening theological
    weight. We avoid both ecclesiastical jargon ("propitiation" is
@@ -104,7 +93,6 @@ Per-verse variance is documented in the individual YAML files.
 | σάρξ *sarx* | flesh (literal) / sinful nature (metaphorical) | — | Context-dependent; per-verse documented |
 | μετανοέω *metanoeō* | change of mind / change your thinking (cognitive contexts); repent (specific-sin contexts) | repent (traditional) | See REVISION_METHODOLOGY.md §"μετανοέω → change of mind" for the per-context rule |
 | νήφω *nēphō* | clear-minded (most contexts); sober (where Paul explicitly runs the drunk/sober metaphor) | sober-minded | See revision notes in 1 Pet 5:8, 1 Thess 5:6 |
-| ἀδελφοί *adelphoi* | brothers and sisters (mixed-gender audience) / brothers (male-only reference) | siblings | Per §4 above |
 | יְהוָה YHWH | the LORD | Yahweh, Jehovah | Follows Jewish reverence tradition + LXX pattern |
 | אָדָם *adam* | man / humankind (context) | — | Context-dependent per usage |
 
@@ -126,6 +114,56 @@ To prevent misunderstanding:
 - **Not a first-century English approximation.** We aim at modern
   English that honors source-language meaning, not at archaism.
 
+## Translating into other languages
+
+The Cartha Open Bible's long-term intention is to be translated
+into every major world language. Scripture belongs to the whole
+church; producing COB only in English would contradict the
+project's mission.
+
+Each target language is its own translation — drafted directly
+from the original-language sources (Hebrew OT, Greek NT, Swete
+LXX for the deuterocanonical books) rather than from the English
+COB. Translating from English would compound the distance from the
+originals and inherit choices that make sense in English but not
+elsewhere. Every target language deserves its own encounter with
+the Hebrew and Greek.
+
+Each language goes through **several revision passes** before it
+is considered stable:
+
+1. **AI-drafted first pass** — a frontier multilingual model
+   produces the initial verse-by-verse draft with full per-verse
+   provenance, following the same methodology used for English
+   (DOCTRINE.md translation philosophy §§1–5, per-verse YAML
+   schema, `doctrine_reference` citations where relevant).
+2. **AI-reviewer revision** — a second, distinct model reads the
+   draft and flags awkward phrasing, dropped nuance, or places
+   where the target language's idiom has drifted from the
+   source's force. Revisions are discrete commits.
+3. **Native-speaker community review** — before a language is
+   declared stable, speakers of that language who are also
+   familiar with the biblical source languages (or who have
+   access to published lexicons in that language) audit the
+   text and raise issues publicly.
+4. **Public issue window** — a minimum public-review period with
+   open GitHub issues before any language moves from "preview"
+   to "stable."
+
+**Supported languages will be disclosed publicly based on model
+performance and feasibility.** Not every language has an AI model
+capable of scholarly-accurate translation yet, and not every
+language has a sufficient community of native-speaking reviewers
+accessible to the project. We will publish the current supported-
+language list, and the ready-but-not-yet-stable list, as we reach
+the capability threshold for each. Languages that do not yet meet
+the bar are named as such, not silently omitted.
+
+Every language published under this program carries the same
+CC-BY 4.0 license, the same per-verse provenance, the same
+auditability. There is no tier system across languages — every
+supported language gets the full Cartha Open Bible.
+
 ## Change log for this document
 
 Material changes to this document are themselves commits. Prior
@@ -133,14 +171,13 @@ versions of the stance are preserved in git history.
 
 - **2026-04-21:** Removed creedal affirmations (Apostles' Creed,
   Nicene Creed, Chalcedonian Definition) and replaced with a
-  theological-stance section that refuses specific creedal
-  commitment. Reason: the project leader does not personally
-  affirm specific creedal formulations with confidence, and
-  putting unverified commitments into the project's named stance
-  was dishonest. Translation decisions that previously cited those
-  creeds are preserved in per-verse YAML as historical record of
-  the drafter's reasoning at time of drafting; they are not
-  retroactively revised. Flipped §4 from "gender-accurate over
-  gender-neutral" to "gender-inclusive where the original audience
-  clearly included both." Queued a project-wide revision pass on
-  *adelphoi* renderings as a follow-up.
+  theological-stance section that declines specific creedal
+  commitment. Translation philosophy and contested-terms table
+  preserved unchanged; those are methodology, not creedal
+  commitment, and the project actually runs on them. Added a
+  "Translating into other languages" section stating COB's long-
+  term intention to ship in every feasible major language, with
+  the full revision pipeline and transparent supported-language
+  disclosure. Per-verse YAML citing the old `doctrine_reference`
+  values is preserved as historical record; those are not
+  retroactively edited.
