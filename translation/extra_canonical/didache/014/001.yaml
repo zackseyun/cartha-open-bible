@@ -4,18 +4,16 @@ unit: verse
 book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
-  text: Κατὰ κυριακὴν δὲ Κυρίου συναχθέντες κλάσατε ἄρτον καὶ εὐχαριστήσατε προεξομολογησάμενοι
-    τὰ παραπτώματα ὑμῶν, ὅπως καθαρὰ ἡ θυσία ὑμῶν ᾖ.
+  text: Κατὰ κυριακὴν δὲ Κυρίου συναχθέντες κλάσατε ἄρτον καὶ εὐχαριστήσατε προεξομολογησάμενοι τὰ παραπτώματα ὑμῶν, ὅπως καθαρὰ ἡ θυσία ὑμῶν ᾖ.
   language: Greek
 translation:
-  text: But on the Lord’s own day, after you have gathered together, break bread and
-    give thanks, after first confessing your transgressions, so that your sacrifice
-    may be pure.
+  text: But on the Lord’s own day, when you have gathered together, break bread and give thanks, having first confessed your transgressions, so that your sacrifice may be pure.
   philosophy: optimal-equivalence
-note: Derived from the chapter-level draft at translation/extra_canonical/didache/014.yaml
-  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
-  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
-  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+  footnotes:
+  - marker: a
+    text: Or 'after you have gathered together, break bread and give thanks, after first confessing'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/014.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -34,12 +32,17 @@ ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:51:58Z'
   prompt_sha256: c2422541bac34fb97973f12633914c46200f683a7e51ef6853ea865b7ecb4823
-  summary: The draft is a high-quality translation that accurately reflects the Greek
-    source. It makes several strong lexical choices, particularly in handling the
-    unusual phrase 'Κατὰ κυριακὴν...Κυρίου' and the sacrificial language. The review
-    focused on refining the footnotes for greater precision and slightly expanding
-    the rationale for two lexical decisions to better document the translation process.
-    No changes were made to the main English text.
+  summary: The draft is a high-quality translation that accurately reflects the Greek source. It makes several strong lexical choices, particularly in handling the unusual phrase 'Κατὰ κυριακὴν...Κυρίου' and the sacrificial language. The review focused on refining the footnotes for greater precision and slightly expanding the rationale for two lexical decisions to better document the translation process. No changes were made to the main English text.
   issues_found:
   - Footnotes could be more precise.
   - Lexical rationales could be slightly more detailed in a few cases.
+revisions:
+- timestamp: '2026-04-22T05:55:45Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/didache/014/001.job-70601.json
+  category: awkward_english
+  tier: 1
+  from: after you have gathered together, break bread and give thanks, after first confessing
+  to: when you have gathered together, break bread and give thanks, having first confessed
+  rationale: The repetition of 'after' in the English draft makes the sentence slightly clunky. Translating the first aorist participle (συναχθέντες) as a temporal 'when' clause and the second (προεξομολογησάμενοι) as 'having first confessed' smooths the English syntax while accurately reflecting the sequence of actions.

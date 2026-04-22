@@ -4,18 +4,16 @@ unit: verse
 book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
-  text: Ὃς δ᾽ ἂν εἴπῃ ἐν πνεύματι· Δός μοι ἀργύρια ἢ ἕτερά τινα, οὐκ ἀκούσεσθε αὐτοῦ·
-    ἐὰν δὲ περὶ ἄλλων ὑστερούντων εἴπῃ δοῦναι, μηδεὶς αὐτὸν κρινέτω.
+  text: Ὃς δ᾽ ἂν εἴπῃ ἐν πνεύματι· Δός μοι ἀργύρια ἢ ἕτερά τινα, οὐκ ἀκούσεσθε αὐτοῦ· ἐὰν δὲ περὶ ἄλλων ὑστερούντων εἴπῃ δοῦναι, μηδεὶς αὐτὸν κρινέτω.
   language: Greek
 translation:
-  text: But whoever says in the Spirit, “Give me money,” or something else, you shall
-    not listen to him. Yet if he tells you to give for others who are in need, let
-    no one judge him.
+  text: But whoever says in the Spirit, “Give me money or anything else,” you shall not listen to him. Yet if he tells you to give for others who are in need, let no one judge him.
   philosophy: optimal-equivalence
-note: Derived from the chapter-level draft at translation/extra_canonical/didache/011.yaml
-  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
-  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
-  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+  footnotes:
+  - marker: a
+    text: Or '“Give me money,” or something else,'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/011.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -34,17 +32,20 @@ ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:49:13Z'
   prompt_sha256: d9278431143f4917101a799e17a0033e40b0d8a918c527eee9e2eba8cb150915
-  summary: 'The draft was strong and generally accurate. The review focused on refining
-    several key points for greater clarity and fidelity to the Greek. Revisions include:
-    improving the flow in verse 1; resolving a significant textual difficulty regarding
-    the length of an apostle''s stay in verse 5 by following a common emendation and
-    adding a footnote; and substituting ''earthly'' for ''worldly'' in the obscure
-    phrase in verse 11 to avoid unintended negative connotations. Footnotes were added
-    or revised to support these changes and clarify the text for the reader.'
+  summary: 'The draft was strong and generally accurate. The review focused on refining several key points for greater clarity and fidelity to the Greek. Revisions include: improving the flow in verse 1; resolving a significant textual difficulty regarding the length of an apostle''s stay in verse 5 by following a common emendation and adding a footnote; and substituting ''earthly'' for ''worldly'' in the obscure phrase in verse 11 to avoid unintended negative connotations. Footnotes were added or revised to support these changes and clarify the text for the reader.'
   issues_found:
   - Minor awkward phrasing in 11:1.
   - The translation of a known textual corruption in 11:5 was confusing.
   - A key lexical choice ('worldly') in 11:11 carried potentially misleading connotations.
   - A footnote was needed to explain the textual decision in 11:5.
-  - The object of a verb in 11:11 was supplied as 'you' when a more general term like
-    'others' is more appropriate.
+  - The object of a verb in 11:11 was supplied as 'you' when a more general term like 'others' is more appropriate.
+revisions:
+- timestamp: '2026-04-22T05:58:25Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/didache/011/012.job-70633.json
+  category: mistranslation
+  tier: 2
+  from: “Give me money,” or something else,
+  to: “Give me money or anything else,”
+  rationale: The Greek `ἢ ἕτερά τινα` ('or other things') is the direct object of `Δός` ('Give'), parallel to `ἀργύρια` ('money'). The draft's punctuation places 'or something else' outside the quotation, which changes the meaning to 'if he says "Give me money", or if he says something else'—a reading that contradicts the very next clause where the prophet *is* allowed to say something else (asking for others). The request for 'other things' must be part of what the false prophet is asking for himself.

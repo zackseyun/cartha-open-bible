@@ -4,17 +4,19 @@ unit: verse
 book: 1 Clement
 source:
   edition: Funk 1901 (normalized OCR)
-  text: Πᾶσα δόξα καὶ πλατυσμὸς ἐδόθη ὑμῖν καὶ ἐτελέσθη τὸ γεγραμμένον· Ἔφαγεν καὶ
-    ἔπιεν, καὶ ἐπλατύνθη καὶ ἐπαχύνθη, καὶ ἀπελάκτισεν ὁ ἠγαπημένος.
+  text: Πᾶσα δόξα καὶ πλατυσμὸς ἐδόθη ὑμῖν καὶ ἐτελέσθη τὸ γεγραμμένον· Ἔφαγεν καὶ ἔπιεν, καὶ ἐπλατύνθη καὶ ἐπαχύνθη, καὶ ἀπελάκτισεν ὁ ἠγαπημένος.
   language: Greek
 translation:
-  text: 'All glory and abundance were given to you, and what is written was fulfilled:
-    “He ate and drank, and became broad and fat, and the beloved one kicked back.”'
+  text: 'All glory and abundance were given to you, and what is written was fulfilled: “He ate and drank, and grew broad and fat, and the beloved one kicked.”'
   philosophy: optimal-equivalence
-note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/003.yaml
-  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
-  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
-  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+  footnotes:
+  - marker: a
+    text: Or 'kicked back'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'became broad and fat'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/003.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -30,3 +32,22 @@ ai_draft_provenance:
   - Later Apostolic Fathers critical editions / commentaries (consult only)
   - Modern English 1 Clement translations for interpretive context only
 ai_draft_chapter_review_passes: []
+revisions:
+- timestamp: '2026-04-22T06:28:26Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/1_clement/003/001.job-70968.json
+  category: mistranslation
+  tier: 2
+  from: kicked back
+  to: kicked
+  rationale: The verb ἀπολακτίζω means to kick out (like an unmanageable, overfed animal) or to rebel, quoting the LXX of Deut 32:15. In modern English, 'kicked back' is a strong idiom for 'relaxed', which completely obscures the author's metaphor of stubborn rebellion.
+- timestamp: '2026-04-22T06:28:26Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/1_clement/003/001.job-70968.json
+  category: awkward_english
+  tier: 1
+  from: became broad and fat
+  to: grew broad and fat
+  rationale: In English, animals or people 'grow' fat rather than 'become' fat; 'grew' better captures the progressive, organic change of state implied by the aorist passives ἐπλατύνθη καὶ ἐπαχύνθη in this agricultural metaphor.

@@ -4,19 +4,19 @@ unit: verse
 book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
-  text: Χειροτονήσατε οὖν ἑαυτοῖς ἐπισκόπους καὶ διακόνους ἀξίους τοῦ Κυρίου, ἄνδρας
-    πραεῖς καὶ ἀφιλαργύρους καὶ ἀληθεῖς καὶ δεδοκιμασμένους· ὑμῖν γὰρ λειτουργοῦσι
-    καὶ αὐτοὶ τὴν λειτουργίαν τῶν προφητῶν καὶ διδασκάλων.
+  text: Χειροτονήσατε οὖν ἑαυτοῖς ἐπισκόπους καὶ διακόνους ἀξίους τοῦ Κυρίου, ἄνδρας πραεῖς καὶ ἀφιλαργύρους καὶ ἀληθεῖς καὶ δεδοκιμασμένους· ὑμῖν γὰρ λειτουργοῦσι καὶ αὐτοὶ τὴν λειτουργίαν τῶν προφητῶν καὶ διδασκάλων.
   language: Greek
 translation:
-  text: Appoint, then, for yourselves overseers and deacons worthy of the Lord—men
-    gentle and not lovers of money, and truthful and proven; for they too minister
-    to you the ministry of the prophets and teachers.
+  text: Appoint, then, for yourselves overseers and deacons worthy of the Lord—men who are gentle, not lovers of money, truthful, and proven; for they too perform for you the ministry of the prophets and teachers.
   philosophy: optimal-equivalence
-note: Derived from the chapter-level draft at translation/extra_canonical/didache/015.yaml
-  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
-  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
-  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+  footnotes:
+  - marker: a
+    text: Or 'men gentle and not lovers of money, and truthful and proven'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'minister to you the ministry'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/015.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -35,14 +35,25 @@ ai_draft_chapter_review_passes:
 - reviewer_model: gemini-2.5-pro
   timestamp: '2026-04-21T20:52:57Z'
   prompt_sha256: df296e5207b7cce206121ca1b197784650e1854f3c6af9ca06f105dd76494cfb
-  summary: The draft is of high quality, with strong lexical choices and helpful footnotes.
-    A single but significant revision was made in verse 3 to correct a grammatical
-    misreading of the disciplinary clause. The original draft rendered an active Greek
-    verb ('let him hear') as a passive ('let him be heard'), changing the meaning.
-    The revised text corrects this while maintaining the flow of the sentence. The
-    associated lexical and theological decisions have been updated to reflect this
-    correction.
+  summary: The draft is of high quality, with strong lexical choices and helpful footnotes. A single but significant revision was made in verse 3 to correct a grammatical misreading of the disciplinary clause. The original draft rendered an active Greek verb ('let him hear') as a passive ('let him be heard'), changing the meaning. The revised text corrects this while maintaining the flow of the sentence. The associated lexical and theological decisions have been updated to reflect this correction.
   issues_found:
-  - A grammatical error in the translation of the disciplinary clause in 15:3 was
-    identified and corrected. The Greek 'ἀκουέτω' (let him hear) was incorrectly rendered
-    as a passive.
+  - A grammatical error in the translation of the disciplinary clause in 15:3 was identified and corrected. The Greek 'ἀκουέτω' (let him hear) was incorrectly rendered as a passive.
+revisions:
+- timestamp: '2026-04-22T05:53:04Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/didache/015/001.job-70585.json
+  category: awkward_english
+  tier: 1
+  from: men gentle and not lovers of money, and truthful and proven
+  to: men who are gentle, not lovers of money, truthful, and proven
+  rationale: The post-positive adjective 'men gentle' is slightly awkward in English. Converting to a relative clause ('men who are...') smooths the English while preserving the four coordinated descriptors (πραεῖς καὶ ἀφιλαργύρους καὶ ἀληθεῖς καὶ δεδοκιμασμένους) without losing any semantic weight.
+- timestamp: '2026-04-22T05:53:04Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/didache/015/001.job-70585.json
+  category: awkward_english
+  tier: 1
+  from: minister to you the ministry
+  to: perform for you the ministry
+  rationale: The Greek uses a cognate accusative (λειτουργοῦσι... τὴν λειτουργίαν), which is a standard idiom for carrying out a public or religious duty. In English, 'minister the ministry' is somewhat wooden and redundant; 'perform the ministry' or 'carry out the ministry' is more natural while retaining the exact meaning. The dative ὑμῖν is well handled as 'for you' in this context.

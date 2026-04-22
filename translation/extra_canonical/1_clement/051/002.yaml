@@ -4,20 +4,19 @@ unit: verse
 book: 1 Clement
 source:
   edition: Funk 1901 (normalized OCR)
-  text: οἱ γὰρ μετὰ φόβου καὶ ἀγάπης πολιτευόμενοι ἑαυτοὺς θέλουσιν μᾶλλον αἰκίαις
-    περιπίπτειν ἢ τοὺς πλησίον· μᾶλλον δὲ ἑαυτῶν κατάγνωσιν φέρουσιν ἢ τῆς παραδεδομένης
-    ἡμῖν καλῶς καὶ δικαίως ὁμοφωνίας.
+  text: οἱ γὰρ μετὰ φόβου καὶ ἀγάπης πολιτευόμενοι ἑαυτοὺς θέλουσιν μᾶλλον αἰκίαις περιπίπτειν ἢ τοὺς πλησίον· μᾶλλον δὲ ἑαυτῶν κατάγνωσιν φέρουσιν ἢ τῆς παραδεδομένης ἡμῖν καλῶς καὶ δικαίως ὁμοφωνίας.
   language: Greek
 translation:
-  text: For those who live as citizens with fear and love desire rather to fall into
-    mistreatment themselves than to bring it upon their neighbors; indeed, they would
-    rather bear condemnation of themselves than of the harmony that has been handed
-    down to us well and rightly.
+  text: For those who live as citizens with fear and love desire that they themselves fall into mistreatment rather than their neighbors; indeed, they would rather bring condemnation upon themselves than upon the harmony that has been handed down to us well and rightly.
   philosophy: optimal-equivalence
-note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/051.yaml
-  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
-  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
-  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+  footnotes:
+  - marker: a
+    text: Or 'desire rather to fall into mistreatment themselves than to bring it upon their neighbors'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'bear condemnation of themselves than of the harmony'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/051.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -33,3 +32,22 @@ ai_draft_provenance:
   - Later Apostolic Fathers critical editions / commentaries (consult only)
   - Modern English 1 Clement translations for interpretive context only
 ai_draft_chapter_review_passes: []
+revisions:
+- timestamp: '2026-04-22T06:39:09Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/1_clement/051/002.job-71070.json
+  category: mistranslation
+  tier: 2
+  from: desire rather to fall into mistreatment themselves than to bring it upon their neighbors
+  to: desire that they themselves fall into mistreatment rather than their neighbors
+  rationale: The Greek `ἢ τοὺς πλησίον` parallels `ἑαυτοὺς` as the accusative subject of the implied infinitive `περιπίπτειν`. It means they prefer that they themselves fall into mistreatment rather than that their neighbors do. The draft's 'bring it upon' introduces an active agency against the neighbors that is absent from the Greek.
+- timestamp: '2026-04-22T06:39:09Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/1_clement/051/002.job-71070.json
+  category: mistranslation
+  tier: 2
+  from: bear condemnation of themselves than of the harmony
+  to: bring condemnation upon themselves than upon the harmony
+  rationale: The idiom `κατάγνωσιν φέρειν` with the genitive means to bring or pronounce condemnation against someone, not to 'bear' (endure) it. The current phrasing misconstrues the action and results in awkward English.

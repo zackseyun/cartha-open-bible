@@ -4,17 +4,19 @@ unit: verse
 book: 1 Clement
 source:
   edition: Funk 1901 (normalized OCR)
-  text: Συνξέσϑω οὖν ἡμῶν ὅλον τὸ σῶμα ἐν Χριστῷ Ἰησοῦ, καὶ ὑποτασσέσϑω ἕκαστος τῷ
-    πλησίον αὐτοῦ, καϑὼς ἐτέϑη ἐν τῷ χαρίσματι αὐτοῦ.
+  text: Συνξέσϑω οὖν ἡμῶν ὅλον τὸ σῶμα ἐν Χριστῷ Ἰησοῦ, καὶ ὑποτασσέσϑω ἕκαστος τῷ πλησίον αὐτοῦ, καϑὼς ἐτέϑη ἐν τῷ χαρίσματι αὐτοῦ.
   language: Greek
 translation:
-  text: Therefore let our whole body be held together in Messiah Jesus, and let each
-    one be subject to his neighbor, according as he was appointed in his own gift.
+  text: Therefore let our whole body be preserved in Messiah Jesus, and let each one be subject to his neighbor, just as he was appointed in his gift.
   philosophy: optimal-equivalence
-note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/038.yaml
-  by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
-  the authoritative record of the AI draft and review passes; per-verse YAMLs exist
-  for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+  footnotes:
+  - marker: a
+    text: Or 'let our whole body be held together'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'according as he was appointed in his own gift'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/038.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
 ai_draft_provenance:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -30,3 +32,22 @@ ai_draft_provenance:
   - Later Apostolic Fathers critical editions / commentaries (consult only)
   - Modern English 1 Clement translations for interpretive context only
 ai_draft_chapter_review_passes: []
+revisions:
+- timestamp: '2026-04-22T06:11:56Z'
+  adjudicator: auto_apply_tier2_source_grounded
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/1_clement/038/001.job-70781.json
+  category: mistranslation
+  tier: 2
+  from: let our whole body be held together
+  to: let our whole body be preserved
+  rationale: The source text contains an OCR error ('Συνξέσϑω' for 'Σωζέσθω' / 'Σῳζέσθω'). The author wrote 'σωζέσθω' (let it be saved/preserved). The draft's 'be held together' attempts to translate the corrupted text or guesses at 'συνεχέσθω', but the manuscript tradition reads 'σωζέσθω'.
+- timestamp: '2026-04-22T06:11:56Z'
+  adjudicator: auto_apply_tier1
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/1_clement/038/001.job-70781.json
+  category: awkward_english
+  tier: 1
+  from: according as he was appointed in his own gift
+  to: just as he was appointed in his gift
+  rationale: '''According as'' is archaic and slightly awkward. ''Just as he was appointed in his gift'' reads more naturally while preserving the force of ''καθὼς ἐτέθη''. Furthermore, ''αὐτοῦ'' is simply ''his'', not ''his own'' (which would typically be ἑαυτοῦ or ἰδίῳ).'
