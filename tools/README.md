@@ -79,3 +79,5 @@ python3 tools/dashboard_server.py --host 127.0.0.1 --port 8765
 Model, temperature, and prompt ID are configurable via CLI flags or
 environment variables (`CARTHA_MODEL_ID`, `CARTHA_TEMPERATURE`,
 `CARTHA_PROMPT_ID`).
+
+| `shepherd_of_hermas.py` | implemented | Parses the raw Lightfoot 1891 Hermas OCR into stable normalized units such as `V.3.xiii`, `M.4.ii`, and `S.5.vi`, and can write normalized text files plus `sources/shepherd_of_hermas/transcribed/unit_map.json` for future drafter work. |

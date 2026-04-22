@@ -39,3 +39,19 @@ python3 tools/greek_extra_pdf_ocr.py \
   --book-hint "Shepherd of Hermas — Lightfoot 1891" \
   --stem-prefix hermas_lightfoot1891
 ```
+
+## Parser / normalized output
+
+Once raw OCR is present, normalize it with:
+
+```bash
+python3 tools/shepherd_of_hermas.py --write-normalized
+```
+
+That writes:
+
+- `sources/shepherd_of_hermas/transcribed/normalized/*.txt`
+- `sources/shepherd_of_hermas/transcribed/unit_map.json`
+
+The parser preserves Lightfoot-style unit identifiers such as `V.3.xiii`,
+`M.4.ii`, and `S.5.vi` so later drafter work can target stable Hermas units.
