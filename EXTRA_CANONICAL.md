@@ -291,7 +291,7 @@ of pipeline groups to independent work sessions:
 | Session | Owns | Directories | Phase(s) | Status |
 |---|---|---|---|---|
 | **A — LXX deuterocanon drafting** | 13 LXX-based deuterocanonical books | `sources/lxx/`, `sources/lxx/hebrew_parallels/`, `tools/` (main LXX stack) | Phase 9 | Drafting in flight in a dedicated session |
-| **B — Latin + multi-witness** | 2 Esdras, then 2 Baruch | `sources/2esdras/`, `sources/2baruch/`, `tools/2esdras/` (+ future `tools/2baruch/`) | 8b → 10 → 15 | 2 Esdras OCR scaffolded; 2 Baruch source acquisition scaffolded (Ceriani/Kmosko/Charles + Violet 1924 WBC bundle) |
+| **B — Latin + multi-witness** | 2 Esdras, then 2 Baruch | `sources/2esdras/`, `sources/2baruch/`, `tools/2esdras/` (+ future `tools/2baruch/`) | 8b → 10 → 15 | 2 Esdras OCR scaffolded; 2 Baruch source acquisition scaffolded and first Ceriani five-page OCR calibration landed |
 | **C — Ethiopic / Ge'ez** | 1 Enoch, then Jubilees | `sources/enoch/`, `sources/jubilees/`, shared `tools/ethiopic/`, per-book `tools/enoch/`, `tools/jubilees/` | 8c → 8d → 11 → 12 | Source PDFs vendored; OCR backend decided (Gemini 2.5 Pro plaintext); Jubilees sharing pipeline |
 | **D — Apostolic Fathers + Greek extras** | Didache, 1 Clement, Shepherd of Hermas, Testaments, Psalms of Solomon | `sources/apostolic_fathers/` (pending), `tools/greek_extra_*` | 8e → 8f → 13 → 14 | Psalms of Solomon setup via Swete reuse; remaining Greek sources in scope-doc stage |
 | **E — Coptic / Nag Hammadi** | Gospel of Thomas, Gospel of Truth, Thunder Perfect Mind | `sources/nag_hammadi/` (pending), `tools/coptic/` (pending) | 16 | **Licensing clarification pending** before any code or source work — see Group D research above |

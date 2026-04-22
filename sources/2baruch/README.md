@@ -60,8 +60,11 @@ A quick visual probe of the local files already clarifies the first OCR
 pass:
 
 - **Ceriani** is the first real OCR target. Its Baruch pages are mostly
-  **two Syriac columns with Latin apparatus at the foot of the page**,
-  so it needs a dedicated prompt rather than a generic Syriac prompt.
+  **two Syriac columns with Latin apparatus at the foot of the page**.
+  The first live calibration showed that naive whole-page OCR
+  under-transcribed the layout, so the current `tools/2baruch/ocr_pipeline.py`
+  uses a **region-assembled pass** (running head + both Syriac columns + both
+  apparatus crops) for Ceriani pages.
 - **Kmosko** is mostly **Latin scholarly discussion with inline Syriac**
   forms. It is valuable as a control witness, but not the first page
   family to optimize for.
@@ -85,7 +88,10 @@ layer.
 
 ## Status
 
-**2026-04-21: source acquisition scaffold complete.** The local source
-files are now rehydrated and pinned in `MANIFEST.md`, and initial OCR
-prompt docs exist for Ceriani, Kmosko, and Violet 1924. The next real
-engineering step is a small Ceriani OCR bake-off into `raw_ocr/`.
+**2026-04-21: first Ceriani OCR calibration landed.** The local source
+files are rehydrated and pinned in `MANIFEST.md`, initial OCR prompt
+docs exist, and a first five-page Ceriani batch now lives under
+`raw_ocr/ceriani1871/` for PDF pages **187, 190, 195, 205, and 220**.
+That batch used **Gemini 3.1 Pro preview** through the repo's existing
+secret plumbing and the new region-assembled Ceriani layout in
+`tools/2baruch/ocr_pipeline.py`.
