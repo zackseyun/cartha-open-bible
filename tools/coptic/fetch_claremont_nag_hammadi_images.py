@@ -29,7 +29,7 @@ GOSPELS_MANUSCRIPT_URL = 'https://www.gospels.net/manuscript'
 CCDL_API_BASE = 'https://ccdl.claremont.edu/digital/api'
 CCDL_DIGITAL_BASE = 'https://ccdl.claremont.edu/digital'
 
-TRUTH_PAGE_SPEC = [16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43]
+TRUTH_PAGE_SPEC = list(range(16, 44))
 THUNDER_PAGE_SPEC = list(range(13, 22))
 
 
