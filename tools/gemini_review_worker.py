@@ -57,9 +57,22 @@ CONTEXT_WINDOW_VERSES = 5  # ±5 verses around target for Pass 2
 VERTEX_LOCATION = (os.environ.get("GCP_LOCATION", "global") or "global").strip()
 PROMPT_VERSION = "gemini_translation_review_v1_2026-04-21"
 PROMPT_VERSION_V2 = "gemini_translation_review_v2_enhanced_2026-04-21"
+PROMPT_VERSION_V3 = "gemini_translation_review_v3_author_intent_2026-04-22"
 
 # Strategies that should use the v2 (enhanced, context-rich) prompt.
 V2_STRATEGIES = {"enhanced_review", "low_agreement_recheck"}
+
+# Strategies that should use the v3 (author-intent, book-aware) prompt.
+# Phase 9 strategies opt in here; canonical strategies stay on v1/v2 for now
+# to avoid mid-pass prompt drift.
+V3_STRATEGIES = {
+    "phase9_review",
+    "phase9_greek",
+    "phase9_latin_multiwitness",
+    "phase9_nag_hammadi",
+    "phase9_geez",
+    "phase9_syriac",
+}
 
 
 _vertex_cached_token: dict[str, Any] = {"token": None, "expiry": 0.0, "project": None}
@@ -292,6 +305,34 @@ def load_v2_system_prompt() -> str:
         p = _PROMPTS_DIR / "gemini_review_v2_enhanced.md"
         _V2_PROMPT_CACHE = p.read_text(encoding="utf-8")
     return _V2_PROMPT_CACHE
+
+
+_V3_PROMPT_CACHE: str | None = None
+_BOOK_CONTEXT_CACHE: dict[str, str] = {}
+
+
+def load_v3_system_prompt() -> str:
+    """v3 author-intent baseline. Single criterion: faithfulness to what
+    the author wrote and meant for their original audience."""
+    global _V3_PROMPT_CACHE
+    if _V3_PROMPT_CACHE is None:
+        p = _PROMPTS_DIR / "gemini_review_v3_author_intent.md"
+        _V3_PROMPT_CACHE = p.read_text(encoding="utf-8")
+    return _V3_PROMPT_CACHE
+
+
+def load_book_context(book_slug: str) -> str:
+    """Return the book-specific context (author, audience, source edition,
+    translation challenges) for this book if a file exists, else empty.
+
+    Looked up at `tools/prompts/book_contexts/<book_slug>.md`. Cached.
+    """
+    if book_slug in _BOOK_CONTEXT_CACHE:
+        return _BOOK_CONTEXT_CACHE[book_slug]
+    p = _PROMPTS_DIR / "book_contexts" / f"{book_slug}.md"
+    text = p.read_text(encoding="utf-8") if p.exists() else ""
+    _BOOK_CONTEXT_CACHE[book_slug] = text
+    return text
 
 
 def read_context_snippet(testament: str, book_slug: str, chapter: int, verse: int) -> str:
@@ -551,11 +592,26 @@ def run_job(
 
     verse_yaml = read_verse_yaml(testament, book_slug, chapter, verse)
 
-    # Dispatch: v2 strategies get the enhanced prompt + chapter context.
+    # Dispatch: v3 author-intent strategies get the v3 prompt + per-book
+    # context + chapter context. v2 strategies get the enhanced prompt + chapter
+    # context. Everything else gets the v1 generic prompt.
+    is_v3 = strategy in V3_STRATEGIES
     is_v2 = strategy in V2_STRATEGIES
-    system_prompt = load_v2_system_prompt() if is_v2 else SYSTEM_PROMPT
-    context_block = read_context_snippet(testament, book_slug, chapter, verse) if is_v2 else ""
-    prompt_version = PROMPT_VERSION_V2 if is_v2 else PROMPT_VERSION
+    if is_v3:
+        system_prompt = load_v3_system_prompt()
+        book_ctx = load_book_context(book_slug)
+        if book_ctx:
+            system_prompt = system_prompt + "\n\n---\n\n" + book_ctx
+        context_block = read_context_snippet(testament, book_slug, chapter, verse)
+        prompt_version = PROMPT_VERSION_V3
+    elif is_v2:
+        system_prompt = load_v2_system_prompt()
+        context_block = read_context_snippet(testament, book_slug, chapter, verse)
+        prompt_version = PROMPT_VERSION_V2
+    else:
+        system_prompt = SYSTEM_PROMPT
+        context_block = ""
+        prompt_version = PROMPT_VERSION
 
     t0 = time.time()
     review, model_id = call_gemini_review(
@@ -589,7 +645,8 @@ def run_job(
         "reviewer_model": model_id,
         "prompt_version": prompt_version,
         "vertex_location": VERTEX_LOCATION,
-        "context_window_verses": CONTEXT_WINDOW_VERSES if is_v2 else 0,
+        "context_window_verses": CONTEXT_WINDOW_VERSES if (is_v2 or is_v3) else 0,
+        "book_context_loaded": bool(is_v3 and load_book_context(book_slug)),
         "reviewed_at": utc_now(),
         "duration_seconds": duration,
         "agreement_score": agreement,
