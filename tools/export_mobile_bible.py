@@ -116,16 +116,19 @@ EXTRA_CANONICAL_ROOT = TRANSLATION_ROOT / "extra_canonical"
 EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
     "DID",     # Didache
     "1CLEM",   # 1 Clement
+    "ENO",     # 1 Enoch
 ]
 
 EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
     "DID":   "Didache",
     "1CLEM": "1 Clement",
+    "ENO":   "1 Enoch",
 }
 
 EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
     "DID":   "didache",
     "1CLEM": "1_clement",
+    "ENO":   "1_enoch",
 }
 
 # Extra-canonical books that only have chapter-level YAMLs (single
@@ -284,6 +287,23 @@ def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
     }
 
 
+def _enoch_expected_verse_map() -> dict[int, list[int]]:
+    """Return the expected per-chapter verse numbers for 1 Enoch.
+
+    This lets the mobile export withhold half-drafted chapters even though 1 Enoch
+    is stored directly as verse-level YAMLs.
+    """
+    import sys
+
+    sys.path.insert(0, str(REPO_ROOT))
+    from tools.enoch import verse_parser
+
+    return {
+        chapter: verse_parser.recovered_verse_numbers(chapter)
+        for chapter in range(1, 109)
+    }
+
+
 def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
     """Walk `translation/extra_canonical/<slug>/<NNN>.yaml` for
     chapter-level books (Didache, 1 Clement, etc.), or the nested
@@ -345,11 +365,17 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
                     continue
                 by_chapter[chapter_num][verse_num] = text
 
+        enoch_expected = _enoch_expected_verse_map() if book_code == "ENO" else None
         for chapter in sorted(by_chapter):
             verses = by_chapter[chapter]
             verse_nums = sorted(verses)
             if not verse_nums:
                 continue
+
+            if enoch_expected is not None:
+                expected = enoch_expected.get(chapter, [])
+                if verse_nums != expected:
+                    continue
             # Extra-canonical scholarly editions legitimately skip
             # verse numbers in some chapters (e.g. 1 Clement 16's Isaiah
             # 53 quotation, where the Greek source per Funk 1901 simply
