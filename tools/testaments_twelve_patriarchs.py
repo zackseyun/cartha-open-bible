@@ -132,7 +132,7 @@ ROMAN_NUMERALS: dict[str, int] = {
     "XXVI": 26,
 }
 ROMAN_HEADING_RE = re.compile(
-    r"^\s*(?:[A-Za-zΑ-Ωα-ωβγδεζηθικλμνξοπρστυφχψω,\-· ]{0,20}\s+)?(?P<num>[IVXLCDMΙΧ]+)[⁰¹²³⁴⁵⁶⁷⁸⁹0-9]*\.\s*",
+    r"^\s*(?:[^\n]{0,40}?\s+)?(?P<num>[IVXLCDMΙΧ]+)[⁰¹²³⁴⁵⁶⁷⁸⁹0-9]*\.\s*",
     re.MULTILINE,
 )
 
@@ -311,13 +311,15 @@ def _strip_leading_title_lines(lines: list[str], testament_slug: str) -> list[st
 
 
 def _trim_before_testament_title(raw_text: str, testament_slug: str) -> str:
-    upper = _strip_diacritics(raw_text).upper()
     markers = TITLE_MARKERS.get(testament_slug, ())
-    starts = [upper.find(_strip_diacritics(marker).upper()) for marker in markers if upper.find(_strip_diacritics(marker).upper()) != -1]
-    if not starts:
-        return raw_text
-    start = min(starts)
-    return raw_text[start:]
+    normalized_markers = [_strip_diacritics(marker).upper() for marker in markers]
+    offset = 0
+    for line in raw_text.splitlines(keepends=True):
+        normalized_line = _strip_diacritics(line).upper()
+        if any(marker in normalized_line for marker in normalized_markers):
+            return raw_text[offset:]
+        offset += len(line)
+    return raw_text
 
 
 def parse_testament_text(testament_slug: str, raw_text: str) -> tuple[list[TestamentChapter], list[str]]:
