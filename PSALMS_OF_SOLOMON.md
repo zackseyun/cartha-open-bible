@@ -14,10 +14,11 @@ It complements:
 - [`sources/lxx/swete/README.md`](sources/lxx/swete/README.md) — the
   underlying Swete source corpus
 
-> **Status: source-transcription phase.** The full Swete page span for
-> Psalms of Solomon has now been transcribed page-by-page from vol. III.
-> The next task is book-specific parsing / verse structuring, not a new
-> OCR pipeline.
+> **Status: parser-complete / drafting-ready.** The full Swete page span
+> for Psalms of Solomon has now been transcribed page-by-page from vol.
+> III, parsed into an 18-chapter / 330-verse corpus, and wired into the
+> shared drafting queue. The next task is drafting + revision, not new
+> OCR or parser architecture.
 
 ## Why Psalms of Solomon
 
@@ -101,16 +102,21 @@ That makes the work sequence:
 | Component | Status | Purpose |
 |---|---|---|
 | `sources/lxx/swete/transcribed/vol3_p0788`–`vol3_p0810` | ✓ | Full per-page Greek source coverage |
-| `tools/psalms_of_solomon.py` | ✓ scaffold | Page-range + coverage helper for the dedicated book track |
-| book-specific parser | ⏳ pending | Extract Psalm / verse structure cleanly from the page corpus |
-| prompt builder | ⏳ pending | Assemble the Psalms of Solomon translation prompt |
+| `tools/psalms_of_solomon.py` | ✓ parser + corpus writer | Dedicated page reader, chapter/verse parser, and corpus builder for PSS |
+| book-specific parser | ✓ complete | Handles Swete's chapter sigla, verse markers, titles, and inline numbering quirks |
+| `sources/lxx/swete/final_corpus_adjudicated/PSS.jsonl` | ✓ complete | Final 330-verse Greek corpus consumed by the drafter |
+| drafting queue integration | ✓ complete | `PSS` is registered in `tools/lxx_swete.py` and enqueueable through `tools/run_phase.py` |
+| prompt builder | ✓ shared | Uses the existing Swete/deuterocanon prompt path in `tools/build_translation_prompt.py` |
 
 ## Immediate next steps
 
-1. **Stabilize the page map** in `page_index.json` and related docs
-2. **Build the parser** for Psalms 1–18 from the Swete page corpus
-3. **Cross-check verse structure** against Ryle & James 1891
-4. **Begin drafting** once the verse skeleton is stable
+1. **Draft Psalm 1–18** from the now-stable 330-verse corpus
+2. **Cross-check difficult passages** against Ryle & James 1891 and other
+   consult editions during revision
+3. **Revise messianic / royal-language hotspots** (especially Psalm 17)
+   with careful provenance notes
+4. **Fold the finished book into the broader Greek extra-canonical
+   roadmap** before moving on to Testaments / Hermas
 
 ## Why this is worth prioritizing now
 

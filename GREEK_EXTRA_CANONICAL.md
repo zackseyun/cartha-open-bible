@@ -13,10 +13,10 @@ It complements:
 - [`FIRST_CLEMENT.md`](FIRST_CLEMENT.md) — dedicated 1 Clement track
 - [`REFERENCE_SOURCES.md`](REFERENCE_SOURCES.md) — source-policy rules
 
-> **Status: pipeline-setup phase.** Psalms of Solomon has already
-> exercised the Swete side of this stack. The next goal is to make the
-> shared Greek OCR/transcription path ready for the remaining Group A
-> texts.
+> **Status: pipeline active.** Psalms of Solomon has now exercised the
+> Swete side of this stack all the way through verse parsing and queue
+> integration. The next goal is to draft PSS while continuing source +
+> OCR prep for the remaining Group A texts.
 
 ## Which texts are in Group A
 
@@ -25,7 +25,7 @@ with the same general stack:
 
 | Text | Primary source situation | Shared pipeline note |
 |---|---|---|
-| **Psalms of Solomon** | Greek in Swete vol. III appendix | Already transcribed from Swete pp. 788–810 |
+| **Psalms of Solomon** | Greek in Swete vol. III appendix | Transcribed, parsed into 330 verses, and drafting-ready |
 | **Didache** | Greek in Codex Hierosolymitanus tradition | Needs local-PDF Greek OCR |
 | **1 Clement** | Greek (Alexandrinus + H54 tradition) | Needs local-PDF Greek OCR |
 | **Shepherd of Hermas** | Greek primary, plus Latin and Ethiopic versions | Greek-first pipeline; later witnesses can layer in |
@@ -85,7 +85,7 @@ its source already lives inside the Swete corpus.
 The shared Greek pipeline does **not** force a rigid book order, but it
 does suggest a sensible sequence:
 
-1. **Psalms of Solomon** — already transcribed, cheapest parser target
+1. **Psalms of Solomon** — already transcribed and parsed; cheapest first drafting target
 2. **Didache / 1 Clement** — shortest new-source Greek texts
 3. **Shepherd of Hermas** — larger, but still same OCR stack
 4. **Testaments of the Twelve Patriarchs** — same stack, later parser work
@@ -95,11 +95,11 @@ and Phase 14.
 
 ## Immediate next steps
 
-1. fetch / vendor the PD Greek editions for Didache, 1 Clement,
+1. continue **Psalms of Solomon drafting** from the finished Swete corpus
+2. fetch / vendor the PD Greek editions for Didache, 1 Clement,
    Hermas, and Testaments
-2. run the shared local-PDF Greek OCR pipeline on pilot pages
-3. create one parser per book once page transcription stabilizes
-4. begin drafting in the order above
+3. run the shared local-PDF Greek OCR pipeline on pilot pages
+4. create one parser per book once page transcription stabilizes
 
 Current note: Didache and 1 Clement already have local source PDFs in
 place, so they are the natural first non-Swete books to exercise the

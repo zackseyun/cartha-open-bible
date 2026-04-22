@@ -125,6 +125,9 @@ PHASES: dict[str, dict[str, Any]] = {
             "2MA",    # 2 Maccabees
             "3MA",    # 3 Maccabees
             "4MA",    # 4 Maccabees
+            "PSS",    # Psalms of Solomon — pseudepigraphal appendix in Swete
+                      # vol 3; included here because it rides on the same
+                      # Swete pipeline. See PSALMS_OF_SOLOMON.md.
         ],
         "testament": "deuterocanon",
         "tag": "v0.9-deuterocanon",

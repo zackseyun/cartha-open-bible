@@ -258,7 +258,7 @@ after Phase 9 (LXX deuterocanon) completes:
 | **8b** | 2 Esdras — source + pipeline setup | B (Latin + 6 daughters) | ✓ source PDFs vendored, scope doc written, scaffolding in place |
 | **8c** | 1 Enoch — source + pipeline setup | C (new Ethiopic pipeline) | ✓ source PDFs vendored, OCR backend selected (Gemini 2.5 Pro plaintext mode; Azure GPT-5 and Gemini Flash fail on Ge'ez), scope doc, scaffolding |
 | **8d** | Jubilees — source + shared Ethiopic pipeline setup | C (reuses/shared with Enoch) | ✓ source PDFs vendored, scope doc written, shared `tools/ethiopic/ocr_geez.py` batch CLI in place, scaffolding added |
-| **Phase 8e** | Psalms of Solomon — Swete source transcription + scope setup | A (reuses Swete Greek infra) | ✓ full Swete page span transcribed; dedicated scope doc + helper scaffold |
+| **Phase 8e** | Psalms of Solomon — Swete source transcription + parser/corpus setup | A (reuses Swete Greek infra) | ✓ full Swete page span transcribed; dedicated parser + 330-verse corpus + queue integration |
 | **8f** | Shared Greek extra-canonical pipeline setup | A (Greek reuse beyond Swete) | ✓ group scope doc + generic local-PDF Greek OCR scaffold + planned source tree |
 | **Phase 9** | LXX deuterocanon drafting | Existing LXX infra | Ready to begin |
 | **Phase 10** | 2 Esdras drafting | B | Gated on Phase 9 |

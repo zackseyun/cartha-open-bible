@@ -160,7 +160,7 @@ rollout (Phases 10-16 after Phase 9) documented in
 README and DEUTEROCANONICAL.md updated with the new extra-canonical
 section and cross-links between scope docs.
 
-## Phase 8e — Psalms of Solomon source setup (in progress, 2026-04-21)
+## Phase 8e — Psalms of Solomon source setup (completed, 2026-04-21)
 
 Focused extra-canonical Greek track for **Psalms of Solomon**, using
 the existing Swete infrastructure rather than a new source pipeline.
@@ -171,9 +171,18 @@ the existing Swete infrastructure rather than a new source pipeline.
   of Solomon into Enoch appendix material and is **not** part of the
   book's source range
 - **Dedicated scope doc** added at `PSALMS_OF_SOLOMON.md`
-- **Helper scaffold** added at `tools/psalms_of_solomon.py` to expose
-  page range + transcription completeness while the book-specific
-  parser is built
+- **Dedicated parser + corpus writer** added at
+  `tools/psalms_of_solomon.py`
+- **Verse structure completed**: the Swete appendix now parses into
+  `18` chapters / `330` verses, with support for the book's
+  inconsistent chapter sigla, inline verse-number transitions, and
+  subscription/title lines
+- **Final drafter corpus written** at
+  `sources/lxx/swete/final_corpus_adjudicated/PSS.jsonl`
+- **Drafting queue integration completed**:
+  `tools/lxx_swete.py` now registers `PSS`, and `tools/run_phase.py`
+  can enqueue Psalms of Solomon chapter jobs alongside the shared Swete
+  pipeline
 - **Page index corrected**: `sources/lxx/swete/transcribed/page_index.json`
   now records the actual Psalms-of-Solomon span (`788-810`) instead of
   the earlier rough probe estimate
