@@ -11,11 +11,11 @@ It complements [EXTRA_CANONICAL.md](EXTRA_CANONICAL.md) (overall
 roadmap) and applies the three-zone source policy in
 [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
-> **Status: scope-design phase.** We are including 2 Baruch in the
-> shared apocalypse-pipeline architecture **now**, even though source
-> acquisition and transcription work have not started yet. The goal is
-> to avoid building a 2 Esdras-only system that later has to be
-> refactored.
+> **Status: source-acquisition scaffold now landed.** The repo now has
+> `sources/2baruch/` with a README, MANIFEST, pinned local source
+> files (Ceriani, Kmosko, Charles, Violet 1924 WBC export), and
+> initial OCR prompt docs. Transcription and loader modules have not
+> started yet, but 2 Baruch is no longer only a paper plan.
 
 ## Why 2 Baruch belongs in the same family as 2 Esdras
 
@@ -62,7 +62,7 @@ That division matters for the pipeline because the back section should
 be modeled explicitly rather than treated as miscellaneous appendix
 matter.
 
-## Source editions (planned)
+## Source editions (now pinned locally)
 
 The following are the natural candidates for the 2 Baruch source stack.
 We are documenting them now so later source acquisition follows an
@@ -77,8 +77,9 @@ already-audited plan.
 - **Charles, *The Apocalypse of Baruch*** (1896) — PD English
   reference only, for numbering / orientation, never as translation base
 - **Violet, *Die Apokalypsen des Esra und des Baruch in deutscher
-  Gestalt*** (1924, GCS 32) — companion volume in the same family as
-  the 2 Esdras material already on our roadmap
+  Gestalt*** (1924, GCS 32) — German-form structural companion volume;
+  useful for chapter/vision division and orientation, but not the same
+  parallel-column witness layout as Violet 1910
 
 ### Zone 2 consult (not reproduced)
 
@@ -110,8 +111,8 @@ These are intentionally parallel to the 2 Esdras track:
 
 | Component | Status | Purpose |
 |---|---|---|
-| `sources/2baruch/` | ⏳ pending | Source PDFs / manifests / rehydration notes |
-| `tools/2baruch/ocr_pipeline.py` | ⏳ pending | OCR of Syriac / fragment witnesses from local PDFs |
+| `sources/2baruch/` | ✅ scaffolded | README + MANIFEST + pinned local source files + OCR prompt docs |
+| `tools/2baruch/ocr_pipeline.py` | ⏳ pending | OCR of Syriac / fragment witnesses from local source files |
 | `tools/2baruch/syriac_primary.py` | ⏳ pending | Chapter/verse loader for cleaned primary Syriac |
 | `tools/2baruch/multi_witness.py` | ⏳ pending | Aggregator returning Syriac + Greek/Latin fragment data |
 | `tools/2baruch/build_translation_prompt.py` | ⏳ pending | Phase-15 translator prompt assembly |
@@ -127,14 +128,22 @@ The current 2 Esdras work is already producing reusable pieces:
 - prompt-builder architecture
 
 That means 2 Baruch should be **included in the architecture now**,
-even if its own source acquisition starts later.
+even if its own transcription / loader work still starts later.
+
+## Kickoff materials now present
+
+- `sources/2baruch/README.md` — source layout + witness roles + OCR notes
+- `sources/2baruch/MANIFEST.md` — rehydration commands + pinned SHA-256 hashes
+- `tools/prompts/transcribe_2baruch_ceriani_syriac.md` — primary Syriac OCR prompt
+- `tools/prompts/transcribe_2baruch_kmosko_syriac_latin.md` — secondary witness OCR prompt
+- `tools/prompts/transcribe_2baruch_violet1924_gcs32.md` — German-form orientation / structure prompt
 
 ## Tentative timing
 
-- **Now**: include 2 Baruch in the shared apocalypse-pipeline docs and
-  abstractions
-- **After 2 Esdras Latin path stabilizes**: vendor 2 Baruch sources and
-  scaffold the Syriac-primary loader
+- **Now**: source acquisition scaffolded locally, with manifest +
+  README + prompt docs in place
+- **After 2 Esdras Latin path stabilizes**: run a Ceriani/Kmosko OCR
+  calibration pass and scaffold the Syriac-primary loader
 - **Drafting phase**: after earlier higher-priority phases complete,
   using the already-proven family tooling
 

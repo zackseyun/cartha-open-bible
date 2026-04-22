@@ -93,7 +93,7 @@ historical-context reading by scholars.
 | **Didache** (*Teaching of the Twelve Apostles*) | Greek | Codex Hierosolymitanus H54 (Bryennios 1873) | 16 chapters | Hitchcock & Brown 1884; Schaff 1885. See [`DIDACHE.md`](DIDACHE.md) |
 | **1 Clement** | Greek | Codex Alexandrinus + H54 | 65 chapters | Lightfoot 1889; Funk 1901. See [`FIRST_CLEMENT.md`](FIRST_CLEMENT.md) |
 | **Shepherd of Hermas** | Greek (+ Latin + Ethiopic versions) | Codex Sinaiticus (partial) + Athous | Visions + Mandates + Similitudes | Lightfoot *Apostolic Fathers*; Gebhardt & Harnack 1877 |
-| **2 Baruch (Syriac Apocalypse of Baruch)** | Hebrew (lost) → Greek (mostly lost) → Syriac | Syriac (Ceriani 1871) | 87 chapters | Ceriani 1871; Violet 1924 (GCS 32); Charles 1896 |
+| **2 Baruch (Syriac Apocalypse of Baruch)** | Hebrew (lost) → Greek (mostly lost) → Syriac | Syriac (Ceriani 1871) | 87 chapters | Ceriani 1871; Kmosko 1907; Violet 1924 (GCS 32); Charles 1896 |
 | **Testaments of the Twelve Patriarchs** | Greek primary; Armenian + Slavonic + Hebrew fragments | Greek | 12 testaments | Charles 1908 critical edition |
 
 ### Tier 3 — Early Christian mystical and contemplative texts (Nag Hammadi, with framing)
@@ -142,9 +142,11 @@ For the non-Swete Group A books, see
 ### Group B — reuses 2 Esdras multi-witness pipeline (Phase 8b infra)
 
 - 2 Esdras itself (Phase 10)
-- 2 Baruch (Violet 1924 GCS 32 is literally the companion volume to
-  Violet 1910; we can lift the same pipeline with minor Syriac
-  additions)
+- 2 Baruch (same Semitic-apocalypse family as 2 Esdras, but with a
+  Syriac-primary base text; the currently rehydrated Violet 1924 copy
+  is a German-form GCS volume rather than the 1910-style witness
+  parallels, so it reuses the surrounding tooling but not the exact
+  OCR prompt)
 
 ### Group C — new Ethiopic (Ge'ez) pipeline
 
@@ -289,16 +291,18 @@ of pipeline groups to independent work sessions:
 | Session | Owns | Directories | Phase(s) | Status |
 |---|---|---|---|---|
 | **A — LXX deuterocanon drafting** | 13 LXX-based deuterocanonical books | `sources/lxx/`, `sources/lxx/hebrew_parallels/`, `tools/` (main LXX stack) | Phase 9 | Drafting in flight in a dedicated session |
-| **B — Latin + multi-witness** | 2 Esdras, then 2 Baruch | `sources/2esdras/`, `sources/2baruch/` (pending), `tools/2esdras/` (+ future `tools/2baruch/`) | 8b → 10 → 15 | Source PDFs vendored for 2 Esdras; OCR pipeline scaffolded; 2 Baruch reuses Violet 1924 on the same pipeline |
+| **B — Latin + multi-witness** | 2 Esdras, then 2 Baruch | `sources/2esdras/`, `sources/2baruch/`, `tools/2esdras/` (+ future `tools/2baruch/`) | 8b → 10 → 15 | 2 Esdras OCR scaffolded; 2 Baruch source acquisition scaffolded (Ceriani/Kmosko/Charles + Violet 1924 WBC bundle) |
 | **C — Ethiopic / Ge'ez** | 1 Enoch, then Jubilees | `sources/enoch/`, `sources/jubilees/`, shared `tools/ethiopic/`, per-book `tools/enoch/`, `tools/jubilees/` | 8c → 8d → 11 → 12 | Source PDFs vendored; OCR backend decided (Gemini 2.5 Pro plaintext); Jubilees sharing pipeline |
 | **D — Apostolic Fathers + Greek extras** | Didache, 1 Clement, Shepherd of Hermas, Testaments, Psalms of Solomon | `sources/apostolic_fathers/` (pending), `tools/greek_extra_*` | 8e → 8f → 13 → 14 | Psalms of Solomon setup via Swete reuse; remaining Greek sources in scope-doc stage |
 | **E — Coptic / Nag Hammadi** | Gospel of Thomas, Gospel of Truth, Thunder Perfect Mind | `sources/nag_hammadi/` (pending), `tools/coptic/` (pending) | 16 | **Licensing clarification pending** before any code or source work — see Group D research above |
 
 ### Why these groupings (and not finer splits)
 
-- **B stays together** because Violet 1910 (2 Esdras) and Violet 1924
-  (2 Baruch) are the same GCS series with identical typesetting
-  conventions. One OCR-prompt engineering pass serves both.
+- **B stays together** because 2 Esdras and 2 Baruch still share the
+  same Semitic-apocalypse provenance model and a lot of the same local
+  tooling (OCR orchestration, witness apparatus, provenance schema),
+  even though Violet 1924 is not the same parallel-column page layout
+  as Violet 1910.
 - **C stays together** because the Ge'ez OCR backend decision and
   typesetting-prompt work applies equally to Enoch and Jubilees, both
   edited by Charles in similar editions.
