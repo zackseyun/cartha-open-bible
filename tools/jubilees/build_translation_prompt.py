@@ -168,6 +168,11 @@ def _load_charles_1895_verse_geez(
     verse record).
     """
     if CORPUS_PATH.exists():
+        priority = {
+            "vertex_targeted_refinement": 3,
+            "vertex_chapter_split": 2,
+            "jubilees_verse_parser": 1,
+        }
         rows = []
         for line in CORPUS_PATH.read_text(encoding="utf-8").splitlines():
             line = line.strip()
@@ -180,7 +185,13 @@ def _load_charles_1895_verse_geez(
             if obj.get("chapter") == chapter and obj.get("verse") == verse:
                 rows.append(obj)
         if rows:
-            row = rows[0]
+            row = max(
+                rows,
+                key=lambda r: (
+                    priority.get(str(r.get("validation") or ""), 0),
+                    len(str(r.get("geez") or "")),
+                ),
+            )
             return (
                 {
                     "edition": "charles_1895",

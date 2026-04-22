@@ -67,3 +67,8 @@ and into:
 - translation drafting
 - lexical review
 - later segmentation polish where needed
+
+
+## Deduplication note
+
+A later QA pass found duplicate chapter+verse rows in the working corpus. The corpus was normalized by keeping the strongest row per chapter+verse (targeted refinement > Vertex split > deterministic parser, with longer text as tie-breaker).

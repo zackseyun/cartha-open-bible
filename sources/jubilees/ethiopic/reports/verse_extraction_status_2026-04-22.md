@@ -26,7 +26,7 @@ Scripts involved:
 ## Coverage snapshot
 
 - chapters represented: **50 / 50**
-- current extracted verse records: **1123**
+- current extracted verse records: **1023**
 - deterministic chapters: **17**
 - Vertex-fallback chapters: **33**
 
@@ -76,3 +76,8 @@ Most chapter counts now look plausible. The previously weakest obvious outliers 
 - chapter 39: `5` -> `17` extracted verses
 
 After those targeted repairs, there are no remaining chapters under 10 extracted verses in the current working corpus.
+
+
+## Deduplication note
+
+A later QA pass found duplicate chapter+verse rows in the working corpus. The corpus was normalized by keeping the strongest row per chapter+verse (targeted refinement > Vertex split > deterministic parser, with longer text as tie-breaker).
