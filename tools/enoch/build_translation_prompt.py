@@ -178,7 +178,7 @@ def build_enoch_prompt(chapter: int, verse: int) -> EnochPromptBundle:
     zone2_consults_known = [entry["name"] for entry in _zone2_registry()]
 
     source_payload = {
-        "edition": "charles_1906",
+        "edition": "charles-1906-enoch",
         "language": "Geez",
         "text": charles.text,
         "pages": pages,

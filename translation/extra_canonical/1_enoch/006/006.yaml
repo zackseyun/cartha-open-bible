@@ -1,0 +1,127 @@
+id: 1EN.6.6
+reference: 1 Enoch 6:6
+book: 1 Enoch
+source:
+  edition: charles-1906-enoch
+  text: ወኮኑ፡ ኵሎሙ፡ *ክልኤ፡ ምእት፡ †ወወረዱ፡ ውስተ፡ አርዲስ፡ ዝውእቱ፡ ድማኁ፡ ለደብረ፡ አርሞን፡†
+  language: Geez
+  pages:
+  - 50
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch06.txt via
+    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 6,
+    but verse-aligned extraction is not yet implemented in this prompt builder.
+translation:
+  text: And all of them were two hundred, and they came down onto Ardis, which is
+    the summit of Mount Hermon.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The place-name 'Ardis' is uncertain in English transliteration. The Ge'ez
+      presents it as the location identified with the summit of Mount Hermon.
+    reason: lexical_alternative
+  - marker: b
+    text: Some translators render the verb more formally as 'descended.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ኵሎሙ
+  chosen: all of them
+  alternatives:
+  - all
+  - all of them together
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The pronominal suffix marks the totality of the previously mentioned
+    group; 'all of them' preserves the explicit collective force.
+- source_word: ክልኤ ምእት
+  chosen: two hundred
+  alternatives:
+  - two hundred in number
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Straight numerical expression; concise English is sufficient.
+- source_word: ወወረዱ
+  chosen: they came down
+  alternatives:
+  - they descended
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The verb denotes downward movement. 'Came down' is natural modern English
+    while preserving the vertical, heavenly-to-earth movement important in the Watchers
+    narrative.
+- source_word: ውስተ
+  chosen: onto
+  alternatives:
+  - into
+  - upon
+  - to
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Although often 'into,' with a mountain location the sense is arrival
+    upon a place or height. 'Onto' fits the topographical context better than 'into.'
+- source_word: አርዲስ
+  chosen: Ardis
+  alternatives:
+  - Ardis/Ardish
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: This is a place-name in apposition to Mount Hermon's height. It is transliterated
+    rather than translated, following project policy for names. The exact vocalization
+    is uncertain in English representation, so the more direct transliteration from
+    the Ge'ez form is retained.
+- source_word: ዝውእቱ ድማኁ ለደብረ አርሞን
+  chosen: which is the summit of Mount Hermon
+  alternatives:
+  - which is the top of Mount Hermon
+  - which is its peak, Mount Hermon
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The relative clause identifies Ardis with the mountain's upper point.
+    'Summit' is elevated but readable English and preserves the geographical specificity.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: enoch_verse_draft_v1
+  prompt_sha256: f22995f21e0741236f4350bc8078391ca45b43f549d0b3b6453e93dc1c56340c
+  timestamp: '2026-04-22T09:08:37Z'
+  output_hash: 3ffd3cde4c495bf56e14f34b7cafd3e88756f8bee557f53fcc264218a788e262
+  zone1_sources_at_draft:
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+  zone2_consults_known:
+  - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+  - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+  - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+  - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+  - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+  - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  temperature: 0.2
+status: draft
+enoch_witnesses:
+  section: Book of the Watchers
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: ወኮኑ፡ ኵሎሙ፡ *ክልኤ፡ ምእት፡ †ወወረዱ፡ ውስተ፡ አርዲስ፡ ዝውእቱ፡ ድማኁ፡ ለደብረ፡ አርሞን፡†
+    source_edition: Charles 1906 Ethiopic Enoch
+    confidence: medium
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch06.txt
+      via tools/enoch/verse_parser.py
+  attestation_expectations:
+    greek:
+      attested: true
+      status: Panopolitanus Greek witness survives for this chapter range
+    aramaic:
+      zone2_consult_possible: true
+      status: Qumran Aramaic fragments exist for at least part of this chapter range
+  geez_only_zone1: false
+  source_warnings:
+  - Dillmann 1851 chapter OCR exists for chapter 6, but verse-aligned extraction is
+    not yet implemented in this prompt builder.
+theological_decisions:
+- issue: Rendering the descent of the Watchers
+  chosen_reading: they came down
+  alternative_readings:
+  - they descended
+  rationale: The verse marks the transgressive movement from heaven to earth. 'Came
+    down' keeps the narrative vivid without importing later theological phrasing.
+  doctrine_reference: Preserve apocalyptic imagery; do not flatten cosmic movement
+    into generic prose.

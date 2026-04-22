@@ -1,0 +1,138 @@
+id: 1EN.6.5
+reference: 1 Enoch 6:5
+book: 1 Enoch
+source:
+  edition: charles-1906-enoch
+  text: አሜሃ፡ መሐሉ፡ ኵሎሙ፡ ኅቡረ፡ ወአውገዙ፡ በበይናቲሆሙ፡ ቦቱ።
+  language: Geez
+  pages:
+  - 50
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch06.txt via
+    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 6,
+    but verse-aligned extraction is not yet implemented in this prompt builder.
+translation:
+  text: Then they all spoke together, and they bound themselves to one another concerning
+    it.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The verb likely carries oath-binding force in context: that is, they committed
+      themselves under an oath or mutual pledge.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: አሜሃ
+  chosen: Then
+  alternatives:
+  - And then
+  - At that time
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Functions as a narrative/sequential particle introducing the next action
+    in the scene; 'Then' preserves the flow without overloading the line.
+- source_word: መሐሉ
+  chosen: they all spoke together
+  alternatives:
+  - they answered together
+  - they said among themselves
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The form indicates collective speech. 'Spoke together' preserves the
+    unanimity and oral force of the oath scene better than a flatter 'said.'
+- source_word: ኵሎሙ
+  chosen: all
+  alternatives:
+  - all of them
+  - the whole company
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Explicitly marks total participation; retained in English because the
+    verse stresses unanimous complicity.
+- source_word: ኅቡረ
+  chosen: together
+  alternatives:
+  - as one
+  - in company
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Adverbial sense reinforcing collective action. Rendered separately to
+    preserve the repeated emphasis on solidarity.
+- source_word: ወአውገዙ
+  chosen: and they bound themselves
+  alternatives:
+  - and they swore
+  - and they pledged themselves
+  - and they bound one another by oath
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: In context this verb refers to mutual self-obligation in an oath-setting.
+    'Bound themselves' keeps the concrete covenantal force and prepares for the curse/oath
+    language in the surrounding verses, without importing a smoother but less vivid
+    paraphrase.
+- source_word: በበይናቲሆሙ
+  chosen: to one another
+  alternatives:
+  - among themselves
+  - between themselves
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Reciprocal phrase indicating mutual commitment. 'To one another' is idiomatic
+    English and preserves the reciprocal nature of the act.
+- source_word: ቦቱ
+  chosen: concerning it
+  alternatives:
+  - about this
+  - over it
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Refers back to the plan under discussion in the immediate context. 'Concerning
+    it' is slightly formal but clear, and avoids over-specifying the object beyond
+    what the pronoun itself states.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: enoch_verse_draft_v1
+  prompt_sha256: 7b6fcf0ae2824b6d3dc5f72eed56cbc6e80358693810c5dfd0df7e6d423c3346
+  timestamp: '2026-04-22T09:08:37Z'
+  output_hash: 3bd55e7b823a64938c65709c5a4008b44685e18e181156a9b9699019157ac3ef
+  zone1_sources_at_draft:
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+  zone2_consults_known:
+  - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+  - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+  - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+  - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+  - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+  - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  temperature: 0.2
+status: draft
+enoch_witnesses:
+  section: Book of the Watchers
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: አሜሃ፡ መሐሉ፡ ኵሎሙ፡ ኅቡረ፡ ወአውገዙ፡ በበይናቲሆሙ፡ ቦቱ።
+    source_edition: Charles 1906 Ethiopic Enoch
+    confidence: medium
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch06.txt
+      via tools/enoch/verse_parser.py
+  attestation_expectations:
+    greek:
+      attested: true
+      status: Panopolitanus Greek witness survives for this chapter range
+    aramaic:
+      zone2_consult_possible: true
+      status: Qumran Aramaic fragments exist for at least part of this chapter range
+  geez_only_zone1: false
+  source_warnings:
+  - Dillmann 1851 chapter OCR exists for chapter 6, but verse-aligned extraction is
+    not yet implemented in this prompt builder.
+theological_decisions:
+- issue: Whether to make the oath explicit in the main text
+  chosen_reading: bound themselves to one another concerning it
+  alternative_readings:
+  - swore together about it
+  - bound one another by oath concerning it
+  rationale: The immediate context is an oath among the Watchers, but the provided
+    Ge'ez wording itself is more literally about mutual binding. To preserve transparency
+    and avoid paraphrasing beyond the witness, the main text keeps 'bound themselves,'
+    while the oath nuance is documented here and in a footnote.
+  doctrine_reference: Translation philosophy §§1, 3

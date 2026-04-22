@@ -1,134 +1,116 @@
-id: ENO.1.6
+id: 1EN.1.6
 reference: 1 Enoch 1:6
-unit: verse
 book: 1 Enoch
-section: Book of the Watchers
 source:
-  edition: Charles 1906 Ethiopic Enoch
-  language: Geʿez
+  edition: charles-1906-enoch
   text: ወይደነግፁ፡ አድባር፡ ነዋኀን፡ ወይቴሐቱ፡ አውግር፡ ነዋኃት፡ ወይትመሰዉ፡ ከመ፡ መዓረ፡ ግራ፡ እምላህብ።
+  language: Geez
   pages:
   - 40
   - 42
   confidence: medium
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via
-    tools/enoch/verse_parser.py
-  section: Book of the Watchers
-  edition_code: charles_1906
-enoch_witnesses:
-  chapter: 1
-  verse: 6
-  section: Book of the Watchers
-  available_witnesses:
-  - language: geez
-    witness: charles_1906
-    text: ወይደነግፁ፡ አድባር፡ ነዋኀን፡ ወይቴሐቱ፡ አውግር፡ ነዋኃት፡ ወይትመሰዉ፡ ከመ፡ መዓረ፡ ግራ፡ እምላህብ።
-    source_edition: Charles 1906 Ethiopic Enoch
-    confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt
-      via tools/enoch/verse_parser.py
-source_warnings:
-- Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is
-  not yet implemented in this prompt builder.
+    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1,
+    but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the high mountains will be shaken, and the high hills will be brought
-    low, and they will melt like wax before the flame.
+  text: And the lofty mountains will quake, and the high hills will be brought low;
+    they will melt like wax before the blaze.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: “Will be brought low” could also be rendered “will sink down” or “will be
-      humbled”; the Ge'ez allows a lowering image that may carry judgment overtones.
+    text: 'Or: will be shaken; will tremble.'
     reason: lexical_alternative
   - marker: b
-    text: 'The final simile is explicit: the heights melt “like wax before the flame,”
-      preserving the verse’s cosmic judgment imagery rather than reducing it to a
-      general statement of fear.'
-    reason: cultural_note
+    text: 'Or: will be made low; will be humbled.'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Or: like wax in the presence of the flame/fire.'
+    reason: lexical_alternative
 lexical_decisions:
-- source_word: ይደነግፁ
-  chosen: will be shaken
+- source_word: ይደነግፁ (yǝdänägǝṣu)
+  chosen: will quake
   alternatives:
-  - will quake
+  - will be shaken
   - will tremble
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The verb conveys violent disturbance rather than a mild movement. “Will
-    be shaken” is clear, elevated English and preserves the apocalyptic force.
-- source_word: አድባር
+  lexicon: Leslau, Comparative Dictionary of Ge‘ez; Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Verb appears intransitive here with plural subject; “quake” preserves
+    apocalyptic force and intransitivity better than passive “be shaken.”
+- source_word: አድባር (ʾadbar)
   chosen: mountains
   alternatives:
-  - mountain heights
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The ordinary sense is mountainous heights or mountains; “mountains” is
-    the most natural English rendering here.
-- source_word: ነዋኀን
-  chosen: high
+  - mounts
+  - mountainland
+  lexicon: Leslau; Dillmann
+  rationale: Common Geʿez noun for mountainous heights; plural sense is contextually
+    prompted by parallelism with “hills.”
+- source_word: ነዋኀን / ነዋኃት (newaḥn / newaḥat)
+  chosen: lofty / high
   alternatives:
-  - lofty
-  - exalted
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: This adjective marks elevation. “High” is direct and keeps the parallelism
-    with the following phrase about the hills.
-- source_word: ይቴሐቱ
+  - elevated
+  - proud
+  lexicon: Leslau; Dillmann
+  rationale: Adjectival forms modifying mountains (m.) and hills (f.); semantic field
+    of height/loftiness suits cosmic-theophanic imagery; “proud” is a metaphorical
+    human quality and is less apt for inanimate terrain here.
+- source_word: ይቴሐቱ (yǝtēḥatu)
   chosen: will be brought low
   alternatives:
+  - will be made low
   - will be humbled
-  - will sink down
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The sense is not merely physical motion but lowering. “Will be brought
-    low” preserves both the physical image and possible judgment resonance.
-- source_word: አውግር
+  - will be flattened
+  lexicon: Leslau; Dillmann
+  rationale: Passive sense of being lowered fits the parallel with lofty hills; “brought
+    low” is idiomatic English for humbling/elevation reversal in theophanic contexts.
+- source_word: አውግር (ʾawgr)
   chosen: hills
   alternatives:
   - hill-country
   - ridges
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In parallel with “mountains,” “hills” fits the poetic scaling of the
-    landscape.
-- source_word: ይትመሰዉ
+  lexicon: Leslau; Dillmann
+  rationale: Standard gloss “hills” balances with “mountains” and matches topographical
+    parallelism.
+- source_word: ይትመሰዉ (yǝtmäsäw)
   chosen: will melt
   alternatives:
   - will dissolve
   - will liquefy
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The following simile controls the meaning: the hills behave like wax
-    near fire. “Will melt” is the most idiomatic and precise choice.'
-- source_word: መዓረ
+  lexicon: Leslau; Dillmann
+  rationale: Basic meaning is to melt; “melt” is vivid and idiomatic in English, keeping
+    the physical imagery.
+- source_word: መዓረ (mäʿärä)
   chosen: wax
   alternatives:
   - beeswax
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The simile is a standard image of softening before heat; “wax” is the
-    straightforward rendering.
-- source_word: ግራ እምላህብ
-  chosen: before the flame
+  lexicon: Leslau; Dillmann
+  rationale: Lexically denotes wax; “wax” is sufficient in English; specifying “beeswax”
+    is unnecessary and over-specific.
+- source_word: ግራ (gǝra)
+  chosen: before
   alternatives:
-  - before fire
-  - from before the flame
-  lexicon: Leslau, Comparative Dictionary of Ge'ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: The phrase expresses immediate exposure to burning heat. “Before the
-    flame” preserves the vivid image better than the more generic “before fire.”
-theological_decisions:
-- issue: Whether to render the lowering of the hills in purely physical terms or with
-    judgment resonance
-  chosen_reading: will be brought low
-  alternative_readings:
-  - will sink down
-  - will be humbled
-  rationale: The verse depicts cosmic upheaval in the Lord’s approach. “Will be brought
-    low” keeps the terrain image while allowing the apocalyptic theme of proud heights
-    reduced before divine presence.
+  - in the presence of
+  - in front of
+  lexicon: Leslau; Dillmann
+  rationale: Prepositional sense “before/in the presence of” suits the simile construction;
+    “before” is concise.
+- source_word: እም ላህብ (ʾǝm lāhb)
+  chosen: the blaze
+  alternatives:
+  - the flame
+  - the fire
+  lexicon: Leslau; Dillmann
+  rationale: lāhb denotes flame/blaze; “blaze” captures the intensity better than
+    the generic “fire,” while keeping the metaphor’s concreteness.
 ai_draft:
   model_id: gpt-5.4
-  model_version: gpt-5.4
+  model_version: gpt-5-2025-08-07
   prompt_id: enoch_verse_draft_v1
-  prompt_sha256: c110be85c082447453a21c016343395939c2125a9be13a8c3db62c428d7c310e
-  timestamp: '2026-04-22T08:52:06Z'
-  output_hash: cc26f2edc423513ff33e9563e1651f678b96bc77402f6e523a271e77ee792f83
-  backend: codex-cli
+  prompt_sha256: c6cd93aca4934b44a77f583212c3b3b0f25662c5b3eba9c747da557c8531598f
+  timestamp: '2026-04-22T09:06:11Z'
+  output_hash: f6905a66deb364bbf2798d0ae3f4e8a5934414d0c8d7dafa97c3b34eb18a9f45
   zone1_sources_at_draft:
-  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @17a195cc
-  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @17a195cc
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
   zone2_consults_known:
   - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
   - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
@@ -137,3 +119,27 @@ ai_draft:
   - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
   - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
 status: draft
+enoch_witnesses:
+  section: Book of the Watchers
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: ወይደነግፁ፡ አድባር፡ ነዋኀን፡ ወይቴሐቱ፡ አውግር፡ ነዋኃት፡ ወይትመሰዉ፡ ከመ፡ መዓረ፡ ግራ፡ እምላህብ።
+    source_edition: Charles 1906 Ethiopic Enoch
+    confidence: medium
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt
+      via tools/enoch/verse_parser.py
+  attestation_expectations:
+    greek:
+      attested: true
+      status: Panopolitanus Greek witness survives for this chapter range
+    aramaic:
+      zone2_consult_possible: true
+      status: Qumran Aramaic fragments exist for at least part of this chapter range
+  geez_only_zone1: false
+  source_warnings:
+  - Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is
+    not yet implemented in this prompt builder.
