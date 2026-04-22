@@ -185,8 +185,8 @@ def call_azure_openai(
     user: str,
     model: str,
     temperature: float,
-    max_completion_tokens: int = 6000,
-) -> tuple[dict[str, Any], str]:
+    max_completion_tokens: int = 12000,
+) -> tuple[dict[str, Any], str, float | None]:
     endpoint = azure_endpoint()
     api_key = os.environ.get("AZURE_OPENAI_API_KEY", "")
     deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT_ID", DEFAULT_AZURE_DEPLOYMENT_ID)
@@ -196,29 +196,52 @@ def call_azure_openai(
         raise RuntimeError("AZURE_OPENAI_API_KEY not set")
 
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={azure_api_version()}"
-    payload = {
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        "temperature": temperature,
-        "max_completion_tokens": max_completion_tokens,
-        "parallel_tool_calls": False,
-        "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
-        "tools": [SUBMIT_TOOL],
-    }
-    request = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"api-key": api_key, "Content-Type": "application/json"},
-        method="POST",
-    )
+    def build_payload(temp: float | None) -> dict[str, Any]:
+        payload: dict[str, Any] = {
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            "max_completion_tokens": max_completion_tokens,
+            "parallel_tool_calls": False,
+            "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
+            "tools": [SUBMIT_TOOL],
+        }
+        if temp is not None:
+            payload["temperature"] = temp
+        return payload
+
+    def send(temp: float | None) -> dict[str, Any]:
+        request = urllib.request.Request(
+            url,
+            data=json.dumps(build_payload(temp)).encode("utf-8"),
+            headers={"api-key": api_key, "Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(request, timeout=300) as response:
+            return json.loads(response.read().decode("utf-8"))
+
+    actual_temperature: float | None = temperature
     try:
-        with urllib.request.urlopen(request, timeout=180) as response:
-            body = json.loads(response.read().decode("utf-8"))
+        body = send(actual_temperature)
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"Azure OpenAI HTTP {exc.code}: {detail}") from exc
+        if (
+            exc.code == 400
+            and "temperature" in detail
+            and "Only the default (1) value is supported" in detail
+            and temperature != 1.0
+        ):
+            actual_temperature = None
+            try:
+                body = send(actual_temperature)
+            except urllib.error.HTTPError as retry_exc:
+                retry_detail = retry_exc.read().decode("utf-8", errors="replace")
+                raise RuntimeError(f"Azure OpenAI HTTP {retry_exc.code}: {retry_detail}") from retry_exc
+            except urllib.error.URLError as retry_exc:
+                raise RuntimeError(f"Azure OpenAI request failed: {retry_exc}") from retry_exc
+        else:
+            raise RuntimeError(f"Azure OpenAI HTTP {exc.code}: {detail}") from exc
     except urllib.error.URLError as exc:
         raise RuntimeError(f"Azure OpenAI request failed: {exc}") from exc
 
@@ -241,7 +264,7 @@ def call_azure_openai(
         raise RuntimeError(f"Azure OpenAI function-call arguments were not valid JSON: {exc}") from exc
 
     model_version = str(body.get("model") or model)
-    return parsed_arguments, model_version
+    return parsed_arguments, model_version, actual_temperature
 
 
 def validate_tool_input(tool_input: dict[str, Any]) -> None:
@@ -376,7 +399,6 @@ def build_record(
             "model_version": model_version,
             "prompt_id": prompt_id,
             "prompt_sha256": prompt_sha256,
-            "temperature": temperature,
             "timestamp": utc_timestamp(),
             "output_hash": output_hash,
             "zone1_sources_at_draft": bundle.zone1_sources_at_draft,
@@ -393,6 +415,9 @@ def build_record(
     theological_decisions = tool_input.get("theological_decisions")
     if theological_decisions:
         record["theological_decisions"] = theological_decisions
+
+    if temperature is not None:
+        record["ai_draft"]["temperature"] = temperature
 
     return record
 
@@ -431,7 +456,7 @@ def draft_verse(
 ) -> DraftResult:
     bundle = build_translation_prompt.build_enoch_prompt(chapter, verse)
     prompt_sha = sha256_hex(SYSTEM_PROMPT + "\n\n---\n\n" + bundle.prompt)
-    tool_input, model_version = call_azure_openai(
+    tool_input, model_version, actual_temperature = call_azure_openai(
         system=SYSTEM_PROMPT,
         user=bundle.prompt,
         model=model,
@@ -446,7 +471,7 @@ def draft_verse(
         model_version=model_version,
         prompt_id=prompt_id,
         prompt_sha256=prompt_sha,
-        temperature=temperature,
+        temperature=(temperature if actual_temperature is not None else None),
         output_hash=output_hash,
     )
     validate_record(record)
