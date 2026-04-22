@@ -27,7 +27,9 @@ sources/2baruch/
 │   └── charles_1896_apocalypse_of_baruch.pdf
 ├── raw_ocr/                      (pending) page-level OCR dumps
 └── syriac/
-    └── transcribed/              (pending) cleaned chapter-indexed Syriac text
+    ├── README.md                  bridge-layer notes for the primary Syriac witness
+    ├── transcribed/              cleaned page-level Ceriani text + page index
+    └── corpus/                   working JSONL corpus derived from the bridged OCR
 ```
 
 Translation drafts will eventually land under
@@ -88,10 +90,14 @@ layer.
 
 ## Status
 
-**2026-04-21: first Ceriani OCR calibration landed.** The local source
-files are rehydrated and pinned in `MANIFEST.md`, initial OCR prompt
-docs exist, and a first five-page Ceriani batch now lives under
-`raw_ocr/ceriani1871/` for PDF pages **187, 190, 195, 205, and 220**.
-That batch used **Gemini 3.1 Pro preview** through the repo's existing
-secret plumbing and the new region-assembled Ceriani layout in
-`tools/2baruch/ocr_pipeline.py`.
+**2026-04-22: OCR-to-corpus bridge landed for the Ceriani calibration set.**
+The initial five-page Ceriani OCR batch now flows through `tools/2baruch/build_corpus.py`
+into a committed Syriac bridge layer:
+
+- `sources/2baruch/syriac/transcribed/ceriani1871/pages/`
+- `sources/2baruch/syriac/transcribed/ceriani1871/page_index.json`
+- `sources/2baruch/syriac/corpus/CERIANI_WORKING.jsonl`
+
+That bridge keeps the text page-level on purpose: the current OCR on disk is still
+a sparse calibration set, so the clean intermediate object is a stable primary-witness
+page corpus rather than a pretend full chapter-aligned edition.

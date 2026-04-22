@@ -112,8 +112,9 @@ These are intentionally parallel to the 2 Esdras track:
 | Component | Status | Purpose |
 |---|---|---|
 | `sources/2baruch/` | ✅ scaffolded | README + MANIFEST + pinned local source files + OCR prompt docs |
-| `tools/2baruch/ocr_pipeline.py` | 🟡 initial calibration landed | Executable OCR pipeline now exists; first five Ceriani pages calibrated into `sources/2baruch/raw_ocr/ceriani1871/` |
-| `tools/2baruch/syriac_primary.py` | ⏳ pending | Chapter/verse loader for cleaned primary Syriac |
+| `tools/2baruch/ocr_pipeline.py` | ✅ calibration landed | Executable OCR pipeline exists; first five Ceriani pages calibrated into `sources/2baruch/raw_ocr/ceriani1871/` |
+| `tools/2baruch/build_corpus.py` | ✅ landed | Bridges raw Ceriani OCR into committed page-level Syriac corpus artifacts |
+| `tools/2baruch/syriac_primary.py` | 🟡 page-level loader landed | Loads the bridged Ceriani page corpus; chapter/verse alignment still pending |
 | `tools/2baruch/multi_witness.py` | ⏳ pending | Aggregator returning Syriac + Greek/Latin fragment data |
 | `tools/2baruch/build_translation_prompt.py` | ⏳ pending | Phase-15 translator prompt assembly |
 
@@ -143,8 +144,8 @@ even if its own transcription / loader work still starts later.
 - **Now**: source acquisition scaffolded locally, with manifest +
   README + prompt docs in place, and a first five-page Ceriani OCR
   calibration on disk
-- **Next**: extend the Ceriani calibration, add Kmosko control pages,
-  and scaffold the Syriac-primary loader
+- **Next**: extend the Ceriani calibration from the current sample pages into a fuller sweep,
+  then layer chapter/verse alignment on top of the new page corpus
 - **Drafting phase**: after earlier higher-priority phases complete,
   using the already-proven family tooling
 
