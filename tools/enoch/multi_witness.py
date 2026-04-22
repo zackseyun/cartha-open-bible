@@ -33,6 +33,11 @@ import pathlib
 from dataclasses import dataclass
 from typing import Optional
 
+try:
+    from . import verse_parser
+except ImportError:  # pragma: no cover - direct script execution
+    import verse_parser  # type: ignore
+
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 SOURCES_ROOT = REPO_ROOT / "sources" / "enoch"
 BETAMASAHEFT_LOCAL = pathlib.Path.home() / "cartha-reference-local" / "enoch_betamasaheft"
@@ -150,28 +155,45 @@ def oracle_available() -> bool:
 
 
 def is_available() -> bool:
-    """True iff our own transcriptions are produced and loadable."""
-    geez_dir = SOURCES_ROOT / "ethiopic" / "transcribed"
-    return geez_dir.exists() and any(geez_dir.glob("*.txt"))
+    """True iff the Charles chapter OCR is present and parseable enough to inspect."""
+    geez_dir = SOURCES_ROOT / "ethiopic" / "transcribed" / "charles_1906"
+    return geez_dir.exists() and any(geez_dir.glob("ch*.txt"))
 
 
 def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
-    """Return the full multi-witness reading for a verse, or None if
-    the transcription pipeline hasn't produced the chapter yet.
+    """Return the currently available witness bundle for one verse.
 
-    SCAFFOLD — returns None until Phase 11b transcription completes.
+    This is now partially implemented:
+      - Charles 1906 Ge'ez OCR is loaded verse-by-verse through
+        ``tools/enoch/verse_parser.py``.
+      - Other witness lanes remain pending until their OCR/alignment work lands.
     """
     if not is_available():
         return None
-    # TODO(phase11b): implement per-witness loaders from transcribed/ files
-    return None
+
+    row, _warnings = verse_parser.load_verse(chapter, verse)
+    if row is None:
+        return None
+
+    return EnochVerseWitnessSet(
+        chapter=chapter,
+        verse=verse,
+        geez_charles=EnochWitnessReading(
+            language="geez",
+            witness="charles_1906",
+            text=row.text,
+            source_edition="Charles 1906 Ethiopic Enoch",
+            confidence="medium",
+            note=f"Recovered from {row.chapter_file} via tools/enoch/verse_parser.py",
+        ),
+    )
 
 
 def summary() -> dict:
     """Diagnostic summary of what's loadable."""
     out = {
         "pipeline": "enoch_multi_witness",
-        "status": "scaffold",
+        "status": "charles_primary_partial",
         "geez_ocr_complete": is_available(),
         "betamasaheft_oracle_available_locally": oracle_available(),
         "greek_ocr_complete": (SOURCES_ROOT / "greek" / "transcribed").exists() and

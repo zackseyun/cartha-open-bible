@@ -123,6 +123,7 @@ DEUTEROCANON_BOOKS: list[tuple[str, str, int, int, str]] = [
     ("1 Esdras", "1ES", 9, 439, "1_esdras"),
     ("Prayer of Manasseh", "MAN", 1, 15, "prayer_of_manasseh"),
     ("Psalm 151", "PS151", 1, 7, "psalm_151"),
+    ("Psalms of Solomon", "PSS", 18, 330, "psalms_of_solomon"),
 ]
 
 
