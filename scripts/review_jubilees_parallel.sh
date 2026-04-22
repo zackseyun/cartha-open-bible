@@ -21,7 +21,7 @@ for ch in range(1, 51):
         continue
     doc = yaml.safe_load(path.read_text(encoding='utf-8'))
     reviews = doc.get('review_passes') or []
-    if reviews:
+    if any((r.get('review_kind') == 'deep_reference_pass') for r in reviews if isinstance(r, dict)):
         continue
     print(ch)
 PY

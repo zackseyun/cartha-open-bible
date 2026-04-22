@@ -144,6 +144,7 @@ def apply_review(chapter: int, payload: dict[str, Any], *, prompt_sha: str, mode
     doc["theological_decisions"] = payload.get("theological_decisions", [])
     review_pass = {
         "reviewer_model": MODEL_ID,
+        "review_kind": "deep_reference_pass",
         "timestamp": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "prompt_sha256": prompt_sha,
         "summary": str(payload["review_summary"]).strip(),
