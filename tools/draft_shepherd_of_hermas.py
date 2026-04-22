@@ -10,6 +10,7 @@ import pathlib
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -425,7 +426,7 @@ def write_unit_yaml(record: dict[str, Any], unit: hermas.NormalizedUnit) -> path
     return out_path
 
 
-def draft_unit(unit: hermas.NormalizedUnit, *, backend: str = DEFAULT_BACKEND, model: str = DEFAULT_MODEL_ID, temperature: float = DEFAULT_TEMPERATURE, prompt_id: str = DEFAULT_PROMPT_ID, dry_run: bool = False, overwrite: bool = False) -> DraftResult:
+def draft_unit(unit: hermas.NormalizedUnit, *, backend: str = DEFAULT_BACKEND, model: str = DEFAULT_MODEL_ID, temperature: float = DEFAULT_TEMPERATURE, prompt_id: str = DEFAULT_PROMPT_ID, dry_run: bool = False, overwrite: bool = False, max_attempts: int = 3) -> DraftResult:
     output_path = output_path_for_unit(unit)
     if output_path.exists() and not overwrite and not dry_run:
         raise FileExistsError(f'{output_path} already exists (pass --overwrite to replace)')
@@ -434,8 +435,21 @@ def draft_unit(unit: hermas.NormalizedUnit, *, backend: str = DEFAULT_BACKEND, m
     if dry_run:
         print(bundle.prompt)
         return DraftResult(unit=unit, record={}, output_path=output_path, prompt_sha256=prompt_sha256, model_version=model)
-    tool_input, model_version, raw_arguments, applied_temperature = call_model(backend=backend, system=SYSTEM_PROMPT, user=bundle.prompt, model=model, temperature=temperature)
-    validate_tool_input(tool_input)
+    last_error: Exception | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            tool_input, model_version, raw_arguments, applied_temperature = call_model(backend=backend, system=SYSTEM_PROMPT, user=bundle.prompt, model=model, temperature=temperature)
+            validate_tool_input(tool_input)
+            break
+        except Exception as exc:  # noqa: BLE001
+            last_error = exc
+            if attempt >= max_attempts:
+                raise
+            wait_s = min(10, attempt * 2)
+            print(f'retry {unit.sequence:03d} {unit.unit_id}: attempt {attempt}/{max_attempts} failed ({type(exc).__name__}: {exc}); waiting {wait_s}s')
+            time.sleep(wait_s)
+    else:
+        raise last_error or RuntimeError('drafting failed without a captured exception')
     output_hash = sha256_hex(canonical_json(tool_input))
     record = build_record(unit, bundle, tool_input, model_id=model, model_version=model_version, prompt_id=prompt_id, prompt_sha256=prompt_sha256, temperature=applied_temperature, output_hash=output_hash)
     output_path = write_unit_yaml(record, unit)
@@ -492,6 +506,7 @@ def main() -> int:
     ap.add_argument('--skip-existing', action='store_true')
     ap.add_argument('--overwrite', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--max-attempts', type=int, default=3)
     args = ap.parse_args()
 
     units = iter_units(args)
@@ -506,7 +521,7 @@ def main() -> int:
             skipped += 1
             print(f'skip {unit.sequence:03d} {unit.unit_id} ({out.relative_to(REPO_ROOT)})')
             continue
-        result = draft_unit(unit, backend=args.backend, model=args.model, temperature=args.temperature, prompt_id=args.prompt_id, dry_run=args.dry_run, overwrite=args.overwrite)
+        result = draft_unit(unit, backend=args.backend, model=args.model, temperature=args.temperature, prompt_id=args.prompt_id, dry_run=args.dry_run, overwrite=args.overwrite, max_attempts=args.max_attempts)
         if not args.dry_run:
             drafted += 1
             print(f'wrote {result.output_path.relative_to(REPO_ROOT)}  <- {unit.unit_id}')
