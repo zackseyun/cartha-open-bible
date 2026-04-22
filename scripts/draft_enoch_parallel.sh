@@ -9,6 +9,7 @@ TEMPERATURE="${TEMPERATURE:-0.2}"
 LOG_DIR="${LOG_DIR:-/tmp/cartha-enoch-draft}"
 PYTHON_BIN="${PYTHON_BIN:-$REPO_ROOT/.venv/bin/python}"
 DRY_RUN="${DRY_RUN:-0}"
+DEPLOYMENT_IDS="${DEPLOYMENT_IDS:-gpt-5-4-deployment,gpt-5-4-translation-b,gpt-5-4-translation-c}"
 
 mkdir -p "$LOG_DIR"
 cd "$REPO_ROOT"
@@ -45,7 +46,7 @@ PY
 )"
 export AZURE_OPENAI_API_VERSION="${AZURE_OPENAI_API_VERSION:-2025-04-01-preview}"
 
-export REPO_ROOT MODEL TEMPERATURE MAX_RETRIES LOG_DIR PYTHON_BIN DRY_RUN
+export REPO_ROOT MODEL TEMPERATURE MAX_RETRIES LOG_DIR PYTHON_BIN DRY_RUN DEPLOYMENT_IDS
 
 QUEUE="$($PYTHON_BIN - <<'PY' "$REPO_ROOT" "$@"
 import os, sys, pathlib
@@ -81,19 +82,25 @@ fi
 printf '%s\n' "$TASKS" | xargs -n2 -P "$CONCURRENCY" bash -lc '
   chapter="$1"
   verse="$2"
+  IFS="," read -r -a deployments <<< "$DEPLOYMENT_IDS"
+  if [[ "${#deployments[@]}" -eq 0 ]]; then
+    deployments=("gpt-5-4-deployment")
+  fi
+  deployment_idx=$(( (10#$chapter * 1000 + 10#$verse) % ${#deployments[@]} ))
+  deployment="${deployments[$deployment_idx]}"
   log="$LOG_DIR/ch$(printf "%03d" "$chapter")_v$(printf "%03d" "$verse").log"
   attempt=1
   while (( attempt <= MAX_RETRIES )); do
-    echo "[1 Enoch $chapter:$verse] attempt $attempt/$MAX_RETRIES $(date -u +%FT%TZ)" >> "$log"
-    if "$PYTHON_BIN" "$REPO_ROOT/tools/enoch/draft.py" --chapter "$chapter" --verse "$verse" --model "$MODEL" --temperature "$TEMPERATURE" >> "$log" 2>&1; then
-      echo "[1 Enoch $chapter:$verse] success" >> "$log"
+    echo "[1 Enoch $chapter:$verse][$deployment] attempt $attempt/$MAX_RETRIES $(date -u +%FT%TZ)" >> "$log"
+    if AZURE_OPENAI_DEPLOYMENT_ID="$deployment" "$PYTHON_BIN" "$REPO_ROOT/tools/enoch/draft.py" --chapter "$chapter" --verse "$verse" --model "$MODEL" --temperature "$TEMPERATURE" >> "$log" 2>&1; then
+      echo "[1 Enoch $chapter:$verse][$deployment] success" >> "$log"
       exit 0
     fi
     sleep_secs=$(( attempt * 15 ))
-    echo "[1 Enoch $chapter:$verse] failed; sleeping ${sleep_secs}s before retry" >> "$log"
+    echo "[1 Enoch $chapter:$verse][$deployment] failed; sleeping ${sleep_secs}s before retry" >> "$log"
     sleep "$sleep_secs"
     attempt=$((attempt + 1))
   done
-  echo "[1 Enoch $chapter:$verse] exhausted retries" >> "$log"
+  echo "[1 Enoch $chapter:$verse][$deployment] exhausted retries" >> "$log"
   exit 1
 ' _
