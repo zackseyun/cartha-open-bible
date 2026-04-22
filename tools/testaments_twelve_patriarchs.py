@@ -116,7 +116,10 @@ ROMAN_NUMERALS: dict[str, int] = {
     "XXV": 25,
     "XXVI": 26,
 }
-ROMAN_HEADING_RE = re.compile(r"^\s*(?P<num>[IVXLCDMΙ]+)\.\s*", re.MULTILINE)
+ROMAN_HEADING_RE = re.compile(
+    r"^\s*(?:[A-Za-zΑ-Ωα-ωβγδεζηθικλμνξοπρστυφχψω,\-· ]{0,20}\s+)?(?P<num>[IVXLCDMΙ]+)\.\s*",
+    re.MULTILINE,
+)
 
 
 def _normalize_heading_token(token: str) -> str:
