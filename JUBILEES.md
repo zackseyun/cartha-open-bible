@@ -7,9 +7,12 @@ pipeline (see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)'s
 Pseudepigrapha section), and applies the three-zone scholarly-source
 policy in [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
-> **Status: source-acquisition phase.** PDFs vendored. Ge'ez OCR
-> pipeline is Gemini 2.5 Pro in plaintext mode (validated on Enoch
-> 2026-04-21). Translation drafting follows Phase 11 (Enoch).
+> **Status: transcription-unblocked phase.** PDFs vendored. Ge'ez OCR
+> pipeline is **Gemini 3.1 Pro preview** in plaintext mode. Jubilees
+> chapter 1 benchmark is closed (2026-04-22): three independent runs
+> were byte-identical and semantically correct against Charles 1902.
+> Full-body OCR + chapter mapping are the remaining input-build steps
+> before broad translation drafting.
 
 ## Why Jubilees
 
@@ -95,7 +98,7 @@ commands.
 
 Same three-zone discipline, adapted for Jubilees:
 
-1. **Primary source**: our own Gemini 2.5 Pro OCR of Charles 1895
+1. **Primary source**: our own Gemini 3.1 Pro OCR of Charles 1895
    Ge'ez, cross-validated against Dillmann/Rönsch 1874 as a second
    witness. No Beta maṣāḥǝft-style digital Ge'ez oracle exists for
    Jubilees (unlike Enoch), so our OCR cross-check relies on the
@@ -117,33 +120,38 @@ Jubilees:
 
 | Component | Purpose | Shared / book-specific |
 |---|---|---|
-| `tools/ethiopic/ocr_geez.py` | Gemini 2.5 Pro plaintext-mode OCR of Ge'ez scans | **Shared** |
+| `tools/ethiopic/ocr_geez.py` | Gemini 3.1 Pro plaintext-mode OCR of Ge'ez scans | **Shared** |
+| `tools/ethiopic/run_parallel_ocr.py` | Multi-key / multi-worker batch runner over `ocr_geez.py` | **Shared** |
 | `tools/ethiopic/verse_parser.py` | Parse Ge'ez numeral verse markers (፩–፼) | **Shared** |
 | `tools/enoch/multi_witness.py` | Enoch-specific witness aggregator | Enoch-specific |
 | `tools/jubilees/multi_witness.py` | Jubilees-specific aggregator (Ge'ez + Latin + Zone 2 Qumran Hebrew) | Jubilees-specific |
+| `tools/jubilees/detect_chapters.py` | Detect chapter-start pages across Charles 1895 | Jubilees-specific |
+| `tools/jubilees/build_page_map.py` | Build/update `sources/jubilees/page_map.json` from detection cache | Jubilees-specific |
 | `tools/*/build_translation_prompt.py` | Book-specific translator prompt assembly | Book-specific |
 
 ## OCR note — same as Enoch
 
-Critical finding (2026-04-21): **Azure GPT-5 fails on Ge'ez;
-Gemini 2.5 Flash hallucinates; Gemini 2.5 Pro in plaintext mode with
-low thinking budget succeeds.** Validated on Enoch ch 1 (Dillmann
-1851 page 7) — Pro output matched Beta maṣāḥǝft ground truth at
-character-level accuracy, correctly producing Ethiopic Unicode with
-word separators (፡), sentence terminators (።), and Ge'ez numerals
-(፩-፲). Jubilees uses the same pipeline.
+Critical findings:
+
+- **2026-04-21:** Azure GPT-5 fails on Ge'ez; Gemini 2.5 Flash
+  hallucinates; Gemini 2.5 Pro plaintext mode succeeds on Enoch.
+- **2026-04-22:** Gemini **3.1 Pro preview** is the regime-shift
+  winner for Jubilees: chapter 1 benchmark closed with 100%
+  byte-identical 3-run consistency and correct prologue/verse-1
+  structure.
 
 Relative costs per page (rough):
 - Azure GPT-5: ~2K tokens, FAILS on Ge'ez
 - Gemini 2.5 Flash: ~1K tokens, produces Ge'ez but hallucinates content
-- **Gemini 2.5 Pro plaintext**: ~1.2K output + ~0.7K thinking tokens, ~90%+ character accuracy
+- Gemini 2.5 Pro plaintext: workable but less stable on Jubilees
+- **Gemini 3.1 Pro plaintext**: current production default for Enoch/Jubilees
 
 ## Phased timeline
 
 | Phase | Work | Effort | Dependencies |
 |---|---|---|---|
 | **12a — source acquisition** | ✓ PDFs vendored, MANIFEST written | Done 2026-04-21 | — |
-| **12b — transcription** | Gemini Pro OCR of Charles 1895 Ethiopic (~180 Ge'ez pages). Cross-validate against Dillmann-Rönsch 1874. OCR Rönsch Latin fragments. | 1-2 weeks | Phase 11 (Enoch) transcription complete — gives us shared tooling |
+| **12b — transcription** | Gemini 3.1 Pro OCR of Charles 1895 Ethiopic (~180 Ge'ez pages). Build chapter map. Cross-validate against Dillmann-Rönsch 1874 where possible. OCR Rönsch Latin material separately. | In progress | Phase 11 (Enoch) transcription complete — gives us shared tooling |
 | **12c — translation** | ~1,350 verses across 50 chapters, multi-witness context, three-zone prompt | 2-3 weeks | 12b complete |
 | **12d — revision** | Reviser pass per REVISION_METHODOLOGY.md | 1 week | 12c complete |
 | **12e — release** | Tagged release, status.json updated | 1 day | 12d complete |
