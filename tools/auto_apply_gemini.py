@@ -259,7 +259,15 @@ def update_processing_state(
 # ---------------------------------------------------------------------------
 
 def yaml_path_for(testament: str, book_slug: str, chapter: int, verse: int) -> pathlib.Path:
-    return REPO_ROOT / "translation" / testament / book_slug / f"{chapter:03d}" / f"{verse:03d}.yaml"
+    path = REPO_ROOT / "translation" / testament / book_slug / f"{chapter:03d}" / f"{verse:03d}.yaml"
+    if path.exists():
+        return path
+    # Flat-layout books (gospel_of_truth, shepherd_of_hermas, thunder_perfect_mind,
+    # jubilees, 2_baruch) store the "verse" as a top-level section file.
+    flat = REPO_ROOT / "translation" / testament / book_slug / f"{verse:03d}.yaml"
+    if flat.exists() and chapter == 1:
+        return flat
+    return path  # return the canonical path even if missing (caller raises)
 
 
 def next_footnote_marker(existing: list[dict[str, Any]] | None) -> str:

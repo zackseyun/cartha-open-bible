@@ -72,6 +72,9 @@ V3_STRATEGIES = {
     "phase9_nag_hammadi",
     "phase9_geez",
     "phase9_syriac",
+    "phase10_greek_apocrypha",
+    "phase10_ethiopic_pseudepigrapha",
+    "phase10_coptic_gnostic",
 }
 
 
@@ -290,10 +293,16 @@ def review_output_path(
 
 
 def read_verse_yaml(testament: str, book_slug: str, chapter: int, verse: int) -> str:
+    # Normal chapter/verse layout
     path = REPO_ROOT / "translation" / testament / book_slug / f"{chapter:03d}" / f"{verse:03d}.yaml"
-    if not path.exists():
-        raise FileNotFoundError(path)
-    return path.read_text(encoding="utf-8")
+    if path.exists():
+        return path.read_text(encoding="utf-8")
+    # Flat layout (section-per-file books like gospel_of_truth or jubilees):
+    # the queue stores chapter=1, verse=section_number
+    flat = REPO_ROOT / "translation" / testament / book_slug / f"{verse:03d}.yaml"
+    if flat.exists() and chapter == 1:
+        return flat.read_text(encoding="utf-8")
+    raise FileNotFoundError(path)
 
 
 _V2_PROMPT_CACHE: str | None = None
@@ -343,7 +352,12 @@ def read_context_snippet(testament: str, book_slug: str, chapter: int, verse: in
     lines = []
     base_dir = REPO_ROOT / "translation" / testament / book_slug / f"{chapter:03d}"
     if not base_dir.exists():
-        return ""
+        # Flat layout fallback: context lives in sibling section files
+        flat_root = REPO_ROOT / "translation" / testament / book_slug
+        if flat_root.exists() and any(p.suffix == ".yaml" for p in flat_root.iterdir()):
+            base_dir = flat_root
+        else:
+            return ""
     verse_files: list[tuple[int, pathlib.Path]] = []
     for p in sorted(base_dir.glob("*.yaml")):
         try:
@@ -381,8 +395,8 @@ def call_gemini_review(
     verse_yaml: str,
     *,
     model: str,
-    timeout: int = 180,
-    max_output_tokens: int = 12000,
+    timeout: int = 240,
+    max_output_tokens: int = 32000,
     retries: int = 6,
     system_prompt: str | None = None,
     context_block: str = "",

@@ -63,6 +63,13 @@ STRATEGY_RANDOM_SAMPLE = "random_sample"
 STRATEGY_LOW_AGREEMENT_RECHECK = "low_agreement_recheck"  # v2 prompt + context
 STRATEGY_ENHANCED_REVIEW = "enhanced_review"               # v2 prompt + context
 
+# Phase 10 — v3 author-intent review on deutero/extra books that didn't
+# pass through Phase 9. One strategy per language tradition so supervisor
+# logs and status dashboards can distinguish them.
+STRATEGY_PHASE10_GREEK_APOCRYPHA = "phase10_greek_apocrypha"
+STRATEGY_PHASE10_ETHIOPIC_PSEUDEPIGRAPHA = "phase10_ethiopic_pseudepigrapha"
+STRATEGY_PHASE10_COPTIC_GNOSTIC = "phase10_coptic_gnostic"
+
 # Books drawn in the "high-scrutiny" strategy. Book slugs match the
 # `translation/<testament>/<slug>/` directory structure.
 HIGH_SCRUTINY_BOOKS: list[tuple[str, str]] = [
@@ -348,6 +355,61 @@ def submit_enhanced_review_for_books(
     return dict(added)
 
 
+def submit_phase10(
+    conn: sqlite3.Connection,
+    model: str,
+    strategy: str,
+    books: list[tuple[str, str]],
+) -> dict[str, int]:
+    """Submit v3 author-intent review jobs for Phase 10 books.
+
+    Handles both chapter/verse layouts and flat (section-style) layouts:
+    for a flat book (e.g. gospel_of_truth), the filename stem is used as
+    'verse' with chapter=1.
+    """
+    added: Counter[str] = Counter()
+    for testament, book_slug in books:
+        book_dir = TRANSLATION_ROOT / testament / book_slug
+        if not book_dir.exists():
+            continue
+        # Detect layout: if any direct child is a .yaml file, treat as flat.
+        flat = any(p.suffix == ".yaml" for p in book_dir.iterdir())
+        if flat:
+            for yaml_path in sorted(book_dir.glob("*.yaml")):
+                try:
+                    verse = int(yaml_path.stem)
+                except ValueError:
+                    continue
+                if insert_job(
+                    conn,
+                    strategy=strategy,
+                    testament=testament,
+                    book_slug=book_slug,
+                    chapter=1,
+                    verse=verse,
+                    model=model,
+                ):
+                    added[book_slug] += 1
+        else:
+            for yaml_path in iter_verse_yamls(testament, book_slug):
+                parsed = parse_verse_id(yaml_path)
+                if not parsed:
+                    continue
+                chapter, verse = parsed
+                if insert_job(
+                    conn,
+                    strategy=strategy,
+                    testament=testament,
+                    book_slug=book_slug,
+                    chapter=chapter,
+                    verse=verse,
+                    model=model,
+                ):
+                    added[book_slug] += 1
+    conn.commit()
+    return dict(added)
+
+
 def submit_random_sample(conn: sqlite3.Connection, model: str) -> dict[str, int]:
     rng = random.Random(RANDOM_SAMPLE_SEED)
     all_verses: list[tuple[str, str, int, int]] = []
@@ -432,6 +494,9 @@ def main() -> int:
             STRATEGY_RANDOM_SAMPLE,
             STRATEGY_LOW_AGREEMENT_RECHECK,
             STRATEGY_ENHANCED_REVIEW,
+            STRATEGY_PHASE10_GREEK_APOCRYPHA,
+            STRATEGY_PHASE10_ETHIOPIC_PSEUDEPIGRAPHA,
+            STRATEGY_PHASE10_COPTIC_GNOSTIC,
         ],
     )
     p_submit.add_argument("--model", default="gemini-3.1-pro-preview")
@@ -475,6 +540,18 @@ def main() -> int:
                     t, s = tok.split(":")
                     book_list.append((t.strip(), s.strip()))
                 added = submit_enhanced_review_for_books(conn, args.model, book_list)
+            elif args.strategy in (
+                STRATEGY_PHASE10_GREEK_APOCRYPHA,
+                STRATEGY_PHASE10_ETHIOPIC_PSEUDEPIGRAPHA,
+                STRATEGY_PHASE10_COPTIC_GNOSTIC,
+            ):
+                if not args.books:
+                    raise SystemExit(f"--books required for {args.strategy}, e.g. 'deuterocanon:prayer_of_manasseh'")
+                book_list = []
+                for tok in args.books.split(","):
+                    t, s = tok.split(":")
+                    book_list.append((t.strip(), s.strip()))
+                added = submit_phase10(conn, args.model, args.strategy, book_list)
             else:
                 raise AssertionError(args.strategy)
             total = sum(added.values())
