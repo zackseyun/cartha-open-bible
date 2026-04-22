@@ -11,7 +11,7 @@ Current artifact:
 
 ## How it was built
 
-The current file is **hybrid**:
+The current file is **hybrid (v3)**:
 
 - deterministic parser where the chapter-aware parser looked reliable
 - Vertex AI Gemini fallback where deterministic extraction was obviously too
@@ -26,9 +26,9 @@ Scripts involved:
 ## Coverage snapshot
 
 - chapters represented: **50 / 50**
-- current extracted verse records: **863**
-- deterministic chapters: **25**
-- Vertex-fallback chapters: **25**
+- current extracted verse records: **1090**
+- deterministic chapters: **17**
+- Vertex-fallback chapters: **33**
 
 This is a major improvement over the earlier sparse parser-only result, which
 left many chapters with zero verse rows.
@@ -66,3 +66,12 @@ Even with those caveats, the project is in a much better place:
 3. then either:
    - promote the hybrid corpus as the current working draft base, or
    - replace weak chapters with improved deterministic / reviewed splits
+
+
+## Current QA note
+
+Most chapter counts now look plausible. The main obviously low outliers still worth
+chapter-specific review are:
+
+- chapter 23 (`9` extracted verses)
+- chapter 39 (`5` extracted verses)
