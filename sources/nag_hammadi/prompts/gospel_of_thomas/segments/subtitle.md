@@ -1,0 +1,59 @@
+# Gospel of Thomas — Subtitle
+
+- Segment id: `subtitle`
+- Segment unit: saying
+- Label: Subtitle
+- Codex pages: NHAM02.51
+
+## Primary Coptic witness (Dilley 2025, Coptic Scriptorium)
+
+- License: CC-BY 4.0
+- URN: `urn:cts:copticLit:nh.thomas.NHAM02:0-114`
+- Manuscript: Nag Hammadi Codex II (NHAM 02), pp. 32–51
+
+### Printed form (morphemes joined)
+
+```coptic
+ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲡⲕⲁⲧⲁ ⲑⲱⲙⲁⲥ
+```
+
+### Normalized Sahidic
+
+```coptic
+ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲡⲕⲁⲧⲁ ⲑⲱⲙⲁⲥ
+```
+
+### Line-level breakdown
+
+- **NHAM02.51 / lb 27** — `ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ`
+- **NHAM02.51 / lb 28** — `ⲡⲕⲁⲧⲁ ⲑⲱⲙⲁⲥ`
+
+## Consult-only references (no text reuse)
+
+- **Layton NHS 20 (1989)** — for difficult Coptic readings.
+- **Bethge et al. 1996** — for Synopsis Quattuor Evangeliorum alignment.
+- **Plisch 2008**, **DeConick 2007**, **Meyer 2007** — interpretive consults.
+- **Mattison/Zinner OGV** — English-comprehension check only, never a text source.
+
+## Translation stance
+
+- Translate from the Coptic, not from any English paraphrase.
+- Keep Thomasine diction — sharp, terse, riddling — when the Coptic supports it.
+- If the Dilley edition marks a lacuna (`[ ]`) or restoration, preserve the ambiguity in the English note rather than silently smoothing it.
+- Where a Greek POxy fragment overlaps, compare and record divergences.
+- Treat Synoptic NT parallels as context; do not harmonize.
+
+## Guardrails
+
+- If a Greek fragment overlaps a saying and differs meaningfully from the Coptic, record both readings and defend the decision.
+- Treat Synoptic parallels as context, not as pressure to harmonize Thomas into the canonical gospels.
+- Keep odd or sharp Thomasine diction when the witness supports it instead of smoothing it into familiar church English.
+- The Coptic has Lycopolitan features in a mostly Sahidic base — where the dialect interacts with meaning, note it instead of flattening it to standard Sahidic.
+
+## Required output
+
+- translation draft
+- textual note (lacuna flags, dialect features, lemma surprises)
+- Greek-overlap decision note (if applicable)
+- Synoptic-parallel check (if any canonical parallel exists)
+- revision risk note
