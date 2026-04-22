@@ -19,7 +19,8 @@ export AZURE_OPENAI_API_VERSION="${AZURE_OPENAI_API_VERSION:-2025-04-01-preview}
 
 CHAPTER_LIST="$(python3 - <<'PY'
 from pathlib import Path
-root = Path('/Users/zackseyun/My Drive/Moltbot-Shared/Documents/GitHub/cartha-translation/translation/extra_canonical/jubilees')
+import os
+root = Path(os.environ['REPO_ROOT']) / 'translation' / 'extra_canonical' / 'jubilees'
 existing = {int(p.stem) for p in root.glob('*.yaml')}
 for ch in range(1, 51):
     if ch not in existing:
