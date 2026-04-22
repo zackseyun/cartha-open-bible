@@ -103,9 +103,9 @@ into a committed Syriac bridge layer:
 - `sources/2baruch/syriac/transcribed/ceriani1871/page_index.json`
 - `sources/2baruch/syriac/corpus/CERIANI_WORKING.jsonl`
 
-That bridge intentionally stays page-level for now: the OCR substrate is
-now complete, but chapter alignment is still the next real task rather
-than something to pretend is already done.
+That bridge started page-level, but the source layer has now been pushed further:
+Ceriani page text is fully bridged, targeted Kmosko control pages are on disk, and
+chapter alignment has been tightened enough for chapter-level drafting to begin.
 
 See also:
 - [`raw_ocr/ceriani1871/COVERAGE.md`](raw_ocr/ceriani1871/COVERAGE.md)

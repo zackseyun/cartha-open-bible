@@ -5,8 +5,8 @@ This prompt builder sits on top of the new Ceriani chapter buckets. It is design
 for the current translation-ready stage where:
 
 - the Ceriani primary witness is fully OCR'd and bridged
-- chapter buckets are tentative and page-overlapping
-- only *targeted* Kmosko control pages exist so far
+- chapter buckets are now control-backed and chapter-ready
+- targeted Kmosko control pages exist across the major weak zones
 """
 from __future__ import annotations
 
@@ -43,7 +43,7 @@ def build_prompt(chapter: int) -> str:
         'Secondary rule: Kmosko control pages, Charles 1896, and Violet 1924 help with boundary / ambiguity decisions but do not replace the primary Syriac witness.',
         '',
         '## Current substrate status',
-        '- The chapter bucket below is **tentative** and may overlap with adjacent chapters at the page boundaries.',
+        '- The chapter bucket below is **chapter-ready**, but some edge pages still carry medium-confidence boundary judgments.',
         '- If a boundary looks doubtful, note that in the draft comments / footnotes rather than silently forcing a false precision.',
         '',
         f'## Source bucket for 2 Baruch {chapter}',
@@ -92,7 +92,7 @@ def build_prompt(chapter: int) -> str:
         - footnotes only where the source situation really requires them
         ''').strip(),
         '',
-        'Prefer honesty over false exactness. Where chapter boundaries remain tentative, say so plainly.',
+        'Prefer honesty over false exactness. Where a medium-confidence boundary still matters, say so plainly.',
     ])
     return '\n'.join(parts).strip() + '\n'
 
