@@ -70,9 +70,9 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          # Set this in repo Settings → Variables to the IAM role ARN, e.g.
-          # arn:aws:iam::<account-id>:role/github-oidc-cartha-translation-prewarm
-          role-to-assume: ${{ vars.GITHUB_OIDC_PREWARM_ROLE_ARN }}
+          # Repo variable — set in Settings → Secrets and variables → Actions → Variables.
+          # GitHub reserves GITHUB_* names, hence the PREWARM_ prefix.
+          role-to-assume: ${{ vars.PREWARM_OIDC_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Count gaps (dry-run)
