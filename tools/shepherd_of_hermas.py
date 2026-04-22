@@ -32,6 +32,7 @@ RAW_DIR = REPO_ROOT / "sources" / "shepherd_of_hermas" / "transcribed" / "raw"
 TRANSCRIBED_DIR = REPO_ROOT / "sources" / "shepherd_of_hermas" / "transcribed"
 NORMALIZED_DIR = TRANSCRIBED_DIR / "normalized"
 UNIT_MAP_PATH = TRANSCRIBED_DIR / "unit_map.json"
+MANUAL_OVERRIDE_PATH = TRANSCRIBED_DIR / "manual_unit_overrides.json"
 
 BODY_RE = re.compile(
     r"\[BODY\]\s*\n(.*?)(?=\n\[(?:RUNNING HEAD|APPARATUS|FOOTNOTES|MARGINALIA|BLANK|PLATE)\]|\n---END-PAGE---|\Z)",
@@ -475,14 +476,14 @@ def parse_units() -> list[HermasUnit]:
         if existing.heading is None and unit.heading is not None:
             existing.heading = unit.heading
 
-    return sorted(
+    return apply_manual_overrides(sorted(
         merged.values(),
         key=lambda unit: (
             PART_ORDER[unit.key.part],
             unit.key.major,
             _roman_to_int(unit.key.minor.upper()) if unit.key.minor else 0,
         ),
-    )
+    ))
 
 
 @dataclass(frozen=True)
@@ -578,6 +579,42 @@ def suspicious_units() -> list[str]:
     return sorted(set(suspicious))
 
 
+def load_manual_unit_overrides() -> list[HermasUnit]:
+    if not MANUAL_OVERRIDE_PATH.exists():
+        return []
+    payload = json.loads(MANUAL_OVERRIDE_PATH.read_text(encoding="utf-8"))
+    out: list[HermasUnit] = []
+    for unit in payload.get("units", []):
+        out.append(HermasUnit(
+            key=HermasUnitKey(
+                part=str(unit["part"]),
+                major=int(unit["major"]),
+                minor=unit.get("minor"),
+            ),
+            text=str(unit["text"]),
+            source_pages=[int(p) for p in unit.get("source_pages", [])],
+            source_files=[str(p) for p in unit.get("source_files", [])],
+            heading=unit.get("heading"),
+            notes=[str(n) for n in unit.get("notes", [])],
+            source_edition=unit.get("source_edition", "Lightfoot & Harmer 1891 (normalized OCR + manual unit override)"),
+        ))
+    return out
+
+
+def apply_manual_overrides(units: list[HermasUnit]) -> list[HermasUnit]:
+    merged = {unit.unit_id: unit for unit in units}
+    for override in load_manual_unit_overrides():
+        merged[override.unit_id] = override
+    return sorted(
+        merged.values(),
+        key=lambda unit: (
+            PART_ORDER[unit.key.part],
+            unit.key.major,
+            _roman_to_int(unit.key.minor.upper()) if unit.key.minor else 0,
+        ),
+    )
+
+
 def unit_map_payload() -> dict[str, object]:
     units = parse_units()
     return {
@@ -598,6 +635,7 @@ def unit_map_payload() -> dict[str, object]:
                 "source_pages": unit.source_pages,
                 "source_files": unit.source_files,
                 "text_path": str(unit.output_path.relative_to(REPO_ROOT)),
+                "notes": unit.notes,
             }
             for unit in units
         ],
@@ -619,6 +657,8 @@ def write_normalized() -> dict[str, object]:
         ]
         if unit.heading:
             lines.append(f"# heading: {unit.heading}")
+        if unit.notes:
+            lines.append(f"# notes: {' || '.join(unit.notes)}")
         lines.extend(["", unit.text, ""])
         unit.output_path.write_text("\n".join(lines), encoding="utf-8")
 

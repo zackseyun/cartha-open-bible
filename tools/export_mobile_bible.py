@@ -126,18 +126,21 @@ EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
     "DID",     # Didache
     "1CLEM",   # 1 Clement
     "ENO",     # 1 Enoch
+    "HERM",    # Shepherd of Hermas
 ]
 
 EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
     "DID":   "Didache",
     "1CLEM": "1 Clement",
     "ENO":   "1 Enoch",
+    "HERM":  "Shepherd of Hermas",
 }
 
 EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
     "DID":   "didache",
     "1CLEM": "1_clement",
     "ENO":   "1_enoch",
+    "HERM":  "shepherd_of_hermas",
 }
 
 # Extra-canonical books that only have chapter-level YAMLs (single
@@ -153,7 +156,7 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
 # Left in place so future books drafted as pure chapter-level prose
 # can be added here for single-synthetic-verse emission without
 # invoking the verse splitter.
-EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = set()
+EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = {"HERM"}
 
 
 def book_title(book_code: str) -> str:
