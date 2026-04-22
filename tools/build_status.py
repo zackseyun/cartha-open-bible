@@ -89,9 +89,20 @@ OT_BOOKS: list[tuple[str, str, int, int]] = [
 # consistency with the mobile export (each chapter ships as a single
 # synthetic verse).
 EXTRA_CANONICAL_BOOKS: list[tuple[str, str, int, int, str]] = [
-    ("Didache", "DID", 16, 16, "didache"),
-    ("1 Clement", "1CLEM", 65, 65, "1_clement"),
+    # Verse totals reflect the actual per-verse split produced by
+    # tools/split_extra_canonical_into_verses.py at the scholarly-
+    # standard divisions (Lightfoot / Funk / Niederwimmer).
+    ("Didache", "DID", 16, 100, "didache"),
+    ("1 Clement", "1CLEM", 65, 395, "1_clement"),
+    ("2 Esdras", "2ES", 16, 892, "2_esdras"),
 ]
+
+# Books in EXTRA_CANONICAL_BOOKS that are presented as an Appendix
+# rather than as peers of the Apostolic Fathers. Per 2ESDRAS.md these
+# are tracked in their own Appendix track in the reading interface and
+# do not count toward the Apocrypha completion metric. The frontend
+# reads the ``appendix`` flag on each book row to render the tag.
+APPENDIX_SLUGS: frozenset[str] = frozenset({"2_esdras"})
 
 
 DEUTEROCANON_BOOKS: list[tuple[str, str, int, int, str]] = [
@@ -222,20 +233,51 @@ def build_deuterocanon_books(
 
 
 def count_extra_canonical_book(slug: str) -> dict[str, int]:
-    """Chapter-level layout counter: translation/extra_canonical/
-    <slug>/<NNN>.yaml, each yaml carrying a single chapter. Verse
-    count mirrors chapter count (one synthetic verse per chapter in
-    the mobile export, matching how these texts are rendered)."""
+    """Counts chapters + verses for extra-canonical books.
+
+    Supports both layouts:
+      - Flat chapter-level: translation/extra_canonical/<slug>/<NNN>.yaml
+        (drafter output; authoritative record).
+      - Nested verse-level: translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml
+        (produced by tools/split_extra_canonical_into_verses.py;
+        drives mobile/CDN reader surfaces and per-verse bookmarks).
+
+    A chapter counts as drafted if EITHER layout has it. Verse count
+    is the verse-level files when they exist; falls back to
+    chapter-level files (treated as 1-synthetic-verse) if no nested
+    directories are present for a given book.
+    """
     book_dir = TRANSLATION_ROOT / "extra_canonical" / slug
     if not book_dir.is_dir():
         return {"chapters_drafted": 0, "verses_drafted": 0}
-    chapter_files = [
+
+    chapters = set()
+    verses_drafted = 0
+    has_verse_level = False
+
+    # Nested verse-level layout
+    for entry in book_dir.iterdir():
+        if entry.is_dir() and entry.name.isdigit():
+            has_verse_level = True
+            chapters.add(int(entry.name))
+            for vf in entry.iterdir():
+                if vf.is_file() and vf.suffix == ".yaml" and vf.stem.isdigit():
+                    verses_drafted += 1
+
+    # Flat chapter-level layout (count chapters either way; verses only
+    # if the verse-level layout is absent)
+    flat_chapter_files = [
         p for p in book_dir.iterdir()
         if p.is_file() and p.suffix == ".yaml" and p.stem.isdigit()
     ]
+    for p in flat_chapter_files:
+        chapters.add(int(p.stem))
+    if not has_verse_level:
+        verses_drafted = len(flat_chapter_files)
+
     return {
-        "chapters_drafted": len(chapter_files),
-        "verses_drafted": len(chapter_files),
+        "chapters_drafted": len(chapters),
+        "verses_drafted": verses_drafted,
     }
 
 
@@ -245,7 +287,7 @@ def build_extra_canonical_books(
     rows: list[dict[str, Any]] = []
     for name, code, chapters_total, verses_total, slug in catalog:
         counts = count_extra_canonical_book(slug)
-        rows.append({
+        row = {
             "book": name,
             "code": code,
             "testament": "extra_canonical",
@@ -253,7 +295,10 @@ def build_extra_canonical_books(
             "chapters_total": chapters_total,
             "verses_total": verses_total,
             **counts,
-        })
+        }
+        if slug in APPENDIX_SLUGS:
+            row["appendix"] = True
+        rows.append(row)
     return rows
 
 
