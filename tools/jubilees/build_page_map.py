@@ -48,8 +48,8 @@ def chapter_hint(n: int) -> str:
     return f"Jubilees chapter {n} (መጽሐፈ፡ ኩፋሌ {geez_numeral(n)})"
 
 
-def load_detection(edition: str) -> dict[int, dict[str, Any]]:
-    path = CACHE_ROOT / f"{edition}.json"
+def load_detection(edition: str, cache_path: pathlib.Path | None = None) -> dict[int, dict[str, Any]]:
+    path = cache_path or (CACHE_ROOT / f"{edition}.json")
     if not path.exists():
         raise SystemExit(f"detection cache missing for {edition}: {path}")
     pages = json.loads(path.read_text(encoding="utf-8")).get("pages", {})
@@ -166,13 +166,14 @@ def summarise(edition: str, proposed: dict[str, Any], existing: dict[str, Any]) 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--edition", default="charles_1895", choices=["charles_1895"])
+    ap.add_argument("--cache-path", type=pathlib.Path, help="Override detection cache JSON path")
     args = ap.parse_args()
 
     existing = load_existing_map()
     proposed = copy.deepcopy(existing)
     proposed["updated"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
 
-    classifications = load_detection(args.edition)
+    classifications = load_detection(args.edition, cache_path=args.cache_path)
     chapter_pages, warnings = assemble_chapters(classifications, edition=args.edition)
     existing_section = existing.get("editions", {}).get(args.edition, {})
     proposed.setdefault("editions", {})[args.edition] = build_edition_section(args.edition, chapter_pages, existing_section)
