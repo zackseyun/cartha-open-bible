@@ -40,6 +40,7 @@ PHILOSOPHY_PATH = REPO_ROOT / "PHILOSOPHY.md"
 JUBILEES_ROOT = REPO_ROOT / "sources" / "jubilees"
 PAGE_MAP_PATH = JUBILEES_ROOT / "page_map.json"
 CHARLES_1895_ROOT = JUBILEES_ROOT / "ethiopic" / "transcribed" / "charles_1895"
+CORPUS_PATH = JUBILEES_ROOT / "ethiopic" / "corpus" / "JUBILEES.vertex.jsonl"
 BODY_DIR = CHARLES_1895_ROOT / "body"
 PILOT_CH1_DIR = CHARLES_1895_ROOT / "pilot_ch01_3p1_run1"
 LEGACY_PILOT_CH1_DIR = CHARLES_1895_ROOT / "pilot_ch01"
@@ -166,6 +167,34 @@ def _load_charles_1895_verse_geez(
     captures any quality caveats (page-map gap, parser fallbacks, missing
     verse record).
     """
+    if CORPUS_PATH.exists():
+        rows = []
+        for line in CORPUS_PATH.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            if obj.get("chapter") == chapter and obj.get("verse") == verse:
+                rows.append(obj)
+        if rows:
+            row = rows[0]
+            return (
+                {
+                    "edition": "charles_1895",
+                    "ocr_source": "JUBILEES.vertex.jsonl",
+                    "language": "Geez",
+                    "text": row.get("geez", ""),
+                    "pages": row.get("chapter_source_pages") or [],
+                    "source_page": row.get("source_page_start"),
+                    "confidence": "working_corpus",
+                    "validation": row.get("validation") or "working_corpus",
+                },
+                [],
+            )
+
     pages, warnings = _chapter_pages(chapter)
     page_texts: list[tuple[int, str]] = []
     missing_pages: list[int] = []
