@@ -91,9 +91,11 @@ OT_BOOKS: list[tuple[str, str, int, int]] = [
 EXTRA_CANONICAL_BOOKS: list[tuple[str, str, int, int, str]] = [
     # Verse totals reflect the actual per-verse split produced by
     # tools/split_extra_canonical_into_verses.py at the scholarly-
-    # standard divisions (Lightfoot / Funk / Niederwimmer).
+    # standard divisions (Lightfoot / Funk / Niederwimmer), plus the
+    # current verse-level Charles 1906 Enoch parser recovery.
     ("Didache", "DID", 16, 100, "didache"),
     ("1 Clement", "1CLEM", 65, 395, "1_clement"),
+    ("1 Enoch", "ENO", 108, 843, "1_enoch"),
     ("2 Esdras", "2ES", 16, 942, "2_esdras"),
 ]
 
@@ -233,6 +235,24 @@ def build_deuterocanon_books(
     return rows
 
 
+def _enoch_expected_verse_map() -> dict[int, list[int]]:
+    """Return {chapter: [verse_numbers...]} for the current Charles 1906 Enoch parser.
+
+    We count Enoch chapters as drafted only when every expected verse YAML for that
+    chapter exists, so a single drafted verse does not make the public status page
+    claim the whole chapter is done.
+    """
+    import sys
+
+    sys.path.insert(0, str(REPO_ROOT))
+    from tools.enoch import verse_parser
+
+    return {
+        chapter: verse_parser.recovered_verse_numbers(chapter)
+        for chapter in range(1, 109)
+    }
+
+
 def count_extra_canonical_book(slug: str) -> dict[str, int]:
     """Counts chapters + verses for extra-canonical books.
 
@@ -240,17 +260,38 @@ def count_extra_canonical_book(slug: str) -> dict[str, int]:
       - Flat chapter-level: translation/extra_canonical/<slug>/<NNN>.yaml
         (drafter output; authoritative record).
       - Nested verse-level: translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml
-        (produced by tools/split_extra_canonical_into_verses.py;
-        drives mobile/CDN reader surfaces and per-verse bookmarks).
+        (produced by tools/split_extra_canonical_into_verses.py or direct
+        verse drafters like 1 Enoch; drives mobile/CDN reader surfaces and
+        per-verse bookmarks).
 
-    A chapter counts as drafted if EITHER layout has it. Verse count
-    is the verse-level files when they exist; falls back to
-    chapter-level files (treated as 1-synthetic-verse) if no nested
-    directories are present for a given book.
+    For most books a chapter counts as drafted if either layout has it.
+    1 Enoch is stricter: a chapter only counts as drafted when every expected
+    verse YAML for that chapter exists.
     """
     book_dir = TRANSLATION_ROOT / "extra_canonical" / slug
     if not book_dir.is_dir():
         return {"chapters_drafted": 0, "verses_drafted": 0}
+
+    if slug == "1_enoch":
+        expected = _enoch_expected_verse_map()
+        verses_drafted = 0
+        chapters_drafted = 0
+        for chapter, expected_verses in expected.items():
+            chapter_dir = book_dir / f"{chapter:03d}"
+            if not chapter_dir.is_dir():
+                continue
+            present = {
+                int(vf.stem)
+                for vf in chapter_dir.glob("*.yaml")
+                if vf.is_file() and vf.stem.isdigit()
+            }
+            verses_drafted += sum(1 for verse in expected_verses if verse in present)
+            if set(expected_verses) == present:
+                chapters_drafted += 1
+        return {
+            "chapters_drafted": chapters_drafted,
+            "verses_drafted": verses_drafted,
+        }
 
     chapters = set()
     verses_drafted = 0
