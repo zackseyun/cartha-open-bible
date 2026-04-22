@@ -73,7 +73,7 @@ APOCRYPHA_ROOT = TRANSLATION_ROOT / "deuterocanon"
 
 APOCRYPHA_BOOK_ORDER: list[str] = [
     "TOB", "JDT", "ESG", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL",
-    "1MA", "2MA", "3MA", "4MA", "1ES", "MAN", "PS151", "PSS",
+    "1MA", "2MA", "3MA", "4MA", "1ES", "MAN", "PS151",
 ]
 
 APOCRYPHA_BOOK_TITLES: dict[str, str] = {
@@ -96,20 +96,11 @@ APOCRYPHA_BOOK_TITLES: dict[str, str] = {
     "1ES": "1 Esdras",
     "MAN": "Prayer of Manasseh",
     "PS151": "Psalm 151",
-    "PSS": "Psalms of Solomon",
 }
 
 APOCRYPHA_BOOK_SLUGS: dict[str, str] = {
     code: meta[4]
     for code, meta in lxx_swete.DEUTEROCANONICAL_BOOKS.items()
-}
-
-# Some appendix / broader-canon books preserve scholarly verse-numbering
-# gaps in their source editions. For these, "missing" numbers are not
-# unfinished draft holes; they are part of the edition's numbering
-# convention and must be preserved in the export.
-APOCRYPHA_ALLOW_NUMBERING_GAPS: set[str] = {
-    "PSS",  # Psalms of Solomon
 }
 
 
@@ -126,21 +117,21 @@ EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
     "DID",     # Didache
     "1CLEM",   # 1 Clement
     "ENO",     # 1 Enoch
-    "HERM",    # Shepherd of Hermas
+    "JUB",     # Jubilees
 ]
 
 EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
     "DID":   "Didache",
     "1CLEM": "1 Clement",
     "ENO":   "1 Enoch",
-    "HERM":  "Shepherd of Hermas",
+    "JUB":   "Jubilees",
 }
 
 EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
     "DID":   "didache",
     "1CLEM": "1_clement",
     "ENO":   "1_enoch",
-    "HERM":  "shepherd_of_hermas",
+    "JUB":   "jubilees",
 }
 
 # Extra-canonical books that only have chapter-level YAMLs (single
@@ -156,7 +147,7 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
 # Left in place so future books drafted as pure chapter-level prose
 # can be added here for single-synthetic-verse emission without
 # invoking the verse splitter.
-EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = {"HERM"}
+EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = set()
 
 
 def book_title(book_code: str) -> str:
@@ -277,12 +268,11 @@ def export_apocrypha_book(book_code: str) -> dict[str, Any] | None:
         verse_nums = sorted(verses)
         if not verse_nums:
             continue
-        if book_code not in APOCRYPHA_ALLOW_NUMBERING_GAPS:
-            # Contiguous 1..N required — a missing verse mid-chapter
-            # usually leaves the reader staring at a misnumbered body.
-            expected = list(range(1, verse_nums[-1] + 1))
-            if verse_nums != expected:
-                continue
+        # Contiguous 1..N required — a missing verse mid-chapter leaves
+        # the reader staring at a misnumbered body.
+        expected = list(range(1, verse_nums[-1] + 1))
+        if verse_nums != expected:
+            continue
         chapters_out.append({
             "chapter": chapter,
             "verses": [
