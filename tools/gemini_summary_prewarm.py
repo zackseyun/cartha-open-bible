@@ -893,6 +893,15 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=10)
     ap.add_argument("--dry-run", action="store_true", help="enumerate gaps but don't call Gemini")
     ap.add_argument("--chapters-only", action="store_true", help="skip book-level summaries")
+    ap.add_argument(
+        "--force-refresh",
+        action="store_true",
+        help=(
+            "Regenerate summaries even when cache entries already exist. "
+            "Useful after a revision / second-pass push so touched books get fresh "
+            "chapter- and book-level summaries."
+        ),
+    )
     ap.add_argument("--limit", type=int, default=0, help="cap on entries to generate (0=all)")
     ap.add_argument("--book", default=None, help="restrict to one book (canonical label)")
     ap.add_argument(
@@ -957,12 +966,17 @@ def main() -> int:
     chapter_gaps = []
     book_gaps = []
     for k, scope, book, chap, tool in expected:
+        if args.force_refresh:
+            (chapter_gaps if scope == SCOPE_CHAPTER else book_gaps).append((book, chap, tool))
+            continue
         gk = k.replace(PRIMARY_MODEL_VERSION, GEMINI_MODEL_VERSION)
         if k in present_primary or gk in present_gemini:
             continue
         (chapter_gaps if scope == SCOPE_CHAPTER else book_gaps).append((book, chap, tool))
 
     print(f"\ngaps: {len(chapter_gaps)} chapter + {len(book_gaps)} book")
+    if args.force_refresh:
+        print("force_refresh=1 (existing cache entries will be regenerated)")
     if args.dry_run:
         print("\n=== chapter gaps (first 40) ===")
         for g in chapter_gaps[:40]:
