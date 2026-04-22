@@ -126,7 +126,10 @@ def build_records(
     for chapter in chapters:
         pages = chapter_pages(page_map, chapter)
         page_texts, missing, labels_used = load_page_texts(chapter, pages, allow_missing_pages=allow_missing_pages)
-        rows = verse_parser.parse_chapter_pages(page_texts)
+        next_chapter = chapter + 1 if chapter < 50 else None
+        rows = verse_parser.parse_chapter_pages_for_target(page_texts, chapter, next_chapter=next_chapter)
+        if not rows:
+            rows = verse_parser.parse_chapter_pages(page_texts)
         if chapter > 1:
             first_ones = [i for i, row in enumerate(rows) if row.verse == 1]
             if first_ones:

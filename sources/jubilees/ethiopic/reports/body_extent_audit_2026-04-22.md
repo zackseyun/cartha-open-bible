@@ -5,8 +5,8 @@
 The earlier assumption that the Ge'ez body ended at PDF **page 210** was
 wrong.
 
-Additional probing showed the Charles 1895 Ge'ez body continues at least to
-PDF **page 264**.
+Additional probing eventually showed the Charles 1895 Ge'ez body continues to
+PDF **page 267**.
 
 ## Evidence
 
@@ -20,14 +20,16 @@ heads:
 - PDF **p250** → **chapter 45**
 - PDF **p260** → **chapter 49**
 - PDF **p264** → still **chapter 49** (`XLIX. 16-23`)
+- PDF **p266** → **chapter 50** (`L. 1-9`)
+- PDF **p267** → **chapter 50** continuation (`L. 10-13`)
 
-Pages **265+** sampled as non-Ge'ez, indicating the Ge'ez body likely ends at
-or just before **264**.
+Pages **268+** sampled as non-Ge'ez / appendix material, indicating the Ge'ez
+body ends with chapter 50 at **p267**.
 
 ### 2. Vertex chapter-detection evidence
 
 Using Vertex AI Gemini (service-account / "second key" path), full chapter
-classification over pages 37–264 recovered a coherent late-book spine:
+classification over pages 37–267 recovered a coherent late-book spine:
 
 - ch33 → p214
 - ch34 → p218
@@ -41,6 +43,7 @@ classification over pages 37–264 recovered a coherent late-book spine:
 - ch47 → p254
 - ch48 → p256
 - ch49 → p260
+- ch50 → p266
 
 ### 3. Manual running-head recovery filled additional gaps
 
@@ -63,10 +66,10 @@ These are recorded in:
 
 The body OCR now covers:
 
-- PDF pages **37–264**
+- PDF pages **37–267**
 
 That means the regenerated Charles 1895 body is no longer just the earlier
-37–210 slice.
+37–210 slice, nor the later intermediate 37–264 assumption.
 
 ## Vertex status
 
@@ -79,33 +82,25 @@ Confirmed working with the service-account credential path (`/cartha/openclaw/ge
 - parallel OCR via `tools/ethiopic/run_parallel_ocr.py --backend vertex`
 - chapter detection via `tools/jubilees/detect_chapters.py --backend vertex`
 
-## Remaining unresolved issue
+## Chapter-map status after correction
 
-Only **chapter 50** remains unlocated in the Ge'ez body.
+Chapter 50 is now located.
 
-Given that:
+Current practical state:
 
-- p260 is chapter 49,
-- p264 is still chapter 49,
-- sampled pages 265+ are non-Ge'ez,
-
-there are two live possibilities:
-
-1. the vendored PDF's Ge'ez section ends before chapter 50, or
-2. chapter 50 is present but not yet isolated because of section-boundary
-   complexity near the end.
-
-This requires a short focused source audit.
+- **50/50 chapters recovered** in the proposed page map
+- the trusted Ge'ez body appears to run through **p267**
+- pages **268+** appear to be post-body appendix / non-Ge'ez material
 
 ## Practical consequence for production
 
 The post-OCR path is now clearer:
 
-1. finalize the corrected Ge'ez body extent (37–264)
-2. finish the trusted chapter page map (49 chapters recovered, ch50 pending)
-3. continue generalizing the Jubilees verse parser for later-page Arabic
+1. finalize the corrected Ge'ez body extent (37–267)
+2. finish the trusted chapter page map (now effectively recovered through all
+   50 chapters)
+3. continue generalizing the Jubilees verse parser for later-page line-start
    verse numbering and mid-page chapter transitions
-4. only then promote the full corpus build
-
-So the blocker after OCR is **chapter segmentation + final source-boundary
-clarity**, not OCR availability.
+4. improve / validate the full corpus build
+So the blocker after OCR is now **verse segmentation quality**, not OCR
+availability or source-boundary clarity.

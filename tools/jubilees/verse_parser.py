@@ -71,6 +71,9 @@ _VERSE_MARKER_RE = re.compile(
     rf"(^|\s)(?P<marker>[{_ETH_DIGIT_CHARS}](?:[ወ፡]*[{_ETH_DIGIT_CHARS}])*)\s*$"
 )
 _ARABIC_START_RE = re.compile(r"^\s*(?P<marker>\d{1,3})\s+(?P<body>.*)$")
+_GEEZ_START_RE = re.compile(
+    rf"^\s*(?P<marker>[{_ETH_DIGIT_CHARS}](?:[ወ፡]*[{_ETH_DIGIT_CHARS}])*)(?:[፣,.:]|፡)?\s+(?P<body>.*)$"
+)
 
 # Superscript footnote markers (Unicode superscripts ² ³ ... and regular digits
 # used as superscripts in the OCR, plus the `*` and `'` variant delimiters)
@@ -137,6 +140,21 @@ def find_arabic_start_markers(lines: list[str]) -> list[tuple[int, int]]:
     return out
 
 
+def find_geez_start_markers(lines: list[str]) -> list[tuple[int, int]]:
+    out: list[tuple[int, int]] = []
+    for idx, line in enumerate(lines):
+        m = _GEEZ_START_RE.match(line.rstrip())
+        if not m:
+            continue
+        try:
+            num = parse_geez_numeral(m.group("marker"))
+        except ValueError:
+            continue
+        if 1 <= num <= 200:
+            out.append((idx, num))
+    return out
+
+
 def parse_page_arabic_start(ocr_text: str, source_page: int) -> list[JubileesVerseRow]:
     """Parse later Jubilees pages where Arabic verse numbers start each line."""
     text = ocr_text.strip()
@@ -182,6 +200,128 @@ def parse_page_arabic_start(ocr_text: str, source_page: int) -> list[JubileesVer
             )
         )
     return result
+
+
+def _normalize_lines_for_target(ocr_text: str) -> list[str]:
+    lines = [ln.rstrip() for ln in ocr_text.splitlines() if ln.strip()]
+    out: list[str] = []
+    for line in lines:
+        if line.strip() == "መጽሐፈ፡ ኩፋሌ፡":
+            continue
+        out.append(line)
+    return out
+
+
+def _extract_start_marker(line: str) -> tuple[int | None, str]:
+    m = _GEEZ_START_RE.match(line.rstrip())
+    if m:
+        try:
+            return parse_geez_numeral(m.group("marker")), m.group("body").strip()
+        except ValueError:
+            pass
+    m2 = _ARABIC_START_RE.match(line.rstrip())
+    if m2:
+        return int(m2.group("marker")), m2.group("body").strip()
+    return None, line.strip()
+
+
+def parse_chapter_pages_for_target(
+    page_texts: list[tuple[int, str]],
+    chapter: int,
+    *,
+    next_chapter: int | None = None,
+) -> list[JubileesVerseRow]:
+    """Chapter-aware parser for later Jubilees pages.
+
+    Later Charles 1895 pages often mark:
+    - carried-over verses with line-initial Ethiopic numerals
+    - the NEW chapter with a line-initial Ethiopic numeral equal to the chapter
+      number itself (that line contains verse 1)
+    - following verses with low line-initial numerals (2, 3, 4, ...)
+    """
+    rows: list[tuple[int, str]] = []
+    for source_page, ocr_text in page_texts:
+        for line in _normalize_lines_for_target(ocr_text):
+            rows.append((source_page, line))
+    if not rows:
+        return []
+
+    structured: list[tuple[int, int | None, str]] = []
+    for source_page, line in rows:
+        marker_num, body = _extract_start_marker(line)
+        structured.append((source_page, marker_num, body))
+
+    started = False
+    current_verse: int | None = None
+    current_page: int | None = None
+    buffer: list[str] = []
+    out: list[JubileesVerseRow] = []
+
+    def flush() -> None:
+        nonlocal current_verse, current_page, buffer
+        if current_verse is None:
+            buffer = []
+            return
+        text = strip_apparatus(" ".join(part for part in buffer if part.strip()))
+        if text:
+            out.append(
+                JubileesVerseRow(
+                    verse=current_verse,
+                    marker_raw=str(current_verse),
+                    text=text,
+                    source_page=current_page or page_texts[0][0],
+                )
+            )
+        buffer = []
+
+    for idx, (source_page, marker_num, body) in enumerate(structured):
+        if marker_num is None:
+            if started and body.strip():
+                buffer.append(body.strip())
+            continue
+
+        # Detect the line where the target chapter starts. That line itself is verse 1.
+        if not started:
+            if marker_num == chapter:
+                started = True
+                current_verse = 1
+                current_page = source_page
+                if body.strip():
+                    buffer.append(body.strip())
+            elif chapter == 1 and marker_num == 1:
+                started = True
+                current_verse = 1
+                current_page = source_page
+                if body.strip():
+                    buffer.append(body.strip())
+            continue
+
+        # If the next chapter starts on an overlapping final page, stop here.
+        if next_chapter is not None and marker_num == next_chapter:
+            upcoming = [m for _, m, _ in structured[idx + 1: idx + 5] if m is not None]
+            if any(v in {2, 3, 4, 5} for v in upcoming) or (current_verse is not None and marker_num < current_verse):
+                flush()
+                break
+
+        # A reset to a lower verse number usually means a new local sequence on the page.
+        if current_verse is not None and marker_num == current_verse:
+            if body.strip():
+                buffer.append(body.strip())
+            continue
+        if current_verse is not None and marker_num < current_verse and marker_num <= 5:
+            flush()
+            current_verse = marker_num
+            current_page = source_page
+            buffer = [body.strip()] if body.strip() else []
+            continue
+
+        flush()
+        current_verse = 1 if marker_num == chapter else marker_num
+        current_page = source_page
+        buffer = [body.strip()] if body.strip() else []
+
+    flush()
+    return out
 
 
 def parse_page(ocr_text: str, source_page: int) -> list[JubileesVerseRow]:
