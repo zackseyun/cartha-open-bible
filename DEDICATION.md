@@ -10,5 +10,3 @@ understanding what scripture says and why.
 
 Scripture belongs to the Church, and to all whom God is drawing to
 Himself. We offer this work in that spirit.
-
-*Soli Deo gloria.*
