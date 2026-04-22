@@ -1,0 +1,107 @@
+id: 1EN.12.1
+reference: 1 Enoch 12:1
+book: 1 Enoch
+source:
+  edition: charles-1906-enoch
+  text: እምቅድመ፡ እሉ፡ ነገረ፡
+  language: Geez
+  pages:
+  - 68
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch12.txt via
+    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 12,
+    but verse-aligned extraction is not yet implemented in this prompt builder.
+translation:
+  text: Before these things, he spoke.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The supplied Ethiopic witness preserves only a brief clause here. The fuller
+      verse is likely longer in complete editions, but this draft translates only
+      the words attested in the provided text.
+    reason: textual_variant
+lexical_decisions:
+- source_word: እምቅድመ
+  chosen: before
+  alternatives:
+  - from before
+  - previously
+  - in the presence of
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The prepositional form most naturally marks temporal priority here. Given
+    the fragmentary witness, a simple temporal 'before' is the least interpretively
+    loaded rendering.
+- source_word: እሉ
+  chosen: these things
+  alternatives:
+  - these
+  - those things
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The demonstrative can stand substantivally. 'These things' gives idiomatic
+    English while preserving the likely referential force better than a bare 'these'.
+- source_word: ነገረ
+  chosen: he spoke
+  alternatives:
+  - he said
+  - he told
+  - he declared
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The verb commonly denotes speaking or saying. 'He spoke' preserves a
+    slightly elevated narrative register and avoids over-specifying an object not
+    explicit in the surviving text.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: enoch_verse_draft_v1
+  prompt_sha256: bcac1b3daee5dab7e087bb3ff34ff1dcc4e2e72f46d8afc7b43afb554174fc67
+  timestamp: '2026-04-22T09:08:46Z'
+  output_hash: 818e92e984ad5075885bef7e3bb3392485f54a3bb3b7017e1119076084d75518
+  zone1_sources_at_draft:
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+  zone2_consults_known:
+  - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+  - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+  - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+  - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+  - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+  - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  temperature: 0.2
+status: draft
+enoch_witnesses:
+  section: Book of the Watchers
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: እምቅድመ፡ እሉ፡ ነገረ፡
+    source_edition: Charles 1906 Ethiopic Enoch
+    confidence: medium
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch12.txt
+      via tools/enoch/verse_parser.py
+  attestation_expectations:
+    greek:
+      attested: true
+      status: Panopolitanus Greek witness survives for this chapter range
+    aramaic:
+      zone2_consult_possible: true
+      status: Qumran Aramaic fragments exist for at least part of this chapter range
+  geez_only_zone1: false
+  source_warnings:
+  - Dillmann 1851 chapter OCR exists for chapter 12, but verse-aligned extraction
+    is not yet implemented in this prompt builder.
+theological_decisions:
+- issue: Extent of the verse in the surviving OCR witness
+  chosen_reading: Translate only the extant clause as a short narrative statement
+    without importing the fuller traditional verse from other editions.
+  alternative_readings:
+  - Reconstruct the commonly known fuller verse from broader textual tradition
+  - Treat the fragment as too incomplete to translate
+  rationale: The project requires anchoring the draft in the provided Ge'ez witness
+    and forbids silently replacing it with later English tradition. A minimal translation
+    of the extant clause is therefore preferable, with uncertainty noted.
+  doctrine_reference: Original-language primacy over translation tradition; preserve
+    ambiguity rather than resolve it

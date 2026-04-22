@@ -1,0 +1,96 @@
+id: 1EN.107.1
+reference: 1 Enoch 107:1
+book: 1 Enoch
+source:
+  edition: charles-1906-enoch
+  text: ወርኢኩ፡
+  language: Geez
+  pages:
+  - 260
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch107.txt via
+    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 107,
+    but verse-aligned extraction is not yet implemented in this prompt builder.
+translation:
+  text: And I saw.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The Ge'ez witness for this verse consists only of the brief vision formula
+      'And I saw.' If a fuller wording is reflected in other witnesses or editions,
+      that expansion is not present in the supplied base text.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ወ
+  chosen: And
+  alternatives:
+  - Then
+  - Now
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The prefixed conjunction commonly means 'and.' In apocalyptic narrative
+    it often carries simple sequential force; 'And' preserves the terse visionary
+    progression without over-interpreting it as a stronger temporal marker.
+- source_word: ርኢኩ
+  chosen: I saw
+  alternatives:
+  - I looked
+  - I beheld
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: First-person perfect of the verb 'to see.' 'I saw' is the most direct
+    and natural English rendering. 'I beheld' is elevated but archaic; 'I looked'
+    weakens the visionary claim by shifting from perception to mere gaze.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: enoch_verse_draft_v1
+  prompt_sha256: f8a5fc680d0f8406dcec5e7c6a8d43765c73a627983af27f9766bca8290908f3
+  timestamp: '2026-04-22T09:24:45Z'
+  output_hash: 3cb9aa3529eb3384d56f8670d503cb0dd0cbe90de7a4072655a17f067c76c72c
+  zone1_sources_at_draft:
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+  zone2_consults_known:
+  - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+  - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+  - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+  - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+  - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+  - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  temperature: 0.2
+status: draft
+enoch_witnesses:
+  section: Epistle of Enoch
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: ወርኢኩ፡
+    source_edition: Charles 1906 Ethiopic Enoch
+    confidence: medium
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch107.txt
+      via tools/enoch/verse_parser.py
+  attestation_expectations:
+    greek:
+      attested: true
+      status: Chester Beatty Greek survives for this chapter range
+    aramaic:
+      zone2_consult_possible: true
+      status: Qumran Aramaic fragments exist for at least part of this chapter range
+  geez_only_zone1: false
+  source_warnings:
+  - Dillmann 1851 chapter OCR exists for chapter 107, but verse-aligned extraction
+    is not yet implemented in this prompt builder.
+theological_decisions:
+- issue: Vision-report formula
+  chosen_reading: And I saw.
+  alternative_readings:
+  - Then I saw.
+  - And I looked.
+  rationale: This brief clause functions as a standard apocalyptic vision marker.
+    The translation preserves its simplicity and does not embellish it with interpretive
+    detail or later traditional phrasing.
+  doctrine_reference: Preserve apocalyptic imagery and repeated formulas; readable
+    modern English, not archaic.

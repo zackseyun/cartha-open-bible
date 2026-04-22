@@ -7,15 +7,33 @@ MAX_RETRIES="${MAX_RETRIES:-3}"
 MODEL="${MODEL:-gpt-5.4}"
 TEMPERATURE="${TEMPERATURE:-0.2}"
 LOG_DIR="${LOG_DIR:-/tmp/cartha-enoch-draft}"
-PYTHON_BIN="${PYTHON_BIN:-$REPO_ROOT/.venv/bin/python}"
+PYTHON_BIN="${PYTHON_BIN:-}"
 DRY_RUN="${DRY_RUN:-0}"
 DEPLOYMENT_IDS="${DEPLOYMENT_IDS:-gpt-5-4-deployment,gpt-5-4-translation-b,gpt-5-4-translation-c}"
 
 mkdir -p "$LOG_DIR"
 cd "$REPO_ROOT"
 
-if [[ ! -x "$PYTHON_BIN" ]]; then
-  PYTHON_BIN="$(command -v python3)"
+python_supports_enoch_draft() {
+  local bin="$1"
+  [[ -n "$bin" && -x "$bin" ]] || return 1
+  "$bin" - <<'PY' >/dev/null 2>&1
+import yaml  # noqa: F401
+PY
+}
+
+if ! python_supports_enoch_draft "${PYTHON_BIN:-}"; then
+  for candidate in "$REPO_ROOT/.venv/bin/python" /opt/homebrew/bin/python3 "$(command -v python3 2>/dev/null || true)" /usr/bin/python3; do
+    if python_supports_enoch_draft "$candidate"; then
+      PYTHON_BIN="$candidate"
+      break
+    fi
+  done
+fi
+
+if ! python_supports_enoch_draft "${PYTHON_BIN:-}"; then
+  echo "ERROR: could not find a Python interpreter with PyYAML installed." >&2
+  exit 2
 fi
 
 if [[ $# -eq 0 ]]; then
@@ -92,6 +110,7 @@ printf '%s\n' "$TASKS" | xargs -n2 -P "$CONCURRENCY" bash -lc '
   attempt=1
   while (( attempt <= MAX_RETRIES )); do
     echo "[1 Enoch $chapter:$verse][$deployment] attempt $attempt/$MAX_RETRIES $(date -u +%FT%TZ)" >> "$log"
+    echo "[1 Enoch $chapter:$verse][$deployment] python=$PYTHON_BIN" >> "$log"
     if AZURE_OPENAI_DEPLOYMENT_ID="$deployment" "$PYTHON_BIN" "$REPO_ROOT/tools/enoch/draft.py" --chapter "$chapter" --verse "$verse" --model "$MODEL" --temperature "$TEMPERATURE" >> "$log" 2>&1; then
       echo "[1 Enoch $chapter:$verse][$deployment] success" >> "$log"
       exit 0

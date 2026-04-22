@@ -1,0 +1,155 @@
+id: 1EN.74.13
+reference: 1 Enoch 74:13
+book: 1 Enoch
+source:
+  edition: charles-1906-enoch
+  text: ለ፫ዓም፡ መዋዕለ፡ ፲፻ወ፺ወክልኤ፡ ወለ፭ዓመት፡ ፲ወ፰፻፳መዋዕለ፡ ወ፰ከመ፡ ይኩን፡ ለ፰ዓመት፡ ፪ወ፱፻፲፪ መዋዕለ፡ ወዓሡር፡
+    ወስኑይ፡ መዋዕለ።
+  language: Geez
+  pages:
+  - 177
+  - 178
+  - 179
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via
+    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74,
+    but verse-aligned extraction is not yet implemented in this prompt builder.
+translation:
+  text: For three years there are one thousand ninety-two days, and for five years,
+    one thousand eight hundred twenty days and eight; thus for eight years there are
+    two thousand nine hundred twelve days, and ten and two days.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'The Ethiopic line is numerically difficult in this OCR witness. The verse
+      appears to total days across spans of three, five, and eight years, but the
+      final wording may preserve a split or awkwardly ordered numeral. A smoother
+      rendering would be: ''For three years, 1,092 days; for five years, 1,828 days;
+      thus for eight years, 2,912 days.'''
+    reason: textual_variant
+lexical_decisions:
+- source_word: ለ፫ዓም
+  chosen: for three years
+  alternatives:
+  - in three years
+  - over three years
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'The preposition ለ with a time expression here functions distributively/calculationally
+    in the astronomical context: the text is giving totals corresponding to spans
+    of years.'
+- source_word: መዋዕለ
+  chosen: days
+  alternatives:
+  - day-count
+  - days in number
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: መዋዕል is the ordinary term for 'days'; in this chapter it serves as a
+    numerical unit in calendrical reckoning.
+- source_word: ፲፻ወ፺ወክልኤ
+  chosen: one thousand ninety-two
+  alternatives:
+  - '1092'
+  lexicon: Ge'ez numeral system; Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'The numeral sequence is read additively: 1000 + 90 + 2 = 1092.'
+- source_word: ወለ፭ዓመት
+  chosen: and for five years
+  alternatives:
+  - and in five years
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Continues the same calculational pattern from the previous clause.
+- source_word: ፲ወ፰፻፳መዋዕለ፡ ወ፰
+  chosen: one thousand eight hundred twenty days and eight
+  alternatives:
+  - one thousand eight hundred twenty-eight days
+  - 1828 days
+  lexicon: Ge'ez numeral system; Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The OCR string places መዋዕለ before a final ወ፰, which may reflect either
+    a split numeral ('820 and 8') or a corruption/word-order issue. I preserve the
+    additive structure transparently rather than smoothing it silently.
+- source_word: ከመ፡ ይኩን
+  chosen: thus ... there are
+  alternatives:
+  - so that there may be
+  - accordingly it is
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: In context this marks the resulting total from the preceding sums, not
+    purpose.
+- source_word: ለ፰ዓመት
+  chosen: for eight years
+  alternatives:
+  - in eight years
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Another time-span total in the same sequence.
+- source_word: ፪ወ፱፻፲፪
+  chosen: two thousand nine hundred twelve
+  alternatives:
+  - '2912'
+  lexicon: Ge'ez numeral system; Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Read additively as 2000 + 900 + 12 = 2912.
+- source_word: ወዓሡር፡ ወስኑይ፡ መዋዕለ
+  chosen: and ten and two days
+  alternatives:
+  - and twelve days
+  - plus twelve days
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: The wording appears to spell out the final twelve separately. Because
+    the transmitted line is numerically awkward, I retain the explicit additive phrasing
+    in English to keep the witness auditable.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: enoch_verse_draft_v1
+  prompt_sha256: a2cdde704496c1defa6dc49520e7eb9c40752497bb4b57282b016ccf2c8997b4
+  timestamp: '2026-04-22T09:17:14Z'
+  output_hash: 3540e9888c7a7b6ca7ffb025ce173f685cb56221cf540944091b4ac6065b2675
+  zone1_sources_at_draft:
+  - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+  - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+  zone2_consults_known:
+  - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+  - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+  - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+  - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+  - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+  - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  temperature: 0.2
+status: draft
+enoch_witnesses:
+  section: Astronomical Book / Book of the Luminaries
+  loaded_witnesses_by_language:
+    geez:
+    - charles_1906
+  available_witnesses:
+  - language: geez
+    witness: charles_1906
+    text: ለ፫ዓም፡ መዋዕለ፡ ፲፻ወ፺ወክልኤ፡ ወለ፭ዓመት፡ ፲ወ፰፻፳መዋዕለ፡ ወ፰ከመ፡ ይኩን፡ ለ፰ዓመት፡ ፪ወ፱፻፲፪ መዋዕለ፡
+      ወዓሡር፡ ወስኑይ፡ መዋዕለ።
+    source_edition: Charles 1906 Ethiopic Enoch
+    confidence: medium
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt
+      via tools/enoch/verse_parser.py
+  attestation_expectations:
+    greek:
+      attested: true
+      status: Greek fragments survive for parts of the Astronomical Book
+    aramaic:
+      zone2_consult_possible: true
+      status: Qumran Aramaic fragments exist for at least part of this chapter range
+  geez_only_zone1: false
+  source_warnings:
+  - Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction
+    is not yet implemented in this prompt builder.
+theological_decisions:
+- issue: Calendrical arithmetic in a difficult OCR-based Ethiopic line
+  chosen_reading: Preserve the verse as a sequence of day totals for 3, 5, and 8 years,
+    without harmonizing the final wording into a cleaner modern equation.
+  alternative_readings:
+  - Normalize the verse to '1092 days; 1820 days and 8; therefore 2912 days and 12'
+    as a fully smoothed arithmetic statement
+  - Emend the line from other witnesses/commentaries to remove the duplicated/additive
+    final phrase
+  rationale: This is not a doctrinal crux but a transparency issue. The Astronomical
+    Book depends on precise numbers; where the Ethiopic OCR is awkward, the translation
+    should expose rather than conceal the difficulty.
+  doctrine_reference: Translation philosophy §1, §3, and transparency commitments

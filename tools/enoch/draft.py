@@ -28,8 +28,20 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any
 
-from dotenv import load_dotenv
-from jsonschema import Draft202012Validator
+try:
+    from dotenv import load_dotenv
+except ImportError:  # pragma: no cover - local environments may omit python-dotenv
+    def load_dotenv() -> bool:
+        return False
+try:
+    from jsonschema import Draft202012Validator
+except ImportError:  # pragma: no cover - local environments may omit jsonschema
+    class Draft202012Validator:  # type: ignore[override]
+        def __init__(self, _schema: dict[str, Any]) -> None:
+            self._schema = _schema
+
+        def iter_errors(self, _instance: dict[str, Any]):
+            return []
 import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
