@@ -362,6 +362,35 @@ templates under `.github/ISSUE_TEMPLATE/`. Engagement is welcomed from
 scholars, pastors, and lay readers. Our commitment is to respond publicly
 to every substantive concern.
 
+## Refreshing cached summaries after major revisions
+
+The live reader caches chapter- and book-level summaries separately from the
+translation text itself. Missing summaries are filled automatically by the
+existing summary-prewarm workflow, but **forced refreshes are manual on
+purpose**. We do **not** automatically regenerate summaries on every push.
+
+When a book has changed substantially, run:
+
+```bash
+scripts/refresh_book_summaries.sh "1 ENOCH"
+```
+
+Useful flags:
+
+```bash
+scripts/refresh_book_summaries.sh "1 ENOCH" --workers 20
+scripts/refresh_book_summaries.sh "1 ENOCH" --chapters-only
+```
+
+Recommended policy:
+
+- **Definitely run it when a book's second pass is finished.**
+- **Usually run it again after a third pass** if major wording or framing changed.
+- You can also run it after any other **significant revision batch** for that
+  book.
+- After the second and third pass, further summary changes should normally be
+  small, so routine refreshes beyond that are optional.
+
 ## Release cadence
 
 The translation is built and released phase-by-phase, with each phase a full

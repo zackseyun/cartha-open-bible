@@ -57,8 +57,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -94,37 +92,3 @@ jobs:
             --backend vertex \
             --workers ${{ github.event.inputs.workers || '10' }} \
             --secret-ids "$PREWARM_SECRET_IDS"
-
-      - name: Detect revision-touched books
-        id: revision_books
-        if: github.event_name == 'push' && github.event.inputs.dry_run != 'true'
-        run: |
-          BEFORE="${{ github.event.before }}"
-          AFTER="${{ github.sha }}"
-          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
-            echo "books=" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          BOOKS="$(python3 tools/revision_prewarm_targets.py --range "${BEFORE}..${AFTER}" || true)"
-          {
-            echo 'books<<EOF'
-            printf '%s\n' "$BOOKS"
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
-          if [[ -n "${BOOKS//[$'\n\r\t ']}" ]]; then
-            echo "Force-refreshing summaries for revision-touched books:" >> "$GITHUB_STEP_SUMMARY"
-            printf '%s\n' "$BOOKS" | sed 's/^/- /' >> "$GITHUB_STEP_SUMMARY"
-          fi
-
-      - name: Force-refresh second-pass books
-        if: github.event_name == 'push' && github.event.inputs.dry_run != 'true' && steps.revision_books.outputs.books != ''
-        run: |
-          while IFS= read -r book; do
-            [[ -n "${book//[$'\r\t ']}" ]] || continue
-            echo "Force-refreshing summary cache for $book"
-            python3 tools/gemini_summary_prewarm.py \
-              --backend vertex \
-              --workers ${{ github.event.inputs.workers || '10' }} \
-              --book "$book" \
-              --force-refresh
-          done <<< "${{ steps.revision_books.outputs.books }}"
