@@ -76,6 +76,12 @@ def book_context() -> str:
 
 def _source_warnings(unit: hermas.NormalizedUnit) -> list[str]:
     warnings: list[str] = []
+    unit_map = hermas.load_unit_map()
+    for row in unit_map.get('units', []):
+        if row.get('unit_id') == unit.unit_id:
+            for note in row.get('notes', []) or []:
+                warnings.append(str(note))
+            break
     for source_file in unit.source_files:
         meta_path = REPO_ROOT / 'sources' / 'shepherd_of_hermas' / 'transcribed' / 'raw' / source_file.replace('.txt', '.meta.json')
         if not meta_path.exists():
