@@ -485,6 +485,99 @@ def parse_units() -> list[HermasUnit]:
     )
 
 
+@dataclass(frozen=True)
+class NormalizedUnit:
+    unit_id: str
+    label: str
+    part: str
+    part_name: str
+    major: int
+    minor: str | None
+    heading: str | None
+    source_pages: list[int]
+    source_files: list[str]
+    text_path: pathlib.Path
+    text: str
+    sequence: int
+    source_edition: str = "Lightfoot & Harmer 1891 (normalized OCR)"
+
+
+def load_unit_map() -> dict[str, object]:
+    if not UNIT_MAP_PATH.exists():
+        write_normalized()
+    return json.loads(UNIT_MAP_PATH.read_text(encoding="utf-8"))
+
+
+def normalized_unit_path_from_id(unit_id: str) -> pathlib.Path | None:
+    payload = load_unit_map()
+    for idx, unit in enumerate(payload.get("units", []), start=1):
+        if unit.get("unit_id") == unit_id:
+            return REPO_ROOT / str(unit["text_path"])
+    return None
+
+
+def _parse_normalized_file(path: pathlib.Path) -> tuple[dict[str, str], str]:
+    meta: dict[str, str] = {}
+    body_lines: list[str] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# ") and ":" in line:
+            key, value = line[2:].split(":", 1)
+            meta[key.strip()] = value.strip()
+        elif line.strip():
+            body_lines.append(line.strip())
+    return meta, " ".join(body_lines).strip()
+
+
+def load_normalized_unit(unit_id: str | None = None, *, sequence: int | None = None) -> NormalizedUnit | None:
+    payload = load_unit_map()
+    units = payload.get("units", [])
+    target = None
+    seq = 0
+    for idx, unit in enumerate(units, start=1):
+        if unit_id is not None and unit.get("unit_id") == unit_id:
+            target = unit
+            seq = idx
+            break
+        if sequence is not None and idx == sequence:
+            target = unit
+            seq = idx
+            break
+    if target is None:
+        return None
+    path = REPO_ROOT / str(target["text_path"])
+    meta, text = _parse_normalized_file(path)
+    return NormalizedUnit(
+        unit_id=str(target["unit_id"]),
+        label=str(target["label"]),
+        part=str(target["part"]),
+        part_name=str(target["part_name"]),
+        major=int(target["major"]),
+        minor=target.get("minor"),
+        heading=target.get("heading"),
+        source_pages=[int(p) for p in target.get("source_pages", [])],
+        source_files=[str(p) for p in target.get("source_files", [])],
+        text_path=path,
+        text=text,
+        sequence=seq,
+        source_edition=meta.get("source_edition", "Lightfoot & Harmer 1891 (normalized OCR)"),
+    )
+
+
+def suspicious_units() -> list[str]:
+    suspicious: list[str] = []
+    payload = load_unit_map()
+    for idx, unit in enumerate(payload.get("units", []), start=1):
+        loaded = load_normalized_unit(sequence=idx)
+        if loaded is None:
+            continue
+        body = loaded.text
+        if re.search(r"\bτ\s+[Α-Ωα-ω]", body):
+            suspicious.append(loaded.unit_id)
+        if re.search(r"\b(correct|Collapsed to|Let me|Wait,)\b", body, re.I):
+            suspicious.append(loaded.unit_id)
+    return sorted(set(suspicious))
+
+
 def unit_map_payload() -> dict[str, object]:
     units = parse_units()
     return {
@@ -545,6 +638,7 @@ def summary() -> dict[str, object]:
     payload = unit_map_payload()
     payload["normalized_dir"] = str(NORMALIZED_DIR.relative_to(REPO_ROOT))
     payload["unit_ids"] = [unit["unit_id"] for unit in payload["units"]]
+    payload["suspicious_units"] = suspicious_units()
     return payload
 
 

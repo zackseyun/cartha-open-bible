@@ -81,3 +81,4 @@ environment variables (`CARTHA_MODEL_ID`, `CARTHA_TEMPERATURE`,
 `CARTHA_PROMPT_ID`).
 
 | `shepherd_of_hermas.py` | implemented | Parses the raw Lightfoot 1891 Hermas OCR into stable normalized units such as `V.3.xiii`, `M.4.ii`, and `S.5.vi`, and can write normalized text files plus `sources/shepherd_of_hermas/transcribed/unit_map.json` for future drafter work. |
+| `build_shepherd_of_hermas_prompt.py` | implemented | Builds a draft-ready translation prompt for one normalized Hermas unit (for example `V.3.i`, `M.4.ii`, or `S.8.ii`) with source metadata, project excerpts, and source-integrity warnings. |
