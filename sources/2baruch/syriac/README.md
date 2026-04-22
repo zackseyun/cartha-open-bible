@@ -28,3 +28,12 @@ Reading order note:
   **physical right column first, then physical left column**.
 - The bridge layer preserves the physical columns separately in JSON, but the text
   files and working corpus use that logical reading order.
+
+## Current milestone
+
+- full Ceriani page corpus on disk
+- tentative chapter buckets under `transcribed/ceriani1871/chapters/`
+- chapter YAML draft landing zone under `translation/extra_canonical/2_baruch/`
+
+This means 2 Baruch is now **translation-ready at the chapter level**, even
+though later control review and finer verse alignment still remain ahead.

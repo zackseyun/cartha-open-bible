@@ -78,8 +78,9 @@ pass:
 So the practical start sequence is:
 
 1. Ceriani full primary sweep
-2. Kmosko targeted control pages
-3. Violet structural / numbering extraction
+2. Tentative chapter segmentation over the page corpus
+3. Kmosko targeted control pages
+4. Violet structural / numbering extraction
 
 ## Zone 2 consult (not reproduced)
 
@@ -109,4 +110,6 @@ than something to pretend is already done.
 See also:
 - [`raw_ocr/ceriani1871/COVERAGE.md`](raw_ocr/ceriani1871/COVERAGE.md)
 - [`raw_ocr/ceriani1871/SPOTCHECK_QUEUE.md`](raw_ocr/ceriani1871/SPOTCHECK_QUEUE.md)
+- [`raw_ocr/kmosko1907/CONTROL_PAGES.md`](raw_ocr/kmosko1907/CONTROL_PAGES.md)
 - [`CONTROL_WITNESSES.md`](CONTROL_WITNESSES.md)
+- [`syriac/transcribed/ceriani1871/CHAPTER_SEGMENTATION.md`](syriac/transcribed/ceriani1871/CHAPTER_SEGMENTATION.md)
