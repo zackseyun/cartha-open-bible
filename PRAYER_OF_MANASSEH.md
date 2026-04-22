@@ -169,16 +169,46 @@ time-sensitive; can be scheduled into any Phase 9 tail session.
 | LXX mirror | `sources/lxx/swete/final_corpus_adjudicated/MAN.jsonl` | copy so the LXX loader sees MAN |
 | English drafts | `translation/deuterocanon/prayer_of_manasseh/001/*.yaml` | all 15 verses, first-pass |
 
-## Residual caveat
+## Verification pass — 2026-04-22
 
-The `reconstruction_note` on MAN 1:1 records which verses (v8, v9,
-first half of v10) were reconstructed from standard LXX form rather
-than directly OCR'd. Those are the highest-value candidates for a
-scan-grounded adjudication polish pass — re-verifying each verse's
-Greek against the Charles 1913 page images to confirm the
-reconstruction matches Charles's apparatus lemmata exactly. Given
-that Rahlfs word-overlap is already 70-90% on the uncertain verses,
-this is tail-end quality work, not a blocker for shipping.
+The scan-grounded adjudication polish pass flagged in the original
+caveat has been completed. Direct visual verification against Charles
+1913 APOT Vol 1 pp. 636-640 yielded:
+
+- **Verse boundaries**: every MAN verse boundary in our reconstruction
+  matches Charles's editorial numbering exactly (1 through 15).
+- **v7 "insertion" correctly omitted**: the long English clause
+  "Thou, O Lord, according to thy great goodness hast promised
+  repentance and forgiveness..." is marked with asterisks in Charles
+  and his apparatus reads "Const. Apost., Syr., Lat., Moz.: om A T" —
+  i.e., absent from Codex Alexandrinus. Our reconstruction correctly
+  omits this insertion, following A.
+- **v8 verified against Codex A**: our reading `ἐμοὶ τῷ ἁμαρτωλῷ`
+  (no preposition) matches Codex Alexandrinus, per Charles's
+  apparatus; Rahlfs prints `ἐπ᾽ ἐμοὶ τῷ ἁμαρτωλῷ` (with preposition)
+  following a different witness tradition. We follow A.
+- **v9 orthographic correction applied**: our initial reconstruction
+  had passive `ἐπληθύνθησαν` (which matched Charles's English "were
+  multiplied" but not his Greek apparatus). Charles's apparatus for
+  Codex A reads `κυριε επληθυναν αι ανομιαι μου` — active
+  `ἐπλήθυναν`. We corrected this on 2026-04-22 and re-drafted v9.
+- **v10 boundary confirmed**: our split at `...προσοχθίσματα. / καὶ
+  νῦν κλίνω γόνυ καρδίας...` between v10 and v11 matches Charles's
+  printed marginalia exactly.
+
+All 15 verses are now either directly verified against Charles's
+apparatus or flagged with a specific apparatus citation. The
+`reconstruction_note` on MAN 1:1 records the current state.
+
+## Residual (low priority)
+
+- **Systematic revision-methodology pass** per
+  `REVISION_METHODOLOGY.md` has not yet run for MAN, same as for
+  the other Apocrypha books. First-pass quality across the whole
+  section.
+- **Consistency lint** across MAN vs the rest of the deuterocanon
+  (e.g., uniform rendering of κύριος, Ἀβραάμ, etc.) is pending the
+  Apocrypha-wide lint cycle.
 
 ## Current gap status
 

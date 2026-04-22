@@ -9,6 +9,37 @@ tracked in git history on the per-verse YAML files.
 - DOCTRINE.md, METHODOLOGY.md first drafts
 - Per-verse YAML schema defined (`schema/verse.schema.json`)
 
+## Apocrypha provenance polish (2026-04-22)
+
+Tail-quality + transparency pass on the completed Apocrypha set:
+
+- **Direct visual verification of Prayer of Manasseh against Charles
+  1913 APOT Vol 1 pp. 636-640**. Every verse boundary checked
+  against Charles's editorial numbering in his printed margin;
+  every substantive word cross-referenced to his critical apparatus
+  lemmata or to the expected Codex Alexandrinus reading. Documented
+  in MAN 1:1 `reconstruction_note`.
+
+- **MAN 1:9 Greek correction**: passive `ἐπληθύνθησαν` → active
+  `ἐπλήθυναν` per Charles 1913 p638 apparatus for Codex Alexandrinus
+  ("κυριε επληθυναν αι ανομιαι μου"). v9 English draft re-run
+  against the corrected source. The `reconstruction_note` on MAN 1:1
+  records the specific apparatus citation.
+
+- **New doc**: `APOCRYPHA_PROVENANCE.md`. Public-facing per-sub-
+  pipeline account of how every verse in the 17-book deuterocanon
+  was sourced, verified, and drafted. Covers the four sub-pipelines
+  (Swete diplomatic Vaticanus, Charles 1913 reconstruction for MAN,
+  Swete vol 2 p432 for PS151, Additions-to-Daniel split) with
+  reader-auditable links per verse. Honest disclosure of residual
+  work (consistency lint, revision-methodology pass, remaining
+  medium-confidence verses) included.
+
+- **`PRAYER_OF_MANASSEH.md`** updated to show verification status
+  + v9 correction.
+
+Apocrypha remains 17/17 drafted on the CDN.
+
 ## Phase 9 tail — Prayer of Manasseh drafted (2026-04-22)
 
 Closes the one remaining Apocrypha-draft gap identified in
