@@ -45,7 +45,7 @@ source:
     curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it
     to PAZ 1:1-67.
 translation:
-  text: Bless the Lord, servants; sing praise to him and highly exalt him forever.
+  text: Bless the Lord, slaves; sing praise to him and highly exalt him forever.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -142,9 +142,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:40:32Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural and contextually
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural and contextually
     appropriate rendering of δοῦλοι in this liturgical address; otherwise retained
-    the draft.
+    the draft. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:40:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -154,3 +155,11 @@ revisions:
   to: Bless the Lord, servants; sing praise to him and highly exalt him forever.
   rationale: Changed 'slaves' to 'servants' for a more natural and contextually appropriate
     rendering of δοῦλοι in this liturgical address; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Bless the Lord, servants; sing praise to him and highly exalt him forever.
+  to: Bless the Lord, slaves; sing praise to him and highly exalt him forever.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

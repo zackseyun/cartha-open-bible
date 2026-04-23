@@ -6,8 +6,8 @@ source:
     אֶל אָכִ֥ישׁ בֶּֽן מַעֲכָ֖ה מֶ֣לֶךְ גַּ֑ת וַ/יַּגִּ֤ידוּ לְ/שִׁמְעִי֙ לֵ/אמֹ֔ר
     הִנֵּ֥ה עֲבָדֶ֖י/ךָ בְּ/גַֽת־־־׃
 translation:
-  text: Now at the end of three years, two servants of Shimei ran away to Achish son
-    of Maacah, king of Gath. And they told Shimei, saying, “Look, your servants are
+  text: Now at the end of three years, two slaves of Shimei ran away to Achish son
+    of Maacah, king of Gath. And they told Shimei, saying, “Look, your slaves are
     in Gath.”
   philosophy: optimal-equivalence
   footnotes:
@@ -98,8 +98,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:06:13Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural and contextually
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural and contextually
     flexible rendering of עֲבָדִים, while keeping the rest of the verse unchanged.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:06:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -113,3 +115,15 @@ revisions:
     in Gath.”
   rationale: Changed 'slaves' to 'servants' for a more natural and contextually flexible
     rendering of עֲבָדִים, while keeping the rest of the verse unchanged.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Now at the end of three years, two servants of Shimei ran away to Achish son
+    of Maacah, king of Gath. And they told Shimei, saying, “Look, your servants are
+    in Gath.”
+  to: Now at the end of three years, two slaves of Shimei ran away to Achish son of
+    Maacah, king of Gath. And they told Shimei, saying, “Look, your slaves are in
+    Gath.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

@@ -6,7 +6,7 @@ source:
     ὑμῖν ἐν Χριστῷ Ἰησοῦ,
 translation:
   text: I thank my God always for you because of the grace of God given to you in
-    Christ Jesus,
+    Messiah Jesus,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -98,9 +98,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:34:56Z'
   unchanged: false
-  changes_summary: Changed 'Messiah Jesus' to 'Christ Jesus' for more natural English
-    and standard rendering of ἐν Χριστῷ Ἰησοῦ in this context; retained the rest as
-    accurate and complete.
+  changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' for more natural
+    English and standard rendering of ἐν Χριστῷ Ἰησοῦ in this context; retained the
+    rest as accurate and complete. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:34:56Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -113,4 +114,14 @@ revisions:
   rationale: Changed 'Messiah Jesus' to 'Christ Jesus' for more natural English and
     standard rendering of ἐν Χριστῷ Ἰησοῦ in this context; retained the rest as accurate
     and complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: I thank my God always for you because of the grace of God given to you in
+    Christ Jesus,
+  to: I thank my God always for you because of the grace of God given to you in Messiah
+    Jesus,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

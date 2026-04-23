@@ -5,7 +5,7 @@ source:
   text: ἐξ αὐτοῦ δὲ ὑμεῖς ἐστε ἐν Χριστῷ Ἰησοῦ, ὃς ἐγενήθη ⸂σοφία ἡμῖν⸃ ἀπὸ θεοῦ,
     δικαιοσύνη τε καὶ ἁγιασμὸς καὶ ἀπολύτρωσις,
 translation:
-  text: And it is from him that you are in Christ Jesus, who became for us wisdom
+  text: And it is from him that you are in Messiah Jesus, who became for us wisdom
     from God, and righteousness and sanctification and redemption,
   philosophy: optimal-equivalence
   footnotes:
@@ -108,9 +108,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:34:58Z'
   unchanged: false
-  changes_summary: Replaced 'Messiah' with 'Christ' to match the Greek proper title
-    in this context and standard formal register; removed the em dashes so the appositional
-    list reads more naturally and directly from the Greek.
+  changes_summary: 'Replaced ''Messiah'' with ''Christ'' to match the Greek proper
+    title in this context and standard formal register; removed the em dashes so the
+    appositional list reads more naturally and directly from the Greek. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:34:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -123,4 +125,14 @@ revisions:
   rationale: Replaced 'Messiah' with 'Christ' to match the Greek proper title in this
     context and standard formal register; removed the em dashes so the appositional
     list reads more naturally and directly from the Greek.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And it is from him that you are in Christ Jesus, who became for us wisdom
+    from God, and righteousness and sanctification and redemption,
+  to: And it is from him that you are in Messiah Jesus, who became for us wisdom from
+    God, and righteousness and sanctification and redemption,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

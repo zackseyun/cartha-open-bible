@@ -1,0 +1,113 @@
+# known_regressions.yaml
+# ======================
+# Policy-enforcing regression cases for the Cartha Open Bible revision pipeline.
+#
+# PURPOSE: These are known cases where prior AI revision passes introduced errors
+# against COB's explicit translation policy. Each entry documents:
+#   - what the model did wrong
+#   - what the correct rendering is
+#   - why (the doctrinal/policy rationale)
+#
+# HOW TO USE: Feed this file to future revision pass model prompts as a
+# "do NOT repeat these patterns" list. Run tools/check_regressions.py to
+# validate that no current verse YAML contains a known regression pattern.
+#
+# FORMAT: Each entry has:
+#   id: unique slug
+#   discovered: ISO date the regression was first observed
+#   fixed: ISO date the regression was corrected in the corpus
+#   category: regression type
+#   source_term: Greek/Hebrew source word
+#   wrong_rendering: what the model produced (forbidden)
+#   correct_rendering: what COB policy requires
+#   policy_ref: reference to DOCTRINE.md or book_context file
+#   rationale: why the wrong_rendering is a regression
+#   affected_verses: sample verse IDs where this regression occurred
+#   fix_script: script that corrected the corpus
+
+regressions:
+
+  - id: christos-as-christ
+    discovered: "2026-04-23"
+    fixed: "2026-04-23"
+    category: lexical_substitution
+    source_term: Χριστός (Greek)
+    wrong_rendering: Christ
+    correct_rendering: Messiah
+    policy_ref: "DOCTRINE.md §Contested Terms — Χριστός"
+    rationale: |
+      Χριστός is the Greek translation of the Hebrew מָשִׁיחַ (Mashiach / Messiah),
+      meaning "the anointed one." Rendering it as "Christ" treats a descriptive title
+      as an opaque proper name, erasing the word's semantic content for modern readers
+      who do not know Greek. COB policy renders Χριστός as "Messiah" throughout,
+      except where it has already frozen as part of an established proper name that
+      the author intended as a name (no such exceptions exist in the NT corpus).
+      "Christ" is conventional but imports a 2,000-year tradition of treating the
+      word as a surname — the opposite of COB's transparent-translation philosophy.
+    affected_verses:
+      - ROM.1.1
+      - GAL.1.1
+      - EPH.1.1
+      - PHP.1.1
+      - COL.1.1
+      - 1TH.1.1
+      - ACT.15.26
+      - EPH.3.1
+      - 1CO.1.1
+      # ... 405 total across all NT books
+    scale: 405 occurrences across NT
+    fix_script: tools/fix_regressions.py (run 2026-04-23)
+    prompt_injection: |
+      CRITICAL — COB POLICY: Render Χριστός as "Messiah", NEVER as "Christ".
+      "Christ" is explicitly forbidden in the Cartha Open Bible translation.
+      If the current draft has "Messiah", do NOT change it to "Christ".
+      Examples of CORRECT COB rendering:
+        "Paul, a slave of Messiah Jesus" (NOT "Christ Jesus")
+        "the grace of our Lord Jesus Messiah" (NOT "Jesus Christ")
+        "prisoner of Messiah Jesus" (NOT "Christ Jesus")
+
+  - id: doulos-as-servant
+    discovered: "2026-04-23"
+    fixed: "2026-04-23"
+    category: lexical_substitution
+    source_term: δοῦλος (Greek) / עֶבֶד (Hebrew)
+    wrong_rendering: servant
+    correct_rendering: slave
+    policy_ref: "DOCTRINE.md §Contested Terms — δοῦλος"
+    rationale: |
+      δοῦλος denotes a bonded slave with no legal freedom — a state fundamentally
+      different from a hired servant (διάκονος, ὑπηρέτης). Rendering δοῦλος as
+      "servant" (as most English Bibles do) softens and euphemizes the social
+      reality the authors invoked. When Paul calls himself a δοῦλος of Messiah,
+      he is invoking total ownership and absence of self-determination — a
+      theological point that "servant" blunts. COB policy: "slave" in all bonded
+      δοῦλος contexts; "servant" only for διάκονος / ὑπηρέτης / ministering roles.
+      The Hebrew עֶבֶד is similarly rendered "slave" in ownership contexts.
+    affected_verses:
+      - ROM.1.1   # "Paul, a slave of Messiah Jesus"
+      - PHP.1.1   # "slaves of Messiah Jesus"
+      - COL.1.7   # "faithful slave"
+      - JAM.1.1   # "James, a slave of God and of the Lord Jesus Messiah"
+      - 2PE.1.1   # "Simeon Peter, a slave and apostle"
+      - REV.1.1   # "to his slaves"
+      - LUK.1.48  # "the humble state of his slave"
+      - LUK.2.29  # "releasing your slave"
+      - LUK.12.45 # parable slave
+      - MAT.13.27 # parable slave
+      - MAT.18.32 # parable slave
+      - MAT.25.14 # parable slave
+      - ACT.2.18  # "my male slaves and female slaves"
+      - GEN.9.25  # Hebrew עֶבֶד contexts
+      # ... 37+ total across NT and OT
+    scale: 37 occurrences across NT and OT
+    fix_script: tools/fix_regressions.py (run 2026-04-23)
+    prompt_injection: |
+      CRITICAL — COB POLICY: Render δοῦλος as "slave", NEVER as "servant".
+      "Servant" is explicitly forbidden for δοῦλος in the Cartha Open Bible.
+      δοῦλος = bonded slave with no legal freedom (NOT a hired servant).
+      If the current draft has "slave", do NOT change it to "servant".
+      Examples of CORRECT COB rendering:
+        "Paul, a slave of Messiah Jesus" (NOT "servant of Christ Jesus")
+        "to his slaves" in Rev 1:1 (NOT "servants")
+        "releasing your slave" in Luke 2:29 (NOT "servant")
+      Note: "servant" IS correct for διάκονος (deacon/minister) and ὑπηρέτης (attendant).

@@ -6,7 +6,7 @@ source:
     ἐρχόμενον ἐν σαρκί· οὗτός ἐστιν ὁ πλάνος καὶ ὁ ἀντίχριστος.
 translation:
   text: For many deceivers have gone out into the world, those who do not confess
-    Jesus Christ coming in the flesh. This is the deceiver and the antichrist.
+    Jesus Messiah coming in the flesh. This is the deceiver and the antichrist.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -147,10 +147,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:20Z'
   unchanged: false
-  changes_summary: Replaced the dash with a comma for smoother formal English; changed
-    'those not confessing' to 'those who do not confess' for naturalness; rendered
-    'Messiah' as 'Christ' to reflect the Greek form and standard register; changed
-    'This one is' to 'This is' for more natural English.
+  changes_summary: 'Replaced the dash with a comma for smoother formal English; changed
+    ''those not confessing'' to ''those who do not confess'' for naturalness; rendered
+    ''Messiah'' as ''Christ'' to reflect the Greek form and standard register; changed
+    ''This one is'' to ''This is'' for more natural English. [Regression fix applied:
+    Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T09:38:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -164,3 +166,13 @@ revisions:
     not confessing' to 'those who do not confess' for naturalness; rendered 'Messiah'
     as 'Christ' to reflect the Greek form and standard register; changed 'This one
     is' to 'This is' for more natural English.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For many deceivers have gone out into the world, those who do not confess
+    Jesus Christ coming in the flesh. This is the deceiver and the antichrist.
+  to: For many deceivers have gone out into the world, those who do not confess Jesus
+    Messiah coming in the flesh. This is the deceiver and the antichrist.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

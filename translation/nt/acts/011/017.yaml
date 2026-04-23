@@ -6,7 +6,7 @@ source:
     κύριον Ἰησοῦν Χριστόν, ⸀ἐγὼ τίς ἤμην δυνατὸς κωλῦσαι τὸν θεόν;
 translation:
   text: If then God gave to them the same gift as also to us who believed in the Lord
-    Jesus Christ, who was I that I could hinder God?
+    Jesus Messiah, who was I that I could hinder God?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -110,9 +110,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:40:34Z'
   unchanged: false
-  changes_summary: Replaced 'when we believed' with 'to us who believed' to reflect
-    the participle πιστεύσασιν more accurately, and changed 'Messiah' to 'Christ'
-    for more natural rendering of the proper title in this context.
+  changes_summary: 'Replaced ''when we believed'' with ''to us who believed'' to reflect
+    the participle πιστεύσασιν more accurately, and changed ''Messiah'' to ''Christ''
+    for more natural rendering of the proper title in this context. [Regression fix
+    applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:40:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -125,3 +127,13 @@ revisions:
   rationale: Replaced 'when we believed' with 'to us who believed' to reflect the
     participle πιστεύσασιν more accurately, and changed 'Messiah' to 'Christ' for
     more natural rendering of the proper title in this context.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: If then God gave to them the same gift as also to us who believed in the Lord
+    Jesus Christ, who was I that I could hinder God?
+  to: If then God gave to them the same gift as also to us who believed in the Lord
+    Jesus Messiah, who was I that I could hinder God?
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

@@ -5,7 +5,7 @@ source:
   text: Καὶ φωνὴ ἀπὸ τοῦ θρόνου ἐξῆλθεν λέγουσα· Αἰνεῖτε ⸂τῷ θεῷ⸃ ἡμῶν, πάντες οἱ
     δοῦλοι αὐτοῦ, ⸀καὶ οἱ φοβούμενοι αὐτόν, οἱ μικροὶ καὶ οἱ μεγάλοι.
 translation:
-  text: And a voice came from the throne, saying, “Praise our God, all his servants,
+  text: And a voice came from the throne, saying, “Praise our God, all his slaves,
     and those who fear him, the small and the great.”
   philosophy: optimal-equivalence
   footnotes:
@@ -136,8 +136,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:00:38Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for more natural formal English
-    in this context while still accurately rendering δοῦλοι.
+  changes_summary: 'Changed ''slaves'' to ''servants'' for more natural formal English
+    in this context while still accurately rendering δοῦλοι. [Regression fix applied:
+    slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T10:00:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -149,3 +151,13 @@ revisions:
     and those who fear him, the small and the great.”
   rationale: Changed 'slaves' to 'servants' for more natural formal English in this
     context while still accurately rendering δοῦλοι.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And a voice came from the throne, saying, “Praise our God, all his servants,
+    and those who fear him, the small and the great.”
+  to: And a voice came from the throne, saying, “Praise our God, all his slaves, and
+    those who fear him, the small and the great.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

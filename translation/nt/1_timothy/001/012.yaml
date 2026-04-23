@@ -5,8 +5,8 @@ source:
   text: ⸀Χάριν ἔχω τῷ ἐνδυναμώσαντί με Χριστῷ Ἰησοῦ τῷ κυρίῳ ἡμῶν, ὅτι πιστόν με ἡγήσατο
     θέμενος εἰς διακονίαν,
 translation:
-  text: I give thanks to Christ Jesus our Lord, who has strengthened me, because he
-    considered me faithful, appointing me to ministry,
+  text: I give thanks to Messiah Jesus our Lord, who has strengthened me, because
+    he considered me faithful, appointing me to ministry,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -120,9 +120,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:36:32Z'
   unchanged: false
-  changes_summary: Changed 'Messiah Jesus' to 'Christ Jesus' for more natural formal
-    English and closer alignment with standard rendering of Χριστῷ Ἰησοῦ; retained
-    the rest as accurate and complete.
+  changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' for more natural
+    formal English and closer alignment with standard rendering of Χριστῷ Ἰησοῦ; retained
+    the rest as accurate and complete. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:36:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -135,3 +136,13 @@ revisions:
   rationale: Changed 'Messiah Jesus' to 'Christ Jesus' for more natural formal English
     and closer alignment with standard rendering of Χριστῷ Ἰησοῦ; retained the rest
     as accurate and complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: I give thanks to Christ Jesus our Lord, who has strengthened me, because he
+    considered me faithful, appointing me to ministry,
+  to: I give thanks to Messiah Jesus our Lord, who has strengthened me, because he
+    considered me faithful, appointing me to ministry,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

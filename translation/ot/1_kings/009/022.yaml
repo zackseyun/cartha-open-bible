@@ -7,8 +7,8 @@ source:
     וּ/פָרָשָֽׁי/ו־־׃ס
 translation:
   text: But from the sons of Israel Solomon made no slaves, for they were the men
-    of war, his servants, his commanders, his officers, and the commanders of his
-    chariots and his horsemen.
+    of war, his slaves, his commanders, his officers, and the commanders of his chariots
+    and his horsemen.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -133,9 +133,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:07:16Z'
   unchanged: false
-  changes_summary: Changed 'slave laborers' to 'slaves' for closer lexical correspondence
+  changes_summary: 'Changed ''slave laborers'' to ''slaves'' for closer lexical correspondence
     to עָבֶד, which is singular collective here. Kept the rest essentially unchanged
-    as accurate and natural.
+    as accurate and natural. [Regression fix applied: slave restored (revision_pass
+    had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:07:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -150,3 +151,15 @@ revisions:
   rationale: Changed 'slave laborers' to 'slaves' for closer lexical correspondence
     to עָבֶד, which is singular collective here. Kept the rest essentially unchanged
     as accurate and natural.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But from the sons of Israel Solomon made no slaves, for they were the men
+    of war, his servants, his commanders, his officers, and the commanders of his
+    chariots and his horsemen.
+  to: But from the sons of Israel Solomon made no slaves, for they were the men of
+    war, his slaves, his commanders, his officers, and the commanders of his chariots
+    and his horsemen.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

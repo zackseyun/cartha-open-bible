@@ -18,7 +18,7 @@ source:
   validation: agree
 translation:
   text: and may God do good to you, and remember his covenant with Abraham, Isaac,
-    and Jacob, his faithful servants.
+    and Jacob, his faithful slaves.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -102,8 +102,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:32:48Z'
   unchanged: false
-  changes_summary: Replaced 'slaves' with 'servants' for a more natural and appropriate
+  changes_summary: 'Replaced ''slaves'' with ''servants'' for a more natural and appropriate
     formal register here, while still accurately rendering δοῦλοι. Kept the rest unchanged.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:32:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -115,3 +117,13 @@ revisions:
     Jacob, his faithful servants.
   rationale: Replaced 'slaves' with 'servants' for a more natural and appropriate
     formal register here, while still accurately rendering δοῦλοι. Kept the rest unchanged.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: and may God do good to you, and remember his covenant with Abraham, Isaac,
+    and Jacob, his faithful servants.
+  to: and may God do good to you, and remember his covenant with Abraham, Isaac, and
+    Jacob, his faithful slaves.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

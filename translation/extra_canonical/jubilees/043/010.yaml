@@ -15,10 +15,10 @@ source:
   validation_modes:
   - vertex_chapter_split
 translation:
-  text: his servants. Look, we are slaves to our lord, we and our donkeys also." And
+  text: his slaves. Look, we are slaves to our lord, we and our donkeys also." And
     Joseph said to them, "God forbid that I should do this. You, go to your houses;
-    but your youngest brother shall be my servant, because you have done evil. Did
-    you not know that a man surely divines with his cup, as I do?
+    but your youngest brother shall be my slave, because you have done evil. Did you
+    not know that a man surely divines with his cup, as I do?
   philosophy: optimal-equivalence
   footnotes:
   - marker: '10'
@@ -81,10 +81,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T14:52:38Z'
   unchanged: false
-  changes_summary: Changed 'fear this' to 'do this' for lexical accuracy; changed
-    'my slave' to 'my servant' for better register and consistency with the opening;
-    removed unsupported additions 'with this cup' and 'Yet you stole it from me,'
-    which are not present in the source.
+  changes_summary: 'Changed ''fear this'' to ''do this'' for lexical accuracy; changed
+    ''my slave'' to ''my servant'' for better register and consistency with the opening;
+    removed unsupported additions ''with this cup'' and ''Yet you stole it from me,''
+    which are not present in the source. [Regression fix applied: slave restored (revision_pass
+    had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T14:52:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -103,4 +104,18 @@ revisions:
     to 'my servant' for better register and consistency with the opening; removed
     unsupported additions 'with this cup' and 'Yet you stole it from me,' which are
     not present in the source.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: his servants. Look, we are slaves to our lord, we and our donkeys also." And
+    Joseph said to them, "God forbid that I should do this. You, go to your houses;
+    but your youngest brother shall be my servant, because you have done evil. Did
+    you not know that a man surely divines with his cup, as I do?
+  to: his slaves. Look, we are slaves to our lord, we and our donkeys also." And Joseph
+    said to them, "God forbid that I should do this. You, go to your houses; but your
+    youngest brother shall be my slave, because you have done evil. Did you not know
+    that a man surely divines with his cup, as I do?
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)
 status: revised

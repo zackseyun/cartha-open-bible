@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: ὥσπερ γὰρ ἐν τῷ Ἀδὰμ πάντες ἀποθνῄσκουσιν, οὕτως καὶ ἐν τῷ Χριστῷ πάντες ζῳοποιηθήσονται.
 translation:
-  text: For just as in Adam all die, so also in Christ all will be made alive.
+  text: For just as in Adam all die, so also in Messiah all will be made alive.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -99,9 +99,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:27Z'
   unchanged: false
-  changes_summary: Changed 'the Messiah' to 'Christ' to match the Greek Χριστῷ more
-    directly and maintain formal register and likely consistency in Pauline usage;
-    otherwise left the draft unchanged.
+  changes_summary: 'Changed ''the Messiah'' to ''Christ'' to match the Greek Χριστῷ
+    more directly and maintain formal register and likely consistency in Pauline usage;
+    otherwise left the draft unchanged. [Regression fix applied: Messiah restored
+    (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -112,3 +113,11 @@ revisions:
   rationale: Changed 'the Messiah' to 'Christ' to match the Greek Χριστῷ more directly
     and maintain formal register and likely consistency in Pauline usage; otherwise
     left the draft unchanged.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For just as in Adam all die, so also in Christ all will be made alive.
+  to: For just as in Adam all die, so also in Messiah all will be made alive.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

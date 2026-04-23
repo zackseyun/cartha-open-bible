@@ -5,7 +5,7 @@ source:
   text: ⸀καθὼς ἐμάθετε ἀπὸ Ἐπαφρᾶ τοῦ ἀγαπητοῦ συνδούλου ἡμῶν, ὅς ἐστιν πιστὸς ὑπὲρ
     ⸀ἡμῶν διάκονος τοῦ Χριστοῦ,
 translation:
-  text: just as you learned from Epaphras, our beloved fellow servant, who is a faithful
+  text: just as you learned from Epaphras, our beloved fellow slave, who is a faithful
     minister of the Messiah on our behalf,
   philosophy: optimal-equivalence
   footnotes:
@@ -135,9 +135,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:42:17Z'
   unchanged: false
-  changes_summary: Removed 'it' because it is not explicit in the Greek, and changed
-    'fellow slave' to 'fellow servant' for more natural formal English while still
-    accurately reflecting σύνδουλος.
+  changes_summary: 'Removed ''it'' because it is not explicit in the Greek, and changed
+    ''fellow slave'' to ''fellow servant'' for more natural formal English while still
+    accurately reflecting σύνδουλος. [Regression fix applied: slave restored (revision_pass
+    had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:42:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -150,3 +151,13 @@ revisions:
   rationale: Removed 'it' because it is not explicit in the Greek, and changed 'fellow
     slave' to 'fellow servant' for more natural formal English while still accurately
     reflecting σύνδουλος.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: just as you learned from Epaphras, our beloved fellow servant, who is a faithful
+    minister of the Messiah on our behalf,
+  to: just as you learned from Epaphras, our beloved fellow slave, who is a faithful
+    minister of the Messiah on our behalf,
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

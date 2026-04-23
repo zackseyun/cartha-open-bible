@@ -5,7 +5,7 @@ source:
   text: ⸂ἐκ τοῦ ὄχλου δὲ πολλοὶ⸃ ἐπίστευσαν εἰς αὐτόν, καὶ ⸀ἔλεγον· Ὁ χριστὸς ὅταν
     ἔλθῃ ⸀μὴ πλείονα ⸀σημεῖα ποιήσει ὧν οὗτος ἐποίησεν;
 translation:
-  text: But many from the crowd believed in him, and they were saying, “When the Christ
+  text: But many from the crowd believed in him, and they were saying, “When the Messiah
     comes, he will not do more signs than this man has done, will he?”
   philosophy: optimal-equivalence
   footnotes:
@@ -146,8 +146,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:46:12Z'
   unchanged: false
-  changes_summary: Changed 'Messiah' to 'Christ' to reflect the Greek term χριστός
-    more directly and maintain formal consistency; otherwise retained the draft.
+  changes_summary: 'Changed ''Messiah'' to ''Christ'' to reflect the Greek term χριστός
+    more directly and maintain formal consistency; otherwise retained the draft. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:46:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -159,3 +161,13 @@ revisions:
     comes, he will not do more signs than this man has done, will he?”
   rationale: Changed 'Messiah' to 'Christ' to reflect the Greek term χριστός more
     directly and maintain formal consistency; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But many from the crowd believed in him, and they were saying, “When the Christ
+    comes, he will not do more signs than this man has done, will he?”
+  to: But many from the crowd believed in him, and they were saying, “When the Messiah
+    comes, he will not do more signs than this man has done, will he?”
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

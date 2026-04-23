@@ -6,7 +6,7 @@ source:
     δίδωμι· ἐν τῷ ὀνόματι Ἰησοῦ Χριστοῦ τοῦ Ναζωραίου ⸀περιπάτει.
 translation:
   text: 'But Peter said, “Silver and gold I do not have, but what I do have, this
-    I give to you: in the name of Jesus Christ the Nazarene, walk.”'
+    I give to you: in the name of Jesus Messiah the Nazarene, walk.”'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -109,9 +109,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:57Z'
   unchanged: false
-  changes_summary: Changed “Messiah” to “Christ” for more natural register and closer
+  changes_summary: 'Changed “Messiah” to “Christ” for more natural register and closer
     alignment with the Greek proper name construction in this verse; otherwise retained
-    the draft.
+    the draft. [Regression fix applied: Messiah restored (revision_pass had changed
+    Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:38:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -124,3 +125,13 @@ revisions:
   rationale: Changed “Messiah” to “Christ” for more natural register and closer alignment
     with the Greek proper name construction in this verse; otherwise retained the
     draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: 'But Peter said, “Silver and gold I do not have, but what I do have, this
+    I give to you: in the name of Jesus Christ the Nazarene, walk.”'
+  to: 'But Peter said, “Silver and gold I do not have, but what I do have, this I
+    give to you: in the name of Jesus Messiah the Nazarene, walk.”'
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

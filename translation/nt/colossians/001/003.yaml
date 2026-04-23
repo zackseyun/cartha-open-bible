@@ -5,7 +5,7 @@ source:
   text: Εὐχαριστοῦμεν τῷ ⸀θεῷ πατρὶ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ πάντοτε ⸀περὶ ὑμῶν
     προσευχόμενοι,
 translation:
-  text: We always give thanks to God, the Father of our Lord Jesus Christ, when we
+  text: We always give thanks to God, the Father of our Lord Jesus Messiah, when we
     pray for you,
   philosophy: optimal-equivalence
   footnotes:
@@ -94,10 +94,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:42:16Z'
   unchanged: false
-  changes_summary: Replaced 'the Messiah' with 'Christ' for more standard formal register
-    and consistency with the Greek name-title sequence; changed 'as we pray for you'
-    to 'when we pray for you' to more naturally reflect the participial sense ('praying
-    for you').
+  changes_summary: 'Replaced ''the Messiah'' with ''Christ'' for more standard formal
+    register and consistency with the Greek name-title sequence; changed ''as we pray
+    for you'' to ''when we pray for you'' to more naturally reflect the participial
+    sense (''praying for you''). [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:42:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -111,3 +112,13 @@ revisions:
     and consistency with the Greek name-title sequence; changed 'as we pray for you'
     to 'when we pray for you' to more naturally reflect the participial sense ('praying
     for you').
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: We always give thanks to God, the Father of our Lord Jesus Christ, when we
+    pray for you,
+  to: We always give thanks to God, the Father of our Lord Jesus Messiah, when we
+    pray for you,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

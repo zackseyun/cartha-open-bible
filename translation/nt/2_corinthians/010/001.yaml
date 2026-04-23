@@ -5,7 +5,7 @@ source:
   text: Αὐτὸς δὲ ἐγὼ Παῦλος παρακαλῶ ὑμᾶς διὰ τῆς πραΰτητος καὶ ἐπιεικείας τοῦ Χριστοῦ,
     ὃς κατὰ πρόσωπον μὲν ταπεινὸς ἐν ὑμῖν, ἀπὼν δὲ θαρρῶ εἰς ὑμᾶς·
 translation:
-  text: Now I myself, Paul, appeal to you by the meekness and gentleness of Christ—I
+  text: Now I myself, Paul, appeal to you by the meekness and gentleness of Messiah—I
     who am humble face to face among you, but bold toward you when absent.
   philosophy: optimal-equivalence
   footnotes:
@@ -166,8 +166,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:37:31Z'
   unchanged: false
-  changes_summary: Changed 'Messiah' to 'Christ' for more natural rendering and consistency
-    with Paul's usage in this epistle; otherwise retained the draft.
+  changes_summary: 'Changed ''Messiah'' to ''Christ'' for more natural rendering and
+    consistency with Paul''s usage in this epistle; otherwise retained the draft.
+    [Regression fix applied: Messiah restored (revision_pass had changed Χριστός →
+    Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:37:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -179,3 +181,13 @@ revisions:
     who am humble face to face among you, but bold toward you when absent.
   rationale: Changed 'Messiah' to 'Christ' for more natural rendering and consistency
     with Paul's usage in this epistle; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Now I myself, Paul, appeal to you by the meekness and gentleness of Christ—I
+    who am humble face to face among you, but bold toward you when absent.
+  to: Now I myself, Paul, appeal to you by the meekness and gentleness of Messiah—I
+    who am humble face to face among you, but bold toward you when absent.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

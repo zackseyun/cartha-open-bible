@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: Ὡς οὖν παρελάβετε τὸν Χριστὸν Ἰησοῦν τὸν κύριον, ἐν αὐτῷ περιπατεῖτε,
 translation:
-  text: Therefore, just as you received Christ Jesus the Lord, walk in him,
+  text: Therefore, just as you received Messiah Jesus the Lord, walk in him,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -107,9 +107,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:42:23Z'
   unchanged: false
-  changes_summary: Changed 'Messiah' to 'Christ' for more natural rendering of Χριστόν
-    in this epistolary context while preserving accuracy; otherwise retained the structure
-    and wording.
+  changes_summary: 'Changed ''Messiah'' to ''Christ'' for more natural rendering of
+    Χριστόν in this epistolary context while preserving accuracy; otherwise retained
+    the structure and wording. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:42:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -120,3 +121,11 @@ revisions:
   rationale: Changed 'Messiah' to 'Christ' for more natural rendering of Χριστόν in
     this epistolary context while preserving accuracy; otherwise retained the structure
     and wording.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Therefore, just as you received Christ Jesus the Lord, walk in him,
+  to: Therefore, just as you received Messiah Jesus the Lord, walk in him,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

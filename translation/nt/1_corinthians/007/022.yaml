@@ -6,7 +6,7 @@ source:
     κληθεὶς δοῦλός ἐστιν Χριστοῦ.
 translation:
   text: For the slave who was called in the Lord is the Lord’s freedman; likewise,
-    the free man who was called is Christ’s slave.
+    the free man who was called is Messiah’s slave.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -131,9 +131,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:08Z'
   unchanged: false
-  changes_summary: Replaced “Messiah’s” with “Christ’s” for more natural formal English
+  changes_summary: 'Replaced “Messiah’s” with “Christ’s” for more natural formal English
     and closer consistency with standard rendering of Χριστοῦ; retained the rest as
-    accurate and complete.
+    accurate and complete. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -146,3 +147,13 @@ revisions:
   rationale: Replaced “Messiah’s” with “Christ’s” for more natural formal English
     and closer consistency with standard rendering of Χριστοῦ; retained the rest as
     accurate and complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For the slave who was called in the Lord is the Lord’s freedman; likewise,
+    the free man who was called is Christ’s slave.
+  to: For the slave who was called in the Lord is the Lord’s freedman; likewise, the
+    free man who was called is Messiah’s slave.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

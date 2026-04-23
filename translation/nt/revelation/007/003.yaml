@@ -6,7 +6,7 @@ source:
     τοὺς δούλους τοῦ θεοῦ ἡμῶν ἐπὶ τῶν μετώπων αὐτῶν.
 translation:
   text: saying, “Do not harm the earth or the sea or the trees until we have sealed
-    the servants of our God on their foreheads.”
+    the slaves of our God on their foreheads.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -99,9 +99,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:59:23Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for more natural formal English
+  changes_summary: 'Changed ''slaves'' to ''servants'' for more natural formal English
     in this context while still accurately rendering δοῦλοι; otherwise retained the
-    draft.
+    draft. [Regression fix applied: slave restored (revision_pass had changed δοῦλος
+    → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:59:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -113,3 +114,13 @@ revisions:
     the servants of our God on their foreheads.”
   rationale: Changed 'slaves' to 'servants' for more natural formal English in this
     context while still accurately rendering δοῦλοι; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: saying, “Do not harm the earth or the sea or the trees until we have sealed
+    the servants of our God on their foreheads.”
+  to: saying, “Do not harm the earth or the sea or the trees until we have sealed
+    the slaves of our God on their foreheads.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

@@ -5,8 +5,8 @@ source:
   text: כִּֽי עֲבָדַ֣/י הֵ֔ם אֲשֶׁר הוֹצֵ֥אתִי אֹתָ֖/ם מֵ/אֶ֣רֶץ מִצְרָ֑יִם לֹ֥א יִמָּכְר֖וּ
     מִמְכֶּ֥רֶת עָֽבֶד־־׃
 translation:
-  text: For they are my servants, whom I brought out from the land of Egypt; they
-    shall not be sold as slaves are sold.
+  text: For they are my slaves, whom I brought out from the land of Egypt; they shall
+    not be sold as slaves are sold.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -105,10 +105,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:11:57Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for better lexical and register
-    fit in reference to Israel as the LORD's servants, and revised the final clause
-    to 'as slaves are sold' for more natural English while preserving the sense of
-    the Hebrew.
+  changes_summary: 'Changed ''slaves'' to ''servants'' for better lexical and register
+    fit in reference to Israel as the LORD''s servants, and revised the final clause
+    to ''as slaves are sold'' for more natural English while preserving the sense
+    of the Hebrew. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T11:11:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -121,3 +122,13 @@ revisions:
   rationale: Changed 'slaves' to 'servants' for better lexical and register fit in
     reference to Israel as the LORD's servants, and revised the final clause to 'as
     slaves are sold' for more natural English while preserving the sense of the Hebrew.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For they are my servants, whom I brought out from the land of Egypt; they
+    shall not be sold as slaves are sold.
+  to: For they are my slaves, whom I brought out from the land of Egypt; they shall
+    not be sold as slaves are sold.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

@@ -5,7 +5,7 @@ source:
   text: καὶ λαβόντες οἱ γεωργοὶ τοὺς δούλους αὐτοῦ ὃν μὲν ἔδειραν, ὃν δὲ ἀπέκτειναν,
     ὃν δὲ ἐλιθοβόλησαν.
 translation:
-  text: And the tenant farmers took his servants; one they beat, another they killed,
+  text: And the tenant farmers took his slaves; one they beat, another they killed,
     and another they stoned.
   philosophy: optimal-equivalence
   footnotes:
@@ -102,9 +102,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:57:14Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural and contextually
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural and contextually
     appropriate rendering of δοῦλοι here; otherwise retained the structure and meaning
-    of the draft.
+    of the draft. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:57:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -117,3 +118,13 @@ revisions:
   rationale: Changed 'slaves' to 'servants' for a more natural and contextually appropriate
     rendering of δοῦλοι here; otherwise retained the structure and meaning of the
     draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And the tenant farmers took his servants; one they beat, another they killed,
+    and another they stoned.
+  to: And the tenant farmers took his slaves; one they beat, another they killed,
+    and another they stoned.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

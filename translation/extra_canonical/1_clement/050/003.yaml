@@ -11,7 +11,7 @@ source:
 translation:
   text: All the generations from Adam until this day have passed away, but those who
     were perfected in love according to the grace of God have a place among the godly,
-    who will be revealed in the visitation of the kingdom of Christ.
+    who will be revealed in the visitation of the kingdom of Messiah.
   philosophy: optimal-equivalence
 note: Derived from the chapter-level draft at translation/extra_canonical/1_clement/050.yaml
   by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains
@@ -36,9 +36,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:35:00Z'
   unchanged: false
-  changes_summary: Changed 'and they will be revealed' to 'who will be revealed' to
-    reflect the relative pronoun more closely, and changed 'the Messiah' to 'Christ'
-    to match the Greek Χριστοῦ more directly and maintain formal consistency.
+  changes_summary: 'Changed ''and they will be revealed'' to ''who will be revealed''
+    to reflect the relative pronoun more closely, and changed ''the Messiah'' to ''Christ''
+    to match the Greek Χριστοῦ more directly and maintain formal consistency. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T11:35:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -53,4 +55,16 @@ revisions:
   rationale: Changed 'and they will be revealed' to 'who will be revealed' to reflect
     the relative pronoun more closely, and changed 'the Messiah' to 'Christ' to match
     the Greek Χριστοῦ more directly and maintain formal consistency.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: All the generations from Adam until this day have passed away, but those who
+    were perfected in love according to the grace of God have a place among the godly,
+    who will be revealed in the visitation of the kingdom of Christ.
+  to: All the generations from Adam until this day have passed away, but those who
+    were perfected in love according to the grace of God have a place among the godly,
+    who will be revealed in the visitation of the kingdom of Messiah.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

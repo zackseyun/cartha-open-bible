@@ -7,7 +7,7 @@ source:
     אַפּֽ/וֹ־׃
 translation:
   text: And it happened that when his master heard the words of his wife that she
-    spoke to him, saying, “According to these words your servant did to me,” his anger
+    spoke to him, saying, “According to these words your slave did to me,” his anger
     burned.
   philosophy: optimal-equivalence
   footnotes:
@@ -122,9 +122,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:22Z'
   unchanged: false
-  changes_summary: Replaced “These are the things” with the more literal “According
+  changes_summary: 'Replaced “These are the things” with the more literal “According
     to these words” to reflect כַדְּבָרִים הָאֵלֶּה, and changed “your slave” to “your
-    servant” for a more formal register and consistency with עַבְדֶּךָ.
+    servant” for a more formal register and consistency with עַבְדֶּךָ. [Regression
+    fix applied: slave restored (revision_pass had changed δοῦλος → servant against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:45:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -137,3 +139,14 @@ revisions:
   rationale: Replaced “These are the things” with the more literal “According to these
     words” to reflect כַדְּבָרִים הָאֵלֶּה, and changed “your slave” to “your servant”
     for a more formal register and consistency with עַבְדֶּךָ.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And it happened that when his master heard the words of his wife that she
+    spoke to him, saying, “According to these words your servant did to me,” his anger
+    burned.
+  to: And it happened that when his master heard the words of his wife that she spoke
+    to him, saying, “According to these words your slave did to me,” his anger burned.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

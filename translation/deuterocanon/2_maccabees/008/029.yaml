@@ -26,7 +26,7 @@ source:
   validation: agree
 translation:
   text: After doing these things, and making a common prayer of supplication, they
-    begged the merciful Lord to be fully reconciled to his servants.
+    begged the merciful Lord to be fully reconciled to his slaves.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -153,8 +153,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:33:59Z'
   unchanged: false
-  changes_summary: Changed 'together' to 'common' to reflect κοινήν more directly,
-    and 'slaves' to 'servants' for more natural formal English in this context.
+  changes_summary: 'Changed ''together'' to ''common'' to reflect κοινήν more directly,
+    and ''slaves'' to ''servants'' for more natural formal English in this context.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:33:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -166,3 +168,13 @@ revisions:
     the merciful Lord to be fully reconciled to his servants.
   rationale: Changed 'together' to 'common' to reflect κοινήν more directly, and 'slaves'
     to 'servants' for more natural formal English in this context.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: After doing these things, and making a common prayer of supplication, they
+    begged the merciful Lord to be fully reconciled to his servants.
+  to: After doing these things, and making a common prayer of supplication, they begged
+    the merciful Lord to be fully reconciled to his slaves.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

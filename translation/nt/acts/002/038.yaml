@@ -7,7 +7,7 @@ source:
     τοῦ ἁγίου πνεύματος·
 translation:
   text: And Peter said to them, “Repent, and let each of you be baptized in the name
-    of Jesus Christ for the forgiveness of your sins, and you will receive the gift
+    of Jesus Messiah for the forgiveness of your sins, and you will receive the gift
     of the Holy Spirit.”
   philosophy: optimal-equivalence
   footnotes:
@@ -136,9 +136,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:55Z'
   unchanged: false
-  changes_summary: Changed “Jesus Messiah” to “Jesus Christ” for more natural formal
+  changes_summary: 'Changed “Jesus Messiah” to “Jesus Christ” for more natural formal
     English and closer consistency with standard rendering of Ἰησοῦ Χριστοῦ in this
-    context. No other changes needed.
+    context. No other changes needed. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:38:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -153,3 +154,15 @@ revisions:
   rationale: Changed “Jesus Messiah” to “Jesus Christ” for more natural formal English
     and closer consistency with standard rendering of Ἰησοῦ Χριστοῦ in this context.
     No other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And Peter said to them, “Repent, and let each of you be baptized in the name
+    of Jesus Christ for the forgiveness of your sins, and you will receive the gift
+    of the Holy Spirit.”
+  to: And Peter said to them, “Repent, and let each of you be baptized in the name
+    of Jesus Messiah for the forgiveness of your sins, and you will receive the gift
+    of the Holy Spirit.”
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

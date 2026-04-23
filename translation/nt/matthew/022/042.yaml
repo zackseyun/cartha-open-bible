@@ -5,8 +5,8 @@ source:
   text: λέγων· Τί ὑμῖν δοκεῖ περὶ τοῦ χριστοῦ; τίνος υἱός ἐστιν; λέγουσιν αὐτῷ· Τοῦ
     Δαυίδ.
 translation:
-  text: saying, “What do you think about the Christ? Whose son is he?” They said to
-    him, “David’s.”
+  text: saying, “What do you think about the Messiah? Whose son is he?” They said
+    to him, “David’s.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -88,9 +88,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:57:24Z'
   unchanged: false
-  changes_summary: Changed “the Messiah” to “the Christ” for closer lexical correspondence
+  changes_summary: 'Changed “the Messiah” to “the Christ” for closer lexical correspondence
     to τοῦ χριστοῦ and a more formal, source-oriented rendering. No other changes
-    needed.
+    needed. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός
+    → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:57:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -103,3 +104,13 @@ revisions:
   rationale: Changed “the Messiah” to “the Christ” for closer lexical correspondence
     to τοῦ χριστοῦ and a more formal, source-oriented rendering. No other changes
     needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: saying, “What do you think about the Christ? Whose son is he?” They said to
+    him, “David’s.”
+  to: saying, “What do you think about the Messiah? Whose son is he?” They said to
+    him, “David’s.”
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

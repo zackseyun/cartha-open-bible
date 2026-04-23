@@ -5,8 +5,8 @@ source:
   text: οὐ γὰρ ἑαυτοὺς κηρύσσομεν ἀλλὰ ⸂Χριστὸν Ἰησοῦν⸃ κύριον, ἑαυτοὺς δὲ δούλους
     ὑμῶν διὰ Ἰησοῦν.
 translation:
-  text: For we do not proclaim ourselves, but Christ Jesus as Lord, and ourselves
-    as your servants for Jesus' sake.
+  text: For we do not proclaim ourselves, but Messiah Jesus as Lord, and ourselves
+    as your slaves for Jesus' sake.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -110,9 +110,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:37:11Z'
   unchanged: false
-  changes_summary: Replaced 'Jesus the Messiah' with 'Christ Jesus' to reflect the
-    Greek order and standard formal rendering; changed 'slaves' to 'servants' for
-    more natural formal English in this context. Kept 'for Jesus' sake' for διὰ Ἰησοῦ.
+  changes_summary: 'Replaced ''Jesus the Messiah'' with ''Christ Jesus'' to reflect
+    the Greek order and standard formal rendering; changed ''slaves'' to ''servants''
+    for more natural formal English in this context. Kept ''for Jesus'' sake'' for
+    διὰ Ἰησοῦ. [Regression fix applied: Messiah restored (revision_pass had changed
+    Χριστός → Christ against DOCTRINE.md policy), slave restored (revision_pass had
+    changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:37:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -125,3 +128,14 @@ revisions:
   rationale: Replaced 'Jesus the Messiah' with 'Christ Jesus' to reflect the Greek
     order and standard formal rendering; changed 'slaves' to 'servants' for more natural
     formal English in this context. Kept 'for Jesus' sake' for διὰ Ἰησοῦ.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For we do not proclaim ourselves, but Christ Jesus as Lord, and ourselves
+    as your servants for Jesus' sake.
+  to: For we do not proclaim ourselves, but Messiah Jesus as Lord, and ourselves as
+    your slaves for Jesus' sake.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy); slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)

@@ -5,7 +5,7 @@ source:
   text: Παῦλος καὶ Τιμόθεος δοῦλοι ⸂Χριστοῦ Ἰησοῦ⸃ πᾶσιν τοῖς ἁγίοις ἐν Χριστῷ Ἰησοῦ
     τοῖς οὖσιν ἐν Φιλίπποις σὺν ἐπισκόποις καὶ διακόνοις·
 translation:
-  text: 'Paul and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus
+  text: 'Paul and Timothy, slaves of Messiah Jesus, to all the saints in Messiah Jesus
     who are in Philippi, together with the overseers and deacons:'
   philosophy: optimal-equivalence
   footnotes:
@@ -119,9 +119,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:33Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for more natural formal register
-    for δοῦλοι in the epistolary greeting, and changed 'Messiah Jesus' to 'Christ
-    Jesus' for standard rendering and consistency with the Greek Χριστοῦ/ἐν Χριστῷ.
+  changes_summary: 'Changed ''slaves'' to ''servants'' for more natural formal register
+    for δοῦλοι in the epistolary greeting, and changed ''Messiah Jesus'' to ''Christ
+    Jesus'' for standard rendering and consistency with the Greek Χριστοῦ/ἐν Χριστῷ.
+    [Regression fix applied: Messiah restored (revision_pass had changed Χριστός →
+    Christ against DOCTRINE.md policy), slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:58:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -134,4 +137,15 @@ revisions:
   rationale: Changed 'slaves' to 'servants' for more natural formal register for δοῦλοι
     in the epistolary greeting, and changed 'Messiah Jesus' to 'Christ Jesus' for
     standard rendering and consistency with the Greek Χριστοῦ/ἐν Χριστῷ.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: 'Paul and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus
+    who are in Philippi, together with the overseers and deacons:'
+  to: 'Paul and Timothy, slaves of Messiah Jesus, to all the saints in Messiah Jesus
+    who are in Philippi, together with the overseers and deacons:'
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy); slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)
 status: revised

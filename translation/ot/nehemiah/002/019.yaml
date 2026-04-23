@@ -7,7 +7,7 @@ source:
     מָֽה הַ/דָּבָ֤ר הַ/זֶּה֙ אֲשֶׁ֣ר אַתֶּ֣ם עֹשִׂ֔ים הַ/עַ֥ל הַ/מֶּ֖לֶךְ אַתֶּ֥ם
     מֹרְדִֽים׀־׃
 translation:
-  text: But when Sanballat the Horonite, Tobiah the Ammonite servant, and Geshem the
+  text: But when Sanballat the Horonite, Tobiah the Ammonite slave, and Geshem the
     Arab heard, they mocked us and despised us, and said, “What is this thing that
     you are doing? Are you rebelling against the king?”
   philosophy: optimal-equivalence
@@ -122,9 +122,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:13:19Z'
   unchanged: false
-  changes_summary: Changed “slave” to “servant” for a more natural and contextually
+  changes_summary: 'Changed “slave” to “servant” for a more natural and contextually
     appropriate rendering of הָעֶבֶד while preserving the formal register. No other
-    changes needed.
+    changes needed. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T11:13:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -138,3 +139,15 @@ revisions:
     you are doing? Are you rebelling against the king?”
   rationale: Changed “slave” to “servant” for a more natural and contextually appropriate
     rendering of הָעֶבֶד while preserving the formal register. No other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But when Sanballat the Horonite, Tobiah the Ammonite servant, and Geshem the
+    Arab heard, they mocked us and despised us, and said, “What is this thing that
+    you are doing? Are you rebelling against the king?”
+  to: But when Sanballat the Horonite, Tobiah the Ammonite slave, and Geshem the Arab
+    heard, they mocked us and despised us, and said, “What is this thing that you
+    are doing? Are you rebelling against the king?”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

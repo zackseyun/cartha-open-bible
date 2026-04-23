@@ -6,7 +6,7 @@ source:
     εἰς τὸν αἰῶνα, καὶ πῶς ⸂λέγεις σὺ⸃ ⸀ὅτι δεῖ ὑψωθῆναι τὸν υἱὸν τοῦ ἀνθρώπου; τίς
     ἐστιν οὗτος ὁ υἱὸς τοῦ ἀνθρώπου;
 translation:
-  text: So the crowd answered him, "We have heard from the Law that the Christ remains
+  text: So the crowd answered him, "We have heard from the Law that the Messiah remains
     forever, and how can you say that the Son of Man must be lifted up? Who is this
     Son of Man?"
   philosophy: optimal-equivalence
@@ -137,8 +137,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:47:00Z'
   unchanged: false
-  changes_summary: Changed 'Messiah' to 'Christ' to reflect ὁ χριστός more directly
-    and maintain Johannine terminology; otherwise retained the draft.
+  changes_summary: 'Changed ''Messiah'' to ''Christ'' to reflect ὁ χριστός more directly
+    and maintain Johannine terminology; otherwise retained the draft. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:47:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -152,3 +154,15 @@ revisions:
     Son of Man?"
   rationale: Changed 'Messiah' to 'Christ' to reflect ὁ χριστός more directly and
     maintain Johannine terminology; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: So the crowd answered him, "We have heard from the Law that the Christ remains
+    forever, and how can you say that the Son of Man must be lifted up? Who is this
+    Son of Man?"
+  to: So the crowd answered him, "We have heard from the Law that the Messiah remains
+    forever, and how can you say that the Son of Man must be lifted up? Who is this
+    Son of Man?"
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

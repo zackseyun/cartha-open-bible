@@ -6,7 +6,7 @@ source:
     Ἰησοῦ Χριστοῦ τοῦ κυρίου ἡμῶν,
 translation:
   text: and who was declared to be the Son of God in power according to the Spirit
-    of holiness by the resurrection from the dead—Jesus Christ our Lord,
+    of holiness by the resurrection from the dead—Jesus Messiah our Lord,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -109,10 +109,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:00:30Z'
   unchanged: false
-  changes_summary: Changed 'appointed' to 'declared to be' for better lexical accuracy
-    of ὁρισθέντος; added 'the' before 'Son of God' for natural English; changed 'Messiah'
-    to 'Christ' to reflect the Greek name-title form Ἰησοῦ Χριστοῦ more directly and
-    naturally here; removed the comma after 'Messiah' accordingly.
+  changes_summary: 'Changed ''appointed'' to ''declared to be'' for better lexical
+    accuracy of ὁρισθέντος; added ''the'' before ''Son of God'' for natural English;
+    changed ''Messiah'' to ''Christ'' to reflect the Greek name-title form Ἰησοῦ Χριστοῦ
+    more directly and naturally here; removed the comma after ''Messiah'' accordingly.
+    [Regression fix applied: Messiah restored (revision_pass had changed Χριστός →
+    Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:00:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -126,4 +128,14 @@ revisions:
     ὁρισθέντος; added 'the' before 'Son of God' for natural English; changed 'Messiah'
     to 'Christ' to reflect the Greek name-title form Ἰησοῦ Χριστοῦ more directly and
     naturally here; removed the comma after 'Messiah' accordingly.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: and who was declared to be the Son of God in power according to the Spirit
+    of holiness by the resurrection from the dead—Jesus Christ our Lord,
+  to: and who was declared to be the Son of God in power according to the Spirit of
+    holiness by the resurrection from the dead—Jesus Messiah our Lord,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

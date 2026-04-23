@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: μάρτυς γάρ ⸀μου ὁ θεός, ὡς ἐπιποθῶ πάντας ὑμᾶς ἐν σπλάγχνοις ⸂Χριστοῦ Ἰησοῦ⸃.
 translation:
-  text: For God is my witness, how I long for all of you with the affections of Christ
+  text: For God is my witness, how I long for all of you with the affections of Messiah
     Jesus.
   philosophy: optimal-equivalence
   footnotes:
@@ -97,9 +97,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:36Z'
   unchanged: false
-  changes_summary: Changed 'Messiah Jesus' to 'Christ Jesus' to reflect the Greek
+  changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' to reflect the Greek
     wording and standard register more naturally in this context; retained the rest
-    as accurate and complete.
+    as accurate and complete. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:58:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -112,4 +113,14 @@ revisions:
   rationale: Changed 'Messiah Jesus' to 'Christ Jesus' to reflect the Greek wording
     and standard register more naturally in this context; retained the rest as accurate
     and complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For God is my witness, how I long for all of you with the affections of Christ
+    Jesus.
+  to: For God is my witness, how I long for all of you with the affections of Messiah
+    Jesus.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

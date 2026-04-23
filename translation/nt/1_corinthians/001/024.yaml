@@ -5,7 +5,7 @@ source:
   text: αὐτοῖς δὲ τοῖς κλητοῖς, Ἰουδαίοις τε καὶ Ἕλλησιν, Χριστὸν θεοῦ δύναμιν καὶ
     θεοῦ σοφίαν.
 translation:
-  text: But to those who are called, both Jews and Greeks, Christ is the power of
+  text: But to those who are called, both Jews and Greeks, Messiah is the power of
     God and the wisdom of God.
   philosophy: optimal-equivalence
   footnotes:
@@ -88,10 +88,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:34:57Z'
   unchanged: false
-  changes_summary: Replaced 'Messiah' with 'Christ' to reflect the Greek proper title
-    Χριστόν more naturally in this context and in keeping with standard NT register;
-    added 'the' and 'of' for a more formal, precise rendering of θεοῦ δύναμιν καὶ
-    θεοῦ σοφίαν.
+  changes_summary: 'Replaced ''Messiah'' with ''Christ'' to reflect the Greek proper
+    title Χριστόν more naturally in this context and in keeping with standard NT register;
+    added ''the'' and ''of'' for a more formal, precise rendering of θεοῦ δύναμιν
+    καὶ θεοῦ σοφίαν. [Regression fix applied: Messiah restored (revision_pass had
+    changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:34:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -104,4 +105,14 @@ revisions:
   rationale: Replaced 'Messiah' with 'Christ' to reflect the Greek proper title Χριστόν
     more naturally in this context and in keeping with standard NT register; added
     'the' and 'of' for a more formal, precise rendering of θεοῦ δύναμιν καὶ θεοῦ σοφίαν.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But to those who are called, both Jews and Greeks, Christ is the power of
+    God and the wisdom of God.
+  to: But to those who are called, both Jews and Greeks, Messiah is the power of God
+    and the wisdom of God.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

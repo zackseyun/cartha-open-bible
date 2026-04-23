@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: ὅτι ὁ νόμος διὰ Μωϋσέως ἐδόθη, ἡ χάρις καὶ ἡ ἀλήθεια διὰ Ἰησοῦ Χριστοῦ ἐγένετο.
 translation:
-  text: For the law was given through Moses; grace and truth came through Jesus Christ.
+  text: For the law was given through Moses; grace and truth came through Jesus Messiah.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -104,9 +104,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:45:07Z'
   unchanged: false
-  changes_summary: Replaced 'Jesus Messiah' with 'Jesus Christ' to reflect the Greek
-    name-title form more naturally and formally in this context; retained the rest
-    as accurate and complete.
+  changes_summary: 'Replaced ''Jesus Messiah'' with ''Jesus Christ'' to reflect the
+    Greek name-title form more naturally and formally in this context; retained the
+    rest as accurate and complete. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:45:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -117,3 +118,11 @@ revisions:
   rationale: Replaced 'Jesus Messiah' with 'Jesus Christ' to reflect the Greek name-title
     form more naturally and formally in this context; retained the rest as accurate
     and complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For the law was given through Moses; grace and truth came through Jesus Christ.
+  to: For the law was given through Moses; grace and truth came through Jesus Messiah.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

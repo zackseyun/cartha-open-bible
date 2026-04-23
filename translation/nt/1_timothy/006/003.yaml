@@ -6,7 +6,7 @@ source:
     ἡμῶν Ἰησοῦ Χριστοῦ, καὶ τῇ κατ’ εὐσέβειαν διδασκαλίᾳ,
 translation:
   text: If anyone teaches a different doctrine and does not agree with sound words,
-    those of our Lord Jesus Christ, and with the teaching that accords with godliness,
+    those of our Lord Jesus Messiah, and with the teaching that accords with godliness,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -122,9 +122,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:36:50Z'
   unchanged: false
-  changes_summary: Replaced 'the Messiah' with 'Christ' for closer lexical correspondence
+  changes_summary: 'Replaced ''the Messiah'' with ''Christ'' for closer lexical correspondence
     to Χριστοῦ and more natural consistency in this formal register; otherwise retained
-    the draft.
+    the draft. [Regression fix applied: Messiah restored (revision_pass had changed
+    Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:36:50Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -137,3 +138,13 @@ revisions:
   rationale: Replaced 'the Messiah' with 'Christ' for closer lexical correspondence
     to Χριστοῦ and more natural consistency in this formal register; otherwise retained
     the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: If anyone teaches a different doctrine and does not agree with sound words,
+    those of our Lord Jesus Christ, and with the teaching that accords with godliness,
+  to: If anyone teaches a different doctrine and does not agree with sound words,
+    those of our Lord Jesus Messiah, and with the teaching that accords with godliness,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

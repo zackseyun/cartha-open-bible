@@ -6,7 +6,7 @@ source:
     καὶ ἄρξηται τύπτειν τοὺς παῖδας καὶ τὰς παιδίσκας, ἐσθίειν τε καὶ πίνειν καὶ μεθύσκεσθαι,
 translation:
   text: But if that slave says in his heart, ‘My master delays in coming,’ and begins
-    to beat the male servants and the female servants, and to eat and drink and get
+    to beat the male slaves and the female servants, and to eat and drink and get
     drunk,
   philosophy: optimal-equivalence
   footnotes:
@@ -141,8 +141,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:50:24Z'
   unchanged: false
-  changes_summary: Revised ‘is delaying his coming’ to ‘delays in coming’ for more
-    natural English while preserving the Greek sense. No other changes needed.
+  changes_summary: 'Revised ‘is delaying his coming’ to ‘delays in coming’ for more
+    natural English while preserving the Greek sense. No other changes needed. [Regression
+    fix applied: slave restored (revision_pass had changed δοῦλος → servant against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:50:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -156,3 +158,15 @@ revisions:
     drunk,
   rationale: Revised ‘is delaying his coming’ to ‘delays in coming’ for more natural
     English while preserving the Greek sense. No other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But if that slave says in his heart, ‘My master delays in coming,’ and begins
+    to beat the male servants and the female servants, and to eat and drink and get
+    drunk,
+  to: But if that slave says in his heart, ‘My master delays in coming,’ and begins
+    to beat the male slaves and the female servants, and to eat and drink and get
+    drunk,
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

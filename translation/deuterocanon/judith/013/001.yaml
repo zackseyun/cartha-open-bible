@@ -19,7 +19,7 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: When evening came, his servants hurried to depart; and Bagoas shut the tent
+  text: When evening came, his slaves hurried to depart; and Bagoas shut the tent
     from outside and excluded those in attendance from the presence of his lord, and
     they went away to their beds.
   philosophy: optimal-equivalence
@@ -136,10 +136,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:39:45Z'
   unchanged: false
-  changes_summary: Replaced 'slaves' with 'servants' for more natural formal register;
-    changed 'withdraw' to 'depart' for clearer sense of ἀναλύειν; changed 'barred
-    those attending' to 'excluded those in attendance' to reflect ἀπέκλεισεν more
-    naturally and formally.
+  changes_summary: 'Replaced ''slaves'' with ''servants'' for more natural formal
+    register; changed ''withdraw'' to ''depart'' for clearer sense of ἀναλύειν; changed
+    ''barred those attending'' to ''excluded those in attendance'' to reflect ἀπέκλεισεν
+    more naturally and formally. [Regression fix applied: slave restored (revision_pass
+    had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:39:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -154,3 +155,15 @@ revisions:
   rationale: Replaced 'slaves' with 'servants' for more natural formal register; changed
     'withdraw' to 'depart' for clearer sense of ἀναλύειν; changed 'barred those attending'
     to 'excluded those in attendance' to reflect ἀπέκλεισεν more naturally and formally.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: When evening came, his servants hurried to depart; and Bagoas shut the tent
+    from outside and excluded those in attendance from the presence of his lord, and
+    they went away to their beds.
+  to: When evening came, his slaves hurried to depart; and Bagoas shut the tent from
+    outside and excluded those in attendance from the presence of his lord, and they
+    went away to their beds.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

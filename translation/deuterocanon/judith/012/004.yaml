@@ -18,7 +18,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judith said to him, “As your life lives, my lord, your servant will not
+  text: And Judith said to him, “As your life lives, my lord, your slave will not
     use up what is with me until he has accomplished by my hand what he has planned.”
   philosophy: optimal-equivalence
   footnotes:
@@ -138,10 +138,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:39:43Z'
   unchanged: false
-  changes_summary: Replaced 'slave' with 'servant' for more natural formal register;
-    rendered τὰ ὄντα as 'what is with me' instead of 'the things with me' for more
-    natural English while preserving the sense. Retained 'he has accomplished' to
-    reflect the implicit subject of ποιήσῃ/ἐβουλεύσατο.
+  changes_summary: 'Replaced ''slave'' with ''servant'' for more natural formal register;
+    rendered τὰ ὄντα as ''what is with me'' instead of ''the things with me'' for
+    more natural English while preserving the sense. Retained ''he has accomplished''
+    to reflect the implicit subject of ποιήσῃ/ἐβουλεύσατο. [Regression fix applied:
+    slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T15:39:43Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -155,3 +157,13 @@ revisions:
     τὰ ὄντα as 'what is with me' instead of 'the things with me' for more natural
     English while preserving the sense. Retained 'he has accomplished' to reflect
     the implicit subject of ποιήσῃ/ἐβουλεύσατο.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And Judith said to him, “As your life lives, my lord, your servant will not
+    use up what is with me until he has accomplished by my hand what he has planned.”
+  to: And Judith said to him, “As your life lives, my lord, your slave will not use
+    up what is with me until he has accomplished by my hand what he has planned.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

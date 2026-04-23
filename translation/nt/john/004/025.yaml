@@ -5,7 +5,7 @@ source:
   text: λέγει αὐτῷ ἡ γυνή· Οἶδα ὅτι Μεσσίας ἔρχεται, ὁ λεγόμενος χριστός· ὅταν ἔλθῃ
     ἐκεῖνος, ἀναγγελεῖ ἡμῖν ⸀ἅπαντα.
 translation:
-  text: The woman said to him, “I know that Messiah is coming” (the one called Christ).
+  text: The woman said to him, “I know that Messiah is coming” (the one called Messiah).
     “When he comes, he will tell us all things.”
   philosophy: optimal-equivalence
   footnotes:
@@ -135,8 +135,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:45:33Z'
   unchanged: false
-  changes_summary: Revised “everything” to “all things” to more closely reflect ἅπαντα
-    while keeping formal register; otherwise left the draft unchanged.
+  changes_summary: 'Revised “everything” to “all things” to more closely reflect ἅπαντα
+    while keeping formal register; otherwise left the draft unchanged. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:45:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -148,3 +150,13 @@ revisions:
     “When he comes, he will tell us all things.”
   rationale: Revised “everything” to “all things” to more closely reflect ἅπαντα while
     keeping formal register; otherwise left the draft unchanged.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: The woman said to him, “I know that Messiah is coming” (the one called Christ).
+    “When he comes, he will tell us all things.”
+  to: The woman said to him, “I know that Messiah is coming” (the one called Messiah).
+    “When he comes, he will tell us all things.”
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

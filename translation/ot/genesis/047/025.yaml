@@ -6,7 +6,7 @@ source:
     עֲבָדִ֖ים לְ/פַרְעֹֽה־׃
 translation:
   text: And they said, “You have kept us alive. May we find favor in the eyes of my
-    lord, and we will be servants to Pharaoh.”
+    lord, and we will be slaves to Pharaoh.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,9 +91,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:46:29Z'
   unchanged: false
-  changes_summary: Changed 'Let us find favor' to 'May we find favor' for more natural
-    rendering of the cohortative/request, and changed 'slaves' to 'servants' for a
-    more formal and contextually suitable rendering of עֲבָדִים here.
+  changes_summary: 'Changed ''Let us find favor'' to ''May we find favor'' for more
+    natural rendering of the cohortative/request, and changed ''slaves'' to ''servants''
+    for a more formal and contextually suitable rendering of עֲבָדִים here. [Regression
+    fix applied: slave restored (revision_pass had changed δοῦλος → servant against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:46:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -106,3 +108,13 @@ revisions:
   rationale: Changed 'Let us find favor' to 'May we find favor' for more natural rendering
     of the cohortative/request, and changed 'slaves' to 'servants' for a more formal
     and contextually suitable rendering of עֲבָדִים here.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And they said, “You have kept us alive. May we find favor in the eyes of my
+    lord, and we will be servants to Pharaoh.”
+  to: And they said, “You have kept us alive. May we find favor in the eyes of my
+    lord, and we will be slaves to Pharaoh.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

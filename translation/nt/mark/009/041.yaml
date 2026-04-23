@@ -5,7 +5,7 @@ source:
   text: Ὃς γὰρ ἂν ποτίσῃ ὑμᾶς ποτήριον ὕδατος ἐν ⸀ὀνόματι ὅτι χριστοῦ ἐστε, ἀμὴν λέγω
     ὑμῖν ⸀ὅτι οὐ μὴ ⸀ἀπολέσῃ τὸν μισθὸν αὐτοῦ.
 translation:
-  text: For whoever gives you a cup of water to drink in the name that you are Christ's,
+  text: For whoever gives you a cup of water to drink in the name that you are Messiah's,
     truly I say to you, he will certainly not lose his reward.
   philosophy: optimal-equivalence
   footnotes:
@@ -107,10 +107,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:53:35Z'
   unchanged: false
-  changes_summary: Revised “in my name” to reflect the Greek text more closely, which
+  changes_summary: 'Revised “in my name” to reflect the Greek text more closely, which
     reads “in [the] name, because you are Christ’s,” not explicitly “my name.” Also
     adjusted “because you belong to the Messiah” to the more literal “that you are
-    Christ’s,” preserving the source wording and formal register.
+    Christ’s,” preserving the source wording and formal register. [Regression fix
+    applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:53:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -124,3 +126,13 @@ revisions:
     “in [the] name, because you are Christ’s,” not explicitly “my name.” Also adjusted
     “because you belong to the Messiah” to the more literal “that you are Christ’s,”
     preserving the source wording and formal register.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For whoever gives you a cup of water to drink in the name that you are Christ's,
+    truly I say to you, he will certainly not lose his reward.
+  to: For whoever gives you a cup of water to drink in the name that you are Messiah's,
+    truly I say to you, he will certainly not lose his reward.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

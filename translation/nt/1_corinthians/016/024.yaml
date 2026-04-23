@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: ἡ ἀγάπη μου μετὰ πάντων ὑμῶν ἐν Χριστῷ ⸀Ἰησοῦ.
 translation:
-  text: My love be with all of you in Christ Jesus.
+  text: My love be with all of you in Messiah Jesus.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,9 +91,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:32Z'
   unchanged: false
-  changes_summary: Changed 'Messiah' to 'Christ' for more natural and conventional
+  changes_summary: 'Changed ''Messiah'' to ''Christ'' for more natural and conventional
     rendering of Χριστῷ in this epistolary closing; otherwise retained the wording
-    and completeness of the draft.
+    and completeness of the draft. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -104,3 +105,11 @@ revisions:
   rationale: Changed 'Messiah' to 'Christ' for more natural and conventional rendering
     of Χριστῷ in this epistolary closing; otherwise retained the wording and completeness
     of the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: My love be with all of you in Christ Jesus.
+  to: My love be with all of you in Messiah Jesus.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

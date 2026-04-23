@@ -5,7 +5,7 @@ source:
   text: προσελθόντες δὲ οἱ δοῦλοι τοῦ οἰκοδεσπότου εἶπον αὐτῷ· Κύριε, οὐχὶ καλὸν σπέρμα
     ⸀ἔσπειρας ἐν τῷ σῷ ἀγρῷ; πόθεν οὖν ἔχει ζιζάνια;
 translation:
-  text: So the servants of the master of the house came to him and said, ‘Lord, did
+  text: So the slaves of the master of the house came to him and said, ‘Lord, did
     you not sow good seed in your field? Where then do the weeds come from?’
   philosophy: optimal-equivalence
   footnotes:
@@ -143,9 +143,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:56:14Z'
   unchanged: false
-  changes_summary: Changed ‘slaves’ to ‘servants’ for more natural formal register
+  changes_summary: 'Changed ‘slaves’ to ‘servants’ for more natural formal register
     here, and revised the final question from ‘Where then does it have weeds?’ to
     ‘Where then do the weeds come from?’ to reflect the Greek more naturally and accurately.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:56:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -158,3 +160,13 @@ revisions:
   rationale: Changed ‘slaves’ to ‘servants’ for more natural formal register here,
     and revised the final question from ‘Where then does it have weeds?’ to ‘Where
     then do the weeds come from?’ to reflect the Greek more naturally and accurately.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: So the servants of the master of the house came to him and said, ‘Lord, did
+    you not sow good seed in your field? Where then do the weeds come from?’
+  to: So the slaves of the master of the house came to him and said, ‘Lord, did you
+    not sow good seed in your field? Where then do the weeds come from?’
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)
