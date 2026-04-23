@@ -142,6 +142,7 @@ def canonical_source_hash(verses: list[dict]) -> str:
 CORPUS_BIBLICAL = "biblical"
 CORPUS_PATRISTIC = "patristic"
 CORPUS_PSEUDEPIGRAPHAL = "pseudepigraphal"
+CORPUS_GNOSTIC = "gnostic"
 
 _PATRISTIC_BOOKS = {
     "DIDACHE", "1 CLEMENT", "2 CLEMENT",
@@ -154,14 +155,54 @@ _PSEUDEPIGRAPHAL_BOOKS = {
     "JUBILEES",
     "TESTAMENTS OF THE TWELVE PATRIARCHS", "TESTAMENTS",
     "2 ESDRAS", "4 EZRA",
+    "2 BARUCH",
     "ASCENSION OF ISAIAH",
     "ASSUMPTION OF MOSES",
     "APOCALYPSE OF ABRAHAM",
+}
+# Nag Hammadi and related Gnostic Christian texts. These use personified
+# abstractions (Error, Pleroma, Forgetfulness, the Father, the Name) that look
+# like proper nouns but are theological concepts — summaries must define them
+# inline or they become unreadable to general users.
+_GNOSTIC_BOOKS = {
+    "GOSPEL OF TRUTH",
+    "GOSPEL OF THOMAS",
+    "GOSPEL OF PHILIP",
+    "THUNDER PERFECT MIND",
+    "APOCRYPHON OF JOHN", "SECRET BOOK OF JOHN",
+    "HYPOSTASIS OF THE ARCHONS",
+    "ON THE ORIGIN OF THE WORLD",
+    "TRIMORPHIC PROTENNOIA",
+    "GOSPEL OF THE EGYPTIANS",
+    "EUGNOSTOS THE BLESSED",
+    "SOPHIA OF JESUS CHRIST",
+    "THREE STELES OF SETH",
+    "ZOSTRIANOS",
+    "MARSANES",
+    "ALLOGENES",
+    "TESTIMONY OF TRUTH",
+    "THOUGHT OF NOREA",
+    "EXEGESIS ON THE SOUL",
+    "AUTHORITATIVE TEACHING",
+    "DISCOURSE ON THE EIGHTH AND NINTH",
+    "CONCEPT OF OUR GREAT POWER",
+    "INTERPRETATION OF KNOWLEDGE",
+    "VALENTINIAN EXPOSITION",
+    "DIALOGUE OF THE SAVIOR",
+    "LETTER OF PETER TO PHILIP",
+    "ACTS OF PETER AND THE TWELVE APOSTLES",
+    "BOOK OF THOMAS",
+    "SENTENCES OF SEXTUS",
+    "PRAYER OF THANKSGIVING",
+    "ASCLEPIUS",
+    "MELCHIZEDEK",
 }
 
 
 def book_corpus(book: str) -> str:
     key = normalize_token(book)
+    if key in _GNOSTIC_BOOKS:
+        return CORPUS_GNOSTIC
     if key in _PATRISTIC_BOOKS:
         return CORPUS_PATRISTIC
     if key in _PSEUDEPIGRAPHAL_BOOKS:
@@ -171,11 +212,112 @@ def book_corpus(book: str) -> str:
 
 def summary_system_prompt(tool: str, scope: str, book: str = "") -> str:
     corpus = book_corpus(book) if book else CORPUS_BIBLICAL
+    if corpus == CORPUS_GNOSTIC:
+        return _gnostic_prompt(tool, scope)
     if corpus == CORPUS_PATRISTIC:
         return _patristic_prompt(tool, scope)
     if corpus == CORPUS_PSEUDEPIGRAPHAL:
         return _pseudepigraphal_prompt(tool, scope)
     return _biblical_prompt(tool, scope)
+
+
+def _gnostic_prompt(tool: str, scope: str) -> str:
+    # Gnostic texts (primarily Nag Hammadi) use capitalized personified
+    # abstractions as technical theological concepts: Pleroma (divine fullness),
+    # Error (spiritual ignorance / the fallen state), Forgetfulness (the condition
+    # of not knowing the Father), the Father (the ultimate hidden God), the Name
+    # (God's self-disclosure through Christ). Summaries that repeat these terms
+    # without definition are unreadable to general users. These prompts instruct
+    # the model to translate the jargon as it summarizes.
+    _GNOSTIC_GLOSSARY = (
+        "Key terms to define inline if they appear: "
+        "Pleroma = the divine fullness or completeness of God; "
+        "Error = the personified force of spiritual ignorance and lostness; "
+        "Forgetfulness = the state of being cut off from the knowledge of God; "
+        "the Father = the ultimate, hidden God; "
+        "the Name = God's self-revelation through Christ; "
+        "gnosis = saving knowledge of one's divine origin."
+    )
+    if scope == SCOPE_BOOK:
+        if tool == TOOL_SIMPLIFY:
+            return (
+                "You are a Bible-study assistant in the Cartha app. A shared book-level "
+                "summary is being generated for all users.\n\n"
+                "This is a Gnostic Christian text — not part of the biblical canon or "
+                "mainstream Christian tradition. It likely originated in second- or "
+                "third-century Gnostic Christianity and uses specialized vocabulary as "
+                "theological concepts, not literal characters.\n\n"
+                f"{_GNOSTIC_GLOSSARY}\n\n"
+                "Summarize the entire document in clear, modern English in 4 to 8 "
+                "sentences. Whenever a Gnostic technical term appears, render its plain "
+                "meaning in your sentence rather than repeating the term as if the reader "
+                "already knows it. State the central teaching plainly. Do not frame this "
+                "text as Scripture. Do not use headers, bullets, or preamble."
+            )
+        if tool == TOOL_RECONTEXTUALIZE_BIBLE:
+            return (
+                "You are a Bible-study assistant in the Cartha app. A shared book-level "
+                "in-Bible context summary is being generated for all users.\n\n"
+                "This is a Gnostic Christian document — not part of the biblical canon. "
+                "In under 250 words, explain how this text relates to and departs from "
+                "the biblical tradition. Cover: (1) which biblical books it echoes or "
+                "reinterprets — likely candidates include the Gospel of John, Genesis, "
+                'and Paul\'s letters (cite them like "Book C:V"); (2) where its theology '
+                "diverges from mainstream Christianity; and (3) what a reader familiar "
+                "with Scripture would find familiar versus surprising. Define any Gnostic "
+                "terms you must use. Respond in flowing prose only."
+            )
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared book-level "
+            "original-context summary is being generated for all users.\n\n"
+            "Explain the historical and cultural context of this Gnostic Christian text. "
+            "In under 250 words, cover: (1) the Nag Hammadi library — a collection of "
+            "Coptic manuscripts discovered in Egypt in 1945 that preserved Gnostic "
+            "texts suppressed by mainstream Christianity; (2) the likely date and "
+            "tradition (Valentinian, Sethian, or other); (3) the community that produced "
+            "or used it; and (4) one or two original-language concepts that shape how "
+            "the text should be read. Respond in flowing prose only."
+        )
+    # Chapter scope
+    if tool == TOOL_SIMPLIFY:
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared chapter summary "
+            "is being generated for all users.\n\n"
+            "This passage is from a Gnostic Christian text — not part of the biblical "
+            "canon. It uses capitalized abstractions as theological concepts, not literal "
+            "characters.\n\n"
+            f"{_GNOSTIC_GLOSSARY}\n\n"
+            "Restate the passage in plain, modern English in 3 to 6 sentences. Do not "
+            "repeat Gnostic technical terms as if the reader already understands them — "
+            "instead, translate their meaning into your sentence. For example, instead of "
+            "'Error pursues the lost,' write something like 'Spiritual confusion and "
+            "lostness follow those who have forgotten their divine origin.' Keep the "
+            "theological weight of the passage without the jargon barrier. "
+            "Respond with the summary only."
+        )
+    if tool == TOOL_RECONTEXTUALIZE_BIBLE:
+        return (
+            "You are a Bible-study assistant in the Cartha app. A shared chapter "
+            "in-Bible context summary is being generated for all users.\n\n"
+            "This passage is from a Gnostic Christian text outside the biblical canon. "
+            "In under 220 words, explain where it sits in its document's argument and "
+            "identify two to four meaningful echoes of or departures from Scripture — "
+            "note parallels to the Gospel of John, Genesis, or Paul's letters where "
+            'genuine (cite them like "Book C:V"), and flag where the Gnostic reading '
+            "diverges from mainstream Christian interpretation. Define any Gnostic terms "
+            "you must use. Respond in flowing prose only."
+        )
+    return (
+        "You are a Bible-study assistant in the Cartha app. A shared chapter "
+        "original-context summary is being generated for all users.\n\n"
+        "This passage is from a Gnostic Christian text, likely composed in the second "
+        "or third century AD. In under 220 words, explain the historical and theological "
+        "context that most helps modern readers hear it well. Note the Nag Hammadi "
+        "discovery context if relevant, identify the specific Gnostic tradition "
+        "(Valentinian, Sethian, etc.) if it can be determined from the passage, and "
+        "surface one or two key concepts — defining them in plain English — only when "
+        "they materially change understanding. Respond in flowing prose only."
+    )
 
 
 def _biblical_prompt(tool: str, scope: str) -> str:
