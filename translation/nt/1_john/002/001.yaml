@@ -6,7 +6,7 @@ source:
     ἔχομεν πρὸς τὸν πατέρα Ἰησοῦν Χριστὸν δίκαιον,
 translation:
   text: My little children, I write these things to you so that you may not sin. But
-    if anyone does sin, we have an advocate with the Father—Jesus Christ the Righteous
+    if anyone does sin, we have an advocate with the Father—Jesus Messiah the Righteous
     One.
   philosophy: optimal-equivalence
   footnotes:
@@ -131,9 +131,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:34Z'
   unchanged: false
-  changes_summary: Changed 'I am writing' to 'I write' for closer correspondence to
-    γράφω; changed 'Jesus Messiah' to 'Jesus Christ' for standard rendering of Ἰησοῦν
-    Χριστόν in formal translation. Kept 'the Righteous One' for δίκαιον.
+  changes_summary: 'Changed ''I am writing'' to ''I write'' for closer correspondence
+    to γράφω; changed ''Jesus Messiah'' to ''Jesus Christ'' for standard rendering
+    of Ἰησοῦν Χριστόν in formal translation. Kept ''the Righteous One'' for δίκαιον.
+    [Regression fix applied: Messiah restored (revision_pass had changed Χριστός →
+    Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -148,3 +150,15 @@ revisions:
   rationale: Changed 'I am writing' to 'I write' for closer correspondence to γράφω;
     changed 'Jesus Messiah' to 'Jesus Christ' for standard rendering of Ἰησοῦν Χριστόν
     in formal translation. Kept 'the Righteous One' for δίκαιον.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: My little children, I write these things to you so that you may not sin. But
+    if anyone does sin, we have an advocate with the Father—Jesus Christ the Righteous
+    One.
+  to: My little children, I write these things to you so that you may not sin. But
+    if anyone does sin, we have an advocate with the Father—Jesus Messiah the Righteous
+    One.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

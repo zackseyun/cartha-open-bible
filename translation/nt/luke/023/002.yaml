@@ -7,7 +7,7 @@ source:
     εἶναι.
 translation:
   text: And they began to accuse him, saying, “We found this man misleading our nation
-    and forbidding us to pay taxes to Caesar, and saying that he himself is Christ,
+    and forbidding us to pay taxes to Caesar, and saying that he himself is Messiah,
     a king.”
   philosophy: optimal-equivalence
   footnotes:
@@ -161,9 +161,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:51:54Z'
   unchanged: false
-  changes_summary: Changed 'the payment of taxes' to 'us to pay taxes' to reflect
-    the implied subject of διδόναι more directly, and changed 'Messiah' to 'Christ'
-    for closer lexical correspondence to χριστόν in this context.
+  changes_summary: 'Changed ''the payment of taxes'' to ''us to pay taxes'' to reflect
+    the implied subject of διδόναι more directly, and changed ''Messiah'' to ''Christ''
+    for closer lexical correspondence to χριστόν in this context. [Regression fix
+    applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:51:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -178,3 +180,15 @@ revisions:
   rationale: Changed 'the payment of taxes' to 'us to pay taxes' to reflect the implied
     subject of διδόναι more directly, and changed 'Messiah' to 'Christ' for closer
     lexical correspondence to χριστόν in this context.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And they began to accuse him, saying, “We found this man misleading our nation
+    and forbidding us to pay taxes to Caesar, and saying that he himself is Christ,
+    a king.”
+  to: And they began to accuse him, saying, “We found this man misleading our nation
+    and forbidding us to pay taxes to Caesar, and saying that he himself is Messiah,
+    a king.”
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

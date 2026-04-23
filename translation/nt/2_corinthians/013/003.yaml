@@ -5,8 +5,8 @@ source:
   text: ἐπεὶ δοκιμὴν ζητεῖτε τοῦ ἐν ἐμοὶ λαλοῦντος Χριστοῦ· ὃς εἰς ὑμᾶς οὐκ ἀσθενεῖ
     ἀλλὰ δυνατεῖ ἐν ὑμῖν,
 translation:
-  text: since you are seeking proof that Christ is speaking in me—he is not weak toward
-    you, but is powerful in you,
+  text: since you are seeking proof that Messiah is speaking in me—he is not weak
+    toward you, but is powerful in you,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -138,9 +138,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:37:47Z'
   unchanged: false
-  changes_summary: Changed 'the Messiah' to 'Christ' for closer correspondence to
-    Χριστοῦ in this context and more natural Pauline register; changed 'among you'
-    to 'in you' to reflect ἐν ὑμῖν more directly. Kept the rest unchanged.
+  changes_summary: 'Changed ''the Messiah'' to ''Christ'' for closer correspondence
+    to Χριστοῦ in this context and more natural Pauline register; changed ''among
+    you'' to ''in you'' to reflect ἐν ὑμῖν more directly. Kept the rest unchanged.
+    [Regression fix applied: Messiah restored (revision_pass had changed Χριστός →
+    Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:37:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -153,3 +155,13 @@ revisions:
   rationale: Changed 'the Messiah' to 'Christ' for closer correspondence to Χριστοῦ
     in this context and more natural Pauline register; changed 'among you' to 'in
     you' to reflect ἐν ὑμῖν more directly. Kept the rest unchanged.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: since you are seeking proof that Christ is speaking in me—he is not weak toward
+    you, but is powerful in you,
+  to: since you are seeking proof that Messiah is speaking in me—he is not weak toward
+    you, but is powerful in you,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

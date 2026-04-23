@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: οἱ πάντες γὰρ τὰ ἑαυτῶν ζητοῦσιν, οὐ τὰ ⸂Ἰησοῦ Χριστοῦ⸃.
 translation:
-  text: For they all seek their own interests, not those of Jesus Christ.
+  text: For they all seek their own interests, not those of Jesus Messiah.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -73,9 +73,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:47Z'
   unchanged: false
-  changes_summary: Replaced 'Jesus the Messiah' with 'Jesus Christ' to reflect the
-    Greek name-title order more directly and maintain standard formal register; otherwise
-    retained the accurate rendering of 'seek their own interests.'
+  changes_summary: 'Replaced ''Jesus the Messiah'' with ''Jesus Christ'' to reflect
+    the Greek name-title order more directly and maintain standard formal register;
+    otherwise retained the accurate rendering of ''seek their own interests.'' [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:58:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -86,4 +88,12 @@ revisions:
   rationale: Replaced 'Jesus the Messiah' with 'Jesus Christ' to reflect the Greek
     name-title order more directly and maintain standard formal register; otherwise
     retained the accurate rendering of 'seek their own interests.'
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For they all seek their own interests, not those of Jesus Christ.
+  to: For they all seek their own interests, not those of Jesus Messiah.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

@@ -16,7 +16,7 @@ source:
     C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor
     map.
 translation:
-  text: And your servant has not rejoiced from the day of my change until now, except
+  text: And your slave has not rejoiced from the day of my change until now, except
     in you, Lord, God of Abraham.
   philosophy: optimal-equivalence
   footnotes:
@@ -117,8 +117,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:37:52Z'
   unchanged: false
-  changes_summary: Changed 'slave' to 'servant' for more natural formal register while
-    still accurately rendering δούλη; retained the rest as faithful and complete.
+  changes_summary: 'Changed ''slave'' to ''servant'' for more natural formal register
+    while still accurately rendering δούλη; retained the rest as faithful and complete.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:37:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -130,3 +132,13 @@ revisions:
     in you, Lord, God of Abraham.
   rationale: Changed 'slave' to 'servant' for more natural formal register while still
     accurately rendering δούλη; retained the rest as faithful and complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And your servant has not rejoiced from the day of my change until now, except
+    in you, Lord, God of Abraham.
+  to: And your slave has not rejoiced from the day of my change until now, except
+    in you, Lord, God of Abraham.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

@@ -37,12 +37,20 @@ import yaml
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION_ROOT = REPO_ROOT / "translation"
+REVISION_POLICY_FILE = REPO_ROOT / "tools" / "prompts" / "revision_policy.md"
 
 DEFAULT_DEPLOYMENT = os.environ.get("AZURE_OPENAI_DEPLOYMENT_ID", "gpt-5-4-deployment")
 DEFAULT_API_VERSION = os.environ.get("AZURE_OPENAI_API_VERSION", "2025-04-01-preview")
 REVISION_TOOL_NAME = "submit_verse_revision"
 
-SYSTEM_PROMPT = """You are a biblical translation revisor for the Cartha Open Bible — \
+
+def _load_revision_policy() -> str:
+    if REVISION_POLICY_FILE.exists():
+        return "\n\n" + REVISION_POLICY_FILE.read_text(encoding="utf-8")
+    return ""
+
+
+_BASE_SYSTEM_PROMPT = """You are a biblical translation revisor for the Cartha Open Bible — \
 a transparent, CC-BY 4.0 English Bible translated directly from the original Greek, Hebrew, and Aramaic.
 
 Your job: perform a focused revision pass on one verse's draft English translation.
@@ -66,6 +74,8 @@ If the draft is accurate and natural, submit it unchanged (set unchanged: true).
 If you improve it, briefly note what changed in changes_summary.
 
 Call submit_verse_revision exactly once. No other output."""
+
+SYSTEM_PROMPT = _BASE_SYSTEM_PROMPT + _load_revision_policy()
 
 REVISION_TOOL = {
     "type": "function",

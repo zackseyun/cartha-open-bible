@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: ⸂ἀπόλλυται γὰρ⸃ ὁ ἀσθενῶν ⸀ἐν τῇ σῇ γνώσει, ⸂ὁ ἀδελφὸς⸃ δι’ ὃν Χριστὸς ἀπέθανεν.
 translation:
-  text: For the weak one is destroyed by your knowledge—the brother for whom Christ
+  text: For the weak one is destroyed by your knowledge—the brother for whom Messiah
     died.
   philosophy: optimal-equivalence
   footnotes:
@@ -137,9 +137,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:10Z'
   unchanged: false
-  changes_summary: Changed 'is being ruined' to 'is destroyed' for a more direct rendering
-    of ἀπόλλυται, and changed 'the Messiah' to 'Christ' for standard formal register
-    and consistency with typical NT rendering of Χριστός.
+  changes_summary: 'Changed ''is being ruined'' to ''is destroyed'' for a more direct
+    rendering of ἀπόλλυται, and changed ''the Messiah'' to ''Christ'' for standard
+    formal register and consistency with typical NT rendering of Χριστός. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -152,3 +154,13 @@ revisions:
   rationale: Changed 'is being ruined' to 'is destroyed' for a more direct rendering
     of ἀπόλλυται, and changed 'the Messiah' to 'Christ' for standard formal register
     and consistency with typical NT rendering of Χριστός.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For the weak one is destroyed by your knowledge—the brother for whom Christ
+    died.
+  to: For the weak one is destroyed by your knowledge—the brother for whom Messiah
+    died.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

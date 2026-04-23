@@ -6,7 +6,7 @@ source:
     ἀλλὰ ὡς ἄγγελον θεοῦ ἐδέξασθέ με, ὡς Χριστὸν Ἰησοῦν.
 translation:
   text: And though my bodily condition was a trial to you, you did not treat me with
-    contempt or disgust; rather, you welcomed me as an angel of God, as Christ Jesus.
+    contempt or disgust; rather, you welcomed me as an angel of God, as Messiah Jesus.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -127,10 +127,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:30Z'
   unchanged: false
-  changes_summary: Recast the opening to reflect that the trial was theirs because
-    of Paul's bodily condition, not 'my bodily trial.' Added 'me' after 'treat' to
-    account for the implied object, and changed 'Messiah Jesus' to 'Christ Jesus'
-    for more natural formal register and consistency with common NT rendering.
+  changes_summary: 'Recast the opening to reflect that the trial was theirs because
+    of Paul''s bodily condition, not ''my bodily trial.'' Added ''me'' after ''treat''
+    to account for the implied object, and changed ''Messiah Jesus'' to ''Christ Jesus''
+    for more natural formal register and consistency with common NT rendering. [Regression
+    fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:43:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -144,3 +146,13 @@ revisions:
     bodily condition, not 'my bodily trial.' Added 'me' after 'treat' to account for
     the implied object, and changed 'Messiah Jesus' to 'Christ Jesus' for more natural
     formal register and consistency with common NT rendering.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And though my bodily condition was a trial to you, you did not treat me with
+    contempt or disgust; rather, you welcomed me as an angel of God, as Christ Jesus.
+  to: And though my bodily condition was a trial to you, you did not treat me with
+    contempt or disgust; rather, you welcomed me as an angel of God, as Messiah Jesus.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

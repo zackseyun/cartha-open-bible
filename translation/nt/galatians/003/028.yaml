@@ -6,7 +6,7 @@ source:
     καὶ θῆλυ· ⸀πάντες γὰρ ὑμεῖς εἷς ἐστε ἐν Χριστῷ Ἰησοῦ.
 translation:
   text: There is no Jew or Greek, there is no slave or free, there is no male and
-    female; for you are all one in Christ Jesus.
+    female; for you are all one in Messiah Jesus.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -139,9 +139,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:26Z'
   unchanged: false
-  changes_summary: Changed 'Messiah Jesus' to 'Christ Jesus' to reflect the Greek
+  changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' to reflect the Greek
     Χριστῷ Ἰησοῦ in standard formal English usage and maintain natural register; no
-    other changes needed.
+    other changes needed. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:43:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -154,3 +155,13 @@ revisions:
   rationale: Changed 'Messiah Jesus' to 'Christ Jesus' to reflect the Greek Χριστῷ
     Ἰησοῦ in standard formal English usage and maintain natural register; no other
     changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: There is no Jew or Greek, there is no slave or free, there is no male and
+    female; for you are all one in Christ Jesus.
+  to: There is no Jew or Greek, there is no slave or free, there is no male and female;
+    for you are all one in Messiah Jesus.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

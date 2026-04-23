@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: מְפַנֵּ֣ק מִ/נֹּ֣עַר עַבְדּ֑/וֹ וְ֝/אַחֲרִית֗/וֹ יִהְיֶ֥ה מָנֽוֹן׃
 translation:
-  text: Whoever pampers his servant from youth, in the end he will become a son.
+  text: Whoever pampers his slave from youth, in the end he will become a son.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -83,9 +83,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:22:50Z'
   unchanged: false
-  changes_summary: Replaced 'slave' with 'servant' for a more standard formal rendering
-    of עבדו, and changed 'will have grief' to 'he will become a son' to reflect the
-    Hebrew מָנוֹן as represented in the source text rather than an interpretive paraphrase.
+  changes_summary: 'Replaced ''slave'' with ''servant'' for a more standard formal
+    rendering of עבדו, and changed ''will have grief'' to ''he will become a son''
+    to reflect the Hebrew מָנוֹן as represented in the source text rather than an
+    interpretive paraphrase. [Regression fix applied: slave restored (revision_pass
+    had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T11:22:50Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -96,3 +98,11 @@ revisions:
   rationale: Replaced 'slave' with 'servant' for a more standard formal rendering
     of עבדו, and changed 'will have grief' to 'he will become a son' to reflect the
     Hebrew מָנוֹן as represented in the source text rather than an interpretive paraphrase.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Whoever pampers his servant from youth, in the end he will become a son.
+  to: Whoever pampers his slave from youth, in the end he will become a son.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

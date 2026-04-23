@@ -5,8 +5,8 @@ source:
   text: וַ/יִּקַּ֨ח אֲבִימֶ֜לֶךְ צֹ֣אן וּ/בָקָ֗ר וַ/עֲבָדִים֙ וּ/שְׁפָחֹ֔ת וַ/יִּתֵּ֖ן
     לְ/אַבְרָהָ֑ם וַ/יָּ֣שֶׁב ל֔/וֹ אֵ֖ת שָׂרָ֥ה אִשְׁתּֽ/וֹ׃
 translation:
-  text: Then Abimelech took sheep and cattle, and male servants and female servants,
-    and gave them to Abraham; and he returned Sarah his wife to him.
+  text: Then Abimelech took sheep and cattle, and male slaves and female slaves, and
+    gave them to Abraham; and he returned Sarah his wife to him.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -112,9 +112,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:42:50Z'
   unchanged: false
-  changes_summary: Changed 'male slaves and female slaves' to 'male servants and female
-    servants' for a more formal and contextually suitable rendering of עבדים ושפחות,
-    while preserving the meaning. No other changes needed.
+  changes_summary: 'Changed ''male slaves and female slaves'' to ''male servants and
+    female servants'' for a more formal and contextually suitable rendering of עבדים
+    ושפחות, while preserving the meaning. No other changes needed. [Regression fix
+    applied: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T10:42:50Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -127,3 +129,13 @@ revisions:
   rationale: Changed 'male slaves and female slaves' to 'male servants and female
     servants' for a more formal and contextually suitable rendering of עבדים ושפחות,
     while preserving the meaning. No other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Then Abimelech took sheep and cattle, and male servants and female servants,
+    and gave them to Abraham; and he returned Sarah his wife to him.
+  to: Then Abimelech took sheep and cattle, and male slaves and female slaves, and
+    gave them to Abraham; and he returned Sarah his wife to him.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

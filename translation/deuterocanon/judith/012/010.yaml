@@ -18,7 +18,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And on the fourth day, Holofernes gave a banquet for his servants alone, and
+  text: And on the fourth day, Holofernes gave a banquet for his slaves alone, and
     he did not invite any of those in attendance.
   philosophy: optimal-equivalence
   footnotes:
@@ -116,10 +116,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:40:13Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural and contextually
-    suitable rendering of δούλοις here, and revised 'those assigned to the duties'
-    to 'those in attendance' for a clearer, more idiomatic translation of τῶν πρὸς
-    ταῖς χρείαις.
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural and contextually
+    suitable rendering of δούλοις here, and revised ''those assigned to the duties''
+    to ''those in attendance'' for a clearer, more idiomatic translation of τῶν πρὸς
+    ταῖς χρείαις. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:40:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -132,3 +133,13 @@ revisions:
   rationale: Changed 'slaves' to 'servants' for a more natural and contextually suitable
     rendering of δούλοις here, and revised 'those assigned to the duties' to 'those
     in attendance' for a clearer, more idiomatic translation of τῶν πρὸς ταῖς χρείαις.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And on the fourth day, Holofernes gave a banquet for his servants alone, and
+    he did not invite any of those in attendance.
+  to: And on the fourth day, Holofernes gave a banquet for his slaves alone, and he
+    did not invite any of those in attendance.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

@@ -5,7 +5,7 @@ source:
   text: ὅτι ἐπέβλεψεν ἐπὶ τὴν ταπείνωσιν τῆς δούλης αὐτοῦ, ἰδοὺ γὰρ ἀπὸ τοῦ νῦν μακαριοῦσίν
     με πᾶσαι αἱ γενεαί·
 translation:
-  text: because he has looked upon the humble state of his servant. For behold, from
+  text: because he has looked upon the humble state of his slave. For behold, from
     now on all generations will call me blessed.
   philosophy: optimal-equivalence
   footnotes:
@@ -118,8 +118,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:48:22Z'
   unchanged: false
-  changes_summary: Changed 'slave' to 'servant' for more natural formal English in
-    this context while preserving the sense of δούλη; otherwise retained the draft.
+  changes_summary: 'Changed ''slave'' to ''servant'' for more natural formal English
+    in this context while preserving the sense of δούλη; otherwise retained the draft.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:48:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -131,3 +133,13 @@ revisions:
     now on all generations will call me blessed.
   rationale: Changed 'slave' to 'servant' for more natural formal English in this
     context while preserving the sense of δούλη; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: because he has looked upon the humble state of his servant. For behold, from
+    now on all generations will call me blessed.
+  to: because he has looked upon the humble state of his slave. For behold, from now
+    on all generations will call me blessed.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

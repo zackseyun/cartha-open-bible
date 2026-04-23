@@ -6,8 +6,8 @@ source:
     καὶ διδάσκει καὶ πλανᾷ τοὺς ἐμοὺς δούλους πορνεῦσαι καὶ φαγεῖν εἰδωλόθυτα.
 translation:
   text: 'But I have this against you: you tolerate the woman Jezebel, who calls herself
-    a prophetess and teaches and deceives my servants to commit sexual immorality
-    and to eat food sacrificed to idols.'
+    a prophetess and teaches and deceives my slaves to commit sexual immorality and
+    to eat food sacrificed to idols.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -142,8 +142,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:59:32Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for more natural formal register
-    while still accurately rendering δούλους; otherwise retained the draft.
+  changes_summary: 'Changed ''slaves'' to ''servants'' for more natural formal register
+    while still accurately rendering δούλους; otherwise retained the draft. [Regression
+    fix applied: slave restored (revision_pass had changed δοῦλος → servant against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:59:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -157,3 +159,15 @@ revisions:
     and to eat food sacrificed to idols.'
   rationale: Changed 'slaves' to 'servants' for more natural formal register while
     still accurately rendering δούλους; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: 'But I have this against you: you tolerate the woman Jezebel, who calls herself
+    a prophetess and teaches and deceives my servants to commit sexual immorality
+    and to eat food sacrificed to idols.'
+  to: 'But I have this against you: you tolerate the woman Jezebel, who calls herself
+    a prophetess and teaches and deceives my slaves to commit sexual immorality and
+    to eat food sacrificed to idols.'
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

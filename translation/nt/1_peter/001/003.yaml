@@ -5,9 +5,9 @@ source:
   text: Εὐλογητὸς ὁ θεὸς καὶ πατὴρ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, ὁ κατὰ τὸ πολὺ αὐτοῦ
     ἔλεος ἀναγεννήσας ἡμᾶς εἰς ἐλπίδα ζῶσαν δι’ ἀναστάσεως Ἰησοῦ Χριστοῦ ἐκ νεκρῶν,
 translation:
-  text: Blessed be the God and Father of our Lord Jesus Christ, who according to his
-    great mercy has caused us to be born again to a living hope through the resurrection
-    of Jesus Christ from the dead,
+  text: Blessed be the God and Father of our Lord Jesus Messiah, who according to
+    his great mercy has caused us to be born again to a living hope through the resurrection
+    of Jesus Messiah from the dead,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -123,10 +123,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:50Z'
   unchanged: false
-  changes_summary: Replaced 'Messiah' with 'Christ' for natural rendering of the proper
-    name/title in this context and consistency within formal Bible English; changed
-    'into a living hope' to 'to a living hope' to more directly reflect εἰς with ἀναγεννήσας
-    in standard English Bible style. All source elements are retained.
+  changes_summary: 'Replaced ''Messiah'' with ''Christ'' for natural rendering of
+    the proper name/title in this context and consistency within formal Bible English;
+    changed ''into a living hope'' to ''to a living hope'' to more directly reflect
+    εἰς with ἀναγεννήσας in standard English Bible style. All source elements are
+    retained. [Regression fix applied: Messiah restored (revision_pass had changed
+    Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:50Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -142,3 +144,15 @@ revisions:
     name/title in this context and consistency within formal Bible English; changed
     'into a living hope' to 'to a living hope' to more directly reflect εἰς with ἀναγεννήσας
     in standard English Bible style. All source elements are retained.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Blessed be the God and Father of our Lord Jesus Christ, who according to his
+    great mercy has caused us to be born again to a living hope through the resurrection
+    of Jesus Christ from the dead,
+  to: Blessed be the God and Father of our Lord Jesus Messiah, who according to his
+    great mercy has caused us to be born again to a living hope through the resurrection
+    of Jesus Messiah from the dead,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

@@ -30,7 +30,7 @@ source:
 translation:
   text: And when he saw that the camp was strong, he prayed and said, “Blessed are
     you, O Savior of Israel, who crushed the assault of the mighty one by the hand
-    of your servant David, and gave the camp of the foreigners into the hands of Jonathan
+    of your slave David, and gave the camp of the foreigners into the hands of Jonathan
     son of Saul and of the one who carried his armor.”
   philosophy: optimal-equivalence
   footnotes:
@@ -171,9 +171,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:30:11Z'
   unchanged: false
-  changes_summary: Capitalized 'Savior' in direct address, changed 'mighty man' to
-    'mighty one' for closer lexical correspondence, and changed 'slave' to 'servant'
-    for more natural formal register in reference to David.
+  changes_summary: 'Capitalized ''Savior'' in direct address, changed ''mighty man''
+    to ''mighty one'' for closer lexical correspondence, and changed ''slave'' to
+    ''servant'' for more natural formal register in reference to David. [Regression
+    fix applied: slave restored (revision_pass had changed δοῦλος → servant against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:30:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -190,3 +192,17 @@ revisions:
   rationale: Capitalized 'Savior' in direct address, changed 'mighty man' to 'mighty
     one' for closer lexical correspondence, and changed 'slave' to 'servant' for more
     natural formal register in reference to David.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And when he saw that the camp was strong, he prayed and said, “Blessed are
+    you, O Savior of Israel, who crushed the assault of the mighty one by the hand
+    of your servant David, and gave the camp of the foreigners into the hands of Jonathan
+    son of Saul and of the one who carried his armor.”
+  to: And when he saw that the camp was strong, he prayed and said, “Blessed are you,
+    O Savior of Israel, who crushed the assault of the mighty one by the hand of your
+    slave David, and gave the camp of the foreigners into the hands of Jonathan son
+    of Saul and of the one who carried his armor.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

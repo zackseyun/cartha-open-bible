@@ -5,7 +5,7 @@ source:
   text: οὐ μόνον δέ, ἀλλὰ καὶ καυχώμενοι ἐν τῷ θεῷ διὰ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ,
     δι’ οὗ νῦν τὴν καταλλαγὴν ἐλάβομεν.
 translation:
-  text: And not only that, but we also boast in God through our Lord Jesus Christ,
+  text: And not only that, but we also boast in God through our Lord Jesus Messiah,
     through whom we have now received the reconciliation.
   philosophy: optimal-equivalence
   footnotes:
@@ -93,10 +93,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:00:54Z'
   unchanged: false
-  changes_summary: Changed 'rejoice' to 'boast' to reflect καυχώμενοι more directly
-    and consistently; changed 'Jesus the Messiah' to 'Jesus Christ' for standard formal
-    rendering of Ἰησοῦ Χριστοῦ. Kept 'the reconciliation' to reflect the article in
-    τὴν καταλλαγήν.
+  changes_summary: 'Changed ''rejoice'' to ''boast'' to reflect καυχώμενοι more directly
+    and consistently; changed ''Jesus the Messiah'' to ''Jesus Christ'' for standard
+    formal rendering of Ἰησοῦ Χριστοῦ. Kept ''the reconciliation'' to reflect the
+    article in τὴν καταλλαγήν. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:00:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -110,4 +111,14 @@ revisions:
     consistently; changed 'Jesus the Messiah' to 'Jesus Christ' for standard formal
     rendering of Ἰησοῦ Χριστοῦ. Kept 'the reconciliation' to reflect the article in
     τὴν καταλλαγήν.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And not only that, but we also boast in God through our Lord Jesus Christ,
+    through whom we have now received the reconciliation.
+  to: And not only that, but we also boast in God through our Lord Jesus Messiah,
+    through whom we have now received the reconciliation.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

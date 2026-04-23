@@ -5,7 +5,7 @@ source:
   text: ναί, ἀδελφέ, ἐγώ σου ὀναίμην ἐν κυρίῳ· ἀνάπαυσόν μου τὰ σπλάγχνα ἐν ⸀Χριστῷ.
 translation:
   text: Yes, brother, let me have benefit from you in the Lord; refresh my heart in
-    Christ.
+    Messiah.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -109,9 +109,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:31Z'
   unchanged: false
-  changes_summary: Removed 'this' since it is not in the Greek, and changed 'Messiah'
-    to 'Christ' to match the Greek term Χριστῷ and maintain formal register/consistency
-    within the verse.
+  changes_summary: 'Removed ''this'' since it is not in the Greek, and changed ''Messiah''
+    to ''Christ'' to match the Greek term Χριστῷ and maintain formal register/consistency
+    within the verse. [Regression fix applied: Messiah restored (revision_pass had
+    changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:58:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -124,3 +125,13 @@ revisions:
   rationale: Removed 'this' since it is not in the Greek, and changed 'Messiah' to
     'Christ' to match the Greek term Χριστῷ and maintain formal register/consistency
     within the verse.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Yes, brother, let me have benefit from you in the Lord; refresh my heart in
+    Christ.
+  to: Yes, brother, let me have benefit from you in the Lord; refresh my heart in
+    Messiah.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

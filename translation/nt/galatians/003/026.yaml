@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: πάντες γὰρ υἱοὶ θεοῦ ἐστε διὰ τῆς πίστεως ἐν Χριστῷ Ἰησοῦ.
 translation:
-  text: For you are all sons of God through faith in Christ Jesus.
+  text: For you are all sons of God through faith in Messiah Jesus.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -89,9 +89,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:25Z'
   unchanged: false
-  changes_summary: Replaced 'Messiah Jesus' with 'Christ Jesus' to reflect the Greek
-    Χριστῷ Ἰησοῦ more naturally in this epistolary context and standard formal register;
-    otherwise retained the wording.
+  changes_summary: 'Replaced ''Messiah Jesus'' with ''Christ Jesus'' to reflect the
+    Greek Χριστῷ Ἰησοῦ more naturally in this epistolary context and standard formal
+    register; otherwise retained the wording. [Regression fix applied: Messiah restored
+    (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:43:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -102,3 +103,11 @@ revisions:
   rationale: Replaced 'Messiah Jesus' with 'Christ Jesus' to reflect the Greek Χριστῷ
     Ἰησοῦ more naturally in this epistolary context and standard formal register;
     otherwise retained the wording.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For you are all sons of God through faith in Christ Jesus.
+  to: For you are all sons of God through faith in Messiah Jesus.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

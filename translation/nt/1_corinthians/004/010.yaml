@@ -5,7 +5,7 @@ source:
   text: ἡμεῖς μωροὶ διὰ Χριστόν, ὑμεῖς δὲ φρόνιμοι ἐν Χριστῷ· ἡμεῖς ἀσθενεῖς, ὑμεῖς
     δὲ ἰσχυροί· ὑμεῖς ἔνδοξοι, ἡμεῖς δὲ ἄτιμοι.
 translation:
-  text: We are fools for Christ, but you are wise in Christ; we are weak, but you
+  text: We are fools for Messiah, but you are wise in Messiah; we are weak, but you
     are strong; you are honored, but we are dishonored.
   philosophy: optimal-equivalence
   footnotes:
@@ -123,9 +123,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:03Z'
   unchanged: false
-  changes_summary: Replaced 'the Messiah' with 'Christ' for more natural rendering
+  changes_summary: 'Replaced ''the Messiah'' with ''Christ'' for more natural rendering
     and consistency with the Greek expressions διὰ Χριστόν / ἐν Χριστῷ in this verse;
-    otherwise retained the structure and sense.
+    otherwise retained the structure and sense. [Regression fix applied: Messiah restored
+    (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:03Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -138,3 +139,13 @@ revisions:
   rationale: Replaced 'the Messiah' with 'Christ' for more natural rendering and consistency
     with the Greek expressions διὰ Χριστόν / ἐν Χριστῷ in this verse; otherwise retained
     the structure and sense.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: We are fools for Christ, but you are wise in Christ; we are weak, but you
+    are strong; you are honored, but we are dishonored.
+  to: We are fools for Messiah, but you are wise in Messiah; we are weak, but you
+    are strong; you are honored, but we are dishonored.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

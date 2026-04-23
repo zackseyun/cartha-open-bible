@@ -10,7 +10,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: and my servants will bring you back to the hill country and place you in one
+  text: and my slaves will bring you back to the hill country and place you in one
     of the cities of the mountain passes,
   philosophy: optimal-equivalence
   footnotes:
@@ -93,9 +93,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:39:07Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural and contextually
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural and contextually
     appropriate rendering of δοῦλοί while preserving the formal register. Kept the
-    rest unchanged.
+    rest unchanged. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:39:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -107,3 +108,13 @@ revisions:
     of the cities of the mountain passes,
   rationale: Changed 'slaves' to 'servants' for a more natural and contextually appropriate
     rendering of δοῦλοί while preserving the formal register. Kept the rest unchanged.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: and my servants will bring you back to the hill country and place you in one
+    of the cities of the mountain passes,
+  to: and my slaves will bring you back to the hill country and place you in one of
+    the cities of the mountain passes,
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

@@ -5,7 +5,7 @@ source:
   text: עֶֽבֶד מַשְׂכִּ֗יל יִ֭מְשֹׁל בְּ/בֵ֣ן מֵבִ֑ישׁ וּ/בְ/ת֥וֹךְ אַ֝חִ֗ים יַחֲלֹ֥ק
     נַחֲלָֽה־׃
 translation:
-  text: A prudent servant will rule over a son who brings shame, and among brothers
+  text: A prudent slave will rule over a son who brings shame, and among brothers
     he will share the inheritance.
   philosophy: optimal-equivalence
   footnotes:
@@ -114,9 +114,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:21:37Z'
   unchanged: false
-  changes_summary: Changed 'slave' to 'servant' for a more natural and suitably formal
-    rendering of עבד in this proverb; otherwise retained the draft, which accurately
-    reflects the Hebrew.
+  changes_summary: 'Changed ''slave'' to ''servant'' for a more natural and suitably
+    formal rendering of עבד in this proverb; otherwise retained the draft, which accurately
+    reflects the Hebrew. [Regression fix applied: slave restored (revision_pass had
+    changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T11:21:37Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -129,3 +130,13 @@ revisions:
   rationale: Changed 'slave' to 'servant' for a more natural and suitably formal rendering
     of עבד in this proverb; otherwise retained the draft, which accurately reflects
     the Hebrew.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: A prudent servant will rule over a son who brings shame, and among brothers
+    he will share the inheritance.
+  to: A prudent slave will rule over a son who brings shame, and among brothers he
+    will share the inheritance.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

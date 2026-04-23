@@ -5,7 +5,7 @@ source:
   text: Παῦλος ἀπόστολος, οὐκ ἀπ’ ἀνθρώπων οὐδὲ δι’ ἀνθρώπου ἀλλὰ διὰ Ἰησοῦ Χριστοῦ
     καὶ θεοῦ πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν,
 translation:
-  text: Paul, an apostle—not from men nor through a man, but through Jesus Christ
+  text: Paul, an apostle—not from men nor through a man, but through Jesus Messiah
     and God the Father, who raised him from the dead,
   philosophy: optimal-equivalence
   footnotes:
@@ -85,10 +85,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:34Z'
   unchanged: false
-  changes_summary: Changed 'through man' to 'through a man' for natural English and
-    to reflect the singular anarthrous Greek; changed 'Jesus the Messiah' to 'Jesus
-    Christ' for standard formal register and consistency with the Greek name-title
-    construction.
+  changes_summary: 'Changed ''through man'' to ''through a man'' for natural English
+    and to reflect the singular anarthrous Greek; changed ''Jesus the Messiah'' to
+    ''Jesus Christ'' for standard formal register and consistency with the Greek name-title
+    construction. [Regression fix applied: Messiah restored (revision_pass had changed
+    Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:43:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -101,4 +102,14 @@ revisions:
   rationale: Changed 'through man' to 'through a man' for natural English and to reflect
     the singular anarthrous Greek; changed 'Jesus the Messiah' to 'Jesus Christ' for
     standard formal register and consistency with the Greek name-title construction.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Paul, an apostle—not from men nor through a man, but through Jesus Christ
+    and God the Father, who raised him from the dead,
+  to: Paul, an apostle—not from men nor through a man, but through Jesus Messiah and
+    God the Father, who raised him from the dead,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

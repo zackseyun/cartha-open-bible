@@ -24,7 +24,7 @@ source:
     from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond
     Wisdom 19:22.
 translation:
-  text: for I am your servant and the son of your female servant, a weak man and short-lived,
+  text: for I am your slave and the son of your female slave, a weak man and short-lived,
     and lacking in understanding of judgment and laws;
   philosophy: optimal-equivalence
   footnotes:
@@ -157,9 +157,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:48:31Z'
   unchanged: false
-  changes_summary: Changed 'slave' to 'servant' for more natural formal register here,
-    and replaced 'too small in understanding' with 'lacking in understanding' to better
-    reflect the Greek and improve English readability.
+  changes_summary: 'Changed ''slave'' to ''servant'' for more natural formal register
+    here, and replaced ''too small in understanding'' with ''lacking in understanding''
+    to better reflect the Greek and improve English readability. [Regression fix applied:
+    slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T15:48:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -172,3 +174,13 @@ revisions:
   rationale: Changed 'slave' to 'servant' for more natural formal register here, and
     replaced 'too small in understanding' with 'lacking in understanding' to better
     reflect the Greek and improve English readability.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: for I am your servant and the son of your female servant, a weak man and short-lived,
+    and lacking in understanding of judgment and laws;
+  to: for I am your slave and the son of your female slave, a weak man and short-lived,
+    and lacking in understanding of judgment and laws;
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

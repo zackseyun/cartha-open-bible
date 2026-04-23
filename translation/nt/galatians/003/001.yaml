@@ -5,7 +5,7 @@ source:
   text: Ὦ ἀνόητοι Γαλάται, τίς ὑμᾶς ⸀ἐβάσκανεν, οἷς κατ’ ὀφθαλμοὺς Ἰησοῦς Χριστὸς
     ⸀προεγράφη ἐσταυρωμένος;
 translation:
-  text: You foolish Galatians, who has bewitched you, before whose eyes Jesus Christ
+  text: You foolish Galatians, who has bewitched you, before whose eyes Jesus Messiah
     was publicly portrayed as crucified?
   philosophy: optimal-equivalence
   footnotes:
@@ -95,10 +95,12 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:20Z'
   unchanged: false
-  changes_summary: Reordered the sentence to reflect the Greek structure more closely,
+  changes_summary: 'Reordered the sentence to reflect the Greek structure more closely,
     replacing the separate sentence break with a comma and moving the relative clause
-    after 'you.' Changed 'Jesus the Messiah' to 'Jesus Christ' for more standard formal
-    register and direct correspondence to Χριστὸς.
+    after ''you.'' Changed ''Jesus the Messiah'' to ''Jesus Christ'' for more standard
+    formal register and direct correspondence to Χριστὸς. [Regression fix applied:
+    Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T09:43:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -112,3 +114,13 @@ revisions:
     the separate sentence break with a comma and moving the relative clause after
     'you.' Changed 'Jesus the Messiah' to 'Jesus Christ' for more standard formal
     register and direct correspondence to Χριστὸς.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: You foolish Galatians, who has bewitched you, before whose eyes Jesus Christ
+    was publicly portrayed as crucified?
+  to: You foolish Galatians, who has bewitched you, before whose eyes Jesus Messiah
+    was publicly portrayed as crucified?
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

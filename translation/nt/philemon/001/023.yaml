@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: ⸀Ἀσπάζεταί σε Ἐπαφρᾶς ὁ συναιχμάλωτός μου ἐν Χριστῷ Ἰησοῦ,
 translation:
-  text: Epaphras, my fellow prisoner in Christ Jesus, greets you.
+  text: Epaphras, my fellow prisoner in Messiah Jesus, greets you.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -76,9 +76,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:32Z'
   unchanged: false
-  changes_summary: Changed 'Messiah Jesus' to 'Christ Jesus' to reflect the Greek
+  changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' to reflect the Greek
     more naturally and consistently in formal translation style; otherwise retained
-    the draft.
+    the draft. [Regression fix applied: Messiah restored (revision_pass had changed
+    Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:58:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -88,3 +89,11 @@ revisions:
   to: Epaphras, my fellow prisoner in Christ Jesus, greets you.
   rationale: Changed 'Messiah Jesus' to 'Christ Jesus' to reflect the Greek more naturally
     and consistently in formal translation style; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Epaphras, my fellow prisoner in Christ Jesus, greets you.
+  to: Epaphras, my fellow prisoner in Messiah Jesus, greets you.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

@@ -5,7 +5,7 @@ source:
   text: φανερωθεῖσαν δὲ νῦν διὰ τῆς ἐπιφανείας τοῦ σωτῆρος ἡμῶν ⸂Ἰησοῦ Χριστοῦ⸃, καταργήσαντος
     μὲν τὸν θάνατον φωτίσαντος δὲ ζωὴν καὶ ἀφθαρσίαν διὰ τοῦ εὐαγγελίου,
 translation:
-  text: but has now been revealed through the appearing of our Savior Jesus Christ,
+  text: but has now been revealed through the appearing of our Savior Jesus Messiah,
     who indeed abolished death and brought life and incorruptibility to light through
     the gospel,
   philosophy: optimal-equivalence
@@ -151,8 +151,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:22Z'
   unchanged: false
-  changes_summary: Changed “Jesus the Messiah” to “Jesus Christ” to reflect the Greek
+  changes_summary: 'Changed “Jesus the Messiah” to “Jesus Christ” to reflect the Greek
     text and maintain formal register and consistency; otherwise retained the draft.
+    [Regression fix applied: Messiah restored (revision_pass had changed Χριστός →
+    Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:38:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -166,3 +168,15 @@ revisions:
     the gospel,
   rationale: Changed “Jesus the Messiah” to “Jesus Christ” to reflect the Greek text
     and maintain formal register and consistency; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: but has now been revealed through the appearing of our Savior Jesus Christ,
+    who indeed abolished death and brought life and incorruptibility to light through
+    the gospel,
+  to: but has now been revealed through the appearing of our Savior Jesus Messiah,
+    who indeed abolished death and brought life and incorruptibility to light through
+    the gospel,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

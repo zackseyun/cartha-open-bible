@@ -5,7 +5,7 @@ source:
   text: τὰ γὰρ ὀψώνια τῆς ἁμαρτίας θάνατος, τὸ δὲ χάρισμα τοῦ θεοῦ ζωὴ αἰώνιος ἐν
     Χριστῷ Ἰησοῦ τῷ κυρίῳ ἡμῶν.
 translation:
-  text: For the wages of sin is death, but the gift of God is eternal life in Christ
+  text: For the wages of sin is death, but the gift of God is eternal life in Messiah
     Jesus our Lord.
   philosophy: optimal-equivalence
   footnotes:
@@ -97,9 +97,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:01:03Z'
   unchanged: false
-  changes_summary: Changed 'Messiah Jesus' to 'Christ Jesus' for more standard formal-register
-    rendering of Χριστῷ Ἰησοῦ and better consistency with common New Testament usage;
-    no other changes needed.
+  changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' for more standard
+    formal-register rendering of Χριστῷ Ἰησοῦ and better consistency with common New
+    Testament usage; no other changes needed. [Regression fix applied: Messiah restored
+    (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:01:03Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -112,4 +113,14 @@ revisions:
   rationale: Changed 'Messiah Jesus' to 'Christ Jesus' for more standard formal-register
     rendering of Χριστῷ Ἰησοῦ and better consistency with common New Testament usage;
     no other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For the wages of sin is death, but the gift of God is eternal life in Christ
+    Jesus our Lord.
+  to: For the wages of sin is death, but the gift of God is eternal life in Messiah
+    Jesus our Lord.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)
 status: revised

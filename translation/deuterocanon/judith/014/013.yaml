@@ -20,7 +20,7 @@ source:
   validation: agree
 translation:
   text: And they came to Holofernes’s tent, and said to the one over all his affairs,
-    “Wake our lord at once, because the servants have dared to come down against us
+    “Wake our lord at once, because the slaves have dared to come down against us
     for battle, so that they may be utterly destroyed.”
   philosophy: optimal-equivalence
   footnotes:
@@ -136,9 +136,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:39:52Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural and contextually
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural and contextually
     appropriate rendering of οἱ δοῦλοι, while preserving the sense and formal register.
-    No other changes needed.
+    No other changes needed. [Regression fix applied: slave restored (revision_pass
+    had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:39:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -153,3 +154,15 @@ revisions:
   rationale: Changed 'slaves' to 'servants' for a more natural and contextually appropriate
     rendering of οἱ δοῦλοι, while preserving the sense and formal register. No other
     changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And they came to Holofernes’s tent, and said to the one over all his affairs,
+    “Wake our lord at once, because the servants have dared to come down against us
+    for battle, so that they may be utterly destroyed.”
+  to: And they came to Holofernes’s tent, and said to the one over all his affairs,
+    “Wake our lord at once, because the slaves have dared to come down against us
+    for battle, so that they may be utterly destroyed.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

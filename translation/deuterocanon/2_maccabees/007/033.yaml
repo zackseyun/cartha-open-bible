@@ -26,7 +26,7 @@ source:
   validation: agree
 translation:
   text: But if our living Lord has become angry for a little while for the sake of
-    rebuke and discipline, he will again be reconciled with his own servants.
+    rebuke and discipline, he will again be reconciled with his own slaves.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -165,8 +165,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:33:51Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for more natural formal register
+  changes_summary: 'Changed ''slaves'' to ''servants'' for more natural formal register
     in this context while preserving the meaning of δούλοις. No other changes needed.
+    [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant
+    against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:33:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -178,3 +180,13 @@ revisions:
     and discipline, he will again be reconciled with his own servants.
   rationale: Changed 'slaves' to 'servants' for more natural formal register in this
     context while preserving the meaning of δούλοις. No other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But if our living Lord has become angry for a little while for the sake of
+    rebuke and discipline, he will again be reconciled with his own servants.
+  to: But if our living Lord has become angry for a little while for the sake of rebuke
+    and discipline, he will again be reconciled with his own slaves.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

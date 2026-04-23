@@ -5,7 +5,7 @@ source:
   text: Ὥσπερ γὰρ ἄνθρωπος ἀποδημῶν ἐκάλεσεν τοὺς ἰδίους δούλους καὶ παρέδωκεν αὐτοῖς
     τὰ ὑπάρχοντα αὐτοῦ,
 translation:
-  text: For it is like a man going on a journey, who called his own servants and entrusted
+  text: For it is like a man going on a journey, who called his own slaves and entrusted
     his possessions to them.
   philosophy: optimal-equivalence
   footnotes:
@@ -98,9 +98,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:57:51Z'
   unchanged: false
-  changes_summary: Changed 'slaves' to 'servants' for a more natural formal register
+  changes_summary: 'Changed ''slaves'' to ''servants'' for a more natural formal register
     while still accurately rendering δούλους in this context; otherwise retained the
-    draft.
+    draft. [Regression fix applied: slave restored (revision_pass had changed δοῦλος
+    → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:57:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -112,3 +113,13 @@ revisions:
     his possessions to them.
   rationale: Changed 'slaves' to 'servants' for a more natural formal register while
     still accurately rendering δούλους in this context; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: For it is like a man going on a journey, who called his own servants and entrusted
+    his possessions to them.
+  to: For it is like a man going on a journey, who called his own slaves and entrusted
+    his possessions to them.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

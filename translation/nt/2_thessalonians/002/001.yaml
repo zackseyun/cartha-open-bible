@@ -5,8 +5,8 @@ source:
   text: Ἐρωτῶμεν δὲ ὑμᾶς, ἀδελφοί, ὑπὲρ τῆς παρουσίας τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ
     καὶ ἡμῶν ἐπισυναγωγῆς ἐπ’ αὐτόν,
 translation:
-  text: Now we ask you, brothers, concerning the coming of our Lord Jesus Christ and
-    our gathering together to him,
+  text: Now we ask you, brothers, concerning the coming of our Lord Jesus Messiah
+    and our gathering together to him,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -144,9 +144,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:38:17Z'
   unchanged: false
-  changes_summary: Replaced “the Messiah” with “Christ” to reflect the Greek Χριστοῦ
+  changes_summary: 'Replaced “the Messiah” with “Christ” to reflect the Greek Χριστοῦ
     more directly and maintain formal register and likely consistency with surrounding
-    usage. No other changes needed.
+    usage. No other changes needed. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:38:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -159,3 +160,13 @@ revisions:
   rationale: Replaced “the Messiah” with “Christ” to reflect the Greek Χριστοῦ more
     directly and maintain formal register and likely consistency with surrounding
     usage. No other changes needed.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Now we ask you, brothers, concerning the coming of our Lord Jesus Christ and
+    our gathering together to him,
+  to: Now we ask you, brothers, concerning the coming of our Lord Jesus Messiah and
+    our gathering together to him,
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

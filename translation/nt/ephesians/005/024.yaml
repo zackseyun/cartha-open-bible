@@ -5,7 +5,7 @@ source:
   text: ἀλλὰ ⸀ὡς ἡ ἐκκλησία ὑποτάσσεται τῷ Χριστῷ, οὕτως καὶ αἱ γυναῖκες ⸀τοῖς ἀνδράσιν
     ἐν παντί.
 translation:
-  text: But as the church submits to Christ, so also wives to their husbands in everything.
+  text: But as the church submits to Messiah, so also wives to their husbands in everything.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -119,9 +119,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:43:00Z'
   unchanged: false
-  changes_summary: Changed 'the Messiah' to 'Christ' for direct consistency with τῷ
-    Χριστῷ in this context, and removed the supplied words 'are to submit' since the
-    Greek omits the repeated verb in the second clause.
+  changes_summary: 'Changed ''the Messiah'' to ''Christ'' for direct consistency with
+    τῷ Χριστῷ in this context, and removed the supplied words ''are to submit'' since
+    the Greek omits the repeated verb in the second clause. [Regression fix applied:
+    Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md
+    policy)]'
 revisions:
 - timestamp: '2026-04-23T09:43:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -133,3 +135,11 @@ revisions:
   rationale: Changed 'the Messiah' to 'Christ' for direct consistency with τῷ Χριστῷ
     in this context, and removed the supplied words 'are to submit' since the Greek
     omits the repeated verb in the second clause.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But as the church submits to Christ, so also wives to their husbands in everything.
+  to: But as the church submits to Messiah, so also wives to their husbands in everything.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

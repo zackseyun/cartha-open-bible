@@ -16,7 +16,7 @@ source:
     C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor
     map.
 translation:
-  text: And your servant did not eat at Haman’s table, and I did not honor the king’s
+  text: And your slave did not eat at Haman’s table, and I did not honor the king’s
     banquet, nor did I drink the wine of libations;
   philosophy: optimal-equivalence
   footnotes:
@@ -124,9 +124,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:37:52Z'
   unchanged: false
-  changes_summary: Changed 'slave' to 'servant' for a more natural and appropriate
+  changes_summary: 'Changed ''slave'' to ''servant'' for a more natural and appropriate
     formal register for δούλη in this context; otherwise retained the draft as accurate
-    and complete.
+    and complete. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:37:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -139,3 +140,13 @@ revisions:
   rationale: Changed 'slave' to 'servant' for a more natural and appropriate formal
     register for δούλη in this context; otherwise retained the draft as accurate and
     complete.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And your servant did not eat at Haman’s table, and I did not honor the king’s
+    banquet, nor did I drink the wine of libations;
+  to: And your slave did not eat at Haman’s table, and I did not honor the king’s
+    banquet, nor did I drink the wine of libations;
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

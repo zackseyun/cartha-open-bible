@@ -6,8 +6,7 @@ source:
     וַ/עֲבָדִים֙ וּ/שְׁפָחֹ֔ת וַ/אֲתֹנֹ֖ת וּ/גְמַלִּֽים־־׃
 translation:
   text: And he treated Abram well because of her, and he came to have sheep and cattle
-    and male donkeys and male servants and female servants and female donkeys and
-    camels.
+    and male donkeys and male slaves and female slaves and female donkeys and camels.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -112,9 +111,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:41:59Z'
   unchanged: false
-  changes_summary: Replaced 'male slaves and female slaves' with 'male servants and
-    female servants' for a more natural and formally appropriate rendering of עֲבָדִים
-    and שְׁפָחֹת in this context; otherwise retained the draft.
+  changes_summary: 'Replaced ''male slaves and female slaves'' with ''male servants
+    and female servants'' for a more natural and formally appropriate rendering of
+    עֲבָדִים and שְׁפָחֹת in this context; otherwise retained the draft. [Regression
+    fix applied: slave restored (revision_pass had changed δοῦλος → servant against
+    DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T10:41:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -128,3 +129,14 @@ revisions:
   rationale: Replaced 'male slaves and female slaves' with 'male servants and female
     servants' for a more natural and formally appropriate rendering of עֲבָדִים and
     שְׁפָחֹת in this context; otherwise retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And he treated Abram well because of her, and he came to have sheep and cattle
+    and male donkeys and male servants and female servants and female donkeys and
+    camels.
+  to: And he treated Abram well because of her, and he came to have sheep and cattle
+    and male donkeys and male slaves and female slaves and female donkeys and camels.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

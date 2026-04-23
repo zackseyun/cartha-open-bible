@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: Νῦν ἀπολύεις τὸν δοῦλόν σου, δέσποτα, κατὰ τὸ ῥῆμά σου ἐν εἰρήνῃ·
 translation:
-  text: Now you are dismissing your servant, Master, according to your word, in peace.
+  text: Now you are dismissing your slave, Master, according to your word, in peace.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -96,9 +96,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:49:06Z'
   unchanged: false
-  changes_summary: Changed 'releasing' to 'dismissing' for a more natural rendering
-    of ἀπολύεις in this context, and 'slave' to 'servant' for appropriate register
-    and idiomatic sense in English prayer language.
+  changes_summary: 'Changed ''releasing'' to ''dismissing'' for a more natural rendering
+    of ἀπολύεις in this context, and ''slave'' to ''servant'' for appropriate register
+    and idiomatic sense in English prayer language. [Regression fix applied: slave
+    restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:49:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -109,3 +110,11 @@ revisions:
   rationale: Changed 'releasing' to 'dismissing' for a more natural rendering of ἀπολύεις
     in this context, and 'slave' to 'servant' for appropriate register and idiomatic
     sense in English prayer language.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: Now you are dismissing your servant, Master, according to your word, in peace.
+  to: Now you are dismissing your slave, Master, according to your word, in peace.
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)

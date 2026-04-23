@@ -5,8 +5,8 @@ source:
   text: προσέταξεν ⸀δὲ αὐτοὺς ⸂ἐν τῷ ὀνόματι Ἰησοῦ Χριστοῦ βαπτισθῆναι⸃. τότε ἠρώτησαν
     αὐτὸν ἐπιμεῖναι ἡμέρας τινάς.
 translation:
-  text: So he ordered them to be baptized in the name of Jesus Christ. Then they asked
-    him to remain for some days.
+  text: So he ordered them to be baptized in the name of Jesus Messiah. Then they
+    asked him to remain for some days.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -113,9 +113,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:39:59Z'
   unchanged: false
-  changes_summary: Changed 'Jesus Messiah' to 'Jesus Christ' to reflect the Greek
+  changes_summary: 'Changed ''Jesus Messiah'' to ''Jesus Christ'' to reflect the Greek
     name-title form more naturally in formal English and standard New Testament usage;
-    otherwise retained the draft.
+    otherwise retained the draft. [Regression fix applied: Messiah restored (revision_pass
+    had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:39:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -128,3 +129,13 @@ revisions:
   rationale: Changed 'Jesus Messiah' to 'Jesus Christ' to reflect the Greek name-title
     form more naturally in formal English and standard New Testament usage; otherwise
     retained the draft.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: So he ordered them to be baptized in the name of Jesus Christ. Then they asked
+    him to remain for some days.
+  to: So he ordered them to be baptized in the name of Jesus Messiah. Then they asked
+    him to remain for some days.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

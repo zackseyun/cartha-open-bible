@@ -5,8 +5,8 @@ source:
   text: θέλω δὲ ὑμᾶς εἰδέναι ὅτι παντὸς ἀνδρὸς ἡ κεφαλὴ ὁ Χριστός ἐστιν, κεφαλὴ δὲ
     γυναικὸς ὁ ἀνήρ, κεφαλὴ δὲ ⸀τοῦ Χριστοῦ ὁ θεός.
 translation:
-  text: But I want you to know that the head of every man is Christ, and the head
-    of a woman is the man, and the head of Christ is God.
+  text: But I want you to know that the head of every man is Messiah, and the head
+    of a woman is the man, and the head of Messiah is God.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -148,9 +148,10 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:16Z'
   unchanged: false
-  changes_summary: Replaced 'the Messiah' with 'Christ' in both occurrences for more
-    natural formal English and consistency with the Greek title Χριστός; otherwise
-    retained the structure and content.
+  changes_summary: 'Replaced ''the Messiah'' with ''Christ'' in both occurrences for
+    more natural formal English and consistency with the Greek title Χριστός; otherwise
+    retained the structure and content. [Regression fix applied: Messiah restored
+    (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T09:35:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -163,3 +164,13 @@ revisions:
   rationale: Replaced 'the Messiah' with 'Christ' in both occurrences for more natural
     formal English and consistency with the Greek title Χριστός; otherwise retained
     the structure and content.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: But I want you to know that the head of every man is Christ, and the head
+    of a woman is the man, and the head of Christ is God.
+  to: But I want you to know that the head of every man is Messiah, and the head of
+    a woman is the man, and the head of Messiah is God.
+  rationale: Messiah restored (revision_pass had changed Χριστός → Christ against
+    DOCTRINE.md policy)

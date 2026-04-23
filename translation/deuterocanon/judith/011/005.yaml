@@ -19,7 +19,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judith said to him, “Receive the words of your servant, and let your maidservant
+  text: And Judith said to him, “Receive the words of your slave, and let your maidservant
     speak before you, and I will not tell a lie to my lord this night.”
   philosophy: optimal-equivalence
   footnotes:
@@ -160,9 +160,11 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:39:40Z'
   unchanged: false
-  changes_summary: Revised 'slave' to 'servant' for more natural formal register here,
-    'servant girl' to 'maidservant' for consistency with the paired humble self-designations,
-    and 'report a lie' to 'tell a lie' as a more natural rendering of the Greek.
+  changes_summary: 'Revised ''slave'' to ''servant'' for more natural formal register
+    here, ''servant girl'' to ''maidservant'' for consistency with the paired humble
+    self-designations, and ''report a lie'' to ''tell a lie'' as a more natural rendering
+    of the Greek. [Regression fix applied: slave restored (revision_pass had changed
+    δοῦλος → servant against DOCTRINE.md policy)]'
 revisions:
 - timestamp: '2026-04-23T15:39:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -175,3 +177,13 @@ revisions:
   rationale: Revised 'slave' to 'servant' for more natural formal register here, 'servant
     girl' to 'maidservant' for consistency with the paired humble self-designations,
     and 'report a lie' to 'tell a lie' as a more natural rendering of the Greek.
+- timestamp: '2026-04-23T12:00:00Z'
+  adjudicator: claude-sonnet-4-6-regression-fix
+  reviewer_model: null
+  category: regression_fix
+  from: And Judith said to him, “Receive the words of your servant, and let your maidservant
+    speak before you, and I will not tell a lie to my lord this night.”
+  to: And Judith said to him, “Receive the words of your slave, and let your maidservant
+    speak before you, and I will not tell a lie to my lord this night.”
+  rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md
+    policy)
