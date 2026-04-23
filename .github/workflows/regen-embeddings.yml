@@ -1,0 +1,148 @@
+name: Regenerate Scripture Embeddings
+
+# Re-embeds verses into the cartha-scripture FalkorDB graph whenever
+# translation/ changes. Submits a one-shot Kubernetes Job that clones
+# this repo at the triggering SHA and runs ingest_scripture.py
+# in-cluster — the script talks to Sentinel directly so there's no
+# port-forward or laptop dependency.
+#
+# The ingest is idempotent via source_hash: if a verse's text is
+# unchanged since last run, it's skipped. A typical translation push
+# touches 10-50 verses and completes in seconds; a full rebuild is
+# ~14 min at --workers 4.
+#
+# Auth: GitHub → AWS OIDC federation via vars.PREWARM_OIDC_ROLE_ARN
+# (reused from regen-summary-cache.yml). The IAM role needs:
+#   - eks:DescribeCluster on cartha-eks-cluster
+#   - The EKS aws-auth ConfigMap must map the role to a K8s group
+#     allowed to create Jobs in the `alpha` namespace
+#     (see docs/EKS_OIDC_SETUP.md for the exact mapping).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'translation/**'
+      - '.github/workflows/regen-embeddings.yml'
+      - '.github/workflows/embedding-job-template.yaml'
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: Concurrent embed+upsert batches (1=sequential)
+        default: '4'
+        required: false
+      testaments:
+        description: Comma-separated testaments (nt,ot,deuterocanon,extra_canonical)
+        default: 'nt,ot'
+        required: false
+
+concurrency:
+  group: regen-embeddings
+  cancel-in-progress: false
+
+permissions:
+  id-token: write   # AWS OIDC
+  contents: read
+
+env:
+  AWS_REGION: us-west-2
+  EKS_CLUSTER: cartha-eks-cluster
+  EKS_NAMESPACE: alpha
+
+jobs:
+  regen:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.PREWARM_OIDC_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig \
+            --name "${{ env.EKS_CLUSTER }}" \
+            --region "${{ env.AWS_REGION }}"
+          kubectl get ns "${{ env.EKS_NAMESPACE }}" > /dev/null
+
+      - name: Render + submit Job
+        id: submit
+        env:
+          WORKERS: ${{ github.event.inputs.workers || '4' }}
+          TESTAMENTS: ${{ github.event.inputs.testaments || 'nt,ot' }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          SHORT_SHA=$(echo "$COMMIT_SHA" | cut -c1-7)
+          JOB_NAME="embed-${SHORT_SHA}-$(date +%s)"
+          echo "job_name=$JOB_NAME" >> "$GITHUB_OUTPUT"
+          # Build "--testament nt\n--testament ot" etc. (one flag per
+          # line so the main container's shell can $-expand cleanly).
+          TESTAMENT_ARGS=$(echo "$TESTAMENTS" | tr ',' '\n' | awk 'NF{printf "--testament %s ", $0}')
+          TESTAMENT_ARGS_B64=$(printf "%s" "$TESTAMENT_ARGS" | base64 -w0)
+          export JOB_NAME COMMIT_SHA WORKERS TESTAMENT_ARGS_B64
+          envsubst < .github/workflows/embedding-job-template.yaml > /tmp/embed-job.yaml
+          echo "---- rendered Job ----"
+          head -40 /tmp/embed-job.yaml
+          kubectl apply -f /tmp/embed-job.yaml
+          echo "submitted: $JOB_NAME"
+
+      - name: Tail Job logs
+        env:
+          JOB_NAME: ${{ steps.submit.outputs.job_name }}
+        run: |
+          set -euo pipefail
+          # Wait up to 2 min for the first pod to appear, then tail.
+          for _ in $(seq 1 60); do
+            POD=$(kubectl get pods -n "${{ env.EKS_NAMESPACE }}" \
+              -l "job-name=$JOB_NAME" \
+              -o jsonpath='{.items[0].metadata.name}' 2>/dev/null || true)
+            [ -n "$POD" ] && break
+            sleep 2
+          done
+          if [ -z "${POD:-}" ]; then
+            echo "::error::Job pod never appeared"
+            kubectl describe job "$JOB_NAME" -n "${{ env.EKS_NAMESPACE }}"
+            exit 1
+          fi
+          echo "tailing pod $POD"
+          kubectl logs -n "${{ env.EKS_NAMESPACE }}" "$POD" \
+            --all-containers=true --follow || true
+
+      - name: Wait for Job to complete
+        env:
+          JOB_NAME: ${{ steps.submit.outputs.job_name }}
+        run: |
+          set -euo pipefail
+          # Race two kubectl waits: whichever condition (Complete or
+          # Failed) fires first determines the workflow exit. Subshells
+          # can't export variables back, so signal via sentinel files.
+          rm -f /tmp/job-ok /tmp/job-bad
+          ( kubectl wait --for=condition=complete \
+              job/"$JOB_NAME" -n "${{ env.EKS_NAMESPACE }}" \
+              --timeout=3600s && touch /tmp/job-ok ) &
+          OK_PID=$!
+          ( kubectl wait --for=condition=failed \
+              job/"$JOB_NAME" -n "${{ env.EKS_NAMESPACE }}" \
+              --timeout=3600s && touch /tmp/job-bad ) &
+          BAD_PID=$!
+          wait -n "$OK_PID" "$BAD_PID" || true
+          kill "$OK_PID" "$BAD_PID" 2>/dev/null || true
+          wait 2>/dev/null || true
+          if [ -f /tmp/job-bad ]; then
+            echo "::error::Job failed"
+            kubectl describe job "$JOB_NAME" -n "${{ env.EKS_NAMESPACE }}"
+            exit 1
+          fi
+          if [ ! -f /tmp/job-ok ]; then
+            echo "::error::Neither complete nor failed within timeout"
+            kubectl describe job "$JOB_NAME" -n "${{ env.EKS_NAMESPACE }}"
+            exit 2
+          fi
+          echo "Job completed successfully"
+          kubectl get job "$JOB_NAME" -n "${{ env.EKS_NAMESPACE }}" -o wide
