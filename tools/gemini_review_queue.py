@@ -70,6 +70,7 @@ STRATEGY_PHASE10_GREEK_APOCRYPHA = "phase10_greek_apocrypha"
 STRATEGY_PHASE10_ETHIOPIC_PSEUDEPIGRAPHA = "phase10_ethiopic_pseudepigrapha"
 STRATEGY_PHASE10_COPTIC_GNOSTIC = "phase10_coptic_gnostic"
 STRATEGY_PHASE10_SYRIAC_APOCALYPSE = "phase10_syriac_apocalypse"
+STRATEGY_PHASE10_T12P = "phase10_t12p"
 
 # Books drawn in the "high-scrutiny" strategy. Book slugs match the
 # `translation/<testament>/<slug>/` directory structure.
@@ -373,8 +374,13 @@ def submit_phase10(
         book_dir = TRANSLATION_ROOT / testament / book_slug
         if not book_dir.exists():
             continue
-        # Detect layout: if any direct child is a .yaml file, treat as flat.
-        flat = any(p.suffix == ".yaml" for p in book_dir.iterdir())
+        # Detect layout: flat if root-level .yaml files exist AND no chapter
+        # subdirectories exist. Mixed directories (T12P: chapter YAMLs +
+        # verse subdirs after splitting) use the nested iter_verse_yamls path.
+        children = list(book_dir.iterdir())
+        has_yaml_files = any(p.suffix == ".yaml" for p in children)
+        has_subdirs = any(p.is_dir() for p in children)
+        flat = has_yaml_files and not has_subdirs
         if flat:
             for yaml_path in sorted(book_dir.glob("*.yaml")):
                 try:
@@ -499,6 +505,7 @@ def main() -> int:
             STRATEGY_PHASE10_ETHIOPIC_PSEUDEPIGRAPHA,
             STRATEGY_PHASE10_COPTIC_GNOSTIC,
             STRATEGY_PHASE10_SYRIAC_APOCALYPSE,
+            STRATEGY_PHASE10_T12P,
         ],
     )
     p_submit.add_argument("--model", default="gemini-3.1-pro-preview")
@@ -547,6 +554,7 @@ def main() -> int:
                 STRATEGY_PHASE10_ETHIOPIC_PSEUDEPIGRAPHA,
                 STRATEGY_PHASE10_COPTIC_GNOSTIC,
                 STRATEGY_PHASE10_SYRIAC_APOCALYPSE,
+                STRATEGY_PHASE10_T12P,
             ):
                 if not args.books:
                     raise SystemExit(f"--books required for {args.strategy}, e.g. 'deuterocanon:prayer_of_manasseh'")

@@ -76,6 +76,7 @@ V3_STRATEGIES = {
     "phase10_ethiopic_pseudepigrapha",
     "phase10_coptic_gnostic",
     "phase10_syriac_apocalypse",
+    "phase10_t12p",
 }
 
 
@@ -335,12 +336,24 @@ def load_book_context(book_slug: str) -> str:
     """Return the book-specific context (author, audience, source edition,
     translation challenges) for this book if a file exists, else empty.
 
-    Looked up at `tools/prompts/book_contexts/<book_slug>.md`. Cached.
+    Looked up at `tools/prompts/book_contexts/<book_slug>.md`. For slugs
+    with a path separator (e.g. 'testaments_twelve_patriarchs/reuben'), also
+    tries the parent slug ('testaments_twelve_patriarchs') as a fallback.
+    Cached.
     """
     if book_slug in _BOOK_CONTEXT_CACHE:
         return _BOOK_CONTEXT_CACHE[book_slug]
+    # Primary lookup
     p = _PROMPTS_DIR / "book_contexts" / f"{book_slug}.md"
-    text = p.read_text(encoding="utf-8") if p.exists() else ""
+    if p.exists():
+        text = p.read_text(encoding="utf-8")
+    elif "/" in book_slug:
+        # Fallback: try the parent collection context file
+        parent_slug = book_slug.rsplit("/", 1)[0]
+        parent_p = _PROMPTS_DIR / "book_contexts" / f"{parent_slug}.md"
+        text = parent_p.read_text(encoding="utf-8") if parent_p.exists() else ""
+    else:
+        text = ""
     _BOOK_CONTEXT_CACHE[book_slug] = text
     return text
 
