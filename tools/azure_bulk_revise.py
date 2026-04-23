@@ -314,8 +314,7 @@ def main() -> None:
     parser.add_argument(
         "--testament", "-t",
         nargs="*",
-        choices=["nt", "ot", "extra_canonical"],
-        default=["nt", "ot", "extra_canonical"],
+        default=["nt", "ot", "extra_canonical", "deuterocanon"],
         help="Testaments to process (default: all)",
     )
     parser.add_argument(

@@ -12,7 +12,7 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LOG="/tmp/azure-revision.log"
 CONCURRENCY="${CONCURRENCY:-20}"
-TESTAMENT="${TESTAMENT:-nt ot extra_canonical}"
+TESTAMENT="${TESTAMENT:-nt ot extra_canonical deuterocanon}"
 DRY_RUN="${DRY_RUN:-0}"
 
 if [[ "$DRY_RUN" == "1" ]]; then
