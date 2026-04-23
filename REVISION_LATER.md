@@ -17,7 +17,7 @@ original-language sources become accessible under a clean license:
 | Masada Ben Sira scroll (Mas1h) | Sir 39:27–44:17 (~150 verses) | IAA request pending | IAA grants photographic access |
 | Qumran Tobit 4Q196–200 | ~20% of Tobit (Aramaic) | DJD XIX + IAA blocked | License path opens (DJD XIX out of copyright 2061 US; IAA policy change earlier) |
 | Cairo Geniza MSS C–F (deeper than Kahana) | Sir portions not in MS A or B | Pipeline in progress | Fresh transcription from PD photos |
-| 11QPsa Psalm 151 (partial Hebrew) | Psalm 151 | IAA blocked | Same channel as Masada |
+| 11QPsa Psalm 151 (Hebrew counterpart) | Psalm 151 | Local consult path now in place; no vendorable source yet | Upgrade to vendored Zone 1 only if a clean-license image/text source becomes available |
 
 We do NOT want the existence of these deferred sources to delay Phase
 9. A deferred source reduces maximum achievable quality by a small

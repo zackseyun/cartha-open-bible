@@ -119,8 +119,8 @@ PHASES: dict[str, dict[str, Any]] = {
             "SUS",    # Susanna (standalone partition)
             "BEL",    # Bel and the Dragon (standalone partition)
             "1ES",    # 1 Esdras
-            "MAN",    # Prayer of Manasseh (pending source-page discovery)
-            "PS151",  # Psalm 151 (pending source-page discovery)
+            "MAN",    # Prayer of Manasseh
+            "PS151",  # Psalm 151 (Greek source ready; Hebrew consult now local-only via 11QPsᵃ path)
             "1MA",    # 1 Maccabees
             "2MA",    # 2 Maccabees
             "3MA",    # 3 Maccabees

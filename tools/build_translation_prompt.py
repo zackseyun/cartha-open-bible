@@ -246,6 +246,18 @@ def _revision_candidates(
             }
         )
 
+    if verse.book_code == "PS151":
+        out.append(
+            {
+                "reason": (
+                    f"{ref} has a longer Hebrew counterpart in 11QPsᵃ / 11Q5 col. XXVIII. "
+                    "If a clean-license image/text source becomes available, upgrade that Hebrew "
+                    "from local Zone 2 consult to vendored Zone 1."
+                ),
+                "trigger": "clean_ps151_hebrew_source_available",
+            }
+        )
+
     if verse.book_code == "BAR" and verse.chapter == 5 and verse.verse >= 10:
         out.append(
             {

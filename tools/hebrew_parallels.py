@@ -1,6 +1,6 @@
 """hebrew_parallels.py — Hebrew/Aramaic originals for LXX deuterocanon.
 
-For three of our deuterocanonical books there is recovered original-
+For four of our deuterocanonical books there is recovered original-
 language material that predates the Greek. When translating these,
 the Hebrew/Aramaic witness must be consulted alongside the Greek:
 
@@ -23,6 +23,11 @@ the Hebrew/Aramaic witness must be consulted alongside the Greek:
     corpus (sources/ot/wlc/). 1 Esdras 3:1-5:6 ('Three Youths') has
     NO Hebrew parallel and is Greek-only.
 
+  - **PS151 (Psalm 151)**: the Greek 7-verse Psalm 151 has a longer
+    Hebrew counterpart preserved in 11QPs^a / 11Q5 col. XXVIII. That
+    Hebrew source is currently exposed only as local consult data via
+    tools/psalm151_hebrew.py; it is not vendored into the repo.
+
 Usage:
 
     from hebrew_parallels import lookup
@@ -35,6 +40,10 @@ Usage:
     hit = lookup('1ES', 1, 1)
     # -> {'kind': 'mt_parallel', 'mt_ref': '2 Chronicles 35:1',
     #     'hebrew': '...', 'license': 'PD (WLC)'}
+
+    hit = lookup_with_consult('PS151', 1, 1)
+    # -> zone_2_live includes mapped Hebrew vv.2-3 from the longer
+    #    11QPsᵃ counterpart when the local consult cache exists.
 """
 from __future__ import annotations
 
@@ -85,6 +94,12 @@ CONSULT_REGISTRY: dict[str, list[dict]] = {
          "guidance": "Standard 1 Esdras critical commentary. Canonical source of the MT-alignment table we vendor. Consult for questions about where 1ES expands or compresses its MT parallel."},
         {"name": "Hanhart 1974, Göttingen LXX -- Esdrae liber I",
          "guidance": "Critical Greek edition. Consult for textual variants."},
+    ],
+    "PS151": [
+        {"name": "11QPsᵃ / 11Q5 col. XXVIII (Hebrew Psalm 151A+B counterpart)",
+         "guidance": "Consult for the longer Hebrew counterpart behind Greek Psalm 151. The Hebrew form is longer than the Greek and includes a superscription not represented as a Greek verse. Use to illuminate expansions, contractions, and idiom, while keeping Swete Greek as the operative Zone 1 source."},
+        {"name": "Kahana 1937, Hebrew Psalm 151",
+         "guidance": "Local-only consult text currently staged through Sefaria's API for practical Hebrew access. Do not vendor or reproduce it as repository source text."},
     ],
     "JDT": [
         {"name": "Moore 1985, Anchor Bible 40",
@@ -173,6 +188,24 @@ def live_zone2_entries(book_code: str, chapter: int, verse: int) -> list[dict]:
                     "hebrew_text": hit.get("hebrew_text_masada", ""),
                     "scholarly_notes": hit.get("scholarly_notes", ""),
                     "page_reference": f"p. {hit.get('page_in_yadin')}",
+                    "guidance": hit["guidance"],
+                    "policy": hit["policy"],
+                })
+        except ImportError:
+            pass
+    if book_code == "PS151":
+        try:
+            import psalm151_hebrew  # noqa: I001
+            hit = psalm151_hebrew.lookup(verse)
+            if hit and hit.get("available"):
+                out.append({
+                    "source_name": hit["source"],
+                    "zone": 2,
+                    "text_kind": "hebrew_only",
+                    "hebrew_text": hit.get("hebrew_text", ""),
+                    "english_gloss": hit.get("english_gloss", ""),
+                    "mapping_note": hit.get("mapping_note", ""),
+                    "hebrew_verses": hit.get("hebrew_verses", []),
                     "guidance": hit["guidance"],
                     "policy": hit["policy"],
                 })
@@ -530,7 +563,7 @@ def lookup(book_code: str, chapter: int, verse: int) -> Optional[dict]:
       - "mt_parallel":     this verse corresponds to a MT passage (1ES)
       - "no_parallel":     the verse has no Hebrew parallel (3 Youths in 1ES)
       - "unmapped":        the lookup fell outside the known alignment
-    Or None if the book_code is not one of SIR/TOB/1ES.
+    Or None if the book_code is not one of SIR/TOB/1ES/PS151.
     """
     if book_code == "SIR":
         hit = _lookup_sir(chapter, verse)
@@ -561,6 +594,18 @@ def lookup(book_code: str, chapter: int, verse: int) -> Optional[dict]:
         }
     if book_code == "1ES":
         return _lookup_1es(chapter, verse)
+    if book_code == "PS151":
+        return {
+            "kind": "hebrew_consult_only",
+            "book_code": "PS151",
+            "chapter": chapter,
+            "verse": verse,
+            "note": (
+                "Psalm 151's Hebrew counterpart is available only as a local "
+                "Zone 2 consult witness at present. Swete Greek remains the "
+                "operative source in the repo pipeline."
+            ),
+        }
     return None
 
 
@@ -610,6 +655,11 @@ def summary() -> dict:
             "with_mt_parallel": sum(1 for r in d["alignment"] if r.get("mt_ref")),
             "greek_only": sum(1 for r in d["alignment"] if not r.get("mt_ref")),
         }
+    try:
+        import psalm151_hebrew  # noqa: I001
+        out["PS151"] = psalm151_hebrew.summary()
+    except ImportError:
+        pass
     return out
 
 
