@@ -1,0 +1,78 @@
+name: Publish COB CDN
+
+# Pushes to `main` can change the Bible text (`translation/**`) and the
+# public revisions feed (`revisions.json`). The apps and website only see
+# those changes after the publisher Lambda rebuilds `cob_preview.json` and
+# updates `bible.cartha.com/manifest.json`, so this workflow performs that
+# publish automatically.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'translation/**'
+      - 'revisions.json'
+      - '.github/workflows/publish-cob.yml'
+  workflow_dispatch: {}
+
+concurrency:
+  group: publish-cob
+  cancel-in-progress: false
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-west-2
+  LAMBDA_NAME: cartha-cob-publisher
+  CDN_MANIFEST_URL: https://bible.cartha.com/manifest.json
+
+jobs:
+  publish:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          # Reuse the existing Actions OIDC role variable unless/until
+          # the repo splits publish onto its own role.
+          role-to-assume: ${{ vars.PREWARM_OIDC_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Invoke publisher Lambda
+        run: |
+          set -euo pipefail
+          aws lambda invoke \
+            --function-name "$LAMBDA_NAME" \
+            --cli-binary-format raw-in-base64-out \
+            --payload '{"force":true}' \
+            publish-response.json
+          cat publish-response.json
+
+      - name: Wait for CDN manifest to match this commit
+        run: |
+          set -euo pipefail
+          TARGET_SHA="${{ github.sha }}"
+          for i in $(seq 1 30); do
+            BODY="$(curl -sL --max-time 15 "$CDN_MANIFEST_URL" || true)"
+            if [[ -n "$BODY" ]]; then
+              SHA="$(python3 -c 'import json,sys; \
+try: print(json.loads(sys.argv[1]).get("commit_sha","")); \
+except Exception: print("")' "$BODY")"
+              echo "attempt=$i manifest_sha=$SHA target_sha=$TARGET_SHA"
+              if [[ "$SHA" == "$TARGET_SHA" ]]; then
+                echo "CDN manifest matches pushed commit."
+                exit 0
+              fi
+            else
+              echo "attempt=$i manifest unavailable"
+            fi
+            sleep 10
+          done
+          echo "::error::CDN manifest did not reach $TARGET_SHA within the wait window."
+          exit 1
