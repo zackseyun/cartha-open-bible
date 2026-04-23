@@ -448,42 +448,82 @@ def load_chapters(translation_code: str) -> list[dict]:
             if not book_dir.is_dir():
                 continue
             book_label = slug_to_label(book_dir.name)
-            for ch_dir in sorted(book_dir.iterdir()):
-                if not ch_dir.is_dir():
-                    continue
-                try:
-                    ch_num = int(ch_dir.name)
-                except ValueError:
-                    continue
-                verse_files = sorted(ch_dir.glob("*.yaml"))
-                if not verse_files:
-                    continue
-                verses = []
-                for vf in verse_files:
+            # Flat .yaml sibling files are skipped when a same-numbered dir exists.
+            nested_ch_nums = set()
+            for _e in book_dir.iterdir():
+                if _e.is_dir():
                     try:
-                        data = yaml.safe_load(vf.read_text(encoding="utf-8"))
-                    except Exception as exc:
-                        print(f"[warn] failed to parse {vf}: {exc}", file=sys.stderr)
+                        nested_ch_nums.add(int(_e.name))
+                    except ValueError:
+                        pass
+            for ch_entry in sorted(book_dir.iterdir()):
+                if ch_entry.is_dir():
+                    # Standard nested structure: book/NNN/VVV.yaml
+                    try:
+                        ch_num = int(ch_entry.name)
+                    except ValueError:
+                        continue
+                    verse_files = sorted(ch_entry.glob("*.yaml"))
+                    if not verse_files:
+                        continue
+                    verses = []
+                    for vf in verse_files:
+                        try:
+                            data = yaml.safe_load(vf.read_text(encoding="utf-8"))
+                        except Exception as exc:
+                            print(f"[warn] failed to parse {vf}: {exc}", file=sys.stderr)
+                            continue
+                        try:
+                            vnum = int(vf.stem)
+                        except ValueError:
+                            continue
+                        text = ((data or {}).get("translation") or {}).get("text") or ""
+                        if not text.strip():
+                            continue
+                        verses.append({
+                            "book": book_label,
+                            "chapter": ch_num,
+                            "verse": vnum,
+                            "text": text,
+                            "translation": translation_code,
+                        })
+                    if verses:
+                        chapters.append({
+                            "book_label": book_label,
+                            "chapter": ch_num,
+                            "verses": verses,
+                        })
+                elif ch_entry.suffix == ".yaml" and ch_entry.is_file():
+                    # Flat structure: book/NNN.yaml (extra_canonical sections).
+                    # Skip if the same chapter number already has a nested dir.
+                    try:
+                        ch_num = int(ch_entry.stem)
+                    except ValueError:
+                        continue
+                    if ch_num in nested_ch_nums:
                         continue
                     try:
-                        vnum = int(vf.stem)
-                    except ValueError:
+                        data = yaml.safe_load(ch_entry.read_text(encoding="utf-8"))
+                    except Exception as exc:
+                        print(f"[warn] failed to parse {ch_entry}: {exc}", file=sys.stderr)
                         continue
                     text = ((data or {}).get("translation") or {}).get("text") or ""
                     if not text.strip():
                         continue
-                    verses.append({
-                        "book": book_label,
-                        "chapter": ch_num,
-                        "verse": vnum,
-                        "text": text,
-                        "translation": translation_code,
-                    })
-                if verses:
+                    # Read book label from YAML field when available so it matches
+                    # the label used in DynamoDB (e.g. "Shepherd of Hermas" not slug).
+                    yaml_book = (data or {}).get("book") or ""
+                    effective_label = normalize_token(yaml_book) if yaml_book else book_label
                     chapters.append({
-                        "book_label": book_label,
+                        "book_label": effective_label,
                         "chapter": ch_num,
-                        "verses": verses,
+                        "verses": [{
+                            "book": effective_label,
+                            "chapter": ch_num,
+                            "verse": 1,
+                            "text": text,
+                            "translation": translation_code,
+                        }],
                     })
     return chapters
 
@@ -1044,6 +1084,16 @@ def main() -> int:
             "chapter- and book-level summaries."
         ),
     )
+    ap.add_argument(
+        "--refresh-gemini-only",
+        action="store_true",
+        help=(
+            "Regenerate ONLY entries currently cached under the GEMINI fallback "
+            "key (not already under PRIMARY). Migrates those off the fallback "
+            "and onto the canonical gpt-5.4 cache key without touching entries "
+            "already under PRIMARY. Pair with --backend=azure."
+        ),
+    )
     ap.add_argument("--limit", type=int, default=0, help="cap on entries to generate (0=all)")
     ap.add_argument("--book", default=None, help="restrict to one book (canonical label)")
     ap.add_argument(
@@ -1130,7 +1180,14 @@ def main() -> int:
             (chapter_gaps if scope == SCOPE_CHAPTER else book_gaps).append((book, chap, tool))
             continue
         gk = k.replace(PRIMARY_MODEL_VERSION, GEMINI_MODEL_VERSION)
-        if k in present_primary or gk in present_gemini:
+        in_p = k in present_primary
+        in_g = gk in present_gemini
+        if args.refresh_gemini_only:
+            # Only regen entries stuck on the fallback key
+            if in_g and not in_p:
+                (chapter_gaps if scope == SCOPE_CHAPTER else book_gaps).append((book, chap, tool))
+            continue
+        if in_p or in_g:
             continue
         (chapter_gaps if scope == SCOPE_CHAPTER else book_gaps).append((book, chap, tool))
 
