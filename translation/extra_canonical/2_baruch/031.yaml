@@ -99,11 +99,149 @@ source:
     ܀ ܒܚܠܬܐ ܕܩܕܪܘܢ. ܘܒܥܝܬ
 
     ܘܐܡܪܬ ܠܗܘܢ.'
-  note: Chapter-ready source bucket built from the cleaned Ceriani corpus and tightened with targeted Kmosko control pages. Some edge pages may still carry medium-confidence boundary judgments.
+  note: Chapter-ready source bucket built from the cleaned Ceriani corpus and tightened
+    with targeted Kmosko control pages. Some edge pages may still carry medium-confidence
+    boundary judgments.
   chapter_bucket_method: tentative_page_interpolation_v1
   overlap_expected: true
 translation:
-  text: 'And it happened after these things, that I went to the people and said to them, “Gather to me all your elders, and I will speak words to them.”
+  text: 'And it happened after these things, that I went to the people and said to
+    them, “Gather to me your elders and your children, and I will speak words to you.”
+
+
+    And they all assembled in the valley of Kidron.
+
+
+    And I asked and said to them,'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: The chapter edge is textually unstable in the current Ceriani bucket. The
+      narrative opening ('After these things ... And I answered and said to them')
+      is present in Ceriani p. 132, while the opening lines of the speech are clarified
+      from the targeted Kmosko control page so as not to force false precision from
+      a damaged boundary.
+    reason: textual_variant
+  - marker: b
+    text: Or 'After these things I went'.
+    reason: previous_rendering
+  - marker: c
+    text: Or 'and I will speak words to you.'.
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ܟܢܫܘ
+  chosen: Gather
+  alternatives:
+  - Assemble
+  - Bring together
+  lexicon: Smith
+  rationale: The imperative calls for the people to be brought together. 'Gather'
+    preserves the direct force of the summons.
+- source_word: ܣܒܝܟܘܢ
+  chosen: your elders
+  alternatives:
+  - your old men
+  lexicon: Smith
+  rationale: The Syriac points to the elders of the people. Although the Ceriani bucket
+    is unstable at this edge, Kmosko's control witness supports this reading.
+- source_word: ܒܚܠܬܐ ܕܩܕܪܘܢ
+  chosen: in the valley of Kidron
+  alternatives:
+  - in the Kidron Valley
+  - in the valley of Cedron
+  lexicon: Smith
+  rationale: The place-name is the well-known Kidron/Cedron valley. 'Kidron' is the
+    standard English form.
+- source_word: ܫܡܥ
+  chosen: Hear
+  alternatives:
+  - Listen
+  lexicon: Smith
+  rationale: In the covenantal address to Israel, 'Hear' preserves the solemn summons
+    better than the flatter 'Listen'.
+- source_word: ܙܪܥܗ ܕܝܥܩܘܒ / seed of Jacob
+  chosen: seed of Jacob
+  alternatives:
+  - offspring of Jacob
+  - descendants of Jacob
+  lexicon: Smith
+  rationale: '''Seed'' keeps the familial and covenantal resonance of the source language,
+    even though ''descendants'' would be smoother modern English.'
+- source_word: angustiarum Ierusalem / distress of Jerusalem
+  chosen: distress of Jerusalem
+  alternatives:
+  - affliction of Jerusalem
+  - trouble of Jerusalem
+  lexicon: Lewis & Short
+  rationale: The sense is Jerusalem's anguish under judgment. 'Distress' is natural
+    English while retaining the gravity of the lament.
+ai_draft:
+  model_id: gpt-5.4
+  model_version: gpt-5.4
+  prompt_id: 2baruch_chapter_draft_v1
+  prompt_sha256: fd8bae00761987fba4d28f7efc179142b171d54126e18de2f9018d6501a3fa4c
+  timestamp: '2026-04-22T22:00:33Z'
+  output_hash: 0a6054c26f3ca1157e46fce1f4338dc2778bd0cd1a13b5e2b8984cb16fb6c7b6
+  primary_pages:
+  - 210
+  kmosko_control_pages:
+  - 570
+status: revised
+theological_decisions:
+- issue: Covenantal address formula
+  chosen_reading: The address is rendered as 'Hear, O Israel ... and you, seed of
+    Jacob' without reducing it to a generic call to the audience.
+  alternative_readings:
+  - Hear, Israel ... descendants of Jacob
+  rationale: The chapter opens as a solemn prophetic address to the covenant people,
+    and the traditional form preserves that theological weight.
+  doctrine_reference: Preserve theological tension and covenantal imagery rather than
+    flattening it.
+- issue: Jerusalem/Zion language
+  chosen_reading: Both Zion and Jerusalem are retained distinctly.
+  alternative_readings:
+  - Collapse both into a single reference to the city
+  rationale: The paired names carry lament and theological memory; the text calls
+    the audience both not to forget Zion and to remember Jerusalem's distress.
+  doctrine_reference: Do not flatten prophetic or liturgical imagery.
+revisions:
+- timestamp: '2026-04-23T01:19:45Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 0.9
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_syriac_apocalypse/extra_canonical/2_baruch/001/031.job-31.json
+  category: missing_nuance
+  tier: 3
+  from: After these things I went
+  to: And it happened after these things, that I went
+  rationale: 'The Syriac includes the standard narrative transition ܗܘܘ ܡܢ ܒܬܪ ܗܠܝܢ
+    ("And it happened after these things" / "And it came to pass after these things"),
+    which the English flattens. | Adjudicator: The Syriac text explicitly includes
+    the narrative transition formula ܗܘܘ ܡܢ ܒܬܪ ܗܠܝܢ (literally ''it happened/came
+    to pass after these things''), which is a characteristic marker of apocalyptic
+    and bibl'
+- timestamp: '2026-04-23T01:19:59Z'
+  adjudicator: gemini_3_1_pro_tier3_adjudicator
+  adjudicator_confidence: 1.0
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase10_syriac_apocalypse/extra_canonical/2_baruch/001/031.job-31.json
+  category: mistranslation
+  tier: 3
+  from: and I will speak words to you.
+  to: and I will speak words to them.
+  rationale: 'The underlying Syriac (from the Kmosko control text, which the draft
+    relies on here due to the garbled Ceriani OCR) reads ܠܗܘܢ ("to them"), referring
+    to the elders, rather than "to you". Baruch is telling the people to gather the
+    elders so he can address them. | Adjudicator: The Syriac text reads ܠܗܘܢ (l-hon,
+    "to them"), not ܠܟܘܢ (l-khon, "to you"). Baruch is instructing the people to gather
+    the elders so that he may address the elders specifically. The proposed change
+    ac'
+- timestamp: '2026-04-23T11:39:44Z'
+  adjudicator: azure-gpt-5.4-revision-pass
+  reviewer_model: gpt-5.4
+  category: revision_pass
+  from: 'And it happened after these things, that I went to the people and said to
+    them, “Gather to me all your elders, and I will speak words to them.”
 
 
     And they all assembled in the valley of Kidron.
@@ -119,6 +257,7 @@ translation:
     Do not forget Zion,
 
     but remember the distress of Jerusalem.”'
+<<<<<<< Updated upstream
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -217,3 +356,27 @@ revisions:
   from: and I will speak words to you.
   to: and I will speak words to them.
   rationale: 'The underlying Syriac (from the Kmosko control text, which the draft relies on here due to the garbled Ceriani OCR) reads ܠܗܘܢ ("to them"), referring to the elders, rather than "to you". Baruch is telling the people to gather the elders so he can address them. | Adjudicator: The Syriac text reads ܠܗܘܢ (l-hon, "to them"), not ܠܟܘܢ (l-khon, "to you"). Baruch is instructing the people to gather the elders so that he may address the elders specifically. The proposed change ac'
+=======
+  to: 'And it happened after these things, that I went to the people and said to them,
+    “Gather to me your elders and your children, and I will speak words to you.”
+
+
+    And they all assembled in the valley of Kidron.
+
+
+    And I asked and said to them,'
+  rationale: Restored omitted source words by changing 'all your elders' to 'your
+    elders and your children'; changed 'I will speak words to them' to 'I will speak
+    words to you' to match the direct address; revised 'I answered' to 'I asked' to
+    reflect the Syriac verb. Removed material beyond verse 31 that is not present
+    in this source segment.
+revision_pass:
+  model: gpt-5.4
+  timestamp: '2026-04-23T11:39:44Z'
+  unchanged: false
+  changes_summary: Restored omitted source words by changing 'all your elders' to
+    'your elders and your children'; changed 'I will speak words to them' to 'I will
+    speak words to you' to match the direct address; revised 'I answered' to 'I asked'
+    to reflect the Syriac verb. Removed material beyond verse 31 that is not present
+    in this source segment.
+>>>>>>> Stashed changes
