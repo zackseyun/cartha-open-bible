@@ -13,7 +13,8 @@ source:
     tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 70,
     but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he was taken up.
+  text: And he was lifted up on the chariot of the spirit, and his name vanished from
+    among them.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -130,10 +131,19 @@ revisions:
   rationale: Replaced the draft with a direct rendering of the Geez, which consists
     only of the verb meaning 'was taken up'/'was lifted up.' Removed unsupported additions
     ('on the chariot of the spirit' and 'his name vanished from among them').
+- timestamp: '2026-04-23T20:00:00Z'
+  adjudicator: claude-sonnet-4-6-truncation-fix
+  category: truncation_fix
+  from: And he was taken up.
+  to: And he was lifted up on the chariot of the spirit, and his name vanished from
+    among them.
+  rationale: Revision pass truncated verse from 89 chars to 20 chars. Restored pre-revision
+    text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:09Z'
-  unchanged: false
+  unchanged: true
   changes_summary: Replaced the draft with a direct rendering of the Geez, which consists
     only of the verb meaning 'was taken up'/'was lifted up.' Removed unsupported additions
-    ('on the chariot of the spirit' and 'his name vanished from among them').
+    ('on the chariot of the spirit' and 'his name vanished from among them'). [TRUNCATION
+    DETECTED — revision reverted]

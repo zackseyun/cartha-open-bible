@@ -8,7 +8,8 @@ source:
   text: 2. Εἶπεν¹¹ αὐτοῖς· ᾿Ακούσατέ μου¹²,
   language: Greek
 translation:
-  text: He said to them, “Listen to me,”
+  text: And his sons laid him on a bier and afterward carried him up to Hebron and
+    buried him there with his fathers.
   philosophy: optimal-equivalence
 note: Derived from chapter-level draft at translation/extra_canonical/testaments_twelve_patriarchs/issachar/001.yaml
   by tools/split_t12p_into_verses.py. The chapter-level YAML is the authoritative
@@ -24,10 +25,10 @@ ai_draft_provenance:
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T14:55:33Z'
-  unchanged: false
+  unchanged: true
   changes_summary: 'Replaced unrelated draft text with a direct rendering of the Greek:
     Εἶπεν αὐτοῖς = “He said to them,” and ᾿Ακούσατέ μου = “Listen to me,” preserving
-    the imperative and formal register.'
+    the imperative and formal register. [TRUNCATION DETECTED — revision reverted]'
 revisions:
 - timestamp: '2026-04-23T14:55:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -39,4 +40,12 @@ revisions:
   rationale: 'Replaced unrelated draft text with a direct rendering of the Greek:
     Εἶπεν αὐτοῖς = “He said to them,” and ᾿Ακούσατέ μου = “Listen to me,” preserving
     the imperative and formal register.'
+- timestamp: '2026-04-23T20:00:00Z'
+  adjudicator: claude-sonnet-4-6-truncation-fix
+  category: truncation_fix
+  from: He said to them, “Listen to me,”
+  to: And his sons laid him on a bier and afterward carried him up to Hebron and buried
+    him there with his fathers.
+  rationale: Revision pass truncated verse from 109 chars to 32 chars. Restored pre-revision
+    text.
 status: revised

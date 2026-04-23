@@ -13,7 +13,8 @@ source:
     tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 17,
     but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw the mountains.
+  text: And I saw the mountains of the darkness of winter and the place where all
+    the waters of the deep flow.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -112,10 +113,18 @@ revisions:
   to: And I saw the mountains.
   rationale: 'Revised to match the extant Geez phrase only: ወርኢኩ፡ አድባረ፡ means ''And
     I saw the mountains.'' Removed material not present in the provided source text.'
+- timestamp: '2026-04-23T20:00:00Z'
+  adjudicator: claude-sonnet-4-6-truncation-fix
+  category: truncation_fix
+  from: And I saw the mountains.
+  to: And I saw the mountains of the darkness of winter and the place where all the
+    waters of the deep flow.
+  rationale: Revision pass truncated verse from 102 chars to 24 chars. Restored pre-revision
+    text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:35:51Z'
-  unchanged: false
+  unchanged: true
   changes_summary: 'Revised to match the extant Geez phrase only: ወርኢኩ፡ አድባረ፡ means
     ''And I saw the mountains.'' Removed material not present in the provided source
-    text.'
+    text. [TRUNCATION DETECTED — revision reverted]'

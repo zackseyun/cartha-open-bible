@@ -11,6 +11,8 @@ aws lambda invoke \
   --function-name "$LAMBDA_NAME" \
   --cli-binary-format raw-in-base64-out \
   --payload '{"force":true}' \
+  --cli-read-timeout 300 \
+  --region us-west-2 \
   "$RESP" >> "$LOG" 2>&1
 
 if [[ -f "$RESP" ]]; then

@@ -128,6 +128,31 @@ def check_file(path: pathlib.Path) -> list[dict]:
                 ),
             })
 
+    # Rule 3: Truncation guard
+    # Compare against the most recent prior revision to catch catastrophic shortenings.
+    revisions = data.get("revisions") or []
+    if revisions:
+        prior_text = None
+        for rev in reversed(revisions):
+            # Get the last adjudicator's from_text as the baseline
+            if rev.get("from"):
+                prior_text = str(rev["from"])
+                break
+        if prior_text and len(prior_text) > 80:
+            ratio = len(text) / len(prior_text)
+            if ratio < 0.35:
+                violations.append({
+                    "file": str(path.relative_to(REPO_ROOT)),
+                    "rule": "truncation",
+                    "translation_text": text[:120],
+                    "details": (
+                        f"Translation text is {ratio:.0%} of prior length "
+                        f"({len(text)} vs {len(prior_text)} chars). "
+                        "Possible truncation by revision pass. "
+                        "Verify the full verse text is present."
+                    ),
+                })
+
     return violations
 
 

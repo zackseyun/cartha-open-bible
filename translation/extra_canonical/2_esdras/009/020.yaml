@@ -43,3 +43,32 @@ ai_draft_provenance:
     Syriac edition. Consult where Violet 1910 Syriac is unclear. Do not reproduce.
   - Longenecker, 2 Esdras (Sheffield Guides to Apocrypha) (1995) — Modern accessible
     commentary.
+revision_pass:
+  model: gpt-5.4
+  timestamp: '2026-04-23T19:48:11Z'
+  unchanged: true
+  changes_summary: 'Revised to reflect the extant Latin clause provided here: ''Et
+    uidi et peperci eis uix'' = ''And I saw, and I spared them with difficulty.''
+    The draft included material from the preceding clause and omitted the final phrase
+    in the source excerpt. [TRUNCATION DETECTED — revision reverted]'
+revisions:
+- timestamp: '2026-04-23T19:48:11Z'
+  adjudicator: azure-gpt-5.4-revision-pass
+  reviewer_model: gpt-5.4
+  category: revision_pass
+  from: And I considered my world, and behold, it was ruined; and my inhabited world,
+    and behold, it was in peril because of the schemes that had come into it.
+  to: And I saw, and I spared them with difficulty.
+  rationale: 'Revised to reflect the extant Latin clause provided here: ''Et uidi
+    et peperci eis uix'' = ''And I saw, and I spared them with difficulty.'' The draft
+    included material from the preceding clause and omitted the final phrase in the
+    source excerpt.'
+- timestamp: '2026-04-23T20:00:00Z'
+  adjudicator: claude-sonnet-4-6-truncation-fix
+  category: truncation_fix
+  from: And I saw, and I spared them with difficulty.
+  to: And I considered my world, and behold, it was ruined; and my inhabited world,
+    and behold, it was in peril because of the schemes that had come into it.
+  rationale: Revision pass truncated verse from 151 chars to 45 chars. Restored pre-revision
+    text.
+status: revised

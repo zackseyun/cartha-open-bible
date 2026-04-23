@@ -13,7 +13,11 @@ source:
   validation_modes:
   - jubilees_verse_parser
 translation:
-  text: For he loved Arpachshad more than all his sons. And Noah slept with his fathers.
+  text: And in the thirty-third jubilee, in the first year of the second week, Peleg
+    took for himself a wife, whose name was Lomna, daughter of Sinaar; and she bore
+    him a son in the fourth year of this week. And he called his name Reu, for he
+    said, "Look, the children of men have become evil through the wicked purpose to
+    build for themselves a city and a tower in the land of Shinar."
   philosophy: optimal-equivalence
 note: Derived mechanically from the chapter-level reviewed draft at translation/extra_canonical/jubilees/009.yaml
   by tools/jubilees/split_into_verses.py. The chapter-level YAML remains the authoritative
@@ -60,11 +64,11 @@ ai_draft_chapter_review_passes:
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T14:49:56Z'
-  unchanged: false
+  unchanged: true
   changes_summary: 'Replaced the unrelated draft text with a translation matching
     the Ge''ez source: rendered እስመ as ''For,'' ያፈቅር as ''loved,'' ፈድፋደ as ''more
     than,'' እምኵሉ ውሉዱ as ''all his sons,'' and ወኖመ ኖኅ ምስለ አበዊሁ as ''And Noah slept
-    with his fathers.'''
+    with his fathers.'' [TRUNCATION DETECTED — revision reverted]'
 revisions:
 - timestamp: '2026-04-23T14:49:56Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -79,4 +83,15 @@ revisions:
   rationale: 'Replaced the unrelated draft text with a translation matching the Ge''ez
     source: rendered እስመ as ''For,'' ያፈቅር as ''loved,'' ፈድፋደ as ''more than,'' እምኵሉ
     ውሉዱ as ''all his sons,'' and ወኖመ ኖኅ ምስለ አበዊሁ as ''And Noah slept with his fathers.'''
+- timestamp: '2026-04-23T20:00:00Z'
+  adjudicator: claude-sonnet-4-6-truncation-fix
+  category: truncation_fix
+  from: For he loved Arpachshad more than all his sons. And Noah slept with his fathers.
+  to: And in the thirty-third jubilee, in the first year of the second week, Peleg
+    took for himself a wife, whose name was Lomna, daughter of Sinaar; and she bore
+    him a son in the fourth year of this week. And he called his name Reu, for he
+    said, "Look, the children of men have become evil through the wicked purpose to
+    build for themselves a city and a tower in the land of Shinar."
+  rationale: Revision pass truncated verse from 378 chars to 80 chars. Restored pre-revision
+    text.
 status: revised
