@@ -44,11 +44,16 @@ jobs:
           role-to-assume: ${{ vars.PREWARM_OIDC_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Invoke publisher Lambda
+      - name: Invoke publisher Lambda (async)
         run: |
           set -euo pipefail
+          # Async invoke: the publisher can take 3+ minutes to process
+          # the full translation corpus, which exceeds the default CLI
+          # read timeout. We fire and forget, then wait for the CDN
+          # manifest to report our commit SHA in the next step.
           aws lambda invoke \
             --function-name "$LAMBDA_NAME" \
+            --invocation-type Event \
             --cli-binary-format raw-in-base64-out \
             --payload '{"force":true}' \
             publish-response.json
