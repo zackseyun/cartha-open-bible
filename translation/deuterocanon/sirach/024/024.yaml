@@ -2,7 +2,7 @@ id: SIR.24.24
 reference: Sirach 24:24
 source:
   edition: lxx-swete-1909
-  text: ''
+  text: μὴ ἐκλίπητε ἐν ἰσχύϊ, κολλᾶσθε αὐτῷ, ἵνα κραταιωθῆτε·
   language: Greek
   pages:
   - 681
@@ -21,66 +21,54 @@ source:
   - 768
   - 769
   confidence: high
-  validation: major_mismatch
+  validation: repaired_from_blank_source_via_swete_parsed_ai
+  repaired_from: sources/lxx/swete/parsed_ai/SIR_024.json
 translation:
-  text: I am like a canal from a river, and like a water channel into a garden.
+  text: Do not fail in strength; cling to him, so that you may be strengthened.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Or ''paradise'': the Greek word can denote a garden, orchard, or paradise-like
-      enclosure; here the irrigation imagery favors ''garden.'''
+    text: Or 'Do not grow weary in strength.' The verb can mean fail, cease, or faint.
     reason: lexical_alternative
+  - marker: b
+    text: The line is an added verse in some Sirach textual traditions; the project retains it as verse 24 in this chapter's sequence.
+    reason: textual_variant
 lexical_decisions:
-- source_word: ἐγώ
-  chosen: I
-  lexicon: LSJ
-  rationale: Explicit first-person pronoun retained because the verse continues Wisdom's
-    self-description in the first person.
-- source_word: ὡς
-  chosen: like
+- source_word: ἐκλίπητε
+  chosen: fail
   alternatives:
-  - as
-  lexicon: LSJ
-  rationale: Introduces similes; 'like' is natural modern English and preserves the
-    comparative force.
-- source_word: διῶρυξ
-  chosen: canal
+  - cease
+  - faint
+  - grow weary
+  lexicon: LEH
+  rationale: The verb can mean fail, cease, or faint. With ἐν ἰσχύϊ, 'fail' best preserves the exhortation against losing strength without becoming paraphrastic.
+- source_word: ἰσχύϊ
+  chosen: strength
   alternatives:
-  - ditch
-  - channel
-  lexicon: LSJ
-  rationale: Refers to an artificial watercourse. 'Canal' best conveys a substantial
-    man-made conduit without sounding archaic.
-- source_word: ἀπὸ ποταμοῦ
-  chosen: from a river
+  - might
+  - vigor
+  lexicon: LEH
+  rationale: ἰσχύς denotes strength, might, or vigor. 'Strength' is the most direct and idiomatic English equivalent here.
+- source_word: κολλᾶσθε
+  chosen: cling
   alternatives:
-  - out of a river
-  - from the river
-  lexicon: LSJ
-  rationale: The preposition indicates derivation/source. The anarthrous English 'a
-    river' reads naturally while preserving the sense of water branching from a larger
-    source.
-- source_word: καί
-  chosen: and
-  lexicon: LSJ
-  rationale: Simple coordination of the two similes.
-- source_word: ὡς ὑδραγωγός
-  chosen: like a water channel
+  - hold fast
+  - join yourselves
+  lexicon: LEH
+  rationale: The middle/passive form carries the sense of attaching oneself closely. 'Cling' preserves the deliberate, covenantal sense of close adherence.
+- source_word: αὐτῷ
+  chosen: him
   alternatives:
-  - like an aqueduct
-  - like a conduit
-  lexicon: LSJ
-  rationale: The term denotes a structure/channel that carries water. 'Water channel'
-    is clearer to modern readers than 'aqueduct' while preserving the image.
-- source_word: εἰς παράδεισον
-  chosen: into a garden
+  - it
+  lexicon: LEH
+  rationale: The dative pronoun may be masculine or neuter, but in this exhortational setting 'him' is the most natural rendering for steadfast attachment to the Lord.
+- source_word: κραταιωθῆτε
+  chosen: be strengthened
   alternatives:
-  - into a park
-  - into paradise
-  lexicon: LSJ
-  rationale: In Sirach this commonly refers to an irrigated garden/orchard setting.
-    'Garden' fits the agricultural imagery better than the more theological-sounding
-    'paradise' in this context.
+  - be made strong
+  - grow strong
+  lexicon: LEH
+  rationale: The passive subjunctive expresses the result of clinging. 'Be strengthened' preserves that passive/resultative force naturally in English.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -99,15 +87,18 @@ ai_draft:
   - Skehan & Di Lella 1987, Anchor Bible 39
   - Ben-Hayyim 1973, Academy of the Hebrew Language
   revision_candidates: []
+  repair_note: '2026-04-23: corrected verse-shift defect; previous English and decision block belonged to Sirach 24:30.'
+  repaired_at: '2026-04-23T00:00:00Z'
 status: draft
 theological_decisions:
-- issue: Rendering παράδεισος in a wisdom/agricultural simile
-  chosen_reading: garden
+- issue: Referent of αὐτῷ in an added exhortational line
+  chosen_reading: him
   alternative_readings:
-  - paradise
-  rationale: The immediate image is irrigation flowing into cultivated space, not
-    an explicit eschatological or Edenic claim. 'Garden' preserves the concrete metaphor
-    while the alternative is worth noting because the Greek term can also carry 'paradise'
-    associations.
-  doctrine_reference: 'Translation philosophy: preserve source sense in context; do
-    not import doctrinal claims the text does not make.'
+  - it
+  rationale: Although the pronoun could formally be neuter, the exhortation's force is best heard as attachment to the Lord rather than to an abstract object. 'Him' keeps the admonition personal and covenantal.
+  doctrine_reference: 'DOCTRINE.md: original-language primacy with natural modern English that preserves theological force'
+- issue: Status of Sirach 24:24 as a textual addition
+  chosen_reading: retain the added line in chapter sequence with a textual-variant footnote
+  alternative_readings:
+  - omit from running text
+  rationale: This chapter already preserves the additional lines in its verse sequence. Retaining the line while footnoting its textual status best matches the project’s current published structure.
