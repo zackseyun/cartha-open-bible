@@ -81,14 +81,12 @@ def main() -> int:
     fetch_azure_env()
     os.environ["AZURE_OPENAI_DEPLOYMENT_ID"] = args.deployment
 
-    queue.init_queue()
     completed = 0
 
     while True:
         job = queue.claim_next_job(args.worker_id)
         if job is None:
             time.sleep(args.sleep_seconds)
-            queue.init_queue()
             summary = queue.summary()
             pending = summary["status_counts"].get(queue.STATUS_PENDING, 0)
             running = summary["status_counts"].get(queue.STATUS_RUNNING, 0)
