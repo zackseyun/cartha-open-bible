@@ -61,9 +61,7 @@ jobs:
           for i in $(seq 1 30); do
             BODY="$(curl -sL --max-time 15 "$CDN_MANIFEST_URL" || true)"
             if [[ -n "$BODY" ]]; then
-              SHA="$(python3 -c 'import json,sys; \
-try: print(json.loads(sys.argv[1]).get("commit_sha","")); \
-except Exception: print("")' "$BODY")"
+              SHA="$(printf '%s' "$BODY" | jq -r '.commit_sha // ""' 2>/dev/null || echo "")"
               echo "attempt=$i manifest_sha=$SHA target_sha=$TARGET_SHA"
               if [[ "$SHA" == "$TARGET_SHA" ]]; then
                 echo "CDN manifest matches pushed commit."
