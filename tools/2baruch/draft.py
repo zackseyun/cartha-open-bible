@@ -347,14 +347,16 @@ def call_azure_openai(*, system: str, user: str, model: str, temperature: float)
     if not api_key:
         raise RuntimeError('AZURE_OPENAI_API_KEY not set')
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={api_version}"
-    payload = {
+    payload: dict[str, Any] = {
         'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}],
-        'temperature': temperature,
         'max_completion_tokens': DEFAULT_MAX_COMPLETION_TOKENS,
         'parallel_tool_calls': False,
         'tool_choice': {'type': 'function', 'function': {'name': TOOL_NAME}},
         'tools': [openrouter_submit_tool()],
     }
+    # GPT-5 family only accepts temperature=1 (the default); omit for non-default values.
+    if not model.startswith('gpt-5'):
+        payload['temperature'] = temperature
     request = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'api-key': api_key, 'Content-Type': 'application/json'}, method='POST')
     with urllib.request.urlopen(request, timeout=240) as response:
         parsed_response = json.loads(response.read().decode('utf-8'))
