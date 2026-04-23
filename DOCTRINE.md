@@ -93,7 +93,7 @@ Per-verse variance is documented in the individual YAML files.
 | σάρξ *sarx* | flesh (literal) / sinful nature (metaphorical) | — | Context-dependent; per-verse documented |
 | μετανοέω *metanoeō* | change of mind / change your thinking (cognitive contexts); repent (specific-sin contexts) | repent (traditional) | See REVISION_METHODOLOGY.md §"μετανοέω → change of mind" for the per-context rule |
 | νήφω *nēphō* | clear-minded (most contexts); sober (where Paul explicitly runs the drunk/sober metaphor) | sober-minded | See revision notes in 1 Pet 5:8, 1 Thess 5:6 |
-| יְהוָה YHWH | the LORD | Yahweh, Jehovah | Follows Jewish reverence tradition + LXX pattern |
+| יְהוָה YHWH | Yahweh | the LORD, Jehovah | Renders the divine name as a name. Where the NT quotes an OT YHWH passage using *Kyrios*, the NT verse retains "Lord" to preserve the Greek; the OT source verse uses "Yahweh". |
 | אָדָם *adam* | man / humankind (context) | — | Context-dependent per usage |
 
 ## What the translation is not
