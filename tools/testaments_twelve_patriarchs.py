@@ -71,6 +71,8 @@ class TestamentChapter:
     chapter: int
     text: str
     marker_raw: str
+    source_pages: list[int]
+    source_edition: str
 
 
 TESTAMENTS: list[TestamentMeta] = [
@@ -88,6 +90,20 @@ TESTAMENTS: list[TestamentMeta] = [
     TestamentMeta(12, "benjamin", "Testament of Benjamin", 12),
 ]
 TESTAMENT_BY_SLUG = {meta.slug: meta for meta in TESTAMENTS}
+TESTAMENT_CODES: dict[str, str] = {
+    "reuben": "REU",
+    "simeon": "SIM",
+    "levi": "LEV",
+    "judah": "JUD",
+    "issachar": "ISS",
+    "zebulun": "ZEB",
+    "dan": "DAN",
+    "naphtali": "NAP",
+    "gad": "GAD",
+    "asher": "ASH",
+    "joseph": "JOS",
+    "benjamin": "BEN",
+}
 TITLE_MARKERS: dict[str, tuple[str, ...]] = {
     "reuben": ("ΔΙΑΘΗΚΗ ΡΟΥΒ", "ΔΙΑΘΗΚΗ ΡΟΥΒΗΜ"),
     "simeon": ("ΔΙΑΘΗΚΗ ΣΥΜΕ", "ΔΙΑΘΗΚΗ ΣΥΜΕΩΝ"),
@@ -260,6 +276,20 @@ def normalized_chapter_path(testament_slug: str, chapter: int) -> pathlib.Path:
     return NORMALIZED_DIR / testament_slug / f"ch{chapter:02d}.txt"
 
 
+def testament_display_name(testament_slug: str) -> str:
+    meta = TESTAMENT_BY_SLUG.get(testament_slug)
+    if meta is None:
+        raise KeyError(f"Unknown testament slug: {testament_slug!r}")
+    return meta.display_name
+
+
+def testament_code(testament_slug: str) -> str:
+    code = TESTAMENT_CODES.get(testament_slug)
+    if code is None:
+        raise KeyError(f"No Testament code registered for slug: {testament_slug!r}")
+    return code
+
+
 def available_normalized_chapters(testament_slug: str) -> list[int]:
     base = NORMALIZED_DIR / testament_slug
     out: list[int] = []
@@ -276,8 +306,20 @@ def load_chapter(testament_slug: str, chapter: int) -> TestamentChapter | None:
     path = normalized_chapter_path(testament_slug, chapter)
     if not path.exists():
         return None
+    source_pages: list[int] = []
+    source_edition = "Charles 1908 Greek Versions (normalized pilot OCR)"
     lines: list[str] = []
     for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# source_pages:"):
+            source_pages = [
+                int(x)
+                for x in line.split(":", 1)[1].strip().split(",")
+                if x.strip().isdigit()
+            ]
+            continue
+        if line.startswith("# source_edition:"):
+            source_edition = line.split(":", 1)[1].strip() or source_edition
+            continue
         if line.startswith("#"):
             continue
         stripped = line.strip()
@@ -291,6 +333,8 @@ def load_chapter(testament_slug: str, chapter: int) -> TestamentChapter | None:
         chapter=chapter,
         text=text,
         marker_raw=f"{chapter}",
+        source_pages=source_pages,
+        source_edition=source_edition,
     )
 
 
