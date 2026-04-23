@@ -662,6 +662,135 @@ def load_vertex_client(secret_id: str, location: str, model: str) -> "VertexClie
     )
 
 
+# ── Azure OpenAI (GPT-5) backend ───────────────────────────────────────
+#
+# Matches the Go service's AzureOpenAIClient contract exactly:
+# - no max_completion_tokens (GPT-5 takes as long as it needs)
+# - no temperature / top_p (GPT-5 only accepts defaults)
+# - reasoning_effort + verbosity control output length instead
+#
+# Entries written through this backend are tagged with PRIMARY_MODEL_VERSION
+# (the canonical Go cache key), which means the frontend's regular cache
+# lookup finds them without needing the fallback to the Gemini key.
+
+AZURE_REASONING_EFFORT_DEFAULT = "low"
+AZURE_VERBOSITY_DEFAULT = "medium"
+
+
+class AzureOpenAIClient:
+    def __init__(self, api_key: str, endpoint: str, deployment: str,
+                 api_version: str,
+                 reasoning_effort: str = AZURE_REASONING_EFFORT_DEFAULT,
+                 verbosity: str = AZURE_VERBOSITY_DEFAULT):
+        self._api_key = api_key
+        self._endpoint = endpoint.rstrip("/")
+        self._deployment = deployment
+        self._api_version = api_version
+        self._reasoning_effort = reasoning_effort
+        self._verbosity = verbosity
+        self._url = (
+            f"{self._endpoint}/openai/deployments/{self._deployment}"
+            f"/chat/completions?api-version={self._api_version}"
+        )
+
+    @property
+    def describe(self) -> str:
+        return f"azure://{self._endpoint}/{self._deployment}"
+
+    @property
+    def model_version(self) -> str:
+        # Azure-generated summaries are the canonical primary; tag them
+        # with the Go service's primary cache key so regular reads hit.
+        return PRIMARY_MODEL_VERSION
+
+    def generate(self, system_prompt: str, user_prompt: str,
+                 max_tokens: int = 2048, timeout: int = 120,
+                 retries: int = 5) -> str:
+        # max_tokens is intentionally ignored — GPT-5 doesn't accept a
+        # completion-token cap in this codepath (see Go azure_openai_client.go
+        # line ~97: "NO max_completion_tokens — let GPT-5 generate full
+        # response"). Kept in the signature for backend polymorphism.
+        del max_tokens
+        payload = {
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            "frequency_penalty": 0,
+            "presence_penalty": 0,
+            "reasoning_effort": self._reasoning_effort,
+            "verbosity": self._verbosity,
+        }
+        backoff = [2, 5, 15, 30, 60]
+        last_err = None
+        for attempt in range(retries):
+            req = urllib.request.Request(
+                self._url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={
+                    "Content-Type": "application/json",
+                    "api-key": self._api_key,
+                },
+                method="POST",
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    body = json.loads(resp.read().decode("utf-8"))
+                choices = body.get("choices") or []
+                if not choices:
+                    raise RuntimeError(f"no choices: {json.dumps(body)[:400]}")
+                msg = choices[0].get("message") or {}
+                finish = choices[0].get("finish_reason", "")
+                text = (msg.get("content") or "").strip()
+                if not text:
+                    # Azure's content filter rejects certain OT passages and
+                    # returns finish_reason="content_filter" with empty content.
+                    # Bubble up so the caller can log + skip.
+                    raise RuntimeError(
+                        f"empty text (finish_reason={finish!r}): "
+                        f"{json.dumps(body)[:400]}"
+                    )
+                return text
+            except urllib.error.HTTPError as exc:
+                detail = exc.read().decode("utf-8", errors="replace")[:400]
+                last_err = RuntimeError(f"HTTP {exc.code}: {detail}")
+                if exc.code in (408, 429, 500, 502, 503, 504) and attempt < retries - 1:
+                    wait = backoff[min(attempt, len(backoff) - 1)] + random.uniform(0, 2)
+                    time.sleep(wait)
+                    continue
+                raise last_err
+            except (urllib.error.URLError, TimeoutError, ConnectionResetError) as exc:
+                last_err = RuntimeError(f"{type(exc).__name__}: {exc}")
+                if attempt < retries - 1:
+                    time.sleep(backoff[min(attempt, len(backoff) - 1)])
+                    continue
+                raise last_err
+        raise last_err or RuntimeError("unknown azure call failure")
+
+
+def load_azure_client(secret_id: str,
+                      reasoning_effort: str = AZURE_REASONING_EFFORT_DEFAULT,
+                      verbosity: str = AZURE_VERBOSITY_DEFAULT) -> "AzureOpenAIClient":
+    """Pull Azure OpenAI creds from Secrets Manager. Expects a JSON secret
+    with keys api_key, endpoint, deployment_name (+ optional api_version)."""
+    sm = boto3.client("secretsmanager", region_name="us-west-2")
+    raw = sm.get_secret_value(SecretId=secret_id)["SecretString"]
+    creds = json.loads(raw)
+    api_key = creds.get("api_key")
+    endpoint = creds.get("endpoint")
+    deployment = creds.get("deployment_name") or creds.get("deployment")
+    api_version = creds.get("api_version") or "2024-12-01-preview"
+    missing = [k for k, v in (("api_key", api_key), ("endpoint", endpoint),
+                              ("deployment_name", deployment)) if not v]
+    if missing:
+        raise RuntimeError(f"secret {secret_id} missing keys: {missing}")
+    return AzureOpenAIClient(
+        api_key=api_key, endpoint=endpoint, deployment=deployment,
+        api_version=api_version, reasoning_effort=reasoning_effort,
+        verbosity=verbosity,
+    )
+
+
 # ── DynamoDB helpers ───────────────────────────────────────────────────
 
 _ddb_lock = threading.Lock()
@@ -810,14 +939,25 @@ def fetch_existing_chapter_output(ddb, table: str, book: str, chapter: int, tool
 
 def _generate_via_backend(backend, system_prompt: str, user_prompt: str,
                           max_tokens: int) -> str:
-    """Dispatch to either the AI Studio key pool or a VertexClient."""
-    if isinstance(backend, VertexClient):
+    """Dispatch to AI Studio, Vertex, or Azure backend."""
+    if isinstance(backend, (VertexClient, AzureOpenAIClient)):
         return backend.generate(system_prompt, user_prompt, max_tokens=max_tokens)
     if isinstance(backend, list):
         key = pick_key(backend)
     else:
         key = backend
     return call_gemini(key, system_prompt, user_prompt, max_tokens=max_tokens)
+
+
+def _backend_model_version(backend) -> str:
+    """Which cache-key model_version does this backend write under?
+
+    Azure = PRIMARY_MODEL_VERSION (canonical Go cache key — reads hit directly).
+    Vertex / AI Studio (both Gemini paths) = GEMINI_MODEL_VERSION (fallback key).
+    """
+    if isinstance(backend, AzureOpenAIClient):
+        return PRIMARY_MODEL_VERSION
+    return GEMINI_MODEL_VERSION
 
 
 def generate_chapter(ddb, table: str, api_key_or_keys, chapter_data: dict, tool: str) -> str:
@@ -827,8 +967,9 @@ def generate_chapter(ddb, table: str, api_key_or_keys, chapter_data: dict, tool:
     sys_prompt = summary_system_prompt(tool, SCOPE_CHAPTER, book)
     user_prompt = format_chapter_passage("COB", book, chap, verses)
     text = _generate_via_backend(api_key_or_keys, sys_prompt, user_prompt, max_tokens=2048)
+    mv = _backend_model_version(api_key_or_keys)
     key = summary_key("COB", "unspecified", SCOPE_CHAPTER, book, chap, tool,
-                      PROMPT_VERSION, GEMINI_MODEL_VERSION)
+                      PROMPT_VERSION, mv)
     entry = {
         "summary_key": key,
         "translation": "COB",
@@ -839,7 +980,7 @@ def generate_chapter(ddb, table: str, api_key_or_keys, chapter_data: dict, tool:
         "tool": tool,
         "output": text,
         "prompt_version": PROMPT_VERSION,
-        "model_version": GEMINI_MODEL_VERSION,
+        "model_version": mv,
         "source_hash": canonical_source_hash(verses),
         "verse_count": len(verses),
         "generated_at": now_iso(),
@@ -861,8 +1002,9 @@ def generate_book(ddb, table: str, api_key_or_keys, chapters_of_book: list[dict]
     sys_prompt = summary_system_prompt(tool, SCOPE_BOOK, book)
     user_prompt = format_book_passage("COB", book, chapter_summaries)
     text = _generate_via_backend(api_key_or_keys, sys_prompt, user_prompt, max_tokens=2560)
+    mv = _backend_model_version(api_key_or_keys)
     key = summary_key("COB", "unspecified", SCOPE_BOOK, book, 0, tool,
-                      PROMPT_VERSION, GEMINI_MODEL_VERSION)
+                      PROMPT_VERSION, mv)
     # source_hash for book scope: hash of the concatenated chapter summaries
     joined = "\n".join(s for _, s in chapter_summaries)
     source_hash = hashlib.sha256(joined.encode("utf-8")).hexdigest()
@@ -876,7 +1018,7 @@ def generate_book(ddb, table: str, api_key_or_keys, chapters_of_book: list[dict]
         "tool": tool,
         "output": text,
         "prompt_version": PROMPT_VERSION,
-        "model_version": GEMINI_MODEL_VERSION,
+        "model_version": mv,
         "source_hash": source_hash,
         "verse_count": sum(len(ch["verses"]) for ch in chapters_of_book),
         "generated_at": now_iso(),
@@ -915,13 +1057,14 @@ def main() -> int:
     )
     ap.add_argument(
         "--backend",
-        choices=["studio", "vertex"],
+        choices=["studio", "vertex", "azure"],
         default="studio",
         help=(
-            "Which Gemini endpoint to call. 'studio' = AI Studio raw "
-            "?key=<> endpoint (daily per-key quota applies). 'vertex' = "
-            "Vertex AI endpoint authed via a service-account JSON; uses the "
-            "project's billed Vertex quota instead of the AI Studio cap."
+            "Which generation endpoint to call. 'studio' = AI Studio raw "
+            "?key=<> (daily per-key quota applies). 'vertex' = Vertex AI "
+            "via service-account JSON (project-billed). 'azure' = Azure "
+            "OpenAI GPT-5 (writes under the canonical gpt-5.4 cache key so "
+            "regular reads hit without the Gemini fallback)."
         ),
     )
     ap.add_argument(
@@ -938,6 +1081,23 @@ def main() -> int:
         "--vertex-model",
         default=VERTEX_MODEL_DEFAULT,
         help="Vertex model id, e.g. gemini-2.5-pro.",
+    )
+    ap.add_argument(
+        "--azure-secret-id",
+        default="cartha-azure-openai-key",
+        help="Secrets Manager ID with api_key + endpoint + deployment_name for Azure OpenAI.",
+    )
+    ap.add_argument(
+        "--azure-reasoning-effort",
+        choices=["low", "medium", "high"],
+        default=AZURE_REASONING_EFFORT_DEFAULT,
+        help="GPT-5 reasoning_effort. 'low' is fast/cheap; 'medium' for harder passages.",
+    )
+    ap.add_argument(
+        "--azure-verbosity",
+        choices=["low", "medium", "high"],
+        default=AZURE_VERBOSITY_DEFAULT,
+        help="GPT-5 verbosity (output length).",
     )
     args = ap.parse_args()
 
@@ -988,8 +1148,8 @@ def main() -> int:
 
     # Resolve the generation backend. Vertex sidesteps the AI Studio
     # daily per-key quota by authing against a service-account JSON and
-    # billing Gemini calls to our GCP project. AI Studio mode stays the
-    # fallback when the user doesn't have a Vertex project wired up.
+    # billing Gemini calls to our GCP project. Azure uses GPT-5 and writes
+    # under the canonical primary cache key. AI Studio stays the default.
     if args.backend == "vertex":
         backend = load_vertex_client(
             secret_id=args.vertex_secret_id,
@@ -997,6 +1157,17 @@ def main() -> int:
             model=args.vertex_model,
         )
         print(f"using Vertex backend: {backend.describe}")
+    elif args.backend == "azure":
+        backend = load_azure_client(
+            secret_id=args.azure_secret_id,
+            reasoning_effort=args.azure_reasoning_effort,
+            verbosity=args.azure_verbosity,
+        )
+        print(
+            f"using Azure backend: {backend.describe}  "
+            f"reasoning={args.azure_reasoning_effort} verbosity={args.azure_verbosity}"
+        )
+        print(f"  writing under model_version={PRIMARY_MODEL_VERSION} (canonical cache key)")
     else:
         secret_ids = [s.strip() for s in args.secret_ids.split(",") if s.strip()]
         api_keys = get_api_keys(secret_ids)
