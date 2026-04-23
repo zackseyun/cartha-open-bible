@@ -33,11 +33,9 @@ spec:
             - -c
             - |
               set -euo pipefail
-              git clone --depth 1 --no-tags \
+              git clone --depth 1 --no-tags --branch main \
                 https://github.com/zackseyun/cartha-open-bible.git /src
               cd /src
-              git fetch --depth 1 origin "${COMMIT_SHA}"
-              git checkout "${COMMIT_SHA}"
               echo "checked out: $(git rev-parse HEAD)"
           volumeMounts:
             - name: src
