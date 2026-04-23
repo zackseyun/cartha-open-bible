@@ -52,56 +52,66 @@ the others.
 
 ### Ranking the candidates against author intent
 
-- **"breath" / "mere breath" / "vapor"** (Alter) — most literal;
-  preserves the concrete image and keeps all three senses latent.
-  Weakness: modern readers struggle to extract the metaphor without
-  help; the opening refrain "breath of breaths" is more opaque in
-  English than in Hebrew.
+- **"breath" / "mere breath"** (Alter) — preserves the concrete
+  image and keeps all three senses latent for the reader to
+  develop. Matches the author's deliberate choice of an
+  image-bearing noun over the abstract Hebrew alternatives he had
+  available (שָׁוְא "worthless," רִיק "empty"). Superlative
+  construct renders naturally as "breath of breaths" (Hebrew
+  absolute-superlative). Predicate uses take "mere" for evaluative
+  tone.
 - **"fleeting" / "elusive" / "transient"** — preserves senses 1 and
-  2 without importing modern metaphysical claims. A reader can sit
-  with *"Fleeting, utterly fleeting. Everything is fleeting"* and
-  hear Qoheleth's complaint about a world that won't hold still.
-- **"futile" / "futility"** — emphasizes sense 3 but *narrows* it
-  to goal-frustration specifically ("effort doesn't pay off"). It
-  under-represents sense 1 (transience) and sense 2
-  (incomprehensibility) — both of which are what Qoheleth's most
-  sustained arguments turn on (e.g., 3:11 "he has put ʿōlām into
-  their heart, yet so that no man can find out what God has done
-  from beginning to end"; 8:17 "no one can find out the work that
-  is done under the sun").
+  2 cleanly; sense 3 must be carried by context. Readable but
+  abstracting — drops the concrete image Qoheleth chose.
+- **"futile" / "futility"** — narrows to goal-frustration ("effort
+  doesn't pay off"). Under-represents sense 1 (transience) and
+  sense 2 (incomprehensibility) — both of which carry Qoheleth's
+  most sustained arguments (3:11; 8:17 "no one can find out the
+  work that is done under the sun").
 - **"vanity"** (KJV/ESV/NRSV) — archaic for modern English readers,
-  who hear "pride / conceit" before anything else. Do not use in
-  the main text; footnote it as the traditional English only.
+  who hear "pride / conceit" first. Do not use in the main text;
+  footnote it as the traditional English only.
 - **"meaningless"** (NIV) — imports modern existentialist nihilism
-  Qoheleth does not assert. He concludes the book (12:13–14) with
-  the fear of God, not with the denial of meaning. This is a
-  theological distortion.
+  Qoheleth does not assert. The book closes (12:13–14) with the
+  fear of God, not with the denial of meaning. Theological
+  distortion.
 - **"absurd"** (Fox) — defensible scholarship, but carries a
-  20th-century Camus/Kierkegaard footprint that makes it feel
-  anachronistic in the mouth of a 3rd-century-BC sage.
+  20th-century Camus/Kierkegaard footprint that feels
+  anachronistic in a 3rd-century-BC sage.
 
 ### Default recommendation
 
-Prefer **"fleeting"** in the main text for the refrain in 1:2,
-1:14, 12:8 and other governing uses, because it preserves Qoheleth's
-dominant complaint — that things slip through the hand — and leaves
-the other two senses audible rather than foreclosed. Where the
-context leans hard into incomprehensibility (e.g., 8:14,
-11:7–10), **"elusive"** is a strong alternative for that specific
-context; flag as a contextual rendering in lexical_decisions rather
-than forcing one English word across all 38 occurrences.
+Preserve the concrete image — **"breath" in the Hebrew superlative
+construct, "mere breath" in predicate position.**
 
-"Futility" is acceptable in passages specifically complaining about
-**the reward-for-effort asymmetry** (e.g., 2:11, 2:19, 4:7–8) and
-there it reads well. For the governing refrain and for verses
-complaining about **transience or incomprehensibility**, push back
-toward "fleeting" / "elusive" / "breath."
+- הֲבֵל הֲבָלִים → **"breath of breaths"** (1:2, 12:8). The
+  superlative does its own intensifying work, the way "holy of
+  holies" does. Do not force "mere" here — "mere breath of mere
+  breaths" is absurd.
+- הָבֶל / הֶבֶל in predicate position ("everything is X," "this
+  also is X") → **"mere breath."** Without "mere," a line like
+  *"this also is breath"* reads as an ontological claim about
+  substance rather than Qoheleth's evaluative verdict. "Mere"
+  supplies the surprise-and-deflation tone Hebrew readers pick up
+  from context but English readers won't supply unprompted.
 
-The superlative construct הֲבֵל הֲבָלִים ("breath of breaths") is
-a Hebrew absolute-superlative (like "song of songs," "holy of
-holies"). Preserve the form when the chosen English gloss allows
-("Fleeting beyond fleeting"); otherwise render with an
-intensifier ("Utterly fleeting").
+This matches the author's specific choice of a concrete-image word
+and preserves all three senses (transient, elusive, ironic) latent
+to the reader across all 38 occurrences, without forcing a single
+abstracting gloss to carry the book.
+
+The footnote on 1:2 (the opening refrain) is mandatory and
+substantive: it names הֶבֶל, its literal meaning, its three-way
+semantic range, and notes the book-wide rendering policy. This is
+the place the reader is paused and paying attention; one strong
+footnote does the anchoring work for the whole book so the main
+text elsewhere can stay clean English.
+
+"Fleeting" is acceptable as a contextual alternative in verses
+where the concrete noun reads awkwardly (rare). "Futility" is
+acceptable only in passages specifically complaining about the
+reward-for-effort asymmetry (e.g., 2:11, 2:19, 4:7–8) — and even
+there, push back toward the concrete image first.
 
 ## Other recurring vocabulary
 
