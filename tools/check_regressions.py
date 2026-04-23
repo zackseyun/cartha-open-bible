@@ -129,9 +129,10 @@ def check_file(path: pathlib.Path) -> list[dict]:
             })
 
     # Rule 3: Truncation guard
-    # Compare against the most recent prior revision to catch catastrophic shortenings.
+    # Skip superscription files (verse 000 — Psalm titles) which are short by design.
+    is_superscription = path.stem == "000"
     revisions = data.get("revisions") or []
-    if revisions:
+    if not is_superscription and revisions:
         prior_text = None
         for rev in reversed(revisions):
             # Get the last adjudicator's from_text as the baseline
