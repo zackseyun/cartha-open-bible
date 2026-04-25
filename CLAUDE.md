@@ -2,6 +2,14 @@
 
 Conventions for AI agents (or humans) working in this repo.
 
+## Cross-platform parity (READ THIS FIRST when touching the reader)
+
+The COB reading experience ships on **mobile (Flutter)** and **website (Next.js)**. Every feature must mirror across both surfaces. The map of what file mirrors what, the canonical analytics vocabulary, and the "add a feature" checklist live in:
+
+**[docs/COB_CROSS_PLATFORM_PARITY.md](docs/COB_CROSS_PLATFORM_PARITY.md)**
+
+Update that doc in the same change set whenever you add, rename, or remove a COB surface on either platform.
+
 ## Commit style
 
 - **No `Co-Authored-By: Claude` trailer on any commit.** This repo's
