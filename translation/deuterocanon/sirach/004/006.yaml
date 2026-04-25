@@ -20,24 +20,19 @@ source:
   - 769
   confidence: high
   validation: minor_mismatch
-  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
-    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
-    in sources/hebrew_sirach/README.md.
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced in sources/hebrew_sirach/README.md.
   parallel_sources:
   - edition: lxx-swete-1909
-    text: καραμένου γὰρ σε ἐν πικρίᾳ ψυχῆς αὐτοῦ, τῆς δεήσεως αὐτοῦ ἐπακούσεται ὁ
-      ποιήσας αὐτόν.
+    text: καραμένου γὰρ σε ἐν πικρίᾳ ψυχῆς αὐτοῦ, τῆς δεήσεως αὐτοῦ ἐπακούσεται ὁ ποιήσας αὐτόν.
     kind: greek_parallel
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 4:6
 translation:
-  text: Love your life for the assembly, and bow your head still more to authority.
+  text: Love your life for the assembly[b][a], and bow your head still more to authority.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The extant Cairo Geniza Hebrew line cited in Zone 1 does not match the Greek
-      wording for this verse; the main translation therefore follows the Greek witness
-      here.
+    text: The extant Cairo Geniza Hebrew line cited in Zone 1 does not match the Greek wording for this verse; the main translation therefore follows the Greek witness here.
     reason: textual_variant
   - marker: b
     text: Or 'calls down judgment on you' for 'cries out against you.'
@@ -50,19 +45,14 @@ lexical_decisions:
   - complains against
   - cries out
   lexicon: LSJ
-  rationale: The Hebrew in Zone 1 appears corrupt or mismatched for this verse, while
-    the Greek parallel gives a coherent sense. In context of oppression of the poor,
-    the participle is best rendered as a hostile appeal directed against the addressee,
-    not merely a neutral cry.
+  rationale: The Hebrew in Zone 1 appears corrupt or mismatched for this verse, while the Greek parallel gives a coherent sense. In context of oppression of the poor, the participle is best rendered as a hostile appeal directed against the addressee, not merely a neutral cry.
 - source_word: ἐν πικρίᾳ ψυχῆς αὐτοῦ
   chosen: in the bitterness of his soul
   alternatives:
   - with a bitter soul
   - in his deep bitterness
   lexicon: LSJ
-  rationale: A fairly literal rendering preserves the emotional and moral force of
-    the phrase. 'Soul' is retained rather than reduced to 'heart' or 'spirit' to reflect
-    ψυχή and the Hebrew anthropological background.
+  rationale: A fairly literal rendering preserves the emotional and moral force of the phrase. 'Soul' is retained rather than reduced to 'heart' or 'spirit' to reflect ψυχή and the Hebrew anthropological background.
 - source_word: δέησις
   chosen: plea
   alternatives:
@@ -70,26 +60,21 @@ lexical_decisions:
   - prayer
   - petition
   lexicon: BDAG
-  rationale: '''Plea'' is accessible modern English and fits the context of an oppressed
-    person appealing for help. ''Prayer'' is possible, but ''plea'' better preserves
-    the urgent forensic tone.'
+  rationale: '''Plea'' is accessible modern English and fits the context of an oppressed person appealing for help. ''Prayer'' is possible, but ''plea'' better preserves the urgent forensic tone.'
 - source_word: ἐπακούσεται
   chosen: will hear
   alternatives:
   - will listen to
   - will answer
   lexicon: BDAG
-  rationale: The verb primarily denotes hearing favorably. 'Will hear' is concise
-    and leaves open the implied response without overtranslating to 'answer'.
+  rationale: The verb primarily denotes hearing favorably. 'Will hear' is concise and leaves open the implied response without overtranslating to 'answer'.
 - source_word: ὁ ποιήσας αὐτόν
   chosen: his Maker
   alternatives:
   - the one who made him
   - his Creator
   lexicon: BDAG
-  rationale: This compact rendering preserves the theological point that God as creator
-    is the one who hears the oppressed. 'Maker' is idiomatic and weighty without sounding
-    technical.
+  rationale: This compact rendering preserves the theological point that God as creator is the one who hears the oppressed. 'Maker' is idiomatic and weighty without sounding technical.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -109,40 +94,26 @@ ai_draft:
   - Skehan & Di Lella 1987, Anchor Bible 39
   - Ben-Hayyim 1973, Academy of the Hebrew Language
   revision_candidates:
-  - reason: SIR 4:6 falls in the Schechter facsimile range; when direct MSS A/B transcription
-      completes, re-run the draft against the deepened Zone 1 Hebrew witness.
+  - reason: SIR 4:6 falls in the Schechter facsimile range; when direct MSS A/B transcription completes, re-run the draft against the deepened Zone 1 Hebrew witness.
     trigger: schechter_pipeline_completes
 status: revised
 theological_decisions:
 - issue: Primary-source selection where Hebrew witness appears mismatched
-  chosen_reading: Translate from the Greek parallel as the operative source while
-    noting the Hebrew composite text is not usable here as presented.
+  chosen_reading: Translate from the Greek parallel as the operative source while noting the Hebrew composite text is not usable here as presented.
   alternative_readings:
   - Attempt a translation from the extant Hebrew line despite mismatch/corruption
-  rationale: The Zone 1 Hebrew text ('Love yourself before the congregation...') does
-    not correspond to the Greek and appears to belong to a different context. Because
-    the prompt instructs use of the parallel source as actual translation input and
-    to preserve source uncertainty honestly, the Greek provides the defensible basis
-    for the main translation here.
-  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and
-    from Greek where it does not; preserve source uncertainty honestly'
+  rationale: The Zone 1 Hebrew text ('Love yourself before the congregation...') does not correspond to the Greek and appears to belong to a different context. Because the prompt instructs use of the parallel source as actual translation input and to preserve source uncertainty honestly, the Greek provides the defensible basis for the main translation here.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and from Greek where it does not; preserve source uncertainty honestly'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:42:04Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that reflects
-    the provided Hebrew: rendered הַאֲהֵב נַפְשְׁךָ as ''Love your life,'' לָעֵדָה
-    as ''for the assembly,'' and וּלְשִׁלְטוֹן עוֹד הַאֲכֵף רֹאשׁ as ''and bow your
-    head still more to authority.'''
+  changes_summary: 'Replaced the unrelated draft with a translation that reflects the provided Hebrew: rendered הַאֲהֵב נַפְשְׁךָ as ''Love your life,'' לָעֵדָה as ''for the assembly,'' and וּלְשִׁלְטוֹן עוֹד הַאֲכֵף רֹאשׁ as ''and bow your head still more to authority.'''
 revisions:
 - timestamp: '2026-04-23T15:42:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: For if he cries out against you in the bitterness of his soul, his Maker will
-    hear his plea.
+  from: For if he cries out against you in the bitterness of his soul, his Maker will hear his plea.
   to: Love your life for the assembly, and bow your head still more to authority.
-  rationale: 'Replaced the unrelated draft with a translation that reflects the provided
-    Hebrew: rendered הַאֲהֵב נַפְשְׁךָ as ''Love your life,'' לָעֵדָה as ''for the
-    assembly,'' and וּלְשִׁלְטוֹן עוֹד הַאֲכֵף רֹאשׁ as ''and bow your head still
-    more to authority.'''
+  rationale: 'Replaced the unrelated draft with a translation that reflects the provided Hebrew: rendered הַאֲהֵב נַפְשְׁךָ as ''Love your life,'' לָעֵדָה as ''for the assembly,'' and וּלְשִׁלְטוֹן עוֹד הַאֲכֵף רֹאשׁ as ''and bow your head still more to authority.'''

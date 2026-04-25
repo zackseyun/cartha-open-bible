@@ -20,25 +20,19 @@ source:
   - 769
   confidence: high
   validation: major_mismatch
-  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where
-    the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced
-    in sources/hebrew_sirach/README.md.
+  note: Kahana's edition is a composite of the Cairo Geniza Hebrew manuscripts. Where the Hebrew is missing or uncertain, consult the fuller scholarly editions referenced in sources/hebrew_sirach/README.md.
   parallel_sources:
   - edition: lxx-swete-1909
-    text: ὁ δὲ δοξαζόμενος ἐν πτωχείᾳ, καὶ ἐν πλούτῳ ποσαχῶς; καὶ ὁ ἄδοξος ἐν πλούτῳ,
-      ἐν πτωχείᾳ ποσαχῶς;
+    text: ὁ δὲ δοξαζόμενος ἐν πτωχείᾳ, καὶ ἐν πλούτῳ ποσαχῶς; καὶ ὁ ἄδοξος ἐν πλούτῳ, ἐν πτωχείᾳ ποσαχῶς;
     kind: greek_parallel
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 10:30
 translation:
-  text: There is a poor man who is honored because of his insight, and there is one
-    who is honored because of his wealth.
+  text: There is a poor man who is honored because of his insight[a], and there is one who is honored because of his wealth.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''But the one honored in poverty—how much more in wealth?
-      And the one without honor in wealth—how much more in poverty?'' The Hebrew and
-      Greek differ substantially here.'
+    text: 'Greek parallel: ''But the one honored in poverty—how much more in wealth? And the one without honor in wealth—how much more in poverty?'' The Hebrew and Greek differ substantially here.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: דַּל
@@ -47,10 +41,7 @@ lexical_decisions:
   - poor person
   - lowly man
   lexicon: HALOT
-  rationale: The Hebrew adjective/noun denotes one who is poor or weak. Because the
-    Hebrew is singular and masculine, and Ben Sira often speaks in representative
-    masculine terms, 'poor man' preserves the source's gendered singular form better
-    than a neutral plural or abstract rendering.
+  rationale: The Hebrew adjective/noun denotes one who is poor or weak. Because the Hebrew is singular and masculine, and Ben Sira often speaks in representative masculine terms, 'poor man' preserves the source's gendered singular form better than a neutral plural or abstract rendering.
 - source_word: נִכְבָּד
   chosen: honored
   alternatives:
@@ -58,17 +49,14 @@ lexical_decisions:
   - glorious
   - important
   lexicon: HALOT
-  rationale: From כבד in the nifal/passive sense, the word denotes being honored or
-    held in esteem. 'Honored' fits both occurrences and keeps the social-status nuance
-    without overstating it as 'glorious.'
+  rationale: From כבד in the nifal/passive sense, the word denotes being honored or held in esteem. 'Honored' fits both occurrences and keeps the social-status nuance without overstating it as 'glorious.'
 - source_word: בִּגְלַל
   chosen: because of
   alternatives:
   - on account of
   - by reason of
   lexicon: HALOT
-  rationale: The preposition marks cause or basis. 'Because of' is natural modern
-    English and clearly expresses the causal relation in both clauses.
+  rationale: The preposition marks cause or basis. 'Because of' is natural modern English and clearly expresses the causal relation in both clauses.
 - source_word: שִׂכְלוֹ
   chosen: his insight
   alternatives:
@@ -76,26 +64,21 @@ lexical_decisions:
   - his understanding
   - his wisdom
   lexicon: HALOT
-  rationale: שכל can denote understanding, prudence, or good sense. 'Insight' captures
-    intellectual discernment in accessible English and avoids overloading the line
-    with the more technical or broader term 'wisdom.'
+  rationale: שכל can denote understanding, prudence, or good sense. 'Insight' captures intellectual discernment in accessible English and avoids overloading the line with the more technical or broader term 'wisdom.'
 - source_word: עָשְׁרוֹ
   chosen: his wealth
   alternatives:
   - his riches
   - his prosperity
   lexicon: HALOT
-  rationale: The noun refers to material wealth or riches. 'Wealth' is the most straightforward
-    modern equivalent and matches the social contrast with poverty.
+  rationale: The noun refers to material wealth or riches. 'Wealth' is the most straightforward modern equivalent and matches the social contrast with poverty.
 - source_word: יֵשׁ ... וְיֵשׁ
   chosen: There is ... and there is ...
   alternatives:
   - One ... and another ...
   - There is ... and there is one ...
   lexicon: HALOT
-  rationale: The Hebrew existential construction sets up a balanced contrast between
-    two cases. Retaining 'There is ... and there is ...' preserves the aphoristic
-    parallelism of the Hebrew.
+  rationale: The Hebrew existential construction sets up a balanced contrast between two cases. Retaining 'There is ... and there is ...' preserves the aphoristic parallelism of the Hebrew.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -115,26 +98,16 @@ ai_draft:
   - Skehan & Di Lella 1987, Anchor Bible 39
   - Ben-Hayyim 1973, Academy of the Hebrew Language
   revision_candidates:
-  - reason: SIR 10:30 falls in the Schechter facsimile range; when direct MSS A/B
-      transcription completes, re-run the draft against the deepened Zone 1 Hebrew
-      witness.
+  - reason: SIR 10:30 falls in the Schechter facsimile range; when direct MSS A/B transcription completes, re-run the draft against the deepened Zone 1 Hebrew witness.
     trigger: schechter_pipeline_completes
 status: revised
 theological_decisions:
 - issue: Use of the Hebrew witness despite Greek parallel divergence
-  chosen_reading: 'Translate the extant Hebrew main line as a positive contrast between
-    two honored men: one honored for insight, one for wealth.'
+  chosen_reading: 'Translate the extant Hebrew main line as a positive contrast between two honored men: one honored for insight, one for wealth.'
   alternative_readings:
-  - The Greek parallel reads a rhetorical comparison about one honored in poverty
-    and one dishonored in wealth, asking 'how much more' in the opposite condition.
-  rationale: Per project philosophy, the surviving Hebrew is primary for Sirach where
-    extant. However, the Greek parallel is materially different and likely reflects
-    a different textual form or substantial corruption/rewriting in transmission.
-    The English main text therefore follows the Hebrew witness, while the Greek alternative
-    is preserved in a footnote because the mismatch is significant and source validation
-    flags a major mismatch.
-  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use
-    Greek parallel as actual input and preserve uncertainty honestly.'
+  - The Greek parallel reads a rhetorical comparison about one honored in poverty and one dishonored in wealth, asking 'how much more' in the opposite condition.
+  rationale: Per project philosophy, the surviving Hebrew is primary for Sirach where extant. However, the Greek parallel is materially different and likely reflects a different textual form or substantial corruption/rewriting in transmission. The English main text therefore follows the Hebrew witness, while the Greek alternative is preserved in a footnote because the mismatch is significant and source validation flags a major mismatch.
+  doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input and preserve uncertainty honestly.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T15:42:40Z'

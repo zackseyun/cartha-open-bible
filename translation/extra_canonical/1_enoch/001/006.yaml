@@ -10,12 +10,9 @@ source:
   - 42
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the lofty mountains will quake, and the high hills will be brought low;
-    they will melt like wax before the flame.
+  text: And the lofty mountains will quake[a], and the high hills will be brought low[c][b]; they will melt like wax before the flame.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -34,25 +31,21 @@ lexical_decisions:
   - will be shaken
   - will tremble
   lexicon: Leslau, Comparative Dictionary of Ge‘ez; Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Verb appears intransitive here with plural subject; “quake” preserves
-    apocalyptic force and intransitivity better than passive “be shaken.”
+  rationale: Verb appears intransitive here with plural subject; “quake” preserves apocalyptic force and intransitivity better than passive “be shaken.”
 - source_word: አድባር (ʾadbar)
   chosen: mountains
   alternatives:
   - mounts
   - mountainland
   lexicon: Leslau; Dillmann
-  rationale: Common Geʿez noun for mountainous heights; plural sense is contextually
-    prompted by parallelism with “hills.”
+  rationale: Common Geʿez noun for mountainous heights; plural sense is contextually prompted by parallelism with “hills.”
 - source_word: ነዋኀን / ነዋኃት (newaḥn / newaḥat)
   chosen: lofty / high
   alternatives:
   - elevated
   - proud
   lexicon: Leslau; Dillmann
-  rationale: Adjectival forms modifying mountains (m.) and hills (f.); semantic field
-    of height/loftiness suits cosmic-theophanic imagery; “proud” is a metaphorical
-    human quality and is less apt for inanimate terrain here.
+  rationale: Adjectival forms modifying mountains (m.) and hills (f.); semantic field of height/loftiness suits cosmic-theophanic imagery; “proud” is a metaphorical human quality and is less apt for inanimate terrain here.
 - source_word: ይቴሐቱ (yǝtēḥatu)
   chosen: will be brought low
   alternatives:
@@ -60,47 +53,41 @@ lexical_decisions:
   - will be humbled
   - will be flattened
   lexicon: Leslau; Dillmann
-  rationale: Passive sense of being lowered fits the parallel with lofty hills; “brought
-    low” is idiomatic English for humbling/elevation reversal in theophanic contexts.
+  rationale: Passive sense of being lowered fits the parallel with lofty hills; “brought low” is idiomatic English for humbling/elevation reversal in theophanic contexts.
 - source_word: አውግር (ʾawgr)
   chosen: hills
   alternatives:
   - hill-country
   - ridges
   lexicon: Leslau; Dillmann
-  rationale: Standard gloss “hills” balances with “mountains” and matches topographical
-    parallelism.
+  rationale: Standard gloss “hills” balances with “mountains” and matches topographical parallelism.
 - source_word: ይትመሰዉ (yǝtmäsäw)
   chosen: will melt
   alternatives:
   - will dissolve
   - will liquefy
   lexicon: Leslau; Dillmann
-  rationale: Basic meaning is to melt; “melt” is vivid and idiomatic in English, keeping
-    the physical imagery.
+  rationale: Basic meaning is to melt; “melt” is vivid and idiomatic in English, keeping the physical imagery.
 - source_word: መዓረ (mäʿärä)
   chosen: wax
   alternatives:
   - beeswax
   lexicon: Leslau; Dillmann
-  rationale: Lexically denotes wax; “wax” is sufficient in English; specifying “beeswax”
-    is unnecessary and over-specific.
+  rationale: Lexically denotes wax; “wax” is sufficient in English; specifying “beeswax” is unnecessary and over-specific.
 - source_word: ግራ (gǝra)
   chosen: before
   alternatives:
   - in the presence of
   - in front of
   lexicon: Leslau; Dillmann
-  rationale: Prepositional sense “before/in the presence of” suits the simile construction;
-    “before” is concise.
+  rationale: Prepositional sense “before/in the presence of” suits the simile construction; “before” is concise.
 - source_word: እም ላህብ (ʾǝm lāhb)
   chosen: the blaze
   alternatives:
   - the flame
   - the fire
   lexicon: Leslau; Dillmann
-  rationale: lāhb denotes flame/blaze; “blaze” captures the intensity better than
-    the generic “fire,” while keeping the metaphor’s concreteness.
+  rationale: lāhb denotes flame/blaze; “blaze” captures the intensity better than the generic “fire,” while keeping the metaphor’s concreteness.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5-2025-08-07
@@ -130,8 +117,7 @@ enoch_witnesses:
     text: ወይደነግፁ፡ አድባር፡ ነዋኀን፡ ወይቴሐቱ፡ አውግር፡ ነዋኃት፡ ወይትመሰዉ፡ ከመ፡ መዓረ፡ ግራ፡ እምላህብ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -141,22 +127,17 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is
-    not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:35:26Z'
   unchanged: false
-  changes_summary: Changed “blaze” to “flame” for closer lexical correspondence to
-    the source term for fire/flame; otherwise retained the accurate and natural rendering.
+  changes_summary: Changed “blaze” to “flame” for closer lexical correspondence to the source term for fire/flame; otherwise retained the accurate and natural rendering.
 revisions:
 - timestamp: '2026-04-23T11:35:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: And the lofty mountains will quake, and the high hills will be brought low;
-    they will melt like wax before the blaze.
-  to: And the lofty mountains will quake, and the high hills will be brought low;
-    they will melt like wax before the flame.
-  rationale: Changed “blaze” to “flame” for closer lexical correspondence to the source
-    term for fire/flame; otherwise retained the accurate and natural rendering.
+  from: And the lofty mountains will quake, and the high hills will be brought low; they will melt like wax before the blaze.
+  to: And the lofty mountains will quake, and the high hills will be brought low; they will melt like wax before the flame.
+  rationale: Changed “blaze” to “flame” for closer lexical correspondence to the source term for fire/flame; otherwise retained the accurate and natural rendering.

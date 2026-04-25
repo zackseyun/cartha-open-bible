@@ -11,16 +11,13 @@ source:
   - 188
   confidence: medium
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via
-    tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78,
-    but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And these are the names of the sun: one is Aryares, and the second, Tomas.'
+  text: 'And these are the names of the sun: one is Aryares[a], and the second, Tomas.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: The two solar names are preserved as transliterations from the Ge'ez witness.
-      Their exact underlying form in earlier stages of the text is uncertain.
+    text: The two solar names are preserved as transliterations from the Ge'ez witness. Their exact underlying form in earlier stages of the text is uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: አስማቲሁ
@@ -29,59 +26,48 @@ lexical_decisions:
   - its names
   - the names thereof
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Plural noun from the Ge'ez root for 'name.' The suffix likely refers
-    back to the sun, but English expresses this naturally as 'the names of the sun'
-    given the following explicit object phrase.
+  rationale: Plural noun from the Ge'ez root for 'name.' The suffix likely refers back to the sun, but English expresses this naturally as 'the names of the sun' given the following explicit object phrase.
 - source_word: ለፀሐይ
   chosen: of the sun
   alternatives:
   - for the sun
   - to the sun
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: 'The object marker with ''sun'' is best rendered possessively in English
-    in this naming formula: the verse is listing names belonging to the sun.'
+  rationale: 'The object marker with ''sun'' is best rendered possessively in English in this naming formula: the verse is listing names belonging to the sun.'
 - source_word: ከመዝ
   chosen: are these
   alternatives:
   - are as follows
   - are thus
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: Formula introducing a list. 'Are these' preserves the slightly formal
-    enumerative style without sounding archaic.
+  rationale: Formula introducing a list. 'Are these' preserves the slightly formal enumerative style without sounding archaic.
 - source_word: ፩
   chosen: one
   alternatives:
   - the first
   lexicon: Charles 1906 Ethiopic Enoch edition
-  rationale: The numeral introduces the first of two names. 'One' follows the manuscript
-    notation directly; English readers still understand the sequence because the second
-    item follows.
+  rationale: The numeral introduces the first of two names. 'One' follows the manuscript notation directly; English readers still understand the sequence because the second item follows.
 - source_word: አርያሬስ
   chosen: Aryares
   alternatives:
   - Ariyares
   - Aryaris
   lexicon: Charles 1906 Ethiopic Enoch edition
-  rationale: This appears to be a proper name for the sun in transliterated form.
-    Per project philosophy, names are transliterated rather than translated. 'Aryares'
-    reflects the consonantal shape of the Ge'ez witness as given.
+  rationale: This appears to be a proper name for the sun in transliterated form. Per project philosophy, names are transliterated rather than translated. 'Aryares' reflects the consonantal shape of the Ge'ez witness as given.
 - source_word: ካልእ
   chosen: the second
   alternatives:
   - another
   - the other
   lexicon: Dillmann, Lexicon Linguae Aethiopicae
-  rationale: In this enumerative context the word marks the second item in the pair,
-    not merely 'another' in an indefinite sense.
+  rationale: In this enumerative context the word marks the second item in the pair, not merely 'another' in an indefinite sense.
 - source_word: ቶማስ
   chosen: Tomas
   alternatives:
   - Thomas
   - Tomas
   lexicon: Charles 1906 Ethiopic Enoch edition
-  rationale: A proper name preserved by transliteration. 'Tomas' is preferred over
-    'Thomas' because the Ge'ez form does not require importing the familiar later
-    English spelling of the apostolic name.
+  rationale: A proper name preserved by transliteration. 'Tomas' is preferred over 'Thomas' because the Ge'ez form does not require importing the familiar later English spelling of the apostolic name.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -112,8 +98,7 @@ enoch_witnesses:
     text: ወአስማቲሁ፡ ለፀሐይ፡ ከመዝ፡ ፩*አርያሬስ፡ ወካልእ፡ ቶማስ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt
-      via tools/enoch/verse_parser.py
+    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py
   attestation_expectations:
     greek:
       attested: true
@@ -123,26 +108,20 @@ enoch_witnesses:
       status: Qumran Aramaic fragments exist for at least part of this chapter range
   geez_only_zone1: false
   source_warnings:
-  - Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction
-    is not yet implemented in this prompt builder.
+  - Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 theological_decisions:
-- issue: Whether to normalize the solar names into familiar or interpretive English
-    forms
+- issue: Whether to normalize the solar names into familiar or interpretive English forms
   chosen_reading: Retain both as transliterated proper names
   alternative_readings:
   - Attempt etymological translation
   - Normalize Tomas to Thomas
-  rationale: The verse presents esoteric astronomical names within apocalyptic cosmology.
-    Transliteration preserves the text's otherness and avoids importing later associations
-    or speculative meanings.
+  rationale: The verse presents esoteric astronomical names within apocalyptic cosmology. Transliteration preserves the text's otherness and avoids importing later associations or speculative meanings.
   doctrine_reference: Translate titles; transliterate names.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: false
-  changes_summary: Adjusted word order to more naturally reflect the source construction
-    ('And these are the names of the sun') while preserving all source elements and
-    the formal register.
+  changes_summary: Adjusted word order to more naturally reflect the source construction ('And these are the names of the sun') while preserving all source elements and the formal register.
 revisions:
 - timestamp: '2026-04-23T11:38:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -150,6 +129,4 @@ revisions:
   category: revision_pass
   from: 'And the names of the sun are these: one is Aryares, and the second, Tomas.'
   to: 'And these are the names of the sun: one is Aryares, and the second, Tomas.'
-  rationale: Adjusted word order to more naturally reflect the source construction
-    ('And these are the names of the sun') while preserving all source elements and
-    the formal register.
+  rationale: Adjusted word order to more naturally reflect the source construction ('And these are the names of the sun') while preserving all source elements and the formal register.
