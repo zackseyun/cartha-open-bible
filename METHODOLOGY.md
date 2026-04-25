@@ -8,19 +8,16 @@ and any subsequent revision with its rationale. This document describes
 how that pipeline actually works in practice — including the parts
 that are not pretty.
 
-The pipeline runs in two voices. The **per-verse voice** is what most
-readers see: source text → AI draft → multi-model cross-check →
-publication. The **per-corpus voice** sits underneath it: the OCR,
-adjudication, queue, worker, and merge-supervisor systems that keep
-phase-scale work (5,000 verses per phase, sometimes more) coherent.
-Both are documented below.
+The per-verse pipeline is source text → AI draft → multi-model
+cross-check → publication. Underneath it sits an OCR + adjudication
+system that prepares deuterocanonical and extra-canonical sources
+before they ever reach the drafter.
 
 For revision policy and what triggers a post-publication change, see
 [REVISION_METHODOLOGY.md](REVISION_METHODOLOGY.md). For doctrinal and
 lexical defaults, see [DOCTRINE.md](DOCTRINE.md) and
-[PHILOSOPHY.md](PHILOSOPHY.md). For the licensing discipline that lets
-the project consult modern scholarship without becoming a derivative
-work of it, see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
+[PHILOSOPHY.md](PHILOSOPHY.md). For the source-licensing inventory,
+see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 
 ## Pipeline overview
 
@@ -35,9 +32,7 @@ work of it, see [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
    Latin, etc.)
 ```
 
-Per-verse stages 1–4 are described below. Operational pipeline
-(chapter queue, worker pool, merge supervisor, CDN publish) is
-described in the "Operational pipeline" section.
+Per-verse stages 1–4 are described below.
 
 ## Phases
 
@@ -152,29 +147,6 @@ The tooling: `tools/adjudicate_corpus.py`,
 `tools/adjudicate_escalated_gemini.py`,
 `tools/rescue_manual_pages.py`.
 
-### Stage 1C — Three-zone scholarship policy
-
-The translation is CC-BY 4.0. The project consults modern scholarship
-constantly without copying it. The boundary is enforced by a
-three-zone policy ([REFERENCE_SOURCES.md](REFERENCE_SOURCES.md)):
-
-- **Zone 1 — Vendored.** Public-domain or CC-licensed source texts
-  and tools. Copied into `sources/` with provenance. Examples: Swete
-  1909, Charles 1913 APOT, Sefaria PD content, First1KGreek TEI,
-  unfoldingWord Hebrew Bible, SBLGNT.
-- **Zone 2 — Consulted, never copied.** Copyrighted scholarly works
-  used to inform decisions but never reproduced in this repository.
-  Examples: Rahlfs-Hanhart 1935/2006, Beentjes Hebrew Sirach, the
-  Yadin Masada scroll editions. Where these inform a decision, the
-  verse YAML records the consultation but never the text.
-- **Zone 3 — Not consulted.** Modern English translations (NIV, ESV,
-  NRSV, etc.). Deliberately excluded so this translation is not a
-  derivative work of any of them.
-
-Each verse YAML's `source.edition` field records which Zone-1 source
-the rendering is anchored to. Zone-2 consultations appear in
-`theological_decisions` or `lexical_decisions` rationale notes.
-
 ## Stage 2 — AI draft
 
 A primary LLM produces the draft using a prompt anchored in
@@ -188,20 +160,10 @@ A primary LLM produces the draft using a prompt anchored in
 - Source-text citations (edition + pages, archive.org-linkable
   where possible)
 
-The drafter prompt loads, in addition to the verse:
-
-- The relevant doctrinal-anchor excerpt from DOCTRINE.md (e.g., the
-  Χριστός default rendering, the YHWH policy, contested-term
-  defaults)
-- The relevant philosophy excerpt from [PHILOSOPHY.md](PHILOSOPHY.md)
-- Per-book apparatus (e.g., Sirach consults Sefaria Kahana for
-  1,018/1,019 verses; Tobit consults Neubauer 1878 for 76/76)
-- Witness parallels where they exist (1 Esdras cross-checked
-  against WLC parallels)
-
-These references are **loaded into the prompt**, not copied to
-output — that's how Zone-2 scholarship can inform a draft without
-contaminating the published rendering.
+The drafter prompt loads, in addition to the verse, the relevant
+doctrinal-anchor excerpt from DOCTRINE.md, the relevant philosophy
+excerpt from [PHILOSOPHY.md](PHILOSOPHY.md), and any per-book
+apparatus or witness parallels recorded for that book.
 
 Draft metadata recorded per verse:
 
@@ -304,90 +266,6 @@ A reader who wants to verify any verse can pull the Zone-1 source
 edition from archive.org, find the cited pages, compare the printed
 text against `source.text`, and inspect the `confidence` and
 `adjudication` fields to see what was uncertain.
-
-## Operational pipeline
-
-The per-verse pipeline above is wrapped in an operational system
-that handles parallel work at corpus scale. None of this is
-incidental — phase-scale work means 1,000+ verses per book, ~25
-books per phase, and dozens of concurrent workers. Without this
-machinery, drafts overlap, partial chapters strand, and the merge
-order is chaotic.
-
-### The chapter queue
-
-`tools/chapter_queue.py` is a SQLite queue (`state/chapter_queue.sqlite3`)
-that tracks jobs at the **chapter** level — the atomic unit of work
-in this project. Each row represents one chapter's drafting job:
-
-- `phase`, `book`, `chapter` (composite key)
-- `status` — pending / running / completed / failed
-- `worker_id`, `worktree_path`
-- `commit_sha` (set when worker commits)
-- `merge_sha` (set when merge supervisor cherry-picks to main)
-- `claimed_at`, `completed_at`, `merged_at`
-
-Operational note: stale claims (running > 10 minutes with no
-progress) are returned to pending by the supervisor.
-
-### The chapter worker
-
-`tools/chapter_worker.py` claims one chapter atomically, drafts it
-in an isolated git worktree, commits the chapter as a single
-commit, and marks the job completed (or failed with a captured
-error). Worktree isolation means parallel workers never collide on
-the same files.
-
-### The merge supervisor
-
-`tools/chapter_merge.py` cherry-picks completed chapter commits
-onto `main` in canonical order, records the merge SHA back to the
-queue, and skips chapters whose drafts are already on `main`.
-
-The check for "already on main" is consequential. The original
-implementation used `git branch --contains <sha>`, which returns
-true if **any** branch contains the sha — including the
-`codex/*` worktree branches the workers commit on. This silently
-marked 357 uncherrypicked drafts as merged. The CDN sat on 42 of 66
-canonical books while the queue showed 100% completion.
-
-The fix:
-
-```python
-# OLD (wrong — true if any branch, including codex/* worktrees, has it)
-proc = git(coord_root, "branch", "--contains", commit_sha)
-
-# NEW (correct — true only if reachable from main HEAD)
-proc = git(coord_root, "merge-base", "--is-ancestor", commit_sha, "HEAD")
-```
-
-If you change the merge supervisor, keep this check or an
-equivalent that pins to `main` specifically.
-
-`scripts/supervise_merge.sh` runs the merge in a loop and republishes
-to the CDN after each batch. `scripts/master_supervisor.sh` is the
-meta-supervisor that spawns worker supervisors per phase, the merge
-supervisor, and the OT summary prewarmers; it exits when the queue
-drains. There is deliberately no launchd plist — this is a finite
-project.
-
-### CDN publish
-
-```
-main (committed drafts)
-   ↓  scripts/publish_cob.sh
-Lambda: cartha-cob-publisher
-   ↓
-bible.cartha.com/manifest.json    (tiny, revalidated on each read)
-bible.cartha.com/cob_preview.json (large body, cache-busted by version)
-```
-
-Clients (the website's `bibleData.js` and the mobile app's
-`CobRuntimeSync`) compare their cached `version_sha` to
-`manifest.version`; if different, they fetch the new body. Nothing
-ships to clients until the Lambda runs. Manual override:
-`scripts/sync_cob.sh --publish-only` republishes whatever is on
-`main` without merging anything new.
 
 ## Revision passes
 
@@ -505,40 +383,3 @@ issue. Resolution may result in:
 All outcomes are documented publicly. Nothing happens in private
 email.
 
-## Incidents and corrections
-
-This methodology has been refined by failures. The ones worth
-remembering:
-
-- **2026-04-19 — merge-lane false-positive.** `tools/chapter_merge.py`
-  used `git branch --contains` to skip already-merged drafts. That
-  predicate returns true if **any** branch (including the workers'
-  `codex/*` worktree branches) contains the commit, which silently
-  marked 357 uncherrypicked drafts as merged. The CDN stayed on 42 of
-  66 books while the queue claimed 100%. Fix: switch to
-  `git merge-base --is-ancestor <sha> HEAD`. If the merge script is
-  ever rewritten, preserve this check.
-- **2026-04-21 — Ge'ez OCR engine selection.** Phases 8c–8d burned
-  several days on 44% run-to-run consistency before the diagnosis
-  landed: JSON response mode escapes 3-byte Ethiopic characters into
-  ~6 tokens each, blowing the 32K budget. Switching Gemini 2.5 Pro
-  to **plaintext** mode fixed it instantly. Lesson: when an OCR
-  pipeline is unstable, suspect tokenization before suspecting the
-  model.
-- **Sirach alternate numbering, 1 Esdras 9 verse drift, BAR 1:1
-  breathing-mark ambiguity.** Each of these looked like a translation
-  problem and turned out to be a page-targeting or
-  edition-numbering problem. The scan-rescue loop (Stage 1B) is the
-  reason the project distinguishes "the OCR was wrong" from "the
-  printed page is genuinely ambiguous" rather than averaging them
-  into one big confidence number.
-- **Phase 1 revision regressions (commit `346e59e`).** Bulk
-  consistency normalizations occasionally undo carefully-chosen
-  per-verse renderings. The fix was an explicit regression-policy
-  enforcement step: any global normalization commit must be
-  followed by a per-verse re-check of the affected verses, not
-  just a lint pass.
-
-These notes are kept here, in the methodology, rather than buried in
-incident reports — the failures shaped the pipeline and the next
-person to touch it should know why each guard exists.
