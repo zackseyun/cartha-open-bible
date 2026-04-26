@@ -99,9 +99,13 @@ def detect_english_verse_count(english: str) -> int:
 def detect_greek_verse_count(greek: str) -> int:
     """Count verse markers in the Greek source (e.g. '2. Word'). Apparatus footnotes
     embedded inside words (superscript-like) don't have a leading whitespace and
-    upper/start-marker after, so this regex avoids them."""
+    upper/start-marker after, so this regex avoids them.
+
+    Polytonic Greek uppercase (Ἀ, Ὑ, Ἐ, ...) lives outside the basic [Α-Ω] block,
+    so the post-marker character class also includes the Greek Extended block
+    (U+1F00–U+1FFF) and the asterisk used as a critical-edition marker."""
     nums = []
-    for m in re.finditer(r'(?:^|\s)(\d+)\.\s+[Α-Ω*]', greek):
+    for m in re.finditer(r'(?:^|\s)(\d+)\.\s+[Α-Ω\u1F00-\u1FFF*]', greek):
         n = int(m.group(1))
         if 2 <= n <= 80:
             nums.append(n)
@@ -123,14 +127,39 @@ def resolve_gemini_key() -> str:
         return obj["api_key"]
     keys = obj.get("api_keys")
     if isinstance(keys, list) and keys:
+        # Probe each key against the model we'll actually call. Secrets sometimes
+        # carry expired or quota-burned entries alongside a working one.
+        import urllib.request, urllib.error
+        from split_t12p_into_verses import MODEL_ID  # avoid hardcoding
+        probe_url_tpl = (
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{MODEL_ID}:generateContent?key={{}}"
+        )
+        for k in keys:
+            req = urllib.request.Request(
+                probe_url_tpl.format(k),
+                data=b'{"contents":[{"parts":[{"text":"hi"}]}],"generationConfig":{"maxOutputTokens":8}}',
+                headers={"Content-Type": "application/json"},
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    if r.status == 200:
+                        return k
+            except urllib.error.HTTPError:
+                continue
+            except Exception:
+                continue
         return keys[0]
     raise RuntimeError(f"unexpected secret shape: keys={list(obj.keys())}")
+
+
+MODEL_ID = "gemini-2.5-flash"
 
 
 def call_gemini(api_key: str, user_text: str) -> str:
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
-        "gemini-3.1-pro-preview:generateContent?key=" + api_key
+        f"{MODEL_ID}:generateContent?key={api_key}"
     )
     payload = {
         "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT}]},
