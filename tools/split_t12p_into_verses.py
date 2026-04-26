@@ -52,22 +52,26 @@ TESTAMENTS: list[dict[str, Any]] = [
 
 SYSTEM_PROMPT = """You are splitting a chapter of the Testaments of the Twelve Patriarchs into individual verse records.
 
-The T12P translation draft embeds verse numbers inline in the English like this:
-  "First verse text, which has no leading number. 2 Second verse text. 3 Third verse text."
-Verse 1 is ALWAYS the implicit first text before any number. Each subsequent verse starts with a standalone number followed by a space and uppercase letter.
+Verse markers can appear in two English styles:
+  Style A: "First verse text. 2 Second verse text. 3 Third verse text."  (digit + space + uppercase)
+  Style B: "1. First verse text. 2. Second verse text. 3. Third verse text."  (digit + period + space + uppercase)
+Verse 1 is the text before the first numbered marker (Style A) or under the "1." marker (Style B).
 
-The Greek source text also has verse markers (e.g. "2. Text 3. Text") but the Greek contains apparatus footnote numbers in similar format — use the ENGLISH verse numbers as the authoritative split guide, and use the Greek markers only to confirm.
+Some English drafts have NO inline verse numbers at all — the prose runs continuously. In those cases the Greek source's verse markers ("2. text 3. text") are authoritative; align the English prose against the Greek verse boundaries by sentence-matching the meaning.
+
+The Greek source contains apparatus footnote numbers (small superscript-like digits embedded INSIDE or right after words). Those are NOT verse markers and must be ignored.
 
 Your job: return a JSON array of verse objects.
 
 Rules:
-1. Use the English inline verse numbers (standalone digits before each verse) to identify verse boundaries. Verse 1 is the text before the first number.
-2. Split the English at those boundaries. Each verse's english field should contain the text of that verse ONLY (without the leading verse number).
-3. For the Greek, find the corresponding Greek text for each verse using the Greek verse markers (e.g. "2.") that align with the English verse numbers. The first verse is everything before the first Greek marker.
-4. Every word of the English must appear in exactly one verse's english field. Same for the Greek. No content dropped, no duplication.
-5. If the English has no embedded verse numbers at all, treat the entire chapter as a single verse (verse 1).
-6. Ignore apparatus footnote notations in the Greek (superscript-like numbers embedded within or after words — those are critical apparatus markers, not verse numbers).
-7. Return ONLY the JSON array. No commentary, no markdown fences.
+1. If the English has inline verse numbers (Style A or B), use them as the primary split guide. Verse 1 is the text before the first marker.
+2. If the English has no inline verse numbers but the Greek does, align the English prose to the Greek verse markers by matching meaning. Split the English at the corresponding sentence boundaries.
+3. Split the English at those boundaries. Each verse's english field should contain the text of that verse ONLY (without any leading verse number or period).
+4. For the Greek, extract the corresponding Greek text per verse using the Greek "N." verse markers. The first verse is everything before the first marker.
+5. Every word of the English must appear in exactly one verse's english field. Same for the Greek. No content dropped, no duplication.
+6. If neither English nor Greek has any verse markers, treat the entire chapter as a single verse (verse 1).
+7. Ignore apparatus footnote notations in the Greek (superscript-like numbers embedded within or right after words — those are critical apparatus markers, not verse numbers).
+8. Return ONLY the JSON array. No commentary, no markdown fences.
 
 Output JSON shape:
 [
@@ -79,16 +83,29 @@ Output JSON shape:
 
 
 def detect_english_verse_count(english: str) -> int:
-    """Count the number of verses based on inline English verse numbers.
-    Returns the max verse number found (+ 1 implicit verse 1 if any found)."""
+    """Count verses from inline English markers (Style A: ' 2 Text', Style B: '\\n2. Text')."""
     nums = []
     for m in re.finditer(r'(?:(?<=[.!?"\'])\s+|(?:^|\n)\s*)(\d+)\s+[A-Z"\'(]', english):
         n = int(m.group(1))
-        if 2 <= n <= 50:
+        if 2 <= n <= 80:
             nums.append(n)
-    if not nums:
-        return 1
-    return max(nums)
+    for m in re.finditer(r'(?:^|\n)\s*(\d+)\.\s+["\'(]?[A-Z]', english):
+        n = int(m.group(1))
+        if 2 <= n <= 80:
+            nums.append(n)
+    return max(nums) if nums else 1
+
+
+def detect_greek_verse_count(greek: str) -> int:
+    """Count verse markers in the Greek source (e.g. '2. Word'). Apparatus footnotes
+    embedded inside words (superscript-like) don't have a leading whitespace and
+    upper/start-marker after, so this regex avoids them."""
+    nums = []
+    for m in re.finditer(r'(?:^|\s)(\d+)\.\s+[Α-Ω*]', greek):
+        n = int(m.group(1))
+        if 2 <= n <= 80:
+            nums.append(n)
+    return max(nums) if nums else 1
 
 
 def resolve_gemini_key() -> str:
@@ -102,7 +119,12 @@ def resolve_gemini_key() -> str:
         "--query", "SecretString", "--output", "text",
     ], text=True).strip()
     obj = json.loads(raw)
-    return obj["api_key"]
+    if "api_key" in obj:
+        return obj["api_key"]
+    keys = obj.get("api_keys")
+    if isinstance(keys, list) and keys:
+        return keys[0]
+    raise RuntimeError(f"unexpected secret shape: keys={list(obj.keys())}")
 
 
 def call_gemini(api_key: str, user_text: str) -> str:
@@ -172,12 +194,16 @@ def split_chapter(
     if not greek or not english:
         return {"chapter": chapter_num, "error": "empty greek or english"}
 
-    expected_verses = detect_english_verse_count(english)
+    en_count = detect_english_verse_count(english)
+    gr_count = detect_greek_verse_count(greek)
+    expected_verses = max(en_count, gr_count)
 
     user_text = json.dumps({
         "testament": testament["display"],
         "chapter": chapter_num,
         "expected_verse_count": expected_verses,
+        "english_marker_count": en_count,
+        "greek_marker_count": gr_count,
         "greek": greek,
         "english": english,
     }, ensure_ascii=False)
