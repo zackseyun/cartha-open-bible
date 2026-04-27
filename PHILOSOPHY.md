@@ -113,16 +113,66 @@ the rest of the world to check our work.
 
 ## Current status
 
-The project is in its initial AI-drafting phase. Every verse you read in
-the repository is exactly what a frontier AI model produced, with the full
-rationale visible alongside it. We don't currently have a formal scholarly
-review process, and we don't pretend to — the drafts are released as
-drafts, and the repository is public so the reader can see the process
-from the first commit forward, unvarnished.
+The project has reached **near-complete first-draft coverage** of the
+Christian biblical corpus, with a multi-model revision pipeline running
+on top of the original drafting work. Live numbers are at the
+[translation progress page](https://cartha.com/cartha-open-bible/progress);
+as of the most recent snapshot:
 
-This is the honest starting point. If a scholarly review process emerges
-later, it will be announced publicly and documented in the repository.
-Until then, what you see is what the AI produced.
+- **Protestant New Testament:** all 27 books, 260 chapters, ~7,900 verses.
+- **Protestant Old Testament:** 38 of 39 books drafted (every book except
+  Song of Songs), ~23,000 verses across both Torah/Histories/Wisdom and
+  Prophets.
+- **Deuterocanonical / Apocrypha:** all 18 books drafted (Tobit, Judith,
+  Wisdom of Solomon, Sirach, Baruch, Letter of Jeremiah, Greek additions
+  to Esther and Daniel, 1–4 Maccabees, 1 Esdras, Prayer of Manasseh,
+  Psalm 151) — over 6,000 verses, translated from Swete LXX with the
+  Hebrew witnesses for Sirach and Tobit consulted in parallel.
+- **Extra-canonical witnesses** translated for transparency about
+  the Jewish/early-Christian textual world (Didache, 1 Clement, 1 Enoch,
+  Jubilees, Psalms of Solomon, 2 Esdras) — not claimed as scripture, but
+  surfaced so readers can see what existed alongside the canonical books.
+
+Every verse remains a draft. What has changed since the project began is
+the depth of the review pipeline, not the claim about finality:
+
+- **Drafting:** GPT-5.4 produces the first English rendering for each
+  verse, anchored in the doctrine prompt and the verse's source-language
+  text (Greek, Hebrew, or Aramaic depending on the book).
+- **Cross-model review:** Gemini 2.5 Pro reads each draft against the
+  source text and flags lexical disagreements, awkward English, and
+  category-1 grammar issues. Reviews land in `state/reviews/` as
+  inspectable JSON.
+- **Revision pass:** an automated GPT-5.4 revision pass adjudicates
+  the cross-model feedback and either applies the change or marks
+  the verse `unchanged`. Every revision is recorded in the verse YAML's
+  `revisions` array with `from`, `to`, rationale, and a model attribution
+  — so anyone reading the file can see the full negotiation history.
+- **Regression checks:** a Claude Sonnet regression-fix layer catches
+  cases where an automated revision violates a documented project policy
+  (e.g., Χριστός being silently changed back to "Christ" against
+  DOCTRINE.md). Those reverts are also visible in the same `revisions`
+  array.
+- **Direct human review** (still informal): commits land in `main`
+  through standard git workflow with public diffs. Issue tracker is open;
+  every revision can be challenged.
+
+This is no longer "what one AI produced." It is what one drafter wrote,
+two reviewers critiqued, an adjudicator decided, and a regression check
+audited — with the entire negotiation persisted in version control.
+
+What it is **not** yet: signed off by a credentialed scholar with named
+authority over the rendering. We do not pretend to that, and the commit
+history makes the absence visible. When credentialed-scholar review
+becomes part of the process, it will be announced publicly and documented
+in the repository in the same auditable way.
+
+The text is also **shipping live** to readers through the
+[Cartha mobile app](https://cartha.com) and the
+[web reader](https://cartha.com/cartha-open-bible/), through a CDN
+publisher pipeline that pushes whatever is on `main`. The app, the
+website, and this repository show the same draft, with the same
+provenance, at all times.
 
 ## Open by principle, not by default
 
