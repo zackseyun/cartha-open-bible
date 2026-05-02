@@ -3,15 +3,15 @@ reference: 1 Enoch 4:1
 book: 1 Enoch
 source:
   edition: charles-1906-enoch
-  text: ወዳግመ፡ ጠይቁ፡ መዋዕለ፡ ሐጋይ፡ ከመ፡ ኮነ፡ ፀሐይ፡ ላዕሌሃ፡ በቅዳሜሃ፡ ወእንትሙ ሰ፡ ትኃሡ፡ ምጽላሰ፡ ወጽላሎተ፡ በእንተ፡ ዖዐየ፡ ፀሐይ፡ ወምድርሰ፡ ትውዒ፡ እምቀ፡
+  text: ወዳግመ፡ ጠየቁ፡ መዋዕለ፡ ሐጋይ፡ ከመ፡ ኮነ፡ ፀሓይ፡ ላዕሌሃ፡ በቅድሜሃ፡ ወአንትሙሰ፡ ተኀሥሡ፡ ምጽላለ፡ ወጽላሎተ፡ በእንተ፡ ዋዕየ፡ ፀሓይ፡ ወምድርኒ፡ ትውዒ፡ እሙቀተ፡ ሐሩር፡ ወአንትሙሰ፡ ኢትክሉ፡ ከይዶታ፡ ለምድር፡ ወኢ፡ ኰኵሐ፡ በእንተ፡ ዋዕያ።
   language: Geez
   pages:
   - 44
-  confidence: medium
+  confidence: high
   validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch04.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 4, but verse-aligned extraction is not yet implemented in this prompt builder.
+  note: Source text corrected against Beta maṣāḥǝft TEI oracle (Jerabek 1995, Hamburg). Charles 1906 OCR (ch04.txt) was truncated mid-verse at ወምድርሰ፡ ትውዒ፡ እምቀ፡, omitting the final clause. Full text recovered from oracle.
 translation:
-  text: And again[a], observe the days of summer—how the sun comes upon it at its beginning, and you seek shelter and shade because of the heat of the sun[c][b], and the earth is scorched with burning heat.
+  text: And again[a], observe the days of summer—how the sun comes upon it at its beginning, and you seek shelter and shade because of the heat of the sun[c][b], and the earth is scorched with burning heat, and you cannot tread on the earth or upon a rock because of its heat.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -107,10 +107,10 @@ enoch_witnesses:
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ወዳግመ፡ ጠይቁ፡ መዋዕለ፡ ሐጋይ፡ ከመ፡ ኮነ፡ ፀሐይ፡ ላዕሌሃ፡ በቅዳሜሃ፡ ወእንትሙ ሰ፡ ትኃሡ፡ ምጽላሰ፡ ወጽላሎተ፡ በእንተ፡ ዖዐየ፡ ፀሐይ፡ ወምድርሰ፡ ትውዒ፡ እምቀ፡
-    source_edition: Charles 1906 Ethiopic Enoch
-    confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch04.txt via tools/enoch/verse_parser.py
+    text: ወዳግመ፡ ጠየቁ፡ መዋዕለ፡ ሐጋይ፡ ከመ፡ ኮነ፡ ፀሓይ፡ ላዕሌሃ፡ በቅድሜሃ፡ ወአንትሙሰ፡ ተኀሥሡ፡ ምጽላለ፡ ወጽላሎተ፡ በእንተ፡ ዋዕየ፡ ፀሓይ፡ ወምድርኒ፡ ትውዒ፡ እሙቀተ፡ ሐሩር፡ ወአንትሙሰ፡ ኢትክሉ፡ ከይዶታ፡ ለምድር፡ ወኢ፡ ኰኵሐ፡ በእንተ፡ ዋዕያ།
+    source_edition: Beta maṣāḥǝft TEI oracle (Jerabek 1995)
+    confidence: high
+    note: Charles 1906 OCR was truncated; full text recovered from Beta maṣāḥǝft oracle
   attestation_expectations:
     greek:
       attested: true
@@ -146,8 +146,14 @@ revisions:
   from: And again, And again, observe the days of summer—how the sun comes upon it at its beginning, and you seek shelter and shade because of the heat of the sun, and the earth is scorched with burning heat. the days of summer—how the sun comes upon it at its beginning, and you seek shelter and shade because of the heat of the sun, and the earth is scorched with burning heat.
   to: And again, observe the days of summer—how the sun comes upon it at its beginning, and you seek shelter and shade because of the heat of the sun, and the earth is scorched with burning heat.
   rationale: Removed the accidental duplicated opening and repeated clause. Retained the core wording, which is accurate and natural for the source.
+- timestamp: '2026-05-02T00:00:00Z'
+  adjudicator: human
+  category: source_correction
+  from: and the earth is scorched with burning heat.
+  to: and the earth is scorched with burning heat, and you cannot tread on the earth or upon a rock because of its heat.
+  rationale: Charles 1906 OCR (ch04.txt) was truncated mid-verse, omitting the final clause. Full Ge'ez recovered from Beta maṣāḥǝft TEI oracle (Jerabek 1995). Missing clause confirmed present in source; added to translation.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:29Z'
+  model: human
+  timestamp: '2026-05-02T00:00:00Z'
   unchanged: false
-  changes_summary: Removed the accidental duplicated opening and repeated clause. Retained the core wording, which is accurate and natural for the source.
+  changes_summary: Restored missing final clause from Beta maṣāḥǝft oracle. Charles 1906 OCR truncation had silently dropped the clause about not being able to tread on the earth or rock; not caught by prior revision passes because both reviewed against the same truncated source text.
