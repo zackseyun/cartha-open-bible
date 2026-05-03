@@ -35,8 +35,10 @@ from typing import Optional
 
 try:
     from . import verse_parser
+    from . import dillmann_verse_parser
 except ImportError:  # pragma: no cover - direct script execution
     import verse_parser  # type: ignore
+    import dillmann_verse_parser  # type: ignore
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 SOURCES_ROOT = REPO_ROOT / "sources" / "enoch"
@@ -160,13 +162,18 @@ def is_available() -> bool:
     return geez_dir.exists() and any(geez_dir.glob("ch*.txt"))
 
 
+def dillmann_is_available() -> bool:
+    """True iff the Dillmann 1851 OCR is present."""
+    dillmann_dir = SOURCES_ROOT / "ethiopic" / "transcribed" / "dillmann_1851"
+    return dillmann_dir.exists() and any(dillmann_dir.glob("ch*.txt"))
+
+
 def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
     """Return the currently available witness bundle for one verse.
 
-    This is now partially implemented:
-      - Charles 1906 Ge'ez OCR is loaded verse-by-verse through
-        ``tools/enoch/verse_parser.py``.
-      - Other witness lanes remain pending until their OCR/alignment work lands.
+    Loads all available Zone 1 Ge'ez witnesses:
+      - Charles 1906 (primary) via verse_parser.py
+      - Dillmann 1851 (secondary cross-check) via dillmann_verse_parser.py
     """
     if not is_available():
         return None
@@ -175,7 +182,7 @@ def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
     if row is None:
         return None
 
-    return EnochVerseWitnessSet(
+    witness_set = EnochVerseWitnessSet(
         chapter=chapter,
         verse=verse,
         geez_charles=EnochWitnessReading(
@@ -188,13 +195,31 @@ def load_verse(chapter: int, verse: int) -> Optional[EnochVerseWitnessSet]:
         ),
     )
 
+    if dillmann_is_available():
+        d_row, d_warnings = dillmann_verse_parser.load_verse(chapter, verse)
+        if d_row is not None:
+            witness_set.geez_dillmann = EnochWitnessReading(
+                language="geez",
+                witness="dillmann_1851",
+                text=d_row.text,
+                source_edition="Dillmann 1851 Ethiopic Enoch (Lipsiae, Vogel)",
+                confidence="medium",
+                note=(
+                    f"Recovered from {d_row.chapter_file} via tools/enoch/dillmann_verse_parser.py"
+                    + (f"; parser warnings: {'; '.join(d_warnings)}" if d_warnings else "")
+                ),
+            )
+
+    return witness_set
+
 
 def summary() -> dict:
     """Diagnostic summary of what's loadable."""
     out = {
         "pipeline": "enoch_multi_witness",
-        "status": "charles_primary_partial",
+        "status": "charles_primary_dillmann_secondary",
         "geez_ocr_complete": is_available(),
+        "dillmann_ocr_available": dillmann_is_available(),
         "betamasaheft_oracle_available_locally": oracle_available(),
         "greek_ocr_complete": (SOURCES_ROOT / "greek" / "transcribed").exists() and
                               any((SOURCES_ROOT / "greek" / "transcribed").iterdir()) if (SOURCES_ROOT / "greek" / "transcribed").exists() else False,
