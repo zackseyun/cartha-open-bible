@@ -442,19 +442,45 @@ release is `v0.1-preview`.
 
 ```
 cartha-open-bible/
+├── README.md            You are here
 ├── DEDICATION.md        Blessing and hope — to whom this work is offered
+├── LICENSE              CC-BY 4.0
+├── CHANGELOG.md         Phase-by-phase release notes
+│
+│   # Why and how
 ├── PHILOSOPHY.md        Why this translation exists, open-source posture, commitments
 ├── DOCTRINE.md          Theological commitments driving translation decisions
 ├── METHODOLOGY.md       Drafting and cross-check pipeline
 ├── REVISION_METHODOLOGY.md  How committed drafts are revised (reviser roles, revision criteria)
-├── DEUTEROCANONICAL.md  Strategy for including the Deuterocanonical / Apocrypha books
-├── CHANGELOG.md         Phase-by-phase release notes
-├── LICENSE              CC-BY 4.0
+├── REVISION_ROADMAP.md  Revision-pass schedule and priorities
+├── REVISION_LATER.md    Deferred-source integration (revisions queued for later passes)
+├── REFERENCE_SOURCES.md Three-zone scholarly-source policy
+│
+│   # Corpus scope and per-book notes
+├── DEUTEROCANONICAL.md  Strategy for the Deuterocanonical / Apocrypha books
+├── EXTRA_CANONICAL.md   Strategy for the wider extra-canonical corpus
+├── GREEK_EXTRA_CANONICAL.md  Greek-language extra-canonical scope
+├── APOCRYPHA_PROVENANCE.md   Provenance notes for the Apocrypha
+├── 2BARUCH.md           Per-book notes: 2 Baruch
+├── 2ESDRAS.md           Per-book notes: 2 Esdras
+├── DIDACHE.md           Per-book notes: Didache
+├── ENOCH.md             Per-book notes: 1 Enoch
+├── FIRST_CLEMENT.md     Per-book notes: 1 Clement
+├── JUBILEES.md          Per-book notes: Jubilees
+├── PRAYER_OF_MANASSEH.md  Per-book notes: Prayer of Manasseh
+├── PSALMS_OF_SOLOMON.md   Per-book notes: Psalms of Solomon
+│
+│   # Public data snapshots (regenerable; see tools/)
+├── status.json          Progress snapshot (tools/build_status.py)
+├── revisions.json       Revisions index (tools/build_revisions_index.py)
+├── book_metadata.json   Canonical book list, codes, ordering
+│
 ├── schema/
 │   └── verse.schema.json    JSON Schema for per-verse YAML
 ├── sources/             Vendored source texts (see sources/README.md)
 ├── translation/         Per-verse YAML (translation/nt/<book>/<chap>/<verse>.yaml)
-├── tools/               draft.py, cross_check.py, verify.py, consistency_lint.py
+├── tools/               draft.py, cross_check.py, verify.py, consistency_lint.py, …
+├── docs/                Phase runbooks, cross-reference notes, design docs
 ├── outreach/            Correspondence with publishers (ESV, NLT, etc.)
 └── .github/
     └── ISSUE_TEMPLATE/  Public disagreement and concern templates
