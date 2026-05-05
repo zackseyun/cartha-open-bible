@@ -238,7 +238,22 @@
     "cross_check": {
       "type": "object",
       "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["high_agreement", "moderate_agreement", "needs_review"],
+          "description": "Bucket derived from the selected agreement score."
+        },
+        "agreement": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Website-compatible alias for agreement_score."
+        },
         "models": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "strategies": {
           "type": "array",
           "items": { "type": "string" }
         },
@@ -246,6 +261,44 @@
           "type": "number",
           "minimum": 0,
           "maximum": 1
+        },
+        "agreement_min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "agreement_max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "verdict": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string"
+        },
+        "reviewer_model": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string"
+        },
+        "pass_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "passes_with_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verdict_counts": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        },
+        "source_review": {
+          "type": "string",
+          "description": "Local state/reviews path for the selected review pass."
         },
         "divergences_resolved_at": {
           "type": "string",

@@ -120,3 +120,27 @@ revision_pass:
   timestamp: '2026-04-23T09:38:16Z'
   unchanged: false
   changes_summary: 'Replaced ''the Messiah'' with ''Christ'' to reflect the Greek ἐν Χριστῷ more naturally and consistently in a formal translation. Kept the rest unchanged as accurate and complete. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
+
+cross_check:
+  status: high_agreement
+  agreement: 1.0
+  agreement_score: 1.0
+  agreement_min: 0.85
+  agreement_max: 1.0
+  verdict: agree
+  reviewed_at: '2026-04-21T22:57:45Z'
+  reviewer_model: gemini-3.1-pro-preview
+  strategy: v31_recheck_applied
+  pass_count: 3
+  passes_with_issues: 2
+  models:
+  - gemini-2.5-pro
+  - gemini-3.1-pro-preview
+  strategies:
+  - low_agreement_recheck
+  - v31_recheck_applied
+  - weighted_vocab
+  verdict_counts:
+    agree: 1
+    minor-issues: 2
+  source_review: state/reviews/gemini/v31_recheck_applied/nt/2_corinthians/012/019.job-38711.json

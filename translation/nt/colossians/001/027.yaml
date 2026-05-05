@@ -133,3 +133,27 @@ revision_pass:
   timestamp: '2026-04-23T09:42:22Z'
   unchanged: false
   changes_summary: 'Changed ''are'' to ''is'' to match the singular construction with ''what''; replaced ''the Messiah'' with ''Christ'' for direct lexical correspondence; changed the colon to a comma for smoother formal English. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
+
+cross_check:
+  status: high_agreement
+  agreement: 1.0
+  agreement_score: 1.0
+  agreement_min: 0.85
+  agreement_max: 1.0
+  verdict: agree
+  reviewed_at: '2026-04-21T22:48:24Z'
+  reviewer_model: gemini-3.1-pro-preview
+  strategy: v31_recheck_applied
+  pass_count: 3
+  passes_with_issues: 2
+  models:
+  - gemini-2.5-pro
+  - gemini-3.1-pro-preview
+  strategies:
+  - low_agreement_recheck
+  - v31_recheck_applied
+  - weighted_vocab
+  verdict_counts:
+    agree: 1
+    minor-issues: 2
+  source_review: state/reviews/gemini/v31_recheck_applied/nt/colossians/001/027.job-38501.json

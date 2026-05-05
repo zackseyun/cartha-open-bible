@@ -148,3 +148,27 @@ revision_pass:
   timestamp: '2026-04-23T09:59:00Z'
   unchanged: false
   changes_summary: 'Removed the added introductory words ''This is''; changed ''Jesus Messiah'' to the more standard ''Jesus Christ''; changed ''slaves'' to ''servants'' for natural formal register; rendered ἐσήμανεν as ''made it known'' rather than ''signified'' for clearer English while preserving meaning. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy), slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)]'
+
+cross_check:
+  status: high_agreement
+  agreement: 1.0
+  agreement_score: 1.0
+  agreement_min: 0.8
+  agreement_max: 1.0
+  verdict: agree
+  reviewed_at: '2026-04-21T22:51:54Z'
+  reviewer_model: gemini-3.1-pro-preview
+  strategy: v31_recheck_applied
+  pass_count: 3
+  passes_with_issues: 2
+  models:
+  - gemini-2.5-pro
+  - gemini-3.1-pro-preview
+  strategies:
+  - low_agreement_recheck
+  - v31_recheck_applied
+  - weighted_vocab
+  verdict_counts:
+    agree: 1
+    minor-issues: 2
+  source_review: state/reviews/gemini/v31_recheck_applied/nt/revelation/001/001.job-38595.json

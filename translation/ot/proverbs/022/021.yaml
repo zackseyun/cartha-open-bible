@@ -80,3 +80,27 @@ revision_pass:
   timestamp: '2026-04-23T11:22:09Z'
   unchanged: true
   changes_summary: No changes needed.
+
+cross_check:
+  status: high_agreement
+  agreement: 1.0
+  agreement_score: 1.0
+  agreement_min: 0.85
+  agreement_max: 1.0
+  verdict: agree
+  reviewed_at: '2026-04-21T22:30:48Z'
+  reviewer_model: gemini-3.1-pro-preview
+  strategy: low_agreement_recheck
+  pass_count: 3
+  passes_with_issues: 2
+  models:
+  - gemini-2.5-pro
+  - gemini-3.1-pro-preview
+  strategies:
+  - low_agreement_recheck
+  - random_sample
+  - weighted_vocab
+  verdict_counts:
+    agree: 1
+    minor-issues: 2
+  source_review: state/reviews/gemini/low_agreement_recheck/ot/proverbs/022/021.job-28929.json
