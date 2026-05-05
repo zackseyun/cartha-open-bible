@@ -68,7 +68,6 @@ as primary input for translation. Output is free to derive from these.
 | WLC (Westminster Leningrad Codex) | Public Domain | `sources/ot/wlc/` |
 | Schechter 1899 *Wisdom of Ben Sira* | Public Domain | `sources/hebrew_sirach/schechter_1899/` |
 | First1KGreek TEI-XML (validation only) | CC-BY-SA 4.0 | not in repo — consulted |
-| Eliran Wong Rahlfs / Amicarelli Swete | NC / GPL (consultation only) | `/tmp/*` — adjudicator reference |
 
 Zone 1 content MAY appear in the prompt context used to generate the
 English translation and MAY influence specific word choices.

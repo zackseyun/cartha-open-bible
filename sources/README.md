@@ -119,14 +119,13 @@ input.
 - **Our work:** OCR + cleaned UTF-8 transcription is our own,
   released as part of the COB output corpus under CC-BY 4.0.
 
-### Rahlfs LXX (1935) — Zone 2 consultation only
+### Rahlfs LXX (1935) — not vendored
 - **Directory:** `lxx/rahlfs/`
-- **Status:** **NOT vendored.** No CC-BY-compatible Rahlfs digitization
-  exists. Rahlfs is consulted as a Zone 2 reference during adjudication
-  via a parser (`tools/rahlfs.py`) that reads a non-redistributable
-  copy from `/tmp/rahlfs-ref/` only. Its readings inform confidence
-  judgments but never flow into our corpus output. See
-  `lxx/rahlfs/README.md` and `REFERENCE_SOURCES.md`.
+- **Status:** **NOT vendored.** No CC-BY-compatible Rahlfs
+  digitization exists. The directory is intentionally empty of source
+  text. See `lxx/rahlfs/README.md` for the rationale and
+  [`../REFERENCE_SOURCES.md`](../REFERENCE_SOURCES.md) for the policy
+  governing Zone 2 references.
 
 ### Psalms of Solomon — dedicated track
 - **Directory:** `lxx/psalms_of_solomon/`

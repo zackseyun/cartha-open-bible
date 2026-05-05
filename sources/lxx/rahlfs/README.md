@@ -1,6 +1,6 @@
-# Rahlfs Septuagint (LXX) — Zone 2 consultation only
+# Rahlfs Septuagint (LXX) — not vendored
 
-**Status: NOT vendored. Used as Zone 2 consult-only reference.**
+**Status: NOT vendored.**
 
 This directory is intentionally empty of source text. Earlier plans
 called for vendoring a CC-BY digital transcription of the 1935
@@ -14,19 +14,12 @@ edition is either CC-BY-NC, CC-BY-SA-derived-from-NC, or restrictive
 Our LXX source is **Swete 1909–1930** (fully public domain;
 [`../swete/`](../swete/)), which we transcribe ourselves via AI
 vision and release under CC-BY 4.0. Swete covers every LXX book
-we need, including the entire deuterocanon.
+we need, including the entire deuterocanon. Nothing from Rahlfs
+appears in COB output.
 
-**Rahlfs is still consulted as a Zone 2 reference** during
-adjudication of uncertain readings — see
-[`../../../REFERENCE_SOURCES.md`](../../../REFERENCE_SOURCES.md)
-for the three-zone policy, and
-[`../../../tools/rahlfs.py`](../../../tools/rahlfs.py) for the
-consultation parser (which reads Eliran Wong's NC-licensed
-digitization from `/tmp/rahlfs-ref/`, never committed to this
-repo). The adjudicator (`tools/adjudicate_corpus.py`) compares our
-Swete OCR against Rahlfs among several other witnesses; Rahlfs
-readings never flow into our corpus output, only into our
-confidence judgments.
+For the policy that governs scholarly references not vendored in
+this repository, see
+[`../../../REFERENCE_SOURCES.md`](../../../REFERENCE_SOURCES.md).
 
 ## NT cross-reference use case
 

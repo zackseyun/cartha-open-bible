@@ -40,9 +40,12 @@ The 100.0% high-confidence rate means that Azure GPT-5.4 vision was able to read
 |---|---|---|
 | **Swete 1909 scans** (Internet Archive) | Public domain | Primary OCR source |
 | **First1KGreek Swete encoding** (Harvard/Leipzig, 2017) | CC-BY-SA 4.0 | Validation oracle, disagreement-flagging |
-| **Rahlfs-Hanhart 1935** (Eliran Wong GitHub) | CC-BY-NC-SA 4.0 | Different-edition cross-check |
-| **Amicarelli Swete** (BibleBento / BibleWorks) | GPL v3 | Second independent Swete transcription (rescue pass) |
 | **Cambridge LXX, Tischendorf, Göttingen, NETS** | Various (commercial / scholarly) | Azure GPT-5.4 training-time knowledge, invoked in prompts |
+
+Additional Zone-2 cross-check witnesses are governed by
+[`../../../REFERENCE_SOURCES.md`](../../../REFERENCE_SOURCES.md);
+their content is not reproduced or vendored here and does not flow
+into corpus output.
 
 ## Per-book breakdown
 
