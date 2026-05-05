@@ -4,7 +4,7 @@
 Walks ``translation/`` to count chapters and verses drafted per book,
 pulls recent ``revise:`` / ``polish:`` commits from git log, and pins
 the result to the current HEAD SHA. The output is committed at the
-repo root so the Cartha Open Bible website can fetch it from
+repo root so the People's Open Bible website can fetch it from
 ``raw.githubusercontent.com/.../main/status.json`` with no backend.
 
 This is intentionally fast and cache-free: no YAML parsing, no schema

@@ -1,7 +1,7 @@
 # Tools
 
 Python scripts for drafting, cross-checking, verifying, and linting the
-Cartha Open Bible.
+People's Open Bible.
 
 ## Scripts
 

@@ -112,7 +112,7 @@ def measure_stage(stage_name: str, corpus_dir: pathlib.Path) -> dict:
 def format_benchmark(stages: list[dict]) -> str:
     import datetime as dt
     lines = [
-        "# Cartha Open Bible — Phase 8 corpus quality benchmark",
+        "# People's Open Bible — Phase 8 corpus quality benchmark",
         "",
         f"**Generated:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         "",

@@ -77,7 +77,7 @@ These are scripted and committed in a single pass.
 After reviewing ~20 verses and noticing per-verse drift, the project
 adopted a consistent rule for rendering the Greek title Χριστός:
 
-| Greek form | COB rendering |
+| Greek form | POB rendering |
 |---|---|
 | `ὁ Χριστός` (the Christ) | the Messiah |
 | `Χριστός` (bare, titular) | the Messiah |

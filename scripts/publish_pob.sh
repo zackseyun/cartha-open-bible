@@ -2,8 +2,8 @@
 set -euo pipefail
 
 LAMBDA_NAME="${LAMBDA_NAME:-cartha-cob-publisher}"
-LOG="${LOG:-/tmp/cob-publish.log}"
-RESP="${RESP:-/tmp/cob-publish-response.json}"
+LOG="${LOG:-/tmp/pob-publish.log}"
+RESP="${RESP:-/tmp/pob-publish-response.json}"
 
 echo "[publish] forcing ${LAMBDA_NAME} at $(date -u +%FT%TZ)" >> "$LOG"
 

@@ -1,7 +1,7 @@
-# COB Revision Policy — Mandatory Constraints for All AI Revision Passes
+# POB Revision Policy — Mandatory Constraints for All AI Revision Passes
 
 This file is loaded into the system prompt of every AI revision pass (Azure GPT-5.4,
-Gemini, Claude) working on Cartha Open Bible verse YAMLs. These constraints override
+Gemini, Claude) working on People's Open Bible verse YAMLs. These constraints override
 any default translation convention the model was trained on.
 
 ---
@@ -11,16 +11,16 @@ any default translation convention the model was trained on.
 ### 1. Χριστός → "Messiah" — NEVER "Christ"
 
 **Rule:** Render the Greek Χριστός as **"Messiah"** in all contexts. The word "Christ"
-is FORBIDDEN in COB translation text.
+is FORBIDDEN in POB translation text.
 
 **Why:** Χριστός is a direct Greek translation of the Hebrew מָשִׁיחַ (Mashiach),
 meaning "the anointed one." Using "Christ" as a rendering treats a living title as
-an opaque surname, erasing its meaning for readers who don't know Greek. COB's
+an opaque surname, erasing its meaning for readers who don't know Greek. POB's
 explicit policy is transparent translation — preserve semantic content.
 
 **Common compound forms:**
 
-| WRONG (conventional) | CORRECT (COB) |
+| WRONG (conventional) | CORRECT (POB) |
 |---|---|
 | Christ Jesus | Messiah Jesus |
 | Jesus Christ | Jesus Messiah |
@@ -34,7 +34,7 @@ This is a deliberate editorial decision, not an error.
 
 **Known regression:** Azure GPT-5.4 revision pass (2026-04-23) changed 402 Messiah
 instances to Christ across all NT books. All were reverted. This is the single largest
-category of regression in COB history.
+category of regression in POB history.
 
 ---
 
@@ -53,7 +53,7 @@ modern scholarship (see Bartchy, TDNT, Louw-Nida).
 
 **Correct rendering by source word:**
 
-| Greek/Hebrew | COB rendering |
+| Greek/Hebrew | POB rendering |
 |---|---|
 | δοῦλος | slave |
 | δούλη | female slave |
@@ -84,7 +84,7 @@ instances to "servant" across NT, OT, and deuterocanon. All were reverted.
 
 ### 3. יְהוָה → "Yahweh"
 
-The divine name יְהוָה (YHWH) is rendered **"Yahweh"** in COB, not "the LORD"
+The divine name יְהוָה (YHWH) is rendered **"Yahweh"** in POB, not "the LORD"
 (which substitutes a title for the personal name). Exception: in the compound
 אֲדֹנָי יְהוִה ("Lord Yahweh"), both elements are preserved.
 
@@ -95,7 +95,7 @@ substitute for the divine name). Do not conflate with YHWH.
 
 ### 5. Optimal equivalence as the guiding philosophy
 
-COB translation philosophy is **optimal equivalence**: faithful to the source structure
+POB translation philosophy is **optimal equivalence**: faithful to the source structure
 and vocabulary, readable in modern English, without paraphrase or interpretive expansion.
 
 - **Do** preserve word-for-word accuracy where English allows it naturally.

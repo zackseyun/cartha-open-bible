@@ -1,7 +1,7 @@
 # Translation Stance
 
 This document states the translation commitments that guide every
-decision in the Cartha Open Bible. Declaring them is an act of
+decision in the People's Open Bible. Declaring them is an act of
 honesty: critics can assess our output against our stated
 commitments rather than guessing at hidden biases.
 
@@ -11,7 +11,7 @@ commitments rather than guessing at hidden biases.
 
 ## Theological stance
 
-The Cartha Open Bible does not commit to a specific denominational
+The People's Open Bible does not commit to a specific denominational
 or creedal doctrinal stance. Where the source texts presuppose
 theological claims — the divinity of Christ, the resurrection,
 the personhood of the Holy Spirit, the unity of God — the
@@ -20,7 +20,7 @@ as imposed commitments of the translator.
 
 Readers from any tradition (Catholic, Eastern Orthodox, Protestant
 of any stripe, non-denominational, inquirer) are invited to
-evaluate COB against their own framework. Where a translation
+evaluate POB against their own framework. Where a translation
 decision is influenced by a theological reading — for example,
 where a Greek construction is genuinely ambiguous and the English
 choice leans one way or the other — that choice is documented in
@@ -35,7 +35,7 @@ translation.
 
 ## Translation philosophy
 
-The Cartha Open Bible aims at **optimal equivalence**: a middle
+The People's Open Bible aims at **optimal equivalence**: a middle
 path between formal ("word-for-word") and dynamic
 ("thought-for-thought") approaches.
 
@@ -116,15 +116,15 @@ To prevent misunderstanding:
 
 ## Translating into other languages
 
-The Cartha Open Bible's long-term intention is to be translated
+The People's Open Bible's long-term intention is to be translated
 into every major world language. Scripture belongs to the whole
-church; producing COB only in English would contradict the
+church; producing POB only in English would contradict the
 project's mission.
 
 Each target language is its own translation — drafted directly
 from the original-language sources (Hebrew OT, Greek NT, Swete
 LXX for the deuterocanonical books) rather than from the English
-COB. Translating from English would compound the distance from the
+POB. Translating from English would compound the distance from the
 originals and inherit choices that make sense in English but not
 elsewhere. Every target language deserves its own encounter with
 the Hebrew and Greek.
@@ -162,7 +162,7 @@ the bar are named as such, not silently omitted.
 Every language published under this program carries the same
 CC-BY 4.0 license, the same per-verse provenance, the same
 auditability. There is no tier system across languages — every
-supported language gets the full Cartha Open Bible.
+supported language gets the full People's Open Bible.
 
 ## Change log for this document
 
@@ -175,7 +175,7 @@ versions of the stance are preserved in git history.
   commitment. Translation philosophy and contested-terms table
   preserved unchanged; those are methodology, not creedal
   commitment, and the project actually runs on them. Added a
-  "Translating into other languages" section stating COB's long-
+  "Translating into other languages" section stating POB's long-
   term intention to ship in every feasible major language, with
   the full revision pipeline and transparent supported-language
   disclosure. Per-verse YAML citing the old `doctrine_reference`

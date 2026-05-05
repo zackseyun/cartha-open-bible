@@ -55,7 +55,7 @@ def load_policy() -> str:
     return ""
 
 
-SYSTEM_PROMPT = """You are a biblical translation revisor for the Cartha Open Bible — \
+SYSTEM_PROMPT = """You are a biblical translation revisor for the People's Open Bible — \
 a transparent, CC-BY 4.0 English Bible translated directly from the original Greek, Hebrew, and Aramaic.
 
 Your job: perform a focused revision pass on one verse's draft English translation.

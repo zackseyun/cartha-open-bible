@@ -1,6 +1,6 @@
 # 2 Esdras (4 Ezra) — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated sub-phase for
+This document covers the People's Open Bible's dedicated sub-phase for
 2 Esdras (called 4 Esdras or 4 Ezra in the Vulgate tradition). It
 complements [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md) (which covers
 the 13 LXX-based deuterocanonical books), [2BARUCH.md](2BARUCH.md)
@@ -74,7 +74,7 @@ compositional history noted in the front matter.
 | Protestant (historic) | Apocrypha (KJV 1611) |
 | Jewish tradition | Not in the Hebrew Bible; the Hebrew original was lost in the talmudic era |
 
-Following the Cartha Open Bible policy (see DEUTEROCANONICAL.md),
+Following the People's Open Bible policy (see DEUTEROCANONICAL.md),
 we take no position on canonicity. We translate and publish with
 transparent labeling.
 
@@ -85,7 +85,7 @@ transparent labeling.
 The Latin text survives in multiple manuscript families. The
 standard critical editions:
 
-| Edition | Year | License | Role for COB |
+| Edition | Year | License | Role for POB |
 |---|---|---|---|
 | **Bensly, *The Missing Fragment of the Latin Translation of the Fourth Book of Ezra*** | 1875 | Public Domain | Vendored (`sources/2esdras/scans/`). The Amiens Codex fragment — 7:36-140 — restored to the text after being dropped in most medieval MSS. |
 | **Bensly (ed. James), *The Fourth Book of Ezra: The Latin Version Edited from the MSS* (Texts & Studies III.2)** | 1895 | Public Domain | Vendored. The full critical Latin edition — our **Zone 1 primary**. |
@@ -137,7 +137,7 @@ Adapted from `METHODOLOGY.md` and `REFERENCE_SOURCES.md`:
    are Zone 2 consult. NIV-family English translations are Zone 3
    forbidden.
 5. **Per-verse provenance YAML** follows the same schema as the rest
-   of COB, with additional fields for each witness's reading.
+   of POB, with additional fields for each witness's reading.
 
 ## Reader-facing presentation
 

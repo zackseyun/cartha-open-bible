@@ -1,6 +1,6 @@
 # 1 Enoch (Mashafa Henok) — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated sub-phase for
+This document covers the People's Open Bible's dedicated sub-phase for
 the Book of Enoch (1 Enoch / Ethiopic Enoch / Mashafa Henok /
 መጽሐፈ፡ ሄኖክ). It sits under the Pseudepigrapha track alongside
 [2ESDRAS.md](2ESDRAS.md), complementing
@@ -72,7 +72,7 @@ versus up to three elsewhere.
 | Protestant | Not canonical; typically not even in Apocrypha sections |
 | New Testament | Jude 14-15 cites it directly; 2 Peter 2:4 alludes to Watchers tradition |
 
-Per COB policy (see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)): we
+Per POB policy (see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)): we
 take no position on canonicity. We label the book clearly in its
 canonical context when published.
 
@@ -112,7 +112,7 @@ commands.
   - License: outer wrapper declared CC-BY-SA 4.0; inner text
     attribution says "noncommercial purpose" and "cannot be sold."
     These are in tension; conservatively treated as non-redistributable.
-  - **Role in COB**: validation oracle only. We do NOT vendor this
+  - **Role in POB**: validation oracle only. We do NOT vendor this
     XML; we do NOT derive our published Ge'ez from it. Instead, we
     cross-check our own fresh OCR of Charles 1906 and Dillmann 1851
     against this digital text. Where they agree, our OCR is
@@ -134,7 +134,7 @@ Per [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md):
 
 These are consulted during translation and cited fact-level in
 footnotes where their conclusions inform a reading. Their text is
-never reproduced in COB output.
+never reproduced in POB output.
 
 ## Translation strategy
 
@@ -154,7 +154,7 @@ Enoch's situation:
 4. **Qumran Aramaic parallels** where they exist: Zone 2 consult via
    Milik 1976. We footnote specific textual agreements/disagreements
    between Qumran and Ethiopic without reproducing Milik's reconstructions.
-5. **Per-verse YAML** follows the standard COB schema with witnesses
+5. **Per-verse YAML** follows the standard POB schema with witnesses
    added: `zone1_sources_at_draft`, `zone2_consults_known`, plus an
    `enoch_witnesses` block listing which languages attest that verse.
 

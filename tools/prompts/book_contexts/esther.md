@@ -1,6 +1,6 @@
 # Esther — book context for review
 
-- **Source**: Westminster Leningrad Codex (WLC) / Unicode Hebrew Bible (UHB). 10 chapters. NOTE: The COB follows the MT. The LXX/Greek Esther has six major additions (Additions A–F) not present in the MT; these are in the Deuterocanon as separate additions (see additions_to_esther.md for those).
+- **Source**: Westminster Leningrad Codex (WLC) / Unicode Hebrew Bible (UHB). 10 chapters. NOTE: The POB follows the MT. The LXX/Greek Esther has six major additions (Additions A–F) not present in the MT; these are in the Deuterocanon as separate additions (see additions_to_esther.md for those).
 - **Form**: Court narrative — a diaspora tale set in the Persian court of Ahasuerus (Xerxes). The only canonical OT book that never mentions God.
 - **Date**: Probably 4th–3rd cent. BC. Set in the Persian period.
 - **Original audience**: Diaspora Jews — encouragement that Jewish identity can survive and prevail even in exile.

@@ -262,7 +262,7 @@ def _build_prompt(entry: dict) -> str:
     display = SLUG_TO_DISPLAY[slug]
     greek = entry["greek"]
     crit_note = entry["note"]
-    return f"""You are translating one verse for the Cartha Open Bible — a CC-BY 4.0 English Bible translated directly from original-language sources.
+    return f"""You are translating one verse for the People's Open Bible — a CC-BY 4.0 English Bible translated directly from original-language sources.
 
 This verse is one of ~30 New Testament verses that the SBLGNT critical edition omits as a later addition, but that the Byzantine textual tradition (and the KJV / NIV / ESV / NRSV with bracket-and-footnote conventions) preserves. Cartha is including these verses with explicit textual-critical footnotes so readers see the fullest received tradition while remaining transparent about manuscript evidence.
 

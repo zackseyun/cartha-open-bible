@@ -37,7 +37,7 @@ decision is documented, every disagreement is public, every verse is
 reproducible, and every word can be traced back to the Greek or Hebrew it
 came from — in under 60 seconds, from a phone, anywhere in the world.
 
-That is the Cartha Open Bible.
+That is the People's Open Bible.
 
 ## What we are translating
 
@@ -116,7 +116,7 @@ the rest of the world to check our work.
 The project has reached **near-complete first-draft coverage** of the
 Christian biblical corpus, with a multi-model revision pipeline running
 on top of the original drafting work. Live numbers are at the
-[translation progress page](https://cartha.com/cartha-open-bible/progress);
+[translation progress page](https://cartha.com/peoples-open-bible/progress);
 as of the most recent snapshot:
 
 - **Protestant New Testament:** all 27 books, 260 chapters, ~7,900 verses.
@@ -167,7 +167,7 @@ in the repository in the same auditable way.
 
 The text is also **shipping live** to readers through the
 [Cartha mobile app](https://cartha.com) and the
-[web reader](https://cartha.com/cartha-open-bible/), through a CDN
+[web reader](https://cartha.com/peoples-open-bible/), through a CDN
 publisher pipeline that pushes whatever is on `main`. The app, the
 website, and this repository show the same draft, with the same
 provenance, at all times.
@@ -185,7 +185,7 @@ means:
 - **Anyone may create derivative works** — paraphrases, adaptations,
   commentaries, translations into other languages, revisions.
 - **Anyone may redistribute it**, including modified versions.
-- Attribution is the only requirement: credit the Cartha Open Bible, link
+- Attribution is the only requirement: credit the People's Open Bible, link
   to the license, and indicate if you made changes.
 
 This is a deliberate theological choice, not a pragmatic one. Every major
@@ -208,7 +208,7 @@ Several things it helps to say explicitly:
   centuries of Greek and Hebrew lexicography, textual criticism, and
   theological scholarship. Every lexical decision cites the lexicons
   (BDAG, HALOT, LSJ, Louw-Nida) the academy already uses.
-- **Not a denominational product.** COB does not commit to a specific
+- **Not a denominational product.** POB does not commit to a specific
   denominational or creedal stance. Where the source texts presuppose
   theological claims, the translation reflects those claims as the
   texts present them, not as imposed commitments. Contested readings
@@ -227,13 +227,13 @@ Several things it helps to say explicitly:
   differently. Lexical disagreements, theological disagreements, and general
   concerns all have templates.
 - **Cite it.** In academic work, sermons, or published material, cite the
-  Cartha Open Bible with a link back. Attribution keeps the paper trail
+  People's Open Bible with a link back. Attribution keeps the paper trail
   visible.
 - **Fork it.** If you have a specific scholarly disagreement you want to
   pursue, fork the repository and publish your alternative. Our provenance
   records travel with the fork.
 - **Translate it.** CC-BY 4.0 permits derivative translations into other
-  languages. A translator working from the Cartha Open Bible into any other
+  languages. A translator working from the People's Open Bible into any other
   language inherits the full provenance chain back to the Greek and Hebrew.
 
 ## Our commitment

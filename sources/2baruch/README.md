@@ -1,6 +1,6 @@
 # 2 Baruch (Syriac Apocalypse of Baruch) source materials
 
-Public-domain source editions for the Cartha Open Bible's forthcoming
+Public-domain source editions for the People's Open Bible's forthcoming
 2 Baruch translation. **Scope and strategy: see
 [`../../2BARUCH.md`](../../2BARUCH.md).**
 
@@ -48,7 +48,7 @@ now.
 
 ## Witness roles
 
-| Witness | Language | Coverage | COB role | Local source |
+| Witness | Language | Coverage | POB role | Local source |
 |---|---|---|---|---|
 | Ceriani 1871 | Syriac | Complete | Primary translation base | `scans/ceriani_1871_monumenta_tom5.pdf` |
 | Kmosko 1907 | Syriac + Latin scholarly witness | Complete | Secondary control witness / apparatus aid | `scans/kmosko_1907_patrologia_syriaca_vol1_2.pdf` |

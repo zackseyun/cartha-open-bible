@@ -35,7 +35,7 @@
 
 - Elevated, oracular English. Closer to the Odes of Solomon, Proverbs 8, or Sirach 24 than to narrative gospel prose.
 - Preserve the rhythmic, chanted quality — short, dense, repeated clauses.
-- Capitalization of pronouns (She, Her) only if the rest of the COB corpus does so for divine/revelatory speakers; otherwise keep lowercase but unmistakably female.
+- Capitalization of pronouns (She, Her) only if the rest of the POB corpus does so for divine/revelatory speakers; otherwise keep lowercase but unmistakably female.
 - Line breaks matter. Where the Coptic has poetic line structure, preserve it in English.
 
 ## Known translation pitfalls

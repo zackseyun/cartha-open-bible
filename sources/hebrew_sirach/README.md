@@ -55,7 +55,7 @@ Sea Scrolls Digital Library** under a restrictive license
 
 We have drafted a formal licensing request to the IAA (see
 `masada/IAA_LICENSING_REQUEST.md`). Pending their response, Masada
-Sirach remains **blocked for direct inclusion** in COB. This affects
+Sirach remains **blocked for direct inclusion** in POB. This affects
 approximately Sirach 39:27–43:30.
 
 In the interim we use Schechter-era transcription for sections where
@@ -79,7 +79,7 @@ be translated from the Greek (Swete LXX), clearly marked.
 
 ## Methodology
 
-Every verse of Sirach in COB will declare its primary-source witness
+Every verse of Sirach in POB will declare its primary-source witness
 in the per-verse YAML:
 
 ```yaml

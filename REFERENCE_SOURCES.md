@@ -2,7 +2,7 @@
 
 This document defines, operationally and legally, how copyrighted and
 restricted-license scholarly sources may be used during translation
-of the Cartha Open Bible. It is a companion to
+of the People's Open Bible. It is a companion to
 [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md) (scope/strategy) and
 [METHODOLOGY.md](METHODOLOGY.md) (pipeline).
 
@@ -77,7 +77,7 @@ English translation and MAY influence specific word choices.
 Copyrighted or restricted-license scholarly sources that inform our
 judgment without appearing in the output. Examples:
 
-- **Yadin 1965, *The Ben Sira Scroll from Masada* (editio princeps)** — Hebrew transcription of the 1st-century BC Masada scroll (Sir 39:27–44:17). A copy of this work is consulted during Sirach drafting for the 413 verses across Sir 4, 39–44, 49, 51 that fall within the scroll's scope; its content is surfaced per verse to the translator through `tools/yadin_masada.py::lookup(chapter, verse)` and `tools/hebrew_parallels.py::lookup_with_consult`. Nothing from this work is committed to the repository or appears in COB output; consultation is kept local to the drafter's workspace, per standard Zone 2 policy.
+- **Yadin 1965, *The Ben Sira Scroll from Masada* (editio princeps)** — Hebrew transcription of the 1st-century BC Masada scroll (Sir 39:27–44:17). A copy of this work is consulted during Sirach drafting for the 413 verses across Sir 4, 39–44, 49, 51 that fall within the scroll's scope; its content is surfaced per verse to the translator through `tools/yadin_masada.py::lookup(chapter, verse)` and `tools/hebrew_parallels.py::lookup_with_consult`. Nothing from this work is committed to the repository or appears in POB output; consultation is kept local to the drafter's workspace, per standard Zone 2 policy.
 - **Fitzmyer, *Discoveries in the Judaean Desert* Vol. XIX (Qumran Tobit)** — reconstructed Aramaic of 4Q196-200
 - **Beentjes 1997, *The Book of Ben Sira in Hebrew*** — critical edition of all recovered Hebrew Sirach
 - **Skehan & Di Lella 1987, Anchor Bible 39** — English Sirach with critical apparatus
@@ -104,7 +104,7 @@ Rules for Zone 2:
    facts are not copyrightable.
 4. **Nothing from Zone 2 is committed to the repository.** Vendoring
    would propagate the source's license to every downstream consumer
-   of COB. Consultation is private to the translator's workspace.
+   of POB. Consultation is private to the translator's workspace.
 
 ### Zone 3 — Forbidden
 
@@ -283,4 +283,4 @@ identified.)
 
 These are for *private consultation* during translation, cited by name
 in footnotes where their fact-level conclusions matter, and never
-reproduced in COB output.
+reproduced in POB output.

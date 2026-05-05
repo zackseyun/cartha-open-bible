@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-run_phase.py — Generate and commit a phase of Cartha Open Bible drafts.
+run_phase.py — Generate and commit a phase of People's Open Bible drafts.
 
 Phase 0 uses a single substantive pilot commit after local drafting.
 Phase 1 and beyond can use chapter-sized commits for steadier progress.

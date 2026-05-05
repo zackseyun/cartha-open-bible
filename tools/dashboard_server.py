@@ -27,11 +27,11 @@ DB_PATH = chapter_queue.db_path_from(REPO_ROOT)
 WORKER_RE = re.compile(r"--worker-id\s+(\S+)")
 SUMMARY_CACHE_TABLE = "BibleSummaryCache-alpha"
 SUMMARY_CACHE_COUNT_TTL_SECONDS = 20
-SUMMARY_LOG_PATH = pathlib.Path("/tmp/cob-summary-prewarm.log")
-SUMMARY_PID_PATH = pathlib.Path("/tmp/cob-summary-prewarm.pid")
-SUMMARY_PIDS_PATH = pathlib.Path("/tmp/cob-summary-prewarm.pids")
-SUMMARY_PARTITION_LOG_GLOB = "cob-summary-prewarm-*.log"
-SUMMARY_KEY_RE = re.compile(r"key=COB\|[^|]+\|(\w+)\|([A-Z0-9_]+)\.(\d+)\|(\w+)\|")
+SUMMARY_LOG_PATH = pathlib.Path("/tmp/pob-summary-prewarm.log")
+SUMMARY_PID_PATH = pathlib.Path("/tmp/pob-summary-prewarm.pid")
+SUMMARY_PIDS_PATH = pathlib.Path("/tmp/pob-summary-prewarm.pids")
+SUMMARY_PARTITION_LOG_GLOB = "pob-summary-prewarm-*.log"
+SUMMARY_KEY_RE = re.compile(r"key=POB\|[^|]+\|(\w+)\|([A-Z0-9_]+)\.(\d+)\|(\w+)\|")
 SUMMARY_CACHED_RE = re.compile(r"cached=(true|false)")
 SUMMARY_AZURE_RE = re.compile(r'time="([^"]+)".*AZURE_OPENAI_REQUEST_PREPARED')
 _summary_cache_snapshot: dict[str, Any] | None = None
@@ -326,7 +326,7 @@ def discover_summary_workers() -> list[dict[str, Any]]:
             pid = int(parts[0])
             label = parts[1]
             books = parts[2] if len(parts) >= 3 else ""
-            log_path = pathlib.Path(f"/tmp/cob-summary-prewarm-{label}.log")
+            log_path = pathlib.Path(f"/tmp/pob-summary-prewarm-{label}.log")
             partitions.append({"pid": pid, "label": label, "books": books, "log_path": log_path})
     elif SUMMARY_PID_PATH.exists():
         raw = SUMMARY_PID_PATH.read_text().strip()

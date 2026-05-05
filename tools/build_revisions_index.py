@@ -296,7 +296,7 @@ def walk_review_records() -> dict[str, Any]:
     state/ is gitignored, so this only produces meaningful output when
     run from a working tree that has the review records present (i.e.,
     locally on the maintainer's machine — see the launchd flywheel
-    com.cartha.cob-revisions-flywheel.plist). When run on GitHub
+    com.cartha.pob-revisions-flywheel.plist). When run on GitHub
     Actions the dir is empty and we return zeros, which is honest:
     the public snapshot is stale until the local flywheel pushes.
 

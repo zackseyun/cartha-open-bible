@@ -48,6 +48,6 @@ DjVu files (`p0001.djvu` ... `p0488.djvu`).
 
 All four source files above are public-domain witnesses or reference
 editions. Our own derived OCR, cleaned transcriptions, and translation
-output remain the CC-BY 4.0 layer published by COB. See
+output remain the CC-BY 4.0 layer published by POB. See
 [`../../REFERENCE_SOURCES.md`](../../REFERENCE_SOURCES.md) for the full
 Zone 1 / Zone 2 policy.

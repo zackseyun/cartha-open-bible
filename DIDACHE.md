@@ -1,6 +1,6 @@
 # Didache — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated track for the
+This document covers the People's Open Bible's dedicated track for the
 **Didache** (*Teaching of the Twelve Apostles*), part of the broader
 Phase 13 Greek-pipeline reuse group.
 
@@ -46,7 +46,7 @@ It complements:
 - **Primary witness:** Codex Hierosolymitanus (H54)
 - **Scope:** 16 chapters
 
-For COB's first release, the Greek printed source is sufficient to
+For POB's first release, the Greek printed source is sufficient to
 begin. The Didache does not require the kind of multi-witness recovery
 that 2 Esdras, Enoch, or Jubilees require.
 

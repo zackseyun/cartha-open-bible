@@ -11,7 +11,7 @@ The runner is intentionally narrow:
 - one verse at a time,
 - Charles 1906 Ge'ez OCR as the current primary witness,
 - transparent metadata about which witness lanes are actually loaded,
-- standard COB verse schema plus an ``enoch_witnesses`` block.
+- standard POB verse schema plus an ``enoch_witnesses`` block.
 """
 from __future__ import annotations
 
@@ -67,7 +67,7 @@ TOOL_REASON_VALUES = {
 }
 _REF_RE = re.compile(r"^\s*(?:1\s*)?enoch\s+(\d+)\s*:\s*(\d+)\s*$", re.IGNORECASE)
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE VERSE OF 1 ENOCH. Your job is to produce the highest-quality draft you can, while exposing every significant lexical or theological decision so the draft is fully auditable.
 

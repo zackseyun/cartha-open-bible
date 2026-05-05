@@ -34,7 +34,7 @@ Zone 1:
 - `tools/fetch_psalm_151_hebrew.py` stages a local-only cache at
   `~/cartha-reference-local/psalm151_hebrew/psalm151_kahana_1937.json`
   using Sefaria's API.
-- `tools/psalm151_hebrew.py` maps the Greek 7-verse COB Psalm 151 to the
+- `tools/psalm151_hebrew.py` maps the Greek 7-verse POB Psalm 151 to the
   longer Hebrew 10-verse form.
 - `tools/hebrew_parallels.lookup_with_consult('PS151', 1, v)` now exposes
   the mapped Hebrew as a live Zone 2 consult block for Psalm 151 prompts.

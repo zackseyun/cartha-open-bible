@@ -36,7 +36,7 @@ DEFAULT_AZURE_DEPLOYMENT_ID = os.environ.get('AZURE_OPENAI_DEPLOYMENT_ID', 'gpt-
 DEFAULT_AZURE_API_VERSION = os.environ.get('AZURE_OPENAI_API_VERSION', '2025-04-01-preview')
 TOOL_NAME = 'submit_truth_section_draft'
 FOOTNOTE_REASONS = {'alternative_reading','lexical_alternative','textual_variant','cultural_note','cross_reference','damage_repair','technical_term'}
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE SECTION of the Gospel of Truth directly from the Coptic primary facsimile OCR. When a Codex XII overlap fragment is present, use it as a repair/check witness and record meaningful repair decisions explicitly.
 

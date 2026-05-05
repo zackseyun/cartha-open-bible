@@ -7,7 +7,7 @@
 
 ## Key translation issues
 
-1. **צַדִּיק בֶּאֱמוּנָתוֹ יִחְיֶה** (2:4 — "the righteous shall live by his faithfulness/faith"): one of the most cited verses in the NT (Romans 1:17, Galatians 3:11, Hebrews 10:38) and in the Qumran Pesher. The Hebrew אֱמוּנָה means "faithfulness, reliability, steadfastness" — not primarily intellectual assent. The Qumran community read it as faithfulness to Torah; Paul reads it through a Christological lens. The COB translation should render the Hebrew precisely — "faithfulness" is more accurate than "faith" for the Hebrew sense. Footnote the NT usage separately.
+1. **צַדִּיק בֶּאֱמוּנָתוֹ יִחְיֶה** (2:4 — "the righteous shall live by his faithfulness/faith"): one of the most cited verses in the NT (Romans 1:17, Galatians 3:11, Hebrews 10:38) and in the Qumran Pesher. The Hebrew אֱמוּנָה means "faithfulness, reliability, steadfastness" — not primarily intellectual assent. The Qumran community read it as faithfulness to Torah; Paul reads it through a Christological lens. The POB translation should render the Hebrew precisely — "faithfulness" is more accurate than "faith" for the Hebrew sense. Footnote the NT usage separately.
 2. **חָמָס** ("violence"): a recurring term (1:2, 3, 9; 2:8, 17). Specific word for injustice and brutality — render consistently as "violence," not "wrong" or "harm."
 3. **עָמַל** ("trouble/affliction/labor"): paired with חָמָס in 1:3. "Trouble" or "affliction" — not the weak "distress."
 4. **הַתִּכּוֹנַנְתִּי עַל-מִשְׁמֶרֶת** (2:1 — "I will stand at my watchpost"): the prophet as watchman waiting for God's answer. Keep the military-guard imagery.

@@ -1,8 +1,8 @@
-# Cartha Open Bible — Cross-Reference Pass
+# People's Open Bible — Cross-Reference Pass
 
 This document describes the pass that should happen **after a phase draft exists** and alongside the broader revision process.
 
-The goal is not to turn COB into a harmonized paraphrase. The goal is to make sure:
+The goal is not to turn POB into a harmonized paraphrase. The goal is to make sure:
 - quotations are translated transparently,
 - repeated formulas are handled consistently,
 - important internal echoes are not missed,
@@ -131,9 +131,9 @@ Avoid:
 - one tiny commit per verse
 - invisible harmonization without explanation
 
-## Practical recommendation for COB
+## Practical recommendation for POB
 
-For COB, the most effective order is:
+For POB, the most effective order is:
 
 1. finish the phase draft,
 2. run consistency lint,
@@ -148,4 +148,4 @@ In short:
 
 > **Draft first, revise second, cross-reference third, then advance.**
 
-That keeps COB auditable while still letting the translation grow phase-by-phase.
+That keeps POB auditable while still letting the translation grow phase-by-phase.

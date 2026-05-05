@@ -25,7 +25,7 @@ contains every deuterocanonical book we need:
   Baruch + Letter of Jeremiah, Greek Daniel with additions (Susanna,
   Bel, Prayer of Azariah, Song of the Three), plus **Psalms of
   Solomon** (not deuterocanonical but bundled, and now a dedicated
-  extra-canonical track in COB).
+  extra-canonical track in POB).
 
 Swete used a different manuscript base than Rahlfs (primarily Codex Vaticanus
 with Sinaiticus and Alexandrinus as variants, vs. Rahlfs's broader eclectic
@@ -76,7 +76,7 @@ Archive.org hosts the digitized scans under a non-copyright rights statement;
 the underlying printed text carries no copyright.
 
 Our fresh transcriptions of the text are released under **CC-BY 4.0** as part
-of the Cartha Open Bible.
+of the People's Open Bible.
 
 ## Required attribution
 
@@ -85,4 +85,4 @@ When quoting from our transcription:
 > Greek text transcribed from Henry Barclay Swete, *The Old Testament in
 > Greek according to the Septuagint*, Vols. I–III (Cambridge University
 > Press, 1909–1930), public-domain scans hosted at Internet Archive.
-> Transcription by Cartha Open Bible, CC-BY 4.0.
+> Transcription by People's Open Bible, CC-BY 4.0.

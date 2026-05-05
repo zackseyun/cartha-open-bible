@@ -1,6 +1,6 @@
 # 1 Clement — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated track for
+This document covers the People's Open Bible's dedicated track for
 **1 Clement**, part of the broader Phase 13 Greek-pipeline reuse group.
 
 It complements:
@@ -44,7 +44,7 @@ It complements:
   witnesses
 - **Scope:** 65 chapters in the standard division
 
-COB's first setup pass uses public-domain Greek printed editions as the
+POB's first setup pass uses public-domain Greek printed editions as the
 Zone 1 source layer.
 
 ## Zone 1 sources
@@ -59,7 +59,7 @@ Zone 1 source layer.
 - Later Apostolic Fathers editions / commentaries
 - modern English translations for interpretive context only
 
-These remain consult-only under the normal COB source policy.
+These remain consult-only under the normal POB source policy.
 
 ## Pipeline fit
 

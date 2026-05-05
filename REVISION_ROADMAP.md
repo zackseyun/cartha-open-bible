@@ -1,4 +1,4 @@
-# COB Revision Pass Roadmap
+# POB Revision Pass Roadmap
 
 ## What We've Done (Revision Pass 1 — April 2026)
 
@@ -9,7 +9,7 @@
 
 ### Known Limitations of Pass 1
 
-1. **No lexical context** — model didn't know COB had chosen "slave" over "servant" for δοῦλος, or "Messiah" over "Christ" for Χριστός. This caused 496 regressions that required manual correction.
+1. **No lexical context** — model didn't know POB had chosen "slave" over "servant" for δοῦλος, or "Messiah" over "Christ" for Χριστός. This caused 496 regressions that required manual correction.
 2. **No footnote awareness** — contested readings and translator notes not visible; model occasionally "resolved" footnoted ambiguity in one direction.
 3. **No revision history** — model couldn't see that a human or prior model had already adjudicated a term.
 4. **No book-level philosophy** — no awareness of book-specific translation conventions (e.g., T12P Greek vs. Aramaic backing, LXX vs. MT divergences).
@@ -35,7 +35,7 @@ Both revision scripts (`azure_bulk_revise.py`, `gemini_bulk_revise.py`) now pass
 - **MOST RECENT REVISION** (adjudicator, from→to, rationale)
 - **revision_policy.md** injected into system prompt
 
-This means the next bulk pass will be substantially more faithful to COB's own reasoning.
+This means the next bulk pass will be substantially more faithful to POB's own reasoning.
 
 ### Trigger Conditions
 
@@ -59,7 +59,7 @@ Run a second pass when any of the following occur:
 - `translation/extra_canonical/gospel_of_thomas/` (305 files — placeholder stubs only)
 - `translation/extra_canonical/jubilees/` (160 files)
 
-These have only `['id', 'reference', 'unit', 'book']` keys. Use the OCR + draft pipeline (Gemini 3.1 Pro primary per COB OCR policy) before running revision.
+These have only `['id', 'reference', 'unit', 'book']` keys. Use the OCR + draft pipeline (Gemini 3.1 Pro primary per POB OCR policy) before running revision.
 
 ### Cost Estimate (Pass 2, All Books)
 

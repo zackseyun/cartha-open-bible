@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-export_mobile_bible.py — Export Cartha Open Bible verse YAMLs into the
+export_mobile_bible.py — Export People's Open Bible verse YAMLs into the
 mobile app's bundled Bible JSON format.
 
 The mobile app expects a single JSON file shaped like:
 
 {
-  "translation": "COB: Cartha Open Bible (Preview)",
+  "translation": "POB: People's Open Bible (Preview)",
   "books": [
     {
       "name": "Romans",
@@ -432,7 +432,7 @@ def export_translation() -> dict[str, Any]:
             books.append(exported)
 
     return {
-        "translation": "COB: Cartha Open Bible (Preview)",
+        "translation": "POB: People's Open Bible (Preview)",
         "books": books,
     }
 

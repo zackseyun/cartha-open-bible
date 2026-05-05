@@ -2,8 +2,8 @@
 set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET="${TARGET:-24}"
-STOP_FLAG="/tmp/cob-phase9-stop"
-LOG_DIR="/tmp/cob-phase9-workers"
+STOP_FLAG="/tmp/pob-phase9-stop"
+LOG_DIR="/tmp/pob-phase9-workers"
 CHECK_INTERVAL_SECONDS="${CHECK_INTERVAL_SECONDS:-20}"
 SPAWN_STAGGER_SECONDS="${SPAWN_STAGGER_SECONDS:-2}"
 PHASE="phase8"

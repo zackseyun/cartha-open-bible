@@ -66,6 +66,6 @@ the drafter's workstation.
 
 Our derived transcriptions (Gemini OCR of Charles 1906 + Dillmann
 1851, validated against Beta maṣāḥǝft) will be published under
-CC-BY 4.0 as the Zone 1 Ge'ez primary for COB Enoch. See
+CC-BY 4.0 as the Zone 1 Ge'ez primary for POB Enoch. See
 [`../../REFERENCE_SOURCES.md`](../../REFERENCE_SOURCES.md) for the full
 policy.

@@ -7,7 +7,7 @@
 
 ## Key translation issues
 
-1. **Greek vs. Hebrew text**: Where the Cairo Geniza Hebrew is available, it often differs from the LXX (the Greek often harmonizes or softens). The COB uses LXX as base text. Do not import readings from the Hebrew without noting it.
+1. **Greek vs. Hebrew text**: Where the Cairo Geniza Hebrew is available, it often differs from the LXX (the Greek often harmonizes or softens). The POB uses LXX as base text. Do not import readings from the Hebrew without noting it.
 2. **σοφία** ("wisdom"): central throughout. Wisdom as a hypostatic figure (ch. 24) — "Lady Wisdom" — is the book's theological climax. Keep "Wisdom" capitalized when personified in ch. 24; be consistent throughout.
 3. **ἐλεημοσύνη** ("almsgiving / mercy"): in Sirach this means specifically charitable giving to the poor, not just mercy in a general sense. Render as "almsgiving" in contexts where giving to the poor is explicit (7:10; 12:3; 17:22; 29:12; 40:24; 50:24).
 4. **δόξα** ("glory / honor"): appears in both divine and human registers. Context determines which — "glory" for divine doxology, "honor" when applied to human reputation.

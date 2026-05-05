@@ -1,6 +1,6 @@
 # Jubilees (Mashafa Kufale) — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated sub-phase for
+This document covers the People's Open Bible's dedicated sub-phase for
 the Book of Jubilees (Mashafa Kufale / መጽሐፈ፡ ኩፋሌ / "Book of Division").
 It sits alongside [ENOCH.md](ENOCH.md) under the shared Ethiopic
 pipeline (see [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)'s
@@ -47,7 +47,7 @@ policy in [REFERENCE_SOURCES.md](REFERENCE_SOURCES.md).
 | Eastern Orthodox (Greek/Russian) | Not canonical |
 | Protestant | Not canonical |
 
-COB policy: no position on canonicity; transparent labeling.
+POB policy: no position on canonicity; transparent labeling.
 
 ## Compositional overview
 
@@ -109,7 +109,7 @@ Same three-zone discipline, adapted for Jubilees:
 3. **Qumran Hebrew fragments**: Zone 2 consult via VanderKam-Milik
    DJD XIII. We footnote fact-level agreements ("4Q219 attests the
    reading here") without reproducing VanderKam's reconstructions.
-4. **Per-verse YAML**: standard COB schema with an `enoch_witnesses`
+4. **Per-verse YAML**: standard POB schema with an `enoch_witnesses`
    analog (`jubilees_witnesses`) listing which languages attest each
    verse.
 

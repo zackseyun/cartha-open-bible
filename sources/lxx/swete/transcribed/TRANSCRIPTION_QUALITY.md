@@ -183,7 +183,7 @@ pathway is multi-model cross-check, not single-model re-prompting.
    scholarly Greek edition without a second-pass revision. We do not
    claim that. Readers who want the authoritative Greek of Swete
    should consult the archive.org PDFs we link from `MANIFEST.md`;
-   our transcription is the working source for COB's English
+   our transcription is the working source for POB's English
    translation, not a replacement for Swete.
 
 ## 4. Improvement pathway

@@ -72,7 +72,7 @@ the text. Dedicated source path:
 - **Drafted**: all 15 verses drafted via `tools/draft.py` with
   GPT-5.4. English per-verse YAMLs at
   `translation/deuterocanon/prayer_of_manasseh/001/{001..015}.yaml`.
-  Standard COB structure: translation + lexical decisions +
+  Standard POB structure: translation + lexical decisions +
   rationale + footnotes + provenance.
 
 **Apocrypha draft status: 100% of the traditional 14-book set is
@@ -132,7 +132,7 @@ but is still subject to further revision cycles.
 
 ## Extra-canonical corpus scope commitment — 2026-04-21
 
-Scope-expansion document committing the Cartha Open Bible to
+Scope-expansion document committing the People's Open Bible to
 translating 11 extra-canonical texts under CC-BY 4.0 beyond the
 13 LXX deuterocanonical books of Phase 8. New master scope doc
 `EXTRA_CANONICAL.md` catalogs:
@@ -586,7 +586,7 @@ from Phase 8 itself.
   during Sirach drafting. 413 Sirach verses indexed across chs
   4, 39-44, 49, 51 with 100% coverage of the Sir 39:27-44:17 scroll
   range. Consulted via `tools/yadin_masada.py::lookup`; nothing from
-  this work appears in COB output or is committed to the repository.
+  this work appears in POB output or is committed to the repository.
 - **Three-zone reference policy** formalized in REFERENCE_SOURCES.md;
   deferred-source integration documented in REVISION_LATER.md.
 

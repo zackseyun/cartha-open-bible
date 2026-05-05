@@ -1,4 +1,4 @@
-# COB 5.5 Revision Pass — Design Doc
+# POB 5.5 Revision Pass — Design Doc
 
 **Status:** DRAFT — not yet approved to run
 **Author:** Cartha drafting team
@@ -6,7 +6,7 @@
 
 ## What this is
 
-A third revision pass over Cartha Open Bible verses, using GPT-5.5 with
+A third revision pass over People's Open Bible verses, using GPT-5.5 with
 the **full prior history of each verse as context** — not a from-scratch
 re-translation, but a *judgment* on whether the existing rendering is the
 best we can do given everything we now know.
@@ -64,7 +64,7 @@ the *log* of how the verse got to its current state.
 System prompt (sketch):
 
 > You are an experienced biblical translator reviewing a verse rendering
-> for the Cartha Open Bible. The verse already has an initial draft and a
+> for the People's Open Bible. The verse already has an initial draft and a
 > revision pass; you can see both, including the lexical and theological
 > rationales that produced the current text.
 >
@@ -139,7 +139,7 @@ self_confidence: 0.83
 
 ### Inputs
 - `translation/**/<book>/<chapter>/<verse>.yaml` — every field is read
-- The COB JSON manifest (`bible.cartha.com/cob_preview.json`) — for
+- The POB JSON manifest (`bible.cartha.com` compiled payload) — for
   comparison translation renderings
 - A side-table of public-domain comparison translations (KJV, NRSV/RSV,
   ASV, ESV draft, etc.) — pre-fetched once, joined per verse
@@ -176,7 +176,7 @@ prioritize by **expected revision yield**, in this order:
 | Verses with footnotes | ~3,000 | Footnotes mark known ambiguity. Did we put the right reading in the body? |
 | Verses with theological_decisions | ~600 | Doctrinal weight; fresh model may surface a better reading. |
 | Verses linked to concept atlas (top concept anchors) | ~6,000 | High-traffic verses; quality matters most here. |
-| Verses where COB diverges from ≥3 of {KJV, NRSV, ESV, NIV} without footnote | ~2,500 | Outlier rendering with no recorded justification. |
+| Verses where POB diverges from ≥3 of {KJV, NRSV, ESV, NIV} without footnote | ~2,500 | Outlier rendering with no recorded justification. |
 | Pseudepigrapha (we know these had splitter issues) | ~3,000 | Translation quality known-uneven. |
 | **Subtotal (deduped)** | **~15,000** | |
 
@@ -245,7 +245,7 @@ opinion. To validate, before running on 15K verses:
    maintainer score "would you have accepted this" → calibrate
    self_confidence threshold for review-queue sorting.
 4. **Order of operations** — concept sweep finishes first, then 5.5
-   COB pass uses concept-tag context (which verses anchor which
+   POB pass uses concept-tag context (which verses anchor which
    concepts). Or run them in parallel. I'd vote sequential: concept
    sweep informs the verse pass.
 

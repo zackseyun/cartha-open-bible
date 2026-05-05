@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""check_regressions.py — Regression guard for Cartha Open Bible verse YAMLs.
+"""check_regressions.py — Regression guard for People's Open Bible verse YAMLs.
 
 Scans changed verse YAMLs (from git diff) for known regression patterns
 defined in tools/known_regressions.yaml. Exits non-zero if any regression
@@ -32,7 +32,7 @@ RULES = [
         "description": 'δοῦλος Χριστός rendered as "Christ" instead of "Messiah"',
         "details": (
             'Found "Christ" in translation.text. '
-            "COB policy: Χριστός → Messiah. "
+            "POB policy: Χριστός → Messiah. "
             'Never use "Christ" in translation.text. '
             "See DOCTRINE.md §Contested Terms."
         ),
@@ -45,7 +45,7 @@ RULES = [
         "description": 'δοῦλος rendered as "servant" instead of "slave"',
         "details": (
             'Found "servant" where source is δοῦλος/עֶבֶד. '
-            "COB policy: δοῦλος → slave (bonded ownership context). "
+            "POB policy: δοῦλος → slave (bonded ownership context). "
             '"servant" is only correct for διάκονος/ὑπηρέτης. '
             "See DOCTRINE.md §Contested Terms."
         ),
@@ -104,7 +104,7 @@ def check_file(path: pathlib.Path) -> list[dict]:
             "translation_text": text[:120],
             "details": (
                 'Forbidden: "Christ" found in NT translation text. '
-                "COB policy requires Χριστός → Messiah. "
+                "POB policy requires Χριστός → Messiah. "
                 "See DOCTRINE.md §Contested Terms and tools/known_regressions.yaml."
             ),
         })
@@ -122,7 +122,7 @@ def check_file(path: pathlib.Path) -> list[dict]:
                 "translation_text": text[:120],
                 "details": (
                     'Forbidden: "servant" found where source has δοῦλος/עֶבֶד. '
-                    "COB policy requires → slave. "
+                    "POB policy requires → slave. "
                     '"servant" only for διάκονος/ὑπηρέτης. '
                     "See DOCTRINE.md §Contested Terms and tools/known_regressions.yaml."
                 ),
@@ -181,7 +181,7 @@ def get_all_yaml_files() -> list[pathlib.Path]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="COB regression guard")
+    parser = argparse.ArgumentParser(description="POB regression guard")
     parser.add_argument("--all", action="store_true", help="Check all verse YAMLs (not just staged)")
     parser.add_argument("--files", nargs="*", help="Check specific files")
     parser.add_argument("--quiet", "-q", action="store_true", help="Only print violations, no progress")

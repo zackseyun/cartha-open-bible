@@ -1,8 +1,8 @@
-name: Publish COB CDN
+name: Publish POB CDN
 
 # Pushes to `main` can change the Bible text (`translation/**`) and the
 # public revisions feed (`revisions.json`). The apps and website only see
-# those changes after the publisher Lambda rebuilds `cob_preview.json` and
+# those changes after the publisher Lambda rebuilds the compiled POB payload and
 # updates `bible.cartha.com/manifest.json`, so this workflow performs that
 # publish automatically.
 
@@ -12,11 +12,11 @@ on:
     paths:
       - 'translation/**'
       - 'revisions.json'
-      - '.github/workflows/publish-cob.yml'
+      - '.github/workflows/publish-pob.yml'
   workflow_dispatch: {}
 
 concurrency:
-  group: publish-cob
+  group: publish-pob
   cancel-in-progress: false
 
 permissions:

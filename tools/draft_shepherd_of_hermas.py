@@ -53,7 +53,7 @@ TOOL_REASON_VALUES = {
     'cross_reference',
 }
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE UNIT OF THE SHEPHERD OF HERMAS. Your job is to produce the highest-quality English rendering you can while exposing the major lexical and theological decisions so the result remains fully auditable.
 
@@ -303,7 +303,7 @@ def call_openrouter(*, system: str, user: str, model: str, temperature: float) -
     api_key = os.environ.get('OPENROUTER_API_KEY', '')
     if not api_key:
         raise RuntimeError('OPENROUTER_API_KEY not set')
-    return _call_openai_compatible(api_key=api_key, base_url=OPENROUTER_BASE_URL, extra_headers={'HTTP-Referer': 'https://cartha.com', 'X-Title': 'Cartha Open Bible Translation'}, tools=[openrouter_submit_tool()], system=system, user=user, model=model, temperature=temperature)
+    return _call_openai_compatible(api_key=api_key, base_url=OPENROUTER_BASE_URL, extra_headers={'HTTP-Referer': 'https://cartha.com', "X-Title": "People\'s Open Bible Translation"}, tools=[openrouter_submit_tool()], system=system, user=user, model=model, temperature=temperature)
 
 
 def call_azure_openai(*, system: str, user: str, model: str, temperature: float) -> tuple[dict[str, Any], str, str]:

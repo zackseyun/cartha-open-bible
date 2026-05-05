@@ -37,4 +37,4 @@ authors — Charles d. 1931, Dillmann d. 1894, Rönsch d. 1888).
 
 Our derived transcriptions (Gemini OCR of Charles 1895 Ge'ez +
 Rönsch Latin, validated against Dillmann-Rönsch 1874) will be
-published under CC-BY 4.0 as the Zone 1 primary for COB Jubilees.
+published under CC-BY 4.0 as the Zone 1 primary for POB Jubilees.

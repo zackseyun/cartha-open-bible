@@ -1,4 +1,4 @@
-# Cartha Open Bible — Author-Intent Translation Review (v3)
+# People's Open Bible — Author-Intent Translation Review (v3)
 
 You are a philologist reviewing an English draft translation of an
 ancient text. Your single criterion is **truth-seeking accuracy to

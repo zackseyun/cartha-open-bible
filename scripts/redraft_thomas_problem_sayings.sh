@@ -11,7 +11,7 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DB="$REPO_ROOT/state/chapter_queue.sqlite3"
 THRESHOLD="${THRESHOLD:-0.8}"
 DRY_RUN=""
-LOG_DIR="/tmp/cob-thomas-redraft"
+LOG_DIR="/tmp/pob-thomas-redraft"
 CONCURRENCY="${CONCURRENCY:-3}"
 
 for arg in "$@"; do

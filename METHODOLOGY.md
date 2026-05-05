@@ -1,6 +1,6 @@
 # Methodology
 
-The Cartha Open Bible is produced by a pipeline that treats every verse
+The People's Open Bible is produced by a pipeline that treats every verse
 as auditable: each rendering is committed to this repository alongside
 its source text, the OCR evidence behind that source text, the prompt
 and model that drafted it, the revision pass that read it against the
@@ -85,7 +85,7 @@ in March 2026 and is documented in the commit history. It was
 superseded on 2026-04-22 by a three-engine bake-off which found
 Gemini 3.1 Pro at 80% page accuracy versus Azure GPT-5.4 at 46% on
 Charles 1906 Ge'ez. Gemini 3.1 Pro is now the primary OCR engine for
-all COB OCR (Ge'ez, Coptic, and Greek where Cambridge typography is
+all POB OCR (Ge'ez, Coptic, and Greek where Cambridge typography is
 not the easier choice). Azure GPT-5.4 remains a useful second-pass
 adjudicator.
 

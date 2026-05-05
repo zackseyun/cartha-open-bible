@@ -1,6 +1,6 @@
 # 2 Baruch (Syriac Apocalypse of Baruch) — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated sub-phase for
+This document covers the People's Open Bible's dedicated sub-phase for
 **2 Baruch**, also called the **Syriac Apocalypse of Baruch**. It sits
 in the same pipeline family as [2ESDRAS.md](2ESDRAS.md): both are late
 Jewish apocalypses transmitted through layered daughter traditions,
@@ -89,7 +89,7 @@ already-audited plan.
 - specialist studies on the Greek fragments and Syriac textual history
 
 These may inform adjudication, but the same no-derivative-text rule
-applies here as everywhere else in COB.
+applies here as everywhere else in POB.
 
 ## Translation strategy
 
@@ -159,6 +159,6 @@ even if its own transcription / loader work still starts later.
 
 - 2 Baruch is one of the most important Jewish apocalypses adjacent to
   2 Esdras.
-- It fits the same COB value proposition: **transparent, auditable,
+- It fits the same POB value proposition: **transparent, auditable,
   open-license, witness-aware translation**.
 - Doing the architectural inclusion now saves rework later.

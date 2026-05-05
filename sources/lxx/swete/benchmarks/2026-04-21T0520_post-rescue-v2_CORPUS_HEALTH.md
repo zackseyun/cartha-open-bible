@@ -1,4 +1,4 @@
-# Cartha Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health
+# People's Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health
 
 **Generated:** 2026-04-21 12:23 UTC
 

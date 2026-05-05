@@ -74,4 +74,4 @@ SHA-256 of `schechter_1899.pdf`:
 
 > Hebrew text of Sirach extracted from Solomon Schechter and Charles Taylor,
 > *The Wisdom of Ben Sira* (Cambridge University Press, 1899), public
-> domain. Transcription to UTF-8 by Cartha Open Bible, CC-BY 4.0.
+> domain. Transcription to UTF-8 by People's Open Bible, CC-BY 4.0.

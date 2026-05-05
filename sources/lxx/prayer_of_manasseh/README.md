@@ -85,5 +85,5 @@ Mozarabic Psalter (**Moz.**).
 2. Phase 9 drafting: `MAN.jsonl` is now available to
    `tools/build_translation_prompt.py` (once it registers MAN); draft
    the English using our standard deuterocanon drafter.
-3. Ship as part of the next COB release, closing the Apocrypha
+3. Ship as part of the next POB release, closing the Apocrypha
    draft gap to 100%.

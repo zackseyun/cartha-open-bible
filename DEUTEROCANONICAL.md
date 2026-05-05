@@ -1,6 +1,6 @@
-# The Deuterocanonical Books in the Cartha Open Bible
+# The Deuterocanonical Books in the People's Open Bible
 
-This document explains why the Cartha Open Bible includes the
+This document explains why the People's Open Bible includes the
 Deuterocanonical books (also called the Apocrypha, or
 *Anagignoskomena*), how we intend to translate them, and what
 commitments we make about their integrity and presentation. It
@@ -22,7 +22,7 @@ complements [DOCTRINE.md](DOCTRINE.md) (theological stance),
 >   (three-zone model: vendored / consulted / forbidden).
 > - [EXTRA_CANONICAL.md](EXTRA_CANONICAL.md) — the scope document
 >   for texts *beyond* the 13 LXX deuterocanonical books (2 Esdras,
->   1 Enoch, Didache, etc.) that the Cartha Open Bible is committed
+>   1 Enoch, Didache, etc.) that the People's Open Bible is committed
 >   to translating under CC-BY in phases after Phase 9.
 > - [PRAYER_OF_MANASSEH.md](PRAYER_OF_MANASSEH.md) — per-book account
 >   for MAN (not in Codex Vaticanus, so sourced from Charles 1913).
@@ -51,10 +51,10 @@ most of that gap in practice without any licensing risk.
 
 ## Why include these books
 
-The Cartha Open Bible exists to make the biblical textual tradition
+The People's Open Bible exists to make the biblical textual tradition
 transparent and auditable. Excluding these books would itself be a
 theological editorial decision — one that curates which texts readers
-are permitted to evaluate. COB's mission is the opposite: present the
+are permitted to evaluate. POB's mission is the opposite: present the
 tradition; let the reader and their faith community judge.
 
 Concretely:
@@ -69,7 +69,7 @@ Concretely:
   consensus.
 - **Ecumenical reach.** Roman Catholic (Trent, 1546), Eastern Orthodox
   (Synod of Jerusalem, 1672), and Oriental Orthodox canons include
-  these books as fully canonical. Excluding them makes COB useful only
+  these books as fully canonical. Excluding them makes POB useful only
   to a subset of Christian readers. Including them, clearly labeled,
   serves the whole church without pronouncing on canonicity.
 - **Intertestamental witness.** These books describe the world Jesus
@@ -78,7 +78,7 @@ Concretely:
   life in the diaspora (Tobit, Judith). Reading the NT without them
   means reading a text whose cultural assumptions are partially
   invisible.
-- **Consistency with COB's stated philosophy.** DOCTRINE.md commits
+- **Consistency with POB's stated philosophy.** DOCTRINE.md commits
   to "preserve theological tension rather than resolve it" and
   "original-language primacy over translation tradition." Including
   texts that are canonical in some traditions and not in others
@@ -88,7 +88,7 @@ We do not pronounce on canonicity. We translate and publish.
 
 ## Our theological stance on canonicity
 
-COB takes no position on whether these books are canonical. This
+POB takes no position on whether these books are canonical. This
 refusal is itself a stance, and we name it clearly:
 
 - **To Protestant readers:** including these books does not assert
@@ -121,7 +121,7 @@ None of the terms is theologically neutral. We use them as follows:
 | **Anagignoskomena** | Orthodox | "worthy to be read" |
 | **Intertestamental books** | neutral-academic | descriptive, narrow |
 
-In COB we use **Deuterocanonical** as our primary term in filenames
+In POB we use **Deuterocanonical** as our primary term in filenames
 and repository documentation because it is the most widely
 understood non-pejorative option in contemporary scholarship. In
 user-facing contexts (the mobile app, published editions) we will
@@ -292,7 +292,7 @@ source, its Greek fallback (for verses or passages where the original
 is lost or damaged), and its overall readiness to enter Phase C
 (drafting). Status updates as sources are transcribed.
 
-| Book | Original language | Primary source for COB | Greek fallback (Swete) | Status |
+| Book | Original language | Primary source for POB | Greek fallback (Swete) | Status |
 |---|---|---|---|---|
 | Tobit | Aramaic (~20% Qumran overlap, blocked) | Swete LXX Long Recension (`TOB_S`) anchored by Neubauer 1878 Hebrew (Zone 1 reference) + Fitzmyer DJD XIX (Zone 2 consult) | — (is primary) | ✓ Swete transcribed; Neubauer vendored; ready for Phase C |
 | Judith | Hebrew (lost entirely) | Swete LXX | — (is primary) | ✓ Swete transcribed; ready for Phase C |
@@ -342,7 +342,7 @@ longer the preferred Phase 9 drafting targets.
 - **Zone 3 (forbidden):** modern commercial English translations.
   Not consulted during drafting.
 
-This three-zone discipline is what keeps COB CC-BY-redistributable
+This three-zone discipline is what keeps POB CC-BY-redistributable
 while still benefiting from the full weight of modern critical
 scholarship. It is the same distinction every serious modern
 translation pipeline already enforces (NRSV, NABRE, ESV) — we just
@@ -397,7 +397,7 @@ with every character auditable back to a public-domain photograph and
 every divergence from published scholarship documented. That is
 substantively equivalent to specialist-grade source fidelity for
 translation purposes, which is what the deuterocanonical section of
-the Cartha Open Bible is delivering.
+the People's Open Bible is delivering.
 
 **Current measured baseline.** First-pass Swete LXX transcription
 quality across all 572 deuterocanonical pages: 100% format-valid,
@@ -534,7 +534,7 @@ In both the repository and the mobile app:
 
 - A clear section header: **"Deuterocanonical Books (Apocrypha)"**
 - An introductory note to the section explaining the canonical-status
-  landscape across traditions, and naming that COB takes no position.
+  landscape across traditions, and naming that POB takes no position.
 - Each book's header displays its canonical status at a glance:
   - *Canonical in: Roman Catholic, Eastern Orthodox*
   - *Considered useful but not canonical in: most Protestant traditions*
@@ -629,7 +629,7 @@ We commit, as a project, to:
 5. **Honest limitations.** We document what our LXX-only approach
    does and does not capture. A reader who wants Hebrew Sirach
    variants at every verse will need to consult scholarly editions
-   alongside COB. That is stated openly, not obscured.
+   alongside POB. That is stated openly, not obscured.
 
 ## Why this honors the texts
 
@@ -645,7 +645,7 @@ them as Scripture for those who receive them as Scripture, and as
 early Jewish religious literature for those who do not. It refuses
 the shortcut of deciding for the reader what counts.
 
-That refusal is the whole point of the Cartha Open Bible.
+That refusal is the whole point of the People's Open Bible.
 
 ## The Pseudepigrapha and expanded canon
 

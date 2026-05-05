@@ -98,7 +98,7 @@ def consult_sources() -> list[dict]:
     """Return the Zone 2 scholarly reference list for 2 Esdras.
 
     Per REFERENCE_SOURCES.md: these may be consulted but their text
-    must not appear in COB output.
+    must not appear in POB output.
     """
     return list(CONSULT_REGISTRY)
 

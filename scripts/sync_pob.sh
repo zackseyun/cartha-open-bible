@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# sync_cob.sh — run the full COB publish pipeline once, synchronously.
+# sync_pob.sh — run the full POB publish pipeline once, synchronously.
 #
 # This is the manual equivalent of what supervise_merge.sh does in a
 # loop. Run it whenever you want to push any pending chapter drafts to
@@ -8,8 +8,8 @@
 # Order of operations:
 #   1. chapter_merge.py cherry-picks any ready-to-merge jobs onto main
 #      and pushes (no-op if the queue is empty).
-#   2. publish_cob.sh fires the cartha-cob-publisher Lambda which
-#      rebuilds cob_preview.json from main and uploads to
+#   2. publish_pob.sh fires the cartha-cob-publisher Lambda which
+#      rebuilds the compiled POB payload from main and uploads to
 #      bible.cartha.com. (Forces re-publish even if step 1 was a no-op,
 #      so a CDN that has drifted behind main still gets corrected.)
 #   3. Prints the resulting CDN manifest so you can see what landed.
@@ -17,9 +17,9 @@
 # Exit status: 0 on successful publish; non-zero on any failure.
 #
 # Usage:
-#   scripts/sync_cob.sh                 # full pipeline
-#   scripts/sync_cob.sh --publish-only  # skip the merge step
-#   scripts/sync_cob.sh --merge-only    # skip the publish step
+#   scripts/sync_pob.sh                 # full pipeline
+#   scripts/sync_pob.sh --publish-only  # skip the merge step
+#   scripts/sync_pob.sh --merge-only    # skip the publish step
 
 set -eu
 
@@ -41,7 +41,7 @@ for arg in "$@"; do
   esac
 done
 
-say() { printf "\033[1m[sync-cob]\033[0m %s\n" "$*"; }
+say() { printf "\033[1m[sync-pob]\033[0m %s\n" "$*"; }
 
 if [[ "$PUBLISH_ONLY" != "1" ]]; then
   say "merge: cherry-picking any ready-to-merge jobs onto main and pushing"
@@ -55,7 +55,7 @@ if [[ "$MERGE_ONLY" == "1" ]]; then
 fi
 
 say "publish: invoking cartha-cob-publisher Lambda"
-"$SCRIPT_DIR/publish_cob.sh"
+"$SCRIPT_DIR/publish_pob.sh"
 
 # Show what the CDN now reports, for a clean receipt.
 say "CDN manifest after publish:"

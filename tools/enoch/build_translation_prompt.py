@@ -220,7 +220,7 @@ Zone 2 consult registry (reference only; do not copy wording):
 {json.dumps(_zone2_registry(), ensure_ascii=False, indent=2)}
 
 Task:
-Translate ONLY this verse into clear, auditable English for the Cartha Open Bible.
+Translate ONLY this verse into clear, auditable English for the People's Open Bible.
 Return a faithful translation anchored in the Ge'ez text above, plus transparent lexical/theological decisions and any footnotes needed for uncertainty or textual difficulty.
 Do not copy from modern copyrighted English Enoch translations.
 """.strip()

@@ -1,6 +1,6 @@
 # Jubilees (Mashafa Kufale) source materials
 
-Public-domain source editions for the Cartha Open Bible's forthcoming
+Public-domain source editions for the People's Open Bible's forthcoming
 Jubilees translation. **Scope and strategy: [`../../JUBILEES.md`](../../JUBILEES.md).**
 
 ## Textual situation

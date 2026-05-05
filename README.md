@@ -1,4 +1,4 @@
-# The Cartha Open Bible
+# The People's Open Bible
 *Translated from the original Greek and Hebrew*
 
 > God bless all believers, and all who are earnestly drawn to God and
@@ -33,7 +33,7 @@ commitments.**
 
 ## Why we built this
 
-The Cartha Open Bible started with a simple need: a Bible we could ship
+The People's Open Bible started with a simple need: a Bible we could ship
 in our own apps without licensing friction. Most modern English
 translations ship under a commercial trademark — free to read, but not
 free to quote at length, fork, adapt, or include in a commercial
@@ -72,19 +72,19 @@ source text and the prompt can re-run the draft.
 See [PHILOSOPHY.md](PHILOSOPHY.md) for the theological and historical
 rationale.
 
-## How COB reads — compared to NKJV and NIV
+## How POB reads — compared to NKJV and NIV
 
-Two verses that illustrate what COB does differently, and why.
+Two verses that illustrate what POB does differently, and why.
 
 ### Philippians 1:1
 
 | | Rendering |
 |---|---|
-| **COB** | "Paul and Timothy, **slaves** of **Messiah** Jesus, to all the saints in Messiah Jesus who are in Philippi, together with the **overseers** and deacons:" |
+| **POB** | "Paul and Timothy, **slaves** of **Messiah** Jesus, to all the saints in Messiah Jesus who are in Philippi, together with the **overseers** and deacons:" |
 | NKJV | "Paul and Timothy, bondservants of Jesus Christ, To all the saints in Christ Jesus who are in Philippi, with the bishops and deacons:" |
 | NIV | "Paul and Timothy, servants of Christ Jesus, To all God's holy people in Christ Jesus at Philippi, together with the overseers and deacons:" |
 
-- **δοῦλοι → "slaves"** (not "servants" or "bondservants"). In 1st-century Greco-Roman use, δοῦλος meant literal ownership of a person. "Servant" softens what Paul actually claimed; "bondservant" is a translator-invented neologism that avoids the weight. COB uses the accurate word and relies on the contextual layer to restore what the word meant to Paul's audience (not what it connotes in modern American English).
+- **δοῦλοι → "slaves"** (not "servants" or "bondservants"). In 1st-century Greco-Roman use, δοῦλος meant literal ownership of a person. "Servant" softens what Paul actually claimed; "bondservant" is a translator-invented neologism that avoids the weight. POB uses the accurate word and relies on the contextual layer to restore what the word meant to Paul's audience (not what it connotes in modern American English).
 - **Χριστοῦ → "Messiah"** (translated, not transliterated). "Christ" has become a name in English; Paul wrote a title. "Messiah" restores the Jewish messianic claim Paul was making.
 - **ἐπισκόποις → "overseers"** (not "bishops"). "Bishops" imports the later ecclesial office that didn't exist in 1st-century Philippi.
 
@@ -92,7 +92,7 @@ Two verses that illustrate what COB does differently, and why.
 
 | | Rendering |
 |---|---|
-| **COB** | "whom God put forward as an **atoning sacrifice** through faith in his blood, to demonstrate his righteousness, because of the **passing over** of previously committed sins." |
+| **POB** | "whom God put forward as an **atoning sacrifice** through faith in his blood, to demonstrate his righteousness, because of the **passing over** of previously committed sins." |
 | NKJV | "whom God set forth as a propitiation by His blood, through faith, to demonstrate His righteousness, because in His forbearance God had passed over the sins that were previously committed" |
 | NIV | "God presented **Christ** as a sacrifice of atonement, through the **shedding of his blood**—to be **received by faith**. He did this to demonstrate his righteousness, because in his forbearance he had left the sins committed beforehand unpunished" |
 
@@ -102,11 +102,11 @@ Two verses that illustrate what COB does differently, and why.
 
 ### The philosophy behind these choices
 
-COB's choice is **lexical accuracy in the main text + contextual understanding in a companion layer** — not pastoral softening of the translation itself.
+POB's choice is **lexical accuracy in the main text + contextual understanding in a companion layer** — not pastoral softening of the translation itself.
 
 "Slaves of Messiah Jesus" is harder on a modern reader's first pass than "servants of Christ Jesus," but it's what Paul actually wrote. Where a word's ancient meaning differs from modern English connotations, the responsibility is on the **reading experience** — the rationale recorded in each verse's YAML, footnotes, the in-app **Original context** AI tool, the public discussion forum — to restore the meaning. Not on the translation to quietly round it off.
 
-That's why NIV's Romans 3:25 is illustrative of what COB avoids: a *good* interpretation invisibly embedded in the main text. The reader can't see it's a choice; they can't audit it; they can't disagree with it. COB makes every such choice visible and defensible.
+That's why NIV's Romans 3:25 is illustrative of what POB avoids: a *good* interpretation invisibly embedded in the main text. The reader can't see it's a choice; they can't audit it; they can't disagree with it. POB makes every such choice visible and defensible.
 
 **Is "slave" true to δοῦλος?** As close as a single English word can be. No single English word fully captures the ownership + submission + paradoxical honor + LXX "servant of YHWH" echo that Paul packed into δοῦλος. That's why one-tap context matters: the word is the foundation; the meaning lives in the layer you can read into.
 
@@ -136,7 +136,7 @@ rescued, and confidence-promoted from direct scan inspection — see
 
 ## The Deuterocanonical Books (Apocrypha)
 
-The Cartha Open Bible includes the Deuterocanonical books — Tobit, Judith,
+The People's Open Bible includes the Deuterocanonical books — Tobit, Judith,
 Wisdom of Solomon, Sirach (Ecclesiasticus), Baruch, 1–4 Maccabees, and
 others — as a clearly labeled section. See [DEUTEROCANONICAL.md](DEUTEROCANONICAL.md)
 for the full strategy; in brief:
@@ -243,7 +243,7 @@ adjacent that has not existed before:
 - **The first freely-redistributable deuterocanonical translation
   from a scan-grounded corpus.** Brenton's 1851 LXX translation is
   public-domain but 175 years old; every scholarly translation since
-  is under a restrictive license. The Cartha Open Bible Apocrypha
+  is under a restrictive license. The People's Open Bible Apocrypha
   is released under **CC-BY 4.0** — use it, quote it, remix it,
   ship it in your app. This is a substantive contribution on its own.
 
@@ -299,7 +299,7 @@ as Scripture for those who receive them as Scripture, and as early
 Jewish religious literature for those who do not. It refuses the
 shortcut of deciding for the reader what counts.
 
-That refusal is the whole point of the Cartha Open Bible.
+That refusal is the whole point of the People's Open Bible.
 
 ## Extra-canonical scripture
 

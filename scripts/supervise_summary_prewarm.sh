@@ -6,7 +6,7 @@ BOOKS="${2:?books csv required}"
 EXTRA_ARGS="${3:-}"
 COORD="${COORD:-/Users/zackseyun/My Drive/Moltbot-Shared/Documents/GitHub/cartha-translation}"
 APIROOT="${APIROOT:-/Users/zackseyun/My Drive/Moltbot-Shared/Documents/GitHub/CarthaCdkService/services/mobile-api-service-go}"
-LOG="/tmp/cob-summary-${NAME}.log"
+LOG="/tmp/pob-summary-${NAME}.log"
 MAX_RESTARTS="${MAX_RESTARTS:-12}"
 RESTART_SLEEP_SECONDS="${RESTART_SLEEP_SECONDS:-60}"
 
@@ -41,7 +41,7 @@ while :; do
   ./prewarm-bible-summary-cache \
     --translation-repo "$COORD" \
     --stage alpha \
-    --translation COB \
+    --translation POB \
     --translation-version unspecified \
     --books "$BOOKS" \
     ${EXTRA_ARGS} >> "$LOG" 2>&1 || true

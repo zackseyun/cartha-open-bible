@@ -1,7 +1,7 @@
-# Extra-canonical scripture in the Cartha Open Bible
+# Extra-canonical scripture in the People's Open Bible
 
 This document catalogs the texts outside the 66-book Protestant canon
-+ 13 LXX deuterocanonical books that the Cartha Open Bible is
++ 13 LXX deuterocanonical books that the People's Open Bible is
 committed to translating and releasing under CC-BY 4.0. It
 complements [`DEUTEROCANONICAL.md`](DEUTEROCANONICAL.md) (the 13
 LXX-based deuterocanonical books), [`2ESDRAS.md`](2ESDRAS.md) (the
@@ -10,16 +10,16 @@ dedicated Latin-primary sub-phase for 2 Esdras), and
 scholarly-source policy applied throughout).
 
 > **Status: scope document.** The texts catalogued here are on the
-> Cartha Open Bible roadmap. Source acquisition, pipeline build, and
+> People's Open Bible roadmap. Source acquisition, pipeline build, and
 > drafting happen in phases after Phase 9 (LXX deuterocanon). Each
 > text gets its own verse-level provenance at release time — we do
 > not ship these as vague historical-interest reprints; we translate
 > them with the same rigor and transparency as every canonical book
-> in COB.
+> in POB.
 
 ## Why we include these
 
-The Cartha Open Bible's mission is transparent translation of the
+The People's Open Bible's mission is transparent translation of the
 biblical textual tradition in its fullest historical form, letting
 readers and their faith communities evaluate. That mission does not
 end at Protestant or Catholic canon borders. Three concrete
@@ -335,7 +335,7 @@ cross-session contract of who-owns-what.
 
 ## Labeling and framing principles
 
-Every extra-canonical text released by COB carries the following in
+Every extra-canonical text released by POB carries the following in
 its reader-facing front matter and per-verse provenance:
 
 1. **Plain-language description** of what the text is and when it
@@ -359,7 +359,7 @@ editorial judgment.
 
 ## License handling
 
-Same three-zone policy as every other COB text:
+Same three-zone policy as every other POB text:
 
 - **Zone 1 (vendored, safe as source):** Pre-1929 public-domain
   source editions (Charles 1895/1902/1906/1912, Bryennios 1883,

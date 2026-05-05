@@ -10,7 +10,7 @@
 1. **גֵּאוֹן לִבְּךָ** (v. 3 — "the pride of your heart"): the oracle's opening charge. גֵּאוֹן is more than pride — it is arrogance backed by presumed security. "The arrogance of your heart" is accurate.
 2. **The "Day of the LORD" section** (vv. 15–21): shifts from Edom-specific oracle to universal eschatological vision. The phrase יוֹם-יהוה must be rendered consistently with other prophetic books — "the Day of the LORD."
 3. **אַחֶיךָ** (v. 10, 12 — "your brother"): Edom = Esau; Israel = Jacob. The "brotherly" relationship is the aggravating factor in Edom's treachery. Make the kinship language explicit.
-4. **Parallels with Jeremiah 49**: Obadiah shares extensive verbal overlap with Jeremiah 49:7–22 (both directions of borrowing are debated). The COB translation should render each text on its own terms; do not harmonize wording.
+4. **Parallels with Jeremiah 49**: Obadiah shares extensive verbal overlap with Jeremiah 49:7–22 (both directions of borrowing are debated). The POB translation should render each text on its own terms; do not harmonize wording.
 
 ## Style / register
 

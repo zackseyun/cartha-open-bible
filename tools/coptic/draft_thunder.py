@@ -37,7 +37,7 @@ DEFAULT_AZURE_API_VERSION = os.environ.get('AZURE_OPENAI_API_VERSION', '2025-04-
 TOOL_NAME = 'submit_thunder_lineblock_draft'
 FOOTNOTE_REASONS = {'alternative_reading','lexical_alternative','textual_variant','cultural_note','cross_reference','alignment_note','parallelism_note'}
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE LINE BLOCK of Thunder, Perfect Mind from a mapped Coptic OCR excerpt. The alignment layer is explicit but heuristic. Your task is to produce the most faithful English you can while preserving paradox, cadence, and voice, and while being honest about alignment risk.
 

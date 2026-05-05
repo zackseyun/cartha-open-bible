@@ -83,7 +83,7 @@ apply. Three PD candidate sources:
 - Archive.org identifier: `apocryphapseudep01charuoft` or similar.
 - Advantage: scholarly critical presentation with apparatus; the
   English is also usable as a Zone 1 reference (though we would
-  produce our own fresh English per COB doctrine).
+  produce our own fresh English per POB doctrine).
 
 ## Recommended execution plan
 
@@ -155,7 +155,7 @@ time-sensitive; can be scheduled into any Phase 9 tail session.
    GPT-5.4 (azure-openai backend, gpt-5-4-deployment). English
    per-verse YAMLs live at
    `translation/deuterocanon/prayer_of_manasseh/001/001-015.yaml`.
-   Each carries standard COB fields: translation text, per-word
+   Each carries standard POB fields: translation text, per-word
    lexical decisions + rationale, footnotes for alternatives,
    AI-draft provenance, source-edition provenance.
 

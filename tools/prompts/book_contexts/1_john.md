@@ -13,7 +13,7 @@
 4. **τέκνα θεοῦ / τέκνα τοῦ διαβόλου** ("children of God / children of the devil"): The binary division of humanity in 3:1–10. Keep "children" — not "sons" (the Greek is τέκνα, not υἱοί).
 5. **The "tests"**: 1 John offers repeated tests for genuine faith — "By this we know…" (ἐν τούτῳ γινώσκομεν). Keep the formula consistent.
 6. **ἱλασμός** (2:2; 4:10 — "propitiation / expiation / atoning sacrifice"): Same debate as Romans 3:25 (ἱλαστήριον). Render consistently within 1 John; footnote the options.
-7. **The Johannine Comma** (5:7 — "the Father, the Word, and the Holy Spirit"): The Trinitarian gloss present in some Latin MSS and late Greek MSS is not in the earliest Greek manuscripts and is not in the NA28. The COB follows NA28 — this clause should NOT appear in the main text (may appear in a text-critical footnote if the project includes those).
+7. **The Johannine Comma** (5:7 — "the Father, the Word, and the Holy Spirit"): The Trinitarian gloss present in some Latin MSS and late Greek MSS is not in the earliest Greek manuscripts and is not in the NA28. The POB follows NA28 — this clause should NOT appear in the main text (may appear in a text-critical footnote if the project includes those).
 
 ## Style / register
 

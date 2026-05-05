@@ -3,8 +3,8 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET="${TARGET:-24}"
-LOG_DIR="${LOG_DIR:-/tmp/cob-testaments-draft}"
-STOP_FILE="${STOP_FILE:-/tmp/cob-testaments-stop}"
+LOG_DIR="${LOG_DIR:-/tmp/pob-testaments-draft}"
+STOP_FILE="${STOP_FILE:-/tmp/pob-testaments-stop}"
 SPAWN_STAGGER_SECONDS="${SPAWN_STAGGER_SECONDS:-2}"
 PYTHON_BIN="${PYTHON_BIN:-$REPO_ROOT/.venv/bin/python}"
 

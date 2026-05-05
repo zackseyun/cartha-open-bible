@@ -44,7 +44,7 @@ AI_STUDIO_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3-pro-preview")
 PROMPT_VERSION = "2esdras_revision_v1_2026-04-22"
 
-SYSTEM_PROMPT = """You are a senior biblical translation reviewer auditing a draft English translation of 2 Esdras (4 Ezra) for the Cartha Open Bible — a CC-BY 4.0 translation project with auditable per-verse reasoning.
+SYSTEM_PROMPT = """You are a senior biblical translation reviewer auditing a draft English translation of 2 Esdras (4 Ezra) for the People's Open Bible — a CC-BY 4.0 translation project with auditable per-verse reasoning.
 
 You are reviewing a chapter produced by GPT-5.4 with a Latin primary source (Bensly 1895 + 1875 Missing Fragment). Your role is NOT to re-translate; it is to flag specific, actionable issues so a human reviewer can apply targeted revisions.
 

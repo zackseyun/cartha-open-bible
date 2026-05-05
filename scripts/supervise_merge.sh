@@ -9,7 +9,7 @@ fi
 PHASES=("$@")
 COORD="${COORD:-/Users/zackseyun/My Drive/Moltbot-Shared/Documents/GitHub/cartha-translation}"
 PHASE_TAG="$(IFS=-; echo "${PHASES[*]}")"
-LOG="/tmp/cob-merge-${PHASE_TAG}.log"
+LOG="/tmp/pob-merge-${PHASE_TAG}.log"
 MAX_RESTARTS="${MAX_RESTARTS:-999999}"
 RESTART_SLEEP_SECONDS="${RESTART_SLEEP_SECONDS:-20}"
 PUBLISH_AFTER_PUSH="${PUBLISH_AFTER_PUSH:-1}"
@@ -61,7 +61,7 @@ while :; do
     fi
     if [[ "$should_publish" == "1" ]]; then
       echo "[merge-supervisor] phases=${PHASES[*]} publishing — $reason" >> "$LOG"
-      "$COORD/scripts/publish_cob.sh" >> "$LOG" 2>&1 || true
+      "$COORD/scripts/publish_pob.sh" >> "$LOG" 2>&1 || true
     fi
   fi
 

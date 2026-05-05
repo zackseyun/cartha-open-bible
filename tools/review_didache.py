@@ -109,7 +109,7 @@ def sanitize_footnotes(notes: list[dict[str, Any]] | None) -> list[dict[str, Any
         out.append(note)
     return out
 
-SYSTEM_PROMPT = """You are a textual reviewer and reviser for the Cartha Open Bible.
+SYSTEM_PROMPT = """You are a textual reviewer and reviser for the People's Open Bible.
 
 You are reviewing ONE Didache chapter draft. Your job is:
 1. audit the current English against the Greek source;

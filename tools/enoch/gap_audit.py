@@ -8,7 +8,7 @@ Pipeline:
   3. Use gpt-5.4-nano via OpenRouter to detect whether the English
      translation covers all content in the oracle Ge'ez.
   4. For confirmed gaps, use gpt-5.4 (Azure) to draft the missing clause
-     in COB optimal-equivalence style.
+     in POB optimal-equivalence style.
   5. Patch the YAML files and print a summary.
 
 Usage:
@@ -195,10 +195,10 @@ def translate_missing_clause(
     ref: str, full_oracle_geez: str, current_english: str,
     missing_geez: str, api_key: str, endpoint: str, deployment: str
 ) -> str:
-    """Use Azure GPT-5.4 to render the missing Ge'ez clause in COB style."""
+    """Use Azure GPT-5.4 to render the missing Ge'ez clause in POB style."""
     prompt = textwrap.dedent(f"""
-        You are translating a missing clause for the Cartha Open Bible (COB).
-        COB translation philosophy: optimal-equivalence — accurate to the source,
+        You are translating a missing clause for the People's Open Bible (POB).
+        POB translation philosophy: optimal-equivalence — accurate to the source,
         natural English, preserve imagery without smoothing. Avoid archaisms
         (no 'thee'/'thou'). Use vivid concrete language faithful to the Ge'ez.
 
@@ -264,7 +264,7 @@ def patch_yaml(path: Path, data: dict, missing_geez: str,
             f"Charles 1906 OCR truncated before clause: '{missing_geez}'. "
             f"Missing content detected by gpt-5.4-nano comparison against "
             f"Beta maṣāḥǝft oracle. Clause translated by Azure GPT-5.4 "
-            f"and appended in COB optimal-equivalence style."
+            f"and appended in POB optimal-equivalence style."
         ),
     })
     data["revision_pass"] = {
@@ -389,7 +389,7 @@ def main():
         msg = (
             f"revise: 1 Enoch gap audit — restore {total_fixed} missing clause(s)\n\n"
             f"Detected by gpt-5.4-nano comparison against Beta maṣāḥǝft oracle.\n"
-            f"Translated by Azure GPT-5.4 in COB optimal-equivalence style.\n"
+            f"Translated by Azure GPT-5.4 in POB optimal-equivalence style.\n"
             f"Affected: {', '.join(fixed_refs)}"
         )
         subprocess.run(["git", "add", str(ENOCH_TRANS)], cwd=REPO_ROOT, check=True)

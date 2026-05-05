@@ -1,9 +1,9 @@
 # known_regressions.yaml
 # ======================
-# Policy-enforcing regression cases for the Cartha Open Bible revision pipeline.
+# Policy-enforcing regression cases for the People's Open Bible revision pipeline.
 #
 # PURPOSE: These are known cases where prior AI revision passes introduced errors
-# against COB's explicit translation policy. Each entry documents:
+# against POB's explicit translation policy. Each entry documents:
 #   - what the model did wrong
 #   - what the correct rendering is
 #   - why (the doctrinal/policy rationale)
@@ -19,7 +19,7 @@
 #   category: regression type
 #   source_term: Greek/Hebrew source word
 #   wrong_rendering: what the model produced (forbidden)
-#   correct_rendering: what COB policy requires
+#   correct_rendering: what POB policy requires
 #   policy_ref: reference to DOCTRINE.md or book_context file
 #   rationale: why the wrong_rendering is a regression
 #   affected_verses: sample verse IDs where this regression occurred
@@ -39,11 +39,11 @@ regressions:
       Χριστός is the Greek translation of the Hebrew מָשִׁיחַ (Mashiach / Messiah),
       meaning "the anointed one." Rendering it as "Christ" treats a descriptive title
       as an opaque proper name, erasing the word's semantic content for modern readers
-      who do not know Greek. COB policy renders Χριστός as "Messiah" throughout,
+      who do not know Greek. POB policy renders Χριστός as "Messiah" throughout,
       except where it has already frozen as part of an established proper name that
       the author intended as a name (no such exceptions exist in the NT corpus).
       "Christ" is conventional but imports a 2,000-year tradition of treating the
-      word as a surname — the opposite of COB's transparent-translation philosophy.
+      word as a surname — the opposite of POB's transparent-translation philosophy.
     affected_verses:
       - ROM.1.1
       - GAL.1.1
@@ -58,10 +58,10 @@ regressions:
     scale: 405 occurrences across NT
     fix_script: tools/fix_regressions.py (run 2026-04-23)
     prompt_injection: |
-      CRITICAL — COB POLICY: Render Χριστός as "Messiah", NEVER as "Christ".
-      "Christ" is explicitly forbidden in the Cartha Open Bible translation.
+      CRITICAL — POB POLICY: Render Χριστός as "Messiah", NEVER as "Christ".
+      "Christ" is explicitly forbidden in the People's Open Bible translation.
       If the current draft has "Messiah", do NOT change it to "Christ".
-      Examples of CORRECT COB rendering:
+      Examples of CORRECT POB rendering:
         "Paul, a slave of Messiah Jesus" (NOT "Christ Jesus")
         "the grace of our Lord Jesus Messiah" (NOT "Jesus Christ")
         "prisoner of Messiah Jesus" (NOT "Christ Jesus")
@@ -80,7 +80,7 @@ regressions:
       "servant" (as most English Bibles do) softens and euphemizes the social
       reality the authors invoked. When Paul calls himself a δοῦλος of Messiah,
       he is invoking total ownership and absence of self-determination — a
-      theological point that "servant" blunts. COB policy: "slave" in all bonded
+      theological point that "servant" blunts. POB policy: "slave" in all bonded
       δοῦλος contexts; "servant" only for διάκονος / ὑπηρέτης / ministering roles.
       The Hebrew עֶבֶד is similarly rendered "slave" in ownership contexts.
     affected_verses:
@@ -102,11 +102,11 @@ regressions:
     scale: 37 occurrences across NT and OT
     fix_script: tools/fix_regressions.py (run 2026-04-23)
     prompt_injection: |
-      CRITICAL — COB POLICY: Render δοῦλος as "slave", NEVER as "servant".
-      "Servant" is explicitly forbidden for δοῦλος in the Cartha Open Bible.
+      CRITICAL — POB POLICY: Render δοῦλος as "slave", NEVER as "servant".
+      "Servant" is explicitly forbidden for δοῦλος in the People's Open Bible.
       δοῦλος = bonded slave with no legal freedom (NOT a hired servant).
       If the current draft has "slave", do NOT change it to "servant".
-      Examples of CORRECT COB rendering:
+      Examples of CORRECT POB rendering:
         "Paul, a slave of Messiah Jesus" (NOT "servant of Christ Jesus")
         "to his slaves" in Rev 1:1 (NOT "servants")
         "releasing your slave" in Luke 2:29 (NOT "servant")

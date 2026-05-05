@@ -38,7 +38,7 @@ TOOL_REASON_VALUES = {
     "segmentation_note",
 }
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE CHAPTER OF JUBILEES. Your job is to produce the highest-quality chapter draft you can, while exposing major lexical and theological decisions so the result is fully auditable.
 

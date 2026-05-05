@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-# master_supervisor.sh — keep the Cartha Open Bible pipeline running at full
+# master_supervisor.sh — keep the People's Open Bible pipeline running at full
 # capacity until every queued job is done, without human intervention.
 #
 # What it supervises:
 #   * chapter translation workers (one supervise_worker.sh per logical worker
 #     id, weighted per phase by backlog — spawns any that are missing)
 #   * per-phase merge supervisors that continuously cherry-pick completed
-#     chapter commits onto main and publish the live COB snapshot
+#     chapter commits onto main and publish the live POB snapshot
 #   * OT summary-prewarm supervisors for the active OT books
 #   * stale claim release (any 'running' claim whose worker is dead for
 #     >STALE_MINUTES gets returned to 'pending')
 #
-# Stop the supervisor with:  touch /tmp/cob-stop-supervisor
+# Stop the supervisor with:  touch /tmp/pob-stop-supervisor
 # (the loop checks every tick)
 #
 # Run once, run forever. Idempotent with respect to already-running workers.
@@ -19,8 +19,8 @@
 set -u
 
 COORD="${COORD:-/Users/zackseyun/My Drive/Moltbot-Shared/Documents/GitHub/cartha-translation}"
-MASTER_LOG=/tmp/cob-master-supervisor.log
-STOP_FILE=/tmp/cob-stop-supervisor
+MASTER_LOG=/tmp/pob-master-supervisor.log
+STOP_FILE=/tmp/pob-stop-supervisor
 TICK_SECONDS="${TICK_SECONDS:-60}"
 STALE_MINUTES="${STALE_MINUTES:-10}"
 

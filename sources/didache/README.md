@@ -1,6 +1,6 @@
 # Didache source materials
 
-Public-domain source editions for the Cartha Open Bible's Greek
+Public-domain source editions for the People's Open Bible's Greek
 extra-canonical pipeline for the **Didache** (*Teaching of the Twelve
 Apostles*).
 
@@ -14,7 +14,7 @@ Scope docs:
 
 The Didache survives in Greek and is transmitted most famously in the
 Jerusalem manuscript / Codex Hierosolymitanus (H54), discovered in the
-19th century. For COB's source-acquisition phase, public-domain Greek
+19th century. For POB's source-acquisition phase, public-domain Greek
 printed editions are sufficient to establish the OCR / transcription
 layer.
 

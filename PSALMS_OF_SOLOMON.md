@@ -1,6 +1,6 @@
 # Psalms of Solomon — scope and source strategy
 
-This document covers the Cartha Open Bible's dedicated track for the
+This document covers the People's Open Bible's dedicated track for the
 **Psalms of Solomon** — an 18-psalm Greek pseudepigraphal collection
 preserved in Swete vol. III and already adjacent to our existing Swete
 transcription pipeline.
@@ -44,7 +44,7 @@ It complements:
 - **Secondary witness:** Syriac fragments / Syriac transmission
 - **Collection size:** 18 psalms
 
-For COB's first release, the translation anchor is the **Greek** text
+For POB's first release, the translation anchor is the **Greek** text
 as printed in Swete vol. III. Syriac can be introduced later as
 additional textual-critical context, but it is not required to begin
 translation work.
@@ -63,7 +63,7 @@ Important boundary note:
 - **p. 810** ends Psalm 18
 - **p. 811** is the transition away from Psalms of Solomon and into the
   Enoch appendix material, so it is **not** part of the book's source
-  range for COB
+  range for POB
 
 ## Source editions
 

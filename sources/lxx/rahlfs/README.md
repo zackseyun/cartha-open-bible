@@ -15,7 +15,7 @@ Our LXX source is **Swete 1909–1930** (fully public domain;
 [`../swete/`](../swete/)), which we transcribe ourselves via AI
 vision and release under CC-BY 4.0. Swete covers every LXX book
 we need, including the entire deuterocanon. Nothing from Rahlfs
-appears in COB output.
+appears in POB output.
 
 For the policy that governs scholarly references not vendored in
 this repository, see

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""azure_bulk_revise.py — bulk Azure GPT-5 revision pass for all COB verses.
+"""azure_bulk_revise.py — bulk Azure GPT-5 revision pass for all POB verses.
 
 Scans every verse YAML that lacks a `revision_pass` block and calls
 Azure GPT-5 to review and improve the draft translation.
@@ -79,7 +79,7 @@ def _load_revision_policy() -> str:
     return ""
 
 
-_BASE_SYSTEM_PROMPT = """You are a biblical translation revisor for the Cartha Open Bible — \
+_BASE_SYSTEM_PROMPT = """You are a biblical translation revisor for the People's Open Bible — \
 a transparent, CC-BY 4.0 English Bible translated directly from the original Greek, Hebrew, and Aramaic.
 
 Your job: perform a focused revision pass on one verse's draft English translation.

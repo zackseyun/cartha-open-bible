@@ -2,7 +2,7 @@
 """
 draft.py — Produce an AI-drafted translation for a single verse.
 
-Pipeline stage 2 of the Cartha Open Bible methodology. Reads the source
+Pipeline stage 2 of the People's Open Bible methodology. Reads the source
 text, builds the doctrinally-constrained prompt, forces a single
 `submit_verse_draft` function call from GPT-5.4, validates the response,
 and writes a schema-valid YAML record with full provenance metadata.
@@ -116,7 +116,7 @@ for code, (_vol, _first, _last, title, slug) in lxx_swete.DEUTEROCANONICAL_BOOKS
     ALL_BOOK_NAME_TO_CODE[title.lower()] = code
     ALL_BOOK_NAME_TO_CODE[slug.replace("_", " ")] = code
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible translated directly from the original Greek and Hebrew with commit-level provenance for every translation decision.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible translated directly from the original Greek and Hebrew with commit-level provenance for every translation decision.
 
 You are drafting ONE verse. Your job is to produce the highest-quality draft you can, and to expose every significant lexical or theological decision so that the draft is fully auditable.
 
@@ -936,7 +936,7 @@ def call_openrouter(
         base_url=OPENROUTER_BASE_URL,
         extra_headers={
             "HTTP-Referer": "https://cartha.com",
-            "X-Title": "Cartha Open Bible Translation",
+            "X-Title": "People's Open Bible Translation",
         },
         tools=[openrouter_submit_tool()],
         system=system,

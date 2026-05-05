@@ -1,6 +1,6 @@
-# Cartha Open Bible — Revision Process
+# People's Open Bible — Revision Process
 
-This document describes how COB should move from the current AI draft phase to a more stable revised phase without losing the transparency and reproducibility that make the project valuable.
+This document describes how POB should move from the current AI draft phase to a more stable revised phase without losing the transparency and reproducibility that make the project valuable.
 
 ## Current reality
 
@@ -64,7 +64,7 @@ Goals:
 - tighten repeated theological vocabulary,
 - make sure the translation reads like one translation rather than many chapter batches.
 
-This is the point where COB should get its first serious “release-candidate” revision cycle.
+This is the point where POB should get its first serious “release-candidate” revision cycle.
 
 ## What counts as a revision?
 
@@ -77,7 +77,7 @@ A revision should be triggered by one of these:
 - phase-level harmonization work.
 
 A revision should **not** be triggered just because another English translation reads more familiarly.
-COB should preserve its own philosophy unless there is a real source-text reason to change.
+POB should preserve its own philosophy unless there is a real source-text reason to change.
 
 ## What should change during revision?
 
@@ -153,7 +153,7 @@ Avoid:
 
 ## Practical recommendation from the repo's current state
 
-Given how COB is being produced now, the most effective path is:
+Given how POB is being produced now, the most effective path is:
 
 - keep drafting in parallel chapter batches,
 - keep phase-level lint clean,

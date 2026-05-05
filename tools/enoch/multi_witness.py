@@ -143,7 +143,7 @@ def consult_sources() -> list[dict]:
     """Return Zone 2 scholarly references for Enoch.
 
     Per REFERENCE_SOURCES.md: these may be consulted during translation;
-    their text must not appear in COB output.
+    their text must not appear in POB output.
     """
     return list(CONSULT_REGISTRY)
 

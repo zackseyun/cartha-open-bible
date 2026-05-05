@@ -4,7 +4,7 @@ Yigael Yadin, *The Ben Sira Scroll from Masada* (Jerusalem: IES, 1965)
 is the editio princeps of the Masada Ben Sira scroll (Sir 39:27-44:17).
 It is copyrighted (Yadin d. 1984). Per REFERENCE_SOURCES.md, this work
 is Zone 2 (consulted-only) — translators may read it for reference,
-but its text must never appear in COB output or be committed to this
+but its text must never appear in POB output or be committed to this
 repository.
 
 A copy of this work is consulted during Sirach drafting on the

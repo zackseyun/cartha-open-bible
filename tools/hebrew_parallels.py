@@ -65,7 +65,7 @@ ESDRAS_ALIGNMENT = PARALLELS_DIR / "1esdras_mt_alignment.json"
 # ---- Zone 2 (consult-only) scholarly-reference registry --------------------
 # See REFERENCE_SOURCES.md for the policy. These sources MAY be consulted by
 # a human or AI translator as reference, but their creative expression MUST
-# NOT appear in COB output. The translator prompt builder injects these into
+# NOT appear in POB output. The translator prompt builder injects these into
 # the verse context so the model knows they exist and what to use them for;
 # it does not -- and cannot -- include their text.
 
@@ -149,7 +149,7 @@ def consult_sources(book_code: str) -> list[dict]:
     """Return Zone 2 scholarly reference list for a book.
 
     These sources may be consulted by the translator; their text must
-    NOT appear in COB output. See REFERENCE_SOURCES.md for policy.
+    NOT appear in POB output. See REFERENCE_SOURCES.md for policy.
     """
     alias_map = {
         "ESG": "ADE",

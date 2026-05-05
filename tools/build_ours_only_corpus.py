@@ -154,7 +154,7 @@ def format_health_report(per_book: list[dict]) -> str:
     missing = all_stats["missing_vs_first1k"]
 
     lines = [
-        "# Cartha Open Bible — Phase 8 corpus health (our OCR only)",
+        "# People's Open Bible — Phase 8 corpus health (our OCR only)",
         "",
         f"**Generated:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         "",

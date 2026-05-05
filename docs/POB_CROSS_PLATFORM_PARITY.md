@@ -1,10 +1,10 @@
-# Cartha Open Bible — Cross-Platform Parity Map
+# People's Open Bible — Cross-Platform Parity Map
 
-A side-by-side reference for the **Cartha Open Bible** (COB) reading experience as it exists on **mobile (Flutter)** and on the **website (Next.js)**.
+A side-by-side reference for the **People's Open Bible** (POB) reading experience as it exists on **mobile (Flutter)** and on the **website (Next.js)**.
 
 The two surfaces ship the same product. They use different code, different state libraries, different rendering primitives — but every feature on one should have a counterpart on the other. This document is the lookup table: when you add a feature to one surface, find its row, copy the change to the mirror.
 
-> **Status:** living document. Update the same change set whenever you add, rename, or remove a COB surface on either platform.
+> **Status:** living document. Update the same change set whenever you add, rename, or remove a POB surface on either platform.
 
 ---
 
@@ -13,7 +13,7 @@ The two surfaces ship the same product. They use different code, different state
 | Concern | Mobile (Flutter) | Web (Next.js) |
 |---|---|---|
 | Repo | `cartha.ai.mobile/cartha_ai_mobile` | `cartha.website` |
-| COB root | `lib/screens/bible/` | `src/app/(main)/cartha-open-bible/` |
+| POB root | `lib/screens/bible/` | `src/app/(main)/peoples-open-bible/` |
 | Reader entry | `bible_reader_screen.dart` | `BibleReader.jsx` (page = `page.js`) |
 | Chapter URL | (in-app navigation, no URL) | `?view=read&book=…&chapter=…` (URL-synced via `useSearchParams`) |
 | Translation source | `assets/bibles/*.json` (bundled) + `cob_runtime_sync.dart` (delta sync) | `bibleApi.js` (CDN-fetched) + `bibleData.js` (canon definitions) |
@@ -55,7 +55,7 @@ Each row is a single user-facing surface. If you add or rename one, update both 
 | Cross-check (chapter-vs-chapter) | (not shipped on mobile) | `cross-check/page.js` |
 | Reading progress | (in `bible_library_store.dart`) | `progress/page.js` |
 | Revisions browser | (links out) | `revisions/page.js` |
-| About COB | (in app menu) | `about/page.js` |
+| About POB | (in app menu) | `about/page.js` |
 | Methodology / docs | (links out to website) | `docs/[slug]/` |
 
 **Rule of thumb:** if a row has only one cell filled, the next product cycle should fill the other or explicitly mark the gap.
@@ -66,8 +66,8 @@ Each row is a single user-facing surface. If you add or rename one, update both 
 
 | Concern | Mobile | Web |
 |---|---|---|
-| Reactive state | `setState` + `ChangeNotifier` (Flutter built-ins; no Riverpod for the COB tree) | `useState` + `useMemo` (React) |
-| Persistent local state | `SharedPreferences` (e.g., `mixpanel_device_id`, recent translation) | `localStorage` (e.g., `cob-oauth-pending`, `cartha_mixpanel_user_id`, theme override) |
+| Reactive state | `setState` + `ChangeNotifier` (Flutter built-ins; no Riverpod for the POB tree) | `useState` + `useMemo` (React) |
+| Persistent local state | `SharedPreferences` (e.g., `mixpanel_device_id`, recent translation) | `localStorage` (e.g., `pob-oauth-pending`, `cartha_mixpanel_user_id`, theme override) |
 | Per-user library | `bible_library_store.dart` (in-memory + REST sync) | `useLibraryStore.js` (in-memory + REST sync) |
 | Tool-thread cache | `bible_tool_threads_store.dart` | analogous web store; key shape is `${tool.id}__${book}__${chapter}__…` on both |
 | Auth token | `Preferences().getToken()` (Cognito JWT today, SuperTokens after migration) | Amplify session cookie + bearer pulled from session |
@@ -115,7 +115,7 @@ This is the single source of truth that the moderation dashboard's `/_admin/metr
 | `cob_note_saved` | A note is saved | `book`, `chapter`, `verse` | `length` |
 | `cob_bookmark_toggled` | A bookmark is added or removed | `book`, `chapter`, `verse_count`, `action` (`added`/`removed`) | |
 | `cob_related_passage_open` | User taps a related/cross-referenced passage | `from_book`, `from_chapter`, `from_verse`, `to_book`, `to_chapter`, `to_verse` | `surface` (`detail_sheet`/`connections`/`tool_output`) |
-| `cob_auth_gate` | Sign-in is required to use a gated COB feature | `gate` (`tool`/`bookmark`/`note`/`library`), `tool` (when `gate=tool`) | |
+| `cob_auth_gate` | Sign-in is required to use a gated POB feature | `gate` (`tool`/`bookmark`/`note`/`library`), `tool` (when `gate=tool`) | |
 | `cob_auth_success` | Sign-in completes and the gated action proceeds | `gate`, `method` (`apple`/`google`/`email`) | |
 | `cob_search_executed` | Reader runs a search | `query_length` | `result_count` |
 | `cob_concept_atlas_open` | Concept atlas surface opens | | `from`, `concept` |
@@ -180,7 +180,7 @@ The `trackScreen('bible_reader_chapter_view', …)` call also emits `cob_reader_
 | Web helper/store files | `camelCase.js` (e.g., `useLibraryStore.js`) |
 | Mixpanel event names | `cob_*` snake_case, lower-case, **passed verbatim** to Mixpanel (no title-casing) |
 | Property keys | `snake_case` |
-| Translation IDs | shortName matches across surfaces (`BSB`, `COB`, `KJV`, `ASV`) |
+| Translation IDs | shortName matches across surfaces (`BSB`, `POB`, `KJV`, `ASV`) |
 | Verse identifiers | canonical form `book/chapter:verse` (function: mobile `canonicalVerseId`, web `canonicalVerseId`) |
 | Tool ids | `simplify`, `cross_reference`, `original`, `summarize`, `chapter_chat`, `recontextualize_bible` |
 
@@ -188,7 +188,7 @@ The `trackScreen('bible_reader_chapter_view', …)` call also emits `cob_reader_
 
 ## 7. Adding a new feature — checklist
 
-When adding a new COB feature, walk this checklist:
+When adding a new POB feature, walk this checklist:
 
 1. **Pick the surface.** Find the equivalent row in §2. If your new surface has no row, add one.
 2. **Mirror the file paths.** If you create `something_sheet.dart`, also create `SomethingSheet.jsx` (and vice versa).
@@ -206,7 +206,7 @@ When adding a new COB feature, walk this checklist:
 - `overview` totals
 - `by_platform` totals (per-card split: web vs ios vs android)
 - `time_series` (daily rollup)
-- `funnels.{website,download,cob}`
+- `funnels.{website,download,pob}`
 - `top_pages`, `top_clicks`, `cob_actions`, `cob_tools`, `cob_translations`, `cob_surfaces`
 - `website_platforms`, `device_types`
 

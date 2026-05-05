@@ -7,18 +7,18 @@
 #   TARGET=100 scripts/supervise_gemini_workers.sh
 #
 # Stop:
-#   touch /tmp/cob-gemini-stop
+#   touch /tmp/pob-gemini-stop
 #   (or: pkill -f supervise_gemini_workers)
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET="${TARGET:-60}"
-STOP_FLAG="/tmp/cob-gemini-stop"
-LOG_DIR="/tmp/cob-gemini-review"
+STOP_FLAG="/tmp/pob-gemini-stop"
+LOG_DIR="/tmp/pob-gemini-review"
 KEY_PATH="${GOOGLE_APPLICATION_CREDENTIALS:-$HOME/.config/cartha/gemini-vertex-sa.json}"
 GEMINI_SECRET_ID="${GEMINI_SECRET_ID:-/cartha/openclaw/gemini_api_key}"
 VERTEX_SECRET_IDS="${VERTEX_SECRET_IDS:-}"
-VERTEX_SECRET_DIR="${VERTEX_SECRET_DIR:-/tmp/cob-gemini-vertex-creds}"
+VERTEX_SECRET_DIR="${VERTEX_SECRET_DIR:-/tmp/pob-gemini-vertex-creds}"
 CHECK_INTERVAL_SECONDS=30
 MAX_SPAWN_PER_CYCLE="${MAX_SPAWN_PER_CYCLE:-10}"
 SPAWN_STAGGER_SECONDS="${SPAWN_STAGGER_SECONDS:-3}"

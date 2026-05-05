@@ -1,6 +1,6 @@
 # Translation
 
-This directory contains the per-verse YAML files for the Cartha Open Bible.
+This directory contains the per-verse YAML files for the People's Open Bible.
 
 ## Layout
 

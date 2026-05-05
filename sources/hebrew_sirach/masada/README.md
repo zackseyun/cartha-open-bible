@@ -25,7 +25,7 @@ later, the Sirach 39:27–43:30 source layer will be upgraded
 transparently, with every per-verse YAML updated in place and
 attributed to its new primary source.
 
-Until then, the front-matter of Sirach in COB flags this passage as
+Until then, the front-matter of Sirach in POB flags this passage as
 "primary source: Greek (Swete LXX); pre-medieval Hebrew witness
 exists but is not in our current source pipeline" so readers are
 not misled about what text underlies the translation.
@@ -57,7 +57,7 @@ policy, we treat Yadin as **consulted reference only**:
   word; our output must be our own fresh rendering.
 - Where Masada and Cairo Genizah MS B disagree on a reading,
   Masada typically wins on textual-critical grounds (1st c. BC vs.
-  10th c. AD). Such divergences are noted in COB footnotes at
+  10th c. AD). Such divergences are noted in POB footnotes at
   fact level — *"Masada scroll reads X where MS B reads Y"* — which
   is uncopyrightable fact citation under *Feist v. Rural* (1991),
   not reproduction of Yadin's creative apparatus.

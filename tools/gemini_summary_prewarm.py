@@ -1171,7 +1171,7 @@ def compute_expected_keys(chapters: list[dict], include_books: bool) -> list[tup
     for ch in chapters:
         for tool in TOOLS:
             k = summary_key(
-                "COB", "unspecified", SCOPE_CHAPTER, ch["book_label"], ch["chapter"],
+                "POB", "unspecified", SCOPE_CHAPTER, ch["book_label"], ch["chapter"],
                 tool, PROMPT_VERSION, PRIMARY_MODEL_VERSION,
             )
             expected.append((k, SCOPE_CHAPTER, ch["book_label"], ch["chapter"], tool))
@@ -1180,7 +1180,7 @@ def compute_expected_keys(chapters: list[dict], include_books: bool) -> list[tup
         for book in books:
             for tool in TOOLS:
                 k = summary_key(
-                    "COB", "unspecified", SCOPE_BOOK, book, 0,
+                    "POB", "unspecified", SCOPE_BOOK, book, 0,
                     tool, PROMPT_VERSION, PRIMARY_MODEL_VERSION,
                 )
                 expected.append((k, SCOPE_BOOK, book, 0, tool))
@@ -1190,7 +1190,7 @@ def compute_expected_keys(chapters: list[dict], include_books: bool) -> list[tup
 def fetch_existing_chapter_output(ddb, table: str, book: str, chapter: int, tool: str) -> str | None:
     """For book-level generation — look up chapter summary under either key."""
     for mv in (PRIMARY_MODEL_VERSION, GEMINI_MODEL_VERSION):
-        k = summary_key("COB", "unspecified", SCOPE_CHAPTER, book, chapter, tool, PROMPT_VERSION, mv)
+        k = summary_key("POB", "unspecified", SCOPE_CHAPTER, book, chapter, tool, PROMPT_VERSION, mv)
         resp = ddb.get_item(TableName=table, Key={"summary_key": {"S": k}},
                             ProjectionExpression="#o", ExpressionAttributeNames={"#o": "output"})
         if "Item" in resp:
@@ -1226,14 +1226,14 @@ def generate_chapter(ddb, table: str, api_key_or_keys, chapter_data: dict, tool:
     chap = chapter_data["chapter"]
     verses = chapter_data["verses"]
     sys_prompt = summary_system_prompt(tool, SCOPE_CHAPTER, book)
-    user_prompt = format_chapter_passage("COB", book, chap, verses)
+    user_prompt = format_chapter_passage("POB", book, chap, verses)
     text = _generate_via_backend(api_key_or_keys, sys_prompt, user_prompt, max_tokens=2048)
     mv = _backend_model_version(api_key_or_keys)
-    key = summary_key("COB", "unspecified", SCOPE_CHAPTER, book, chap, tool,
+    key = summary_key("POB", "unspecified", SCOPE_CHAPTER, book, chap, tool,
                       PROMPT_VERSION, mv)
     entry = {
         "summary_key": key,
-        "translation": "COB",
+        "translation": "POB",
         "translation_version": "unspecified",
         "scope": SCOPE_CHAPTER,
         "book": normalize_token(book),
@@ -1261,17 +1261,17 @@ def generate_book(ddb, table: str, api_key_or_keys, chapters_of_book: list[dict]
             raise RuntimeError(f"missing chapter summary {book} {ch['chapter']} ({tool}) — chapter must be filled first")
         chapter_summaries.append((ch["chapter"], out))
     sys_prompt = summary_system_prompt(tool, SCOPE_BOOK, book)
-    user_prompt = format_book_passage("COB", book, chapter_summaries)
+    user_prompt = format_book_passage("POB", book, chapter_summaries)
     text = _generate_via_backend(api_key_or_keys, sys_prompt, user_prompt, max_tokens=2560)
     mv = _backend_model_version(api_key_or_keys)
-    key = summary_key("COB", "unspecified", SCOPE_BOOK, book, 0, tool,
+    key = summary_key("POB", "unspecified", SCOPE_BOOK, book, 0, tool,
                       PROMPT_VERSION, mv)
     # source_hash for book scope: hash of the concatenated chapter summaries
     joined = "\n".join(s for _, s in chapter_summaries)
     source_hash = hashlib.sha256(joined.encode("utf-8")).hexdigest()
     entry = {
         "summary_key": key,
-        "translation": "COB",
+        "translation": "POB",
         "translation_version": "unspecified",
         "scope": SCOPE_BOOK,
         "book": normalize_token(book),
@@ -1399,7 +1399,7 @@ def main() -> int:
     args = ap.parse_args()
 
     table = f"BibleSummaryCache-{args.stage}"
-    chapters = load_chapters("COB")
+    chapters = load_chapters("POB")
     print(f"loaded {len(chapters)} chapters across {len(set(c['book_label'] for c in chapters))} books")
 
     if args.book:

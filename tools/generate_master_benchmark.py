@@ -109,7 +109,7 @@ def format_md(data):
     high_pct = conf_tot["high"] / max(1, total_conf) * 100
 
     lines = [
-        "# Cartha Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health",
+        "# People's Open Bible — Phase 8 (LXX Deuterocanon) Corpus Health",
         "",
         f"**Generated:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         "",

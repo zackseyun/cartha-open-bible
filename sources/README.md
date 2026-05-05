@@ -1,6 +1,6 @@
 # Source Texts
 
-All source texts the Cartha Open Bible translates from are vendored in
+All source texts the People's Open Bible translates from are vendored in
 this directory with their original licenses preserved. The repo's
 output (the English translation in `translation/`) is CC-BY 4.0 — but
 the upstream sources beneath it carry their own licenses and are
@@ -117,7 +117,7 @@ input.
   was OCR'd in-house, and covers every deuterocanonical book we need.
   See `lxx/swete/README.md` for the full rationale.
 - **Our work:** OCR + cleaned UTF-8 transcription is our own,
-  released as part of the COB output corpus under CC-BY 4.0.
+  released as part of the POB output corpus under CC-BY 4.0.
 
 ### Rahlfs LXX (1935) — not vendored
 - **Directory:** `lxx/rahlfs/`
@@ -130,7 +130,7 @@ input.
 ### Psalms of Solomon — dedicated track
 - **Directory:** `lxx/psalms_of_solomon/`
 - **Source:** within the Swete vol. III corpus (pp. 765–787 area).
-- **Status:** PD. Drafted as its own extra-canonical book in COB.
+- **Status:** PD. Drafted as its own extra-canonical book in POB.
 
 ### Psalm 151
 - **Directory:** `lxx/psalm_151/`
@@ -174,7 +174,7 @@ input.
   extra B). License terms vary per item; only items with
   research+redistribution-safe terms are processed here.
 - **Output:** fresh AI-vision Hebrew transcription, released under
-  CC-BY 4.0 as part of COB output.
+  CC-BY 4.0 as part of POB output.
 
 ### Masada Ben Sira scroll
 - **Directory:** `hebrew_sirach/masada/`
@@ -298,7 +298,7 @@ rehydration) and `scans/` (gitignored).
 
 ## How sources are used
 
-The Cartha Open Bible translates from the **most-original extant text**
+The People's Open Bible translates from the **most-original extant text**
 for each book, not uniformly from one edition. The current per-book
 mapping:
 
@@ -332,7 +332,7 @@ scope docs at the repo root (`ENOCH.md`, `JUBILEES.md`, `2BARUCH.md`,
 
 ## License scope — important note
 
-The Cartha Open Bible's output (the English translation in
+The People's Open Bible's output (the English translation in
 `translation/`) is released under **CC-BY 4.0** (see root `LICENSE`).
 
 **Source texts vendored in this directory retain their own licenses
@@ -345,18 +345,18 @@ from this directory must comply with the individual source's license:
 | SBLGNT morphology | CC-BY-SA 3.0 | Share-alike on derivatives |
 | WLC (via OSHB) | CC-BY 4.0 | Attribution |
 | UHB | CC-BY-SA 4.0 | Attribution + share-alike + trademark restrictions |
-| Swete LXX (raw scans + our OCR) | Public Domain (scans); CC-BY 4.0 (our OCR/transcription) | Attribution to COB for the OCR layer |
+| Swete LXX (raw scans + our OCR) | Public Domain (scans); CC-BY 4.0 (our OCR/transcription) | Attribution to POB for the OCR layer |
 | Schechter & Taylor 1899 | Public Domain | None |
 | Charles 1895 / 1902 / 1906 / 1908 / 1913, Dillmann 1851, Bouriant 1892, Flemming 1901, Lightfoot 1889/1891, Funk 1901, Hitchcock & Brown 1884, Schaff 1885, Sinker 1879, Ceriani 1871, Kmosko 1907, Violet 1910/1924, Bensly 1875, Schodde 1882, Rönsch 1874 | Public Domain (pre-1929 / author d. before 1954) | None |
 | Sefaria Ben Sira | CC0 | None |
 | Coptic Scriptorium TEI (Nag Hammadi) | CC-BY 4.0 | Attribution (Dilley 2025 + Coptic Scriptorium) |
 
-The Cartha Open Bible's English output is a new creative work,
+The People's Open Bible's English output is a new creative work,
 licensed independently (CC-BY 4.0). The share-alike clauses on the
 SBLGNT morphology and the UHB do **not** propagate to our translation
 output, which is not a share-alike derivative of those works.
 
-If you build on the Cartha Open Bible *and* incorporate any of the
+If you build on the People's Open Bible *and* incorporate any of the
 vendored source data, you must comply with the source license for that
 data separately.
 

@@ -8,9 +8,9 @@ baseline review JSON files, and emits a side-by-side Markdown report.
 
 Usage:
   python3 tools/phase10_generate_comparison.py \
-      --pilot /tmp/cob-pilot/sirach_24 \
+      --pilot /tmp/pob-pilot/sirach_24 \
       --baseline v31 \
-      --out /tmp/cob-pilot/sirach_24_comparison.md
+      --out /tmp/pob-pilot/sirach_24_comparison.md
 """
 from __future__ import annotations
 

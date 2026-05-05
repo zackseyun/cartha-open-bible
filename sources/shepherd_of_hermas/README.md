@@ -1,6 +1,6 @@
 # Shepherd of Hermas source materials
 
-Public-domain source editions for the Cartha Open Bible's Greek
+Public-domain source editions for the People's Open Bible's Greek
 extra-canonical pipeline for the **Shepherd of Hermas**.
 
 Shared scope doc: [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL.md)
@@ -8,7 +8,7 @@ Shared scope doc: [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL
 ## Textual situation
 
 The Shepherd of Hermas survives primarily in **Greek**, with important
-secondary witness traditions in Latin and Ethiopic. For the first COB
+secondary witness traditions in Latin and Ethiopic. For the first POB
 pass, the translation anchor is Greek.
 
 ## Local layout

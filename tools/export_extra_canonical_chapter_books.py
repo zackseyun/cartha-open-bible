@@ -79,7 +79,7 @@ def build_payload(slugs: list[str]) -> dict[str, Any]:
         if loaded is not None:
             books.append(loaded)
     return {
-        "translation": "COB: Cartha Open Bible (Preview)",
+        "translation": "POB: People's Open Bible (Preview)",
         "collection": "extra_canonical",
         "books": books,
     }

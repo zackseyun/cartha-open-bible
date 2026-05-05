@@ -2,7 +2,7 @@
 
 This directory holds fresh AI-vision transcriptions of Cairo Genizah
 Ben Sira manuscripts from public-domain photographs, for use as
-source material in the Cartha Open Bible.
+source material in the People's Open Bible.
 
 **Our transcription is freshly produced from photographs; our work is
 actively informed by the full scholarly literature.** Beentjes 1997,

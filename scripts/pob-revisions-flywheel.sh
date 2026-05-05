@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# cob-revisions-flywheel.sh
+# pob-revisions-flywheel.sh
 #
-# Local flywheel that keeps the Cartha Open Bible public revisions
+# Local flywheel that keeps the People's Open Bible public revisions
 # index honest. Walks both the YAML revision history (verses where an
 # applied edit was committed) AND the local state/reviews/ tree (every
 # verse-level review pass that ran, including "agree" verdicts where
@@ -16,10 +16,10 @@
 # us bloating the repo with the raw review payloads.
 #
 # Companion launchd plist:
-#   ~/Library/LaunchAgents/com.cartha.cob-revisions-flywheel.plist
+#   ~/Library/LaunchAgents/com.cartha.pob-revisions-flywheel.plist
 #
-# Manual one-shot:  bash ~/scripts/cob-revisions-flywheel.sh
-# Tail logs:        tail -f /tmp/cob-revisions-flywheel-stdout.log
+# Manual one-shot:  bash ~/scripts/pob-revisions-flywheel.sh
+# Tail logs:        tail -f /tmp/pob-revisions-flywheel-stdout.log
 
 set -u
 

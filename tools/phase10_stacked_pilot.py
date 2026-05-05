@@ -13,14 +13,14 @@ better revisions than the current baseline review passes:
      context, then returns a retain/modify/reject verdict plus rationale.
 
 Outputs are written ONLY under the requested pilot directory (for
-example `/tmp/cob-pilot/sirach_24/`). This script never writes back to
+example `/tmp/pob-pilot/sirach_24/`). This script never writes back to
 translation YAML files.
 
 Usage:
   python3 tools/phase10_stacked_pilot.py --book sirach --chapter 24 \
-      --out /tmp/cob-pilot/sirach_24
+      --out /tmp/pob-pilot/sirach_24
   python3 tools/phase10_stacked_pilot.py --book prayer_of_manasseh \
-      --chapter 1 --out /tmp/cob-pilot/prayer_of_manasseh
+      --chapter 1 --out /tmp/pob-pilot/prayer_of_manasseh
 """
 from __future__ import annotations
 
@@ -359,7 +359,7 @@ def load_chapter_records(
 
 def build_blind_system_prompt(*, book_slug: str, book_context: str) -> str:
     parts: list[str] = [
-        "You are producing a fresh English translation of a single ancient Greek verse for the Cartha Open Bible project.",
+        "You are producing a fresh English translation of a single ancient Greek verse for the People's Open Bible project.",
         "CRITICAL: you have NOT seen the existing Cartha English draft for this verse. Do not assume it, imitate it, or compare against familiar published Bible wording.",
         "Translate from the source text alone.",
         "",

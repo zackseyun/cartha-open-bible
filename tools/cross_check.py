@@ -3,7 +3,7 @@
 cross_check.py — Run a verse draft through Claude, GPT, and Gemini in
 parallel, compute agreement scores, and surface divergences.
 
-Pipeline stage 3 of the Cartha Open Bible methodology. Takes a verse
+Pipeline stage 3 of the People's Open Bible methodology. Takes a verse
 YAML produced by draft.py and augments it with cross-check results.
 
 Usage:

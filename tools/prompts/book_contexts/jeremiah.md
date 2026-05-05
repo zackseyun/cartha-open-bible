@@ -13,7 +13,7 @@
 4. **The "new covenant" oracle** (31:31–34): "I will make a new covenant with the house of Israel… I will put my law within them." The term בְּרִית חֲדָשָׁה (new covenant) is used here for the only time in the OT. Render exactly; do not paraphrase.
 5. **"To pluck up and to tear down… to build and to plant"** (1:10): The programmatic formula for Jeremiah's calling. Keep this exact formula wherever it recurs.
 6. **פֶּשַׁע / חַטָּאת / עָוֹן** ("transgression / sin / iniquity"): Jeremiah uses all three. Distinguish: עָוֹן = "iniquity" (with connotation of guilt/consequences), פֶּשַׁע = "transgression" (willful breach), חַטָּאת = "sin" (error/offense). Keep them distinct where possible.
-7. **The Septuagint divergence**: The MT and LXX Jeremiah differ substantially. The COB follows the MT (WLC). Do not harmonize with the LXX; translate the MT text consistently.
+7. **The Septuagint divergence**: The MT and LXX Jeremiah differ substantially. The POB follows the MT (WLC). Do not harmonize with the LXX; translate the MT text consistently.
 
 ## Style / register
 

@@ -1,4 +1,4 @@
-# Cartha Open Bible — Queue Workflow
+# People's Open Bible — Queue Workflow
 
 This workflow turns the Bible drafting run into a real chapter queue instead of an ad-hoc collection of shell sessions.
 

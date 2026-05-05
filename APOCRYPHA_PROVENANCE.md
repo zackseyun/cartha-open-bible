@@ -11,7 +11,7 @@ scholarship without taking anything on trust.
 
 ## Principle
 
-Every deuterocanonical verse in the Cartha Open Bible carries three
+Every deuterocanonical verse in the People's Open Bible carries three
 things on its per-verse YAML:
 
 1. **A Greek source text** (the `source.text` field) with a named
@@ -205,7 +205,7 @@ English drafts are produced by `tools/draft.py` with GPT-5.4 (Azure
 OpenAI, deployment `gpt-5-4-deployment`). For each verse the drafter:
 
 1. Reads the adjudicated Greek source and verse number.
-2. Loads the relevant COB doctrinal and translation-philosophy
+2. Loads the relevant POB doctrinal and translation-philosophy
    excerpts (DOCTRINE.md, PHILOSOPHY.md).
 3. Loads any per-book apparatus or witness parallels (e.g., Hebrew
    parallels for Sirach / Tobit / 1 Esdras from
@@ -222,7 +222,7 @@ a specific source edition + adjudicator verdict + drafter invocation.**
 
 ## What a reader can check, per verse
 
-Take any deuterocanonical verse page on `cartha.com/cartha-open-bible`
+Take any deuterocanonical verse page on `cartha.com/peoples-open-bible`
 and click through to its provenance. You will see:
 
 - The Greek source text (`source.text`)
@@ -287,7 +287,7 @@ translation always has.
 
 ## Summary
 
-The Apocrypha section of the Cartha Open Bible is:
+The Apocrypha section of the People's Open Bible is:
 
 - **Translated from original Greek** (not retranslated from other
   English translations).

@@ -1,6 +1,6 @@
 # Testaments of the Twelve Patriarchs source materials
 
-Public-domain source editions for the Cartha Open Bible's Greek
+Public-domain source editions for the People's Open Bible's Greek
 extra-canonical pipeline for the **Testaments of the Twelve Patriarchs**.
 
 Shared scope doc: [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL.md)
@@ -8,7 +8,7 @@ Shared scope doc: [`../../GREEK_EXTRA_CANONICAL.md`](../../GREEK_EXTRA_CANONICAL
 ## Textual situation
 
 The Testaments survive primarily in **Greek**, with important secondary
-versions in Armenian, Slavonic, and other traditions. For the first COB
+versions in Armenian, Slavonic, and other traditions. For the first POB
 pass, the goal is a Greek-primary workflow.
 
 ## Current source state

@@ -90,7 +90,7 @@ TOOL_REASON_VALUES = {
     "cross_reference",
 }
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE VERSE OF 1 ENOCH. Your job is to produce the highest-quality verse draft you can from the witness payload provided, while exposing the major lexical and theological decisions so the result stays fully auditable.
 
@@ -574,7 +574,7 @@ def call_openrouter(
         base_url=OPENROUTER_BASE_URL,
         extra_headers={
             "HTTP-Referer": "https://cartha.com",
-            "X-Title": "Cartha Open Bible Translation",
+            "X-Title": "People's Open Bible Translation",
         },
         tools=[openrouter_submit_tool()],
         system=system,

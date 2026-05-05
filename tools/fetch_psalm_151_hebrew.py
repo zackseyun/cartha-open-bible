@@ -7,7 +7,7 @@ it to the drafter's local reference workspace:
   ~/cartha-reference-local/psalm151_hebrew/psalm151_kahana_1937.json
 
 This output is deliberately outside the repo because the Hebrew source is
-treated as consult-only in the current COB policy.
+treated as consult-only in the current POB policy.
 """
 from __future__ import annotations
 

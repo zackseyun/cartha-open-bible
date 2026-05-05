@@ -5,7 +5,7 @@ The publicly viewable Leon Levy / IAA images are valuable for scholarly
 consultation, but their website terms do not permit us to vendor the
 images or a direct derivative transcription into this repository.
 
-To keep COB's repo clean while still allowing a drafter to consult the
+To keep POB's repo clean while still allowing a drafter to consult the
 Hebrew counterpart, this module reads a **local-only** structured cache
 outside the repo at:
 
@@ -15,7 +15,7 @@ That local file is populated by `tools/fetch_psalm_151_hebrew.py`, which
 pulls the 10-verse Hebrew Psalm 151 text from Sefaria's public API
 (Avraham Kahana 1937 version) for personal scholarly consultation.
 
-The Greek LXX Psalm 151 in COB remains the operative Zone 1 source. This
+The Greek LXX Psalm 151 in POB remains the operative Zone 1 source. This
 module only provides Zone 2 consult material that can be surfaced in the
 translation prompt.
 """
@@ -30,7 +30,7 @@ LOCAL_ROOT = pathlib.Path.home() / "cartha-reference-local" / "psalm151_hebrew"
 LOCAL_JSON = LOCAL_ROOT / "psalm151_kahana_1937.json"
 
 # Greek Psalm 151 (7 verses) is a shorter composition than the 10-verse
-# Hebrew form surfaced by Sefaria. This map aligns each COB Greek verse to
+# Hebrew form surfaced by Sefaria. This map aligns each POB Greek verse to
 # the Hebrew verse(s) that most closely correspond.
 GREEK_TO_HEBREW_MAP: dict[int, list[int]] = {
     1: [2, 3],
@@ -87,7 +87,7 @@ def lookup(greek_verse: int) -> Optional[dict]:
         ),
         "guidance": (
             "Use the Hebrew only as a consult witness for idiom and expansion/contraction awareness. "
-            "The operative COB source remains the Greek Psalm 151 text from Swete."
+            "The operative POB source remains the Greek Psalm 151 text from Swete."
         ),
         "policy": (
             "Zone 2 consult only; local reference data must stay outside the repo. "

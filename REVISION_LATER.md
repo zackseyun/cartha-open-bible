@@ -1,6 +1,6 @@
 # Revision-later — deferred-source integration policy
 
-This document defines how the Cartha Open Bible integrates new
+This document defines how the People's Open Bible integrates new
 sources that become available AFTER a book has been drafted and
 published. It is the operational companion to
 [REVISION_METHODOLOGY.md](REVISION_METHODOLOGY.md) (what counts as
@@ -162,7 +162,7 @@ pass adds one more step specific to deferred-source integration:
    `revise: integrate <trigger_name> for <book> <verse_range>`.
    Commit body explains the specific textual delta.
 6. **Regenerate status.json and republish.** One-shot via
-   `scripts/sync_cob.sh`.
+   `scripts/sync_pob.sh`.
 
 ## What this does NOT cover
 
@@ -179,7 +179,7 @@ pass adds one more step specific to deferred-source integration:
 
 ## Commitment to readers
 
-Every COB verse is traceable back to the Zone 1 sources that produced
+Every POB verse is traceable back to the Zone 1 sources that produced
 it. When a new Zone 1 source becomes available and demonstrably
 improves a verse, we say so — in the commit message, in the
 per-verse YAML's revision history, and in the reader-facing

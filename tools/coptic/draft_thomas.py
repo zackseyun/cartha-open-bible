@@ -67,7 +67,7 @@ FOOTNOTE_REASONS = {
     "lacuna_or_restoration",
 }
 
-SYSTEM_PROMPT = """You are a translator producing a draft English translation for the Cartha Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
+SYSTEM_PROMPT = """You are a translator producing a draft English translation for the People's Open Bible — a transparent, CC-BY 4.0 English Bible and broader-canon project translated directly from original-language sources with auditable reasoning.
 
 You are drafting ONE GOSPEL-OF-THOMAS SAYING directly from the Coptic. The Coptic source is the Paul Dilley 2025 edition (CopticScriptorium, CC-BY 4.0). When a POxy Greek fragment overlaps the saying, use it as a cross-witness — record divergences rather than silently reconciling them.
 

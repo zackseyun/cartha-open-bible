@@ -35,7 +35,7 @@ class ThomasPromptBundle:
 
 def _doctrinal_excerpts() -> str:
     """Short extracts from DOCTRINE.md + PHILOSOPHY.md that guide any
-    Cartha Open Bible drafter. Keep brief to save tokens."""
+    People's Open Bible drafter. Keep brief to save tokens."""
     extracts = []
     if DOCTRINE_PATH.exists():
         text = DOCTRINE_PATH.read_text(encoding="utf-8")

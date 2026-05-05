@@ -111,7 +111,7 @@ def _vertex_call(prompt: str) -> dict:
 
 def _build_prompt(entry: dict, current_yaml: dict) -> str:
     book_display = entry["slug"].replace("_", " ").title()
-    return f"""You are re-drafting one verse for the Cartha Open Bible because the previous draft contained a verse-boundary chunking error.
+    return f"""You are re-drafting one verse for the People's Open Bible because the previous draft contained a verse-boundary chunking error.
 
 REFERENCE: {book_display} {entry["ch"]}:{entry["v"]}
 SOURCE LANGUAGE: {entry["lang"]}

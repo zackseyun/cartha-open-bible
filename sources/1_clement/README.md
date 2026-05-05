@@ -1,6 +1,6 @@
 # 1 Clement source materials
 
-Public-domain source editions for the Cartha Open Bible's Greek
+Public-domain source editions for the People's Open Bible's Greek
 extra-canonical pipeline for **1 Clement**.
 
 Scope docs:
@@ -12,7 +12,7 @@ Scope docs:
 ## Textual situation
 
 1 Clement survives in Greek and is one of the most important early
-Christian writings outside the New Testament. For COB's source setup,
+Christian writings outside the New Testament. For POB's source setup,
 public-domain Greek printed editions are enough to establish the OCR /
 transcription layer.
 

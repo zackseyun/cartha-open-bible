@@ -1,4 +1,4 @@
-# Cartha Open Bible — Phase 8 corpus health (our OCR only)
+# People's Open Bible — Phase 8 corpus health (our OCR only)
 
 **Generated:** 2026-04-21 13:43 UTC
 
