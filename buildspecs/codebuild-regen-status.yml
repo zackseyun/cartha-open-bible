@@ -1,0 +1,50 @@
+version: 0.2
+
+env:
+  shell: bash
+  secrets-manager:
+    GITHUB_DEPLOY_KEY: "cartha-open-bible/codebuild-status-deploy-key:privateKey"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - set -euo pipefail
+      - python3 --version
+      - git --version
+      - mkdir -p ~/.ssh
+      - printf '%s\n' "$GITHUB_DEPLOY_KEY" > ~/.ssh/id_ed25519
+      - chmod 600 ~/.ssh/id_ed25519
+      - ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - git config --global --add safe.directory "$CODEBUILD_SRC_DIR"
+  pre_build:
+    commands:
+      - set -euo pipefail
+      - export HEAD_MESSAGE="$(git log -1 --pretty=%B || true)"
+      - |
+        if [[ "$HEAD_MESSAGE" == *"[skip ci]"* ]]; then
+          echo "Skipping status regeneration because commit message contains [skip ci]."
+          exit 0
+        fi
+      - git remote set-url origin git@github.com:zackseyun/cartha-open-bible.git
+      - git fetch origin main --tags --force
+      - git checkout -B main origin/main
+  build:
+    commands:
+      - set -euo pipefail
+      - python3 tools/build_status.py
+      - |
+        if git diff --quiet status.json; then
+          echo "status.json unchanged — nothing to commit."
+          exit 0
+        fi
+      - git config user.name 'codebuild-cartha-open-bible[bot]'
+      - git config user.email 'codebuild-cartha-open-bible@users.noreply.github.com'
+      - git add status.json
+      - git commit -m 'status: regenerate snapshot [skip ci]'
+      - git push origin HEAD:main
+  post_build:
+    commands:
+      - rm -f ~/.ssh/id_ed25519
+      - echo "status.json regeneration CodeBuild finished at $(date -u +%Y-%m-%dT%H:%M:%SZ)"

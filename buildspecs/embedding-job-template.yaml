@@ -1,0 +1,97 @@
+# Kubernetes Job template rendered by buildspecs/codebuild-regen-embeddings.yml.
+# Runs ingest_scripture.py in-cluster so it can talk to FalkorDB Sentinel directly.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ${JOB_NAME}
+  namespace: alpha
+  labels:
+    app: scripture-embedding-ingest
+    commit: "${COMMIT_SHA}"
+spec:
+  backoffLimit: 1
+  activeDeadlineSeconds: 3600
+  ttlSecondsAfterFinished: 86400
+  template:
+    metadata:
+      labels:
+        app: scripture-embedding-ingest
+        commit: "${COMMIT_SHA}"
+    spec:
+      restartPolicy: Never
+      initContainers:
+        - name: git-clone
+          image: alpine/git:latest
+          command:
+            - sh
+            - -c
+            - |
+              set -euo pipefail
+              git clone --depth 1 --no-tags https://github.com/zackseyun/cartha-open-bible.git /src
+              cd /src
+              git fetch --depth 1 origin "${COMMIT_SHA}"
+              git checkout --detach "${COMMIT_SHA}"
+              echo "checked out: $(git rev-parse HEAD)"
+          volumeMounts:
+            - name: src
+              mountPath: /src
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
+      containers:
+        - name: ingest
+          image: 320447260467.dkr.ecr.us-west-2.amazonaws.com/cartha-graphiti:latest
+          imagePullPolicy: Always
+          workingDir: /app
+          command: ["sh", "-c"]
+          args:
+            - |
+              set -euo pipefail
+              T_ARGS=$(echo "${TESTAMENT_ARGS_B64}" | base64 -d)
+              echo "testament flags: $T_ARGS"
+              exec python -u scripts/ingest_scripture.py \
+                --translation-repo /src \
+                --workers "${WORKERS}" \
+                $T_ARGS
+          env:
+            - name: FALKORDB_SENTINEL_HOSTS
+              value: "falkordb-sentinel.alpha.svc.cluster.local:26379"
+            - name: FALKORDB_SENTINEL_MASTER
+              value: "cartha-graph"
+            - name: FALKORDB_PASSWORD
+              value: ""
+            - name: FALKORDB_DATABASE
+              value: "cartha"
+            - name: FALKORDB_SCRIPTURE_DATABASE
+              value: "cartha-scripture"
+            - name: EMBEDDING_DIM
+              value: "3072"
+            - name: GEMINI_EMBEDDING_MODEL
+              value: "gemini-embedding-2-preview"
+            - name: GEMINI_EMBEDDING_SECRET_IDS
+              value: "/cartha/openclaw/gemini_api_key,/cartha/openclaw/gemini_api_key_2"
+            - name: GEMINI_EMBEDDING_VERTEX_LOCATION
+              value: ""
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: LOG_LEVEL
+              value: "INFO"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "2Gi"
+            limits:
+              cpu: "2000m"
+              memory: "6Gi"
+          volumeMounts:
+            - name: src
+              mountPath: /src
+              readOnly: true
+      volumes:
+        - name: src
+          emptyDir:
+            sizeLimit: 2Gi

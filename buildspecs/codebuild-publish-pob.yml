@@ -1,0 +1,59 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    AWS_REGION: us-west-2
+    LAMBDA_NAME: cartha-cob-publisher
+    CDN_MANIFEST_URL: https://bible.cartha.com/manifest.json
+
+phases:
+  install:
+    commands:
+      - set -euo pipefail
+      - aws --version
+      - jq --version
+  pre_build:
+    commands:
+      - set -euo pipefail
+      - export TARGET_SHA="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$(git rev-parse HEAD)}"
+      - export HEAD_MESSAGE="$(git log -1 --pretty=%B || true)"
+      - echo "target_sha=$TARGET_SHA"
+      - |
+        if [[ "$HEAD_MESSAGE" == *"[skip ci]"* ]]; then
+          echo "Skipping publish because commit message contains [skip ci]."
+          exit 0
+        fi
+  build:
+    commands:
+      - set -euo pipefail
+      - export TARGET_SHA="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$(git rev-parse HEAD)}"
+      - |
+        aws lambda invoke \
+          --region "$AWS_REGION" \
+          --function-name "$LAMBDA_NAME" \
+          --invocation-type Event \
+          --cli-binary-format raw-in-base64-out \
+          --payload '{"force":true}' \
+          publish-response.json
+        cat publish-response.json
+      - |
+        for i in $(seq 1 30); do
+          BODY="$(curl -sL --max-time 15 "$CDN_MANIFEST_URL" || true)"
+          if [[ -n "$BODY" ]]; then
+            SHA="$(printf '%s' "$BODY" | jq -r '.commit_sha // ""' 2>/dev/null || echo "")"
+            echo "attempt=$i manifest_sha=$SHA target_sha=$TARGET_SHA"
+            if [[ "$SHA" == "$TARGET_SHA" ]]; then
+              echo "CDN manifest matches pushed commit."
+              exit 0
+            fi
+          else
+            echo "attempt=$i manifest unavailable"
+          fi
+          sleep 10
+        done
+        echo "CDN manifest did not reach $TARGET_SHA within the wait window." >&2
+        exit 1
+  post_build:
+    commands:
+      - echo "POB publish CodeBuild finished at $(date -u +%Y-%m-%dT%H:%M:%SZ)"

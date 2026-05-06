@@ -1,0 +1,93 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    AWS_REGION: us-west-2
+    EKS_CLUSTER: cartha-eks-cluster
+    EKS_NAMESPACE: alpha
+    WORKERS: "4"
+    TESTAMENTS: nt,ot
+
+phases:
+  install:
+    commands:
+      - set -euo pipefail
+      - aws --version
+      - |
+        if ! command -v kubectl >/dev/null 2>&1; then
+          KUBECTL_VERSION="$(curl -fsSL https://dl.k8s.io/release/stable.txt)"
+          curl -fsSLo /usr/local/bin/kubectl "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+          chmod +x /usr/local/bin/kubectl
+        fi
+      - kubectl version --client=true
+  pre_build:
+    commands:
+      - set -euo pipefail
+      - export COMMIT_SHA="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$(git rev-parse HEAD)}"
+      - export HEAD_MESSAGE="$(git log -1 --pretty=%B || true)"
+      - echo "commit_sha=$COMMIT_SHA workers=$WORKERS testaments=$TESTAMENTS"
+      - |
+        if [[ "$HEAD_MESSAGE" == *"[skip ci]"* ]]; then
+          echo "Skipping embedding regeneration because commit message contains [skip ci]."
+          exit 0
+        fi
+      - aws eks update-kubeconfig --name "$EKS_CLUSTER" --region "$AWS_REGION"
+      - kubectl get ns "$EKS_NAMESPACE" >/dev/null
+  build:
+    commands:
+      - set -euo pipefail
+      - export COMMIT_SHA="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$(git rev-parse HEAD)}"
+      - SHORT_SHA="$(echo "$COMMIT_SHA" | cut -c1-7)"
+      - export JOB_NAME="embed-${SHORT_SHA}-$(date +%s)"
+      - TESTAMENT_ARGS="$(echo "$TESTAMENTS" | tr ',' '\n' | awk 'NF{gsub(/^ +| +$/, ""); printf "--testament %s ", $0}')"
+      - export TESTAMENT_ARGS_B64="$(printf "%s" "$TESTAMENT_ARGS" | base64 -w0)"
+      - |
+        python3 - <<'PY'
+        import os, pathlib
+        template = pathlib.Path('buildspecs/embedding-job-template.yaml').read_text()
+        for key in ('JOB_NAME', 'COMMIT_SHA', 'WORKERS', 'TESTAMENT_ARGS_B64'):
+            template = template.replace('${' + key + '}', os.environ[key])
+        pathlib.Path('/tmp/embed-job.yaml').write_text(template)
+        PY
+      - echo "---- rendered Job ----"
+      - head -60 /tmp/embed-job.yaml
+      - kubectl apply -f /tmp/embed-job.yaml
+      - echo "submitted: $JOB_NAME"
+      - |
+        for _ in $(seq 1 60); do
+          POD="$(kubectl get pods -n "$EKS_NAMESPACE" -l "job-name=$JOB_NAME" -o jsonpath='{.items[0].metadata.name}' 2>/dev/null || true)"
+          [ -n "$POD" ] && break
+          sleep 2
+        done
+        if [ -z "${POD:-}" ]; then
+          echo "Job pod never appeared" >&2
+          kubectl describe job "$JOB_NAME" -n "$EKS_NAMESPACE" || true
+          exit 1
+        fi
+        echo "tailing pod $POD"
+        kubectl logs -n "$EKS_NAMESPACE" "$POD" --all-containers=true --follow || true
+      - |
+        rm -f /tmp/job-ok /tmp/job-bad
+        ( kubectl wait --for=condition=complete job/"$JOB_NAME" -n "$EKS_NAMESPACE" --timeout=3600s && touch /tmp/job-ok ) &
+        OK_PID=$!
+        ( kubectl wait --for=condition=failed job/"$JOB_NAME" -n "$EKS_NAMESPACE" --timeout=3600s && touch /tmp/job-bad ) &
+        BAD_PID=$!
+        wait -n "$OK_PID" "$BAD_PID" || true
+        kill "$OK_PID" "$BAD_PID" 2>/dev/null || true
+        wait 2>/dev/null || true
+        if [ -f /tmp/job-bad ]; then
+          echo "Job failed" >&2
+          kubectl describe job "$JOB_NAME" -n "$EKS_NAMESPACE" || true
+          exit 1
+        fi
+        if [ ! -f /tmp/job-ok ]; then
+          echo "Neither complete nor failed within timeout" >&2
+          kubectl describe job "$JOB_NAME" -n "$EKS_NAMESPACE" || true
+          exit 2
+        fi
+        echo "Job completed successfully"
+        kubectl get job "$JOB_NAME" -n "$EKS_NAMESPACE" -o wide
+  post_build:
+    commands:
+      - echo "Embedding regeneration CodeBuild finished at $(date -u +%Y-%m-%dT%H:%M:%SZ)"

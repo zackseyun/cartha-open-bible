@@ -1,0 +1,54 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    AWS_REGION: us-west-2
+    PREWARM_SECRET_IDS: /cartha/openclaw/gemini_api_key_2
+    WORKERS: "10"
+    DRY_RUN: "false"
+
+cache:
+  paths:
+    - "/root/.cache/pip/**/*"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - set -euo pipefail
+      - python3 --version
+      - python3 -m pip install --upgrade pip
+      - python3 -m pip install boto3 pyyaml google-auth requests
+      - aws --version
+  pre_build:
+    commands:
+      - set -euo pipefail
+      - export HEAD_MESSAGE="$(git log -1 --pretty=%B || true)"
+      - |
+        if [[ "$HEAD_MESSAGE" == *"[skip ci]"* ]]; then
+          echo "Skipping summary cache regeneration because commit message contains [skip ci]."
+          exit 0
+        fi
+  build:
+    commands:
+      - set -euo pipefail
+      - |
+        python3 tools/gemini_summary_prewarm.py \
+          --dry-run \
+          --secret-ids "$PREWARM_SECRET_IDS" \
+        | tee gap-report.txt
+      - |
+        if [[ "${DRY_RUN,,}" == "true" ]]; then
+          echo "DRY_RUN=true; not filling missing summaries."
+          exit 0
+        fi
+      - |
+        python3 tools/gemini_summary_prewarm.py \
+          --backend vertex \
+          --workers "$WORKERS" \
+          --secret-ids "$PREWARM_SECRET_IDS"
+  post_build:
+    commands:
+      - echo "Summary cache regeneration CodeBuild finished at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
