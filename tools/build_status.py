@@ -107,6 +107,11 @@ EXTRA_CANONICAL_BOOKS: list[tuple[str, str, int, int, str]] = [
     # current verse-level Charles 1906 Enoch parser recovery.
     ("Didache", "DID", 16, 100, "didache"),
     ("1 Clement", "1CLEM", 65, 395, "1_clement"),
+    # Shepherd is authored/reviewed as 63 section-level units, then
+    # deterministically split into 331 paragraph-sized reader verses by
+    # tools/hermas/split_into_reader_verses.py so the website/mobile reader
+    # does not render each section as one giant synthetic verse.
+    ("Shepherd of Hermas", "HERM", 63, 331, "shepherd_of_hermas"),
     ("1 Enoch", "ENO", 108, 843, "1_enoch"),
     ("Jubilees", "JUB", 50, 1023, "jubilees"),
     ("2 Esdras", "2ES", 16, 942, "2_esdras"),

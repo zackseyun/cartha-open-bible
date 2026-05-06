@@ -116,6 +116,7 @@ EXTRA_CANONICAL_ROOT = TRANSLATION_ROOT / "extra_canonical"
 EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
     "DID",     # Didache
     "1CLEM",   # 1 Clement
+    "HERM",    # Shepherd of Hermas
     "ENO",     # 1 Enoch
     "JUB",     # Jubilees
     "2BAR",    # 2 Baruch (Syriac Apocalypse)
@@ -124,6 +125,7 @@ EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
 EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
     "DID":   "Didache",
     "1CLEM": "1 Clement",
+    "HERM":  "Shepherd of Hermas",
     "ENO":   "1 Enoch",
     "JUB":   "Jubilees",
     "2BAR":  "2 Baruch",
@@ -132,6 +134,7 @@ EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
 EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
     "DID":   "didache",
     "1CLEM": "1_clement",
+    "HERM":  "shepherd_of_hermas",
     "ENO":   "1_enoch",
     "JUB":   "jubilees",
     "2BAR":  "2_baruch",
@@ -140,12 +143,12 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
 # Extra-canonical books that only have chapter-level YAMLs (single
 # text block per chapter) rather than per-verse YAMLs.
 #
-# Didache and 1 Clement started here, but their chapter-level drafts
-# have since been split into per-verse YAMLs at
+# Didache, 1 Clement, and Shepherd of Hermas started here, but their
+# chapter/section-level drafts have since been split into per-verse YAMLs at
 # translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml (via
-# tools/split_extra_canonical_into_verses.py — 116 Didache verses and
-# 460 1 Clement verses at the scholarly-standard divisions). They are
-# now treated as verse-level books.
+# tools/split_extra_canonical_into_verses.py for Didache/1 Clement, and
+# tools/hermas/split_into_reader_verses.py for Hermas). They are now treated
+# as verse-level reader books.
 #
 # Left in place so future books drafted as pure chapter-level prose
 # can be added here for single-synthetic-verse emission without
