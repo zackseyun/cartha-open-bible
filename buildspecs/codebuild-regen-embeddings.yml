@@ -53,7 +53,8 @@ phases:
       - echo "---- rendered Job ----"
       - head -60 /tmp/embed-job.yaml
       - kubectl apply -f /tmp/embed-job.yaml
-      - echo "submitted: $JOB_NAME"
+      - |
+        echo "submitted: $JOB_NAME"
       - |
         for _ in $(seq 1 60); do
           POD="$(kubectl get pods -n "$EKS_NAMESPACE" -l "job-name=$JOB_NAME" -o jsonpath='{.items[0].metadata.name}' 2>/dev/null || true)"

@@ -42,7 +42,8 @@ phases:
       - git config user.name 'codebuild-cartha-open-bible[bot]'
       - git config user.email 'codebuild-cartha-open-bible@users.noreply.github.com'
       - git add status.json
-      - git commit -m 'status: regenerate snapshot [skip ci]'
+      - |
+        git commit -m 'status: regenerate snapshot [skip ci]'
       - git push origin HEAD:main
   post_build:
     commands:
