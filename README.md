@@ -1,79 +1,66 @@
-# The People's Open Bible
+# the People's Open Bible
 
 Managed by the team at [cartha.com](https://cartha.com).
 
-*Translated from the original Greek and Hebrew*
+This is the people’s Bible — the most accurate-to-original translation
+from Hebrew, Greek, and Latin into English that we can build. Every
+decision is publicly defensible and publicly revisable. Our data,
+methods, and code are published as openly as possible.
 
-> God bless all believers, and all who are earnestly drawn to God and
-> seeking Him. The hope of this translation is to create more critical
-> thought and more open discussion of God's Word. — see [DEDICATION.md](DEDICATION.md)
+[Read the Bible](https://cartha.com/peoples-open-bible/) ·
+[About the project](https://cartha.com/peoples-open-bible/about/) ·
+[Our philosophy](https://cartha.com/peoples-open-bible/philosophy/)
 
-**An open, transparent English Bible with auditable, commit-level
-provenance for every translation decision.**
+## What makes this different
 
-Released under **CC-BY 4.0** — anyone may use, adapt, redistribute, or
-commercialize this translation with attribution. **See [PHILOSOPHY.md](PHILOSOPHY.md)
-for the full statement on openness, transparency, and our theological
-commitments.**
+### From manuscript originals
 
-## Three things that make this different
-
-1. **We translate from the originals, not from other English translations.**
-   Source texts are the SBLGNT (Greek NT) and the Westminster Leningrad
-   Codex / unfoldingWord Hebrew Bible (Hebrew OT) — the openly-licensed
-   critical editions closest to what the NT and OT authors actually wrote.
-
-2. **Every translation decision is publicly documented.** Every verse is a
-   file in this repository with the source text, the English rendering, the
-   key lexical choices (source word, chosen gloss, alternatives considered,
-   lexicon entry, rationale), any contested theological readings with
-   alternatives preserved, and the AI model and prompt that drafted it.
-
-3. **Every verse is reproducible.** Given the source text, the prompt hash,
-   and the model identifier, any third party can re-run the LLM pipeline
-   and verify our documented draft. No other English Bible in history has
-   offered this.
+- **Direct from the originals.** Drafted from original Hebrew, Greek,
+  and Latin source texts — including books where we used AI vision
+  models to read the text directly from manuscript photographs. See the
+  [source corpora](sources/README.md).
+- **Every translation decision is publicly documented.** Every verse is
+  a file in this repository with the source text, the English rendering,
+  every lexical decision (source word, chosen gloss, alternatives
+  considered, lexicon entry, rationale), and contested theological
+  readings with alternatives preserved. Every change is traceable in
+  git, and every disagreement can have a permanent URL. See
+  [John 1:1’s source record](translation/nt/john/001/001.yaml).
+- **Every verse is reproducible.** Given the source text, prompt hash,
+  and model identifier, any third party can re-run the pipeline and
+  verify the documented draft. No other English Bible in history has
+  offered this level of public reproducibility. Read the
+  [methodology](METHODOLOGY.md).
 
 ## Why we built this
 
-The People's Open Bible started with a simple need: a Bible we could ship
-in our own apps without licensing friction. Most modern English
-translations ship under a commercial trademark — free to read, but not
-free to quote at length, fork, adapt, or include in a commercial
-product. The openly-licensed alternatives are almost all older
-translations that don't reflect modern scholarship.
+### A method, not a claim of authority
 
-Building one surfaced two gaps in the existing English Bible ecosystem
-worth addressing at once:
+We’re not claiming authority. We’re presenting a method: use
+state-of-the-art AI alongside original Hebrew, Greek, and Latin source
+texts to render a translation as close to what the original scribes
+wrote as we can get. Everything that goes into it is open-sourced —
+source texts, restored public-domain manuscript material, model passes,
+lexical decisions, revisions, and disagreements.
 
-- **A free translation that modern reasoning could strengthen.**
-  Frontier AI models can now work carefully through the Greek and
-  Hebrew — not to replace scholars, but to surface the hard choices and
-  document them at a scale no single committee could.
-- **Transparent reasoning.** Most translations happen behind closed
-  doors. A reader who disagrees with a rendering has no way to see why
-  the committee chose it. We wanted every decision visible: source
-  word, alternatives considered, rationale, the model that drafted it,
-  the reviewer that revised it.
+The point is not that the first draft is perfect. The point is that the
+whole process is inspectable, repeatable, and publicly revisable. If a
+reader disagrees with a rendering, they can see why it was chosen,
+inspect the alternatives, and propose a better one.
 
-So we translate directly from the original Greek and Hebrew, reason
-across multiple frontier models, and document every decision publicly.
-Released under CC-BY 4.0 — free to read, quote, fork, adapt, or ship
-inside a commercial product, with no trademark and no royalty. For the
-Deuterocanonical books, where no modern openly-licensed scan-grounded
-corpus existed, we transcribed the source text from photographs of the
-manuscripts first.
+See [PHILOSOPHY.md](PHILOSOPHY.md) for the full statement on openness,
+transparency, and our theological commitments.
 
-## Why this is possible now
+## Use it freely
 
-Open-source infrastructure, frontier AI models as drafting tools, and modern
-reproducibility standards together enable a kind of transparent translation
-that was not feasible in any previous era — a translation where every
-decision is documented, every verse is reproducible, and anyone with the
-source text and the prompt can re-run the draft.
+### Free to use in any way
 
-See [PHILOSOPHY.md](PHILOSOPHY.md) for the theological and historical
-rationale.
+Released under **CC-BY 4.0**: read it, fork it, quote it, adapt it,
+use it publicly, include it in commercial products, or build derivatives
+with attribution. We never paywall scripture. All of it is packaged and
+organized for anyone to use.
+
+See [LICENSE](LICENSE) and [DEDICATION.md](DEDICATION.md).
 
 ## How POB reads — compared to NKJV and NIV
 
