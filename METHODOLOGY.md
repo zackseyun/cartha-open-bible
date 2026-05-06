@@ -11,16 +11,22 @@ our internal work log step by step.
 ## Pipeline overview
 
 ```
-  source text  ──▶  AI draft     ──▶  revision pass    ──▶  spot fix         ──▶  publication
+  source text  ──▶  first draft  ──▶  revision pass    ──▶  spot fix         ──▶  publication
   (SBLGNT,         (GPT-5.4,          (Gemini 3.1 Pro       (Claude Opus 4.7      (commit +
    WLC, UHB,        prompt             reads draft           on individual         tagged
-   Swete LXX,       anchored           against source;       verses to fight       release +
-   Charles APOT,    in DOCTRINE)       applies edits         against same-model    CDN publish)
-   Bensly Latin,                       or marks              bias)
+   Swete LXX,       anchored           against source;       verses needing        release +
+   Charles APOT,    in DOCTRINE)       applies edits         targeted rework)      CDN publish)
+   Bensly Latin,                       or marks
    Charles 1895                        unchanged)
    Ge'ez,
    Coptic NHC)
 ```
+
+Model diversity is a deliberate quality layer: any revision pass run
+by a different model from the first drafter helps fight same-model
+bias. Cross-pollinating model families gives the strongest reasoning
+and best outcome; spot fixes are an additional targeted pass when a
+verse needs more scrutiny.
 
 Per-verse stages 1–4 are described below. For revision policy and what
 triggers a post-publication change, see
@@ -186,7 +192,7 @@ The tooling: `tools/adjudicate_corpus.py`,
 `tools/adjudicate_escalated_gemini.py`,
 `tools/rescue_manual_pages.py`.
 
-## Stage 2 — AI draft
+## Stage 2 — First draft
 
 A primary LLM produces the draft using a prompt anchored in
 [DOCTRINE.md](DOCTRINE.md). The draft includes:
@@ -236,8 +242,8 @@ per-verse path. The honest description is:
    filtering issues were redrafted with Gemini 3.1 Pro as a fallback
    (97 Azure-blocked verses in 4 Maccabees and other martyrdom
    passages, processed 2026-04-23). Claude Opus 4.7 has been used
-   for occasional spot fixes on individual verses where another
-   set of eyes was useful.
+   for occasional spot fixes on individual verses needing targeted
+   rework or another independent model-family pass.
 2. **Revision pass.** Gemini 3.1 Pro running on Vertex AI
    reads each draft against the source text, identifies lexical
    disagreements, awkward English, and category-1 grammar issues,
@@ -384,7 +390,7 @@ change and a documented set of carve-outs.
 `tools/verify.py <verse_id>` takes a published verse and re-runs the
 LLM pipeline using the documented inputs. It reports:
 
-- Whether the AI draft reproduces (modulo model non-determinism)
+- Whether the first draft reproduces (modulo model non-determinism)
 - Whether the revision pass reproduces
 - Whether the OCR for the cited source page reproduces (for
   scan-grounded verses)
