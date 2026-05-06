@@ -1,4 +1,7 @@
 # The People's Open Bible
+
+Managed by the team at [cartha.com](https://cartha.com).
+
 *Translated from the original Greek and Hebrew*
 
 > God bless all believers, and all who are earnestly drawn to God and
