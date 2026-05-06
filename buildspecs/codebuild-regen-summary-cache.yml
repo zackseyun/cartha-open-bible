@@ -5,6 +5,7 @@ env:
   variables:
     AWS_REGION: us-west-2
     PREWARM_SECRET_IDS: /cartha/openclaw/gemini_api_key_2
+    VERTEX_SECRET_ID: /cartha/vertex/gemini-sa-3
     WORKERS: "10"
     DRY_RUN: "false"
 
@@ -48,7 +49,8 @@ phases:
         python3 tools/gemini_summary_prewarm.py \
           --backend vertex \
           --workers "$WORKERS" \
-          --secret-ids "$PREWARM_SECRET_IDS"
+          --secret-ids "$PREWARM_SECRET_IDS" \
+          --vertex-secret-id "$VERTEX_SECRET_ID"
   post_build:
     commands:
       - echo "Summary cache regeneration CodeBuild finished at $(date -u +%Y-%m-%dT%H:%M:%SZ)"

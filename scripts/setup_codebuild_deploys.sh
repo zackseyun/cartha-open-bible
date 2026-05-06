@@ -142,7 +142,9 @@ cat > "$TMP_DIR/codebuild-policy.json" <<JSON
       "Action": "secretsmanager:GetSecretValue",
       "Resource": [
         "arn:aws:secretsmanager:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:secret:/cartha/openclaw/gemini_api_key-*",
-        "arn:aws:secretsmanager:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:secret:/cartha/openclaw/gemini_api_key_2-*"
+        "arn:aws:secretsmanager:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:secret:/cartha/openclaw/gemini_api_key_2-*",
+        "arn:aws:secretsmanager:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:secret:/cartha/vertex/gemini-sa-*",
+        "arn:aws:secretsmanager:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:secret:/cartha/openclaw/gemini_vertex_cbv_sa-*"
       ]
     },
     {
