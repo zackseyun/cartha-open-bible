@@ -25,7 +25,7 @@ AWS_REGION=us-east-2 ./scripts/setup_codebuild_deploys.sh
 
 The setup script is idempotent. It creates/updates:
 
-- CodeBuild projects in `us-east-2` using the existing GitHub CodeConnections connection.
+- CodeBuild projects in `us-east-2` using the existing GitHub CodeConnections connection, with `concurrentBuildLimit=1` to avoid overlapping runs.
 - The CodeBuild service role `cartha-open-bible-codebuild-role`.
 - A repo-scoped GitHub deploy key for status pushes, stored in Secrets Manager as `cartha-open-bible/codebuild-status-deploy-key`.
 - GitHub repository webhooks that send `push` events directly to CodeBuild.
@@ -64,7 +64,7 @@ aws codebuild start-build \
 - Keep Actions disabled unless we intentionally roll back. Old workflow files are preserved under `.github/workflows/disabled/*.disabled`.
 - Use CodeBuild for push-driven operational automation; use local scripts for heavy drafting/review batches that do not need to run on every commit.
 - Keep status commits small and `[skip ci]` so they do not cause publish/embedding loops.
-- Watch CodeBuild and CloudWatch logs for failures. Summary cache can legitimately run longer than publish/status because it may generate many missing summaries.
+- Watch CodeBuild and CloudWatch logs for failures. Summary cache can legitimately run longer than publish/status because it may generate many missing summaries. CodeBuild project concurrency is capped at 1 so hourly backups do not pile up parallel expensive jobs.
 - Do not promote a new embedder image or change the EKS/Kubernetes group without verifying the CodeBuild role still has access to `alpha` namespace Jobs.
 
 ## Rollback

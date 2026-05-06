@@ -243,6 +243,7 @@ write_project_json() {
   "serviceRole": "${ROLE_ARN}",
   "timeoutInMinutes": ${timeout_minutes},
   "queuedTimeoutInMinutes": 30,
+  "concurrentBuildLimit": 1,
   "cache": {
     "type": "LOCAL",
     "modes": ["LOCAL_SOURCE_CACHE", "LOCAL_CUSTOM_CACHE"]
@@ -390,10 +391,10 @@ if command -v gh >/dev/null 2>&1 && [[ "${INSTALL_GITHUB_WEBHOOKS:-true}" != "fa
       done
 fi
 
-PUBLISH_FILE_PATTERN='^(translation/|revisions\.json$|buildspecs/codebuild-publish-pob\.yml$|scripts/setup_codebuild_deploys\.sh$)'
-STATUS_FILE_PATTERN='^(translation/|tools/build_status\.py$|buildspecs/codebuild-regen-status\.yml$|scripts/setup_codebuild_deploys\.sh$)'
-SUMMARY_FILE_PATTERN='^(translation/|tools/gemini_summary_prewarm\.py$|buildspecs/codebuild-regen-summary-cache\.yml$|scripts/setup_codebuild_deploys\.sh$)'
-EMBEDDINGS_FILE_PATTERN='^(translation/|buildspecs/codebuild-regen-embeddings\.yml$|buildspecs/embedding-job-template\.yaml$|scripts/setup_codebuild_deploys\.sh$)'
+PUBLISH_FILE_PATTERN='^(translation/|revisions\.json$|buildspecs/codebuild-publish-pob\.yml$)'
+STATUS_FILE_PATTERN='^(translation/|tools/build_status\.py$|buildspecs/codebuild-regen-status\.yml$)'
+SUMMARY_FILE_PATTERN='^(translation/|tools/gemini_summary_prewarm\.py$|buildspecs/codebuild-regen-summary-cache\.yml$)'
+EMBEDDINGS_FILE_PATTERN='^(translation/|buildspecs/codebuild-regen-embeddings\.yml$|buildspecs/embedding-job-template\.yaml$)'
 
 create_or_replace_webhook "$PUBLISH_PROJECT" "$PUBLISH_FILE_PATTERN"
 create_or_replace_webhook "$STATUS_PROJECT" "$STATUS_FILE_PATTERN"
