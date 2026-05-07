@@ -1,6 +1,6 @@
 # the People's Open Bible
 
-Managed by the team at [cartha.com](https://cartha.com).
+Managed by [cartha.com](https://cartha.com).
 
 This is the people’s Bible — the most accurate-to-original translation
 from Hebrew, Greek, and Latin into English that we can build. Every
@@ -9,7 +9,7 @@ methods, and code are published as openly as possible.
 
 [Read the Bible](https://cartha.com/peoples-open-bible/) ·
 [About the project](https://cartha.com/peoples-open-bible/about/) ·
-[Our philosophy](https://cartha.com/peoples-open-bible/philosophy/)
+[Our philosophy](https://cartha.com/peoples-open-bible/docs/philosophy/)
 
 ## What makes this different
 
