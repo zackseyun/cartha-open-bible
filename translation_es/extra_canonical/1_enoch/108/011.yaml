@@ -1,0 +1,187 @@
+id: 1EN.108.11
+reference: 1 Enoch 108:11
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይእዜኒ፡ እጼውዕ፡ መናፍስቲሆሙ፡ ለኄራን፡ *እምትውልድ፡ እንተ፡ ብርሃን፡ ወእዊልጥ፡ ለእለ፡ ተወልዱ፡ በጽልመት፡ እለ፡ በሥጋሆሙ፡ ኢተፈደዩ፡ ክብር፡ ከመ፡ ይደሉ፡ ለሃይማኖቶሙ።
+  language: Geez
+  pages:
+  - 261
+  - 262
+  - 263
+  - 264
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/108/011.yaml
+  text: And now I will summon their spirits—the good ones from the generation of light—and I will transform those who were born in darkness[c][b][a], who in their flesh were not repaid with the honor that their faith deserved.
+  footnotes:
+  - marker: a
+    text: Or 'their faithfulness deserved.' The Ge'ez term can denote faith in the sense of steadfast fidelity as well as belief.
+    reason: lexical_alternative
+  - marker: b
+    text: The verb rendered 'I will transform' is difficult. A more image-specific sense such as 'I will make shine' or 'I will illumine' may underlie the line.
+    reason: textual_variant
+  - marker: c
+    text: Or 'And now I summon their spirits—the good ones from the generation of light—and I will transform'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 72b427443c183a3b6f9c3ef08d1036101f5194802065e7a1e055cad7a6b48311
+    timestamp: '2026-04-22T09:25:37Z'
+    output_hash: 84997dcf7e9e68d27bfa30b6f031c51cf2c0b398801167a25ee30590d8be9e44
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:39:07Z'
+    unchanged: false
+    changes_summary: Added 'their' to reflect the pronominal suffix on 'spirits,' adjusted punctuation for clarity, and changed 'as their faith deserved' to 'that their faith deserved' for more natural formal English while preserving the sense.
+translation:
+  language: es
+  text: Y ahora convocaré sus espíritus —los buenos de la generación de la luz— y transformaré[a] a los que nacieron en las tinieblas, quienes en su carne no fueron recompensados con el honor que merecía su fe[b].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El verbo ge'ez subyacente es de sentido difícil; puede subyacer un matiz más específico como 'haré brillar' o 'iluminaré'.
+    reason: textual_variant
+  - marker: b
+    text: O 'fidelidad.' El término ge'ez ሃይማኖት puede denotar tanto la fe en el sentido de creencia como la fidelidad constante.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: እጼውዕ
+  english_pob_choice: I will summon
+  chosen_spanish: convocaré
+  alternatives_spanish:
+  - llamaré
+  - invocaré
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo ge'ez denota llamar o convocar con autoridad. 'Convocaré' preserva la fuerza solemne y apocalíptica mejor que el más neutro 'llamaré', evitando a la vez las connotaciones rituales de 'invocaré'. El imperfecto ge'ez se rinde como futuro, coherente con el marco escatológico del versículo.
+- source_word: መናፍስቲሆሙ
+  english_pob_choice: their spirits
+  chosen_spanish: sus espíritus
+  alternatives_spanish:
+  - sus almas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El plural de 'espíritu' es la traducción más transparente y preserva la ambigüedad antropológica del texto sin forzar una distinción posterior entre alma y espíritu. Sigue el valor predeterminado del proyecto para πνεῦμα/ሥጋ → 'espíritu' según contexto.
+- source_word: ለኄራን
+  english_pob_choice: the good ones
+  chosen_spanish: los buenos
+  alternatives_spanish:
+  - los justos
+  - los virtuosos
+  - los bienaventurados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término ge'ez apunta a bondad o beneficencia. 'Los buenos' es lexicalmente directo y evita importar la categoría covenant-técnica de 'los justos', que no está explícita en esta palabra. 'Los virtuosos' sería más digno pero añadiría una carga filosófica ausente en la fuente.
+- source_word: እምትውልድ እንተ ብርሃን
+  english_pob_choice: from the generation of light
+  chosen_spanish: de la generación de la luz
+  alternatives_spanish:
+  - del linaje de la luz
+  - de la descendencia de la luz
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se preserva la imagen apocalíptica de pertenecer a un linaje luminoso. 'Generación' es idiomático en español apocalíptico y mantiene la metáfora intacta. 'Linaje' o 'descendencia' son alternativas igualmente fieles pero menos naturales en el registro bíblico amplio.
+- source_word: እዊልጥ
+  english_pob_choice: I will transform
+  chosen_spanish: transformaré
+  alternatives_spanish:
+  - haré brillar
+  - iluminaré
+  - cambiaré
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma verbal es de sentido difícil, pero en contexto indica un cambio efectuado sobre los nacidos en las tinieblas. 'Transformaré' capta el motivo de inversión redentora sin comprometerse con una imagen física más estrecha. Se preserva el matiz 'haré brillar'/'iluminaré' en nota al pie [a], siguiendo la práctica del POB inglés.
+- source_word: ተወልዱ በጽልመት
+  english_pob_choice: were born in darkness
+  chosen_spanish: nacieron en las tinieblas
+  alternatives_spanish:
+  - fueron engendrados en las tinieblas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Traducción directa que preserva el contraste con 'la generación de la luz' y el simbolismo apocalíptico. Se prefiere 'las tinieblas' sobre 'la oscuridad' por su mayor solemnidad en el registro bíblico-apocalíptico del español.
+- source_word: በሥጋሆሙ
+  english_pob_choice: in their flesh
+  chosen_spanish: en su carne
+  alternatives_spanish:
+  - en sus cuerpos
+  - durante su vida corporal
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''En su carne'' es la traducción más literal de ሥጋ y preserva el carácter encarnado y mortal de su experiencia terrena. Sigue el valor predeterminado del proyecto para σάρξ/ሥጋ → ''carne''; se evita ''cuerpos'' para no aplanar la resonancia somática del término.'
+- source_word: ኢተፈደዩ ክብር
+  english_pob_choice: were not repaid with honor
+  chosen_spanish: no fueron recompensados con el honor
+  alternatives_spanish:
+  - no recibieron la gloria
+  - no fueron retribuidos con honor
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase ge'ez implica retribución o pago en forma de honor. 'Recompensados con el honor' preserva el matiz judicial-retributivo mejor que el simple 'recibieron la gloria', que perdería la noción de deuda merecida.
+- source_word: ከመ ይደሉ ለሃይማኖቶሙ
+  english_pob_choice: that their faith deserved
+  chosen_spanish: que merecía su fe
+  alternatives_spanish:
+  - como correspondía a su fidelidad
+  - como era debido a su fe
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La cláusula expresa la medida debida en relación con su ሃይማኖት. 'Que merecía su fe' sigue el valor predeterminado del proyecto y es la construcción más natural en español; la nota al pie [b] preserva 'fidelidad' como alternativa viable en este contexto ético-apocalíptico.
+theological_decisions:
+- issue: Significado de ሃይማኖት en contexto ético-apocalíptico
+  english_pob_reading: faith
+  chosen_spanish_reading: fe
+  alternative_spanish_readings:
+  - fidelidad
+  rationale: Siguiendo el valor predeterminado del proyecto, 'fe' se prefiere en el texto principal. El versículo habla de personas que no fueron honradas en su vida corporal en proporción a su confianza/compromiso constante; 'fidelidad' es igualmente viable y se preserva en nota al pie [b] para no borrar la tensión léxico-teológica documentada.
+  doctrine_reference: 'Filosofía de traducción §Términos disputados: πίστις → fe; alternativas en nota al pie cuando el término es disputado'
+- issue: Identidad de los 'nacidos en las tinieblas' que son transformados
+  english_pob_reading: the same group viewed under reversal imagery rather than a separate condemned class
+  chosen_spanish_reading: el mismo grupo visto bajo una imagen de inversión redentora
+  alternative_spanish_readings:
+  - un segundo grupo distinto de 'los buenos'
+  - los que antes estaban en ignorancia y luego son iluminados
+  rationale: 'La sintaxis del versículo une las cláusulas con suficiente cercanía como para leer una inversión redentora: el hablante convoca los espíritus de los buenos y habla de transformar a los nacidos en las tinieblas que no fueron honrados en la carne. La traducción española preserva esta tensión sin sistematizar en exceso la antropología apocalíptica.'
+  doctrine_reference: 'Decisiones teológicas del POB inglés: §Identidad de los nacidos en las tinieblas; vindicación apocalíptica'
+translation_notes:
+  revision_awareness: 'Las dos revisiones aplicadas al POB inglés crearon tensión sobre la estructura genitiva ge''ez (መናፍስቲሆሙ ለኄራን). La revisión de Gemini la leyó como un genitivo verdadero (''los espíritus de los buenos''), mientras que la revisión de Azure GPT restauró la construcción aposicional con guiones (''sus espíritus—los buenos de la generación de la luz''). El POB inglés final preserva la lectura aposicional. El español sigue esta forma definitiva: ''sus espíritus —los buenos de la generación de la luz—'', lo que mantiene el sufijo pronominal (''sus'') mientras el apositivo especifica el referente. Los dos imperfectos ge''ez (እጼውዕ y እዊልጥ) se rinden como futuros (''convocaré'', ''transformaré''), coherentes con el marco escatológico establecido por la revisión gramatical de Gemini y refrendado por la última revisión de estilo.'
+  spanish_consistency_notes:
+  - 'Se sigue el valor predeterminado del proyecto para ሥጋ/σάρξ → ''carne'': ''en su carne''.'
+  - 'Se sigue el valor predeterminado del proyecto para ሥጋ/πνεῦμα → ''espíritu'' según contexto: ''sus espíritus''.'
+  - No aparece el nombre divino (Yahvé) ni terminología mesiánica en este versículo.
+  - Se prefiere 'las tinieblas' sobre 'la oscuridad' para mantener el registro solemne-apocalíptico en español, en contraste simétrico con 'la generación de la luz'.
+  - ሃይማኖት se rinde como 'fe' en el texto principal con 'fidelidad' en nota al pie, siguiendo la política del proyecto para πίστις y equivalentes en lenguas no griegas.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/108/011.yaml
+  source_text_sha256: 96634fd5836e4e4d62bb74d5cbdaad9d03fbb52d5736f1d8213ccda7c5179f98
+  english_pob_commit_sha: e76a3ac2f1668c9dd8e6b2f444c299ac2a8c52ed
+ai_draft:
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_cli
+  prompt_id: spanish_source_grounded_draft_claude_v1
+  prompt_sha256: c6d91148ef63fd54160290b553c892ce6f2b31917d7ca2b01d9883b8fa8d1bab
+  timestamp: '2026-05-07T23:15:28Z'
+  output_hash: 775f15050892b70a7e08783f483dd3a1a123342f514ae3655cfcd94affe4ed86
+  usage:
+    prompt_tokens: 46454
+    completion_tokens: 10012
+    total_tokens: 56466
+    reasoning_tokens: 0
+    cache_read_input_tokens: 28789
+    cache_creation_input_tokens: 17661
+    estimated_cost_usd: 0.211812
+  provider: anthropic_claude_code_cli
+  fallback_reason: azure_content_filter
+status: spanish_draft

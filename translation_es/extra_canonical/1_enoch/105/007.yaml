@@ -1,0 +1,185 @@
+id: 1EN.105.7
+reference: 1 Enoch 105:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእስመ፡ ትብሉ፡ *አንትሙ፡ ኃጥኣን፡ ኢ*ትኅሥሡ፡ ወኢ*ይጽሐፉ፡ *ኵሎ፡ ኃጢአትነ፡ *ይጽሐፉ፡ ሀለዉ፡ ኵሎ፡ ኃጢአትክሙ፡ *በኵሉ፡ ዕለት።
+  language: Geez
+  pages:
+  - 255
+  - 256
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch105.txt via tools/enoch/verse_parser.py | Could not locate Roman chapter header CV. in chapter file; using full cleaned file. | Dillmann 1851 chapter OCR exists for chapter 105, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/105/007.yaml
+  text: And because you sinners say[a], ‘We are not sought out[d][c][b], and all our sins are not written down’—all your sins are being written down every day.
+  footnotes:
+  - marker: a
+    text: 'The transmitted wording in the quotation is awkward: the Ethiopic has a second-person pronoun near ''sinners,'' but the sense of the speech is most naturally the sinners'' own claim, hence ''we sinners.'''
+    reason: textual_variant
+  - marker: b
+    text: The verb rendered 'sought out' can also mean 'investigated' or 'searched for,' with a judicial sense in context.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And because you say, ‘We sinners are not sought out, and all our sins are not written down’'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'behold, all your sins are being written down'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 94ff33c16414ed917bc5b191b12d3f08fa45a0c36e34b15700ebc4a611300255
+    timestamp: '2026-04-22T09:26:03Z'
+    output_hash: de9f69a9d25abaf528d009eece766d84005e3823f493876bea3e749cf8b21c72
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:39:00Z'
+    unchanged: false
+    changes_summary: Recast the quoted clause to better reflect the passive sense of the verbs (‘are not sought out,’ ‘are not written down’), changed first person plural to match the source (‘our sins’), and smoothed the final clause to natural formal English while preserving the contrast.
+translation:
+  language: es
+  text: 'Y porque ustedes, pecadores, dicen: «No somos investigados[a], ni están escritos todos nuestros pecados[b]»—todos sus pecados están siendo escritos[c] cada día.'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'El ge''ez ኢትኅሥሡ puede leerse como 2ª persona plural activa: «ustedes no nos investigan» (los pecadores acusando a Dios o a sus ángeles de ignorarlos). Una revisión gramatical del texto ge''ez en el proceso de adjudicación favoreció esa lectura; la redacción final de la POB inglesa optó por la voz pasiva para preservar la coherencia de la cita en primera persona. La verificación cruzada registró acuerdo de 0,6 con problemas importantes, por lo que la tensión permanece abierta.'
+    reason: textual_variant
+  - marker: b
+    text: 'O bien: «y todos nuestros pecados no están siendo escritos». El ge''ez ኢይጽሐፉ es 3ª persona plural negada («no escriben / no están escritos»); la construcción pasiva española sigue la redacción final de la POB inglesa y mantiene el paralelismo con la cláusula anterior.'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Ge''ez ይጽሐፉ ሀለዉ (yəṣḥafu hallawu): el auxiliar ሀለዉ («estar», 3ª persona plural) forma el presente continuo con el imperfecto ይጽሐፉ. Una versión anterior del borrador inglés interpretó erróneamente ሀለዉ como interjección enfática («he aquí»); la adjudicación lo corrigió como auxiliar verbal estándar. «Están siendo escritos» preserva el aspecto continuo del registro celestial.'
+    reason: source_note
+lexical_decisions:
+- source_word: እስመ
+  english_pob_choice: because
+  chosen_spanish: porque
+  alternatives_spanish:
+  - pues
+  - ya que
+  - puesto que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conjunción causal estándar; introduce la razón de la declaración que sigue. 'Porque' es la correspondencia directa y es idiomática en español para introducir citas que justifican una respuesta.
+- source_word: ትብሉ
+  english_pob_choice: you say
+  chosen_spanish: dicen
+  alternatives_spanish:
+  - están diciendo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Imperfecto de 2ª persona plural ge'ez; el presente simple 'dicen' (con 'ustedes' explícito) refleja el discurso directo que se dirige a los pecadores. Se usa 'ustedes' para el español latinoamericano neutro.
+- source_word: አንትሙ ኃጥኣን
+  english_pob_choice: you sinners
+  chosen_spanish: ustedes, pecadores
+  alternatives_spanish:
+  - vosotros, pecadores
+  - ustedes los pecadores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'Pronombre personal አንትሙ en aposición al verbo ትብሉ, confirmado por la adjudicación gramatical: está fuera de la cita directa. ''Ustedes, pecadores'' (con coma apositiva) reproduce esa estructura; ''ustedes'' es la forma estándar del español latinoamericano neutro.'
+- source_word: ኢትኅሥሡ
+  english_pob_choice: are not sought out
+  chosen_spanish: no somos investigados
+  alternatives_spanish:
+  - no se nos investiga
+  - no nos buscan
+  - ustedes no nos investigan
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El verbo ኀሠሠ tiene sentido judicial de ''buscar / investigar / escudriñar''. Una revisión gramatical (adjudicación Gemini) lo leyó como 2ª persona plural activa: ''ustedes no investigan''; la revisión final de la POB inglesa (azure-gpt-5.4) reconsideró y optó por la voz pasiva para preservar la coherencia de la cita en primera persona. El español sigue esa redacción pasiva, documentando la alternativa activa en la nota [a].'
+- source_word: ኢይጽሐፉ ኵሎ ኃጢአትነ
+  english_pob_choice: all our sins are not written down
+  chosen_spanish: ni están escritos todos nuestros pecados
+  alternatives_spanish:
+  - y todos nuestros pecados no están escritos
+  - ni se escriben todos nuestros pecados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez ኢይጽሐፉ es 3ª persona plural negada de ጸሐፈ ('escribir'). La construcción pasiva española 'ni están escritos' es idiomática para la doble negación con 'no somos investigados', usando 'ni' para enlazar las dos cláusulas negativas dentro de la cita. ኃጢአትነ ('nuestros pecados') confirma que la cita es en primera persona plural.
+- source_word: ይጽሐፉ ሀለዉ
+  english_pob_choice: are being written down
+  chosen_spanish: están siendo escritos
+  alternatives_spanish:
+  - se están escribiendo
+  - los están escribiendo
+  - se escriben
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ሀለዉ es el auxiliar de 3ª persona plural de ሀለወ ('estar/ser'), que forma el presente continuo con el imperfecto ይጽሐፉ. Una versión anterior confundió ሀለዉ con una interjección enfática ('he aquí'), error corregido en adjudicación. 'Están siendo escritos' preserva el aspecto continuo del registro celestial.
+- source_word: ኵሎ ኃጢአትክሙ
+  english_pob_choice: all your sins
+  chosen_spanish: todos sus pecados
+  alternatives_spanish:
+  - todos vuestros pecados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'ኃጢአትክሙ es el genitivo de 2ª persona plural (''de ustedes''); ''sus pecados'' es la forma estándar latinoamericana neutra. Contrasta deliberadamente con ኃጢአትነ (''nuestros pecados'') dentro de la cita: los pecadores dicen ''nuestros'', pero el narrador les responde ''los de ustedes''.'
+- source_word: በኵሉ ዕለት
+  english_pob_choice: every day
+  chosen_spanish: cada día
+  alternatives_spanish:
+  - todos los días
+  - día a día
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Frase distributiva que subraya el carácter continuo y exhaustivo del registro. 'Cada día' es natural y preciso en español; 'todos los días' sería igualmente válido pero levemente más coloquial.
+theological_decisions:
+- issue: Naturaleza del registro celestial de los pecados
+  english_pob_reading: The verse speaks of an ongoing written record of the sinners' deeds before judgment.
+  chosen_spanish_reading: todos sus pecados están siendo escritos cada día
+  alternative_spanish_readings:
+  - todos sus pecados quedan registrados cada día
+  - se lleva cuenta de todos sus pecados cada día
+  rationale: El verbo continuo ይጽሐፉ ሀለዉ y el marco apocalíptico de la Epístola de Enoc favorecen un registro celestial real y en curso, no meramente metafórico. 'Están siendo escritos' preserva el aspecto continuo y el motivo del libro judicial sin sobreexplicar la mecánica del registro. Se evita 'quedan registrados' porque aplana el dinamismo del presente continuo.
+  doctrine_reference: Preservar la imagen apocalíptica del registro celestial; no aplanar las fórmulas de juicio en prosa genérica.
+- issue: Tensión activo/pasivo en ኢትኅሥሡ dentro del discurso directo
+  english_pob_reading: We are not sought out (passive, final POB revision)
+  chosen_spanish_reading: No somos investigados
+  alternative_spanish_readings:
+  - ustedes no nos investigan (lectura activa, 2ª persona plural)
+  - no se nos investiga
+  rationale: La adjudicación gramatical (Gemini) argumentó que ኢትኅሥሡ es 2ª persona plural activa —los pecadores dirigiéndose a Dios o a los ángeles— lo que implicaría una acusación directa. La revisión final de la POB inglesa (azure-gpt-5.4) reconsideró y adoptó la voz pasiva para mantener la cita coherente en primera persona plural. El español sigue esa opción pero documenta la alternativa activa en la nota [a] porque la tensión gramatical no está resuelta (acuerdo 0,6 en la verificación cruzada).
+  doctrine_reference: No borrar tensiones léxico-gramaticales documentadas; preservar la alternativa en nota.
+translation_notes:
+  revision_awareness: 'El borrador sigue el texto final de la POB inglesa tras tres pasadas de revisión. Correcciones integradas: (1) አንትሙ ኃጥኣን («ustedes, pecadores») es aposición externa al verbo ትብሉ, no parte de la cita —confirmado por adjudicación gramatical Gemini—; (2) ሀለዉ es auxiliar de presente continuo, no interjección, corrección aplicada en la segunda adjudicación; (3) la redacción final azure-gpt-5.4 reconsideró la lectura activa de ኢትኅሥሡ y adoptó la pasiva para coherencia en primera persona dentro de la cita. La verificación cruzada muestra acuerdo de 0,6 con veredicto «major-issues»: la ambigüedad activo/pasivo de ኢትኅሥሡ permanece documentada en la nota [a].'
+  spanish_consistency_notes:
+  - No aparecen el tetragramaton (יהוה) ni κύριος en este versículo; el parámetro de proyecto 'Yahvé' no aplica.
+  - No hay terminología cristológica (Mesías/Cristo) en el pasaje.
+  - ኃጥኣን ('pecadores') se traduce como 'pecadores', término estándar sin equivalente de proyecto que lo desplace.
+  - El motivo del registro celestial ('están siendo escritos cada día') preserva la imagen apocalíptica sin aplanarla en prosa genérica, conforme a la decisión teológica de proyecto para fórmulas de juicio.
+  - Se usan guillemets españoles (« ») para la cita directa, conforme a la convención tipográfica del español.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/105/007.yaml
+  source_text_sha256: 99fba663193e3531442e5bd783ca5eb8cdf785a1838d58c6073ad473b59911a4
+  english_pob_commit_sha: e76a3ac2f1668c9dd8e6b2f444c299ac2a8c52ed
+ai_draft:
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_cli
+  prompt_id: spanish_source_grounded_draft_claude_v1
+  prompt_sha256: 3b3710b12d51b7e5a36d23d1a0cbcc492ba0fefb0bfdcf9d2669a3bb14f13d73
+  timestamp: '2026-05-07T23:13:39Z'
+  output_hash: 369760e01d1296dbe86d53419e5938f8f39c57ed6276819a674d42ee5029368f
+  usage:
+    prompt_tokens: 104991
+    completion_tokens: 8829
+    total_tokens: 113820
+    reasoning_tokens: 0
+    cache_read_input_tokens: 79014
+    cache_creation_input_tokens: 25969
+    estimated_cost_usd: 0.23407
+  provider: anthropic_claude_code_cli
+  fallback_reason: azure_content_filter
+status: spanish_draft

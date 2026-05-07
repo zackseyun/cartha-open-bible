@@ -1,0 +1,162 @@
+id: 1EN.90.25
+reference: 1 Enoch 90:25
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወዝኩ፡ ሮ*ኖላዊያን፡ ተኰነኑ፡ *ወኮኑ፡ ኃጥኣነ፡ ወተወድዩ፡ እሙንቱ፡ *ውስተ'ዛ፡ ማዕምቀ፡ እሳት።
+  language: Geez
+  pages:
+  - 219
+  - 220
+  - 221
+  - 222
+  - 223
+  - 224
+  - 225
+  - 226
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/090/025.yaml
+  text: And those shepherds were judged and were found to be sinners[c][b][a], and they were cast into that abyss of fire.
+  footnotes:
+  - marker: a
+    text: The animal term in the Ethiopic OCR is textually uncertain in form, but the context of the Animal Apocalypse strongly suggests the referent is the elephants.
+    reason: textual_variant
+  - marker: b
+    text: Or 'were found guilty'; the phrase 'became sinners' may function as a judicial declaration in context.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And I saw that those elephants were judged and became sinners, and they were cast into that deep abyss of fire.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 319d295d3237cfff48e22ff17fa87fe930bc59b826b9bffff27aa64d8f3b774f
+    timestamp: '2026-04-22T09:21:36Z'
+    output_hash: 513a868378c9ada876d606b3eae55a722cf3f3c2832d23bc8b5b209154ff567c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:21Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Y aquellos pastores[a] fueron juzgados y fueron hallados pecadores[b], y fueron arrojados a aquel abismo de fuego[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El geez ኖላዊያን (nolawiyan) designa a «los pastores», en referencia a los setenta pastores angélicos de la Apocalipsis Animal (cf. 1 Enoc 90:22). Una revisión de nivel 3 corrigió una lectura OCR previa que identificaba erróneamente este término como «elefantes» y leía ወዝኩ como el verbo «y vi» en lugar del demostrativo «y aquellos».
+    reason: textual_variant
+  - marker: b
+    text: O «fueron declarados culpables»; la frase geez ወኮኑ ኃጥኣነ puede funcionar en este contexto como declaración judicial de culpabilidad más que como descripción de estado moral.
+    reason: lexical_alternative
+  - marker: c
+    text: 'Lectura anterior a la revisión de nivel 3: «Y vi que aquellos elefantes fueron juzgados y se convirtieron en pecadores, y fueron arrojados a aquel profundo abismo de fuego».'
+    reason: source_note
+lexical_decisions:
+- source_word: ወዝኩ ኖላዊያን
+  english_pob_choice: those shepherds
+  chosen_spanish: aquellos pastores
+  alternatives_spanish:
+  - los pastores
+  - esos pastores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'La revisión de nivel 3 estableció que ወዝኩ es demostrativo («y aquellos»), no el verbo «y vi» (ወርኢኩ), y que ኖላዊያን significa «pastores», no «elefantes». «Aquellos pastores» preserva la fuerza demostrativa y señala el referente específico: los setenta pastores angélicos mencionados en v. 22. Se prefiere «aquellos» sobre «esos» por su registro más solemne en contexto apocalíptico.'
+- source_word: ተኰነኑ
+  english_pob_choice: were judged
+  chosen_spanish: fueron juzgados
+  alternatives_spanish:
+  - fueron condenados
+  - fueron sentenciados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Pasivo judicial que preserva la ambigüedad entre veredicto y sentencia. «Fueron condenados» resolvería la tensión prematuramente; «fueron juzgados» mantiene el proceso judicial abierto, en consonancia con la escena de tribunal apocalíptico.
+- source_word: ወኮኑ ኃጥኣነ
+  english_pob_choice: were found to be sinners
+  chosen_spanish: fueron hallados pecadores
+  alternatives_spanish:
+  - fueron declarados culpables
+  - resultaron ser pecadores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión de nivel 3 corrigió la lectura anterior («se convirtieron en pecadores») al constatar que en contexto judicial ወኮኑ ኃጥኣነ equivale a una declaración de culpabilidad. «Fueron hallados pecadores» reproduce el verbo de constatación judicial («hallados») y el término moral-religioso geez ኃጥኣነ («pecadores»). «Fueron declarados culpables» desplazaría el registro hacia lo jurídico puro, perdiendo la carga teológico-moral; queda como alternativa en nota.
+- source_word: ወተወድዩ
+  english_pob_choice: were cast
+  chosen_spanish: fueron arrojados
+  alternatives_spanish:
+  - fueron lanzados
+  - fueron echados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Pasivo de expulsión forzosa. «Fueron arrojados» es vívido y digno sin resultar hiperbólico; «fueron lanzados» tiene connotaciones más físicas, y «fueron echados» puede sonar coloquial en español neutro formal.
+- source_word: ውስተ'ዛ ማዕምቀ እሳት
+  english_pob_choice: into that abyss of fire
+  chosen_spanish: a aquel abismo de fuego
+  alternatives_spanish:
+  - en aquel abismo de fuego
+  - al abismo de fuego
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión de nivel 3 eliminó el adjetivo «profundo» por redundante (ማዕምቀ ya contiene la idea de profundidad/abismo). El demostrativo geez se reproduce con «aquel» para mantener la referencia a un lugar específico evocado en la visión. La preposición «a» (dirección) es más natural que «en» (lugar de reposo) dado el movimiento verbal «fueron arrojados».
+theological_decisions:
+- issue: 'Referente simbólico: ¿«pastores» o «elefantes»?'
+  english_pob_reading: those shepherds
+  chosen_spanish_reading: aquellos pastores
+  alternative_spanish_readings:
+  - aquellos elefantes
+  rationale: La revisión de nivel 3 (adjudicador Gemini, confianza 1.0) estableció que ኖላዊያን designa «pastores» —los setenta ángeles-pastores de la Apocalipsis Animal— y no «elefantes». El geez ኖላዊያን (nolawiyan) es el término técnico para estos agentes angélicos en 1 Enoc 89–90. La traducción española sigue el texto corregido.
+  doctrine_reference: 'Filosofía del POB: primacía del texto en lengua original; no perpetuar errores de OCR ni aplanar la imaginería apocalíptica.'
+- issue: 'ወኮኑ ኃጥኣነ: declaración moral o jurídica'
+  english_pob_reading: were found to be sinners
+  chosen_spanish_reading: fueron hallados pecadores
+  alternative_spanish_readings:
+  - fueron declarados culpables
+  - se hallaron culpables
+  rationale: 'El POB inglés preserva la tensión entre el sentido moral («pecadores») y el judicial («hallados»). El español «fueron hallados pecadores» reproduce esa doble carga: «hallados» aporta el matiz de verificación o veredicto, mientras «pecadores» mantiene el peso teológico-moral de ኃጥኣነ. Resolver la tensión a favor de una lectura puramente jurídica empobrecería el texto.'
+  doctrine_reference: 'Principio del POB: preservar la tensión teológica antes que resolverla.'
+translation_notes:
+  revision_awareness: 'La revisión de nivel 3 (adjudicador Gemini-3.1-pro-preview, 2026-04-22, confianza 1.0) realizó cuatro correcciones al texto inglés de base: (1) ወዝኩ pasa de verbo «y vi» a demostrativo «y aquellos»; (2) ኖላዊያን pasa de «elefantes» a «pastores»; (3) ወኮኑ ኃጥኣነ pasa de «se convirtieron en pecadores» a «fueron hallados pecadores», reflejando el uso judicial del contexto; (4) se elimina «profundo» de «abismo de fuego» por redundante con ማዕምቀ. El borrador español sigue íntegramente el texto inglés post-revisión y refleja estas correcciones en las decisiones léxicas y en la nota [a].'
+  spanish_consistency_notes:
+  - «Pastores» para ኖላዊያን (nolawiyan) en contexto de la Apocalipsis Animal; diferente de términos para ángeles en general.
+  - «Abismo de fuego» para ማዕምቀ እሳት, sin añadir «profundo», en concordancia con la corrección de la revisión de nivel 3.
+  - «Fueron hallados pecadores» para ወኮኑ ኃጥኣነ en contexto judicial; coherente con el tratamiento de la misma frase en 90:24 según el adjudicador.
+  - «Fueron arrojados» para ወተወድዩ; mantiene el registro apocalíptico sin hipérbole.
+  - No interviene la terminología YHWH/Mesías/Espíritu en este versículo; no se requieren notas de terminología teológica del proyecto.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/090/025.yaml
+  source_text_sha256: 64d8b6c64f168691fbb422cc8f3d9866d7ff0e8954def34fe1bf1ed011d7891a
+  english_pob_commit_sha: e76a3ac2f1668c9dd8e6b2f444c299ac2a8c52ed
+ai_draft:
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_cli
+  prompt_id: spanish_source_grounded_draft_claude_v1
+  prompt_sha256: 7cf9a737bd27081d1dc2ed8587f0747b354e23b39de52808ebe79a645e9bfec3
+  timestamp: '2026-05-07T23:13:09Z'
+  output_hash: 3b51babccc831a046523f1336fc8a833716e9b0c0e031edde2ae2774d6075f88
+  usage:
+    prompt_tokens: 89998
+    completion_tokens: 9426
+    total_tokens: 99424
+    reasoning_tokens: 0
+    cache_read_input_tokens: 73029
+    cache_creation_input_tokens: 16963
+    estimated_cost_usd: 0.214206
+  provider: anthropic_claude_code_cli
+  fallback_reason: azure_content_filter
+status: spanish_draft
