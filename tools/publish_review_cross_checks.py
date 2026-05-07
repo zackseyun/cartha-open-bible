@@ -78,7 +78,25 @@ class ReviewRecord:
             / self.book_slug
             / f"{self.verse:03d}.yaml"
         )
-        return flat if flat.exists() else nested
+        if flat.exists():
+            return flat
+
+        # Testaments of the Twelve Patriarchs uses an extra-deep layout:
+        #   extra_canonical/testaments_twelve_patriarchs/<patriarch>/<chap>/<verse>.yaml
+        # Reviews are keyed on the patriarch slug (e.g. 'asher'), not on
+        # the parent collection, so resolve by walking the parent.
+        t12p_nested = (
+            TRANSLATION_ROOT
+            / "extra_canonical"
+            / "testaments_twelve_patriarchs"
+            / self.book_slug
+            / f"{self.chapter:03d}"
+            / f"{self.verse:03d}.yaml"
+        )
+        if t12p_nested.exists():
+            return t12p_nested
+
+        return nested
 
     @property
     def rel_review_path(self) -> str:
