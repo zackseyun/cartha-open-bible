@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that matches the Greek: included ''And he said to them,'' rendered Ἰδοῦ as ''Behold,'' preserved the present ''I am dying today,'' and translated the age statement as ''at one hundred and eighteen years of age.'''
 translation:
   language: es
-  text: 'Y les dijo: «He aquí, hoy estoy muriendo a la edad de ciento dieciocho años».'
+  text: Yo nací como el quinto hijo de Jacob, como salario por las mandrágoras.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἰδοῦ
@@ -65,4 +65,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y les dijo: «He aquí, hoy estoy muriendo a la edad de ciento dieciocho años».'
+  to: Yo nací como el quinto hijo de Jacob, como salario por las mandrágoras.
+  rationale: 'Revised to match the Greek: ἐτέχθην πέμπτος υἱὸς τῷ Ἰακώβ → ''nací como el quinto hijo de Jacob''; ἐν μισθῷ τῶν μανδραγόρων → ''como salario por las mandrágoras'' (μισθός = wage/hire/price; μανδραγόρας = mandrakes, referring to Gen 30:14-18 context).'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source (ISS 1:2) reads: ''I was born as the fifth son to Jacob, as the wages for the mandrakes.'' The EN YAML base_translation carries a mismatched text (''And he said to them, Behold, I am dying today at one hundred and eighteen years of age'') due to a known revision-pass misalignment (same pattern as GAD 8:3-5). The Spanish draft ''Y les dijo: He aquí, hoy estoy muriendo a la edad de ciento dieciocho años'' follows that incorrect EN text and does not correspond to the Greek of verse 1:2.'
+  spanish_quality_summary: The current Spanish text does not represent the Greek of ISS 1:2. A corrected rendering is provided.
+  glossary_alignment: No special glossary terms in this verse.
+  issues:
+  - severity: high
+    issue: Spanish text follows a misaligned EN base translation rather than the Greek source
+    rationale: 'ISS 1:2 Greek states Issachar''s birth as fifth son in exchange for mandrakes. The Spanish ''Y les dijo: He aquí, hoy estoy muriendo...'' belongs to a different verse context entirely.'
+  revised_spanish_text: Yo nací como el quinto hijo de Jacob, como salario por las mandrágoras.
+  revision_rationale: 'Revised to match the Greek: ἐτέχθην πέμπτος υἱὸς τῷ Ἰακώβ → ''nací como el quinto hijo de Jacob''; ἐν μισθῷ τῶν μανδραγόρων → ''como salario por las mandrágoras'' (μισθός = wage/hire/price; μανδραγόρας = mandrakes, referring to Gen 30:14-18 context).'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 112e9a7f3b863d768c07bf1db1256e0d63de31d9f96cbda9d62cce8e1ae64e1a
+  timestamp: '2026-05-08T06:29:53Z'
+  output_hash: 112e9a7f3b863d768c07bf1db1256e0d63de31d9f96cbda9d62cce8e1ae64e1a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

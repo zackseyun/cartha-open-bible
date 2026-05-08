@@ -20,7 +20,7 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a rendering of the supplied Greek: ''Εἴπατε'' as ''Say'', ''ταῦτα'' as ''these things'', and included both subjects ''you and I'' and the indirect object ''to your children''.'
 translation:
   language: es
-  text: Decid estas cosas, tanto vosotros como yo, a vuestros hijos,
+  text: Y después de cinco años lo llevaron a Hebrón, y lo pusieron con sus padres.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Εἴπατε
@@ -79,4 +79,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Decid estas cosas, tanto vosotros como yo, a vuestros hijos,
+  to: Y después de cinco años lo llevaron a Hebrón, y lo pusieron con sus padres.
+  rationale: 'Revised to match the Greek: μετὰ ἔτη πέντε → ''después de cinco años''; ἀνήγαγον αὐτὸν εἰς Χεβρών → ''lo llevaron a Hebrón''; ἔθηκαν αὐτὸν μετὰ τῶν πατέρων αὐτοῦ → ''lo pusieron con sus padres''.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source (8:5) reads: ''And after five years they brought him up to Hebron, and laid him with his fathers.'' The EN YAML base_translation carries a mismatched text (''Say these things, both you and I, to your children'') from the same revision-pass misalignment. The Spanish ''Decid estas cosas, tanto vosotros como yo, a vuestros hijos'' does not correspond to the Greek.'
+  spanish_quality_summary: The current Spanish text does not represent the Greek of verse 8:5. A corrected rendering matching the Greek is provided.
+  glossary_alignment: No special glossary terms. Χεβρών → 'Hebrón' (standard biblical Spanish transliteration).
+  issues:
+  - severity: high
+    issue: Spanish text follows a misaligned EN base translation rather than the Greek source
+    rationale: 8:5 Greek narrates the post-death transfer of Gad's body to Hebron after five years. The Spanish 'Decid estas cosas...' is from a different context entirely.
+  revised_spanish_text: Y después de cinco años lo llevaron a Hebrón, y lo pusieron con sus padres.
+  revision_rationale: 'Revised to match the Greek: μετὰ ἔτη πέντε → ''después de cinco años''; ἀνήγαγον αὐτὸν εἰς Χεβρών → ''lo llevaron a Hebrón''; ἔθηκαν αὐτὸν μετὰ τῶν πατέρων αὐτοῦ → ''lo pusieron con sus padres''.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 246372882524c8d39269d733641b42f132c5f5648204a1ff9b86ad1f2197c70e
+  timestamp: '2026-05-08T06:29:06Z'
+  output_hash: 246372882524c8d39269d733641b42f132c5f5648204a1ff9b86ad1f2197c70e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

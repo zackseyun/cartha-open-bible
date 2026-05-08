@@ -20,7 +20,7 @@ base_translation:
     changes_summary: 'Revised to match the source imperative and address: “Say these things” for Εἴπατε ταῦτα, retained the vocative name, and rendered ὑμεῖς … τοῖς τέκνοις ὑμῶν as “also you to your children.”'
 translation:
   language: es
-  text: Decid estas cosas, Gad, también vosotros a vuestros hijos,
+  text: 'Y después de descansar un poco, habló de nuevo: «Hijos míos, obedeced a vuestro padre, y sepultadme cerca de mis padres».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Εἴπατε
@@ -72,4 +72,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Decid estas cosas, Gad, también vosotros a vuestros hijos,
+  to: 'Y después de descansar un poco, habló de nuevo: «Hijos míos, obedeced a vuestro padre, y sepultadme cerca de mis padres».'
+  rationale: 'The Spanish is revised to match the Greek source directly: ἡσυχάσας ὀλίγον → ''después de descansar un poco''; εἶπε πάλιν → ''habló de nuevo''; τέκνα μου → ''hijos míos''; ὑπακούσατε τοῦ πατρὸς ὑμῶν → ''obedeced a vuestro padre''; θάψατέ με ἐγγὺς τῶν πατέρων μου → ''sepultadme cerca de mis padres''.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:50Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source (8:3) reads: ''And after resting a little he spoke again. My children, obey your father, and bury me near my fathers.'' The EN YAML base_translation carries a mismatched text (''Say these things, Gad, also you to your children'') caused by a known truncation/misalignment error in the revision pass. The Spanish draft follows that incorrect EN text with ''Decid estas cosas, Gad, también vosotros a vuestros hijos,'' which does not correspond to the Greek. The correct Spanish should render the Greek directly.'
+  spanish_quality_summary: The current Spanish text is based on a misaligned EN source and does not represent the Greek of verse 8:3. A corrected rendering is provided below that matches the Greek.
+  glossary_alignment: No special glossary terms in this verse.
+  issues:
+  - severity: high
+    issue: Spanish text follows a misaligned EN base translation rather than the Greek source
+    rationale: 'EN YAML base_translation for 8:3 was corrupted by revision pass truncation. The Greek clearly reads the deathbed scene: resting, then addressing children to obey and bury him near his fathers. The Spanish ''Decid estas cosas, Gad...'' is from a different context entirely.'
+  revised_spanish_text: 'Y después de descansar un poco, habló de nuevo: «Hijos míos, obedeced a vuestro padre, y sepultadme cerca de mis padres».'
+  revision_rationale: 'The Spanish is revised to match the Greek source directly: ἡσυχάσας ὀλίγον → ''después de descansar un poco''; εἶπε πάλιν → ''habló de nuevo''; τέκνα μου → ''hijos míos''; ὑπακούσατε τοῦ πατρὸς ὑμῶν → ''obedeced a vuestro padre''; θάψατέ με ἐγγὺς τῶν πατέρων μου → ''sepultadme cerca de mis padres''.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 94dda40dd4a3300c734ecb230187b2acdad0e1cfef6db4d2fd71c2494de56ec2
+  timestamp: '2026-05-08T06:28:50Z'
+  output_hash: 94dda40dd4a3300c734ecb230187b2acdad0e1cfef6db4d2fd71c2494de56ec2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

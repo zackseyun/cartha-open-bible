@@ -104,4 +104,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'All source elements faithfully rendered: ἀρνήσηται → ''lo niega''; αἰδεσθῇ ἐλεγχόμενος → ''se avergüenza al ser reprendido''; ἡσύχασον → ''guarda silencio''; μὴ ἐλέγξῃς → ''no lo reprendas'' (following POB revision from ''do not keep reproving''); πλημμελῆσαι εἰς σέ → ''haber pecado contra ti'' (following POB revision from ''done wrong''); φοβηθεὶς εἰρηνεύει → ''temeroso, hace las paces''. Additional expansion ''para no volver a hacerte daño'' correctly renders the implicit τοῦ μή clause.'
+  spanish_quality_summary: Natural, dignified Spanish. The rendition of 'guarda silencio' for ἡσύχασον is slightly fuller than 'be still' but captures the same idea well. Footnotes [a] and [b] markers present and match text.
+  glossary_alignment: μετανοέω → 'arrepentirse' (correct). πλημμελέω → 'pecar' (following POB revision). Consistent with ch. 6 glossary.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: cdb4ffdb47d4c61f7a10f7a8ec9544fc83d6676f2a41f276d7aef7a364f3407e
+  timestamp: '2026-05-08T06:27:49Z'
+  output_hash: cdb4ffdb47d4c61f7a10f7a8ec9544fc83d6676f2a41f276d7aef7a364f3407e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

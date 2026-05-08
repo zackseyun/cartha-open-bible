@@ -20,7 +20,7 @@ base_translation:
     changes_summary: Replaced the unrelated paragraph with a direct rendering of the Greek source, preserving the address to the children and the imperative 'Tell these things also to your children.'
 translation:
   language: es
-  text: Contad estas cosas también a vuestros hijos,
+  text: Y recogiendo sus pies, se durmió en paz.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Εἴπατε / aor. imper.
@@ -72,4 +72,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Contad estas cosas también a vuestros hijos,
+  to: Y recogiendo sus pies, se durmió en paz.
+  rationale: 'Revised to match the Greek: ἐξάρας τοὺς πόδας → ''recogiendo sus pies'' (standard deathbed posture idiom); ἐκοιμήθη ἐν εἰρήνῃ → ''se durmió en paz'' (standard euphemism for death, κοιμάομαι as sleep-of-death).'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source (8:4) reads: ''And drawing up his feet, he fell asleep in peace.'' The EN YAML base_translation carries a mismatched text (''Tell these things also to your children'') caused by the same known truncation/revision-pass misalignment. The Spanish draft ''Contad estas cosas también a vuestros hijos'' does not correspond to the Greek.'
+  spanish_quality_summary: The current Spanish text does not represent the Greek of verse 8:4. A corrected rendering matching the Greek is provided.
+  glossary_alignment: No special glossary terms. ἐκοιμήθη ἐν εἰρήνῃ is the standard death-sleep formula.
+  issues:
+  - severity: high
+    issue: Spanish text follows a misaligned EN base translation rather than the Greek source
+    rationale: 8:4 Greek describes Gad's death — drawing up feet, falling asleep in peace — a classic deathbed scene. The Spanish 'Contad estas cosas...' is from a different verse context.
+  revised_spanish_text: Y recogiendo sus pies, se durmió en paz.
+  revision_rationale: 'Revised to match the Greek: ἐξάρας τοὺς πόδας → ''recogiendo sus pies'' (standard deathbed posture idiom); ἐκοιμήθη ἐν εἰρήνῃ → ''se durmió en paz'' (standard euphemism for death, κοιμάομαι as sleep-of-death).'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0a93c038263f089d3cc306ba619458e9a0bfc5a383c9baf7f34416f6c44450fb
+  timestamp: '2026-05-08T06:28:58Z'
+  output_hash: 0a93c038263f089d3cc306ba619458e9a0bfc5a383c9baf7f34416f6c44450fb
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
