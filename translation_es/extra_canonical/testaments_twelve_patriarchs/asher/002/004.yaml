@@ -131,4 +131,27 @@ ai_draft:
     estimated_cost_usd: 0.198983
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish renders †Καίγε ἀγάπη οὖσα, ἐν πονηρίᾳ ἐστὶν ὁ συγκρύπτων τὸ κακὸν ὑπὲρ τὸ ὄνομα τὸ καλόν· τὸ δὲ τέλος τῆς πράξεως ἔρχεται εἰς κακόν well. Correctly identifies ὁ συγκρύπτων as the grammatical subject. The concessive 'Aun siendo amor' is syntactically more faithful than the EN plural 'they are in love'. The textual obelus is properly footnoted.
+  spanish_quality_summary: '''Aun siendo amor, está en maldad el que oculta el mal bajo nombre bueno; pero el fin de la acción llega al mal.'' The front-loaded concession is unusual but justified by Greek word order. The footnotes on both textual difficulties (ἀγάπη οὖσα with obeli, ὑπέρ used as ''under'') are clear and helpful.'
+  glossary_alignment: ἀγάπη→amor (not 'caridad') is correct for this non-theological ethical context. No YHWH/κύριος, no δοῦλος, no Χριστός, no πνεῦμα. All glossary rules satisfied.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9a89daba403af80a2aab160f75911f050a5bbe683b157f4120c7ac8aaad08323
+  timestamp: '2026-05-08T06:15:34Z'
+  output_hash: 9a89daba403af80a2aab160f75911f050a5bbe683b157f4120c7ac8aaad08323
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

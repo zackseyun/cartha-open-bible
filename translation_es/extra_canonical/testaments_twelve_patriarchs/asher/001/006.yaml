@@ -118,4 +118,27 @@ ai_draft:
     estimated_cost_usd: 0.090642
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish faithfully renders Ἐὰν ἡ ψυχὴ θέλει καλῶς πορευθῆναι, πάσας τὰς πράξεις αὐτῆς ποιεῖ ἐν δικαιοσύνῃ, κἂν ἁμάρτῃ εὐθὺς μετανοεῖ. All decisions (θέλει→quiere, πράξεις→acciones, δικαιοσύνη→justicia, μετανοεῖ→se arrepiente) are well-grounded and follow EN POB adjudicated revisions.
+  spanish_quality_summary: '''Si, pues, el alma quiere caminar bien, realiza todas sus acciones en justicia; y aun si peca, inmediatamente se arrepiente.'' Reads naturally. ''Caminar bien'' preserves the walking metaphor. μετανοεῖ→se arrepiente is correct per project default for sin-turning contexts. Footnote on the textual obelus is appropriate.'
+  glossary_alignment: δικαιοσύνη→justicia correct (ethical not forensic). μετανοεῖ→se arrepiente correct for sin context. No YHWH/κύριος, no δοῦλος. All glossary rules satisfied.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 3a558281c4c480067666f1b57830c1cb0de3cc2fa10a9cc37f36f11bd603c547
+  timestamp: '2026-05-08T06:13:38Z'
+  output_hash: 3a558281c4c480067666f1b57830c1cb0de3cc2fa10a9cc37f36f11bd603c547
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

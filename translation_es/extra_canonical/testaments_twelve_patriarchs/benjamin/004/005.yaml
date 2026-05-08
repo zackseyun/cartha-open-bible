@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Defiende al que tiene el temor del Señor; ayuda al que ama a Dios; amonestando, hace volver al que rechaza al Altísimo; y ama, como a su propia alma, al que tiene la gracia de un buen espíritu[a].
+  text: Y ama, como a su propia alma, al que tiene la gracia de un buen espíritu[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,4 +91,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Defiende al que tiene el temor del Señor; ayuda al que ama a Dios; amonestando, hace volver al que rechaza al Altísimo; y ama, como a su propia alma, al que tiene la gracia de un buen espíritu[a].
+  to: Y ama, como a su propia alma, al que tiene la gracia de un buen espíritu[a].
+  rationale: Trimmed to only the single Greek clause of the per-verse source (Καὶ τὸν ἔχοντα χάριν ἀγαθοῦ πνεύματος ἀγαπᾷ κατὰ τὴν ψυχὴν αὐτοῦ). The expanded virtues catalogue belongs at the chapter-level YAML, not the per-verse file. Retained the textual-variant footnote as it applies to this verse.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:13:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ τὸν ἔχοντα χάριν ἀγαθοῦ πνεύματος ἀγαπᾷ κατὰ τὴν ψυχὴν αὐτοῦ. The EN per-verse YAML text is simply ''And he loves the one who has the grace of a good spirit as his own soul.'' However, the Spanish draft (''Defiende al que tiene el temor del Señor; ayuda al que ama a Dios; amonestando, hace volver al que rechaza al Altísimo; y ama, como a su propia alma, al que tiene la gracia de un buen espíritu'') incorporates content from the chapter-level BEN 4:5 expansion (ὑπερασπίζει, συντρέχει, νουθετῶν ἐπιστρέφει) that is NOT in the per-verse source YAML source text (which only shows Καὶ τὸν ἔχοντα...). The base_translation field in the Spanish file correctly quotes the expanded EN text from the per-verse EN YAML, which itself shows only the short form. The Spanish adds material that does not appear in the per-verse EN source text.'
+  spanish_quality_summary: The Spanish quality is good when evaluated against the chapter-level text, but the per-verse Spanish overshoots the per-verse Greek source. The extra material about defending, helping, and admonishing belongs to the chapter 4 level, not this per-verse file's source. The Spanish should reflect only the single clause of the source text.
+  glossary_alignment: No YHWH/Χριστός. Κύριου→Señor (correct). πνεῦμα→espíritu lowercase (correct per theological decision). Glossary respected.
+  issues:
+  - severity: high
+    issue: Spanish per-verse translation expands beyond the per-verse Greek source text
+    rationale: The per-verse EN YAML source text is Καὶ τὸν ἔχοντα χάριν ἀγαθοῦ πνεύματος ἀγαπᾷ κατὰ τὴν ψυχὴν αὐτοῦ (one clause), but the Spanish draft includes three additional clauses (defends, helps, admonishes) that appear only in the chapter-level YAML. For the per-verse file the translation should match the per-verse source.
+  revised_spanish_text: Y ama, como a su propia alma, al que tiene la gracia de un buen espíritu[a].
+  revised_footnotes:
+  - marker: a
+    text: Algunos testigos abrevian aquí, mientras que otros amplían la lista de virtudes. La traducción sigue la secuencia ética más completa representada en la capa griega aportada.
+    reason: textual_variant
+  revision_rationale: Trimmed to only the single Greek clause of the per-verse source (Καὶ τὸν ἔχοντα χάριν ἀγαθοῦ πνεύματος ἀγαπᾷ κατὰ τὴν ψυχὴν αὐτοῦ). The expanded virtues catalogue belongs at the chapter-level YAML, not the per-verse file. Retained the textual-variant footnote as it applies to this verse.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 3c698f5c93583e303c613a71edd428ccc4cecff5525494f18e9fd20d7c4ade08
+  timestamp: '2026-05-08T06:13:24Z'
+  output_hash: 3c698f5c93583e303c613a71edd428ccc4cecff5525494f18e9fd20d7c4ade08
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

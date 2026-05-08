@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Pues sabe que el día en que Israel se vuelva, será consumado el reino del enemigo[a].
+  text: Pues sabe que el día en que Israel se vuelva, el reino del enemigo llegará a su fin[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -79,4 +79,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pues sabe que el día en que Israel se vuelva, será consumado el reino del enemigo[a].
+  to: Pues sabe que el día en que Israel se vuelva, el reino del enemigo llegará a su fin[a].
+  rationale: Changed 'será consumado el reino del enemigo' to 'el reino del enemigo llegará a su fin' to avoid the positive connotation of 'consumado' (which implies a desirable completion) and more clearly convey the termination/destruction intended by συντελέω and the EN POB 'will be brought to an end'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:15:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'ἐν ᾗ ἡμέρᾳ → ''el día en que'' (correct). ἐπιστρέψει Ἰσραήλ → ''Israel se vuelva'' (correct, consistent with 5:9). συντελεσθήσεται → ''será consumado'' is problematic. συντελέω means ''to bring to completion, to end/destroy''; ''será consumado'' in Spanish means ''will be consummated/completed'' but has a positive connotation (a consummation) that does not convey the destruction/ending of the enemy''s kingdom. Better: ''llegará a su fin'' or ''será destruido''. The footnote [a] notes the eschatological echo but the text itself needs a clearer rendering.'
+  spanish_quality_summary: The verse reads naturally except for 'será consumado' which is ambiguous in Spanish — it can suggest 'consummation' (positive completion) rather than 'brought to an end' (destruction). The English POB says 'will be brought to an end', meaning termination of the enemy's rule, which 'llegará a su fin' captures more clearly.
+  glossary_alignment: No glossary terms of concern. Consistent.
+  issues:
+  - severity: medium
+    issue: '''será consumado el reino del enemigo'' — ''consumado'' in Spanish typically means positively completed/consummated, giving the wrong connotation for the end of the enemy''s kingdom'
+    rationale: συντελέω means to bring to completion/end; the EN POB says 'will be brought to an end'. 'Consumado' in Spanish can read as the fulfillment of something desirable. 'Llegará a su fin' or 'tendrá su fin' is clearer for the annihilation of the enemy's power.
+  revised_spanish_text: Pues sabe que el día en que Israel se vuelva, el reino del enemigo llegará a su fin[a].
+  revised_footnotes:
+  - marker: a
+    text: 'Eco escatológico: el retorno de Israel al Señor coincide con la disolución del reino adversario.'
+    reason: cross_reference
+  revision_rationale: Changed 'será consumado el reino del enemigo' to 'el reino del enemigo llegará a su fin' to avoid the positive connotation of 'consumado' (which implies a desirable completion) and more clearly convey the termination/destruction intended by συντελέω and the EN POB 'will be brought to an end'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c389ad00a3728297b74aceb49a5368402bdc636b4383dfd1eaa8d2ee9cf7f3d2
+  timestamp: '2026-05-08T06:15:14Z'
+  output_hash: c389ad00a3728297b74aceb49a5368402bdc636b4383dfd1eaa8d2ee9cf7f3d2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

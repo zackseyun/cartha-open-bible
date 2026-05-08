@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed 'also' as unsupported by the source; otherwise retained the draft as accurate and natural.
 translation:
   language: es
-  text: Y si alguien traiciona a un alma justa e injuria a un alma justa, el justo ora; y aunque por un poco de tiempo sea humillado, no mucho después aparece mucho más radiante[a], como llegó a ser José mi hermano.
+  text: Y si alguien traiciona a un alma justa[a], el justo ora; y aunque por un poco de tiempo sea humillado, no mucho después aparece mucho más radiante, como llegó a ser José mi hermano.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -85,4 +85,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y si alguien traiciona a un alma justa e injuria a un alma justa, el justo ora; y aunque por un poco de tiempo sea humillado, no mucho después aparece mucho más radiante[a], como llegó a ser José mi hermano.
+  to: Y si alguien traiciona a un alma justa[a], el justo ora; y aunque por un poco de tiempo sea humillado, no mucho después aparece mucho más radiante, como llegó a ser José mi hermano.
+  rationale: Removed 'e injuria a un alma justa' which is a surplus clause from the chapter-level draft absent from the per-verse Greek source (only δίκαιον προδώσει = betrays a righteous one). Moved the Joseph cross-reference footnote to [a] since it is the only footnote. Updated 'reappears' to 'aparece' to match revised EN ('appears', not 'reappears').
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Κἄν τις δίκαιον προδώσει, ὁ δίκαιος προσεύχεται· εἰ καὶ πρὸς ὀλίγον ταπεινωθῇ, μετʼ οὐ πολὺ φαιδρότερος ἀναφαίνεται, οἷος γέγονεν Ἰωσὴφ ὁ ἀδελφός μου. The Greek text has one clause ''betrays a righteous [man]'' — just δίκαιον προδώσει. However the base_translation in the ES file reads ''And if anyone betrays a righteous soul and insults a righteous soul, the righteous man prays'' — this doubled ''betrays/insults'' clause appears in the chapter-level draft but NOT in the per-verse EN revised text. The per-verse EN revised text is: ''And if anyone betrays a righteous man, the righteous man prays; and even if for a little while he is brought low, before long he reappears far more radiant, as Joseph my brother became.'' The Spanish follows the doubled chapter-draft version rather than the per-verse revised text.'
+  spanish_quality_summary: The quality of the Spanish itself is good, but it includes 'e injuria a un alma justa' which is a surplus clause from the chapter draft not found in the per-verse revised EN text or the Greek source for this verse. Should be removed to match the per-verse source.
+  glossary_alignment: No divine names. No violations.
+  issues:
+  - severity: medium
+    issue: Spanish includes surplus clause 'e injuria a un alma justa' not present in per-verse EN or Greek source
+    rationale: The Greek δίκαιον προδώσει has only one verb (betrays). The doubled insults clause comes from the chapter-level draft, not the per-verse revised text. Per-verse Spanish should follow the per-verse revised EN text.
+  revised_spanish_text: Y si alguien traiciona a un alma justa[a], el justo ora; y aunque por un poco de tiempo sea humillado, no mucho después aparece mucho más radiante, como llegó a ser José mi hermano.
+  revised_footnotes:
+  - marker: a
+    text: 'La historia de José es el modelo: aunque humillado por un tiempo, después fue manifestado como glorioso y vindicado. Cf. Génesis 37; 39–45.'
+    reason: cross_reference
+  revision_rationale: Removed 'e injuria a un alma justa' which is a surplus clause from the chapter-level draft absent from the per-verse Greek source (only δίκαιον προδώσει = betrays a righteous one). Moved the Joseph cross-reference footnote to [a] since it is the only footnote. Updated 'reappears' to 'aparece' to match revised EN ('appears', not 'reappears').
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: b57192085b50d94356ccc4af63f566086703e206445c83030dcc0bb533ab8f8c
+  timestamp: '2026-05-08T06:14:23Z'
+  output_hash: b57192085b50d94356ccc4af63f566086703e206445c83030dcc0bb533ab8f8c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

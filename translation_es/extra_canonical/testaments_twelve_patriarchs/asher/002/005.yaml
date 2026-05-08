@@ -138,4 +138,27 @@ ai_draft:
     estimated_cost_usd: 0.175481
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish renders Ἄλλος κλέπτει, ἀδικεῖ, ἁρπάζει, πλεονεκτεῖ, καὶ ἐλεεῖ πτωχούς· διπρόσωπον μὲν καὶ τοῦτο, τὸ δὲ ὅλον πονηρόν ἐστιν accurately. The plain 'y' (not adversative 'pero/sin embargo') for καὶ before ἐλεεῖ follows the EN revision correctly. All five verbs rendered with appropriate force.
+  spanish_quality_summary: '''Otro roba, obra injustamente, arrebata, codicia y muestra misericordia a los pobres. También este es de doble cara, pero la totalidad de ello es malo.'' Clean, vivid, parallel structure. ''Arrebata'' distinguishes ἁρπάζει (violent seizing) from κλέπτει (theft). The footnote on διπρόσωπον maintains technical consistency.'
+  glossary_alignment: No YHWH/κύριος, no δοῦλος, no Χριστός, no πνεῦμα. διπρόσωπον→de doble cara consistent. All glossary rules satisfied.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4187ac0590ca6571d351ec46d496f04de498a02ba87fca94a5e07e706cb1c729
+  timestamp: '2026-05-08T06:15:45Z'
+  output_hash: 4187ac0590ca6571d351ec46d496f04de498a02ba87fca94a5e07e706cb1c729
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Hay un hombre que ama al que obra mal[a], pues también él mismo elige morir en el mal; y acerca de esto es manifiesto[b] que es de doble cara[c], pero todo ello es una obra malvada.
+  text: Hay un hombre que ama al que obra mal,[a] ya que también él mismo elige morir en el mal; y acerca de esto es manifiesto[b] que es de doble cara,[c] pero todo ello es una obra malvada.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -133,4 +133,49 @@ ai_draft:
     estimated_cost_usd: 0.224276
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Hay un hombre que ama al que obra mal[a], pues también él mismo elige morir en el mal; y acerca de esto es manifiesto[b] que es de doble cara[c], pero todo ello es una obra malvada.
+  to: Hay un hombre que ama al que obra mal,[a] ya que también él mismo elige morir en el mal; y acerca de esto es manifiesto[b] que es de doble cara,[c] pero todo ello es una obra malvada.
+  rationale: Changed 'pues' to 'ya que' to more accurately signal the explanatory ὅτι (reason-giving) without implying reverse causation. All other content and footnotes preserved.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:15:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Spanish renders Ἔστιν ἄνθρωπος ἀγαπῶν πονηρευόμενον... fairly well, but the EN POB text includes ''on that man''s account'' which has no Greek basis (the Spanish correctly omits this, following the source). However, one alignment issue: the Greek ends with ''τὸ δὲ πᾶν κακὴ πρᾶξις'' (but the whole of it is an evil deed), which the Spanish renders as ''una obra malvada'' — acceptable but could be improved.'
+  spanish_quality_summary: '''Hay un hombre que ama al que obra mal, pues también él mismo elige morir en el mal; y acerca de esto es manifiesto que es de doble cara, pero todo ello es una obra malvada.'' Readable and accurate. The Spanish correctly omits ''on that man''s account'' (not in Greek). ''Es manifiesto'' for φανερόν ἐστι is formal and appropriate.'
+  glossary_alignment: No YHWH/κύριος, no δοῦλος, no Χριστός, no πνεῦμα. All glossary rules satisfied.
+  issues:
+  - severity: low
+    issue: The Spanish 'pues también él mismo elige morir en el mal' omits the subordinate reason clause properly, but 'pues' as conjunction may imply the man loves the wicked person *because* he chooses to die in evil, which reverses the causal direction (the Greek ὅτι καὶ connects the reason Asher gives for why the man does so).
+    rationale: 'ὅτι here introduces the reason: the man loves the wicked person, [the reason being] that he himself also chooses to die in evil. The ''pues'' is acceptable but ''ya que'' or keeping it as a separate clause might better signal the explanatory force without implying the love is caused by the evil-dying choice.'
+  revised_spanish_text: Hay un hombre que ama al que obra mal,[a] ya que también él mismo elige morir en el mal; y acerca de esto es manifiesto[b] que es de doble cara,[c] pero todo ello es una obra malvada.
+  revised_footnotes:
+  - marker: a
+    text: El texto griego incluye la frase marcada con óbelos †ὃ ἐστι πονηρία†¹³ («lo cual es maldad») inmediatamente después de «al que obra mal», indicando que Charles la considera corrupta o una glosa. El POB inglés no la reproduce por separado. Esta traducción sigue ese juicio editorial.
+    reason: textual_variant
+  - marker: b
+    text: Una segunda frase marcada †τὸ ὅλον†¹⁴ («el todo / la totalidad») precede a «de doble cara» en el griego, haciendo incierta la sintaxis de esta cláusula. Charles marca ambos pasajes como problemáticos. «Es manifiesto» traduce el φανερόν ἐστι no disputado; la función sintáctica de la frase marcada no puede establecerse con certeza a partir del texto extante.
+    reason: textual_variant
+  - marker: c
+    text: Griego διπρόσωπος, literalmente «de dos caras / de doble cara». Es el término ético central de la enseñanza de Aser sobre los dos caminos morales (cf. T. Asher 2:1–2; 4:1). Se prefiere a «hipócrita» para preservar la imagen estructural del texto y la coherencia terminológica con el resto del Testamento de Aser.
+    reason: theological_note
+  revision_rationale: Changed 'pues' to 'ya que' to more accurately signal the explanatory ὅτι (reason-giving) without implying reverse causation. All other content and footnotes preserved.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f7a3bc2d35d24a8121e9cb3eb7dfefc200e94df005cfaa3bd7ce3e2b0fb0bc81
+  timestamp: '2026-05-08T06:15:22Z'
+  output_hash: f7a3bc2d35d24a8121e9cb3eb7dfefc200e94df005cfaa3bd7ce3e2b0fb0bc81
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

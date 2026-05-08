@@ -137,4 +137,27 @@ ai_draft:
     estimated_cost_usd: 0.192593
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish correctly follows τὸ ἀγαθὸν ποιεῖν ('hacer el bien') from the Greek rather than the erroneous EN revision ('to do evil against good'). The theological decision to attach πονηροῦ to πνεύματος rather than διαβουλίου is sound and the reasoning is well-documented.
+  spanish_quality_summary: '''Pues siempre que comienza a hacer el bien, el fin de la acción lo empuja hacia el mal, porque el tesoro de su propósito está lleno de un espíritu maligno.'' Accurate and natural. ''Espíritu maligno'' correctly lowercased for an evil spirit entity. ''Lo empuja'' conveys ἐλαύνει''s kinetic force well. Footnotes clearly document the departure from the EN revision.'
+  glossary_alignment: πνεῦμα→espíritu maligno, lowercase correct per project convention (evil spirit, not Holy Spirit). No YHWH/κύριος. No δοῦλος, Χριστός. All glossary rules satisfied.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 78708212087a7888f68e859b449ea0f0350a50bb4a948d54daf1ea0470ac28a8
+  timestamp: '2026-05-08T06:14:06Z'
+  output_hash: 78708212087a7888f68e859b449ea0f0350a50bb4a948d54daf1ea0470ac28a8
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

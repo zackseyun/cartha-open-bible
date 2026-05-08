@@ -137,4 +137,27 @@ ai_draft:
     estimated_cost_usd: 0.17089
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish correctly renders ἃ³ Ὑγιαίνων γὰρ εἶπε πρὸς αὐτούς following the Greek of v.1.2 only, without importing the chronological data from v.1.1 as the EN POB did. Source-faithful.
+  spanish_quality_summary: '''Estando aún sano, les dijo: «Escuchen, hijos de Asher, su padre, y les mostraré todo lo recto ante Dios».'' Reads naturally. Use of ''recto'' for εὐθές is thematically apt for the Two-Ways motif. Footnotes are clear and well-sourced.'
+  glossary_alignment: θεός→Dios correct; no YHWH/κύριος; no δοῦλος, πνεῦμα, Χριστός. All glossary rules satisfied.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 38c9a9565e0b9b33d196f7cb8d28451998062097ffb5e50d51a9a0d2dca2b3c2
+  timestamp: '2026-05-08T06:12:49Z'
+  output_hash: 38c9a9565e0b9b33d196f7cb8d28451998062097ffb5e50d51a9a0d2dca2b3c2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

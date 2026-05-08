@@ -405,4 +405,31 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The chapter-level Spanish translation accurately renders the Greek source across all 13 verses. Key POB revision decisions are correctly mirrored: v.1 ''Depart from anger'' → ''Apartaos de la ira''; v.1 ''dwell in you'' → ''habite en vosotros''; v.2 emphatic double negation → ''de ningún modo...de ninguna manera''; v.4 ''provoke Levi'' (without ''to anger'') → ''provocaréis a Leví''; v.9 participial ''habiéndoos vuelto'' (not temporal ''when you return''); v.12 ''sobre la nueva Jerusalén, la cual es'' (reflecting ἐπί and ἥτις). The bracketed textual variants in vv. 6–7 are retained in the main text. All eschatological passages (vv. 8–13) are consistent with the per-verse translations.'
+  spanish_quality_summary: 'The chapter reads fluently as a connected whole. The vosotros register is consistent throughout. Footnote markers [a]–[f] in the text body all match the footnotes array (6 footnotes, 6 markers). One minor lexical note: v.5 renders γυναιξὶν ἀνόμων as ''mujeres impías'' rather than ''mujeres sin ley''; the drafter''s rationale is linguistically sound (''impías'' carries moral-legal force naturally) and the POB lexical_decisions document this choice explicitly. The paired verbs ''guardad/observad'' (v.1) for φυλάξατε/τηρήσατε are well-reasoned and documented.'
+  glossary_alignment: Κύριος → Señor throughout (correct). θεός → Dios (v.2, correct). Βελίαρ → Beliar (correct, Greek form preserved). πνεῦμα in demonological context → espíritu (lowercase, correct). ἔθνη → naciones (correct, not 'gentiles'). No YHWH present. No Χριστός/Mesías terms. No δοῦλος terms.
+  issues:
+  - severity: low
+    issue: 'v.5: γυναιξὶν ἀνόμων rendered ''mujeres impías'' rather than ''mujeres sin ley/transgresoras'''
+    rationale: ἄνομος means 'without law/lawless' while 'impías' means 'impious/ungodly'. The semantic range overlaps but is not identical. However the drafter's reasoning (natural register in a vice list) is documented and acceptable. No revision required.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 113f2e8ef704ac3646a127604f3f6e604c10fc234f2edab7075fb26bff25e24e
+  timestamp: '2026-05-08T06:14:27Z'
+  output_hash: 113f2e8ef704ac3646a127604f3f6e604c10fc234f2edab7075fb26bff25e24e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

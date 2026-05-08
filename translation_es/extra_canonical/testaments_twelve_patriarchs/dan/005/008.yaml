@@ -85,4 +85,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish faithfully renders the Greek source. ἀπαχθήσεσθε → 'seréis llevados' (passive preserved), αἰχμαλωσίαν → 'cautiverio' (standard biblical term), πληγὰς Αἰγύπτου → 'plagas de Egipto' (correct biblical calque), πονηρίας τῶν ἐθνῶν → 'maldades de las naciones' (morally weighted plural). The bracketed [σὺν αὐτοῖς] textual variant is correctly noted in footnote [a].
+  spanish_quality_summary: Clear, natural neutral Latin-American Spanish. The vosotros register matches the exhortatory tone of the Greek testament. Footnote marker [a] in text matches the footnotes array correctly.
+  glossary_alignment: αἰχμαλωσία → cautiverio (correct). ἔθνη → naciones (correct, not 'gentiles'). πονηρία → maldades (correct plural moral term).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4ad01f96674b7376de4d00539e97dea8681f13ddbb4240058364610717f820f6
+  timestamp: '2026-05-08T06:13:12Z'
+  output_hash: 4ad01f96674b7376de4d00539e97dea8681f13ddbb4240058364610717f820f6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

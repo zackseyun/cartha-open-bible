@@ -158,4 +158,27 @@ ai_draft:
     estimated_cost_usd: 0.337843
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish faithfully renders the complex verse Ἐὰν δὲ ἐν πονηρᾷ κλίνῃ τὸ διαβούλιον... including all participial elements, the Beliar reference, and the final clause. The gender normalization to feminine (concordance with 'la intención') is well-documented and justified.
+  spanish_quality_summary: '''Pero si la intención se inclina hacia el mal, todas sus acciones están en la maldad, rechazando lo bueno y aferrándose a lo malo, y dominada por Beliar; y aunque haga algo bueno, lo convierte en maldad.'' Reads well and handles the complex syntax adeptly. Βελίαρ→Beliar correct per project policy (Greek source form). πνεῦμα lowercase for evil spirit is correct.'
+  glossary_alignment: Βελίαρ→Beliar correct. πνεῦμα not present in this verse. τὸ διαβούλιον→la intención follows EN revision ('intent'). Distinction πονηρᾷ/el mal vs πονηρίᾳ/la maldad is maintained. All glossary rules satisfied.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: eed85aaad349e8489d392d4ef0c9580017c20f6c496c1df1c5e1af9711f52371
+  timestamp: '2026-05-08T06:13:58Z'
+  output_hash: eed85aaad349e8489d392d4ef0c9580017c20f6c496c1df1c5e1af9711f52371
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

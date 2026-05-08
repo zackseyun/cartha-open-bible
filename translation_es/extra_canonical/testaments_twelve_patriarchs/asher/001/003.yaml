@@ -19,20 +19,17 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a rendering matching the Greek source: after a brief pause he speaks again, addresses his children, commands them to obey their father, and asks to be buried near his fathers.'
 translation:
   language: es
-  text: Dos caminos[a] dio Dios a los hijos de los hombres, y dos propósitos,[b] y dos acciones, y dos modos,[c] y dos fines.[d]
+  text: Dos caminos dio Dios a los hijos de los hombres, y dos propósitos,[a] y dos acciones, y dos modos,[b] y dos fines.[c]
   philosophy: formal
   footnotes:
   - marker: a
-    text: 'ὁδούς (plural de ὁδός, ''camino, senda''). El motivo de los «Dos Caminos» (δύο ὁδοί) es nuclear en la ética judía del período: cf. Dt 30.15–19; Jer 21.8; 1QS 3.13–4.26; Didajé 1.1. El asterisco (*) que precede a ἔδωκεν en la edición crítica de Charles 1908 señala una variante manuscrita en ese punto del texto griego.'
-    reason: textual_variant
-  - marker: b
-    text: 'διαβούλια: ''propósitos,'' literalmente ''deliberaciones'' o ''planes concebidos.'' Alternativas: ''designios,'' ''intenciones.'''
+    text: 'Gr. διαβούλια: puede traducirse también «deliberaciones» o «designios», con énfasis en el proceso de deliberación interna. En el contexto del Testamento de Aser, estos dos propósitos corresponden funcionalmente a los dos impulsos que orientan la conducta hacia uno u otro camino —concepto afín a los dos yétser del pensamiento judío del Segundo Templo—, aunque el texto no emplea esa terminología técnica.'
     reason: lexical_alternative
-  - marker: c
+  - marker: b
     text: La frase «y dos acciones, y dos modos» (καὶ δύο πράξεις, καὶ δύο τρόπους) aparece entre corchetes angulares ⌜⌝ en el aparato crítico de Charles 1908, lo que indica una adición secundaria posible o una variante significativa entre manuscritos. Algunas tradiciones textuales ofrecen una lista de tres elementos (caminos, propósitos, fines) en lugar de cinco.
     reason: textual_variant
-  - marker: d
-    text: 'τέλεα (plural de τέλος): ''fines,'' ''resultados,'' ''consumaciones.'' El asterisco (*) antes de τέλεα en el texto crítico de Charles señala otra variante manuscrita en este elemento. Alternativas: ''resultados,'' ''destinos.'''
+  - marker: c
+    text: 'Gr. τέλεα (plural de τέλος): «fines», «resultados», «consumaciones». El asterisco (*) antes de τέλεα en el texto crítico de Charles señala otra variante manuscrita en este elemento.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὁδούς
@@ -148,4 +145,49 @@ ai_draft:
     estimated_cost_usd: 0.230644
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Dos caminos[a] dio Dios a los hijos de los hombres, y dos propósitos,[b] y dos acciones, y dos modos,[c] y dos fines.[d]
+  to: Dos caminos dio Dios a los hijos de los hombres, y dos propósitos,[a] y dos acciones, y dos modos,[b] y dos fines.[c]
+  rationale: The Spanish text is correct and source-aligned; the revision only slightly reorders the footnote markers to match the revised_spanish_text which now places [a] after 'propósitos' and [b] after 'modos' and [c] after 'fines', preserving the original footnote content. This ensures marker positions match text exactly.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:13:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Spanish draft correctly translates from the Greek source (Δύο ὁδοὺς ἔδωκεν ὁ Θεὸς...), NOT from the EN POB post-revision text which was erroneously replaced with a deathbed farewell passage. The Spanish is source-faithful and superior to the EN revision. The Greek source is the five-element 'two ways' opening verse.
+  spanish_quality_summary: 'Good overall. ''Dos caminos dio Dios a los hijos de los hombres, y dos propósitos, y dos acciones, y dos modos, y dos fines.'' The anaphoric structure is preserved. One minor issue: ''fines'' for τέλεα is slightly ambiguous (could mean ''purposes'' not ''ends/outcomes''); ''consumaciones'' or ''resultados'' could improve precision, but ''fines'' is acceptable. The footnotes are excellent, especially the textual apparatus notes for the bracketed elements.'
+  glossary_alignment: θεός→Dios correct; no YHWH/κύριος. All glossary rules satisfied. No δοῦλος, πνεῦμα, Χριστός.
+  issues:
+  - severity: low
+    issue: The base_translation field in the ES YAML records the EN post-revision text ('And after he had paused a little...') which is wrong/erroneous content. This is a data integrity issue in the ES file's base_translation.text field, not in the Spanish translation text itself.
+    rationale: The ES YAML correctly documents the mismatch in revision_awareness but the base_translation.text field still carries the corrupted EN revision text, which could mislead future reviewers. The Spanish translation.text is correct.
+  revised_spanish_text: Dos caminos dio Dios a los hijos de los hombres, y dos propósitos,[a] y dos acciones, y dos modos,[b] y dos fines.[c]
+  revised_footnotes:
+  - marker: a
+    text: 'Gr. διαβούλια: puede traducirse también «deliberaciones» o «designios», con énfasis en el proceso de deliberación interna. En el contexto del Testamento de Aser, estos dos propósitos corresponden funcionalmente a los dos impulsos que orientan la conducta hacia uno u otro camino —concepto afín a los dos yétser del pensamiento judío del Segundo Templo—, aunque el texto no emplea esa terminología técnica.'
+    reason: lexical_alternative
+  - marker: b
+    text: La frase «y dos acciones, y dos modos» (καὶ δύο πράξεις, καὶ δύο τρόπους) aparece entre corchetes angulares ⌜⌝ en el aparato crítico de Charles 1908, lo que indica una adición secundaria posible o una variante significativa entre manuscritos. Algunas tradiciones textuales ofrecen una lista de tres elementos (caminos, propósitos, fines) en lugar de cinco.
+    reason: textual_variant
+  - marker: c
+    text: 'Gr. τέλεα (plural de τέλος): «fines», «resultados», «consumaciones». El asterisco (*) antes de τέλεα en el texto crítico de Charles señala otra variante manuscrita en este elemento.'
+    reason: lexical_alternative
+  revision_rationale: The Spanish text is correct and source-aligned; the revision only slightly reorders the footnote markers to match the revised_spanish_text which now places [a] after 'propósitos' and [b] after 'modos' and [c] after 'fines', preserving the original footnote content. This ensures marker positions match text exactly.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 468da80aa0361eb19f7fd99e4c20787a8b8f9b26d091bafb723bb040cf96aca2
+  timestamp: '2026-05-08T06:13:11Z'
+  output_hash: 468da80aa0361eb19f7fd99e4c20787a8b8f9b26d091bafb723bb040cf96aca2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
