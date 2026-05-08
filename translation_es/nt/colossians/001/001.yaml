@@ -1,0 +1,188 @@
+id: COL.1.1
+reference: Colossians 1:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: SBLGNT
+  text: Παῦλος ἀπόστολος ⸂Χριστοῦ Ἰησοῦ⸃ διὰ θελήματος θεοῦ καὶ Τιμόθεος ὁ ἀδελφὸς
+base_translation:
+  language: en
+  yaml_path: translation/nt/colossians/001/001.yaml
+  text: Paul[a], an apostle of Messiah Jesus by the will of God, and Timothy our brother[b],
+  footnotes:
+  - marker: a
+    text: Or 'of Christ Jesus.' The Greek title Χριστός can be rendered 'Christ'; here it is translated 'Messiah' to preserve its titular sense.
+    reason: alternative_reading
+  - marker: b
+    text: Greek 'the brother'; rendered 'our brother' for natural English in this letter opening.
+    reason: lexical_alternative
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: nt_draft_v1
+    prompt_sha256: 498ec16fdc38e10804f1111527baa3bf3b89dbec8b1b17ba33dd3e8a38da2977
+    timestamp: '2026-04-18T10:31:35Z'
+    output_hash: b15c72ad7dd36bb9c99831ce0a99276c5869dbdd86cc49b5a4a3051c0a678794
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T09:42:15Z'
+    unchanged: false
+    changes_summary: 'Changed ''Messiah Jesus'' to ''Christ Jesus'' for more standard rendering of Χριστοῦ Ἰησοῦ in formal register and NT consistency; retained the rest unchanged. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
+translation:
+  language: es
+  text: Pablo[a], apóstol de Mesías Jesús por la voluntad de Dios, y Timoteo, nuestro hermano[b],
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «de Cristo Jesús». Aquí Χριστοῦ se vierte «Mesías» para conservar su fuerza titulativa.'
+    reason: alternative_reading
+  - marker: b
+    text: 'Griego: «el hermano»; se vierte «nuestro hermano» para expresar de forma natural en español la designación fraterna cristiana en este saludo.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: Παῦλος
+  english_pob_choice: Paul
+  chosen_spanish: Pablo
+  alternatives_spanish:
+  - Paulo
+  lexicon: nombre propio
+  rationale: Nombre propio estándar en español para Παῦλος; conserva la identificación personal sin añadir sentido.
+- source_word: ἀπόστολος
+  english_pob_choice: apostle
+  chosen_spanish: apóstol
+  alternatives_spanish:
+  - mensajero
+  - delegado
+  lexicon: BDAG
+  rationale: En el saludo paulino funciona como título ministerial, no como simple 'mensajero'; 'apóstol' preserva esa fuerza eclesial.
+- source_word: Χριστοῦ Ἰησοῦ
+  english_pob_choice: Messiah Jesus
+  chosen_spanish: Mesías Jesús
+  alternatives_spanish:
+  - Cristo Jesús
+  - Jesucristo
+  lexicon: BDAG
+  rationale: Se conserva 'Mesías' porque el inglés POB documenta la decisión de traducir Χριστός como título y no como forma litúrgica fija. El orden 'Mesías Jesús' sigue el griego y mantiene el valor titular.
+- source_word: διὰ
+  english_pob_choice: by
+  chosen_spanish: por
+  alternatives_spanish:
+  - mediante
+  - a través de
+  lexicon: BDAG
+  rationale: Con genitivo expresa agencia o medio; 'por la voluntad de Dios' es natural en español y refleja la causalidad/mediación divina de su apostolado.
+- source_word: θελήματος
+  english_pob_choice: will
+  chosen_spanish: voluntad
+  alternatives_spanish:
+  - propósito
+  - deseo
+  lexicon: BDAG
+  rationale: Aquí θέλημα denota la determinación volitiva de Dios. 'Voluntad' es la equivalencia más directa y transparente.
+- source_word: θεοῦ
+  english_pob_choice: God
+  chosen_spanish: Dios
+  lexicon: BDAG
+  rationale: Genitivo dependiente de 'voluntad'; se mantiene el referente divino sin ajustes interpretativos.
+- source_word: Τιμόθεος
+  english_pob_choice: Timothy
+  chosen_spanish: Timoteo
+  alternatives_spanish:
+  - Timotheo
+  lexicon: nombre propio
+  rationale: Nombre propio estándar en español para Τιμόθεος.
+- source_word: ὁ ἀδελφός
+  english_pob_choice: our brother
+  chosen_spanish: el hermano
+  alternatives_spanish:
+  - nuestro hermano
+  - el hermano de la fe
+  lexicon: BDAG
+  rationale: El griego dice literalmente 'el hermano'. Como el inglés POB observó la forma literal y solo aclaró el sentido por naturalidad inglesa, en español se conserva la referencia directa sin añadir posesivo no explicitado por el griego.
+theological_decisions:
+- issue: Título Χριστός en un saludo epistolar
+  english_pob_reading: Messiah
+  chosen_spanish_reading: Mesías
+  alternative_spanish_readings:
+  - Cristo
+  rationale: 'Se sigue la política doctrinal reflejada en el audit trail: Χριστός se traduce como título cuando su sentido titular sigue vivo. En este versículo, ''Mesías'' preserva mejor el valor semántico y evita la forma nombre-propio automática.'
+  doctrine_reference: 'DOCTRINE.md: traducir títulos; Χριστός como Mesías cuando el contexto lo permite'
+- issue: Relación fraterna de ὁ ἀδελφός
+  english_pob_reading: our brother
+  chosen_spanish_reading: el hermano
+  alternative_spanish_readings:
+  - nuestro hermano
+  rationale: El contexto epistolar permite entenderlo como referencia fraterna cristiana, pero el griego no expresa posesivo. En español se evita introducir 'nuestro' sin apoyo explícito, manteniendo la literalidad con naturalidad mínima.
+  doctrine_reference: 'DOCTRINE.md: lectura clara y sobria; no añadir matices no presentes en el texto base'
+translation_notes:
+  revision_awareness: El inglés audit trail muestra una oscilación editorial entre 'Messiah Jesus' y 'Christ Jesus', con restauración final de 'Messiah Jesus' por política doctrinal. La versión española sigue esa decisión final y la explicita con una nota alternativa donde corresponde. Para ὁ ἀδελφός, el inglés añadió 'our' por naturalidad; en español se opta por no expandir el posesivo, manteniendo la forma más cercana al griego.
+  spanish_consistency_notes:
+  - Se usa 'Mesías' para Χριστός, conforme al criterio del proyecto, evitando 'Cristo' como forma de nombre propio salvo necesidad textual.
+  - Se mantiene 'Dios' para θεοῦ y 'voluntad' para θέλημα en un giro natural y fiel.
+  - El saludo se conserva como una sola línea epistolar, con puntuación española y comas de vocativo/aposición.
+  - No se introduce mayúscula reverencial ni sustitución por 'SEÑOR'.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/nt/colossians/001/001.yaml
+  source_text_sha256: 55dda6c83ec615de667de784b612f38a324e8d2391d17c196c17e81a9c0e40a3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: aa0dc511f8c6263783e4aa35591bd52732fa61a7a41a8ae4ab4cd51fcd435179
+  timestamp: '2026-05-07T21:05:42Z'
+  output_hash: 921d2925dd124e631e2c7beb5d46feac2b0c6e17919e06b8fef5dfbfd8eae022
+  usage:
+    prompt_tokens: 3030
+    completion_tokens: 1199
+    total_tokens: 4229
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007668
+status: spanish_reviewed
+revisions:
+- from: Pablo[a], apóstol de Mesías Jesús por la voluntad de Dios, y Timoteo, el hermano[b],
+  to: Pablo[a], apóstol de Mesías Jesús por la voluntad de Dios, y Timoteo, nuestro hermano[b],
+  rationale: Se mantiene «Mesías Jesús» conforme a la política doctrinal y al audit trail. Se revisa únicamente ὁ ἀδελφός a «nuestro hermano» porque en español esta explicitación es más natural y fiel al sentido epistolar que «el hermano», sin introducir un cambio teológico ni una paráfrasis amplia. La nota correspondiente se actualiza para reflejar la decisión.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:02:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura griega básica: «Pablo», «apóstol», «de Mesías Jesús», «por la voluntad de Dios» y «Timoteo». También preserva correctamente la decisión doctrinal del POB de traducir Χριστός como «Mesías» en sentido titular. Sin embargo, en ὁ ἀδελφός el borrador se aparta del audit trail inglés y de la naturalidad epistolar en español al mantener «el hermano», que suena marcado y menos idiomático en este contexto. La evidencia griega permite una explicitación relacional en la salutación, y el POB inglés ya la documentó como ajuste de estilo legítimo.'
+  spanish_quality_summary: El español es mayormente claro y digno, pero «y Timoteo, el hermano» resulta poco natural en una apertura de carta y puede sonar incompleto o extrañamente enfático. «Y Timoteo, nuestro hermano» comunica mejor la designación cristiana fraterna en español eclesial contemporáneo sin añadir una interpretación excesiva. También conviene ajustar la nota b para explicar esta decisión, no solo dar la literalidad.
+  glossary_alignment: 'Buena alineación general con el glosario del proyecto: Χριστός → «Mesías», Ἰησοῦς → «Jesús», θεοῦ → «Dios». No hay conflicto con Yahvé ni otros términos sensibles. La única desalineación relevante es no seguir la racionalidad documentada del POB para ὁ ἀδελφός, donde el español debería preferir «nuestro hermano» por legibilidad epistolar.'
+  issues:
+  - severity: medium
+    issue: «el hermano» en lugar de «nuestro hermano»
+    rationale: Aunque ὁ ἀδελφός es literalmente «el hermano», en la salutación epistolar cristiana el español natural y eclesial entiende mejor la relación con «nuestro hermano». El audit trail inglés documenta precisamente esta explicitación relacional por naturalidad de la lengua receptora.
+  - severity: low
+    issue: Nota b insuficiente para justificar la opción española
+    rationale: 'La nota actual solo dice «Literalmente: “el hermano”», pero si el texto se revisa a «nuestro hermano» debe explicarse que es una explicitación idiomática en español, paralela a la decisión inglesa auditada.'
+  revised_spanish_text: Pablo[a], apóstol de Mesías Jesús por la voluntad de Dios, y Timoteo, nuestro hermano[b],
+  revised_footnotes:
+  - marker: a
+    text: 'O: «de Cristo Jesús». Aquí Χριστοῦ se vierte «Mesías» para conservar su fuerza titulativa.'
+    reason: alternative_reading
+  - marker: b
+    text: 'Griego: «el hermano»; se vierte «nuestro hermano» para expresar de forma natural en español la designación fraterna cristiana en este saludo.'
+    reason: lexical_alternative
+  revision_rationale: Se mantiene «Mesías Jesús» conforme a la política doctrinal y al audit trail. Se revisa únicamente ὁ ἀδελφός a «nuestro hermano» porque en español esta explicitación es más natural y fiel al sentido epistolar que «el hermano», sin introducir un cambio teológico ni una paráfrasis amplia. La nota correspondiente se actualiza para reflejar la decisión.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9a1b619502f57089a03c3e4bc464780d611f9a59026db67259f16a24a4aaf0e6
+  timestamp: '2026-05-07T22:02:08Z'
+  output_hash: bb0ba63450e655f04114b7d81f96a1bc11d5e5339530d193bd0102127ee3c78a
+  usage:
+    prompt_tokens: 3820
+    completion_tokens: 757
+    total_tokens: 4577
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020905
+  applied_revision: true

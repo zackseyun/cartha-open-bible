@@ -1,0 +1,184 @@
+id: GAL.1.1
+reference: Galatians 1:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: SBLGNT
+  text: Παῦλος ἀπόστολος, οὐκ ἀπ’ ἀνθρώπων οὐδὲ δι’ ἀνθρώπου ἀλλὰ διὰ Ἰησοῦ Χριστοῦ καὶ θεοῦ πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν,
+base_translation:
+  language: en
+  yaml_path: translation/nt/galatians/001/001.yaml
+  text: Paul[a], an apostle—not from men nor through a man, but through Jesus Messiah and God the Father, who raised him from the dead,
+  footnotes:
+  - marker: a
+    text: Or, 'through Jesus Christ.'
+    reason: lexical_alternative
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4
+    prompt_id: nt_draft_v1
+    prompt_sha256: 570298592f1ddd4ed038d2294225996f03ac48632789ed7c505f8ad95acb4eaa
+    timestamp: '2026-04-18T05:09:57Z'
+    output_hash: ab73c9232f49916eb703963a701f512f91d0caeeef1616a1d53f55eebc3158c3
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T09:43:34Z'
+    unchanged: false
+    changes_summary: 'Changed ''through man'' to ''through a man'' for natural English and to reflect the singular anarthrous Greek; changed ''Jesus the Messiah'' to ''Jesus Christ'' for standard formal register and consistency with the Greek name-title construction. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
+translation:
+  language: es
+  text: Pablo[a], apóstol, no de hombres ni por medio de un hombre, sino por medio de Jesús el Mesías y de Dios el Padre, que lo resucitó de entre los muertos.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «por medio de Jesucristo».'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: Παῦλος
+  english_pob_choice: Paul
+  chosen_spanish: Pablo
+  alternatives_spanish:
+  - Pául
+  lexicon: nombre propio (equivalente estándar)
+  rationale: El nombre propio tiene equivalencia estable en español; 'Pablo' es la forma normal y transparente para el lector hispanohablante.
+- source_word: ἀπόστολος
+  english_pob_choice: apostle
+  chosen_spanish: apóstol
+  alternatives_spanish:
+  - mensajero
+  - delegado
+  lexicon: BDAG
+  rationale: El término funciona aquí como título de comisión y autoridad apostólica. 'Apóstol' conserva ese peso teológico y evita diluir el cargo en una denominación más general.
+- source_word: ἀπ’ ἀνθρώπων
+  english_pob_choice: from men
+  chosen_spanish: de hombres
+  alternatives_spanish:
+  - de seres humanos
+  - de personas
+  lexicon: BDAG
+  rationale: La preposición con genitivo expresa origen. 'De hombres' mantiene el contraste retórico con la frase singular siguiente y refleja el plural del griego sin sobreexplicarlo.
+- source_word: δι’ ἀνθρώπου
+  english_pob_choice: through a man
+  chosen_spanish: por medio de un hombre
+  alternatives_spanish:
+  - por un hombre
+  - mediante un hombre
+  lexicon: BDAG
+  rationale: διά con genitivo expresa mediación o agencia. 'Por medio de un hombre' conserva esa idea y hace visible el contraste entre el plural anterior y el singular presente en el griego.
+- source_word: διὰ Ἰησοῦ Χριστοῦ
+  english_pob_choice: through Jesus Messiah
+  chosen_spanish: por medio de Jesucristo
+  alternatives_spanish:
+  - por medio de Jesús el Mesías
+  - por medio de Jesús, el Cristo
+  lexicon: BDAG
+  rationale: Se mantiene la mediación de Jesús. En español, 'Jesucristo' es la forma más natural y reconocible en registro eclesial amplio; aunque el proyecto suele preferir 'Mesías' cuando el título está activo, aquí la construcción nominal fija y el flujo de la salutación hacen más publicable 'Jesucristo'. La nota textual preserva la alternativa titular.
+- source_word: θεοῦ πατρὸς
+  english_pob_choice: God the Father
+  chosen_spanish: de Dios el Padre
+  alternatives_spanish:
+  - de Dios, el Padre
+  - de Dios Padre
+  lexicon: BDAG
+  rationale: La construcción genitiva se vierte de modo natural como fuente coordinada con la frase anterior. 'De Dios el Padre' mantiene claridad y el vínculo entre Dios y la paternidad divina.
+- source_word: τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν
+  english_pob_choice: who raised him from the dead
+  chosen_spanish: que lo resucitó de entre los muertos
+  alternatives_spanish:
+  - que lo levantó de entre los muertos
+  - que lo hizo resucitar de entre los muertos
+  lexicon: BDAG
+  rationale: El participio articular modifica a 'Dios el Padre'. 'Resucitó de entre los muertos' es una forma española natural y fiel para ἐκ νεκρῶν; conserva la afirmación de la resurrección sin literalidad áspera.
+theological_decisions:
+- issue: Título cristológico en Ἰησοῦ Χριστοῦ
+  english_pob_reading: through Jesus Messiah (with revision history noting a temporary shift to Jesus Christ, then restoration of Messiah)
+  chosen_spanish_reading: por medio de Jesucristo
+  alternative_spanish_readings:
+  - por medio de Jesús el Mesías
+  - por medio de Jesús, el Cristo
+  rationale: El griego admite lectura titular, y el audit trail inglés favorece 'Messiah' por política del proyecto. En español, sin embargo, 'Jesucristo' preserva fluidez y reconocimiento eclesial en una salutación programática. Para no borrar la tensión terminológica, la nota registra la alternativa 'Jesús el Mesías'.
+  doctrine_reference: 'DOCTRINE.md: Χριστός → ''Mesías'' cuando el título está activo; se permite ''Cristo'' cuando la forma nominal fija exige mayor naturalidad'
+- issue: Agencia de la comisión apostólica
+  english_pob_reading: not from men nor through a man, but through Jesus Messiah and God the Father
+  chosen_spanish_reading: no de hombres ni por medio de un hombre, sino por medio de Jesucristo y de Dios el Padre
+  alternative_spanish_readings:
+  - no de seres humanos ni por un hombre, sino por Jesús el Mesías y Dios el Padre
+  rationale: Se conserva la doble negación y el contraste plural/singular del griego. La mediación humana queda negada con fuerza, y la mediación divina se afirma sin suavizar la estructura retórica.
+  doctrine_reference: Lectura sintáctica de Gálatas 1:1; énfasis paulino en origen divino del apostolado
+- issue: ἐκ νεκρῶν
+  english_pob_reading: from the dead
+  chosen_spanish_reading: de entre los muertos
+  alternative_spanish_readings:
+  - de los muertos
+  - fuera de los muertos
+  rationale: '''De entre los muertos'' comunica de forma idiomática la resurrección desde el estado de muerte y preserva el valor locativo/relacional de la expresión griega sin convertirla en un mero cliché.'
+  doctrine_reference: Doctrina de la resurrección corporal en el anuncio paulino
+translation_notes:
+  revision_awareness: 'El texto base inglés pasó por una revisión que osciló entre ''Jesus Messiah'' y ''Jesus Christ''; el estado más reciente del auditor inglés volvió a ''Jesus Messiah'' por política doctrinal. La presente versión española toma una decisión de estilo distinta pero controlada: usa la forma eclesial natural ''Jesucristo'' en el cuerpo y conserva en nota la alternativa titular ''Jesús el Mesías'' para no perder la tensión léxica del griego ni del audit trail.'
+  spanish_consistency_notes:
+  - Se mantiene 'Dios el Padre' sin reemplazarlo por una formulación más paraprástica.
+  - '''apóstol'' se conserva como título técnico y no como ''enviado'' para no rebajar la densidad paulina.'
+  - '''de hombres / por medio de un hombre'' reproduce el contraste plural-singular del griego.'
+  - La nota a marca la única alternativa cristológica relevante en este versículo.
+  - El nombre divino no aparece en este versículo; por tanto no se introduce 'Yahvé'.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/nt/galatians/001/001.yaml
+  source_text_sha256: ceb25789ac24cb44b73f0d3d616b6f8acf993f913bcccc28b277ecbbc74f82e7
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 14fbab2c39567490dbfb36af21e0f1745e066e1b81b182a27c585ec5f6934b69
+  timestamp: '2026-05-07T21:05:11Z'
+  output_hash: 63b9efbd53bbfdc50a8f60020dc39954fd505e274d05fe8344ba9dd22a30e748
+  usage:
+    prompt_tokens: 3198
+    completion_tokens: 1521
+    total_tokens: 4719
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009243
+status: spanish_reviewed
+revisions:
+- from: 'Pablo[a], apóstol: no de hombres ni por medio de un hombre, sino por medio de Jesucristo y de Dios el Padre, que lo resucitó de entre los muertos.'
+  to: Pablo[a], apóstol, no de hombres ni por medio de un hombre, sino por medio de Jesús el Mesías y de Dios el Padre, que lo resucitó de entre los muertos.
+  rationale: Se corrige Χριστοῦ a «Mesías» para seguir la decisión léxica y teológica del POB en este versículo, conservando la fuerza titular activa del griego. Se mantiene «Jesucristo» solo como alternativa en nota. También se ajusta la puntuación de «apóstol» a coma para reflejar mejor la aposición del original y mejorar el ritmo natural en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T21:13:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la sintaxis básica del griego: Pablo se identifica como apóstol, niega origen humano plural y mediación humana singular, y afirma la mediación de Jesús y de Dios el Padre, quien lo resucitó de entre los muertos. Sin embargo, no sigue la decisión léxico-teológica auditada del POB para Χριστοῦ, que aquí debe conservar fuerza titular como «Mesías», no la forma fija «Jesucristo».'
+  spanish_quality_summary: El español es claro y natural, pero «apóstol:» suena menos idiomático que la aposición con coma del original, y «Jesucristo» contradice la política terminológica documentada. La redacción revisada mejora fidelidad y mantiene buena legibilidad eclesial.
+  glossary_alignment: 'Alinea bien «Pablo», «apóstol», «de hombres», «por medio de un hombre», «Dios el Padre» y «de entre los muertos». Desalinea el término clave Χριστοῦ: el proyecto prefiere «Mesías» cuando el título está activo, y el audit trail inglés restauró explícitamente «Messiah» en este versículo.'
+  issues:
+  - severity: high
+    issue: «Jesucristo» en lugar de «Jesús el Mesías»
+    rationale: El expediente inglés y la decisión teológica documentada para Gálatas 1:1 restauran «Messiah» específicamente, porque Χριστοῦ conserva fuerza titular. La justificación del borrador para apartarse de esa política no supera la evidencia auditada.
+  - severity: low
+    issue: Dos puntos tras «apóstol»
+    rationale: El griego presenta aposición simple («Παῦλος ἀπόστολος,»). En español, la coma reproduce mejor el flujo epistolar y evita una pausa demasiado fuerte.
+  revised_spanish_text: Pablo[a], apóstol, no de hombres ni por medio de un hombre, sino por medio de Jesús el Mesías y de Dios el Padre, que lo resucitó de entre los muertos.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «por medio de Jesucristo».'
+    reason: lexical_alternative
+  revision_rationale: Se corrige Χριστοῦ a «Mesías» para seguir la decisión léxica y teológica del POB en este versículo, conservando la fuerza titular activa del griego. Se mantiene «Jesucristo» solo como alternativa en nota. También se ajusta la puntuación de «apóstol» a coma para reflejar mejor la aposición del original y mejorar el ritmo natural en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 95ad9ad0b520d5b7f1e2b161289970307ab8f8185770bf0e08c16f0ff259bde7
+  timestamp: '2026-05-07T21:13:55Z'
+  output_hash: 68478dc50ddadfd5acd228fb6e123bd2fa2f09a4b104f63e5f3b89309b90f804
+  usage:
+    prompt_tokens: 4331
+    completion_tokens: 596
+    total_tokens: 4927
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019768
+  applied_revision: true
