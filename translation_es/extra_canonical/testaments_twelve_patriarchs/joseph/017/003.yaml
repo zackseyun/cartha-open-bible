@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Simplified the final clause for closer alignment with the Greek, replacing the interpretive 'that intends what is good' with 'the good intention of the heart,' which more directly reflects προαιρέσει καρδίας ἀγαθῆς and avoids unnecessary expansion.
 translation:
   language: es
-  text: Pues Dios se deleita en la concordia de hermanos[a] y en la buena intención del corazón[b].
+  text: Pues Dios se deleita en la concordia de hermanos[a] y en la buena intención del corazón[b]; estas cosas son agradables para bien.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -95,4 +95,46 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pues Dios se deleita en la concordia de hermanos[a] y en la buena intención del corazón[b].
+  to: Pues Dios se deleita en la concordia de hermanos[a] y en la buena intención del corazón[b]; estas cosas son agradables para bien.
+  rationale: Added the clause 'estas cosas son agradables para bien' to render εὐδοκοῦσιν εἰς ἀγαθόν, which was restored to the EN source in the phase2_realign pass. The rendering is neutral and literal.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The per-verse EN source (017/003.yaml) has been updated via a phase2_realign_pass to add the dropped clause: ''For God delights in the harmony of brothers and in the good intention of the heart; these are well-pleasing for good.'' This reflects εὐδοκοῦσιν εἰς ἀγαθόν (†εὐδοκοῦσιν¹¹ εἰς ἀγαθόν¹²) from the Greek. The current ES draft translates only the pre-realignment EN (''la buena intención del corazón'') and omits ''these are well-pleasing for good''. The Spanish needs to incorporate the realigned clause.'
+  spanish_quality_summary: The existing Spanish 'Pues Dios se deleita en la concordia de hermanos y en la buena intención del corazón' is good but incomplete relative to the current EN source which now includes the additional clause from εὐδοκοῦσιν εἰς ἀγαθόν. The missing clause should be added.
+  glossary_alignment: θεός→Dios (correct, capitalised). ὁμόνοια→'concordia' (excellent choice). No YHWH, Χριστός, δοῦλος, or πνεῦμα. Compliant.
+  issues:
+  - severity: medium
+    issue: 'El texto español omite la cláusula añadida por el realineamiento de fase 2 del inglés: ''these are well-pleasing for good'' (εὐδοκοῦσιν εἰς ἀγαθόν). El EN per-verso actual incluye este fragmento; el español debe corresponderse.'
+    rationale: El POB inglés fue actualizado en un pase phase2_realign para recuperar εὐδοκοῦσιν εἰς ἀγαθόν; el español debe reflejar ese cambio para mantener la alineación con el texto griego.
+  revised_spanish_text: Pues Dios se deleita en la concordia de hermanos[a] y en la buena intención del corazón[b]; estas cosas son agradables para bien.
+  revised_footnotes:
+  - marker: a
+    text: '''Concordia'' traduce ὁμόνοια, literalmente ''misma mente'' o ''unanimidad de pensamiento entre hermanos''.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'La cláusula sobre el ''propósito de un buen corazón'' es textualmente difícil en el testimonio griego; la traducción sigue el sentido ético aparente: un corazón dispuesto al bien.'
+    reason: textual_variant
+  revision_rationale: Added the clause 'estas cosas son agradables para bien' to render εὐδοκοῦσιν εἰς ἀγαθόν, which was restored to the EN source in the phase2_realign pass. The rendering is neutral and literal.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: fbe5886579e6d130d7de40e1693dedb1e231ffc014f07fca2bf8b3b75f3bfefd
+  timestamp: '2026-05-08T06:38:06Z'
+  output_hash: fbe5886579e6d130d7de40e1693dedb1e231ffc014f07fca2bf8b3b75f3bfefd
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

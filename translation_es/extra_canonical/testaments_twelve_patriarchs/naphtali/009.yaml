@@ -61,10 +61,13 @@ translation:
   text: 'Y después de haberles mandado muchas cosas tales, les rogó que trasladaran sus huesos a Hebrón y lo sepultaran con sus padres.
 
 
-    2. Y después de comer y beber con alegría de alma, cubrió su rostro y murió.
+
+    2. Y, habiendo comido y bebido con alegría de alma, cubrió su rostro y murió.
+
 
 
     3. Y sus hijos hicieron en todo[a] lo que Naphtali su padre les había mandado.
+
 
 
     [Aquí comienza el Testamento de Gad, el noveno hijo de Jacob y Zilpa.]'
@@ -187,4 +190,76 @@ ai_draft:
     total_tokens: 4646
     reasoning_tokens: 0
     estimated_cost_usd: 0.009091
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y después de haberles mandado muchas cosas tales, les rogó que trasladaran sus huesos a Hebrón y lo sepultaran con sus padres.
+
+
+    2. Y después de comer y beber con alegría de alma, cubrió su rostro y murió.
+
+
+    3. Y sus hijos hicieron en todo[a] lo que Naphtali su padre les había mandado.
+
+
+    [Aquí comienza el Testamento de Gad, el noveno hijo de Jacob y Zilpa.]'
+  to: 'Y después de haberles mandado muchas cosas tales, les rogó que trasladaran sus huesos a Hebrón y lo sepultaran con sus padres.
+
+
+
+    2. Y, habiendo comido y bebido con alegría de alma, cubrió su rostro y murió.
+
+
+
+    3. Y sus hijos hicieron en todo[a] lo que Naphtali su padre les había mandado.
+
+
+
+    [Aquí comienza el Testamento de Gad, el noveno hijo de Jacob y Zilpa.]'
+  rationale: Updated v.2 from 'después de comer y beber' to 'habiendo comido y bebido' to align with the EN revision pass and the per-verse ES file, which correctly reflects the Greek aorist participle construction.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The chapter-level ES correctly handles v.1 and v.3, but v.2 uses 'después de comer y beber' which corresponds to the pre-revision English ('after eating and drinking'). The EN revision pass changed this to 'having eaten and drunk' (closer to the Greek aorist participles φαγὼν / πιὼν). The per-verse ES file (naphtali/009/002.yaml) correctly uses 'habiendo comido y bebido'. The chapter-level should match.
+  spanish_quality_summary: V.1 and V.3 are well rendered. 'les rogó que trasladaran sus huesos a Hebrón' is accurate and idiomatic. The footnote for κατὰ πάντα is appropriate. The closing bracket incipit is correctly preserved.
+  glossary_alignment: No YHWH/θεός/Κύριος/πνεῦμα/δοῦλος occurrences. Proper names Hebrón/Jacob/Naphtali/Gad/Zilpa correctly handled.
+  issues:
+  - severity: low
+    issue: V.2 uses pre-revision form 'después de comer y beber' instead of the revised 'habiendo comido y bebido' which aligns with the Greek aorist participles φαγὼν / πιὼν and the EN revision pass.
+    rationale: The EN revision pass explicitly changed 'after eating and drinking' to 'having eaten and drunk' to reflect Greek participial syntax. The chapter-level ES should match the per-verse ES file which already uses the correct form.
+  revised_spanish_text: 'Y después de haberles mandado muchas cosas tales, les rogó que trasladaran sus huesos a Hebrón y lo sepultaran con sus padres.
+
+
+
+    2. Y, habiendo comido y bebido con alegría de alma, cubrió su rostro y murió.
+
+
+
+    3. Y sus hijos hicieron en todo[a] lo que Naphtali su padre les había mandado.
+
+
+
+    [Aquí comienza el Testamento de Gad, el noveno hijo de Jacob y Zilpa.]'
+  revised_footnotes:
+  - marker: a
+    text: La expresión griega κατὰ πάντα indica cumplimiento completo; «en todo» resume esa totalidad de manera natural en español.
+    reason: lexical_alternative
+  revision_rationale: Updated v.2 from 'después de comer y beber' to 'habiendo comido y bebido' to align with the EN revision pass and the per-verse ES file, which correctly reflects the Greek aorist participle construction.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5bb7b12aa643fd11068da89bdfe17445d50cde8ab5978fc9acf6241b52ddff33
+  timestamp: '2026-05-08T06:46:42Z'
+  output_hash: 5bb7b12aa643fd11068da89bdfe17445d50cde8ab5978fc9acf6241b52ddff33
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

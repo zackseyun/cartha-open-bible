@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the bracketed footnote markers from the running text; otherwise retained the draft, which accurately reflects the source clause structure.
 translation:
   language: es
-  text: Y mi reino será puesto fin entre extranjeros, hasta que venga la salvación de Israel,
+  text: Y mi reino llegará a su fin entre extranjeros, hasta que venga la salvación de Israel,
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐν ἀλλοφύλοις
@@ -95,4 +95,39 @@ ai_draft:
     total_tokens: 2404
     reasoning_tokens: 0
     estimated_cost_usd: 0.004758
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y mi reino será puesto fin entre extranjeros, hasta que venga la salvación de Israel,
+  to: Y mi reino llegará a su fin entre extranjeros, hasta que venga la salvación de Israel,
+  rationale: Replaced the ungrammatical 'será puesto fin' with the natural 'llegará a su fin', maintaining the same meaning.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:29Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'EN: ''And my kingdom will be brought to an end among foreigners, until the salvation of Israel comes,'' Greek: Καὶ ἐν ἀλλοφύλοις συντελεσθήσεται ἡ βασιλεία μου, ἕως τοῦ ἐλθεῖν τὸ σωτήριον τοῦ Ἰσραήλ. Spanish: ''Y mi reino será puesto fin entre extranjeros, hasta que venga la salvación de Israel,'' The phrase ''será puesto fin'' is grammatically awkward in Spanish—''será puesto fin'' is not idiomatic. The correct form would be ''llegará a su fin'' or ''tendrá fin''. No footnotes in the final EN text (markers were removed in revision); ES has no footnotes—marker parity is fine.'
+  spanish_quality_summary: '''Será puesto fin'' is a grammatical error—passive construction does not work with ''poner fin'' in this way. Should be ''llegará a su fin'' or ''será llevado a su fin''.'
+  glossary_alignment: No YHWH/glossary items in this verse.
+  issues:
+  - severity: high
+    issue: '''será puesto fin'' is ungrammatical Spanish'
+    rationale: The passive of 'poner fin' does not form 'será puesto fin' as a nominal predicate on the subject 'mi reino'. Correct Spanish would be 'mi reino llegará a su fin' or 'mi reino será llevado a su fin'.
+  revised_spanish_text: Y mi reino llegará a su fin entre extranjeros, hasta que venga la salvación de Israel,
+  revision_rationale: Replaced the ungrammatical 'será puesto fin' with the natural 'llegará a su fin', maintaining the same meaning.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 97e8010979677095260b9892a46b7b26efb4fdac47f8a0c10dab3bbdfd4e0b7b
+  timestamp: '2026-05-08T06:37:29Z'
+  output_hash: 97e8010979677095260b9892a46b7b26efb4fdac47f8a0c10dab3bbdfd4e0b7b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

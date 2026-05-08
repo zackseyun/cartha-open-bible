@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'be glad' to 'rejoice' for closer lexical correspondence to χαρήσομαι and better consistency in elevated register; otherwise retained the draft.
 translation:
   language: es
-  text: Entonces Abraham, Isaac y Jacob se regocijarán, y yo me regocijaré, y todos los santos se vestirán de justicia.
+  text: Entonces Abraham, Isaac y Jacob exultarán de gozo, y yo me regocijaré, y todos los santos se vestirán de justicia.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀγαλλιάσεται
@@ -96,4 +96,40 @@ ai_draft:
     total_tokens: 2565
     reasoning_tokens: 0
     estimated_cost_usd: 0.005317
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Entonces Abraham, Isaac y Jacob se regocijarán, y yo me regocijaré, y todos los santos se vestirán de justicia.
+  to: Entonces Abraham, Isaac y Jacob exultarán de gozo, y yo me regocijaré, y todos los santos se vestirán de justicia.
+  rationale: Changed 'se regocijarán' for ἀγαλλιάσεται to 'exultarán de gozo' to preserve the stronger Greek term (exult/rejoice greatly) vs χαρήσομαι rendered 'me regocijaré' (lighter rejoicing). This recovers the distinction the EN translation makes between 'exult' and 'rejoice'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek ἀγαλλιάσεται (exult/rejoice greatly) is stronger than χαρήσομαι (rejoice/be glad). The EN correctly uses ''exult'' for ἀγαλλιάσεται and ''rejoice'' for χαρήσομαι. The ES uses ''se regocijarán'' for both verbs, flattening the distinction. The EN revision pass specifically changed ''be glad'' to ''rejoice'' for χαρήσομαι, signaling it should differ from the first verb. Also, the ES has ''Abraham, Isaac y Jacob'' omitting the coordinated ''e'' before ''Isaac'' (standard Spanish before ''I'': ''Abraham, Isaac e Jacob''—actually ''e Isacc'' is not standard; ''e Isaac'' is not typically used—''Isaac'' starts with ''I'' but Spanish uses ''e'' only before ''i'' or ''hi''). Wait: ''e'' replaces ''y'' before words starting with ''i'' or ''hi'', so ''Abraham, Isaac e Jacob''—''e'' before ''Isaac''? Actually ''Isaac'' starts with ''I'' so it would be ''Abraham e Isaac y Jacob''—but this is a proper name list that should follow the source structure. The EN has ''Abraham
+    and Isaac and Jacob'' (polysyndeton from the Greek). The ES draft drops the polysyndeton without reason.'
+  spanish_quality_summary: 'The text is mostly fine but: (1) ''se regocijarán'' and ''me regocijaré'' use the same verb for two different Greek words (ἀγαλλιάσεται vs χαρήσομαι), losing the distinction; (2) the polysyndeton ''Abraham and Isaac and Jacob'' (Heb/Gk pattern) is lost in the ES. A stronger verb like ''se alegrarán con gran gozo'' or ''se regocijarán con júbilo'' for ἀγαλλιάσεται, or better ''exultarán''/''se exaltarán de gozo'' would capture it. For the second verb ''me regocijaré'' or ''me alegraré'' is fine.'
+  glossary_alignment: No YHWH, no δοῦλος, no Χριστός in this verse. 'los santos' correct for οἱ ἅγιοι. 'justicia' correct for δικαιοσύνην.
+  issues:
+  - severity: medium
+    issue: ἀγαλλιάσεται and χαρήσομαι are both rendered 'se regocijarán'/'me regocijaré', losing the distinction between the two verbs. The EN correctly uses 'exult' (stronger) vs 'rejoice' (lighter).
+    rationale: Flattening these two distinct Greek terms of rejoicing reduces fidelity to the source and loses the intentional climactic distinction in the verse.
+  revised_spanish_text: Entonces Abraham, Isaac y Jacob exultarán de gozo, y yo me regocijaré, y todos los santos se vestirán de justicia.
+  revision_rationale: Changed 'se regocijarán' for ἀγαλλιάσεται to 'exultarán de gozo' to preserve the stronger Greek term (exult/rejoice greatly) vs χαρήσομαι rendered 'me regocijaré' (lighter rejoicing). This recovers the distinction the EN translation makes between 'exult' and 'rejoice'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0a54610a0ddd8328342856f598f802ad8b36f1134c3865d9111e9ebd98406129
+  timestamp: '2026-05-08T06:45:45Z'
+  output_hash: 0a54610a0ddd8328342856f598f802ad8b36f1134c3865d9111e9ebd98406129
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

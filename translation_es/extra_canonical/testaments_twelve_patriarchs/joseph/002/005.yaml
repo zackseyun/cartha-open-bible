@@ -93,4 +93,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The Spanish faithfully renders the Greek tricolon negation: God does not feel shame like a man (ἐπαισχύνεται → se avergüenza), does not grow fearful like a son of man (δειλιᾷ → teme), nor, like one born of earth, does he become weak (ἀσθενεῖ → se debilita) or terrified (πτοεῖται → se aterra). The bracketed phrase [ἀσθενεῖ ἢ] present in the revised EN is rendered as ''se debilita o se aterra'', which is correct. Parallel structure with ''ni…ni…ni'' mirrors the Greek Οὔτε…Οὔτε.'
+  spanish_quality_summary: Reads naturally in neutral Latin-American Spanish. Rhetoric is preserved. No awkward phrasings. The verse-level file matches the chapter-level rendering in 002.yaml for this verse.
+  glossary_alignment: Θεός → Dios (correct). No YHWH/κύριος in this verse. δειλιᾷ rendered as 'teme' (acceptable compression; alternatives like 'se acobarda' noted). γηγενής → 'uno nacido de la tierra' (correct). πτοεῖται → 'se aterra' (correct force).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 92ca5144cbd8e7a62437fefc92bb60d4f2360bb94c2570297eb91272c1f3346c
+  timestamp: '2026-05-08T06:27:25Z'
+  output_hash: 92ca5144cbd8e7a62437fefc92bb60d4f2360bb94c2570297eb91272c1f3346c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Doce ciervos[a] estaban paciendo en un lugar, y los nueve fueron dispersados por toda la tierra; y de igual modo también los tres. Así que escuchen el sueño que vi.
+  text: Doce ciervos[a] estaban paciendo en un lugar, y los nueve fueron dispersados por toda la tierra; y de igual modo también los tres.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -90,4 +90,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Doce ciervos[a] estaban paciendo en un lugar, y los nueve fueron dispersados por toda la tierra; y de igual modo también los tres. Así que escuchen el sueño que vi.
+  to: Doce ciervos[a] estaban paciendo en un lugar, y los nueve fueron dispersados por toda la tierra; y de igual modo también los tres.
+  rationale: Removes the spurious appended sentence not present in the revised EN per-verse source.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:52Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The revised EN per-verse text ends at 'and likewise the three also.' The ES adds 'Así que escuchen el sueño que vi.' — a sentence not present in the revised EN source. This extra sentence comes from an older pre-revision EN base_translation field carried into the ES draft but not reflecting the current revised source.
+  spanish_quality_summary: The core verse ('Doce ciervos estaban paciendo en un lugar, y los nueve fueron dispersados por toda la tierra; y de igual modo también los tres') is accurate. The appended sentence is spurious.
+  glossary_alignment: No YHWH/θεός/Χριστός/δοῦλος/πνεῦμα. ἔλαφοι→ciervos correct.
+  issues:
+  - severity: high
+    issue: ES appends 'Así que escuchen el sueño que vi.' — this sentence is NOT in the revised EN per-verse source; it comes from a pre-revision base_translation field
+    rationale: The EN revision-pass text for this verse ends at 'and likewise the three also.' The appended sentence belongs to an older draft version and must be removed.
+  revised_spanish_text: Doce ciervos[a] estaban paciendo en un lugar, y los nueve fueron dispersados por toda la tierra; y de igual modo también los tres.
+  revised_footnotes:
+  - marker: a
+    text: Los doce ciervos representan a las doce tribus; 'los nueve' y 'los tres' aluden al destino dividido del pueblo.
+    reason: cultural_note
+  revision_rationale: Removes the spurious appended sentence not present in the revised EN per-verse source.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6b5572b65d9e5b13bed0608be2dc2186d2e9f1be16bf2a801c4028430e05041a
+  timestamp: '2026-05-08T06:37:52Z'
+  output_hash: 6b5572b65d9e5b13bed0608be2dc2186d2e9f1be16bf2a801c4028430e05041a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

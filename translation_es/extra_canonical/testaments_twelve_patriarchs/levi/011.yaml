@@ -37,7 +37,7 @@ base_translation:
     changes_summary: 'Combined verses 4–5 to avoid repeating the same vision statement twice and to reflect the Greek sequence more accurately: the vision is introduced in v.4 with ''toward the sunrise,'' and the content continues in v.5 with ''that he stood in the midst of the congregation, in the heights.'''
 translation:
   language: es
-  text: '1. Cuando tomé esposa, yo tenía veintiocho años, y su nombre era Melca. 2. Y ella concibió y dio a luz un hijo, y llamé su nombre Gersam, porque estábamos en tierra de[ a] peregrinación. 3. Y vi acerca de él que no estaba en el primer rango. 4. Y Kohat nació en el trigésimo quinto año de mi vida, y vi en una visión, hacia la salida del sol, 5. que él estaba en medio de la congregación, en las alturas. 6. Por eso llamé su nombre Kohat, que es: comienzo de majestad y asamblea[a]. 7. Y un tercer hijo, Merari, me nació en el año cuadragésimo de mi vida; y porque su madre lo dio a luz con dificultad, lo llamé Merari, que es amargura. 8. Y Jocabed nació en Egipto, en el año sexagésimo cuarto de mi vida, pues en aquel tiempo yo era ilustre entre mis hermanos.'
+  text: '1. Cuando tomé esposa, yo tenía veintiocho años, y su nombre era Melca. 2. Y ella concibió y dio a luz un hijo, y llamé su nombre Gersam, porque estábamos en tierra de peregrinación. 3. Y vi acerca de él que no estaba en el primer rango. 4. Y Kohat nació en el trigésimo quinto año de mi vida, y vi en una visión, hacia la salida del sol, 5. que él estaba en medio de la congregación, en las alturas. 6. Por eso llamé su nombre Kohat, que es: comienzo de majestad y asamblea[a]. 7. Y un tercer hijo, Merari, me nació en el año cuadragésimo de mi vida; y porque su madre lo dio a luz con dificultad, lo llamé Merari, que es amargura. 8. Y Jocabed nació en Egipto, en el año sexagésimo cuarto de mi vida, pues en aquel tiempo yo era ilustre entre mis hermanos.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -171,4 +171,46 @@ ai_draft:
     total_tokens: 5813
     reasoning_tokens: 0
     estimated_cost_usd: 0.011638
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '1. Cuando tomé esposa, yo tenía veintiocho años, y su nombre era Melca. 2. Y ella concibió y dio a luz un hijo, y llamé su nombre Gersam, porque estábamos en tierra de[ a] peregrinación. 3. Y vi acerca de él que no estaba en el primer rango. 4. Y Kohat nació en el trigésimo quinto año de mi vida, y vi en una visión, hacia la salida del sol, 5. que él estaba en medio de la congregación, en las alturas. 6. Por eso llamé su nombre Kohat, que es: comienzo de majestad y asamblea[a]. 7. Y un tercer hijo, Merari, me nació en el año cuadragésimo de mi vida; y porque su madre lo dio a luz con dificultad, lo llamé Merari, que es amargura. 8. Y Jocabed nació en Egipto, en el año sexagésimo cuarto de mi vida, pues en aquel tiempo yo era ilustre entre mis hermanos.'
+  to: '1. Cuando tomé esposa, yo tenía veintiocho años, y su nombre era Melca. 2. Y ella concibió y dio a luz un hijo, y llamé su nombre Gersam, porque estábamos en tierra de peregrinación. 3. Y vi acerca de él que no estaba en el primer rango. 4. Y Kohat nació en el trigésimo quinto año de mi vida, y vi en una visión, hacia la salida del sol, 5. que él estaba en medio de la congregación, en las alturas. 6. Por eso llamé su nombre Kohat, que es: comienzo de majestad y asamblea[a]. 7. Y un tercer hijo, Merari, me nació en el año cuadragésimo de mi vida; y porque su madre lo dio a luz con dificultad, lo llamé Merari, que es amargura. 8. Y Jocabed nació en Egipto, en el año sexagésimo cuarto de mi vida, pues en aquel tiempo yo era ilustre entre mis hermanos.'
+  rationale: Removed the erroneous footnote marker '[a]' from verse 2 ('tierra de peregrinación') since no corresponding footnote exists for it and the text needs no annotation there. Corrected the space error ('[ a]' → removed entirely from that location). The sole footnote marker '[a]' now appears only at v.6 where the Kohath naming gloss footnote applies.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:52Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek is faithfully rendered across all eight verses. Name forms, chronological data, and the vision content are all accurately translated. The etymological glosses and the naming of Jocabed in Egypt at Levi's sixty-fourth year are preserved.
+  spanish_quality_summary: 'The translation reads well in neutral Latin-American Spanish with a biblical register. However, there are two footnote marker formatting issues: (1) the marker for ''peregrinación'' in v.2 appears as ''[ a]'' (with a space before ''a'') instead of ''[a]''; (2) the footnote marker ''[a]'' appears twice in the text (at ''peregrinación'' and at ''asamblea[a]'') but there is only one footnote covering the Kohath naming gloss, with no footnote addressing the ''tierra de peregrinación'' marker.'
+  glossary_alignment: 'No divine name in this chapter. YHWH/θεός/Χριστός not present. All proper names handled appropriately: Jocabed (Ἰωχαβέδ), Kohat (Καάθ), Gersam, Merari consistently rendered.'
+  issues:
+  - severity: medium
+    issue: 'Spurious space in footnote marker: text reads ''tierra de[ a] peregrinación'' instead of ''tierra de[a] peregrinación''.'
+    rationale: The marker formatting is malformed; the space between '[' and 'a' may cause rendering errors or marker-matching failure.
+  - severity: medium
+    issue: Two '[a]' markers in the text but only one footnote. The marker at 'peregrinación' (v.2) has no corresponding footnote entry; the single footnote only addresses the Kohath naming gloss (v.6).
+    rationale: Footnote markers must match footnote entries one-to-one. Either the v.2 marker must be removed from the text, or a second footnote must be added for it.
+  revised_spanish_text: '1. Cuando tomé esposa, yo tenía veintiocho años, y su nombre era Melca. 2. Y ella concibió y dio a luz un hijo, y llamé su nombre Gersam, porque estábamos en tierra de peregrinación. 3. Y vi acerca de él que no estaba en el primer rango. 4. Y Kohat nació en el trigésimo quinto año de mi vida, y vi en una visión, hacia la salida del sol, 5. que él estaba en medio de la congregación, en las alturas. 6. Por eso llamé su nombre Kohat, que es: comienzo de majestad y asamblea[a]. 7. Y un tercer hijo, Merari, me nació en el año cuadragésimo de mi vida; y porque su madre lo dio a luz con dificultad, lo llamé Merari, que es amargura. 8. Y Jocabed nació en Egipto, en el año sexagésimo cuarto de mi vida, pues en aquel tiempo yo era ilustre entre mis hermanos.'
+  revised_footnotes:
+  - marker: a
+    text: La expresión griega es textual y léxicamente difícil; la traducción conserva el sentido posible sin suavizar la aspereza del testimonio.
+    reason: textual_variant
+  revision_rationale: Removed the erroneous footnote marker '[a]' from verse 2 ('tierra de peregrinación') since no corresponding footnote exists for it and the text needs no annotation there. Corrected the space error ('[ a]' → removed entirely from that location). The sole footnote marker '[a]' now appears only at v.6 where the Kohath naming gloss footnote applies.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e57c806653885a0be6b5f9e4b8e2e52a44b91cee601ed01b98b1275d0172bbea
+  timestamp: '2026-05-08T06:45:52Z'
+  output_hash: e57c806653885a0be6b5f9e4b8e2e52a44b91cee601ed01b98b1275d0172bbea
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

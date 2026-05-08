@@ -269,4 +269,31 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'All main Greek clauses for vv. 3-7 are represented. The chapter-level EN does not include the ''A slave, he exalted me'' clause (that was a per-verse phase2 realignment), so the chapter ES consistently omits it. All key terms faithfully rendered: φθόνος → ''envidia'', δουλείαν → ''esclavo'', δεσπότης → ''Amo'', σωτήρ → ''Salvador'', καταδουλώσετε→n/a here.'
+  spanish_quality_summary: 'High quality. Markers [a][b][c][d] in text match all four defined footnotes. Note: markers [d][c] appear in v.7 in the ES (''también en mi defensa[d][c]'') following the EN order exactly. Some minor variation between chapter and per-verse ES texts (e.g., ''me extravié'' vs ''no fui extraviado'') is acceptable as both are independent drafts.'
+  glossary_alignment: 'σωτήρ → ''Salvador'' correct. δεσπότης → ''Amo'' distinct from Κύριος → ''Señor''. δοῦλος context: δουλείαν → ''esclavo'' per policy. No Χριστός/YHWH issues.'
+  issues:
+  - severity: low
+    issue: v.7 in the chapter ES omits the Greek clause Δοῦλος καὶ ὕψωσέ με, consistent with the chapter-level EN which also omits it. The per-verse 007.yaml has been revised separately to include it.
+    rationale: The chapter EN predates the phase2 realignment that added this clause to the per-verse EN. The chapter-level ES may eventually need updating when the chapter EN is updated.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 79c0dede2579fbc538478d4ee811405001fd57eaf90671ba6c8da28d15cea4ed
+  timestamp: '2026-05-08T06:29:54Z'
+  output_hash: 79c0dede2579fbc538478d4ee811405001fd57eaf90671ba6c8da28d15cea4ed
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

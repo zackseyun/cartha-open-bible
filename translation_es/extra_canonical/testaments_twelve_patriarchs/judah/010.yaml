@@ -42,7 +42,7 @@ base_translation:
     changes_summary: 'Made minor adjustments for accuracy and natural formal English: added ''as'' in ''as a wife'' and changed ''lived with her'' to ''was with her'' to more closely reflect the Greek without over-specifying.'
 translation:
   language: es
-  text: Después de estas cosas[a], Er, mi hijo, tomó a Tamar para sí como esposa, de Mesopotamia, hija de Aram. Pero Er era malo, y un ángel del Señor lo mató. Y yo la di a Onán, mi segundo hijo, y he aquí, el Señor también lo derribó. Porque no la conoció, por la intriga de su madre, pues no quería tener hijos de ella. En los días del tálamo nupcial[b] yo la di a Onán en matrimonio levirato[c]; sin embargo, también este, en su maldad, no la conoció, aunque estuvo con ella un año. Y cuando lo amenacé, él fue a ella, pero desperdició la semilla sobre la tierra, según el mandato de su madre. Así también este murió en su maldad. Y yo quería dar también a Selom a ella, pero su madre no lo permitió; pues actuó malvadamente[d], porque Tamar no era de las hijas de Canaán, como ella misma lo era.
+  text: Después de estas cosas[a], Er, mi hijo, tomó a Tamar para sí como esposa, de Mesopotamia, hija de Aram. Pero Er era malvado, y un ángel de Yahvé lo mató. Y yo la di a Onán, mi segundo hijo, y he aquí, Yahvé también lo derribó. Porque no la conoció, por la intriga de su madre, pues no quería tener hijos de ella. En los días del tálamo nupcial[b] yo la di a Onán en matrimonio levirato[c]; sin embargo, también este, en su maldad, no la conoció, aunque estuvo con ella un año. Y cuando lo amenacé, él fue a ella, pero desperdició la semilla sobre la tierra, según el mandato de su madre. Así también este murió en su maldad. Y yo quería dar también a Selom a ella, pero su madre no lo permitió; pues actuó malvadamente[d], porque Tamar no era de las hijas de Canaán, como ella misma lo era.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -205,4 +205,55 @@ ai_draft:
     total_tokens: 6310
     reasoning_tokens: 0
     estimated_cost_usd: 0.013185
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Después de estas cosas[a], Er, mi hijo, tomó a Tamar para sí como esposa, de Mesopotamia, hija de Aram. Pero Er era malo, y un ángel del Señor lo mató. Y yo la di a Onán, mi segundo hijo, y he aquí, el Señor también lo derribó. Porque no la conoció, por la intriga de su madre, pues no quería tener hijos de ella. En los días del tálamo nupcial[b] yo la di a Onán en matrimonio levirato[c]; sin embargo, también este, en su maldad, no la conoció, aunque estuvo con ella un año. Y cuando lo amenacé, él fue a ella, pero desperdició la semilla sobre la tierra, según el mandato de su madre. Así también este murió en su maldad. Y yo quería dar también a Selom a ella, pero su madre no lo permitió; pues actuó malvadamente[d], porque Tamar no era de las hijas de Canaán, como ella misma lo era.
+  to: Después de estas cosas[a], Er, mi hijo, tomó a Tamar para sí como esposa, de Mesopotamia, hija de Aram. Pero Er era malvado, y un ángel de Yahvé lo mató. Y yo la di a Onán, mi segundo hijo, y he aquí, Yahvé también lo derribó. Porque no la conoció, por la intriga de su madre, pues no quería tener hijos de ella. En los días del tálamo nupcial[b] yo la di a Onán en matrimonio levirato[c]; sin embargo, también este, en su maldad, no la conoció, aunque estuvo con ella un año. Y cuando lo amenacé, él fue a ella, pero desperdició la semilla sobre la tierra, según el mandato de su madre. Así también este murió en su maldad. Y yo quería dar también a Selom a ella, pero su madre no lo permitió; pues actuó malvadamente[d], porque Tamar no era de las hijas de Canaán, como ella misma lo era.
+  rationale: 1) Replaced 'un ángel del Señor' with 'un ángel de Yahvé' and 'el Señor también lo derribó' with 'Yahvé también lo derribó' per project glossary (YHWH→Yahvé). 2) Changed 'era malo' to 'era malvado' for Er's individual indictment to match per-verse file and strengthen the moral charge. All footnote markers [a][b][c][d] preserved.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:17Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter-level Spanish covers all content of the Greek source and the EN POB. However, there is a glossary issue: Κυρίου in ''ἄγγελος Κυρίου'' is rendered as ''del Señor'' rather than ''Yahvé'' as required by project policy. The chapter-level EN POB uses ''the Lord'' because the context is a Greek text without the Tetragrammaton, but the Spanish project policy specifies YHWH→Yahvé regardless. The per-verse ES 010/002 correctly uses ''Yahvé.'' The chapter-level draft uses ''del Señor'' inconsistently. Also, ''malo'' for πονηρός (individual moral verdict on Er) is weaker than ''malvado'' used in the per-verse file; ''malvado'' is preferable for the individual indictment.'
+  spanish_quality_summary: The chapter-level ES is generally well done. Main text flows naturally. Footnote markers [a][b][c][d] are present in text and correspond to all four EN footnotes — marker count matches. The only structural issue is the glossary term 'del Señor' for Κυρίου.
+  glossary_alignment: Κυρίου rendered as 'del Señor' — should be 'Yahvé' per project policy. This is the primary issue requiring revision. The rest of the text is glossary-consistent.
+  issues:
+  - severity: high
+    issue: '''un ángel del Señor'' should be ''un ángel de Yahvé'''
+    rationale: Project glossary mandates YHWH→Yahvé. In a Greek text, Κύριος maps to Yahvé in this project's convention. The per-verse file 010/002 correctly uses 'Yahvé'. The chapter-level file must be consistent.
+  - severity: low
+    issue: '''Er era malo'' — ''malo'' is weaker than ''malvado'' for an individual moral verdict'
+    rationale: The per-verse file uses 'malvado' which better preserves the force of πονηρός as a moral condemnation. The chapter-level also has 'en su maldad' which is consistent, but 'malo' for the individual verdict is slightly underpowered.
+  revised_spanish_text: Después de estas cosas[a], Er, mi hijo, tomó a Tamar para sí como esposa, de Mesopotamia, hija de Aram. Pero Er era malvado, y un ángel de Yahvé lo mató. Y yo la di a Onán, mi segundo hijo, y he aquí, Yahvé también lo derribó. Porque no la conoció, por la intriga de su madre, pues no quería tener hijos de ella. En los días del tálamo nupcial[b] yo la di a Onán en matrimonio levirato[c]; sin embargo, también este, en su maldad, no la conoció, aunque estuvo con ella un año. Y cuando lo amenacé, él fue a ella, pero desperdició la semilla sobre la tierra, según el mandato de su madre. Así también este murió en su maldad. Y yo quería dar también a Selom a ella, pero su madre no lo permitió; pues actuó malvadamente[d], porque Tamar no era de las hijas de Canaán, como ella misma lo era.
+  revised_footnotes:
+  - marker: a
+    text: Algunos testigos griegos varían en detalles menores de secuencia y tiempo, incluyendo si Er murió al segundo día o en la tercera noche, y si Onán fue unido a Tamar de inmediato o durante el período nupcial.
+    reason: textual_variant
+  - marker: b
+    text: '''No la conoció'' es un eufemismo bíblico para relaciones sexuales.'
+    reason: lexical_alternative
+  - marker: c
+    text: '''Matrimonio levirato'' alude al deber del hermano de un difunto de levantar descendencia para él por medio de la viuda; compárese Génesis 38.'
+    reason: cultural_note
+  - marker: d
+    text: La repetición de 'maldad' en el capítulo une las muertes de Er y Onán con la obstrucción de la madre en un mismo patrón moral.
+    reason: cross_reference
+  revision_rationale: 1) Replaced 'un ángel del Señor' with 'un ángel de Yahvé' and 'el Señor también lo derribó' with 'Yahvé también lo derribó' per project glossary (YHWH→Yahvé). 2) Changed 'era malo' to 'era malvado' for Er's individual indictment to match per-verse file and strengthen the moral charge. All footnote markers [a][b][c][d] preserved.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: b4a8836e27e202195b297ac9926559f3841bc5c1c28903d69308cf98b21f0b4b
+  timestamp: '2026-05-08T06:37:17Z'
+  output_hash: b4a8836e27e202195b297ac9926559f3841bc5c1c28903d69308cf98b21f0b4b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

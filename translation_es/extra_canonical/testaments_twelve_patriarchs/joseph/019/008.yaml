@@ -19,18 +19,15 @@ base_translation:
     changes_summary: Changed 'but' to 'and' to match the source's coordination; otherwise retained the draft.
 translation:
   language: es
-  text: Y vi que nació una virgen[a], y de ella nació un cordero, y a su izquierda apareció algo como un león[b]; y todas las bestias se lanzaron contra él, y el cordero las venció y las destruyó y las pisoteó[c].
+  text: Y vi que [de Judá nació] una virgen[a], [vestida con una túnica de lino fino, y de ella] nació un cordero [sin mancha]; y a su izquierda había como un león[b]; y todas las bestias se lanzaron contra él, y el cordero las venció y las destruyó para pisotearlas.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Algunos testigos griegos leen más explícitamente, 'de Judá nació una virgen', mientras que otra forma lee, 'vi entre los cuernos cierta virgen'.
+    text: 'Algunos testigos griegos leen más explícitamente: ''de Judá nació una virgen''; otra forma dice: ''vi entre los cuernos a cierta virgen''.'
     reason: textual_variant
   - marker: b
-    text: La frase 'a su izquierda apareció algo como un león' es textualmente difícil; otro testigo expresa la escena de modo distinto pero sigue presentando un asalto bestial hostil al cordero.
+    text: La frase 'a su izquierda había como un león' es textualmente difícil; otro testigo expresa la escena de modo distinto pero sigue presentando un asalto bestial hostil al cordero. Algunos testigos amplían al cordero como 'sin mancha', y una lectura de tono tardío añade lenguaje similar al de 'el cordero de Dios, que quita el pecado del mundo'.
     reason: alternative_reading
-  - marker: c
-    text: Algunos testigos amplían el cordero como 'sin mancha', y una lectura tardía añade lenguaje similar a 'el cordero de Dios, que quita el pecado del mundo'.
-    reason: textual_variant
 lexical_decisions:
 - source_word: παρθένος
   english_pob_choice: virgin
@@ -124,4 +121,52 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y vi que nació una virgen[a], y de ella nació un cordero, y a su izquierda apareció algo como un león[b]; y todas las bestias se lanzaron contra él, y el cordero las venció y las destruyó y las pisoteó[c].
+  to: Y vi que [de Judá nació] una virgen[a], [vestida con una túnica de lino fino, y de ella] nació un cordero [sin mancha]; y a su izquierda había como un león[b]; y todas las bestias se lanzaron contra él, y el cordero las venció y las destruyó para pisotearlas.
+  rationale: Aligned to the phase2-realigned EN by restoring the bracketed clauses. Fixed ἦν ὡς λέων as 'había como un león' (matching EN 'there was, as it were, a lion'). Merged footnotes [b] and [c] into a single [b] to eliminate the unanchored [c] marker.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:35:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The current EN YAML (phase2_realign) reads: ''And I saw that [from Judah was born] a virgin, [wearing a robe of fine linen, and from her] a [blameless] lamb was born; and on his left there was, as it were, a lion; and all the beasts were rushing against him, and the lamb overcame them and destroyed them for trampling.'' The ES draft follows the older pre-phase2 EN text (''Y vi que nació una virgen[a], y de ella nació un cordero, y a su izquierda apareció algo como un león[b]''), omitting the bracketed clauses present in the current EN and misrendering ἦν ὡς λέων as ''apareció algo como un león'' rather than ''había, por así decirlo, un león''. Source also says ἀπώλεσεν αὐτὰ εἰς καταπάτημα, best rendered as ''los destruyó para pisotearlos'' or ''los destruyó y pisoteó'', which the ES gets right. The main issue is the ES is based on the old EN draft, not the current phase2 realigned EN.'
+  spanish_quality_summary: 'The Spanish is natural and fluent. The footnote assignment is off: marker [b] is assigned to the lion-clause note (alternative_reading) but marker [c] covers the spotless/Lamb-of-God expansion. This reverses the order vs the EN chapter YAML footnotes (a=virgin textual variant, b=spotless/lamb expansion, c=lion clause difficulty, d=watchman hut). The per-verse ES assigns [a]=virgin textual variant, [b]=lion difficulty, [c]=spotless/lamb expansion — but the text only anchors [a] and [b] explicitly in the text body; [c] has no anchor in the text. Footnote mismatch: text has markers [a] and [b] but footnotes array has [a],[b],[c].'
+  glossary_alignment: cordero=lamb correct; bestias=beasts correct; virgen=virgin correct; no YHWH/Mesías/esclavo issues.
+  issues:
+  - severity: high
+    issue: ES based on old pre-phase2 EN text, omitting bracketed clauses now in current EN
+    rationale: Phase2 realign added bracketed clauses 'from Judah was born', 'wearing a robe of fine linen, and from her', 'blameless'. ES draft was based on the revision_pass EN which lacked these. Revised ES should include them.
+  - severity: high
+    issue: Footnote marker [c] has no anchor in the Spanish text body
+    rationale: The footnotes array has [a],[b],[c] but the text only references [a] and [b]. This causes a marker mismatch validation failure.
+  - severity: medium
+    issue: ἦν ὡς λέων rendered as 'apareció algo como un león' (appeared something like a lion) rather than 'había como un león' (there was, as it were, a lion)
+    rationale: EN phase2 reads 'there was, as it were, a lion'; the ES adds the verb 'apareció' not in the source.
+  revised_spanish_text: Y vi que [de Judá nació] una virgen[a], [vestida con una túnica de lino fino, y de ella] nació un cordero [sin mancha]; y a su izquierda había como un león[b]; y todas las bestias se lanzaron contra él, y el cordero las venció y las destruyó para pisotearlas.
+  revised_footnotes:
+  - marker: a
+    text: 'Algunos testigos griegos leen más explícitamente: ''de Judá nació una virgen''; otra forma dice: ''vi entre los cuernos a cierta virgen''.'
+    reason: textual_variant
+  - marker: b
+    text: La frase 'a su izquierda había como un león' es textualmente difícil; otro testigo expresa la escena de modo distinto pero sigue presentando un asalto bestial hostil al cordero. Algunos testigos amplían al cordero como 'sin mancha', y una lectura de tono tardío añade lenguaje similar al de 'el cordero de Dios, que quita el pecado del mundo'.
+    reason: alternative_reading
+  revision_rationale: Aligned to the phase2-realigned EN by restoring the bracketed clauses. Fixed ἦν ὡς λέων as 'había como un león' (matching EN 'there was, as it were, a lion'). Merged footnotes [b] and [c] into a single [b] to eliminate the unanchored [c] marker.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0ce97a6afd7684509da525c9b95da9dceb67764c35633ff9d45db7ea39712d20
+  timestamp: '2026-05-08T06:35:26Z'
+  output_hash: 0ce97a6afd7684509da525c9b95da9dceb67764c35633ff9d45db7ea39712d20
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

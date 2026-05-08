@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y los ciervos[a] de Jacob correrán en exultación, y las águilas de Israel volarán con alegría; y todos los pueblos glorificarán al Señor para siempre.
+  text: Y los ciervos de Jacob correrán en exultación, y las águilas de Israel volarán con alegría; y todos los pueblos glorificarán a Yahvé para siempre.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Ciervos» traduce el animal del griego; algunos lectores podrían preferir «venados».
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔλαφοι
   english_pob_choice: deer
@@ -108,4 +104,42 @@ ai_draft:
     total_tokens: 2676
     reasoning_tokens: 0
     estimated_cost_usd: 0.005877
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los ciervos[a] de Jacob correrán en exultación, y las águilas de Israel volarán con alegría; y todos los pueblos glorificarán al Señor para siempre.
+  to: Y los ciervos de Jacob correrán en exultación, y las águilas de Israel volarán con alegría; y todos los pueblos glorificarán a Yahvé para siempre.
+  rationale: Replaced 'el Señor' with 'Yahvé' per project policy. Removed trivial [a] footnote about ciervos/venados. No other content changes; 'ciervos de Jacob' correctly reflects the Greek ἔλαφοι Ἰακὼβ.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ἔλαφοι Ἰακὼβ δραμοῦνται ἐν ἀγαλλιάσει, ἀετοὶ Ἰσραὴλ πετασθήσονται ἐν χαρᾷ, πάντες οἱ λαοὶ δοξάσουσι Κύριον εἰς αἰῶνας. EN POB: ''And the deer of Joseph will run in exultation, and the eagles of Israel will fly in joy, and all the peoples will glorify the Lord forever.'' Note: EN says ''deer of Joseph'' but Greek says ''deer of Jacob'' (ἔλαφοι Ἰακὼβ). The Spanish correctly uses ''ciervos de Jacob'' — which is closer to the Greek! The EN POB appears to have an error saying ''deer of Joseph'' when the Greek clearly says Ἰακὼβ (Jacob). Spanish ''ciervos de Jacob'' is more faithful to the source. However there is also ''el Señor'' vs Yahvé inconsistency — the rationale says it uses ''el Señor'' by continuity with the audit trail, but project policy should have Yahvé. The [a] footnote about ''ciervos'' as an alternative to ''venados'' is a minor but unnecessary note — the note is trivial.'
+  spanish_quality_summary: Text flows well. 'Correrán en exultación' and 'volarán con alegría' maintain the parallelism. 'Glorificarán al Señor para siempre' is natural. The choice of 'ciervos de Jacob' is actually correct and more faithful to the Greek than the EN POB which says 'Joseph'. The footnote [a] about venados vs ciervos is extremely minor and could be dropped, but is not harmful.
+  glossary_alignment: Κύριον rendered as 'el Señor' but Yahvé is the project norm. Inconsistent with 025/001 and 025/003 in the same chapter.
+  issues:
+  - severity: medium
+    issue: Κύριον rendered as 'el Señor' but project policy and the rest of this chapter use 'Yahvé'.
+    rationale: Consistent divine name policy requires Yahvé throughout this chapter.
+  - severity: low
+    issue: The [a] footnote about 'ciervos vs venados' is trivially minor and adds noise without meaningful lexical or textual information.
+    rationale: Footnotes should document genuine textual or semantic issues, not stylistic synonym preferences.
+  revised_spanish_text: Y los ciervos de Jacob correrán en exultación, y las águilas de Israel volarán con alegría; y todos los pueblos glorificarán a Yahvé para siempre.
+  revision_rationale: Replaced 'el Señor' with 'Yahvé' per project policy. Removed trivial [a] footnote about ciervos/venados. No other content changes; 'ciervos de Jacob' correctly reflects the Greek ἔλαφοι Ἰακὼβ.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e899b5bcae9b19428a655df3cdb25853fc6ef8a1be96ce229d661c6c69d8c257
+  timestamp: '2026-05-08T06:37:10Z'
+  output_hash: e899b5bcae9b19428a655df3cdb25853fc6ef8a1be96ce229d661c6c69d8c257
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

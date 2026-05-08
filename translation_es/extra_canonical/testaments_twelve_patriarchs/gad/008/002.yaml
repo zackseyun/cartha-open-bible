@@ -20,7 +20,7 @@ base_translation:
     changes_summary: Revised to match the source’s direct imperative and address to the children; removed the unrelated expanded material from the draft.
 translation:
   language: es
-  text: Porque yo sé que vuestros hijos se apartarán de él, y estarán en toda maldad, maltrato y corrupción lejos de Yahvé.
+  text: Porque yo sé que sus hijos se apartarán de él, y estarán en toda maldad, maltrato y corrupción lejos del Señor.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἐγὼ γὰρ ἔγνων
@@ -97,4 +97,42 @@ ai_draft:
     total_tokens: 2733
     reasoning_tokens: 0
     estimated_cost_usd: 0.005807
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque yo sé que vuestros hijos se apartarán de él, y estarán en toda maldad, maltrato y corrupción lejos de Yahvé.
+  to: Porque yo sé que sus hijos se apartarán de él, y estarán en toda maldad, maltrato y corrupción lejos del Señor.
+  rationale: Changed 'vuestros' to 'sus' (ustedes register). Changed 'Yahvé' to 'el Señor' for Κυρίου, consistent with how Κύριος is rendered throughout the Gad corpus in ch.6 and ch.7. The POB YHWH→Yahvé rule applies to the Hebrew tetragrammaton in OT texts, not to the Greek Κύριος in T12P.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:20:51Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek 8:2: Ἐγὼ γὰρ ἔγνων, ὅτι ἀποστήσονται τὰ τέκνα ὑμῶν ἀπ᾽ αὐτοῦ, καὶ πάσῃ πονηρίᾳ καὶ κακώσει καὶ διαφθορᾷ ἔσονται ἀπὸ Κυρίου. The Spanish ''Porque yo sé que vuestros hijos se apartarán de él, y estarán en toda maldad, maltrato y corrupción lejos de Yahvé'' is largely faithful. Issues: (1) ''vuestros hijos'' uses vosotros possessive — should be ''sus hijos'' (ustedes register). (2) Κυρίου rendered as ''Yahvé'' — this is a deliberate POB decision noted in theological_decisions, with rationale that the project policy maps YHWH→Yahvé and the editor chose to explicit the divine name. However, the Greek here is Κυρίου, not a Hebrew YHWH — in this T12P Greek text, Κύριος is the standard Greek term. Throughout ch.7 and ch.6, the Spanish consistently uses ''el Señor'' for Κύριος. Switching to ''Yahvé'' at 8:2 breaks the internal consistency of the chapter-level Spanish for this book.'
+  spanish_quality_summary: Good prose aside from the vosotros form and the Yahvé/Señor inconsistency. 'Maltrato' for κακωσις is reasonable. 'Corrupción' for διαφθορά is accurate.
+  glossary_alignment: Κύριος → should be 'el Señor' (consistent with ch.6 and 7 where Κύριος/Κυρίῳ is consistently 'el Señor'). The POB glossary rule is YHWH→Yahvé, not Κύριος→Yahvé. Using Yahvé for the Greek Κύριος diverges from the corpus-wide convention established in the prior chapters.
+  issues:
+  - severity: high
+    issue: Κυρίου rendered as 'Yahvé' — the entire Gad corpus (ch.6, 7) renders Κύριος as 'el Señor'. Using 'Yahvé' at 8:2 breaks internal consistency. POB glossary rule is YHWH (Hebrew tetragrammaton) → Yahvé, not Greek Κύριος → Yahvé.
+    rationale: The Greek text has Κυρίου, not a Hebrew source. Throughout the Gad testament, Κύριος is 'el Señor'. Switching to Yahvé here is inconsistent and not supported by the source language.
+  - severity: medium
+    issue: '''vuestros hijos'' — vosotros possessive; should be ''sus hijos'' for ustedes register.'
+    rationale: Same register issue as 8:1; the corpus uses ustedes throughout.
+  revised_spanish_text: Porque yo sé que sus hijos se apartarán de él, y estarán en toda maldad, maltrato y corrupción lejos del Señor.
+  revision_rationale: Changed 'vuestros' to 'sus' (ustedes register). Changed 'Yahvé' to 'el Señor' for Κυρίου, consistent with how Κύριος is rendered throughout the Gad corpus in ch.6 and ch.7. The POB YHWH→Yahvé rule applies to the Hebrew tetragrammaton in OT texts, not to the Greek Κύριος in T12P.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 22276d937c87d7105cdddfca8f0f6aef83160d8a0637da3fceb3fd959a25eef4
+  timestamp: '2026-05-08T06:20:51Z'
+  output_hash: 22276d937c87d7105cdddfca8f0f6aef83160d8a0637da3fceb3fd959a25eef4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

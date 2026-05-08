@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'ruinous' to 'destructive' for a more direct rendering of εἰς ὄλεθρον. Kept the rest of the draft, which is accurate and complete.
 translation:
   language: es
-  text: Porque las continuas [a] reuniones, aun si no se lleva a cabo el acto impío, son sin embargo para ellos una enfermedad incurable, y para nosotros una deshonra destructiva de Beliar y un oprobio eterno.
+  text: Porque las continuas [a] reuniones, aun si no se lleva a cabo el acto impío, son sin embargo para ellas una enfermedad incurable, y para nosotros una deshonra destructiva de Beliar y un oprobio eterno.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -122,4 +122,44 @@ ai_draft:
     total_tokens: 3235
     reasoning_tokens: 0
     estimated_cost_usd: 0.007646
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque las continuas [a] reuniones, aun si no se lleva a cabo el acto impío, son sin embargo para ellos una enfermedad incurable, y para nosotros una deshonra destructiva de Beliar y un oprobio eterno.
+  to: Porque las continuas [a] reuniones, aun si no se lleva a cabo el acto impío, son sin embargo para ellas una enfermedad incurable, y para nosotros una deshonra destructiva de Beliar y un oprobio eterno.
+  rationale: 'Corrected ''para ellos'' to ''para ellas'' to match the Greek αὐταῖς (feminine dative, referring to the women). The EN has ''for them'' without marking gender, but the Greek is explicit: the disease is for the women (αὐταῖς), reproach is for us (ἡμῖν, the men).'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The main issues: (1) The EN revised form uses ''disgrace of Beliar'' (genitive of origin/association), but the ES uses ''deshonra de Beliar'' for the first ὄνειδος but the actual EN per-verse text says ''destructive disgrace of Beliar'' — however looking at the chapter.yaml the revision changed ''of Beliar'' to ''from Beliar''. The per-verse EN reads ''destructive disgrace of Beliar'' while the chapter EN revision says ''from Beliar''. The per-verse ES uses ''deshonra destructiva de Beliar'' which follows the per-verse EN. (2) There is a minor issue: ''para ellos'' vs ''para ellas/nosotros'' — the Greek says αὐταῖς (for them, feminine, referring to the women) and ἡμῖν (for us, masculine, referring to men). The ES renders ''para ellos'' but should be ''para ellas'' (feminine, referring to the women who encounter us). Let me re-check: the text says ''son sin embargo para ellos una enfermedad incurable'' — but αὐταῖς is feminine dative (for them = for the women).
+    Should be ''para ellas''.'
+  spanish_quality_summary: 'Good quality overall. The issue is the pronoun gender: ''para ellos'' should be ''para ellas'' since αὐταῖς refers to the women. Also the footnote marker [a] is present in text (''continuas [a] reuniones'') but there''s a space before [a] that looks odd — however this may be a formatting quirk. The footnote marker is in both text and array.'
+  glossary_alignment: Beliar retained as Beliar (correct). No YHWH, θεός, Χριστός, πνεῦμα present.
+  issues:
+  - severity: high
+    issue: '''para ellos una enfermedad incurable'' uses masculine pronoun but αὐταῖς (feminine dative) refers to the women — should be ''para ellas'''
+    rationale: Grammatical error — the Greek clearly uses the feminine dative to indicate the disease is for the women (the ones encountered), while ἡμῖν refers to the men.
+  revised_spanish_text: Porque las continuas [a] reuniones, aun si no se lleva a cabo el acto impío, son sin embargo para ellas una enfermedad incurable, y para nosotros una deshonra destructiva de Beliar y un oprobio eterno.
+  revised_footnotes:
+  - marker: a
+    text: «Reuniones» traduce el sentido de encuentros frecuentes; otras posibilidades son «encuentros» o «citas».
+    reason: lexical_alternative
+  revision_rationale: 'Corrected ''para ellos'' to ''para ellas'' to match the Greek αὐταῖς (feminine dative, referring to the women). The EN has ''for them'' without marking gender, but the Greek is explicit: the disease is for the women (αὐταῖς), reproach is for us (ἡμῖν, the men).'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6f8423b68e4f3f9119c8a69bc0904e8830420fb40502611ee318832be706977b
+  timestamp: '2026-05-08T06:47:42Z'
+  output_hash: 6f8423b68e4f3f9119c8a69bc0904e8830420fb40502611ee318832be706977b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -211,4 +211,31 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Chapter-level draft accurately renders all four verses. EN revision change (''in good things''→''with good things'') tracked as ''con bienes''. The truncation at v.4 ''Aun así'' is faithfully preserved. Footnote markers [a],[b],[c],[d] in text: ''1[a]...con bienes[b]...paciencia[c]...mi Señor[d]'' — all four footnotes present and correctly associated.'
+  spanish_quality_summary: Good quality overall. v.2 uses 'ustedes' forms correctly (consistent with neutral LATAM register). v.3 uses 'ustedes mismos' (adding 'mismos' not in revised EN which removed 'yourselves' — minor excess). All marker placements are correct.
+  glossary_alignment: θεός→Dios, κύριος→el Señor consistent within chapter. No YHWH/Χριστός/δοῦλος/πνεῦμα.
+  issues:
+  - severity: low
+    issue: 'v.3: ''ustedes mismos saben'' adds ''mismos'' which was explicitly removed from EN (''you yourselves''→''you know'') in the revision pass'
+    rationale: Minor excess that slightly contradicts the EN revision correction. Easily fixed but not critical to meaning.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6aae450a8c0313f207f50bac7333c5f68aa02905cc9beab8e563e945b45644a1
+  timestamp: '2026-05-08T06:37:33Z'
+  output_hash: 6aae450a8c0313f207f50bac7333c5f68aa02905cc9beab8e563e945b45644a1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

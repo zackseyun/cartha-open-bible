@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: El quinto es el espíritu de la palabra, por medio del cual se produce conocimiento.
+  text: El quinto es el espíritu de la palabra, por medio del cual surge el conocimiento.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: πνεῦμα
@@ -82,4 +82,39 @@ ai_draft:
     total_tokens: 2139
     reasoning_tokens: 0
     estimated_cost_usd: 0.003993
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: El quinto es el espíritu de la palabra, por medio del cual se produce conocimiento.
+  to: El quinto es el espíritu de la palabra, por medio del cual surge el conocimiento.
+  rationale: Changed 'se produce conocimiento' to 'surge el conocimiento' to align with the parallel rendering of γίνεται in the surrounding verses (2:4 'surge el deseo', 2:5 'viene la instrucción') and to preserve the natural arising/coming-to-be sense of the Greek.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: fifth spirit of speech (γνῶσις comes to be). EN: ''The fifth is the spirit of speech, by which knowledge comes to be.'' ES: ''El quinto es el espíritu de la palabra, por medio del cual se produce conocimiento.'' The rendering ''se produce conocimiento'' slightly shifts γίνεται (comes to be/arises) toward production/manufacture. Preferably ''viene el conocimiento'' or ''surge el conocimiento'' as in the parallel structure of surrounding verses. This is a minor issue in the catalog consistency.'
+  spanish_quality_summary: Readable and appropriate register. The ordinal 'El quinto' correctly uses masculine. The choice of 'palabra' for λαλιά is acceptable (speech → word/speech). 'Se produce conocimiento' is slightly interpretive compared to 'viene' or 'surge'.
+  glossary_alignment: πνεῦμα → espíritu (lowercase, correct). No divine name issues.
+  issues:
+  - severity: low
+    issue: '''Se produce conocimiento'' renders γίνεται as ''is produced'' rather than the more neutral ''comes to be/arises''. In the parallel verses (004, 005) γίνεται is rendered ''surge'' (arises) and ''viene'' (comes). Consistency across the catalog favors ''surge'' or ''viene'' here as well.'
+    rationale: 'Catalog parallelism: 2:4 uses ''surge el deseo'', 2:5 uses ''viene la instrucción''. Using ''se produce'' for the same Greek verb in 2:6 disrupts the parallel structure.'
+  revised_spanish_text: El quinto es el espíritu de la palabra, por medio del cual surge el conocimiento.
+  revision_rationale: Changed 'se produce conocimiento' to 'surge el conocimiento' to align with the parallel rendering of γίνεται in the surrounding verses (2:4 'surge el deseo', 2:5 'viene la instrucción') and to preserve the natural arising/coming-to-be sense of the Greek.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 680608048ee7a26bc347790b86e08947aa905966273595ceb8831febee6f6a5e
+  timestamp: '2026-05-08T06:46:34Z'
+  output_hash: 680608048ee7a26bc347790b86e08947aa905966273595ceb8831febee6f6a5e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

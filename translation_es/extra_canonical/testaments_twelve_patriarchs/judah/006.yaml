@@ -36,11 +36,11 @@ base_translation:
     changes_summary: Changed 'for war' to 'for battle' for more natural and formal English while preserving the Greek sense; otherwise retained the draft.
 translation:
   language: es
-  text: Y cuando estaba en las aguas de Chozebá[a], los de Jobel vinieron contra nosotros para batalla. Y, entablando combate, los pusimos en fuga; y matamos a los de Silom, sus aliados[b], y no les dimos salida para entrar contra nosotros.
+  text: Y cuando estaba en las aguas de Chozebá[a], los de Jobel vinieron contra nosotros para batalla. Y, entablando combate, los pusimos en fuga; y matamos a los de Shiloh, sus aliados[b], y no les dimos salida para entrar contra nosotros.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Los nombres de lugar «Chozebá», «Jobel» y «Silom» son transliteraciones de las formas griegas de este testimonio; su identificación histórica es incierta.
+    text: Los nombres de lugar «Chozebá», «Jobel» y «Shiloh» son transliteraciones de las formas griegas de este testimonio; su identificación histórica es incierta.
     reason: cultural_note
   - marker: b
     text: El texto griego de este capítulo, tal como se proporciona aquí, es fragmentario; esta traducción vierte únicamente el texto conservado.
@@ -152,4 +152,46 @@ ai_draft:
     total_tokens: 4289
     reasoning_tokens: 0
     estimated_cost_usd: 0.008103
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y cuando estaba en las aguas de Chozebá[a], los de Jobel vinieron contra nosotros para batalla. Y, entablando combate, los pusimos en fuga; y matamos a los de Silom, sus aliados[b], y no les dimos salida para entrar contra nosotros.
+  to: Y cuando estaba en las aguas de Chozebá[a], los de Jobel vinieron contra nosotros para batalla. Y, entablando combate, los pusimos en fuga; y matamos a los de Shiloh, sus aliados[b], y no les dimos salida para entrar contra nosotros.
+  rationale: Changed 'Silom' to 'Shiloh' throughout the translation text and in the footnote a text, to match the EN revision pass and the per-verse ES file. No other changes needed.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The ES chapter follows the pre-revision EN chapter text at one critical point: the place name ''Silom'' was retained from the older EN, whereas the EN per-verse revision pass explicitly corrected ''Shilom'' to ''Shiloh'' as the more standard transliteration. The per-verse ES (006/002.yaml) already uses ''Shiloh'' consistently. The chapter-level ES should align with that. Footnotes markers a and b both present and matching the EN chapter. The rest of the text is faithful.'
+  spanish_quality_summary: Generally fluent. 'Los pusimos en fuga' is an acceptable rendering for ἐτρέψαμεν. The main inconsistency is 'Silom' vs the corrected 'Shiloh'. The footnote texts are well-rendered.
+  glossary_alignment: No glossary-sensitive terms present.
+  issues:
+  - severity: medium
+    issue: Toponym 'Silom' in the ES chapter text should be 'Shiloh' for consistency with the EN revision pass and the per-verse ES (006/002.yaml).
+    rationale: The EN revision pass explicitly corrected 'Shilom' to 'Shiloh'; using 'Silom' in the chapter-level ES introduces inconsistency.
+  revised_spanish_text: Y cuando estaba en las aguas de Chozebá[a], los de Jobel vinieron contra nosotros para batalla. Y, entablando combate, los pusimos en fuga; y matamos a los de Shiloh, sus aliados[b], y no les dimos salida para entrar contra nosotros.
+  revised_footnotes:
+  - marker: a
+    text: Los nombres de lugar «Chozebá», «Jobel» y «Shiloh» son transliteraciones de las formas griegas de este testimonio; su identificación histórica es incierta.
+    reason: cultural_note
+  - marker: b
+    text: El texto griego de este capítulo, tal como se proporciona aquí, es fragmentario; esta traducción vierte únicamente el texto conservado.
+    reason: textual_variant
+  revision_rationale: Changed 'Silom' to 'Shiloh' throughout the translation text and in the footnote a text, to match the EN revision pass and the per-verse ES file. No other changes needed.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 88ec87d2496e460c99af4ef3ad6e255ff860ef6b33bd3ca4eab4519ac06dcdcc
+  timestamp: '2026-05-08T06:38:53Z'
+  output_hash: 88ec87d2496e460c99af4ef3ad6e255ff860ef6b33bd3ca4eab4519ac06dcdcc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

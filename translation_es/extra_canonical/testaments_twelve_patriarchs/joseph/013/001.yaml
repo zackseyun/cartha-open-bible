@@ -109,4 +109,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: ES renders πεισθεὶς→persuadido, μετάβολον→corredor[b], ἐλθεῖν→que viniera (follows revision from 'to be brought' to 'to come'), κλέπτεις ψυχὰς→robas almas[c], εἰς παῖδας μεταπωλεῖς→las vendes como esclavos. Three footnotes [a], [b], [c] match markers in text.
+  spanish_quality_summary: Natural formal neutral Latin-American Spanish. Dialogue with guillemets. Literal 'almas' for ψυχὰς preserves the moral force of trafficking language. Markers [a], [b], [c] all present in text and defined in array. Note the text uses Pentefris (with -s) vs Pentefri in ch.12 — correctly matching the Greek variant Πεντεφρίς.
+  glossary_alignment: δοῦλος concept rendered via 'esclavos' for παῖδας in servile context — appropriate. No Κύριος/θεός/YHWH in this verse.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5f82777163d6c0e5b7b20e01b25236b7413d648a2ae53d3b728783655d15666a
+  timestamp: '2026-05-08T06:30:28Z'
+  output_hash: 5f82777163d6c0e5b7b20e01b25236b7413d648a2ae53d3b728783655d15666a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

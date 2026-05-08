@@ -75,4 +75,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'T.Jos 10:1 Greek: Ὁρᾶτε οὖν, τέκνα μου, πόσα κατεργάζεται ἡ ὑπομονὴ καὶ ἡ προσευχὴ μετὰ νηστείας. Spanish ''Vean, pues, hijos míos, cuánto logran la perseverancia y la oración con ayuno.'' ὑπομονή → ''perseverancia'' (internally consistent in ch.10). κατεργάζεται → ''logran'' (correct plural to match the two coordinated subjects). μετὰ νηστείας → ''con ayuno'' correct.'
+  spanish_quality_summary: Clean, accurate, natural. The coordinated structure with both subjects governing 'logran' is correct per EN revision. No footnotes needed.
+  glossary_alignment: No κύριος, YHWH, θεός, Χριστός, δοῦλος, πνεῦμα.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: cf63de4b1ef30721f9ab8edc91d825b93966abee2b439bd04e9b7f7ae359bb8e
+  timestamp: '2026-05-08T06:30:15Z'
+  output_hash: cf63de4b1ef30721f9ab8edc91d825b93966abee2b439bd04e9b7f7ae359bb8e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

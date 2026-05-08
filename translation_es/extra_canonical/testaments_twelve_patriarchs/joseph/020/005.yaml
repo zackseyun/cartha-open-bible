@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'perform' to 'carry out' to better match ἐπιτελέσατε while keeping the meaning natural and formal.
 translation:
   language: es
-  text: Y vosotros llevaréis mis huesos con vosotros. Porque cuando mis huesos sean llevados allá, Yahvé estará con vosotros en luz, y Belial estará con los egipcios en tinieblas.
+  text: Y ustedes llevarán mis huesos con ustedes. Porque cuando mis huesos sean llevados allí, el Señor estará con ustedes en luz, y Beliar estará con los egipcios en tinieblas.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: συνανοίσετε
@@ -102,4 +102,46 @@ ai_draft:
     total_tokens: 2783
     reasoning_tokens: 0
     estimated_cost_usd: 0.005773
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y vosotros llevaréis mis huesos con vosotros. Porque cuando mis huesos sean llevados allá, Yahvé estará con vosotros en luz, y Belial estará con los egipcios en tinieblas.
+  to: Y ustedes llevarán mis huesos con ustedes. Porque cuando mis huesos sean llevados allí, el Señor estará con ustedes en luz, y Beliar estará con los egipcios en tinieblas.
+  rationale: Converted vosotros forms to ustedes forms for Latin-American Spanish consistency. Changed 'Yahvé' to 'el Señor' for consistency with 20:2 (same verse) and with the EN 'the Lord'. Changed 'Belial' to 'Beliar' to match source form Βελίαρ and 20:2.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:40:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: same as 20:2. EN base_translation for 20:5 shows the pre-revision EN text ''And when you go up from this land, take my bones with you, and carry out my burial in Hebron, near Abraham and Isaac'' — this is clearly wrong for this verse. The EN YAML at 20:5 actually has the correct text ''And you shall carry up my bones with you. For when my bones are taken up there, the Lord will be with you in light, and Beliar will be with the Egyptians in darkness.'' The ES base_translation field references the wrong EN text but the ES translation text itself is aligned to the correct Greek. Two issues: (1) The ES uses ''vosotros'' forms (''llevaréis'', ''vosotros'') vs. ''ustedes'' forms used elsewhere; (2) ''Yahvé'' used for Κύριος while 20:2 (same verse) uses ''el Señor'' — inconsistency between duplicate verses. For neutral Latin-Am Spanish, ''llevaréis'' and ''vosotros'' should be ''llevarán'' and ''ustedes''. (3) ''Belial'' used here vs. ''Beliar'' in 20:2 — the
+    source form is Βελίαρ; ''Beliar'' is the more accurate transliteration.'
+  spanish_quality_summary: Vosotros forms are non-standard for Latin-American Spanish. The Yahvé/Señor and Belial/Beliar inconsistency with the duplicate verse 20:2 is problematic. The glossary note says Κύριος → Yahvé in divine-name contexts, but in 20:2 the reviewer approved 'Señor'. For consistency within the shard, and since the EN uses 'the Lord', 'el Señor' is preferable here too.
+  glossary_alignment: 'Belial vs Beliar: source has Βελίαρ, so ''Beliar'' is more faithful. The project glossary doesn''t mandate one form but ''Beliar'' matches the source form.'
+  issues:
+  - severity: high
+    issue: Vosotros forms ('llevaréis', 'vosotros') instead of ustedes forms
+    rationale: Neutral Latin-American Spanish standard for this project uses ustedes, not vosotros.
+  - severity: medium
+    issue: '''Yahvé'' used while 20:2 (same Greek verse) uses ''el Señor'' — creates cross-verse inconsistency'
+    rationale: The EN consistently uses 'the Lord'. Within this project's context for T12P, 'el Señor' is appropriate here.
+  - severity: medium
+    issue: '''Belial'' used while 20:2 uses ''Beliar'' (the transliteration matching source Βελίαρ)'
+    rationale: Consistency with 20:2 and fidelity to the source form prefer 'Beliar'.
+  revised_spanish_text: Y ustedes llevarán mis huesos con ustedes. Porque cuando mis huesos sean llevados allí, el Señor estará con ustedes en luz, y Beliar estará con los egipcios en tinieblas.
+  revision_rationale: Converted vosotros forms to ustedes forms for Latin-American Spanish consistency. Changed 'Yahvé' to 'el Señor' for consistency with 20:2 (same verse) and with the EN 'the Lord'. Changed 'Belial' to 'Beliar' to match source form Βελίαρ and 20:2.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d0f3f71d9cefc398f8cd0f2080aae9ce2dd5c3dd5bfe16fcf108679e2bef04b9
+  timestamp: '2026-05-08T06:40:30Z'
+  output_hash: d0f3f71d9cefc398f8cd0f2080aae9ce2dd5c3dd5bfe16fcf108679e2bef04b9
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Removed ''the ... thing'' to reflect the Greek more naturally and accurately: τὸ πονηρόν is better rendered simply as ''evil'' here. Kept the rest substantially unchanged.'
 translation:
   language: es
-  text: Porque yo tenía treinta años cuando hice el mal delante de Yahvé, y por siete meses fui debilitado hasta la muerte.
+  text: Porque yo tenía treinta años cuando hice el mal delante del Señor, y por siete meses fui debilitado hasta la muerte.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἤμην ... ἐτῶν τριάκοντα
@@ -97,4 +97,39 @@ ai_draft:
     total_tokens: 2619
     reasoning_tokens: 0
     estimated_cost_usd: 0.005189
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque yo tenía treinta años cuando hice el mal delante de Yahvé, y por siete meses fui debilitado hasta la muerte.
+  to: Porque yo tenía treinta años cuando hice el mal delante del Señor, y por siete meses fui debilitado hasta la muerte.
+  rationale: Corrected 'delante de Yahvé' to 'delante del Señor' to align with the EN POB ('before the Lord') and the fact that the Greek source uses Κύριος as a title, not as a transliteration of the Tetragrammaton.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:35Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Most elements are faithful: τριάκοντα ἐτῶν→treinta años, τὸ πονηρόν→el mal (following revised EN ''evil''), ἐνώπιον→delante de, ἐμαλακίσθην→fui debilitado, μῆνας ἑπτὰ ἕως θανάτου→por siete meses hasta la muerte. The issue is Κυρίου rendered as ''Yahvé'' instead of ''el Señor''.'
+  spanish_quality_summary: Otherwise natural and precise Spanish. The structural choices are correct.
+  glossary_alignment: The glossary rule YHWH→Yahvé applies specifically to the Hebrew Tetragrammaton or its equivalents clearly identified as such. This is a Greek extracanonical text where Κύριος functions as a divine title, not as a direct rendering of יהוה. The EN POB consistently uses 'the Lord' for Κύριος in this text. Rendering Κύριος as 'Yahvé' oversteps the glossary convention and misrepresents the source language's own choice of title over name. Should be 'el Señor'.
+  issues:
+  - severity: medium
+    issue: ἐνώπιον Κυρίου rendered as 'delante de Yahvé' instead of 'delante del Señor'.
+    rationale: The source is a Greek text that uses Κύριος as a title. The POB Yahvé policy applies to the Hebrew Tetragrammaton (יהוה/YHWH), not to every occurrence of Κύριος in Greek extracanonical literature. The EN POB uses 'before the Lord' here, confirming this is a title usage. Substituting 'Yahvé' imports a Hebrew name not present in the Greek witness.
+  revised_spanish_text: Porque yo tenía treinta años cuando hice el mal delante del Señor, y por siete meses fui debilitado hasta la muerte.
+  revision_rationale: Corrected 'delante de Yahvé' to 'delante del Señor' to align with the EN POB ('before the Lord') and the fact that the Greek source uses Κύριος as a title, not as a transliteration of the Tetragrammaton.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 84700dfa89796ca4e744c19bec972d2b93e738ced46fc6a6dcb80c7a553b9855
+  timestamp: '2026-05-08T06:47:35Z'
+  output_hash: 84700dfa89796ca4e744c19bec972d2b93e738ced46fc6a6dcb80c7a553b9855
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

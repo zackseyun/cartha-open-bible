@@ -40,11 +40,14 @@ base_translation:
     changes_summary: Adjusted 'went away to' to 'went to' for more natural English, and changed 'were drawn out against us' to 'were drawn out toward us' to reflect the Greek more closely. No other changes needed.
 translation:
   language: es
-  text: 1[a]. Y al día siguiente fuimos a Aretá, una ciudad aún poderosa y fuerte, que nos amenazaba con muerte. 2. Pero yo y Gad atacamos desde el oriente de la ciudad, y Rubén y Leví desde el occidente. 3. Y los que estaban sobre el muro, pensando que estábamos solos, fueron atraídos hacia nosotros. 4. Así, mis hermanos, secretamente, desde ambos lados del muro, lo escalaron con estacas y entraron en la ciudad sin que ellos lo supieran. 5. Y la tomamos a filo de espada, y a los que habían huido buscando refugio en las torres los quemamos con fuego; y así los capturamos a todos. 6. Y cuando nos íbamos, hombres de Tapphué[c] cayeron sobre nuestros cautivos; y, después de entregarlos a nuestros hijos, trabamos combate con ellos hasta Tapphué[c]. 7. Y también los matamos, y quemamos la ciudad[c], y todo lo que había en ella.
+  text: 1[a]. Y al día siguiente fuimos a Aretá, una ciudad aún poderosa y fuerte, que nos amenazaba con muerte. 2. Pero yo y Gad atacamos desde el oriente de la ciudad, y Rubén y Leví desde el occidente. 3. Y los que estaban sobre el muro, pensando que estábamos solos[b], fueron atraídos hacia nosotros. 4. Así, mis hermanos, desde ambos lados del muro, lo escalaron con estacas y entraron en la ciudad sin que ellos lo supieran. 5. Y la tomamos a filo de espada, y a los que habían huido buscando refugio en la torre los quemamos con fuego; y así los capturamos a todos. 6. Y cuando nos íbamos, hombres de Tapphué[c] cayeron sobre nuestros cautivos; y, después de entregarlos a nuestros hijos, trabamos combate con ellos hasta Tapphué[c]. 7. Y también los matamos, y quemamos la ciudad[c], y todo lo que había en ella.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: El versículo 4 presenta variación textual. Algunos testigos ofrecen una forma más breve, diciendo simplemente que los hermanos de Judá entraron en la ciudad desde ambos lados del muro; otros mencionan más explícitamente estacas o clavijas usadas para escalarlo.
+    reason: textual_variant
+  - marker: b
+    text: El versículo 5 varía entre «los que estaban en la torre» y «los que huyeron al muro/las torres». El texto principal sigue el sentido de que los defensores se refugiaron en posiciones fortificadas antes de ser quemados.
     reason: textual_variant
   - marker: c
     text: Aquí el nombre principal del lugar es Tapphué; otro testigo da Bathoue como variante.
@@ -197,4 +200,55 @@ ai_draft:
     total_tokens: 6000
     reasoning_tokens: 0
     estimated_cost_usd: 0.011925
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 1[a]. Y al día siguiente fuimos a Aretá, una ciudad aún poderosa y fuerte, que nos amenazaba con muerte. 2. Pero yo y Gad atacamos desde el oriente de la ciudad, y Rubén y Leví desde el occidente. 3. Y los que estaban sobre el muro, pensando que estábamos solos, fueron atraídos hacia nosotros. 4. Así, mis hermanos, secretamente, desde ambos lados del muro, lo escalaron con estacas y entraron en la ciudad sin que ellos lo supieran. 5. Y la tomamos a filo de espada, y a los que habían huido buscando refugio en las torres los quemamos con fuego; y así los capturamos a todos. 6. Y cuando nos íbamos, hombres de Tapphué[c] cayeron sobre nuestros cautivos; y, después de entregarlos a nuestros hijos, trabamos combate con ellos hasta Tapphué[c]. 7. Y también los matamos, y quemamos la ciudad[c], y todo lo que había en ella.
+  to: 1[a]. Y al día siguiente fuimos a Aretá, una ciudad aún poderosa y fuerte, que nos amenazaba con muerte. 2. Pero yo y Gad atacamos desde el oriente de la ciudad, y Rubén y Leví desde el occidente. 3. Y los que estaban sobre el muro, pensando que estábamos solos[b], fueron atraídos hacia nosotros. 4. Así, mis hermanos, desde ambos lados del muro, lo escalaron con estacas y entraron en la ciudad sin que ellos lo supieran. 5. Y la tomamos a filo de espada, y a los que habían huido buscando refugio en la torre los quemamos con fuego; y así los capturamos a todos. 6. Y cuando nos íbamos, hombres de Tapphué[c] cayeron sobre nuestros cautivos; y, después de entregarlos a nuestros hijos, trabamos combate con ellos hasta Tapphué[c]. 7. Y también los matamos, y quemamos la ciudad[c], y todo lo que había en ella.
+  rationale: Removed 'secretamente' from verse 4 (not present in α-primary Greek, per-verse EN revision deleted it); changed 'las torres' to 'la torre' in verse 5 (following revised EN 'tower'); added missing footnote b (textual variant on the tower/wall); adjusted verse 3 footnote marker to [b] and verb to 'pensando que estábamos solos' for consistency with the per-verse revision.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The ES chapter-level draft follows the pre-revision EN chapter text in two significant points: (1) verse 4 includes ''secretamente'' which the EN per-verse revision removed as not explicit in the Greek (ἀγνοούντων αὐτῶν; λάθρα was a variant reading, not the α-column primary used for the per-verse); (2) verse 5 uses ''las torres'' (plural) while the revised EN settled on singular ''tower'' (τῷ πύργῳ). Additionally the ES footnotes use markers a and c but are missing marker b (the textual variant note about the tower/wall, which is marker b in the EN chapter).'
+  spanish_quality_summary: Generally fluent. The main issues are the 'secretamente' addition in verse 4 and the plural 'torres' in verse 5. The missing footnote b is a structural gap. The rest of the chapter reads naturally.
+  glossary_alignment: No glossary-sensitive terms present.
+  issues:
+  - severity: medium
+    issue: 'Verse 4: ''secretamente'' added, matching the pre-revision EN but not the α-primary Greek; the per-verse EN revision deliberately removed it.'
+    rationale: 'The revision notes explicitly say: ''removed secretely as it is not explicit''.'
+  - severity: medium
+    issue: 'Verse 5: ''las torres'' (plural) should be ''la torre'' (singular) per the revised EN, which corrected ''towers'' to ''tower'' to match τῷ πύργῳ.'
+    rationale: The revision pass changed towers→tower to follow the primary Greek text.
+  - severity: medium
+    issue: Missing footnote with marker b (textual variant note about 'those in the tower vs those who fled to the wall/towers').
+    rationale: The EN chapter has three footnotes (a, b, c); the ES has only two (a, c).
+  revised_spanish_text: 1[a]. Y al día siguiente fuimos a Aretá, una ciudad aún poderosa y fuerte, que nos amenazaba con muerte. 2. Pero yo y Gad atacamos desde el oriente de la ciudad, y Rubén y Leví desde el occidente. 3. Y los que estaban sobre el muro, pensando que estábamos solos[b], fueron atraídos hacia nosotros. 4. Así, mis hermanos, desde ambos lados del muro, lo escalaron con estacas y entraron en la ciudad sin que ellos lo supieran. 5. Y la tomamos a filo de espada, y a los que habían huido buscando refugio en la torre los quemamos con fuego; y así los capturamos a todos. 6. Y cuando nos íbamos, hombres de Tapphué[c] cayeron sobre nuestros cautivos; y, después de entregarlos a nuestros hijos, trabamos combate con ellos hasta Tapphué[c]. 7. Y también los matamos, y quemamos la ciudad[c], y todo lo que había en ella.
+  revised_footnotes:
+  - marker: a
+    text: El versículo 4 presenta variación textual. Algunos testigos ofrecen una forma más breve, diciendo simplemente que los hermanos de Judá entraron en la ciudad desde ambos lados del muro; otros mencionan más explícitamente estacas o clavijas usadas para escalarlo.
+    reason: textual_variant
+  - marker: b
+    text: El versículo 5 varía entre «los que estaban en la torre» y «los que huyeron al muro/las torres». El texto principal sigue el sentido de que los defensores se refugiaron en posiciones fortificadas antes de ser quemados.
+    reason: textual_variant
+  - marker: c
+    text: Aquí el nombre principal del lugar es Tapphué; otro testigo da Bathoue como variante.
+    reason: textual_variant
+  revision_rationale: Removed 'secretamente' from verse 4 (not present in α-primary Greek, per-verse EN revision deleted it); changed 'las torres' to 'la torre' in verse 5 (following revised EN 'tower'); added missing footnote b (textual variant on the tower/wall); adjusted verse 3 footnote marker to [b] and verb to 'pensando que estábamos solos' for consistency with the per-verse revision.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 48fa6348cea7ef68cb731fcd4d75a73b1d235744a8c7d8fe97add8bb3bb66ed1
+  timestamp: '2026-05-08T06:38:11Z'
+  output_hash: 48fa6348cea7ef68cb731fcd4d75a73b1d235744a8c7d8fe97add8bb3bb66ed1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

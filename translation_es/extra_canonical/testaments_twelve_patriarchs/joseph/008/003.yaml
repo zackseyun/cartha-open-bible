@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Adjusted for closer source correspondence and smoother English: retained the causal opening, rendered the participial phrase more directly as "she, in her frenzy, was seizing," and simplified "I left it behind" to "I left it."'
 translation:
   language: es
-  text: Por tanto, cuando vi que ella, en su frenesí, me agarraba la túnica, la dejé y huí desnudo.
+  text: Por tanto, cuando vi que ella, en su frenesí, me agarraba la túnica, la dejé [y me sacudí de ella] y huí desnudo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ὡς οὖν εἶδον
@@ -90,4 +90,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, cuando vi que ella, en su frenesí, me agarraba la túnica, la dejé y huí desnudo.
+  to: Por tanto, cuando vi que ella, en su frenesí, me agarraba la túnica, la dejé [y me sacudí de ella] y huí desnudo.
+  rationale: Added '[y me sacudí de ella]' to render [καὶ ἐκτιναξάμενος] present in the Greek source, restored in EN phase2 realignment pass. Brackets retained as in the EN to signal textual uncertainty.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:31:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: καταλείψας αὐτὸν [καὶ ἐκτιναξάμενος] ἔφυγον γυμνός. The bracketed phrase [καὶ ἐκτιναξάμενος] = ''[and shaking it off]'' is present in the Greek source. The final EN per-verse text (phase2_realign_pass) restored this: ''leaving it [and shaking it off], I fled naked.'' The ES draft ''la dejé y huí desnudo'' was drafted from an older EN form that lacked the bracketed clause.'
+  spanish_quality_summary: Good translation for the main clause. The revision adds the bracketed phrase per the Greek witness and the final EN text.
+  glossary_alignment: túnica for χιτών correct. frenesí for μαινομένη correct.
+  issues:
+  - severity: medium
+    issue: Missing bracketed clause '[y sacudiéndola]' / '[y desembarazándome de ella]' corresponding to [καὶ ἐκτιναξάμενος] which is present in the Greek and was restored in the EN phase2 realignment
+    rationale: The per-verse EN base_translation used by the ES drafter was the pre-phase2 version without the bracketed clause. The final EN text restores it.
+  revised_spanish_text: Por tanto, cuando vi que ella, en su frenesí, me agarraba la túnica, la dejé [y me sacudí de ella] y huí desnudo.
+  revision_rationale: Added '[y me sacudí de ella]' to render [καὶ ἐκτιναξάμενος] present in the Greek source, restored in EN phase2 realignment pass. Brackets retained as in the EN to signal textual uncertainty.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2b0657c67826c60efdcc5e2108032ac1a59bf61a1f205240e4661ae6a0e65c16
+  timestamp: '2026-05-08T06:31:11Z'
+  output_hash: 2b0657c67826c60efdcc5e2108032ac1a59bf61a1f205240e4661ae6a0e65c16
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised 'for the Lord’s sake' to 'because of the Lord' to more directly reflect διὰ Κύριον and keep the repeated phrase consistent in both clauses. Kept the rest unchanged.
 translation:
   language: es
-  text: Y los que murieron en tristeza resucitarán en gozo, y los pobres, a causa del Señor, serán enriquecidos, y los que mueren a causa del Señor despertarán a la vida.
+  text: Y los que murieron en tristeza resucitarán en gozo, y los pobres, a causa de Yahvé, serán enriquecidos, y los que mueren a causa de Yahvé despertarán a la vida.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐν λύπῃ
@@ -136,4 +136,40 @@ ai_draft:
     total_tokens: 3132
     reasoning_tokens: 0
     estimated_cost_usd: 0.007532
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los que murieron en tristeza resucitarán en gozo, y los pobres, a causa del Señor, serán enriquecidos, y los que mueren a causa del Señor despertarán a la vida.
+  to: Y los que murieron en tristeza resucitarán en gozo, y los pobres, a causa de Yahvé, serán enriquecidos, y los que mueren a causa de Yahvé despertarán a la vida.
+  rationale: Replaced 'Señor' with 'Yahvé' in both occurrences of 'a causa del Señor' for consistency with project policy and the rest of this chapter.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ἐν λύπῃ τελευτήσαντες ἀναστήσονται, πτωχοὶ διὰ Κύριον πλουτισθήσονται, ἀποθνήσκοντες διὰ Κύριον ἐξυπνισθήσονται εἰς ζωήν. EN POB (revised): ''those who died in sorrow will rise in joy, and the poor because of the Lord will be made rich, and those dying because of the Lord will awake to life.'' Spanish draft: ''los que murieron en tristeza resucitarán en gozo, y los pobres, a causa del Señor, serán enriquecidos, y los que mueren a causa del Señor despertarán a la vida.'' Issue: The draft renders διὰ Κύριον as ''a causa del Señor'' (using ''Señor'') while the per-verse lexical notes acknowledge this. However the project policy requires Κύριον→Yahvé when it refers to the divine name. The Spanish notes explicitly say ''Se usa «Señor» para Κύριος en concordancia con el texto auditado en inglés; aquí no aparece el tetragrámaton hebreo, sino una forma griega de título divino.'' This is a defensible decision for this text (T12P is transmitted in Greek), but it
+    creates inconsistency with verses 025/001 and the chapter-level 025.yaml which both use Yahvé. Given the project norm of Yahvé for the divine name, the inconsistency should be resolved by using Yahvé here as well.'
+  spanish_quality_summary: Otherwise well-rendered. The three-member parallel structure is preserved. 'Resucitarán/serán enriquecidos/despertarán' is a clean progression. 'A la vida' vs bare 'para vida' in 025/001 is a minor inconsistency but both are acceptable.
+  glossary_alignment: Κύριον rendered as 'Señor' in this verse but as 'Yahvé' in 025/001 and other verses in the same chapter. Inconsistent. Should be 'Yahvé' per project policy.
+  issues:
+  - severity: medium
+    issue: διὰ Κύριον rendered as 'a causa del Señor' but other verses in this chapter (025/001, 025/003) use 'Yahvé'. Inconsistent within the same chapter.
+    rationale: Project policy requires Yahvé for the divine name. Even in Greek-transmitted pseudepigrapha, the project consistently uses Yahvé when κύριος refers to the God of Israel, as seen in the same chapter.
+  revised_spanish_text: Y los que murieron en tristeza resucitarán en gozo, y los pobres, a causa de Yahvé, serán enriquecidos, y los que mueren a causa de Yahvé despertarán a la vida.
+  revision_rationale: Replaced 'Señor' with 'Yahvé' in both occurrences of 'a causa del Señor' for consistency with project policy and the rest of this chapter.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 3781fefdefda8fef6cabab887f6aedef6775db72c804bc16fc6f504fdd98f420
+  timestamp: '2026-05-08T06:36:54Z'
+  output_hash: 3781fefdefda8fef6cabab887f6aedef6775db72c804bc16fc6f504fdd98f420
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

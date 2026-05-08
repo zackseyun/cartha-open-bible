@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the footnote markers from the draft and corrected the final clause to match the source more closely, rendering the subject as 'she' rather than 'Tamar' for consistency with the Greek.
 translation:
   language: es
-  text: Y cuando lo amenacé, entró a ella, pero derramó la semilla en tierra, conforme al mandato de su madre. Así también él murió en maldad. Y quise dar también a Selom a ella, pero su madre no lo permitió; porque ella actuó malvadamente, pues no era de las hijas de Canaán, como ella misma era.
+  text: Y cuando lo amenacé, entró a ella, pero derramó la semilla en tierra, conforme al mandato de su madre. Así también él murió en maldad. Y quise darle también a Selom, pero su madre no lo permitió; porque ella actuó malvadamente, pues no era de las hijas de Canaán, como ella misma era.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἠπείλησα αὐτῷ
@@ -151,4 +151,39 @@ ai_draft:
     total_tokens: 3908
     reasoning_tokens: 0
     estimated_cost_usd: 0.009883
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y cuando lo amenacé, entró a ella, pero derramó la semilla en tierra, conforme al mandato de su madre. Así también él murió en maldad. Y quise dar también a Selom a ella, pero su madre no lo permitió; porque ella actuó malvadamente, pues no era de las hijas de Canaán, como ella misma era.
+  to: Y cuando lo amenacé, entró a ella, pero derramó la semilla en tierra, conforme al mandato de su madre. Así también él murió en maldad. Y quise darle también a Selom, pero su madre no lo permitió; porque ella actuó malvadamente, pues no era de las hijas de Canaán, como ella misma era.
+  rationale: Replaced 'Y quise dar también a Selom a ella' with 'Y quise darle también a Selom' (indirect object expressed via 'le' clitic, referent clear from prior context). All other choices retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: All source content faithfully rendered. The Greek has Onan going in to her (συνῆλθε), wasting the seed (διέφθειρε τὸ σπέρμα ἐπὶ τὴν γῆν), dying in wickedness (ἀπέθανεν ἐν πονηρίᾳ), Judah wanting to give Shelah (Σηλὼμ) to her, the mother refusing (οὐκ ἀφῆκεν), acting wickedly (ἐπονηρεύσατο) because Tamar was not from daughters of Canaan. All present and accurate.
+  spanish_quality_summary: '''Y quise dar también a Selom a ella'' has an awkward word order placing ''a ella'' at the end when ''Selom'' is the direct object and ''a ella'' the indirect. A more natural Spanish word order would be ''Y quise darle también a Selom'' or ''Y quise dar a Selom también a ella''. Also, ''Selom'' here vs ''Selá'' in 11.3 creates an inter-chapter name inconsistency, but since the chapter-level 010.yaml also uses ''Selom'', maintaining ''Selom'' here is internally consistent for chapter 10.'
+  glossary_alignment: No YHWH/Κύριος here. 'Maldad' consistent for πονηρίᾳ. 'Actuó malvadamente' for ἐπονηρεύσατο is accurate.
+  issues:
+  - severity: low
+    issue: Awkward word order in 'Y quise dar también a Selom a ella'
+    rationale: Placing the indirect object 'a ella' after the direct object 'Selom' at the end of the clause is unnatural in Spanish. Standard word order would integrate the indirect object earlier via a clitic or reorder the phrase.
+  revised_spanish_text: Y cuando lo amenacé, entró a ella, pero derramó la semilla en tierra, conforme al mandato de su madre. Así también él murió en maldad. Y quise darle también a Selom, pero su madre no lo permitió; porque ella actuó malvadamente, pues no era de las hijas de Canaán, como ella misma era.
+  revision_rationale: Replaced 'Y quise dar también a Selom a ella' with 'Y quise darle también a Selom' (indirect object expressed via 'le' clitic, referent clear from prior context). All other choices retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: bf9e52b311f2c2f10e4b2d6a792e01a99f43fe6249fde5104cd0f4e2382ff403
+  timestamp: '2026-05-08T06:36:53Z'
+  output_hash: bf9e52b311f2c2f10e4b2d6a792e01a99f43fe6249fde5104cd0f4e2382ff403
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

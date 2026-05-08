@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'know' to 'have known' to reflect the Greek perfect ἔγνων more formally, and revised 'become an object of mockery' to the more direct 'become a mockery' for closer lexical correspondence to χλευασμός.
 translation:
   language: es
-  text: Por tanto yo, hijos míos, he sabido que al fin de los siglos obraréis impíamente contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones llegaréis a ser una burla.
+  text: Por tanto yo, hijos míos, he sabido que al fin de los siglos obrarán impíamente contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones llegarán a ser una burla.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἐγὼ οὖν, τέκνα μου
@@ -120,4 +120,39 @@ ai_draft:
     total_tokens: 3301
     reasoning_tokens: 0
     estimated_cost_usd: 0.007793
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto yo, hijos míos, he sabido que al fin de los siglos obraréis impíamente contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones llegaréis a ser una burla.
+  to: Por tanto yo, hijos míos, he sabido que al fin de los siglos obrarán impíamente contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones llegarán a ser una burla.
+  rationale: Replaced Castilian vosotros future forms ('obraréis', 'llegaréis') with neutral Latin-American ustedes forms ('obrarán', 'llegarán') to match the file's declared variant.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:18Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'ἔγνων→he sabido (perfect, correct); ἐπὶ τὰ τέλη τῶν αἰώνων→al fin de los siglos; ἀσεβήσετε ἐπὶ Κυρίου→obraréis impíamente contra el Señor; χεῖρας ἐπιβάλλοντες ἐν κακίᾳ [ἐπ᾿ αὐτόν]→poniendo manos sobre él en maldad; χλευασμός→una burla. Source alignment is good. The cross_check had verdict=revise with agreement 0.88. One issue: the Spanish uses ''obraréis/poniendo/llegaréis'' (vosotros/future) which is Castilian; the chapter-level equivalent may use ''ustedes'' forms. The per-verse ES uses Iberian vosotros forms inconsistently with neutral Latin-American Spanish convention.'
+  spanish_quality_summary: The Spanish uses Castilian vosotros forms ('obraréis', 'llegaréis', 'poniendo') mixed with Latin-American convention. Per the variant specified as 'neutral Latin American', these should be ustedes-based forms. This is a genuine register inconsistency.
+  glossary_alignment: Señor for Κυρίου is appropriate here (no direct Hebrew tetragrammaton). No other glossary terms apply.
+  issues:
+  - severity: medium
+    issue: Vosotros-form verbs ('obraréis', 'llegaréis') used in a file marked 'neutral Latin American' Spanish variant.
+    rationale: Neutral Latin-American Spanish uses 'ustedes' for second person plural, not 'vosotros'. The forms 'obraréis impíamente' and 'llegaréis a ser' are Iberian Spanish.
+  revised_spanish_text: Por tanto yo, hijos míos, he sabido que al fin de los siglos obrarán impíamente contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones llegarán a ser una burla.
+  revision_rationale: Replaced Castilian vosotros future forms ('obraréis', 'llegaréis') with neutral Latin-American ustedes forms ('obrarán', 'llegarán') to match the file's declared variant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e4706c08f0474930e55bb9e1e7e7afdbf2135a8f373dfb4536b1ebb472329db3
+  timestamp: '2026-05-08T06:46:18Z'
+  output_hash: e4706c08f0474930e55bb9e1e7e7afdbf2135a8f373dfb4536b1ebb472329db3
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

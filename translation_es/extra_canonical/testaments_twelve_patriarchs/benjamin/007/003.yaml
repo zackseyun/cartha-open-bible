@@ -19,11 +19,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Por esto también Caín fue entregado por Dios a siete actos de venganza. Pues a lo largo de cien años el Señor traía sobre él una plaga tras otra[a],
+  text: Por esto también Caín fue entregado por Dios a siete actos de venganza. Pues en cada centésimo año el Señor le traía una plaga[a],
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Lit. 'una plaga'; el sentido en contexto es la sucesión de plagas anuales/centenales sobre Caín.
+    text: Lit. 'cada centésimo año'; el griego usa κατά + acusativo de tiempo para indicar el intervalo regular de cien años entre cada plaga.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐκδικίαις
@@ -81,4 +81,46 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por esto también Caín fue entregado por Dios a siete actos de venganza. Pues a lo largo de cien años el Señor traía sobre él una plaga tras otra[a],
+  to: Por esto también Caín fue entregado por Dios a siete actos de venganza. Pues en cada centésimo año el Señor le traía una plaga[a],
+  rationale: Corrected the rendering of κατὰ ἑκατοστὸν ἔτος to 'en cada centésimo año' (distributive every hundredth year), removed the unwarranted 'tras otra', and updated the footnote to accurately describe the interval. This aligns with the phase2 EN realignment.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The EN verse for BEN.7.3 was corrected by a phase2 realignment pass to: ''Because of this also, Cain was handed over by God to seven acts of vengeance. For every hundredth year the Lord brought one plague upon him.'' The ES verse still reflects the old chapter-level EN wording: ''Pues a lo largo de cien años el Señor traía sobre él una plaga tras otra[a]'' — which (1) misrenders κατὰ ἑκατοστὸν ἔτος as ''a lo largo de cien años'' instead of ''cada centésimo año'', and (2) adds ''tras otra'' not in the Greek. Also the EN phase2 version has ''by God'' as agent which the ES already has (''por Dios'').'
+  spanish_quality_summary: 'Otherwise natural Spanish. The corrected text should be: ''Pues en cada centésimo año el Señor traía una plaga sobre él[a]'' or similar. The footnote [a] in the ES says ''Lit. una plaga; el sentido en contexto es la sucesión de plagas anuales/centenales sobre Caín'' — this footnote misleads by suggesting annual intervals when the text says centennial. The footnote text should be updated to clarify the centennial interval.'
+  glossary_alignment: Señor for Κύριος. Dios for θεός. Marker [a] present in text and footnotes array.
+  issues:
+  - severity: medium
+    issue: κατὰ ἑκατοστὸν ἔτος rendered as 'a lo largo de cien años' (in the space of one hundred years) instead of the distributive 'cada centésimo año' (every hundredth year). Also 'una plaga tras otra' adds 'tras otra' not in the Greek.
+    rationale: κατά + accusative of time = at intervals of / every. The EN phase2 pass corrected this to 'every hundredth year.' The ES should follow suit.
+  - severity: low
+    issue: The footnote [a] mentions 'plagas anuales/centenales' which is confusing; it should clarify the centennial interval.
+    rationale: The text should be internally consistent about the 100-year interval.
+  revised_spanish_text: Por esto también Caín fue entregado por Dios a siete actos de venganza. Pues en cada centésimo año el Señor le traía una plaga[a],
+  revised_footnotes:
+  - marker: a
+    text: Lit. 'cada centésimo año'; el griego usa κατά + acusativo de tiempo para indicar el intervalo regular de cien años entre cada plaga.
+    reason: lexical_alternative
+  revision_rationale: Corrected the rendering of κατὰ ἑκατοστὸν ἔτος to 'en cada centésimo año' (distributive every hundredth year), removed the unwarranted 'tras otra', and updated the footnote to accurately describe the interval. This aligns with the phase2 EN realignment.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0749697d448718022bae1c1e411222ac1a63712b4fa7e52e74c28ae173cbf823
+  timestamp: '2026-05-08T06:28:58Z'
+  output_hash: 0749697d448718022bae1c1e411222ac1a63712b4fa7e52e74c28ae173cbf823
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

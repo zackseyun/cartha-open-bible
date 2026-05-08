@@ -19,11 +19,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Por tanto, expulsen el odio de sus almas, y ámense unos a otros en obra y en palabra y en la disposición[a] de su alma.
+  text: Por tanto, expulsen el odio de sus almas, y ámense unos a otros en rectitud de corazón[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El griego literal εὐθύτης καρδίας significaría 'rectitud del corazón'; el texto griego se interrumpe en el OCR superviviente y POB conjetura la fórmula final 'in deed and in word and in the disposition of your soul' por continuidad con 6:1. La nota refleja la opción literal y la decisión de POB.
+    text: El griego εὐθύτης καρδίας significa literalmente 'rectitud del corazón'. En el OCR superviviente el texto se interrumpe; la edición POB suple en el nivel de capítulo la fórmula 'en obra y en palabra y en la disposición del alma' por continuidad con 6:1. Este versículo restituye la lectura más cercana al texto extante.
     reason: textual_variant
 lexical_decisions:
 - source_word: Ἐξάρατε
@@ -86,4 +86,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, expulsen el odio de sus almas, y ámense unos a otros en obra y en palabra y en la disposición[a] de su alma.
+  to: Por tanto, expulsen el odio de sus almas, y ámense unos a otros en rectitud de corazón[a].
+  rationale: The per-verse EN text 'love one another in uprightness of heart' renders the extant Greek εὐθύτητι καρδίας directly. The Spanish per-verse file should follow the per-verse EN rather than the chapter-level conjectural expansion. Revised to 'en rectitud de corazón' with a footnote acknowledging the OCR truncation and the chapter-level conjectural expansion.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:19:50Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Ἐξάρατε τὸ μῖσος ἀπὸ τῶν ψυχῶν ὑμῶν → expulsen el odio de sus almas; ἀγαπήσατε ἀλλήλους ἐν εὐθύτητι καρδίας → ámense unos a otros en obra y en palabra y en la disposición de su alma. The expanded phrase 'en obra y en palabra y en la disposición' is a POB-supplied conjecture where the OCR is cut off (acknowledged in footnote). Source alignment is faithful to the POB decision. However, the Greek εὐθύτητι καρδίας means 'uprightness/straightness of heart', not 'disposition of soul'; the EN POB also chose 'disposition of your soul' as a conjectured expansion. The footnote [a] acknowledges this is a supply, but it describes εὐθύτης καρδίας as 'rectitud del corazón' — the literal Greek — and then says POB chose 'disposition of your soul'. This is accurate and fine. No source alignment issue beyond the acknowledged textual uncertainty.
+  spanish_quality_summary: 'Overall good. One issue: the footnote says ''en obra y en palabra y en la disposición de su alma'' but the actual Greek of 7:7 only has εὐθύτητι καρδίας (''uprightness of heart''). The expansion (''en obra y en palabra'') is borrowed from 6:1 by POB conjecture. The footnote explains this. The Spanish text is therefore consistent with the POB decision. However, the footnote text contains an error: it states ''El griego literal εὐθύτης καρδίας significaría rectitud del corazón; el texto griego se interrumpe en el OCR superviviente y POB conjetura la fórmula final'' — this is accurate. No correction needed on that. But ''en la disposición de su alma'' differs slightly from the EN ''in uprightness of heart'' — it follows the POB chapter-level rendering, which used ''disposition of your soul''. This is consistent across the corpus, so approve.'
+  glossary_alignment: μῖσος → el odio (correct); ἀγαπάω → amar (correct). No YHWH/θεός/Χριστός/δοῦλος issues.
+  issues:
+  - severity: low
+    issue: The per-verse EN YAML text says 'in uprightness of heart' (literal εὐθύτητι καρδίας) but the Spanish follows the chapter-level POB expansion 'en obra y en palabra y en la disposición de su alma'. This is internally consistent with the chapter-level but diverges from the per-verse EN text.
+    rationale: The per-verse EN text 'Therefore cast out hatred from your souls, and love one another in uprightness of heart' is the more literal rendering of the extant Greek εὐθύτητι καρδίας. The chapter-level expanded version is POB's conjectural supply. The Spanish verse-level file should follow the per-verse EN, not the chapter expansion. The footnote needs updating to reflect this.
+  revised_spanish_text: Por tanto, expulsen el odio de sus almas, y ámense unos a otros en rectitud de corazón[a].
+  revised_footnotes:
+  - marker: a
+    text: El griego εὐθύτης καρδίας significa literalmente 'rectitud del corazón'. En el OCR superviviente el texto se interrumpe; la edición POB suple en el nivel de capítulo la fórmula 'en obra y en palabra y en la disposición del alma' por continuidad con 6:1. Este versículo restituye la lectura más cercana al texto extante.
+    reason: textual_variant
+  revision_rationale: The per-verse EN text 'love one another in uprightness of heart' renders the extant Greek εὐθύτητι καρδίας directly. The Spanish per-verse file should follow the per-verse EN rather than the chapter-level conjectural expansion. Revised to 'en rectitud de corazón' with a footnote acknowledging the OCR truncation and the chapter-level conjectural expansion.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2b565cf91a494f2e5f943a7459276f40f65dba1fd0c22a1092a2b951b5f17a6e
+  timestamp: '2026-05-08T06:19:50Z'
+  output_hash: 2b565cf91a494f2e5f943a7459276f40f65dba1fd0c22a1092a2b951b5f17a6e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

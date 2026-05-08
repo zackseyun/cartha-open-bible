@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Adjusted the phrase to match the source more closely: ''for'' → ''for your son’s mandrakes'' to reflect ἀντὶ τῶν μανδραγόρων τοῦ υἱοῦ σου, and ''tonight'' → ''this night'' for a more formal, direct rendering.'
 translation:
   language: es
-  text: 'Y Raquel dijo: "A cambio de las mandrágoras de tu hijo, él se acostará contigo esta noche".'
+  text: «Pero aun así, a cambio de las mandrágoras te alquilo una noche con Jacob».
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀντὶ τῶν μανδραγόρων
@@ -63,4 +63,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y Raquel dijo: "A cambio de las mandrágoras de tu hijo, él se acostará contigo esta noche".'
+  to: «Pero aun así, a cambio de las mandrágoras te alquilo una noche con Jacob».
+  rationale: Removes the incorrect 'Y Raquel dijo' speaker tag. The speech belongs to Leah continuing from v.12. 'Aun así' renders Ἀλλ᾽ οὖν (but still/nevertheless); 'a cambio de las mandrágoras' renders ἀντὶ τῶν μανδραγόρων; 'te alquilo una noche con Jacob' renders ἐκμισθῶ σοι μίαν νύκτα τῷ Ἰακώβ.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek for v.13: Ἀλλ᾽ οὖν ἀντὶ τῶν μανδραγόρων ἐκμισθῶ σοι μίαν νύκτα τῷ Ἰακώβ. EN POB for v.13: ''But still, in exchange for the mandrakes I hire out to you one night with Jacob.'' But the ES base_translation field shows: ''And Rachel said, For your son''s mandrakes, he shall lie with you this night'' — which seems to be a different EN reading. Checking the EN YAML for 001/013: ''But still, in exchange for the mandrakes I hire out to you one night with Jacob.'' The ES draft says: ''Y Raquel dijo: A cambio de las mandrágoras de tu hijo, él se acostará contigo esta noche.'' The speaker in the Greek (and EN POB revised) is Leah, not Rachel — Leah speaks in v.13 offering to hire out Jacob. The EN for the base_translation in the ES YAML shows a different version with ''Rachel said'', but the actual EN YAML 001/013 current text is Leah''s speech. This is a speaker attribution error in the ES.'
+  spanish_quality_summary: The ES draft attributes the speech to Rachel but the Greek Ἀλλ᾽ οὖν... ἐκμισθῶ σοι (I hire out to you) is Leah speaking to Rachel — Leah is the one offering to hire out Jacob in exchange for the mandrakes she gave Rachel. EN POB correctly gives the speech without a named speaker, leaving it as Leah's continuation from v.12.
+  glossary_alignment: ἐκμισθόω → alquilar is consistent with the chapter's hire/wages vocabulary.
+  issues:
+  - severity: high
+    issue: 'Wrong speaker attribution: the ES assigns speech to Rachel (''Y Raquel dijo''), but in the Greek it is Leah speaking (ἐκμισθῶ σοι = I hire out to you, i.e. Leah offers Jacob to Rachel).'
+    rationale: The Greek has Leah as the implicit speaker continuing from v.12 context. EN POB renders it without speaker tag 'But still, in exchange for the mandrakes I hire out to you one night with Jacob' — the 'I' is Leah. The ES 'Y Raquel dijo' is incorrect.
+  revised_spanish_text: «Pero aun así, a cambio de las mandrágoras te alquilo una noche con Jacob».
+  revision_rationale: Removes the incorrect 'Y Raquel dijo' speaker tag. The speech belongs to Leah continuing from v.12. 'Aun así' renders Ἀλλ᾽ οὖν (but still/nevertheless); 'a cambio de las mandrágoras' renders ἀντὶ τῶν μανδραγόρων; 'te alquilo una noche con Jacob' renders ἐκμισθῶ σοι μίαν νύκτα τῷ Ἰακώβ.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 71172acbcd01f09627f09094fb06780656b2538b29d1a064c59312ef489e791d
+  timestamp: '2026-05-08T06:29:44Z'
+  output_hash: 71172acbcd01f09627f09094fb06780656b2538b29d1a064c59312ef489e791d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

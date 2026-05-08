@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y todos los que te odian se alegrarán por tu destrucción.
+  text: Y todos los que los odian se alegrarán por su destrucción.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: μισοῦντες
@@ -80,4 +80,39 @@ ai_draft:
     total_tokens: 2147
     reasoning_tokens: 0
     estimated_cost_usd: 0.004224
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y todos los que te odian se alegrarán por tu destrucción.
+  to: Y todos los que los odian se alegrarán por su destrucción.
+  rationale: Corrected singular 'te/tu' to plural 'los/su' to match the Greek ὑμᾶς/ὑμῶν and maintain consistency with the plural address throughout this prophetic section.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:13Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: μισοῦντες→odian; χαρήσονται→se alegrarán; ἀπωλείᾳ→destrucción. Greek uses ὑμᾶς/ὑμῶν (second person plural). The Spanish renders as singular 'te/tu' ('los que te odian', 'tu destrucción'). The lexical_decisions notes this tension but chooses singular following the EN POB. However the Greek clearly has plural ὑμᾶς and ὑμῶν, so the singular 'te/tu' is an under-translation.
+  spanish_quality_summary: The singular rendering 'los que te odian' / 'tu destrucción' diverges from the Greek plural ὑμᾶς/ὑμῶν. The lexical_decisions field acknowledges the plural but defers to the EN POB singular. The EN says 'who hate you / your destruction' (English 'you' is ambiguous singular/plural), but Greek is unambiguously plural. For source-grounded translation, the plural should be maintained.
+  glossary_alignment: No YHWH/Dios/Mesías/Espíritu/esclavo applies here.
+  issues:
+  - severity: medium
+    issue: Greek ὑμᾶς/ὑμῶν (plural) rendered as singular 'te/tu' in Spanish.
+    rationale: The Greek text uses second person plural consistently throughout this prophecy. Spanish must use 'ustedes/su/los' forms to match.
+  revised_spanish_text: Y todos los que los odian se alegrarán por su destrucción.
+  revision_rationale: Corrected singular 'te/tu' to plural 'los/su' to match the Greek ὑμᾶς/ὑμῶν and maintain consistency with the plural address throughout this prophetic section.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 39c01db60f3a062f11ab818092d984135c923402752aea916658a9132d97a6f4
+  timestamp: '2026-05-08T06:47:13Z'
+  output_hash: 39c01db60f3a062f11ab818092d984135c923402752aea916658a9132d97a6f4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

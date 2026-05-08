@@ -106,4 +106,41 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Τότε ὤφθη τῷ Ἰακώβ ἄγγελος Κυρίου καὶ εἶπε λέγων, ὅτι τέκνα τέξει Ῥαχήλ, ἐπειδὴ κατέπτυσεν συνουσίαν ἀνδρὸς καὶ ἐξελέξατο τὴν ἐγκράτειαν. EN POB: ''Then an angel of the Lord appeared to Jacob, saying, Rachel will bear children, because she despised intercourse with a husband and chose self-control.'' ES draft: ''Entonces se apareció a Jacob un ángel del Señor, diciendo: Raquel dará a luz hijos[a], porque despreció[b] el trato carnal con un marido y eligió el dominio propio.'' Issue: The ES uses ''un ángel del Señor'' but the chapter-level ES (002.yaml) consistently uses ''un ángel de Yahvé''. Given that this is T12P Greek text where Κύριος is used (not the Tetragrammaton directly), the chapter-level ES translator chose ''Yahvé'' but the verse-level uses ''Señor''. This is a glossary consistency issue — for T12P, Κύριος = ''el Señor'' is correct per the chapter notes. The verse-level ''Señor'' is correct; the chapter-level ''Yahvé'' is the error. Otherwise
+    the ES is accurate. Footnote markers [a] and [b] appear in text and match the footnotes array.'
+  spanish_quality_summary: Good Spanish overall. 'Trato carnal' for συνουσία is dignified. 'Dominio propio' for ἐγκράτεια is standard. The footnotes add useful textual notes. The only issue is the Κύριος rendering inconsistency across verse vs chapter level.
+  glossary_alignment: Κύριος in T12P should be 'el Señor' per chapter notes (not 'Yahvé' since the Greek is not transmitting the Tetragrammaton). Verse-level ES correctly uses 'del Señor'. The chapter-level uses 'Yahvé' inconsistently.
+  issues:
+  - severity: low
+    issue: 'Minor: the verse-level ES uses ''del Señor'' while chapter-level uses ''de Yahvé'' — internal inconsistency.'
+    rationale: T12P uses Κύριος as a title, not as a translation of the Tetragrammaton. The verse-level choice 'del Señor' is correct per the chapter notes.
+  revised_spanish_text: 'Entonces se apareció a Jacob un ángel del Señor, diciendo: «Raquel dará a luz hijos[a], porque despreció[b] el trato carnal con un marido y eligió el dominio propio».'
+  revised_footnotes:
+  - marker: a
+    text: El revision pass de gpt-5.4 eliminó el numeral «dos» (ἕνα aparece en un contexto manuscrito variante/corrupto y no se considera parte segura de la cláusula principal). La traducción al español sigue esta lectura de «hijos» sin numeral.
+    reason: textual_variant
+  - marker: b
+    text: O «rechazó con desdén» / «desdeñó el trato conyugal». El verbo griego κατέπτυσεν tiene una fuerza inusualmente cruda y puede reflejar una tradición interpretativa desarrollada sobre la moderación de Raquel.
+    reason: lexical_alternative
+  revision_rationale: 'Minor revision: changes straight quotes to Spanish angle quotes «» for consistency with the rest of the document. Content is otherwise correct.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7efb4c85e812413387c3d5b7c753255c3a995c4fdeaa4659e0836423029e4a97
+  timestamp: '2026-05-08T06:32:05Z'
+  output_hash: 7efb4c85e812413387c3d5b7c753255c3a995c4fdeaa4659e0836423029e4a97
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

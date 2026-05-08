@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Improved punctuation for natural English and clearer apposition of 'our fathers'; preserved the source meaning of 'not one of your seed would be left on the earth.'
 translation:
   language: es
-  text: Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; no quedaría en la tierra ni uno de tu descendencia.
+  text: Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; no quedaría en la tierra ni uno de su descendencia.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἔλεος λήψεσθε
@@ -106,4 +106,39 @@ ai_draft:
     total_tokens: 2913
     reasoning_tokens: 0
     estimated_cost_usd: 0.006599
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; no quedaría en la tierra ni uno de tu descendencia.
+  to: Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; no quedaría en la tierra ni uno de su descendencia.
+  rationale: Replaced 'tu descendencia' with 'su descendencia' to match the Greek plural ὑμῶν and maintain neutral Latin-American Spanish convention.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'εἰ μὴ δι᾽ Ἀβραὰμ καὶ Ἰσαὰκ καὶ Ἰακὼβ→si no fuera por Abraham, Isaac y Jacob; τῶν πατέρων ἡμῶν→nuestros padres; ἔλεος λήψεσθε→no recibirían misericordia; εἷς ἐκ τοῦ σπέρματος ὑμῶν οὐ μὴ καταλειφθῇ→no quedaría en la tierra ni uno de tu descendencia. The cross_check had verdict=revise. Plural issue: ''tu descendencia'' uses singular ''tu'' but the Greek has ὑμῶν (plural). The opening clause uses ''recibirían'' (third person plural conditional) which is odd — should be second person plural ''recibirían ustedes'' or ''no recibirían misericordia'' is ambiguous. The main issues are: (1) ''tu descendencia'' should be ''su descendencia'' for plural; (2) the overall conditional structure should address the audience directly.'
+  spanish_quality_summary: The conditional structure works, but 'tu descendencia' is singular Castilian when it should be plural 'su descendencia'. The opening 'no recibirían misericordia' lacks an explicit subject, but context makes 'ustedes' clear. The Greek uses future not conditional in the apodosis, but given the counterfactual frame, conditional Spanish is appropriate.
+  glossary_alignment: Abraham, Isaac, Jacob retained correctly. No YHWH/Dios/Mesías/Espíritu/esclavo terms apply.
+  issues:
+  - severity: medium
+    issue: '''tu descendencia'' uses second person singular possessive; Greek has ὑμῶν (plural second person).'
+    rationale: Should be 'su descendencia' (neutral Latin-American plural) to match ὑμῶν.
+  revised_spanish_text: Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; no quedaría en la tierra ni uno de su descendencia.
+  revision_rationale: Replaced 'tu descendencia' with 'su descendencia' to match the Greek plural ὑμῶν and maintain neutral Latin-American Spanish convention.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8a6400d3b255456132ab72938b80cededd2ceaec022ea2cf44d4df5da11bbccc
+  timestamp: '2026-05-08T06:47:26Z'
+  output_hash: 8a6400d3b255456132ab72938b80cededd2ceaec022ea2cf44d4df5da11bbccc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

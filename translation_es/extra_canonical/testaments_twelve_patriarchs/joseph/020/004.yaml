@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y después de haber dicho estas cosas, extendió los pies y se durmió en una buena vejez.
+  text: Y después de haber dicho estas cosas, extendió los pies y se durmió en un sueño hermoso.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: καὶ ... ταῦτα εἰπών
@@ -81,4 +81,39 @@ ai_draft:
     total_tokens: 2240
     reasoning_tokens: 0
     estimated_cost_usd: 0.00459
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y después de haber dicho estas cosas, extendió los pies y se durmió en una buena vejez.
+  to: Y después de haber dicho estas cosas, extendió los pies y se durmió en un sueño hermoso.
+  rationale: Corrected 'en una buena vejez' to 'en un sueño hermoso' to match the phase2-realigned EN 'fell asleep in a good sleep', which properly renders ὕπνῳ καλῷ.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:40:12Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ ταῦτα εἰπὼν ἐκτείνας τοὺς πόδας αὐτοῦ ἐκοιμήθη ὕπνῳ καλῷ. Current EN (phase2_realign): ''And after saying these things, he stretched out his feet and fell asleep in a good sleep.'' Note: the base_translation field in the ES YAML references the pre-phase2 EN text ''And after saying these things, he stretched out his feet and died at a good old age.'' The phase2 realign corrected this: ὕπνῳ καλῷ means ''in a good sleep'' NOT ''at a good old age''. The ES renders this as ''se durmió en una buena vejez'' (fell asleep in a good old age) — this follows the wrong pre-phase2 interpretation. The correct rendering should be ''se durmió en un sueño hermoso'' (fell asleep in a beautiful sleep) or ''se quedó dormido apaciblemente'' following the phase2 EN ''fell asleep in a good sleep''.'
+  spanish_quality_summary: The translation error 'en una buena vejez' perpetuates the pre-phase2 mistranslation. The current EN specifically says 'fell asleep in a good sleep'. The lexical rationale in the ES file even acknowledges the discrepancy but chose to follow the wrong EN interpretation.
+  glossary_alignment: No glossary issues.
+  issues:
+  - severity: high
+    issue: ES renders ὕπνῳ καλῷ as 'en una buena vejez' (in a good old age) following the wrong pre-phase2 EN text
+    rationale: 'Phase2 realign corrected the EN: ὕπνῳ καλῷ means ''in a good sleep''. The ES must follow the current EN ''fell asleep in a good sleep'' → ''se durmió en un sueño hermoso''.'
+  revised_spanish_text: Y después de haber dicho estas cosas, extendió los pies y se durmió en un sueño hermoso.
+  revision_rationale: Corrected 'en una buena vejez' to 'en un sueño hermoso' to match the phase2-realigned EN 'fell asleep in a good sleep', which properly renders ὕπνῳ καλῷ.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f90951579e4a8639f23e7e2952414749ba84a806eaa391481b3ca87f572b07cc
+  timestamp: '2026-05-08T06:40:12Z'
+  output_hash: f90951579e4a8639f23e7e2952414749ba84a806eaa391481b3ca87f572b07cc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

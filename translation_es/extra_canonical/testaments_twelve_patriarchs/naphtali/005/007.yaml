@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'it' to 'him' twice to match αὐτόν/αὐτῷ, rendered κατέλαβεν as 'seized' for better lexical accuracy, and simplified 'into the height' to 'to the height' to reflect εἰς τὸ ὕψος more naturally.
 translation:
   language: es
-  text: Pero José vino y lo agarró, y subió con él a la altura.
+  text: Pero José vino y lo asió, y subió con él a la altura.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐλθὼν δὲ
@@ -87,4 +87,39 @@ ai_draft:
     total_tokens: 2435
     reasoning_tokens: 0
     estimated_cost_usd: 0.004609
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero José vino y lo agarró, y subió con él a la altura.
+  to: Pero José vino y lo asió, y subió con él a la altura.
+  rationale: κατέλαβεν was rendered 'seized' in the EN revision pass to reflect forceful grasping; 'lo asió' better matches that force in Spanish than 'lo agarró', which sounds more casual/colloquial. 'A la altura' retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ἐλθὼν δὲ Ἰωσὴφ κατέλαβεν αὐτόν, καὶ συνανῆλθεν αὐτῷ εἰς τὸ ὕψος. EN revised κατέλαβεν as ''seized'' and αὐτόν/αὐτῷ as ''him''. ES uses ''lo agarró'' (less strong than ''seized''/κατέλαβεν) and ''con él a la altura'' which is good. The chapter-level ES used ''lo tomó'' which is weaker. Per-verse ES ''lo agarró'' is a stronger improvement.'
+  spanish_quality_summary: 'Generally natural. ''Lo agarró'' works but ''lo asió'' or ''lo sujetó'' would be closer to κατέλαβεν. Minor consistency note: per-verse says ''José vino y lo agarró'' but EN POB says ''Joseph came and seized him'' — ''agarró'' is adequate. The real concern: ''subió con él a la altura'' is good.'
+  glossary_alignment: No glossary terms. Proper name José correct.
+  issues:
+  - severity: low
+    issue: Per-verse ES uses 'lo agarró' for κατέλαβεν/seized; 'lo asió' or 'lo sujetó' might better match the strength of seizure in the vision context, though 'lo agarró' is acceptable
+    rationale: Minor lexical preference; does not affect meaning significantly
+  revised_spanish_text: Pero José vino y lo asió, y subió con él a la altura.
+  revision_rationale: κατέλαβεν was rendered 'seized' in the EN revision pass to reflect forceful grasping; 'lo asió' better matches that force in Spanish than 'lo agarró', which sounds more casual/colloquial. 'A la altura' retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 430181b165686efd29abc8b25ae2a804b83b159b89516a7c906406c72ac6e2ce
+  timestamp: '2026-05-08T06:45:26Z'
+  output_hash: 430181b165686efd29abc8b25ae2a804b83b159b89516a7c906406c72ac6e2ce
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

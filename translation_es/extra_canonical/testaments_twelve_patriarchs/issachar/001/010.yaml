@@ -92,4 +92,37 @@ ai_draft:
     total_tokens: 2851
     reasoning_tokens: 0
     estimated_cost_usd: 0.005798
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Μὴ καυχῶ μηδὲ δόξαζε σεαυτήν, ὅτι ἐμὲ πρότερόν σου ἡρμόσατο, καὶ δι᾽ ἐμὲ ἐδούλευσε τῷ πατρὶ ἡμῶν ἔτη δεκατέσσαρα. EN POB: ''Do not boast, nor glorify yourself, for he was joined to me before you, and because of me he served our father fourteen years.'' ES draft: ''No te jactes ni te gloríes[a], porque él se unió a mí antes que a ti, y por causa de mí sirvió a nuestro padre catorce años.'' Issue: The EN POB uses ''served'' for ἐδούλευσε here, and the ES follows with ''sirvió''. This is consistent with the EN POB''s choice. However, the footnote marker [a] appears after ''te gloríes'' but the footnote content is ''También puede leerse «ni te enaltezcas»'' — this is an alternative reading note which is valid. Footnote marker in text matches the footnote array (marker: a). This is structurally sound.'
+  spanish_quality_summary: 'Good Spanish. ''No te jactes ni te gloríes'' renders the double prohibition well. The footnote [a] on ''gloríes'' is useful. ''Por causa de mí sirvió'' correctly renders δι᾽ ἐμὲ ἐδούλευσε. One minor issue: the footnote text gives an alternative ''ni te enaltezcas'' but ''enaltezcas'' could sound more like δόξαζε than the note implies. The note is appropriate but could be clearer. Overall the verse is solid.'
+  glossary_alignment: No special glossary terms. Names consistent.
+  issues:
+  - severity: low
+    issue: Footnote note text is slightly confusing — it says 'ni te enaltezcas' as the alternative, but 'enaltecer' can map to either verb; minor clarification would help.
+    rationale: Not a translation error, just a note quality issue.
+  revised_spanish_text: 'Y Raquel dijo: «No te jactes ni te gloríes[a], porque él se unió a mí antes que a ti, y por causa de mí sirvió a nuestro padre catorce años».'
+  revised_footnotes:
+  - marker: a
+    text: O bien «ni te enaltezcas»; se prefirió «te gloríes» por corresponder más directamente al verbo δοξάζω del texto griego.
+    reason: lexical_alternative
+  revision_rationale: Approved with minor clarification of footnote text to make the note's scope explicit (δοξάζω → gloríes).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5ab193710a208953044d66c1c3aef3c2c6b70e3567cf349b951d4b9ac363bdea
+  timestamp: '2026-05-08T06:28:41Z'
+  output_hash: 5ab193710a208953044d66c1c3aef3c2c6b70e3567cf349b951d4b9ac363bdea
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

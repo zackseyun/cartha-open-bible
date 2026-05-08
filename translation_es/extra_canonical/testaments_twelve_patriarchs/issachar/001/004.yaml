@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Pero Lía mi madre salió al oír su llanto y lloraba.
+  text: Pero Rubén lloraba, y al oír su llanto salió Lía, mi madre.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἔκλαιε
@@ -72,4 +72,42 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero Lía mi madre salió al oír su llanto y lloraba.
+  to: Pero Rubén lloraba, y al oír su llanto salió Lía, mi madre.
+  rationale: Restores Reuben as the explicit subject of weeping (matching Greek Ἔκλαιε δὲ Ῥουβίμ), preserves the causal chain (his cry → Leah comes out), and removes the ambiguity of the original draft.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:27:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἔκλαιε δὲ Ῥουβίμ, καὶ ἐπὶ τῇ φωνῇ αὐτοῦ ἐξῆλθεν Λεία ἡ μήτηρ μου. EN POB: ''But Reuben was weeping, and at his cry Leah my mother came out.'' ES draft: ''Pero Lía mi madre salió al oír su llanto y lloraba.'' The ES reverses the order of the two actions — the Greek and EN put weeping first (Reuben weeps), then Leah comes out; the ES puts Leah coming out first (''salió'') then describes weeping as an ongoing state, losing the causal chain. Also ''lloraba'' is applied to the same subject (Lía) in the ES, but in the Greek/EN it is Reuben who is weeping. The subject of lloraba in the ES is ambiguous and misleads.'
+  spanish_quality_summary: The construction 'salió al oír su llanto y lloraba' is grammatically acceptable but the participle 'lloraba' hangs ambiguously — it can be read as applying to Lía, not Reuben. The EN is clear that Reuben was the one weeping and Leah came out in response. The revised text should preserve the two-clause structure.
+  glossary_alignment: 'No YHWH/θεός/Χριστός/δοῦλος/πνεῦμα items. Names: Rubén/Lía are standard Spanish biblical forms.'
+  issues:
+  - severity: high
+    issue: 'Subject ambiguity: ''lloraba'' in the ES draft reads as if Leah is weeping, but the Greek/EN specifies Reuben is weeping.'
+    rationale: Ἔκλαιε δὲ Ῥουβίμ is unambiguous — Reuben weeps. Then at his cry (ἐπὶ τῇ φωνῇ αὐτοῦ) Leah came out. The ES 'salió al oír su llanto y lloraba' leaves the subject of lloraba unclear and reverses the narrative emphasis.
+  - severity: medium
+    issue: 'Action order: EN has weeping as the first statement, Leah''s coming out as the second. ES reverses this.'
+    rationale: Minor structural issue but the Greek clause order puts the weeping first as the cause.
+  revised_spanish_text: Pero Rubén lloraba, y al oír su llanto salió Lía, mi madre.
+  revision_rationale: Restores Reuben as the explicit subject of weeping (matching Greek Ἔκλαιε δὲ Ῥουβίμ), preserves the causal chain (his cry → Leah comes out), and removes the ambiguity of the original draft.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e3cf2847dab5cc2dfb37476b552f567fdef0aa03af08ab18cbdeef1a2445ac17
+  timestamp: '2026-05-08T06:27:22Z'
+  output_hash: e3cf2847dab5cc2dfb37476b552f567fdef0aa03af08ab18cbdeef1a2445ac17
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

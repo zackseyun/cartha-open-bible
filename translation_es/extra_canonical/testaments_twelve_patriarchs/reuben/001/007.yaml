@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'in my loins' to 'on my loins' for more natural rendering of ἐπὶ; reordered 'prayed for me to the Lord' to 'prayed to the Lord for me' for natural English; simplified 'would have been willing to destroy me' to 'would have destroyed me' to better reflect ἤθελε ... ἀνελεῖν idiomatically.
 translation:
   language: es
-  text: Y os digo que me hirió con un golpe terrible en mis lomos durante siete meses; y si mi padre Jacob no hubiera orado al Señor por mí, el Señor me habría destruido.
+  text: Y les digo que me hirió con un golpe terrible en mis lomos durante siete meses; y si mi padre Jacob no hubiera orado al Señor por mí, el Señor me habría destruido.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἔπληξέ με πληγῇ μεγάλῃ
@@ -96,4 +96,39 @@ ai_draft:
     total_tokens: 2925
     reasoning_tokens: 0
     estimated_cost_usd: 0.005771
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y os digo que me hirió con un golpe terrible en mis lomos durante siete meses; y si mi padre Jacob no hubiera orado al Señor por mí, el Señor me habría destruido.
+  to: Y les digo que me hirió con un golpe terrible en mis lomos durante siete meses; y si mi padre Jacob no hubiera orado al Señor por mí, el Señor me habría destruido.
+  rationale: Changed 'os digo' to 'les digo' to conform to neutral Latin-American Spanish. All other lexical choices retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:19Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Source alignment is largely correct. ἔπληξέ με πληγῇ μεγάλῃ→'me hirió con un golpe terrible', ἐπὶ τῆς λαγόνος→'en mis lomos', μῆνας ἑπτά→'durante siete meses', Κύριον→'al Señor', ἀνελεῖν→'destruido' all faithful. The conditional structure is preserved.
+  spanish_quality_summary: The translation opens with 'Y os digo' which uses the Spain-specific vosotros pronoun 'os' rather than neutral Latin-American 'les'. The target variant is neutral Latin-American Spanish, so this must be corrected to 'Y les digo'. All other phrases are natural and accurate.
+  glossary_alignment: Κύριος→el Señor is appropriate in this context; the Greek uses Κύριος as a title, not as a rendering of YHWH, so 'el Señor' is correct per project policy.
+  issues:
+  - severity: medium
+    issue: '''Y os digo'' uses Castilian vosotros pronoun ''os'' instead of neutral Latin-American ''les''.'
+    rationale: The project targets neutral Latin-American Spanish. 'Os' is a Spain-specific pronoun form not used in Latin America; 'les' or 'les digo' is the correct neutral form.
+  revised_spanish_text: Y les digo que me hirió con un golpe terrible en mis lomos durante siete meses; y si mi padre Jacob no hubiera orado al Señor por mí, el Señor me habría destruido.
+  revision_rationale: Changed 'os digo' to 'les digo' to conform to neutral Latin-American Spanish. All other lexical choices retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8868ef496f8bd80439daa948b99e21fdec066778a1ac9ca62a051cdd64495573
+  timestamp: '2026-05-08T06:47:19Z'
+  output_hash: 8868ef496f8bd80439daa948b99e21fdec066778a1ac9ca62a051cdd64495573
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

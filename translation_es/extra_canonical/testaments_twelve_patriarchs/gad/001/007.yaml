@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted the final clause to more closely reflect ἡμέρας πράσεως αὐτοῦ as ‘the day of his sale’ and removed the unnecessary comma after ‘this’ for a tighter rendering.
 translation:
   language: es
-  text: Y por causa de esto me enojé con José hasta el día de su venta.
+  text: Pues él había visto que yo rescaté un cordero de la boca de un oso, y a ese oso lo maté, pero al cordero lo degollé — por el cual me entristecí, porque no podía vivir — y nos lo comimos.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὑπὲρ τοῦτο ἐνεκότουν
@@ -69,4 +69,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y por causa de esto me enojé con José hasta el día de su venta.
+  to: Pues él había visto que yo rescaté un cordero de la boca de un oso, y a ese oso lo maté, pero al cordero lo degollé — por el cual me entristecí, porque no podía vivir — y nos lo comimos.
+  rationale: 'Replaced v.8 content with faithful translation of v.7 Greek: ἦν ἰδὼν (he had seen), ἀρνα ἐξειλάμην ἐκ τοῦ στόματος τῆς ἄρκου (rescued a lamb from the mouth of the bear), κἀκείνην ἐθανάτωσα (killed the bear), τὸν δὲ ἀρνὸν ἔθυσα (slaughtered the lamb), περὶ οὗ ἐλυπούμην (over which I grieved), ὅτι οὐκ ἠδύνατο ζῆν (because it could not live), ἐφάγομεν αὐτόν (we ate it). Em-dash preserves parenthetical grief clause as in EN.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:23:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek v.7: Ἦν γὰρ ἰδὼν ὅτι ἀρνα ἐξειλάμην ἐκ τοῦ στόματος τῆς ἄρκου, κἀκείνην ἐθανάτωσα, τὸν δὲ ἀρνὸν ἔθυσα· περὶ οὗ ἐλυπούμην, ὅτι οὐκ ἠδύνατο ζῆν, καὶ ἐφάγομεν αὐτόν. Current Spanish is v.8 content (anger until day of sale) — wrong verse.'
+  spanish_quality_summary: 'Current Spanish is the wrong verse (v.8 content). Must render v.7: rescue of lamb from bear, killing the bear, slaughtering the unable-to-live lamb, eating it.'
+  glossary_alignment: N/A — wrong verse.
+  issues:
+  - severity: high
+    issue: Spanish contains v.8 content instead of v.7 content (bear/lamb narrative).
+    rationale: Source Greek is definitively v.7.
+  revised_spanish_text: Pues él había visto que yo rescaté un cordero de la boca de un oso, y a ese oso lo maté, pero al cordero lo degollé — por el cual me entristecí, porque no podía vivir — y nos lo comimos.
+  revision_rationale: 'Replaced v.8 content with faithful translation of v.7 Greek: ἦν ἰδὼν (he had seen), ἀρνα ἐξειλάμην ἐκ τοῦ στόματος τῆς ἄρκου (rescued a lamb from the mouth of the bear), κἀκείνην ἐθανάτωσα (killed the bear), τὸν δὲ ἀρνὸν ἔθυσα (slaughtered the lamb), περὶ οὗ ἐλυπούμην (over which I grieved), ὅτι οὐκ ἠδύνατο ζῆν (because it could not live), ἐφάγομεν αὐτόν (we ate it). Em-dash preserves parenthetical grief clause as in EN.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6b881a5fd7aefcd5f7b5e3b3917955f87633460eb4f549b5c323f26f6897785e
+  timestamp: '2026-05-08T06:23:14Z'
+  output_hash: 6b881a5fd7aefcd5f7b5e3b3917955f87633460eb4f549b5c323f26f6897785e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

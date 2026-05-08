@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y después de esto, con el propósito de mi alma, me arrepentí delante de Yahvé durante siete años.
+  text: Y después de esto, con el propósito de mi alma, me arrepentí delante del Señor durante siete años.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: μετὰ τοῦτο
@@ -98,4 +98,39 @@ ai_draft:
     total_tokens: 2400
     reasoning_tokens: 0
     estimated_cost_usd: 0.005051
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y después de esto, con el propósito de mi alma, me arrepentí delante de Yahvé durante siete años.
+  to: Y después de esto, con el propósito de mi alma, me arrepentí delante del Señor durante siete años.
+  rationale: Corrected 'delante de Yahvé' to 'delante del Señor' to align with the EN POB ('before the Lord') and the source language convention for Κύριος in this Greek text.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: μετὰ τοῦτο→después de esto, ἐν προαιρέσει ψυχῆς μου→con el propósito de mi alma, μετενόησα→me arrepentí, ἑπτὰ ἔτη→durante siete años all correct. Same Κύριος→Yahvé issue as in v.8.
+  spanish_quality_summary: Natural, precise Spanish. 'con el propósito de mi alma' is a good rendering of ἐν προαιρέσει ψυχῆς μου. 'me arrepentí' is direct and appropriate.
+  glossary_alignment: 'Same issue: ἐνώπιον Κυρίου rendered as ''delante de Yahvé''. Greek extracanonical text; EN POB uses ''before the Lord''. Should be ''delante del Señor'' per project policy for Κύριος in Greek texts not directly citing the Tetragrammaton.'
+  issues:
+  - severity: medium
+    issue: ἐνώπιον Κυρίου rendered as 'delante de Yahvé' instead of 'delante del Señor'.
+    rationale: 'Same as REU.1.8: Κύριος here is a Greek divine title, not a direct rendering of the Hebrew Tetragrammaton. The EN POB uses ''before the Lord''. The Yahvé convention is reserved for explicit YHWH/יהוה occurrences, not for generic Κύριος in Greek extracanonical literature.'
+  revised_spanish_text: Y después de esto, con el propósito de mi alma, me arrepentí delante del Señor durante siete años.
+  revision_rationale: Corrected 'delante de Yahvé' to 'delante del Señor' to align with the EN POB ('before the Lord') and the source language convention for Κύριος in this Greek text.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 196f86a858da974419a9008fd2c37bd2e35546b44e246e13b5746d8c33c26d4a
+  timestamp: '2026-05-08T06:47:44Z'
+  output_hash: 196f86a858da974419a9008fd2c37bd2e35546b44e246e13b5746d8c33c26d4a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

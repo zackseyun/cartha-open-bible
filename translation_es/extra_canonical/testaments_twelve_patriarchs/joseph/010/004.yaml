@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Replaced the inaccurate 'in every way a person is lifted up' with 'every person comes together,' reflecting πάντας γὰρ ἀνθρώπους ... συνέρχεται more closely; accounted for φαντίᾳ/διανοίᾳ with 'imaginative thought'; streamlined the coordinate structure for natural formal English.
 translation:
   language: es
-  text: Porque toda persona se manifiesta sea en obra, sea en palabra, sea en pensamiento imaginativo[a].
+  text: Porque recae sobre toda persona[a], sea en obra, sea en palabra, sea en pensamiento.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'El texto griego es difícil. El sentido es que la persona se hace patente o aparece en cada esfera: obra, palabra y pensamiento. Algunos testigos leen φαντία (''imaginación'') donde otros tienen διάνοια.'
+    text: 'El texto griego es difícil (†συνέρχεται con πάντας ἀνθρώπους). El sentido es que la envidia, la esclavitud o la calumnia (mencionadas en el versículo anterior) pueden sobrevenir a cualquier persona en las tres dimensiones de su vida: obra, palabra y pensamiento.'
     reason: textual_variant
 lexical_decisions:
 - source_word: πάντας ... ἀνθρώπους
@@ -85,4 +85,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque toda persona se manifiesta sea en obra, sea en palabra, sea en pensamiento imaginativo[a].
+  to: Porque recae sobre toda persona[a], sea en obra, sea en palabra, sea en pensamiento.
+  rationale: 'Updated to reflect phase2 realigned EN: changed subject from ''toda persona se manifiesta'' to implicit ''it/ello recae sobre toda persona'', removed ''imaginativo'' from ''pensamiento'', and updated the footnote to explain the difficult Greek in light of the new reading.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'T.Jos 10:4 Greek: πάντας γὰρ ἀνθρώπους ἢ ἐν ἔργῳ ἢ ἐν λόγῳ, ἢ ἐν διανοίᾳ συνέρχεται. The EN per-verse base_translation in the ES file still shows the PRE-phase2 text (''For every person comes together either in deed or in word or in imaginative thought'') but the EN file was updated in phase2 to ''For it comes upon all people either in deed or in word or in mind.'' The ES was therefore drafted from the old EN. Consequence: (1) ''se manifiesta'' translates ''comes together'' (old EN) not the revised meaning ''comes upon'' (new EN). (2) ''pensamiento imaginativo'' follows old EN''s ''imaginative thought'' but phase2 dropped ''imaginative''. (3) The footnote [a] mentions ''pensamiento imaginativo'' which now disagrees with the revised EN.'
+  spanish_quality_summary: 'The Spanish is natural but was derived from the superseded pre-phase2 EN. Needs update to reflect phase2: implicit subject ''it'' (referring to envy/slavery/slander from v.3) ''comes upon'' all people in deed/word/mind.'
+  glossary_alignment: No glossary terms at issue.
+  issues:
+  - severity: medium
+    issue: ES drafted against pre-phase2 EN; subject/verb and 'imaginative' not reflecting updated EN
+    rationale: Phase2 changed EN from 'every person comes together... in imaginative thought' to 'it comes upon all people... in mind'. ES needs to reflect the new reading.
+  revised_spanish_text: Porque recae sobre toda persona[a], sea en obra, sea en palabra, sea en pensamiento.
+  revised_footnotes:
+  - marker: a
+    text: 'El texto griego es difícil (†συνέρχεται con πάντας ἀνθρώπους). El sentido es que la envidia, la esclavitud o la calumnia (mencionadas en el versículo anterior) pueden sobrevenir a cualquier persona en las tres dimensiones de su vida: obra, palabra y pensamiento.'
+    reason: textual_variant
+  revision_rationale: 'Updated to reflect phase2 realigned EN: changed subject from ''toda persona se manifiesta'' to implicit ''it/ello recae sobre toda persona'', removed ''imaginativo'' from ''pensamiento'', and updated the footnote to explain the difficult Greek in light of the new reading.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: eca34a1de1b35c509c79d3ea09ffbfb2422462cbf46c1223c3f1904f8e138c97
+  timestamp: '2026-05-08T06:30:53Z'
+  output_hash: eca34a1de1b35c509c79d3ea09ffbfb2422462cbf46c1223c3f1904f8e138c97
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

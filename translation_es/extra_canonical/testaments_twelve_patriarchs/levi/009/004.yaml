@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed ‘gave a tenth of everything’ to the more direct ‘tithed everything’ to better match ἀπεδεκάτωσε πάντα; retained the rest.
 translation:
   language: es
-  text: Y levantándose de madrugada, diezmo todo por medio de mí para Yahvé.
+  text: Y levantándose de madrugada, diezmó todo por medio de mí para Yahvé.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Καὶ ἀναστὰς τῷ πρωὶ
@@ -96,4 +96,39 @@ ai_draft:
     total_tokens: 2470
     reasoning_tokens: 0
     estimated_cost_usd: 0.005074
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y levantándose de madrugada, diezmo todo por medio de mí para Yahvé.
+  to: Y levantándose de madrugada, diezmó todo por medio de mí para Yahvé.
+  rationale: Corrected 'diezmo' (noun) to 'diezmó' (preterite verb, 3rd person singular) to properly render ἀπεδεκάτωσε as a past-tense action.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ ἀναστὰς τῷ πρωὶ ἀπεδεκάτωσε πάντα δι'' ἐμοῦ τῷ Κυρίῳ. EN POB: ''And rising early in the morning, he tithed everything through me to the Lord.'' Spanish draft: ''Y levantándose de madrugada, diezmo todo por medio de mí para Yahvé.'' The critical issue is ''diezmo'' — this appears to be a noun (''tithe'') where a verb is needed (''diezmó'', preterite of ''diezmar''). The Greek ἀπεδεκάτωσε is an aorist indicative 3rd singular, meaning ''he tithed'' (past action). The draft uses ''diezmo'' (noun) creating a grammatically broken sentence: ''levantándose de madrugada, diezmo todo'' parses as ''rising early in the morning, tithe everything'' — ungrammatical. The correct verb form is ''diezmó'' (he tithed). Also, τῷ Κυρίῳ→Yahvé: the project decision to render this as Yahvé is documented in the YAML and is defensible, though debatable. This is a secondary concern. The primary issue is the missing verbal inflection.'
+  spanish_quality_summary: 'The verse contains a critical grammatical error: ''diezmo'' (noun) should be ''diezmó'' (preterite verb, 3rd person singular) to match ἀπεδεκάτωσε. ''Y levantándose de madrugada, diezmó todo por medio de mí para Yahvé'' is the correct rendering.'
+  glossary_alignment: 'τῷ Κυρίῳ→Yahvé: the project theological note says this is appropriate in a cultic offering context where Κύριος stands for the God of Israel. This is a judgment call; the draft provides rationale. Acceptable within project parameters.'
+  issues:
+  - severity: high
+    issue: '''diezmo'' should be the verb ''diezmó'' (preterite 3rd sg.) — ''diezmo'' is a noun meaning ''tithe'', making the sentence ungrammatical'
+    rationale: ἀπεδεκάτωσε is an aorist indicative 3rd person singular of ἀποδεκατόω, 'he tithed'; the Spanish must use the preterite verb 'diezmó'.
+  revised_spanish_text: Y levantándose de madrugada, diezmó todo por medio de mí para Yahvé.
+  revision_rationale: Corrected 'diezmo' (noun) to 'diezmó' (preterite verb, 3rd person singular) to properly render ἀπεδεκάτωσε as a past-tense action.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0c1ab5173fb9a64b17d0ad16f6529633a3de2cf8ec0e65cc4c27ffdb0d1900af
+  timestamp: '2026-05-08T06:46:59Z'
+  output_hash: 0c1ab5173fb9a64b17d0ad16f6529633a3de2cf8ec0e65cc4c27ffdb0d1900af
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

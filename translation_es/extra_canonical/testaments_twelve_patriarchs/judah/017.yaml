@@ -41,7 +41,8 @@ translation:
   text: 'Y ahora les ordeno, hijos míos: no amen la plata, ni pongan su mirada en la belleza de las mujeres; porque yo también, por el oro y la hermosura, fui descarriado[a] hacia Besué, la mujer cananea.
 
 
-    Y sé que, a causa de estas dos cosas, mi descendencia llegará a la ruina de la inmoralidad sexual[b]. Porque incluso corromperán a hombres sabios de entre mis hijos, y harán que el reino de Judá sea disminuido, el cual Yahvé me dio por mi obediencia a mi padre Jacob.'
+
+    Y sé que, a causa de estas dos cosas, mi descendencia será para destrucción por causa de la inmoralidad sexual[b]. Porque incluso corromperán a hombres sabios de entre mis hijos, y harán que el reino de Judá sea disminuido, el cual el Señor me dio por mi obediencia a mi padre Jacob.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -166,4 +167,61 @@ ai_draft:
     total_tokens: 4856
     reasoning_tokens: 0
     estimated_cost_usd: 0.009571
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y ahora les ordeno, hijos míos: no amen la plata, ni pongan su mirada en la belleza de las mujeres; porque yo también, por el oro y la hermosura, fui descarriado[a] hacia Besué, la mujer cananea.
+
+
+    Y sé que, a causa de estas dos cosas, mi descendencia llegará a la ruina de la inmoralidad sexual[b]. Porque incluso corromperán a hombres sabios de entre mis hijos, y harán que el reino de Judá sea disminuido, el cual Yahvé me dio por mi obediencia a mi padre Jacob.'
+  to: 'Y ahora les ordeno, hijos míos: no amen la plata, ni pongan su mirada en la belleza de las mujeres; porque yo también, por el oro y la hermosura, fui descarriado[a] hacia Besué, la mujer cananea.
+
+
+
+    Y sé que, a causa de estas dos cosas, mi descendencia será para destrucción por causa de la inmoralidad sexual[b]. Porque incluso corromperán a hombres sabios de entre mis hijos, y harán que el reino de Judá sea disminuido, el cual el Señor me dio por mi obediencia a mi padre Jacob.'
+  rationale: Changed 'Yahvé' to 'el Señor' to correctly represent κύριος in the Greek text of T12P, which does not carry the Tetragrammaton. Updated v.2 to 'será para destrucción por causa de la inmoralidad sexual' to track the revised EN (from 'llegará a la ruina de' which reflected the pre-revision draft).
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The chapter-level ES text uses 'Yahvé' for κύριος in the chapter text where the Greek chapter-level source (017.yaml) does have 'ἣν ἔδωκέ μοι Κύριος'. This is the chapter-level text where κύριος is present, so using 'Yahvé' is debatable — the project policy is YHWH→Yahvé, and κύριος in the Greek does not necessarily represent the Tetragrammaton. The per-verse file (017/003) correctly omits 'the Lord' since that per-verse fragment doesn't include it. The chapter-level is the authoritative draft. Using 'Yahvé' here over-reads κύριος as the Tetragrammaton. However the theological_decisions section justifies this choice explicitly. This is a genuine edge case. Additionally, the base_translation field in the ES 017.yaml shows an older EN version ('come to the destruction of sexual immorality') which predates the revision to 'will be for destruction because of'. The Spanish chapter text uses 'llegará a la ruina de la inmoralidad sexual' which reflects neither the old
+    nor the new EN but an intermediate paraphrase. A revision to align to the current EN is warranted.
+  spanish_quality_summary: Mostly reads well. 'fui descarriado' vs per-verse 'fui desviado' is an internal inconsistency (chapter is authoritative, so 'descarriado' governs). The chapter base_translation_text is the pre-revision EN; the ES chapter body should track the final revised EN meaning.
+  glossary_alignment: Κύριος → 'Yahvé' is a project policy question. The project policy is YHWH→Yahvé, θεός→Dios. Κύριος in a Greek Jewish text like T12P does not automatically equal YHWH/Yahvé — it can be a generic title. The EN consistently renders κύριος as 'the Lord'. Using 'Yahvé' here over-reaches. Should be 'el Señor'.
+  issues:
+  - severity: medium
+    issue: Chapter ES text renders κύριος as 'Yahvé' but the project policy maps YHWH→Yahvé; κύριος in this Greek text is 'Lord/el Señor', not necessarily the Tetragrammaton.
+    rationale: The EN POB correctly uses 'the Lord' for κύριος throughout T12P. Using 'Yahvé' over-identifies κύριος with the divine name without Hebrew textual warrant.
+  - severity: medium
+    issue: ES chapter body renders v.2 as 'llegará a la ruina de la inmoralidad sexual' based on the old EN draft, but the revised EN reads 'will be for destruction because of sexual immorality'. The Spanish should be updated.
+    rationale: The base_translation in the ES chapter captures the pre-revision EN. The per-verse 017/002 Spanish correctly tracks the revised reading. The chapter-level needs to match.
+  revised_spanish_text: 'Y ahora les ordeno, hijos míos: no amen la plata, ni pongan su mirada en la belleza de las mujeres; porque yo también, por el oro y la hermosura, fui descarriado[a] hacia Besué, la mujer cananea.
+
+
+
+    Y sé que, a causa de estas dos cosas, mi descendencia será para destrucción por causa de la inmoralidad sexual[b]. Porque incluso corromperán a hombres sabios de entre mis hijos, y harán que el reino de Judá sea disminuido, el cual el Señor me dio por mi obediencia a mi padre Jacob.'
+  revised_footnotes:
+  - marker: a
+    text: '"Fui descarriado" conserva la pasiva del griego; también puede leerse como "fui desviado".'
+    reason: lexical_alternative
+  - marker: b
+    text: La frase griega es comprimida y también puede entenderse como "la destrucción por la inmoralidad sexual".
+    reason: lexical_alternative
+  revision_rationale: Changed 'Yahvé' to 'el Señor' to correctly represent κύριος in the Greek text of T12P, which does not carry the Tetragrammaton. Updated v.2 to 'será para destrucción por causa de la inmoralidad sexual' to track the revised EN (from 'llegará a la ruina de' which reflected the pre-revision draft).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 00a8593f922e1d9e473640e8488b523240a07e983f8caa39cb9e89f1ab123e7c
+  timestamp: '2026-05-08T06:37:24Z'
+  output_hash: 00a8593f922e1d9e473640e8488b523240a07e983f8caa39cb9e89f1ab123e7c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

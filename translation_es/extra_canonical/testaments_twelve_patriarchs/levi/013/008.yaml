@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque si alguno se guarda de estas malas obras, entonces para él la sabiduría será espléndida[a] aun entre enemigos, y en tierra extranjera, una patria, y en medio de los enemigos será hallado como amigo.
+  text: Porque si alguno se guarda de estas malas obras, entonces la sabiduría será para él espléndida[a] aun entre enemigos, y en tierra extranjera, una patria, y en medio de los enemigos será hallado como amigo.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -109,4 +109,43 @@ ai_draft:
     total_tokens: 2865
     reasoning_tokens: 0
     estimated_cost_usd: 0.006975
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque si alguno se guarda de estas malas obras, entonces para él la sabiduría será espléndida[a] aun entre enemigos, y en tierra extranjera, una patria, y en medio de los enemigos será hallado como amigo.
+  to: Porque si alguno se guarda de estas malas obras, entonces la sabiduría será para él espléndida[a] aun entre enemigos, y en tierra extranjera, una patria, y en medio de los enemigos será hallado como amigo.
+  rationale: 'Minor word-order adjustment for naturalness in Latin-American Spanish: moved ''para él'' to after ''será'' to avoid awkward front-loading. Content and meaning unchanged.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Spanish draft is mostly faithful to the Greek source. φυλάξῃ αὐτὸν→se guarda de, γενήσεται αὐτῷ σοφία→la sabiduría será para él, λαμπρά→espléndida (footnoted), πατρίς→patria, εὑρηθήσεται φίλος→será hallado como amigo. One issue: the footnote marker [a] appears in the text (''espléndida[a]'') but the word order places it somewhat awkwardly mid-sentence. More importantly, the text says ''para él la sabiduría será espléndida[a] aun entre enemigos'' but the lexical_decisions field says chosen_spanish is ''la sabiduría será para él'' — the actual text reorders to ''para él la sabiduría será espléndida[a]''. This is a minor ordering difference but the overall rendering is accurate. The main structural issue is that ''para él la sabiduría será espléndida[a] aun entre enemigos, y en tierra extranjera, una patria'' is slightly awkward; the comma usage in ''en tierra extranjera, una patria'' reproduces the Greek elliptical construction well.'
+  spanish_quality_summary: Generally fluent. The footnote marker placement after 'espléndida' is correct. However, 'para él la sabiduría será espléndida[a] aun entre enemigos' has an unusual word order that front-loads the beneficiary pronoun. A more natural reading would be 'entonces la sabiduría será para él espléndida[a] aun entre enemigos'. Minor improvement needed for naturalness.
+  glossary_alignment: No YHWH/Yahvé, Dios, Mesías, Espíritu, or esclavo terms apply here. Consistent with glossary policy.
+  issues:
+  - severity: low
+    issue: 'Word order in the main clause is slightly unnatural: ''para él la sabiduría será espléndida'' front-loads ''para él'' awkwardly.'
+    rationale: In neutral Latin-American Spanish, 'entonces la sabiduría será para él espléndida' or 'entonces para él la sabiduría será espléndida' reads more naturally. The footnote marker should follow 'espléndida' in either case.
+  revised_spanish_text: Porque si alguno se guarda de estas malas obras, entonces la sabiduría será para él espléndida[a] aun entre enemigos, y en tierra extranjera, una patria, y en medio de los enemigos será hallado como amigo.
+  revised_footnotes:
+  - marker: a
+    text: «Espléndida» traduce aquí λαμπρά con el sentido de brillante, distinguida o resplandeciente; no implica necesariamente lujo material.
+    reason: lexical_alternative
+  revision_rationale: 'Minor word-order adjustment for naturalness in Latin-American Spanish: moved ''para él'' to after ''será'' to avoid awkward front-loading. Content and meaning unchanged.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2484544c1715ad4dcf6092d8bc03cf713fa5146b088b53ba94798836eb6b00a7
+  timestamp: '2026-05-08T06:45:23Z'
+  output_hash: 2484544c1715ad4dcf6092d8bc03cf713fa5146b088b53ba94798836eb6b00a7
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

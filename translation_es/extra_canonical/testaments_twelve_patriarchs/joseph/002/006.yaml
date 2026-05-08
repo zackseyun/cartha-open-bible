@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised ‘gives comfort’ to ‘encourages’ for παρακαλεῖ, while keeping ‘takes the lead’ for προΐσταται and removing the footnote marker from the main text.
 translation:
   language: es
-  text: Pero en todas estas cosas él toma la delantera, y de diversos modos alienta.
+  text: Pero en todas estas cosas él toma la delantera, y de diversos modos alienta. Por un breve tiempo se retira, para poner a prueba la resolución interior del alma.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: προΐσταται
@@ -83,4 +83,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero en todas estas cosas él toma la delantera, y de diversos modos alienta.
+  to: Pero en todas estas cosas él toma la delantera, y de diversos modos alienta. Por un breve tiempo se retira, para poner a prueba la resolución interior del alma.
+  rationale: Added translation of the second clause of the verse ('Ἐν βραχεῖ ἀφίσταται εἰς τὸ δοκιμάσαι τῆς ψυχῆς τὸ διαβούλιον'), which was present in the EN base text but missing from the Spanish draft. 'Por un breve tiempo se retira' for ἐν βραχεῖ ἀφίσταται; 'para poner a prueba la resolución interior del alma' for εἰς τὸ δοκιμάσαι τῆς ψυχῆς τὸ διαβούλιον (following EN 'inner intent of the soul' and the POB revision of διαβούλιον as 'resolve').
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:27:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek verse contains two sentences: (1) ''Ἐν πᾶσι δὲ τούτοις προΐσταται Καὶ ἐν διαφόροις τρόποις παρακαλεῖ'' (But in all these things he takes the lead, and in various ways he encourages) and (2) ''Ἐν βραχεῖ ἀφίσταται εἰς τὸ δοκιμάσαι τῆς ψυχῆς τὸ διαβούλιον'' (For a short time he withdraws, in order to test the inner intent of the soul). The EN per-verse YAML only includes the first sentence, following the chapter division. The Spanish draft translates just the first sentence correctly. However, the EN text at the per-verse level reads ''For a short time he withdraws, in order to test the inner intent of the soul'' — this is the second half of the Greek verse assigned to 2:6, but the per-verse EN file at 002/006 shows only the first part. The Spanish draft appropriately translates only the text present in its EN base (''But in all these things he takes the lead, and in various ways he encourages''). The translation is accurate for the scope given.'
+  spanish_quality_summary: The Spanish 'Pero en todas estas cosas él toma la delantera, y de diversos modos alienta' is well-formed and natural. 'Toma la delantera' for προΐσταται and 'alienta' for παρακαλεῖ (following the revised EN 'encourages') are good choices. The footnote note field says the [c] marker was dropped per the EN revision, which is correct. However, the EN per-verse base text actually reads 'For a short time he withdraws, in order to test the inner intent of the soul' — this second clause is included in the EN per-verse YAML but missing from the Spanish translation entirely. The Spanish draft should include this second clause.
+  glossary_alignment: No YHWH/κύριος/θεός in this verse. παρακαλεῖ → 'alienta' (correct, aligns with revised EN 'encourages'). προΐσταται → 'toma la delantera' (correct).
+  issues:
+  - severity: high
+    issue: 'The EN per-verse file (002/006) includes a second sentence: ''For a short time he withdraws, in order to test the inner intent of the soul.'' This corresponds to the second half of the Greek verse 2:6 (''Ἐν βραχεῖ ἀφίσταται εἰς τὸ δοκιμάσαι τῆς ψυχῆς τὸ διαβούλιον''). The Spanish draft omits this clause entirely.'
+    rationale: 'The EN YAML at translation/extra_canonical/testaments_twelve_patriarchs/joseph/002/006.yaml contains: ''But in all these things he takes the lead, and in various ways he encourages. For a short time he withdraws, in order to test the inner intent of the soul.'' The Spanish only translates the first sentence.'
+  revised_spanish_text: Pero en todas estas cosas él toma la delantera, y de diversos modos alienta. Por un breve tiempo se retira, para poner a prueba la resolución interior del alma.
+  revision_rationale: Added translation of the second clause of the verse ('Ἐν βραχεῖ ἀφίσταται εἰς τὸ δοκιμάσαι τῆς ψυχῆς τὸ διαβούλιον'), which was present in the EN base text but missing from the Spanish draft. 'Por un breve tiempo se retira' for ἐν βραχεῖ ἀφίσταται; 'para poner a prueba la resolución interior del alma' for εἰς τὸ δοκιμάσαι τῆς ψυχῆς τὸ διαβούλιον (following EN 'inner intent of the soul' and the POB revision of διαβούλιον as 'resolve').
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1b2b22f7c4eb8debd2f2eaca1e4e0bf63f6d4317cc665620f87ff2bcf866ffd6
+  timestamp: '2026-05-08T06:27:44Z'
+  output_hash: 1b2b22f7c4eb8debd2f2eaca1e4e0bf63f6d4317cc665620f87ff2bcf866ffd6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,14 +19,14 @@ base_translation:
     changes_summary: Adjusted the first clause to reflect ἀφελέσθαι more directly as 'taken away'; simplified the second clause to keep the source’s direct address and possession concise, rendering τοὺς μανδραγόρας τοῦ υἱοῦ μου as 'my son’s mandrakes.'
 translation:
   language: es
-  text: Y si no se hubiera multiplicado el engaño sobre la tierra y no hubiera avanzado la maldad de los hombres, no habría[b] yo visto el rostro de Jacob[a].
+  text: Y si no se hubiera multiplicado el engaño sobre la tierra y no hubiera avanzado la maldad de los hombres, no habrías[b] visto el rostro de Jacob[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «rostro de Jacob» traduce literalmente τὸ πρόσωπον τοῦ Ἰακώβ; se conserva la expresión aun cuando su sentido contextual sea oscuro.
+    text: «rostro de Jacob» traduce literalmente τὸ πρόσωπον τοῦ Ἰακώβ; se conserva la expresión aun cuando su sentido contextual pueda parecer oscuro.
     reason: source_note
   - marker: b
-    text: «no habría» refleja la apódosis potencial del griego con οὐκ ἂν εἶ; en español se conserva como forma condicional natural.
+    text: «no habrías» refleja la apódosis potencial del griego con οὐκ ἂν εἶ (segunda persona singular), dirigida a Raquel.
     reason: source_note
 lexical_decisions:
 - source_word: ἡ πονηρία
@@ -99,4 +99,46 @@ ai_draft:
     total_tokens: 2686
     reasoning_tokens: 0
     estimated_cost_usd: 0.005258
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y si no se hubiera multiplicado el engaño sobre la tierra y no hubiera avanzado la maldad de los hombres, no habría[b] yo visto el rostro de Jacob[a].
+  to: Y si no se hubiera multiplicado el engaño sobre la tierra y no hubiera avanzado la maldad de los hombres, no habrías[b] visto el rostro de Jacob[a].
+  rationale: Corrects the person from first (yo/habría yo) to second singular (habrías) to match Greek σὺ ὁρῶσα and EN 'you would not be looking'. Footnote [b] updated to clarify the second person reading.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ εἰ μὴ ὁ δόλος ἐπλήθυνεν ἐπὶ τῆς γῆς καὶ ἡ πονηρία τῶν ἀνθρώπων ἐχώρησεν, οὐκ ἂν εἶ σὺ ὁρῶσα τὸ πρόσωπον τοῦ Ἰακώβ. EN POB: ''And had guile not multiplied upon the earth and the wickedness of men advanced, you would not be looking on the face of Jacob.'' ES: ''Y si no se hubiera multiplicado el engaño sobre la tierra y no hubiera avanzado la maldad de los hombres, no habría yo visto el rostro de Jacob.'' The ES uses first person (''yo'') but the Greek has second person (σὺ ὁρῶσα — ''you looking''). This is a significant subject error. The EN POB correctly has ''you would not be looking'' — Rachel is addressed. The ES draft wrongly switches to ''yo'' (I).'
+  spanish_quality_summary: Good conditional structure, but incorrect person. The apodosis 'no habría yo visto' uses first person singular whereas the Greek σὺ ὁρῶσα is second person singular feminine — Rachel would not be seeing Jacob's face. The footnotes in the ES have markers [a] and [b] but the text only shows 'no habría[b]' and 'de Jacob[a]' — footnotes are present with matching markers.
+  glossary_alignment: No special glossary terms. δόλος→engaño is appropriate (consistent with chapter).
+  issues:
+  - severity: high
+    issue: 'Wrong grammatical person: ES uses ''yo'' (first person) but Greek σὺ ὁρῶσα and EN ''you would not be looking'' are second person addressed to Rachel.'
+    rationale: σὺ ὁρῶσα = 'you (sg. fem.) seeing/looking' — this is Rachel being told she would not have seen Jacob. The ES 'no habría yo visto' makes the speaker (Leah) the subject instead.
+  revised_spanish_text: Y si no se hubiera multiplicado el engaño sobre la tierra y no hubiera avanzado la maldad de los hombres, no habrías[b] visto el rostro de Jacob[a].
+  revised_footnotes:
+  - marker: a
+    text: «rostro de Jacob» traduce literalmente τὸ πρόσωπον τοῦ Ἰακώβ; se conserva la expresión aun cuando su sentido contextual pueda parecer oscuro.
+    reason: source_note
+  - marker: b
+    text: «no habrías» refleja la apódosis potencial del griego con οὐκ ἂν εἶ (segunda persona singular), dirigida a Raquel.
+    reason: source_note
+  revision_rationale: Corrects the person from first (yo/habría yo) to second singular (habrías) to match Greek σὺ ὁρῶσα and EN 'you would not be looking'. Footnote [b] updated to clarify the second person reading.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 666140859563068c3aeb0300070aaf7ac30f852bec8cf5b620aefe0921caa2fd
+  timestamp: '2026-05-08T06:29:10Z'
+  output_hash: 666140859563068c3aeb0300070aaf7ac30f852bec8cf5b620aefe0921caa2fd
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

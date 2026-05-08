@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted word order to reflect the source more closely by moving 'for the sake of children' earlier; otherwise retained the draft's rendering.
 translation:
   language: es
-  text: Y Raquel comió las mandrágoras, y no concibió; porque el Señor vio que, por causa de los hijos, ella deseaba acostarse con Jacob, y no por causa del placer.
+  text: 'Y Raquel continuó hablando y dijo: «Tomaré una de las mandrágoras, y a cambio de ella te lo alquilaré por la noche».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀντὶ τοῦ ἑνὸς ἐκμισθώσω σοι ἐν τῇ νυκτί (ampl. tradición)
@@ -70,4 +70,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y Raquel comió las mandrágoras, y no concibió; porque el Señor vio que, por causa de los hijos, ella deseaba acostarse con Jacob, y no por causa del placer.
+  to: 'Y Raquel continuó hablando y dijo: «Tomaré una de las mandrágoras, y a cambio de ella te lo alquilaré por la noche».'
+  rationale: Replaces the misaligned content with a translation of the actual Greek v.14. Καὶ προσέθηκε Ῥαχὴλ λαλεῖν = Rachel continued/went on speaking; εἶπεν = said; Ἕνα τῶν μανδραγόρων λήψομαι = I will take one of the mandrakes; ἀντὶ τοῦ ἑνὸς ἐκμισθώσω σοι = in exchange for the one I will hire him out to you; ἐν τῇ νυκτί = for the night.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek for v.14: Καὶ προσέθηκε Ῥαχὴλ λαλεῖν καὶ εἶπεν. Ἕνα τῶν μανδραγόρων λήψομαι, καὶ ἀντὶ τοῦ ἑνὸς ἐκμισθώσω σοι ἐν τῇ νυκτί. EN POB for v.14: ''And Rachel went on speaking and said, I will take one of the mandrakes, and in exchange for the one I will hire him out to you for the night.'' ES draft: ''Y Raquel comió las mandrágoras, y no concibió; porque el Señor vio que, por causa de los hijos, ella deseaba acostarse con Jacob, y no por causa del placer.'' The ES translates completely different content — Rachel eating mandrakes and not conceiving. The actual Greek v.14 has Rachel continuing to speak and offering to take one mandrake and hire out Jacob for one night. This is a severe content misalignment (the ES appears to translate material from a different chapter/verse).'
+  spanish_quality_summary: The ES text does not correspond to the Greek or EN for v.14 at all. It should render Rachel's speech offering to take one mandrake and hiring out Jacob for the night.
+  glossary_alignment: No glossary issues in corrected text.
+  issues:
+  - severity: high
+    issue: 'Complete content misalignment: ES translates Rachel eating mandrakes and not conceiving (from a different source), but v.14 Greek has Rachel proposing to take one mandrake and hire Jacob out for the night.'
+    rationale: 'Καὶ προσέθηκε Ῥαχὴλ λαλεῖν καὶ εἶπεν: Rachel continued to speak. Ἕνα τῶν μανδραγόρων λήψομαι = I will take one of the mandrakes. ἀντὶ τοῦ ἑνὸς ἐκμισθώσω σοι ἐν τῇ νυκτί = in exchange for the one I will hire him out to you for the night.'
+  revised_spanish_text: 'Y Raquel continuó hablando y dijo: «Tomaré una de las mandrágoras, y a cambio de ella te lo alquilaré por la noche».'
+  revision_rationale: Replaces the misaligned content with a translation of the actual Greek v.14. Καὶ προσέθηκε Ῥαχὴλ λαλεῖν = Rachel continued/went on speaking; εἶπεν = said; Ἕνα τῶν μανδραγόρων λήψομαι = I will take one of the mandrakes; ἀντὶ τοῦ ἑνὸς ἐκμισθώσω σοι = in exchange for the one I will hire him out to you; ἐν τῇ νυκτί = for the night.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 63e3b747728bf033d80df4be8a2e0292a763e6e1388dea9ba6c910b601a90b02
+  timestamp: '2026-05-08T06:30:01Z'
+  output_hash: 63e3b747728bf033d80df4be8a2e0292a763e6e1388dea9ba6c910b601a90b02
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

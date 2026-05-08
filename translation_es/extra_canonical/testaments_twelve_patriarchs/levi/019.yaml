@@ -42,24 +42,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: '1[a]. Y ahora, hijos míos, lo habéis oído todo. Elegid para vosotros mismos o la luz o las tinieblas, o la ley de Yahvé o las obras de Beliar[b].
-
-
-    2. Y sus hijos le respondieron, diciendo: «Delante de Yahvé caminaremos, y conforme a su ley».
-
-
-    3. Y su padre les dijo: «Yahvé es testigo, y sus ángeles son testigos, y vosotros sois testigos, y yo soy testigo[c] respecto de la palabra de vuestra boca». Y sus hijos le dijeron: «Testigos».'
+  text: "1[a]. Y ahora, hijos míos, todo lo habéis oído. Elegid para vosotros mismos o la luz o las tinieblas, o la ley de Yahvé o las obras de Beliar[b].\n\n\n    2. Y sus hijos le respondieron, diciendo: «Delante de Yahvé caminaremos, y conforme a su ley».\n\n\n    3. Y su padre les dijo: «Yahvé es testigo, y sus ángeles son testigos, y vosotros sois testigos, y yo soy testigo respecto de la palabra de vuestra boca». Y sus hijos le dijeron[c]: «Testigos»."
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «Habéis oído todo».'
-    reason: alternative_reading
-  - marker: b
-    text: 'O: «las acciones de Beliar».'
+    text: 'O: «las obras de Beliar».'
     reason: lexical_alternative
+  - marker: b
+    text: La frase «caminar delante de Yahvé» es un modismo bíblico para vivir la vida en obediencia responsable ante Dios.
+    reason: cultural_note
   - marker: c
-    text: 'O: «El Señor»; el griego aquí dice κύριος, y en este contexto se entiende como referencia al nombre divino.'
-    reason: theological_note
+    text: El griego nombra a «Beliar», forma también conocida en otros lugares como «Belial».
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Ἐκλέξασθε
   english_pob_choice: Choose for yourselves
@@ -173,4 +167,58 @@ ai_draft:
     total_tokens: 4271
     reasoning_tokens: 0
     estimated_cost_usd: 0.008843
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '1[a]. Y ahora, hijos míos, lo habéis oído todo. Elegid para vosotros mismos o la luz o las tinieblas, o la ley de Yahvé o las obras de Beliar[b].
+
+
+    2. Y sus hijos le respondieron, diciendo: «Delante de Yahvé caminaremos, y conforme a su ley».
+
+
+    3. Y su padre les dijo: «Yahvé es testigo, y sus ángeles son testigos, y vosotros sois testigos, y yo soy testigo[c] respecto de la palabra de vuestra boca». Y sus hijos le dijeron: «Testigos».'
+  to: "1[a]. Y ahora, hijos míos, todo lo habéis oído. Elegid para vosotros mismos o la luz o las tinieblas, o la ley de Yahvé o las obras de Beliar[b].\n\n\n    2. Y sus hijos le respondieron, diciendo: «Delante de Yahvé caminaremos, y conforme a su ley».\n\n\n    3. Y su padre les dijo: «Yahvé es testigo, y sus ángeles son testigos, y vosotros sois testigos, y yo soy testigo respecto de la palabra de vuestra boca». Y sus hijos le dijeron[c]: «Testigos»."
+  rationale: 'Corrected footnotes to match the EN footnote content: [a]=lexical alternative ''deeds/works'', [b]=cultural note on ''walk before the Lord'', [c]=Beliar/Belial note. The previous ES footnote [a] was a Spanish word-order variant not present in the EN, and [c] was a theological note about κύριος not in the EN.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter-level ES (T12P.LEV.19) is mostly good. Issues: (1) v.1 uses ''habéis'' (Spain register) whereas neutral Latin-American would prefer ''han oído''; but this is a minor register choice and the chapter uses vosotros throughout—acceptable for this project. (2) The footnote [a] says ''O: «Habéis oído todo»'' which is not a genuine textual variant of the verse but a word-order alternative in Spanish—the EN footnote [a] actually says ''Or, the deeds of Beliar'' (which is an alternative for ''works''). The ES footnote [b] says ''O: «las acciones de Beliar»'' which matches the EN footnote [a]. The ES footnote [a] is incorrect—it doesn''t correspond to any EN footnote. (3) Footnote [c] says ''O: «El Señor»; el griego aquí dice κύριος...'' which adds a theological note not in the EN footnote [c]. EN footnote [c] says ''The Greek names ''Beliar,'' a form also known elsewhere as ''Belial.''—the ES footnote [c] is completely different content.'
+  spanish_quality_summary: The prose is generally good. The vosotros register is consistent within the chapter. Main quality issues are in the footnote content mismatches.
+  glossary_alignment: Yahvé used correctly for κύριος. Beliar correctly preserved. No other glossary terms apply.
+  issues:
+  - severity: high
+    issue: 'Footnote [a] content is wrong: ES has ''O: Habéis oído todo'' (word-order variant in Spanish) but EN footnote [a] says ''Or, the deeds of Beliar'' (a lexical alternative for ἔργα). The ES maps footnote [a] to a non-existent variant.'
+    rationale: Footnote [a] in the EN corresponds to 'deeds' as an alternative to 'works'—this should be the ES footnote [a] equivalent. The ES has inverted the mapping.
+  - severity: high
+    issue: Footnote [c] in ES describes κύριος/Yahvé semantics but EN footnote [c] is about Beliar/Belial. These do not correspond.
+    rationale: The footnote markers in the translated text and the footnotes array must correspond to the same textual notes as the EN.
+  revised_spanish_text: "1[a]. Y ahora, hijos míos, todo lo habéis oído. Elegid para vosotros mismos o la luz o las tinieblas, o la ley de Yahvé o las obras de Beliar[b].\n\n\n    2. Y sus hijos le respondieron, diciendo: «Delante de Yahvé caminaremos, y conforme a su ley».\n\n\n    3. Y su padre les dijo: «Yahvé es testigo, y sus ángeles son testigos, y vosotros sois testigos, y yo soy testigo respecto de la palabra de vuestra boca». Y sus hijos le dijeron[c]: «Testigos»."
+  revised_footnotes:
+  - marker: a
+    text: 'O: «las obras de Beliar».'
+    reason: lexical_alternative
+  - marker: b
+    text: La frase «caminar delante de Yahvé» es un modismo bíblico para vivir la vida en obediencia responsable ante Dios.
+    reason: cultural_note
+  - marker: c
+    text: El griego nombra a «Beliar», forma también conocida en otros lugares como «Belial».
+    reason: alternative_reading
+  revision_rationale: 'Corrected footnotes to match the EN footnote content: [a]=lexical alternative ''deeds/works'', [b]=cultural note on ''walk before the Lord'', [c]=Beliar/Belial note. The previous ES footnote [a] was a Spanish word-order variant not present in the EN, and [c] was a theological note about κύριος not in the EN.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9bb2186a352388e7f28dd8cb4db5fd023f087ffe5f9853ea84046b39d0de8819
+  timestamp: '2026-05-08T06:46:53Z'
+  output_hash: 9bb2186a352388e7f28dd8cb4db5fd023f087ffe5f9853ea84046b39d0de8819
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

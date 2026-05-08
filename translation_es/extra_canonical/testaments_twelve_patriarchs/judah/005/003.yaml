@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'against us' to 'toward us' to reflect πρὸς ἡμᾶς more accurately; retained 'were drawn' for ἐφελκύσθησαν and kept the rest unchanged.
 translation:
   language: es
-  text: Y los que estaban en el muro, pensando que nosotros solos estábamos allí, fueron atraídos hacia nosotros.
+  text: Y los que estaban en el muro, pensando que estábamos solos, fueron atraídos hacia nosotros.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: οἱ ἀπὸ τοῦ τείχους
@@ -78,4 +78,39 @@ ai_draft:
     total_tokens: 2249
     reasoning_tokens: 0
     estimated_cost_usd: 0.003828
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los que estaban en el muro, pensando que nosotros solos estábamos allí, fueron atraídos hacia nosotros.
+  to: Y los que estaban en el muro, pensando que estábamos solos, fueron atraídos hacia nosotros.
+  rationale: Removed the non-source 'allí' and reordered to the more natural 'pensando que estábamos solos', matching EN 'thinking that we were alone'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek νομίσαντες οἱ ἀπὸ τοῦ τείχους ὅτι ἡμεῖς μόνοι ἐσμέν / EN 'those on the wall, thinking that we were alone' is rendered as 'los que estaban en el muro, pensando que nosotros solos estábamos allí'. The addition of 'allí' is not in the source and the word order 'nosotros solos estábamos allí' is awkward.
+  spanish_quality_summary: The phrase 'pensando que nosotros solos estábamos allí' adds 'allí' (not in source) and reads unnaturally. The more direct 'pensando que estábamos solos' matches the EN and the Greek.
+  glossary_alignment: No glossary-sensitive terms present.
+  issues:
+  - severity: low
+    issue: Addition of 'allí' not present in Greek or EN source; word order 'nosotros solos estábamos allí' is awkward.
+    rationale: '''Μόνοι'' simply means ''alone''; no locative adverb is present in the source.'
+  revised_spanish_text: Y los que estaban en el muro, pensando que estábamos solos, fueron atraídos hacia nosotros.
+  revision_rationale: Removed the non-source 'allí' and reordered to the more natural 'pensando que estábamos solos', matching EN 'thinking that we were alone'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7037b0bf94b14527e2f108c8cb5c753c48beb3c07a060b4167d7085efb7f8024
+  timestamp: '2026-05-08T06:37:07Z'
+  output_hash: 7037b0bf94b14527e2f108c8cb5c753c48beb3c07a060b4167d7085efb7f8024
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

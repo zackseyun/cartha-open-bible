@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y yo madrugaba al Yahvé y lloraba por Menfis, la egipcia, porque me molestaba muchísimo, sin cesar; pues aun de noche venía a mí con pretexto de visita.
+  text: Y yo madrugaba a Yahvé y lloraba por Menfis, la egipcia, porque me molestaba muchísimo, sin cesar; pues aun de noche venía a mí con pretexto de visita.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: πρὸς Κύριον
@@ -111,4 +111,40 @@ ai_draft:
     total_tokens: 2811
     reasoning_tokens: 0
     estimated_cost_usd: 0.006829
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y yo madrugaba al Yahvé y lloraba por Menfis, la egipcia, porque me molestaba muchísimo, sin cesar; pues aun de noche venía a mí con pretexto de visita.
+  to: Y yo madrugaba a Yahvé y lloraba por Menfis, la egipcia, porque me molestaba muchísimo, sin cesar; pues aun de noche venía a mí con pretexto de visita.
+  rationale: Corrected 'al Yahvé' to 'a Yahvé'. Proper names in Spanish do not take the definite article; 'al' (a+el contraction) before 'Yahvé' is ungrammatical.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Ὤρθριζον δὲ πρὸς Κύριον καὶ ἔκλαιον περὶ Μεμφίας τῆς Αἰγυπτίας, ὅτι σφόδρα ἀδιαλείπτως ἠνόχλει μοι. καὶ γὰρ ἐν νυκτὶ εἰσήιει πρός με λόγῳ ἐπισκέψεως.'' EN: ''And I would rise early to the Lord and weep concerning Memphis the Egyptian woman, because she troubled me greatly without ceasing; for even at night she would come in to me under a pretext of visiting.'' Spanish draft: ''Y yo madrugaba al Yahvé y lloraba por Menfis, la egipcia, porque me molestaba muchísimo, sin cesar; pues aun de noche venía a mí con pretexto de visita.'' Issue: ''al Yahvé'' is grammatically incorrect in Spanish. ''Yahvé'' as a proper name does not take the definite article. It should be ''a Yahvé'' (no article). ''Madrugaba al Yahvé'' is ungrammatical; ''madrugaba a Yahvé'' or better ''madrugaba ante Yahvé'' / ''me levantaba temprano a Yahvé''. Additionally, ''madrugaba al Yahvé'' is unusual — the idiom ὀρθρίζω πρός means to ''rise early and go to'' or ''seek early''. ''Me levantaba
+    temprano a Yahvé'' or ''madrugaba ante Yahvé'' would be correct.'
+  spanish_quality_summary: 'The use of ''al Yahvé'' (definite article before a proper name) is grammatically incorrect in Spanish. Yahvé is a proper name and does not take the article. The rest is well-rendered: ''lloraba por Menfis, la egipcia'', ''porque me molestaba muchísimo, sin cesar'', ''pues aun de noche venía a mí con pretexto de visita'' — all faithful.'
+  glossary_alignment: The draft chose 'Yahvé' for κύριον based on POB policy for the divine name. This is a defensible policy choice for this verse. The grammatical error is the article 'al' before 'Yahvé'.
+  issues:
+  - severity: medium
+    issue: '''al Yahvé'' is grammatically incorrect — proper names do not take the definite article in Spanish.'
+    rationale: '''Yahvé'' is a proper name. ''Al'' = ''a el'' (contraction of preposition + definite article). Proper names in Spanish do not take the definite article. Should be ''a Yahvé'' or ''ante Yahvé''. ''Madrugaba a Yahvé'' is idiomatic (cf. ''madrugar a/ante alguien'').'
+  revised_spanish_text: Y yo madrugaba a Yahvé y lloraba por Menfis, la egipcia, porque me molestaba muchísimo, sin cesar; pues aun de noche venía a mí con pretexto de visita.
+  revision_rationale: Corrected 'al Yahvé' to 'a Yahvé'. Proper names in Spanish do not take the definite article; 'al' (a+el contraction) before 'Yahvé' is ungrammatical.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 63ecf9fca19b306eeaf7d148ea0e5e1528338ad783aaff650a0dcdf1f7e8d54a
+  timestamp: '2026-05-08T06:29:30Z'
+  output_hash: 63ecf9fca19b306eeaf7d148ea0e5e1528338ad783aaff650a0dcdf1f7e8d54a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

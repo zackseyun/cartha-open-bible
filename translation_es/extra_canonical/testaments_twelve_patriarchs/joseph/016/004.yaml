@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'pay it' to 'pay them' to better reflect the plural verb 'they ask' and the implied amount requested, while keeping the rest of the translation accurate and natural.
 translation:
   language: es
-  text: 'Entonces ella envió a otro eunuco, diciendo: «Aunque pidan dos minas, páguenlas. No escatimen el oro. Solo compre al muchacho y tráigamelo».'
+  text: 'Entonces ella envió a otro eunuco, diciendo: «Aunque pidan dos minas, págalo. No escatimes el oro. Solo compra al muchacho y tráemelo».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀπέστειλεν
@@ -121,4 +121,39 @@ ai_draft:
     total_tokens: 2892
     reasoning_tokens: 0
     estimated_cost_usd: 0.006422
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Entonces ella envió a otro eunuco, diciendo: «Aunque pidan dos minas, páguenlas. No escatimen el oro. Solo compre al muchacho y tráigamelo».'
+  to: 'Entonces ella envió a otro eunuco, diciendo: «Aunque pidan dos minas, págalo. No escatimes el oro. Solo compra al muchacho y tráemelo».'
+  rationale: Normalized imperatives to singular ('págalo', 'No escatimes', 'compra', 'tráemelo') to match the single-addressee context (one eunuch) and for internal consistency with the chapter-level ES which already uses singular for the same commands.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:50Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek uses plural imperatives for the commands to the eunuch (παρέχετε, μὴ φείσασθε — both plural; πριασάμενος...ἄγαγε are aorist participle + aorist imperative addressed to the single eunuch). The EN POB correctly renders ''pay them / Do not spare the gold / Only buy the boy and bring him to me'' using singular or plural as appropriate. The ES draft inconsistently mixes: ''páguenlas'' (plural, correct for παρέχετε), but then ''No escatimen'' (plural, OK for φείσασθε) and ''Solo compre...tráigamelo'' (singular subjunctive, directed to the single eunuch for ἄγαγε). The mix is grammatically defensible but internally inconsistent — the speech is addressed to a single eunuch (v.4 opens ''another eunuch''), so the imperatives should be uniformly singular. Using plural throughout for a single addressee is a medium-severity issue.'
+  spanish_quality_summary: Mostly natural. The internal inconsistency in person of imperatives (plural 'páguenlas/escatimen' then singular 'compre/tráigamelo') needs to be resolved. Since the speech is addressed to the one new eunuch, singular commands throughout are more accurate.
+  glossary_alignment: μνᾶς→'minas' (transliteration, correct). εὐνοῦχος→'eunuco' (consistent). παῖς→'el muchacho' (consistent). No θεός, YHWH, δοῦλος, or πνεῦμα. Compliant.
+  issues:
+  - severity: medium
+    issue: Los imperativos de Memphis al eunuco mezclan plural ('páguenlas', 'No escatimen') con singular ('compre', 'tráigamelo'). La destinataria del discurso es un único eunuco (v.4 introduce 'otro eunuco'); los mandatos deberían ser uniformemente en singular.
+    rationale: En el griego el plural παρέχετε puede ser un plural retórico o textual, pero dado que el discurso se dirige a un solo emisario, el singular ('págalo', 'No escatimes el oro', 'compra al muchacho y tráemelo') es más coherente y sigue el registro del capítulo-nivel ES que ya usa singular para estas mismas instrucciones.
+  revised_spanish_text: 'Entonces ella envió a otro eunuco, diciendo: «Aunque pidan dos minas, págalo. No escatimes el oro. Solo compra al muchacho y tráemelo».'
+  revision_rationale: Normalized imperatives to singular ('págalo', 'No escatimes', 'compra', 'tráemelo') to match the single-addressee context (one eunuch) and for internal consistency with the chapter-level ES which already uses singular for the same commands.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7483f6c51680a48f514d1271b026373dd84ad27d08d2de1b80e515b887a55ba3
+  timestamp: '2026-05-08T06:36:50Z'
+  output_hash: 7483f6c51680a48f514d1271b026373dd84ad27d08d2de1b80e515b887a55ba3
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

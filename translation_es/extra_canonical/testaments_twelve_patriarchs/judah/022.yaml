@@ -39,7 +39,7 @@ base_translation:
     changes_summary: Changed 'upon them' to 'among them' for more natural rendering of the reciprocal sense, and 'to its end' to 'to an end' for more idiomatic English while preserving the meaning.
 translation:
   language: es
-  text: El Señor traerá divisiones entre ellos, unos contra otros[a], y habrá guerras continuas en Israel. Y mi reino será llevado a su fin entre extranjeros, hasta que venga la salvación de Israel[b][c],
+  text: Yahvé traerá divisiones entre ellos, unos contra otros[a], y habrá guerras continuas en Israel. Y mi reino será llevado a su fin entre extranjeros, hasta que venga la salvación de Israel[b][c],
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -166,4 +166,49 @@ ai_draft:
     total_tokens: 4522
     reasoning_tokens: 0
     estimated_cost_usd: 0.0089
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: El Señor traerá divisiones entre ellos, unos contra otros[a], y habrá guerras continuas en Israel. Y mi reino será llevado a su fin entre extranjeros, hasta que venga la salvación de Israel[b][c],
+  to: Yahvé traerá divisiones entre ellos, unos contra otros[a], y habrá guerras continuas en Israel. Y mi reino será llevado a su fin entre extranjeros, hasta que venga la salvación de Israel[b][c],
+  rationale: Changed 'El Señor' to 'Yahvé' in v.1 to match the project policy and the per-verse file. Kept all other content unchanged.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter 22 EN covers three verses: v.1 (divisions/wars), v.2 (kingdom among foreigners until salvation comes), and then (from the full Greek) v.2 continued with the coming of the God of righteousness, Jacob at peace, and he will preserve the might of my kingdom forever. The chapter ES text includes all of these. Key issue: The chapter ES uses ''El Señor traerá divisiones'' (v.1) while the per-verse ES correctly uses ''Yahvé''. The footnote markers in the chapter ES are [a],[b],[c] in the text body. Let me verify: text has ''...unos contra otros[a]'' and ''...salvación de Israel[b][c]''. The footnotes array has markers a, b, c. That matches. However the ''El Señor'' vs ''Yahvé'' inconsistency needs fixing.'
+  spanish_quality_summary: The chapter translation is well-constructed and faithful. The main issue is 'El Señor' for Κύριος in v.1 when the project policy and per-verse file use 'Yahvé'.
+  glossary_alignment: Κύριος→Yahvé required but chapter uses 'El Señor' in the main text body.
+  issues:
+  - severity: medium
+    issue: '''El Señor'' used for Κύριος in v.1 when project policy requires ''Yahvé'''
+    rationale: The per-verse file 022/001.yaml correctly uses 'Yahvé'; the chapter-level file should be consistent.
+  revised_spanish_text: Yahvé traerá divisiones entre ellos, unos contra otros[a], y habrá guerras continuas en Israel. Y mi reino será llevado a su fin entre extranjeros, hasta que venga la salvación de Israel[b][c],
+  revised_footnotes:
+  - marker: a
+    text: O «guerras constantes».
+    reason: lexical_alternative
+  - marker: b
+    text: O «la liberación de Israel».
+    reason: alternative_reading
+  - marker: c
+    text: O «el salvador de Israel»; la frase puede tener resonancia mesiánica sin nombrar explícitamente a una persona.
+    reason: theological_note
+  revision_rationale: Changed 'El Señor' to 'Yahvé' in v.1 to match the project policy and the per-verse file. Kept all other content unchanged.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5d54a41ff1b4b4356dd1c7413b357bf0b3530d2291aad178e79adfbb5ef72ee6
+  timestamp: '2026-05-08T06:37:43Z'
+  output_hash: 5d54a41ff1b4b4356dd1c7413b357bf0b3530d2291aad178e79adfbb5ef72ee6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

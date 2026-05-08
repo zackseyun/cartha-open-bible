@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y siembran cosas buenas en sus almas, y las encontrarán en su vida. Pero si siembran cosas malas, segarán toda turbación y aflicción.
+  text: Y siembren cosas buenas en sus almas, y las encontrarán en su vida. Pero si siembran cosas malas, segarán toda turbación y aflicción.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: σπείρατε / σπείρητε
@@ -121,4 +121,39 @@ ai_draft:
     total_tokens: 2799
     reasoning_tokens: 0
     estimated_cost_usd: 0.006839
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y siembran cosas buenas en sus almas, y las encontrarán en su vida. Pero si siembran cosas malas, segarán toda turbación y aflicción.
+  to: Y siembren cosas buenas en sus almas, y las encontrarán en su vida. Pero si siembran cosas malas, segarán toda turbación y aflicción.
+  rationale: Changed 'siembran' (indicative) to 'siembren' (imperative) in the first clause to correctly render σπείρατε as the command it is. The conditional 'si siembran' in the second clause is correct as-is.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek σπείρατε (aorist imperative, 'sow!') opens the verse as a command; εὑρήσετε ('you will find') is a future indicative; σπείρητε is an aorist subjunctive in a conditional clause. The imperatives require imperative mood in translation.
+  spanish_quality_summary: 'The translation ''Y siembran cosas buenas en sus almas, y las encontrarán en su vida'' uses present indicative ''siembran'' instead of the required imperative ''siembren'' for σπείρατε. This is a mood mismatch: the Greek opens with an imperative command, but the Spanish reads as an indicative statement of fact. The second clause with ''si siembran'' for the conditional is acceptable.'
+  glossary_alignment: No divine names. No glossary items triggered.
+  issues:
+  - severity: high
+    issue: 'Mood mismatch: ''siembran'' (present indicative) used for σπείρατε (aorist imperative). The verse opens with a command ''Sow good things'', not a statement ''You sow good things''.'
+    rationale: The aorist imperative σπείρατε is a directive, parallel to the other imperatives in chapter 13 ('fear', 'walk', 'do righteousness', 'sow'). Using indicative mood changes the force from command to description.
+  revised_spanish_text: Y siembren cosas buenas en sus almas, y las encontrarán en su vida. Pero si siembran cosas malas, segarán toda turbación y aflicción.
+  revision_rationale: Changed 'siembran' (indicative) to 'siembren' (imperative) in the first clause to correctly render σπείρατε as the command it is. The conditional 'si siembran' in the second clause is correct as-is.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 789d0afa4d38629f367a337c9d403b87d54b558859ab5aaa2b8ddedb35cc34e8
+  timestamp: '2026-05-08T06:48:08Z'
+  output_hash: 789d0afa4d38629f367a337c9d403b87d54b558859ab5aaa2b8ddedb35cc34e8
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

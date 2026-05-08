@@ -296,4 +296,43 @@ ai_draft:
     total_tokens: 7897
     reasoning_tokens: 0
     estimated_cost_usd: 0.018091
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Chapter-level text covers Greek vv.1-8 in full. The Spanish accurately follows the English POB for nearly all hunting exploits. One significant issue: σκοτίσας rendered as ''lo dejé ciego'' (following the per-verse revision choosing ''blinded it''), but the chapter-level EN draft still says ''struck it blind''. More importantly, the footnote [c] in Spanish reads about ''cuernos sin posesivo'' (note about possessive on horns), but the EN footnote [c] is about ''wild bull vs wild ox''. This is a marker mismatch in substance: the Spanish footnote [c] text is entirely different from what [c] should say per the EN audit trail.'
+  spanish_quality_summary: 'The main text is fluent and accurate throughout. The problem is in footnote [c]: the EN footnote [c] reads ''Some readers may prefer wild bull instead of wild ox. The Greek can support either, and the image is of a powerful untamed bovine.'' The Spanish footnote [c] instead discusses whether to use a possessive with ''cuernos'' — this is a different footnote entirely substituted for the actual content. Footnotes [a] and [b] are accurately translated from EN.'
+  glossary_alignment: 'Κύριος → Yahvé: correctly applied. No Χριστός, δοῦλος, or πνεῦμα present.'
+  issues:
+  - severity: medium
+    issue: Footnote [c] content does not correspond to the EN POB footnote [c]. EN footnote [c] is about 'wild bull vs wild ox' lexical alternative. The Spanish footnote [c] instead discusses the possessive on 'cuernos', which is not a footnote in the EN POB at all.
+    rationale: Footnote text must faithfully translate the EN footnote content. The Spanish has substituted a different explanatory note not present in the EN audit trail.
+  revised_spanish_text: Y Yahvé me concedió favor en todas mis obras[a], en el campo y en la casa. Sé que corrí con una cierva y la capturé, y la hice comida para mi padre, y él comió. Y solía apresar a la gacela en su carrera, y alcanzaba todo lo que estaba en los campos. Maté al león y arranqué un cabrito de su boca. Tomé al oso por la pata y lo arrojé por el precipicio, y quedó aplastado. Corrí tras el jabalí, y lo alcancé mientras corría y lo hice pedazos. Atrapé una yegua salvaje y, después de sujetarla, la dominé. Un leopardo en Hebrón se abalanzó sobre el perro, y lo agarré por la cola y lo lancé contra la roca, y se partió en dos. Encontré un buey salvaje pastando en la tierra, y, tomando sus cuernos[c][b], lo sacudí de un lado a otro y lo dejé ciego.
+  revised_footnotes:
+  - marker: a
+    text: El texto griego de este capítulo es áspero en varios lugares, especialmente en la secuencia de hazañas de caza. La traducción sigue el sentido del testimonio griego conservado sin pulir su estilo abrupto.
+    reason: textual_variant
+  - marker: b
+    text: O «gracia» en lugar de «favor» en la primera línea; el contexto aquí favorece el éxito otorgado por la benevolencia divina en las obras de Judá.
+    reason: lexical_alternative
+  - marker: c
+    text: Algunos lectores pueden preferir «toro salvaje» en lugar de «buey salvaje». El griego puede sostener ambas ideas, y la imagen es la de un bovino poderoso e indómito.
+    reason: lexical_alternative
+  revision_rationale: Footnote [c] replaced with faithful translation of EN POB footnote [c] about 'wild bull vs wild ox'. Footnote [b] also corrected to faithfully translate the EN POB footnote [b] about 'grace vs favor'. Main text unchanged.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 96a3d368457e61ffdf966d5eee1b5758e292b65b1dcf2e493d0371bb82aa83d5
+  timestamp: '2026-05-08T06:35:31Z'
+  output_hash: 96a3d368457e61ffdf966d5eee1b5758e292b65b1dcf2e493d0371bb82aa83d5
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

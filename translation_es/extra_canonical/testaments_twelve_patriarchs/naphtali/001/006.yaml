@@ -19,12 +19,8 @@ base_translation:
     changes_summary: Changed 'upon Rachel’s knees' to 'on Rachel’s knees' for more natural formal English. The rest of the draft accurately reflects the Greek and is complete.
 translation:
   language: es
-  text: Yo nací de Bilha, porque Raquel actuó con astucia y dio a Bilha a Jacob en su lugar; y Bilha concibió y me dio a luz sobre las rodillas de Raquel, y por eso llamó mi nombre [a]Neftalí[a].
+  text: Yo nací de Bilha, porque Raquel actuó con astucia y dio a Bilha a Jacob en su lugar; y Bilha concibió y me dio a luz sobre las rodillas de Raquel, y por eso llamó mi nombre Neftalí.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Se conserva la fórmula semítica de nombramiento «llamó mi nombre».
-    reason: spanish_style_note
 lexical_decisions:
 - source_word: ἐγεννήθην ἀπὸ Βάλλας
   english_pob_choice: I was born from Bilhah
@@ -116,4 +112,39 @@ ai_draft:
     total_tokens: 3094
     reasoning_tokens: 0
     estimated_cost_usd: 0.006551
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo nací de Bilha, porque Raquel actuó con astucia y dio a Bilha a Jacob en su lugar; y Bilha concibió y me dio a luz sobre las rodillas de Raquel, y por eso llamó mi nombre [a]Neftalí[a].
+  to: Yo nací de Bilha, porque Raquel actuó con astucia y dio a Bilha a Jacob en su lugar; y Bilha concibió y me dio a luz sobre las rodillas de Raquel, y por eso llamó mi nombre Neftalí.
+  rationale: Removed the malformed [a] markers surrounding 'Neftalí'. The EN verse has no footnotes; the style note about the Semitic naming formula is not a textual variant and does not require a footnote marker in the main text.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The ES text has a malformed footnote marker: ''y por eso llamó mi nombre [a]Neftalí[a].'' — The [a] markers are wrapping the name ''Neftalí'' rather than appearing after the word as a superscript reference. Correct form would be ''y por eso llamó mi nombre Neftalí[a].'' or simply removing the footnote since the EN per-verse has no footnotes and the note content is a style observation not a textual variant. The EN verse has no footnotes; this is an unsolicited addition.'
+  spanish_quality_summary: 'Otherwise the translation is accurate: ''Yo nací de Bilha, porque Raquel actuó con astucia y dio a Bilha a Jacob en su lugar; y Bilha concibió y me dio a luz sobre las rodillas de Raquel, y por eso llamó mi nombre Neftalí.'' is correct. The footnote markup is malformed.'
+  glossary_alignment: No divine name. 'astucia' for πανουργίᾳ correct. No other glossary terms.
+  issues:
+  - severity: high
+    issue: Footnote marker [a] wraps the proper name 'Neftalí' as '[a]Neftalí[a]' rather than appearing as a superscript after the word. This is malformed markup that would display incorrectly in the reader.
+    rationale: Footnote markers should follow the word they annotate, not surround it. The EN verse has no footnotes; this note adds no textual information.
+  revised_spanish_text: Yo nací de Bilha, porque Raquel actuó con astucia y dio a Bilha a Jacob en su lugar; y Bilha concibió y me dio a luz sobre las rodillas de Raquel, y por eso llamó mi nombre Neftalí.
+  revision_rationale: Removed the malformed [a] markers surrounding 'Neftalí'. The EN verse has no footnotes; the style note about the Semitic naming formula is not a textual variant and does not require a footnote marker in the main text.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 77127d78aece91e01a03ab073990131b39e7353f3ee2ee8ebc957eb5c218d132
+  timestamp: '2026-05-08T06:47:45Z'
+  output_hash: 77127d78aece91e01a03ab073990131b39e7353f3ee2ee8ebc957eb5c218d132
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

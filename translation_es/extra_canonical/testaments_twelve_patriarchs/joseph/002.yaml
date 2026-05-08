@@ -285,4 +285,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The chapter-level Spanish translation accurately covers all seven verses of the Greek chapter. Key renderings checked against source: ἀρχιμάγειρος → ''jefe de cocineros'' (following EN lexical decision); ἠγωνισάμην → ''luché''; ἐρρύσατό με ἐκ φλογὸς καιομένης → ''me rescató de una llama ardiente'' (metaphor preserved); Κύριος → ''Señor'' (consistent); οἰκτιρμοὺς → ''favor'' (following EN revision); φοβουμένους → ''los que le temen''; negation chain for vv.4-5 with ''ni…ni''; προΐσταται → ''toma la delantera''; παρακαλεῖ → ''alienta''. Footnotes [a][b][c] are present in text and match the footnotes array.'
+  spanish_quality_summary: The Spanish reads fluently in neutral Latin-American register. The chapter-level text is internally consistent. Footnote markers in the text ([a], [b], [c]) match the three footnotes defined. No dangling markers.
+  glossary_alignment: θεός → 'Dios' (correct). κύριος → 'Señor' (correct, consistent). No YHWH issue in this chapter. δοῦλος not present. πνεῦμα not present. Mesías not applicable.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: ed61d9936f24368669c52d6fd85f01963f90564fc87fe6f7f648bc04c385a1c4
+  timestamp: '2026-05-08T06:27:56Z'
+  output_hash: ed61d9936f24368669c52d6fd85f01963f90564fc87fe6f7f648bc04c385a1c4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

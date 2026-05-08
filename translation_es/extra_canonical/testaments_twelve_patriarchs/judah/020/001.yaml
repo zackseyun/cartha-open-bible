@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'it makes' to 'it causes' for smoother formal English, and rendered ἔκστασιν more closely as 'ecstasy' rather than 'frenzy'.
 translation:
   language: es
-  text: Porque lo desvía, pues en la ilusión de la plata llaman dioses a los que no son dioses, y hace que el que la posee caiga en éxtasis.
+  text: Porque lo desvía, pues en el engaño de la plata llaman dioses a los que no son dioses, y hace que el que la posee caiga en éxtasis.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὁδηγεῖ
@@ -96,4 +96,39 @@ ai_draft:
     total_tokens: 2709
     reasoning_tokens: 0
     estimated_cost_usd: 0.005699
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque lo desvía, pues en la ilusión de la plata llaman dioses a los que no son dioses, y hace que el que la posee caiga en éxtasis.
+  to: Porque lo desvía, pues en el engaño de la plata llaman dioses a los que no son dioses, y hace que el que la posee caiga en éxtasis.
+  rationale: Changed 'en la ilusión de la plata' to 'en el engaño de la plata' to match the moral deception force of πλάνη and the EN 'delusion' choice.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The ES draft follows the revised EN text accurately. The ἔκστασιν → éxtasis choice follows the EN revision pass. However, 'en la ilusión de la plata' for ἐν πλάνῃ ἀργυρίου is slightly weak; πλάνη primarily means 'delusion/error/leading astray' and 'ilusión' in Spanish skews toward 'illusion/hope' rather than 'delusion/deception'. The EN POB chose 'delusion' for its stronger moral force.
+  spanish_quality_summary: Otherwise natural neutral Latin American Spanish. 'Hace que el que la posee caiga en éxtasis' is grammatically correct and follows EN.
+  glossary_alignment: No specific POB glossary items triggered here.
+  issues:
+  - severity: medium
+    issue: '''en la ilusión de la plata'' — ''ilusión'' in Spanish commonly means ''hope'' or ''illusion'' (pleasant fantasy), not ''delusion'' (harmful deception/leading astray). πλάνη means error/wandering/deception. Better: ''en el engaño de la plata'' or ''en el extravío de la plata''.'
+    rationale: The EN chose 'delusion' to convey moral misdirection. 'Ilusión' misleads the Spanish reader toward a positive or neutral sense.
+  revised_spanish_text: Porque lo desvía, pues en el engaño de la plata llaman dioses a los que no son dioses, y hace que el que la posee caiga en éxtasis.
+  revision_rationale: Changed 'en la ilusión de la plata' to 'en el engaño de la plata' to match the moral deception force of πλάνη and the EN 'delusion' choice.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 42845c8a4210dd1a262d92e5dcd564e43258b62d8852d91061f5b1516d497831
+  timestamp: '2026-05-08T06:36:10Z'
+  output_hash: 42845c8a4210dd1a262d92e5dcd564e43258b62d8852d91061f5b1516d497831
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y yo estaba entristecido por la raza de los hijos de los hombres, y supliqué al Señor para que yo fuera salvo.
+  text: Y yo estaba entristecido por el linaje de los hijos de los hombres, y oré al Señor para que yo fuera salvo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἤμην λυπούμενος
@@ -95,4 +95,42 @@ ai_draft:
     total_tokens: 2482
     reasoning_tokens: 0
     estimated_cost_usd: 0.005326
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y yo estaba entristecido por la raza de los hijos de los hombres, y supliqué al Señor para que yo fuera salvo.
+  to: Y yo estaba entristecido por el linaje de los hijos de los hombres, y oré al Señor para que yo fuera salvo.
+  rationale: Changed 'supliqué' to 'oré' to match Greek ηὐξάμην (εὔχομαι = to pray/vow) and the EN 'prayed'. Changed 'la raza' to 'el linaje' to avoid modern racial connotations while preserving the solemn Semitic register of γένος, consistent with the chapter-level translation.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek ηὐξάμην (prayed/supplicated) rendered as 'supliqué' (I besought/implored) — slightly more intense than the EN 'prayed'. γένους τῶν υἱῶν τῶν ἀνθρώπων as 'la raza de los hijos de los hombres' — 'raza' is technically accurate but carries modern ethnic connotations in Spanish; 'el linaje' is safer. κύριος = 'el Señor' with documented justification for not using Yahvé here — acceptable per project policy for this Greek-transmitted text.
+  spanish_quality_summary: Text is fluent but 'supliqué' overstates the Greek ηὐξάμην which means simply to pray/vow. 'La raza de los hijos de los hombres' is defensible but 'linaje' avoids modern racial connotations. 'para que yo fuera salvo' is good.
+  glossary_alignment: Κύριος = 'el Señor' — justified per theological decision note for this pseudepigraphal text. σῴζω → 'salvo' appropriate.
+  issues:
+  - severity: low
+    issue: ηὐξάμην rendered 'supliqué' (I besought) rather than the EN 'I prayed'; the Greek verb denotes prayer/vow not urgent supplication.
+    rationale: ηὐξάμην from εὔχομαι means to pray or vow, not the more intense supplicatory sense of δέομαι/ἱκετεύω. 'Oré' matches the EN and Greek better.
+  - severity: low
+    issue: '''La raza de los hijos de los hombres'' — ''raza'' carries potential modern racial connotations in Spanish.'
+    rationale: γένος here means lineage/stock/race in the ancient sense. 'El linaje' is the safer, more neutral Spanish equivalent used in the chapter-level draft (levi/002.yaml) for the same phrase.
+  revised_spanish_text: Y yo estaba entristecido por el linaje de los hijos de los hombres, y oré al Señor para que yo fuera salvo.
+  revision_rationale: Changed 'supliqué' to 'oré' to match Greek ηὐξάμην (εὔχομαι = to pray/vow) and the EN 'prayed'. Changed 'la raza' to 'el linaje' to avoid modern racial connotations while preserving the solemn Semitic register of γένος, consistent with the chapter-level translation.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 82997463528d75538fa6bb6d6e12219c095eb933d83a1ae7ed51dcf0a0cdd075
+  timestamp: '2026-05-08T06:37:21Z'
+  output_hash: 82997463528d75538fa6bb6d6e12219c095eb933d83a1ae7ed51dcf0a0cdd075
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

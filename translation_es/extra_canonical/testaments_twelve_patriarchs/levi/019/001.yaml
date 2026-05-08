@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y ahora, hijos míos, todo lo habéis oído. Escoged para vosotros mismos o la luz o la oscuridad, o la ley del Señor o las obras de Beliar.
+  text: Y ahora, hijos míos, todo lo habéis oído. Escoged para vosotros mismos o la luz o la oscuridad, o la ley de Yahvé o las obras de Beliar.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: τέκνα μου
@@ -128,4 +128,39 @@ ai_draft:
     total_tokens: 2926
     reasoning_tokens: 0
     estimated_cost_usd: 0.007504
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y ahora, hijos míos, todo lo habéis oído. Escoged para vosotros mismos o la luz o la oscuridad, o la ley del Señor o las obras de Beliar.
+  to: Y ahora, hijos míos, todo lo habéis oído. Escoged para vosotros mismos o la luz o la oscuridad, o la ley de Yahvé o las obras de Beliar.
+  rationale: Changed 'el Señor' to 'Yahvé' to align with the project glossary (κύριος→Yahvé for divine name) and with the chapter-level ES translation that uses 'Yahvé' consistently.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The ES verse text 'Y ahora, hijos míos, todo lo habéis oído. Escoged para vosotros mismos o la luz o la oscuridad, o la ley del Señor o las obras de Beliar.' diverges from the chapter-level ES which uses 'Yahvé' consistently. The verse-level ES uses 'el Señor' for κύριος instead of 'Yahvé'—the chapter-level ES correctly uses 'Yahvé'. The verse-level translator's rationale acknowledges this tension but sides with 'Señor', which is inconsistent with the project's glossary standard.
+  spanish_quality_summary: The vosotros register is consistent with the rest of the chapter. 'Elegid'/'Escoged' is a minor stylistic difference; 'Escoged' is acceptable. Main issue is 'el Señor' vs 'Yahvé' for κύριος, which creates inconsistency with the chapter-level translation.
+  glossary_alignment: 'Glossary policy: YHWH→Yahvé applies even in Greek texts when κύριος stands for the divine name. Chapter-level ES uses ''Yahvé'' consistently. This verse-level ES breaks that consistency by using ''el Señor''. Beliar correctly preserved.'
+  issues:
+  - severity: medium
+    issue: '''el Señor'' used for κύριος where the chapter-level Spanish (T12P.LEV.19) uses ''Yahvé''. The project policy is YHWH/κύριος→Yahvé for divine name references.'
+    rationale: Inconsistency within the same chapter and project-wide glossary policy violation.
+  revised_spanish_text: Y ahora, hijos míos, todo lo habéis oído. Escoged para vosotros mismos o la luz o la oscuridad, o la ley de Yahvé o las obras de Beliar.
+  revision_rationale: Changed 'el Señor' to 'Yahvé' to align with the project glossary (κύριος→Yahvé for divine name) and with the chapter-level ES translation that uses 'Yahvé' consistently.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: be5a2a652d00990b6d4c8804c1a9629f7cc0ede3af9e8621dd468b708fb6dda4
+  timestamp: '2026-05-08T06:46:33Z'
+  output_hash: be5a2a652d00990b6d4c8804c1a9629f7cc0ede3af9e8621dd468b708fb6dda4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

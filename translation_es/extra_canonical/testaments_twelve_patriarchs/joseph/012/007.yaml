@@ -86,4 +86,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: ES renders ὁ Θεὸς→Dios, ἐν χειρί μου→por mi mano, ἐπλήθυνεν→lo multiplicó, χρυσίῳ καὶ ἀργυρίῳ→oro y plata, ἔργῳ→bienes[a]. Footnote [a] notes the OCR difficulty, matching the EN revision from 'work' to 'goods'. Marker [a] present in text and defined in array.
+  spanish_quality_summary: Smooth neutral Latin-American Spanish. Footnote marker [a] correctly placed and defined. Biblical instrumental idiom 'por mi mano' appropriate.
+  glossary_alignment: ὁ Θεὸς→Dios correct. Κύριος not present in this verse (distinguished from v.6 per POB theological decision).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 67cea14e10c24ee333ba97e290b852aedf26f1a128948ae045c8149cb94a047b
+  timestamp: '2026-05-08T06:29:20Z'
+  output_hash: 67cea14e10c24ee333ba97e290b852aedf26f1a128948ae045c8149cb94a047b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

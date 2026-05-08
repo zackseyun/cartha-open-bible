@@ -149,4 +149,27 @@ ai_draft:
     estimated_cost_usd: 0.208705
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Greek source accurately rendered. πονηρά (†-marked) → 'malvada' with textual uncertainty noted in fn [a]. ἀπέρχεται → 'se aparta' (departure/separation sense). βασανίζεται → 'es atormentada' (intense torment, passive preserved). τοῦ πονηροῦ πνεύματος → 'el espíritu maligno' (personal spiritual entity, lowercase per project defaults). ἐδούλευεν → 'esclavizó' (follows approved EN POB revision from 'served' to 'enslaved'). ἐπιθυμίαις → 'deseos' (not 'concupiscencias'; accessible, pejoration from context). ἔργοις πονηροῖς → 'obras perversas' (πονηροῖς qualifies only ἔργοις, not ἐπιθυμίαις—grammatical accuracy preserved). The grammatical tension of ἐδούλευεν (normally intransitive) is documented in fn [b]. All three markers [a][b][c] present in text with matching footnotes.
+  spanish_quality_summary: Well-executed with careful attention to the textual difficulties (†, grammatical tension of ἐδούλευεν). The distinction between 'malvada' (ψυχή) and 'perversas' (ἔργα) is stylistically elegant and grammatically faithful. Footnote [b] is admirably transparent about the cross-check low-agreement (0.55) and the underlying syntactic ambiguity. Natural, fluent Spanish.
+  glossary_alignment: 'πνεῦμα πονηρόν → ''espíritu maligno'' (lowercase, personal entity): correct. No YHWH/Κύριος/Χριστός/δοῦλος issues.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2a1cbeac26f98ba229f0dd7724e7962124b5f8d1f0cb00495c85e0ad1e3e013f
+  timestamp: '2026-05-08T06:29:06Z'
+  output_hash: 2a1cbeac26f98ba229f0dd7724e7962124b5f8d1f0cb00495c85e0ad1e3e013f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -240,4 +240,31 @@ ai_draft:
     total_tokens: 8123
     reasoning_tokens: 0
     estimated_cost_usd: 0.013705
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Chapter-level file covering verses 1-7. All content faithfully rendered. Key choices: Ἀντίγραφον λόγων → ''Copia de las palabras'', διέθετο → ''les dejó'', ἐν τῷ ἑκατοστῷ τετάρτῳ → ''en el año ciento catorce'', μετὰ δύο ἔτη τοῦ θανάτου Ἰωσήφ → ''dos años después de la muerte de José''. Note: ''Zabulón'' used consistently (vs ''Zebulún'' in per-verse files) — both are acceptable Spanish forms, this is a project-level consistency matter, not a translation error. Footnote [a] in text and footnotes array correctly.'
+  spanish_quality_summary: Seven-verse chapter flows well. Narrative and testamentary registers balanced.
+  glossary_alignment: No YHWH, Χριστός, δοῦλος. πνεύματα πονηρίας → 'espíritus de maldad/iniquidad' in the chapter content is appropriate.
+  issues:
+  - severity: low
+    issue: 'Name form inconsistency: chapter-level ES uses ''Zabulón'' throughout while per-verse ES files use ''Zebulún''. Both are valid Spanish transliterations but internal consistency is desirable.'
+    rationale: This is a project-level normalization concern, not a content or source-alignment error. The translation is otherwise sound.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d514d1bd1dd0dcd88a7c084fb83116e34de1c57c59ac3eec76b2229cc84f8491
+  timestamp: '2026-05-08T06:47:45Z'
+  output_hash: d514d1bd1dd0dcd88a7c084fb83116e34de1c57c59ac3eec76b2229cc84f8491
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

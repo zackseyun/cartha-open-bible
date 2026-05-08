@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the bracketed footnote marker from the main text, and tightened the wording for closer alignment with the Greek while preserving the meaning of both clauses.
 translation:
   language: es
-  text: La primera es el espíritu de vida, con el cual se forma la constitución. La segunda es el espíritu de la vista, con el cual surge el deseo.
+  text: El primero es el espíritu de vida, con el cual se forma la constitución. El segundo es el espíritu de la vista, con el cual surge el deseo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Πρῶτον πνεῦμα ζωῆς
@@ -97,4 +97,40 @@ ai_draft:
     total_tokens: 2783
     reasoning_tokens: 0
     estimated_cost_usd: 0.006044
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: La primera es el espíritu de vida, con el cual se forma la constitución. La segunda es el espíritu de la vista, con el cual surge el deseo.
+  to: El primero es el espíritu de vida, con el cual se forma la constitución. El segundo es el espíritu de la vista, con el cual surge el deseo.
+  rationale: 'Changed ''La primera / La segunda'' to ''El primero / El segundo'' to agree in gender with ''espíritu'' (masculine), consistent with the parallel enumeration in the surrounding context (vv. 3, 5, 6, 8 all use masculine ordinals: El tercero, El cuarto, etc.).'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:13Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: First spirit of life (σύστασις formed), Second spirit of sight (desire arises). EN: ''The first is the spirit of life, with which the constitution is formed. The second is the spirit of sight, with which desire arises.'' ES: ''La primera es el espíritu de vida, con el cual se forma la constitución. La segunda es el espíritu de la vista, con el cual surge el deseo.'' The content alignment is accurate, but there is a gender agreement issue: ''el cual'' refers back to ''el espíritu'' (masculine) in both clauses which is grammatically correct. However, ''La primera/La segunda'' (feminine) referring to an implicit unstated feminine noun while ''el espíritu'' is masculine creates mild inconsistency. More importantly, in the first clause the rendering is internally consistent. The issue is actually minor: ''La primera / La segunda'' imply a feminine antecedent (facultad? virtud?) not present in the text, while the EN uses ''The first / The second'' as neuter.
+    This is an acceptable Spanish solution. No major issue found.'
+  spanish_quality_summary: Reads naturally. The choice 'La primera / La segunda' with the following masculine 'el espíritu' is slightly mixed in gender but is a common and accepted Spanish construction. 'constitución' for σύστασις is defended. No footnotes needed.
+  glossary_alignment: πνεῦμα → espíritu (lowercase, correct for faculties/senses context).
+  issues:
+  - severity: low
+    issue: 'Minor: ''La primera es el espíritu de vida'' uses a feminine ordinal for a masculine head noun (espíritu). While this is acceptable in Spanish, ''El primero es el espíritu de vida'' would be more strictly gender-consistent.'
+    rationale: Spanish normally matches ordinal number gender to the implicit or explicit noun. 'El primero / El segundo' would better match 'espíritu' (masculine). This is a very minor stylistic point.
+  revised_spanish_text: El primero es el espíritu de vida, con el cual se forma la constitución. El segundo es el espíritu de la vista, con el cual surge el deseo.
+  revision_rationale: 'Changed ''La primera / La segunda'' to ''El primero / El segundo'' to agree in gender with ''espíritu'' (masculine), consistent with the parallel enumeration in the surrounding context (vv. 3, 5, 6, 8 all use masculine ordinals: El tercero, El cuarto, etc.).'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: eb38c659443a190168b7e2cb9c814fb95819698bb5f69f84b515b7a91bb30864
+  timestamp: '2026-05-08T06:46:13Z'
+  output_hash: eb38c659443a190168b7e2cb9c814fb95819698bb5f69f84b515b7a91bb30864
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

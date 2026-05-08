@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'on account of' to 'because of' for a more natural rendering of διὰ τὸ, while preserving the formal sense. No other changes needed.
 translation:
   language: es
-  text: Después de esto, aconsejé con mi padre y con Rubén, para que él dijera a los hijos de Emmor que no se circuncidaran, porque tuve celo por la abominación que habían cometido contra mi hermana.
+  text: Después de esto, consulté con mi padre y con Rubén, para que él dijera a los hijos de Emmor que no se circuncidaran, porque tuve celo por la abominación que habían cometido contra mi hermana.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Μετὰ δὲ τοῦτο
@@ -152,4 +152,39 @@ ai_draft:
     total_tokens: 3351
     reasoning_tokens: 0
     estimated_cost_usd: 0.008314
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Después de esto, aconsejé con mi padre y con Rubén, para que él dijera a los hijos de Emmor que no se circuncidaran, porque tuve celo por la abominación que habían cometido contra mi hermana.
+  to: Después de esto, consulté con mi padre y con Rubén, para que él dijera a los hijos de Emmor que no se circuncidaran, porque tuve celo por la abominación que habían cometido contra mi hermana.
+  rationale: Replaced 'aconsejé con' with 'consulté con' to use the correct Spanish idiom for taking counsel with someone. All other decisions retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:44:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek συνεβούλευσα means 'I took counsel / I consulted with'; the Spanish 'aconsejé con' is unnatural — 'aconsejar con' is not standard usage for deliberating together. The revised EN 'I took counsel with' should yield 'consulté con' or 'tomé consejo con'. All other choices are accurate.
+  spanish_quality_summary: Apart from 'aconsejé con', the translation is natural and accurate. 'Tuve celo' well preserves the moral-fervor sense of ἐζήλωσα.
+  glossary_alignment: No YHWH/θεός/δοῦλος terms here. 'Emmor' retained as in EN. Correct.
+  issues:
+  - severity: medium
+    issue: '''Aconsejé con mi padre y con Rubén'' is grammatically awkward; ''aconsejar con'' is non-standard for mutual consultation.'
+    rationale: Spanish idiom for συνεβούλευσα ('I took counsel with') is 'consulté con' or 'tomé consejo con', not 'aconsejé con'.
+  revised_spanish_text: Después de esto, consulté con mi padre y con Rubén, para que él dijera a los hijos de Emmor que no se circuncidaran, porque tuve celo por la abominación que habían cometido contra mi hermana.
+  revision_rationale: Replaced 'aconsejé con' with 'consulté con' to use the correct Spanish idiom for taking counsel with someone. All other decisions retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: fc793a05ef5cdb5c7986c9d91b20ed6dbc3bc612a130926f7c455637ed779d7f
+  timestamp: '2026-05-08T06:44:48Z'
+  output_hash: fc793a05ef5cdb5c7986c9d91b20ed6dbc3bc612a130926f7c455637ed779d7f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

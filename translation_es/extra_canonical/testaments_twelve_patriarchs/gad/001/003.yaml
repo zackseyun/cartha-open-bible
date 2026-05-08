@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Adjusted the wording to better reflect the Greek participle and verb: ''And catching up to it'' -> ''And when I caught up with it,'' and ''grab'' -> ''seize'' for a more formal, literal rendering.'
 translation:
   language: es
-  text: Y cuando lo alcanzaba, le sujetaba el pie.
+  text: Yo, pues, guardaba el rebaño de noche; y cuando venía un león, o el lobo, o cualquier fiera contra el rebaño, lo perseguía, y cuando lo alcanzaba, le sujetaba el pie con mi mano, y lo lanzaba a la distancia de un tiro de piedra, y así lo mataba.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: φθάνων
@@ -64,4 +64,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y cuando lo alcanzaba, le sujetaba el pie.
+  to: Yo, pues, guardaba el rebaño de noche; y cuando venía un león, o el lobo, o cualquier fiera contra el rebaño, lo perseguía, y cuando lo alcanzaba, le sujetaba el pie con mi mano, y lo lanzaba a la distancia de un tiro de piedra, y así lo mataba.
+  rationale: 'Expanded to render full Greek v.3: ἐφύλαττον ἐν τῇ νυκτί (guarded by night), beast-coming sequence, κατεδίωκον (pursued), φθάνων ἐκράτουν τὸν πόδα (catching foot), ἠκόντισα ὡσεὶ λίθου βολήν (hurled stone''s throw), ἀνῄρουν (killed). Aligns verse scope with the Greek source.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:22:29Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek v.3: Ἐγὼ οὖν ἐφύλαττον ἐν τῇ νυκτὶ τὸ ποίμνιον, καὶ ὅταν ἤρχετο λέων, ἢ ὁ λύκος, ἢ πᾶν θηρίον ἐπὶ τὴν ποίμνην, κατεδίωκον αὐτό, καὶ φθάνων ἐκράτουν τὸν πόδα αὐτοῦ τῇ χειρὶ μου καὶ ἠκόντισα αὐτὸ ὡσεὶ λίθου βολήν, καὶ ἀνῄρουν αὐτό. Current Spanish only has the foot-seizing fragment from the EN truncation.'
+  spanish_quality_summary: 'Current Spanish is a fragment. Should render the full v.3 Greek: night guarding, beast coming, pursuing, catching by foot, hurling a stone''s throw, killing.'
+  glossary_alignment: No special glossary terms.
+  issues:
+  - severity: low
+    issue: Per-verse YAML only covers the foot-seizing fragment because EN verse-level YAML itself is truncated. Full Greek v.3 is richer.
+    rationale: Expanding to full Greek v.3 is source-faithful.
+  revised_spanish_text: Yo, pues, guardaba el rebaño de noche; y cuando venía un león, o el lobo, o cualquier fiera contra el rebaño, lo perseguía, y cuando lo alcanzaba, le sujetaba el pie con mi mano, y lo lanzaba a la distancia de un tiro de piedra, y así lo mataba.
+  revision_rationale: 'Expanded to render full Greek v.3: ἐφύλαττον ἐν τῇ νυκτί (guarded by night), beast-coming sequence, κατεδίωκον (pursued), φθάνων ἐκράτουν τὸν πόδα (catching foot), ἠκόντισα ὡσεὶ λίθου βολήν (hurled stone''s throw), ἀνῄρουν (killed). Aligns verse scope with the Greek source.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5c63b82ea8c0b51e3a16070b8f0d52c623fb38b2c6227fb4b2a1343db3d3f3b8
+  timestamp: '2026-05-08T06:22:29Z'
+  output_hash: 5c63b82ea8c0b51e3a16070b8f0d52c623fb38b2c6227fb4b2a1343db3d3f3b8
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

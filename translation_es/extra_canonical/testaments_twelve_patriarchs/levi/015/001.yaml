@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Removed the bracketed verse marker from the main text and tightened the final clause to reflect the source more directly: ''among all the nations'' → ''to all the nations''.'
 translation:
   language: es
-  text: Por tanto, el templo que el Señor escogerá quedará desolado en vuestra impureza, y seréis llevados cautivos a todas las naciones.
+  text: Por tanto, el templo que el Señor escogerá quedará desolado en su impureza, y serán llevados cautivos a todas las naciones.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὁ ναός
@@ -104,4 +104,39 @@ ai_draft:
     total_tokens: 2831
     reasoning_tokens: 0
     estimated_cost_usd: 0.006061
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, el templo que el Señor escogerá quedará desolado en vuestra impureza, y seréis llevados cautivos a todas las naciones.
+  to: Por tanto, el templo que el Señor escogerá quedará desolado en su impureza, y serán llevados cautivos a todas las naciones.
+  rationale: Replaced Castilian 'vuestra' and 'seréis' with neutral Latin-American 'su' and 'serán' to match the file's declared variant.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: ναός→templo; ἐκλέξεται κύριος→el Señor escogerá; ἔρημος ἔσται→quedará desolado; ἐν τῇ ἀκαθαρσίᾳ ὑμῶν→en vuestra impureza; αἰχμάλωτοι ἔσεσθε→seréis llevados cautivos; εἰς πάντα τὰ ἔθνη→a todas las naciones. All well aligned with source. EN revision confirmed 'to all the nations' (not 'among'). The Spanish correctly uses 'a todas las naciones'. However, the text uses 'vuestra/vosotros' forms (Castilian) while the file is marked 'neutral Latin American'.
+  spanish_quality_summary: The Spanish is accurate but uses Castilian forms 'vuestra impureza' and 'seréis llevados cautivos' in a file declared as neutral Latin American. These should be 'su impureza' and 'serán llevados cautivos'.
+  glossary_alignment: Señor for κύριος is appropriate (no explicit tetragrammaton). No YHWH/esclavo/Mesías/Espíritu applies.
+  issues:
+  - severity: medium
+    issue: Castilian forms 'vuestra impureza' and 'seréis llevados cautivos' in neutral Latin-American Spanish file.
+    rationale: Neutral Latin-American Spanish uses 'su/ustedes' not 'vuestra/vosotros'. These forms create register inconsistency.
+  revised_spanish_text: Por tanto, el templo que el Señor escogerá quedará desolado en su impureza, y serán llevados cautivos a todas las naciones.
+  revision_rationale: Replaced Castilian 'vuestra' and 'seréis' with neutral Latin-American 'su' and 'serán' to match the file's declared variant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: b729d86ccee2168a91d2663a36de3569d744947c28d0e8b14663215594f441b5
+  timestamp: '2026-05-08T06:46:53Z'
+  output_hash: b729d86ccee2168a91d2663a36de3569d744947c28d0e8b14663215594f441b5
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

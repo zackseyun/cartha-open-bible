@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'And' to 'But' for δέ, and 'that too' to 'this also' to more directly reflect καὶ ταῦτα while keeping formal, natural English.
 translation:
   language: es
-  text: Pero si uno vive en autocontrol, y el Altísimo sabe que la gloria también le conviene, se la concede también a él, como también a mí.
+  text: Pero si uno vive en dominio propio y también desea la gloria, y el Altísimo sabe que le es provechoso, le concede también estas cosas, como también a mí.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: δὲ
@@ -112,4 +112,39 @@ ai_draft:
     total_tokens: 2798
     reasoning_tokens: 0
     estimated_cost_usd: 0.006208
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero si uno vive en autocontrol, y el Altísimo sabe que la gloria también le conviene, se la concede también a él, como también a mí.
+  to: Pero si uno vive en dominio propio y también desea la gloria, y el Altísimo sabe que le es provechoso, le concede también estas cosas, como también a mí.
+  rationale: 'Updated to reflect phase2 realigned EN: added ''también desea la gloria'' for θέλει καὶ δόξαν, changed ''le conviene'' to ''le es provechoso'' for συμφέρει (matching the phase2 EN ''beneficial''), and changed ''se la concede'' to ''le concede también estas cosas'' to render plural ταῦτα correctly.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:20Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'T.Jos 9:3 Greek: εἰ δὲ ἐν σωφροσύνῃ διάγων θέλει καὶ δόξαν, καὶ οἶδεν ὁ ὕψιστος ὅτι συμφέρει, παρέχει καὶ αὐτῷ καὶ ταῦτα ὡς κἀμοί. The EN per-verse file was updated in a phase2 realignment pass (2026-05-08) to: ''But if one lives in self-control and also desires glory, and the Most High knows that it is beneficial, he grants these things also to him, as also to me.'' But the ES base_translation field still shows the OLDER EN text (''glory also is fitting for him'') — the ES was drafted against the pre-phase2 English. The Greek θέλει καὶ δόξαν means ''also desires glory'' (not ''glory is fitting''), and ταῦτα (plural) means ''these things'' (not ''se la'' which refers back only to glory). The current ES ''se la concede también a él'' uses a singular pronoun (''la'') that refers back to ''la gloria'' but ταῦτα is plural — the phase2 EN corrected this to ''these things''. The ES needs to reflect the updated EN.'
+  spanish_quality_summary: 'The translation is good but was made against the pre-phase2 EN. Needs update to align with the phase2 realigned EN text: θέλει καὶ δόξαν = ''también desea la gloria'', and ταῦτα = ''estas cosas'' (plural).'
+  glossary_alignment: ὁ ὕψιστος → 'el Altísimo' correct. No YHWH, Χριστός, δοῦλος, πνεῦμα.
+  issues:
+  - severity: medium
+    issue: ES drafted against pre-phase2 EN; θέλει καὶ δόξαν and ταῦτα not correctly reflected
+    rationale: Phase2 realignment changed EN to include 'also desires glory' (θέλει) and 'these things' (ταῦτα plural). Current ES 'se la concede' uses singular feminine referring only to gloria, missing the plural ταῦτα.
+  revised_spanish_text: Pero si uno vive en dominio propio y también desea la gloria, y el Altísimo sabe que le es provechoso, le concede también estas cosas, como también a mí.
+  revision_rationale: 'Updated to reflect phase2 realigned EN: added ''también desea la gloria'' for θέλει καὶ δόξαν, changed ''le conviene'' to ''le es provechoso'' for συμφέρει (matching the phase2 EN ''beneficial''), and changed ''se la concede'' to ''le concede también estas cosas'' to render plural ταῦτα correctly.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e76df38b882a964416f85ec0e3b01349576ee3ca0dae2bad70326067df36311f
+  timestamp: '2026-05-08T06:29:20Z'
+  output_hash: e76df38b882a964416f85ec0e3b01349576ee3ca0dae2bad70326067df36311f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

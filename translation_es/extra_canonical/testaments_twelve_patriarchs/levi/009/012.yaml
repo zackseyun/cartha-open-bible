@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted the opening to better reflect the source's exhortative wording and removed the unnecessary 'And'; retained the Lord reference and Abraham clause.
 translation:
   language: es
-  text: Así que, de doce árboles que tienen hojas, ofrécele al Señor, como Abraham me enseñó.
+  text: Así que, de doce árboles que tienen hojas, ofrécelo al Señor, como Abraham me enseñó.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Δώδεκα οὖν δένδρων ἐχόντων φύλλα
@@ -87,4 +87,40 @@ ai_draft:
     total_tokens: 2483
     reasoning_tokens: 0
     estimated_cost_usd: 0.00511
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Así que, de doce árboles que tienen hojas, ofrécele al Señor, como Abraham me enseñó.
+  to: Así que, de doce árboles que tienen hojas, ofrécelo al Señor, como Abraham me enseñó.
+  rationale: Changed 'ofrécele' to 'ofrécelo' to use the accusative clitic referring to the offering from the twelve trees, avoiding leísmo with the following 'al Señor'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Δώδεκα οὖν δένδρων ἐχόντων φύλλα ἀνάγαγε τῷ Κυρίῳ ὡς κἀμὲ Ἀβραὰμ ἐδίδαξε. EN POB: ''From twelve trees having leaves, then offer to the Lord, as Abraham taught me.'' Spanish draft: ''Así que, de doce árboles que tienen hojas, ofrécele al Señor, como Abraham me enseñó.'' The issue is ''ofrécele al Señor'' — the clitic ''le'' in ''ofrécele'' is redundant and incorrect here. The verb ἀνάγαγε is a 2nd person singular aorist imperative meaning ''bring up/offer'' — its direct object is the offering from the twelve trees, and τῷ Κυρίῳ is the indirect object (to the Lord). In Spanish, ''ofrece al Señor'' is correct; adding ''le'' as a dative clitic before ''al Señor'' creates leísmo (since ''al Señor'' is already present). The correct form is ''ofrece al Señor'' (or ''ofrécele'' without ''al Señor'' afterward). Either: ''ofrécelo al Señor'' (with accusative clitic for the offering) or ''ofrece al Señor'' (clean imperative). Since the object is ''what comes from
+    the twelve trees'', ''ofrécelo al Señor'' is most natural. Also, τῷ Κυρίῳ→al Señor is consistent with EN POB and correct here (Greek κύριος, not a Tetragrammaton substitution in this Greek testamental text).'
+  spanish_quality_summary: Near-accurate but 'ofrécele' creates a minor grammatical redundancy (leísmo) when followed by 'al Señor'. The correct form is 'ofrécelo al Señor' (accusative clitic for the offering from the trees) or simply 'ofrece al Señor'.
+  glossary_alignment: 'τῷ Κυρίῳ→al Señor: consistent with EN POB; the draft correctly notes this is Κύριος in the Greek testamental text. Correct project alignment.'
+  issues:
+  - severity: medium
+    issue: '''ofrécele al Señor'' uses redundant dative clitic ''le'' alongside the full indirect object ''al Señor'', creating leísmo; should be ''ofrécelo al Señor'' (with accusative clitic) or ''ofrece al Señor'''
+    rationale: In standard neutral Latin American Spanish, using 'le' alongside 'al Señor' as dative-reduplication is grammatically inelegant; 'ofrécelo' (referring back to what is derived from the twelve trees) is more natural.
+  revised_spanish_text: Así que, de doce árboles que tienen hojas, ofrécelo al Señor, como Abraham me enseñó.
+  revision_rationale: Changed 'ofrécele' to 'ofrécelo' to use the accusative clitic referring to the offering from the twelve trees, avoiding leísmo with the following 'al Señor'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a147dc4168db8194468e1fc355e7899bda970aa6ed6e7c78548d3f3f4d43b15f
+  timestamp: '2026-05-08T06:48:45Z'
+  output_hash: a147dc4168db8194468e1fc355e7899bda970aa6ed6e7c78548d3f3f4d43b15f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Si pierden la verdad y la paciencia, perecerán.
+  text: '...la verdad y la longanimidad, perecerán.'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀλήθεια
@@ -70,4 +70,42 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Si pierden la verdad y la paciencia, perecerán.
+  to: '...la verdad y la longanimidad, perecerán.'
+  rationale: Restored the fragment-clause form matching the EN '...truth and long-suffering, you will perish.' Changed 'paciencia' to 'longanimidad' for consistency with all other occurrences of μακροθυμία in these chapters.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:05Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek source for this verse is 'τὴν ἀλήθειαν καὶ τὴν μακροθυμίαν, ἀπολεῖσθε' — a continuation clause meaning '...truth and long-suffering, you will perish.' The EN correctly renders this as '...truth and long-suffering, you will perish.' with a leading ellipsis. The ES draft renders 'Si pierden la verdad y la paciencia, perecerán' which introduces a conditional 'if they lose' not in the source, and substitutes 'paciencia' for 'longanimidad' inconsistently. The EN base_translation in the ES file shows 'If you lose truth and patience, you will perish.' which differs from the actual EN YAML text. The verse is a continuation fragment; the correct ES should preserve the partial clause form.
+  spanish_quality_summary: The proposed revision is a complete sentence paraphrase of what should be a partial continuation clause. While grammatically natural, it misrepresents the source structure.
+  glossary_alignment: μακροθυμία rendered as 'paciencia' while the chapter-level files use 'longanimidad' — inconsistency within the same chapter.
+  issues:
+  - severity: medium
+    issue: 'ES renders partial continuation clause as complete sentence with added conditional: ''Si pierden la verdad y la paciencia, perecerán'' adds ''if they lose'' not present in source. EN correctly preserves the fragment: ''...truth and long-suffering, you will perish.'''
+    rationale: The verse is a mid-sentence continuation; the ES should mirror the EN fragment structure.
+  - severity: low
+    issue: μακροθυμία rendered as 'paciencia' here but as 'longanimidad' in all other dan/002 files. Should be consistent with chapter usage.
+    rationale: Cross-verse consistency for the same term in the same chapter.
+  revised_spanish_text: '...la verdad y la longanimidad, perecerán.'
+  revision_rationale: Restored the fragment-clause form matching the EN '...truth and long-suffering, you will perish.' Changed 'paciencia' to 'longanimidad' for consistency with all other occurrences of μακροθυμία in these chapters.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1ec719c07df0cab6ca6a5cc6a890e023302f01131e78323f8cd9ca3075290694
+  timestamp: '2026-05-08T06:29:05Z'
+  output_hash: 1ec719c07df0cab6ca6a5cc6a890e023302f01131e78323f8cd9ca3075290694
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

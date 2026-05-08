@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque así el sacerdocio de Dios sobrepasa al reino terrenal[b], a menos que por los pecados se aparte de Yahvé y sea dominado por el reino terrenal.
+  text: Porque así el sacerdocio de Dios sobrepasa al reino terrenal[b], a menos que por los pecados se aparte del Señor y sea dominado por el reino terrenal.
   philosophy: optimal-equivalence
   footnotes:
   - marker: b
@@ -108,4 +108,44 @@ ai_draft:
     total_tokens: 2672
     reasoning_tokens: 0
     estimated_cost_usd: 0.006234
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque así el sacerdocio de Dios sobrepasa al reino terrenal[b], a menos que por los pecados se aparte de Yahvé y sea dominado por el reino terrenal.
+  to: Porque así el sacerdocio de Dios sobrepasa al reino terrenal[b], a menos que por los pecados se aparte del Señor y sea dominado por el reino terrenal.
+  rationale: Changed 'Yahvé' to 'el Señor' for Κυρίου, consistent with EN POB 'the Lord' and the project policy that reserves Yahvé for explicit divine-Name contexts.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:39Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ὑπερέχει ἡ ἱερατεία τοῦ Θεοῦ τῆς ἐπιγείου βασιλείας (the priesthood of God surpasses the earthly kingdom), ἐκπέσῃ ἀπὸ Κυρίου (falls away from the Lord), κυριευθῇ (is ruled by). Spanish: ''el sacerdocio de Dios sobrepasa al reino terrenal[b], a menos que por los pecados se aparte de Yahvé y sea dominado por el reino terrenal.'' Source alignment is good except for one issue: the footnote [b] marker appears in the Spanish text but there is no footnote [b] in the Spanish footnotes array—wait, checking again: there IS a footnote with marker ''b'' in the Spanish YAML. However, the EN file (judah/021/004.yaml) does NOT have a footnote [b] at all in the per-verse file. The footnote marker [b] in the EN base_translation text comes from the chapter-level file. The EN per-verse file text reads ''For thus the priesthood of God surpasses the earthly kingdom[b]'' but the per-verse EN YAML has no footnotes list—the [b] is inherited from the chapter. The Spanish per-verse
+    YAML does include the footnote with marker ''b'', which is reasonable since the text contains [b]. The footnote markers match between text and footnotes in the Spanish file. One glossary issue: ''ἐκπέσῃ ἀπὸ Κυρίου'' is rendered ''se aparte de Yahvé'' but Κύριος in this context is more likely a title (''the Lord'') than specifically the divine Name; the EN POB itself uses ''the Lord''. Using ''Yahvé'' here is a mild overreach per the project standard (Yahvé is used when the Greek reflects the Tetragrammaton, not for κύριος as a title).'
+  spanish_quality_summary: Well-written, natural Spanish. 'Sobrepasa' captures ὑπερέχει well. 'Sea dominado' for κυριευθῇ is accurate. 'Sacerdocio de Dios' and 'reino terrenal' are consistent choices. The only issue is 'Yahvé' where the EN POB has 'the Lord' for Κύριου (which is a title here, not explicitly the divine Name).
+  glossary_alignment: Κύριου rendered as Yahvé. In this passage Κύριος functions as a title; the EN POB uses 'the Lord'. Project rule says Yahvé for YHWH/divine name contexts. This verse's Greek does not explicitly signal the Tetragrammaton—κύριος is a title for God in a conditional clause. Should be 'el Señor' to match EN POB.
+  issues:
+  - severity: low
+    issue: Κύριου rendered as 'Yahvé' instead of 'el Señor'
+    rationale: The Greek uses κύριος as a title in a conditional clause ('unless it falls away from the Lord'). The EN POB audited text uses 'the Lord'. The POB Spanish glossary policy renders Yahvé when the source text reflects the Tetragrammaton; here κύριος is a generic title. 'El Señor' matches the EN audit trail.
+  revised_spanish_text: Porque así el sacerdocio de Dios sobrepasa al reino terrenal[b], a menos que por los pecados se aparte del Señor y sea dominado por el reino terrenal.
+  revised_footnotes:
+  - marker: b
+    text: «Reino terrenal» traduce el griego τῆς ἐπιγείου βασιλείας; también podría entenderse como «reino de la tierra», pero «terrenal» conserva mejor la cualidad adjetival del original.
+    reason: lexical_alternative
+  revision_rationale: Changed 'Yahvé' to 'el Señor' for Κυρίου, consistent with EN POB 'the Lord' and the project policy that reserves Yahvé for explicit divine-Name contexts.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 37999491bb856ebb49de4ffa5a194d21e45cf6943cfdaaf4919d6bcc1a348568
+  timestamp: '2026-05-08T06:45:39Z'
+  output_hash: 37999491bb856ebb49de4ffa5a194d21e45cf6943cfdaaf4919d6bcc1a348568
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

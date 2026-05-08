@@ -261,4 +261,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Full chapter Spanish faithfully renders the Greek source. All major lexical decisions track the POB audit trail: hechicería for γοητεία, aterrador for φοβερός, artimaña for περιέργεια, para exponerte for εἰς ἔλεγχόν σου, arrepintieras for μετανοήσεις. Proper nouns and theological terms handled correctly.'
+  spanish_quality_summary: Fluent, natural Latin-American Spanish throughout. Narrative flow is maintained. Footnote markers [a][b][c][d][e] all appear in the text and match the footnotes array.
+  glossary_alignment: Dios for Θεός, Señor for Κύριος, arrepentirse for μετανοέω in specific-sin context. All correct.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 96167b673d1914efb4f59ed09f555fe7000a83177ac1ea7dd99e072920423058
+  timestamp: '2026-05-08T06:29:06Z'
+  output_hash: 96167b673d1914efb4f59ed09f555fe7000a83177ac1ea7dd99e072920423058
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

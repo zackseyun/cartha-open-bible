@@ -74,4 +74,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Ἐγὼ δὲ εἰδὼς ἐσιώπησα ἵνα μὴ αἰσχυνθῇ ὁ εὐνοῦχος→'Pero yo, sabiéndolo, guardé silencio, para que [a]'. The verse is deliberately incomplete (the Greek excerpt cuts off), and the Spanish mirrors this with 'para que[a]'. Footnote [a] explains the textual truncation. This is correct.
+  spanish_quality_summary: Accurate. 'Sabiéndolo' for εἰδὼς is concise and natural. 'Guardé silencio' for ἐσιώπησα suits the elevated testamentary register. The intentional truncation is handled correctly. Footnote [a] is present and matches.
+  glossary_alignment: εὐνοῦχος→implied in '(the eunuch)' but the Spanish truncation cuts before naming him, which is correct. No glossary terms present. Compliant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 996a167292f9b70f33fe5137695d6c250fce1b312d67f1661332d561edf6015c
+  timestamp: '2026-05-08T06:37:10Z'
+  output_hash: 996a167292f9b70f33fe5137695d6c250fce1b312d67f1661332d561edf6015c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

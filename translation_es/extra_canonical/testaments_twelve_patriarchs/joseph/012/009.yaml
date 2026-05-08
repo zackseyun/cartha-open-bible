@@ -19,14 +19,17 @@ base_translation:
     changes_summary: Replaced 'with great display' with 'with great splendor' for a more natural and formally appropriate rendering of μετὰ δόξης πολλῆς, while preserving the meaning. All source elements are otherwise retained.
 translation:
   language: es
-  text: En aquel tiempo, la mujer de Pentefri[a] descendió a Menfis con gran esplendor, porque había oído acerca de mí por sus eunucos[b].
+  text: En aquel tiempo, la mujer de Pentefri[a] descendió a Menfis en litera[c], con gran esplendor, porque había oído acerca de mí por sus eunucos[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Pentefri es la forma griega del nombre egipcio asociado en las tradiciones de Génesis con Potifar/casa de Potifar.
+    text: Pentefri es la forma griega del nombre egipcio asociado con Potifar.
     reason: cross_reference
   - marker: b
     text: El término griego literalmente denota eunucos, aunque puede extenderse a oficiales de la corte; aquí el contexto cortesano sostiene el sentido literal.
+    reason: lexical_alternative
+  - marker: c
+    text: Gr. ἐν λαμπήνῃ, 'en litera' o 'en palanquín'; el término está marcado con obeli en el texto griego, indicando dificultad textual.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: κατῆει
@@ -82,4 +85,49 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: En aquel tiempo, la mujer de Pentefri[a] descendió a Menfis con gran esplendor, porque había oído acerca de mí por sus eunucos[b].
+  to: En aquel tiempo, la mujer de Pentefri[a] descendió a Menfis en litera[c], con gran esplendor, porque había oído acerca de mí por sus eunucos[b].
+  rationale: Added 'en litera[c]' to match the ἐν λαμπήνῃ detail restored in the EN phase2_realign_pass. The Greek marks this with obeli (textual difficulty) but the word is present in the source; the EN audit trail restored it and the ES should follow.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The ES draft was written against the pre-phase2 EN text and is missing the detail ἐν λαμπήνῃ ('in a litter/palanquin'), which the EN phase2_realign_pass added ('in a litter, with great splendor'). The Greek has this detail explicitly marked with obeli (†ἐν λαμπήνῃ†). All other elements (κατῆει→descendió, μετὰ δόξης πολλῆς→con gran esplendor, εὐνούχων→eunucos) are faithfully rendered.
+  spanish_quality_summary: Otherwise smooth neutral Latin-American Spanish. Footnote markers [a] and [b] present and defined. The revision adds 'en litera' with a new marker [c] matching the updated EN source.
+  glossary_alignment: No YHWH/θεός/Κύριος/δοῦλος in this verse. Glossary not at issue.
+  issues:
+  - severity: medium
+    issue: Missing ἐν λαμπήνῃ ('in a litter') — present in Greek and added to EN by phase2_realign_pass but absent from ES draft.
+    rationale: The Greek text explicitly includes ἐν λαμπήνῃ (though marked with obeli indicating textual difficulty). The EN phase2 pass restored this element. The ES should match.
+  revised_spanish_text: En aquel tiempo, la mujer de Pentefri[a] descendió a Menfis en litera[c], con gran esplendor, porque había oído acerca de mí por sus eunucos[b].
+  revised_footnotes:
+  - marker: a
+    text: Pentefri es la forma griega del nombre egipcio asociado con Potifar.
+    reason: cross_reference
+  - marker: b
+    text: El término griego literalmente denota eunucos, aunque puede extenderse a oficiales de la corte; aquí el contexto cortesano sostiene el sentido literal.
+    reason: lexical_alternative
+  - marker: c
+    text: Gr. ἐν λαμπήνῃ, 'en litera' o 'en palanquín'; el término está marcado con obeli en el texto griego, indicando dificultad textual.
+    reason: lexical_alternative
+  revision_rationale: Added 'en litera[c]' to match the ἐν λαμπήνῃ detail restored in the EN phase2_realign_pass. The Greek marks this with obeli (textual difficulty) but the word is present in the source; the EN audit trail restored it and the ES should follow.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 63e2ad348c9b255ae736215264564459ad02487ee0b4def5c9a45c179291ea5f
+  timestamp: '2026-05-08T06:29:49Z'
+  output_hash: 63e2ad348c9b255ae736215264564459ad02487ee0b4def5c9a45c179291ea5f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

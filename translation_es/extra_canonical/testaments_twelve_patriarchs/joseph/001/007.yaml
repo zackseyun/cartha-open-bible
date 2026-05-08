@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Added 'also' to reflect καὶ with συνηγόρησέ, and revised 'talk' to the more literal 'words' for λόγοις while keeping the phrasing natural.
 translation:
   language: es
-  text: En medio de calumnias, también habló en mi defensa. Por las palabras amargas[a] de los sueños me rescató.
+  text: En medio de calumnias, también habló en mi defensa. Por las palabras amargas[a] de los sueños me rescató. Esclavo, y él me exaltó.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -92,4 +92,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: En medio de calumnias, también habló en mi defensa. Por las palabras amargas[a] de los sueños me rescató.
+  to: En medio de calumnias, también habló en mi defensa. Por las palabras amargas[a] de los sueños me rescató. Esclavo, y él me exaltó.
+  rationale: Added the third clause 'Esclavo, y él me exaltó.' to match the phase2-realigned EN ('A slave, he exalted me.') and the Greek Δοῦλος καὶ ὕψωσέ με. 'Esclavo' renders δοῦλος per POB slave-rendering policy. 'Exaltó' renders ὕψωσε.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek has three clauses: Ἐν διαβολαῖς καὶ συνηγόρησέ μοι / Ἐν λόγοις ἐνυπνίων πικροῖς καὶ ἐρρύσατό με / Δοῦλος καὶ ὕψωσέ με. The EN was phase2-realigned to include the final clause ''A slave, he exalted me.'' The ES ''En medio de calumnias, también habló en mi defensa. Por las palabras amargas[a] de los sueños me rescató.'' omits the third clause.'
+  spanish_quality_summary: The first two clauses are well-rendered. The missing third clause (Δοῦλος καὶ ὕψωσέ με) must be added.
+  glossary_alignment: δοῦλος → 'esclavo' per POB policy where slave-rendering was chosen.
+  issues:
+  - severity: high
+    issue: Missing third clause 'Δοῦλος καὶ ὕψωσέ με' / 'A slave, he exalted me.' The ES follows the old pre-phase2 EN which omitted this clause.
+    rationale: The EN phase2_realign_pass added 'A slave, he exalted me.' to match the Greek. The ES must include it.
+  revised_spanish_text: En medio de calumnias, también habló en mi defensa. Por las palabras amargas[a] de los sueños me rescató. Esclavo, y él me exaltó.
+  revised_footnotes:
+  - marker: a
+    text: La frase 'las palabras amargas de los sueños' es de griego difícil; probablemente se refiere a las palabras hostiles y acusaciones relacionadas con los sueños de José.
+    reason: alternative_reading
+  revision_rationale: Added the third clause 'Esclavo, y él me exaltó.' to match the phase2-realigned EN ('A slave, he exalted me.') and the Greek Δοῦλος καὶ ὕψωσέ με. 'Esclavo' renders δοῦλος per POB slave-rendering policy. 'Exaltó' renders ὕψωσε.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 21c7335b7d4fd130d9d56a1848f9dc8f282ac3b992f8d09b08b948f32f9573fb
+  timestamp: '2026-05-08T06:29:42Z'
+  output_hash: 21c7335b7d4fd130d9d56a1848f9dc8f282ac3b992f8d09b08b948f32f9573fb
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

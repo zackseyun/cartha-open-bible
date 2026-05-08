@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'their soul was' to 'their souls were' to match the plural subject οἱ υἱοὶ αὐτῶν / αὐτῶν and improve grammatical agreement in English; otherwise retained the draft.
 translation:
   language: es
-  text: Y los hijos de ellos eran mis hijos, y mis hijos eran como esclavos[a] para ellos, y sus almas eran mi alma, y todo dolor de ellos era mi dolor, y toda enfermedad de ellos era mi padecimiento, y su voluntad era mi voluntad.
+  text: Y los hijos de ellos eran mis hijos, y mis hijos eran como esclavos[a] para ellos, y sus almas eran mi alma, y todo dolor de ellos era mi dolor, y toda debilidad de ellos era mi padecimiento, y su propósito era mi propósito.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -111,4 +111,46 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los hijos de ellos eran mis hijos, y mis hijos eran como esclavos[a] para ellos, y sus almas eran mi alma, y todo dolor de ellos era mi dolor, y toda enfermedad de ellos era mi padecimiento, y su voluntad era mi voluntad.
+  to: Y los hijos de ellos eran mis hijos, y mis hijos eran como esclavos[a] para ellos, y sus almas eran mi alma, y todo dolor de ellos era mi dolor, y toda debilidad de ellos era mi padecimiento, y su propósito era mi propósito.
+  rationale: Distinguishes μαλακία ('debilidad') from ἀσθένεια ('padecimiento') to match the EN rhetorical doubling, and changes βουλή to 'propósito' (closer to EN 'purpose') for consistency with the chapter-level draft.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:03Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The draft collapses the EN distinction between μαλακία ('weakness') and ἀσθένεια ('sickness') into a single 'debilidad/debilidad' pair. The English POB deliberately preserves two distinct terms. βουλή is rendered 'voluntad' here but the chapter-level draft uses 'propósito' (closer to EN 'purpose'). Both 'voluntad' and 'propósito' are defensible; 'propósito' aligns better with EN.
+  spanish_quality_summary: Mostly natural. The collapsed μαλακία/ἀσθένεια distinction is the main issue. 'Sus almas eran mi alma' correctly tracks the EN plural correction.
+  glossary_alignment: δοῦλοι→esclavos correct per project doctrine. No YHWH/θεός/Χριστός/πνεῦμα.
+  issues:
+  - severity: medium
+    issue: μαλακία and ἀσθένεια both rendered as 'debilidad', collapsing the EN 'weakness/sickness' distinction the EN revision deliberately maintained
+    rationale: 'The EN POB uses ''weakness'' for μαλακία and ''sickness'' for ἀσθένεια to preserve the rhetorical doubling. Spanish should use two distinct terms: ''debilidad'' for μαλακία and ''padecimiento'' or ''enfermedad'' for ἀσθένεια.'
+  - severity: low
+    issue: βουλή rendered 'voluntad' but EN 'purpose' is better served by 'propósito', which the chapter-level draft already uses
+    rationale: Minor consistency issue; 'voluntad' is defensible but 'propósito' aligns more closely with EN 'purpose' and with the chapter-level draft.
+  revised_spanish_text: Y los hijos de ellos eran mis hijos, y mis hijos eran como esclavos[a] para ellos, y sus almas eran mi alma, y todo dolor de ellos era mi dolor, y toda debilidad de ellos era mi padecimiento, y su propósito era mi propósito.
+  revised_footnotes:
+  - marker: a
+    text: '''Esclavos'' traduce el griego douloi. La formulación es deliberadamente fuerte y expresa la humildad de José y la subordinación de su propia casa ante sus hermanos.'
+    reason: lexical_alternative
+  revision_rationale: Distinguishes μαλακία ('debilidad') from ἀσθένεια ('padecimiento') to match the EN rhetorical doubling, and changes βουλή to 'propósito' (closer to EN 'purpose') for consistency with the chapter-level draft.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 546a73ee1fa5ad457a3bc2da1b5a6ce47a7e37d2e4ed6824c3dcf55ae7d4460e
+  timestamp: '2026-05-08T06:36:03Z'
+  output_hash: 546a73ee1fa5ad457a3bc2da1b5a6ce47a7e37d2e4ed6824c3dcf55ae7d4460e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -144,4 +144,27 @@ ai_draft:
     estimated_cost_usd: 0.172919
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The Spanish draft makes a well-argued grammatical correction to the EN POB: the Greek τοῖς ἀγγέλοις Κυρίου, καὶ τοῦ Βελίαρ has both Κυρίου and τοῦ Βελίαρ as genitives modifying ἀγγέλοις, giving ''angels of Yahvé and of Beliar'' rather than the EN POB''s revised ''to Beliar'' as a separate dative recipient. The cross-check had already flagged the EN revision as needing revision (0.7). The ES draft ''a los ángeles de Yahvé y de Beliar'' restores the syntactically correct genitive-parallel reading. Κυρίου → Yahvé: correct per project policy. δικαιοσύνην → ''rectitud'' (personal moral character in wisdom context, appropriate). τέλη → ''fines'' (preserves productive ambiguity). γνωρίζονται passive preserved as ''son dados a conocer''. All footnotes [a][b][c][d][e] have matching text markers.'
+  spanish_quality_summary: Excellent translation with strong textual-critical awareness. The grammatical argument for 'de Beliar' vs. 'a Beliar' is linguistically sound and the decision is well-documented. The choice of 'rectitud' over 'justicia' for δικαιοσύνη in this personal wisdom context is defensible and documented. All footnote markers match. Footnote [e] clearly explains the divergence from EN POB text.
+  glossary_alignment: 'Κύριος → Yahvé: correctly applied. Θεός absent. No δοῦλος/πνεῦμα/Χριστός issues.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d359529002f3e8e91474cb2e99765dc141f5528366ae427c922f505edca5c331
+  timestamp: '2026-05-08T06:28:53Z'
+  output_hash: d359529002f3e8e91474cb2e99765dc141f5528366ae427c922f505edca5c331
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

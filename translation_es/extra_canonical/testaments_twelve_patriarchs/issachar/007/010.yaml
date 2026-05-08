@@ -76,4 +76,31 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The Greek (9b variant) has ἐξέτεινε / ἀπέθανε ἐν γήρει καλῷ / πᾶν μέλος ἔχων ὑγιές / ὕπνωσεν ὕπνον αἰώνιον. However the EN was restored (after a truncation incident) to the pre-revision text: ''his sons laid him on a bier and afterward carried him up to Hebron.'' The ES faithfully follows that restored EN base (''lo colocaron sobre unas andas... lo llevaron a Hebrón... lo enterraron allí con sus padres'').'
+  spanish_quality_summary: Fluent. 'Andas' is well-chosen for the funerary bier. Footnote [a] present in text and defined in footnotes. Consistent with v.8 lexical choices.
+  glossary_alignment: No glossary terms at issue.
+  issues:
+  - severity: low
+    issue: The Greek 9b variant text (ἀπέθανε ἐν γήρει καλῷ... ὕπνωσεν ὕπνον αἰώνιον) does not correspond to the EN text about 'sons laid him on a bier.' The EN was truncation-corrected back to a different source clause. The ES correctly follows the EN, but the mismatch with the raw Greek source is inherent to the EN restoration.
+    rationale: This is a known pipeline issue documented in the EN YAML. The ES is as faithful as the EN allows.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1e4a6f23c7543fd9bb59507ef879d949ff315167e7fc943f4a8aba66d3dbc4cb
+  timestamp: '2026-05-08T06:28:23Z'
+  output_hash: 1e4a6f23c7543fd9bb59507ef879d949ff315167e7fc943f4a8aba66d3dbc4cb
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

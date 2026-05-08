@@ -20,7 +20,7 @@ base_translation:
     changes_summary: 'Revised to match the source more closely: imperative ''keep'' instead of conditional ''if you walk,'' ''law'' instead of ''commandments,'' and ''hope for all'' to reflect the Greek. The draft''s additional material about dwelling securely, Israel being gathered, and ''forever'' is not present in the provided source excerpt and was removed.'
 translation:
   language: es
-  text: Por tanto, hijos míos, guardad toda la ley del Señor, porque es esperanza para todos los que...
+  text: Por tanto, hijos míos, guarden toda la ley de Yahvé, porque es esperanza para todos los que...
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Φυλάξατε
@@ -99,4 +99,42 @@ ai_draft:
     total_tokens: 2631
     reasoning_tokens: 0
     estimated_cost_usd: 0.005318
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, hijos míos, guardad toda la ley del Señor, porque es esperanza para todos los que...
+  to: Por tanto, hijos míos, guarden toda la ley de Yahvé, porque es esperanza para todos los que...
+  rationale: Replaced vosotros 'guardad' with LATAM 'guarden'. Replaced 'del Señor' with 'de Yahvé'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Per-verse EN: ''Therefore, my children, keep all the law of the Lord, because it is hope for all who are...'' (truncated). ES: ''Por tanto, hijos míos, guardad toda la ley del Señor, porque es esperanza para todos los que...'' Same issue as 026/001: ''guardad'' is vosotros form. Also ''del Señor'' instead of ''de Yahvé''.'
+  spanish_quality_summary: 'Two issues: (1) ''guardad'' is vosotros imperative — should be ''guarden'' for LATAM Spanish. (2) ''del Señor'' inconsistent with Yahvé policy.'
+  glossary_alignment: Κύριος rendered as 'del Señor'. Should be 'de Yahvé'.
+  issues:
+  - severity: medium
+    issue: '''guardad'' is vosotros imperative. Neutral LATAM Spanish requires ''guarden''.'
+    rationale: Project specifies neutral Latin-American Spanish.
+  - severity: medium
+    issue: Κύριος rendered as 'del Señor' instead of 'de Yahvé'.
+    rationale: Project policy requires Yahvé for the divine name throughout this text.
+  revised_spanish_text: Por tanto, hijos míos, guarden toda la ley de Yahvé, porque es esperanza para todos los que...
+  revision_rationale: Replaced vosotros 'guardad' with LATAM 'guarden'. Replaced 'del Señor' with 'de Yahvé'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 85e7044e7f81ce8c19890f2dfbbf2905ed1abcc6e54af715b1646268f9f67831
+  timestamp: '2026-05-08T06:38:41Z'
+  output_hash: 85e7044e7f81ce8c19890f2dfbbf2905ed1abcc6e54af715b1646268f9f67831
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

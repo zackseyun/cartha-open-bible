@@ -109,4 +109,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Spanish accurately renders ἐπήγαγε νόσον ἥπατος (trajo sobre mí una enfermedad del hígado), εὐχαὶ τοῦ πατρός μου (las oraciones de mi padre), ἐβοήθησάν μοι (no me hubieran ayudado), ὀλίγου δεῖν (casi), ἐξέλειπε τὸ πνεῦμα μου (habría desfallecido mi espíritu). Three footnotes [a][b][c] in text and array, markers match.
+  spanish_quality_summary: Fluid conditional sentence handling the pluperfect subjunctive correctly in Spanish. 'Desfallecer' is well-chosen for the anthropological sense without over-literalizing.
+  glossary_alignment: Dios correct. πνεῦμα as espíritu (lowercase, anthropological) correct.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2ad8fd412eef584e8d433cf977f3b8483f31fd621e8139755a50d5263d3d6706
+  timestamp: '2026-05-08T06:28:43Z'
+  output_hash: 2ad8fd412eef584e8d433cf977f3b8483f31fd621e8139755a50d5263d3d6706
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

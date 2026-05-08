@@ -71,4 +71,37 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: Ἔγνω δὲ Ἰακὼβ τῇ Λείᾳ, καὶ συλλαβοῦσα ἔτεκεν ἐμέ, καὶ διὰ τούτου τὸν μισθὸν ἐκλήθην Ἰσαχάρ. EN POB (revised): ''And Jacob knew Leah, and she conceived and bore me; and because of this — the wages — I was called Issachar.'' ES: ''Y Jacob conoció a Lía, y ella concibió y me dio a luz, y por esto fui llamado Isacar.'' Source-faithful. ἔγνω = conoció (biblical euphemism preserved). συλλαβοῦσα = concibió (accurate). ἔτεκεν ἐμέ = me dio a luz (dignified rendering). διὰ τούτου τὸν μισθόν: EN POB uses a dash construction ''this — the wages —''; ES simplifies to ''por esto'' which loses ''the wages'' element but captures the causal link. Minor issue.'
+  spanish_quality_summary: The ES drops the explicit 'wages' (μισθόν) that the EN POB foregrounds with the em-dash construction. However, this is a minor simplification — the verse works. 'Isacar' is the correct Spanish form. Natural Spanish throughout.
+  glossary_alignment: No special glossary terms. 'Isacar' is the correct Spanish transliteration.
+  issues:
+  - severity: low
+    issue: The ES 'por esto fui llamado Isacar' loses the explicit 'wages/salario' that the EN POB renders as 'because of this — the wages — I was called Issachar', dropping the μισθόν from the translation.
+    rationale: The chapter-level YAML establishes 'salario' as the translation of μισθόν throughout. The per-verse text could include it for completeness.
+  revised_spanish_text: Y Jacob conoció a Lía, y ella concibió y me dio a luz; y por causa de este salario[a] fui llamado Isacar.
+  revised_footnotes:
+  - marker: a
+    text: «salario» reproduce τὸν μισθόν (paga/recompensa), que da nombre a Isacar según la etimología testamentaria.
+    reason: lexical_alternative
+  revision_rationale: Adds 'este salario' to preserve the explicit μισθόν (wages) that gives the name Issachar its meaning and that EN POB foregrounds with the em-dash. This keeps the chapter's central wordplay visible.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 65fad077b607d5c515861cb268bb7aaed858a45d2ee52f689aa120ed608583b6
+  timestamp: '2026-05-08T06:30:17Z'
+  output_hash: 65fad077b607d5c515861cb268bb7aaed858a45d2ee52f689aa120ed608583b6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

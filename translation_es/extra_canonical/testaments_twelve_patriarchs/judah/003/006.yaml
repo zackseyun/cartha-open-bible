@@ -19,12 +19,8 @@ base_translation:
     changes_summary: 'Restored major omitted content from the Greek: the four stones, the mounted target, the heavy stone, striking and killing the horse, and the subsequent fight with King Nahor. Also revised wording for closer lexical accuracy and formal natural English.'
 translation:
   language: es
-  text: Pero envolví mi manto alrededor de mi brazo y les arrojé cuatro piedras; desde atrás y desde delante, alrededor de la cintura de uno que estaba sentado sobre un caballo, levanté una piedra de sesenta libras[a] y la lancé; golpeé al caballo y lo maté. Y peleé contra el rey Nahor durante cerca de dos horas, y después de hacer pedazos el escudo, le corté los pies, y así lo maté.
+  text: Pero envolví mi manto alrededor de mi brazo y les arrojé cuatro piedras; desde atrás y desde delante, alrededor de la cintura de uno que estaba sentado sobre un caballo, levanté una piedra de sesenta litras y la lancé; golpeé al caballo y lo maté. Y peleé contra el rey Nahor durante cerca de dos horas, y después de hacer pedazos el escudo, le corté los pies, y así lo maté.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Sesenta libras» refleja aquí la medida griega λιτρῶν ξʹ; se adopta una equivalencia aproximada para hacer legible el peso en español.
-    reason: source_note
 lexical_decisions:
 - source_word: στολήν
   english_pob_choice: garment
@@ -133,4 +129,39 @@ ai_draft:
     total_tokens: 3291
     reasoning_tokens: 0
     estimated_cost_usd: 0.00722
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero envolví mi manto alrededor de mi brazo y les arrojé cuatro piedras; desde atrás y desde delante, alrededor de la cintura de uno que estaba sentado sobre un caballo, levanté una piedra de sesenta libras[a] y la lancé; golpeé al caballo y lo maté. Y peleé contra el rey Nahor durante cerca de dos horas, y después de hacer pedazos el escudo, le corté los pies, y así lo maté.
+  to: Pero envolví mi manto alrededor de mi brazo y les arrojé cuatro piedras; desde atrás y desde delante, alrededor de la cintura de uno que estaba sentado sobre un caballo, levanté una piedra de sesenta litras y la lancé; golpeé al caballo y lo maté. Y peleé contra el rey Nahor durante cerca de dos horas, y después de hacer pedazos el escudo, le corté los pies, y así lo maté.
+  rationale: Changed 'sesenta libras' to 'sesenta litras' to match the project's documented standard of preserving the ancient measure without modern conversion. Removed footnote [a] that explained the conversion, as no conversion is now needed. This aligns with the approach taken in 3.3, 3.4, and the chapter-level ES file.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἐνειλήσας τὴν στολήν μου ἐπὶ τὴν χεῖρά μου (envolví mi manto alrededor de mi brazo), σφενδονήσας λίθους τέσσαρας (les arrojé cuatro piedras), λίθον λιτρῶν ξʹ (piedra de sesenta litras). Spanish is mostly accurate but introduces ''sesenta libras'' instead of ''sesenta litras'', a departure from the EN POB deliberate choice to preserve the ancient unit ''litras'' without converting it.'
+  spanish_quality_summary: The main text is fluent. However 'sesenta libras' in the main text contradicts the project policy of preserving 'litras' as the ancient measure (as documented in all other per-verse files and the chapter-level ES file for ch.3 which uses 'litras'). The footnote [a] then explains it as an 'equivalencia aproximada' but the EN POB specifically chose NOT to modernize this unit. This is an inconsistency with the project's established approach.
+  glossary_alignment: No glossary items apply.
+  issues:
+  - severity: medium
+    issue: Main text uses 'sesenta libras' (modern approximation) instead of 'sesenta litras' (ancient unit). The EN POB and all other per-verse/chapter ES files use 'litras' to preserve the cultural texture of the ancient source. The footnote [a] acknowledges the substitution but the project standard is to preserve 'litras'.
+    rationale: Consistency with project's established approach of keeping 'litras' as the ancient unit across all references in this text. The per-verse files 3.3, 3.4, and chapter-level 3 all use 'litras'.
+  revised_spanish_text: Pero envolví mi manto alrededor de mi brazo y les arrojé cuatro piedras; desde atrás y desde delante, alrededor de la cintura de uno que estaba sentado sobre un caballo, levanté una piedra de sesenta litras y la lancé; golpeé al caballo y lo maté. Y peleé contra el rey Nahor durante cerca de dos horas, y después de hacer pedazos el escudo, le corté los pies, y así lo maté.
+  revision_rationale: Changed 'sesenta libras' to 'sesenta litras' to match the project's documented standard of preserving the ancient measure without modern conversion. Removed footnote [a] that explained the conversion, as no conversion is now needed. This aligns with the approach taken in 3.3, 3.4, and the chapter-level ES file.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: b165bbf7c9140ed630f86c9858511719ba822d2063eca3be5faeb9a175e334c2
+  timestamp: '2026-05-08T06:36:30Z'
+  output_hash: b165bbf7c9140ed630f86c9858511719ba822d2063eca3be5faeb9a175e334c2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

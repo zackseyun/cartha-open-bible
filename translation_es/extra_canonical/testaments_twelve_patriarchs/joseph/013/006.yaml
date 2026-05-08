@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Y, después de separarme de él, me dijo: «¿Eres esclavo[a] o libre?». Y yo le dije: «Esclavo[a]».'
+  text: 'Y, después de separarme de él, me dijo: «¿Eres esclavo[a] o libre?». Y yo le dije: «Esclavo».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -83,4 +83,43 @@ ai_draft:
     total_tokens: 2168
     reasoning_tokens: 0
     estimated_cost_usd: 0.004146
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y, después de separarme de él, me dijo: «¿Eres esclavo[a] o libre?». Y yo le dije: «Esclavo[a]».'
+  to: 'Y, después de separarme de él, me dijo: «¿Eres esclavo[a] o libre?». Y yo le dije: «Esclavo».'
+  rationale: Removed the duplicate [a] marker from the second 'Esclavo' (the one-word answer). The footnote explaining the choice of 'esclavo' belongs to the first occurrence where the word appears in the question; the answer 'Esclavo' echoes it without needing a second marker.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:39Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek Δοῦλος εἶ ἢ ἐλεύθερος→'¿Eres esclavo o libre?'; Δοῦλος→'Esclavo'. Both occurrences of δοῦλος are correctly rendered as 'esclavo'. Source alignment is accurate.
+  spanish_quality_summary: Natural and accurate. The dialogue preserves the stark contrast. However, the [a] marker appears twice in the text (on both instances of 'Esclavo') but there is only one footnote entry for marker 'a'. This creates an ambiguity in the footnote system — standard practice is that each marker appears once, or if repeated, each should map clearly.
+  glossary_alignment: 'δοῦλος→esclavo: correct per POB policy. ἐλεύθερος→libre: correct.'
+  issues:
+  - severity: medium
+    issue: 'The footnote marker [a] appears twice in the text: on ''¿Eres esclavo[a] o libre?'' and on ''Esclavo[a]''. There is only one footnote entry. Footnote markers in the POB system should appear once per footnote entry to maintain a clean correspondence.'
+    rationale: Duplicate markers can confuse the reading surface. The footnote note is more relevant to the first occurrence (the question) where the word choice is explained; the second is the single-word answer which may not need marking.
+  revised_spanish_text: 'Y, después de separarme de él, me dijo: «¿Eres esclavo[a] o libre?». Y yo le dije: «Esclavo».'
+  revised_footnotes:
+  - marker: a
+    text: '''Esclavo'' conserva la fuerza del griego δοῦλος; ''siervo'' suavizaría el contraste con ''libre''.'
+    reason: lexical_alternative
+  revision_rationale: Removed the duplicate [a] marker from the second 'Esclavo' (the one-word answer). The footnote explaining the choice of 'esclavo' belongs to the first occurrence where the word appears in the question; the answer 'Esclavo' echoes it without needing a second marker.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2277d533d2ca52f2ea91292334dc08eda9e45cefe0b90ebcd6eb602d31236e50
+  timestamp: '2026-05-08T06:36:39Z'
+  output_hash: 2277d533d2ca52f2ea91292334dc08eda9e45cefe0b90ebcd6eb602d31236e50
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

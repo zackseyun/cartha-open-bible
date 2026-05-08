@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 2. Por fin, con malas intenciones, me agarró las vestiduras por la fuerza, arrastrándome violentamente hacia el coito.
+  text: Por fin, con fuerza me agarró las vestiduras, arrastrándome violentamente hacia el coito.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Τέλος βίᾳ ἐπελαμβάνετό
@@ -81,4 +81,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 2. Por fin, con malas intenciones, me agarró las vestiduras por la fuerza, arrastrándome violentamente hacia el coito.
+  to: Por fin, con fuerza me agarró las vestiduras, arrastrándome violentamente hacia el coito.
+  rationale: Removed 'con malas intenciones' which has no Greek basis; βίᾳ = 'by force'. Dropped '2.' verse tag to match EN per-verse current format. 'Con fuerza' now renders βίᾳ directly, matching the final EN revision.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Τέλος βίᾳ ἐπελαμβάνετό μου τῶν ἱματίων, μετὰ βίας ἐφελκομένη με εἰς συνουσίαν. The source only has βίᾳ/μετὰ βίας (by force/violently) — there is no phrase corresponding to ''with evil intent'' / ''con malas intenciones''. The final EN revised text is ''At last, by force, she seized my garments, violently dragging me toward intercourse.'' The addition ''con malas intenciones'' in the ES draft reflects an older EN draft form that was superseded.'
+  spanish_quality_summary: Otherwise good Spanish. The revision removes the unsourced addition and aligns with the final POB EN text.
+  glossary_alignment: coito for συνουσία follows POB directness policy. vestiduras for ἱμάτιον correct.
+  issues:
+  - severity: medium
+    issue: '''Con malas intenciones'' has no basis in the Greek source (βίᾳ means ''by force'' only) and was removed in the POB EN revision'
+    rationale: The EN base text in the per-verse file confirms the revision removed this phrase. The Spanish draft was based on an older EN form.
+  revised_spanish_text: Por fin, con fuerza me agarró las vestiduras, arrastrándome violentamente hacia el coito.
+  revision_rationale: Removed 'con malas intenciones' which has no Greek basis; βίᾳ = 'by force'. Dropped '2.' verse tag to match EN per-verse current format. 'Con fuerza' now renders βίᾳ directly, matching the final EN revision.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7bb8d189186cd0d3487366e86838c8fa8ac621775118fb9d103d5cb05466a16d
+  timestamp: '2026-05-08T06:30:59Z'
+  output_hash: 7bb8d189186cd0d3487366e86838c8fa8ac621775118fb9d103d5cb05466a16d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y cuando fui llevado adentro, me postré ante Pentefris, pues, dijo, era el tercero en rango[a] entre los gobernantes del faraón.
+  text: Y cuando fui llevado adentro, me postré ante Pentefris, pues era el tercero en rango[a] entre los gobernantes del faraón.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -90,4 +90,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y cuando fui llevado adentro, me postré ante Pentefris, pues, dijo, era el tercero en rango[a] entre los gobernantes del faraón.
+  to: Y cuando fui llevado adentro, me postré ante Pentefris, pues era el tercero en rango[a] entre los gobernantes del faraón.
+  rationale: Removed 'dijo' (he said), which is present in the chapter-level draft but not in the per-verse EN final. The per-verse EN ('for he was third in rank') is the authoritative base. Retained the footnote offering the alternative 'oficio'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek εἰσαχθεὶς→'cuando fui llevado adentro'; προσεκύνησα→'me postré'; ἐν ἀξιώματι→'en rango'; Φαραὼ ἀρχόντων→'gobernantes del faraón'. The chapter-level base has 'he was, he said, third in rank' but the per-verse EN final text reads 'for he was third in rank' without 'he said'. The ES includes 'pues, dijo' (he said) following the chapter-level wording, not the per-verse EN final.
+  spanish_quality_summary: Generally natural and accurate. 'Me postré' is a good rendering of προσεκύνησα. 'Gobernantes' for ἀρχόντων is appropriate. The inserted 'dijo' is a minor over-addition not present in the per-verse EN final.
+  glossary_alignment: No divine names or key glossary terms in this verse.
+  issues:
+  - severity: low
+    issue: The ES includes 'pues, dijo, era el tercero en rango' — the inserted 'dijo' (he said) is present in the chapter-level base but absent from the per-verse EN final ('for he was third in rank'). The per-verse EN is the authoritative base for per-verse files.
+    rationale: The chapter-level draft had 'he was, he said' as an editorial note; the per-verse EN final dropped it. The ES should follow the per-verse EN.
+  revised_spanish_text: Y cuando fui llevado adentro, me postré ante Pentefris, pues era el tercero en rango[a] entre los gobernantes del faraón.
+  revised_footnotes:
+  - marker: a
+    text: O 'tercero en oficio entre los gobernantes del faraón'.
+    reason: lexical_alternative
+  revision_rationale: Removed 'dijo' (he said), which is present in the chapter-level draft but not in the per-verse EN final. The per-verse EN ('for he was third in rank') is the authoritative base. Retained the footnote offering the alternative 'oficio'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a8098d6d5a3f27bd875c7f2045e7436f0e238297f8fe5c4f0d860bcb7775df9e
+  timestamp: '2026-05-08T06:36:26Z'
+  output_hash: a8098d6d5a3f27bd875c7f2045e7436f0e238297f8fe5c4f0d860bcb7775df9e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

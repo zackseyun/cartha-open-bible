@@ -39,7 +39,7 @@ base_translation:
     changes_summary: Changed 'because of your uncleanness' to 'in your uncleanness' to more closely reflect ἐν τῇ ἀκαθαρσίᾳ ὑμῶν. No other changes needed.
 translation:
   language: es
-  text: Por tanto, el templo que el Señor escogerá quedará desolado en vuestra impureza, y seréis llevados cautivos entre todas las naciones. Seréis una abominación para ellos, y recibiréis oprobio y vergüenza eterna de la recta justicia de Dios. Y todos los que os odian se alegrarán por vuestra destrucción. Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibiríais misericordia; ni uno solo de vuestra descendencia quedaría sobre la tierra.
+  text: Por tanto, el templo que el Señor escogerá quedará desolado en su impureza, y serán llevados cautivos entre todas las naciones. Serán una abominación para ellos, y recibirán oprobio y vergüenza eterna de la recta justicia de Dios. Y todos los que los odian se alegrarán por su destrucción. Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; ni uno solo de su descendencia quedaría sobre la tierra.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ναός
@@ -196,4 +196,42 @@ ai_draft:
     total_tokens: 5374
     reasoning_tokens: 0
     estimated_cost_usd: 0.011272
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, el templo que el Señor escogerá quedará desolado en vuestra impureza, y seréis llevados cautivos entre todas las naciones. Seréis una abominación para ellos, y recibiréis oprobio y vergüenza eterna de la recta justicia de Dios. Y todos los que os odian se alegrarán por vuestra destrucción. Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibiríais misericordia; ni uno solo de vuestra descendencia quedaría sobre la tierra.
+  to: Por tanto, el templo que el Señor escogerá quedará desolado en su impureza, y serán llevados cautivos entre todas las naciones. Serán una abominación para ellos, y recibirán oprobio y vergüenza eterna de la recta justicia de Dios. Y todos los que los odian se alegrarán por su destrucción. Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; ni uno solo de su descendencia quedaría sobre la tierra.
+  rationale: Replaced Castilian vosotros/vuestra forms throughout with neutral Latin-American ustedes/su/serán forms to match the file's declared variant.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:38Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter-level ES text uses vosotros/vuestra forms throughout (''seréis llevados cautivos'', ''vuestra destrucción'', etc.) while marked as neutral Latin American. The actual content translation is accurate: templo/escogerá/desolado/impureza/cautivos/naciones/abominación/oprobio/vergüenza eterna/recta justicia/destrucción/misericordia/descendencia all correct. However ''recta justicia'' for δικαιοκρισίας departs somewhat from the per-verse choice of ''justo juicio''; both are defensible but the per-verse is closer to the EN POB ''righteous judgment''.'
+  spanish_quality_summary: The chapter-level text uses Castilian vosotros/vuestra forms throughout ('seréis llevados cautivos entre todas las naciones', 'seréis una abominación', 'recibiréis', 'los que os odian', 'vuestra destrucción', 'recibiríais', 'vuestra descendencia') in a file marked neutral Latin American.
+  glossary_alignment: Señor for κύριος correct. Dios for Θεός correct. No YHWH/Mesías/Espíritu/esclavo issues.
+  issues:
+  - severity: medium
+    issue: Consistent use of Castilian vosotros forms throughout the chapter-level text in a neutral Latin-American Spanish file.
+    rationale: seréis/recibiréis/os/vuestra/recibiríais/vuestra should be serán/recibirán/los/su/recibirían/su in neutral Latin-American Spanish.
+  - severity: low
+    issue: '''recta justicia'' for δικαιοκρισίας diverges from per-verse ''justo juicio''.'
+    rationale: Per-verse uses 'justo juicio de Dios' which is closer to EN 'righteous judgment of God'. Both are defensible.
+  revised_spanish_text: Por tanto, el templo que el Señor escogerá quedará desolado en su impureza, y serán llevados cautivos entre todas las naciones. Serán una abominación para ellos, y recibirán oprobio y vergüenza eterna de la recta justicia de Dios. Y todos los que los odian se alegrarán por su destrucción. Y si no fuera por Abraham, Isaac y Jacob, nuestros padres, no recibirían misericordia; ni uno solo de su descendencia quedaría sobre la tierra.
+  revision_rationale: Replaced Castilian vosotros/vuestra forms throughout with neutral Latin-American ustedes/su/serán forms to match the file's declared variant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 81d12d38adcc09363b293e9d755f17bab72f93822e0853e822e335477349e45c
+  timestamp: '2026-05-08T06:47:38Z'
+  output_hash: 81d12d38adcc09363b293e9d755f17bab72f93822e0853e822e335477349e45c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

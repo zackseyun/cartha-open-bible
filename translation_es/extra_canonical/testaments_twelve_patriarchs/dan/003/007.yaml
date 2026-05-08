@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y le da poder al cuerpo, para que cometa toda obra inicua.
+  text: Y hace suyo el cuerpo del iracundo, y se enseñorea de su alma, y le da fuerza al cuerpo, para que cometa toda obra inicua.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: δύναμις
@@ -77,4 +77,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y le da poder al cuerpo, para que cometa toda obra inicua.
+  to: Y hace suyo el cuerpo del iracundo, y se enseñorea de su alma, y le da fuerza al cuerpo, para que cometa toda obra inicua.
+  rationale: 'Added the two missing clauses from the Greek source: ''Y hace suyo el cuerpo del iracundo'' (ἴδιον ποιεῖται τοῦ θυμουμένου) and ''se enseñorea de su alma'' (τῆς δὲ ψυχῆς κατακυριεύει). Changed ''poder'' to ''fuerza'' for δύναμιν in this clause (physical capacity given to the body) to align with the chapter-level distinction. The verb ''enseñorearse'' is consistent with the chapter-level translation of κατακυριεύει.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''And it makes the body of the angry man its own, and gains mastery over the soul, and gives the body strength so that it may commit every lawless deed.'' The ES draft rendered only the final clause (''Y le da poder al cuerpo, para que cometa toda obra inicua'') omitting ''it makes the body of the angry man its own'' (ἴδιον ποιεῖται τοῦ θυμουμένου) and ''gains mastery over the soul'' (τῆς δὲ ψυχῆς κατακυριεύει). This appears to be because the ES base_translation field shows a truncated EN; the actual EN YAML has the full verse.'
+  spanish_quality_summary: The fragment translated is good Spanish, but the verse is substantially incomplete.
+  glossary_alignment: ἀνομία→obra inicua correct. Needs σῶμα→cuerpo and ψυχή→alma in the missing clauses.
+  issues:
+  - severity: high
+    issue: 'ES omits two-thirds of the verse: ''it makes the body of the angry man its own'' and ''gains mastery over the soul'' are missing entirely.'
+    rationale: The Greek has three coordinated clauses; the ES draft only rendered the third. This leaves major source content untranslated.
+  revised_spanish_text: Y hace suyo el cuerpo del iracundo, y se enseñorea de su alma, y le da fuerza al cuerpo, para que cometa toda obra inicua.
+  revision_rationale: 'Added the two missing clauses from the Greek source: ''Y hace suyo el cuerpo del iracundo'' (ἴδιον ποιεῖται τοῦ θυμουμένου) and ''se enseñorea de su alma'' (τῆς δὲ ψυχῆς κατακυριεύει). Changed ''poder'' to ''fuerza'' for δύναμιν in this clause (physical capacity given to the body) to align with the chapter-level distinction. The verb ''enseñorearse'' is consistent with the chapter-level translation of κατακυριεύει.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2674c9c64e1c8be73d1f23d9baad18729d472769a3a98b0fceaa44999d152b8c
+  timestamp: '2026-05-08T06:30:08Z'
+  output_hash: 2674c9c64e1c8be73d1f23d9baad18729d472769a3a98b0fceaa44999d152b8c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

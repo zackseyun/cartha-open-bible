@@ -19,12 +19,8 @@ base_translation:
     changes_summary: Changed "for my sake he served" to "through me he worked" to reflect ἠργάσατο more literally and avoid importing "served"; kept the rest unchanged.
 translation:
   language: es
-  text: 'Y Raquel dijo: «No te jactes ni te engrías; porque él se había desposado conmigo antes que contigo, y por medio de mí trabajó para nuestro padre catorce años»[a].'
+  text: Pero Labán me engañó con astucia y me alejó aquella noche, y no permitió que Jacob me viera; porque si yo hubiera estado allí, esto no le habría sucedido a él.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El griego transmitido en este pasaje presenta una forma y un contenido distintos del texto inglés POB auditado; se conserva aquí la lectura recibida por la POB para mantener continuidad con su tradición de traducción y revisión.
-    reason: textual_variant
 lexical_decisions:
 - source_word: ἠπάτησέ με
   english_pob_choice: Do not boast, and do not be arrogant
@@ -92,4 +88,39 @@ ai_draft:
     total_tokens: 2814
     reasoning_tokens: 0
     estimated_cost_usd: 0.005924
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y Raquel dijo: «No te jactes ni te engrías; porque él se había desposado conmigo antes que contigo, y por medio de mí trabajó para nuestro padre catorce años»[a].'
+  to: Pero Labán me engañó con astucia y me alejó aquella noche, y no permitió que Jacob me viera; porque si yo hubiera estado allí, esto no le habría sucedido a él.
+  rationale: 'Replaces the misaligned content (v.10 material) with a correct translation of the Greek v.12: Laban deceives Leah with guile (ἐν δόλῳ ἠπάτησέ), removes her that night (μετέστησέ με τὴν νύκτα ἐκείνην), does not allow Jacob to see her, with counterfactual conclusion. ''Astucia'' renders δόλος naturally here; ''engañó'' renders ἠπάτησέ; ''alejó'' renders μετέστησέ; ''esto no le habría sucedido'' renders τοῦτο αὐτῷ οὐκ ἐγένετο.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:29Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek for v.12: Λαβὰν δὲ ἐν δόλῳ ἠπάτησέ με καὶ μετέστησέ με τὴν νύκτα ἐκείνην, καὶ οὐκ εἴασε τῷ Ἰακὼβ ἰδεῖν με, ἐπεί, ἐὰν ἤμην ἐκεῖ, τοῦτο αὐτῷ οὐκ ἐγένετο. EN POB for v.12: ''But Laban deceived me with guile, and removed me that night, and did not allow Jacob to see me; for if I had been there, this would not have happened to him.'' The ES draft however translates a DIFFERENT text — it renders content about Rachel''s boasting/pride and Jacob serving 14 years, which actually belongs to verse 10. The base_translation field in the ES YAML shows the EN YAML path 001/012 but the text stored is ''And Rachel said, Do not boast...'' which belongs to v.10. The actual EN for 001/012 in the EN YAML reads ''But Laban deceived me with guile...'' The ES draft has been generated from the wrong EN base text, creating a severe misalignment.'
+  spanish_quality_summary: 'The ES draft ''Y Raquel dijo: No te jactes ni te engrías; porque él se había desposado conmigo antes que contigo, y por medio de mí trabajó para nuestro padre catorce años'' is a translation of a completely different verse. It should be translating Laban deceiving Leah and removing her that night.'
+  glossary_alignment: δόλος→engaño is consistent in this chapter.
+  issues:
+  - severity: high
+    issue: 'Complete content misalignment: the ES draft translates v.10 content (Rachel''s speech about boasting/14 years) but should translate v.12 (Laban deceiving Leah with guile, removing her that night).'
+    rationale: 'The EN 001/012.yaml text is ''But Laban deceived me with guile, and removed me that night, and did not allow Jacob to see me; for if I had been there, this would not have happened to him.'' The ES draft has Raquel dijo: No te jactes... which is v.10 content.'
+  revised_spanish_text: Pero Labán me engañó con astucia y me alejó aquella noche, y no permitió que Jacob me viera; porque si yo hubiera estado allí, esto no le habría sucedido a él.
+  revision_rationale: 'Replaces the misaligned content (v.10 material) with a correct translation of the Greek v.12: Laban deceives Leah with guile (ἐν δόλῳ ἠπάτησέ), removes her that night (μετέστησέ με τὴν νύκτα ἐκείνην), does not allow Jacob to see her, with counterfactual conclusion. ''Astucia'' renders δόλος naturally here; ''engañó'' renders ἠπάτησέ; ''alejó'' renders μετέστησέ; ''esto no le habría sucedido'' renders τοῦτο αὐτῷ οὐκ ἐγένετο.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: bfb9b1830967aeec022e21c2694a65666d3a20d8956b202e712d1c9cbeef0561
+  timestamp: '2026-05-08T06:29:29Z'
+  output_hash: bfb9b1830967aeec022e21c2694a65666d3a20d8956b202e712d1c9cbeef0561
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

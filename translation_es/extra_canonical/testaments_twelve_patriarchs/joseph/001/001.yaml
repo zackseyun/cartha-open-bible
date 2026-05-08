@@ -19,12 +19,8 @@ base_translation:
     changes_summary: Added the final comma before 'and said to them' to match the source clause structure more closely.
 translation:
   language: es
-  text: 'José, sobre el dominio propio[a]. Copia del testamento de José. Cuando estaba a punto de morir, llamó a sus hijos y a sus hermanos, y les dijo:'
+  text: 'El testamento de José, el undécimo hijo de Jacob y de Raquel. Copia del testamento de José. Cuando estaba a punto de morir, llamó a sus hijos y a sus hermanos, y les dijo:'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'σωφροσύνη: virtud griega de la moderación, autodominio y prudencia. En este Testamento adquiere un fuerte matiz de castidad y dominio sexual, que estructura la narración siguiente.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: περὶ σωφροσύνης (encabezado)
   english_pob_choice: concerning self-control
@@ -78,4 +74,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'José, sobre el dominio propio[a]. Copia del testamento de José. Cuando estaba a punto de morir, llamó a sus hijos y a sus hermanos, y les dijo:'
+  to: 'El testamento de José, el undécimo hijo de Jacob y de Raquel. Copia del testamento de José. Cuando estaba a punto de morir, llamó a sus hijos y a sus hermanos, y les dijo:'
+  rationale: 'Updated superscription from the pre-realignment form (''José, sobre el dominio propio'') to match the phase2-realigned EN and the Greek source: Διαθήκη Ἰωσὴφ τοῦ ἑνδεκάτου υἱοῦ Ἰακὼβ καὶ Ῥαχήλ = ''El testamento de José, el undécimo hijo de Jacob y de Raquel.'' The footnote on σωφροσύνη is removed as the theme header is no longer present in the revised text.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek superscription: Διαθήκη Ἰωσὴφ τοῦ ἑνδεκάτου υἱοῦ Ἰακὼβ καὶ Ῥαχήλ = ''The testament of Joseph, the eleventh son of Jacob and Rachel.'' The EN was phase2-realigned to render this correctly. The ES base_translation still reflects the old EN (''José, sobre el dominio propio'') which pre-dates the realignment and no longer matches the current EN or the Greek superscription.'
+  spanish_quality_summary: The current ES text 'José, sobre el dominio propio[a]' is based on the pre-realignment EN. Once updated to match the realigned EN, quality will be high. The body clause ('Cuando estaba a punto de morir, llamó a sus hijos y a sus hermanos, y les dijo:') is faithful.
+  glossary_alignment: No glossary terms at issue in the revised superscription.
+  issues:
+  - severity: high
+    issue: ES superscription does not reflect the phase2-realigned EN ('The testament of Joseph, the eleventh son of Jacob and Rachel'). Current ES renders 'José, sobre el dominio propio' which matches the old pre-realignment EN header, not the Greek source.
+    rationale: The EN phase2_realign_pass updated the superscription to match the Greek (Διαθήκη Ἰωσὴφ τοῦ ἑνδεκάτου υἱοῦ Ἰακὼβ καὶ Ῥαχήλ). The ES must follow.
+  revised_spanish_text: 'El testamento de José, el undécimo hijo de Jacob y de Raquel. Copia del testamento de José. Cuando estaba a punto de morir, llamó a sus hijos y a sus hermanos, y les dijo:'
+  revision_rationale: 'Updated superscription from the pre-realignment form (''José, sobre el dominio propio'') to match the phase2-realigned EN and the Greek source: Διαθήκη Ἰωσὴφ τοῦ ἑνδεκάτου υἱοῦ Ἰακὼβ καὶ Ῥαχήλ = ''El testamento de José, el undécimo hijo de Jacob y de Raquel.'' The footnote on σωφροσύνη is removed as the theme header is no longer present in the revised text.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a98b662296487b710dfd1f6a3e54132bc46b6a4a619dcb15b1e5b27b8e106c7d
+  timestamp: '2026-05-08T06:28:46Z'
+  output_hash: a98b662296487b710dfd1f6a3e54132bc46b6a4a619dcb15b1e5b27b8e106c7d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

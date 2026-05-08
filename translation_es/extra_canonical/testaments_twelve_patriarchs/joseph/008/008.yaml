@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 8. Porque si alguien cae bajo la pasión del deseo y queda esclavizado a ella, como también ella, aun si oye algo bueno, lo toma en relación con esa pasión, hacia su deseo malvado[a].
+  text: 8. Porque si alguien cae bajo la pasión del deseo y queda esclavizado a ella, como también ella, aun si oye algo bueno, lo toma en relación con esa pasión, hacia su deseo malvado.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O 'hacia la unión sexual'. El griego συνουσία es término explícito para relaciones sexuales (referencia al contexto del capítulo).
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ὑποπέσῃ πάθει ἐπιθυμίας
   english_pob_choice: falls under the passion of desire
@@ -101,4 +97,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 8. Porque si alguien cae bajo la pasión del deseo y queda esclavizado a ella, como también ella, aun si oye algo bueno, lo toma en relación con esa pasión, hacia su deseo malvado[a].
+  to: 8. Porque si alguien cae bajo la pasión del deseo y queda esclavizado a ella, como también ella, aun si oye algo bueno, lo toma en relación con esa pasión, hacia su deseo malvado.
+  rationale: Removed erroneous footnote marker [a] and the associated footnote about συνουσία, which does not appear in 8:8. The footnote belongs to the chapter-level file at 8:2 where συνουσίαν occurs.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:27:57Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'T.Jos 8:8 Greek: ὑποπέσῃ πάθει ἐπιθυμίας / δουλωθῇ αὐτῷ / ἐκλαμβάνει αὐτὸ πρὸς τὴν πονηρὰν ἐπιθυμίαν. Spanish ''queda esclavizado a ella'' correctly renders δουλωθῇ (feminine agreement with ''pasión''). The footnote marker [a] is present in the text but the footnote text incorrectly references συνουσία, which belongs to 8:2, not 8:8. The EN per-verse file has no footnote; the chapter-level EN file has footnote ''8:2'' for συνουσία. The per-verse ES file should not carry a συνουσία footnote — that footnote belongs to the chapter/verse where συνουσίαν appears (v.2 of ch.8). This is an erroneous footnote insertion.'
+  spanish_quality_summary: 'The translation body itself is excellent: source-faithful, natural Spanish, correct bondage language. The only problem is the footnote [a] which references συνουσία — a word not present in 8:8. The marker [a] must be removed from the text and the footnote array must be empty.'
+  glossary_alignment: δοῦλος family → 'esclavizado' correct. ἐπιθυμία → 'deseo' correct. πονηρός → 'malvado' correct.
+  issues:
+  - severity: high
+    issue: Footnote [a] in text references συνουσία which does not appear in 8:8
+    rationale: T.Jos 8:8 contains no form of συνουσία; the marker and footnote belong to 8:2 (chapter-level). The per-verse file must have clean text with no footnote marker, and an empty footnotes array.
+  revised_spanish_text: 8. Porque si alguien cae bajo la pasión del deseo y queda esclavizado a ella, como también ella, aun si oye algo bueno, lo toma en relación con esa pasión, hacia su deseo malvado.
+  revision_rationale: Removed erroneous footnote marker [a] and the associated footnote about συνουσία, which does not appear in 8:8. The footnote belongs to the chapter-level file at 8:2 where συνουσίαν occurs.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5ac3b0b842107861ca1c12178fcc1ffceda6277e36d9c27aabd757dc9e4bfa07
+  timestamp: '2026-05-08T06:27:57Z'
+  output_hash: 5ac3b0b842107861ca1c12178fcc1ffceda6277e36d9c27aabd757dc9e4bfa07
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

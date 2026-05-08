@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'torments me' to 'strikes me' to better reflect τύπτει; otherwise kept the sentence structure.
 translation:
   language: es
-  text: Y aun ahora mi conciencia me [a] golpea por causa de mi pecado.
+  text: Y aun ahora mi conciencia me golpea[a] por causa de mi pecado.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -84,4 +84,43 @@ ai_draft:
     total_tokens: 2293
     reasoning_tokens: 0
     estimated_cost_usd: 0.004198
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y aun ahora mi conciencia me [a] golpea por causa de mi pecado.
+  to: Y aun ahora mi conciencia me golpea[a] por causa de mi pecado.
+  rationale: 'Fixed malformed footnote marker placement: moved [a] from between ''me'' and ''golpea'' to directly after ''golpea'' without surrounding spaces. All other content unchanged.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:47Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: καὶ ἕως νῦν ἡ συνείδησίς μου τύπτει με περὶ τῆς ἁμαρτίας μου. EN (revised): ''And even now my conscience strikes me concerning my sin.'' ES: ''Y aun ahora mi conciencia me [a] golpea por causa de mi pecado.'' Issue: There is an errant space in the marker placement — ''me [a] golpea'' should be ''me golpea[a]'' or the anchor should be after ''golpea''. The marker is floating between ''me'' and ''golpea'' with spaces around it, which is malformed and inconsistent with POB footnote convention (markers should directly follow the word they annotate, no surrounding spaces).'
+  spanish_quality_summary: Content is excellent. 'Me golpea' for τύπτει is faithful to the revised EN. 'Por causa de mi pecado' for περὶ τῆς ἁμαρτίας μου is natural and accurate. The only structural issue is the malformed footnote marker placement.
+  glossary_alignment: No divine name issues. No πνεῦμα here.
+  issues:
+  - severity: high
+    issue: 'Footnote marker [a] is malformed: appears as ''me [a] golpea'' with spaces on both sides, floating between two words. POB convention requires the marker to directly follow the annotated word without surrounding spaces, e.g. ''me golpea[a]''.'
+    rationale: Markers must be directly appended to the word they annotate (e.g. 'golpea[a]') with no space before the bracket, to match footnote lookup conventions and reading surface display.
+  revised_spanish_text: Y aun ahora mi conciencia me golpea[a] por causa de mi pecado.
+  revised_footnotes:
+  - marker: a
+    text: 'También: «me acusa».'
+    reason: lexical_alternative
+  revision_rationale: 'Fixed malformed footnote marker placement: moved [a] from between ''me'' and ''golpea'' to directly after ''golpea'' without surrounding spaces. All other content unchanged.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 31ed8ad46614b2f4735f2a931cd2f5d334d52ca531a2f4c6505570636677e502
+  timestamp: '2026-05-08T06:48:47Z'
+  output_hash: 31ed8ad46614b2f4735f2a931cd2f5d334d52ca531a2f4c6505570636677e502
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,10 +19,10 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Porque si dices al ojo: «Escucha», no podrá[o]; así tampoco, estando en tinieblas, pueden hacer las obras de la luz.'
+  text: 'Porque si dices al ojo: «Escucha», no podrá[a]; así tampoco, estando en tinieblas, pueden hacer las obras de la luz.'
   philosophy: optimal-equivalence
   footnotes:
-  - marker: o
+  - marker: a
     text: Lit. «escucha»; el imperativo conserva la personificación del ojo que oye, una imposibilidad deliberada en la imagen.
     reason: lexical_alternative
 lexical_decisions:
@@ -100,4 +100,43 @@ ai_draft:
     total_tokens: 2426
     reasoning_tokens: 0
     estimated_cost_usd: 0.005243
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Porque si dices al ojo: «Escucha», no podrá[o]; así tampoco, estando en tinieblas, pueden hacer las obras de la luz.'
+  to: 'Porque si dices al ojo: «Escucha», no podrá[a]; así tampoco, estando en tinieblas, pueden hacer las obras de la luz.'
+  rationale: Corrected footnote marker from 'o' to 'a' to follow POB sequential-letter convention. No other changes needed.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἄκουε→Escucha, ἐν σκότει→en tinieblas, ἔργα φωτός→obras de la luz — all well-rendered. The footnote marker [o] is non-standard (POB convention uses sequential alphabetic starting at [a]). The footnote content itself is sound but the marker letter ''o'' looks like it may be a draft artifact.'
+  spanish_quality_summary: The translation text is excellent and natural. The footnote note content is appropriate. The issue is only the non-standard marker 'o' which should be 'a' for the first footnote in this verse.
+  glossary_alignment: σκότος→tinieblas correct. No YHWH/Χριστός/δοῦλος/πνεῦμα issues.
+  issues:
+  - severity: low
+    issue: Footnote marker is 'o' instead of 'a'. POB convention uses sequential letters starting with 'a' for each verse.
+    rationale: The marker [o] in the text and footnote entry both say 'o', so they match each other, but 'o' is non-sequential and non-standard for a first footnote.
+  revised_spanish_text: 'Porque si dices al ojo: «Escucha», no podrá[a]; así tampoco, estando en tinieblas, pueden hacer las obras de la luz.'
+  revised_footnotes:
+  - marker: a
+    text: Lit. «escucha»; el imperativo conserva la personificación del ojo que oye, una imposibilidad deliberada en la imagen.
+    reason: lexical_alternative
+  revision_rationale: Corrected footnote marker from 'o' to 'a' to follow POB sequential-letter convention. No other changes needed.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d7200e4d0472f8b4efdff9c324179747fc5843bbb7beab6e5f43b2b0ec7d87ca
+  timestamp: '2026-05-08T06:45:46Z'
+  output_hash: d7200e4d0472f8b4efdff9c324179747fc5843bbb7beab6e5f43b2b0ec7d87ca
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

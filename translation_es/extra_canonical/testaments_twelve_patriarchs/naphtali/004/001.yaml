@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the footnote marker, changed "learned from" to "have learned in" to match ἐν τῇ γραφῇ, and rendered ἀποστήσεσθε as "will depart" without the added intensifier "surely."
 translation:
   language: es
-  text: Estas cosas os digo, hijos míos, porque he aprendido en la escritura de Enoc que también vosotros os apartaréis de Yahvé, andando en toda la iniquidad de las naciones y haciendo toda la maldad de Sodoma.
+  text: Estas cosas les digo, hijos míos, porque he aprendido en la escritura de Enoc que ustedes también se apartarán de Yahvé, andando en toda la iniquidad de las naciones y haciendo toda la maldad de Sodoma.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ταῦτα λέγω ὑμῖν
@@ -119,4 +119,39 @@ ai_draft:
     total_tokens: 3214
     reasoning_tokens: 0
     estimated_cost_usd: 0.007585
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Estas cosas os digo, hijos míos, porque he aprendido en la escritura de Enoc que también vosotros os apartaréis de Yahvé, andando en toda la iniquidad de las naciones y haciendo toda la maldad de Sodoma.
+  to: Estas cosas les digo, hijos míos, porque he aprendido en la escritura de Enoc que ustedes también se apartarán de Yahvé, andando en toda la iniquidad de las naciones y haciendo toda la maldad de Sodoma.
+  rationale: Replaced vosotros-register forms ('os digo', 'vosotros os apartaréis') with neutral Latin American Spanish ustedes forms ('les digo', 'ustedes también se apartarán'). No other changes needed.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:49:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Lexical choices are accurate: ἔγνων→he aprendido, γραφῇ Ἐνώχ→escritura de Enoc, ἀποστήσεσθε→os apartaréis, Κυρίου→Yahvé (correct), ἀνομίαν→iniquidad, πονηρίαν→maldad. EN revision (no ''surely'', ἐν τῇ γραφῇ not ''from'') is followed. The issue is morphosyntactic: vosotros forms throughout (''os digo'', ''vosotros os apartaréis'', ''andando…haciendo'').'
+  spanish_quality_summary: Otherwise well-rendered. The register violation (vosotros instead of ustedes) affects the whole verse and must be corrected per the neutral Latin American Spanish requirement.
+  glossary_alignment: Yahvé for Κυρίου correct. Sodom/Sodoma preserved.
+  issues:
+  - severity: high
+    issue: Vosotros register used throughout ('os digo', 'vosotros os apartaréis') instead of required neutral Latin American Spanish with ustedes.
+    rationale: The project spec requires neutral Latin American Spanish. 'Os' and 'vosotros' are Spain-Spanish forms not used in Latin America.
+  revised_spanish_text: Estas cosas les digo, hijos míos, porque he aprendido en la escritura de Enoc que ustedes también se apartarán de Yahvé, andando en toda la iniquidad de las naciones y haciendo toda la maldad de Sodoma.
+  revision_rationale: Replaced vosotros-register forms ('os digo', 'vosotros os apartaréis') with neutral Latin American Spanish ustedes forms ('les digo', 'ustedes también se apartarán'). No other changes needed.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d8de8c4e5bc744332c0a3a468935df4b47a45a27caba67ae294225dfedfdb6c6
+  timestamp: '2026-05-08T06:49:32Z'
+  output_hash: d8de8c4e5bc744332c0a3a468935df4b47a45a27caba67ae294225dfedfdb6c6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Pero él dijo: «¿Cómo llegaste a ser esclavo de ellos?» Y yo dije: «Me compraron en la tierra de Canaán».'
+  text: 'Pero él dijo: «¿Cómo llegaste a ser esclavo de ellos?» Y yo dije: «Me compraron de la tierra de Canaán».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: δοῦλος
@@ -80,4 +80,39 @@ ai_draft:
     total_tokens: 2100
     reasoning_tokens: 0
     estimated_cost_usd: 0.003874
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Pero él dijo: «¿Cómo llegaste a ser esclavo de ellos?» Y yo dije: «Me compraron en la tierra de Canaán».'
+  to: 'Pero él dijo: «¿Cómo llegaste a ser esclavo de ellos?» Y yo dije: «Me compraron de la tierra de Canaán».'
+  rationale: Changed 'en la tierra de Canaán' to 'de la tierra de Canaán' to accurately reflect the Greek ἐκ (from/out of) and align with the EN 'from the land of Canaan'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:56Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek ἐκ γῆς Χαναὰν ἐπριάσαντό με→'They bought me from the land of Canaan'. The preposition ἐκ means 'from/out of', indicating origin/provenance. The ES uses 'en la tierra de Canaán' (in the land of Canaan) instead of 'de la tierra de Canaán' (from the land of Canaan), which is less accurate to the source.
+  spanish_quality_summary: Otherwise natural and accurate. 'Llegaste a ser esclavo de ellos' renders the Greek well. 'Me compraron' is correct.
+  glossary_alignment: 'δοῦλος→esclavo: correct per POB policy.'
+  issues:
+  - severity: low
+    issue: '''Me compraron en la tierra de Canaán'' uses ''en'' (in) where the Greek ἐκ γῆς Χαναὰν means ''from the land of Canaan''. ''De la tierra de Canaán'' is more accurate to source and matches the EN ''from the land of Canaan''.'
+    rationale: While 'en' can be used idiomatically in Spanish for location of a purchase, the source and EN use 'from', indicating origin, not merely location. 'De la tierra de Canaán' preserves the provenance meaning.
+  revised_spanish_text: 'Pero él dijo: «¿Cómo llegaste a ser esclavo de ellos?» Y yo dije: «Me compraron de la tierra de Canaán».'
+  revision_rationale: Changed 'en la tierra de Canaán' to 'de la tierra de Canaán' to accurately reflect the Greek ἐκ (from/out of) and align with the EN 'from the land of Canaan'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 922f16f53b1ab1e151b8ea053bbe91730bd05fca4bcf255ba3fe8e159191c24b
+  timestamp: '2026-05-08T06:36:56Z'
+  output_hash: 922f16f53b1ab1e151b8ea053bbe91730bd05fca4bcf255ba3fe8e159191c24b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

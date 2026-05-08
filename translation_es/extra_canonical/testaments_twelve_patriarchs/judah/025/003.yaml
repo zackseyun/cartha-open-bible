@@ -19,11 +19,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y seréis el pueblo de Yahvé, y habrá una sola lengua, y allí no habrá espíritu[a] de engaño de Belial, porque será arrojado al fuego para siempre.
+  text: Y serán el pueblo de Yahvé, y habrá una sola lengua, y allí no habrá espíritu de engaño de Belial[a], porque será arrojado al fuego para siempre.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «espíritu» conserva aquí el valor de entidad espiritual; el griego πνεῦμα no se limita a una mera actitud interior.
+    text: «Espíritu» conserva aquí el valor de entidad espiritual; el griego πνεῦμα no se limita a una mera actitud interior.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: λαὸν Κυρίου
@@ -109,4 +109,46 @@ ai_draft:
     total_tokens: 2775
     reasoning_tokens: 0
     estimated_cost_usd: 0.00675
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y seréis el pueblo de Yahvé, y habrá una sola lengua, y allí no habrá espíritu[a] de engaño de Belial, porque será arrojado al fuego para siempre.
+  to: Y serán el pueblo de Yahvé, y habrá una sola lengua, y allí no habrá espíritu de engaño de Belial[a], porque será arrojado al fuego para siempre.
+  rationale: Corrected 'seréis' to 'serán' for neutral Latin-American Spanish. Moved footnote marker [a] from after 'espíritu' to after the full phrase 'espíritu de engaño de Belial'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ἔσεσθε εἰς λαὸν Κυρίου, γλῶσσα μία, πνεῦμα πλάνης τοῦ Βελιάρ, ἐμβληθήσεται εἰς τὸν αἰῶνα. EN POB: ''you will be the Lord''s people, with one language, and there will not be there a spirit of Belial''s deceit, because it will be thrown into the fire forever.'' Spanish draft renders this faithfully EXCEPT: (1) ''seréis'' (vosotros form) is used instead of ''serán/serán ustedes'' — in neutral Latin-American Spanish the vosotros form is not used; should be ''serán'' or ''ustedes serán''. (2) The footnote marker [a] is placed after ''espíritu'' in ''espíritu[a] de engaño de Belial'' — this is structurally odd since the note clarifies the nature of πνεῦμα as a spiritual entity, not just the word ''espíritu'' in isolation. Should attach after the full phrase ''espíritu de engaño de Belial[a]''. The EN POB phrase ''a spirit of Belial''s deceit'' = ''espíritu de engaño de Belial'' in the draft, which drops the possessive construction slightly. This is acceptable.'
+  spanish_quality_summary: 'One significant error: ''seréis'' is the Spain Spanish vosotros form. Neutral Latin-American Spanish requires ''serán'' (or ''ustedes serán''). This is a clear dialect violation for this project variant. Otherwise the text is well-rendered.'
+  glossary_alignment: Κύριος correctly rendered as 'Yahvé'. πνεῦμα rendered as 'espíritu' (lowercase) — correct for a demonic spirit of error in context.
+  issues:
+  - severity: high
+    issue: seréis is vosotros form, not used in neutral Latin-American Spanish. Must be 'serán'.
+    rationale: Project specifies neutral Latin-American Spanish variant, which uses ustedes/serán, not vosotros/seréis.
+  - severity: low
+    issue: Footnote marker [a] should follow the full annotated phrase 'espíritu de engaño de Belial', not just 'espíritu'.
+    rationale: The note explains the nature of πνεῦμα as a spiritual entity distinct from an interior attitude — it annotates the whole phrase, not the single noun.
+  revised_spanish_text: Y serán el pueblo de Yahvé, y habrá una sola lengua, y allí no habrá espíritu de engaño de Belial[a], porque será arrojado al fuego para siempre.
+  revised_footnotes:
+  - marker: a
+    text: «Espíritu» conserva aquí el valor de entidad espiritual; el griego πνεῦμα no se limita a una mera actitud interior.
+    reason: lexical_alternative
+  revision_rationale: Corrected 'seréis' to 'serán' for neutral Latin-American Spanish. Moved footnote marker [a] from after 'espíritu' to after the full phrase 'espíritu de engaño de Belial'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c67ce8f4812a061545dd9568ee70f5e2c6f8bb4245e2626d96f5394dac443f72
+  timestamp: '2026-05-08T06:36:36Z'
+  output_hash: c67ce8f4812a061545dd9568ee70f5e2c6f8bb4245e2626d96f5394dac443f72
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

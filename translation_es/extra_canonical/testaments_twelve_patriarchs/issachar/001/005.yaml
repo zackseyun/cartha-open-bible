@@ -73,4 +73,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: ἦσαν δὲ ταῦτα μῆλα εὔοσμα, ἅπερ γίνονται ἐν τῇ γῇ Χαράν ὑποκάτω φάραγγος ὑδάτων. EN POB (revised): ''Now these were fragrant fruits, which grow in the land of Haran below a watercourse.'' ES: ''Eran estas frutas fragantes, que crecen en la tierra de Harán bajo un curso de agua.'' Faithful to source: μῆλα=frutas, εὔοσμα=fragantes, γῇ Χαράν=tierra de Harán, φάραγγος ὑδάτων=curso de agua. Minor note: EN uses ''these'' (ταῦτα) and ES ''estas'', which is fine. ''Crecen'' for γίνονται is acceptable.'
+  spanish_quality_summary: Natural neutral Latin-American Spanish. 'Eran estas frutas fragantes' flows well. 'Curso de agua' adequately renders φάραγγος ὑδάτων. No issues.
+  glossary_alignment: No special glossary terms. 'Harán' is the standard Spanish biblical transliteration.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 781e600d2414c15f2d8444185d55bbb6668a52d36f078841ddf90c5411b2b2f0
+  timestamp: '2026-05-08T06:27:32Z'
+  output_hash: 781e600d2414c15f2d8444185d55bbb6668a52d36f078841ddf90c5411b2b2f0
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

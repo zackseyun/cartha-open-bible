@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised 'against the limit of wine' to 'from the boundary of wine' for a more natural rendering of τὸν ὅρον τοῦ οἴνου; changed 'heated passion' to 'burning passion' for πυρώσεως, 'wastefulness' to 'debauchery' for ἀσωτίας, and 'shameful greed' to 'shameful gain' for αἰσχροκερδίας to better reflect the Greek.
 translation:
   language: es
-  text: 'Cuidaos, pues, hijos míos, del límite del vino; porque en él hay cuatro espíritus malignos: deseo, ardor, desenfreno y ganancia vergonzosa.'
+  text: 'Cuídense, pues, hijos míos, del límite del vino; porque en él hay cuatro espíritus malignos: deseo, ardor, desenfreno y ganancia vergonzosa.'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: τὸν ὅρον τοῦ οἴνου
@@ -112,4 +112,39 @@ ai_draft:
     total_tokens: 3275
     reasoning_tokens: 0
     estimated_cost_usd: 0.00723
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Cuidaos, pues, hijos míos, del límite del vino; porque en él hay cuatro espíritus malignos: deseo, ardor, desenfreno y ganancia vergonzosa.'
+  to: 'Cuídense, pues, hijos míos, del límite del vino; porque en él hay cuatro espíritus malignos: deseo, ardor, desenfreno y ganancia vergonzosa.'
+  rationale: Changed 'Cuidaos' to 'Cuídense' to use the ustedes imperative form required by neutral Latin-American Spanish register.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Φυλάξασθε οὖν, τέκνα μου, τὸν ὅρον τοῦ οἴνου· ἔστιν γὰρ ἐν αὐτῷ τέσσαρα πνεύματα πονηρά· ἐπιθυμίας, πυρώσεως, ἀσωτίας καὶ αἰσχροκερδίας. EN POB: ''Guard yourselves, therefore, my children, from the boundary of wine; for in it there are four evil spirits: desire, burning passion, debauchery, and shameful gain.'' Spanish: ''Cuidaos, pues, hijos míos, del límite del vino; porque en él hay cuatro espíritus malignos: deseo, ardor, desenfreno y ganancia vergonzosa.'' Main issue: ''Cuidaos'' uses second person plural imperative of Spain (vosotros form). This is not neutral Latin-American Spanish — the target variant. In neutral Latin-American Spanish, ''Cuídense'' (ustedes form) is required.'
+  spanish_quality_summary: All lexical choices are good. The significant issue is 'Cuidaos' which is a vosotros form (peninsular Spanish), not neutral Latin-American. Should be 'Cuídense'. This is a systematic register error.
+  glossary_alignment: πνεύματα πονηρά→'espíritus malignos' — correctly preserves spiritual personification. No YHWH, Χριστός, δοῦλος terms. Consistent.
+  issues:
+  - severity: high
+    issue: '''Cuidaos'' is vosotros form (peninsular Spanish), not neutral Latin-American Spanish'
+    rationale: The target variant is 'neutral Latin American Spanish'; the imperative should be 'Cuídense' (ustedes).
+  revised_spanish_text: 'Cuídense, pues, hijos míos, del límite del vino; porque en él hay cuatro espíritus malignos: deseo, ardor, desenfreno y ganancia vergonzosa.'
+  revision_rationale: Changed 'Cuidaos' to 'Cuídense' to use the ustedes imperative form required by neutral Latin-American Spanish register.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 3e680a796cc2fa1ace9b02140919638040175517e3a6ef5292ce318970f580f4
+  timestamp: '2026-05-08T06:38:54Z'
+  output_hash: 3e680a796cc2fa1ace9b02140919638040175517e3a6ef5292ce318970f580f4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

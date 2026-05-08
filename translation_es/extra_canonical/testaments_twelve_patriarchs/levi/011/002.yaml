@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y ella concibió y dio a luz un hijo, y le puse por nombre Gersam, porque en tierra de peregrinación estábamos.
+  text: Y ella concibió y dio a luz un hijo, y le puse por nombre Gersam, porque estábamos en tierra de peregrinación.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: συλλαβοῦσα
@@ -97,4 +97,39 @@ ai_draft:
     total_tokens: 2336
     reasoning_tokens: 0
     estimated_cost_usd: 0.004951
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y ella concibió y dio a luz un hijo, y le puse por nombre Gersam, porque en tierra de peregrinación estábamos.
+  to: Y ella concibió y dio a luz un hijo, y le puse por nombre Gersam, porque estábamos en tierra de peregrinación.
+  rationale: Regularized inverted clause 'en tierra de peregrinación estábamos' to 'estábamos en tierra de peregrinación' for more natural Latin-American Spanish.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:49:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek: συλλαβοῦσα ἔτεκεν υἱόν (she conceived and bore a son), ἐκάλεσα τὸ ὄνομα αὐτοῦ Γηρσάμ (I called his name Gersam), ὅτι ἐν γῇ παροικίας ἦμεν (because we were in a land of sojourning). ES: ''Y ella concibió y dio a luz un hijo, y le puse por nombre Gersam, porque en tierra de peregrinación estábamos.'' Source alignment is good. The phrase order ''en tierra de peregrinación estábamos'' (inverted) instead of ''estábamos en tierra de peregrinación'' is stylistic but creates a slightly archaic Hebrew-like inversion that may be intentional for Biblical register. Acceptable but could be regularized.'
+  spanish_quality_summary: Natural and appropriate. 'Le puse por nombre' is a good idiomatic rendering of ἐκάλεσα τὸ ὄνομα αὐτοῦ. 'Tierra de peregrinación' is fitting for γῇ παροικίας. The inverted word order at the end ('en tierra de peregrinación estábamos') is elevated but slightly unusual. Could be regularized to 'porque estábamos en tierra de peregrinación' for clarity.
+  glossary_alignment: No divine name terms. No δοῦλος, πνεῦμα, Χριστός, or θεός present.
+  issues:
+  - severity: low
+    issue: Inverted clause 'en tierra de peregrinación estábamos' is unusual
+    rationale: Spanish readers may find the inversion slightly archaic. 'Porque estábamos en tierra de peregrinación' is more natural while preserving all meaning.
+  revised_spanish_text: Y ella concibió y dio a luz un hijo, y le puse por nombre Gersam, porque estábamos en tierra de peregrinación.
+  revision_rationale: Regularized inverted clause 'en tierra de peregrinación estábamos' to 'estábamos en tierra de peregrinación' for more natural Latin-American Spanish.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 76a5efeb81bbc6d35896dad241100e7194cecf2f3cf89fcc62facbfe5df5c2ca
+  timestamp: '2026-05-08T06:49:40Z'
+  output_hash: 76a5efeb81bbc6d35896dad241100e7194cecf2f3cf89fcc62facbfe5df5c2ca
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Adjusted 'because of their fear' to 'because of fear of them' for closer alignment with the Greek, removed 'so as' for a more direct rendering of the infinitive, and smoothed punctuation.
 translation:
   language: es
-  text: Y no me dejé envanecer en el mal; al contrario, honraba a mis hermanos, y por temor a ellos guardé silencio cuando estaba siendo vendido, sin decir a los ismaelitas que yo era hijo de Jacob, un hombre grande y poderoso[a].
+  text: Y no me dejé envanecer en el mal; al contrario, honraba a mis hermanos, y por temor a ellos guardé silencio cuando estaba siendo vendido, sin decir a los ismaelitas que yo era hijo de Jacob, un hombre grande y justo[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Algunos testigos griegos tienen δικαίου ('justo') en lugar de la lectura traducida aquí como 'poderoso'; el sentido fundamental es que José se contuvo en silencio respecto a su identidad familiar mientras lo vendían.
+    text: Algunos testigos griegos difieren en esta cláusula; el sentido es que José permaneció en silencio sobre su identidad familiar mientras lo vendían.
     reason: textual_variant
 lexical_decisions:
 - source_word: ἐπήρθην
@@ -105,4 +105,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y no me dejé envanecer en el mal; al contrario, honraba a mis hermanos, y por temor a ellos guardé silencio cuando estaba siendo vendido, sin decir a los ismaelitas que yo era hijo de Jacob, un hombre grande y poderoso[a].
+  to: Y no me dejé envanecer en el mal; al contrario, honraba a mis hermanos, y por temor a ellos guardé silencio cuando estaba siendo vendido, sin decir a los ismaelitas que yo era hijo de Jacob, un hombre grande y justo[a].
+  rationale: Corrected 'poderoso' to 'justo' to reflect the Greek δικαίου ('righteous/just') per the phase2 EN realignment. Updated the footnote to remove the reference to 'poderoso' as a primary reading and keep only the textual variant note consistent with the EN.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:31:17Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'T.Jos 10:6 Greek: ἀνδρὸς μεγάλου καὶ δικαίου. The EN per-verse base_translation in the ES file shows the PRE-phase2 text: ''a great and mighty man'' (δικαίου rendered as ''mighty''). Phase2 realignment corrected this to ''a great and righteous man'' with note ''δικαίου means righteous, not mighty''. The ES translates ''un hombre grande y poderoso'' following the OLD EN mistranslation. The footnote [a] notes δικαίου as an alternative but treats the current ES ''poderoso'' (mighty) as the primary reading — this inverts what the Greek actually says. The Greek has δικαίου = ''righteous/just'', not ''mighty''. The ES should follow the phase2 corrected EN: ''justo''.'
+  spanish_quality_summary: Otherwise excellent. The only issue is the δικαίου mistranslation inherited from the pre-phase2 EN. The rest — 'me dejé envanecer en el mal', 'honraba a mis hermanos', 'por temor a ellos guardé silencio' — is accurate and natural.
+  glossary_alignment: No κύριος, YHWH, θεός. δικαίου → should be 'justo' not 'poderoso'.
+  issues:
+  - severity: high
+    issue: δικαίου translated 'poderoso' (mighty) instead of 'justo' (righteous)
+    rationale: 'Phase2 EN correction explicitly states: ''δικαίου means righteous, not mighty''. The ES follows the old mistranslation and must be corrected.'
+  revised_spanish_text: Y no me dejé envanecer en el mal; al contrario, honraba a mis hermanos, y por temor a ellos guardé silencio cuando estaba siendo vendido, sin decir a los ismaelitas que yo era hijo de Jacob, un hombre grande y justo[a].
+  revised_footnotes:
+  - marker: a
+    text: Algunos testigos griegos difieren en esta cláusula; el sentido es que José permaneció en silencio sobre su identidad familiar mientras lo vendían.
+    reason: textual_variant
+  revision_rationale: Corrected 'poderoso' to 'justo' to reflect the Greek δικαίου ('righteous/just') per the phase2 EN realignment. Updated the footnote to remove the reference to 'poderoso' as a primary reading and keep only the textual variant note consistent with the EN.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 74538d83e341db9ecec7173c72cfd21d6a74d979f18462da8b0f1a86ae1aaf8a
+  timestamp: '2026-05-08T06:31:17Z'
+  output_hash: 74538d83e341db9ecec7173c72cfd21d6a74d979f18462da8b0f1a86ae1aaf8a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -42,17 +42,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Por tanto, guarden, hijos míos, toda la ley de Yahvé, porque es esperanza para todos los que enderezan sus caminos en justicia. Y entiérrenme cerca de mis padres.
-
-
-    Y se durmió en buena vejez. Y sus hijos hicieron conforme a todo lo que les había mandado, y lo llevaron a Hebrón y lo sepultaron allí con sus padres.
-
-
-    Y si andan en santidad conforme a todos los mandamientos de Yahvé, volverán a habitar con seguridad conmigo[a], y todo Israel será reunido a Yahvé para siempre.'
+  text: "Por tanto, guarden, hijos míos, toda la ley de Yahvé, porque es esperanza para todos los que enderezan sus caminos en justicia. Y entiérrenme cerca de mis padres.\n\n\n    Y se durmió[a] en buena vejez. Y sus hijos hicieron conforme a todo lo que les había mandado, y lo llevaron a Hebrón y lo sepultaron allí con sus padres.\n\n\n    Y si andan en santidad conforme a todos los mandamientos de Yahvé, volverán a habitar con seguridad conmigo, y todo Israel será reunido a Yahvé para siempre."
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: '''Se durmió'' es un eufemismo convencional antiguo para la muerte, conservado aquí para mantener el registro testamentario.'
+    text: «Se durmió» es un eufemismo convencional antiguo para la muerte, conservado aquí para mantener el registro testamentario.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Φυλάξατε
@@ -218,4 +212,50 @@ ai_draft:
     total_tokens: 4644
     reasoning_tokens: 0
     estimated_cost_usd: 0.010949
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Por tanto, guarden, hijos míos, toda la ley de Yahvé, porque es esperanza para todos los que enderezan sus caminos en justicia. Y entiérrenme cerca de mis padres.
+
+
+    Y se durmió en buena vejez. Y sus hijos hicieron conforme a todo lo que les había mandado, y lo llevaron a Hebrón y lo sepultaron allí con sus padres.
+
+
+    Y si andan en santidad conforme a todos los mandamientos de Yahvé, volverán a habitar con seguridad conmigo[a], y todo Israel será reunido a Yahvé para siempre.'
+  to: "Por tanto, guarden, hijos míos, toda la ley de Yahvé, porque es esperanza para todos los que enderezan sus caminos en justicia. Y entiérrenme cerca de mis padres.\n\n\n    Y se durmió[a] en buena vejez. Y sus hijos hicieron conforme a todo lo que les había mandado, y lo llevaron a Hebrón y lo sepultaron allí con sus padres.\n\n\n    Y si andan en santidad conforme a todos los mandamientos de Yahvé, volverán a habitar con seguridad conmigo, y todo Israel será reunido a Yahvé para siempre."
+  rationale: Moved footnote marker [a] from 'conmigo[a]' to 'se durmió[a]' to correctly annotate the death euphemism. The footnote content was already correct; only the marker placement in the body text needed correction.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Full chapter Greek available. EN POB (chapter-level): 3 sections — (1) law exhortation + burial request, (2) death and burial narrative, (3) conditional eschatological exhortation. Spanish generally faithful. Key issues: (1) v.1 equivalent ''guarden, hijos míos, toda la ley de Yahvé, porque es esperanza para todos los que enderezan sus caminos en justicia'' — correct, uses guarden (LATAM), Yahvé. (2) ''Y entiérrenme cerca de mis padres'' — good, uses LATAM form. (3) ''Y se durmió en buena vejez'' — good. (4) The closing conditional ''Y si andan en santidad conforme a todos los mandamientos de Yahvé, volverán a habitar con seguridad conmigo[a], y todo Israel será reunido a Yahvé para siempre.'' — good. (5) Footnote [a] says ''''''Se durmió'''' es un eufemismo convencional antiguo para la muerte'' — but marker [a] in the text is attached to ''conmigo[a]'' not to ''se durmió''. This is a footnote-text mismatch: the footnote explains the death euphemism but the marker
+    is on ''conmigo''. This is incorrect and confusing.'
+  spanish_quality_summary: 'Good overall quality with LATAM imperatives used correctly. One significant problem: footnote [a] describes the death euphemism ''se durmió'' but the [a] marker in the text appears after ''conmigo'', not near ''se durmió''. This mismatch needs correction.'
+  glossary_alignment: Yahvé used consistently throughout. Good.
+  issues:
+  - severity: high
+    issue: Footnote marker [a] is attached to 'conmigo[a]' in the text, but the footnote text describes the death euphemism 'se durmió'. These do not correspond. The marker should be on 'se durmió[a]' or a separate footnote should address the eschatological tone of the closing verse.
+    rationale: Footnote markers must match the text they annotate. This mismatch misleads readers about what footnote [a] is clarifying.
+  revised_spanish_text: "Por tanto, guarden, hijos míos, toda la ley de Yahvé, porque es esperanza para todos los que enderezan sus caminos en justicia. Y entiérrenme cerca de mis padres.\n\n\n    Y se durmió[a] en buena vejez. Y sus hijos hicieron conforme a todo lo que les había mandado, y lo llevaron a Hebrón y lo sepultaron allí con sus padres.\n\n\n    Y si andan en santidad conforme a todos los mandamientos de Yahvé, volverán a habitar con seguridad conmigo, y todo Israel será reunido a Yahvé para siempre."
+  revised_footnotes:
+  - marker: a
+    text: «Se durmió» es un eufemismo convencional antiguo para la muerte, conservado aquí para mantener el registro testamentario.
+    reason: lexical_alternative
+  revision_rationale: Moved footnote marker [a] from 'conmigo[a]' to 'se durmió[a]' to correctly annotate the death euphemism. The footnote content was already correct; only the marker placement in the body text needed correction.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 30976133121a6fd715f2a0fe3c8b231ff0e757b3c9b56a6552343128786a7bf0
+  timestamp: '2026-05-08T06:38:59Z'
+  output_hash: 30976133121a6fd715f2a0fe3c8b231ff0e757b3c9b56a6552343128786a7bf0
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted word order to reflect 'against them up to the summit' more naturally and completely; changed 'hurling stones' to 'pelting me with stones' to better match the Greek construction with ἐν λίθοις while retaining the ongoing sense.
 translation:
   language: es
-  text: Entonces, siendo insultado por ellos, me llené de ira, y arremetí contra ellos hacia la cumbre. Y ellos seguían apedreándome con piedras y lanzando flechas contra mí.
+  text: Entonces, siendo insultado por ellos, me llené de ira, y arremetí contra ellos hacia la cumbre. Y ellos seguían arrojándome piedras y disparando flechas contra mí.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὑβριζόμενος παρ᾽ αὐτῶν
@@ -104,4 +104,39 @@ ai_draft:
     total_tokens: 2905
     reasoning_tokens: 0
     estimated_cost_usd: 0.006412
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Entonces, siendo insultado por ellos, me llené de ira, y arremetí contra ellos hacia la cumbre. Y ellos seguían apedreándome con piedras y lanzando flechas contra mí.
+  to: Entonces, siendo insultado por ellos, me llené de ira, y arremetí contra ellos hacia la cumbre. Y ellos seguían arrojándome piedras y disparando flechas contra mí.
+  rationale: Replaced 'apedreándome con piedras' with 'arrojándome piedras' to eliminate the tautological redundancy (apedrear already means to throw stones); changed 'lanzando flechas' to 'disparando flechas' for more natural modern neutral Spanish.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek ὑβριζόμενος (being insulted), ὠργίσθην (became angry), ὥρμησα ἐπ᾽ αὐτοὺς ἐπὶ τὴν κορυφήν (rushed against them up to the summit), ἐσφενδόνιζον με ἐν λίθοις (kept pelting me with stones) and τοξεύοντες (shooting arrows) are all faithfully rendered. Source alignment is solid.
+  spanish_quality_summary: 'Mostly natural. Main issue: ''apedreándome con piedras'' is redundant in Spanish (apedrear already means to throw stones at someone). Preferred: ''arrojándome piedras'' or ''lanzándome piedras''. Also ''lanzando flechas'' (present participle) slightly loses the durative force of the Greek imperfect; ''disparando flechas'' is more natural in modern neutral Spanish.'
+  glossary_alignment: No divine names or POB glossary terms triggered. 'me llené de ira' for ὠργίσθην is an acceptable intensification not violating any glossary rule.
+  issues:
+  - severity: medium
+    issue: '''apedreándome con piedras'' is redundant: apedrear already encodes stone-throwing, making ''con piedras'' tautological.'
+    rationale: 'A cleaner rendering preserves meaning without the etymological redundancy. Preferred: ''arrojándome piedras''.'
+  revised_spanish_text: Entonces, siendo insultado por ellos, me llené de ira, y arremetí contra ellos hacia la cumbre. Y ellos seguían arrojándome piedras y disparando flechas contra mí.
+  revision_rationale: Replaced 'apedreándome con piedras' with 'arrojándome piedras' to eliminate the tautological redundancy (apedrear already means to throw stones); changed 'lanzando flechas' to 'disparando flechas' for more natural modern neutral Spanish.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: af71795fbc8b39a71055fc78bd65d4eeb560394fc2b22c4a11ca2752db3dc04b
+  timestamp: '2026-05-08T06:36:42Z'
+  output_hash: af71795fbc8b39a71055fc78bd65d4eeb560394fc2b22c4a11ca2752db3dc04b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

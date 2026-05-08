@@ -23,18 +23,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Copia de las palabras de Gad, las cosas que habló a sus hijos en el año ciento veinticinco de su vida, diciéndoles:
-
-
-    2. Escuchen las palabras de la verdad, hijos míos, y practiquen la justicia y toda la ley del Altísimo. No se desvíen tras el espíritu del odio, porque es maligno en todas las obras de los hombres.
-
-
-    3. Lo que un hombre odia, eso no quiere verlo ni oírlo. Si alguno habla del Señor, lo odia como a quien lo reprende. Si alguno prospera, lo envidia. Si alguno es rico, no se complace en ello. Si alguno es valiente, no lo alaba. Calumnia al hombre veraz, le rehúsa lo bueno al hombre exitoso, y ama al arrogante y al inicuo[a]. Pues el odio ciega su alma, como yo también vi respecto de José.'
+  text: 'Copia de las palabras de Gad, las cosas que habló a sus hijos en el año ciento veinticinco de su vida, diciéndoles:'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Algunas líneas en la sección narrativa de apertura presentan dificultades textuales en los testimonios griegos sobrevivientes; el sentido se refiere a la fuerza de Gad guardando el rebaño y al inicio de su resentimiento hacia José.
-    reason: textual_variant
 lexical_decisions:
 - source_word: Ἀντίγραφον διαθήκης
   english_pob_choice: The copy of the words
@@ -110,4 +100,45 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Copia de las palabras de Gad, las cosas que habló a sus hijos en el año ciento veinticinco de su vida, diciéndoles:
+
+
+    2. Escuchen las palabras de la verdad, hijos míos, y practiquen la justicia y toda la ley del Altísimo. No se desvíen tras el espíritu del odio, porque es maligno en todas las obras de los hombres.
+
+
+    3. Lo que un hombre odia, eso no quiere verlo ni oírlo. Si alguno habla del Señor, lo odia como a quien lo reprende. Si alguno prospera, lo envidia. Si alguno es rico, no se complace en ello. Si alguno es valiente, no lo alaba. Calumnia al hombre veraz, le rehúsa lo bueno al hombre exitoso, y ama al arrogante y al inicuo[a]. Pues el odio ciega su alma, como yo también vi respecto de José.'
+  to: 'Copia de las palabras de Gad, las cosas que habló a sus hijos en el año ciento veinticinco de su vida, diciéndoles:'
+  rationale: Trimmed per-verse Spanish to match scope of EN verse-level YAML (v.1 superscription only). Removed vv.2-3 content and the footnote that references broader opening-section difficulties — these belong in the chapter-level file.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:22:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek v.1: Ἀντίγραφον διαθήκης Γάδ, ἣ ἐλάλησε τοῖς υἱοῖς αὐτοῦ ἐν τῷ ἑκατοστῷ εἰκοστῷ πέμπτῳ ἔτει τῆς ζωῆς αὐτοῦ, λέγων αὐτοῖς. The per-verse EN text is only the superscription. Current Spanish includes vv.2-3 content which belongs in other verse files.'
+  spanish_quality_summary: Current Spanish includes more than the v.1 superscription. The v.1-only text 'Copia de las palabras de Gad, las cosas que habló a sus hijos en el año ciento veinticinco de su vida, diciéndoles:' is a faithful and natural rendering.
+  glossary_alignment: No special glossary terms in the superscription. 'Copia de las palabras' follows EN POB choice.
+  issues:
+  - severity: high
+    issue: Per-verse file contains vv.2-3 content. Should only contain v.1 superscription text.
+    rationale: EN verse-level YAML contains only the v.1 superscription. Spanish must mirror this scope.
+  revised_spanish_text: 'Copia de las palabras de Gad, las cosas que habló a sus hijos en el año ciento veinticinco de su vida, diciéndoles:'
+  revision_rationale: Trimmed per-verse Spanish to match scope of EN verse-level YAML (v.1 superscription only). Removed vv.2-3 content and the footnote that references broader opening-section difficulties — these belong in the chapter-level file.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a472f4b3a919871bc67d34dc40ad855ba946526fb95f47e467787dd6d3a2d4b0
+  timestamp: '2026-05-08T06:22:01Z'
+  output_hash: a472f4b3a919871bc67d34dc40ad855ba946526fb95f47e467787dd6d3a2d4b0
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

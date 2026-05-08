@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque así como el sol es puro delante del Señor sobre la tierra, así también ustedes son, las lumbreras de Israel, por encima de todas las naciones.
+  text: Porque así como el sol es puro delante del Señor sobre la tierra, así también ustedes son, las lumbreras de Israel, más que todas las naciones.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὁ ἥλιος ... καθαρὸς
@@ -112,4 +112,39 @@ ai_draft:
     total_tokens: 2667
     reasoning_tokens: 0
     estimated_cost_usd: 0.006332
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque así como el sol es puro delante del Señor sobre la tierra, así también ustedes son, las lumbreras de Israel, por encima de todas las naciones.
+  to: Porque así como el sol es puro delante del Señor sobre la tierra, así también ustedes son, las lumbreras de Israel, más que todas las naciones.
+  rationale: Replaced 'por encima de todas las naciones' with 'más que todas las naciones' to better capture the comparative force of παρὰ πάντα τὰ ἔθνη without adding a hierarchical-spatial image not strictly in the Greek.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: ὁ ἥλιος καθαρὸς ἐνώπιον κυρίου→el sol es puro delante del Señor; ἐπὶ τὴν γῆν→sobre la tierra; οἱ φωστῆρες τοῦ Ἰσραήλ→las lumbreras de Israel; παρὰ πάντα τὰ ἔθνη→por encima de todas las naciones. The cross_check had verdict=revise with agreement 0.85. The EN POB has 'beyond all the nations' which the Spanish renders as 'por encima de todas las naciones' (above/over all nations). The Greek παρά with accusative here has comparative force; 'por encima de' slightly over-interprets toward hierarchical superiority rather than the more neutral comparative or distinguishing sense. However the main issue is that 'así también ustedes son, las lumbreras de Israel' — the appositive 'las lumbreras de Israel' after a comma works well.
+  spanish_quality_summary: Generally fluent. The rendering of παρὰ πάντα τὰ ἔθνη as 'por encima de todas las naciones' is defensible but could be slightly over-hierarchical. The more neutral 'entre todas las naciones' or 'más que todas las naciones' might better preserve the ambiguity of παρά. However the EN POB uses 'beyond' which similarly implies distinction/superiority, so 'por encima de' is a reasonable match.
+  glossary_alignment: Señor for κυρίου is appropriate (no Hebrew tetragrammaton explicit in this verse). Israel is rendered correctly.
+  issues:
+  - severity: low
+    issue: παρὰ πάντα τὰ ἔθνη rendered as 'por encima de todas las naciones' slightly over-specifies the hierarchical sense; 'más que todas las naciones' or 'entre todas las naciones' is closer to the comparative ambiguity of παρά.
+    rationale: The Greek παρά + accusative with adjective of quality means 'beyond/surpassing' in a comparative sense; 'por encima de' is directionally correct but adds a spatial-hierarchical image not strictly present.
+  revised_spanish_text: Porque así como el sol es puro delante del Señor sobre la tierra, así también ustedes son, las lumbreras de Israel, más que todas las naciones.
+  revision_rationale: Replaced 'por encima de todas las naciones' with 'más que todas las naciones' to better capture the comparative force of παρὰ πάντα τὰ ἔθνη without adding a hierarchical-spatial image not strictly in the Greek.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 849d5de7ef0a0abaf5db76e94b51db017eb94e0baba185fd7202c71a3d7d3ab8
+  timestamp: '2026-05-08T06:46:40Z'
+  output_hash: 849d5de7ef0a0abaf5db76e94b51db017eb94e0baba185fd7202c71a3d7d3ab8
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

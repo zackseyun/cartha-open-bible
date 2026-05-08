@@ -115,4 +115,38 @@ ai_draft:
     total_tokens: 2617
     reasoning_tokens: 0
     estimated_cost_usd: 0.006208
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ ὁ Ἰσαὰκ ἐκάλει με συνεχῶς τοῦ ὑπομνῆσαί με νόμον Κυρίου, καθὼς ἔδειξέ μοι ὁ ἄγγελος. EN POB: ''And Isaac kept calling me continually to remind me of the law of the Lord, just as the angel had shown me.'' Spanish: ''Y Isaac seguía llamándome continuamente para recordarme la ley del Señor[a], así como me lo había mostrado el ángel.'' The footnote [a] is marked on ''del Señor[a]'' in the text, and the footnotes array has marker ''a'' with a theological note. Footnote markers match between text and footnotes array. Content is accurate. However, the footnote text reads: "''Señor'' reproduce aquí el título Κυρίου del griego; no se introduce ''Yahvé'' porque esta línea no usa directamente el nombre divino hebreo." This is a theological note, not a lexical alternative or textual variant — using a footnote marker [a] on a word in the main text for a purely explanatory theological note may be problematic for the reader. However, it does not cause a technical
+    marker mismatch. The translation is accurate and the Spanish is fluent.'
+  spanish_quality_summary: 'Well-rendered. ''Seguía llamándome continuamente'' captures the iterative imperfect ἐκάλει. ''Para recordarme'' accurately renders τοῦ ὑπομνῆσαί. ''Así como me lo había mostrado el ángel'' preserves the pluperfect and adds ''lo'' to avoid ambiguity. The footnote on Señor/Κυρίου is a reasonable project transparency note. Minor issue: the footnote is somewhat unusual as an [a]-marker on the body text (it reads more like an editorial note than a textual variant), but it is structurally valid.'
+  glossary_alignment: 'Κύριος→Señor: justified here as the text is not substituting the Hebrew Tetragrammaton explicitly; project consistency maintained. No other special glossary terms.'
+  issues:
+  - severity: low
+    issue: The footnote [a] on 'del Señor' is a theological/editorial note rather than a textual variant or lexical alternative; marker placement is technically valid but may confuse readers expecting a variant reading
+    rationale: Footnote marker [a] typically signals a translational choice or textual variant; using it for a purely explanatory note about Señor vs. Yahvé policy is an unusual convention, though not erroneous.
+  revised_spanish_text: Y Isaac seguía llamándome continuamente para recordarme la ley del Señor[a], así como me lo había mostrado el ángel.
+  revised_footnotes:
+  - marker: a
+    text: El griego dice Κυρίου («Señor»); se conserva «Señor» en lugar de «Yahvé» porque este pasaje no contiene el Tetragrámaton hebreo.
+    reason: theological_note
+  revision_rationale: Tightened the footnote wording to be more concise and reader-facing without changing the translation text.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8e07a51080072bc05716ee317376be7bd556017216b42adaf01d635d71b86e13
+  timestamp: '2026-05-08T06:47:25Z'
+  output_hash: 8e07a51080072bc05716ee317376be7bd556017216b42adaf01d635d71b86e13
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

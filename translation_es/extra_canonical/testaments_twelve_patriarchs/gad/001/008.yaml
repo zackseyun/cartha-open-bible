@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the inaccurate draft with a complete rendering of the Greek: ἐνεκότουν means ''I was angry/resentful,'' τῷ Ἰωσὴφ is ''with Joseph,'' and ἕως ἡμέρας διαπράσεως αὐτοῦ is ''until the day of his being sold.'''
 translation:
   language: es
-  text: Y más allá de esto me enojé con José hasta el día en que fue vendido.
+  text: Y más allá de esto estuve enojado con José hasta el día en que fue vendido.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὑπὲρ τοῦτο
@@ -72,4 +72,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y más allá de esto me enojé con José hasta el día en que fue vendido.
+  to: Y más allá de esto estuve enojado con José hasta el día en que fue vendido.
+  rationale: Changed 'me enojé' (punctual preterite) to 'estuve enojado' (durative state) to capture the imperfect aspect of ἐνεκότουν, conveying ongoing resentment continuing until the sale.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:23:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek v.8: Καὶ ὑπὲρ τοῦτο ἐνεκότουν τῷ Ἰωσὴφ ἕως ἡμέρας διαπράσεως αὐτοῦ. EN: ''And beyond this I was angry with Joseph until the day of his being sold.'' Spanish: ''Y más allá de esto me enojé con José hasta el día en que fue vendido.'' Issue: ''me enojé'' is punctual preterite; ἐνεκότουν is imperfect indicating sustained resentment.'
+  spanish_quality_summary: Mostly accurate. 'Me enojé' (punctual) should be 'estuve enojado' (durative/ongoing) to match the imperfect ἐνεκότουν.
+  glossary_alignment: No special glossary terms. 'José' correct.
+  issues:
+  - severity: medium
+    issue: '''Me enojé'' (punctual preterite) does not capture the imperfect ἐνεκότουν (ongoing sustained resentment).'
+    rationale: The imperfect indicates a state continuing until the sale; 'estuve enojado' conveys this duration.
+  revised_spanish_text: Y más allá de esto estuve enojado con José hasta el día en que fue vendido.
+  revision_rationale: Changed 'me enojé' (punctual preterite) to 'estuve enojado' (durative state) to capture the imperfect aspect of ἐνεκότουν, conveying ongoing resentment continuing until the sale.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 065b2528658d180b7aa80466253593f6732e407db2e5ab17954a882df98e0b1f
+  timestamp: '2026-05-08T06:23:24Z'
+  output_hash: 065b2528658d180b7aa80466253593f6732e407db2e5ab17954a882df98e0b1f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

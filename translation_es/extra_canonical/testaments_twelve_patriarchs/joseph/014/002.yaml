@@ -77,4 +77,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Greek οὐκ ἤλλαξα τὸν λόγον μου→'no alteré mi declaración'; φυλαχθῆναί με→'fuera mantenido bajo custodia'; οἱ κύριοι τοῦ παιδός→'los amos del muchacho'; ἕως οὗ ἔλθωσιν→'hasta que vinieran'. All faithfully rendered.
+  spanish_quality_summary: Clean, formal, juridical Spanish. 'Los amos del muchacho' correctly captures the ownership context. 'Fuera mantenido bajo custodia' is appropriate for φυλαχθῆναί.
+  glossary_alignment: κύριοι rendered as 'amos' (consistent with slave-ownership context). παιδός→'muchacho' (literal, as documented). No divine names.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5d5dc8d504bdc364b8a7c420141c69739684b6eb9e064ab002d3218fd2ffeec5
+  timestamp: '2026-05-08T06:37:42Z'
+  output_hash: 5d5dc8d504bdc364b8a7c420141c69739684b6eb9e064ab002d3218fd2ffeec5
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

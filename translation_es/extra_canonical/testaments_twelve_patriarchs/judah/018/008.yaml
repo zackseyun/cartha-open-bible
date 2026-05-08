@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Made pronouns consistent by changing singular 'he does/He does' to plural 'do/They do' to match the opening plural subject; removed unnecessary repeated subject before 'resent' for smoother formal English.
 translation:
   language: es
-  text: Impiden los sacrificios de Dios, y no recuerdan la bendición de Dios. No escuchan cuando habla un profeta, y aborrecen las palabras de piedad.
+  text: Impiden los sacrificios de Dios, y no recuerdan la bendición de Dios. No escuchan cuando habla un profeta, y resienten las palabras de piedad.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Θυσίας Θεοῦ ἐμποδίζει
@@ -95,4 +95,39 @@ ai_draft:
     total_tokens: 2787
     reasoning_tokens: 0
     estimated_cost_usd: 0.005911
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Impiden los sacrificios de Dios, y no recuerdan la bendición de Dios. No escuchan cuando habla un profeta, y aborrecen las palabras de piedad.
+  to: Impiden los sacrificios de Dios, y no recuerdan la bendición de Dios. No escuchan cuando habla un profeta, y resienten las palabras de piedad.
+  rationale: Changed 'aborrecen' to 'resienten' to better capture the irritated aversion of προσοχθίζει, consistent with the EN 'resent'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek has singular verbs throughout v.5 (ἐμποδίζει, οὐ μνημονεύει, οὐκ ἀκούει, προσοχθίζει). The EN revised to plural 'They/do' to match what it took as a plural subject from context. The Spanish also uses plural ('Impiden', 'no recuerdan', 'No escuchan', 'aborrecen') following the EN's plurality choice — this is consistent with the EN revision. However 'aborrecen' for προσοχθίζει departs somewhat from the EN 'resent'; the EN lexical notes show 'resent'/'is offended by'. 'Aborrecen' (abhor/hate strongly) is stronger than 'resent' or 'se ofenden'. This is a medium severity departure.
+  spanish_quality_summary: Generally clean. 'Aborrecen' is stronger than warranted ('resent' or 'se ofenden por'); 'resienten' or 'se ofenden por' would be more faithful.
+  glossary_alignment: Dios for Θεός correct (appears twice).
+  issues:
+  - severity: low
+    issue: '''aborrecen las palabras de piedad'' renders προσοχθίζει with stronger aversion than the Greek/EN warrant; ''resent'' or ''is offended by'' in EN maps better to ''resienten'' or ''se ofenden por''.'
+    rationale: προσοχθίζω denotes irritation/vexation/offense, not full hatred (aborrecimiento). 'Aborrecen' is too strong and shifts the meaning.
+  revised_spanish_text: Impiden los sacrificios de Dios, y no recuerdan la bendición de Dios. No escuchan cuando habla un profeta, y resienten las palabras de piedad.
+  revision_rationale: Changed 'aborrecen' to 'resienten' to better capture the irritated aversion of προσοχθίζει, consistent with the EN 'resent'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 3de17bf1c3baad1780a753c853ce8123233766697400b4cc3cb2ca2e7c1e870c
+  timestamp: '2026-05-08T06:38:33Z'
+  output_hash: 3de17bf1c3baad1780a753c853ce8123233766697400b4cc3cb2ca2e7c1e870c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

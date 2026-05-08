@@ -200,4 +200,31 @@ ai_draft:
     total_tokens: 6128
     reasoning_tokens: 0
     estimated_cost_usd: 0.011207
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The full chapter 9 Greek is faithfully rendered: the 18-year peace, Esau''s return, Jacob killing Esau with a bow (preserved without harmonization to Genesis per EN decision), the pursuit and siege, Judah''s ladder assault, Reuben and Gad killing six, the peace negotiation, and the tribute list. All EN revision choices (ἐπανῆλθεν→''regresó'', ''asked us for'', ''baths of oil'') are reflected.'
+  spanish_quality_summary: 'High quality. Footnotes [a][b][c] in body text correctly map to markers a, b, c in the footnotes array: [a] at v.1 Esau/Jacob note, [b] after ''hombres poderosos'' in v.5, [c] after ''el hambre'' in v.8. Chapter-level uses ''hombres poderosos'' vs. per-verse ''valientes'' for δυνάστας — minor divergence, both acceptable. The chapter correctly preserves the Jacob-kills-Esau tension with footnote [a].'
+  glossary_alignment: No divine names. 'El Señor' not triggered here. No YHWH/δοῦλος/πνεῦμα. Clean.
+  issues:
+  - severity: low
+    issue: Chapter v.5 uses 'hombres poderosos' for δυνάστας while per-verse YAML 009/005.yaml uses 'valientes'. Minor divergence within same chapter.
+    rationale: Both are defensible translations of δυνάστης; 'valientes' is perhaps slightly more appropriate to the military narrative context, but 'hombres poderosos' is not wrong.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5787f5cc0eedb4b2dbc08b55fc02faf9f9b6132166ffa3c8fc05b908d99c651c
+  timestamp: '2026-05-08T06:40:31Z'
+  output_hash: 5787f5cc0eedb4b2dbc08b55fc02faf9f9b6132166ffa3c8fc05b908d99c651c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

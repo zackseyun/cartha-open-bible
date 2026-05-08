@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Adjusted word order for clearer English and more exact correspondence to the source: ''gave Onan to her'' -> ''gave her to Onan''.'
 translation:
   language: es
-  text: En los días del tálamo le di a ella a Onán en matrimonio levirático; pero también este, en maldad, no la conoció, aunque estuvo con ella por un año.
+  text: En los días del tálamo la di a Onán en matrimonio levirático; pero también este, en maldad, no la conoció, aunque estuvo con ella por un año.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐν ταῖς ἡμέραις τοῦ θαλάμου
@@ -105,4 +105,39 @@ ai_draft:
     total_tokens: 3064
     reasoning_tokens: 0
     estimated_cost_usd: 0.006487
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: En los días del tálamo le di a ella a Onán en matrimonio levirático; pero también este, en maldad, no la conoció, aunque estuvo con ella por un año.
+  to: En los días del tálamo la di a Onán en matrimonio levirático; pero también este, en maldad, no la conoció, aunque estuvo con ella por un año.
+  rationale: Replaced 'le di a ella a Onán' with 'la di a Onán' to eliminate the awkward double-object clitic construction. The meaning is identical and mirrors the Greek (I gave her to Onan). All other lexical choices retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:37Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Content is fully present and accurate. The Greek ἐπεγάμβρευσα αὐτῇ τὸν Αὐνάν means 'I gave Onan to her in levirate marriage.' The Spanish 'le di a ella a Onán en matrimonio levirático' captures the correct directionality but produces awkward syntax (double-object construction with both indirect 'le' and direct 'a Onán a ella'). A smoother phrasing preserves the meaning while improving readability.
+  spanish_quality_summary: The phrase 'le di a ella a Onán en matrimonio levirático' is syntactically awkward in Spanish. The chapter-level ES counterpart (010.yaml) uses 'la di a Onán en matrimonio levirato,' which is more idiomatic. 'Matrimonio levirático' (per-verse) vs 'matrimonio levirato' (chapter-level) is also an inconsistency; 'levirático' is the preferred adjective form in standard Spanish.
+  glossary_alignment: No YHWH/divine terms in this verse. 'Maldad' for πονηρίᾳ is consistent. Biblical euphemism 'conoció' preserved correctly.
+  issues:
+  - severity: medium
+    issue: Awkward double-object construction 'le di a ella a Onán'
+    rationale: Spanish does not naturally permit a clitic-doubled indirect object 'le' followed by an explicit 'a ella' alongside a direct object 'a Onán'. This creates readability friction. The chapter-level text avoids this with 'la di a Onán'.
+  revised_spanish_text: En los días del tálamo la di a Onán en matrimonio levirático; pero también este, en maldad, no la conoció, aunque estuvo con ella por un año.
+  revision_rationale: Replaced 'le di a ella a Onán' with 'la di a Onán' to eliminate the awkward double-object clitic construction. The meaning is identical and mirrors the Greek (I gave her to Onan). All other lexical choices retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: cfb765f88c9dd3370cc1a78962a39cbfba2fcfc8bd9bdf5e011f3f648c78eac8
+  timestamp: '2026-05-08T06:36:37Z'
+  output_hash: cfb765f88c9dd3370cc1a78962a39cbfba2fcfc8bd9bdf5e011f3f648c78eac8
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

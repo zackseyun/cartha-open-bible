@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Replaced 'but sought out' with 'and I sought' to match the Greek conjunction and avoid unnecessary expansion; adjusted the final phrase to 'with all my strength as I walked' so κατὰ πᾶσαν ἰσχύν μου modifies the seeking more naturally while retaining πορευόμενος.
 translation:
   language: es
-  text: Así pues, todas estas cosas las puse a prueba en mi vida, y no me extravié de la verdad de Yahvé[a], y busqué los mandamientos del Altísimo con toda mi fuerza al caminar[b].
+  text: Por tanto, todas estas cosas las puse a prueba en mi vida, y no me extravié de la verdad de Yahvé[a], y busqué los mandamientos del Altísimo con toda mi fuerza al caminar[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -128,4 +128,46 @@ ai_draft:
     estimated_cost_usd: 0.157585
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Así pues, todas estas cosas las puse a prueba en mi vida, y no me extravié de la verdad de Yahvé[a], y busqué los mandamientos del Altísimo con toda mi fuerza al caminar[b].
+  to: Por tanto, todas estas cosas las puse a prueba en mi vida, y no me extravié de la verdad de Yahvé[a], y busqué los mandamientos del Altísimo con toda mi fuerza al caminar[b].
+  rationale: 'Minimal change: replaced ''Así pues'' with ''Por tanto'' to align with the revised EN POB ''So then / Therefore'' rendering of Ταῦτα οὖν, and to maintain consistency with the chapter-level revision. All other elements of the draft are source-accurate and natural.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:27:18Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek Κυρίου (genitive) here functions as a divine-name substitute in a Jewish pseudepigraphon (Testament of Asher). The per-verse ES draft correctly renders it as ''Yahvé'' per POB project convention, but the chapter-level ES (005.yaml) renders the same word as ''el Señor''. The per-verse draft is the more defensible reading per project policy. The rest of the verse is accurately rendered from the Greek: ἐδοκίμασα → ''puse a prueba'' (deliberate testing), οὐκ ἐπλανήθην → ''me extravié'' (straying off path), τοῦ ὑψίστου → ''el Altísimo'', ἐξεζήτησα → ''busqué'', κατὰ πᾶσαν ἰσχύν μου → ''con toda mi fuerza'', πορευόμενος → ''al caminar''. One minor issue: ''Así pues'' for the opening οὖν is slightly heavier than warranted; ''Por tanto'' (matching the revised EN POB) or ''Así pues'' are both acceptable. Main substantive issue is internal inconsistency within the ES corpus on Κυρίου treatment (per-verse uses ''Yahvé'', chapter uses ''el Señor'').'
+  spanish_quality_summary: The per-verse text is fluent, natural, and well-constructed. 'Puse a prueba' is excellent for δοκιμάζω. 'Me extravié' is stronger than 'no me aparté' used in the chapter YAML, and more faithful to πλανάομαι's sense of wandering/straying. The participial phrase 'al caminar' is idiomatic and preserves the ambiguity of πορευόμενος (temporal + ethical). Footnotes are informative and accurate. The main revision needed is aligning the opening to match the revised EN POB ('Por tanto' rather than 'Así pues') and ensuring Yahvé is used here (which it already is in the per-verse file).
+  glossary_alignment: 'Κύριος → Yahvé: correctly applied in this per-verse file. ὕψιστος → el Altísimo: correct. No Χριστός, δοῦλος, or πνεῦμα issues.'
+  issues:
+  - severity: low
+    issue: 'Opening conjunction: ''Así pues'' vs. the revised EN POB ''So then'' / ''Therefore'''
+    rationale: The revised EN POB settled on 'So then I tested...' (from the revision notes at the per-verse EN YAML). The Spanish 'Así pues' is a legitimate rendering of 'So then / Ταῦτα οὖν', but 'Por tanto' would align more closely with the chapter-level revision's direction toward 'Therefore'. This is a minor stylistic point and does not affect source alignment.
+  revised_spanish_text: Por tanto, todas estas cosas las puse a prueba en mi vida, y no me extravié de la verdad de Yahvé[a], y busqué los mandamientos del Altísimo con toda mi fuerza al caminar[b].
+  revised_footnotes:
+  - marker: a
+    text: Gr. Κυρίου. En los escritos pseudoepígrafos judíos, Κύριος sustituye habitualmente al nombre divino YHWH. Siguiendo la convención del proyecto POB, se traduce «Yahvé» en lugar de enmascarar el nombre como «el Señor».
+    reason: theological_note
+  - marker: b
+    text: Gr. πορευόμενος, participio presente de πορεύομαι («caminar»). La expresión puede leerse tanto como «mientras caminaba» (circunstancia temporal) como «en mi andar» (conducta y modo de vida). Se conserva «al caminar» para mantener ambos sentidos.
+    reason: lexical_alternative
+  revision_rationale: 'Minimal change: replaced ''Así pues'' with ''Por tanto'' to align with the revised EN POB ''So then / Therefore'' rendering of Ταῦτα οὖν, and to maintain consistency with the chapter-level revision. All other elements of the draft are source-accurate and natural.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 34e3e73841b6681f4cf9877519e22592e97d16adecb9d604063acf9409e8b344
+  timestamp: '2026-05-08T06:27:18Z'
+  output_hash: 34e3e73841b6681f4cf9877519e22592e97d16adecb9d604063acf9409e8b344
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

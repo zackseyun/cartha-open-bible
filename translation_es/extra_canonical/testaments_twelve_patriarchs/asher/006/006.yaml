@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Adjusted the opening clause to better reflect the source’s ‘quiet’ language and added ‘recognizes’ for γνωρίζει; kept the angel of peace wording and preserved the rest of the drafted clause.
 translation:
   language: es
-  text: Pero si está tranquila en gozo, reconoce al ángel de la paz[b], y se regocija en él; y a su muerte él la conduce a la vida eterna. Y no entra en la destrucción de Beliar, como sí lo hacen las almas de los pecadores.
+  text: Pero si está tranquila en gozo, reconoce al ángel de la paz[b], y se regocija en él; y a su muerte él la conduce a la vida eterna.
   philosophy: optimal-equivalence
   footnotes:
   - marker: b
-    text: 'El ''ángel de la paz'' es figura recurrente en los Testamentos de los Doce Patriarcas: el ser angélico que acompaña al alma justa y la introduce en la vida eterna, contrastando con Beliar que arrastra a las almas pecadoras.'
+    text: 'El «ángel de la paz» es figura recurrente en los Testamentos de los Doce Patriarcas: el ser angélico que acompaña al alma justa y la introduce en la vida eterna, contrastando con Beliar que arrastra a las almas pecadoras.'
     reason: cultural_note
 lexical_decisions:
 - source_word: ἥσυχος
@@ -102,4 +102,44 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero si está tranquila en gozo, reconoce al ángel de la paz[b], y se regocija en él; y a su muerte él la conduce a la vida eterna. Y no entra en la destrucción de Beliar, como sí lo hacen las almas de los pecadores.
+  to: Pero si está tranquila en gozo, reconoce al ángel de la paz[b], y se regocija en él; y a su muerte él la conduce a la vida eterna.
+  rationale: Removed the clause 'Y no entra en la destrucción de Beliar, como sí lo hacen las almas de los pecadores' which is not attested in the per-verse Greek source. The per-verse text should be confined to what the Greek source supports. The chapter-level YAML retains this clause. All other text is accurate.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source for this verse (Ἐὰν δὲ *ἔστω ἥσυχος *ἐν χαρᾷ †γνωρίζει τὸν ἄγγελον τῆς εἰρήνης, *καὶ εἰσφέρει αὐτὸν εἰς ζωὴν αἰώνιον) contains only the positive counterpart: if the soul is quiet/at rest in joy, it recognizes the angel of peace and he leads it into eternal life. However, the EN base_translation and Spanish draft include additional text not in the Greek source provided: ''And it does not come into the destruction of Beliar, as do the souls of sinners.'' / ''Y no entra en la destrucción de Beliar, como sí lo hacen las almas de los pecadores.'' These clauses come from the chapter-level YAML''s longer translation but are absent from the per-verse Greek source. The per-verse EN YAML''s actual text is ''But if it is quiet in joy, it recognizes the angel of peace[b], and rejoices in him; and at its death he leads it into eternal life. And it does not come into the destruction of Beliar, as do the souls of sinners.'' which goes beyond the Greek source.
+    Verses strictly translated from Greek source should not include the Beliar clause unless it is grounded in the Greek. The footnote marker [b] is present in text (''al ángel de la paz[b]'') but there is no marker [a] in the text, yet footnote [a] is absent; the footnote array only has marker [b]—this is consistent. The translation of the actual Greek is accurate: ἥσυχος → ''tranquila'' (follows revised EN ''quiet''); γνωρίζει → ''reconoce''; ἄγγελον τῆς εἰρήνης → ''ángel de la paz''; εἰσφέρει αὐτὸν εἰς ζωὴν αἰώνιον → ''la conduce a la vida eterna''. However the Beliar clause is extracanonical to the Greek source verse.'
+  spanish_quality_summary: The portion directly from the Greek source is well-translated and natural. 'Tranquila en gozo' (quiet/at rest in joy) is better than the older 'apacible' for ἥσυχος in this context. 'Reconoce' for γνωρίζει is correct per the EN revision. The Beliar clause appended to the verse is text not present in the supplied Greek source—its inclusion should be documented or removed. The single footnote [b] marker is correctly matched.
+  glossary_alignment: No YHWH/Κύριος/Χριστός issues. Βελίαρ → 'Beliar' consistent. ζωὴ αἰώνιος → 'vida eterna' standard.
+  issues:
+  - severity: medium
+    issue: Extra clause 'Y no entra en la destrucción de Beliar, como sí lo hacen las almas de los pecadores' is not present in the Greek source text for this verse
+    rationale: The per-verse Greek source ends at εἰς ζωὴν αἰώνιον. The Beliar contrast clause comes from the longer chapter-level text. Including it without source documentation overextends the per-verse translation beyond what the Greek warrants for this specific verse.
+  revised_spanish_text: Pero si está tranquila en gozo, reconoce al ángel de la paz[b], y se regocija en él; y a su muerte él la conduce a la vida eterna.
+  revised_footnotes:
+  - marker: b
+    text: 'El «ángel de la paz» es figura recurrente en los Testamentos de los Doce Patriarcas: el ser angélico que acompaña al alma justa y la introduce en la vida eterna, contrastando con Beliar que arrastra a las almas pecadoras.'
+    reason: cultural_note
+  revision_rationale: Removed the clause 'Y no entra en la destrucción de Beliar, como sí lo hacen las almas de los pecadores' which is not attested in the per-verse Greek source. The per-verse text should be confined to what the Greek source supports. The chapter-level YAML retains this clause. All other text is accurate.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8cdd55e49e1d14351ad20ec46ca87392f391f9ebb9927083052b5bfd853bf085
+  timestamp: '2026-05-08T06:29:31Z'
+  output_hash: 8cdd55e49e1d14351ad20ec46ca87392f391f9ebb9927083052b5bfd853bf085
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

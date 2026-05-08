@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed the speaker from singular to plural to match the Greek, and tightened the clause to better reflect the source without adding 'to see whether'.
 translation:
   language: es
-  text: Y le decían palabras del Altísimo, por si acaso ella se volvía atrás del deseo malvado.
+  text: Y le decían palabras del Altísimo, por si acaso ella se volviera atrás del deseo malvado.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἔλεγον
@@ -81,4 +81,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y le decían palabras del Altísimo, por si acaso ella se volvía atrás del deseo malvado.
+  to: Y le decían palabras del Altísimo, por si acaso ella se volviera atrás del deseo malvado.
+  rationale: Changed indicative 'se volvía atrás' to imperfect subjunctive 'se volviera atrás', consistent with the indirect possibility expressed by Greek εἰ ἄρα + future and EN 'whether perhaps she might turn back'. 'Por si acaso' in Spanish requires subjunctive mood for hypothetical or uncertain situations.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Καὶ ἔλεγον πρὸς αὐτὴν ῥήματα ὑψίστου, εἰ ἄρα ἐπιστρέψει ἀπὸ τῆς ἐπιθυμίας τῆς πονηρᾶς.'' EN (revised): ''And they were saying to her words of the Most High, whether perhaps she might turn back from the evil desire.'' Spanish: ''Y le decían palabras del Altísimo, por si acaso ella se volvía atrás del deseo malvado.'' The translation is largely accurate. However, ἐπιθυμία τῆς πονηρᾶς is ''the evil desire'' — the genitive ''τῆς πονηρᾶς'' modifies ἐπιθυμίας. ''El deseo malvado'' (adjective agreeing with noun) correctly represents this. Issue: ''se volvía atrás'' uses imperfect indicative, but the Greek εἰ ἄρα + future indicative ἐπιστρέψει expresses an indirect question/optative purpose (''whether perhaps she might turn back''). The EN POB uses subjunctive ''might turn back''. Spanish should use subjunctive ''se volviera atrás'' (or ''se arrepintiera''), not imperfect indicative ''se volvía atrás''.'
+  spanish_quality_summary: 'The main issue is mood: ''por si acaso ella se volvía atrás'' uses indicative where subjunctive is required in Spanish for indirect questions of possibility (''por si acaso'' + subjunctive). Should be ''por si acaso ella se volviera atrás'' or ''para ver si quizás se apartaba''. The EN has ''whether perhaps she might turn back'' — in Spanish this requires subjunctive.'
+  glossary_alignment: ὕψιστος → 'Altísimo' (correct). ἐπιθυμία → 'deseo' (correct). No YHWH/Mesías issue.
+  issues:
+  - severity: medium
+    issue: '''por si acaso ella se volvía atrás'' uses indicative where subjunctive is required.'
+    rationale: 'The Greek εἰ ἄρα + future ἐπιστρέψει expresses indirect possibility (''whether perhaps she might turn''). In Spanish, ''por si acaso'' governing a possibility clause requires subjunctive: ''se volviera atrás'' (imperfect subjunctive). Using indicative ''se volvía'' implies a known fact rather than an uncertain possibility.'
+  revised_spanish_text: Y le decían palabras del Altísimo, por si acaso ella se volviera atrás del deseo malvado.
+  revision_rationale: Changed indicative 'se volvía atrás' to imperfect subjunctive 'se volviera atrás', consistent with the indirect possibility expressed by Greek εἰ ἄρα + future and EN 'whether perhaps she might turn back'. 'Por si acaso' in Spanish requires subjunctive mood for hypothetical or uncertain situations.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: da9314a8a45cfaddaa21f955f9fcf37eec64e5bda857981b9f0d91b2632e551c
+  timestamp: '2026-05-08T06:30:36Z'
+  output_hash: da9314a8a45cfaddaa21f955f9fcf37eec64e5bda857981b9f0d91b2632e551c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

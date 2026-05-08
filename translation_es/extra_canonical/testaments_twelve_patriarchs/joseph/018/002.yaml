@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y si alguno quiere haceros mal, vosotros, haciendo el bien, orad por él, y seréis librados de todo mal por Yahvé.
+  text: Y si alguno quiere hacerles mal, ustedes, haciendo el bien, oren por él, y serán librados de todo mal por el Señor.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: κακοποιῆσαι
@@ -94,4 +94,42 @@ ai_draft:
     total_tokens: 2375
     reasoning_tokens: 0
     estimated_cost_usd: 0.005014
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y si alguno quiere haceros mal, vosotros, haciendo el bien, orad por él, y seréis librados de todo mal por Yahvé.
+  to: Y si alguno quiere hacerles mal, ustedes, haciendo el bien, oren por él, y serán librados de todo mal por el Señor.
+  rationale: Replaces Castilian vosotros forms with neutral Latin-American ustedes forms throughout. Changes 'Yahvé' to 'el Señor' for consistency with 18:1 within the same chapter context.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:00Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source meaning is preserved: κακοποιῆσαι→hacer mal, ἀγαθοεργείᾳ→haciendo el bien, εὔχεσθε→orad, λυτρωθήσεσθε→seréis librados, Κυρίου→Yahvé. The Yahvé choice for Κυρίου is a defensible project-policy decision but creates an inconsistency with 18:1 which uses ''el Señor'' for the same κύριος construction.'
+  spanish_quality_summary: 'Critical register error: uses Castilian vosotros forms (''haceros'', ''vosotros'', ''orad'', ''seréis'') throughout, violating the neutral Latin-American Spanish requirement. The rest of the shard consistently uses ''ustedes'' forms.'
+  glossary_alignment: Κύριος→Yahvé per project doctrine, but inconsistent with 018:1 (el Señor) for parallel construction. This inconsistency within the same chapter should be resolved.
+  issues:
+  - severity: high
+    issue: 'Castilian vosotros register throughout: ''haceros'', ''vosotros'', ''orad'', ''seréis librados'' — violates neutral Latin-American Spanish requirement'
+    rationale: The project specifies neutral Latin-American Spanish. All other verses in this shard use 'ustedes' forms. This is an isolated register failure.
+  - severity: medium
+    issue: Κύριος rendered 'Yahvé' here but 'el Señor' in 18:1 for the same κύριος in parallel construction within the same chapter
+    rationale: Within a single chapter, κύριος should be handled consistently. The chapter-level draft uses 'el Señor' for both occurrences. Either standardize to 'Yahvé' (if project policy mandates it for divine references) or 'el Señor' (if contextual consistency within the chapter takes precedence). Given the uncertainty, flagging for review but proposing 'el Señor' for chapter consistency.
+  revised_spanish_text: Y si alguno quiere hacerles mal, ustedes, haciendo el bien, oren por él, y serán librados de todo mal por el Señor.
+  revision_rationale: Replaces Castilian vosotros forms with neutral Latin-American ustedes forms throughout. Changes 'Yahvé' to 'el Señor' for consistency with 18:1 within the same chapter context.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 20d2b03bd2c023cbb31b2263ef2e1cf8dad33547daec489dbd7225a2cc4d074f
+  timestamp: '2026-05-08T06:37:00Z'
+  output_hash: 20d2b03bd2c023cbb31b2263ef2e1cf8dad33547daec489dbd7225a2cc4d074f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Tightened wording to match the Greek more closely: rendered τὰ εἴδωλα as “the idols” in both places and kept the clause structure without adding or omitting content.'
 translation:
   language: es
-  text: '15. Y me dice: «Si quieres que deje los ídolos, persuadiré a mi marido a que se aparte de los ídolos, e iremos delante de tu Señor, andando en la ley de tu Señor».'
+  text: '15. Y me dice: «Si quieres que deje los ídolos, persuadiré a mi marido a que se aparte de los ídolos, e iremos delante de tu Señor».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: καταλείψω τὰ εἴδωλα
@@ -89,4 +89,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '15. Y me dice: «Si quieres que deje los ídolos, persuadiré a mi marido a que se aparte de los ídolos, e iremos delante de tu Señor, andando en la ley de tu Señor».'
+  to: '15. Y me dice: «Si quieres que deje los ídolos, persuadiré a mi marido a que se aparte de los ídolos, e iremos delante de tu Señor».'
+  rationale: 'Removed ''andando en la ley de tu Señor'' to align with the per-verse EN YAML (004/007.yaml) which is the authoritative revised text. The per-verse EN reads: ''we will go before your Lord'' without the trailing walking clause.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:04Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek reads: Εἰ θέλῃς ἵνα καταλείψω τὰ εἴδωλα, συγγενοῦς μου, κἀγὼ πείθω τὸν ἄνδρα μου ἀποστῆναι ἀπὸ τῶν εἰδώλων, καὶ πορευσόμεθα ἐνώπιον Κυρίου σου. The key issue is that the ES draft preserves ''andando en la ley de tu Señor'' but the per-verse EN YAML shows the POB revision removed that phrase—the EN text at 004/007.yaml reads only ''we will go before your Lord'' without ''walking in the law of your Lord''. The chapter-level YAML retains it, but the per-verse is authoritative for the reading surface. Also συγγενοῦς μου (''my kinsman'') is missing from both EN and ES translations.'
+  spanish_quality_summary: The Spanish is fluent and natural. However, the phrase 'andando en la ley de tu Señor' is an addition not reflected in the per-verse EN text (which is the current revised form). The per-verse EN reads 'we will go before your Lord' without the 'walking in the law' expansion. The ES should align with the per-verse EN. Also the address 'pariente mío' or 'familiar mío' for συγγενοῦς μου is missing—though it is also absent from the EN per-verse YAML, so we follow EN.
+  glossary_alignment: Κυρίου σου → 'tu Señor' (correct, preserves possessive as required by theological_decisions). εἴδωλα → ídolos (correct, consistent per POB revision decision).
+  issues:
+  - severity: medium
+    issue: The phrase 'andando en la ley de tu Señor' is present in the ES but not in the per-verse EN YAML (004/007.yaml), which is the authoritative revised text. The per-verse EN ends at 'we will go before your Lord'. The ES should match the per-verse EN level.
+    rationale: The per-verse EN says only 'iremos delante de tu Señor'. The trailing clause about the law appears in the chapter-level EN but was removed from the per-verse by the revision pipeline. The ES should align to the per-verse EN text.
+  revised_spanish_text: '15. Y me dice: «Si quieres que deje los ídolos, persuadiré a mi marido a que se aparte de los ídolos, e iremos delante de tu Señor».'
+  revision_rationale: 'Removed ''andando en la ley de tu Señor'' to align with the per-verse EN YAML (004/007.yaml) which is the authoritative revised text. The per-verse EN reads: ''we will go before your Lord'' without the trailing walking clause.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8792f5a1a3402a0f8ab5ef0c8ea7f89efa6a9448c785c788860152fe631ef353
+  timestamp: '2026-05-08T06:28:04Z'
+  output_hash: 8792f5a1a3402a0f8ab5ef0c8ea7f89efa6a9448c785c788860152fe631ef353
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

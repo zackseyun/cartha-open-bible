@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 11. Así pues, muchas veces[a], como a un varón santo, me adulaba con palabras; y con engaño, mediante sus dichos alababa mi dominio propio delante de su marido, queriendo derribarme cuando estábamos a solas.
+  text: Así pues, muchas veces, como a un varón santo, me adulaba con palabras; y con engaño, mediante sus dichos alababa mi dominio propio delante de su marido, queriendo derribarme cuando estábamos a solas.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O 'volvía en sí'.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐκολάκευέ
   english_pob_choice: she flattered
@@ -95,4 +91,42 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 11. Así pues, muchas veces[a], como a un varón santo, me adulaba con palabras; y con engaño, mediante sus dichos alababa mi dominio propio delante de su marido, queriendo derribarme cuando estábamos a solas.
+  to: Así pues, muchas veces, como a un varón santo, me adulaba con palabras; y con engaño, mediante sus dichos alababa mi dominio propio delante de su marido, queriendo derribarme cuando estábamos a solas.
+  rationale: 'Removed spurious ''11.'' verse number prefix. Removed footnote marker [a] and its erroneous content (''O: volvía en sí''), which was copied from a different verse and has no relevance here. The EN source for this verse has no footnotes.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Πολλάκις οὖν ὡς ἁγίῳ ἀνδρὶ ἐν λόγοις ἐκολάκευέ με καὶ μετὰ δόλου διὰ ῥημάτων ἐπαίνει τὴν σωφροσύνην μου ἐνώπιον τοῦ ἀνδρὸς αὐτῆς, βουλομένη κατὰ μόνας ὑποσκελίσαι με.'' EN: ''So then, many times, as to a holy man, she flattered me with words; and with deceit she praised my self-control before her husband, wishing to trip me up when we were alone.'' Spanish draft: ''11. Así pues, muchas veces[a], como a un varón santo, me adulaba con palabras; y con engaño, mediante sus dichos alababa mi dominio propio delante de su marido, queriendo derribarme cuando estábamos a solas.'' Issues: (1) Spurious chapter-verse number ''11.'' at start of text; (2) footnote [a] in the text has content ''O: volvía en sí'' which appears to be an error copied from a different verse — it has no relevance to this verse about flattery; (3) The footnote marker [a] after ''muchas veces'' in the text but the footnote content ''O: volvía en sí'' is completely unrelated.'
+  spanish_quality_summary: Good rendering of the Greek content. 'Me adulaba con palabras' for ἐκολάκευέ with 'ἐν λόγοις' is fine. 'Dominio propio' for σωφροσύνη is a defensible choice (POB uses 'self-control'). 'Derribarme' for ὑποσκελίσαι is good. Main problems are the spurious '11.' prefix and the erroneous footnote content.
+  glossary_alignment: No YHWH/κύριος/θεός/Mesías. σωφροσύνη → 'dominio propio' consistent.
+  issues:
+  - severity: high
+    issue: Spurious verse number '11.' at start of text.
+    rationale: Per-verse YAMLs should not have chapter-verse numbers in the translation.text field.
+  - severity: high
+    issue: 'Footnote [a] content (''O: volvía en sí'') is completely irrelevant to this verse.'
+    rationale: 'The marker [a] is placed after ''muchas veces'' but the footnote says ''O: volvía en sí'' which belongs to a different verse. If there is no valid footnote for this verse, the marker and footnote should be removed.'
+  revised_spanish_text: Así pues, muchas veces, como a un varón santo, me adulaba con palabras; y con engaño, mediante sus dichos alababa mi dominio propio delante de su marido, queriendo derribarme cuando estábamos a solas.
+  revision_rationale: 'Removed spurious ''11.'' verse number prefix. Removed footnote marker [a] and its erroneous content (''O: volvía en sí''), which was copied from a different verse and has no relevance here. The EN source for this verse has no footnotes.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 23c3a8688ed97e448f288f65a8182d0cb34ac4070a642c6c11de635308a07585
+  timestamp: '2026-05-08T06:30:54Z'
+  output_hash: 23c3a8688ed97e448f288f65a8182d0cb34ac4070a642c6c11de635308a07585
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

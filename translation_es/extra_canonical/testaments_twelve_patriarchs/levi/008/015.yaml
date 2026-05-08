@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'presence' to 'appearance' for a more natural and contextually fitting rendering of παρουσία here; otherwise retained the draft.
 translation:
   language: es
-  text: Y su aparición es amable, como un profeta del Altísimo, de la descendencia de Abraham nuestro padre.
+  text: Y su aparición es amada, como un profeta del Altísimo, de la descendencia de Abraham nuestro padre.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: παρουσία
@@ -97,4 +97,39 @@ ai_draft:
     total_tokens: 2569
     reasoning_tokens: 0
     estimated_cost_usd: 0.005407
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y su aparición es amable, como un profeta del Altísimo, de la descendencia de Abraham nuestro padre.
+  to: Y su aparición es amada, como un profeta del Altísimo, de la descendencia de Abraham nuestro padre.
+  rationale: Changed 'amable' to 'amada' to faithfully render ἀγαπητή (beloved/dear) and align with the EN POB's 'beloved.' 'Amable' in modern Spanish means kind/agreeable, not beloved, which misrepresents the Greek.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: παρουσία → aparición (follows EN revision from presence to appearance — acceptable). ἀγαπητή → amable — this is the key issue. ἀγαπητός means beloved/dear, and the EN POB chose 'beloved.' The ES draft chose 'amable' (= kind, agreeable), which shifts the semantic field. ἐκ σπέρματος Ἀβραάμ → de la descendencia de Abraham — good. ὑψίστου → Altísimo — correct.
+  spanish_quality_summary: Otherwise natural and clear Spanish. The revision of amable to amado or querido does not require restructuring the sentence.
+  glossary_alignment: No glossary terms triggered. ὑψίστου correctly rendered as Altísimo.
+  issues:
+  - severity: medium
+    issue: ἀγαπητή rendered as amable instead of amado/querido
+    rationale: ἀγαπητός means beloved, dear, cherished — not merely agreeable or kind. The EN POB chose 'beloved.' Spanish 'amable' means kind/pleasant/agreeable, shifting the meaning to a quality of character rather than a relation of affection. 'Amado' or 'querido' is more accurate to both the Greek and the EN.
+  revised_spanish_text: Y su aparición es amada, como un profeta del Altísimo, de la descendencia de Abraham nuestro padre.
+  revision_rationale: Changed 'amable' to 'amada' to faithfully render ἀγαπητή (beloved/dear) and align with the EN POB's 'beloved.' 'Amable' in modern Spanish means kind/agreeable, not beloved, which misrepresents the Greek.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: ad635a97fe026a3e7f0b5eb9476222a33edc50e1303e9790f58f8e89f4aab1e9
+  timestamp: '2026-05-08T06:47:11Z'
+  output_hash: ad635a97fe026a3e7f0b5eb9476222a33edc50e1303e9790f58f8e89f4aab1e9
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

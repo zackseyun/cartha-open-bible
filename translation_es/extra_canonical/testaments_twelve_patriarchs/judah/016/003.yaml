@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Added 'drink' to reflect ἵνα μὴ πίνητε, which was omitted in the draft. Kept the rest substantially unchanged for accuracy and formal register.
 translation:
   language: es
-  text: Pero si quieren vivir con dominio propio, no toquen el vino en absoluto, para que no beban y pequen en palabras de insolencia, en pleitos, en calumnias y en transgresiones de los mandamientos de Dios, y perezcan antes de su tiempo.
+  text: Pero si quieren vivir con dominio propio, no toquen el vino en absoluto, para que no beban y pequen en palabras de insolencia, en peleas, en calumnias y en transgresiones de los mandamientos de Dios, y perezcan antes de su tiempo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: σωφρόνως ζῆσαι
@@ -142,4 +142,39 @@ ai_draft:
     total_tokens: 3308
     reasoning_tokens: 0
     estimated_cost_usd: 0.007772
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero si quieren vivir con dominio propio, no toquen el vino en absoluto, para que no beban y pequen en palabras de insolencia, en pleitos, en calumnias y en transgresiones de los mandamientos de Dios, y perezcan antes de su tiempo.
+  to: Pero si quieren vivir con dominio propio, no toquen el vino en absoluto, para que no beban y pequen en palabras de insolencia, en peleas, en calumnias y en transgresiones de los mandamientos de Dios, y perezcan antes de su tiempo.
+  rationale: Changed 'pleitos' to 'peleas' to correctly render μάχαις as fights/quarrels rather than legal disputes in this vice-catalogue context.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Εἰ δὲ θέλετε σωφρόνως ζῆσαι, μηδ'' ὅλως τοῦ οἴνου ἐφάπτεσθε ἵνα μὴ πίνητε ἁμαρτάνητε ἐν λόγοις ὕβρεως καὶ μάχαις καὶ συκοφαντίαις καὶ παραβάσεσι ἐντολῶν Θεοῦ, καὶ ἀπολεῖσθε οὐκ ἐν καιρῷ ὑμῶν. Spanish: ''Pero si quieren vivir con dominio propio, no toquen el vino en absoluto, para que no beban y pequen en palabras de insolencia, en pleitos, en calumnias y en transgresiones de los mandamientos de Dios, y perezcan antes de su tiempo.'' θέλετε→''quieren'' (ustedes form — correct). ἐφάπτεσθε→''no toquen'' (ustedes imperative — correct). Alignment issue: ''μάχαις'' is rendered ''pleitos'' (litigation/lawsuits) but the Greek means ''fights/quarrels/brawls'' in this context; ''peleas'' or ''riñas'' would be closer. ''Pleitos'' implies legal disputes.'
+  spanish_quality_summary: Generally good. Most forms are correctly ustedes. The rendering of μάχαις as 'pleitos' introduces a legal nuance not present in the source — μάχη in this context means physical or verbal fights/quarrels, not lawsuits. Should be 'peleas' or 'riñas'.
+  glossary_alignment: Θεός→'Dios' correctly applied. No other applicable glossary terms. Consistent.
+  issues:
+  - severity: medium
+    issue: μάχαις rendered as 'pleitos' (lawsuits/litigation) rather than 'peleas' or 'riñas' (fights/quarrels)
+    rationale: μάχη in this vice-list context means quarrels/fights, not legal disputes. 'Pleitos' introduces a legal connotation absent from the source.
+  revised_spanish_text: Pero si quieren vivir con dominio propio, no toquen el vino en absoluto, para que no beban y pequen en palabras de insolencia, en peleas, en calumnias y en transgresiones de los mandamientos de Dios, y perezcan antes de su tiempo.
+  revision_rationale: Changed 'pleitos' to 'peleas' to correctly render μάχαις as fights/quarrels rather than legal disputes in this vice-catalogue context.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 833689c9f9dcda9a6d29d769bb9160089e950fea5da05d83b54eea22326c25c9
+  timestamp: '2026-05-08T06:39:21Z'
+  output_hash: 833689c9f9dcda9a6d29d769bb9160089e950fea5da05d83b54eea22326c25c9
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

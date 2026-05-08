@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed one unnecessary possessive ('your') for closer alignment with the Greek; otherwise retained the draft as accurate and natural.
 translation:
   language: es
-  text: Si bebéis vino en alegría, sed modestos con el temor de Dios. Porque, si en alegría se aparta el temor de Dios, entonces sobreviene la embriaguez, y entra la desvergüenza.
+  text: Si beben vino en alegría, sean modestos con el temor de Dios. Porque, si en alegría se aparta el temor de Dios, entonces sobreviene la embriaguez, y entra la desvergüenza.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἐὰν ... πίνητε οἶνον
@@ -121,4 +121,39 @@ ai_draft:
     total_tokens: 3087
     reasoning_tokens: 0
     estimated_cost_usd: 0.007408
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Si bebéis vino en alegría, sed modestos con el temor de Dios. Porque, si en alegría se aparta el temor de Dios, entonces sobreviene la embriaguez, y entra la desvergüenza.
+  to: Si beben vino en alegría, sean modestos con el temor de Dios. Porque, si en alegría se aparta el temor de Dios, entonces sobreviene la embriaguez, y entra la desvergüenza.
+  rationale: Changed 'bebéis' to 'beben' and 'sed modestos' to 'sean modestos' to use ustedes forms required by neutral Latin-American Spanish register.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἐὰν πίνητε οἶνον ἐν εὐφροσύνῃ, ἐστὲ αἰδούμενοι μετὰ φόβου θεοῦ. ἐὰν γὰρ ἐν εὐφροσύνῃ ἀποστῇ ὁ τοῦ Θεοῦ φόβος, λοιπὸν γίνεται μέθη, καὶ παρεισέρχεται ἡ ἀναισχυντία. Spanish: ''Si bebéis vino en alegría, sed modestos con el temor de Dios. Porque, si en alegría se aparta el temor de Dios, entonces sobreviene la embriaguez, y entra la desvergüenza.'' Same issue: ''bebéis'' and ''sed'' are vosotros forms. Neutral Latin-American Spanish requires ''beben'' and ''sean'' (or ''estén'').'
+  spanish_quality_summary: 'Lexical choices are accurate and well-reasoned. Structural issue: ''bebéis'' and ''sed modestos'' use vosotros forms, not neutral Latin-American ustedes forms. Should be ''beben'' / ''sean modestos''.'
+  glossary_alignment: θεός→'Dios' consistently applied (twice). No other applicable glossary terms. Consistent.
+  issues:
+  - severity: high
+    issue: '''bebéis'' and ''sed modestos'' are vosotros forms (peninsular Spanish), not neutral Latin-American Spanish'
+    rationale: 'Target variant requires ustedes forms: ''beben'' and ''sean modestos''.'
+  revised_spanish_text: Si beben vino en alegría, sean modestos con el temor de Dios. Porque, si en alegría se aparta el temor de Dios, entonces sobreviene la embriaguez, y entra la desvergüenza.
+  revision_rationale: Changed 'bebéis' to 'beben' and 'sed modestos' to 'sean modestos' to use ustedes forms required by neutral Latin-American Spanish register.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 07eff36456f37d02fc57d7ddd26357814c801fd26c2985747da8de002163119c
+  timestamp: '2026-05-08T06:39:06Z'
+  output_hash: 07eff36456f37d02fc57d7ddd26357814c801fd26c2985747da8de002163119c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

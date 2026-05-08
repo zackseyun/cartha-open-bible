@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised the final phrase from 'a minister of his presence' to 'a minister before him' to reflect λειτουργὸν τοῦ προσώπου αὐτοῦ more naturally and accurately in English while preserving the formal register.
 translation:
   language: es
-  text: Por tanto, el Altísimo ha escuchado tu oración, para apartarte de la injusticia y para que llegues a ser para él un hijo, un esclavo y un ministro delante de él.
+  text: Por tanto, el Altísimo ha escuchado tu oración, para apartarte de la injusticia y para que llegues a ser para él un hijo, un servidor y un ministro delante de él.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Εἰσήκουσεν ... ὁ ὕψιστος
@@ -104,4 +104,39 @@ ai_draft:
     total_tokens: 2858
     reasoning_tokens: 0
     estimated_cost_usd: 0.006332
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, el Altísimo ha escuchado tu oración, para apartarte de la injusticia y para que llegues a ser para él un hijo, un esclavo y un ministro delante de él.
+  to: Por tanto, el Altísimo ha escuchado tu oración, para apartarte de la injusticia y para que llegues a ser para él un hijo, un servidor y un ministro delante de él.
+  rationale: Changed 'un esclavo' to 'un servidor' to reflect θεράπων correctly — the EN POB chose 'servant' (not 'slave') for θεράπων, which is an honored attendant distinct from δοῦλος. 'Servidor' is the natural Spanish equivalent of 'servant' in this honorable service context.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:09Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek θεράπων is translated 'servant' in the EN but rendered 'esclavo' (slave) in the ES. θεράπων specifically denotes an honored attendant/retainer, distinct from δοῦλος (slave). The POB glossary policy is δοῦλος→esclavo where POB=slave, but here the EN POB chose 'servant' for θεράπων, not 'slave'. λειτουργὸν τοῦ προσώπου αὐτοῦ revised to 'minister before him' in EN but ES keeps 'ministro de su presencia' (minister of his presence) — the older pre-revision rendering.
+  spanish_quality_summary: Otherwise fluent and accurate. 'El Altísimo' for ὁ ὕψιστος is correct. 'delante de él' for the final phrase should be 'ante su presencia' or matches revised EN 'before him'. Actually 'delante de él' does match 'before him'. But the θεράπων/esclavo issue is a source misalignment.
+  glossary_alignment: 'δοῦλος→esclavo policy does not apply here: the Greek is θεράπων, not δοῦλος, and the EN chose ''servant''. Using ''esclavo'' for θεράπων overstates the servitude.'
+  issues:
+  - severity: medium
+    issue: θεράπων translated as 'esclavo' (slave) but the EN POB chose 'servant' and the Greek θεράπων denotes an honored attendant, not a slave (δοῦλος).
+    rationale: The POB policy for δοῦλος→esclavo does not extend to θεράπων. The EN source uses 'servant' for θεράπων. Using 'esclavo' introduces a harsher servitude connotation not warranted by θεράπων.
+  revised_spanish_text: Por tanto, el Altísimo ha escuchado tu oración, para apartarte de la injusticia y para que llegues a ser para él un hijo, un servidor y un ministro delante de él.
+  revision_rationale: Changed 'un esclavo' to 'un servidor' to reflect θεράπων correctly — the EN POB chose 'servant' (not 'slave') for θεράπων, which is an honored attendant distinct from δοῦλος. 'Servidor' is the natural Spanish equivalent of 'servant' in this honorable service context.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0f879be004479ba7607f863ee57eff3c5ba40a6dc7824fd34c1fa35b4a4a8a2c
+  timestamp: '2026-05-08T06:39:09Z'
+  output_hash: 0f879be004479ba7607f863ee57eff3c5ba40a6dc7824fd34c1fa35b4a4a8a2c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

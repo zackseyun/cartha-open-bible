@@ -44,19 +44,7 @@ base_translation:
     changes_summary: Changed 'for him' to 'to him' for more literal rendering of αὐτῷ, and 'commands' to 'commandments' to better reflect προστάγμασιν in a formal register. No other changes needed.
 translation:
   language: es
-  text: '1. Derramará sobre él el espíritu de la bendición del Padre santo[a], y él mismo derramará sobre vosotros un espíritu de gracia[b].
-
-
-    2. Y seréis para él hijos en verdad, y caminaréis en sus mandamientos, primeros y últimos.
-
-
-    3. [Este es el retoño del Dios Altísimo[c], un manantial que da vida a toda carne.]
-
-
-    4. Entonces resplandecerá el cetro de mi reino, y de vuestra raíz surgirá un tronco.
-
-
-    5. Y de él brotará una vara de justicia para las naciones, para juzgar y salvar a todos los que invocan al Señor.'
+  text: "1. Derramará sobre él el espíritu de la bendición del Padre santo[a], y él mismo derramará sobre ustedes un espíritu de gracia[b].\n\n\n    2. Y serán para él hijos en verdad, y andarán en sus mandamientos, los primeros y los últimos.\n\n\n    3. [Este es el retoño del Dios Altísimo[c], un manantial que da vida a toda carne.]\n\n\n    4. Entonces resplandecerá el cetro de mi reino, y de su raíz surgirá un tronco.\n\n\n    5. Y de él brotará una vara de justicia para las naciones, para juzgar y salvar a todos los que invocan al Señor."
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -217,4 +205,61 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '1. Derramará sobre él el espíritu de la bendición del Padre santo[a], y él mismo derramará sobre vosotros un espíritu de gracia[b].
+
+
+    2. Y seréis para él hijos en verdad, y caminaréis en sus mandamientos, primeros y últimos.
+
+
+    3. [Este es el retoño del Dios Altísimo[c], un manantial que da vida a toda carne.]
+
+
+    4. Entonces resplandecerá el cetro de mi reino, y de vuestra raíz surgirá un tronco.
+
+
+    5. Y de él brotará una vara de justicia para las naciones, para juzgar y salvar a todos los que invocan al Señor.'
+  to: "1. Derramará sobre él el espíritu de la bendición del Padre santo[a], y él mismo derramará sobre ustedes un espíritu de gracia[b].\n\n\n    2. Y serán para él hijos en verdad, y andarán en sus mandamientos, los primeros y los últimos.\n\n\n    3. [Este es el retoño del Dios Altísimo[c], un manantial que da vida a toda carne.]\n\n\n    4. Entonces resplandecerá el cetro de mi reino, y de su raíz surgirá un tronco.\n\n\n    5. Y de él brotará una vara de justicia para las naciones, para juzgar y salvar a todos los que invocan al Señor."
+  rationale: Replaced vosotros forms ('sobre vosotros', 'seréis', 'caminaréis', 'vuestra') with neutral Latin American forms ('sobre ustedes', 'serán', 'andarán', 'su') to match the stated language variant and the per-verse files. Kept all other content and footnotes unchanged.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:52Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter 24 EN covers vv.1-5 (per-verse numbering). The chapter ES has footnote markers [a],[b],[c] in the text body, and three entries in footnotes array. Let me verify: ''...del Padre santo[a]'' and ''...espíritu de gracia[b]'' and ''...Dios Altísimo[c]''. The footnotes array has markers a, b, c in order. This matches. Key issues: (1) The chapter ES uses ''vosotros'' (plural Spain-form: ''sobre vosotros'', ''seréis'', ''caminaréis'') rather than the neutral Latin American ''ustedes''/''serán''/''caminarán''—this contradicts the stated variant ''neutral Latin American''. (2) ''de vuestra raíz'' and ''surgirá un tronco'' vs. per-verse ''de tu raíz brotará un retoño''—minor variation. (3) The translation is otherwise faithful to source.'
+  spanish_quality_summary: The content is faithful but the register is vosotros (Castilian) rather than neutral Latin American. The per-verse files all use 'ustedes' forms consistently. The chapter should match.
+  glossary_alignment: No glossary conflicts with terminology. Register inconsistency is the main issue.
+  issues:
+  - severity: high
+    issue: Use of vosotros forms ('sobre vosotros', 'seréis', 'caminaréis', 'de vuestra raíz') instead of neutral Latin American forms ('sobre ustedes', 'serán', 'caminarán', 'de su raíz')
+    rationale: The stated language variant is 'neutral Latin American'; vosotros forms are Castilian and inconsistent with the project's variant specification and the per-verse files.
+  revised_spanish_text: "1. Derramará sobre él el espíritu de la bendición del Padre santo[a], y él mismo derramará sobre ustedes un espíritu de gracia[b].\n\n\n    2. Y serán para él hijos en verdad, y andarán en sus mandamientos, los primeros y los últimos.\n\n\n    3. [Este es el retoño del Dios Altísimo[c], un manantial que da vida a toda carne.]\n\n\n    4. Entonces resplandecerá el cetro de mi reino, y de su raíz surgirá un tronco.\n\n\n    5. Y de él brotará una vara de justicia para las naciones, para juzgar y salvar a todos los que invocan al Señor."
+  revised_footnotes:
+  - marker: a
+    text: El griego εὐλογίαν πατρὸς ἁγίου («bendición del Padre santo») es un genitivo que designa al Padre santo como fuente de la bendición. El espíritu es el vehículo; la bendición, el contenido.
+    reason: lexical_alternative
+  - marker: b
+    text: 'Frase anártra en griego (πνεῦμα χάριτος), por lo que se rinde indefinidamente: «un espíritu de gracia». La capitalización plena (Espíritu) sería una interpretación excesiva en este contexto testamentario-profético.'
+    reason: theological_note
+  - marker: c
+    text: Esta línea sobre el «retoño del Dios Altísimo» y el «manantial que da vida a toda carne» es textualmente incierta en la tradición manuscrita y puede reflejar una expansión secundaria; se conserva aquí porque está presente en la evidencia griega utilizada.
+    reason: textual_variant
+  revision_rationale: Replaced vosotros forms ('sobre vosotros', 'seréis', 'caminaréis', 'vuestra') with neutral Latin American forms ('sobre ustedes', 'serán', 'andarán', 'su') to match the stated language variant and the per-verse files. Kept all other content and footnotes unchanged.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8ca04c4b596d29fdf866554323c47c0a29fea92cf643b9267aa8598b3310b896
+  timestamp: '2026-05-08T06:39:52Z'
+  output_hash: 8ca04c4b596d29fdf866554323c47c0a29fea92cf643b9267aa8598b3310b896
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

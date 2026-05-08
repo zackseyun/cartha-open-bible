@@ -19,12 +19,8 @@ base_translation:
     changes_summary: 'Revised for completeness and closer lexical accuracy: rendered δεῖ γίνεσθαι as "must happen" and ἐν καιρῷ αὐτῶν as "in their time"; omitted "in the last days" because it is present in one witness but absent in the other.'
 translation:
   language: es
-  text: Y estas cosas han de suceder[a] en su tiempo.
+  text: Pero estas cosas sucederán en su tiempo, en los últimos días.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El pase de revisión inglés omitió 'en los últimos días' por estar presente en un testigo y ausente en otro. La traducción española sigue esa decisión textual.
-    reason: textual_variant
 lexical_decisions:
 - source_word: γενήσεται
   english_pob_choice: must happen
@@ -71,4 +67,45 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y estas cosas han de suceder[a] en su tiempo.
+  to: Pero estas cosas sucederán en su tiempo, en los últimos días.
+  rationale: Added 'en los últimos días' to match the phase2-realigned EN. Changed 'Y estas cosas han de suceder' to 'Pero estas cosas sucederán' to match EN 'But these things will happen' (δέ as contrastive). Removed the now-incorrect footnote [a].
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:35:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ταῦτα δὲ γενήσεται ἐν καιρῷ αὐτῶν ἐν ἐσχάταις ἡμέραις. Current EN (phase2_realign): ''But these things will happen in their time, in the last days.'' ES base_translation field references the pre-phase2 EN text ''And these things must happen in their time'' (which omitted ''in the last days''). The phase2 realign restored ''in the last days''. The ES text ''Y estas cosas han de suceder[a] en su tiempo'' follows the old EN and omits ''en los últimos días''. The footnote [a] even acknowledges this omission as a textual decision by the English revision pass — but that decision was itself overridden by the phase2 realign which put the clause back. The ES must now include ''en los últimos días''.'
+  spanish_quality_summary: The Spanish is fluent. 'Han de suceder' for γενήσεται is good. The main deficiency is the missing 'en los últimos días' clause. The footnote [a] is now misleading since it explains omitting a clause that the current EN actually includes.
+  glossary_alignment: No glossary issues.
+  issues:
+  - severity: high
+    issue: Missing 'en los últimos días' clause — the phase2 realign restored ἐν ἐσχάταις ἡμέραις but the ES still omits it
+    rationale: Current EN reads 'in their time, in the last days'. ES must match.
+  - severity: medium
+    issue: Footnote [a] incorrectly explains an omission that is no longer present in the current EN
+    rationale: The footnote says the English pass omitted 'en los últimos días', but the current EN includes it. This footnote should be removed or updated.
+  - severity: low
+    issue: 'Opening ''Pero''/''Y'' discrepancy: Greek has δέ (contrastive/transitional), EN uses ''But'', ES uses ''Y'''
+    rationale: Minor but 'Pero' would match the current EN 'But' more closely for δέ.
+  revised_spanish_text: Pero estas cosas sucederán en su tiempo, en los últimos días.
+  revision_rationale: Added 'en los últimos días' to match the phase2-realigned EN. Changed 'Y estas cosas han de suceder' to 'Pero estas cosas sucederán' to match EN 'But these things will happen' (δέ as contrastive). Removed the now-incorrect footnote [a].
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 07b969adc767cd90549329065bf24c098c90d14e518701c3dd569602d29c57ed
+  timestamp: '2026-05-08T06:35:58Z'
+  output_hash: 07b969adc767cd90549329065bf24c098c90d14e518701c3dd569602d29c57ed
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

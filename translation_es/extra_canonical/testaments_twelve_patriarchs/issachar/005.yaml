@@ -262,4 +262,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Full chapter translation faithfully renders all key Greek terms: νόμον Θεοῦ as ''la ley de Dios'', ἁπλότητα as ''sencillez'', ἀκακίᾳ as ''inocencia'', ἐλεήσατε as ''tengan misericordia'', πρωτογεννήμασιν καρπῶν as ''primicias de los frutos de la tierra'', ἁγίους as ''los santos'', πιότητος τῆς γῆς as ''la riqueza de la tierra'', ἐκληροδότησεν as ''les dio su heredad'', πειρατήρια as ''bandas de piratas''. Reflects all EN revision-pass changes.'
+  spanish_quality_summary: Well-crafted neutral Latin-American Spanish. All three chapter-level footnotes [a][b][c] correctly mirror EN footnotes a, b, c. Gad clause preserved in brackets with clear textual note. 'Santos' for ἁγίους is acceptable given the footnote clarification.
+  glossary_alignment: Κύριος rendered 'el Señor' consistently (grk text, no tetragrammaton). 'Beliar'/'bandas de piratas' consistent with POB. No YHWH/Mesías/Dios/δοῦλος/πνεῦμα concerns in this chapter.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9ee8d525df74691f1761f57e34cb13b5be6dd159cd1ef39b68d9f4f768afb715
+  timestamp: '2026-05-08T06:28:20Z'
+  output_hash: 9ee8d525df74691f1761f57e34cb13b5be6dd159cd1ef39b68d9f4f768afb715
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

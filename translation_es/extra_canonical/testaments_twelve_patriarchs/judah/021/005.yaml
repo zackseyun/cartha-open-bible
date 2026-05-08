@@ -129,4 +129,34 @@ ai_draft:
     total_tokens: 3318
     reasoning_tokens: 0
     estimated_cost_usd: 0.008012
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ὁ ἄγγελος Κυρίου (angel of the Lord), Κύριος ἐξελέξατο (the Lord chose him), ἀπαρχὰς αὐτῷ προσφέρειν (offer the firstfruits to him), βασιλεὺς Ἰακώβ (king of Jacob). EN: ''the angel of the Lord told me that the Lord chose him above you...''. Spanish uses ''ángel de Yahvé'' (good) but then ''el Señor'' in the quoted speech where the EN also uses ''the Lord''. The firstfruits placement (dative ''to him'') is correctly handled. Issue: the Spanish renders the opening as indirect speech (''me dijo: «A él lo escogió el Señor por encima de ti»'') while the EN has it as indirect + quoted (''the angel of the Lord told me that the Lord chose him above you, to draw near...''). The Spanish shifts the quoted speech attribution—putting ''escogió el Señor'' at the start is a valid reordering for Spanish. No meaning lost. One concern: the inner speech attribution is mixed—''ángel de Yahvé'' for ἄγγελος Κυρίου in the narrative frame is correct per project; ''el Señor''
+    in the speech body is also correct. Footnote markers: no footnotes in EN per-verse file; no footnotes in Spanish per-verse file. Match is clean.'
+  spanish_quality_summary: 'Well-constructed Spanish. The sequence of infinitives (acercarse, comer, presentarle) mirrors the Greek''s series well. ''Primicias'' for ἀπαρχάς is standard. ''Deleites de los hijos de Israel'' for ἐντρυφημάτων υἱῶν Ἰσραήλ is accurate. ''Rey de Jacob'' correct. One small issue: the indirect-to-direct speech transition ''me dijo: «A él lo escogió el Señor»'' uses a topicalization that slightly changes the word order from EN. This is acceptable but the subject-object-verb order inverts ''the Lord chose him'' to ''A él lo escogió el Señor'', which is natural Spanish.'
+  glossary_alignment: 'ἄγγελος Κυρίου → ''ángel de Yahvé'': correct per project (divine name in fixed expression). Second Κύριος → ''el Señor'': consistent with EN POB. No δοῦλος, πνεῦμα issues. Clean.'
+  issues:
+  - severity: low
+    issue: Inconsistent Κύριος rendering within same verse
+    rationale: First Κυρίου (genitive in ἄγγελος Κυρίου) rendered as 'Yahvé'—correct for the 'angel of the Lord/YHWH' formula. Second Κύριος (subject of ἐξελέξατο) rendered as 'el Señor'. This inconsistency is actually theologically defensible (different grammatical-contextual positions), and the Spanish lexical decision explains the choice. Low severity—both are reasonable.
+  revised_spanish_text: 'Porque el ángel de Yahvé me dijo: «A él lo escogió el Señor por encima de ti, para acercarse a él, y para comer en su mesa, y para presentarle las primicias de los deleites de los hijos de Israel. Pero tú serás rey de Jacob».'
+  revision_rationale: No content change needed; the low-severity Κύριος inconsistency is already explained in the lexical decisions and is defensible. Approving the existing text as-is with verdict revise downgraded to approve—however since the helper was already called with revise, providing full text unchanged.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 28b8ad47ac5d62d331d760cd1890d756b3bc8618f9a80d054ab69471aaae4328
+  timestamp: '2026-05-08T06:46:00Z'
+  output_hash: 28b8ad47ac5d62d331d760cd1890d756b3bc8618f9a80d054ab69471aaae4328
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

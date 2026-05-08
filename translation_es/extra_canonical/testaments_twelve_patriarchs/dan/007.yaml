@@ -54,13 +54,7 @@ base_translation:
     changes_summary: Removed 'affectionately' because the Greek verb already means 'kissed' without requiring an adverbial expansion, and changed 'carried up his bones' to 'carried his bones' since the Greek does not clearly require 'up' here. Retained the rest.
 translation:
   language: es
-  text: 'Y cuando hubo dicho estas cosas, los besó y se durmió un buen sueño[a].
-
-
-    2 Y sus hijos lo enterraron. Y después de esto llevaron sus huesos[b] al lugar donde estaban Abraham, Isaac y Jacob.
-
-
-    3 Sin embargo[c], Dan les profetizó que olvidarían a su Dios y serían extrañados de la tierra de su herencia, del linaje de Israel y de la familia de su descendencia.'
+  text: "Y cuando hubo dicho estas cosas[a], los besó y se durmió un buen sueño.\n\n\n    2 Y sus hijos lo enterraron. Y después de esto llevaron sus huesos[b] al lugar donde estaban Abraham, Isaac y Jacob.\n\n\n    3 Sin embargo[c], Dan les profetizó que olvidarían a su Dios y serían enajenados de la tierra de su herencia, del linaje de Israel y de la familia de su descendencia."
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -70,7 +64,7 @@ translation:
     text: '''Llevaron sus huesos'' probablemente se refiere a una reinhumación posterior con los patriarcas.'
     reason: cultural_note
   - marker: c
-    text: El testimonio griego está truncado en esta línea; la traducción sigue el sentido recuperable de que Dan vaticinó el olvido de Israel hacia Dios y su extrañamiento de herencia y parentela.
+    text: El testimonio griego está truncado en esta línea; la traducción sigue el sentido recuperable de que Dan vaticinó el olvido de Israel hacia Dios y su apartamiento de herencia y parentela.
     reason: textual_variant
 lexical_decisions:
 - source_word: καταφιλήσας
@@ -192,4 +186,55 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y cuando hubo dicho estas cosas, los besó y se durmió un buen sueño[a].
+
+
+    2 Y sus hijos lo enterraron. Y después de esto llevaron sus huesos[b] al lugar donde estaban Abraham, Isaac y Jacob.
+
+
+    3 Sin embargo[c], Dan les profetizó que olvidarían a su Dios y serían extrañados de la tierra de su herencia, del linaje de Israel y de la familia de su descendencia.'
+  to: "Y cuando hubo dicho estas cosas[a], los besó y se durmió un buen sueño.\n\n\n    2 Y sus hijos lo enterraron. Y después de esto llevaron sus huesos[b] al lugar donde estaban Abraham, Isaac y Jacob.\n\n\n    3 Sin embargo[c], Dan les profetizó que olvidarían a su Dios y serían enajenados de la tierra de su herencia, del linaje de Israel y de la familia de su descendencia."
+  rationale: Changed 'serían extrañados' to 'serían enajenados' for ἀλλοτριωθήσονται (v.3) as it is more natural in modern neutral Latin American Spanish while preserving the relational alienation sense. Updated footnote [c] to use 'apartamiento' instead of 'extrañamiento' for consistency.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:21:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek Dan 7 covers death scene (v.1), burial and bone transfer (v.2), and fragmentary prophecy (v.3). Chapter-level Spanish covers all three. All major source elements present. V.3 uses 'serían extrañados' for ἀλλοτριωθήσονται.
+  spanish_quality_summary: 'Fluent with correct footnotes [a],[b],[c]. One issue: ''serían extrañados'' for ἀλλοτριωθήσονται sounds slightly archaic. ''Serían enajenados'' or ''se apartarían'' is more natural in modern neutral Latin American Spanish.'
+  glossary_alignment: Death euphemism preserved. 'Linaje' for γένος preferred over 'raza'. No special glossary terms otherwise.
+  issues:
+  - severity: low
+    issue: '''Serían extrañados'' for ἀλλοτριωθήσονται is grammatically correct but archaic in modern Latin American Spanish. ''Serían enajenados'' carries the relational alienation more naturally.'
+    rationale: ἀλλοτριόω means to alienate, estrange, make foreign. 'Enajenados' is more natural in modern neutral Latin American Spanish.
+  revised_spanish_text: "Y cuando hubo dicho estas cosas[a], los besó y se durmió un buen sueño.\n\n\n    2 Y sus hijos lo enterraron. Y después de esto llevaron sus huesos[b] al lugar donde estaban Abraham, Isaac y Jacob.\n\n\n    3 Sin embargo[c], Dan les profetizó que olvidarían a su Dios y serían enajenados de la tierra de su herencia, del linaje de Israel y de la familia de su descendencia."
+  revised_footnotes:
+  - marker: a
+    text: Literalmente 'se durmió un buen sueño,' un eufemismo reverente para la muerte en la literatura testamentaria.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Llevaron sus huesos'' probablemente se refiere a una reinhumación posterior con los patriarcas.'
+    reason: cultural_note
+  - marker: c
+    text: El testimonio griego está truncado en esta línea; la traducción sigue el sentido recuperable de que Dan vaticinó el olvido de Israel hacia Dios y su apartamiento de herencia y parentela.
+    reason: textual_variant
+  revision_rationale: Changed 'serían extrañados' to 'serían enajenados' for ἀλλοτριωθήσονται (v.3) as it is more natural in modern neutral Latin American Spanish while preserving the relational alienation sense. Updated footnote [c] to use 'apartamiento' instead of 'extrañamiento' for consistency.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: ca00f7bdef057c4ec1b2eb62edeebeb73a52f287d5390b572a5e072f1f578ac5
+  timestamp: '2026-05-08T06:21:49Z'
+  output_hash: ca00f7bdef057c4ec1b2eb62edeebeb73a52f287d5390b572a5e072f1f578ac5
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y ahora, hijos míos, hagan buenos sus corazones delante de Yahvé, y enderecen sus caminos delante de los hombres, y hallarán favor delante de Yahvé y de los hombres.
+  text: Y ahora, hijos míos, hagan buenos sus corazones delante del Señor, y enderecen sus caminos delante de los hombres, y hallarán favor delante del Señor y de los hombres.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἀγαθύνατε τὰς καρδίας ὑμῶν
@@ -109,4 +109,39 @@ ai_draft:
     total_tokens: 2693
     reasoning_tokens: 0
     estimated_cost_usd: 0.006313
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y ahora, hijos míos, hagan buenos sus corazones delante de Yahvé, y enderecen sus caminos delante de los hombres, y hallarán favor delante de Yahvé y de los hombres.
+  to: Y ahora, hijos míos, hagan buenos sus corazones delante del Señor, y enderecen sus caminos delante de los hombres, y hallarán favor delante del Señor y de los hombres.
+  rationale: Changed 'Yahvé' to 'el Señor' (twice) to be consistent with the treatment of Κύριος (Greek-only text, no Hebrew tetragrammaton marker) in T12P.SIM.2.2 and T12P.SIM.2.13, where 'el Señor' is used following the same reasoning. The project policy YHWH→Yahvé applies to the Hebrew name; in a pure Greek-source context 'el Señor' is the established intra-testament choice.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:17Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek ''Ἀγαθύνατε τὰς καρδίας ὑμῶν''→''hagan buenos sus corazones'' faithful. ''εὐθύνατε τὰς ὁδοὺς ὑμῶν''→''enderecen sus caminos'' accurate. Main issue: ''ἐνώπιον Κυρίου'' is rendered ''delante de Yahvé'' but the EN POB renders Κύριος as ''the Lord'' throughout, and in T12P.SIM.2.2 and T12P.SIM.2.13 the same Κύριος in this Greek text (without Hebrew tetragrammaton marker) is correctly rendered ''el Señor''. Using ''Yahvé'' for Κύριος in a Greek-source-only text is inconsistent with those earlier verses.'
+  spanish_quality_summary: Otherwise good, natural Spanish. The inconsistency in rendering Κύριος as 'Yahvé' here but 'el Señor' in 2.2 and 2.13 should be harmonized. The project policy for Hebrew YHWH→Yahvé is clear, but for Greek Κύριος alone in a non-Hebrew-source verse the project's own earlier choices use 'el Señor'.
+  glossary_alignment: Κύριος rendered 'Yahvé' — inconsistent with 2.2 ('el Señor') and 2.13 ('Señor Dios'). Recommend 'el Señor' for consistency within this testament.
+  issues:
+  - severity: medium
+    issue: Κύριος rendered 'Yahvé' inconsistently with other verses in the same testament
+    rationale: In T12P.SIM.2.2 and 2.13, Κύριος (Greek-only context) is rendered 'el Señor'/'Señor Dios'. In T12P.SIM.5.5, Κυρίου is also rendered 'Yahvé'. The project glossary policy (YHWH→Yahvé) applies to the Hebrew divine name; for a Greek text where no Hebrew name underlies Κύριος, 'el Señor' is the consistent choice within this testament. The translator's own theological decision for 2.13 explicitly states that when the Greek offers only Κύριος without a Hebrew marker, 'Señor' is used. Applying 'Yahvé' in 5.2 contradicts that decision.
+  revised_spanish_text: Y ahora, hijos míos, hagan buenos sus corazones delante del Señor, y enderecen sus caminos delante de los hombres, y hallarán favor delante del Señor y de los hombres.
+  revision_rationale: Changed 'Yahvé' to 'el Señor' (twice) to be consistent with the treatment of Κύριος (Greek-only text, no Hebrew tetragrammaton marker) in T12P.SIM.2.2 and T12P.SIM.2.13, where 'el Señor' is used following the same reasoning. The project policy YHWH→Yahvé applies to the Hebrew name; in a pure Greek-source context 'el Señor' is the established intra-testament choice.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 44d7e7a36fea7308a33966e19ca5a9b2a176da41a908d0efd9615828f4c47488
+  timestamp: '2026-05-08T06:48:17Z'
+  output_hash: 44d7e7a36fea7308a33966e19ca5a9b2a176da41a908d0efd9615828f4c47488
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

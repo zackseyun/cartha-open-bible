@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Entonces mi padre me dijo: «Creo a Dios que José está vivo; porque siempre veo que el Señor lo cuenta como estando con nosotros».'
+  text: 'Entonces mi padre me dijo: «Creo a Dios que José está vivo; porque siempre veo que el Señor lo cuenta entre nosotros».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Πιστεύω τῷ θεῷ
@@ -98,4 +98,39 @@ ai_draft:
     total_tokens: 2502
     reasoning_tokens: 0
     estimated_cost_usd: 0.005555
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Entonces mi padre me dijo: «Creo a Dios que José está vivo; porque siempre veo que el Señor lo cuenta como estando con nosotros».'
+  to: 'Entonces mi padre me dijo: «Creo a Dios que José está vivo; porque siempre veo que el Señor lo cuenta entre nosotros».'
+  rationale: '''lo cuenta como estando con nosotros''→''lo cuenta entre nosotros'' removes the awkward gerund construction and renders ἀριθμεῖ αὐτὸν μεθʼ ἡμῶν more naturally in Spanish while preserving the meaning of being counted/numbered with the group.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Πιστεύω τῷ θεῷ ὅτι ζῇ Ἰωσήφ· ὁρῶ γὰρ πάντοτε ὅτι Κύριος ἀριθμεῖ αὐτὸν μεθʼ ἡμῶν. EN: ''I believe God that Joseph is alive; for I always see that the Lord counts him as being with us.'' ES: ''Creo a Dios que José está vivo; porque siempre veo que el Señor lo cuenta como estando con nosotros.'' The phrase ''como estando con nosotros'' is slightly awkward (gerund after como); better Spanish: ''como uno de los nuestros'' or ''entre nosotros'' or ''como si estuviera con nosotros''.'
+  spanish_quality_summary: 'Generally good. The main issue is ''lo cuenta como estando con nosotros'' — ''como estando'' uses a gerund after ''como'' which is grammatically unusual in Spanish. Better rendering: ''lo cuenta entre nosotros'' or ''lo considera uno de los nuestros''. The EN uses ''counts him as being with us'' which the ES tries to match too literally.'
+  glossary_alignment: θεός→Dios correct. Κύριος without tetragrammaton→'el Señor' correct.
+  issues:
+  - severity: medium
+    issue: '''lo cuenta como estando con nosotros'' — ''como estando'' is a gerund construction after ''como'' that sounds awkward in Spanish; more natural options exist'
+    rationale: Spanish rarely uses 'como' followed directly by a gerund (estando) in this sense; it sounds like a literal English calque
+  revised_spanish_text: 'Entonces mi padre me dijo: «Creo a Dios que José está vivo; porque siempre veo que el Señor lo cuenta entre nosotros».'
+  revision_rationale: '''lo cuenta como estando con nosotros''→''lo cuenta entre nosotros'' removes the awkward gerund construction and renders ἀριθμεῖ αὐτὸν μεθʼ ἡμῶν more naturally in Spanish while preserving the meaning of being counted/numbered with the group.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9e1842ca2d7e162b6f2851f5e1bbc3cc8d15d776bf48ef67b2f8752462e53c7d
+  timestamp: '2026-05-08T06:47:54Z'
+  output_hash: 9e1842ca2d7e162b6f2851f5e1bbc3cc8d15d776bf48ef67b2f8752462e53c7d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

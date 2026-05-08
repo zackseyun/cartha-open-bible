@@ -102,4 +102,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek (first sentence): ''But if the one who is angry is weak, the passion of wrath grows in him twofold, for anger always helps him in wrongdoing.'' ES: ''Pero si el iracundo es débil, la pasión de la cólera crece en él al doble, pues la ira siempre lo ayuda en el mal obrar.'' All elements: ἀσθενής→débil, ὀργή→cólera (distinguished from θυμός→ira), πάθος→pasión, ἀναφύει→crece, ἐν παρανομίᾳ→en el mal obrar. Note: the Greek source for this verse also includes the second sentence about the spirit at Satan''s right hand, but the EN base only covers the first sentence — ES correctly follows EN.'
+  spanish_quality_summary: Excellent Spanish. The distinction θυμός→ira vs ὀργή→cólera is a smart lexical choice that preserves source nuance not visible in English. 'crece en él al doble' for 'grows in him twofold' is natural.
+  glossary_alignment: ὀργή→cólera (good distinction), θυμός→ira, πνεῦμα not present in EN base — all correct.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 53c1b2730523ce26cdab7842f500f94e396235048a644dc0c7786255ac0d6192
+  timestamp: '2026-05-08T06:30:41Z'
+  output_hash: 53c1b2730523ce26cdab7842f500f94e396235048a644dc0c7786255ac0d6192
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

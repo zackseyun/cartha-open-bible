@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised the second clause to reflect the imperative οἰκτειρήσατε more naturally and to account for σπλάγχνα as 'compassion' rather than 'inward compassion.' Added 'upon me' to make explicit the object implied with 'bring your hands,' and smoothed the English while preserving the formal tone.
 translation:
   language: es
-  text: «Ten compasión de mí, hermanos míos; tengan compasión, por la compasión de Jacob, nuestro padre. No echen sus manos sobre mí para derramar sangre inocente, porque no he pecado contra ustedes».
+  text: «Tengan compasión de mí, hermanos míos; tengan compasión, por la compasión de Jacob, nuestro padre. No echen sus manos sobre mí para derramar sangre inocente, porque no he pecado contra ustedes».
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἐλεήσατέ με
@@ -120,4 +120,39 @@ ai_draft:
     total_tokens: 3271
     reasoning_tokens: 0
     estimated_cost_usd: 0.007782
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: «Ten compasión de mí, hermanos míos; tengan compasión, por la compasión de Jacob, nuestro padre. No echen sus manos sobre mí para derramar sangre inocente, porque no he pecado contra ustedes».
+  to: «Tengan compasión de mí, hermanos míos; tengan compasión, por la compasión de Jacob, nuestro padre. No echen sus manos sobre mí para derramar sangre inocente, porque no he pecado contra ustedes».
+  rationale: Corrected 'Ten compasión de mí' (2sg) to 'Tengan compasión de mí' (2pl) to match the Greek plural imperative Ἐλεήσατέ με and the fact that the speech addresses multiple brothers ('hermanos míos').
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:25Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Ἐλεήσατέ με → 2nd person PLURAL imperative (Greek -ατέ ending confirms plural). οἰκτειρήσατε → also 2nd person plural imperative. ES renders the first as 'Ten compasión de mí' (2nd singular) but the second as 'tengan compasión' (2nd plural). This is a person-number inconsistency. Both imperatives are addressed to 'mis hermanos' (plural), so both should be 'Tengan compasión'. σπλάγχνα Ἰακὼβ → 'la compasión de Jacob' follows EN. αἷμα ἀθῷον → 'sangre inocente' correct.
+  spanish_quality_summary: Otherwise natural and fluid, but the singular/plural inconsistency in the opening imperative is a grammatical error relative to the Greek and the plural addressees ('hermanos míos').
+  glossary_alignment: No glossary terms.
+  issues:
+  - severity: medium
+    issue: First imperative 'Ten compasión de mí' uses 2nd person singular, but Greek Ἐλεήσατέ με is clearly 2nd person plural (same form as οἰκτειρήσατε in the next clause). The verse addresses 'hermanos míos' — multiple brothers. Should be 'Tengan compasión de mí'.
+    rationale: Both Greek imperatives Ἐλεήσατέ and οἰκτειρήσατε are 2nd person plural aorist imperatives addressed to the brothers collectively.
+  revised_spanish_text: «Tengan compasión de mí, hermanos míos; tengan compasión, por la compasión de Jacob, nuestro padre. No echen sus manos sobre mí para derramar sangre inocente, porque no he pecado contra ustedes».
+  revision_rationale: Corrected 'Ten compasión de mí' (2sg) to 'Tengan compasión de mí' (2pl) to match the Greek plural imperative Ἐλεήσατέ με and the fact that the speech addresses multiple brothers ('hermanos míos').
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 454c989ad56ba85a51d623bbfcba067368a1095972824714cebbbf111873f257
+  timestamp: '2026-05-08T06:48:25Z'
+  output_hash: 454c989ad56ba85a51d623bbfcba067368a1095972824714cebbbf111873f257
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

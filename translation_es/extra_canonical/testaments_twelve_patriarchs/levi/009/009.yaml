@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the bracketed note from the main text; rendered the clause more directly and preserved the source sense of ongoing persistence and defiling the holy things through offspring.
 translation:
   language: es
-  text: Ten cuidado contigo mismo[a] respecto del espíritu de la inmoralidad sexual, porque éste es persistente y está por contaminar las cosas santas por medio de tu descendencia.
+  text: Ten cuidado contigo mismo[a] del espíritu de la inmoralidad sexual, porque este es persistente y está por contaminar las cosas santas por medio de tu descendencia.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -128,4 +128,47 @@ ai_draft:
     total_tokens: 3123
     reasoning_tokens: 0
     estimated_cost_usd: 0.007686
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Ten cuidado contigo mismo[a] respecto del espíritu de la inmoralidad sexual, porque éste es persistente y está por contaminar las cosas santas por medio de tu descendencia.
+  to: Ten cuidado contigo mismo[a] del espíritu de la inmoralidad sexual, porque este es persistente y está por contaminar las cosas santas por medio de tu descendencia.
+  rationale: Replaced 'respecto del espíritu' with 'del espíritu' for more natural rendering of ἀπὸ τοῦ πνεύματος (guarding oneself from the spirit); removed deprecated accent from 'éste'→'este' per RAE 2010.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Πρόσεχε σεαυτῷ ἀπὸ τοῦ πνεύματος τῆς πορνείας. τοῦτο γὰρ †ἐνδελεχῆ ἐστιν† καὶ μέλλει μιαίνειν διὰ τοῦ σπέρματός σου τὰ ἅγια. EN POB: ''Take heed to yourself from the spirit of sexual immorality, for this is persistent and is about to defile the holy things through your offspring.'' Spanish draft: ''Ten cuidado contigo mismo[a] respecto del espíritu de la inmoralidad sexual, porque éste es persistente y está por contaminar las cosas santas por medio de tu descendencia.'' Alignment is strong. Issue: ''éste'' with accent is deprecated per current RAE guidelines (2010 reform); should be ''este'' without accent in modern Spanish. This is a minor but real issue. The footnote [a] on ''Ten cuidado contigo mismo[a]'' is an alternative reading note. Footnote marker matches between text and footnotes array. The text ''respecto del espíritu'' is slightly awkward — ''del espíritu'' alone or ''frente al espíritu'' would be more natural; ''ἀπό'' here expresses source/separation,
+    and ''respecto del'' implies aboutness rather than guarding-from.'
+  spanish_quality_summary: 'Generally accurate. Two issues: (1) ''éste'' should be ''este'' per modern RAE orthography; (2) ''respecto del espíritu'' is slightly awkward for ἀπὸ τοῦ πνεύματος — ''del espíritu'' or ''respecto al espíritu'' would flow better, but ''Guard yourself from'' ≈ ''cuídate del'' — ''Ten cuidado contigo mismo respecto del'' is a bit convoluted. A cleaner rendering: ''Cuídate del espíritu de la inmoralidad sexual'' or keeping the approved rendering ''Ten cuidado contigo mismo del espíritu de la inmoralidad sexual''.'
+  glossary_alignment: 'πνεῦμα→espíritu: correct, lowercase appropriate here (evil spirit/moral influence, not Holy Spirit). σπέρμα→descendencia: correct. τὰ ἅγια→las cosas santas: correct, preserving plurality and ambiguity.'
+  issues:
+  - severity: medium
+    issue: '''éste'' should be ''este'' — the demonstrative pronoun no longer takes a written accent per RAE 2010 orthographic reform'
+    rationale: RAE 2010 reform eliminated the written accent on demonstrative pronouns; 'este' is now the standard form in modern neutral Spanish.
+  - severity: low
+    issue: '''respecto del espíritu de la inmoralidad sexual'' is slightly unnatural; ''del espíritu'' or ''frente al espíritu'' reads more idiomatically for ἀπὸ τοῦ πνεύματος in a cautionary context'
+    rationale: ἀπό with σεαυτῷ expresses guarding oneself away from a source; 'respecto del' means 'with regard to' which is weaker than 'del' (from/against).
+  revised_spanish_text: Ten cuidado contigo mismo[a] del espíritu de la inmoralidad sexual, porque este es persistente y está por contaminar las cosas santas por medio de tu descendencia.
+  revised_footnotes:
+  - marker: a
+    text: También puede entenderse como «Presta atención a ti mismo».
+    reason: alternative_reading
+  revision_rationale: Replaced 'respecto del espíritu' with 'del espíritu' for more natural rendering of ἀπὸ τοῦ πνεύματος (guarding oneself from the spirit); removed deprecated accent from 'éste'→'este' per RAE 2010.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 436a27ba2d791deccc429694bbab60ab19cb3273541580ccb52f946a32595a94
+  timestamp: '2026-05-08T06:48:08Z'
+  output_hash: 436a27ba2d791deccc429694bbab60ab19cb3273541580ccb52f946a32595a94
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

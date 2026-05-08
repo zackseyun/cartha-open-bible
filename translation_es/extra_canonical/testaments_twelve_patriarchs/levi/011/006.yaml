@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Added the article for natural English, and revised the final phrase from 'assembly' to 'the union of all' to better reflect πάσης συμβιβασμός ('union/reconciliation of all') rather than an assembled group.
 translation:
   language: es
-  text: Por eso llamé su nombre Caat[h][a], [que es, el comienzo de la majestad y la unión de todos].
+  text: Por eso le puse por nombre Caat[a], [que es, el comienzo de la majestad y la unión de todos].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La transliteración del nombre propio sigue la forma griega Καάθ; otras tradiciones castellanas pueden presentar variantes como «Cohat» o «Caath».
+    text: La transliteración del nombre propio sigue la forma griega Καάθ; otras tradiciones castellanas pueden presentar variantes como «Cohat», «Caath» o «Kahath».
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Διὰ τοῦτο ἐκάλεσα
@@ -101,4 +101,46 @@ ai_draft:
     total_tokens: 2599
     reasoning_tokens: 0
     estimated_cost_usd: 0.005534
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por eso llamé su nombre Caat[h][a], [que es, el comienzo de la majestad y la unión de todos].
+  to: Por eso le puse por nombre Caat[a], [que es, el comienzo de la majestad y la unión de todos].
+  rationale: Replaced unidiomatic 'llamé su nombre Caat[h][a]' with natural 'le puse por nombre Caat[a]'; moved the '[h]' from the name itself into the footnote explanation, keeping the main text clean.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:50:20Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek: Διὰ τοῦτο ἐκάλεσα τὸ ὄνομα αὐτοῦ Καάθ [ὅ ἐστιν ἀρχὴ μεγαλείου καὶ συμβιβασμός]. EN POB: ''Therefore I called his name Kohath, [which is, the beginning of majesty and uniting].'' The ES renders: ''Por eso llamé su nombre Caat[h][a], [que es, el comienzo de la majestad y la unión de todos].'' Issue: ''llamé su nombre'' is not idiomatic Spanish — the natural expression is ''lo llamé'' or ''puse por nombre'' or ''le di el nombre de''. Additionally, the footnote marker ''[a]'' appears in the main text right after ''Caat[h]'' but the EN source has no footnote at this position; the marker for the bracketed etymology ''[b]'' would be needed if there is a note, but ''[a]'' attached to the name itself (not the bracketed meaning) is unusual. Finally, ''Caat[h]'' with ''[h]'' in brackets is an editorial insertion that introduces ''[h]'' into the actual text flow — footnote ''a'' should explain this transliteration choice rather than embedding it in the name itself.'
+  spanish_quality_summary: The main content is sound. 'El comienzo de la majestad y la unión de todos' correctly follows the EN POB revision. However 'llamé su nombre' is unidiomatic; it should be 'llamé Caat a su nombre' or better 'lo llamé Caat' or 'puse por nombre Caat'. The '[h]' insertion in the name and the footnote marker placement create visual clutter.
+  glossary_alignment: No divine name terms. No δοῦλος, πνεῦμα, Χριστός, or θεός present.
+  issues:
+  - severity: medium
+    issue: '''llamé su nombre Caat[h][a]'' is unidiomatic and visually cluttered'
+    rationale: Standard Spanish for 'I called his name X' is 'le puse por nombre X' or 'lo llamé X'. Embedding '[h]' in the name and attaching a footnote marker to the name itself is confusing. The transliteration note should appear in a footnote without cluttering the name in the main text.
+  - severity: low
+    issue: The bracketed etymology should carry the footnote marker, not the name
+    rationale: If a note explains the name's etymology or transliteration, the marker logically attaches to 'Caat' or to the bracketed phrase, not embedded as '[h]' in the name.
+  revised_spanish_text: Por eso le puse por nombre Caat[a], [que es, el comienzo de la majestad y la unión de todos].
+  revised_footnotes:
+  - marker: a
+    text: La transliteración del nombre propio sigue la forma griega Καάθ; otras tradiciones castellanas pueden presentar variantes como «Cohat», «Caath» o «Kahath».
+    reason: lexical_alternative
+  revision_rationale: Replaced unidiomatic 'llamé su nombre Caat[h][a]' with natural 'le puse por nombre Caat[a]'; moved the '[h]' from the name itself into the footnote explanation, keeping the main text clean.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0335db8387f3d95c00463874ba23541304c89fa495bfcfab6b9958dd91e5e761
+  timestamp: '2026-05-08T06:50:20Z'
+  output_hash: 0335db8387f3d95c00463874ba23541304c89fa495bfcfab6b9958dd91e5e761
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

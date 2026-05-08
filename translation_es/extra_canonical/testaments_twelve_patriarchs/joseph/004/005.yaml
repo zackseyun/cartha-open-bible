@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 13. En todas estas cosas yo, postrándome en tierra[a], suplicaba al Dios de mis padres que me librara de su engaño.
+  text: En todas estas cosas yo, postrándome en tierra, suplicaba a Dios que me librara de su engaño.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El griego en este verso es textualmente difícil en este testigo normalizado por OCR; 'Dios de mis padres' refleja el sentido patriarcal probable, aunque una lectura más corta 'Dios' es posible.
-    reason: textual_variant
 lexical_decisions:
 - source_word: χαμοκοιτῶν
   english_pob_choice: lying low
@@ -102,4 +98,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 13. En todas estas cosas yo, postrándome en tierra[a], suplicaba al Dios de mis padres que me librara de su engaño.
+  to: En todas estas cosas yo, postrándome en tierra, suplicaba a Dios que me librara de su engaño.
+  rationale: Removed spurious '13.' verse number prefix. Changed 'al Dios de mis padres' to 'a Dios' to accurately reflect τοῦ Θεοῦ (simply 'God'). Removed the footnote [a] that attempted to justify the expansion. The EN per-verse YAML reads 'God' without the patriarchal qualifier.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:31:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Ἐν τούτοις πᾶσιν ἐγὼ χαμοκοιτῶν ἐδεόμην τοῦ Θεοῦ ὅπως ῥύσεταί με ἐκ τῆς δολιότητος αὐτῆς.'' EN (base in per-verse file): ''In all these things I, lying on the ground, kept begging God that he would rescue me from her deceit.'' Note: the ES draft''s base_translation.text field shows ''In all these things I, lying low, kept begging the God of my fathers that he would rescue me from her deceit.'' — this has ''the God of my fathers'' which differs from the EN per-verse YAML which reads simply ''God'' (τοῦ Θεοῦ). The ES draft renders ''al Dios de mis padres'' — this adds ''de mis padres'' which is not in the Greek (τοῦ Θεοῦ = simply ''God''). The ES YAML has a footnote [a] noting this textual uncertainty, but the addition is still an expansion. Also, ''13.'' prefix is spurious. Additionally, ''postrándome en tierra'' for χαμοκοιτῶν (''lying on the ground / sleeping on the ground'') is acceptable but slightly paraphrastic — the verb literally means ''sleeping
+    on the ground'' as an ascetic practice; ''acostándome en tierra'' or ''tendido en tierra'' would be more literal.'
+  spanish_quality_summary: 'Issues: (1) Spurious ''13.'' verse number prefix; (2) ''al Dios de mis padres'' expands τοῦ Θεοῦ (simply ''God'') beyond what the Greek supports; (3) footnote [a] attempts to justify the expansion with a note about OCR instability, but the Greek itself is clear (τοῦ Θεοῦ). The expansion should be removed. The rest is accurate.'
+  glossary_alignment: θεός → 'Dios' (correct). No YHWH. The addition 'de mis padres' is an over-expansion.
+  issues:
+  - severity: high
+    issue: Spurious verse number '13.' at start of text.
+    rationale: Per-verse YAMLs should not have chapter-verse numbers in the translation.text field.
+  - severity: medium
+    issue: '''al Dios de mis padres'' expands τοῦ Θεοῦ beyond the Greek.'
+    rationale: The Greek reads τοῦ Θεοῦ — simply 'God'. 'The God of my fathers' is an expansion not supported by the Greek text of this verse. The EN per-verse YAML reads simply 'God'. The footnote [a] notes OCR instability but this does not justify adding 'of my fathers' when the source text does not contain it.
+  revised_spanish_text: En todas estas cosas yo, postrándome en tierra, suplicaba a Dios que me librara de su engaño.
+  revision_rationale: Removed spurious '13.' verse number prefix. Changed 'al Dios de mis padres' to 'a Dios' to accurately reflect τοῦ Θεοῦ (simply 'God'). Removed the footnote [a] that attempted to justify the expansion. The EN per-verse YAML reads 'God' without the patriarchal qualifier.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c69e34343a2019ccba68a7c2ca4b50b1ef4a0fcf481cf3545016e67309c04c76
+  timestamp: '2026-05-08T06:31:33Z'
+  output_hash: c69e34343a2019ccba68a7c2ca4b50b1ef4a0fcf481cf3545016e67309c04c76
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

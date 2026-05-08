@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Changed 'fell upon him' to 'fell before him' to better reflect the Greek and more natural English. Kept the rest substantially unchanged as accurate and complete.
 translation:
   language: es
-  text: 'Y Pentefris se postró ante él[a] y le dijo: «¿De dónde, entonces, es este esclavo hebreo que está delante de mí?». Y él dijo: «Los ismaelitas me lo confiaron hasta que regresen».'
+  text: 'Y Pentefris le dijo: «¿De dónde, entonces, es este esclavo[a] hebreo que está delante de mí?». Y él dijo: «Los ismaelitas me lo confiaron hasta que regresaran».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El texto griego es difícil al inicio del versículo; el sentido es que Pentefris presiona al corredor sobre el origen de 'este esclavo hebreo' que está delante de él. El POB revisó 'fell upon him' a 'fell before him'.
+    text: El texto griego es textualmente difícil al inicio del versículo; el sentido es que Pentefris interroga al corredor sobre el origen de 'este esclavo hebreo' que está ante él.
     reason: textual_variant
 lexical_decisions:
 - source_word: λέγει αὐτῷ
@@ -88,4 +88,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y Pentefris se postró ante él[a] y le dijo: «¿De dónde, entonces, es este esclavo hebreo que está delante de mí?». Y él dijo: «Los ismaelitas me lo confiaron hasta que regresen».'
+  to: 'Y Pentefris le dijo: «¿De dónde, entonces, es este esclavo[a] hebreo que está delante de mí?». Y él dijo: «Los ismaelitas me lo confiaron hasta que regresaran».'
+  rationale: Removed 'se postró ante él' which is not in the per-verse EN final text (the prostration reading was a chapter-level draft artifact, superseded by the per-verse YAML). The source Greek λέγει αὐτῷ in v.3 is simply 'said to him'. Retained footnote on textual difficulty.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek λέγει αὐτῷ ὁ Πεντεφρής is simply 'Pentephris said to him'; no prostration is present in v.3 source. The per-verse EN final text correctly drops the prostration reading. The ES base_translation.text uses the chapter-level revised reading ('fell before him') but the per-verse EN final does not contain this. The ES renders 'se postró ante él' (prostrated) which follows the chapter-level text but not the per-verse EN. The rest of the verse (Hebrew boy, Ishmaelites entrusted) is accurate.
+  spanish_quality_summary: Mostly natural Latin-American Spanish. 'Se postró ante él' is an over-interpretation of the source for this verse's per-verse EN text. 'Esclavo hebreo' correctly renders παῖς ὁ Ἑβραῖος per POB policy. 'Me lo confiaron hasta que regresen' is accurate.
+  glossary_alignment: 'δοῦλος→esclavo: correct. No divine names. Consistent with project policy.'
+  issues:
+  - severity: low
+    issue: ES text includes 'se postró ante él' (prostrated before him) which follows the chapter-level draft but is not present in the per-verse EN final text which reads 'And Pentephris said to him'. The source Greek simply has λέγει αὐτῷ (said to him) without prostration language in v.3.
+    rationale: The per-verse EN final drops 'fell before him'; the ES should align to the per-verse EN which is the base_translation reference for per-verse files.
+  revised_spanish_text: 'Y Pentefris le dijo: «¿De dónde, entonces, es este esclavo[a] hebreo que está delante de mí?». Y él dijo: «Los ismaelitas me lo confiaron hasta que regresaran».'
+  revised_footnotes:
+  - marker: a
+    text: El texto griego es textualmente difícil al inicio del versículo; el sentido es que Pentefris interroga al corredor sobre el origen de 'este esclavo hebreo' que está ante él.
+    reason: textual_variant
+  revision_rationale: Removed 'se postró ante él' which is not in the per-verse EN final text (the prostration reading was a chapter-level draft artifact, superseded by the per-verse YAML). The source Greek λέγει αὐτῷ in v.3 is simply 'said to him'. Retained footnote on textual difficulty.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6197eba5db9f2b53f0f2dea0a54165d10ae233a06d47fbf6eb9c0c9fedd5feb6
+  timestamp: '2026-05-08T06:36:07Z'
+  output_hash: 6197eba5db9f2b53f0f2dea0a54165d10ae233a06d47fbf6eb9c0c9fedd5feb6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

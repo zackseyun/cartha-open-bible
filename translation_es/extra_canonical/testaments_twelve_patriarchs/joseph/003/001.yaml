@@ -19,14 +19,14 @@ base_translation:
     changes_summary: Changed 'purpose' to 'resolve' for a more natural and accurate rendering of τὸ διαβούλιον in context; otherwise retained the draft.
 translation:
   language: es
-  text: En diez tentaciones me probó como aprobado, y en todas ellas fui paciente; porque la paciencia es un gran remedio[a], y mucha bondad da la perseverancia[b].
+  text: En diez tentaciones me probó como aprobado, y en todas ellas fui paciente; porque la paciencia es un gran remedio[a], y muchos bienes da la perseverancia[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: ‘la paciencia es una gran medicina’.'
+    text: 'O: ''la paciencia es una gran medicina''.'
     reason: lexical_alternative
   - marker: b
-    text: 'O: ‘y la perseverancia produce muchos bienes’.'
+    text: 'O: ''y la perseverancia produce muchos bienes''.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἐν δέκα πειρασμοῖς
@@ -119,4 +119,47 @@ ai_draft:
     total_tokens: 3144
     reasoning_tokens: 0
     estimated_cost_usd: 0.007121
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: En diez tentaciones me probó como aprobado, y en todas ellas fui paciente; porque la paciencia es un gran remedio[a], y mucha bondad da la perseverancia[b].
+  to: En diez tentaciones me probó como aprobado, y en todas ellas fui paciente; porque la paciencia es un gran remedio[a], y muchos bienes da la perseverancia[b].
+  rationale: Corrected 'mucha bondad' to 'muchos bienes' to accurately render πολλὰ ἀγαθά ('many good things/benefits'), consistent with EN POB 'gives many good things'. 'Bondad' (goodness, kindness) is too narrow. Footnote [b] retained with minor adjustment.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:18Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek verse (T12P.JOS.3.1) is: ''Ἐν δέκα πειρασμοῖς δόκιμον ἀπέδειξέ με Καὶ ἐν πᾶσιν αὐτοῖς ἐμακροθύμησα. Ὅτι μέγα φάρμακόν ἐστιν ἡ μακροθυμία Καὶ πολλὰ ἀγαθὰ δίδωσιν ἡ ὑπομονή.'' The EN YAML reads: ''In ten temptations he proved me approved, and in them all I was patient; for patience is a great remedy, and endurance gives many good things.'' The Spanish draft reads: ''En diez tentaciones me probó como aprobado, y en todas ellas fui paciente; porque la paciencia es un gran remedio[a], y mucha bondad da la perseverancia[b].'' Issue: the EN base text in the verse YAML differs from the revised EN at the chapter level — the EN verse file still carries the older chapter-split text ''In a short time she would withdraw, to test the resolve of my soul. In ten temptations she proved me approved...'' which spans a clause from 2:6 continued into 3:1. The Spanish correctly bases itself on the actual Greek verse for 3:1. The rendering ''mucha bondad da la perseverancia''
+    for ''πολλὰ ἀγαθὰ δίδωσιν ἡ ὑπομονή'' compresses ''many good things'' into ''mucha bondad'' — this changes the meaning. πολλὰ ἀγαθά means ''many good things'' not ''much goodness/kindness''. The footnote [a] for ''remedio'' (medicine alternative) is anchored; footnote [b] for ''perseverancia'' is also anchored.'
+  spanish_quality_summary: Good rendering overall but 'mucha bondad' is a contraction of 'πολλὰ ἀγαθά' (many good things) — 'bondad' means goodness/kindness which is narrower than the Greek ἀγαθά (good things, benefits). Should read 'muchos bienes' or 'muchas cosas buenas'. Footnote markers [a] and [b] present and match footnotes array.
+  glossary_alignment: No YHWH/κύριος/θεός/Mesías in this verse. μακροθυμία → 'paciencia' (correct). ὑπομονή → 'perseverancia' (good distinction from paciencia).
+  issues:
+  - severity: medium
+    issue: '''mucha bondad da la perseverancia'' mistranslates πολλὰ ἀγαθὰ δίδωσιν ἡ ὑπομονή.'
+    rationale: πολλὰ ἀγαθά means 'many good things' or 'many benefits' (plural neuter). 'Bondad' (goodness/kindness) is too narrow and alters the meaning. The EN POB reads 'gives many good things'; the Spanish should say 'muchos bienes da la perseverancia' or 'muchas cosas buenas da la perseverancia'.
+  revised_spanish_text: En diez tentaciones me probó como aprobado, y en todas ellas fui paciente; porque la paciencia es un gran remedio[a], y muchos bienes da la perseverancia[b].
+  revised_footnotes:
+  - marker: a
+    text: 'O: ''la paciencia es una gran medicina''.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: ''y la perseverancia produce muchos bienes''.'
+    reason: lexical_alternative
+  revision_rationale: Corrected 'mucha bondad' to 'muchos bienes' to accurately render πολλὰ ἀγαθά ('many good things/benefits'), consistent with EN POB 'gives many good things'. 'Bondad' (goodness, kindness) is too narrow. Footnote [b] retained with minor adjustment.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 062ca485a87aac16aa6f2d866165a3e54f80b88414cd0479e943f39ee2540fbc
+  timestamp: '2026-05-08T06:28:18Z'
+  output_hash: 062ca485a87aac16aa6f2d866165a3e54f80b88414cd0479e943f39ee2540fbc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

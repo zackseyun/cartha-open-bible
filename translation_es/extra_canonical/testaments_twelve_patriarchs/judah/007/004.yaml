@@ -96,4 +96,31 @@ ai_draft:
     total_tokens: 2283
     reasoning_tokens: 0
     estimated_cost_usd: 0.004735
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: The Greek ἀποσκευή (baggage/equipment) and the locative clause ἐν ᾗ ἦν are both rendered accurately. Thamna preserved as proper noun.
+  spanish_quality_summary: 'Natural, concise neutral Latin-American Spanish. ''Nos acercamos'' for προσεγγίζω and ''equipaje'' for ἀποσκευή are well-chosen. Minor inconsistency: chapter-level ES uses ''Tamna'' while this verse uses ''Thamna''; both are acceptable transliterations but consistency across shard would be preferable.'
+  glossary_alignment: No divine names, δοῦλος, πνεῦμα, or Χριστός present. Glossary rules not triggered.
+  issues:
+  - severity: low
+    issue: 'Toponym inconsistency: verse-level uses ''Thamna'' while chapter-level (007.yaml) uses ''Tamna''.'
+    rationale: Within the same chapter's verse files, both forms appear. Low impact since shard users see individual verses, but uniformity is desirable.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6fc97b92a0bc673c945311cb598dddaa211a769356da5edc2780e31d6809385c
+  timestamp: '2026-05-08T06:36:28Z'
+  output_hash: 6fc97b92a0bc673c945311cb598dddaa211a769356da5edc2780e31d6809385c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

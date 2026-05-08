@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'which' to 'that' for natural formal English, added the final phrase 'and for a curse' to account for the Greek καὶ εἰς κατάραν, and retained the rest with minimal adjustment.
 translation:
   language: es
-  text: Porque la casa que el Señor escogerá será llamada Jerusalén, como lo contiene el libro de Enoc el justo; y para maldición.
+  text: Porque la casa que Yahvé escogerá será llamada Jerusalén, como lo contiene el libro de Enoc el justo; y para maldición.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Κύριος
@@ -110,4 +110,39 @@ ai_draft:
     total_tokens: 2793
     reasoning_tokens: 0
     estimated_cost_usd: 0.006227
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque la casa que el Señor escogerá será llamada Jerusalén, como lo contiene el libro de Enoc el justo; y para maldición.
+  to: Porque la casa que Yahvé escogerá será llamada Jerusalén, como lo contiene el libro de Enoc el justo; y para maldición.
+  rationale: Changed 'el Señor' to 'Yahvé' to align with project glossary policy for Κύριος in divine election contexts.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek: Ὁ γὰρ οἶκος ὃν ἂν ἐκλέξεται Κύριος Ἱερουσαλὴμ κληθήσεται καθὼς περιέχει ἡ βίβλος Ἐνὼχ τοῦ δικαίου. The EN POB revised text adds ''and for a curse'' at the end to account for καὶ εἰς κατάραν. The ES renders ''y para maldición'' after the Enoch reference. Source alignment is sound. However, the ES uses ''el Señor'' instead of ''Yahvé'' for Κύριος in this verse. The translator''s rationale is that this is an allusive citation formula. While defensible, the project''s default policy is Yahvé for κύριος in divine contexts — the Κύριος here refers to God choosing Jerusalem, a divine election context. Using ''el Señor'' deviates from project policy without a sufficiently strong override reason.'
+  spanish_quality_summary: Fluent Spanish. 'Será llamada Jerusalén' correctly renders Ἱερουσαλὴμ κληθήσεται. 'Lo contiene' for περιέχει is accurate. 'Y para maldición' is correctly appended.
+  glossary_alignment: 'Κύριος→''el Señor'' instead of ''Yahvé'': this deviates from the project default. Project policy is Yahvé for κύριος when referring to the divine name. The translator chose ''el Señor'' based on it being an allusive citation, but the act of God choosing Jerusalem is a direct divine agency reference, not merely a title in passing. Revise to Yahvé.'
+  issues:
+  - severity: medium
+    issue: Κύριος rendered as 'el Señor' instead of 'Yahvé'
+    rationale: Project glossary policy maps Κύριος→Yahvé in divine contexts. The phrase 'la casa que Yahvé escogerá' is a standard divine-election formula; there is no compelling override reason to use 'el Señor' here. Both the choice of Jerusalem and the Enoch citation frame the verse in direct Yahwistic election language.
+  revised_spanish_text: Porque la casa que Yahvé escogerá será llamada Jerusalén, como lo contiene el libro de Enoc el justo; y para maldición.
+  revision_rationale: Changed 'el Señor' to 'Yahvé' to align with project glossary policy for Κύριος in divine election contexts.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 574c9f897525d0e5272c0a41985003ab518f4483c07f79fc6b198278d7b96ed2
+  timestamp: '2026-05-08T06:48:55Z'
+  output_hash: 574c9f897525d0e5272c0a41985003ab518f4483c07f79fc6b198278d7b96ed2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

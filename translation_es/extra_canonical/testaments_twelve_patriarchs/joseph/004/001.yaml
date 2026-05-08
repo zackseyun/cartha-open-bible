@@ -81,4 +81,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: ''Καὶ νοήσας ἐγὼ ἐλυπήθην ἕως θανάτου· ἐξελθούσης δὲ αὐτῆς ἦλθον εἰς ἐμαυτόν, καὶ ἐπένθησα περὶ αὐτῆς ἡμέρας πολλάς, ὅτι ἔγνων τὸν δόλον αὐτῆς καὶ τὴν πλάνην.'' EN: ''And when I understood, I was grieved unto death. But after she had gone out, I came to myself and mourned over her for many days, because I knew her deceit and her delusion.'' Spanish: ''Y al darme cuenta, me afligí hasta la muerte. Pero después que ella salió, volví en mí, y la lloré por muchos días, porque conocí su engaño y su extravío.'' All elements present. ἦλθον εἰς ἐμαυτόν → ''volví en mí'' (correct idiomatic Spanish). ἔγνων → ''conocí'' (following EN revision ''knew''). δόλον → ''engaño'', πλάνην → ''extravío'' (good moral pair).'
+  spanish_quality_summary: Accurate and natural. 'Me afligí hasta la muerte' for ἐλυπήθην ἕως θανάτου is correct. 'La lloré por muchos días' for ἐπένθησα περὶ αὐτῆς ἡμέρας πολλάς — 'lloré' is a reasonable rendering of ἐπένθησα though 'lamenté' or 'me dolí' would be slightly more precise (ἐπενθέω = to mourn/lament rather than to weep/cry). However 'lloré' is not inaccurate and is natural in Spanish. No footnotes needed.
+  glossary_alignment: No YHWH/κύριος/θεός/Mesías in this verse.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 44f76041f5a222883a4bf912bfafda37919f1913ded38d0690b39906a312a0a4
+  timestamp: '2026-05-08T06:30:19Z'
+  output_hash: 44f76041f5a222883a4bf912bfafda37919f1913ded38d0690b39906a312a0a4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

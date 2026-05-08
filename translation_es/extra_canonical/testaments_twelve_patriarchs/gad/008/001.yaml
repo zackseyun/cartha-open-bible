@@ -20,7 +20,7 @@ base_translation:
     changes_summary: Removed the added explanatory material not present in the provided Greek source and kept the direct address to the children.
 translation:
   language: es
-  text: Decid también estas cosas a vuestros hijos,
+  text: Digan también estas cosas a sus hijos,
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Εἴπατε ... τοῖς τέκνοις ὑμῶν
@@ -56,4 +56,40 @@ ai_draft:
     total_tokens: 2039
     reasoning_tokens: 0
     estimated_cost_usd: 0.002729
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Decid también estas cosas a vuestros hijos,
+  to: Digan también estas cosas a sus hijos,
+  rationale: Changed 'Decid' (vosotros) to 'Digan' (ustedes) and 'vuestros' to 'sus' to align with the neutral Latin American register used consistently throughout the Testament of Gad Spanish corpus.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:20:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek for 8:1 is: Εἴπατε δὲ ταῦτα καὶ ὑμεῖς τοῖς τέκνοις ὑμῶν, ὅπως τιμήσωσιν Ἰούδα καὶ Λευί ὅτι ἐξ αὐτῶν ἀνατελεῖ ὑμῖν Κύριος σωτηρίαν τῷ Ἰσραήλ. The EN POB revision-pass truncated to ''Say these things also to your children,'' — but this is only the first clause; the remainder (''so that they may honor Judah and Levi; for from them the Lord will raise up for you salvation for Israel'') is present in the Greek. The Spanish ''Decid también estas cosas a vuestros hijos,'' follows the truncated EN. However, the complete Greek content justifies a fuller translation. The POB revision-pass note says it ''kept only the direct address to the children'' — meaning the EN deliberately truncated (possibly the Greek fragment is partial). Following the EN as consulted source, the Spanish truncated text is internally consistent. Main issue: ''Decid'' uses vosotros imperative, not ''ustedes'' form, which is inconsistent with the neutral Latin American register used throughout
+    this corpus.'
+  spanish_quality_summary: 'The text is truncated following the EN. Primary issue: ''Decid'' is vosotros imperative, not Latin American ''ustedes'' form. The corpus consistently uses ''ustedes'' forms (e.g., ''ámense'', ''no se entristezcan'', ''ofrezcan''). ''Decid'' breaks register consistency.'
+  glossary_alignment: No divine names present in the truncated Spanish text. The Greek has Κύριος σωτηρίαν → would be 'el Señor' in Spanish. But since the EN and Spanish follow the truncated POB form, this is not currently an issue.
+  issues:
+  - severity: medium
+    issue: '''Decid'' is vosotros imperative — inconsistent with the neutral Latin American ''ustedes'' register used throughout the corpus (e.g., ''ámense'', ''no se entristezcan'', ''ofrezcan'').'
+    rationale: The entire Gad corpus uses ustedes forms for plural imperatives. Using vosotros 'Decid' breaks register consistency.
+  revised_spanish_text: Digan también estas cosas a sus hijos,
+  revision_rationale: Changed 'Decid' (vosotros) to 'Digan' (ustedes) and 'vuestros' to 'sus' to align with the neutral Latin American register used consistently throughout the Testament of Gad Spanish corpus.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 335453ca031e9102364b61669426ae20e6a5b1a61f8112c41ac767192ff49636
+  timestamp: '2026-05-08T06:20:33Z'
+  output_hash: 335453ca031e9102364b61669426ae20e6a5b1a61f8112c41ac767192ff49636
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

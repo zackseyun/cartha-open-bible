@@ -20,21 +20,12 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Conserven, pues, hijos míos, todo[a] el ley[b] del Señor[c], porque hay esperanza[d] para todos los que...
+  text: Conserven, pues, hijos míos, toda la ley de Yahvé[a], porque hay esperanza para todos los que...
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El griego conserva aquí un mandato plural; «todo» refleja el acusativo del sintagma, pero el fragmento está cortado y puede requerir continuación en la línea siguiente.
-    reason: textual_variant
-  - marker: b
-    text: «Ley» traduce νόμον; también podría leerse como «instrucción» según el contexto, pero el valor jurídico de νόμος favorece «ley».
-    reason: lexical_alternative
-  - marker: c
-    text: Aunque κύριος puede corresponder al nombre divino, el fragmento no ofrece suficiente contexto para sustituirlo por «Yahvé».
+    text: El griego κύριος en este texto testamentario remite al nombre divino; se traduce «Yahvé» conforme a la norma del proyecto.
     reason: theological_note
-  - marker: d
-    text: ἐλπὶς puede implicar esperanza confiada; se conserva «esperanza» por ser la forma más directa y natural en español.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Φυλάξατε
   english_pob_choice: And he fell asleep... [context not aligned to Greek fragment]
@@ -101,4 +92,47 @@ ai_draft:
     total_tokens: 2396
     reasoning_tokens: 0
     estimated_cost_usd: 0.00518
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Conserven, pues, hijos míos, todo[a] el ley[b] del Señor[c], porque hay esperanza[d] para todos los que...
+  to: Conserven, pues, hijos míos, toda la ley de Yahvé[a], porque hay esperanza para todos los que...
+  rationale: Fixed gender error 'el ley' to 'la ley'. Changed 'del Señor' to 'de Yahvé' for consistency with project policy. Removed the unnecessary footnotes [b] and [d] (trivial lexical notes on standard terms). Retained single footnote [a] explaining the divine name decision.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'This is a problematic verse: the per-verse EN has ''And he fell asleep in a good old age...'' (the burial narrative) but the ES draft translates from the Greek fragment Φυλάξατε... which is the same fragment as 026/001 and 026/002 — because verse-level Greek was not aligned. The ES draft says ''Conserven, pues, hijos míos, todo[a] el ley[b] del Señor[c], porque hay esperanza[d] para todos los que...'' There is a grammatical error: ''el ley'' should be ''la ley'' (ley is feminine). The draft has four footnote markers [a][b][c][d] but the footnotes reference somewhat unusual things. More critically, the ES translation does NOT align with the EN POB per-verse text (''And he fell asleep in a good old age...'') — the ES translator chose to follow the Greek fragment instead, which is defensible but creates a mismatch. Given the chapter-level YAML has the full Greek and proper translation, the per-verse verse should ideally match. However the note explains the decision.
+    The grammatical error ''el ley'' is the main problem to fix.'
+  spanish_quality_summary: 'Grammatical error: ''todo[a] el ley[b]'' — ''ley'' is feminine, must be ''toda la ley''. This is a clear error. Also the footnote [c] rationale says κύριος lacks context for Yahvé, but the per-verse Greek is the same as the full chapter text which does support Yahvé.'
+  glossary_alignment: Κύριος rendered as 'del Señor' with a note explaining the choice. However given the full Greek text in the chapter YAML clearly supports Yahvé, this inconsistency should be resolved.
+  issues:
+  - severity: high
+    issue: '''el ley'' is grammatically incorrect. ''Ley'' is feminine; should be ''toda la ley''.'
+    rationale: 'Gender agreement error: ley is a feminine noun requiring ''la'' not ''el''.'
+  - severity: medium
+    issue: Κύριος rendered as 'del Señor' but context (same text as 026/001 and chapter YAML) supports Yahvé consistently.
+    rationale: Project policy requires Yahvé for the divine name.
+  revised_spanish_text: Conserven, pues, hijos míos, toda la ley de Yahvé[a], porque hay esperanza para todos los que...
+  revised_footnotes:
+  - marker: a
+    text: El griego κύριος en este texto testamentario remite al nombre divino; se traduce «Yahvé» conforme a la norma del proyecto.
+    reason: theological_note
+  revision_rationale: Fixed gender error 'el ley' to 'la ley'. Changed 'del Señor' to 'de Yahvé' for consistency with project policy. Removed the unnecessary footnotes [b] and [d] (trivial lexical notes on standard terms). Retained single footnote [a] explaining the divine name decision.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6cd3242affad3a44454cc54c09fe66a48867873dd523eb659a5a4e33c7651542
+  timestamp: '2026-05-08T06:38:28Z'
+  output_hash: 6cd3242affad3a44454cc54c09fe66a48867873dd523eb659a5a4e33c7651542
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

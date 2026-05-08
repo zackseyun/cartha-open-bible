@@ -19,12 +19,8 @@ base_translation:
     changes_summary: Changed “concerning” to “about” to better reflect περὶ τῆς σωφροσύνης; otherwise retained the draft.
 translation:
   language: es
-  text: '12. Pues abiertamente me ensalzaba como casto en el lecho[a], pero en secreto me decía: «No tengas miedo de mi marido; pues está convencido acerca de tu pureza, y aunque alguien le diga algo sobre nosotros, no lo creerá».'
+  text: 'Pues abiertamente me ensalzaba como alguien de dominio propio, pero en secreto me decía: «No tengas miedo de mi marido; pues está convencido acerca de tu pureza, y aunque alguien le diga algo sobre nosotros, no lo creerá».'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: '''Casto en el lecho'' traduce un sintagma que se refiere explícitamente a la pureza sexual.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐδόξαζε
   english_pob_choice: she openly extolled
@@ -94,4 +90,43 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '12. Pues abiertamente me ensalzaba como casto en el lecho[a], pero en secreto me decía: «No tengas miedo de mi marido; pues está convencido acerca de tu pureza, y aunque alguien le diga algo sobre nosotros, no lo creerá».'
+  to: 'Pues abiertamente me ensalzaba como alguien de dominio propio, pero en secreto me decía: «No tengas miedo de mi marido; pues está convencido acerca de tu pureza, y aunque alguien le diga algo sobre nosotros, no lo creerá».'
+  rationale: Removed spurious '12.' verse number prefix. Changed 'casto en el lecho' to 'alguien de dominio propio' to accurately render σώφρονα without the ungrounded addition 'en el lecho'. Removed the footnote [a] that rationalized that addition. The EN POB uses 'self-controlled' for σώφρονα; 'dominio propio' is the established Spanish equivalent used in 4:3.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:31:17Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Εδόξαζε γάρ με ὡς σώφρονα φανερῶς, καὶ ἐν κρυφῇ ἔλεγέ μοι· Μὴ φοβηθῇς τὸν ἄνδρα μου· καὶ γὰρ πέπεισται περὶ τῆς σωφροσύνης σου· ὅτι κἂν τις αὐτῷ εἴπῃ περὶ ἡμῶν, οὐ πιστεύσει.'' EN (revised): ''For she openly extolled me as self-controlled, but in secret she said to me, "Do not be afraid of my husband; for he is persuaded about your purity, and even if someone should tell him about us, he will not believe it."'' Spanish draft: ''12. Pues abiertamente me ensalzaba como casto en el lecho[a], pero en secreto me decía: «No tengas miedo de mi marido; pues está convencido acerca de tu pureza, y aunque alguien le diga algo sobre nosotros, no lo creerá».'' Issues: (1) Spurious ''12.'' verse number prefix; (2) ''casto en el lecho'' — the Greek simply says σώφρονα (''self-controlled/temperate/chaste'') with no explicit ''in bed'' qualifier; adding ''en el lecho'' is an interpretive addition not in the Greek; (3) The footnote [a] content ''Casto en el lecho traduce
+    un sintagma que se refiere explícitamente a la pureza sexual'' — but the Greek does NOT say ''in bed''; the footnote rationalizes an addition. The EN POB reads simply ''self-controlled''. The Spanish should say ''como alguien que tiene dominio propio'' or ''como casto'' without adding ''en el lecho''.'
+  spanish_quality_summary: The addition 'en el lecho' is an interpretive expansion not present in the Greek σώφρονα. This is a source fidelity problem. The rest of the verse is accurate. Spurious '12.' prefix must be removed.
+  glossary_alignment: σωφροσύνη → 'pureza' in this verse (contextual; 'dominio propio' in 4:3 — minor variation noted in the file, which accepts it). No YHWH/κύριος/θεός/Mesías.
+  issues:
+  - severity: high
+    issue: Spurious verse number '12.' at start of text.
+    rationale: Per-verse YAMLs should not have chapter-verse numbers in the translation.text field.
+  - severity: medium
+    issue: '''casto en el lecho'' adds ''en el lecho'' which is not in the Greek.'
+    rationale: The Greek σώφρονα means 'self-controlled' or 'chaste' as a moral virtue. There is no explicit reference to 'bed' in the source. The EN POB reads 'self-controlled'. Adding 'en el lecho' is an interpretive expansion. The footnote [a] attempts to justify this expansion, but it should be removed in favor of the plain Greek meaning.
+  revised_spanish_text: 'Pues abiertamente me ensalzaba como alguien de dominio propio, pero en secreto me decía: «No tengas miedo de mi marido; pues está convencido acerca de tu pureza, y aunque alguien le diga algo sobre nosotros, no lo creerá».'
+  revision_rationale: Removed spurious '12.' verse number prefix. Changed 'casto en el lecho' to 'alguien de dominio propio' to accurately render σώφρονα without the ungrounded addition 'en el lecho'. Removed the footnote [a] that rationalized that addition. The EN POB uses 'self-controlled' for σώφρονα; 'dominio propio' is the established Spanish equivalent used in 4:3.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 32e70c421fc95f7759fc3542be06c11f2b00785ae8dab7707bd8dd1a9eeb5b5b
+  timestamp: '2026-05-08T06:31:17Z'
+  output_hash: 32e70c421fc95f7759fc3542be06c11f2b00785ae8dab7707bd8dd1a9eeb5b5b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

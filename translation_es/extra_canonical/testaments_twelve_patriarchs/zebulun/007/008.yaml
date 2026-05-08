@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Revised verse 12 for closer lexical accuracy and completeness: rendered συμπάσχετε/ἐν σπλάγχνοις ἐλέους more directly as ''I had compassion for him'' and ''weeping with him in mercy,'' while keeping the rest of the draft unchanged.'
 translation:
   language: es
-  text: Pero si no tienen nada para dar al que está en necesidad, sufran con él en las entrañas de misericordia.
+  text: La mitad la preparaba en invierno con mis hermanos. Pero si no tienen nada para dar al que está en necesidad, sufran con él en las entrañas de misericordia. Sé que mi propia mano no encontró nada para dar al que estaba en necesidad, y caminando junto a él durante siete estadios lloraba; y mis entrañas se volvían hacia él en compasión.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: δοῦναι
@@ -89,4 +89,39 @@ ai_draft:
     total_tokens: 3616
     reasoning_tokens: 0
     estimated_cost_usd: 0.005622
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero si no tienen nada para dar al que está en necesidad, sufran con él en las entrañas de misericordia.
+  to: La mitad la preparaba en invierno con mis hermanos. Pero si no tienen nada para dar al que está en necesidad, sufran con él en las entrañas de misericordia. Sé que mi propia mano no encontró nada para dar al que estaba en necesidad, y caminando junto a él durante siete estadios lloraba; y mis entrañas se volvían hacia él en compasión.
+  rationale: 'Added the missing sub-verses 7 and 9. Sub-verse 7: τὸ μὲν ἥμισυ ἐν τῷ χειμῶνι ἐτοιμαίμην μετὰ τῶν ἀδελφῶν μου→La mitad la preparaba en invierno con mis hermanos. Sub-verse 8 unchanged from draft. Sub-verse 9: ἡ χείρ μου οὐχ εὗρε ἐπιδοῦναι→no encontró nada para dar; ἑπτὰ σταδίους συμπορευόμενος ἔκλαιον→caminando junto a él durante siete estadios lloraba; τὰ σπλάγχνα μου ἐστρέφετο εἰς συμπάθειαν→mis entrañas se volvían hacia él en compasión.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:55:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source covers three sub-verses (7, 8, 9): half set aside in winter (v.7), exhortation to suffer with the needy in entrañas de misericordia (v.8), and first-person testimony about walking seven stadia weeping with the needy (v.9). The EN covers all three. The ES draft renders only verse 8, omitting v.7 (''Half of it I would set aside in winter with my brothers'') and all of v.9 (''I know that my own hand did not find anything to give to the one in need, and walking together with him for seven stadia I would weep; and my inward parts turned toward him in sympathy'').'
+  spanish_quality_summary: The translated portion (verse 8) is good — 'sufran con él en las entrañas de misericordia' faithfully preserves the Greek corporeal language. But incomplete coverage is a medium-severity issue.
+  glossary_alignment: No YHWH/Mesías/Dios/esclavo glossary issues in this passage.
+  issues:
+  - severity: medium
+    issue: ES draft covers only one of three sub-verses from the Greek source. Verses 7 (half set aside in winter) and 9 (walking seven stadia weeping) are completely absent.
+    rationale: The EN text for this verse covers three Greek sub-verses (7, 8, 9) and all must be translated. The omission leaves roughly two-thirds of the source content untranslated.
+  revised_spanish_text: La mitad la preparaba en invierno con mis hermanos. Pero si no tienen nada para dar al que está en necesidad, sufran con él en las entrañas de misericordia. Sé que mi propia mano no encontró nada para dar al que estaba en necesidad, y caminando junto a él durante siete estadios lloraba; y mis entrañas se volvían hacia él en compasión.
+  revision_rationale: 'Added the missing sub-verses 7 and 9. Sub-verse 7: τὸ μὲν ἥμισυ ἐν τῷ χειμῶνι ἐτοιμαίμην μετὰ τῶν ἀδελφῶν μου→La mitad la preparaba en invierno con mis hermanos. Sub-verse 8 unchanged from draft. Sub-verse 9: ἡ χείρ μου οὐχ εὗρε ἐπιδοῦναι→no encontró nada para dar; ἑπτὰ σταδίους συμπορευόμενος ἔκλαιον→caminando junto a él durante siete estadios lloraba; τὰ σπλάγχνα μου ἐστρέφετο εἰς συμπάθειαν→mis entrañas se volvían hacia él en compasión.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f31fcf936b8a810f42327f4713c3b36756b4a1fe8804103524e189d383dd8fdc
+  timestamp: '2026-05-08T06:55:01Z'
+  output_hash: f31fcf936b8a810f42327f4713c3b36756b4a1fe8804103524e189d383dd8fdc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

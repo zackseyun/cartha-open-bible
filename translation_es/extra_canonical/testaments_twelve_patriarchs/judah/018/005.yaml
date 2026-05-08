@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the second 'from' for a closer and more natural rendering of the single Greek preposition governing both nouns; otherwise retained the draft.
 translation:
   language: es
-  text: 5. Guárdense, pues, mis hijos, de la inmoralidad sexual y del amor al dinero, y escuchen a Judá, su padre.
+  text: Guárdense, pues, hijos míos, de la inmoralidad sexual y del amor al dinero, y escuchen a Judá, su padre.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Φυλάξασθε
@@ -117,4 +117,39 @@ ai_draft:
     total_tokens: 2789
     reasoning_tokens: 0
     estimated_cost_usd: 0.006333
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 5. Guárdense, pues, mis hijos, de la inmoralidad sexual y del amor al dinero, y escuchen a Judá, su padre.
+  to: Guárdense, pues, hijos míos, de la inmoralidad sexual y del amor al dinero, y escuchen a Judá, su padre.
+  rationale: Removed the leading '5. ' verse number artifact. Also normalized address 'mis hijos' to 'hijos míos' to match the Greek τέκνα μου and the EN 'my children' (possessive following the noun, standard biblical address).
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:02Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Spanish 'Guárdense, pues, mis hijos, de la inmoralidad sexual y del amor al dinero, y escuchen a Judá, su padre' is accurate but has a verse number artifact '5.' at the start and also needs checking.
+  spanish_quality_summary: The translation text begins with '5. Guárdense' — this is a verse number artifact from the chapter-level draft that should not appear in a per-verse file. The content itself is good. πορνείας → 'inmoralidad sexual', φιλαργυρίας → 'el amor al dinero' both correct.
+  glossary_alignment: No YHWH/Mesías/θεός/δοῦλος issues.
+  issues:
+  - severity: medium
+    issue: Translation text begins with '5. ' — a verse number artifact from the chapter-level draft, inappropriate in a per-verse YAML.
+    rationale: Per-verse YAMLs should contain only the verse text, not a verse number prefix.
+  revised_spanish_text: Guárdense, pues, hijos míos, de la inmoralidad sexual y del amor al dinero, y escuchen a Judá, su padre.
+  revision_rationale: Removed the leading '5. ' verse number artifact. Also normalized address 'mis hijos' to 'hijos míos' to match the Greek τέκνα μου and the EN 'my children' (possessive following the noun, standard biblical address).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: b259ea6ecdaa2d4d41847ea42831dffa07c3969836541bc4b2f3e898957ff2b2
+  timestamp: '2026-05-08T06:38:02Z'
+  output_hash: b259ea6ecdaa2d4d41847ea42831dffa07c3969836541bc4b2f3e898957ff2b2
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

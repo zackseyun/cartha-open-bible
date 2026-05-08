@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Added a comma before the relative clause for clearer English punctuation; otherwise retained the draft as accurate and complete.
 translation:
   language: es
-  text: 'Y en el entretanto, Rubén se levantó y dijo: «Venid, mis hermanos, no lo matemos, sino arrojémoslo a uno de estos pozos secos, que cavaron nuestros padres y no hallaron agua».'
+  text: 'Y en el entretanto, Rubén se levantó y dijo: «Vengan, mis hermanos, no lo matemos, sino arrojémoslo a uno de estos pozos secos, que cavaron nuestros padres y no hallaron agua».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἐν δὲ τῷ μεταξὺ
@@ -112,4 +112,39 @@ ai_draft:
     total_tokens: 3024
     reasoning_tokens: 0
     estimated_cost_usd: 0.006903
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y en el entretanto, Rubén se levantó y dijo: «Venid, mis hermanos, no lo matemos, sino arrojémoslo a uno de estos pozos secos, que cavaron nuestros padres y no hallaron agua».'
+  to: 'Y en el entretanto, Rubén se levantó y dijo: «Vengan, mis hermanos, no lo matemos, sino arrojémoslo a uno de estos pozos secos, que cavaron nuestros padres y no hallaron agua».'
+  rationale: Changed 'Venid' (vosotros imperative, Spain Spanish) to 'Vengan' (ustedes imperative, neutral Latin-American Spanish) to comply with the project's register requirement.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Ἐν δὲ τῷ μεταξὺ → 'Y en el entretanto'. ἀναστὰς Ῥουβήμ → 'Rubén se levantó'. Δεῦτε → 'Venid' — but this is vosotros form, which is Spain Spanish, not neutral Latin-American Spanish. For neutral LA Spanish should be 'Vengan'. ἀποκτείνωμεν → 'no lo matemos'. ῥίψωμεν → 'arrojémoslo'. ξηρῶν λάκκων → 'pozos secos'. ὤρυξαν → 'cavaron'. οὐχ εὗρον ὕδωρ → 'no hallaron agua'.
+  spanish_quality_summary: Otherwise accurate and fluent, but 'Venid' is Spain Spanish (vosotros imperative). Neutral Latin-American Spanish requires 'Vengan'.
+  glossary_alignment: No glossary terms.
+  issues:
+  - severity: medium
+    issue: '''Venid'' is the vosotros imperative used in Spain Spanish. The project targets neutral Latin-American Spanish where the plural imperative of ''venir'' is ''Vengan''.'
+    rationale: Project guideline specifies neutral Latin-American Spanish. Vosotros forms ('venid', 'venís', etc.) are regional to Spain and should not appear in this translation.
+  revised_spanish_text: 'Y en el entretanto, Rubén se levantó y dijo: «Vengan, mis hermanos, no lo matemos, sino arrojémoslo a uno de estos pozos secos, que cavaron nuestros padres y no hallaron agua».'
+  revision_rationale: Changed 'Venid' (vosotros imperative, Spain Spanish) to 'Vengan' (ustedes imperative, neutral Latin-American Spanish) to comply with the project's register requirement.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: fe8846d0e2d6d5c28b480b73c9a7bbc4898eb5ee6dce247fe5ef8500fc9e43c7
+  timestamp: '2026-05-08T06:48:48Z'
+  output_hash: fe8846d0e2d6d5c28b480b73c9a7bbc4898eb5ee6dce247fe5ef8500fc9e43c7
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

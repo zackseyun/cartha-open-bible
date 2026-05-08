@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Y nuestro padre nos dijo: «Venid, subamos a nuestra barca».'
+  text: 'Y nuestro padre nos dijo: «Vengan, subamos a nuestra nave».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Καὶ λέγει ἡμῖν ὁ πατὴρ ἡμῶν
@@ -71,4 +71,42 @@ ai_draft:
     total_tokens: 2047
     reasoning_tokens: 0
     estimated_cost_usd: 0.003677
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y nuestro padre nos dijo: «Venid, subamos a nuestra barca».'
+  to: 'Y nuestro padre nos dijo: «Vengan, subamos a nuestra nave».'
+  rationale: 'Two changes: (1) ''barca''→''nave'' for consistency with πλοῖον throughout the chapter; (2) ''Venid''→''Vengan'' for neutral Latin-American register as specified by the project. ''Subamos'' retained as the natural subjunctive cohortative.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ λέγει ἡμῖν ὁ πατὴρ ἡμῶν· Δεῦτε ἀνέλθωμεν εἰς τὸ πλοῖον ἡμῶν. EN: ''And our father said to us, Come, let us go up into our ship.'' ES: ''Y nuestro padre nos dijo: «Venid, subamos a nuestra barca».'' The ES uses ''barca'' where EN says ''ship'' (πλοῖον) and the chapter-level EN and per-verse EN both say ''ship''. ''Barca'' implies a smaller vessel than πλοῖον, which was used throughout the chapter for the same ship. Should use ''nave'' for consistency.'
+  spanish_quality_summary: '''Venid'' uses the vosotros imperative which is Spain-centric; neutral Latin-American Spanish would use ''Vengan'' or retain ''Venid'' as biblical register. The project is neutral Latin-American, so ''Venid'' can be flagged. However ''Venid'' is acceptable in biblical register. The bigger issue is ''barca'' for πλοῖον which is used consistently as ''nave'' elsewhere in the chapter.'
+  glossary_alignment: No glossary terms.
+  issues:
+  - severity: medium
+    issue: '''barca'' used for πλοῖον/ship inconsistently; the same vessel is called ''nave'' throughout the chapter (vv.1,2,5 etc.) — should be ''nave'' here for consistency'
+    rationale: πλοῖον is consistently rendered 'nave' in the chapter-level ES and other per-verse files; using 'barca' here breaks that consistency
+  - severity: low
+    issue: '''Venid'' is a Spain-specific vosotros imperative; for neutral Latin-American register ''Vengan'' would be more appropriate, though ''Venid'' is acceptable in solemn biblical register'
+    rationale: The project targets neutral Latin-American Spanish
+  revised_spanish_text: 'Y nuestro padre nos dijo: «Vengan, subamos a nuestra nave».'
+  revision_rationale: 'Two changes: (1) ''barca''→''nave'' for consistency with πλοῖον throughout the chapter; (2) ''Venid''→''Vengan'' for neutral Latin-American register as specified by the project. ''Subamos'' retained as the natural subjunctive cohortative.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: bb8b88f1e0f1f46d41eee98a83cc41dd990ba4aa6099be636021af51c2335053
+  timestamp: '2026-05-08T06:46:31Z'
+  output_hash: bb8b88f1e0f1f46d41eee98a83cc41dd990ba4aa6099be636021af51c2335053
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

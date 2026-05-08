@@ -89,4 +89,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: Τότε λέγει αὐτοῖς ὁ μετάβολος→'Entonces el traficante les dijo' (accurate). Λύσατέ με→'Líbrenme' (imperative plural, latinoamerican neutral, follows EN POB revision from 'Release' to 'Free'). κρίσεως τοῦ Πεντεφρί→'del juicio de Potifar' (correct, Πεντεφρί→Potifar is the standard Spanish form).
+  spanish_quality_summary: Clean, natural Spanish. Dialogue punctuation uses quotation marks correctly. Footnotes [a] and [b] are marked in the text and provided in the array.
+  glossary_alignment: μετάβολος→'traficante' (consistent with project usage). Πεντεφρί→'Potifar' (standard Spanish). No θεός, YHWH, δοῦλος, or πνεῦμα. Fully compliant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: dbf792888726fbe4d5001bda78207fc819c73730b1b329c525703e2fcc8a62bf
+  timestamp: '2026-05-08T06:35:19Z'
+  output_hash: dbf792888726fbe4d5001bda78207fc819c73730b1b329c525703e2fcc8a62bf
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

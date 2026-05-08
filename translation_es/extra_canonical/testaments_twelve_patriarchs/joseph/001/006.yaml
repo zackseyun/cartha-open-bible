@@ -95,4 +95,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek Μόνος ἤμην / Θεὸς παρεκάλεσέ / Κύριος ἐπεσκέψατό / σωτὴρ ἐχαρίτωσέ all rendered: ''Estaba solo'', ''Dios me consoló'', ''el Señor me visitó'', ''el Salvador me mostró su favor''. Bracketed uncertain clause [Ἐν δεσμοῖς] correctly retained with [b] footnote.'
+  spanish_quality_summary: Fluent and faithful. Footnote markers [a] on 'Salvador' and [b] on bracketed clause both present and matching. σωτήρ → 'Salvador' correct per project policy (translate as is, flag in footnote).
+  glossary_alignment: σωτήρ → 'Salvador' appropriate. Κύριος → 'Señor', Θεός → 'Dios' correct. φυλακῇ → 'cárcel' natural in Latin-American Spanish.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: eba65b79c45f14fd255064e668d561c7918659eab8e22a8cecfaebfaa1afd372
+  timestamp: '2026-05-08T06:29:29Z'
+  output_hash: eba65b79c45f14fd255064e668d561c7918659eab8e22a8cecfaebfaa1afd372
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

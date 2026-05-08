@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised 'for God's sake' to the more literal 'for God' and replaced 'receive graciousness of face' with the more natural and accurate 'receive favor in their appearance,' reflecting τοῦ προσώπου τὴν χάριν.
 translation:
   language: es
-  text: 4. Ayuné durante aquellos siete años, y me parecía al egipcio como uno que vivía en lujo; porque los que ayunan por Dios reciben favor en su apariencia.
+  text: Y ayuné durante aquellos siete años, y aparecía ante el egipcio como uno que vivía en lujo; porque los que ayunan por Dios reciben favor en su apariencia.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐνήστευον
@@ -96,4 +96,42 @@ ai_draft:
     total_tokens: 2810
     reasoning_tokens: 0
     estimated_cost_usd: 0.005486
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 4. Ayuné durante aquellos siete años, y me parecía al egipcio como uno que vivía en lujo; porque los que ayunan por Dios reciben favor en su apariencia.
+  to: Y ayuné durante aquellos siete años, y aparecía ante el egipcio como uno que vivía en lujo; porque los que ayunan por Dios reciben favor en su apariencia.
+  rationale: Removed spurious leading '4.' verse number from the text. Fixed 'me parecía al egipcio' (which means 'the Egyptian seemed to me') to 'aparecía ante el egipcio' (I appeared to the Egyptian), correctly reflecting φαίνομαι + dative where Joseph is the subject appearing before the Egyptian.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Καὶ ἐνήστευον ἐν τοῖς ἑπτὰ ἔτεσιν ἐκείνοις, καὶ ἐφαινόμην τῷ Αἰγυπτίῳ ὡς ἐν τρυφῇ διάγων· ὅτι οἱ νηστεύοντες διὰ τὸν θεὸν τοῦ προσώπου τὴν χάριν λαμβάνουσιν.'' EN: ''And I fasted during those seven years, and I appeared to the Egyptian as one living in luxury; because those who fast for God receive favor in their appearance.'' Spanish draft: ''4. Ayuné durante aquellos siete años, y me parecía al egipcio como uno que vivía en lujo; porque los que ayunan por Dios reciben favor en su apariencia.'' Issue 1: The verse number ''4.'' is spuriously present at the start — per-verse YAMLs should not include a chapter-verse number in the text. Issue 2: ''me parecía al egipcio'' inverts the meaning. φαίνομαι + dative means ''appeared to [someone]'', so ''I appeared to the Egyptian''. ''Me parecía al egipcio'' in Spanish means ''the Egyptian seemed to me'' — the subject/object are reversed.'
+  spanish_quality_summary: The leading '4.' should not be in the verse text. 'Me parecía al egipcio' is a subject-object inversion error — it means 'the Egyptian seemed to me' rather than 'I appeared to the Egyptian'. Should be 'parecía al egipcio' or 'aparecía ante el egipcio'. The rest of the verse ('porque los que ayunan por Dios reciben favor en su apariencia') is good.
+  glossary_alignment: θεός → 'Dios' (correct). τοῦ προσώπου τὴν χάριν → 'favor en su apariencia' (follows revised EN).
+  issues:
+  - severity: high
+    issue: Spurious verse number '4.' at the beginning of the text string.
+    rationale: Per-verse YAMLs carry standalone verse text; chapter-verse numbers do not belong in the translation.text field.
+  - severity: high
+    issue: '''me parecía al egipcio'' inverts the subject and object.'
+    rationale: φαίνομαι + dative means 'to appear to someone'. The subject is Joseph (I appeared). 'Me parecía al egipcio' in Spanish means 'the Egyptian seemed/appeared to me', reversing the intended meaning. Should be 'parecía ante el egipcio' or 'aparecía al egipcio como uno que vivía en lujo'.
+  revised_spanish_text: Y ayuné durante aquellos siete años, y aparecía ante el egipcio como uno que vivía en lujo; porque los que ayunan por Dios reciben favor en su apariencia.
+  revision_rationale: Removed spurious leading '4.' verse number from the text. Fixed 'me parecía al egipcio' (which means 'the Egyptian seemed to me') to 'aparecía ante el egipcio' (I appeared to the Egyptian), correctly reflecting φαίνομαι + dative where Joseph is the subject appearing before the Egyptian.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7bd937335e8550d0032088df098ed6323e2b4b97dce46ebaebaa311cae0d84fd
+  timestamp: '2026-05-08T06:28:59Z'
+  output_hash: 7bd937335e8550d0032088df098ed6323e2b4b97dce46ebaebaa311cae0d84fd
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

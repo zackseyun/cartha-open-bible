@@ -96,4 +96,31 @@ ai_draft:
     total_tokens: 2590
     reasoning_tokens: 0
     estimated_cost_usd: 0.005347
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: Πιὼν τὸν οἶνον οὐκ αἰσχύνθην τὴν ἐντολὴν τοῦ Θεοῦ, καὶ ἔλαβον γυναῖκα Χαναναίαν. Spanish ''Después de beber el vino, no me avergoncé del mandato de Dios, y tomé una mujer cananea.'' All elements faithfully rendered. Definite article preserved for τὸν οἶνον→''el vino''. ἐντολή→''mandato'' (acceptable; slightly modern vs. ''mandamiento'' but well-reasoned in audit trail). Θεοῦ→''Dios''. Χαναναίαν→''cananea''.'
+  spanish_quality_summary: 'Clear, natural, well-structured. Minor note: ''mandato de Dios'' vs ''mandamiento de Dios'' — both acceptable; POB per-verse 15.3 uses ''mandamiento'' in the chapter-level file but this per-verse file uses ''mandato''. Slight inconsistency but within acceptable variation.'
+  glossary_alignment: Θεός→Dios correctly applied. No other glossary terms. Consistent.
+  issues:
+  - severity: low
+    issue: ἐντολή rendered as 'mandato' in this verse but chapter-level ES uses 'mandamiento'
+    rationale: Minor intra-text inconsistency; both renderings are defensible and audited.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 825f7b1f97a2ced20bbe6e474b648dc7eb6f9006228891c08f218f7acdb2cc24
+  timestamp: '2026-05-08T06:36:31Z'
+  output_hash: 825f7b1f97a2ced20bbe6e474b648dc7eb6f9006228891c08f218f7acdb2cc24
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

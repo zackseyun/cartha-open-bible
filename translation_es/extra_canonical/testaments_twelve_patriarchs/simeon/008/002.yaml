@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed ‘during a war’ to ‘in a war’ to better reflect ἐν πολέμῳ; retained the rest as accurate and natural.
 translation:
   language: es
-  text: Y lo pusieron en un ataúd de madera, para llevar sus huesos a Hebrón. Y los llevaron en secreto durante una guerra de los egipcios.
+  text: Y lo pusieron en un ataúd de madera, para llevar sus huesos a Hebrón. Y los llevaron en secreto en una guerra de los egipcios.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: θήκῃ ξυλίνῃ
@@ -96,4 +96,39 @@ ai_draft:
     total_tokens: 2740
     reasoning_tokens: 0
     estimated_cost_usd: 0.005951
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y lo pusieron en un ataúd de madera, para llevar sus huesos a Hebrón. Y los llevaron en secreto durante una guerra de los egipcios.
+  to: Y lo pusieron en un ataúd de madera, para llevar sus huesos a Hebrón. Y los llevaron en secreto en una guerra de los egipcios.
+  rationale: Changed 'durante una guerra de los egipcios' to 'en una guerra de los egipcios' to track the EN revision (which moved from 'during a war' to 'in a war') and to reflect ἐν πολέμῳ more directly.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: θήκῃ ξυλίνῃ → 'ataúd de madera' good. τοῦ ἀναγαγεῖν → 'para llevar' acceptable. ἐν πολέμῳ Αἰγυπτίων κρυφῇ → 'en secreto durante una guerra de los egipcios'. The EN revision corrected 'during a war' to 'in a war' to better reflect ἐν πολέμῳ. ES retains 'durante una guerra' which uses the pre-revision phrasing. While 'durante' is natural Spanish, aligning with 'en' is preferable to track the EN revision.
+  spanish_quality_summary: Generally natural. The 'durante' choice is idiomatic but diverges slightly from the revised EN's preference for 'in a war'.
+  glossary_alignment: No glossary terms.
+  issues:
+  - severity: low
+    issue: ES uses 'durante una guerra de los egipcios' while the EN revision settled on 'in a war of the Egyptians' (not 'during a war'). The ES lexical note acknowledges this but still opts for 'durante'. 'En una guerra de los egipcios' is equally natural in Spanish and better tracks the revised EN and the Greek ἐν πολέμῳ.
+    rationale: ἐν πολέμῳ is a locative/circumstantial prepositional phrase; the EN revision specifically moved away from 'during' to 'in' to reflect ἐν more closely. Spanish 'en' mirrors that choice.
+  revised_spanish_text: Y lo pusieron en un ataúd de madera, para llevar sus huesos a Hebrón. Y los llevaron en secreto en una guerra de los egipcios.
+  revision_rationale: Changed 'durante una guerra de los egipcios' to 'en una guerra de los egipcios' to track the EN revision (which moved from 'during a war' to 'in a war') and to reflect ἐν πολέμῳ more directly.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4c81d4a83c3d77cf8e54be857d939d9d88dc5a0b9c2199248cd0a0ee79bf33bb
+  timestamp: '2026-05-08T06:46:58Z'
+  output_hash: 4c81d4a83c3d77cf8e54be857d939d9d88dc5a0b9c2199248cd0a0ee79bf33bb
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -106,4 +106,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'The Spanish faithfully renders the Greek: Θεός→Dios, δι'' ἀγγέλου→por medio de su ángel, ἀπεκάλυψέ→reveló, κακίαν→maldad, ἔλεγχόν→reprobación, μετανοήσεις→arrepintieras. The pronoun la (referring to food/maldad) correctly matches the neuter αὐτό in context.'
+  spanish_quality_summary: Clear, natural Latin-American Spanish. 'Por esto la conservé para tu reprobación' reads smoothly. Footnotes [a] and [b] match markers in the text.
+  glossary_alignment: Dios for Θεός correct. Espíritu not in this verse. No YHWH. Arrepintieras for μετανοήσεις in specific-sin context correct per glossary.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4465ab81bb9ea09bef9c74d0ad3c929e3f7016e2628950e26efcf6ef9a0764d4
+  timestamp: '2026-05-08T06:28:56Z'
+  output_hash: 4465ab81bb9ea09bef9c74d0ad3c929e3f7016e2628950e26efcf6ef9a0764d4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Restored the omitted final clause 'He pleaded with us' to match the source; removed the bracketed note marker from the draft.
 translation:
   language: es
-  text: Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente.
+  text: Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente. Él nos suplicó.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Καὶ ἰδοὺ
@@ -89,4 +89,39 @@ ai_draft:
     total_tokens: 2419
     reasoning_tokens: 0
     estimated_cost_usd: 0.004795
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente.
+  to: Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente. Él nos suplicó.
+  rationale: Added 'Él nos suplicó' to render the restored clause 'He pleaded with us' from the EN revision pass. The ES draft note acknowledges this omission but incorrectly attributes it to the Greek; the EN base_translation includes this clause and ES must follow it.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:47:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ ἰδοὺ ἦλθεν ὁ πατὴρ ἡμῶν καὶ πάντες ὁμοθυμαδὸν ἠγαλλιασάμεθα. EN revised to: ''And behold, our father came, and we all rejoiced with one accord. He pleaded with us.'' The ES draft only translates the first clause (''Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente'') and is missing ''He pleaded with us'' which was explicitly restored in the EN revision pass.'
+  spanish_quality_summary: The first part 'Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente' is excellent. However the ES is missing the restored final clause 'He pleaded with us' that the EN revision pass added back. The ES translation_notes acknowledge this gap but incorrectly claim the Greek ends at the rejoicing — the EN revision pass restored additional text beyond the supplied Greek.
+  glossary_alignment: No glossary terms.
+  issues:
+  - severity: high
+    issue: ES is missing the restored clause 'He pleaded with us' from the EN revision pass text
+    rationale: The EN revision pass explicitly added 'He pleaded with us' back to the text. The ES draft only covers the Greek verse provided but the EN base_translation shows the full restored text including this clause, which the ES must include.
+  revised_spanish_text: Y he aquí, vino nuestro padre, y todos nos alegramos unánimemente. Él nos suplicó.
+  revision_rationale: Added 'Él nos suplicó' to render the restored clause 'He pleaded with us' from the EN revision pass. The ES draft note acknowledges this omission but incorrectly attributes it to the Greek; the EN base_translation includes this clause and ES must follow it.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4d19c35885cc2ab12afb689777cc7b3ba1f5b5bb9e5be76a0acfbc5c4bbaba91
+  timestamp: '2026-05-08T06:47:28Z'
+  output_hash: 4d19c35885cc2ab12afb689777cc7b3ba1f5b5bb9e5be76a0acfbc5c4bbaba91
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

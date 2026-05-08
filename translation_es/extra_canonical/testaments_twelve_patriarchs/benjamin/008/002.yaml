@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y ya no seré llamado lobo rapaz por causa de vuestro saqueo, sino obrero del Señor, que distribuye alimento a los que hacen el bien.
+  text: Porque la mente pura no tiene contaminación con el estiércol ni el barro, sino que más bien rechaza ambos y ahuyenta el hedor; así también la mente pura, cuando se halla en medio de las inmundicias de la tierra, más bien †edifica†, y ella misma no se contamina.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: λύκος ἅρπαξ
@@ -79,4 +79,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y ya no seré llamado lobo rapaz por causa de vuestro saqueo, sino obrero del Señor, que distribuye alimento a los que hacen el bien.
+  to: Porque la mente pura no tiene contaminación con el estiércol ni el barro, sino que más bien rechaza ambos y ahuyenta el hedor; así también la mente pura, cuando se halla en medio de las inmundicias de la tierra, más bien †edifica†, y ella misma no se contamina.
+  rationale: Replaced the incorrect 'lobo rapaz/obrero del Señor' content with the correct translation of Greek VIII.2 (the pure-mind/dung analogy), matching the EN verse-level text. The dagger around 'edifica' preserves the textual uncertainty marker from the EN (†builds up†) for οἰκοδομεῖ.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The EN verse 8:2 is: ''For the pure mind has no defilement from dung or filth, but rather repels both and drives away the stench; thus also the pure mind, when held among the defilements of the earth, rather †builds up†, and is itself not defiled.'' This renders Greek VIII.2: Ὁ γὰρ καθαρὸς νοῦς οὐκ ἔχει μιασμὸν ἐπὶ κόπρου καὶ βόρβορον, ἀλλὰ μᾶλλον ἀμφότερα ψύγει καὶ ἀπελαύνει τὴν δυσωδίαν, οὕτω καὶ ὁ καθαρὸς νοῦς ἐν τοῖς μιασμοῖς τῆς γῆς συνεχόμενος μᾶλλον οἰκοδομεῖ, αὐτὸς δὲ οὐ μιαίνεται. However the ES verse file shows: ''Y ya no seré llamado lobo rapaz por causa de vuestro saqueo, sino obrero del Señor, que distribuye alimento a los que hacen el bien.'' This is the chapter-level verse 2 text, not the dung/filth/pure mind verse.'
+  spanish_quality_summary: 'The current ES text is for the wrong verse. The correct translation of Greek VIII.2 should be: ''Porque la mente pura no tiene contaminación con el estiércol y el barro, sino que más bien rechaza ambos y ahuyenta el hedor; así también la mente pura, cuando es retenida entre las inmundicias de la tierra, más bien edifica, y ella misma no se contamina.'''
+  glossary_alignment: No key glossary terms. The dagger †oikodoméi† in EN indicates textual uncertainty.
+  issues:
+  - severity: high
+    issue: The ES verse-level file 008/002 has the wrong translation — the 'ravening wolf / worker of the Lord' content (from the chapter-level BEN.08 verse 2) instead of the pure-mind/dung analogy from the actual Greek VIII.2 source text.
+    rationale: The EN verse file 008/002.yaml clearly shows the pure-mind analogy text. The ES draft was generated from the wrong source.
+  revised_spanish_text: Porque la mente pura no tiene contaminación con el estiércol ni el barro, sino que más bien rechaza ambos y ahuyenta el hedor; así también la mente pura, cuando se halla en medio de las inmundicias de la tierra, más bien †edifica†, y ella misma no se contamina.
+  revision_rationale: Replaced the incorrect 'lobo rapaz/obrero del Señor' content with the correct translation of Greek VIII.2 (the pure-mind/dung analogy), matching the EN verse-level text. The dagger around 'edifica' preserves the textual uncertainty marker from the EN (†builds up†) for οἰκοδομεῖ.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9b0568e40fc2766298b40e6c4e28868aaeef16949fc3294687d56f75932c7556
+  timestamp: '2026-05-08T06:29:44Z'
+  output_hash: 9b0568e40fc2766298b40e6c4e28868aaeef16949fc3294687d56f75932c7556
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

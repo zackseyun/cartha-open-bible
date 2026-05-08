@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the article before ‘Lord God’ to better match the source and keep the divine title tighter; otherwise retained the draft.
 translation:
   language: es
-  text: Y de todos los primeros frutos de tu tierra y del vino ofrece las primicias como sacrificio a Yahvé, Dios. Y toda ofrenda la sazonarás con sal.
+  text: Y de todos los primeros frutos y del vino ofrece las primicias como sacrificio a Yahvé, Dios. Y todo sacrificio lo sazonarás con sal.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: παντὸς πρωτογεννήματός σου
@@ -104,4 +104,42 @@ ai_draft:
     total_tokens: 2827
     reasoning_tokens: 0
     estimated_cost_usd: 0.006144
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y de todos los primeros frutos de tu tierra y del vino ofrece las primicias como sacrificio a Yahvé, Dios. Y toda ofrenda la sazonarás con sal.
+  to: Y de todos los primeros frutos y del vino ofrece las primicias como sacrificio a Yahvé, Dios. Y todo sacrificio lo sazonarás con sal.
+  rationale: Removed 'de tu tierra' (not in source); regularized θυσία as 'sacrificio' in both clauses for internal consistency; slightly reworded final clause for natural Spanish.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek reads: παντὸς πρωτογεννήματός σου (all your first produce) καὶ οἴνου (and of wine) πρόσφερε ἀπαρχὰς εἰς θυσίαν Κυρίῳ θεῷ (offer firstfruits as sacrifice to Lord God). The ES renders ''todos los primeros frutos de tu tierra'' — the addition of ''de tu tierra'' is not in the Greek (πρωτογεννήματός σου = first produce of yours, not specifically ''of your land''). The EN POB has ''all your first produce'' without this addition. Minor expansion should be removed. The rest (primicias, Yahvé Dios, sazonarás con sal) is well-aligned.'
+  spanish_quality_summary: Generally natural and fluent. 'Ofrenda' for θυσία in the second clause (versus 'sacrificio' earlier) introduces inconsistency — the same Greek word θυσία was translated as 'sacrificio' in the first clause and 'ofrenda' in the second. While the translator's rationale is understandable, this creates internal inconsistency. The addition 'de tu tierra' is unsupported by the source.
+  glossary_alignment: 'Κύριος→Yahvé: correct. θεός→Dios: correct. No δοῦλος, πνεῦμα, or Χριστός present.'
+  issues:
+  - severity: low
+    issue: Addition of 'de tu tierra' not in source
+    rationale: πρωτογεννήματός σου means 'your first produce'; the source does not specify 'of your land.' EN POB has 'all your first produce.' The expansion is interpretive rather than source-grounded.
+  - severity: low
+    issue: θυσία rendered inconsistently as 'ofrenda' in the second clause
+    rationale: The Greek has θυσία in both occurrences. While 'ofrenda' reads more smoothly, the internal inconsistency within a single verse is worth regularizing. 'Toda ofrenda' → 'todo sacrificio' aligns better with the source and the first clause.
+  revised_spanish_text: Y de todos los primeros frutos y del vino ofrece las primicias como sacrificio a Yahvé, Dios. Y todo sacrificio lo sazonarás con sal.
+  revision_rationale: Removed 'de tu tierra' (not in source); regularized θυσία as 'sacrificio' in both clauses for internal consistency; slightly reworded final clause for natural Spanish.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 90abee7ebf7ea522f006bee662302e9de360fc9e38612a1d26d473f7c6249392
+  timestamp: '2026-05-08T06:45:07Z'
+  output_hash: 90abee7ebf7ea522f006bee662302e9de360fc9e38612a1d26d473f7c6249392
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -35,14 +35,11 @@ base_translation:
     changes_summary: Changed 'what he ordained' to 'which he ordained' for more natural formal English referring back to 'words.'
 translation:
   language: es
-  text: 'Un [a]copiado de las palabras de Leví, las cuales dispuso para sus hijos acerca de todo lo que harían, y de lo que les acontecería hasta el día del juicio.
-
-
-    Porque estaba en buena salud cuando los llamó a sí; pero se le reveló que estaba a punto de morir. Y cuando se reunieron, les dijo:'
+  text: "Copia de las palabras de Leví[a], las cuales dispuso para sus hijos acerca de todo lo que harían, y de lo que les acontecería hasta el día del juicio.\n\n\n    Porque estaba en buena salud cuando los llamó a reunirse con él; pero se le reveló que estaba a punto de morir. Y cuando se reunieron, les dijo:"
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La forma más natural en español sería «una copia»; se conserva aquí el matiz documental del encabezado griego y del POB inglés.
+    text: O «lo que les sobrevendría». El griego ἀντίγραφον indica un documento copiado o transcrito.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἀντίγραφον
@@ -170,4 +167,46 @@ ai_draft:
     total_tokens: 4445
     reasoning_tokens: 0
     estimated_cost_usd: 0.009307
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Un [a]copiado de las palabras de Leví, las cuales dispuso para sus hijos acerca de todo lo que harían, y de lo que les acontecería hasta el día del juicio.
+
+
+    Porque estaba en buena salud cuando los llamó a sí; pero se le reveló que estaba a punto de morir. Y cuando se reunieron, les dijo:'
+  to: "Copia de las palabras de Leví[a], las cuales dispuso para sus hijos acerca de todo lo que harían, y de lo que les acontecería hasta el día del juicio.\n\n\n    Porque estaba en buena salud cuando los llamó a reunirse con él; pero se le reveló que estaba a punto de morir. Y cuando se reunieron, les dijo:"
+  rationale: Replaced non-standard 'Un copiado' with 'Copia' (the correct Spanish noun). Moved footnote marker [a] to annotate the full heading noun phrase. Updated footnote to explain the Greek ἀντίγραφον rather than defend a non-standard word choice.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Chapter-level Levi 1. Greek covers the introduction (v.1) and narrative setup (v.2). ES: v.1: ''Un [a]copiado de las palabras de Leví, las cuales dispuso para sus hijos acerca de todo lo que harían, y de lo que les acontecería hasta el día del juicio.'' Two issues: (1) ''Un [a]copiado'' — the footnote marker [a] is inserted mid-noun-phrase before ''copiado'', which is highly unusual. Also ''copiado'' (gerund used as noun) is non-standard; ''copia'' is the correct Spanish noun. ''Una copia de las palabras de Leví'' is the natural rendering. (2) The footnote [a] says ''La forma más natural en español sería «una copia»'' — acknowledging that ''copiado'' is not natural! The note is explaining why it used an unnatural form, which is circular reasoning. The ES per-verse 001/001 correctly uses ''Copia'' without this awkwardness. The chapter-level should use the same clean ''Copia'' form. v.2 rendering is fine.'
+  spanish_quality_summary: '''Un [a]copiado'' is unnatural Spanish. ''Copia'' or ''Una copia'' is correct. The footnote marker placement inside the noun phrase is also awkward.'
+  glossary_alignment: No divine name in this chapter. Good.
+  issues:
+  - severity: medium
+    issue: '''Un [a]copiado'' is non-standard Spanish. ''Copiado'' as a noun is unusual/incorrect; the natural form is ''copia''. The footnote even acknowledges this. Should use ''Copia de las palabras de Leví[a]'' with footnote explaining the Greek ἀντίγραφον.'
+    rationale: Spanish uses 'copia' (feminine noun) for a documentary copy, not 'copiado'. The footnote [a] should annotate the Greek idiom if needed, not defend a non-standard word choice.
+  revised_spanish_text: "Copia de las palabras de Leví[a], las cuales dispuso para sus hijos acerca de todo lo que harían, y de lo que les acontecería hasta el día del juicio.\n\n\n    Porque estaba en buena salud cuando los llamó a reunirse con él; pero se le reveló que estaba a punto de morir. Y cuando se reunieron, les dijo:"
+  revised_footnotes:
+  - marker: a
+    text: O «lo que les sobrevendría». El griego ἀντίγραφον indica un documento copiado o transcrito.
+    reason: lexical_alternative
+  revision_rationale: Replaced non-standard 'Un copiado' with 'Copia' (the correct Spanish noun). Moved footnote marker [a] to annotate the full heading noun phrase. Updated footnote to explain the Greek ἀντίγραφον rather than defend a non-standard word choice.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0bb51257f25f07b350db4ce3c97afdc5dde0ac385ea68566c8e8e9dbbb231ed9
+  timestamp: '2026-05-08T06:39:40Z'
+  output_hash: 0bb51257f25f07b350db4ce3c97afdc5dde0ac385ea68566c8e8e9dbbb231ed9
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed ‘serve’ to ‘slave’ to reflect δουλεύσουσιν more accurately and consistently with POB policy.
 translation:
   language: es
-  text: Y dejando la agricultura, seguirán sus malos designios, y serán esparcidos entre las naciones y esclavizarán para sus enemigos.
+  text: Y dejando la agricultura, seguirán sus malos designios, y serán esparcidos entre las naciones y esclavizados por sus enemigos.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: γεωργεῖν
@@ -82,4 +82,39 @@ ai_draft:
     total_tokens: 2352
     reasoning_tokens: 0
     estimated_cost_usd: 0.004078
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y dejando la agricultura, seguirán sus malos designios, y serán esparcidos entre las naciones y esclavizarán para sus enemigos.
+  to: Y dejando la agricultura, seguirán sus malos designios, y serán esparcidos entre las naciones y esclavizados por sus enemigos.
+  rationale: 'Changed the final clause from ''esclavizarán para sus enemigos'' (they will enslave their enemies) to ''serán esclavizados por sus enemigos'' (they will be enslaved by their enemies), restoring the correct passive relationship of δουλεύσουσιν τοῖς ἐχθροῖς: the descendants are subjected to servitude under their enemies, not the other way around.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:51Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek δουλεύσουσιν τοῖς ἐχθροῖς αὐτῶν means 'they will slave/serve FOR their enemies' — they are the ones enslaved, not the enslavers. The EN POB text correctly reads 'will slave for their enemies'. The Spanish 'esclavizarán para sus enemigos' uses the transitive verb esclavizar which means 'they will enslave their enemies' — the opposite meaning.
+  spanish_quality_summary: 'Most of the verse is well-rendered: ''Y dejando la agricultura, seguirán sus malos designios, y serán esparcidos entre las naciones'' is accurate. Only the final clause inverts the subject-object relationship through the transitive verb esclavizar.'
+  glossary_alignment: No YHWH/Mesías/Dios/πνεῦμα glossary terms. 'Esclavo/esclavizar' is the POB policy verb for δοῦλος family; but here it must be intransitive (they suffer enslavement), not transitive.
+  issues:
+  - severity: high
+    issue: '''esclavizarán para sus enemigos'' inverts the meaning — δουλεύσουσιν τοῖς ἐχθροῖς is intransitive: they will slave/serve-as-slaves FOR their enemies, not that they will enslave their enemies.'
+    rationale: 'δουλεύω is consistently intransitive: ''to be a slave, to serve as a slave''. The EN renders ''will slave for their enemies''. Spanish ''esclavizarán'' (transitive causative) means ''they will enslave [others]'', reversing the subject-object relationship.'
+  revised_spanish_text: Y dejando la agricultura, seguirán sus malos designios, y serán esparcidos entre las naciones y esclavizados por sus enemigos.
+  revision_rationale: 'Changed the final clause from ''esclavizarán para sus enemigos'' (they will enslave their enemies) to ''serán esclavizados por sus enemigos'' (they will be enslaved by their enemies), restoring the correct passive relationship of δουλεύσουσιν τοῖς ἐχθροῖς: the descendants are subjected to servitude under their enemies, not the other way around.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 21f317b000a31f2390a715a91388c95751858c5a6a88f59c0bd894ae961fa745
+  timestamp: '2026-05-08T06:28:51Z'
+  output_hash: 21f317b000a31f2390a715a91388c95751858c5a6a88f59c0bd894ae961fa745
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Slightly adjusted wording for closer alignment with the Greek and smoother English: ''seizing'' -> ''catching,'' added commas to preserve clause flow, and retained the rest of the draft.'
 translation:
   language: es
-  text: Y cuando un león o un lobo o cualquier fiera salvaje venía contra el rebaño, yo lo perseguía y, atrapándolo del pie con mi mano, lo lanzaba, tan lejos como el tiro de una piedra, y lo mataba.
+  text: 'Escúchenme, hijos míos: yo fui el noveno hijo nacido a Jacob, y era valeroso con los rebaños.'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: λέων ... λύκος ... πᾶν θηρίον
@@ -86,4 +86,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y cuando un león o un lobo o cualquier fiera salvaje venía contra el rebaño, yo lo perseguía y, atrapándolo del pie con mi mano, lo lanzaba, tan lejos como el tiro de una piedra, y lo mataba.
+  to: 'Escúchenme, hijos míos: yo fui el noveno hijo nacido a Jacob, y era valeroso con los rebaños.'
+  rationale: 'Replaced v.3 content with correct translation of v.2 Greek: Ἀκούσατε (Listen/Hear me), τέκνα μου (my children), ἔννατος υἱὸς τῷ Ἰακώβ (ninth son born to Jacob), ἤμην ἀνδρεῖος ἐπὶ τῶν ποιμνίων (was brave/valorous with the flocks). ''Valeroso'' for ἀνδρεῖος is precise and natural in neutral Latin American Spanish.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:22:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek v.2: Ἀκούσατε, τέκνα μου· ἐγὼ ἐγενόμην ἔννατος υἱὸς τῷ Ἰακώβ, καὶ ἤμην ἀνδρεῖος ἐπὶ τῶν ποιμνίων. Current Spanish contains v.3 content (beast-hunting scene) which is the wrong verse.'
+  spanish_quality_summary: 'Current Spanish is v.3 content. Must be replaced with v.2: the self-introduction as ninth son of Jacob, brave with the flocks.'
+  glossary_alignment: N/A — wrong verse content.
+  issues:
+  - severity: high
+    issue: 'Spanish text is v.3 content (beast-hunting). Should be v.2: ninth son of Jacob, brave with flocks.'
+    rationale: Source Greek in this file is definitively v.2.
+  revised_spanish_text: 'Escúchenme, hijos míos: yo fui el noveno hijo nacido a Jacob, y era valeroso con los rebaños.'
+  revision_rationale: 'Replaced v.3 content with correct translation of v.2 Greek: Ἀκούσατε (Listen/Hear me), τέκνα μου (my children), ἔννατος υἱὸς τῷ Ἰακώβ (ninth son born to Jacob), ἤμην ἀνδρεῖος ἐπὶ τῶν ποιμνίων (was brave/valorous with the flocks). ''Valeroso'' for ἀνδρεῖος is precise and natural in neutral Latin American Spanish.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e1ec666fe14217e0ab4fa848f7af2c41c1bc1a88f541f84469bb04cbe7c2ade3
+  timestamp: '2026-05-08T06:22:14Z'
+  output_hash: e1ec666fe14217e0ab4fa848f7af2c41c1bc1a88f541f84469bb04cbe7c2ade3
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

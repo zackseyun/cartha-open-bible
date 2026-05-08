@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed "fight" to "wage" to better match the idiom "wage war" for πόλεμον ... πολεμήσει, and "host" to "camp" for παρεμβολήν.
 translation:
   language: es
-  text: Pero no podrán resistir ante Leví, porque él hará la guerra de Yahvé y derrotará todo su campamento.
+  text: Pero no podrán resistir ante Leví, porque él hará la guerra del Señor y derrotará todo su campamento.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: οὐ δυνήσονται πρὸς Λευὶ ἀντιστῆναι
@@ -87,4 +87,39 @@ ai_draft:
     total_tokens: 2467
     reasoning_tokens: 0
     estimated_cost_usd: 0.004745
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero no podrán resistir ante Leví, porque él hará la guerra de Yahvé y derrotará todo su campamento.
+  to: Pero no podrán resistir ante Leví, porque él hará la guerra del Señor y derrotará todo su campamento.
+  rationale: Changed 'de Yahvé' to 'del Señor' in 'la guerra del Señor' to be consistent with the treatment of Κύριος (Greek-only text) in T12P.SIM.2.2 and T12P.SIM.2.13, where 'el Señor' is used. The pattern 'guerra de Yahvé' (known from OT warfare texts) is appropriate when the Hebrew יהוה underlies the Greek, but in this Greek-only testament source the consistent choice is 'el Señor'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Greek 'πόλεμον Κυρίου πολεμήσει'→'hará la guerra de Yahvé' — same Κύριος consistency issue as T12P.SIM.5.2. The EN POB renders 'the Lord's war'. 'νικήσει πᾶσαν παρεμβολήν'→'derrotará todo su campamento' faithful to the revised EN.
+  spanish_quality_summary: Otherwise good Spanish. 'Resistir ante Leví' is natural. 'Derrotará' is the right choice. The 'Yahvé' for Κύριος issue is the same as in 5.2.
+  glossary_alignment: Κύριος rendered 'Yahvé' — inconsistent with 2.2, 2.13 treatment of Κύριος in this Greek testament. Recommend 'el Señor' for consistency.
+  issues:
+  - severity: medium
+    issue: Κύριος rendered 'Yahvé' inconsistently with other verses in the same testament
+    rationale: Same issue as T12P.SIM.5.2. In T12P.SIM.2.2 and 2.13, Κύριος in this same Greek text is rendered 'el Señor'/'Señor Dios'. The phrase 'guerra de Yahvé' should read 'guerra del Señor' to match the established intra-testament choice for Κύριος without underlying Hebrew tetragrammaton.
+  revised_spanish_text: Pero no podrán resistir ante Leví, porque él hará la guerra del Señor y derrotará todo su campamento.
+  revision_rationale: Changed 'de Yahvé' to 'del Señor' in 'la guerra del Señor' to be consistent with the treatment of Κύριος (Greek-only text) in T12P.SIM.2.2 and T12P.SIM.2.13, where 'el Señor' is used. The pattern 'guerra de Yahvé' (known from OT warfare texts) is appropriate when the Hebrew יהוה underlies the Greek, but in this Greek-only testament source the consistent choice is 'el Señor'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 44ff44779416d88d35f8e1083caa5e51f6d316882fedc109dccf8b115917813d
+  timestamp: '2026-05-08T06:48:28Z'
+  output_hash: 44ff44779416d88d35f8e1083caa5e51f6d316882fedc109dccf8b115917813d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

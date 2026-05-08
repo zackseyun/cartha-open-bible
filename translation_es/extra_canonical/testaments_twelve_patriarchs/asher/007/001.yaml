@@ -137,4 +137,27 @@ ai_draft:
     estimated_cost_usd: 0.20139
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: The Greek source (Μὴ γίνεσθε ὡς Σόδομα, ἥτις ἠγνόησε τοὺς ἀγγέλους Κυρίου, καὶ ἀπώλετο ἕως αἰῶνος) is faithfully rendered. The ES draft correctly works from the Greek source rather than the displaced EN POB base_translation. Μὴ γίνεσθε → 'No sean' (correct Latin American ustedes imperative). ἠγνόησε → 'desconoció' (preserves ambiguity between passive ignorance and active dismissal, noted in fn [a]). τοὺς ἀγγέλους Κυρίου → 'los ángeles del Señor' (Κυρίου → del Señor is used here; fn [b] documents the divine-name consideration). ἀπώλετο ἕως αἰῶνος → 'pereció para siempre' (fn [c] notes alternatives). The translation_notes correctly flags the source-text/EN-translation mismatch for editorial attention.
+  spanish_quality_summary: Fluent, natural, and appropriately brief for this single-sentence verse. The three footnotes [a][b][c] are all matched to text markers. 'Desconoció' is the best choice for ἠγνόησε given the ambiguity. 'Para siempre' is the most natural equivalent of ἕως αἰῶνος.
+  glossary_alignment: Κύριος → 'del Señor' (this draft; footnote documents the consideration). Note that other per-verse files use Yahvé, but the footnote documentation here is acceptable given the editorial alert about the source-text mismatch.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 308dbe4a1f7fafcb857ebf60aa2d39f8d60d236265cfede0661fa04b3dd4041b
+  timestamp: '2026-05-08T06:31:06Z'
+  output_hash: 308dbe4a1f7fafcb857ebf60aa2d39f8d60d236265cfede0661fa04b3dd4041b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

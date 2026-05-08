@@ -79,4 +79,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: ''Καὶ γὰρ πονηρὸς ὁ θυμός, τέκνα μου, ὡς καὶ αὐτὴν τὴν ψυχὴν ἐκταράσσει.'' EN: ''For anger is evil, my children, because it throws even the soul itself into turmoil.'' ES: ''Porque la ira es mala, hijos míos, pues perturba aun el alma misma.'' All elements rendered: γάρ→porque, πονηρός→mala, θυμός→ira, τέκνα μου→hijos míos, αὐτὴν τὴν ψυχήν→el alma misma, ἐκταράσσει→perturba.'
+  spanish_quality_summary: Excellent, natural Spanish. 'perturba' for ἐκταράσσει is good; captures the intensive disturbance. 'Pues' for 'because' flows naturally. 'hijos míos' correct address.
+  glossary_alignment: θυμός→ira, ψυχή→alma, πνεῦμα not present here — all correct.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e9145983cdfb04c695fcf51584208c6006d7bb7db1eac465b6757aa4554f3bf1
+  timestamp: '2026-05-08T06:29:44Z'
+  output_hash: e9145983cdfb04c695fcf51584208c6006d7bb7db1eac465b6757aa4554f3bf1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

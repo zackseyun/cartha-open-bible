@@ -19,12 +19,12 @@ base_translation:
     changes_summary: Changed “concerning” to “about” to better reflect κατὰ πάντα ἃ; changed “what would happen” to “all that would happen” to match καὶ ὅσα more fully.
 translation:
   language: es
-  text: Copia de las palabras de Leví[a], que él dispuso para sus hijos acerca de todo lo que ellos harían, y de todo lo que les sucedería hasta el día del juicio.
+  text: Copia de las palabras de Leví, que él dispuso para sus hijos acerca de todo lo que ellos harían, y de todo lo que les sucedería[a] hasta el día del juicio.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Leví: el nombre propio se adapta a la forma española común en textos bíblicos.'
-    reason: spanish_style_note
+    text: El griego usa συναντήσει (literalmente «lo que les saldrá al encuentro»), que puede verterse también como «lo que les sobrevendrá» o «lo que les acontecerá».
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ᾿Αντίγραφον
   english_pob_choice: A copy
@@ -139,4 +139,44 @@ ai_draft:
     total_tokens: 3182
     reasoning_tokens: 0
     estimated_cost_usd: 0.007591
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Copia de las palabras de Leví[a], que él dispuso para sus hijos acerca de todo lo que ellos harían, y de todo lo que les sucedería hasta el día del juicio.
+  to: Copia de las palabras de Leví, que él dispuso para sus hijos acerca de todo lo que ellos harían, y de todo lo que les sucedería[a] hasta el día del juicio.
+  rationale: Replaced trivial name-spelling footnote with a translation of the EN POB lexical alternative note about the Greek idiom συναντήσει, which is more useful to the Spanish reader. Moved marker [a] to annotate 'sucedería' where the Greek idiom is relevant.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:16Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἀντίγραφον λόγων Λευί, ὅσα διέθετο τοῖς υἱοῖς αὐτοῦ κατὰ πάντα ἃ ποιήσουσιν, καὶ ὅσα συναντήσει αὐτοῖς ἕως ἡμέρας κρίσεως. EN POB: ''A copy of the words of Levi[a], which he ordained for his sons about all that they would do, and all that would happen to them until the day of judgment.'' Spanish: ''Copia de las palabras de Leví[a], que él dispuso para sus hijos acerca de todo lo que ellos harían, y de todo lo que les sucedería hasta el día del juicio.'' This is accurate and well-rendered. One issue: the footnote [a] in the EN POB notes an alternative rendering (''would befall them''), but the ES footnote [a] instead says ''Leví: el nombre propio se adapta a la forma española común en textos bíblicos.'' This is a mismatch — the ES is using footnote [a] for a different purpose (name spelling note) than the EN POB footnote [a] (lexical alternative for the Greek idiom). The EN footnote about the Greek idiom συναντήσει (''would befall them / would meet them'')
+    is not represented in the ES. This is a minor issue but the footnote marker should ideally align in purpose.'
+  spanish_quality_summary: Very good. Accurate and natural. The footnote [a] substitution (name spelling note instead of lexical alternative note) is minor but technically a mismatch.
+  glossary_alignment: No divine name, no glossary items. Good.
+  issues:
+  - severity: low
+    issue: ES footnote [a] addresses name spelling ('Leví') instead of the EN POB footnote [a]'s lexical alternative for συναντήσει ('would befall them'). The Spanish reader loses access to that lexical note.
+    rationale: Footnote content should serve the Spanish reader's needs; a note on standard Spanish name spelling is trivial compared to the lexical note about the Greek idiom 'what would meet them'.
+  revised_spanish_text: Copia de las palabras de Leví, que él dispuso para sus hijos acerca de todo lo que ellos harían, y de todo lo que les sucedería[a] hasta el día del juicio.
+  revised_footnotes:
+  - marker: a
+    text: El griego usa συναντήσει (literalmente «lo que les saldrá al encuentro»), que puede verterse también como «lo que les sobrevendrá» o «lo que les acontecerá».
+    reason: lexical_alternative
+  revision_rationale: Replaced trivial name-spelling footnote with a translation of the EN POB lexical alternative note about the Greek idiom συναντήσει, which is more useful to the Spanish reader. Moved marker [a] to annotate 'sucedería' where the Greek idiom is relevant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: fe723142b434fe819206a59a96f5c62e5e8a8a2e3078f62d76ced86f3599d0d6
+  timestamp: '2026-05-08T06:39:16Z'
+  output_hash: fe723142b434fe819206a59a96f5c62e5e8a8a2e3078f62d76ced86f3599d0d6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Pero mientras yo estaba ausente, ella fue y tomó para Selá una mujer de Canaán.
+  text: Pero mientras yo estaba ausente, ella fue y tomó para Selom una mujer de Canaán.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀπόντος ἐμοῦ
@@ -94,4 +94,39 @@ ai_draft:
     total_tokens: 2246
     reasoning_tokens: 0
     estimated_cost_usd: 0.004591
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero mientras yo estaba ausente, ella fue y tomó para Selá una mujer de Canaán.
+  to: Pero mientras yo estaba ausente, ella fue y tomó para Selom una mujer de Canaán.
+  rationale: Changed 'Selá' to 'Selom' for consistency with the chapter-level 011.yaml and chapter 010 per-verse files, which all use 'Selom' for Σηλὼμ.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source content is fully preserved. The only issue is the proper name: ''Selá'' (used here) vs ''Selom'' (used in chapter 10 verses and the chapter-level 011.yaml). The Greek is Σηλὼμ throughout. Both ''Selá'' and ''Selom'' are attested Spanish forms for Shelah, but within this project the chapter-level 011.yaml uses ''Selom'' and must be consistent across verses.'
+  spanish_quality_summary: The verse is natural and well-phrased. The only correction needed is harmonizing 'Selá' to 'Selom' for intra-project consistency.
+  glossary_alignment: No divine names or special glossary terms. Proper name needs harmonization.
+  issues:
+  - severity: medium
+    issue: '''Selá'' vs ''Selom'' inconsistency'
+    rationale: The chapter-level 011.yaml and chapter 010 per-verse files all use 'Selom' for Σηλὼμ. This verse uses 'Selá'. Intra-project consistency requires 'Selom'.
+  revised_spanish_text: Pero mientras yo estaba ausente, ella fue y tomó para Selom una mujer de Canaán.
+  revision_rationale: Changed 'Selá' to 'Selom' for consistency with the chapter-level 011.yaml and chapter 010 per-verse files, which all use 'Selom' for Σηλὼμ.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: cba1f0c9d6f6111d36764ccf51c615a8315fd45e8510489bf5af1732a0740ce0
+  timestamp: '2026-05-08T06:37:45Z'
+  output_hash: cba1f0c9d6f6111d36764ccf51c615a8315fd45e8510489bf5af1732a0740ce0
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

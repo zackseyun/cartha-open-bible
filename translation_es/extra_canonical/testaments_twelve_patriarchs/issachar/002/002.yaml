@@ -77,4 +77,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: Καὶ εἰ μὴ Λεία ἡ μήτηρ μου ἀντὶ συνουσίας ἀπέδοτο τὰ δύο μῆλα, ὀκτὼ υἱοὺς ἔμελλε τεκεῖν· διὰ τοῦτο ἓξ ἔτεκε, καὶ Ῥαχιὴλ τέτοκε τοὺς δύο ὅτι ἐν τοῖς μανδραγόροις ἐπεσκέψατο αὐτὴν ὁ Κύριος. EN POB (condensed): ''And had Leah my mother not given over the two fruits in exchange for intercourse, she would have been about to bear eight sons; for this reason she bore six, and Rachel bore the two — because in the mandrakes the Lord visited her.'' The ES base_translation shows a condensed version ''And Leah took mandrakes, and for them hired me for one night'' but the ES translation renders: ''Y Lía tomó las mandrágoras y, a cambio de ellas, me alquiló por una noche[a].'' This follows the condensed EN POB synthesis rather than the full Greek text. The note acknowledges this. The chapter-level ES has the full rendering. For the verse-level, following the EN POB synthesis is acceptable as documented.'
+  spanish_quality_summary: Good Spanish. 'Me alquiló por una noche' correctly preserves the hire/wages vocabulary (alquilar/μισθόω). The footnote [a] acknowledges the condensation from the longer Greek passage. Clean and natural.
+  glossary_alignment: ἀντί transaccional → 'a cambio de' is consistent. μανδραγόραι → 'mandrágoras' consistent.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: dd9b00c667c7a1eff62b99b634a5ad00f8e9bff9fc5c7771fb41accaef863348
+  timestamp: '2026-05-08T06:32:23Z'
+  output_hash: dd9b00c667c7a1eff62b99b634a5ad00f8e9bff9fc5c7771fb41accaef863348
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'against him' to 'to him' for closer lexical accuracy; removed 'but' and kept 'for' to reflect the Greek connective; simplified 'toward wicked lust' to 'for wicked desire' for more natural and consistent rendering of ἐπιθυμία.
 translation:
   language: es
-  text: Porque la mujer egipcia hizo muchas cosas contra él, y llamó a magos y le trajo pócimas; pues José se guardó de todo deseo malo y no aceptó el consejo de su alma para deseo perverso.
+  text: Porque la mujer egipcia hizo muchas cosas a él, y llamó a magos y le trajo pócimas; pues José se guardó de todo deseo malo y no aceptó el consejo de su alma para un deseo perverso.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἡ Αἰγυπτία
@@ -121,4 +121,42 @@ ai_draft:
     total_tokens: 3315
     reasoning_tokens: 0
     estimated_cost_usd: 0.007489
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque la mujer egipcia hizo muchas cosas contra él, y llamó a magos y le trajo pócimas; pues José se guardó de todo deseo malo y no aceptó el consejo de su alma para deseo perverso.
+  to: Porque la mujer egipcia hizo muchas cosas a él, y llamó a magos y le trajo pócimas; pues José se guardó de todo deseo malo y no aceptó el consejo de su alma para un deseo perverso.
+  rationale: Aligned 'hizo muchas cosas a él' with the EN revised form 'did many things to him' (following the explicit revision-pass correction of 'against him' → 'to him'). Slightly smoothed the final phrase by adding 'un' before 'deseo perverso' for grammatical naturalness.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:45:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The main issue is πολλὰ ἐποίησεν αὐτῷ. The revised EN POB settled on 'did many things to him' (not 'against him'). The Spanish keeps 'hizo muchas cosas contra él', reverting to the pre-revision reading. Also, ἐπιθυμίαν πονηράν in the EN was revised from 'wicked lust' to 'wicked desire' (desire, not lust) for consistency. The Spanish ends 'no aceptó el consejo de su alma para deseo perverso' — this is close but the structure 'para deseo perverso' is somewhat awkward as a final phrase. Also, the lexical decision box says they chose 'contra él' deliberately as an adversative interpretation despite EN revising to 'to him'; this is a misalignment with the authoritative EN revision.
+  spanish_quality_summary: Otherwise grammatically correct and fluent. The phrase 'no aceptó el consejo de su alma para deseo perverso' is a slightly awkward final phrase; 'para dar lugar a un deseo perverso' or 'ante el deseo perverso' would be cleaner. The main concern is the 'contra él' divergence from EN revised form.
+  glossary_alignment: No YHWH, no Χριστός. πνεῦμα not present here. ἐπιθυμία → deseo (correct).
+  issues:
+  - severity: medium
+    issue: πολλὰ ἐποίησεν αὐτῷ rendered as 'hizo muchas cosas contra él' despite EN revision pass explicitly changing 'against him' to 'to him' (closer to the Greek dative αὐτῷ)
+    rationale: The EN revision pass corrected this for lexical accuracy. The Spanish reverts to the pre-revision reading, creating misalignment with the authoritative base.
+  - severity: low
+    issue: Final phrase 'para deseo perverso' is somewhat elliptical; the EN has 'for wicked desire' which is also somewhat awkward, but the Spanish could be smoother
+    rationale: Minor naturalness issue.
+  revised_spanish_text: Porque la mujer egipcia hizo muchas cosas a él, y llamó a magos y le trajo pócimas; pues José se guardó de todo deseo malo y no aceptó el consejo de su alma para un deseo perverso.
+  revision_rationale: Aligned 'hizo muchas cosas a él' with the EN revised form 'did many things to him' (following the explicit revision-pass correction of 'against him' → 'to him'). Slightly smoothed the final phrase by adding 'un' before 'deseo perverso' for grammatical naturalness.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d6227d8db73f98b12642d16b234cac0c738e5d72723b57579b9e7d2b7650dd7e
+  timestamp: '2026-05-08T06:45:44Z'
+  output_hash: d6227d8db73f98b12642d16b234cac0c738e5d72723b57579b9e7d2b7650dd7e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

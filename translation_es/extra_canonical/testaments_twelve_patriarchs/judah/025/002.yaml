@@ -19,11 +19,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y Yahvé bendijo a Leví, pero el ángel de la presencia me [a] bendijo; las potestades de gloria, a Simeón; el cielo, a Rubén; la tierra, a Isacar; el mar, a Zabulón; los montes, a José; la tienda, a Benjamín; las luminarias, a Dan; el deleite, a Neftalí; el sol, a Gad; la luna, a Aser.
+  text: Y Yahvé bendijo a Leví, pero el ángel de la presencia me bendijo[a]; las potestades de gloria, a Simeón; el cielo, a Rubén; la tierra, a Isacar; el mar, a Zabulón; los montes, a José; la tienda, a Benjamín; las luminarias, a Dan; el deleite, a Neftalí; el sol, a Gad; la luna, a Aser.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'También puede entenderse ''me bendijo'' como parte de la clausura de la primera cláusula: ''el ángel de la presencia me bendijo''.'
+    text: 'También puede entenderse «me bendijo» como parte de la clausura de la primera cláusula: «el ángel de la presencia me bendijo».'
     reason: alternative_reading
 lexical_decisions:
 - source_word: Κύριος
@@ -135,4 +135,44 @@ ai_draft:
     total_tokens: 3108
     reasoning_tokens: 0
     estimated_cost_usd: 0.007671
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y Yahvé bendijo a Leví, pero el ángel de la presencia me [a] bendijo; las potestades de gloria, a Simeón; el cielo, a Rubén; la tierra, a Isacar; el mar, a Zabulón; los montes, a José; la tienda, a Benjamín; las luminarias, a Dan; el deleite, a Neftalí; el sol, a Gad; la luna, a Aser.
+  to: Y Yahvé bendijo a Leví, pero el ángel de la presencia me bendijo[a]; las potestades de gloria, a Simeón; el cielo, a Rubén; la tierra, a Isacar; el mar, a Zabulón; los montes, a José; la tienda, a Benjamín; las luminarias, a Dan; el deleite, a Neftalí; el sol, a Gad; la luna, a Aser.
+  rationale: Moved footnote marker [a] from mid-phrase to after the full clause it annotates. No content changes.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek text (α-column) has an elided structure: Κύριος εὐλόγησε τὸν Λευί, then ellipsis of ''blessed'' for subsequent subjects. The EN POB correctly reads ''the angel of the presence blessed me'' in the chapter-level YAML but the per-verse EN says ''but the angel of the presence blessed me'' — however the revised chapter-level dropped the repeated ''blessed''. The Spanish ES 025/002 inserts ''me [a] bendijo'' which is fine structurally but the footnote marker placement in the text is problematic: ''el ángel de la presencia me [a] bendijo'' — the [a] is sitting between ''me'' and ''bendijo'', which is visually awkward and semantically misleading. The footnote content itself explains an alternative reading of the clause boundary, which is valid. More importantly, Κύριος here renders as ''Yahvé'' which is correct project policy. The content is sound. However the per-verse EN base_translation says ''the angel of the presence blessed me'' (unchanged), while the
+    chapter-level dropped that repeated ''blessed''. The ES verse independently has ''me [a] bendijo'' which does preserve the verb. The footnote marker position inside the clause should be moved to after the full clause.'
+  spanish_quality_summary: 'Text reads naturally overall. The list structure with semicolons mirrors the Greek elliptic catalog well. ''Potestades de gloria'' is an elevated but appropriate rendering for δυνάμεις τῆς δόξης. ''Luminarias'' for φωστῆρες is better than ''luces''. One issue: the marker [a] appears mid-phrase ''me [a] bendijo'' — in Spanish it should appear after the full unit it notes. The footnote text describes an alternative reading, which is appropriate.'
+  glossary_alignment: Κύριος correctly rendered as 'Yahvé'. No YHWH/θεός/Χριστός/δοῦλος/πνεῦμα issues.
+  issues:
+  - severity: low
+    issue: 'Footnote marker [a] is positioned mid-phrase: ''me [a] bendijo''. It should follow the full clause.'
+    rationale: Footnote markers should attach to the word or clause they annotate, not split a verbal phrase. Moving [a] to end of 'el ángel de la presencia me bendijo[a]' makes the reference clear.
+  revised_spanish_text: Y Yahvé bendijo a Leví, pero el ángel de la presencia me bendijo[a]; las potestades de gloria, a Simeón; el cielo, a Rubén; la tierra, a Isacar; el mar, a Zabulón; los montes, a José; la tienda, a Benjamín; las luminarias, a Dan; el deleite, a Neftalí; el sol, a Gad; la luna, a Aser.
+  revised_footnotes:
+  - marker: a
+    text: 'También puede entenderse «me bendijo» como parte de la clausura de la primera cláusula: «el ángel de la presencia me bendijo».'
+    reason: alternative_reading
+  revision_rationale: Moved footnote marker [a] from mid-phrase to after the full clause it annotates. No content changes.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 0c662b5d31553e5a13008fd0ea3d92ad503a92e0d89dd2b7dd77c988884f8ed5
+  timestamp: '2026-05-08T06:36:10Z'
+  output_hash: 0c662b5d31553e5a13008fd0ea3d92ad503a92e0d89dd2b7dd77c988884f8ed5
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

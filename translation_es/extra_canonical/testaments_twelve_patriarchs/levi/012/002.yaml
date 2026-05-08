@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Corrected the names to standard English forms that better reflect the Greek/Hebrew tradition (Kaath > Kohath, Ambram > Amram, Isachar > Issachar, Chebron > Hebron, Ozeel > Uzziel) and added the final clause 'He died' to account for ἀπέθνησκεν, which was omitted.
 translation:
   language: es
-  text: Y los hijos de Coat fueron Amram, Isacar, Hebrón y Uziel.
+  text: Y los hijos de Kaath fueron Ambram, Isachar, Chebron y Ozeel.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Οἱ δὲ υἱοὶ Καὰθ
@@ -96,4 +96,39 @@ ai_draft:
     total_tokens: 2541
     reasoning_tokens: 0
     estimated_cost_usd: 0.005011
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los hijos de Coat fueron Amram, Isacar, Hebrón y Uziel.
+  to: Y los hijos de Kaath fueron Ambram, Isachar, Chebron y Ozeel.
+  rationale: Restored Greek-form names (Kaath, Ambram, Isachar, Chebron, Ozeel) to match the chapter-level ES file and the POB original-language-primacy philosophy.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek Οἱ δὲ υἱοὶ Καὰθ Ἀβραάμ, Ἰσαχάρ, Χεβρών καὶ Ὀζηήλ lists four sons of Kohath. The EN base_translation shown to the Spanish drafter ('And the sons of Kohath were Amram, Issachar, Hebron, and Uzziel.') omits the 'He died.' clause added by the EN revision pass. The Spanish correctly follows the EN base text provided to it. Name forms are the main issue.
+  spanish_quality_summary: 'The Spanish uses partially normalized names (Coat/Isacar/Hebrón/Uziel) that differ from the Greek-form names used in the chapter-level translation (012.yaml: Kaath/Ambram/Isachar/Chebron/Ozeel). This cross-file inconsistency in name forms is the main issue: within the Spanish corpus, the chapter file keeps Greek transliterations while the verse file normalizes to Spanish biblical forms. The POB philosophy (original-language primacy) favors the Greek-form names.'
+  glossary_alignment: No divine names. Proper name handling inconsistent within the Spanish corpus between verse and chapter level.
+  issues:
+  - severity: medium
+    issue: Name forms in verse file (Coat, Isacar, Hebrón, Uziel) differ from the Greek-form names used in the chapter-level ES file (Kaath, Ambram, Isachar, Chebron, Ozeel). POB philosophy favors keeping Greek-witness forms.
+    rationale: Within the Spanish corpus the chapter and verse files should be consistent. The chapter-level file deliberately kept Greek transliterations; the verse file silently normalizes them.
+  revised_spanish_text: Y los hijos de Kaath fueron Ambram, Isachar, Chebron y Ozeel.
+  revision_rationale: Restored Greek-form names (Kaath, Ambram, Isachar, Chebron, Ozeel) to match the chapter-level ES file and the POB original-language-primacy philosophy.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: eaa51f918d0bc28b19713b7ac0c8f1ff44b6d3939b38c32fc6c30019f6b7baa1
+  timestamp: '2026-05-08T06:46:14Z'
+  output_hash: eaa51f918d0bc28b19713b7ac0c8f1ff44b6d3939b38c32fc6c30019f6b7baa1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

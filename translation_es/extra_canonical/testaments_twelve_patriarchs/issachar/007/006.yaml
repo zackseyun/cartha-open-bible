@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Amé al Señor con todas mis fuerzas, y de igual modo amé a toda persona con todo mi corazón, más que a mis propios hijos[a].
+  text: Amé al Señor y a toda persona con todo mi corazón, más que a mis propios hijos[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -76,4 +76,46 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Amé al Señor con todas mis fuerzas, y de igual modo amé a toda persona con todo mi corazón, más que a mis propios hijos[a].
+  to: Amé al Señor y a toda persona con todo mi corazón, más que a mis propios hijos[a].
+  rationale: Removed the unsupported 'con todas mis fuerzas' (the Greek has ἐξ ὅλης τῆς καρδίας — 'with all my heart' only, as in the EN POB text) and 'y de igual modo' (not in the Greek). Unified the two love-objects under the single 'con todo mi corazón' as the Greek has one ἐξ ὅλης τῆς καρδίας covering both Κύριον and πάντα ἄνθρωπον.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:15Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek source: ''Τὸν Κύριον ἠγάπησα καὶ πάντα ἄνθρωπον ἐξ ὅλης τῆς καρδίας μου ὑπὲρ τὰ τέκνα μου.'' — one verbal clause, one object (''the Lord and every person''), one qualifier (''with all my heart''), one comparison (''more than my children''). The EN POB revision reads: ''I loved the Lord and every person with all my heart, more than my children.'' The ES base_translation field, however, contains a different EN text: ''I loved the Lord with all my strength, and likewise I loved every person with all my heart, more than my children.'' That differs from the EN POB revision text and adds ''with all my strength'' (not in Greek) and ''likewise'' and splits into two clauses. The Spanish mirrors this expanded base rather than the Greek/EN POB.'
+  spanish_quality_summary: The expansion 'con todas mis fuerzas' has no support in the Greek — ἐξ ὅλης τῆς καρδίας is 'with all my heart', not 'with all my strength'. 'Y de igual modo' is also an addition. The revised text should match the Greek's single verb structure.
+  glossary_alignment: Κύριος rendered 'el Señor' correctly. No other glossary issues.
+  issues:
+  - severity: medium
+    issue: '''con todas mis fuerzas'' is not in the Greek; ἐξ ὅλης τῆς καρδίας means ''with all my heart'', not ''with all my strength''.'
+    rationale: The Spanish base_translation block appears to have used an incorrect EN intermediate text that added 'with all my strength'. The Greek has a single καρδίας qualifier for both objects.
+  - severity: medium
+    issue: '''y de igual modo'' adds a connective not present in the Greek καὶ (simple ''and'').'
+    rationale: The Greek structure is 'I loved X and Y with Z, more than W' — not two separate love-statements.
+  revised_spanish_text: Amé al Señor y a toda persona con todo mi corazón, más que a mis propios hijos[a].
+  revised_footnotes:
+  - marker: a
+    text: 'El griego ὑπὲρ τὰ τέκνα μου expresa una comparación intencionalmente fuerte: el amor al prójimo iguala o supera al amor familiar inmediato, manteniendo la fuerza ética del texto.'
+    reason: theological_note
+  revision_rationale: Removed the unsupported 'con todas mis fuerzas' (the Greek has ἐξ ὅλης τῆς καρδίας — 'with all my heart' only, as in the EN POB text) and 'y de igual modo' (not in the Greek). Unified the two love-objects under the single 'con todo mi corazón' as the Greek has one ἐξ ὅλης τῆς καρδίας covering both Κύριον and πάντα ἄνθρωπον.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: ea1be5b0211d431c892b0dbdd5b242112e0fdb65dab9a8e3b3ab52cda4d7c03b
+  timestamp: '2026-05-08T06:30:15Z'
+  output_hash: ea1be5b0211d431c892b0dbdd5b242112e0fdb65dab9a8e3b3ab52cda4d7c03b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

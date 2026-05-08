@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft text with a translation matching the Greek of this verse: Joseph reports to their father about the sons of Zilpah and Bilhah slaughtering the best livestock and eating them without Judah.'
 translation:
   language: es
-  text: Y José le dijo a nuestro padre que los hijos de Zilpa y Bilha estaban degollando lo mejor del ganado y comiéndolo aparte de Judá.
+  text: Y José le dijo a nuestro padre que los hijos de Zilpa y Bilha estaban degollando lo mejor del ganado y comiéndolo aparte de Rubén y de Judá.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: εἶπεν Ἰωσὴφ τῷ πατρὶ ἡμῶν
@@ -72,4 +72,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y José le dijo a nuestro padre que los hijos de Zilpa y Bilha estaban degollando lo mejor del ganado y comiéndolo aparte de Judá.
+  to: Y José le dijo a nuestro padre que los hijos de Zilpa y Bilha estaban degollando lo mejor del ganado y comiéndolo aparte de Rubén y de Judá.
+  rationale: Added 'Rubén y de' to restore the Greek Ῥουβὶμ καὶ Ἰούδα — both Reuben and Judah are named in the source. 'Rubén' is the standard Spanish form of the name.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:23:00Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ εἶπεν Ἰωσὴφ τῷ πατρὶ ἡμῶν, ὅτι οἱ υἱοὶ Ζέλφας καὶ Βάλλας θύουσι τὰ θρέμματα τὰ καλὰ καὶ ἐσθίουσιν αὐτὰ παρὰ γνώμην Ῥουβὶμ καὶ Ἰούδα. Current Spanish omits Reuben (Ῥουβίμ), only mentions Judah. The Greek has both Reuben and Judah.'
+  spanish_quality_summary: Fluent and natural. The single issue is the omission of Reuben which is in the Greek source.
+  glossary_alignment: θύουσι→degollando appropriate for pastoral context. παρὰ γνώμην→aparte de follows EN rendition.
+  issues:
+  - severity: medium
+    issue: Greek has παρὰ γνώμην Ῥουβὶμ καὶ Ἰούδα (without consent of Reuben AND Judah). Spanish only mentions Judah, omitting Reuben.
+    rationale: Source faithfulness requires including both names per the Greek text.
+  revised_spanish_text: Y José le dijo a nuestro padre que los hijos de Zilpa y Bilha estaban degollando lo mejor del ganado y comiéndolo aparte de Rubén y de Judá.
+  revision_rationale: Added 'Rubén y de' to restore the Greek Ῥουβὶμ καὶ Ἰούδα — both Reuben and Judah are named in the source. 'Rubén' is the standard Spanish form of the name.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a7c262c42329194e36cc21126bf41dee9dac92c7535cb741d845c92e78ecf476
+  timestamp: '2026-05-08T06:23:00Z'
+  output_hash: a7c262c42329194e36cc21126bf41dee9dac92c7535cb741d845c92e78ecf476
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

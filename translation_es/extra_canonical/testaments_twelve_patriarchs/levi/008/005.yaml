@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised 'pure water of the Lord' to 'the Lord's pure water' for more natural English while preserving the genitive sense. No other changes needed.
 translation:
   language: es
-  text: Y el segundo me lavó con el agua pura de Yahvé, y me dio a comer pan santo y vino santo, y me puso una túnica santa y gloriosa.
+  text: Y el segundo me lavó con el agua pura del Señor, y me dio a comer pan santo y vino santo, y me puso una túnica santa y gloriosa.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὕδατι κυρίου καθαρῷ
@@ -84,4 +84,39 @@ ai_draft:
     total_tokens: 2596
     reasoning_tokens: 0
     estimated_cost_usd: 0.005296
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y el segundo me lavó con el agua pura de Yahvé, y me dio a comer pan santo y vino santo, y me puso una túnica santa y gloriosa.
+  to: Y el segundo me lavó con el agua pura del Señor, y me dio a comer pan santo y vino santo, y me puso una túnica santa y gloriosa.
+  rationale: Changed 'Yahvé' to 'del Señor' to align with the EN POB's 'the Lord' and the project convention that YHWH→Yahvé applies to Hebrew source texts, not Greek ones. κύριος in T12P is a Greek reverential title, not a transliteration of the Tetragrammaton.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:46:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek ὕδατι κυρίου καθαρῷ uses κύριος. The EN POB renders this as 'the Lord's pure water.' The Spanish draft uses 'Yahvé' rather than 'Señor.' The YHWH→Yahvé convention applies to Hebrew source texts containing the Tetragrammaton; this text is a Greek pseudepigraphon (T12P) where κύριος is a Greek title, not a transliteration of YHWH. The EN audited translation uses 'the Lord,' so the Spanish should follow with 'Señor,' not 'Yahvé.'
+  spanish_quality_summary: Otherwise good Spanish. ψωμίζω → me dio a comer is natural. στολὴν ἁγίαν καὶ ἔνδοξον → túnica santa y gloriosa is well chosen.
+  glossary_alignment: 'Issue: κύριος in this Greek text should be Señor, not Yahvé. The YHWH→Yahvé convention applies to Hebrew source texts only.'
+  issues:
+  - severity: medium
+    issue: κύριος rendered as Yahvé instead of Señor
+    rationale: This is a Greek pseudepigraphon (T12P); the EN POB uses 'the Lord' for κύριος here. The YHWH→Yahvé convention applies to Hebrew source texts. Using Yahvé imports a Hebrew-source convention into a Greek text where the author wrote κύριος as a Greek title.
+  revised_spanish_text: Y el segundo me lavó con el agua pura del Señor, y me dio a comer pan santo y vino santo, y me puso una túnica santa y gloriosa.
+  revision_rationale: Changed 'Yahvé' to 'del Señor' to align with the EN POB's 'the Lord' and the project convention that YHWH→Yahvé applies to Hebrew source texts, not Greek ones. κύριος in T12P is a Greek reverential title, not a transliteration of the Tetragrammaton.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 3d20e5e7966a463bc47be3535fa2747fd6f0bdc8bcac73d0900a2f4450758e92
+  timestamp: '2026-05-08T06:46:06Z'
+  output_hash: 3d20e5e7966a463bc47be3535fa2747fd6f0bdc8bcac73d0900a2f4450758e92
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

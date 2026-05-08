@@ -84,4 +84,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: Καὶ ἐξελθόντος αὐτοῦ ἔκλαιον, μὴ γευσάμενος μήτε ἐκείνου μήτε ἄλλου τῶν ἐδεσμάτων αὐτῆς. Spanish: ''Y después de que él hubo salido, no comí ni aquella comida ni ninguno de sus otros alimentos, sino que lloré, sin haberlos probado[a].'' Accurate. The EN per-verse says ''I ate neither that food nor any of her other foods, but wept, not having tasted them.'' The ES renders this well. Footnote [a] in text, matched.'
+  spanish_quality_summary: Slightly formal construction 'después de que él hubo salido' (pluperfect subjunctive) is appropriate for the genitivo absoluto. 'sin haberlos probado' matches the EN revision from 'without tasting'. No issues.
+  glossary_alignment: No divine names. μὴ γευσάμενος → sin haberlos probado (correct).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1c3fd756a8d06520f7177cc025785b702f18c151df242ffe831725aa6a5cc0ac
+  timestamp: '2026-05-08T06:30:39Z'
+  output_hash: 1c3fd756a8d06520f7177cc025785b702f18c151df242ffe831725aa6a5cc0ac
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

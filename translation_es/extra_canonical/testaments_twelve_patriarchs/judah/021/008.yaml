@@ -19,11 +19,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y harán que las carnes de muchos sean devoradas por cuervos y ibis injustamente[a], y avanzarán en el mal, alzándose en la codicia.
+  text: Y llenarán injustamente de la carne de muchos a cuervos e ibis[a], y avanzarán en el mal, alzándose en la codicia.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Injustamente» modifica la acción de hacer que las carnes sean devoradas; no introduce una lectura distinta, sino que preserva el adverbio ἀδίκως.
+    text: «Injustamente» modifica la acción de llenar de carne a las aves carroñeras; preserva el adverbio ἀδίκως del griego.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: σάρκας
@@ -124,4 +124,43 @@ ai_draft:
     total_tokens: 2796
     reasoning_tokens: 0
     estimated_cost_usd: 0.006552
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y harán que las carnes de muchos sean devoradas por cuervos y ibis injustamente[a], y avanzarán en el mal, alzándose en la codicia.
+  to: Y llenarán injustamente de la carne de muchos a cuervos e ibis[a], y avanzarán en el mal, alzándose en la codicia.
+  rationale: Replaced the causative passive construction with a direct active rendering closer to both the EN POB and the Greek, while keeping the second clause unchanged as it is accurate.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The EN text reads 'they will unjustly fill ravens and ibises with the flesh of many, and they will advance in evil, being lifted up in greed.' The Spanish 'harán que las carnes de muchos sean devoradas por cuervos y ibis injustamente' restructures the EN active construction into a causative passive, which moves away from both the EN and Greek. The Greek κόρακας can be read as an accusative (filling ravens), so the EN stays closer to source. The second clause 'avanzarán en el mal, alzándose en la codicia' is faithful. However ὑπερηφανίᾳ is 'arrogance/pride' not 'codicia/greed'—the EN chose to combine it with the prior πλεονεξίᾳ phrase, so the ES following EN is acceptable. The footnote marker [a] appears in text but the footnote is present—marker match is fine.
+  spanish_quality_summary: The causative restructuring 'harán que las carnes... sean devoradas' is awkward and less idiomatic than a direct rendering. A more natural and source-faithful reading would be 'llenarán injustamente de la carne de muchos a cuervos e ibis'. The second half is good.
+  glossary_alignment: πλεονεξίᾳ→codicia is correct per glossary. No YHWH/θεός/Χριστός/δοῦλος/πνεῦμα terms present.
+  issues:
+  - severity: medium
+    issue: Causative passive restructuring of the main clause
+    rationale: The ES 'harán que las carnes de muchos sean devoradas por cuervos e ibis injustamente' is a periphrastic causative that distances from both EN 'they will unjustly fill ravens and ibises with the flesh of many' and the Greek χορτάσουσιν κόρακας. A direct rendering is more faithful.
+  revised_spanish_text: Y llenarán injustamente de la carne de muchos a cuervos e ibis[a], y avanzarán en el mal, alzándose en la codicia.
+  revised_footnotes:
+  - marker: a
+    text: «Injustamente» modifica la acción de llenar de carne a las aves carroñeras; preserva el adverbio ἀδίκως del griego.
+    reason: lexical_alternative
+  revision_rationale: Replaced the causative passive construction with a direct active rendering closer to both the EN POB and the Greek, while keeping the second clause unchanged as it is accurate.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: cebbc9de1717c21f97a3458f38cd9e6111f2bb017bc4cba3d4e96afadad3412b
+  timestamp: '2026-05-08T06:36:24Z'
+  output_hash: cebbc9de1717c21f97a3458f38cd9e6111f2bb017bc4cba3d4e96afadad3412b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,12 +19,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y la mujer le decía continuamente[a] a su marido,
+  text: 'Y la mujer le decía continuamente[a] a su marido: «¿Por qué tienes encadenado[b] a este muchacho[c] cautivo y de noble linaje, cuando más bien debería ser puesto en libertad y ser servido?».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El imperfecto griego ἔλεγε denota acción repetida o continuada; la oración se interrumpe aquí en el testigo griego conservado y continúa en el capítulo siguiente.
+    text: El imperfecto griego ἔλεγε denota acción repetida o continuada.
     reason: textual_variant
+  - marker: b
+    text: Lit. 'en cadenas'; ἐν δεσμοῖς.
+    reason: lexical_alternative
+  - marker: c
+    text: El griego παῖδα puede referirse a 'muchacho' o 'sirviente'; aquí el contexto enfatiza la nobleza del joven.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔλεγε
   english_pob_choice: kept saying
@@ -67,4 +73,49 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y la mujer le decía continuamente[a] a su marido,
+  to: 'Y la mujer le decía continuamente[a] a su marido: «¿Por qué tienes encadenado[b] a este muchacho[c] cautivo y de noble linaje, cuando más bien debería ser puesto en libertad y ser servido?».'
+  rationale: 'Completed the truncated verse by translating the full Greek source text, including the direct speech that was missing from the draft. The speech ''Why do you keep this captive and noble boy in chains, when he ought rather to be set free and waited upon?'' corresponds to: Τί συνέχεις τὸν αἰχμάλωτον καὶ εὐγενῆ παῖδα ἐν δεσμοῖς, ὃν ἔδει μᾶλλον ἄνετον εἶναι καὶ ὑπηρετεῖσθαι.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:00Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The per-verse EN YAML for 14:3 has an incomplete base text: ''And the woman kept saying to her husband,'' — it is truncated at that point. However, the Greek source for v.3 contains the full speech: ''¿Τί συνέχεις τὸν αἰχμάλωτον καὶ εὐγενῆ παῖδα ἐν δεσμοῖς, ὃν ἔδει μᾶλλον ἄνετον εἶναι καὶ ὑπηρετεῖσθαι.'' The ES draft (''Y la mujer le decía continuamente a su marido,'') is also truncated, matching the incomplete EN base but not the full Greek source. The complete speech is present in the chapter-level YAML (14.yaml). The per-verse file should include the full verse.'
+  spanish_quality_summary: 'The incomplete state means only half the verse is translated. The full verse reads: ''And the woman kept saying to her husband, "Why do you keep this captive and noble boy in chains, when he ought rather to be set free and waited upon?"'' The ES needs to provide the complete text.'
+  glossary_alignment: αἰχμάλωτον→captive; εὐγενῆ→noble; παῖδα→muchacho; δεσμοῖς→cadenas/ataduras; ἄνετον→libre/suelto; ὑπηρετεῖσθαι→ser atendido/servido.
+  issues:
+  - severity: high
+    issue: 'The per-verse ES translation is incomplete — it renders only the narrative introduction and not the quoted speech from the Greek source. The full verse includes the direct quotation: ''Why do you keep this captive and noble boy in chains, when he ought rather to be set free and waited upon?'''
+    rationale: The per-verse EN base was truncated; the ES followed it but the Greek source has the full verse. The per-verse ES should translate the complete Greek text.
+  revised_spanish_text: 'Y la mujer le decía continuamente[a] a su marido: «¿Por qué tienes encadenado[b] a este muchacho[c] cautivo y de noble linaje, cuando más bien debería ser puesto en libertad y ser servido?».'
+  revised_footnotes:
+  - marker: a
+    text: El imperfecto griego ἔλεγε denota acción repetida o continuada.
+    reason: textual_variant
+  - marker: b
+    text: Lit. 'en cadenas'; ἐν δεσμοῖς.
+    reason: lexical_alternative
+  - marker: c
+    text: El griego παῖδα puede referirse a 'muchacho' o 'sirviente'; aquí el contexto enfatiza la nobleza del joven.
+    reason: lexical_alternative
+  revision_rationale: 'Completed the truncated verse by translating the full Greek source text, including the direct speech that was missing from the draft. The speech ''Why do you keep this captive and noble boy in chains, when he ought rather to be set free and waited upon?'' corresponds to: Τί συνέχεις τὸν αἰχμάλωτον καὶ εὐγενῆ παῖδα ἐν δεσμοῖς, ὃν ἔδει μᾶλλον ἄνετον εἶναι καὶ ὑπηρετεῖσθαι.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 42da770dc82194e72de750118d0fdbce674823d74049b953ba608c0d3a8f21cc
+  timestamp: '2026-05-08T06:38:00Z'
+  output_hash: 42da770dc82194e72de750118d0fdbce674823d74049b953ba608c0d3a8f21cc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

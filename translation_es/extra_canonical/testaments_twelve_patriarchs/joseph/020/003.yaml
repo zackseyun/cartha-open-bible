@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y llevad a Asenet, vuestra madre [a], [al Hipódromo] y sepultadla junto a Raquel, mi madre.
+  text: Y traigan a Asenet, la madre de ustedes, [al Hipódromo], y sepúltenla junto a Raquel, mi madre.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'El texto griego lleva un pasaje entre corchetes: [παρὰ τὸν Ἱππόδρομον], que el inglés POB también marca entre corchetes como aclaración o localización del acto.'
-    reason: source_note
 lexical_decisions:
 - source_word: ᾿Ασυνὲθ / Aseneth
   english_pob_choice: Aseneth
@@ -107,4 +103,42 @@ ai_draft:
     total_tokens: 2527
     reasoning_tokens: 0
     estimated_cost_usd: 0.005552
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y llevad a Asenet, vuestra madre [a], [al Hipódromo] y sepultadla junto a Raquel, mi madre.
+  to: Y traigan a Asenet, la madre de ustedes, [al Hipódromo], y sepúltenla junto a Raquel, mi madre.
+  rationale: Converted vosotros imperatives to ustedes imperatives ('traigan', 'sepúltenla') for neutral Latin-American Spanish consistency. Removed the redundant footnote [a] that merely explained the visible bracket. Reordered slightly for natural flow.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:40:00Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἀσυνὲθ δὲ τὴν μητέρα ὑμῶν ἀγάγετε [παρὰ τὸν Ἱππόδρομον] καὶ πλησίον Ῥαχιὴλ τῆς μητέρος μου θάψατε αὐτήν. EN: ''And bring Aseneth your mother [to the Hippodrome], and bury her near Rachel my mother.'' ES: ''Y llevad a Asenet, vuestra madre [a], [al Hipódromo] y sepultadla junto a Raquel, mi madre.'' The ES uses vosotros forms (''llevad'', ''sepultadla'', ''vuestra'') while the rest of the corpus consistently uses ustedes forms. This is a register inconsistency for neutral Latin-American Spanish — vosotros is used in Spain but not in Latin America. The footnote [a] is awkwardly placed after ''vuestra madre'' with text about the bracketed Hippodrome, but the actual bracket [al Hipódromo] appears immediately after, making the footnote placement confusing.'
+  spanish_quality_summary: The main quality issue is the use of vosotros (llevad, sepultadla, vuestra) instead of ustedes forms. This is inconsistent with the neutral Latin-American Spanish standard for this project. Also the footnote [a] text duplicates what is already shown by the bracket notation in the text itself.
+  glossary_alignment: Asenet/Aseneth name is fine. No glossary conflicts.
+  issues:
+  - severity: high
+    issue: Vosotros forms used instead of ustedes forms — inconsistent with neutral Latin-American Spanish standard
+    rationale: '''Llevad'' should be ''traigan'', ''vuestra madre'' should be ''su madre'' or ''la madre de ustedes'', ''sepultadla'' should be ''sepúltenla''.'
+  - severity: medium
+    issue: Footnote [a] is redundant — it just describes the bracketed material already visible in the text
+    rationale: The bracket [al Hipódromo] already signals the interpolation. The footnote simply restates what the brackets show. EN POB has no footnote for this verse.
+  revised_spanish_text: Y traigan a Asenet, la madre de ustedes, [al Hipódromo], y sepúltenla junto a Raquel, mi madre.
+  revision_rationale: Converted vosotros imperatives to ustedes imperatives ('traigan', 'sepúltenla') for neutral Latin-American Spanish consistency. Removed the redundant footnote [a] that merely explained the visible bracket. Reordered slightly for natural flow.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 11becc8c3d85ac65d526d5f884a797e6c38c5f72a06c18d76354ce057396874d
+  timestamp: '2026-05-08T06:40:00Z'
+  output_hash: 11becc8c3d85ac65d526d5f884a797e6c38c5f72a06c18d76354ce057396874d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

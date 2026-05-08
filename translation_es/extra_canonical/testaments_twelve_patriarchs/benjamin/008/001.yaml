@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: '[a]. Por tanto, si vosotros también andáis en santidad conforme a los mandamientos del Señor, habitaréis conmigo en seguridad, y todo Israel será reunido al Señor.'
+  text: Pero vosotros, hijos míos, huid del mal —la envidia y el odio fraternal— y aferraos a la bondad y al amor.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Marca la transición a la exhortación final de Benjamín, conservando la numeración del testimonio griego.
-    reason: textual_variant
 lexical_decisions:
 - source_word: ἁγιωσύνη / ἁγίως
   english_pob_choice: holiness
@@ -76,4 +72,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '[a]. Por tanto, si vosotros también andáis en santidad conforme a los mandamientos del Señor, habitaréis conmigo en seguridad, y todo Israel será reunido al Señor.'
+  to: Pero vosotros, hijos míos, huid del mal —la envidia y el odio fraternal— y aferraos a la bondad y al amor.
+  rationale: 'Replaced the incorrect ''walk in holiness'' content with the correct translation of Greek VIII.1 (ἀπόδρατε τὴν κακίαν, τὸν φθόνον καὶ τὴν μισαδελφίαν, καὶ προσκολλᾶσθε τῇ ἀγαθότητι καὶ τῇ ἀγάπῃ), matching the EN verse-level text: ''But you, my children, flee evil — envy and hatred of brothers — and cling to goodness and love.'''
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The EN verse 8:1 text is: ''But you, my children, flee evil — envy and hatred of brothers — and cling to goodness and love.'' This directly renders the Greek VIII.1: ἀπόδρατε τὴν κακίαν, τὸν φθόνον καὶ τὴν μισαδελφίαν, καὶ προσκολλᾶσθε τῇ ἀγαθότητι καὶ τῇ ἀγάπῃ. However, the ES verse-level file shows a completely different text: ''[a]. Por tanto, si vosotros también andáis en santidad conforme a los mandamientos del Señor, habitaréis conmigo en seguridad, y todo Israel será reunido al Señor.'' This appears to be the text from the chapter-level verse 8:1 which is from the DIFFERENT chapter context. The Spanish draft of the verse-level 008/001 has the wrong content — it translated from the chapter-level BEN.08 verse 1 (which is really verse 1 of the chapter 8 CONTINUATION), not from the actual Greek VIII.1 which is about fleeing evil. The base_translation text in the ES yaml is also wrong — it shows the holiness/commands text, not the flee evil text.'
+  spanish_quality_summary: 'The current ES text is for a different verse. It should translate the Greek ἀπόδρατε τὴν κακίαν, τὸν φθόνον καὶ τὴν μισαδελφίαν, καὶ προσκολλᾶσθε τῇ ἀγαθότητι καὶ τῇ ἀγάπῃ: ''Pero vosotros, hijos míos, huid del mal —la envidia y el odio fraternal— y aferraos a la bondad y al amor.'''
+  glossary_alignment: No key glossary terms in this verse.
+  issues:
+  - severity: high
+    issue: The ES verse-level file for 008/001 contains the wrong translation content. It has the 'walk in holiness' text (which is from the chapter-level BEN.08 section) instead of the Greek VIII.1 source text about fleeing evil (ἀπόδρατε τὴν κακίαν, τὸν φθόνον καὶ τὴν μισαδελφίαν, καὶ προσκολλᾶσθε τῇ ἀγαθότητι καὶ τῇ ἀγάπῃ).
+    rationale: 'The EN verse-level file 008/001.yaml clearly has: ''But you, my children, flee evil — envy and hatred of brothers — and cling to goodness and love.'' The ES draft was apparently generated from the chapter-level context rather than the verse-level source.'
+  revised_spanish_text: Pero vosotros, hijos míos, huid del mal —la envidia y el odio fraternal— y aferraos a la bondad y al amor.
+  revision_rationale: 'Replaced the incorrect ''walk in holiness'' content with the correct translation of Greek VIII.1 (ἀπόδρατε τὴν κακίαν, τὸν φθόνον καὶ τὴν μισαδελφίαν, καὶ προσκολλᾶσθε τῇ ἀγαθότητι καὶ τῇ ἀγάπῃ), matching the EN verse-level text: ''But you, my children, flee evil — envy and hatred of brothers — and cling to goodness and love.'''
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a6900cd46856699d8712a215bb732ff63d3e7344d5bf5f9225e9a658c6124a6b
+  timestamp: '2026-05-08T06:29:26Z'
+  output_hash: a6900cd46856699d8712a215bb732ff63d3e7344d5bf5f9225e9a658c6124a6b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

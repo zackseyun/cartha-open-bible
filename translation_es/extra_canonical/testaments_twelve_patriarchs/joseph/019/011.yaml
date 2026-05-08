@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Por tanto, ustedes, hijos míos, guarden los mandamientos del Señor, y honren a Leví y a Judá; porque de su descendencia se levantará para ustedes el Cordero de Dios, que quita el pecado del mundo, salvando a todas las naciones y a Israel.
+  text: Por tanto, ustedes, hijos míos, guarden los mandamientos del Señor, y honren a Leví y a Judá; porque de su descendencia se levantará para ustedes [el cordero de Dios, que quita el pecado del mundo,] salvando [a todas las naciones y] a Israel.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: τὰς ἐντολὰς Κυρίου
@@ -112,4 +112,42 @@ ai_draft:
     total_tokens: 2962
     reasoning_tokens: 0
     estimated_cost_usd: 0.007052
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por tanto, ustedes, hijos míos, guarden los mandamientos del Señor, y honren a Leví y a Judá; porque de su descendencia se levantará para ustedes el Cordero de Dios, que quita el pecado del mundo, salvando a todas las naciones y a Israel.
+  to: Por tanto, ustedes, hijos míos, guarden los mandamientos del Señor, y honren a Leví y a Judá; porque de su descendencia se levantará para ustedes [el cordero de Dios, que quita el pecado del mundo,] salvando [a todas las naciones y] a Israel.
+  rationale: Added square brackets around interpolated clauses to match EN convention. Lowercased 'cordero' to match EN 'lamb' (symbolic, not a christological title here). No footnotes needed since the brackets themselves signal textual uncertainty.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:17Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ὑμεῖς οὖν, τέκνα μου, φυλάξατε τὰς ἐντολὰς Κυρίου, καὶ τιμᾶτε τὸν Λευὶ καὶ τὸν Ἰούδαν. ὅτι ἐκ τοῦ σπέρματος αὐτῶν ἀνατελεῖ ὑμῖν [ὁ ἀμνὸς τοῦ Θεοῦ, ὁ αἴρων τὴν ἁμαρτίαν τοῦ κόσμου], σώζων [πάντα τὰ ἔθνη καὶ] τὸν Ἰσραήλ. EN: ''Therefore you, my children, keep the commandments of the Lord, and honor Levi and Judah; for from their seed there will arise for you [the lamb of God, who takes away the sin of the world,] saving [all the nations and] Israel.'' The ES renders the bracketed christological material WITHOUT brackets: ''el Cordero de Dios, que quita el pecado del mundo, salvando a todas las naciones y a Israel.'' The EN explicitly uses square brackets to signal textual uncertainty/interpolation. The ES should match that convention.'
+  spanish_quality_summary: Fluent, theologically sensitive. The main issue is omission of the interpolation brackets. 'El Cordero de Dios' with capital C is also inconsistent — the EN uses lowercase 'lamb' (symbol, not a title). The ES chapter-level YAML uses lowercase 'cordero' in v.11. Should be '[el cordero de Dios, que quita el pecado del mundo,] salvando [a todas las naciones y] a Israel'.
+  glossary_alignment: Dios=θεός correct. No YHWH issue since κύριος rendered as Señor. No esclavo/δοῦλος issue.
+  issues:
+  - severity: high
+    issue: Bracketed interpolation markers absent from ES text
+    rationale: 'EN uses [the lamb of God...] and [all the nations and] to signal textual uncertainty. ES must preserve these brackets: ''[el cordero de Dios, que quita el pecado del mundo,] salvando [a todas las naciones y] a Israel''.'
+  - severity: medium
+    issue: Uppercase 'Cordero de Dios' vs lowercase in EN source 'lamb of God'
+    rationale: EN uses lowercase 'lamb' consistently as a symbolic term, not a title. ES should use 'cordero' lowercase to match.
+  revised_spanish_text: Por tanto, ustedes, hijos míos, guarden los mandamientos del Señor, y honren a Leví y a Judá; porque de su descendencia se levantará para ustedes [el cordero de Dios, que quita el pecado del mundo,] salvando [a todas las naciones y] a Israel.
+  revision_rationale: Added square brackets around interpolated clauses to match EN convention. Lowercased 'cordero' to match EN 'lamb' (symbolic, not a christological title here). No footnotes needed since the brackets themselves signal textual uncertainty.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1f68cedf655f5dea840e089a7b4fa4058ca4558f6b7595af1f19f14ec867f29b
+  timestamp: '2026-05-08T06:36:17Z'
+  output_hash: 1f68cedf655f5dea840e089a7b4fa4058ca4558f6b7595af1f19f14ec867f29b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

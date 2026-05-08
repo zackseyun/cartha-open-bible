@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed ‘constrained by grief’ to ‘held together by grief’ to reflect συνείχετο more closely; removed the bracketed cross-reference as it is not part of the verse text.
 translation:
   language: es
-  text: Y mientras yo estaba en cadenas, la egipcia estaba consumida por la pena.
+  text: Y mientras yo estaba en cadenas, la egipcia estaba consumida por la pena; y cuando vino, me escuchaba atentamente cómo daba gracias al Señor y entonaba himnos en la casa de las tinieblas, y me alegraba con voz gozosa, glorificando a mi Dios, porque por un pretexto había sido librado de la egipcia.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐν τοῖς δεσμοῖς
@@ -74,4 +74,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y mientras yo estaba en cadenas, la egipcia estaba consumida por la pena.
+  to: Y mientras yo estaba en cadenas, la egipcia estaba consumida por la pena; y cuando vino, me escuchaba atentamente cómo daba gracias al Señor y entonaba himnos en la casa de las tinieblas, y me alegraba con voz gozosa, glorificando a mi Dios, porque por un pretexto había sido librado de la egipcia.
+  rationale: Restored the complete verse. The full Greek (ἐπηκροᾶτό μου ... ηὐχαρίστουν τῷ Κυρίῳ ... ὕμνουν ἐν οἴκῳ τοῦ σκότους ... ἔχαιρον ἐν ἱλαρᾷ φωνῇ ... δοξάζων τὸν Θεόν ... διὰ προφάσεως ἀπηλλάγην) was absent from the Spanish draft. 'Entonaba himnos' for ὕμνουν, 'casa de las tinieblas' for οἴκῳ τοῦ σκότους, 'voz gozosa' for ἱλαρᾷ φωνῇ, 'pretexto' for προφάσεως all follow the EN POB faithfully.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:31:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ἤμην ἐν τοῖς δεσμοῖς, ἡ Αἰγυπτία συνείχετο ἀπὸ τῆς λύπης; ἐλθοῦσα ἐπηκροᾶτό μου πῶς ηὐχαρίστουν τῷ Κυρίῳ καὶ ὕμνουν ἐν οἴκῳ τοῦ σκότους, καὶ ἔχαιρον ἐν ἱλαρᾷ φωνῇ δοξάζων τὸν Θεόν μου, ὅτι διὰ προφάσεως ἀπηλλάγην τῆς Αἰγυπτίας. The ES draft only translates the opening clause — the remainder of the verse (eavesdropping, hymns in darkness, rejoicing, deliverance) is completely absent.'
+  spanish_quality_summary: The first clause is rendered well ('consumida por la pena' for συνείχετο ἀπὸ τῆς λύπης is apt). However the verse is substantially incomplete — over half the Greek content is missing.
+  glossary_alignment: Señor for Κύριος and Dios for Θεός should appear in the full revision. espíritu not in this verse.
+  issues:
+  - severity: high
+    issue: The Spanish draft only covers the first clause of 8:5; the remainder of the verse — the Egyptian woman coming to listen in, Joseph giving thanks to the Lord, singing hymns in the house of darkness, rejoicing with a cheerful voice, glorifying God because by a pretext he had been delivered — is entirely absent
+    rationale: The EN per-verse base_translation provided to the drafter appears to have been truncated. The full EN text and full Greek source are clear. The complete verse must be provided.
+  revised_spanish_text: Y mientras yo estaba en cadenas, la egipcia estaba consumida por la pena; y cuando vino, me escuchaba atentamente cómo daba gracias al Señor y entonaba himnos en la casa de las tinieblas, y me alegraba con voz gozosa, glorificando a mi Dios, porque por un pretexto había sido librado de la egipcia.
+  revision_rationale: Restored the complete verse. The full Greek (ἐπηκροᾶτό μου ... ηὐχαρίστουν τῷ Κυρίῳ ... ὕμνουν ἐν οἴκῳ τοῦ σκότους ... ἔχαιρον ἐν ἱλαρᾷ φωνῇ ... δοξάζων τὸν Θεόν ... διὰ προφάσεως ἀπηλλάγην) was absent from the Spanish draft. 'Entonaba himnos' for ὕμνουν, 'casa de las tinieblas' for οἴκῳ τοῦ σκότους, 'voz gozosa' for ἱλαρᾷ φωνῇ, 'pretexto' for προφάσεως all follow the EN POB faithfully.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6478c897e45fcfcd191bea0e597361563e339530495620a23e6ab260c767e2dc
+  timestamp: '2026-05-08T06:31:43Z'
+  output_hash: 6478c897e45fcfcd191bea0e597361563e339530495620a23e6ab260c767e2dc
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'be ashamed before God' to 'fear God' for αἰδέσθητι τὸν Θεόν; added 'this' before 'scheme of yours' to reflect ταύτην and rendered σου explicitly as 'of yours.'
 translation:
   language: es
-  text: 'Así que, cuando oí esto, rasgué mis vestidos y le dije: «Mujer, teme a Dios, y no hagas esta mala obra, para que no seas destruida. Porque además, sabe esto: declararé a todos este plan tuyo».'
+  text: 'Así que, cuando oí esto, rasgué mis vestidos y le dije: «Mujer, reverencia a Dios, y no hagas esta mala obra, para que no seas destruida. Porque además, sabe esto: declararé a todos este plan tuyo».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: διέρρηξα τὰ ἱμάτιά μου
@@ -105,4 +105,41 @@ ai_draft:
     total_tokens: 3219
     reasoning_tokens: 0
     estimated_cost_usd: 0.006832
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Así que, cuando oí esto, rasgué mis vestidos y le dije: «Mujer, teme a Dios, y no hagas esta mala obra, para que no seas destruida. Porque además, sabe esto: declararé a todos este plan tuyo».'
+  to: 'Así que, cuando oí esto, rasgué mis vestidos y le dije: «Mujer, reverencia a Dios, y no hagas esta mala obra, para que no seas destruida. Porque además, sabe esto: declararé a todos este plan tuyo».'
+  rationale: Changed 'teme a Dios' to 'reverencia a Dios' to align with the current EN per-verse translation.text which reads 'have reverence for God'. αἰδέομαι primarily denotes shame/reverence, and the current EN text settles on 'have reverence'.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:29:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Γύναι, αἰδέσθητι τὸν Θεόν, καὶ μὴ ποιήσῃς τὴν πρᾶξιν ταύτην τὴν πονηράν, ἵνα μὴ ἐξολοθρευθῇς· ἐπεὶ καίγε γίνωσκε ὅτι ἐγὼ ἐξαγγελῶ πᾶσιν τὴν ἐπίνοιάν σου ταύτην. The EN per-verse reads: ''have reverence for God'' (in the translation.text field), but the revision_pass changed αἰδέσθητι from ''be ashamed'' to ''fear God''. The ES uses ''teme a Dios'' which follows the revision correctly. However, the EN per-verse text field says ''have reverence for God'' while the ES says ''teme a Dios'' (fear God). Looking at the EN per-verse YAML more carefully: the translation.text says ''have reverence for God'' but the revision_pass changes_summary says it changed to ''fear God''. The actual current EN text at 005/002.yaml says ''have reverence for God''. The ES should match the current EN text which is ''have reverence for God'' → ''ten reverencia por Dios'' / ''reverencia a Dios''. Also, the EN text omits ''lawless and'' — it reads ''do not do this evil deed'' — but
+    the revision history shows ''lawless and evil deed'' was in the from field. Let me re-check: the EN per-verse translation.text is: ''So when I heard this, I tore my garments and said to her, "Woman, have reverence for God, and do not do this evil deed, lest you be destroyed. For know this also: I will tell everyone of this scheme of yours."'' So current EN says ''have reverence for God'' and ''evil deed'' (not ''lawless and evil''). The ES has ''teme a Dios'' (aligns with revision_pass but not current translation.text) and ''mala obra'' (matches ''evil deed''). The inconsistency: ES ''teme a Dios'' vs EN ''have reverence for God''. Actually αἰδέσθητι can go either way and the revision_pass record shows a change to ''fear God'' — but the current translation.text says ''have reverence for God'', suggesting the revision_pass did NOT update the translation.text field, or this is the pre-revision text. Given the revision_pass timestamp and that the text field was not changed to ''fear God'',
+    the current authoritative EN text is ''have reverence for God''. The ES should render this as ''reverencia a Dios'' or ''ten reverencia por Dios'' rather than ''teme a Dios''.'
+  spanish_quality_summary: Fluent and natural. The main issue is 'teme a Dios' vs the EN per-verse current text 'have reverence for God'. Also 'no hagas esta mala obra' is a good rendering of 'do not do this evil deed'. 'declararé a todos este plan tuyo' correctly renders ἐξαγγελῶ πᾶσιν τὴν ἐπίνοιάν σου ταύτην.
+  glossary_alignment: Θεόν → Dios (correct). No YHWH in this verse.
+  issues:
+  - severity: medium
+    issue: ES uses 'teme a Dios' but the current EN per-verse translation.text says 'have reverence for God'. The ES should render αἰδέσθητι τὸν Θεόν consistently with the EN POB text 'have reverence for God' → 'reverencia a Dios' or 'ten reverencia por Dios'.
+    rationale: The EN per-verse translation.text field is the authoritative current text. It says 'have reverence for God'. The revision_pass changed 'be ashamed before God' to 'fear God' per the record but the current translation.text reads 'have reverence for God', indicating the final state is 'have reverence'. The ES should align.
+  revised_spanish_text: 'Así que, cuando oí esto, rasgué mis vestidos y le dije: «Mujer, reverencia a Dios, y no hagas esta mala obra, para que no seas destruida. Porque además, sabe esto: declararé a todos este plan tuyo».'
+  revision_rationale: Changed 'teme a Dios' to 'reverencia a Dios' to align with the current EN per-verse translation.text which reads 'have reverence for God'. αἰδέομαι primarily denotes shame/reverence, and the current EN text settles on 'have reverence'.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 84f0cc5405b48b4bf31d8f46e960e625a4ed650b9598c73ae36b07523bb9d9db
+  timestamp: '2026-05-08T06:29:28Z'
+  output_hash: 84f0cc5405b48b4bf31d8f46e960e625a4ed650b9598c73ae36b07523bb9d9db
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

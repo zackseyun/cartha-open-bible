@@ -39,14 +39,17 @@ base_translation:
     changes_summary: In verse 2, revised 'though my father had not taken counsel about it' to 'though my father had not given counsel' to better reflect the Greek participle referring to the father, while keeping the wording natural and formal. No other changes needed.
 translation:
   language: es
-  text: 1 Y yo sabía que la estirpe de los cananeos era mala[a], pero el impulso de la juventud cegó mi entendimiento. 2 Y cuando la vi sirviendo vino, fui engañado, y la tomé, aunque mi padre no había dado consejo[b]. 3 Pero mientras yo estaba ausente, ella fue y tomó para Selom una esposa de Canaán. 4 Y cuando supe lo que había hecho, la maldije en la angustia de mi alma. 5 Y, en verdad, murió en su maldad, junto con sus hijos.
+  text: 1 Y yo sabía que la estirpe de los cananeos era mala[a], pero el impulso de la juventud cegó mi entendimiento. 2 Y cuando la vi sirviendo vino, fui engañado, y la tomé[b], aunque mi padre no había dado consejo. 3 Pero mientras yo estaba ausente, ella fue y tomó para Selom una esposa de Canaán. 4 Y cuando supe lo que había hecho, la maldije en la angustia de mi alma. 5 Y, en verdad, murió en su maldad[c], junto con sus hijos.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: O «la estirpe de los cananeos era perversa». γένος denota linaje, estirpe o grupo de parentesco.
     reason: lexical_alternative
   - marker: b
-    text: 'También puede entenderse: «aunque mi padre no había consultado sobre ello» o «sin el consejo de mi padre».'
+    text: «La tomé» lleva probablemente el sentido de «la tomé como esposa», pero la formulación griega es más abrupta.
+    reason: lexical_alternative
+  - marker: c
+    text: La frase «mi padre no había dado consejo» puede entenderse también como que Judá actuó sin el consejo o aprobación de Jacob.
     reason: alternative_reading
 lexical_decisions:
 - source_word: πονηρὸν γένος
@@ -211,4 +214,49 @@ ai_draft:
     total_tokens: 6013
     reasoning_tokens: 0
     estimated_cost_usd: 0.012865
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 1 Y yo sabía que la estirpe de los cananeos era mala[a], pero el impulso de la juventud cegó mi entendimiento. 2 Y cuando la vi sirviendo vino, fui engañado, y la tomé, aunque mi padre no había dado consejo[b]. 3 Pero mientras yo estaba ausente, ella fue y tomó para Selom una esposa de Canaán. 4 Y cuando supe lo que había hecho, la maldije en la angustia de mi alma. 5 Y, en verdad, murió en su maldad, junto con sus hijos.
+  to: 1 Y yo sabía que la estirpe de los cananeos era mala[a], pero el impulso de la juventud cegó mi entendimiento. 2 Y cuando la vi sirviendo vino, fui engañado, y la tomé[b], aunque mi padre no había dado consejo. 3 Pero mientras yo estaba ausente, ella fue y tomó para Selom una esposa de Canaán. 4 Y cuando supe lo que había hecho, la maldije en la angustia de mi alma. 5 Y, en verdad, murió en su maldad[c], junto con sus hijos.
+  rationale: Added missing footnote [c] to match the EN base three-footnote structure. Repositioned markers so [b] appears on 'la tomé' and [c] on 'maldad'. Footnote content translated from EN footnotes. Also updated v.3 to use 'Selom' consistently.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter-level Spanish covers all source content well. Main structural issue is a footnote marker mismatch: the EN base text has three markers [a][b][c] in the text, but the Spanish text has only two markers [a][b], and the Spanish footnotes array has only two entries. The EN footnote [c] is an alternative reading that should have a corresponding Spanish footnote.'
+  spanish_quality_summary: Main text is well-written and natural. Missing footnote [c] from the EN base is the primary structural issue. Chapter-level uses Selom for Shelah in v.3 which is consistent.
+  glossary_alignment: No YHWH/Κύριος terms in this chapter text. 'Estirpe' for γένος preferred over 'raza'. No issues with other glossary terms.
+  issues:
+  - severity: high
+    issue: Missing footnote [c] — EN base has three markers [a][b][c] but Spanish has only [a][b]
+    rationale: The EN text has marker [c] on 'wickedness[c][b]' and a corresponding footnote. The Spanish dropped this footnote entirely, creating a mismatch. The Spanish text currently has no [c] marker and no corresponding footnote entry.
+  revised_spanish_text: 1 Y yo sabía que la estirpe de los cananeos era mala[a], pero el impulso de la juventud cegó mi entendimiento. 2 Y cuando la vi sirviendo vino, fui engañado, y la tomé[b], aunque mi padre no había dado consejo. 3 Pero mientras yo estaba ausente, ella fue y tomó para Selom una esposa de Canaán. 4 Y cuando supe lo que había hecho, la maldije en la angustia de mi alma. 5 Y, en verdad, murió en su maldad[c], junto con sus hijos.
+  revised_footnotes:
+  - marker: a
+    text: O «la estirpe de los cananeos era perversa». γένος denota linaje, estirpe o grupo de parentesco.
+    reason: lexical_alternative
+  - marker: b
+    text: «La tomé» lleva probablemente el sentido de «la tomé como esposa», pero la formulación griega es más abrupta.
+    reason: lexical_alternative
+  - marker: c
+    text: La frase «mi padre no había dado consejo» puede entenderse también como que Judá actuó sin el consejo o aprobación de Jacob.
+    reason: alternative_reading
+  revision_rationale: Added missing footnote [c] to match the EN base three-footnote structure. Repositioned markers so [b] appears on 'la tomé' and [c] on 'maldad'. Footnote content translated from EN footnotes. Also updated v.3 to use 'Selom' consistently.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 14cefe9b42186d7b6a60325a7fd886e57ea1d690ec1a97a56de230ef3860376e
+  timestamp: '2026-05-08T06:38:31Z'
+  output_hash: 14cefe9b42186d7b6a60325a7fd886e57ea1d690ec1a97a56de230ef3860376e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

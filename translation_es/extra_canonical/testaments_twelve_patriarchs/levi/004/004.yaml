@@ -19,17 +19,17 @@ base_translation:
     changes_summary: Capitalized 'Son' to reflect the explicit filial reference in the Greek bracketed reading; otherwise the draft is accurate and natural.
 translation:
   language: es
-  text: Y se te dará bendición y a toda tu descendencia, hasta que Yahvé visite a todas las naciones en las entrañas misericordiosas de su Hijo para siempre. [a] [b] [c]
+  text: Y se te dará bendición[a] y a toda tu descendencia, hasta que Yahvé[b] visite a todas las naciones en las entrañas misericordiosas de su Hijo[c] para siempre. [Pero tus hijos extenderán sus manos sobre él para empalarlo.]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: «Entrañas misericordiosas» conserva el lenguaje corporal-afectivo de σπλάγχνοις y explicita el matiz compasivo que la POB inglesa traduce como «tender mercies».
     reason: lexical_alternative
   - marker: b
-    text: «Yahvé» se usa aquí para reflejar el nombre divino en κύριος según la política terminológica del proyecto, en lugar de una máscara reverencial.
+    text: «Yahvé» se usa aquí para reflejar el nombre divino en κύριος según la política terminológica del proyecto.
     reason: theological_note
   - marker: c
-    text: «Hijo» se capitaliza para reflejar la lectura explícitamente filial del griego entre corchetes y la revisión inglesa más reciente.
+    text: «Hijo» se capitaliza para reflejar la lectura explícitamente filial del griego entre corchetes y la revisión inglesa más reciente. El pasaje entero entre corchetes es textualmente incierto.
     reason: textual_variant
 lexical_decisions:
 - source_word: Κύριος
@@ -118,4 +118,52 @@ ai_draft:
     total_tokens: 3054
     reasoning_tokens: 0
     estimated_cost_usd: 0.006835
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y se te dará bendición y a toda tu descendencia, hasta que Yahvé visite a todas las naciones en las entrañas misericordiosas de su Hijo para siempre. [a] [b] [c]
+  to: Y se te dará bendición[a] y a toda tu descendencia, hasta que Yahvé[b] visite a todas las naciones en las entrañas misericordiosas de su Hijo[c] para siempre. [Pero tus hijos extenderán sus manos sobre él para empalarlo.]
+  rationale: Restored the missing bracketed sentence '[Pero tus hijos extenderán sus manos sobre él para empalarlo.]' from the EN source. Anchored all three footnote markers at specific textual locations (bendición[a], Yahvé[b], Hijo[c]) instead of leaving them floating at the end. Note [c] updated to include the broader textual uncertainty caveat.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:39:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Critical: the ES text ends with three floating markers ''[a] [b] [c]'' not anchored to any words. The EN source includes a bracketed second sentence ''[But your sons shall lay hands upon him to impale him.]'' which is entirely absent from the ES main text. The EN footnote anchor ''forever'' ends the main content, then the bracketed sentence follows. The ES omits this bracketed clause entirely and instead places three orphaned footnote markers at the end.'
+  spanish_quality_summary: The first sentence is well-translated. 'Entrañas misericordiosas' for σπλάγχνοις is accurate. 'Yahvé' for κύριος correct per project policy. 'su Hijo' capitalized correctly. But the missing bracketed sentence and orphaned markers are high-severity structural issues.
+  glossary_alignment: κύριος = 'Yahvé' — appropriately justified here. Capitalized 'Hijo' for [υἱοῦ] in the bracketed reading — follows EN revision.
+  issues:
+  - severity: high
+    issue: 'The bracketed sentence ''[Pero tus hijos extenderán sus manos sobre él para empalarlo.]'' (EN: ''[But your sons shall lay hands upon him to impale him.]'') is entirely missing from the ES translation.'
+    rationale: The EN source text includes this bracketed clause as part of v.4. The ES omits it entirely, losing content present in the Greek witness.
+  - severity: high
+    issue: The ES text ends with '[a] [b] [c]' — three floating footnote markers with no textual anchor. These markers are disconnected from any words.
+    rationale: Per the runbook, footnote markers must be anchored in the translation text at specific words/phrases. Floating markers at the end of a verse are invalid.
+  revised_spanish_text: Y se te dará bendición[a] y a toda tu descendencia, hasta que Yahvé[b] visite a todas las naciones en las entrañas misericordiosas de su Hijo[c] para siempre. [Pero tus hijos extenderán sus manos sobre él para empalarlo.]
+  revised_footnotes:
+  - marker: a
+    text: «Entrañas misericordiosas» conserva el lenguaje corporal-afectivo de σπλάγχνοις y explicita el matiz compasivo que la POB inglesa traduce como «tender mercies».
+    reason: lexical_alternative
+  - marker: b
+    text: «Yahvé» se usa aquí para reflejar el nombre divino en κύριος según la política terminológica del proyecto.
+    reason: theological_note
+  - marker: c
+    text: «Hijo» se capitaliza para reflejar la lectura explícitamente filial del griego entre corchetes y la revisión inglesa más reciente. El pasaje entero entre corchetes es textualmente incierto.
+    reason: textual_variant
+  revision_rationale: Restored the missing bracketed sentence '[Pero tus hijos extenderán sus manos sobre él para empalarlo.]' from the EN source. Anchored all three footnote markers at specific textual locations (bendición[a], Yahvé[b], Hijo[c]) instead of leaving them floating at the end. Note [c] updated to include the broader textual uncertainty caveat.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e97fb4020b8e1f0549e0ace1639535bc89c37f76f91377f22fd06cac708ac87d
+  timestamp: '2026-05-08T06:39:40Z'
+  output_hash: e97fb4020b8e1f0549e0ace1639535bc89c37f76f91377f22fd06cac708ac87d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

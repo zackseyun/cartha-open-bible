@@ -19,12 +19,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y los ángeles y los hombres y toda la tierra se regocijaron[a] sobre él.
+  text: Y los ángeles y los hombres y toda la tierra se regocijaron por él.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El gozo cósmico (ángeles, hombres, tierra) responde a la victoria del cordero.
-    reason: cultural_note
 lexical_decisions:
 - source_word: ἔχαιρον
   english_pob_choice: rejoiced
@@ -76,4 +72,42 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los ángeles y los hombres y toda la tierra se regocijaron[a] sobre él.
+  to: Y los ángeles y los hombres y toda la tierra se regocijaron por él.
+  rationale: Removed the unwarranted footnote [a] (no text-critical basis) and changed 'sobre él' to 'por él' for more natural Spanish idiom with ἐπ᾽ αὐτῷ in a rejoicing context.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:35:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ ἔχαιρον ἐπ᾽ αὐτῷ οἱ ἄγγελοι καὶ οἱ ἄνθρωποι καὶ πᾶσα ἡ γῆ. EN: ''And the angels and men and all the earth rejoiced over him.'' ES: ''Y los ángeles y los hombres y toda la tierra se regocijaron[a] sobre él.'' Source alignment is good. The one issue is that footnote [a] explains ''el gozo cósmico ... responde a la victoria del cordero'' as a cultural_note — this is a commentary gloss not a textual issue and adds a [a] marker where the source has no variant or ambiguity requiring annotation. The footnote is not wrong per se but the marker creates an anchor that is purely interpretive. However, ''sobre él'' for ἐπ᾽ αὐτῷ is also slightly awkward; ''por él'' is more natural in Spanish for this expression of rejoicing. More critically: the ES footnote [a] has no parallel in the EN text, which has no footnotes for this verse. Minor issue only.'
+  spanish_quality_summary: The translation is accurate and reads naturally. 'Se regocijaron sobre él' is acceptable but 'se regocijaron por él' would be more idiomatic Spanish for εἰρήνη ἐπ᾽ αὐτῷ in the sense of rejoicing over/about someone. The unnecessary footnote [a] adds clutter without text-critical warrant.
+  glossary_alignment: ángeles=angels correct. No glossary conflicts.
+  issues:
+  - severity: low
+    issue: Footnote [a] is a pure editorial gloss with no text-critical or lexical warrant from the source
+    rationale: The EN POB has no footnotes for this verse and the Greek has no textual difficulty. The [a] marker adds an interpretive comment that goes beyond the review mandate.
+  - severity: low
+    issue: '''sobre él'' slightly awkward; ''por él'' more natural for ἐπ᾽ αὐτῷ in the context of rejoicing'
+    rationale: While ἐπί + dative can mean 'over/about', in the context of rejoicing in Spanish 'por él' is idiomatic.
+  revised_spanish_text: Y los ángeles y los hombres y toda la tierra se regocijaron por él.
+  revision_rationale: Removed the unwarranted footnote [a] (no text-critical basis) and changed 'sobre él' to 'por él' for more natural Spanish idiom with ἐπ᾽ αὐτῷ in a rejoicing context.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6a6de55280b69f343cc73d9f672ee291e5ca46cf0220c10a2f1a8d83f998caf6
+  timestamp: '2026-05-08T06:35:41Z'
+  output_hash: 6a6de55280b69f343cc73d9f672ee291e5ca46cf0220c10a2f1a8d83f998caf6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

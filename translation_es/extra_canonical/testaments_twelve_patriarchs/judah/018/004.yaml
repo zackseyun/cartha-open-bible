@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y yo sé qué males haréis en los últimos días.
+  text: Y yo sé qué males harán en los últimos días.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Καὶ ἔγνωκα / οἶδα
@@ -88,4 +88,39 @@ ai_draft:
     total_tokens: 2208
     reasoning_tokens: 0
     estimated_cost_usd: 0.004453
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y yo sé qué males haréis en los últimos días.
+  to: Y yo sé qué males harán en los últimos días.
+  rationale: Changed 'haréis' to 'harán' to conform to neutral Latin-American Spanish (ustedes paradigm) as required by the project variant.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:51Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: Spanish 'Y yo sé qué males haréis en los últimos días' is accurate. However 'haréis' uses vosotros conjugation, which is not neutral Latin-American Spanish (Latin American uses 'harán' or 'van a hacer').
+  spanish_quality_summary: Content accurate, but 'haréis' is a Spain-specific vosotros future form, inappropriate for the neutral Latin-American Spanish target variant specified for this project.
+  glossary_alignment: No special glossary issues.
+  issues:
+  - severity: medium
+    issue: '''haréis'' is the vosotros future (Spain only); neutral Latin-American Spanish uses ''harán'' (third-person plural standing in for second-person plural).'
+    rationale: The project specifies 'neutral Latin American Spanish'. In Latin America, 'ustedes' replaces 'vosotros', and the corresponding future is 'harán'.
+  revised_spanish_text: Y yo sé qué males harán en los últimos días.
+  revision_rationale: Changed 'haréis' to 'harán' to conform to neutral Latin-American Spanish (ustedes paradigm) as required by the project variant.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 69918fbdf3a3027e873a031423d5d6d257dcbbe49a08cdf18c9a300df09de0ce
+  timestamp: '2026-05-08T06:37:51Z'
+  output_hash: 69918fbdf3a3027e873a031423d5d6d257dcbbe49a08cdf18c9a300df09de0ce
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

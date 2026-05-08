@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque él bendecirá a Israel y a Judá, porque en él el Señor eligió reinar delante de todo el pueblo.
+  text: Pues él bendecirá a Israel y a Judá, porque en él el Señor eligió reinar delante de todo el pueblo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Αὐτὸς γὰρ ... εὐλογήσει
@@ -110,4 +110,40 @@ ai_draft:
     total_tokens: 2796
     reasoning_tokens: 0
     estimated_cost_usd: 0.006668
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque él bendecirá a Israel y a Judá, porque en él el Señor eligió reinar delante de todo el pueblo.
+  to: Pues él bendecirá a Israel y a Judá, porque en él el Señor eligió reinar delante de todo el pueblo.
+  rationale: Changed opening 'Porque' to 'Pues' to avoid the awkward double 'porque...porque' in quick succession, while maintaining the causal γάρ force. The nested 'porque' for ὅτι is retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:48:29Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Spanish text ''Porque él bendecirá a Israel y a Judá, porque en él el Señor eligió reinar delante de todo el pueblo'' is faithful to the Greek source. However there is a structural issue: the verse begins with ''Porque'' (For/Because) but this double ''porque...porque'' creates a clunky repetition. The Greek has γάρ (for) + ὅτι (because), so the double causal is justified. More importantly, the cross-check source_review had agreement 0.74 (needs_review) — an independent review flagged concern here. The EN has ''For he will bless... because in him the Lord chose to reign''. The Spanish rendering is accurate but the double ''porque'' issue was noted. The reference ''elegió reinar'' vs ''ἐξελέξατο κύριος βασιλεύειν'' — the subject of ἐξελέξατο is κύριος (the Lord) not ''he/Levi''. The EN correctly renders ''the Lord chose to reign''. But wait — to reign who? The Lord chose to reign? Or the Lord chose Levi to reign? Looking at the Greek: ''ὅτι ἐν αὐτῷ ἐξελέξατο
+    Κύριος βασιλεύειν ἐνώπιον παντὸς τοῦ λαοῦ'' — ''because in him the Lord chose to reign before all the people''. This is ambiguous: the Lord chose (someone/something) in Levi to reign, or the Lord chose Levi for reigning. The ES renders it literally ''porque en él el Señor eligió reinar'' which follows the EN. This is faithful.'
+  spanish_quality_summary: Accurate and literal rendering. Double 'porque' is justified by the Greek structure. No major issues. The EN was unchanged in revision, the cross-check flagged 0.74 agreement but the EN reviewer's concern appears to be about the EN source, not the Spanish.
+  glossary_alignment: Κύριος → el Señor (correct, Greek context). No tetragrams. No Χριστός, πνεῦμα, πορνεία present.
+  issues:
+  - severity: low
+    issue: Double 'porque...porque' is grammatically justified by the Greek but slightly awkward in Spanish; could use 'pues' for the first
+    rationale: Minor euphony issue; not a fidelity problem.
+  revised_spanish_text: Pues él bendecirá a Israel y a Judá, porque en él el Señor eligió reinar delante de todo el pueblo.
+  revision_rationale: Changed opening 'Porque' to 'Pues' to avoid the awkward double 'porque...porque' in quick succession, while maintaining the causal γάρ force. The nested 'porque' for ὅτι is retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c28321bd2510a31e7f078cbe6a41c1554f6e1fcaa59256ccde2fae1af01d6c13
+  timestamp: '2026-05-08T06:48:29Z'
+  output_hash: c28321bd2510a31e7f078cbe6a41c1554f6e1fcaa59256ccde2fae1af01d6c13
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
