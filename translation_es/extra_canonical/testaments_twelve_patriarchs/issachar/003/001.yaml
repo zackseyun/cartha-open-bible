@@ -22,7 +22,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Cuando, pues, yo llegué a la madurez, hijos míos, anduve en rectitud de corazón, y llegué a ser labrador para mi padre y para mis hermanos.
+  text: Cuando, pues, yo llegué a la madurez, hijos míos, anduve en rectitud de corazón, y llegué a ser labrador para mi padre y para mis hermanos, y traía frutos de los campos a su tiempo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἡδρύνθην
@@ -99,4 +99,39 @@ ai_draft:
     total_tokens: 2682
     reasoning_tokens: 0
     estimated_cost_usd: 0.005705
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Cuando, pues, yo llegué a la madurez, hijos míos, anduve en rectitud de corazón, y llegué a ser labrador para mi padre y para mis hermanos.
+  to: Cuando, pues, yo llegué a la madurez, hijos míos, anduve en rectitud de corazón, y llegué a ser labrador para mi padre y para mis hermanos, y traía frutos de los campos a su tiempo.
+  rationale: Added the missing final clause 'y traía frutos de los campos a su tiempo' to render the full source text καὶ ἔφερον καρποὺς ἐξ ἀγρῶν κατὰ καιρὸν αὐτῶν, matching the EN POB 'and I brought in fruits from the fields in their season.' The imperfect 'traía' reflects the habitual action implied by the imperfect ἔφερον.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:28:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek source (T12P.ISS.3.1) contains a final clause 'καὶ ἔφερον καρποὺς ἐξ ἀγρῶν κατὰ καιρὸν αὐτῶν' rendered in EN as 'and I brought in fruits from the fields in their season.' The ES draft omits this clause entirely, dropping roughly one-third of the verse's content.
+  spanish_quality_summary: The opening clauses are accurate and natural. However the omission of the final fruit-bearing clause leaves the verse incomplete and misrepresents the source.
+  glossary_alignment: εὐθύτητι καρδίας→rectitud de corazón correct; γεωργός→labrador correct; no YHWH/θεός/Χριστός/δοῦλος/πνεῦμα in this verse.
+  issues:
+  - severity: high
+    issue: 'Final clause omitted: ''and I brought in fruits from the fields in their season'' (καὶ ἔφερον καρποὺς ἐξ ἀγρῶν κατὰ καιρὸν αὐτῶν) has no Spanish equivalent.'
+    rationale: The source text and the EN POB translation both include this clause. The ES draft stops after 'mis hermanos' without the concluding statement about bringing in the harvest.
+  revised_spanish_text: Cuando, pues, yo llegué a la madurez, hijos míos, anduve en rectitud de corazón, y llegué a ser labrador para mi padre y para mis hermanos, y traía frutos de los campos a su tiempo.
+  revision_rationale: Added the missing final clause 'y traía frutos de los campos a su tiempo' to render the full source text καὶ ἔφερον καρποὺς ἐξ ἀγρῶν κατὰ καιρὸν αὐτῶν, matching the EN POB 'and I brought in fruits from the fields in their season.' The imperfect 'traía' reflects the habitual action implied by the imperfect ἔφερον.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5829aeccb805f375bfeea9e25e2e51bea2895aef13782b0792a6749958fecb7e
+  timestamp: '2026-05-08T06:28:01Z'
+  output_hash: 5829aeccb805f375bfeea9e25e2e51bea2895aef13782b0792a6749958fecb7e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
