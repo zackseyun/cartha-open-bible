@@ -72,4 +72,34 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: The Greek source reads 'Ἀντίγραφον λόγων Δάν... ἐν τῷ ἑκατοστῷ εἰκοστῷ πέμπτῳ ἔτει τῆς ζωῆς αὐτοῦ' — literally 'a copy of the words of Dan... in the 125th year of his life.' The EN per-verse file renders this as 'In the fifth year of his life, Dan called together his family and said:' with a note that 'fifth year' is the EN POB's terse rendering. The Spanish translator chose to render the full Greek numeral 'ciento veinticinco años' (125), which is actually MORE faithful to the Greek source. However, the EN per-verse base_translation shows 'fifth year' (not 125th), meaning the Spanish diverges from the EN POB base. This is a case where the Spanish translator made an independent source-grounded decision. The full number matches the Greek better. The EN cross_check review flagged this as 'major-issues' (agreement 0.55). The title 'Testamento de Dan...' / 'Βάλλας' (Bilhah) is missing from the Spanish — the EN source includes 'Testament of Dan, the seventh son of
+    Jacob and Bilhah. A copy of the words of Dan...' but the Spanish only has 'En el año ciento veinticinco de su vida, Dan reunió a su familia y dijo:' omitting the header and the copy-of-words formula.
+  spanish_quality_summary: The Spanish text is missing the opening header 'Testamento de Dan, el séptimo hijo de Jacob y Bilha' and the formula 'Copia de las palabras de Dan' that appear in the Greek (Διαθήκη Δὰν τοῦ ἑβδόμου υἱοῦ Ἰακὼβ καὶ Βάλλας. Ἀντίγραφον λόγων Δάν). The EN per-verse file only includes 'In the fifth year...' because these elements are in the chapter header, not the verse text. However, the per-verse YAML's Spanish should match what the EN per-verse yields. The EN text 'In the fifth year of his life, Dan called together his family and said:' is the per-verse content. The Spanish translator correctly renders '125' from the full Greek while the EN used an abbreviated rendering. This is the defensible approach. The omission of the title/copy formula is structural — those are at chapter level, not verse level. The Spanish is acceptable for the verse level.
+  glossary_alignment: No YHWH/Mesías/Espíritu/esclavo issues. 'Familia' for πατριά is acceptable.
+  issues:
+  - severity: low
+    issue: The Spanish renders '125 años' following the Greek numeral directly rather than the EN POB's abbreviated 'fifth year'; this is more source-faithful but diverges from the EN base translation. A note would clarify the choice.
+    rationale: The Spanish translator's choice to follow the full Greek numeral is defensible and actually more faithful to the source. No change needed on the text itself, but documenting is appropriate.
+  revised_spanish_text: 'En el año ciento veinticinco de su vida, Dan reunió a su familia y dijo:'
+  revision_rationale: Text is accepted as-is since the Spanish translator's choice to render the full Greek numeral (ἑκατοστῷ εἰκοστῷ πέμπτῳ = 125th year) is more faithful to the source than the EN POB's abbreviated 'fifth year'. No textual revision needed.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 681677734eb1401e105e88dd3a018b4fc8a32e4ce86a19cd7b5db8f38dd35cd1
+  timestamp: '2026-05-08T06:14:41Z'
+  output_hash: 681677734eb1401e105e88dd3a018b4fc8a32e4ce86a19cd7b5db8f38dd35cd1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

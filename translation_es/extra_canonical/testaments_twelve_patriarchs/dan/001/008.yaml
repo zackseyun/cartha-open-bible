@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Revised key imagery for lexical accuracy: changed ''crushes''/''destroy'' to ''sucks out'' to reflect ἐκμύζουσα / ἐκμυζῆσαι. Also kept the second clause closer to the Greek by rendering ἐνέβαλεν as ''put into me'' rather than paraphrasing as ''I too should.'''
 translation:
   language: es
-  text: Y este era el espíritu de la ira persuadiéndome, que así como un leopardo chupa la sangre de un cabrito, así me incitó a chupar la sangre de José.
+  text: Y este era el espíritu de la ira persuadiéndome, que así como un leopardo chupa a un cabrito, así me incitó a chupar a José.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: πνεῦμα τοῦ θυμοῦ
@@ -105,4 +105,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y este era el espíritu de la ira persuadiéndome, que así como un leopardo chupa la sangre de un cabrito, así me incitó a chupar la sangre de José.
+  to: Y este era el espíritu de la ira persuadiéndome, que así como un leopardo chupa a un cabrito, así me incitó a chupar a José.
+  rationale: Removed the two additions of 'la sangre de' which are not present in the Greek source (ἐκμύζω targets the animal/person directly, not the blood). The EN POB kept 'sucks out a young goat... suck out Joseph' without specifying blood. Revised to 'chupa a un cabrito... chupar a José' which preserves the parallel structure and the jarring predatory image without over-interpreting the verb.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:16:05Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek source: τὸ πνεῦμα τοῦ θυμοῦ τὸ πεῖθόν με· ὥσπερ πάρδαλις ἐκμύζουσα ἔριφον, ἵνα οὕτως ἐμοὶ ἐνέβαλεν ἐκμυζῆσαι τὸν Ἰωσήφ. The EN POB (revised) renders: ''just as a leopard sucks out a young goat, so it put into me to suck out Joseph.'' The Spanish renders: ''así como un leopardo chupa la sangre de un cabrito, así me incitó a chupar la sangre de José.'' The Spanish adds ''la sangre de'' (the blood of) which is an interpretive expansion not present in the Greek source. The Greek ἐκμύζω means ''to suck out/drain'' without specifying ''blood'' — the object is the animal/person. This addition, while graphic and probably intended, over-interprets the verb. The EN POB deliberately kept ''sucks out [a young goat/Joseph]'' without specifying ''blood'' per the source.'
+  spanish_quality_summary: Natural Spanish. The main issue is the addition of 'la sangre de' twice which is not in the Greek source. The EN POB was deliberate in not adding this specification. This is a medium-severity accuracy issue.
+  glossary_alignment: No YHWH/Mesías/Espíritu/esclavo issues. 'La ira' for θυμός consistent.
+  issues:
+  - severity: medium
+    issue: Addition of 'la sangre de' (the blood of) twice is an interpretive expansion not present in the Greek ἐκμύζω, which means to drain/suck out but does not specify the object as blood
+    rationale: The EN POB deliberately rendered ἐκμυζῆσαι as 'to suck out Joseph' without specifying blood. The Spanish should follow the source's non-specification. An alternative could be 'chupa a un cabrito... chupar a José' or 'drena a un cabrito... drenar a José'.
+  revised_spanish_text: Y este era el espíritu de la ira persuadiéndome, que así como un leopardo chupa a un cabrito, así me incitó a chupar a José.
+  revision_rationale: Removed the two additions of 'la sangre de' which are not present in the Greek source (ἐκμύζω targets the animal/person directly, not the blood). The EN POB kept 'sucks out a young goat... suck out Joseph' without specifying blood. Revised to 'chupa a un cabrito... chupar a José' which preserves the parallel structure and the jarring predatory image without over-interpreting the verb.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4155a58a447066292a35c5cb0c159d565afc898819a020c75ae30b6ffedd53ac
+  timestamp: '2026-05-08T06:16:05Z'
+  output_hash: 4155a58a447066292a35c5cb0c159d565afc898819a020c75ae30b6ffedd53ac
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

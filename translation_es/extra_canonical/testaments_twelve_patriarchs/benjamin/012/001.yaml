@@ -64,4 +64,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek source: ἐκτείνας τοὺς πόδας ἐκοιμήθη ὕπνῳ καλῷ [καὶ ἀγαθῷ]. Spanish ''extendió sus pies y se durmió en un buen sueño'' faithfully mirrors the EN POB ''stretched out his feet and fell asleep in a good sleep.'' Note: the EN per-verse file (012/001) now includes ''[and good]'' due to phase2 realignment, but the Spanish translates the core phrase correctly. The bracketed addition in EN is textual variant notation; Spanish handles it correctly without the bracket.'
+  spanish_quality_summary: Clean, natural, dignified neutral Spanish. Euphemism for death preserved ('se durmió'). No glossary conflicts. Reads naturally in Latin-American Spanish.
+  glossary_alignment: No problematic terms. 'Señor' not present. No YHWH/Mesías/esclavo issues.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: de9bc218da1dc20de1730a203ccc2c01284e3bf8bececb08c094b2ffd8916fd4
+  timestamp: '2026-05-08T06:13:32Z'
+  output_hash: de9bc218da1dc20de1730a203ccc2c01284e3bf8bececb08c094b2ffd8916fd4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

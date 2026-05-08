@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Replaced 'so that' with 'that' for a more natural rendering of purpose after 'did not give'; otherwise retained the draft as accurate and complete.
 translation:
   language: es
-  text: Pero el Dios de mis padres no permitió que cayera en mis manos, para que yo, hallándolo solo, lo matara y cometiera este acto inicuo, para que no se destruyeran dos tribus de Israel."
+  text: Pero el Dios de mis padres no permitió que cayera en mis manos, para que yo, hallándolo solo, lo matara y cometiera este acto inicuo, no fuera que se destruyeran dos tribus de Israel."
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὁ Θεὸς τῶν πατέρων μου
@@ -106,4 +106,40 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero el Dios de mis padres no permitió que cayera en mis manos, para que yo, hallándolo solo, lo matara y cometiera este acto inicuo, para que no se destruyeran dos tribus de Israel."
+  to: Pero el Dios de mis padres no permitió que cayera en mis manos, para que yo, hallándolo solo, lo matara y cometiera este acto inicuo, no fuera que se destruyeran dos tribus de Israel."
+  rationale: Changed 'para que no se destruyeran' to 'no fuera que se destruyeran' to avoid the double 'para que' construction and better render the Greek negative purpose clause (ἵνα μή equivalent = lest). The closing quote mark is retained to close the discourse.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:16:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek source: ὁ Θεὸς τῶν πατέρων μου οὐκ εἴασεν αὐτὸν ἐμπεσεῖν εἰς τὰς χεῖράς μου, ἵνα κατὰ μόνας εὑρὼν αὐτὸν ἀνελῶ, καὶ ποιήσω λυθῆναι σκῆπτρον δεύτερον τῷ Ἰσραήλ. The EN POB renders: ''the God of my fathers did not allow him to fall into my hands, so that I might find him alone and kill him, and bring about the loosing of a second tribe from Israel.'' The Spanish renders: ''no permitió que cayera en mis manos, para que yo, hallándolo solo, lo matara y cometiera este acto inicuo, para que no se destruyeran dos tribus de Israel.'' There are notable differences: (1) The EN POB''s final per-verse text reads differently from the chapter-level. The per-verse EN has ''allow him to fall into my hands'' while the Spanish has ''no permitió que cayera en mis manos'' — faithful. (2) The EN ends ''lest two tribes be destroyed from Israel'' while Spanish has ''para que no se destruyeran dos tribus de Israel'' — this is a double negative construction: ''so that... not be
+    destroyed'' which reads oddly. (3) Also the Spanish quotes include a closing quote mark that seems to close the discourse begun in v.2: ''de Israel."'' which is consistent with the EN per-verse base. (4) The phrase ''cometiera este acto inicuo'' follows the EN ''commit this lawless deed'' which is from the chapter-level, not the per-verse file. The per-verse EN has different wording.'
+  spanish_quality_summary: 'The ''para que no se destruyeran'' construction is slightly awkward — the ἵνα clause in Greek with negative μή is an ordinary result/purpose clause. Better: ''para que no se destruyeran'' is actually fine in Spanish. The closing quotation mark appears correctly. No vosotros forms present.'
+  glossary_alignment: No YHWH/Mesías/Espíritu/esclavo issues. 'Dios' for Θεός correct.
+  issues:
+  - severity: low
+    issue: The per-verse EN file text is 'did not allow him to fall into my hands, that I might find him alone and kill him and commit this lawless deed, lest two tribes be destroyed from Israel' but the Spanish base_translation records a slightly different version. Both are faithful to the Greek source, this is a minor consistency note.
+    rationale: The Spanish faithfully renders the source. The awkwardness of double purpose clauses ('para que... para que no') could be slightly smoothed.
+  revised_spanish_text: Pero el Dios de mis padres no permitió que cayera en mis manos, para que yo, hallándolo solo, lo matara y cometiera este acto inicuo, no fuera que se destruyeran dos tribus de Israel."
+  revision_rationale: Changed 'para que no se destruyeran' to 'no fuera que se destruyeran' to avoid the double 'para que' construction and better render the Greek negative purpose clause (ἵνα μή equivalent = lest). The closing quote mark is retained to close the discourse.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 05d9a0a9fa9e5855edb0ca318d41e92fd3743664478e40f6f61c49f80bb6eb07
+  timestamp: '2026-05-08T06:16:24Z'
+  output_hash: 05d9a0a9fa9e5855edb0ca318d41e92fd3743664478e40f6f61c49f80bb6eb07
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

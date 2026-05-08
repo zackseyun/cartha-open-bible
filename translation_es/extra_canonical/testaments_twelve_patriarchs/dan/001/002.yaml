@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed “sayings” to “words” for closer lexical consistency with λόγων / ῥήμασι while keeping natural formal English.
 translation:
   language: es
-  text: Oíd, hijos de Dan, mis palabras, y prestad atención a las palabras de vuestro padre.
+  text: Escuchen, hijos de Dan, mis palabras, y presten atención a las palabras de su padre.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἀκούσατε
@@ -81,4 +81,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Oíd, hijos de Dan, mis palabras, y prestad atención a las palabras de vuestro padre.
+  to: Escuchen, hijos de Dan, mis palabras, y presten atención a las palabras de su padre.
+  rationale: Replaced vosotros imperative 'Oíd' with 'Escuchen', 'prestad atención' with 'presten atención', and 'vuestro padre' with 'su padre' to conform to neutral Latin-American Spanish.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek source: Ἀκούσατε υἱοὶ Δὰν λόγων μου, καὶ προσέχετε ῥήμασι τοῦ πατρὸς ὑμῶν. EN POB: ''Hear my words, sons of Dan, and pay attention to the words of your father.'' Spanish: ''Oíd, hijos de Dan, mis palabras, y prestad atención a las palabras de vuestro padre.'' The translation is faithful to the source.'
+  spanish_quality_summary: 'Issue: ''Oíd'' and ''prestad'' are vosotros imperative forms. Target dialect is neutral Latin-American Spanish. ''vuestro padre'' is also Iberian. These should be replaced with ustedes equivalents: ''Escuchen, hijos de Dan, mis palabras, y presten atención a las palabras de su padre'' or similar.'
+  glossary_alignment: No YHWH/Mesías/Espíritu/esclavo issues.
+  issues:
+  - severity: medium
+    issue: '''Oíd'', ''prestad'', and ''vuestro'' are Iberian vosotros forms not appropriate for neutral Latin-American Spanish'
+    rationale: The repo targets neutral Latin-American Spanish. Imperatives should use ustedes forms.
+  revised_spanish_text: Escuchen, hijos de Dan, mis palabras, y presten atención a las palabras de su padre.
+  revision_rationale: Replaced vosotros imperative 'Oíd' with 'Escuchen', 'prestad atención' with 'presten atención', and 'vuestro padre' with 'su padre' to conform to neutral Latin-American Spanish.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 4da7e2443ad58c7fd99bbfe7c018abc6d0cea44a4daf247881311d0ea5a328d4
+  timestamp: '2026-05-08T06:14:59Z'
+  output_hash: 4da7e2443ad58c7fd99bbfe7c018abc6d0cea44a4daf247881311d0ea5a328d4
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
