@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the draft, which reflected different source material, with a rendering that matches the Greek here: included ''then,'' ''he will judge,'' ''all the nations,'' ''as many as did not believe in him,'' and ''when he appeared on earth.'''
 translation:
   language: es
-  text: Y entonces juzgará a todas las naciones, a cuantos no creyeron en él cuando apareció en la tierra.
+  text: Entonces nosotros también resucitaremos, cada uno con su cetro, adorando al Rey de los cielos [el que apareció en la tierra en forma de hombre en humildad; y todos los que crean en él en la tierra se regocijarán con él].
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: πάντα τὰ ἔθνη
@@ -73,4 +73,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y entonces juzgará a todas las naciones, a cuantos no creyeron en él cuando apareció en la tierra.
+  to: Entonces nosotros también resucitaremos, cada uno con su cetro, adorando al Rey de los cielos [el que apareció en la tierra en forma de hombre en humildad; y todos los que crean en él en la tierra se regocijarán con él].
+  rationale: 'Revised to match the final EN YAML and source Greek for v.7: the resurrection of the twelve patriarchs worshiping the king of the heavens, with the bracketed christological expansion. ''Con su cetro'' (each one''s scepter) consistent with 010.yaml''s established rendering. ''Rey de los cielos'' (plural) consistent with τῶν οὐρανῶν.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source Greek for 10:7: ''Then we also will rise, each on our scepter, worshiping the king of the heavens [the one who appeared on earth in the form of a man in humility; and as many as believed in him on the earth will rejoice with him].'' The final EN YAML correctly renders this. The ES base_translation captured a stale EN draft (''And then he will judge all the nations, as many as did not believe in him when he appeared on earth'') from the pre-phase2-realignment EN revision pass, which belongs to v.9, not v.7.'
+  spanish_quality_summary: The existing ES renders judgment content instead of the resurrection-worship content that belongs in this verse. A full replacement matching the final EN and source Greek is needed.
+  glossary_alignment: βασιλέα τῶν οὐρανῶν→Rey de los cielos (plural per Greek τῶν οὐρανῶν, consistent with 010.yaml). Bracketed christological clause must be preserved with corchetes.
+  issues:
+  - severity: high
+    issue: ES renders content from v.9 (judgment of nations) instead of v.7 (resurrection, worship, bracketed christological clause)
+    rationale: The ES base captured the stale EN revision-pass draft for v.7 which had been rewritten to content from v.9. The source Greek for v.7 is about the twelve patriarchs rising and worshiping the king of the heavens.
+  revised_spanish_text: Entonces nosotros también resucitaremos, cada uno con su cetro, adorando al Rey de los cielos [el que apareció en la tierra en forma de hombre en humildad; y todos los que crean en él en la tierra se regocijarán con él].
+  revision_rationale: 'Revised to match the final EN YAML and source Greek for v.7: the resurrection of the twelve patriarchs worshiping the king of the heavens, with the bracketed christological expansion. ''Con su cetro'' (each one''s scepter) consistent with 010.yaml''s established rendering. ''Rey de los cielos'' (plural) consistent with τῶν οὐρανῶν.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c1231b370804964353332528c5600ca2aab570c9679aecbb323ade0f3fe487a5
+  timestamp: '2026-05-08T06:14:44Z'
+  output_hash: c1231b370804964353332528c5600ca2aab570c9679aecbb323ade0f3fe487a5
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

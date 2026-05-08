@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted future phrasing from 'you will see' to 'you see' for a more natural rendering of ἕως ὅτου with the future sense, and changed 'risen up' to 'raised up' to better reflect ἀνασταμένους in formal English.
 translation:
   language: es
-  text: 'Porque todas estas cosas nos las dieron como herencia, diciendo: ''Guarden los mandamientos de Dios hasta el momento en que vean a Enoc, a Set, a Abraham, a Isaac y a Jacob, levantados a su derecha en regocijo.'''
+  text: 'Porque todas estas cosas nos las dieron como herencia, diciendo: ''Guarden los mandamientos de Dios hasta el momento en que [el Señor revele su salvación a todas las naciones].'''
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: δέδωκαν ... εἰς κληρονομίαν
@@ -88,4 +88,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Porque todas estas cosas nos las dieron como herencia, diciendo: ''Guarden los mandamientos de Dios hasta el momento en que vean a Enoc, a Set, a Abraham, a Isaac y a Jacob, levantados a su derecha en regocijo.'''
+  to: 'Porque todas estas cosas nos las dieron como herencia, diciendo: ''Guarden los mandamientos de Dios hasta el momento en que [el Señor revele su salvación a todas las naciones].'''
+  rationale: 'Revised to match the final EN YAML and source Greek: the bracketed clause is [Κύριος τὸ σωτήριον αὐτοῦ πᾶσι τοῖς ἔθνεσι] = [the Lord reveals his salvation to all the nations]. The old ES rendered the patriarchs-rising content from a stale pre-phase2 draft.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The source Greek for 10:5 ends with a bracketed clause about the Lord revealing his salvation to all the nations: [Κύριος τὸ σωτήριον αὐτοῦ πᾶσι τοῖς ἔθνεσι]. The final EN YAML translation reads ''Keep the commandments of God until the time when [the Lord reveals his salvation to all the nations].'' However, the ES base_translation field captured the pre-revision EN draft (which had the Enoch/Seth/Abraham list from an earlier cross-contamination). The current ES text translates the wrong content—it renders the patriarchs-at-his-right-hand vision that belongs to v.6, not the Lord-reveals-salvation clause that the source Greek and final EN have.'
+  spanish_quality_summary: The existing ES translation is well-written Spanish but renders the wrong verse content (it corresponds to the old EN draft for a different verse). A full replacement is needed.
+  glossary_alignment: θεός→Dios correct. Κύριος→Señor correct for T12P. The bracketed clause must be preserved.
+  issues:
+  - severity: high
+    issue: ES translation renders wrong verse content
+    rationale: The ES base_translation captured a stale pre-revision EN draft. The source Greek and final EN both have 'the Lord reveals his salvation to all the nations' as the bracketed clause, but the ES renders the Enoch/Seth/Abraham resurrection vision that belongs in v.6.
+  revised_spanish_text: 'Porque todas estas cosas nos las dieron como herencia, diciendo: ''Guarden los mandamientos de Dios hasta el momento en que [el Señor revele su salvación a todas las naciones].'''
+  revision_rationale: 'Revised to match the final EN YAML and source Greek: the bracketed clause is [Κύριος τὸ σωτήριον αὐτοῦ πᾶσι τοῖς ἔθνεσι] = [the Lord reveals his salvation to all the nations]. The old ES rendered the patriarchs-rising content from a stale pre-phase2 draft.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 96345604c3131241f4c0593f0c2013dd6a7317ddcb77b88cfeb1f3963b2b247b
+  timestamp: '2026-05-08T06:14:24Z'
+  output_hash: 96345604c3131241f4c0593f0c2013dd6a7317ddcb77b88cfeb1f3963b2b247b
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Revised 'your ravaging' to 'your acts of plunder' for a more accurate rendering of ἁρπαγάς, and changed 'those who labor in what is good' to 'those who do what is good' for a more natural and direct rendering of τοῖς ἐργαζομένοις τὸ ἀγαθόν.
 translation:
   language: es
-  text: Ya no se me llamará lobo rapaz a causa de sus actos de saqueo, sino obrero del Señor, que distribuye alimento a los que hacen el bien.
+  text: Ya no se me llamará lobo rapaz a causa de sus actos de saqueo, sino [obrero del Señor, que distribuye alimento a los que hacen el bien].
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: λύκος ἅρπαξ
@@ -89,4 +89,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Ya no se me llamará lobo rapaz a causa de sus actos de saqueo, sino obrero del Señor, que distribuye alimento a los que hacen el bien.
+  to: Ya no se me llamará lobo rapaz a causa de sus actos de saqueo, sino [obrero del Señor, que distribuye alimento a los que hacen el bien].
+  rationale: Added brackets around the second clause to match the final EN YAML and the Greek source encoding, consistent with the project policy of marking bracketed interpolations transparently.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:15:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source Greek for 11:1 begins a bracketed section: ''No longer shall I be called a ravening wolf because of your acts of plunder, but [a worker of the Lord, distributing food to those who do what is good].'' The final EN YAML (after phase2 realignment) correctly adds brackets around the second half. The ES base_translation captured the pre-phase2 EN that lacks brackets. The ES translation therefore renders the bracketed clause without brackets, hiding the textual signal.'
+  spanish_quality_summary: The existing ES is fluent and the content is correct, but the bracketed clause marker is missing. A minor revision adding the brackets is all that is needed.
+  glossary_alignment: Κύριος→Señor correct. ἁρπαγάς→actos de saqueo follows the revised EN. ἐργάτης Κυρίου→obrero del Señor is good.
+  issues:
+  - severity: medium
+    issue: Bracketed interpolation marker missing in ES translation
+    rationale: The final EN YAML adds brackets around 'a worker of the Lord, distributing food to those who do what is good' to mark this as a bracketed interpolation in the Greek source. The ES translation omits this, inconsistent with the project policy of transparent textual marking.
+  revised_spanish_text: Ya no se me llamará lobo rapaz a causa de sus actos de saqueo, sino [obrero del Señor, que distribuye alimento a los que hacen el bien].
+  revision_rationale: Added brackets around the second clause to match the final EN YAML and the Greek source encoding, consistent with the project policy of marking bracketed interpolations transparently.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 35096e1415340bfb576c70734ca91bcff5af5768231a4cc5bfcf23c9e4036de9
+  timestamp: '2026-05-08T06:15:48Z'
+  output_hash: 35096e1415340bfb576c70734ca91bcff5af5768231a4cc5bfcf23c9e4036de9
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

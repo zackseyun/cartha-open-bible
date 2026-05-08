@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Revised awkward or inaccurate phrases for more natural and faithful English: changed ''entering upon Israel in salvation'' to ''bringing salvation to Israel''; changed ''snatching away from them as a wolf'' to ''snatching from them like a wolf''; and changed ''gathering of the nations'' to ''assembly of the nations.'''
 translation:
   language: es
-  text: Y en los últimos tiempos surgirá de mi descendencia uno amado del Señor, que oirá su voz y hará la buena voluntad de su designio, iluminando a todas las naciones con un nuevo conocimiento, trayendo salvación a Israel, arrebatando de ellos como lobo, y dando a la asamblea de las naciones.
+  text: Y en los últimos tiempos surgirá un amado del Señor [de la simiente de Judá y Leví], haciendo buen agrado con su boca, [iluminando a todas las naciones con un nuevo conocimiento], luz de conocimiento, viniendo sobre Israel en salvación, y arrebatando de ellos como lobo, y dando a la asamblea de las naciones.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐν ὑστέροις
@@ -120,4 +120,40 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y en los últimos tiempos surgirá de mi descendencia uno amado del Señor, que oirá su voz y hará la buena voluntad de su designio, iluminando a todas las naciones con un nuevo conocimiento, trayendo salvación a Israel, arrebatando de ellos como lobo, y dando a la asamblea de las naciones.
+  to: Y en los últimos tiempos surgirá un amado del Señor [de la simiente de Judá y Leví], haciendo buen agrado con su boca, [iluminando a todas las naciones con un nuevo conocimiento], luz de conocimiento, viniendo sobre Israel en salvación, y arrebatando de ellos como lobo, y dando a la asamblea de las naciones.
+  rationale: 'Revised to match the final EN YAML and source Greek: (1) added brackets around the two bracketed clauses; (2) removed ''from my seed/hearing his voice'' not in source; (3) added ''luz de conocimiento'' for φῶς γνώσεως; (4) ''haciendo buen agrado con su boca'' for ποιῶν εὐδοκίαν ἐν στόματι αὐτοῦ. ''Viniendo sobre Israel en salvación'' for ἐπεμβαίνων τὸν Ἰσραὴλ ἐν σωτηρίᾳ stays closer to the Greek than the interpretive ''bringing salvation.'''
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:16:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source Greek for 11:2 contains ''ἀγαπητὸς Κυρίου [ἐκ σπέρματος Ἰούδα καὶ Λευί] ποιῶν εὐδοκίαν ἐν στόματι αὐτοῦ, [γνῶσιν καινὴν φωτίζων πάντα τὰ ἔθνη] φῶς γνώσεως, ἐπεμβαίνων τὸν Ἰσραὴλ ἐν σωτηρίᾳ...'' The final EN YAML (after phase2 realignment) restructures to: ''a beloved one of the Lord shall arise [from the seed of Judah and Levi], doing good pleasure with his mouth, [enlightening all the nations with new knowledge], a light of knowledge, coming upon Israel in salvation, and snatching from them like a wolf, and giving to the assembly of the nations.'' The ES base_translation captured the pre-phase2 EN which: (1) had ''from my seed'' instead of the bracketed ''[from the seed of Judah and Levi]''; (2) had ''hearing his voice and doing the good pleasure of his will'' instead of ''doing good pleasure with his mouth''; (3) omitted the ''a light of knowledge'' clause; (4) omitted brackets around both interpolated clauses. The ES translation thus adds ''from my
+    seed'' (not in the source Greek after the phase2 correction), adds ''hearing his voice'' (not in source), omits ''a light of knowledge'', and removes both sets of brackets.'
+  spanish_quality_summary: Existing ES is fluent but renders pre-phase2 content. Needs restructuring to match the final EN and preserve brackets.
+  glossary_alignment: Κύριος→Señor, ἔθνη→naciones established. ἐκ σπέρματος Ἰούδα καὶ Λευί = de la simiente de Judá y Leví (standard biblical terms). φῶς γνώσεως = luz de conocimiento.
+  issues:
+  - severity: high
+    issue: ES translation adds material not in source Greek and omits bracketed interpolation markers
+    rationale: The pre-phase2 EN added 'from my seed' and 'hearing his voice' which are not in the Greek. The phase2 realigned EN removed these and added brackets around [from the seed of Judah and Levi] and [enlightening all the nations with new knowledge]. The ES also omits the 'light of knowledge' phrase which is in the source.
+  revised_spanish_text: Y en los últimos tiempos surgirá un amado del Señor [de la simiente de Judá y Leví], haciendo buen agrado con su boca, [iluminando a todas las naciones con un nuevo conocimiento], luz de conocimiento, viniendo sobre Israel en salvación, y arrebatando de ellos como lobo, y dando a la asamblea de las naciones.
+  revision_rationale: 'Revised to match the final EN YAML and source Greek: (1) added brackets around the two bracketed clauses; (2) removed ''from my seed/hearing his voice'' not in source; (3) added ''luz de conocimiento'' for φῶς γνώσεως; (4) ''haciendo buen agrado con su boca'' for ποιῶν εὐδοκίαν ἐν στόματι αὐτοῦ. ''Viniendo sobre Israel en salvación'' for ἐπεμβαίνων τὸν Ἰσραὴλ ἐν σωτηρίᾳ stays closer to the Greek than the interpretive ''bringing salvation.'''
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e2409d445dfbf85793d0bcbd2ec30495b8070d5d00fa3805737f271d3a217c5a
+  timestamp: '2026-05-08T06:16:11Z'
+  output_hash: e2409d445dfbf85793d0bcbd2ec30495b8070d5d00fa3805737f271d3a217c5a
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

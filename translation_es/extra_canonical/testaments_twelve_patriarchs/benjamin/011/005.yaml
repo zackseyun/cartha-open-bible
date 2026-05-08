@@ -82,4 +82,27 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Spanish faithfully renders the source Greek: δι᾽ αὐτῶν→por medio de ellos, φοιτήσει→visitará, ὡς Ἰακὼβ ὁ πατήρ μου→como Jacob mi padre, ἀναπληρώσει τὰ ὑστερήματα τῆς φυλῆς σου→completará lo que falta en tu tribu.'
+  spanish_quality_summary: Natural Spanish. 'Visitará' correctly captures the revised 'will visit'. 'Completará lo que falta en tu tribu' renders the biblical phrase ἀναπληρόω τὰ ὑστερήματα accurately.
+  glossary_alignment: No YHWH/θεός/Χριστός/δοῦλος/πνεῦμα present.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1056fe608fb7ffad3a7ba1815005303d2227939058c86b23c447210f9e5090e1
+  timestamp: '2026-05-08T06:16:33Z'
+  output_hash: 1056fe608fb7ffad3a7ba1815005303d2227939058c86b23c447210f9e5090e1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

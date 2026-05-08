@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that reflects the Greek: resurrection of all, division into glory/dishonor, and the Lord judging Israel first for their unrighteousness. Included the bracketed clause present in one textual form without interpretive expansion.'
 translation:
   language: es
-  text: Entonces todos resucitarán, unos para gloria y otros para deshonra; y el Señor juzgará a Israel primero por su injusticia [porque, cuando Dios vino a ellos en carne, no le creyeron].
+  text: Y entonces verán a Enoc, a Set, a Abraham, a Isaac y a Jacob, levantados a su derecha en regocijo.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀναστήσονται
@@ -95,4 +95,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Entonces todos resucitarán, unos para gloria y otros para deshonra; y el Señor juzgará a Israel primero por su injusticia [porque, cuando Dios vino a ellos en carne, no le creyeron].
+  to: Y entonces verán a Enoc, a Set, a Abraham, a Isaac y a Jacob, levantados a su derecha en regocijo.
+  rationale: Revised to match the final EN YAML and source Greek. 'Levantados a su derecha en regocijo' renders ἀνασταμένους ἐκ δεξιῶν αὐτοῦ ἐν ἀγαλλιάσει correctly, following established glossary choices from 010.yaml (regocijo for ἀγαλλίασις, levantados for ἀνασταμένους).
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The source Greek for 10:6 is: ''And then you will see Enoch and Seth and Abraham and Isaac and Jacob raised up at his right hand in rejoicing.'' The final EN YAML correctly renders this. However the ES base_translation captured the revised EN content for a different verse (all will rise, some to glory/dishonor, Lord judges Israel). The ES translation therefore renders judgment content instead of the patriarchs-resurrection vision.'
+  spanish_quality_summary: The existing ES is fluent but renders the wrong content. Revised translation targets the actual source Greek for this verse.
+  glossary_alignment: Κύριος not present in this verse's source Greek. ἐν ἀγαλλιάσει→en regocijo is the established glossary choice.
+  issues:
+  - severity: high
+    issue: ES renders wrong verse content due to stale EN base draft
+    rationale: The ES draft was built on the pre-phase2-realignment EN. The source Greek for v.6 is about seeing Enoch/Seth/Abraham/Isaac/Jacob raised at his right hand, not about universal resurrection and judgment of Israel.
+  revised_spanish_text: Y entonces verán a Enoc, a Set, a Abraham, a Isaac y a Jacob, levantados a su derecha en regocijo.
+  revision_rationale: Revised to match the final EN YAML and source Greek. 'Levantados a su derecha en regocijo' renders ἀνασταμένους ἐκ δεξιῶν αὐτοῦ ἐν ἀγαλλιάσει correctly, following established glossary choices from 010.yaml (regocijo for ἀγαλλίασις, levantados for ἀνασταμένους).
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: cb83ab8f78adceb335ccabde5cc09aeeb7acd5e8a8217738bc23bbe59eb19351
+  timestamp: '2026-05-08T06:14:34Z'
+  output_hash: cb83ab8f78adceb335ccabde5cc09aeeb7acd5e8a8217738bc23bbe59eb19351
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

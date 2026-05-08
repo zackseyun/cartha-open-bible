@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted 'rising up' to 'having risen' to better reflect the aorist participle; changed 'on the right hand' to 'at the right hand' for more natural English and closer correspondence to the source.
 translation:
   language: es
-  text: Y entonces verán a Enoc, a Sem, a Abraham, a Isaac y a Jacob, habiendo resucitado en gozo a la derecha.
+  text: Y entonces juzgará a todas las naciones [que no le creyeron cuando apareció en la tierra].
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀνασταμένους (participio aoristo)
@@ -73,4 +73,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y entonces verán a Enoc, a Sem, a Abraham, a Isaac y a Jacob, habiendo resucitado en gozo a la derecha.
+  to: Y entonces juzgará a todas las naciones [que no le creyeron cuando apareció en la tierra].
+  rationale: Revised to match the final EN YAML and source Greek. 'Todas las naciones' for πάντα τὰ ἔθνη, 'que no le creyeron cuando apareció en la tierra' for ὅσα οὐκ ἐπίστευσαν αὐτῷ ἐπὶ τῆς γῆς φανέντι. Bracketed clause preserved.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:15:04Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source Greek for 10:9: ''And then he will judge all the nations, [as many as did not believe him when he appeared on earth].'' The final EN YAML correctly renders this. The ES base_translation captured a stale pre-revision EN draft about Enoch/Shem/Abraham/Isaac/Jacob having risen in joy at the right hand—content that belongs to v.6 of a different manuscript tradition, not v.9.'
+  spanish_quality_summary: The existing ES renders wrong content (the patriarchs-at-right-hand vision). A replacement is needed for the judgment-of-nations content with bracketed clause.
+  glossary_alignment: No Κύριος/θεός/YHWH in this verse. ἔθνη→naciones established. Bracketed clause must be preserved.
+  issues:
+  - severity: high
+    issue: ES renders patriarchs-resurrection content instead of v.9 judgment-of-nations content
+    rationale: The ES base_translation captured an old revision draft. The source Greek and final EN for v.9 are about judging the nations that did not believe when he appeared on earth.
+  revised_spanish_text: Y entonces juzgará a todas las naciones [que no le creyeron cuando apareció en la tierra].
+  revision_rationale: Revised to match the final EN YAML and source Greek. 'Todas las naciones' for πάντα τὰ ἔθνη, 'que no le creyeron cuando apareció en la tierra' for ὅσα οὐκ ἐπίστευσαν αὐτῷ ἐπὶ τῆς γῆς φανέντι. Bracketed clause preserved.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 95bb085a60b4ccf52e60bab1a49c90621dd76876d47866e9bb6b9a1c1ca004b7
+  timestamp: '2026-05-08T06:15:04Z'
+  output_hash: 95bb085a60b4ccf52e60bab1a49c90621dd76876d47866e9bb6b9a1c1ca004b7
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

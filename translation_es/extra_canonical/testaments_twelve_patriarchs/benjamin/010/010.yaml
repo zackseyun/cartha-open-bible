@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Added a comma after 'rise' for clearer clause structure; otherwise retained the draft, which accurately renders the source.
 translation:
   language: es
-  text: Y nosotros también resucitaremos, cada uno a su propia tribu, adorando al Rey del cielo.
+  text: Y declarará culpable a Israel entre los escogidos de las naciones, así como declaró culpable a Esaú entre los madianitas, los cuales engañaron a sus hermanos [para que llegaran a serlo mediante la inmoralidad sexual y la idolatría, y así fueron alienados de Dios], llegando a ser hijos en la porción de los que temen al Señor.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀναστησόμεθα
@@ -81,4 +81,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y nosotros también resucitaremos, cada uno a su propia tribu, adorando al Rey del cielo.
+  to: Y declarará culpable a Israel entre los escogidos de las naciones, así como declaró culpable a Esaú entre los madianitas, los cuales engañaron a sus hermanos [para que llegaran a serlo mediante la inmoralidad sexual y la idolatría, y así fueron alienados de Dios], llegando a ser hijos en la porción de los que temen al Señor.
+  rationale: Revised to match the final EN YAML and source Greek. ἐλέγξει→declarará culpable (established). ἐν τοῖς ἐκλεκτοῖς τῶν ἐθνῶν→entre los escogidos de las naciones. Bracketed clause [γενέσθαι...ἀπηλλοτριώθησαν Θεοῦ] preserved. φοβουμένων Κύριον→los que temen al Señor.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:15:18Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source Greek for 10:10: ''And he will convict Israel among the chosen of the nations, just as he convicted Esau among the Midianites, who deceived their brothers [to become through fornication and idolatry, and they were alienated from God], thus becoming children in the portion of those who fear the Lord.'' The final EN YAML (after phase2 realignment) correctly renders this. The ES base_translation captured the pre-phase2 stale EN draft (''And we will rise, each to his own tribe, worshiping the King of heaven'') which belongs to v.7 of a different manuscript layer.'
+  spanish_quality_summary: The existing ES renders 'nosotros también resucitaremos, cada uno a su propia tribu, adorando al Rey del cielo'—wrong content. A full replacement matching the final EN and source Greek is needed.
+  glossary_alignment: ἐκλεκτοί→escogidos, ἔθνη→naciones, πορνεία→inmoralidad sexual, εἰδωλολατρεία→idolatría, ἀπηλλοτριώθησαν Θεοῦ→alienados de Dios, φοβουμένων Κύριον→los que temen al Señor. All established choices from 010.yaml and 008 review.
+  issues:
+  - severity: high
+    issue: ES renders v.7 content (resurrection/worship) instead of v.10 content (conviction of Israel via Esau/Midianites comparison)
+    rationale: The ES draft was built on the stale pre-phase2 EN. The source Greek for v.10 is about God convicting Israel among the chosen nations, with the Esau/Midianites comparison.
+  revised_spanish_text: Y declarará culpable a Israel entre los escogidos de las naciones, así como declaró culpable a Esaú entre los madianitas, los cuales engañaron a sus hermanos [para que llegaran a serlo mediante la inmoralidad sexual y la idolatría, y así fueron alienados de Dios], llegando a ser hijos en la porción de los que temen al Señor.
+  revision_rationale: Revised to match the final EN YAML and source Greek. ἐλέγξει→declarará culpable (established). ἐν τοῖς ἐκλεκτοῖς τῶν ἐθνῶν→entre los escogidos de las naciones. Bracketed clause [γενέσθαι...ἀπηλλοτριώθησαν Θεοῦ] preserved. φοβουμένων Κύριον→los que temen al Señor.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a0ddda2eb7b47443000b1f2ea400a67a202b6639f0ca312a5f90cb2b3f7a2a22
+  timestamp: '2026-05-08T06:15:18Z'
+  output_hash: a0ddda2eb7b47443000b1f2ea400a67a202b6639f0ca312a5f90cb2b3f7a2a22
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

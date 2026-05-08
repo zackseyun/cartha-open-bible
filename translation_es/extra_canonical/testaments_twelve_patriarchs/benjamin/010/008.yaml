@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that reflects the Greek text: restored ''he will convict Israel among the chosen of the nations,'' the comparison with Esau among the Midianites, the clause about deceiving their brothers through sexual immorality and idolatry, their alienation from God, and the concluding result clause.'
 translation:
   language: es
-  text: Y declarará culpable a Israel entre los escogidos de las naciones, así como declaró culpable a Esaú entre los madianitas, los cuales engañaron a sus hermanos para que llegaran a serlo por medio de la inmoralidad sexual y la idolatría, y así fueron alienados de Dios, llegando a ser hijos en la porción de los que temen al Señor.
+  text: Y todos resucitarán, unos para gloria y otros para deshonra; y el Señor juzgará a Israel primero por su injusticia [porque, cuando Dios vino a ellos en carne, no le creyeron].
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐλέγξει
@@ -97,4 +97,39 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y declarará culpable a Israel entre los escogidos de las naciones, así como declaró culpable a Esaú entre los madianitas, los cuales engañaron a sus hermanos para que llegaran a serlo por medio de la inmoralidad sexual y la idolatría, y así fueron alienados de Dios, llegando a ser hijos en la porción de los que temen al Señor.
+  to: Y todos resucitarán, unos para gloria y otros para deshonra; y el Señor juzgará a Israel primero por su injusticia [porque, cuando Dios vino a ellos en carne, no le creyeron].
+  rationale: 'Revised to match the final EN YAML and source Greek. Follows established glossary: ἀτιμία→deshonra, δόξα→gloria, ἀδικία→injusticia, Κύριος→Señor, θεός→Dios. Bracketed clause preserved.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:14:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Source Greek for 10:8: ''And all will rise, some to glory and some to dishonor; and the Lord will judge Israel first concerning their unrighteousness, [because when God came to them in flesh, they did not believe him].'' The final EN YAML correctly renders this. The ES base_translation captured a stale EN draft with the Esau/Midianites/convict content that belongs to v.10.'
+  spanish_quality_summary: The existing ES renders the wrong verse content (v.10 material). A full replacement matching the final EN and source Greek for v.8 is needed.
+  glossary_alignment: Κύριος→Señor correct. θεός→Dios correct. ἀδικία→injusticia established. ἀτιμία→deshonra, δόξα→gloria established.
+  issues:
+  - severity: high
+    issue: ES renders v.10 content (conviction of Israel/Esau/Midianites) instead of v.8 content (universal resurrection with glory/dishonor, judgment of Israel)
+    rationale: The stale EN base for v.8 had been overwritten with v.10 content in the phase2 realignment pass. The ES draft was built on that stale base.
+  revised_spanish_text: Y todos resucitarán, unos para gloria y otros para deshonra; y el Señor juzgará a Israel primero por su injusticia [porque, cuando Dios vino a ellos en carne, no le creyeron].
+  revision_rationale: 'Revised to match the final EN YAML and source Greek. Follows established glossary: ἀτιμία→deshonra, δόξα→gloria, ἀδικία→injusticia, Κύριος→Señor, θεός→Dios. Bracketed clause preserved.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7249bfade0d137c8fc9101dc7e2b76923fbf488c6ecedebbb7ae99e37c6607f9
+  timestamp: '2026-05-08T06:14:54Z'
+  output_hash: 7249bfade0d137c8fc9101dc7e2b76923fbf488c6ecedebbb7ae99e37c6607f9
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
