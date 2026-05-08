@@ -1,0 +1,126 @@
+id: JUB.42.7
+reference: Jubilees 42:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles_1895
+  language: Geez
+  text: አኀዊሁ፡ ፈነወ። ወመልአ፡ አሕስሊሆሙ፡ ስርናየ፡ ወወርቆሙኒ፡ ወደየ፡ ሎሙ፡
+  pages:
+  - 242
+  - 245
+  validation_modes:
+  - vertex_chapter_split
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/jubilees/042/007.yaml
+  text: He sent his brothers away, and he filled their sacks with grain, and he also put their money for them.
+  footnotes:
+  - marker: a
+    text: Or 'their silver in them'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T14:52:36Z'
+    unchanged: false
+    changes_summary: Reordered the opening for natural English ('He sent his brothers away'), supplied 'his' for the possessive, and rendered the final phrase more completely and idiomatically as 'he also put their silver in them' rather than 'for them.'
+translation:
+  language: es
+  text: Él despidió a sus hermanos, y llenó sus costales de grano, y también les puso su dinero.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: ፈነወ
+  english_pob_choice: He sent away / He sent his brothers away
+  chosen_spanish: despidió
+  alternatives_spanish:
+  - envió lejos
+  - mandó despedidos
+  lexicon: verbo de alejamiento/despido; no se inventa una acepción de envío documental no presente
+  rationale: El ge'ez indica que los hermanos fueron enviados fuera/dejados ir; en español, «despidió» comunica bien la acción de hacerlos partir sin añadir matices ajenos. «Envió lejos» suena más pesado y menos natural.
+- source_word: አሕስሊሆሙ፡ ስርናየ፡
+  english_pob_choice: he filled their sacks with grain
+  chosen_spanish: llenó sus costales de grano
+  alternatives_spanish:
+  - llenó sus sacos de grano
+  - colmó sus costales de grano
+  lexicon: frase nominal de contención; el texto habla de recipientes de provisión
+  rationale: «Costales» es claro y bíblico en español para recipientes de carga/provisión; «sacos» es alternativa válida. «Llenó ... de grano» sigue de cerca el sentido del original sin forzar equivalencias técnicas.
+- source_word: ወወርቆሙኒ
+  english_pob_choice: their money
+  chosen_spanish: su dinero
+  alternatives_spanish:
+  - su oro
+  - su plata
+  lexicon: sustantivo de valor/moneda; evitar armonización con el hebreo
+  rationale: El audit trail aclara que el ge'ez no exige «plata»; el término puede referirse a dinero o metal valioso. «Su dinero» es la opción más amplia y fiel al dato revisado.
+- source_word: ሎሙ
+  english_pob_choice: for them
+  chosen_spanish: para ellos
+  alternatives_spanish:
+  - a ellos
+  - en favor de ellos
+  lexicon: preposición dativa de beneficio
+  rationale: El ge'ez significa «para ellos», no «en ellos». «Para ellos» conserva el dativo de beneficio y evita introducir una ubicación física no sustentada por el texto.
+translation_notes:
+  revision_awareness: La redacción sigue la revisión crítica que corrigió el valor de ወወርቆሙኒ a «money» y ሎሙ a «for them», evitando la armonización con el hebreo de Génesis y manteniendo la lectura propia del ge'ez de Jubileos.
+  spanish_consistency_notes:
+  - Se mantiene «grano» como término general de provisión, sin especificar cereal.
+  - Se usa «dinero» por la amplitud semántica indicada por la revisión; no se estrecha a «plata».
+  - El orden natural del español coloca primero la acción de despedir, luego el llenado de los costales y finalmente la mención del dinero.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/jubilees/042/007.yaml
+  source_text_sha256: 62d083d6ee359cd2b7a75f8f8301a78902960cafa265c3cdf8527f486e74f0cd
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 9cabca1e124ec1cfb907111bd24a7a68e2d7873611d139c95f25d7aec831d8e6
+  timestamp: '2026-05-07T21:28:10Z'
+  output_hash: 137ae82ac82201564159d5f288423b4436492e1cf89f69552b19698e675d09f9
+  usage:
+    prompt_tokens: 2024
+    completion_tokens: 711
+    total_tokens: 2735
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004718
+status: spanish_reviewed
+revisions:
+- from: Él despidió a sus hermanos, y llenó sus costales de grano, y también puso su dinero para ellos.
+  to: Él despidió a sus hermanos, y llenó sus costales de grano, y también les puso su dinero.
+  rationale: 'Se hace una reparación mínima en la última cláusula: «les puso su dinero» conserva el verbo «puso» y el valor dativo/benefactivo de ሎሙ sin introducir la localización física de «en ellos» ni la interpretación más fuerte de «les devolvió». El resto del versículo puede mantenerse.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La mayor parte del borrador sigue bien el ge''ez y el rastro de auditoría inglés: ፈነወ se refleja adecuadamente como despedir/enviar; አሕስሊሆሙ ስርናየ como llenar sus sacos/costales de grano; y ወወርቆሙኒ correctamente evita la armonización con «plata» y se vierte como «dinero». Sin embargo, la frase final ወደየ ሎሙ no queda bien resuelta en español con «puso su dinero para ellos», que suena incompleta y poco idiomática para un verbo de poner con objeto material.'
+  spanish_quality_summary: 'El español es generalmente claro, pero «puso su dinero para ellos» resulta torpe e incluso ambiguo: puede leerse como si les hubiera asignado dinero, no que lo colocó junto con las provisiones. Hace falta una reparación mínima para lograr naturalidad sin introducir el sentido rechazado de «en ellos» como localización explícita. «Les devolvió su dinero» sería demasiado interpretativo; conviene conservar «puso» y hacer explícito el dativo con pronombre.'
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «Dinero» respeta la decisión documentada frente a «plata». No aparecen términos teológicos sensibles. «Costales» es aceptable, aunque «sacos» sería más neutral panhispánico; no es un problema grave.
+  issues:
+  - severity: medium
+    issue: La cláusula final «también puso su dinero para ellos» es poco natural en español.
+    rationale: Aunque «para ellos» refleja ሎሙ, en español el verbo «poner» con objeto físico normalmente requiere un complemento más claro o una construcción dativa más idiomática. La forma actual suena calcada y puede oscurecer la acción.
+  - severity: low
+    issue: «Costales» es regionalmente marcado.
+    rationale: Es comprensible en buena parte de América Latina, pero «sacos» sería más ampliamente neutro. No obstante, no impide la comprensión ni contradice el original, así que no exige cambio obligatorio.
+  revised_spanish_text: Él despidió a sus hermanos, y llenó sus costales de grano, y también les puso su dinero.
+  revision_rationale: 'Se hace una reparación mínima en la última cláusula: «les puso su dinero» conserva el verbo «puso» y el valor dativo/benefactivo de ሎሙ sin introducir la localización física de «en ellos» ni la interpretación más fuerte de «les devolvió». El resto del versículo puede mantenerse.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 4b8da833789b0ec97057704590fdd0874b6850c4e6b5a5fdd59ceaf4803a7f12
+  timestamp: '2026-05-07T23:06:45Z'
+  output_hash: 6cae0f2b92c259fe120689f7f22c7a13b927919c523b3ab558a2e4ca140f6d78
+  usage:
+    prompt_tokens: 2356
+    completion_tokens: 623
+    total_tokens: 2979
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015235
+  applied_revision: true

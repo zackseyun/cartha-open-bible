@@ -1,0 +1,241 @@
+id: 1EN.106.14
+reference: 1 Enoch 106:14
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወነዮሙ፡ *ይገብሩ፡ ኀጢአተ፡ ወየኀልፉ፡ ሥርዐተ፡ ወምስለ፡ አንስት፡ ተደመሩ፡ ወምስ ሌሆን፡ ይገብሩ፡ ኃጢአተ፡ ወአውሰቡ፡ እምኔሆን፡ ወእምኔሆን፡
+  language: Geez
+  pages:
+  - 257
+  - 258
+  - 259
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch106.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 106, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/106/014.yaml
+  text: And they will commit sin[a], and they will transgress the ordinance; and they will join themselves with women and commit sin with them, and they will take wives from among them[c][b], and they will beget children.
+  footnotes:
+  - marker: a
+    text: The closing clause is uncertain in this Ethiopic witness. The repeated 'from them and from them' may preserve emphasis, corruption, or a variant reading in the transmission.
+    reason: textual_variant
+  - marker: b
+    text: The phrase 'join themselves with women' likely refers to illicit union in context, but the wording is broader than an explicitly sexual verb.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'and they will be separated from them and from them.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 6e4ef7b0cee6fb2b7545a6f54072cad1c21bb1faf3457451340b3f9338746d90
+    timestamp: '2026-04-22T09:24:56Z'
+    output_hash: 47ce85db2c302aaed5acb0f13467a20780c90cc90aa3eb0e3dad1ff1a80f741b
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:39:04Z'
+    unchanged: false
+    changes_summary: Removed the accidental duplicated clause at the beginning. Retained the rest with minor normalization only, since it accurately reflects the source and reads naturally.
+translation:
+  language: es
+  text: Y cometerán pecado, y transgredirán la ordenanza; y se unirán con mujeres[a] y cometerán pecado con ellas, y tomarán esposas de entre esas mujeres, y engendrarán hijos.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: ‘Se unirán con mujeres’ refleja una formulación más amplia que ‘tendrán relaciones con mujeres’; el contexto la vuelve transgresora, pero el verbo ge’ez no obliga a explicitar el acto sexual.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ይገብሩ
+  english_pob_choice: they will commit
+  chosen_spanish: cometerán
+  alternatives_spanish:
+  - harán
+  - practicarán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Con objeto moral explícito (‘pecado’), el español natural y fiel es ‘cometerán [pecado]’, evitando un calco como ‘harán pecado’.
+- source_word: ኀጢአተ
+  english_pob_choice: sin
+  chosen_spanish: pecado
+  alternatives_spanish:
+  - pecado
+  - culpa
+  - ofensa
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ‘Pecado’ conserva el valor moral general y fluye mejor en español bíblico actual; ‘culpa’ o ‘ofensa’ estrecharían o desplazarían el sentido.
+- source_word: የኀልፉ
+  english_pob_choice: they will transgress
+  chosen_spanish: transgredirán
+  alternatives_spanish:
+  - violarán
+  - pasarán por encima de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Con ሥርዐተ, el sentido es infringir una norma establecida. ‘Transgredirán’ conserva el registro jurídico-moral sin añadir especificación indebida.
+- source_word: ሥርዐተ
+  english_pob_choice: the ordinance
+  chosen_spanish: la ordenanza
+  alternatives_spanish:
+  - el orden
+  - la ley
+  - la regla
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ‘Ordenanza’ reproduce el matiz de norma/decreto establecido y mantiene el tono apocalíptico-judicial. ‘Ley’ sería demasiado específico; ‘orden’ demasiado vago.
+- source_word: ተደመሩ
+  english_pob_choice: they will join themselves
+  chosen_spanish: se unirán
+  alternatives_spanish:
+  - se mezclarán
+  - se juntarán
+  - se unirán con
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo indica asociación o unión voluntaria. ‘Se unirán’ es natural en español y conserva la ambigüedad moral sin volver la frase más explícita de lo que exige el ge’ez.
+- source_word: አንስት
+  english_pob_choice: women
+  chosen_spanish: mujeres
+  alternatives_spanish:
+  - esposas
+  - feminas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término colectivo simple se traduce mejor como ‘mujeres’; ‘esposas’ añadiría una precisión marital no presente en el sustantivo.
+- source_word: ተደመሩ ወምስለ አንስት
+  english_pob_choice: join themselves with women
+  chosen_spanish: se unirán con mujeres
+  alternatives_spanish:
+  - se juntarán con mujeres
+  - se mezclarán con mujeres
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'La construcción se mantiene amplia, en línea con la auditoría inglesa: union ilícita sugerida por el contexto, pero sin explicitar el acto sexual más allá del texto fuente.'
+- source_word: አውሰቡ
+  english_pob_choice: they will take wives
+  chosen_spanish: tomarán esposas
+  alternatives_spanish:
+  - tomarán mujeres
+  - recibirán esposas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión auditada corrige la lectura errónea anterior de ‘separados’. Aquí el verbo indica tomar/contraer esposa, así que ‘tomarán esposas’ refleja con fidelidad la decisión lexical revisada.
+- source_word: እምኔሆን
+  english_pob_choice: from among them
+  chosen_spanish: de entre ellas
+  alternatives_spanish:
+  - de entre ellas mismas
+  - de entre ellas y de entre ellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La preposición repetida se vierte con una locución española natural que conserva la idea de extracción/selección desde el grupo femenino.
+- source_word: ወይወልዱ ውሉደ (from revision context)
+  english_pob_choice: and they will beget children
+  chosen_spanish: y engendrarán hijos
+  alternatives_spanish:
+  - y tendrán hijos
+  - y procrearán hijos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión del audit trail indica que el final correcto significa ‘engendrarán hijos’. ‘Engendrarán’ conserva el registro bíblico y el vínculo causal con la unión descrita.
+theological_decisions:
+- issue: Naturaleza de la unión con mujeres
+  english_pob_reading: Render the line as illicit joining with women without making the sexual act more explicit than the Ge'ez wording itself.
+  chosen_spanish_reading: ‘Se unirán con mujeres’ mantiene la carga transgresora sin convertir la frase en una paráfrasis más explícita que el ge’ez.
+  alternative_spanish_readings:
+  - ‘Se casarán con mujeres’
+  - ‘Tendrán relaciones con mujeres’
+  rationale: La auditoría inglesa preserva la tensión entre unión ilícita y formulación amplia. En español, ‘se unirán con mujeres’ conserva esa ambigüedad controlada y evita resolverla por adelantado.
+  doctrine_reference: Preservar la tensión léxica y no sobreinterpretar el alcance del verbo cuando el testimonio no lo exige.
+- issue: Sentido de 'ordenanza' frente a otras normas
+  english_pob_reading: they will transgress the ordinance
+  chosen_spanish_reading: ‘transgredirán la ordenanza’ mantiene el lenguaje de norma establecida y de infracción deliberada.
+  alternative_spanish_readings:
+  - ‘violarán la ley’
+  - ‘romperán el orden’
+  rationale: ‘Ordenanza’ deja abierto si se trata de decreto, orden instituida o norma sagrada, sin forzar el texto hacia una ley mosaica específica.
+  doctrine_reference: Respetar el registro normativo/judicial del pasaje sin estrechar indebidamente el alcance.
+- issue: Clausula final de descendencia
+  english_pob_reading: and they will beget children
+  chosen_spanish_reading: ‘y engendrarán hijos’ sigue la revisión textual que corrige la lectura errónea previa.
+  alternative_spanish_readings:
+  - ‘y tendrán hijos’
+  - ‘y procrearán hijos’
+  rationale: La nota de revisión indica que el final del verso debe leerse como engendrar hijos. La traducción lo refleja de forma directa y sobria.
+  doctrine_reference: Dar prioridad a la corrección textual auditada frente a una lectura anterior equivocada.
+translation_notes:
+  revision_awareness: 'Se siguió la revisión más reciente del audit trail, que corrige un error importante en la parte final: el texto no dice ‘separados de ellas’, sino que concluye con ‘engendrarán hijos’. También se adoptó la lectura revisada de አውሰቡ como ‘tomarán esposas’ y no como separación. La traducción española evita reproducir la lectura errónea anterior y conserva la ambigüedad prudente donde el ge’ez es amplio.'
+  spanish_consistency_notes:
+  - Se usó ‘Yahvé’ solo cuando el texto fuente lo exige; aquí no aparece.
+  - Se prefirió ‘pecado’/‘pecar’ por consistencia con el campo moral del pasaje.
+  - Se mantuvo ‘ordenanza’ para el valor normativo del término, en lugar de ‘ley’ o ‘regla’.
+  - No se introdujo ‘Cristo’ ni terminología cristológica ajena al pasaje.
+  - ‘Mujeres’ se mantuvo como traducción simple de አንስት; ‘esposas’ solo aparece donde la revisión textual lo justifica por አውሰቡ.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/106/014.yaml
+  source_text_sha256: 026c194b473e14437bab0040a54e5953cf76e5c87473ae0855899409522de6c4
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 791e31dde33d9e80166704ffad863cb28f68137017b4a507b5cf6d3e46fc3a20
+  timestamp: '2026-05-07T21:28:16Z'
+  output_hash: 85e559b920e17806f903f8112c2c863f85413bb82b3dcb0476c5c07462021b49
+  usage:
+    prompt_tokens: 3383
+    completion_tokens: 2003
+    total_tokens: 5386
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011551
+status: spanish_reviewed
+revisions:
+- from: Y cometerán pecado[a], y transgredirán la ordenanza; y se unirán con mujeres[b] y cometerán pecado con ellas, y tomarán esposas de entre ellas, y engendrarán hijos.
+  to: Y cometerán pecado, y transgredirán la ordenanza; y se unirán con mujeres[a] y cometerán pecado con ellas, y tomarán esposas de entre esas mujeres, y engendrarán hijos.
+  rationale: Se elimina la nota textual desactualizada porque la auditoría ya corrigió la cláusula final como ‘y engendrarán hijos’. Se conserva la nota léxica útil sobre ‘se unirán con mujeres’. Se hace un ajuste menor a ‘de entre esas mujeres’ para mejorar la claridad referencial en español sin cambiar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:58:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente la revisión auditada del verso: ‘cometerán pecado’, ‘transgredirán la ordenanza’, ‘se unirán con mujeres’, ‘tomarán esposas de entre ellas’ y ‘engendrarán hijos’ concuerdan bien con la lectura fuente corregida y con el rastro de auditoría inglés. Sin embargo, la nota [a] ya no está bien alineada con el texto revisado, porque ancla en ‘pecado’ una observación sobre una incertidumbre textual final que la auditoría ya resolvió en favor de ‘engendrarán hijos’.'
+  spanish_quality_summary: 'El español es claro, natural y de registro bíblico moderno. La sintaxis fluye bien. El único problema relevante es paratextual: la nota [a] introduce incertidumbre innecesaria y desubicada. Además, ‘de entre ellas’ puede mantenerse, pero ‘de entre esas mujeres’ mejora levemente la referencia en español sin alterar el sentido.'
+  glossary_alignment: No hay conflictos con la terminología marco del proyecto. Las decisiones ‘pecado’, ‘ordenanza’, ‘mujeres’, ‘esposas’ e ‘hijos’ son apropiadas. La elección ‘se unirán con mujeres’ preserva correctamente la cautela léxica documentada.
+  issues:
+  - severity: medium
+    issue: La nota [a] conserva una incertidumbre textual desactualizada
+    rationale: El audit trail muestra que la cláusula final fue corregida adjudicadamente a ‘y engendrarán hijos’. Mantener una nota que presenta esa cláusula como todavía incierta debilita indebidamente la confianza del texto final y además está anclada en un lugar no pertinente.
+  - severity: low
+    issue: Anclaje de nota mal ubicado
+    rationale: La nota [a] aparece sobre ‘pecado’, pero su contenido trata de la cláusula final del verso. Si no se elimina, debería anclarse al final; dado que la auditoría ya resolvió el punto, lo mejor es quitarla.
+  - severity: low
+    issue: Ligera mejora estilística posible en ‘de entre ellas’
+    rationale: ‘De entre ellas’ es válido, pero en español la referencia puede sonar un poco flotante tras varias cláusulas. ‘De entre esas mujeres’ o conservar ‘de entre ellas’ son ambas fieles; la mejora es opcional y estilística.
+  revised_spanish_text: Y cometerán pecado, y transgredirán la ordenanza; y se unirán con mujeres[a] y cometerán pecado con ellas, y tomarán esposas de entre esas mujeres, y engendrarán hijos.
+  revised_footnotes:
+  - marker: a
+    text: ‘Se unirán con mujeres’ refleja una formulación más amplia que ‘tendrán relaciones con mujeres’; el contexto la vuelve transgresora, pero el verbo ge’ez no obliga a explicitar el acto sexual.
+    reason: lexical_alternative
+  revision_rationale: Se elimina la nota textual desactualizada porque la auditoría ya corrigió la cláusula final como ‘y engendrarán hijos’. Se conserva la nota léxica útil sobre ‘se unirán con mujeres’. Se hace un ajuste menor a ‘de entre esas mujeres’ para mejorar la claridad referencial en español sin cambiar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b77511e472902ed3a772626a3a6dd6ed7df3e14f69140a54bf289e61e212aac3
+  timestamp: '2026-05-07T22:58:07Z'
+  output_hash: 25de3ac5cb9d278a86f397b3b083b9c8f37130c3856da90f9cded8be5b2bf7f4
+  usage:
+    prompt_tokens: 4980
+    completion_tokens: 732
+    total_tokens: 5712
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02343
+  applied_revision: true

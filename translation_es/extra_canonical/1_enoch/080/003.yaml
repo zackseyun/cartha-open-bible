@@ -1,0 +1,213 @@
+id: 1EN.80.3
+reference: 1 Enoch 80:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወበውእቱ፡ አዝማን፡ ፍሬ፡ ምድር፡ ደሓራዊ፡ ይከውን፡ ወኢይበቍል፡ በዘመኑ፡ ወፍሬ፡ ዕፅ፡ ይትከላእ፡ በዘመኑ፡ ዚአሁ።
+  language: Geez
+  pages:
+  - 190
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch80.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 80, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/080/003.yaml
+  text: And in those times the fruit of the earth will be delayed[a], and it will not sprout in its season[d][c][b]; and the fruit of the trees will be withheld in its season.
+  footnotes:
+  - marker: a
+    text: Or 'the produce of the land will come late.' The Ge'ez wording emphasizes delay relative to the proper season.
+    reason: lexical_alternative
+  - marker: b
+    text: The final clause may also be understood as 'the fruit of the trees will be hindered at its proper time,' stressing that the expected harvest is held back when it should appear.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'in their season'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'will be delayed'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 8c53b3f943dba667651df38530f9e603b03e2db2ad04480ff25dbc578e3f561b
+    timestamp: '2026-04-22T09:18:10Z'
+    output_hash: 005bea3198ada3200c32d3cc64cf0f24c88262a38a09cbbef0d631f9cb0fdca1
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:39Z'
+    unchanged: false
+    changes_summary: Changed 'late' to 'delayed' for more natural formal English, and simplified 'its own season' to 'its season' for consistency with the preceding phrase.
+translation:
+  language: es
+  text: Y en aquellos tiempos el fruto de la tierra se retrasará[a], y no brotará en su tiempo; y el fruto de los árboles será retenido[b] en su tiempo.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «llegará tarde». El ge''ez enfatiza la demora con respecto al tiempo oportuno.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «será impedido» o «será obstaculizado», con el sentido de que el fruto esperado queda retenido en el momento debido.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: አዝማን
+  english_pob_choice: times
+  chosen_spanish: tiempos
+  alternatives_spanish:
+  - días
+  - épocas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término plural señala un marco temporal amplio; «tiempos» conserva ese alcance apocalíptico sin limitarlo a días concretos ni a estaciones agrícolas.
+- source_word: ፍሬ፡ ምድር
+  english_pob_choice: the fruit of the earth
+  chosen_spanish: el fruto de la tierra
+  alternatives_spanish:
+  - el producto de la tierra
+  - la cosecha de la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Fruto de la tierra» mantiene la imagen concreta y el registro agrícola-cósmico del pasaje mejor que un equivalente más económico o genérico.
+- source_word: ደሓራዊ
+  english_pob_choice: will be delayed
+  chosen_spanish: será retrasado
+  alternatives_spanish:
+  - llegará tarde
+  - será demorado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La idea es que el fruto no llega a su tiempo debido. «Será retrasado» conserva la noción de demora impuesta por circunstancias externas, y evita suavizarla en exceso.
+- source_word: ወኢይበቍል
+  english_pob_choice: and it will not sprout
+  chosen_spanish: y no brotará
+  alternatives_spanish:
+  - y no germinará
+  - y no echará brotes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo apunta a salir o brotar; «brotará» es natural en español y preserva la imagen de crecimiento esperado que no aparece.
+- source_word: በዘመኑ
+  english_pob_choice: in its season
+  chosen_spanish: en su temporada
+  alternatives_spanish:
+  - en su tiempo
+  - a su debido tiempo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En contexto agrícola, «temporada» comunica bien la referencia al momento apropiado de fruto y cosecha.
+- source_word: ፍሬ፡ ዕፅ
+  english_pob_choice: the fruit of the trees
+  chosen_spanish: el fruto de los árboles
+  alternatives_spanish:
+  - el fruto de las plantas
+  - el fruto del bosque
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Árboles» es la equivalencia idiomática más clara para ዕፅ en este contexto agrícola.
+- source_word: ይትከላእ
+  english_pob_choice: will be withheld
+  chosen_spanish: será retenido
+  alternatives_spanish:
+  - será contenido
+  - será impedido
+  - será retenido de aparecer
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma pasiva expresa que el fruto queda detenido o retenido; «retenido» transmite esa idea con naturalidad en español.
+- source_word: በዘመኑ፡ ዚአሁ
+  english_pob_choice: in its season
+  chosen_spanish: en su temporada
+  alternatives_spanish:
+  - en su propio tiempo
+  - en el tiempo que le corresponde
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El posesivo singular del ge'ez se refleja en «su». Mantengo «temporada» para paralelismo con la primera mitad del verso y por su tono agrícola.
+theological_decisions:
+- issue: Imagen de juicio cósmico-agricícola
+  english_pob_reading: 'The verse describes cosmic-agricultural disorder as a sign of judgment: normal fertility and timing fail.'
+  chosen_spanish_reading: 'El verso describe un desorden agrícola-cósmico como señal de juicio: la fertilidad normal y el tiempo debido fracasan.'
+  alternative_spanish_readings:
+  - Solo describe malas cosechas naturales.
+  - Es una metáfora moral general sin fuerza agrícola literal.
+  rationale: En el contexto de 1 Enoc, la alteración de tiempos y frutos funciona como señal apocalíptica concreta. La traducción mantiene la imagen literal sin convertirla en una abstracción moral.
+  doctrine_reference: Preservar la imaginería apocalíptica; no aplanar el lenguaje cósmico en prosa genérica.
+translation_notes:
+  revision_awareness: 'La base inglesa pasó por ajustes menores: primero se prefirió «delayed» sobre «late», y luego se simplificó «its own season» a «its season». La versión española sigue esa decisión general de naturalidad formal, pero conserva la fuerza de demora y el paralelo agrícola del verso, reflejando también que el ge''ez usa un posesivo singular enfático en la clausula final.'
+  spanish_consistency_notes:
+  - Se mantiene el paralelismo entre «fruto de la tierra» y «fruto de los árboles».
+  - Se usa un único campo semántico agrícola («brotará», «temporada», «retenido») para reflejar la unidad del verso.
+  - El posesivo singular «su» en ambas cláusulas evita perder la referencia al momento debido de cada fruto.
+  - Se evita «SEÑOR» u otra terminología de sustitución porque el verso no contiene el nombre divino.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/080/003.yaml
+  source_text_sha256: eee1161518f811388ae8f45a08ef41c23ff1ecc6f610ca88cd5eb4d3938a7935
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 6ac020e76de57d6b2812d13be671d1a7a0ca7ee402208c299acfc9b97a26b220
+  timestamp: '2026-05-07T21:27:43Z'
+  output_hash: 2dc73600338e0f948ee6e6b72c3a2298a7bb0dd960ced0d59918680ee69031df
+  usage:
+    prompt_tokens: 3577
+    completion_tokens: 1363
+    total_tokens: 4940
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008816
+status: spanish_reviewed
+revisions:
+- from: Y en aquellos tiempos el fruto de la tierra será retrasado[a], y no brotará en su temporada; y el fruto de los árboles será retenido[b] en su temporada.
+  to: Y en aquellos tiempos el fruto de la tierra se retrasará[a], y no brotará en su tiempo; y el fruto de los árboles será retenido[b] en su tiempo.
+  rationale: La revisión conserva el sentido del original y del POB inglés, pero mejora la naturalidad y dignidad del español. «Se retrasará» expresa mejor la demora del fruto que «será retrasado», y «en su tiempo» refleja con más precisión el marco calendárico-apocalíptico del ge'ez que «en su temporada». No hace falta adjudicación adicional porque el ajuste es estilístico y léxico, no doctrinal ni textualmente incierto.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:17:09Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura básica del ge''ez: marco temporal amplio («en aquellos tiempos»), imaginería agrícola literal, retraso del fruto, falta de brote en el tiempo debido y fruto de los árboles retenido. Sin embargo, «será retrasado» suena poco idiomático en español para fruto/cosecha, y «temporada» es menos preciso y digno que «tiempo» en este contexto bíblico-agrocalendárico. También conviene reflejar mejor el matiz de tiempo debido del original y de las notas inglesas.'
+  spanish_quality_summary: La redacción es comprensible, pero «el fruto de la tierra será retrasado» resulta forzada; en español natural sería mejor «se retrasará» o «llegará tarde». «Temporada» funciona, pero «tiempo» o «debido tiempo» suena más bíblico y menos comercial/estacional. La frase revisada mejora naturalidad, paralelismo y dignidad sin alejarse del original.
+  glossary_alignment: No hay conflictos con la terminología doctrinal principal del proyecto. Las decisiones léxicas agrícolas se mantienen literales, como exige la rationale teológica. La revisión propone «se retrasará» para ደሓራዊ y «en su tiempo» para በዘመኑ, manteniendo fielmente el sentido calendárico-agricultural del original.
+  issues:
+  - severity: medium
+    issue: «será retrasado» es poco idiomático en español
+    rationale: Aunque semánticamente comprensible, en español natural el fruto o la cosecha normalmente «se retrasa» más que «es retrasado». La forma actual suena calcada y resta fluidez.
+  - severity: medium
+    issue: «temporada» debilita el matiz de tiempo debido
+    rationale: El ge'ez apunta al tiempo/sezón señalado u oportuno. «Temporada» no es imposible, pero «tiempo» o «debido tiempo» encaja mejor con el registro bíblico y con la idea de orden temporal alterado.
+  - severity: low
+    issue: La nota [a] usa «será demorado», también algo rígido
+    rationale: Si se revisa el texto principal a una forma más natural, conviene alinear la alternativa con español más idiomático, como «llegará tarde» o «se demorará».
+  revised_spanish_text: Y en aquellos tiempos el fruto de la tierra se retrasará[a], y no brotará en su tiempo; y el fruto de los árboles será retenido[b] en su tiempo.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «llegará tarde». El ge''ez enfatiza la demora con respecto al tiempo oportuno.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «será impedido» o «será obstaculizado», con el sentido de que el fruto esperado queda retenido en el momento debido.'
+    reason: lexical_alternative
+  revision_rationale: La revisión conserva el sentido del original y del POB inglés, pero mejora la naturalidad y dignidad del español. «Se retrasará» expresa mejor la demora del fruto que «será retrasado», y «en su tiempo» refleja con más precisión el marco calendárico-apocalíptico del ge'ez que «en su temporada». No hace falta adjudicación adicional porque el ajuste es estilístico y léxico, no doctrinal ni textualmente incierto.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 605452775d446aecffd02274fc62d1174e9427c1b34f4db743df1d4759c232c2
+  timestamp: '2026-05-07T23:17:09Z'
+  output_hash: 2b5731f25c02dbc14b22bf2d9e8cba184a5e47c1ef4b3345b76064acf1577447
+  usage:
+    prompt_tokens: 4569
+    completion_tokens: 785
+    total_tokens: 5354
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023198
+  applied_revision: true

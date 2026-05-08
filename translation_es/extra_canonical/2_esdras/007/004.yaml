@@ -1,0 +1,141 @@
+id: 2ES.7.4
+reference: 2 Esdras 7:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: erit autem ei introitus in angusto loco positus, ut esset similis fluminis.
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/007/004.yaml
+  text: But its entrance will be set in a narrow place[b][a], so that it would be like a river.
+  footnotes:
+  - marker: a
+    text: Or 'is set'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'so that it is'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:58Z'
+    unchanged: false
+    changes_summary: Changed 'might be' to 'would be' to better reflect the result/purpose nuance of 'ut esset' in formal, natural English.
+translation:
+  language: es
+  text: Pero su entrada será colocada en un lugar angosto[a], de modo que fuera como un río.[b]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O 'será puesta'.
+    reason: previous_rendering
+  - marker: b
+    text: O 'sería como un río'.
+    reason: previous_rendering
+lexical_decisions:
+- source_word: erit ... positus
+  english_pob_choice: will be set
+  chosen_spanish: será puesta
+  alternatives_spanish:
+  - será colocada
+  - quedará puesta
+  lexicon: sum + positus (futuro pasivo perifrástico)
+  rationale: El latín usa una construcción futura con valor pasivo; en español, 'será puesta' conserva el futuro y la pasividad sin sonar artificial. 'Colocada' es posible, pero 'puesta' sigue más de cerca la sencillez del original.
+- source_word: angusto loco
+  english_pob_choice: in a narrow place
+  chosen_spanish: en un lugar angosto
+  alternatives_spanish:
+  - en un sitio estrecho
+  - en un lugar estrecho
+  lexicon: angustus + locus
+  rationale: '''Angosto'' reproduce bien la idea de estrechez física y mantiene un registro claro y bíblico. ''Lugar'' evita sobreinterpretar el espacio concreto.'
+- source_word: ut esset similis
+  english_pob_choice: so that it would be like
+  chosen_spanish: de modo que sería como
+  alternatives_spanish:
+  - para que fuera como
+  - de manera que fuera como
+  lexicon: ut + subjuntivo imperfecto; similis
+  rationale: La cláusula final/resultativa con 'ut esset' admite en español una expresión natural de resultado. 'Sería como' conserva el valor prospectivo/resultativo que el POB inglés fijó como 'would be'.
+- source_word: fluminis
+  english_pob_choice: a river
+  chosen_spanish: un río
+  alternatives_spanish:
+  - corriente
+  - arroyo
+  lexicon: flumen
+  rationale: '''Río'' es el equivalente directo y no añade matices ajenos. ''Corriente'' sería más interpretativa y ''arroyo'' demasiado específico.'
+translation_notes:
+  revision_awareness: La revisión más reciente corrige el tiempo verbal del latín 'erit' a futuro en inglés ('will be set') y mantiene la fuerza resultativa de 'ut esset' como 'would be'. La traducción española refleja ambos ajustes con futuro ('será puesta') y con una cláusula de resultado natural ('de modo que sería').
+  spanish_consistency_notes:
+  - Se preserva el futuro del verbo principal para no borrar la corrección aprobada del latín.
+  - No se usa 'SEÑOR' ni terminología teológica especial porque el versículo no contiene vocabulario divino explícito.
+  - Se mantiene 'río' como imagen literal, evitando ampliar el sentido de la comparación.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/007/004.yaml
+  source_text_sha256: d79b07e7f6b577f10e91c6a4d12be3a6024d37030042d1daf7619a62f9f30a34
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 21af8913be32c0a9f4b9a5920532fba4e104475973ce93f6a81309c2083a5ebe
+  timestamp: '2026-05-07T21:28:39Z'
+  output_hash: 4fac5076d4d837aab04413c9cd752ce1a7c685e769d2f4b8eb313d42dc938eea
+  usage:
+    prompt_tokens: 2169
+    completion_tokens: 650
+    total_tokens: 2819
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004552
+status: spanish_reviewed
+revisions:
+- from: Pero su entrada será puesta en un lugar angosto[a][b], de modo que sería como un río.
+  to: Pero su entrada será colocada en un lugar angosto[a], de modo que fuera como un río.[b]
+  rationale: Se ajusta el texto para mejorar la naturalidad del español sin apartarse del latín ni del historial POB. `Será colocada` conserva el futuro pasivo de `erit ... positus` con mejor fluidez. `De modo que fuera como un río` refleja mejor `ut esset similis fluminis` en español subordinado. Las notas se conservan solo como alternativas previas documentadas y con razones alineadas al audit trail.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:07:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el sentido básico del latín: futuro pasivo en `erit ... positus`, ubicación `in angusto loco`, y comparación/result ado en `ut esset similis fluminis`. Sin embargo, la cláusula final `de modo que sería como un río` suena menos idiomática y menos directamente subordinada al `ut esset` latino que `de modo que fuera como un río` o `para que fuera como un río`.'
+  spanish_quality_summary: El español es mayormente claro, pero `será puesta` aplicado a `entrada` resulta algo tosco en español natural; `será colocada` lee mejor sin apartarse del sentido. Además, las notas heredadas del inglés están mal clasificadas y una de ellas transmite una alternativa menos natural en español (`es puesta`).
+  glossary_alignment: No hay términos teológicos o del glosario mayor implicados aquí. Las decisiones léxicas principales son correctas en general, pero conviene ajustar la formulación española para mayor naturalidad y precisión sintáctica.
+  issues:
+  - severity: medium
+    issue: '`será puesta` es fiel pero suena rígido con `entrada` en español.'
+    rationale: Aunque calca de cerca `positus`, en español bíblico legible `será colocada` o `estará situada` resulta más natural. `Puesta` no es incorrecto, pero sí menos fluido.
+  - severity: medium
+    issue: '`de modo que sería como un río` no es la mejor subordinación para `ut esset`.'
+    rationale: En español, tras `de modo que`, el imperfecto de subjuntivo (`fuera`) expresa mejor el matiz de propósito/resultado del latín. `Sería` suena más independiente y menos integrado sintácticamente.
+  - severity: low
+    issue: Las razones de las notas no siguen bien el historial auditado en inglés.
+    rationale: Las notas inglesas son `previous_rendering`, no `textual_variant` ni `alternative_reading`. Además, `es puesta` no es una alternativa particularmente recomendable en español, aunque puede conservarse como nota histórica si se reetiqueta adecuadamente.
+  revised_spanish_text: Pero su entrada será colocada en un lugar angosto[a], de modo que fuera como un río.[b]
+  revised_footnotes:
+  - marker: a
+    text: O 'será puesta'.
+    reason: previous_rendering
+  - marker: b
+    text: O 'sería como un río'.
+    reason: previous_rendering
+  revision_rationale: Se ajusta el texto para mejorar la naturalidad del español sin apartarse del latín ni del historial POB. `Será colocada` conserva el futuro pasivo de `erit ... positus` con mejor fluidez. `De modo que fuera como un río` refleja mejor `ut esset similis fluminis` en español subordinado. Las notas se conservan solo como alternativas previas documentadas y con razones alineadas al audit trail.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1cbc6fa45ffbdcf605022086bce35f75042e2dd2788ac705e3454de054118ada
+  timestamp: '2026-05-07T23:07:10Z'
+  output_hash: 451ba2b66d24846a42167fcceaec94a308fab28f76e189b227696005b4e56451
+  usage:
+    prompt_tokens: 2465
+    completion_tokens: 669
+    total_tokens: 3134
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016198
+  applied_revision: true

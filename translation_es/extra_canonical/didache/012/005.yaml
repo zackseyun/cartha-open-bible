@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Replaced 'Christ-trader' with 'Messiah-trader' to follow POB policy for χριστός, and changed 'watch out for' to the more formal 'beware of' for register.
 translation:
   language: es
-  text: Pero si no está dispuesto a obrar así, es un mercader del Mesías[a]; guárdense de los tales.
+  text: Pero si no está dispuesto a hacerlo así, es un mercader del Mesías[a]; cuídense de tales personas.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -100,4 +100,43 @@ ai_draft:
     estimated_cost_usd: 0.173154
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero si no está dispuesto a obrar así, es un mercader del Mesías[a]; guárdense de los tales.
+  to: Pero si no está dispuesto a hacerlo así, es un mercader del Mesías[a]; cuídense de tales personas.
+  rationale: 'Applied a small readability repair without changing meaning: simplified ''obrar así'' to the more natural ''hacerlo así'' and replaced the marked expression ''los tales'' with ''tales personas'' for clearer neutral Spanish while preserving the warning force of προσέχετε ἀπὸ τῶν τοιούτων.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:38:57Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The draft accurately reflects the Greek clause structure and the English POB audit trail: οὐ θέλει ... ποιεῖν is captured as unwillingness to act accordingly, χριστέμπορός is rightly rendered with Mesías rather than Cristo, and προσέχετε ἀπὸ τῶν τοιούτων is conveyed as a warning to avoid such people. The only notable issue is that ''obrar así'' is somewhat stiffer than needed and ''guárdense de los tales'' is readable but sounds marked/archaic in a way that slightly reduces broad church readability.'
+  spanish_quality_summary: The Spanish is faithful and dignified, but a small stylistic repair would improve naturalness in broadly readable neutral Spanish. 'Hacerlo así' is simpler and still faithful for οὕτω ποιεῖν, and 'cuídense de tales personas' preserves the warning force without the somewhat archaic elliptical 'los tales.'
+  glossary_alignment: 'Terminology aligns well with project defaults: χριστός is rendered as ''Mesías'' per POB policy, not ''Cristo''; the coined compound χριστέμπορός is explained responsibly in a footnote. No glossary conflicts were found.'
+  issues:
+  - severity: medium
+    issue: Marked phrasing in 'guárdense de los tales'
+    rationale: While defensible, 'los tales' is somewhat archaic/elliptical and less broadly natural in neutral Latin American Spanish. A clearer equivalent such as 'tales personas' preserves τοιούτων without sacrificing dignity.
+  - severity: low
+    issue: Slightly wooden 'obrar así'
+    rationale: '''Obrar así'' is faithful but can sound formalistic. ''Hacerlo así'' or similar is more natural and still adequately reflects οὕτω ποιεῖν in context.'
+  revised_spanish_text: Pero si no está dispuesto a hacerlo así, es un mercader del Mesías[a]; cuídense de tales personas.
+  revised_footnotes:
+  - marker: a
+    text: 'Griego χριστέμπορός (christémporos): compuesto de χριστός (Mesías, el Ungido) y ἔμπορος (mercader, comerciante viajero). El término, aparentemente acuñado por el autor de la Didajé, designa a quien explota el nombre o la causa del Mesías con fines de lucro personal. Alternativa posible: «traficante del Mesías», que acentúa aún más el carácter censurable de la conducta.'
+    reason: lexical_alternative
+  revision_rationale: 'Applied a small readability repair without changing meaning: simplified ''obrar así'' to the more natural ''hacerlo así'' and replaced the marked expression ''los tales'' with ''tales personas'' for clearer neutral Spanish while preserving the warning force of προσέχετε ἀπὸ τῶν τοιούτων.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 52585943750a5d5ef68436a7205f3e450f2c08909c8abf8bcb4abf735db8538d
+  timestamp: '2026-05-07T23:38:57Z'
+  output_hash: 394308141d746ed6ff7d44c865a744f61abe552b4312b768b78381aa2e6f00f0
+  usage:
+    prompt_tokens: 2642
+    completion_tokens: 636
+    total_tokens: 3278
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016145
+  applied_revision: true

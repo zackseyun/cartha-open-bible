@@ -1,0 +1,123 @@
+id: 2ES.7.6
+reference: 2 Esdras 7:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'item aliud: civitas est aedificata et posita in loco campestri, est autem plena omnium bonorum.'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/007/006.yaml
+  text: 'Again, another example: a city is built and set in a plain, and it is full of every good thing.'
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:58Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: 'De nuevo, otro ejemplo: una ciudad está edificada y situada en una llanura, y está llena de todo bien.'
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: item aliud
+  english_pob_choice: Again, another example
+  chosen_spanish: De nuevo, otro ejemplo
+  alternatives_spanish:
+  - Además, otro ejemplo
+  - 'Otra vez: otro ejemplo'
+  lexicon: item = 'de nuevo/además'; aliud = 'otro'
+  rationale: La secuencia latina introduce un nuevo caso ilustrativo; 'De nuevo' conserva el valor aditivo y 'otro ejemplo' refleja el carácter ejemplar señalado por la versión inglesa, sin sobretraducir.
+- source_word: civitas
+  english_pob_choice: a city
+  chosen_spanish: una ciudad
+  alternatives_spanish:
+  - una urbe
+  lexicon: civitas = ciudad
+  rationale: '''Ciudad'' es el equivalente natural y fiel en español para civitas en este contexto descriptivo.'
+- source_word: aedificata est
+  english_pob_choice: is built
+  chosen_spanish: está edificada
+  alternatives_spanish:
+  - está construida
+  - ha sido edificada
+  lexicon: aedificata est = edificada/construida
+  rationale: El participio pasivo expresa el estado resultante de una ciudad ya levantada; 'está edificada' conserva esa idea sin forzar un perfecto perifrástico.
+- source_word: posita in loco campestri
+  english_pob_choice: set in a plain
+  chosen_spanish: puesta en una llanura
+  alternatives_spanish:
+  - situada en una llanura
+  - colocada en un llano
+  lexicon: posita in loco campestri = puesta/situada en un lugar llano
+  rationale: '''Puesta en una llanura'' reproduce la imagen espacial del latín y sigue de cerca la formulación inglesa, manteniendo claridad idiomática en español.'
+- source_word: plena omnium bonorum
+  english_pob_choice: full of every good thing
+  chosen_spanish: llena de toda clase de bienes
+  alternatives_spanish:
+  - llena de todos los bienes
+  - llena de todo bien
+  lexicon: plena = llena; omnium bonorum = de todos los bienes / de toda clase de bienes
+  rationale: '''Toda clase de bienes'' evita una lectura excesivamente abstracta y mantiene el sentido de abundancia total presente en el latín y la versión inglesa.'
+translation_notes:
+  revision_awareness: La versión inglesa auditada fue dejada sin cambios en la última revisión, con acuerdo alto entre evaluadores. No se detectaron tensiones léxicas o textuales adicionales en el breve contenido latino, así que la redacción española sigue de cerca el sentido confirmado por el audit trail.
+  spanish_consistency_notes:
+  - Se mantuvo un estilo sobrio y bíblico, con vocabulario transparente para lectores de español general.
+  - No se introdujeron notas de pie porque el texto no presenta variantes ni ambigüedades significativas que el audit trail haya documentado.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/007/006.yaml
+  source_text_sha256: 73147f849fd0236b193959ca79044e3d3b97d31ab0caffc5cb6974b9aaf7b7f4
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 5e83204c2925651b0b5a61c1de9d42f8b4d52d68727e47be8f9d0725e80c5b5b
+  timestamp: '2026-05-07T21:28:31Z'
+  output_hash: aeb0fcdd5032e87096c53f7f19aef6539d8949a9e092c48145ab9fb2212d2d2c
+  usage:
+    prompt_tokens: 1517
+    completion_tokens: 689
+    total_tokens: 2206
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004238
+status: spanish_reviewed
+revisions:
+- from: 'De nuevo, otro ejemplo: una ciudad está edificada y puesta en una llanura, y está llena de toda clase de bienes.'
+  to: 'De nuevo, otro ejemplo: una ciudad está edificada y situada en una llanura, y está llena de todo bien.'
+  rationale: Se ajusta la última frase para reflejar con mayor precisión plena omnium bonorum sin añadir un matiz de clases o categorías. También se cambia 'puesta' por 'situada' para una expresión más natural en español, manteniendo el mismo sentido del original latino.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:16:35Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura y el sentido del latín: una nueva ilustración sobre una ciudad construida en una llanura y llena de bienes. Sin embargo, ''toda clase de bienes'' introduce un matiz distributivo no explicitado por omnium bonorum / ''every good thing'', que se expresa mejor de forma más directa.'
+  spanish_quality_summary: El español es claro y natural. La frase 'está edificada y puesta en una llanura' es comprensible, pero 'situada' suena más idiomático en español sin perder fidelidad. El resto mantiene tono digno y legible.
+  glossary_alignment: No hay términos teológicos del glosario principal implicados. Las elecciones léxicas generales son adecuadas, salvo que conviene ajustar 'toda clase de bienes' a 'todo bien' o 'todos los bienes' para una correspondencia más estrecha con el original.
+  issues:
+  - severity: medium
+    issue: '''Toda clase de bienes'' sobreinterpreta omnium bonorum.'
+    rationale: El latín dice literalmente 'llena de todos los bienes' / 'de todo bien'. 'Toda clase de bienes' añade la idea de variedades o categorías, mientras que el original enfatiza plenitud total.
+  - severity: low
+    issue: '''Puesta en una llanura'' suena algo calcado en español.'
+    rationale: Aunque fiel a posita, en español bíblico natural 'situada en una llanura' conserva el valor espacial con mejor fluidez.
+  revised_spanish_text: 'De nuevo, otro ejemplo: una ciudad está edificada y situada en una llanura, y está llena de todo bien.'
+  revision_rationale: Se ajusta la última frase para reflejar con mayor precisión plena omnium bonorum sin añadir un matiz de clases o categorías. También se cambia 'puesta' por 'situada' para una expresión más natural en español, manteniendo el mismo sentido del original latino.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 686f8b9575ba8d12c483cd4c1d99aa81f14cf0377af43e4b3166da1acd04aa84
+  timestamp: '2026-05-07T23:16:35Z'
+  output_hash: a884dc0305dfd3b230f2dc6575f20768b2916c5a607b908c534b03f0bf274857
+  usage:
+    prompt_tokens: 1903
+    completion_tokens: 453
+    total_tokens: 2356
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011553
+  applied_revision: true

@@ -1,0 +1,186 @@
+id: 1EN.101.9
+reference: 1 Enoch 101:9
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: አኮኑ፡ ውእቶሙ፡ ተነገሥተ፡ አሕማር፡ ይፈርህዋ፡ ለባሕር፡ ወኃጥኣን፡ ለልዑል፡ ኢይፈርህዎ።
+  language: Geez
+  pages:
+  - 248
+  - 249
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/101/009.yaml
+  text: Do not those kings of the sea fear the sea[b][a], while sinners do not fear the Most High?
+  footnotes:
+  - marker: a
+    text: The phrase rendered 'those mariners' is textually difficult in the OCR'd Ge'ez. It likely refers to people who go down to the sea in ships; 'sailors' or 'seafarers' are possible alternatives.
+    reason: textual_variant
+  - marker: b
+    text: Or 'Are not those mariners afraid of the sea, while sinners do not fear'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: bc24a8c2659ae95751d97f1d87fab6528ed13839216789316b537947b1df8d8f
+    timestamp: '2026-04-22T09:24:00Z'
+    output_hash: 1c3ebe77ef5e7fcd243c941d4e0a8ef5f1cb7938745627d11c6724b7b2be5d60
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:51Z'
+    unchanged: false
+    changes_summary: Revised 'kings of the ships' to 'kings of the sea' for better lexical accuracy and more natural English; retained the rhetorical contrast and formal register.
+translation:
+  language: es
+  text: ¿No temen esos reyes del mar al mar[a], mientras los pecadores no temen al Altísimo[b]?
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La expresión ge'ez es difícil; puede aludir literalmente a 'reyes del mar' y, por extensión, a navegantes o marineros. Se conserva aquí la lectura literal para respetar la repetición con 101:4.
+    reason: textual_variant
+  - marker: b
+    text: El POB inglés traduce aquí el título divino como 'the Most High'; en español se usa 'el Altísimo' como equivalente reverente y establecido.
+    reason: theological_note
+lexical_decisions:
+- source_word: አኮኑ
+  english_pob_choice: Do not
+  chosen_spanish: ¿No
+  alternatives_spanish:
+  - ¿Acaso no
+  - ¿No es así que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma introduce una pregunta retórica que espera asentimiento; en español, '¿No...?' conserva esa fuerza interrogativa y el tono admonitorio.
+- source_word: ውእቶሙ
+  english_pob_choice: those
+  chosen_spanish: esos
+  alternatives_spanish:
+  - aquellos
+  - ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El demostrativo señala a un grupo ya identificado; 'esos' mantiene la deixis sin volverla demasiado distante.
+- source_word: ተነገሥተ አሕማር
+  english_pob_choice: kings of the sea
+  chosen_spanish: reyes del mar
+  alternatives_spanish:
+  - gobernantes del mar
+  - señores del mar
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Sigo la revisión más reciente del POB inglés que mantiene la idea literal del compuesto ge'ez. En español, 'reyes del mar' preserva la imagen y la repetición interna con 101:4, aunque suene figurado.
+- source_word: ይፈርህዋ ለባሕር
+  english_pob_choice: fear the sea
+  chosen_spanish: temen al mar
+  alternatives_spanish:
+  - temen el mar
+  - tienen miedo del mar
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Temer al mar'' reproduce el verbo de miedo con naturalidad en español y mantiene el paralelismo con el segundo miembro de la frase.'
+- source_word: ወኃጥኣን
+  english_pob_choice: while sinners
+  chosen_spanish: mientras los pecadores
+  alternatives_spanish:
+  - y los pecadores
+  - pero los pecadores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La conjunción funciona de modo contrastivo; 'mientras' expresa esa oposición entre los marineros y los pecadores.
+- source_word: ለልዑል
+  english_pob_choice: the Most High
+  chosen_spanish: al Altísimo
+  alternatives_spanish:
+  - al Más Alto
+  - al Exaltado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Es un título divino establecido en el uso judío y bíblico. 'Altísimo' es la equivalencia española más natural y reverente, sin perder el valor de título.
+- source_word: ኢይፈርህዎ
+  english_pob_choice: do not fear
+  chosen_spanish: no temen
+  alternatives_spanish:
+  - no temen reverencia a
+  - no temen de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Repito el campo semántico de 'temor' para conservar el contraste deliberado del verso. En español, la negación simple en presente funciona bien dentro de la pregunta retórica.
+theological_decisions:
+- issue: ልዑል como título divino
+  english_pob_reading: the Most High
+  chosen_spanish_reading: el Altísimo
+  alternative_spanish_readings:
+  - el Más Alto
+  - el Exaltado
+  rationale: En este contexto el término designa a Dios, no un adjetivo comparativo ordinario. 'Altísimo' transmite con claridad la dignidad del título y preserva el registro teológico.
+  doctrine_reference: Mantener títulos divinos con equivalentes semánticos claros; no neutralizar la referencia a Dios.
+- issue: Repetición del verbo de temor en ambos miembros
+  english_pob_reading: fear / do not fear
+  chosen_spanish_reading: temen / no temen
+  alternative_spanish_readings:
+  - tienen miedo / no tienen miedo
+  - temen / no reverencian
+  rationale: La versión inglesa revisada insiste en conservar el mismo verbo para ambas mitades. 'Temen / no temen' mantiene esa simetría retórica y no suaviza la oposición.
+  doctrine_reference: Preservar paralelismo y tensión retórica del texto fuente.
+translation_notes:
+  revision_awareness: Esta entrega corrige el fallo anterior asegurando que cada nota al pie esté anclada explícitamente en el texto principal. También sigue la revisión más reciente del audit trail inglés, que prefirió 'kings of the sea' y conservó el paralelismo verbal entre el temor del mar y el no-temor al Altísimo.
+  spanish_consistency_notes:
+  - He mantenido el mismo campo léxico de temor en ambos miembros ('temen' / 'no temen') para reflejar el paralelismo del ge'ez.
+  - He preferido 'Altísimo' en lugar de 'SEÑOR' o 'Dios' porque el título ge'ez corresponde al divine title del texto fuente.
+  - He usado 'reyes del mar' para reflejar la lectura auditada del POB inglés y su vínculo con 101:4.
+  - La puntuación con coma marca el contraste de dos miembros coordinados dentro de una sola pregunta retórica.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/101/009.yaml
+  source_text_sha256: 533c3553b2dbad22414313c57894a180d63bd777e1a737cc251dea3847b8ae6d
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 750eb0bc670e61e160ee53d061d7a916ca9e4c9755ce62d83dd2ec04d571a493
+  timestamp: '2026-05-07T21:27:58Z'
+  output_hash: 38a83e8299e3c138fc01b57be0ea1a535d5db45cf6e8b4b9d7361c1ad440cd23
+  usage:
+    prompt_tokens: 3083
+    completion_tokens: 1353
+    total_tokens: 4436
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008401
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: El borrador español conserva adecuadamente la pregunta retórica, el paralelismo del verbo 'temer', el contraste con 'los pecadores' y el título divino 'el Altísimo'. También sigue la revisión inglesa auditada que opta por la lectura literal 'reyes del mar' y preserva la repetición con 101:4.
+  spanish_quality_summary: El español es claro, natural y de registro digno. '¿No temen esos reyes del mar al mar...?' suena algo llamativo por la repetición, pero precisamente refleja la imagen retórica y la decisión léxica documentada. La sintaxis es legible y eclesialmente comprensible.
+  glossary_alignment: No hay conflicto con los términos base del proyecto. 'Altísimo' es una equivalencia española estable para 'the Most High'. 'Pecadores' y 'temen / no temen' respetan bien las decisiones léxicas y teológicas documentadas.
+  issues:
+  - severity: low
+    issue: La nota [b] explica una equivalencia teológica bastante obvia.
+    rationale: No perjudica el texto y puede ayudar a justificar 'Altísimo' frente al inglés auditado; no requiere revisión obligatoria.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e90a398d2aec984dae64247a988e5a3cf0cd62e3811cb557bc1a89896e8850c6
+  timestamp: '2026-05-07T22:54:52Z'
+  output_hash: 530f84d93e28c67a84e22ed811854c8b29bc6498b9fec9528c5012ca1fed2da5
+  usage:
+    prompt_tokens: 3987
+    completion_tokens: 308
+    total_tokens: 4295
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.014587
+  applied_revision: false

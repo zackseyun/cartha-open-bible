@@ -1,0 +1,240 @@
+id: 1EN.63.2
+reference: 1 Enoch 63:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይባርክዎ፡ ወይሴብሕዎ፡ ለእግዚአ፡ መንፈሳት፡ ወይብሉ፡ *ቡሩክ፡ ውእቱ፡ እግዚአ፡ መናፍስት፡ *ወእግዚኦሙ፡ ለነገሥት፡ *ወእግዚኦሙ፡ ለዐዚዛን፡ ወ*እግዚኦሙ፡ ለብዑላን፡ ወ*እግዚአ፡ ስብሐት፡ ወ*እግዚአ፡ ጥበብ።
+  language: Geez
+  pages:
+  - 152
+  - 153
+  - 154
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch63.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 63, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/063/002.yaml
+  text: And they will bless and praise the Lord of spirits[a], and they will say, “Blessed is the Lord of spirits, the Lord of the kings, the Lord of the mighty, the Lord of the great ones, the Lord of glory[c][b], and the Lord of wisdom.”
+  footnotes:
+  - marker: a
+    text: The Ge'ez repeats 'Lord of ...' across each social class and abstract quality; the English keeps that repetition rather than compressing it.
+    reason: cultural_note
+  - marker: b
+    text: The phrase rendered 'the rich' may also be understood more broadly as those who possess wealth or property.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'the Lord of the kings, the Lord of the mighty, the Lord of the rich, the Lord of glory, and the Lord of wisdom.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: b3862cb26705e6e85d49b13b9fe903d19b6f647b7ae140917a8a9016b171dbf4
+    timestamp: '2026-04-22T17:22:23Z'
+    output_hash: 7311d2c2739437e491d3565b59063b44577d708ab7b614f8afc7b948905a167e
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:56Z'
+    unchanged: false
+    changes_summary: Removed repeated 'and' within the quoted blessing for smoother, more formal English while preserving the list structure; changed 'the rich' to 'the great ones' to better reflect ብዑላን as nobles/great men rather than specifically wealthy people.
+translation:
+  language: es
+  text: 'Y ellos bendecirán y alabarán al Señor de los espíritus[a], y dirán: «Bendito es el Señor de los espíritus, el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes[b], el Señor de la gloria, y el Señor de la sabiduría[c]».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El ge'ez repite el patrón «Señor de...» con cada clase social o cualidad abstracta; se mantiene la estructura repetitiva para conservar el efecto litúrgico y la solemnidad del pasaje.
+    reason: cultural_note
+  - marker: b
+    text: «Los grandes» refleja la lectura ampliada de ብዑላን en este contexto; también puede entenderse como personas de riqueza o posición elevada.
+    reason: lexical_alternative
+  - marker: c
+    text: 'También puede ordenarse como: «el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes, el Señor de la gloria y el Señor de la sabiduría».'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: ይባርክዎ
+  english_pob_choice: they will bless
+  chosen_spanish: bendecirán
+  alternatives_spanish:
+  - ellos bendecirán
+  - bendecirán a él
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa bendecir en una fórmula de aclamación futura; en español, «bendecirán» mantiene el valor doxológico y la direccionalidad implícita del objeto sin volver la frase pesada con un pronombre explícito.
+- source_word: ይሴብሕዎ
+  english_pob_choice: praise
+  chosen_spanish: alabarán
+  alternatives_spanish:
+  - glorificarán
+  - exaltarán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Alabar» conserva el paralelismo con «bendecirán» y comunica de manera clara la segunda acción de culto sin sobreelevar el registro más allá del género litúrgico del texto.
+- source_word: እግዚአ መንፈሳት / እግዚአ መናፍስት
+  english_pob_choice: Lord of spirits
+  chosen_spanish: Señor de los espíritus
+  alternatives_spanish:
+  - Señor de los espíritus
+  - Dueño de los espíritus
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el título en forma estable y reverente. «Señor» sigue la convención del proyecto para títulos divinos y «de los espíritus» preserva el alcance cósmico del genitivo plural.
+- source_word: ቡሩክ ውእቱ
+  english_pob_choice: Blessed is
+  chosen_spanish: Bendito es
+  alternatives_spanish:
+  - Bendecido es
+  - Sea bendito
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La escena es una proclamación declarativa; «Bendito es» reproduce mejor el valor de aclamación que una forma optativa como «Sea bendito».
+- source_word: እግዚኦሙ ለነገሥት
+  english_pob_choice: the Lord of the kings
+  chosen_spanish: el Señor de los reyes
+  alternatives_spanish:
+  - el Señor de los reyes
+  - el Señor sobre los reyes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El genitivo con valor de soberanía se vierte naturalmente como «de los reyes», conservando la cadencia repetitiva del título.
+- source_word: ዐዚዛን
+  english_pob_choice: the mighty
+  chosen_spanish: los poderosos
+  alternatives_spanish:
+  - los fuertes
+  - los valientes
+  - los poderosos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto de clases sociales y poder, «poderosos» comunica mejor la fuerza y la posición de dominio que un simple rasgo físico.
+- source_word: ብዑላን
+  english_pob_choice: the great ones
+  chosen_spanish: los grandes
+  alternatives_spanish:
+  - los grandes
+  - los ricos
+  - los nobles
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Dado el ajuste revisado del audit trail inglés hacia «the great ones», en español «los grandes» preserva la amplitud semántica de dignidad/rango sin restringirlo a riqueza material.
+- source_word: እግዚአ ስብሐት
+  english_pob_choice: the Lord of glory
+  chosen_spanish: el Señor de la gloria
+  alternatives_spanish:
+  - el Señor de la gloria
+  - el Señor del esplendor
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Gloria» mantiene el registro apocalíptico y la terminología bíblica estable, más fiel que «esplendor» para esta fórmula de título.
+- source_word: እግዚአ ጥበብ
+  english_pob_choice: the Lord of wisdom
+  chosen_spanish: el Señor de la sabiduría
+  alternatives_spanish:
+  - el Señor de la sabiduría
+  - el Señor del entendimiento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Sabiduría» reproduce el campo semántico básico del término y evita estrecharlo a mera inteligencia o comprensión técnica.
+theological_decisions:
+- issue: Mantenimiento del título divino fijo እግዚአ መንፈሳት
+  english_pob_reading: Lord of spirits
+  chosen_spanish_reading: Señor de los espíritus
+  alternative_spanish_readings:
+  - Señor de los espíritus
+  - Dueño de los espíritus
+  rationale: Se conserva la fórmula en traducción estable para no diluir su carácter enóquico y para mantener coherencia interna con el título divino en el resto de la obra.
+  doctrine_reference: Translation philosophy §2, §4
+- issue: Valor de ቡሩክ ውእቱ como aclamación declarativa
+  english_pob_reading: Blessed is
+  chosen_spanish_reading: Bendito es
+  alternative_spanish_readings:
+  - Sea bendito
+  - Bendecido es
+  rationale: El contexto es una proclamación de seres hablantes; la forma declarativa respeta la sintaxis y evita convertir la frase en una súplica litúrgica.
+  doctrine_reference: Translation philosophy §3
+- issue: Repetición polisindética de los títulos divinos
+  english_pob_reading: the Lord of the kings, the Lord of the mighty, the Lord of the great ones, the Lord of glory, and the Lord of wisdom
+  chosen_spanish_reading: el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes, el Señor de la gloria y el Señor de la sabiduría
+  alternative_spanish_readings:
+  - el Señor de los reyes, el Señor de los poderosos, el Señor de los nobles, el Señor de la gloria y el Señor de la sabiduría
+  - el Señor de los reyes, y el Señor de los poderosos, y el Señor de los grandes, y el Señor de la gloria, y el Señor de la sabiduría
+  rationale: El texto ge'ez usa repetición deliberada de la conjunción para dar solemnidad; en español se conserva la repetición de «el Señor de...» y, en la cita, el tono acumulativo sin forzar una traducción excesivamente artificiosa.
+  doctrine_reference: Translation philosophy §4
+translation_notes:
+  revision_awareness: Se tomó en cuenta la revisión más reciente del audit trail inglés, que prefirió «the great ones» para ብዑላን y eliminó la repetición explícita de «and» por fluidez en inglés. En español se recupera la repetición retórica de los títulos mediante la estructura paralela «el Señor de...», sin copiar mecánicamente el cambio estilístico del inglés cuando este debilitaba la fuerza del original ge'ez.
+  spanish_consistency_notes:
+  - Se usó «Señor» para el título divino en coherencia con el estilo del proyecto y con la traducción estable de títulos enóquicos.
+  - Se mantuvo «espíritus» en plural para reflejar el genitivo plural del original.
+  - Se evitó «Cristo» y otras equivalencias cristológicas ajenas al texto.
+  - Se eligió «gloria» y «sabiduría» como abstracciones sustantivas, no como adjetivos, para sostener el patrón del título.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/063/002.yaml
+  source_text_sha256: 0f150cf12c0276a896ccac2887aa0dce90e5ee8ac38e9c7c6d876ab9242aed20
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 9fd206fe697005ed06f8b03ff3a893d4cb7e20ce992991f58e842b376e99c2d1
+  timestamp: '2026-05-07T21:27:37Z'
+  output_hash: f69532df329310bd172f45be706f0f4483569899a92946acb20ff9dd7fa132c2
+  usage:
+    prompt_tokens: 3758
+    completion_tokens: 2019
+    total_tokens: 5777
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011904
+status: spanish_reviewed
+revisions:
+- from: 'Y ellos bendecirán y alabarán al Señor de los espíritus[a], y dirán: «Bendito es el Señor de los espíritus, el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes, el Señor de la gloria[c][b], y el Señor de la sabiduría».'
+  to: 'Y ellos bendecirán y alabarán al Señor de los espíritus[a], y dirán: «Bendito es el Señor de los espíritus, el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes[b], el Señor de la gloria, y el Señor de la sabiduría[c]».'
+  rationale: 'Se corrige la puntuación de la serie final para conservar mejor la cadencia solemne del original y se reubican las notas para que cada marcador corresponda claramente a su función: [b] en «los grandes» para la alternativa léxica y [c] al final de la secuencia para la observación sobre ordenación alternativa.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:26:15Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien el sentido base del ge''ez y sigue en líneas generales el rastro auditado en inglés: bendecir/alabar, «Bendito es», el título fijo «Señor de los espíritus», y la serie de títulos repetidos. Sin embargo, hay un desajuste importante entre el texto principal y las notas: la nota [c] está anclada en «gloria» aunque no explica una alternativa léxica para «gloria», sino una ordenación/agrupación alternativa de toda la secuencia. Además, el texto principal omite la coma antes de «y el Señor de la sabiduría», lo que no refleja bien la serie appositiva repetitiva del original ni del inglés auditado.'
+  spanish_quality_summary: 'El español es claro, digno y eclesialmente legible. «Señor de los espíritus», «los poderosos» y «los grandes» suenan naturales. La única mejora de estilo necesaria es la puntuación de la enumeración final para mantener la cadencia: «..., el Señor de la gloria, y el Señor de la sabiduría». También conviene retirar la nota [c] del cuerpo porque su anclaje actual genera confusión textual.'
+  glossary_alignment: La terminología está alineada con el proyecto. No aparece el nombre divino Yahvé en este versículo, así que «Señor» para el título enóquico es adecuado. «Bendito es», «sabiduría», «gloria» y «los poderosos» son buenas decisiones. «Los grandes» es aceptable para ብዑላን conforme a la revisión inglesa, con nota alternativa que preserve el matiz de riqueza/posición.
+  issues:
+  - severity: medium
+    issue: La nota [c] está mal anclada en «gloria».
+    rationale: La nota [c] no explica «gloria» ni una alternativa léxica puntual, sino una posible ordenación de la secuencia completa. Anclarla en «gloria» crea la impresión de que afecta solo a esa palabra.
+  - severity: low
+    issue: Falta la coma antes de «y el Señor de la sabiduría».
+    rationale: En esta serie solemne de títulos repetidos, la coma ayuda a reflejar la acumulación del original y coincide mejor con la estructura auditada en inglés.
+  revised_spanish_text: 'Y ellos bendecirán y alabarán al Señor de los espíritus[a], y dirán: «Bendito es el Señor de los espíritus, el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes[b], el Señor de la gloria, y el Señor de la sabiduría[c]».'
+  revised_footnotes:
+  - marker: a
+    text: El ge'ez repite el patrón «Señor de...» con cada clase social o cualidad abstracta; se mantiene la estructura repetitiva para conservar el efecto litúrgico y la solemnidad del pasaje.
+    reason: cultural_note
+  - marker: b
+    text: «Los grandes» refleja la lectura ampliada de ብዑላን en este contexto; también puede entenderse como personas de riqueza o posición elevada.
+    reason: lexical_alternative
+  - marker: c
+    text: 'También puede ordenarse como: «el Señor de los reyes, el Señor de los poderosos, el Señor de los grandes, el Señor de la gloria y el Señor de la sabiduría».'
+    reason: alternative_reading
+  revision_rationale: 'Se corrige la puntuación de la serie final para conservar mejor la cadencia solemne del original y se reubican las notas para que cada marcador corresponda claramente a su función: [b] en «los grandes» para la alternativa léxica y [c] al final de la secuencia para la observación sobre ordenación alternativa.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e53aaad1eb76553b44f2c0eea42c3f2bbfe85ef2c7b4575155caefd6922af512
+  timestamp: '2026-05-07T23:26:15Z'
+  output_hash: f17041795ed1ece62e894536b31c6eba1986d022fef2417f4dc68d1f832da85a
+  usage:
+    prompt_tokens: 5385
+    completion_tokens: 865
+    total_tokens: 6250
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026438
+  applied_revision: true

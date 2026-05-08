@@ -1,0 +1,138 @@
+id: 2ES.3.3
+reference: 2 Esdras 3:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: Et uentilatus est spiritus meus ualde, et coepi loqui ad altissimum uerba timorata,
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/003/003.yaml
+  text: And my spirit was greatly stirred[a], and I began to speak fearful words to the Most High,
+  footnotes:
+  - marker: a
+    text: Or 'fearful words'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:22Z'
+    unchanged: false
+    changes_summary: Changed 'anxious words' to 'fearful words' to more closely reflect Latin 'uerba timorata' while preserving formal register and natural English.
+translation:
+  language: es
+  text: Y mi espíritu fue grandemente conmovido[a], y comencé a hablar palabras temerosas al Altísimo,
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «palabras temerosas».
+    reason: alternative_reading
+lexical_decisions:
+- source_word: spiritus meus
+  english_pob_choice: my spirit
+  chosen_spanish: mi espíritu
+  alternatives_spanish:
+  - mi aliento
+  - mi ánimo
+  lexicon: spiritus
+  rationale: El latín spiritus en este contexto expresa la interioridad personal de Esdras, no el Espíritu Santo ni el viento; por eso se vierte naturalmente como «mi espíritu».
+- source_word: uentilatus est
+  english_pob_choice: was greatly stirred
+  chosen_spanish: fue grandemente conmovido
+  alternatives_spanish:
+  - fue fuertemente agitado
+  - fue profundamente turbado
+  lexicon: ventilare
+  rationale: La imagen latina sugiere agitación intensa. «Conmovido» comunica el movimiento interior en español de forma digna y fluida, y «grandemente» conserva el énfasis del adverbio.
+- source_word: uerba timorata
+  english_pob_choice: fearful words
+  chosen_spanish: palabras temerosas
+  alternatives_spanish:
+  - palabras llenas de temor
+  - palabras de temor
+  lexicon: timoratus
+  rationale: El adjetivo latino timorata tiene fuerza de temor/aprensión, no de «palabras aterradoras». «Temerosas» mantiene la cercanía formal al latín y evita la ambigüedad de un castellano más libre.
+- source_word: ad altissimum
+  english_pob_choice: to the Most High
+  chosen_spanish: al Altísimo
+  alternatives_spanish:
+  - al Dios Altísimo
+  - al Altísimo Dios
+  lexicon: Altissimus
+  rationale: «Altísimo» reproduce el título reverencial del latín y es idiomático en español bíblico; no hay base aquí para introducir «Dios» explícitamente en el texto principal, aunque el referente es divino.
+theological_decisions:
+- issue: El referente de «Altissimum»
+  english_pob_reading: to the Most High
+  chosen_spanish_reading: al Altísimo
+  alternative_spanish_readings:
+  - al Dios Altísimo
+  - al Altísimo Dios
+  rationale: El latín usa un título superlativo reverencial sin añadir el sustantivo «Dios». Mantener solo «Altísimo» preserva esa sobriedad y la tensión del original, dejando claro por el contexto que Esdras se dirige a Dios.
+  doctrine_reference: Teología bíblica del título divino reverencial
+- issue: Naturaleza de las «palabras temerosas»
+  english_pob_reading: fearful words
+  chosen_spanish_reading: palabras temerosas
+  alternative_spanish_readings:
+  - palabras llenas de temor
+  - palabras de temor
+  rationale: Se conserva la idea de temor reverente y audacia ante Dios. No se convierte en «palabras aterradoras», porque el sujeto es el hablante, no el efecto de sus palabras sobre otros.
+  doctrine_reference: Tono de oración y reverencia ante Dios
+translation_notes:
+  revision_awareness: La versión inglesa más reciente volvió de «anxious words» a «fearful words» para reflejar mejor el latín uerba timorata. La redacción española sigue directamente esa lectura, usando una forma que conserva el matiz de temor sin sugerir que las palabras sean aterradoras para oyentes.
+  spanish_consistency_notes:
+  - Se mantiene «Altísimo» con artículo contracto («al») para un registro bíblico natural en español.
+  - «Espíritu» se escribe en minúscula porque se refiere al espíritu de Esdras, no al Espíritu Santo.
+  - La puntuación final queda abierta por tratarse de un miembro de cláusula que continúa en el versículo siguiente en muchas ediciones del libro.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/003/003.yaml
+  source_text_sha256: fe0c65874bcc8060725d3557348a191309678f81f2437293bf81b9e945e2a753
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 3657f68a0a25d36973ff1c62e11264970edb5d668c815c7ae20c18fd8473fd39
+  timestamp: '2026-05-07T21:28:20Z'
+  output_hash: 62985ca9d9c3c6c4b938c41f56c1d62f2920ddffed5a9544b2c6381028eb73c8
+  usage:
+    prompt_tokens: 1877
+    completion_tokens: 880
+    total_tokens: 2757
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005368
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el latín: «spiritus meus» = «mi espíritu», «uentilatus est ... ualde» expresa agitación interior intensa, «ad altissimum» = «al Altísimo». El punto a corregir es la nota: el inglés registra «fearful words» como texto principal y la nota «Or ''fearful words''» es internamente redundante; en español, además, la nota repite exactamente el texto principal. Conviene eliminarla. También «grandemente conmovido» es comprensible, pero «muy agitado» o «profundamente conmovido» reflejaría mejor la fuerza de «uentilatus est».'
+  spanish_quality_summary: El español es digno y legible, pero «fue grandemente conmovido» suena algo calcado y menos natural en español actual eclesial que «se agitó mucho» o «quedó muy agitado». «Palabras temerosas» es aceptable y conserva bien que el temor pertenece al hablante, no al efecto de las palabras. La presencia de una nota redundante perjudica la calidad editorial.
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «Altísimo» es adecuado. «Espíritu» está bien por contexto. No aparecen términos sensibles como Yahvé/Mesías/esclavo.
+  issues:
+  - severity: medium
+    issue: La nota [a] es redundante e incorrectamente justificada.
+    rationale: 'El texto principal ya dice «palabras temerosas», y la nota ofrece exactamente la misma lectura: «O «palabras temerosas»». Esto no preserva una alternativa real ni añade claridad.'
+  - severity: low
+    issue: «Fue grandemente conmovido» suena algo rígido y calcado.
+    rationale: Aunque fiel, la construcción pasiva con «grandemente» resulta menos natural en español moderno. Una formulación como «se agitó mucho» conserva mejor la imagen de agitación interior de «uentilatus est ... ualde».
+  revised_spanish_text: Y mi espíritu se agitó mucho, y comencé a hablar palabras temerosas al Altísimo,
+  revision_rationale: Se elimina la nota redundante y se mejora la naturalidad de «uentilatus est ... ualde» con «se agitó mucho», que sigue reflejando la agitación interior intensa del latín sin perder dignidad bíblica. Se mantiene «palabras temerosas» por fidelidad a «uerba timorata» y para evitar interpretaciones como «palabras aterradoras».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: adca048433ad2846ac5d0071b4fba953cf28d3c10e24df324e658ed15b7ad0ca
+  timestamp: '2026-05-07T23:42:51Z'
+  output_hash: b86e2ff42d6346887425a67037dd9a8cb3b9fdc2a2b2ae36146077feb139f0eb
+  usage:
+    prompt_tokens: 2395
+    completion_tokens: 586
+    total_tokens: 2981
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.014778
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

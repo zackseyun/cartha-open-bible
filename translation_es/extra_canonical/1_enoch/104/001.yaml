@@ -1,0 +1,195 @@
+id: 1EN.104.1
+reference: 1 Enoch 104:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: እምሕል፡ ለክሙ፡ እስመ፡ በሰማይ፡ ይዜከሩ፡ መላእክት፡ በእንቲአክሙ፡ ለሠናይ፡ በ*ቅድመ፡
+  language: Geez
+  pages:
+  - 254
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch104.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 104, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/104/001.yaml
+  text: I swear to you that in heaven the angels remember you for good before the glory of the Great One[a][b][c].
+  footnotes:
+  - marker: a
+    text: The Ethiopic OCR for this verse is incomplete and difficult. The visible words include 'in heaven,' 'remembered,' and 'angels,' but the line appears truncated. The translation therefore reflects the probable sense of heavenly remembrance in context rather than a mechanically literal rendering of the damaged OCR alone.
+    reason: textual_variant
+  - marker: b
+    text: 'An alternative, closer to the visible Ethiopic forms, would be: ''...for in heaven the angels remember you for good before ...'''
+    reason: alternative_reading
+  - marker: c
+    text: Or 'Do not think in your spirit that your complaint is not heard, for your memorial is written down before the glory of the Great One.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: bf9a5c9c1e30dfb8f3706e577279820e7d11111dc5cecd94fdc6466d8c76f024
+    timestamp: '2026-04-22T09:24:26Z'
+    output_hash: f93a9e83699defe6f0a28dbcdc60b5c1cc04fd13329280fb42d41a8b53d79a6c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:57Z'
+    unchanged: false
+    changes_summary: Removed the unnecessary comma after 'you' for more natural English; otherwise retained the draft as accurate and complete.
+translation:
+  language: es
+  text: Les juro que en el cielo los ángeles los recuerdan para bien, delante de la gloria del Grande.[a][b][c]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'El ge''ez conservado es breve pero suficiente para la idea general: un juramento dirigido a los oyentes. Se opta por la formulación solemne ''Les juro'' para reflejar esa apertura enfática de manera natural en español.'
+    reason: textual_variant
+  - marker: b
+    text: La expresión 'en el cielo' sigue de cerca el texto visible y mantiene el marco celestial del pasaje. Otras traducciones amplían el sentido con lenguaje más interpretativo.
+    reason: alternative_reading
+  - marker: c
+    text: '''Delante de la gloria del Grande'' conserva el cierre reverente del texto. La frase final es corta en el testimonio ge''ez transmitido, por lo que no se introduce aquí una expansión interpretativa.'
+    reason: source_note
+lexical_decisions:
+- source_word: እምሕል፡ ለክሙ፡
+  english_pob_choice: I swear to you
+  chosen_spanish: Juro a ustedes
+  alternatives_spanish:
+  - Les aseguro
+  - Les juro
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez expresa una fórmula enfática de juramento/aseveración dirigida al auditorio. En español, 'Juro a ustedes' conserva la fuerza solemne y la dirección plural del original, sin introducir una paráfrasis ajena.
+- source_word: በሰማይ፡
+  english_pob_choice: in heaven
+  chosen_spanish: en el cielo
+  alternatives_spanish:
+  - en el cielo de Dios
+  - en los cielos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sintagma visible es directo y espacial. 'En el cielo' comunica bien el ámbito celestial sin sobrecargarlo con una glosa interpretativa.
+- source_word: መላእክት፡
+  english_pob_choice: the angels
+  chosen_spanish: los ángeles
+  alternatives_spanish:
+  - los mensajeros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma ge'ez corresponde claramente a 'ángeles'. Se mantiene el término estándar y fiel al texto auditado.
+- source_word: ይዜከሩ፡
+  english_pob_choice: remember
+  chosen_spanish: recuerdan
+  alternatives_spanish:
+  - memoran
+  - tienen presente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo remite a recordar o tener en memoria. 'Recuerdan' es la opción más natural y directa en español, preservando el sentido de memorial/recuerdo sin añadir la carga forense de 'escrito' que no está en el ge'ez visible.
+- source_word: በእንቲአክሙ፡ ለሠናይ፡
+  english_pob_choice: for good
+  chosen_spanish: para bien
+  alternatives_spanish:
+  - en favor de ustedes
+  - con propósito bueno
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La secuencia expresa beneficio o resultado favorable respecto de los destinatarios. 'Para bien' reproduce esa orientación benéfica de manera concisa y bíblica en español.
+- source_word: ቅድመ፡
+  english_pob_choice: before the glory of the Great One
+  chosen_spanish: delante de la gloria del Grande
+  alternatives_spanish:
+  - ante la gloria del Grande
+  - en presencia de la gloria del Grande
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El final conservado apunta a una escena de presencia/corte celestial. 'Delante de' mantiene la relación espacial y judicial del original, y 'el Grande' traduce el título reverente sin sustituirlo por una fórmula doctrinal posterior.
+theological_decisions:
+- issue: 'La escena celestial: recuerdo angelical ante la gloria divina'
+  english_pob_reading: The verse speaks of the righteous being remembered by angels in heaven before the glory of the Great One.
+  chosen_spanish_reading: El versículo presenta a los ángeles recordando a los destinatarios en el cielo para su bien, delante de la gloria del Grande.
+  alternative_spanish_readings:
+  - los ángeles tienen presente a los destinatarios en el cielo
+  - su memorial está delante de la gloria del Grande
+  rationale: El texto ge'ez disponible favorece de forma clara la lectura de ángeles que recuerdan, no de un memorial escrito. Mantener ese sentido evita ocultar la imagen explícita del original y respeta la revisión crítica del audit trail.
+  doctrine_reference: Preservar la imaginería apocalíptica y la mediación angelical propia de 1 Enoc, sin nivelarla a un mero recuerdo abstracto.
+translation_notes:
+  revision_awareness: 'Se tuvo en cuenta la revisión crítica que corrigió una antigua mistraducción en el contexto inglés. A diferencia del borrador anterior, esta versión sigue el ge''ez visible: juramento inicial, ángeles como sujeto, recuerdo/consideración benéfica y la escena de presencia delante de la gloria del Grande. No se adopta la lectura alternativa sobre memorial escrito porque no está sustentada por el texto fuente proporcionado.'
+  spanish_consistency_notes:
+  - Se usa 'ángeles' de forma consistente con መላእክት፡.
+  - Se evita 'Cristo' o 'SEÑOR' porque el texto no los contiene.
+  - '''Para bien'' conserva el valor benefactivo de ''ለሠናይ፡'' sin sobreinterpretar.'
+  - '''El Grande'' mantiene el título reverente del original sin introducir una glosa cristiana posterior.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/104/001.yaml
+  source_text_sha256: 07fe9db065f8bb07a5f7f6c7a10d3e9f30c1c30a54140fb26efe27e6c9795daf
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 57563fe78074e00d078c604439e18a54901308419c3f532427b44df99b9dc143
+  timestamp: '2026-05-07T21:27:56Z'
+  output_hash: 8377d2cae20bf00803b07af2b37cf7ddbb51ee6fd40b8c4d4219e0129f2af83c
+  usage:
+    prompt_tokens: 3171
+    completion_tokens: 1310
+    total_tokens: 4481
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008273
+status: spanish_reviewed
+revisions:
+- from: Juro a ustedes que en el cielo los ángeles los recuerdan para bien, delante de la gloria del Grande.[a][b][c]
+  to: Les juro que en el cielo los ángeles los recuerdan para bien, delante de la gloria del Grande.[a][b][c]
+  rationale: 'Se hace una reparación menor de español idiomático: ''Les juro'' es la forma natural y fiel para un juramento dirigido a los destinatarios. No se requieren cambios de sentido en el resto del versículo.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:21:47Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la revisión inglesa adjudicada y el ge''ez visible: juramento en primera persona, ámbito celestial, ángeles como sujeto, recuerdo favorable y escena ante la gloria del Grande. No obstante, hay un problema de naturalidad/fidelidad idiomática en ''Juro a ustedes'', que en español estándar suena poco natural para ''I swear to you''.'
+  spanish_quality_summary: El texto es claro y digno, pero necesita una pequeña reparación estilística para sonar natural en español eclesial general. 'Les juro' o 'Yo les juro' transmite mejor la fórmula solemne. El resto del versículo lee bien. Las notas son útiles, aunque la primera también debe ajustarse para reflejar la forma revisada.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Ángeles', 'cielo' y 'gloria' están bien. 'el Grande' es aceptable aquí por seguir el audit trail de 'the Great One'.
+  issues:
+  - severity: medium
+    issue: La expresión 'Juro a ustedes' es poco natural en español.
+    rationale: Aunque comprensible, no es la forma idiomática normal para un juramento dirigido a los oyentes. 'Les juro' preserva mejor la fuerza del original sin sonar calcado del inglés.
+  - severity: low
+    issue: La nota [a] defiende una formulación que conviene actualizar.
+    rationale: Si se corrige el texto principal a 'Les juro', la nota debe reflejar esa elección para mantener coherencia documental.
+  revised_spanish_text: Les juro que en el cielo los ángeles los recuerdan para bien, delante de la gloria del Grande.[a][b][c]
+  revised_footnotes:
+  - marker: a
+    text: 'El ge''ez conservado es breve pero suficiente para la idea general: un juramento dirigido a los oyentes. Se opta por la formulación solemne ''Les juro'' para reflejar esa apertura enfática de manera natural en español.'
+    reason: textual_variant
+  - marker: b
+    text: La expresión 'en el cielo' sigue de cerca el texto visible y mantiene el marco celestial del pasaje. Otras traducciones amplían el sentido con lenguaje más interpretativo.
+    reason: alternative_reading
+  - marker: c
+    text: '''Delante de la gloria del Grande'' conserva el cierre reverente del texto. La frase final es corta en el testimonio ge''ez transmitido, por lo que no se introduce aquí una expansión interpretativa.'
+    reason: source_note
+  revision_rationale: 'Se hace una reparación menor de español idiomático: ''Les juro'' es la forma natural y fiel para un juramento dirigido a los destinatarios. No se requieren cambios de sentido en el resto del versículo.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a5b7ab115c713c98cef209b55e8ddaa04beb16b8d732075797a1f0b3e8d7fc22
+  timestamp: '2026-05-07T23:21:47Z'
+  output_hash: 841a96568da09d1ef154255ada5f670ce5c5fb41d59b655476fd248f23ffc729
+  usage:
+    prompt_tokens: 4121
+    completion_tokens: 623
+    total_tokens: 4744
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019647
+  applied_revision: true

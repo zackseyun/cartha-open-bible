@@ -1,0 +1,132 @@
+id: 2BA.12.2
+reference: 2 Baruch 12:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 12
+  pages:
+  - 222
+  - 221
+  chapter_bucket_method: manual_rejected_item_rebucket_v1
+  overlap_expected: false
+  verse: 2
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/012/002.yaml
+  text: For the noonday blaze does not burn forever, nor do the rays of the sun continue to give light.
+  footnotes:
+  - marker: a
+    text: Or 'The noonday blaze'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:08:09Z'
+    unchanged: false
+    changes_summary: 'Replaced ''keep giving light'' with ''continue to give light'' for a more formal register while preserving the original meaning and structure; retained causal ''For.'' Note: Footnote [a] now duplicates the main text.'
+translation:
+  language: es
+  text: Porque el ardor del mediodía no arde para siempre, ni los rayos del sol continúan dando luz.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: meṭṭul d-
+  english_pob_choice: For
+  chosen_spanish: Porque
+  alternatives_spanish:
+  - Pues
+  - Ya que
+  lexicon: conjunction causal
+  rationale: La conjunción causal del siríaco introduce la razón del enunciado; 'Porque' conserva con claridad el enlace lógico y el tono formal del registro bíblico.
+- source_word: noonday blaze
+  english_pob_choice: the noonday blaze
+  chosen_spanish: el fulgor del mediodía
+  alternatives_spanish:
+  - el ardor del mediodía
+  - la llama del mediodía
+  lexicon: noun phrase
+  rationale: '''Blaze'' expresa una luz intensa y ardiente; ''fulgor'' mantiene la imagen de brillo sin obligar a un calco demasiado físico. ''Del mediodía'' preserva el valor temporal del original.'
+- source_word: does not burn forever
+  english_pob_choice: does not burn forever
+  chosen_spanish: no arde para siempre
+  alternatives_spanish:
+  - no quema para siempre
+  - no permanece ardiendo para siempre
+  lexicon: verb phrase
+  rationale: '''Arder'' es la equivalencia más natural para el fuego/luz intensa aquí, y ''para siempre'' reproduce la duración negada por el texto.'
+- source_word: rays of the sun
+  english_pob_choice: rays of the sun
+  chosen_spanish: los rayos del sol
+  alternatives_spanish:
+  - los rayos del sol
+  - las radiaciones del sol
+  lexicon: noun phrase
+  rationale: La expresión es directa y transparente en español; conserva la imagen física del original sin introducir tecnicismos.
+- source_word: continue to give light
+  english_pob_choice: continue to give light
+  chosen_spanish: continúan dando luz
+  alternatives_spanish:
+  - siguen dando luz
+  - continúan alumbrando
+  lexicon: verb phrase
+  rationale: '''Continuar dando luz'' sigue de cerca la estructura del original y del audit trail inglés, manteniendo el paralelismo con la primera cláusula.'
+translation_notes:
+  revision_awareness: El borrador incorpora la revisión que preserva la conjunción causal inicial ('For' -> 'Porque') y la formulación formal 'continue to give light' sin perder el paralelismo del verso; no se incluye nota al pie porque el marcador [a] no estaba anclado en el texto español y la variante ya queda absorbida en la redacción principal.
+  spanish_consistency_notes:
+  - Se mantuvo un registro bíblico formal pero natural para lectores hispanohablantes.
+  - No se usó 'SEÑOR' ni terminología teológica ajena al verso.
+  - La estructura causal se conservó al inicio para reflejar el flujo argumental del contexto precedente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/012/002.yaml
+  source_text_sha256: 12b5eafb526c2cbe3b42050db2c74a2cc5c806308b2df88f1bef2200914dae82
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0848fd5f0eafd99df15b492381fb703da7601d2cfaeb8832f4a4ebc770f72730
+  timestamp: '2026-05-07T21:28:52Z'
+  output_hash: 60f19cdcc9ffac374a7140f4cdb1c89fd0877d37946fbb5d5fb10779f317417f
+  usage:
+    prompt_tokens: 1938
+    completion_tokens: 654
+    total_tokens: 2592
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004396
+status: spanish_reviewed
+revisions:
+- from: Porque el fulgor del mediodía no arde para siempre, ni los rayos del sol continúan dando luz.
+  to: Porque el ardor del mediodía no arde para siempre, ni los rayos del sol continúan dando luz.
+  rationale: Se ajusta una sola expresión para conservar mejor la fuerza imagética del original y mejorar la naturalidad del español. No se requieren notas, ya que la revisión no introduce nueva ambigüedad ni necesita preservar una alternativa en nota.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:14:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español conserva bien la estructura causal del siríaco y el paralelismo de las dos cláusulas. Sin embargo, 'fulgor del mediodía' atenúa la fuerza ígnea de 'blaze' y choca un poco con 'arde'; una formulación más natural y semánticamente coherente en español es 'ardor del mediodía'.
+  spanish_quality_summary: La redacción es clara y digna, pero 'el fulgor del mediodía no arde' suena algo tensa en español, porque 'fulgor' se asocia más con brillo que con combustión. El resto del versículo es fluido; 'continúan dando luz' es correcto y de buen registro.
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. Las decisiones léxicas generales son adecuadas, salvo el ajuste de 'fulgor' a 'ardor' para reflejar mejor la imagen fuente y mejorar la naturalidad española.
+  issues:
+  - severity: medium
+    issue: '''fulgor del mediodía'' no encaja del todo con el verbo ''arde'''
+    rationale: La imagen fuente combina intensidad luminosa y ardor; en español, 'fulgor' tiende al brillo y hace menos natural 'no arde'. 'Ardor del mediodía' preserva mejor el campo semántico y el paralelismo con la combustión.
+  revised_spanish_text: Porque el ardor del mediodía no arde para siempre, ni los rayos del sol continúan dando luz.
+  revision_rationale: Se ajusta una sola expresión para conservar mejor la fuerza imagética del original y mejorar la naturalidad del español. No se requieren notas, ya que la revisión no introduce nueva ambigüedad ni necesita preservar una alternativa en nota.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8d5a89d027ebf2d517f486dc568c085e463bcff65e9fc94e9d37987acd7ad3dc
+  timestamp: '2026-05-07T23:14:58Z'
+  output_hash: 4f1b4e4bc8b32e91423871788f2c5853c9cc91d753b7fffab4eeba39a79d9603
+  usage:
+    prompt_tokens: 2166
+    completion_tokens: 422
+    total_tokens: 2588
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011745
+  applied_revision: true

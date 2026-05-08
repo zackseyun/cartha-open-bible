@@ -1,0 +1,200 @@
+id: 1EN.98.1
+reference: 1 Enoch 98:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይእዜኒ፡ እኔ፡ እምሕል፡ ለክሙ፡ ለጠቢባን፡ ወለአብዳን፡ እስመ፡ ብዙኅ፡ ትሬእዩ፡ ዲበ፡ ምድር።
+  language: Geez
+  pages:
+  - 241
+  - 242
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/098/001.yaml
+  text: And now I swear to you[a], to the wise and to the foolish[b], that you will see much upon the earth.
+  footnotes:
+  - marker: a
+    text: Or 'many things.' The Ge'ez expression emphasizes abundance in what the hearers are about to witness.
+    reason: lexical_alternative
+  - marker: b
+    text: 'Or ''And now I declare to you, to the wise and to the foolish: for you will see much upon the earth.''.'
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: f34444d5c39594c163d1afb65f07cadc732758cabb327a2594982e0119f379a5
+    timestamp: '2026-04-22T09:23:09Z'
+    output_hash: 0acc5e11c6402b43ede2d0807cba87318d4e5d4a286d6bb73ff3199530ca07c1
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:41Z'
+    unchanged: false
+    changes_summary: Replaced 'for' with 'that' to better reflect the oath/complement construction and improve natural English flow; removed the colon accordingly.
+translation:
+  language: es
+  text: Y ahora les juro, a los sabios y a los necios, que verán mucho sobre la tierra.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: ወይእዜኒ
+  english_pob_choice: And now
+  chosen_spanish: Y ahora
+  alternatives_spanish:
+  - Y en este momento
+  - Y ahora bien
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión introduce un nuevo giro exhortativo; 'Y ahora' conserva el cambio discursivo de manera natural en español.
+- source_word: እኔ
+  english_pob_choice: I
+  chosen_spanish: yo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sujeto está explícito en la forma verbal de primera persona; en español no es necesario redundarlo en la traducción pública.
+- source_word: እምሕል
+  english_pob_choice: I swear
+  chosen_spanish: juro
+  alternatives_spanish:
+  - declaro
+  - prometo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El audit trail revisado corrige 'declare' a 'swear'; 'juro' reproduce con fidelidad el valor de juramento solemne.
+- source_word: ለክሙ
+  english_pob_choice: to you
+  chosen_spanish: a ustedes
+  alternatives_spanish:
+  - a vosotros
+  - a ustedes todos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se usa la forma neutra latinoamericana para un destinatario plural en registro público.
+- source_word: ለጠቢባን
+  english_pob_choice: to the wise
+  chosen_spanish: a los sabios
+  alternatives_spanish:
+  - a los prudentes
+  - a los entendidos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Los sabios'' mantiene el contraste sapiencial directo con ''los necios'' y refleja el sustantivo colectivo del etíope.'
+- source_word: ወለአብዳን
+  english_pob_choice: and to the foolish
+  chosen_spanish: y a los necios
+  alternatives_spanish:
+  - y a los foolish
+  - y a los insensatos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Necios'' conserva mejor la oposición moral e intelectual fuerte que ''insensatos'' y sigue el paralelismo del texto.'
+- source_word: እስመ
+  english_pob_choice: that / for
+  chosen_spanish: que
+  alternatives_spanish:
+  - pues
+  - porque
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Tras el verbo de juramento en español, 'que' expresa de forma natural el contenido jurado y evita una construcción forzada con 'porque'.
+- source_word: ብዙኅ
+  english_pob_choice: much
+  chosen_spanish: mucho
+  alternatives_spanish:
+  - muchas cosas
+  - en gran abundancia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sustantivo/quantificador etíope enfatiza abundancia; con 'verán' en español, 'mucho' suena natural y no reduce el alcance apocalíptico.
+- source_word: ትሬእዩ
+  english_pob_choice: you will see
+  chosen_spanish: verán
+  alternatives_spanish:
+  - verán ustedes
+  - han de ver
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El futuro simple transmite la certeza profética; el sujeto plural queda claro por la flexión verbal.
+- source_word: ዲበ ምድር
+  english_pob_choice: upon the earth
+  chosen_spanish: sobre la tierra
+  alternatives_spanish:
+  - en la tierra
+  - sobre la faz de la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Sobre la tierra'' preserva el registro amplio y elevado de ''upon the earth'' sin forzar un calco arcaizante.'
+theological_decisions:
+- issue: Alcance de 'los sabios y los necios'
+  english_pob_reading: A universalized moral address including both discerning and undiscerning hearers
+  chosen_spanish_reading: Un contraste moral directo entre quienes tienen sabiduría y quienes carecen de ella, sin restringirlo aún a un grupo histórico particular
+  alternative_spanish_readings:
+  - Una referencia interna a dos clases dentro de Israel
+  - Un tono irónico dirigido principalmente a los impíos
+  rationale: El versículo presenta la oposición sin más especificación; traducirla de modo directo preserva la tensión y deja que el contexto posterior determine el alcance exacto.
+  doctrine_reference: Preservar la tensión interpretativa sin resolverla prematuramente.
+translation_notes:
+  revision_awareness: 'Se corrigió la relación entre el verbo de juramento y la cláusula siguiente conforme al audit trail más reciente: la versión inglesa final prefiere ''that you will see much upon the earth'', y en español se reflejó como una oración completiva natural. También se evitó cualquier nota no anclada, porque la validación previa falló por un marcador sin inserción en el texto.'
+  spanish_consistency_notes:
+  - Se mantuvo 'Yahvé' no aplicable aquí, al no aparecer el nombre divino.
+  - Se evitó 'Cristo/Mesías' por no estar en el pasaje.
+  - '''Necios'' conserva el contraste sapiencial con ''sabios'' en un registro bíblico natural.'
+  - La preposición 'a' en los destinatarios conserva el dativo de dirección/objeto indirecto del original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/098/001.yaml
+  source_text_sha256: c109a0e54af235668d29b1f0b387c013fd2f15c5576fbbb0ed7810c328124c27
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0c87169297b43354f03572ea81e64ef65fb95d8ea16bcef01b514ea3d20bf250
+  timestamp: '2026-05-07T21:28:08Z'
+  output_hash: c4998c6c1c2f30f85c5237c31f82bc0b48996d5afef77c280cabe1bb97b5e94c
+  usage:
+    prompt_tokens: 3252
+    completion_tokens: 1310
+    total_tokens: 4562
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008334
+status: spanish_reviewed
+revisions:
+- from: Y ahora juro a ustedes, a los sabios y a los necios, que verán mucho sobre la tierra.
+  to: Y ahora les juro, a los sabios y a los necios, que verán mucho sobre la tierra.
+  rationale: 'Se hizo una reparación menor para ajustar la sintaxis española a un uso natural y culto: ''les juro'' en lugar de ''juro a ustedes''. No altera el sentido, el tono solemne ni las decisiones léxicas centrales del audit trail.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:21:47Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura y el sentido general del ge''ez auditado: giro discursivo (''Y ahora''), juramento explícito (''juro''), destinatarios dobles (''los sabios y los necios'') y futuro profético (''verán mucho''). También sigue correctamente la revisión inglesa que entiende እምሕል como ''swear'' y እስመ en construcción complementaria como ''que''. Sin embargo, ''juro a ustedes'' no es la construcción española más natural para ''I swear to you''; en español culto y claro conviene ''les juro'' o ''juro ante ustedes'', y aquí el sentido es de dirección del juramento, no de objeto directo.'
+  spanish_quality_summary: La frase es legible y digna, pero 'juro a ustedes' suena poco idiomático en español general. 'Les juro' mejora notablemente la naturalidad sin perder solemnidad ni precisión. El resto del versículo está bien equilibrado; 'los sabios y los necios' funciona y 'sobre la tierra' es aceptable y elevado.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen términos clave como Yahvé, Mesías, Espíritu, etc. La decisión 'necios' frente a 'insensatos' es defendible y coherente con el contraste moral del audit trail.
+  issues:
+  - severity: medium
+    issue: Construcción pronominal poco natural en 'juro a ustedes'
+    rationale: Aunque comprensible, en español estándar la forma idiomática para 'I swear to you' es 'les juro'. Mantiene el dativo de destinatario y evita una formulación rígida o calcada del inglés.
+  revised_spanish_text: Y ahora les juro, a los sabios y a los necios, que verán mucho sobre la tierra.
+  revision_rationale: 'Se hizo una reparación menor para ajustar la sintaxis española a un uso natural y culto: ''les juro'' en lugar de ''juro a ustedes''. No altera el sentido, el tono solemne ni las decisiones léxicas centrales del audit trail.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3db0085d7716abb4eb3d0629271c5626c7d86805713d21ab22833f0eaae703fb
+  timestamp: '2026-05-07T23:21:47Z'
+  output_hash: 5b4b562deb6460cd8af58bf64e507cc90cfb2ce8b67e9a8088660c12bbff6d24
+  usage:
+    prompt_tokens: 4159
+    completion_tokens: 495
+    total_tokens: 4654
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017823
+  applied_revision: true

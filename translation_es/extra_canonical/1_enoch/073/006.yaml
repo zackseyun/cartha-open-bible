@@ -1,0 +1,208 @@
+id: 1EN.73.6
+reference: 1 Enoch 73:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወበዕለተ፡ ትነሥእ፡ ሳብዐተ፡ እደ፡ መንፈቀ፡ ብርሃኑ፡ ወይከውን፡ ብርሃኑ፡ ሳብዐተ፡ እደ፡ አሐተ፡ ወመንፈቃ።
+  language: Geez
+  pages:
+  - 175
+  - 176
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/073/006.yaml
+  text: And on the day it takes up a seventh part of half of its light[c][b][a], and its light becomes one and a half seventh parts.
+  footnotes:
+  - marker: a
+    text: The underlying expression is literally 'seven hands,' an idiom for measured portions or units in this astronomical context.
+    reason: lexical_alternative
+  - marker: b
+    text: The final numbers are difficult in English. The Ge'ez reads literally along the lines of 'seven parts, one and a half,' so the verse likely describes a fractional increase in the moon's light.
+    reason: textual_variant
+  - marker: c
+    text: Or 'she rises, she takes seven parts from half of her light, and her light becomes seven parts and one half'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: d32b39daf7a283dd9308f415f640bf05f145e10b5c5b51fef8b9c0c4614ab483
+    timestamp: '2026-04-22T09:16:50Z'
+    output_hash: ed02848233e558dc2838078b5aafb550ccb7eae8aa9f23263823023bed820275
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:24Z'
+    unchanged: false
+    changes_summary: Changed 'takes' to 'takes up' for closer lexical correspondence, and revised 'one seventh part and a half' to 'one and a half seventh parts' for clearer, more natural English while preserving the source sense.
+translation:
+  language: es
+  text: Y ese día toma una séptima parte de la mitad de su luz[a][b], y su luz llega a ser una parte y media de un séptimo[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: «Séptima parte» traduce aquí la fracción indicada por el ge'ez; el texto no dice «siete partes».
+    reason: textual_variant
+  - marker: b
+    text: La expresión es matemática y algo difícil; el orden exacto de las fracciones se conserva sin intentar normalizarlo más de lo que permite el original.
+    reason: source_note
+  - marker: c
+    text: La cláusula final es numéricamente difícil en el original. Esta redacción intenta reflejar la idea de «una parte y media de un séptimo», en vez de simplificarla como si fuera «un séptimo y medio» en un sentido más libre.
+    reason: textual_variant
+lexical_decisions:
+- source_word: በዕለተ
+  english_pob_choice: on the day
+  chosen_spanish: en el día
+  alternatives_spanish:
+  - en ese día
+  - el día en que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión es temporal y concreta; en español, «en el día» mantiene el marco calendárico sin introducir una paráfrasis excesiva.
+- source_word: ትነሥእ
+  english_pob_choice: takes up
+  chosen_spanish: toma
+  alternatives_spanish:
+  - recibe
+  - toma para sí
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa la acción de tomar/recibir una porción. «Toma» es breve, natural y fiel al movimiento matemático del pasaje.
+- source_word: ሳብዐተ እደ
+  english_pob_choice: a seventh part
+  chosen_spanish: una séptima parte
+  alternatives_spanish:
+  - un séptimo
+  - una parte séptima
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El audit trail corrige la lectura previa: no son «siete partes», sino una fracción de un séptimo. En español, «una séptima parte» conserva el valor fraccionario con claridad.'
+- source_word: መንፈቀ
+  english_pob_choice: half
+  chosen_spanish: la mitad
+  alternatives_spanish:
+  - medio
+  - una mitad
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Es la equivalencia normal y exacta para la fracción indicada por el original.
+- source_word: ብርሃኑ
+  english_pob_choice: its light
+  chosen_spanish: su luz
+  alternatives_spanish:
+  - su resplandor
+  - su brillo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El posesivo neutro/masculino del ge'ez se refleja de manera natural en «su luz»; evita una personificación no sustentada por la revisión textual.
+- source_word: ይከውን
+  english_pob_choice: becomes
+  chosen_spanish: llega a ser
+  alternatives_spanish:
+  - se convierte en
+  - queda
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Marca un cambio de estado resultante; «llega a ser» es idiomático y conserva la progresión descriptiva del versículo.
+- source_word: አሐተ ወመንፈቃ
+  english_pob_choice: one and a half seventh parts
+  chosen_spanish: una séptima parte y media
+  alternatives_spanish:
+  - una séptima parte y una mitad
+  - una séptima parte y medio
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase final es numéricamente difícil en ambas lenguas. «Una séptima parte y media» mantiene la ambigüedad textual y el carácter fraccionario sin imponer una normalización interpretativa.
+theological_decisions:
+- issue: Personificación lunar
+  english_pob_reading: Use feminine pronouns ('she,' 'her') for the rising luminary
+  chosen_spanish_reading: Usar un referente impersonal («su luz») y no introducir género personal
+  alternative_spanish_readings:
+  - ella / su luz
+  - él / su luz
+  rationale: La revisión auditada corrige la lectura personificada anterior y señala que el ge'ez usa un posesivo masculino para la luna. Por eso el español debe evitar una personificación no apoyada por el texto y mantener el registro astronómico descriptivo.
+  doctrine_reference: Principio de fidelidad textual y preservación de la corrección filológica frente a la personificación literaria.
+translation_notes:
+  revision_awareness: 'El borrador anterior seguía una lectura ya corregida por la revisión auditada: confundía el verbo único, invertía la fracción principal y personificaba la luna con pronombres femeninos. Este borrador adopta la lectura revisada: acción única de tomar/recibir, fracción de una séptima parte, y referencia impersonal al brillo/luz.'
+  spanish_consistency_notes:
+  - Se evita «SEÑOR» u otra convención de sustitución porque el pasaje no involucra el Tetragrámaton.
+  - Se conserva un registro sobrio y técnico, acorde con el discurso astronómico del libro.
+  - «Luz» se mantiene literal para bərhānu, sin añadir matices de «brillo» salvo en alternativas.
+  - Las fracciones se expresan de forma legible para el lector español sin borrar la dificultad del cierre del versículo.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/073/006.yaml
+  source_text_sha256: 642cf79fce685d0f9d28a691fdd550763e361a18ca496d45af4bf37cb2bb8774
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: ee380d874d42d7f9e7592923cc68278bdab4ac34a76a4dd62dc2c8491445ef04
+  timestamp: '2026-05-07T21:27:44Z'
+  output_hash: 55d6470267ae1c8d9ceeba903b6db019832ede91438f2898f6e3a4e5845fb343
+  usage:
+    prompt_tokens: 3229
+    completion_tokens: 1260
+    total_tokens: 4489
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008092
+status: spanish_reviewed
+revisions:
+- from: Y en el día toma una séptima parte de la mitad de su luz[a][b], y su luz llega a ser una séptima parte y media[c].
+  to: Y ese día toma una séptima parte de la mitad de su luz[a][b], y su luz llega a ser una parte y media de un séptimo[c].
+  rationale: 'Se mejora la naturalidad temporal (''ese día'') y se corrige la cláusula final para reflejar con mayor fidelidad la solución auditada del inglés POB: no simplemente ''una séptima parte y media'', sino ''una parte y media de un séptimo'', que preserva mejor el valor fraccional documentado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:28:12Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la corrección principal del audit trail: ትነሥእ se entiende como ''toma'' y ሳብዐተ እደ como una fracción (''una séptima parte''), no ''siete partes''. También evita correctamente la personificación femenina descartada por la revisión. Sin embargo, la cláusula final no preserva con suficiente precisión la solución inglesa auditada ''one and a half seventh parts''. ''Una séptima parte y media'' en español sugiere más naturalmente ''una séptima parte más media parte'', no ''una parte y media de séptimo'', y por eso desplaza el valor fraccionario documentado.'
+  spanish_quality_summary: El español es claro y digno, pero 'Y en el día' suena calcado; 'Y ese día' o 'Y en ese día' sería más natural. Además, la nota c habla de oscuridad general, pero conviene anclarla a la formulación fraccionaria específica para evitar una ambigüedad española innecesaria. El resto del texto es legible y apropiado para el registro.
+  glossary_alignment: No hay términos del glosario teológico principal especialmente implicados aquí. La decisión de no introducir personificación está alineada con la revisión auditada. La terminología matemática/fraccional necesita ajustarse para corresponder mejor al inglés POB y a la racionalidad léxica documentada.
+  issues:
+  - severity: medium
+    issue: '''en el día'' suena poco natural en español'
+    rationale: Aunque es comprensible, en español bíblico moderno neutral 'ese día' comunica la misma referencia temporal con mejor fluidez sin perder concreción.
+  - severity: high
+    issue: La cláusula final 'una séptima parte y media' no corresponde bien a 'one and a half seventh parts'
+    rationale: Esa redacción española normalmente se entenderá como 'un séptimo más una mitad', no como 'uno y medio séptimos'. El audit trail ya fijó una solución específica para conservar la fuerza fraccional del ge'ez.
+  - severity: low
+    issue: La nota final podría explicar mejor la dificultad numérica concreta
+    rationale: Dado que el español revisado necesitará una formulación menos habitual ('una parte y media de un séptimo'), conviene una nota que justifique esa sintaxis como esfuerzo de fidelidad al original.
+  revised_spanish_text: Y ese día toma una séptima parte de la mitad de su luz[a][b], y su luz llega a ser una parte y media de un séptimo[c].
+  revised_footnotes:
+  - marker: a
+    text: «Séptima parte» traduce aquí la fracción indicada por el ge'ez; el texto no dice «siete partes».
+    reason: textual_variant
+  - marker: b
+    text: La expresión es matemática y algo difícil; el orden exacto de las fracciones se conserva sin intentar normalizarlo más de lo que permite el original.
+    reason: source_note
+  - marker: c
+    text: La cláusula final es numéricamente difícil en el original. Esta redacción intenta reflejar la idea de «una parte y media de un séptimo», en vez de simplificarla como si fuera «un séptimo y medio» en un sentido más libre.
+    reason: textual_variant
+  revision_rationale: 'Se mejora la naturalidad temporal (''ese día'') y se corrige la cláusula final para reflejar con mayor fidelidad la solución auditada del inglés POB: no simplemente ''una séptima parte y media'', sino ''una parte y media de un séptimo'', que preserva mejor el valor fraccional documentado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ee4afdb961f93e15b6a8353c369b32758bb6d79f2c7ef5f12a1759eab9e13a2b
+  timestamp: '2026-05-07T23:28:12Z'
+  output_hash: 90681df0cf494c7bf0aedf50860b0ae5daf5d34e06580a385b4027e38bbd9f9c
+  usage:
+    prompt_tokens: 4037
+    completion_tokens: 824
+    total_tokens: 4861
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022453
+  applied_revision: true

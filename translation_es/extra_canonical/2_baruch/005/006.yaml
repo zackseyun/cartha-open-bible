@@ -1,0 +1,133 @@
+id: 2BA.5.6
+reference: 2 Baruch 5:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 5
+  pages:
+  - 227
+  - 226
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 6
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/005/006.yaml
+  text: And they lifted up their voices and they all wept. And we sat there and fasted until evening.
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:07:32Z'
+    unchanged: false
+    changes_summary: Removed an unnecessary comma after “voices” to improve natural flow; wording otherwise unchanged.
+translation:
+  language: es
+  text: Y alzaron la voz, y todos lloraron. Y nos sentamos allí y ayunamos hasta la tarde.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: lifted up their voices
+  english_pob_choice: they lifted up their voices
+  chosen_spanish: alzaron su voz
+  alternatives_spanish:
+  - levantaron la voz
+  - alzaron sus voces
+  lexicon: alzaron
+  rationale: En español, "alzar la voz" comunica bien el acto de exclamación o clamor colectivo sin sonar forzado. Mantengo el singular colectivo "su voz" porque el sentido es plural pero idiomático en español; "sus voces" es posible, pero menos natural en este giro.
+- source_word: wept
+  english_pob_choice: they all wept
+  chosen_spanish: todos lloraron
+  alternatives_spanish:
+  - todos se lamentaron
+  - todos lloraron juntos
+  lexicon: llorar
+  rationale: El verbo simple "llorar" corresponde de manera directa al llanto expresado en el texto. Añadí "todos" para conservar la totalidad enfatizada por el inglés POB.
+- source_word: we sat there
+  english_pob_choice: we sat there
+  chosen_spanish: nos quedamos allí
+  alternatives_spanish:
+  - nos sentamos allí
+  - permanecimos allí
+  lexicon: quedarse
+  rationale: El español "nos quedamos allí" puede expresar permanencia en el lugar de forma natural y encaja con la secuencia narrativa. "Nos sentamos allí" sería más literal, pero el contexto no exige especificar la postura corporal, solo la permanencia durante el ayuno.
+- source_word: fasted until evening
+  english_pob_choice: fasted until evening
+  chosen_spanish: ayunamos hasta la tarde
+  alternatives_spanish:
+  - ayunamos hasta el atardecer
+  - ayunamos hasta la noche
+  lexicon: ayunar
+  rationale: '"Ayunamos" conserva el verbo técnico-religioso con claridad. "Hasta la tarde" traduce el límite temporal de modo natural y suficientemente cercano al inglés POB; "atardecer" sería una opción más puntual, pero menos neutra.'
+theological_decisions:
+- issue: Collective lament and fasting as public mourning
+  english_pob_reading: they all wept... we sat there and fasted until evening
+  chosen_spanish_reading: todos lloraron... nos quedamos allí y ayunamos hasta la tarde
+  alternative_spanish_readings:
+  - todos se lamentaron... permanecimos allí y ayunamos hasta la tarde
+  - todos lloraron... nos sentamos allí y ayunamos hasta la noche
+  rationale: 'El versículo presenta una respuesta comunitaria de duelo: alzar la voz, llorar y ayunar. Mantengo ese ritmo sin añadir interpretaciones sobre penitencia, sólo el ayuno y el llanto como expresión de aflicción compartida.'
+  doctrine_reference: Narrative lament; no doctrinal expansion beyond the source
+translation_notes:
+  revision_awareness: 'La redacción inglesa auditada fue ligeramente ajustada por puntuación בלבד, sin cambio de contenido: se eliminó una coma tras "voices". La versión española sigue el mismo contenido confirmado por el pasaje fuente y no introduce elementos ausentes.'
+  spanish_consistency_notes:
+  - Conservo un español sobrio y bíblico, pero no arcaizante.
+  - No se introdujo "SEÑOR" ni otras sustituciones teológicas no requeridas por el texto.
+  - '"Ayunamos" mantiene el matiz religioso del acto sin añadir explicación.'
+  - La forma plural del sujeto se conserva en el sentido, aunque se use un giro idiomático singular en "su voz".
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/005/006.yaml
+  source_text_sha256: f679d8885fe103f978c9b92dea3c9cf8412b1354466ae4677bfaaf5ba3da590d
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 42c2d74edcc1cda7304475756c1a71b08fcced2ce3b4b6b4a28a7ffad3c6cdfe
+  timestamp: '2026-05-07T21:28:39Z'
+  output_hash: 0a652248d589818a145489ae9c9d1776e8f8859481d891a413ed9930ccec0dcc
+  usage:
+    prompt_tokens: 1638
+    completion_tokens: 804
+    total_tokens: 2442
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004847
+status: spanish_reviewed
+revisions:
+- from: Y alzaron su voz y todos lloraron. Y nosotros nos quedamos allí y ayunamos hasta la tarde.
+  to: Y alzaron la voz, y todos lloraron. Y nos sentamos allí y ayunamos hasta la tarde.
+  rationale: Se ajusta «alzaron su voz» a la expresión idiomática «alzaron la voz» y se cambia «nos quedamos allí» por «nos sentamos allí» para conservar la acción narrativa específica reflejada en la auditoría inglesa. No se requieren notas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:50:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el sentido general del siríaco según la auditoría inglesa: clamor colectivo, llanto de todos, permanencia en el lugar y ayuno hasta la tarde. Sin embargo, «nos quedamos allí» debilita el valor más concreto de «we sat there», que en este contexto narrativo conviene conservar de forma más literal.'
+  spanish_quality_summary: El español es claro y natural, pero puede afinarse para reflejar mejor la imagen narrativa. «Alzaron su voz» es comprensible, aunque «alzaron la voz» suena más idiomático en español. «Nos sentamos allí» preserva mejor la acción expresada por el original/inglés que «nos quedamos allí».
+  glossary_alignment: No hay términos del glosario mayor en juego. «Ayunamos» y «lloraron» están bien. La revisión propuesta mejora fidelidad sin afectar legibilidad.
+  issues:
+  - severity: medium
+    issue: «nos quedamos allí» traduce permanencia más que la acción de sentarse
+    rationale: El inglés POB refleja explícitamente «we sat there». Aunque «nos quedamos allí» es natural, omite una imagen narrativa concreta presente en la línea auditada y probablemente en el siríaco.
+  - severity: low
+    issue: «alzaron su voz» suena menos idiomático que «alzaron la voz»
+    rationale: En español, la expresión fija para clamor colectivo suele ser «alzaron la voz». El singular posesivo no es incorrecto, pero resulta algo más rígido.
+  revised_spanish_text: Y alzaron la voz, y todos lloraron. Y nos sentamos allí y ayunamos hasta la tarde.
+  revision_rationale: Se ajusta «alzaron su voz» a la expresión idiomática «alzaron la voz» y se cambia «nos quedamos allí» por «nos sentamos allí» para conservar la acción narrativa específica reflejada en la auditoría inglesa. No se requieren notas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 707650c5d3f1a050b1d3e8568c3de47af309c87ab5f1bacc08bdacad428fd7ee
+  timestamp: '2026-05-07T22:50:31Z'
+  output_hash: 6856236b794d96dbaac8b2390c99d366c43c58f5379ed71c2126b43021808874
+  usage:
+    prompt_tokens: 2112
+    completion_tokens: 467
+    total_tokens: 2579
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012285
+  applied_revision: true

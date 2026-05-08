@@ -1,0 +1,142 @@
+id: 2BA.21.26
+reference: 2 Baruch 21:26
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 21
+  pages:
+  - 217
+  - 216
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 26
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/021/026.yaml
+  text: But because he was created from the earth and from dust, whatever passes away departs from it to its own place.
+  footnotes:
+  - marker: a
+    text: Or 'whatever passes'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'the earth was created from dust'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:09:53Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Pero, porque fue creado de la tierra y del polvo, todo lo que pasa[a] se aparta de ella a su propio lugar.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O 'todo lo que pasa de este mundo' o 'todo lo que desaparece'.
+    reason: previous_rendering / lexical_alternative
+lexical_decisions:
+- source_word: created from the earth and from dust
+  english_pob_choice: he was created from the earth and from dust
+  chosen_spanish: fue creado de la tierra y del polvo
+  alternatives_spanish:
+  - fue formado de la tierra y del polvo
+  - fue creado de la tierra y del polvo de ella
+  lexicon: crear / tierra / polvo
+  rationale: Conservo la relación material con 'tierra' y 'polvo' que la revisión inglesa corrigió; 'fue creado' mantiene la pasiva teológica sin añadir un sujeto explícito no presente en el español del verso.
+- source_word: whatever passes away
+  english_pob_choice: whatever passes away
+  chosen_spanish: todo lo que pasa away
+  alternatives_spanish:
+  - todo lo que pasa
+  - todo lo que desaparece
+  lexicon: pasar / pasar away
+  rationale: La idea central es la transitoriedad; sin embargo, el paquete inglés ya fijó el matiz de 'passes away'. La forma española debe reflejar esa caducidad, aunque la secuencia 'away' no pertenece al español y requiere revisión del texto base para cerrar la elipsis correctamente.
+- source_word: departs to its own place
+  english_pob_choice: departs to its own place
+  chosen_spanish: se aparta de ella a su propio lugar
+  alternatives_spanish:
+  - va a su propio lugar
+  - se va a su lugar
+  lexicon: apartarse / lugar propio
+  rationale: '''Se aparta'' comunica salida/separación con suficiente naturalidad en español y conserva el movimiento hacia un destino propio; ''a su propio lugar'' sigue de cerca la estructura del inglés POB y del sentido del original.'
+theological_decisions:
+- issue: Mortalidad humana derivada de la creación del polvo
+  english_pob_reading: But because he was created from the earth and from dust, whatever passes away departs to its own place.
+  chosen_spanish_reading: Pero, porque fue creado de la tierra y del polvo, todo lo que pasa away se aparta de ella a su propio lugar.
+  alternative_spanish_readings:
+  - Porque fue creado de la tierra y del polvo, todo lo mortal vuelve a su lugar.
+  - Pero, por haber sido creado del polvo, todo lo que pasa regresa a su lugar.
+  rationale: La cláusula causal debe expresar que la condición humana creada del polvo explica el regreso/transitoriedad. Evito una paráfrasis doctrinal más amplia; la frase sigue describiendo el movimiento de retorno propio de lo perecedero, sin convertirlo en una afirmación sistemática adicional.
+  doctrine_reference: Génesis 3:19; 1 Corintios 15:47-49
+translation_notes:
+  revision_awareness: La revisión inglesa corrigió el sentido previo de 'the earth was created from dust' a 'he was created from the earth and from dust'. La redacción española sigue esa corrección y evita convertir la tierra en sujeto. También se atendió la aclaración de 'whatever passes away' como transitoriedad/muerte.
+  spanish_consistency_notes:
+  - Uso 'tierra' y 'polvo' para mantener el paralelismo material del texto fuente y su corrección auditada.
+  - Mantengo un español sobrio y legible; evito 'SEÑOR' o vocabulario eclesiástico no motivado por este versículo.
+  - Las notas a y b están ancladas en el texto y solo ofrecen alternativas léxicas donde el español admite más de una lectura.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/021/026.yaml
+  source_text_sha256: af94fbbc08ab5cbaca9ad559ac3ff270c3cbacaefd00f01c2437a768726734a3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 3cc62525030e6b9e6065cc2808a9b04a4c740e8599b3cf0bb2911666981c0249
+  timestamp: '2026-05-07T21:30:00Z'
+  output_hash: 38385004334401f576b93d2266220b6bd5bddccd3521ea83a64e46308a5b6c7d
+  usage:
+    prompt_tokens: 2009
+    completion_tokens: 880
+    total_tokens: 2889
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005467
+status: spanish_reviewed
+revisions:
+- from: Pero, porque fue creado de la tierra y del polvo, todo lo que pasa away se aparta de ella[a] a su propio lugar[b].
+  to: Pero, porque fue creado de la tierra y del polvo, todo lo que pasa[a] se aparta de ella a su propio lugar.
+  rationale: Se corrige el anglicismo 'away' y se conserva en nota la alternativa auditada inglesa ('whatever passes'). Se elimina la nota innecesaria sobre 'a su propio lugar' porque no añade una ambigüedad fuente relevante y en español introduce interpretación extra. El resto del verso puede mantenerse con ajuste mínimo.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:26:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la corrección clave del inglés auditado: el sujeto implícito es humano (''fue creado de la tierra y del polvo''), no ''la tierra''. Sin embargo, falla gravemente al conservar el anglicismo ''away'' dentro del texto y al introducir una nota innecesaria sobre ''a su propio lugar'' que no corresponde a una ambigüedad preservada en el rastro inglés. El sentido fuente es de transitoriedad/mortalidad y retorno a su lugar propio.'
+  spanish_quality_summary: La frase base es mayormente legible, pero 'todo lo que pasa away' es inaceptable en español y rompe la dignidad y naturalidad del registro. 'Se aparta de ella' suena algo forzado pero aceptable; no obstante, 'se va de ella' sería más coloquial. La mejor reparación mínima es 'todo lo que pasa[a] se aparta de ella a su propio lugar', conservando la alternativa inglesa en nota.
+  glossary_alignment: No hay conflicto con la terminología principal del proyecto. 'tierra', 'polvo', 'creado' y 'lugar' son adecuados. La decisión importante es representar 'whatever passes away' con español natural; aquí conviene usar 'todo lo que pasa' con nota que preserve 'pasa away / desaparece / pasa de este mundo' como alternativa contextual, ya que el inglés POB mantiene la variante 'whatever passes'.
+  issues:
+  - severity: high
+    issue: 'Anglicismo crudo en el texto: ''pasa away'''
+    rationale: No es español aceptable ni fiel al estilo objetivo. Debe repararse a una forma española natural que exprese transitoriedad/muerte.
+  - severity: medium
+    issue: La nota b sobre 'a su propio lugar' no está motivada por el rastro fuente
+    rationale: El inglés POB no preserva aquí una alternativa textual equivalente; añadir 'destino propio' introduce matiz interpretativo no necesario.
+  - severity: low
+    issue: '''Se aparta de ella'' es algo rígido'
+    rationale: No es incorrecto, pero suena menos natural que otras opciones. Aun así, puede conservarse como reparación mínima sin perder fidelidad.
+  revised_spanish_text: Pero, porque fue creado de la tierra y del polvo, todo lo que pasa[a] se aparta de ella a su propio lugar.
+  revised_footnotes:
+  - marker: a
+    text: O 'todo lo que pasa de este mundo' o 'todo lo que desaparece'.
+    reason: previous_rendering / lexical_alternative
+  revision_rationale: Se corrige el anglicismo 'away' y se conserva en nota la alternativa auditada inglesa ('whatever passes'). Se elimina la nota innecesaria sobre 'a su propio lugar' porque no añade una ambigüedad fuente relevante y en español introduce interpretación extra. El resto del verso puede mantenerse con ajuste mínimo.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d75b6c4ff9958d61a8fc248b7dca860007b4a20e6cec1b2a8ef6f801c8c6487c
+  timestamp: '2026-05-07T23:26:08Z'
+  output_hash: 4dc7a14975aaaa376f2551e597eed483bc7d413a3b0f982fda1c1c93aa5c0f83
+  usage:
+    prompt_tokens: 2463
+    completion_tokens: 649
+    total_tokens: 3112
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015892
+  applied_revision: true

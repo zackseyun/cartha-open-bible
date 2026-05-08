@@ -1,0 +1,148 @@
+id: 2ES.7.101
+reference: 2 Esdras 7:101
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'dixisti ? Et dixit : septem diebus erit libertas earum, ut uideant qui praedicti'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/007/101.yaml
+  text: And he said[a], “For seven days they will have freedom, so that they may see the things that were foretold.”
+  footnotes:
+  - marker: a
+    text: Or 'And he said to me, “They will have freedom for seven days, so that they may see the things of which you have been told, and afterward they will be gathered into their habitations.”'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:42:20Z'
+    unchanged: false
+    changes_summary: Removed material not present in the provided Latin source ('and afterward they will be gathered into their habitations') and adjusted word order slightly for natural English while preserving the sense.
+translation:
+  language: es
+  text: 'Y dijo[a]: «Durante siete días tendrán libertad, para que vean lo que fue anunciado».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «Y me dijo». El latín aquí solo dice «Et dixit» y no explicita el destinatario.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: Et dixit
+  english_pob_choice: And he said
+  chosen_spanish: Y dijo
+  alternatives_spanish:
+  - Y él dijo
+  - Y respondió
+  lexicon: dixit > decir
+  rationale: El latín solo trae un sujeto implícito con verbo de habla; el contexto identifica al hablante, pero no justifica añadir «a mí». «Y dijo» conserva la sobriedad del original y evita introducir un complemento no atestiguado.
+- source_word: septem diebus
+  english_pob_choice: for seven days
+  chosen_spanish: Durante siete días
+  alternatives_spanish:
+  - Por siete días
+  - Siete días
+  lexicon: septem + dies
+  rationale: 'La idea es durativa: un período completo de siete días. «Durante siete días» expresa mejor esa duración en español que un mero conteo aislado.'
+- source_word: erit libertas earum
+  english_pob_choice: they will have freedom
+  chosen_spanish: tendrán libertad
+  alternatives_spanish:
+  - habrá libertad para ellas
+  - será libertad de ellas
+  lexicon: libertas
+  rationale: «Libertad» es la equivalencia directa de libertas. «Tendrán libertad» suena natural en español y conserva el valor de estado concedido, sin forzar una perífrasis más pesada.
+- source_word: ut uideant
+  english_pob_choice: so that they may see
+  chosen_spanish: para que vean
+  alternatives_spanish:
+  - a fin de que vean
+  - para ver
+  lexicon: ut + videant
+  rationale: La construcción final en español se expresa con «para que» + subjuntivo. Se mantiene el matiz de propósito del latín.
+- source_word: qui praedicti
+  english_pob_choice: the things that were foretold
+  chosen_spanish: lo que había sido anunciado
+  alternatives_spanish:
+  - las cosas que habían sido anunciadas
+  - lo que fue predicho
+  lexicon: praedictus
+  rationale: La forma latina es sintética y algo fragmentaria en el testimonio dado; la revisión inglesa dejó claro que el sentido es pasivo y profético. «Lo que había sido anunciado» mantiene el carácter previo de la predicción sin añadir detalles ausentes del fragmento.
+theological_decisions:
+- issue: Valor de la libertad concedida por siete días
+  english_pob_reading: They will have freedom for seven days
+  chosen_spanish_reading: Durante siete días tendrán libertad
+  alternative_spanish_readings:
+  - Por siete días tendrán libertad
+  - Tendrán libertad por siete días
+  rationale: No se trata de una libertad abstracta sino de una concesión temporal. La redacción española conserva ese límite temporal sin cargarla con implicaciones doctrinales ajenas al versículo.
+  doctrine_reference: none
+translation_notes:
+  revision_awareness: El inglés auditado fue revisado para eliminar «to me» porque el latín fuente solo dice «Et dixit». También se retiró material no presente en el testimonio latino («and afterward they will be gathered into their habitations»). La versión española sigue esa lectura más sobria y se mantiene alineada con el texto latino limpio proporcionado.
+  spanish_consistency_notes:
+  - Se usó «libertad» para libertas, en coherencia con un valor temporal concedido.
+  - Se evitó «Cristo», «SEÑOR» y otros términos no presentes en el fragmento.
+  - 'La nota textual se limitó al único punto de ambigüedad relevante: el destinatario del habla.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/007/101.yaml
+  source_text_sha256: 1a89a91920e35d95720a6db4893f118b2ac50c7fba492b962e0705ab3cb5b821
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: ef8905dfd0e39143559d7f2d9ec154e3a818f662e8adcbf18eef8ffc47ccc5ed
+  timestamp: '2026-05-07T21:28:32Z'
+  output_hash: 0288bd061f020ffc6940df10f67bb24db61853fb22763581b37cb14d1531bf17
+  usage:
+    prompt_tokens: 2140
+    completion_tokens: 851
+    total_tokens: 2991
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005435
+status: spanish_reviewed
+revisions:
+- from: 'Y dijo[a]: «Durante siete días tendrán libertad, para que vean lo que había sido anunciado».'
+  to: 'Y dijo[a]: «Durante siete días tendrán libertad, para que vean lo que fue anunciado».'
+  rationale: Se mantiene el sentido del original y del POB en inglés, pero se corrige la nota para usar español idiomático y se aligera la frase final a «lo que fue anunciado», que preserva el pasivo de praedicti con mejor fluidez.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:18:57Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el latín conservado: «Et dixit» = «Y dijo»; «septem diebus erit libertas earum» = concesión temporal de libertad; «ut uideant» = finalidad; y «qui praedicti» apunta a lo previamente anunciado/predicho. Sin embargo, la nota actual ofrece como alternativa «Y dijo a mí», que no es español natural y además puede sugerir una lectura que el propio expediente inglés descartó como no explícita en este punto.'
+  spanish_quality_summary: El texto principal es claro y legible. «Durante siete días tendrán libertad» suena natural. La única mejora necesaria es afinar «lo que había sido anunciado» a una formulación más directa y idiomática, y corregir la nota para que el español sea natural y no introduzca una alternativa torpe.
+  glossary_alignment: 'No hay términos de glosario mayor en disputa. Las decisiones léxicas principales son adecuadas: «libertad» para libertas y «para que vean» para ut uideant. Conviene preferir «lo que fue anunciado» frente a «lo que había sido anunciado» por mayor naturalidad sin pérdida de sentido.'
+  issues:
+  - severity: medium
+    issue: La nota al pie usa la alternativa «Y dijo a mí».
+    rationale: Aunque pretende reflejar una lectura posible del destinatario, esa redacción no es español natural; la forma idiomática sería «Y me dijo». Además, la nota debe dejar claro que esa adición no está explícita en el latín aquí.
+  - severity: low
+    issue: «lo que había sido anunciado» suena algo pesado.
+    rationale: El pasivo perifrástico con pluscuamperfecto no añade precisión necesaria. «Lo que fue anunciado» o «las cosas que fueron anunciadas» comunica mejor el sentido pasivo de praedicti en español bíblico claro.
+  revised_spanish_text: 'Y dijo[a]: «Durante siete días tendrán libertad, para que vean lo que fue anunciado».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Y me dijo». El latín aquí solo dice «Et dixit» y no explicita el destinatario.'
+    reason: alternative_reading
+  revision_rationale: Se mantiene el sentido del original y del POB en inglés, pero se corrige la nota para usar español idiomático y se aligera la frase final a «lo que fue anunciado», que preserva el pasivo de praedicti con mejor fluidez.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d7f851cafc8286f5ca5394655c4e9af4b769766cdd4cf6dfb0bf01979ff0ba83
+  timestamp: '2026-05-07T23:18:57Z'
+  output_hash: 6d0eb27cb3d2d93255fa47b7a59584c73541b416d61e00f60d85f2d9f8fb6eaa
+  usage:
+    prompt_tokens: 2645
+    completion_tokens: 572
+    total_tokens: 3217
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015193
+  applied_revision: true

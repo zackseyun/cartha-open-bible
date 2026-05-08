@@ -1,0 +1,132 @@
+id: 2ES.8.26
+reference: 2 Esdras 8:26
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: erunt. Neque adtendas impie agentium studia, sed qui tua
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/008/026.yaml
+  text: but upon those who have served you in truth[a]. Do not pay attention to the pursuits of those who act impiously,
+  footnotes:
+  - marker: a
+    text: Or 'Do not attend to'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:42:33Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: pero sobre los que te han servido en verdad. No prestes atención[a] a los afanes de los que actúan impíamente,
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: "No atiendas a".'
+    reason: lexical_alternative for adtendas
+lexical_decisions:
+- source_word: adtendas
+  english_pob_choice: Do not pay attention to
+  chosen_spanish: No prestes atención a
+  alternatives_spanish:
+  - No atiendas a
+  - No consideres
+  - No mires a
+  lexicon: attendo
+  rationale: El latino adtendas significa dirigir la mente hacia algo, no 'atender' en el sentido moderno de asistir o cuidar. 'No prestes atención a' conserva la idea de enfocar la mente, y evita la ambigüedad moderna de 'atender'.
+- source_word: impie agentium studia
+  english_pob_choice: the pursuits of those who act impiously
+  chosen_spanish: las prácticas de los que actúan impíamente
+  alternatives_spanish:
+  - los afanes de los que obran impíamente
+  - los empeños de los impíos
+  - las empresas de los que obran mal
+  lexicon: studium / impie agere
+  rationale: studia aquí se entiende como empeños, prácticas o actividades; 'prácticas' mantiene el valor de conducta persistente. 'Impíamente' conserva el adverbio latino y su fuerza moral-religiosa sin suavizarla a 'mal'.
+- source_word: qui tua
+  english_pob_choice: those who have served you in truth
+  chosen_spanish: los que te han servido en verdad
+  alternatives_spanish:
+  - los que te sirvieron fielmente
+  - los que te han servido con verdad
+  lexicon: qui tua
+  rationale: La frase latina está fragmentaria en el testimonio dado, pero el contexto del POB inglés apunta a los que han servido con verdad/fidelidad. 'En verdad' preserva la formulación directa y permite la relación con la fidelidad sin introducir una paráfrasis más amplia.
+theological_decisions:
+- issue: Contraste entre los fieles y los impíos
+  english_pob_reading: but upon those who have served you in truth. Do not pay attention to the pursuits of those who act impiously
+  chosen_spanish_reading: pero sobre los que te han servido en verdad. No prestes atención a las prácticas de los que actúan impíamente
+  alternative_spanish_readings:
+  - sino sobre los que te han servido en verdad
+  - pero fíjate en los que te han servido fielmente
+  rationale: 'La estructura conserva el contraste implícito del texto: por un lado, los servidores fieles; por otro, la advertencia de no fijarse en la conducta de los impíos. No se suaviza la tensión moral del pasaje.'
+  doctrine_reference: fidelidad vs. impiedad en el juicio y discernimiento moral
+translation_notes:
+  revision_awareness: El audit trail inglés muestra una revisión reciente de 'Do not attend to' a 'Do not pay attention to' por claridad moderna; la versión española refleja esa intención con 'No prestes atención a'. No hay otros cambios sustantivos en el último pass.
+  spanish_consistency_notes:
+  - Se mantiene 'en verdad' para reproducir la fuerza del inglés POB sin añadir 'fielmente' en el texto principal.
+  - '''impíamente'' conserva el registro bíblico y el contraste ético del latín.'
+  - La puntuación con coma final preserva que la cláusula continúa en el versículo siguiente o en la unidad mayor, según el flujo del texto fuente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/008/026.yaml
+  source_text_sha256: 70080a00c7300cd8ed5a42ffe2deed3bdf1010703a3d800b18864371bff56a64
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: b22df920fd81a94d613f4340e876ef22856aa57b441d4e509b42c8289a8280a2
+  timestamp: '2026-05-07T21:28:27Z'
+  output_hash: 70ada997b1a07d69c562872bf55259846342367bf1019815c75417e2b38715a3
+  usage:
+    prompt_tokens: 1757
+    completion_tokens: 795
+    total_tokens: 2552
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004895
+status: spanish_reviewed
+revisions:
+- from: pero sobre los que te han servido en verdad[a]. No prestes atención a las prácticas de los que actúan impíamente,
+  to: pero sobre los que te han servido en verdad. No prestes atención[a] a los afanes de los que actúan impíamente,
+  rationale: Se movió la nota al verbo correspondiente para alinearla con la evidencia fuente y el rastro de auditoría en inglés. Además, se ajustó `studia` de 'prácticas' a 'afanes' para reflejar mejor el sentido de 'pursuits/empeños' sin perder naturalidad en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:35:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador capta bien el sentido del latín conservado: `adtendas` = dirigir la atención; `impie agentium studia` = los afanes/empeños de quienes obran impíamente. También refleja adecuadamente la cláusula previa reconstruida por el rastro inglés (''los que te han servido en verdad''). Sin embargo, la nota [a] está mal anclada: el pie inglés sobre la alternativa de `adtendas` fue colocado en ''verdad'' en vez de en la frase verbal correspondiente.'
+  spanish_quality_summary: El español es claro y natural en general. 'No prestes atención a' es una muy buena solución moderna. No obstante, 'las prácticas' para `studia` puede sonar algo reducido; 'los afanes' o 'empeños' preserva mejor la idea de pursuits/empeños. Además, debe corregirse la ubicación de la nota para evitar confusión.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. El registro es moderno y digno. La elección 'impíamente' preserva bien la fuerza moral-religiosa del latín.
+  issues:
+  - severity: medium
+    issue: Nota [a] anclada en el lugar equivocado
+    rationale: La nota inglesa documenta una alternativa para `adtendas` ('Do not attend to'), por lo que en español debe anclarse en 'No prestes atención a', no en 'verdad'.
+  - severity: low
+    issue: '`studia` vertido como ''prácticas'' puede estrechar el sentido'
+    rationale: '`Studia` aquí se acerca más a ''afanes'', ''empeños'' o ''ocupaciones/pursuits'' que a ''prácticas'' en sentido habitual. ''Afanes'' suena natural y conserva mejor el matiz de dedicación o empeño.'
+  revised_spanish_text: pero sobre los que te han servido en verdad. No prestes atención[a] a los afanes de los que actúan impíamente,
+  revised_footnotes:
+  - marker: a
+    text: 'O: "No atiendas a".'
+    reason: lexical_alternative for adtendas
+  revision_rationale: Se movió la nota al verbo correspondiente para alinearla con la evidencia fuente y el rastro de auditoría en inglés. Además, se ajustó `studia` de 'prácticas' a 'afanes' para reflejar mejor el sentido de 'pursuits/empeños' sin perder naturalidad en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 26b73d1f3ba648f00910f2e3695efa374d20685e3797cd73b17112b974fdaecc
+  timestamp: '2026-05-07T23:35:53Z'
+  output_hash: 9b25a1b343b8330ab84f619f4dac72fb70011b24ba64affb5e3fcb7944774f6d
+  usage:
+    prompt_tokens: 2234
+    completion_tokens: 568
+    total_tokens: 2802
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.014105
+  applied_revision: true

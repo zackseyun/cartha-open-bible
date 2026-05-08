@@ -1,0 +1,139 @@
+id: 2ES.5.3
+reference: 2 Esdras 5:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: et erit inconposita vestigio quam nunc vides regnare regionem, et videbunt eam desertam.
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/005/003.yaml
+  text: And the region that you now see ruling will be a trackless waste, and they will see it desolate.
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:36Z'
+    unchanged: false
+    changes_summary: Changed 'land' to 'region' for closer alignment with regionem; removed 'laid' to avoid adding beyond the source; adjusted word order slightly for more natural formal English while retaining 'ruling' and 'trackless waste' for vestigio/inconposita.
+translation:
+  language: es
+  text: Y la región que ahora ves reinando será un desierto sin senderos[a], y la verán desolada.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: «desierto sin senderos» intenta reproducir la fuerza de inconposita vestigio; otras opciones posibles son «yermo sin huellas» o «desolación sin caminos».
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: regionem
+  english_pob_choice: region
+  chosen_spanish: territorio
+  alternatives_spanish:
+  - región
+  - tierra
+  - comarca
+  lexicon: N/A
+  rationale: «Territorio» comunica de forma natural y formal la extensión geográfica implicada por regionem sin forzar una calco rígido; «región» también sería posible, pero en español puede sonar más abstracto o técnico, mientras que aquí el contraste con la desolación pide una referencia concreta a la tierra habitada.
+- source_word: regnare
+  english_pob_choice: ruling
+  chosen_spanish: reinando
+  alternatives_spanish:
+  - gobernando
+  - dominando
+  lexicon: N/A
+  rationale: Se conserva la imagen verbal del presente participial con «reinando», que corresponde bien a la idea de ejercer dominio sobre la tierra/territorio. «Gobernando» sería más neutro, pero pierde parte del matiz real de regnare.
+- source_word: inconposita vestigio
+  english_pob_choice: trackless waste
+  chosen_spanish: desierto sin senderos
+  alternatives_spanish:
+  - desolación sin caminos
+  - yermo sin huellas
+  - desierto sin huellas
+  lexicon: N/A
+  rationale: La construcción latina sugiere una zona no trazada ni recorrible; «desierto sin senderos» preserva la fuerza imagética de un lugar sin caminos marcados y resulta idiomático en español. «Sin huellas» sería una alternativa cercana, pero puede sonar más literaria que descriptiva.
+- source_word: videbunt eam desertam
+  english_pob_choice: they will see it desolate
+  chosen_spanish: lo verán desolado
+  alternatives_spanish:
+  - la verán desolada
+  - la verán convertida en desolación
+  lexicon: N/A
+  rationale: Se mantiene el futuro y la idea de percepción directa. «Desolado» funciona como adjetivo predicativo que recoge el estado resultante sin añadir una pasiva perifrástica que no está explícita en el latín.
+theological_decisions:
+- issue: Cómo expresar el juicio de ruina territorial sin introducir más detalle que el fuente
+  english_pob_reading: And the region that you now see ruling will be a trackless waste, and they will see it desolate.
+  chosen_spanish_reading: Y el territorio que ahora ves reinando será un desierto sin senderos, y lo verán desolado.
+  alternative_spanish_readings:
+  - Y la región que ahora ves gobernando será un yermo sin caminos, y la verán desolada.
+  - Y la tierra que ahora ves dominando quedará desierta, y la verán en desolación.
+  rationale: 'El texto anuncia un juicio histórico de inversión: el lugar que domina ahora quedará arrasado y sin transitar. La traducción conserva esa tensión sin añadir interpretaciones escatológicas o morales ajenas al texto.'
+  doctrine_reference: Juicio histórico y reversión de estados; no se añade doctrina sistemática fuera del sentido literal.
+translation_notes:
+  revision_awareness: 'La redacción sigue la revisión más reciente del inglés auditado: mantiene «region» como «territorio/región» en sentido geográfico concreto, evita añadir «laid», y conserva la idea de «trackless waste» sin sobreexplicarla. El latín cleaned también respalda una formulación sobria y directa.'
+  spanish_consistency_notes:
+  - Se evita «SEÑOR» u otras sustituciones no motivadas, porque el verso no contiene el Tetragrama ni κύριος.
+  - Se mantiene el tiempo futuro («será», «lo verán») para reflejar la profecía directa del latín.
+  - El adjetivo «desolado» se usa sin añadir pasiva explícita, en coherencia con videbunt eam desertam.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/005/003.yaml
+  source_text_sha256: 900d74b61a5f197322063c59f3e6553ecbc0500487fb9ccb712abd3b498f15d8
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 096f2d201bbe32b3e9643e81db175348aaea47cb462864915910c326378269a4
+  timestamp: '2026-05-07T21:28:46Z'
+  output_hash: fa0d990c43fd8d6cf30f6c4cf0b9e1d45363b04531150528344c1979c701f011
+  usage:
+    prompt_tokens: 1724
+    completion_tokens: 945
+    total_tokens: 2669
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005546
+status: spanish_reviewed
+revisions:
+- from: Y el territorio que ahora ves reinando será un [a] desierto sin senderos, y lo verán desolado.
+  to: Y la región que ahora ves reinando será un desierto sin senderos[a], y la verán desolada.
+  rationale: Se cambia «territorio» por «región» para alinearse mejor con regionem y con la auditoría inglesa; se corrige la referencia final a «la verán desolada» para concordancia y claridad; y se recoloca la nota al sintagma léxico pertinente sin alterar el sentido básico del borrador.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:37:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura del latín: la región/territorio que ahora ''reina'' o domina llegará a ser una desolación no transitada, y luego será vista desolada. Sin embargo, hay un desajuste gramatical importante en el pronombre final: para «territorio/región» debe ser femenino si se usa «región», o neutro no corresponde; además el artículo «un» antes de la nota interrumpe innecesariamente la fluidez. Conviene también acercar más el cierre a «la verán desolada».'
+  spanish_quality_summary: El español es generalmente claro y digno, pero «será un [a] desierto sin senderos» suena algo forzado; «será un desierto sin senderos[a]» mejora la sintaxis. Más importante, «lo verán desolado» no concuerda con «región» y resulta menos natural si se opta por un sustantivo femenino, que además alinea mejor con el inglés POB «region».
+  glossary_alignment: No hay términos del glosario mayor en juego. Entre «territorio» y «región», «región» alinea mejor con regionem y con la revisión inglesa auditada. «Reinando» preserva adecuadamente regnare, aunque es una imagen algo dura en español; sigue siendo aceptable. «Desierto sin senderos» es defendible para inconposita vestigio con nota léxica.
+  issues:
+  - severity: medium
+    issue: Desalineación con regionem / English POB en «territorio» frente a «región».
+    rationale: «Territorio» no es imposible, pero la pista auditada corrigió expresamente a «region» por cercanía a regionem. En español, «región» funciona de manera natural y más estrechamente alineada con la evidencia.
+  - severity: high
+    issue: Pronombre y adjetivo finales mal ajustados en «lo verán desolado».
+    rationale: Si el referente es «región», debe ser «la verán desolada». Incluso con «territorio», la construcción con «lo» vuelve menos transparente la referencia a la tierra/región previamente mencionada.
+  - severity: low
+    issue: Ubicación del marcador de nota tras el artículo.
+    rationale: «un [a] desierto» es tipográficamente torpe. El marcador debe anclarse a la expresión léxica relevante, por ejemplo «desierto sin senderos[a]».
+  revised_spanish_text: Y la región que ahora ves reinando será un desierto sin senderos[a], y la verán desolada.
+  revised_footnotes:
+  - marker: a
+    text: «desierto sin senderos» intenta reproducir la fuerza de inconposita vestigio; otras opciones posibles son «yermo sin huellas» o «desolación sin caminos».
+    reason: lexical_alternative
+  revision_rationale: Se cambia «territorio» por «región» para alinearse mejor con regionem y con la auditoría inglesa; se corrige la referencia final a «la verán desolada» para concordancia y claridad; y se recoloca la nota al sintagma léxico pertinente sin alterar el sentido básico del borrador.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b3e112383c60e9124a2e4cde3488277d77cae3be93ec6785fd7da86f2fed4681
+  timestamp: '2026-05-07T23:37:59Z'
+  output_hash: 3eb2aab116cf9ae0b28ee5bffc2e8a1c294cccc77505deab7138249225d49439
+  usage:
+    prompt_tokens: 2278
+    completion_tokens: 734
+    total_tokens: 3012
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016705
+  applied_revision: true

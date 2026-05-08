@@ -1,0 +1,217 @@
+id: 1EN.5.5
+reference: 1 Enoch 5:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወበእንተዝ፡ አንትሙ፡ መዋዕሊክሙ፡ ትረግሙ፡ ወዓመታት፡ ሕይወት*ክሙ፡ ትኃጕሉ፡ ወ(ዓመታት፡ ኀጕልክሙ፡) ይበዝኅ፡ በርገመት፡ ዘለዓለም፡ ወኢይከውነክሙ፡ ሣህል፡
+  language: Geez
+  pages:
+  - 46
+  - 48
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/005/005.yaml
+  text: And because of this[a], you will curse your days, and you will shorten the years of your life; and the years of your destruction will increase in an eternal curse[b], and there will be no mercy for you.
+  footnotes:
+  - marker: a
+    text: The clause 'the years of your destruction will increase' is textually difficult. The underlying noun may also be understood as 'ruin' or 'perishing,' yielding 'the years of your ruin will increase.'
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'and the years of your life will perish'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: b064e3ed02c738188130fbb29497846ec052a9c389e78fc5547b796112d46632
+    timestamp: '2026-04-22T09:08:44Z'
+    output_hash: d4dfe383e20efe667f160191e2270366ff830c1bccd4bbc5059293898c5445ef
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:29Z'
+    unchanged: false
+    changes_summary: Changed 'destroy the years of your life' to 'shorten the years of your life' for better lexical accuracy and more natural English; changed 'there will not be mercy for you' to 'there will be no mercy for you' for natural formal English.
+translation:
+  language: es
+  text: Y por esto, ustedes maldecirán sus días, y acortarán los años de su vida; y aumentarán[a] los años de su destrucción en una maldición eterna, y no habrá misericordia para ustedes.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «se multiplicarán». El verbo expresa aumento; aquí se traduce «aumentarán» para seguir el sentido básico de incremento sin intensificar innecesariamente la imagen.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወበእንተዝ
+  english_pob_choice: And because of this
+  chosen_spanish: Y por causa de esto
+  alternatives_spanish:
+  - Y por esto
+  - Por esta razón
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La partícula introduce una consecuencia causal explícita. «Por causa de esto» conserva la fuerza causal sin volver la frase demasiado interpretativa.
+- source_word: መዋዕሊክሙ
+  english_pob_choice: your days
+  chosen_spanish: sus días
+  alternatives_spanish:
+  - los días de ustedes
+  - su vida
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene el sustantivo concreto «días», que en este contexto apocalíptico y de juicio no debe reducirse a «vida» sin más. El pronombre plural de cortesía no es necesario aquí; «sus» conserva el referente plural.
+- source_word: ትረግሙ
+  english_pob_choice: you will curse
+  chosen_spanish: maldecirán
+  alternatives_spanish:
+  - maldecirán ustedes
+  - se maldecirán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El valor activo de segunda persona plural se refleja con «maldecirán». En español, el sujeto pronominal puede omitirse sin perder claridad.
+- source_word: ዓመታት ሕይወትክሙ
+  english_pob_choice: the years of your life
+  chosen_spanish: los años de su vida
+  alternatives_spanish:
+  - sus años de vida
+  - los años de la vida de ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción genitiva se conserva de manera natural en español. «Vida» mantiene el registro solemne y evita una paráfrasis excesiva.
+- source_word: ትኃጕሉ
+  english_pob_choice: will shorten
+  chosen_spanish: acortarán
+  alternatives_spanish:
+  - abreviarán
+  - reducirán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión auditada corrigió la comprensión activa de la forma ge'ez. «Acortarán» expresa con naturalidad la reducción de la duración de la vida y preserva la culpabilidad del sujeto.
+- source_word: ዓመታት ኀጕልክሙ
+  english_pob_choice: the years of your destruction
+  chosen_spanish: los años de su destrucción
+  alternatives_spanish:
+  - los años de su ruina
+  - los años de su perdición
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la noción de ruina/destrucción sin resolver demasiado el matiz exacto. «Destrucción» sigue de cerca la decisión inglesa auditable.
+- source_word: ይበዝኅ
+  english_pob_choice: will increase
+  chosen_spanish: se multiplicarán
+  alternatives_spanish:
+  - aumentarán
+  - crecerán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo puede expresar aumento o multiplicación. En español, «se multiplicarán» mantiene la idea de incremento de manera fuerte y acorde al paralelo negativo.
+- source_word: በርገመት ዘለዓለም
+  english_pob_choice: in an eternal curse
+  chosen_spanish: en una maldición eterna
+  alternatives_spanish:
+  - bajo una maldición eterna
+  - con una maldición eterna
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Maldición eterna» conserva el valor de finalización perdurable del giro. Se prefiere la preposición «en» para reflejar la construcción del inglés auditado y una lectura fluida en español.
+- source_word: ወኢይከውነክሙ ሣህል
+  english_pob_choice: and there will be no mercy for you
+  chosen_spanish: y no habrá misericordia para ustedes
+  alternatives_spanish:
+  - y no tendrán misericordia
+  - y no se les concederá misericordia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «No habrá misericordia para ustedes» reproduce la negación existencial del original y evita suavizar la sentencia. «Misericordia» es el equivalente más estable y digno en español bíblico contemporáneo.
+theological_decisions:
+- issue: Sujeto activo de los verbos de juicio en segunda persona plural
+  english_pob_reading: self-cursing in lament under judgment
+  chosen_spanish_reading: ustedes actúan sobre sus propios días y años bajo juicio
+  alternative_spanish_readings:
+  - ustedes son maldecidos por otros
+  - una maldición impersonal cae sobre ustedes
+  rationale: La forma verbal ge'ez, confirmada por la revisión auditada y el testimonio griego, exige un sentido activo en segunda persona plural. La traducción española conserva esa responsabilidad directa sin borrar el trasfondo de juicio divino.
+  doctrine_reference: Preservar la tensión local del texto; no neutralizar la agencia verbal del pasaje.
+- issue: Valor escatológico de la expresión «en una maldición eterna»
+  english_pob_reading: eternal/everlasting curse
+  chosen_spanish_reading: maldición eterna
+  alternative_spanish_readings:
+  - maldición perpetua
+  - maldición de duración indefinida
+  rationale: En este contexto apocalíptico, la frase comunica permanencia y finalidad. «Eterna» es la opción más clara y solemne en español moderno sin convertirla en una fórmula doctrinal ajena al pasaje.
+  doctrine_reference: Mantener el peso escatológico del juicio sin sobreinterpretar la fórmula.
+translation_notes:
+  revision_awareness: La redacción española toma en cuenta la corrección revisada del verbo ትኃጕሉ como forma activa de segunda persona plural, no como sujeto en tercera persona. Por eso se evita cualquier giro que haga de «los años» el sujeto de la acción y se mantiene el paralelismo de culpa y consecuencia. También se conserva el cierre con negación absoluta de misericordia, acorde con la revisión inglesa más reciente.
+  spanish_consistency_notes:
+  - Se mantiene «maldición» para በርገመት y no se sustituye por un eufemismo más suave.
+  - «Misericordia» se usa con sentido existencial y no como simple compasión momentánea.
+  - La traducción conserva el registro solemne y judicial del pasaje sin introducir vocabulario eclesiástico no motivado por la fuente.
+  - No se introdujo «Mesías», «SEÑOR» ni otra terminología no presente en el texto fuente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/005/005.yaml
+  source_text_sha256: 7988f8c64ee5fa92117113fe912103d6f46226b1f9391ecfff3b19570e32b39f
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 3b0bcc1afe738c8838a637d93a65a1a8f6a3fdf5e40f68f2d241772b39cc8f41
+  timestamp: '2026-05-07T21:27:27Z'
+  output_hash: 6daf55c04b7fe32288e47a46dd06901ea28baabfb48d55baefc1ace4f5fab88d
+  usage:
+    prompt_tokens: 3506
+    completion_tokens: 1723
+    total_tokens: 5229
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010383
+status: spanish_reviewed
+revisions:
+- from: Y por causa de esto,[a] ustedes maldecirán sus días, y acortarán los años de su vida; y se multiplicarán[b] los años de su destrucción en una maldición eterna, y no habrá misericordia para ustedes.
+  to: Y por esto, ustedes maldecirán sus días, y acortarán los años de su vida; y aumentarán[a] los años de su destrucción en una maldición eterna, y no habrá misericordia para ustedes.
+  rationale: Se ajusta el español a la decisión léxica auditada para ይበዝኅ ('will increase' → 'aumentarán'), se mejora la naturalidad del conector inicial y se reducen notas innecesarias, conservando la agencia activa de segunda persona plural y el tono solemne del juicio.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:11:05Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español preserva bien la estructura causal, la agencia activa de segunda persona plural, el acortamiento de la vida, la maldición eterna y la negación final de misericordia. Sin embargo, no sigue del todo la decisión auditada en ይበዝኅ, donde el inglés POB fijó 'will increase'. El español 'se multiplicarán' es posible, pero se aparta innecesariamente de la elección auditada y además vuelve redundante la nota. También la nota [a] sobre el conector causal es prescindible y recarga el texto sin necesidad exegética fuerte.
+  spanish_quality_summary: El español es claro y digno, pero puede mejorar en naturalidad y fidelidad auditada. 'Y por causa de esto' suena algo calcado; 'Y por esto' conserva bien la causalidad y fluye mejor. El resto del verso es legible y adecuado para registro bíblico moderno. Conviene simplificar las notas para no sobreanotar decisiones ya claras en español.
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. El borrador usa ''misericordia'', ''maldición eterna'' y formas verbales activas apropiadas. La principal cuestión es de consistencia con la decisión léxica auditada: ይበዝኅ debe reflejarse preferiblemente como ''aumentarán'' en lugar de ''se multiplicarán'', salvo justificación fuerte, que aquí no es necesaria.'
+  issues:
+  - severity: medium
+    issue: '''se multiplicarán'' se aparta de la decisión auditada ''will increase'''
+    rationale: Aunque semánticamente cercano, 'se multiplicarán' intensifica de forma innecesaria y no mejora la claridad. 'Aumentarán' sigue más de cerca el inglés POB auditado y el valor básico del verbo.
+  - severity: low
+    issue: '''Y por causa de esto'' suena algo rígido en español'
+    rationale: La fuerza causal puede conservarse con 'Y por esto', que es más natural y suficientemente explícito para el contexto.
+  - severity: low
+    issue: La nota [a] es innecesaria
+    rationale: El conector causal no presenta una dificultad que requiera nota en español, y la anotación distrae más de lo que ayuda.
+  revised_spanish_text: Y por esto, ustedes maldecirán sus días, y acortarán los años de su vida; y aumentarán[a] los años de su destrucción en una maldición eterna, y no habrá misericordia para ustedes.
+  revised_footnotes:
+  - marker: a
+    text: O «se multiplicarán». El verbo expresa aumento; aquí se traduce «aumentarán» para seguir el sentido básico de incremento sin intensificar innecesariamente la imagen.
+    reason: lexical_alternative
+  revision_rationale: Se ajusta el español a la decisión léxica auditada para ይበዝኅ ('will increase' → 'aumentarán'), se mejora la naturalidad del conector inicial y se reducen notas innecesarias, conservando la agencia activa de segunda persona plural y el tono solemne del juicio.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9ae47560cd588b820e5cd97b5cdd7f410245eaddd1086fe6d077cadd314e7305
+  timestamp: '2026-05-07T23:11:05Z'
+  output_hash: 66b885ab28cbf22457e63cc60895e65460b2654017541fad9ad73fffe9141eea
+  usage:
+    prompt_tokens: 4832
+    completion_tokens: 709
+    total_tokens: 5541
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022715
+  applied_revision: true

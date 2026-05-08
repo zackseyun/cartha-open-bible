@@ -1,0 +1,244 @@
+id: 1EN.40.1
+reference: 1 Enoch 40:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወርኢኩ፡ እምድኅረዝ፡ አእላፈ፡ አእላፍ፡ ወትእልፊተ፡ ትእልፊት፡ *ኍልቈ፡ ወኃሳበ፡ አልቦሙ፡ እለ፡ ይቀውሙ፡ ቅድመ፡ እግዚአ፡ መናፍስት።
+  language: Geez
+  pages:
+  - 118
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch40.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 40, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/040/001.yaml
+  text: And after that I saw thousands of thousands and ten thousands of ten thousands[a], whose number and count were without end[e][d][c][b], standing before the Lord of Spirits.
+  footnotes:
+  - marker: a
+    text: The underlying Ethiopic here includes an uncertain segment (“*ኍልቈ” in the OCR). The sense continues immediately as “and there was no count of them,” indicating innumerability; we translate the secure wording.
+    reason: textual_variant
+  - marker: b
+    text: Compare Daniel 7:10 for a similar vision of countless attendants standing before the divine throne.
+    reason: cross_reference
+  - marker: c
+    text: Alternatively, “without number” for “there was no count of them.”
+    reason: lexical_alternative
+  - marker: d
+    text: Or 'there was no count of them'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'Lord of the Spirits'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5-2025-08-07
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: ef958182d1bfdaa49c7084c088dc5b197ab276ed53a482ea068e1cb565c87d72
+    timestamp: '2026-04-22T08:41:27Z'
+    output_hash: 956ff515e4e48014f35bbeb5fc306128ad9a6a10b80f401c1b2ffdc68123ea8e
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @03a234336
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @03a234336
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:18Z'
+    unchanged: false
+    changes_summary: Removed the duplicated text and corrected the corrupted ending. Rendered ኍልቈ፡ ወኃሳበ፡ አልቦሙ as 'whose number and count were without end' to account for both terms naturally, and smoothed the final clause to formal, readable English.
+translation:
+  language: es
+  text: Y después de eso vi miles de miles y diez miles de diez miles[a], cuyo número y cuenta eran sin fin[b], de pie ante el Señor de Espíritus[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El ge'ez contiene un doble intensificador numérico («miles de miles» y «diez miles de diez miles»), que preservamos de forma literal para reflejar la multitud innumerable.
+    reason: lexical_choice
+  - marker: b
+    text: La expresión ge'ez incluye dos sustantivos de cálculo, «número» y «cuenta». Conservamos ambos para no suavizar la intensificación del original.
+    reason: lexical_alternative
+  - marker: c
+    text: «Señor de Espíritus» traduce un título divino fijo en esta sección. Lo mantenemos como forma titular reverente y en armonía con la decisión de consistencia del audit trail.
+    reason: theological_note
+lexical_decisions:
+- source_word: ወርኢኩ
+  english_pob_choice: And I saw
+  chosen_spanish: Y vi
+  alternatives_spanish:
+  - Y miré
+  - Vi
+  lexicon: Dillmann; Leslau
+  rationale: El perfecto narrativo con waw conserva la secuencia visionaria; en español, «vi» mantiene la sencillez y el ritmo, y la conjunción inicial reproduce el encadenamiento del original.
+- source_word: እምድኅረዝ
+  english_pob_choice: after that
+  chosen_spanish: después de eso
+  alternatives_spanish:
+  - después
+  - luego de eso
+  lexicon: Dillmann; Leslau
+  rationale: La expresión idiomática equivale a un marcador temporal posterior sin requerir un calco rígido.
+- source_word: አእላፍ / አእላፈ
+  english_pob_choice: thousands of thousands
+  chosen_spanish: miles de miles
+  alternatives_spanish:
+  - millares de millares
+  - miles sobre miles
+  lexicon: Leslau; Dillmann
+  rationale: El plural repetido expresa una superabundancia numérica. «Miles de miles» conserva el patrón semítico sin introducir «myriads», que no es natural en español.
+- source_word: ትእልፊት / ትእልፊተ
+  english_pob_choice: ten thousands of ten thousands
+  chosen_spanish: diez miles de diez miles
+  alternatives_spanish:
+  - miríadas de miríadas
+  - decenas de miles de decenas de miles
+  lexicon: Leslau; Dillmann
+  rationale: La base léxica ge'ez designa diez mil; la duplicación intensifica la inmensidad. «Diez miles de diez miles» mantiene la estructura literal y el valor superlativo.
+- source_word: ኍልቈ
+  english_pob_choice: number
+  chosen_spanish: número
+  alternatives_spanish:
+  - cuenta
+  - cómputo
+  lexicon: Dillmann; Leslau
+  rationale: La revisión auditada exige reflejar también este término explícito. «Número» reproduce la idea básica del sustantivo y se combina bien con el siguiente doblete.
+- source_word: ኃሳበ
+  english_pob_choice: count
+  chosen_spanish: cuenta
+  alternatives_spanish:
+  - cómputo
+  - recuento
+  lexicon: Leslau (ḥasab); Dillmann
+  rationale: El segundo sustantivo del doblete mantiene el campo semántico de cálculo/recuento. «Cuenta» permite una coordinación natural con «número» sin borrar la redundancia enfática del original.
+- source_word: አልቦሙ
+  english_pob_choice: were without end / there was no count of them
+  chosen_spanish: eran sin fin
+  alternatives_spanish:
+  - no tenían fin
+  - carecían de número
+  lexicon: Dillmann; Leslau
+  rationale: La construcción negativa con sufijo pronominal se interpreta idiomáticamente como ausencia de límite. «Eran sin fin» integra el sentido de innumerabilidad de forma clara y elegante en español.
+- source_word: እለ ይቀውሙ
+  english_pob_choice: standing
+  chosen_spanish: los que están de pie
+  alternatives_spanish:
+  - los que se mantienen en pie
+  - estando de pie
+  lexicon: Leslau (qwm); Dillmann
+  rationale: El participio relativo describe postura continua. «Están de pie» preserva la imagen judicial/cortesana sin añadir matices ajenos.
+- source_word: ቅድመ
+  english_pob_choice: before
+  chosen_spanish: delante de
+  alternatives_spanish:
+  - ante
+  - en presencia de
+  lexicon: Leslau; Dillmann
+  rationale: «Delante de» es natural en español y conserva la relación espacial y reverencial del original.
+- source_word: እግዚአ መናፍስት
+  english_pob_choice: the Lord of the Spirits
+  chosen_spanish: el Señor de los Espíritus
+  alternatives_spanish:
+  - el Señor de espíritu
+  - el Señor de los espíritus
+  lexicon: Dillmann; Leslau
+  rationale: Se conserva el título divino como en el audit trail inglés. En español, el plural con artículo forma una titulatura reverente y reconocible; «Señor» traduce እግዚአ sin sustituirlo por un equivalente litúrgico que ocultaría la forma del título.
+theological_decisions:
+- issue: Título divino እግዚአ መናፍስት
+  english_pob_reading: A divine title for God in the Parables, retained as “the Lord of the Spirits.”
+  chosen_spanish_reading: Un título divino para Dios, mantenido como «el Señor de los Espíritus».
+  alternative_spanish_readings:
+  - un señor de espíritus
+  - el Señor de espíritu
+  rationale: La escena es de corte celestial y el título funciona como designación reverente del Altísimo. Mantener la forma titular evita rebajarla a una descripción genérica o a un ángel exaltado.
+  doctrine_reference: Translation philosophy §2 (Translate titles; transliterate names).
+- issue: 'Doble expresión de innumerabilidad: ኍልቈ ወኃሳበ አልቦሙ'
+  english_pob_reading: whose number and count were without end
+  chosen_spanish_reading: cuyo número y cuenta eran sin fin
+  alternative_spanish_readings:
+  - de quienes no había número ni cuenta
+  - cuyo cómputo y número no tenían fin
+  rationale: La revisión auditada insiste en no omitir el doblete explícito. En español, «número y cuenta» conserva ambas piezas léxicas y «eran sin fin» expresa la imposibilidad de cuantificación sin introducir una idea más fuerte que la del original.
+  doctrine_reference: Translation philosophy §3 (Preserve emphatic doublets and parallelism).
+translation_notes:
+  revision_awareness: La lectura inglesa más reciente corrigió una omisión anterior y recuperó el doblete explícito «number and count»; la versión española refleja esa revisión con «número y cuenta». También se evita suavizar la multitud con una sola idea de infinitud, preservando la redundancia enfática del ge'ez. El cierre se ajusta al sujeto participial para sonar natural en español sin perder la escena de audiencia celestial.
+  spanish_consistency_notes:
+  - Se mantiene «Señor» como traducción de እግዚአ, conforme al tratamiento titular del texto.
+  - 'Se preserva la duplicación numérica del original con dos pares coordinados: «miles de miles» y «diez miles de diez miles».'
+  - Se usa «de pie» para la postura de los asistentes celestiales, coherente con un marco de tribunal o sala del trono.
+  - No se introduce «Cristo» ni terminología eclesial posterior, ya que el texto no lo requiere.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/040/001.yaml
+  source_text_sha256: 5322496c5a89d7e8ec33d9217f599e723a5e1eff79aa52d5af74a2088e1b1157
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e9e504cfd4ab00def57f2a0506ff77be74ef70804982ff92c6b609b0e65d903a
+  timestamp: '2026-05-07T21:27:24Z'
+  output_hash: 03b2626c732ae8269782e04d82b9855b812e824675338f6edb2df9182fa655a8
+  usage:
+    prompt_tokens: 4004
+    completion_tokens: 1785
+    total_tokens: 5789
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011036
+status: spanish_reviewed
+revisions:
+- from: Y después de eso vi miles de miles y diez miles de diez miles[a], cuyo número y cuenta eran sin fin[b], los que están de pie delante del Señor de los Espíritus[c].
+  to: Y después de eso vi miles de miles y diez miles de diez miles[a], cuyo número y cuenta eran sin fin[b], de pie ante el Señor de Espíritus[c].
+  rationale: Se ajusta el título divino a la forma armonizada del audit trail final («Lord of Spirits» → «Señor de Espíritus») y se suaviza la sintaxis final para que la postura de la multitud se lea con naturalidad en español sin perder solemnidad ni fidelidad.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:16:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge''ez y preserva correctamente el doblete «número y cuenta». Sin embargo, dos decisiones no siguen del todo el audit trail final: (1) el título debe armonizarse con la revisión inglesa final/aplicada como «Lord of Spirits», por lo que en español conviene «Señor de Espíritus», no «Señor de los Espíritus»; (2) la cláusula final debe fluir como modificador de la multitud («de pie delante de...» / «que están de pie delante de...»), no como aposición algo trabada con «los que están de pie».'
+  spanish_quality_summary: El texto es generalmente claro y digno, pero «diez miles de diez miles» suena algo forzado; aun así, puede mantenerse por fidelidad literal. La mejora principal de legibilidad es reemplazar «los que están de pie» por «de pie» o «que están de pie», lo cual suaviza la sintaxis sin perder el sentido. También «ante» resulta más natural y solemne que «delante de» en este contexto.
+  glossary_alignment: 'No hay conflicto con las pautas principales de terminología del proyecto salvo la consistencia del título divino en 1 Enoc. Aquí no aplica Yahvé. La decisión pertinente es armonizar እግዚአ መናፍስት con el audit trail revisado como título fijo: «Señor de Espíritus».'
+  issues:
+  - severity: medium
+    issue: El título divino está como «Señor de los Espíritus» en lugar de la forma armonizada «Señor de Espíritus».
+    rationale: 'Las revisiones aplicadas del inglés indican una decisión de consistencia para este título técnico frecuente en las Parábolas: «Lord of Spirits». Aunque el ge''ez permite ambas defensas, el audit trail final pide armonización.'
+  - severity: low
+    issue: La secuencia «..., cuyo número y cuenta eran sin fin, los que están de pie...» suena sintácticamente rígida en español.
+    rationale: El relativo «los que están de pie» queda algo colgante tras una descripción ya cerrada. «..., cuyo número y cuenta eran sin fin, de pie ante...» o «..., que están de pie ante...» comunica mejor la relación con la multitud.
+  - severity: low
+    issue: Las notas actuales son mayormente explicativas, pero la nota c debe alinearse con la forma revisada del título.
+    rationale: Si el texto principal cambia a «Señor de Espíritus», la nota debe explicar esa decisión de consistencia y titularidad.
+  revised_spanish_text: Y después de eso vi miles de miles y diez miles de diez miles[a], cuyo número y cuenta eran sin fin[b], de pie ante el Señor de Espíritus[c].
+  revised_footnotes:
+  - marker: a
+    text: El ge'ez contiene un doble intensificador numérico («miles de miles» y «diez miles de diez miles»), que preservamos de forma literal para reflejar la multitud innumerable.
+    reason: lexical_choice
+  - marker: b
+    text: La expresión ge'ez incluye dos sustantivos de cálculo, «número» y «cuenta». Conservamos ambos para no suavizar la intensificación del original.
+    reason: lexical_alternative
+  - marker: c
+    text: «Señor de Espíritus» traduce un título divino fijo en esta sección. Lo mantenemos como forma titular reverente y en armonía con la decisión de consistencia del audit trail.
+    reason: theological_note
+  revision_rationale: Se ajusta el título divino a la forma armonizada del audit trail final («Lord of Spirits» → «Señor de Espíritus») y se suaviza la sintaxis final para que la postura de la multitud se lea con naturalidad en español sin perder solemnidad ni fidelidad.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 829944ecb83246572d2ee76322afbbc53b776c5cd75ce9bb9ea26673714315b5
+  timestamp: '2026-05-07T23:16:07Z'
+  output_hash: c9f487e115f9a76322b2bbe6f2579bd218c627ec5d1033b8576ba39c222db5c9
+  usage:
+    prompt_tokens: 5385
+    completion_tokens: 875
+    total_tokens: 6260
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026588
+  applied_revision: true

@@ -1,0 +1,153 @@
+id: 2BA.22.7
+reference: 2 Baruch 22:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 22
+  pages:
+  - 216
+  - 215
+  - 214
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 7
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/022/007.yaml
+  text: Or if a pregnant woman gives birth prematurely, does she not kill the child in her womb?
+  footnotes:
+  - marker: a
+    text: Or 'if she gives birth without pains, expect a dead child'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'Or does a woman who is pregnant, if she gives birth prematurely, does she not kill'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4-mini
+    timestamp: '2026-05-03T07:41:42Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: ¿O si una mujer encinta da a luz antes de tiempo[a], no mata al niño en su vientre[b]?
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: '''antes de tiempo'' traduce el sentido siriaco de ''sin su tiempo'', no ''sin dolores''.'
+    reason: lexical_alternative
+  - marker: b
+    text: '''mata al niño'' expresa que ella causa la muerte del niño en su vientre; no significa meramente esperar un niño muerto.'
+    reason: textual_variant
+lexical_decisions:
+- source_word: b-la zabnah
+  english_pob_choice: gives birth prematurely
+  chosen_spanish: da a luz prematuramente
+  alternatives_spanish:
+  - da a luz antes de tiempo
+  - alumbra antes de tiempo
+  lexicon: prematurely
+  rationale: El giro siriaco indica nacimiento 'sin su tiempo' o 'antes de tiempo', no 'sin dolores'. En español, 'da a luz prematuramente' conserva con claridad la idea temporal y el registro natural de la pregunta retórica.
+- source_word: la mamyta yalda
+  english_pob_choice: does she not kill the child
+  chosen_spanish: no mata al niño
+  alternatives_spanish:
+  - no da muerte al niño
+  - no mata al hijo
+  lexicon: kill
+  rationale: 'La revisión fuente-auditada corrige la lectura errónea de ''expect a dead child''. El verbo debe expresar acción causal directa: la madre provoca la muerte del niño por el parto prematuro; ''no mata al niño'' refleja esa fuerza con naturalidad en español.'
+- source_word: yalda
+  english_pob_choice: the child
+  chosen_spanish: el niño
+  alternatives_spanish:
+  - el hijo
+  - la criatura
+  lexicon: child
+  rationale: El término es general en el contexto del embarazo y el nacimiento. 'El niño' es claro y directo en español; 'criatura' sonaría más perifrástico, y 'hijo' introduce una relación filial no explícita en el texto.
+- source_word: pregnant woman
+  english_pob_choice: pregnant woman
+  chosen_spanish: una mujer encinta
+  alternatives_spanish:
+  - una mujer embarazada
+  lexicon: pregnant woman
+  rationale: '''Encinta'' es plenamente comprensible y algo más cercano al registro literario del texto. ''Embarazada'' también es posible, pero ''encinta'' evita una modernización excesiva y mantiene dignidad estilística.'
+theological_decisions:
+- issue: Relación causal entre parto prematuro y muerte del niño
+  english_pob_reading: does she not kill the child in her womb?
+  chosen_spanish_reading: no mata al niño en su vientre
+  alternative_spanish_readings:
+  - no da muerte al niño en su vientre
+  - ¿no hace morir al niño en su vientre?
+  rationale: 'La fuente y la revisión auditada señalan una afirmación fuerte de causalidad: el nacimiento prematuro resulta en la muerte del niño. El español conserva esa tensión sin suavizarla ni convertirla en mera expectativa de muerte.'
+  doctrine_reference: Sin referencia doctrinal específica; decisión de fidelidad semántica al testimonio textual.
+translation_notes:
+  revision_awareness: 'Se incorporó la corrección auditada del siriaco: la frase no significa ''sin dolores'' ni ''espera un niño muerto'', sino ''da a luz prematuramente'' y ''mata al niño''. También se adoptó una estructura española fluida equivalente a la pregunta retórica del inglés POB revisado.'
+  spanish_consistency_notes:
+  - Se preserva el tono interrogativo-retórico del original.
+  - '''Encinta'' y ''niño'' mantienen un registro claro y respetuoso sin añadir interpretaciones ajenas.'
+  - No se introduce 'Cristo', 'SEÑOR' ni otros términos no presentes en este versículo.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/022/007.yaml
+  source_text_sha256: 8f675b400987bca3a04ca979055f7db8dd1dde7db09e225e729410ece6e038c3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e7b6a374b190b4eac6a3ceee6cad4d3a3171419bc26e702381747404dc422cfb
+  timestamp: '2026-05-07T21:28:59Z'
+  output_hash: f5aa3da5a80be011f3f60de9cce713da3d9b07f529dc7b848a9dcf9f829e265f
+  usage:
+    prompt_tokens: 2046
+    completion_tokens: 852
+    total_tokens: 2898
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005369
+status: spanish_reviewed
+revisions:
+- from: ¿O si una mujer encinta da a luz prematuramente[a], no mata al niño en su vientre[b]?
+  to: ¿O si una mujer encinta da a luz antes de tiempo[a], no mata al niño en su vientre[b]?
+  rationale: La revisión mejora la naturalidad del español con 'antes de tiempo', que corresponde más directamente al sentido temporal del siriaco y evita una formulación algo técnica. También simplifica y enfoca las notas para que expliquen la decisión semántica relevante al lector español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:22:04Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido fuente auditado: la condición es un parto antes de tiempo, no ''sin dolores'', y la consecuencia es que la mujer causa la muerte del niño. También conserva correctamente la localización ''en su vientre''.'
+  spanish_quality_summary: El texto es claro y digno, pero 'da a luz prematuramente' suena algo menos natural en español que 'da a luz antes de tiempo'. Además, la nota [b] explica la fuerza causal pero no ancla explícitamente la opción 'en su vientre', que sí está bien preservada en el texto. Se puede pulir sin cambiar el sentido.
+  glossary_alignment: 'No hay términos del glosario maestro particularmente implicados. Las decisiones ''mujer encinta'', ''niño'' y ''vientre'' son compatibles con el registro del proyecto. La principal mejora es idiomática: preferir ''antes de tiempo'' para expresar b-la zabnah con naturalidad española.'
+  issues:
+  - severity: medium
+    issue: 'Expresión algo forzada: ''da a luz prematuramente'''
+    rationale: Aunque es comprensible y fiel, en español bíblico-legible suena más natural 'da a luz antes de tiempo', que además refleja mejor la explicación lexical 'sin su tiempo' / 'antes de tiempo' ya documentada.
+  - severity: low
+    issue: La nota [b] no necesita justificar una variante previa inglesa tan extensamente
+    rationale: 'La nota puede concentrarse en la decisión semántica relevante en español: el verbo expresa causar la muerte del niño, no solo prever un resultado.'
+  revised_spanish_text: ¿O si una mujer encinta da a luz antes de tiempo[a], no mata al niño en su vientre[b]?
+  revised_footnotes:
+  - marker: a
+    text: '''antes de tiempo'' traduce el sentido siriaco de ''sin su tiempo'', no ''sin dolores''.'
+    reason: lexical_alternative
+  - marker: b
+    text: '''mata al niño'' expresa que ella causa la muerte del niño en su vientre; no significa meramente esperar un niño muerto.'
+    reason: textual_variant
+  revision_rationale: La revisión mejora la naturalidad del español con 'antes de tiempo', que corresponde más directamente al sentido temporal del siriaco y evita una formulación algo técnica. También simplifica y enfoca las notas para que expliquen la decisión semántica relevante al lector español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 70d456a9e4b2d3393af4758d84863f13ed7b43af1c1fbc441f568c97d3149903
+  timestamp: '2026-05-07T23:22:04Z'
+  output_hash: 0986d4b6d62fe8c21205db48a033349d6030de7b3f476f0c9a1d568a725e7cf6
+  usage:
+    prompt_tokens: 2506
+    completion_tokens: 541
+    total_tokens: 3047
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01438
+  applied_revision: true

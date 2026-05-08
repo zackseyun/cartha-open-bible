@@ -1,0 +1,126 @@
+id: JUB.37.8
+reference: Jubilees 37:8
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles_1895
+  language: Geez
+  text: ቅድሜሁ። ወይቤልዎ፡ ዝኒ፡ *ከመ፡ ገብርከ፡ ዘእምውርዝትከ፡ እስከ፡ ዛቲ፡ ዕለት፡ ወአንተ፡
+  pages:
+  - 226
+  - 228
+  - 229
+  - 230
+  validation_modes:
+  - jubilees_verse_parser
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/jubilees/037/008.yaml
+  text: But they said to him, "This is how you have acted from your youth until this day, and you
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T14:52:40Z'
+    unchanged: false
+    changes_summary: Removed 'just' as unsupported by the source and added 'and you' to reflect the final ወአንተ, preserving the verse's incomplete continuation.
+translation:
+  language: es
+  text: 'Pero ellos le dijeron: «Así has actuado desde tu juventud hasta este día, y tú…»'
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: ዝኒ፡ *ከመ፡ ገብርከ፡
+  english_pob_choice: This is how you have acted
+  chosen_spanish: Así has actuado
+  alternatives_spanish:
+  - Así te has comportado
+  - De esta manera has procedido
+  lexicon: actuar / comportarse
+  rationale: El ge'ez expresa una conducta reiterada o característica; «has actuado» reproduce la valoración directa sin añadir intensificadores como «just» que fueron retirados en la revisión inglesa por no estar sustentados en la fuente.
+- source_word: ዘእምውርዝትከ፡
+  english_pob_choice: from your youth
+  chosen_spanish: desde tu juventud
+  alternatives_spanish:
+  - desde tu niñez
+  - desde tus años jóvenes
+  lexicon: juventud
+  rationale: La referencia temporal apunta a la etapa temprana de la vida; «juventud» es natural en español bíblico y conserva el alcance amplio del original mejor que una restricción a «niñez».
+- source_word: እስከ፡ ዛቲ፡ ዕለት፡
+  english_pob_choice: until this day
+  chosen_spanish: hasta este día
+  alternatives_spanish:
+  - hasta hoy
+  - hasta el día de hoy
+  lexicon: día
+  rationale: «Este día» sigue de cerca la deixis del original y mantiene el tono acusatorio/formal del pasaje.
+- source_word: ወአንተ፡
+  english_pob_choice: and you
+  chosen_spanish: y tú…
+  alternatives_spanish:
+  - y tú
+  - y en cuanto a ti…
+  lexicon: pronombre enfático
+  rationale: La revisión inglesa observó que el verso termina en una continuación incompleta; el español conserva esa apertura con puntos suspensivos, reflejando el final abrupto sin cerrarlo artificialmente.
+theological_decisions:
+- issue: Final incompleto o elíptico del verso
+  english_pob_reading: and you
+  chosen_spanish_reading: y tú…
+  alternative_spanish_readings:
+  - y tú
+  - 'y tú, '
+  rationale: El ge'ez conserva una cola sintáctica no concluida; el español debe transparentar la interrupción en lugar de convertirla en una frase completa. Los puntos suspensivos señalan fidelidad textual y evitan sobrerinterpretación.
+  doctrine_reference: Crítica textual / integridad del testimonio
+- issue: Carácter evaluativo de la declaración
+  english_pob_reading: This is how you have acted
+  chosen_spanish_reading: Así has actuado
+  alternative_spanish_readings:
+  - Así te has comportado
+  - De esta manera has procedido
+  rationale: El enunciado funciona como reproche narrativo, no como doctrina explícita; «has actuado» mantiene el juicio de la escena sin introducir matices pastorales ajenos al texto.
+  doctrine_reference: N/A
+translation_notes:
+  revision_awareness: 'La revisión inglesa eliminó ''just'' por carecer de apoyo en la fuente y añadió ''and you'' para reflejar el final ወአንተ. El español sigue esa revisión: evita todo intensificador no atestiguado y conserva la cláusula final abierta con una elipsis.'
+  spanish_consistency_notes:
+  - Se usa un español neutral, bíblico y contemporáneo, evitando calcos innecesarios.
+  - No se introduce terminología doctrinal ajena al pasaje; el texto permanece descriptivo y acusatorio.
+  - Se preserva la incompletud sintáctica del original con una elipsis final para no cerrar el verso artificialmente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/jubilees/037/008.yaml
+  source_text_sha256: 30c714e5b49b7b1898e8da820ad0ebea44c4bb43e2f6d0e252f44a6ab57d192d
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0c8a2f78c82770bef68b6d37a4aafc1482e45ffa258ec2256e7f90b79bedf7dd
+  timestamp: '2026-05-07T21:28:22Z'
+  output_hash: eb89ac463165430837223f78e47f51c90f8bbbbff1cbbe677fef1bc45cc2433e
+  usage:
+    prompt_tokens: 1771
+    completion_tokens: 854
+    total_tokens: 2625
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005171
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'El borrador español preserva fielmente el sentido disponible del ge''ez y sigue la revisión del audit trail inglés: «Así has actuado» refleja bien ዝኒ ከመ ገብርከ; «desde tu juventud hasta este día» representa adecuadamente la secuencia temporal; y «y tú…» conserva de forma transparente el ወአንተ final e incompleto, tal como documenta la revisión inglesa.'
+  spanish_quality_summary: El español es natural, claro y digno. La puntuación con dos puntos, comillas angulares y puntos suspensivos funciona bien para un registro bíblico legible. No hay calcos torpes ni expansión interpretativa indebida.
+  glossary_alignment: 'No aparecen términos del glosario principal con riesgo de desviación. Las decisiones léxicas registradas son apropiadas: «actuado», «juventud», «este día» y el pronombre enfático «y tú…» mantienen la fuerza del original y la racionalidad documentada en el POB inglés.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a6a93ebf245aa7c47054bb071c64474c2df8f6eebaaa231722c9978159b4d1dc
+  timestamp: '2026-05-07T23:05:17Z'
+  output_hash: ccef780ade090ada9e5624e37043242045b21cde76f7a1cbdc8ceda55d7f219b
+  usage:
+    prompt_tokens: 2284
+    completion_tokens: 281
+    total_tokens: 2565
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009925
+  applied_revision: false

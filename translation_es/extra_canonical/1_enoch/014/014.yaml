@@ -1,0 +1,187 @@
+id: 1EN.14.14
+reference: 1 Enoch 14:14
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእንዘ፡ እትሀወክ፡ ወእርዕድ፡ ወድቁ፡ በገጽየ፡ ወእሬኢ፡ በራእይ።
+  language: Geez
+  pages:
+  - 72
+  - 74
+  - 76
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/014/014.yaml
+  text: And as I shook and trembled[a], I fell on my face and saw in the vision.
+  footnotes:
+  - marker: a
+    text: Or 'while I was disturbed and quaking.' The first two verbs are closely related and together express intense fear or agitation.
+    reason: lexical_alternative
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 9b2f55afd6c798b5ffbdbafd2f0ce82171e1ff5f92306d9a55b7ce110897789a
+    timestamp: '2026-04-22T09:11:32Z'
+    output_hash: 492f2b39b42b03e1a56bf48fd1879940d91f4b13c03f2045c57f1271e79efbb9
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:45Z'
+    unchanged: false
+    changes_summary: Reordered 'shook and trembled' to reflect the source sequence more closely and improve natural rhythm; otherwise retained the draft.
+translation:
+  language: es
+  text: Y mientras yo me estremecía y temblaba[a], caí rostro en tierra y vi en la visión.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «mientras estaba turbado y temblando». Los dos verbos están estrechamente relacionados y juntos expresan un miedo o una agitación intensos.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: እንዘ
+  english_pob_choice: as
+  chosen_spanish: mientras
+  alternatives_spanish:
+  - cuando
+  - así que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Introduce simultaneidad de manera natural en español y conserva la circunstancia concurrente entre el temblor y la caída.
+- source_word: እትሀወክ
+  english_pob_choice: I trembled
+  chosen_spanish: temblaba
+  alternatives_spanish:
+  - estaba turbado
+  - me agitaba
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto visionario, el verbo expresa agitación interior con reflejo corporal; 'temblaba' mantiene ese matiz sin volverlo abstracto.
+- source_word: እርዕድ
+  english_pob_choice: shook
+  chosen_spanish: me estremecía
+  alternatives_spanish:
+  - me sacudía
+  - me conmovía
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conserva el segundo verbo como reacción física distinta, siguiendo la decisión POB de no fusionar ambos verbos en un solo término genérico.
+- source_word: ወድቁ
+  english_pob_choice: I fell
+  chosen_spanish: caí
+  alternatives_spanish:
+  - me postré
+  - me desplomé
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo básico de movimiento se puede expresar de forma directa; la postura queda especificada por la frase siguiente.
+- source_word: በገጽየ
+  english_pob_choice: on my face
+  chosen_spanish: sobre mi rostro
+  alternatives_spanish:
+  - con el rostro en tierra
+  - boca abajo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Mantiene la imagen idiomática de postración de forma literal y digna, sin añadir una paráfrasis excesiva.
+- source_word: እሬኢ
+  english_pob_choice: I saw
+  chosen_spanish: vi
+  alternatives_spanish:
+  - contemplé
+  - miré
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo visionario básico se traduce con simplicidad y claridad.
+- source_word: በራእይ
+  english_pob_choice: in the vision
+  chosen_spanish: en la visión
+  alternatives_spanish:
+  - en una visión
+  - por la visión
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conserva el marco técnico apocalíptico del pasaje y sigue de cerca la formulación auditada en inglés.
+theological_decisions:
+- issue: Cómo rendir la doble reacción de temor/agitación sin aplanarla a un solo estado emocional
+  english_pob_reading: 'embodied reaction: ''I shook and trembled'''
+  chosen_spanish_reading: 'reacción corporal: ''temblaba y me estremecía'''
+  alternative_spanish_readings:
+  - '''estaba turbado y temblando'''
+  - '''temblaba y temblaba'''
+  rationale: La secuencia enfatiza la respuesta física previa a la revelación; por eso se conservan dos verbos coordinados que expresan intensidad y no solo miedo interior.
+  doctrine_reference: Translation philosophy §§1, 5; preservar imaginería apocalíptica y evitar aplanar la prosa visionaria.
+translation_notes:
+  revision_awareness: La versión inglesa auditada fue revisada para reflejar más de cerca el orden del original, pasando de 'trembled and shook' a 'shook and trembled'. La redacción española sigue ese impulso de conservar la secuencia de dos verbos y la simultaneidad del evento sin sobrecargar el texto.
+  spanish_consistency_notes:
+  - Se mantiene 'visión' para el marco apocalíptico, coherente con el inglés auditado.
+  - '''Rostro'' conserva el tono literal y culto del gesto de postración, sin sustituirlo por una expresión más coloquial.'
+  - Se opta por 'temblaba y me estremecía' para reflejar dos verbos cercanos pero no idénticos, siguiendo la decisión léxica POB de preservar la tensión.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/014/014.yaml
+  source_text_sha256: 995b760473a19e6ef00ac365b85c0133fd84eb6e214bb773a10aa65186f051b0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 695128c7c95c78cf13186555caec6e9bd6f14918e97fa07bb0720ae0a8fffc07
+  timestamp: '2026-05-07T21:27:43Z'
+  output_hash: ee85ba2732be7d1cb87e124966a68a10bcf5860b7560a024393fea50d4aa032c
+  usage:
+    prompt_tokens: 2516
+    completion_tokens: 1072
+    total_tokens: 3588
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.006711
+status: spanish_reviewed
+revisions:
+- from: Y mientras yo temblaba y me estremecía[a], caí sobre mi rostro y vi en la visión.
+  to: Y mientras yo me estremecía y temblaba[a], caí rostro en tierra y vi en la visión.
+  rationale: Se invirtió el orden de los verbos para seguir la secuencia fuente/auditada y se sustituyó 'sobre mi rostro' por 'rostro en tierra' para lograr un español más natural sin perder la imagen de postración. La nota se conserva porque sigue representando adecuadamente la alternativa léxica documentada.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:14:39Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura del ge''ez y la línea auditada en inglés: circunstancia simultánea, doble reacción corporal, caída/postración y percepción visionaria. Sin embargo, el orden de los dos verbos de temor no sigue la secuencia fuente/auditada revisada (''shook and trembled''), y ''sobre mi rostro'' suena menos natural en español que una formulación idiomática equivalente.'
+  spanish_quality_summary: El español es claro y digno, pero puede mejorarse para mayor naturalidad y fidelidad estilística. 'Mientras yo temblaba y me estremecía' comunica bien la reacción, aunque conviene invertir el orden para reflejar mejor la fuente. 'Caí sobre mi rostro' es comprensible pero algo calcado; 'caí rostro en tierra' preserva la imagen de postración con mejor español bíblico moderno.
+  glossary_alignment: No hay términos del glosario doctrinal principal implicados aquí. La decisión de mantener dos verbos físicos distintos concuerda con la filosofía POB. La nota léxica también está alineada, aunque debe ajustarse al nuevo orden verbal.
+  issues:
+  - severity: medium
+    issue: El orden de los verbos de reacción no sigue la secuencia de la fuente ni la revisión inglesa auditada.
+    rationale: La auditoría inglesa corrigió explícitamente el orden a 'shook and trembled' para reflejar mejor el ge'ez. El español actual ('temblaba y me estremecía') invierte esa secuencia.
+  - severity: low
+    issue: '''Sobre mi rostro'' suena poco natural en español.'
+    rationale: Aunque es literal, en español eclesial general resulta algo forzado. Una formulación como 'rostro en tierra' conserva la postura de postración sin paráfrasis indebida.
+  revised_spanish_text: Y mientras yo me estremecía y temblaba[a], caí rostro en tierra y vi en la visión.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «mientras estaba turbado y temblando». Los dos verbos están estrechamente relacionados y juntos expresan un miedo o una agitación intensos.'
+    reason: lexical_alternative
+  revision_rationale: Se invirtió el orden de los verbos para seguir la secuencia fuente/auditada y se sustituyó 'sobre mi rostro' por 'rostro en tierra' para lograr un español más natural sin perder la imagen de postración. La nota se conserva porque sigue representando adecuadamente la alternativa léxica documentada.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ae1e1bdb8e9fb0b926a47b2921a8283cb3679882d2354c78fbbd88838e00befe
+  timestamp: '2026-05-07T23:14:39Z'
+  output_hash: b06d380ce1f6d280e78212312339a25c3f3521b5932ad56c877da1c9c3d463ce
+  usage:
+    prompt_tokens: 3240
+    completion_tokens: 574
+    total_tokens: 3814
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01671
+  applied_revision: true

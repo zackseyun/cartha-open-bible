@@ -1,0 +1,197 @@
+id: 1EN.73.1
+reference: 1 Enoch 73:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወድኅሬሁ፡ ለዝ፡ ትእዛዝ፡ ርኢኩ፡ ካልአ፡ ትእዛዘ፡ ለብርሃን፡ ንኡስ፡ ዘስሙ፡ ወርኅ።
+  language: Geez
+  pages:
+  - 175
+  - 176
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch73.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 73, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/073/001.yaml
+  text: And after this law I saw another law for the lesser light[b][a], whose name is the moon.
+  footnotes:
+  - marker: a
+    text: Or 'ordinance' or 'order' for both occurrences of 'command'; the Ge'ez term can denote a prescribed arrangement or directive.
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'And after this command I saw another command'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: c3e23a58806e155b90219cc3667784b45afc055c3773e09a865ab224a2757b28
+    timestamp: '2026-04-22T09:17:23Z'
+    output_hash: 06a373ba0e528d5d55d8fa14b895aaa5a9006184475a61a458891a93cf54f59a
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:22Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Y después de esta ley[b] vi otra ley para el luminar menor[a], cuyo nombre es la luna.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: También podría traducirse «orden» u «ordenanza» para ambos usos de ትእዛዝ; el término ge'ez puede denotar una disposición prescrita o una directiva.
+    reason: lexical_alternative
+  - marker: b
+    text: O «Y después de este mandato vi otro mandato».
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ወድኅሬሁ
+  english_pob_choice: And after this
+  chosen_spanish: Y después de esta
+  alternatives_spanish:
+  - Y luego de esta
+  - Y después de esto
+  lexicon: Dillmann
+  rationale: La fórmula marca transición temporal entre visiones o disposiciones; «después de esta» conserva la secuencia sin cargar el texto con una paráfrasis innecesaria.
+- source_word: ትእዛዝ
+  english_pob_choice: command / law
+  chosen_spanish: ley
+  alternatives_spanish:
+  - orden
+  - ordenanza
+  - mandato
+  lexicon: Dillmann
+  rationale: En este contexto astronómico, el término funciona como disposición normativa o regularidad estable del orden celeste. «Ley» recoge mejor esa fuerza técnica en español que «mandato», que suena a acto puntual de ordenar.
+- source_word: ርኢኩ
+  english_pob_choice: I saw
+  chosen_spanish: vi
+  alternatives_spanish:
+  - contemplé
+  - observé
+  lexicon: Dillmann
+  rationale: La forma visionaria directa queda bien en pretérito simple español; «vi» es natural y mantiene el testimonio apocalíptico en primera persona.
+- source_word: ካልአ
+  english_pob_choice: another
+  chosen_spanish: otra
+  alternatives_spanish:
+  - una segunda
+  - una ulterior
+  lexicon: Dillmann
+  rationale: «Otra» conserva la idea de una disposición adicional correspondiente a la anterior sin sugerir necesariamente mera repetición mecánica.
+- source_word: ለብርሃን ንኡስ
+  english_pob_choice: for the lesser light
+  chosen_spanish: para la luz menor
+  alternatives_spanish:
+  - para el luminar menor
+  - para la lumbrera menor
+  lexicon: Dillmann
+  rationale: «Luz menor» preserva la imagen cósmica y la relación comparativa con la luz mayor, sin introducir un término más técnico que el texto no exige.
+- source_word: ዘስሙ
+  english_pob_choice: whose name is
+  chosen_spanish: cuyo nombre es
+  alternatives_spanish:
+  - que se llama
+  - de nombre
+  lexicon: Dillmann
+  rationale: La construcción relativa introduce la identificación nominal de forma clara y fluida en español.
+- source_word: ወርኅ
+  english_pob_choice: the moon
+  chosen_spanish: la luna
+  alternatives_spanish:
+  - la luna
+  - el satélite lunar
+  lexicon: Dillmann
+  rationale: Es la identificación normal y transparente del luminar menor; «la luna» mantiene el paralelismo cósmico del pasaje.
+theological_decisions:
+- issue: Valor técnico de ትእዛዝ en el libro astronómico
+  english_pob_reading: law / command
+  chosen_spanish_reading: ley
+  alternative_spanish_readings:
+  - orden
+  - mandato
+  - ordenanza
+  rationale: El contexto describe el régimen regular de los astros, no una orden aislada. «Ley» expresa mejor la idea de disposición normativa y cíclica, en línea con la revisión auditada del inglés POB.
+  doctrine_reference: Optimal equivalence; preservar la imagen apocalíptica del orden cósmico y su regularidad normativa.
+translation_notes:
+  revision_awareness: La redacción sigue la revisión más reciente que prefirió «law» frente a «command» para ትእዛዝ en este pasaje del Libro Astronómico, y mantiene la identificación del segundo miembro como «la luna».
+  spanish_consistency_notes:
+  - Se mantiene «ley» para ትእዛዝ en este contexto astronómico, por coherencia con el valor técnico señalado en el audit trail.
+  - «Luz menor» conserva la imaginería cosmológica del original y evita una terminología más eclesiástica o interpretativa.
+  - La puntuación y el orden sintáctico buscan sonar naturales en español sin diluir la repetición conceptual del texto fuente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/073/001.yaml
+  source_text_sha256: e34ed33200a564d21d7a60c23bceba211e6690f7cc7b4057f42b241cbd26db4b
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: d0ec21c46be368450fa31970b35ca4b1b45ef632960a6ece2eb4aefc78ee85a3
+  timestamp: '2026-05-07T21:27:17Z'
+  output_hash: da5ecaef6e6cd441914be94cc56fffb40d5a31678f41d94724d93bef6d85fd6d
+  usage:
+    prompt_tokens: 2612
+    completion_tokens: 998
+    total_tokens: 3610
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00645
+status: spanish_reviewed
+revisions:
+- from: Y después de esta ley vi otra ley para la luz menor[a], cuyo nombre es la luna.
+  to: Y después de esta ley[b] vi otra ley para el luminar menor[a], cuyo nombre es la luna.
+  rationale: Se añade la nota omitida que preserva la alternativa documentada en el rastro inglés y se ajusta «luz menor» a «luminar menor» para reflejar con más precisión el referente astronómico del texto sin abandonar la decisión principal de traducir ትእዛዝ como «ley».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español transmite bien la estructura básica del ge'ez y sigue la revisión auditada que entiende ትእዛዝ como término técnico astronómico tipo «ley». También conserva la repetición de «ley» y la identificación de la luna como luminar menor. Sin embargo, falta una nota equivalente a la nota inglesa b sobre la alternativa de traducir toda la cláusula inicial como «Y después de este mandato vi otro mandato», y «luz menor» resulta algo menos preciso que «luminar menor» para un contexto astronómico.
+  spanish_quality_summary: El español es claro y digno, pero «para la luz menor» suena algo físico/abstracto en vez de cósmico-astronómico. «Para el luminar menor» mejora la naturalidad contextual sin apartarse del sentido. El resto de la sintaxis es fluida y apta para una traducción eclesial moderna.
+  glossary_alignment: No hay términos del glosario mayor en juego salvo la necesidad de respetar la decisión auditada de ትእዛዝ como «ley» en este contexto; eso está bien logrado. Se debe además preservar en notas las alternativas significativas ya documentadas por el inglés POB.
+  issues:
+  - severity: medium
+    issue: Falta la nota de alternativa correspondiente a la nota inglesa b
+    rationale: El inglés POB conserva una alternativa de traducción para toda la secuencia inicial («And after this command I saw another command»). La revisión española debe reflejar esa alternativa significativa, no solo la nota léxica sobre ትእዛዝ.
+  - severity: medium
+    issue: «luz menor» es menos exacto que «luminar menor» en este contexto
+    rationale: El ge'ez se refiere al cuerpo celeste identificado luego como la luna. «Luminar menor» preserva mejor la referencia astronómica/cósmica que «luz menor», que en español puede sonar más abstracto o físico.
+  revised_spanish_text: Y después de esta ley[b] vi otra ley para el luminar menor[a], cuyo nombre es la luna.
+  revised_footnotes:
+  - marker: a
+    text: También podría traducirse «orden» u «ordenanza» para ambos usos de ትእዛዝ; el término ge'ez puede denotar una disposición prescrita o una directiva.
+    reason: lexical_alternative
+  - marker: b
+    text: O «Y después de este mandato vi otro mandato».
+    reason: previous_rendering
+  revision_rationale: Se añade la nota omitida que preserva la alternativa documentada en el rastro inglés y se ajusta «luz menor» a «luminar menor» para reflejar con más precisión el referente astronómico del texto sin abandonar la decisión principal de traducir ትእዛዝ como «ley».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9e42c26ae7257a12b26821825f33d0fb71a8a2ca512c8bf8b2094f7f1a4dd873
+  timestamp: '2026-05-07T23:06:32Z'
+  output_hash: d3e3a75140436a1a10d0fdbf4e49fcfa8cdf027c3a908f8eeeac0a68e87fe3e0
+  usage:
+    prompt_tokens: 3306
+    completion_tokens: 646
+    total_tokens: 3952
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017955
+  applied_revision: true

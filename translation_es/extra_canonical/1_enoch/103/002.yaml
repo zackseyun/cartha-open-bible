@@ -1,0 +1,204 @@
+id: 1EN.103.2
+reference: 1 Enoch 103:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: እስመ፡ አነ፡ አአምር፡ ምሥጢረ፡ ወአንበብኩ፡ ፀፍፀፈ፡ ሰማይ፡ ወርኢኩ፡ ጽሕፈተ፡ ቅድስተ፡ ወረከብኩ፡ ጽሑፈ፡ ውስቴቶሙ፡ ወ*አኩዐ፡ በእንቲአሆሙ፡፡
+  language: Geez
+  pages:
+  - 251
+  - 252
+  - 253
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/103/002.yaml
+  text: For I know the mystery[a], and I have read the tablets of heaven, and I have seen the holy writings[c][b], and I found written in them and understood concerning them.
+  footnotes:
+  - marker: a
+    text: Or 'the holy writing.' The Ge'ez phrase is difficult, and the exact relation between 'writing' and 'holy ones' is uncertain.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Tablets of heaven'' is an apocalyptic image for heavenly records or decrees, not necessarily physical tablets in a literalistic sense.'
+    reason: cultural_note
+  - marker: c
+    text: Or 'the writing of the holy ones'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 4a1ab63a7d0558a2b80c076da8e2d4f03491ab97a1788bd081121e2aad511524
+    timestamp: '2026-04-22T09:24:08Z'
+    output_hash: 60f025449b405937bd16e84a9b3688ef3ef3533669577dedfd40b385e7260247
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:53Z'
+    unchanged: false
+    changes_summary: Changed 'holy writing' to 'holy writings' to better reflect the plural sense of the source while preserving the structure and meaning of the draft.
+translation:
+  language: es
+  text: Porque conozco el misterio[a], y he leído las tablas del cielo[b], y he visto los santos escritos[c], y he hallado escrito en ellas, y he entendido acerca de ellas.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «el secreto». El contexto apocalíptico favorece «misterio» como conocimiento revelado.
+    reason: lexical_alternative
+  - marker: b
+    text: Imagen apocalíptica de registros o decretos celestiales; no necesariamente tablas físicas en sentido literal.
+    reason: cultural_note
+  - marker: c
+    text: O «la santa escritura». La expresión ge'ez es difícil, y el historial de revisión conserva tensión entre una lectura singular y una plural; aquí se traduce en plural para seguir el texto principal inglés auditado.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ምሥጢረ
+  english_pob_choice: the mystery
+  chosen_spanish: el misterio
+  alternatives_spanish:
+  - el secreto
+  - lo oculto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En contexto apocalíptico, «misterio» conserva el registro revelado y la idea de conocimiento oculto dado a conocer. «Secreto» sería posible, pero rebaja el matiz técnico y solemne del pasaje.
+- source_word: ፀፍፀፈ ሰማይ
+  english_pob_choice: the tablets of heaven
+  chosen_spanish: las tablas del cielo
+  alternatives_spanish:
+  - las tablas de los cielos
+  - los libros del cielo
+  - los escritos del cielo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Tablas» mantiene la imagen concreta de registro escrito celestial que el contexto enóquico sugiere. «Cielo» traduce el genitivo/relación celestial sin convertirlo en una paráfrasis más abstracta como «escritos».
+- source_word: ጽሕፈተ ቅድስተ
+  english_pob_choice: the holy writings
+  chosen_spanish: la santa escritura
+  alternatives_spanish:
+  - los santos escritos
+  - la escritura santa
+  - la santa escritura
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'La revisión del audit trail corrigió la comprensión hacia una expresión adjetival singular: «la santa escritura». En español, esto preserva la relación directa entre el sustantivo y el adjetivo y evita introducir un plural no exigido por el griego fragmentario citado en el contexto. Mantengo el singular porque es el mejor correlato de la lectura revisada, aun cuando el resto de la cláusula use un referente plural para «ellas».'
+- source_word: ውስቴቶሙ
+  english_pob_choice: in them
+  chosen_spanish: en ellas
+  alternatives_spanish:
+  - dentro de ellas
+  - entre ellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El plural femenino español concuerda naturalmente con «las tablas» y conserva la referencia locativa simple de la cláusula: «hallé escrito en ellas».'
+- source_word: አኩዐ
+  english_pob_choice: understood
+  chosen_spanish: entendí
+  alternatives_spanish:
+  - comprendí
+  - percibí
+  - conocí
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Entendí» expresa de manera directa el paso de leer a comprender, sin añadir contenido interpretativo extra.
+- source_word: አንበብኩ
+  english_pob_choice: I have read
+  chosen_spanish: he leído
+  alternatives_spanish:
+  - leí
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El perfecto español reproduce mejor el valor resultativo del verbo en la secuencia narrativa: el hablante afirma haber realizado la lectura con efecto presente de conocimiento.'
+theological_decisions:
+- issue: Identidad y alcance de «la santa escritura»
+  english_pob_reading: The English POB preserves ambiguity with 'the holy writings' and notes the textual difficulty; the revision trail points to a singular adjectival reading.
+  chosen_spanish_reading: «la santa escritura» sin especificar si se trata de un escrito celestial singular, de una colección, o de una escritura asociada a seres santos.
+  alternative_spanish_readings:
+  - «los santos escritos»
+  - «la escritura de los santos»
+  - «la escritura santa»
+  rationale: 'La evidencia del audit trail muestra tensión entre una lectura singular revisada y el encaje plural de la referencia pronominal posterior. En español conviene conservar esa tensión: el sintagma puede leerse como una escritura santa singular, mientras «en ellas» sigue remitiendo a las tablas del cielo. No se debe resolver artificialmente la ambigüedad introduciendo «ángeles» o «santos» sin base suficiente.'
+  doctrine_reference: Preservar la tensión textual y no sobredeterminar el referente.
+translation_notes:
+  revision_awareness: 'El borrador español toma en cuenta el audit trail inglés y la revisión posterior: se mantiene «misterio» y «tablas del cielo», pero se adopta la lectura revisada de ጽሕፈተ ቅድስተ como singular adjetival («la santa escritura»). También se conserva la tensión entre ese singular y el plural de «en ellas», siguiendo la ambigüedad documentada en la tradición de trabajo.'
+  spanish_consistency_notes:
+  - Se usa «Yahvé» solo cuando el texto lo requiera; aquí no aparece.
+  - Se mantiene el registro apocalíptico elevado sin recurrir a paráfrasis devocionales.
+  - «Entendí» y «he leído» conservan el encadenamiento verbal de descubrimiento y comprensión.
+  - La concordancia en «en ellas» se refiere naturalmente a «las tablas del cielo» y no fuerza el referente de «la santa escritura».
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/103/002.yaml
+  source_text_sha256: eba836212391d01b2701c59640423c28397f8dbec650a3468871b85fc141f913
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 11e712632a551ac7d9a3bd8a999d6f75b81cf8364d2a38571a56ba6c6e8c51bf
+  timestamp: '2026-05-07T21:27:58Z'
+  output_hash: 3a22d0b1ba5b30f6f7d79949bb1e4a67413d59f8672e9873646277b7afb76d09
+  usage:
+    prompt_tokens: 3161
+    completion_tokens: 1327
+    total_tokens: 4488
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008342
+status: spanish_reviewed
+revisions:
+- from: Porque conozco el misterio[a], y he leído las tablas del cielo[b], y he visto la santa escritura[c], y hallé escrito en ellas, y entendí acerca de ellas.
+  to: Porque conozco el misterio[a], y he leído las tablas del cielo[b], y he visto los santos escritos[c], y he hallado escrito en ellas, y he entendido acerca de ellas.
+  rationale: Se revisa el sintagma central a «los santos escritos» para alinearlo con el texto principal inglés auditado ('the holy writings') sin perder la dificultad textual, que se conserva en nota. También se armoniza la secuencia verbal con perfectos compuestos para mejorar la fluidez española.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:11:04Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien la secuencia básica del verso: conocimiento del misterio, lectura de las tablas celestiales, visión de un escrito santo, hallazgo de algo escrito en ellas y comprensión. Sin embargo, no sigue fielmente el estado más reciente del audit trail inglés, que en el texto principal usa plural: ''the holy writings''. Además, la nota c del borrador enfatiza una preferencia singular que ya no refleja de forma equilibrada la revisión inglesa final. El plural pronominal ''en ellas'' concuerda bien con ''las tablas''.'
+  spanish_quality_summary: El español es claro y digno, con buen registro. 'Porque conozco el misterio' y 'he leído las tablas del cielo' funcionan bien. No obstante, 'hallé' junto a 'he leído' produce una leve mezcla aspectual; para mayor fluidez conviene armonizar la serie verbal con 'he hallado'. 'Los santos escritos' suena más natural en español que 'las santas escrituras' en este contexto y preserva mejor el valor no canónico-específico del original.
+  glossary_alignment: 'No hay conflicto con la terminología doctrinal principal del proyecto. La decisión clave aquí es ጽሕፈተ ቅድስተ: el español debe reflejar el texto principal auditado en inglés (''the holy writings'') sin cerrar indebidamente la ambigüedad. ''Los santos escritos'' preserva bien ese valor. ''Tablas del cielo'' mantiene correctamente la imagen apocalíptica de registros celestiales.'
+  issues:
+  - severity: medium
+    issue: El texto principal español usa singular ('la santa escritura') donde el English POB vigente usa plural ('the holy writings').
+    rationale: Aunque el historial de revisión muestra debate real sobre el singular, el texto inglés auditado final presentado para esta revisión está en plural y el revisor español debe seguir ese estado salvo razón fuerte en contra.
+  - severity: medium
+    issue: La nota c está desalineada con el audit trail final y sesga hacia la lectura singular.
+    rationale: La nota actual afirma que la revisión favorece el singular, pero el English POB mostrado conserva plural en el texto principal y registra alternativas; la nota española debe reflejar esa tensión con más fidelidad.
+  - severity: low
+    issue: Leve mezcla de tiempos verbales en 'he leído ... hallé'.
+    rationale: No es un error grave, pero una serie uniforme con perfectos compuestos mejora la naturalidad del español en este contexto.
+  revised_spanish_text: Porque conozco el misterio[a], y he leído las tablas del cielo[b], y he visto los santos escritos[c], y he hallado escrito en ellas, y he entendido acerca de ellas.
+  revised_footnotes:
+  - marker: a
+    text: O «el secreto». El contexto apocalíptico favorece «misterio» como conocimiento revelado.
+    reason: lexical_alternative
+  - marker: b
+    text: Imagen apocalíptica de registros o decretos celestiales; no necesariamente tablas físicas en sentido literal.
+    reason: cultural_note
+  - marker: c
+    text: O «la santa escritura». La expresión ge'ez es difícil, y el historial de revisión conserva tensión entre una lectura singular y una plural; aquí se traduce en plural para seguir el texto principal inglés auditado.
+    reason: textual_variant
+  revision_rationale: Se revisa el sintagma central a «los santos escritos» para alinearlo con el texto principal inglés auditado ('the holy writings') sin perder la dificultad textual, que se conserva en nota. También se armoniza la secuencia verbal con perfectos compuestos para mejorar la fluidez española.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1f69d398ab10dcabaec94a5d8301f7f77b1a96d3060a98eeccdb2e499b399bc9
+  timestamp: '2026-05-07T23:11:04Z'
+  output_hash: 91da546913e524e806ad1de74a84c696dd93ea2cc18c68f52acc59570c487b6d
+  usage:
+    prompt_tokens: 4108
+    completion_tokens: 808
+    total_tokens: 4916
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02239
+  applied_revision: true

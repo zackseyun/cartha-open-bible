@@ -1,0 +1,230 @@
+id: 1EN.75.5
+reference: 1 Enoch 75:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: †ወለነፋሳት፡ ወለመንፈሰ፡ ጠል፡† [ሶበ፡ ይትረኃዉ፡ ርኅወተ፡ በሰማይ፡ ዲበ፡ አጽናፈ፡]
+  language: Geez
+  pages:
+  - 180
+  - 181
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch75.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 75, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/075/005.yaml
+  text: and for the winds[a], and for the spirit of dew[c][b], when the openings are opened in heaven at the ends.
+  footnotes:
+  - marker: a
+    text: The phrase rendered 'spirit of dew' is lexically difficult and could also be understood more physically, such as 'breath of dew' or a dew-bearing wind.
+    reason: lexical_alternative
+  - marker: b
+    text: The bracketed clause in the source witness appears textually uncertain; 'openings' may also be rendered 'windows' or 'vents' of heaven.
+    reason: textual_variant
+  - marker: c
+    text: Or 'when their openings are opened in the heavens'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: d77e7b7492407e8ee603ed12b84f0da1feeea2f3212b03ae5297ed4828fe6e28
+    timestamp: '2026-04-22T09:18:01Z'
+    output_hash: 15acf04ea96bf9523fc176dc5f33435327ea2028dc319985a38181b5c90d0056
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:30Z'
+    unchanged: false
+    changes_summary: Added the article in 'the openings' for more natural formal English while preserving the source sense; otherwise retained the draft.
+translation:
+  language: es
+  text: y para los vientos, y para el espíritu[a] del rocío, cuando las aperturas[b][c] se abren en el cielo, en los confines.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La expresión 'espíritu del rocío' es léxicamente difícil y también podría entenderse de manera más física, como 'aliento del rocío' o un viento portador de rocío.
+    reason: lexical_alternative
+  - marker: b
+    text: La cláusula entre corchetes en el testimonio fuente parece textualmente incierta; 'aperturas' también podría traducirse como 'ventanas' o 'respiraderos' del cielo.
+    reason: textual_variant
+  - marker: c
+    text: O 'cuando se abren aperturas en el cielo'.
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ነፋሳት
+  english_pob_choice: winds
+  chosen_spanish: vientos
+  alternatives_spanish:
+  - aires
+  - espíritus
+  - vientos y brisas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto astronómico-cósmico, el término alude a fenómenos creados y no a seres espirituales. 'Vientos' conserva mejor el sentido meteorológico y el orden de la lista.
+- source_word: መንፈሰ
+  english_pob_choice: spirit
+  chosen_spanish: espíritu
+  alternatives_spanish:
+  - aliento
+  - viento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La combinación con 'rocío' es oscura; 'espíritu del rocío' preserva la imagen inusual sin reducirla a una paráfrasis física que borre la tensión léxica del original.
+- source_word: ጠል
+  english_pob_choice: dew
+  chosen_spanish: rocío
+  alternatives_spanish:
+  - rocío
+  - dew
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Rocío'' es la forma natural y transparente en español para el fenómeno meteorológico, manteniendo el referente literal sin perder legibilidad.'
+- source_word: ሶበ
+  english_pob_choice: when
+  chosen_spanish: cuando
+  alternatives_spanish:
+  - al tiempo que
+  - cuando, al
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Introduce una cláusula temporal natural en español y refleja bien la relación circunstancial del original.
+- source_word: ይትረኃዉ
+  english_pob_choice: are opened
+  chosen_spanish: se abren
+  alternatives_spanish:
+  - son abiertas
+  - se abren
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La pasiva/reflexiva en español mantiene el foco en las aberturas como sujetos gramaticales, evitando introducir un agente inexistente en el texto.
+- source_word: ርኅወተ
+  english_pob_choice: the openings
+  chosen_spanish: las aberturas
+  alternatives_spanish:
+  - las ventanas
+  - los orificios
+  - las aperturas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Aberturas'' es amplio y fiel al valor genérico de aperturas celestes, sin especificar indebidamente ''ventanas'' o ''compuertas''.'
+- source_word: በሰማይ
+  english_pob_choice: in heaven
+  chosen_spanish: en el cielo
+  alternatives_spanish:
+  - en el cielo
+  - en los cielos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Aunque el inglés POB usa 'heaven', en español 'cielo' comunica con naturalidad el ámbito cósmico; 'los cielos' introduciría un plural no exigido por el ge'ez.
+- source_word: አጽናፈ
+  english_pob_choice: the ends
+  chosen_spanish: en los extremos
+  alternatives_spanish:
+  - en los confines
+  - en los bordes
+  - en los extremos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Extremos'' expresa bien la idea de límites o bordes del cielo; en español conviene explicitar la relación con el sitio de las aberturas mediante la preposición ''en''.'
+theological_decisions:
+- issue: Conservar o suavizar la imagen cosmológica inusual de 'espíritu del rocío'
+  english_pob_reading: Retain 'spirit of dew' in the main text
+  chosen_spanish_reading: Conservar 'espíritu del rocío' en el texto principal
+  alternative_spanish_readings:
+  - aliento del rocío
+  - rocío portador de viento
+  - humedad del rocío
+  rationale: El pasaje pertenece a un catálogo de realidades cósmicas y mecanismos celestes; conservar la expresión extraña evita desmitologizar el texto y respeta la tensión léxica documentada por el POB inglés.
+  doctrine_reference: Preservar la imaginería apocalíptica y la dificultad lexical del testimonio, sin convertirla en prosa meteorológica moderna.
+- issue: Interpretación espacial de 'en el cielo' frente a 'en los cielos'
+  english_pob_reading: in heaven
+  chosen_spanish_reading: en el cielo
+  alternative_spanish_readings:
+  - en los cielos
+  - en el firmamento
+  rationale: El ge'ez está en singular y la revisión auditada corrigió el plural implícito. 'En el cielo' mantiene ese singular y evita introducir una cosmología más explícita de la que exige el texto.
+  doctrine_reference: Fidelidad al número gramatical del testimonio y cautela ante expansiones interpretativas.
+translation_notes:
+  revision_awareness: La versión española sigue la revisión auditada que corrige el singular de 'en heaven' y evita el posesivo no apoyado en el ge'ez. También refleja la decisión posterior de mantener 'the openings' como aberturas definidas, sin añadir un agente ni pluralizar indebidamente el lugar.
+  spanish_consistency_notes:
+  - Se mantiene 'espíritu' para መንፈሰ por coherencia con la decisión inglesa, aunque en español podría sugerir algo más personal; aquí se conserva por fidelidad a la imagen.
+  - Se usa 'cielo' en singular para respetar la revisión textual y el número del original.
+  - '''Aberturas'' y ''extremos'' conservan el tono cosmográfico, evitando términos eclesiásticos o litúrgicos ajenos al pasaje.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/075/005.yaml
+  source_text_sha256: 7c2757f002b8f73361dbb5a050b7e42229cf3bfe0abd294853ceca8e0a601dd2
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 84b0de47e195e4b029c9375345e574f11799b94386e480a5f3d03e31a67c3b63
+  timestamp: '2026-05-07T21:27:52Z'
+  output_hash: 91898661217534247b5f5e543fab8208639d656a216aac82dc7b0349a59f40aa
+  usage:
+    prompt_tokens: 2998
+    completion_tokens: 1515
+    total_tokens: 4513
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009066
+status: spanish_reviewed
+revisions:
+- from: y para los vientos[a], y para el espíritu del rocío[b], cuando las aberturas[c] se abren en el cielo, en los extremos.
+  to: y para los vientos, y para el espíritu[a] del rocío, cuando las aperturas[b][c] se abren en el cielo, en los confines.
+  rationale: La revisión corrige principalmente el aparato crítico para que refleje con fidelidad el expediente inglés y el punto exacto del texto al que cada nota corresponde. También hace ajustes menores de estilo ('aperturas', 'confines') que mejoran la naturalidad y el registro sin apartarse del ge'ez ni de las decisiones léxicas auditadas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:22:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien el sentido básico del ge''ez y sigue la decisión auditada de mantener la imagen difícil ''espíritu del rocío''. También refleja correctamente ''en el cielo'' en singular y evita el posesivo rechazado por la adjudicación inglesa. Sin embargo, la distribución de notas al pie no preserva fielmente la lógica del expediente inglés: la nota sobre la dificultad léxica de ''spirit of dew'' está anclada erróneamente en ''vientos'', y la nota sobre la incertidumbre textual de la cláusula entre corchetes fue desplazada de la cláusula al sustantivo ''aberturas''.'
+  spanish_quality_summary: El español es claro y digno, pero puede mejorarse levemente para mayor naturalidad formal. 'Aberturas' es aceptable, aunque 'aperturas' suena algo más natural en registro cósmico-formal. La frase final 'en los extremos' funciona, pero 'en los confines' expresa mejor el matiz apocalíptico de los límites del cielo sin añadir contenido. La mayor necesidad de revisión está en el anclaje y contenido de las notas.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'vientos', 'espíritu', 'rocío' y 'cielo' están bien elegidos según las decisiones léxicas documentadas. La conservación de 'espíritu del rocío' respeta la rationale teológica de no desmitologizar la imaginería cósmica.
+  issues:
+  - severity: medium
+    issue: Anclaje incorrecto de la nota léxica sobre 'espíritu del rocío'
+    rationale: La nota a en el expediente inglés explica la dificultad de la frase 'spirit of dew', pero en el borrador español está anclada en 'vientos', lo que desinforma al lector sobre qué expresión es problemática.
+  - severity: medium
+    issue: La nota de incertidumbre textual no corresponde al contenido inglés auditado
+    rationale: La nota inglesa b trata la cláusula entre corchetes y las alternativas para 'openings' como 'windows' o 'vents'. En español, la nota b afirma que el sintagma es textual o semánticamente incierto y repite una lectura casi idéntica al texto principal, perdiendo la precisión del expediente.
+  - severity: low
+    issue: Distribución de notas desordenada respecto del texto revisado
+    rationale: El inglés usa notas separadas para la dificultad léxica de 'spirit of dew', para una lectura previa de la cláusula, y para la alternativa de 'openings'. En español conviene reordenarlas y anclarlas exactamente donde corresponde para que el aparato crítico sea útil.
+  - severity: low
+    issue: Leve mejora estilística posible en 'aberturas' y 'extremos'
+    rationale: Aunque no es un error, 'aperturas' y 'confines' leen con más naturalidad y elevación en español bíblico moderno sin alterar el sentido fuente.
+  revised_spanish_text: y para los vientos, y para el espíritu[a] del rocío, cuando las aperturas[b][c] se abren en el cielo, en los confines.
+  revised_footnotes:
+  - marker: a
+    text: La expresión 'espíritu del rocío' es léxicamente difícil y también podría entenderse de manera más física, como 'aliento del rocío' o un viento portador de rocío.
+    reason: lexical_alternative
+  - marker: b
+    text: La cláusula entre corchetes en el testimonio fuente parece textualmente incierta; 'aperturas' también podría traducirse como 'ventanas' o 'respiraderos' del cielo.
+    reason: textual_variant
+  - marker: c
+    text: O 'cuando se abren aperturas en el cielo'.
+    reason: previous_rendering
+  revision_rationale: La revisión corrige principalmente el aparato crítico para que refleje con fidelidad el expediente inglés y el punto exacto del texto al que cada nota corresponde. También hace ajustes menores de estilo ('aperturas', 'confines') que mejoran la naturalidad y el registro sin apartarse del ge'ez ni de las decisiones léxicas auditadas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 40cf738e271a26b6e7e30a4aee443c1bb03e77ffba165e04057e2ede0e34cb12
+  timestamp: '2026-05-07T23:22:10Z'
+  output_hash: 25b3b6bf9472c53c0a0cc3340a288ab5cdb63a6dc8f2402e15a6f6b896be38d0
+  usage:
+    prompt_tokens: 4188
+    completion_tokens: 930
+    total_tokens: 5118
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02442
+  applied_revision: true

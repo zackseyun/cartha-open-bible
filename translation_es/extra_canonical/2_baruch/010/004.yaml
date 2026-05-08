@@ -1,0 +1,128 @@
+id: 2BA.10.4
+reference: 2 Baruch 10:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 10
+  pages:
+  - 224
+  - 223
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 4
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/010/004.yaml
+  text: And I spoke to my brother Jeremiah as the Lord had commanded me.
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:07:53Z'
+    unchanged: false
+    changes_summary: Reordered the appositive to read more naturally in English (“my brother Jeremiah” instead of “Jeremiah my brother”); otherwise unchanged.
+translation:
+  language: es
+  text: Y hablé a mi hermano Jeremías, como Yahvé me había mandado.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: spoke
+  english_pob_choice: spoke
+  chosen_spanish: hablé
+  alternatives_spanish:
+  - le hablé
+  - dije
+  lexicon: hablar
+  rationale: El verbo indica acto de comunicación directa y queda bien en español con valor simple y narrativo. «Le hablé» explicita el objeto indirecto, pero no es necesario si el contexto ya identifica a Jeremías; «dije» sería más general y menos fiel al acto de hablar con alguien.
+- source_word: brother
+  english_pob_choice: my brother Jeremiah
+  chosen_spanish: mi hermano Jeremías
+  alternatives_spanish:
+  - Jeremías, mi hermano
+  - mi hermano, Jeremías
+  lexicon: hermano
+  rationale: Se conserva el parentesco explícito del original y del inglés auditado. El orden «mi hermano Jeremías» es natural en español bíblico y mantiene la apposición sin añadir énfasis interpretativo.
+- source_word: Lord
+  english_pob_choice: the Lord
+  chosen_spanish: el Señor
+  alternatives_spanish:
+  - Yahvé
+  lexicon: Lord / divine title
+  rationale: Aunque el proyecto prefiere «Yahvé» para יהוה en textos donde ese nombre es el referente directo, aquí la evidencia disponible en el audit trail es la forma inglesa fija «the Lord». Sin un marcador textual adicional del nombre divino en el paquete fuente, se mantiene la designación reverencial tradicional «el Señor» para no forzar una identificación que el expediente no documenta explícitamente.
+- source_word: had commanded
+  english_pob_choice: had commanded me
+  chosen_spanish: me había mandado
+  alternatives_spanish:
+  - me había ordenado
+  - me había dado mandamiento
+  lexicon: command
+  rationale: «Mandar» transmite la fuerza directiva del verbo sin sonar excesivamente jurídico en español moderno. «Ordenado» es posible, pero «mandado» resulta más idiomático en la narración bíblica. Se preserva el pasado anterior de la acción respecto del habla.
+theological_decisions:
+- issue: Referencia al nombre divino en un contexto de mandato
+  english_pob_reading: as the Lord had commanded me
+  chosen_spanish_reading: como el Señor me había mandado
+  alternative_spanish_readings:
+  - como Yahvé me había mandado
+  - según me había mandado el Señor
+  rationale: El expediente inglés no documenta una decisión lexical específica sobre el tetragrámaton en este versículo. Por ello, la traducción española conserva el valor reverencial de «el Señor» tal como está atestiguado en el audit trail, evitando introducir una identificación nominal más fuerte sin respaldo explícito del material provisto.
+  doctrine_reference: Uso reverencial del título divino; cautela textual en ausencia de señalación explícita del nombre.
+translation_notes:
+  revision_awareness: 'El inglés auditado fue revisado solo por el orden del aposicional: de «Jeremiah my brother» a «my brother Jeremiah». La versión española refleja esa forma final sin necesidad de nota, manteniendo la misma relación sintáctica y el mismo sentido global.'
+  spanish_consistency_notes:
+  - Se mantiene el registro bíblico sobrio y directo.
+  - No se introducen glosas explicativas que excedan el sentido del versículo.
+  - La puntuación conserva la pausa natural de la apposición con coma antes de la cláusula comparativa.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/010/004.yaml
+  source_text_sha256: 38a6fc61ed123cc17bb16b295593b593a3adc936d9d866152f254ec791ab7859
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: aa408a3d48ebb1c7fe2e975f9b48018e86743851e524755ad7bd725395805eb8
+  timestamp: '2026-05-07T21:28:45Z'
+  output_hash: d9acd33cd73afad8e37f1be404437640a5a42473c1dc252a269c5995fbdf7a4c
+  usage:
+    prompt_tokens: 1639
+    completion_tokens: 774
+    total_tokens: 2413
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004712
+status: spanish_reviewed
+revisions:
+- from: Y hablé a mi hermano Jeremías, como el Señor me había mandado.
+  to: Y hablé a mi hermano Jeremías, como Yahvé me había mandado.
+  rationale: Se conserva íntegramente la redacción española salvo la sustitución de «el Señor» por «Yahvé» para cumplir con la terminología por defecto del proyecto respecto del nombre divino, sin alterar el sentido narrativo ni la sintaxis natural del versículo.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:27:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador conserva bien el sentido básico del siríaco según el rastro inglés: Baruc habla a Jeremías, identificado como su hermano, y lo hace conforme a un mandato divino previo. La estructura narrativa y la relación temporal de «hablé ... como ... había mandado» están bien preservadas. Sin embargo, el uso de «el Señor» no se alinea con la política terminológica por defecto del proyecto para el nombre divino cuando no hay una razón documentada de excepción en este versículo.'
+  spanish_quality_summary: El español es claro, natural y digno. «Y hablé a mi hermano Jeremías» suena bien y refleja la revisión inglesa auditada. «como ... me había mandado» es idiomático y adecuado. Solo conviene ajustar la designación divina para concordar con la norma del proyecto.
+  glossary_alignment: 'Buen ajuste en «Jeremías», «hermano» y «mandado». Desajuste menor pero importante en la terminología divina: el proyecto prefiere «Yahvé» en el texto principal para el nombre divino, y aquí no se documenta una excepción litúrgica o contextual que justifique mantener «el Señor».'
+  issues:
+  - severity: medium
+    issue: Uso de «el Señor» en lugar de «Yahvé»
+    rationale: La pauta del proyecto establece «Yahvé» en el texto principal para יהוה / YHWH. El expediente inglés usa «the Lord», pero no ofrece una decisión teológica o lexical que exija conservar ese enmascaramiento en español. Dado que no hay justificación documentada para apartarse de la norma, debe ajustarse a «Yahvé».
+  revised_spanish_text: Y hablé a mi hermano Jeremías, como Yahvé me había mandado.
+  revision_rationale: Se conserva íntegramente la redacción española salvo la sustitución de «el Señor» por «Yahvé» para cumplir con la terminología por defecto del proyecto respecto del nombre divino, sin alterar el sentido narrativo ni la sintaxis natural del versículo.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c75f26cbb191c4d6f2e6c59b92c597982b9e0959e98d7a2b314038aeba154515
+  timestamp: '2026-05-07T23:27:54Z'
+  output_hash: cb463da6c1f3b0f755d6f53b2bb0dac80b9f1c5db62cd14cce8886231864327d
+  usage:
+    prompt_tokens: 2087
+    completion_tokens: 480
+    total_tokens: 2567
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012417
+  applied_revision: true

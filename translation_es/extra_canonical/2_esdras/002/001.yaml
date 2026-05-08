@@ -1,0 +1,162 @@
+id: 2ES.2.1
+reference: 2 Esdras 2:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'Haec dicit dominus : ego eduxi populum istum de seruitute, quibus mandata dedi per pueros meos prophetas, quos audire noluerunt, sed irrita fecerunt mea consilia.'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/002/001.yaml
+  text: 'Thus says the Lord: I brought this people out of slavery[a], and I gave them commandments through my slaves the prophets, whom they were unwilling to hear, but they made my counsels void.'
+  footnotes:
+  - marker: a
+    text: Or 'but they were unwilling to listen and made my counsels void.'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:03Z'
+    unchanged: false
+    changes_summary: 'Changed ''out from slavery'' to the more natural ''out of slavery.'' [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)]'
+translation:
+  language: es
+  text: 'Así dice el Señor: yo saqué a este pueblo de la esclavitud, y les di mandamientos por medio de mis esclavos, los profetas, a quienes no quisieron oír, pero invalidaron mis consejos.'
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: dominus
+  english_pob_choice: the Lord
+  chosen_spanish: el Señor
+  alternatives_spanish:
+  - Yahvé
+  lexicon: Latín dominus
+  rationale: Aquí la fuente latina usa dominus como apelación directa; en español POB se puede conservar «el Señor» porque el texto no está escribiendo explícitamente el Tetragrámaton en hebreo. «Yahvé» es el valor de proyecto para YHWH, pero no hay base textual directa en este verso latino para forzarlo en la cita.
+- source_word: seruitate
+  english_pob_choice: slavery
+  chosen_spanish: la esclavitud
+  alternatives_spanish:
+  - servidumbre
+  lexicon: Latín seruitas
+  rationale: La POB inglesa eligió «slavery» para mantener la fuerza léxica de la liberación. En español, «esclavitud» comunica esa fuerza con naturalidad y corresponde mejor que el más tenue «servidumbre».
+- source_word: pueros meos
+  english_pob_choice: my slaves
+  chosen_spanish: mis esclavos
+  alternatives_spanish:
+  - mis siervos
+  lexicon: Latín puer/servus en este contexto rendido por la POB como slave
+  rationale: Sigo la decisión auditada de la POB inglesa de preservar la fuerza de δοῦλος/servus como «slave». En español, «esclavos» mantiene esa dureza lexical y evita suavizar el término a «siervos».
+- source_word: mandata
+  english_pob_choice: commandments
+  chosen_spanish: mandamientos
+  alternatives_spanish:
+  - preceptos
+  - órdenes
+  lexicon: Latín mandatum
+  rationale: «Mandamientos» es la correspondencia natural y tradicionalmente comprensible para mandata, sin perder el carácter imperativo del término.
+- source_word: quos audire noluerunt
+  english_pob_choice: whom they were unwilling to hear
+  chosen_spanish: a quienes no quisieron escuchar
+  alternatives_spanish:
+  - a quienes no quisieron oír
+  - a quienes se negaron a escuchar
+  lexicon: Latín accusative relative with audire noluerunt
+  rationale: La revisión auditada subraya que el objeto directo es «quos»; por eso lo expreso de forma explícita en español con «a quienes». «Escuchar» conserva mejor el matiz relacional y obediencial que el simple oír.
+- source_word: sed irrita fecerunt mea consilia
+  english_pob_choice: but they made my counsels void
+  chosen_spanish: sino que invalidaron mis designios
+  alternatives_spanish:
+  - pero hicieron vanos mis consejos
+  - sino que anularon mis consejos
+  lexicon: Latín irrita facere + consilia
+  rationale: '«Invalidaron» refleja bien irrita fecerunt: no solo ignoraron, sino que dejaron sin efecto. «Designios» puede ser más idiomático que «consejos» en español y mantiene la idea deliberativa de consilia sin reducirla a mera opinión.'
+theological_decisions:
+- issue: Traducción de doctrina del habla divina y posible allusión al nombre divino
+  english_pob_reading: Thus says the Lord
+  chosen_spanish_reading: Así dice el Señor
+  alternative_spanish_readings:
+  - Así dice Yahvé
+  rationale: El verso latino dice dominus, no el Tetragrámaton. Mantengo «el Señor» en la invocación discursiva y reservo «Yahvé» para contextos con base textual directa en el nombre divino.
+  doctrine_reference: Nombre divino / respeto al testigo textual latino
+- issue: Fuerza social y teológica de pueros meos
+  english_pob_reading: my slaves the prophets
+  chosen_spanish_reading: mis esclavos, los profetas
+  alternative_spanish_readings:
+  - mis siervos, los profetas
+  rationale: La POB inglesa restauró «slaves» por fidelidad al término de fuerza. En español, «esclavos» conserva la incomodidad intencional del original y evita suavizar la relación de dependencia al nivel de «siervos».
+  doctrine_reference: Lexical force of δοῦλος / servus in POB policy
+- issue: Relación sintáctica entre rechazo a oír y anulación de consejos
+  english_pob_reading: whom they were unwilling to hear, but they made my counsels void
+  chosen_spanish_reading: a quienes no quisieron escuchar, sino que invalidaron mis designios
+  alternative_spanish_readings:
+  - a quienes no quisieron oír, pero hicieron vanos mis consejos
+  rationale: La revisión del audit trail destaca que el «but/sed» contrasta el rechazo directo a los profetas con la acción de anular los designios divinos. «Sino que» en español preserva mejor ese contraste adversativo tras una negación previa.
+  doctrine_reference: Sintaxis adversativa y responsabilidad humana
+translation_notes:
+  revision_awareness: 'La versión inglesa revisada corrigió una atenuación sintáctica: el objeto de «hear/listen» es explícito en el latín (quos), y la partícula adversativa sed contrasta la negativa a escuchar a los profetas con la invalidación de los consejos divinos. La presente redacción conserva ambos rasgos y evita suavizar δοῦλος/servus en «siervo».'
+  spanish_consistency_notes:
+  - He evitado usar «SEÑOR» como máscara para el nombre divino porque el verso fuente está en latín dominus y no exige la convención del Tetragrámaton.
+  - He mantenido «esclavos» por coherencia con la política POB documentada en el audit trail.
+  - He preferido «designios» para consilia por ser más natural en español y conservar el sentido deliberativo sin banalizarlo.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/002/001.yaml
+  source_text_sha256: 7c087d8f88fe447478925f90e2e2b16806ddc95e0ff4374d371cac255a5ca354
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 798ebb9c2cc73119a5a939136d51304bd16c1f5acbc707e3fb3b89bfb43ea9ce
+  timestamp: '2026-05-07T21:28:51Z'
+  output_hash: f0432e51baceb1f5c483e1da0c57c6a9c893de07226c94d744894a62653ee001
+  usage:
+    prompt_tokens: 2272
+    completion_tokens: 1353
+    total_tokens: 3625
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007793
+status: spanish_reviewed
+revisions:
+- from: 'Así dice el Señor: Yo saqué a este pueblo de la esclavitud, y les di mandamientos por medio de mis esclavos, los profetas, a quienes no quisieron escuchar, sino que invalidaron mis designios.'
+  to: 'Así dice el Señor: yo saqué a este pueblo de la esclavitud, y les di mandamientos por medio de mis esclavos, los profetas, a quienes no quisieron oír, pero invalidaron mis consejos.'
+  rationale: Se hace una reparación menor para ajustar mejor la adversativa latina («sed» → «pero»), acercar «consilia» al inglés POB auditado («counsels» → «consejos»), y pulir el español («yo» en minúscula; «oír» más directo para audire). No se requiere adjudicación adicional.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:01:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la sintaxis latina general: «Haec dicit dominus», «ego eduxi populum istum de seruitute», «quibus mandata dedi per pueros meos prophetas», «quos audire noluerunt, sed irrita fecerunt mea consilia». Preserva correctamente el objeto explícito de «audire» con «a quienes». Sin embargo, «por medio de mis esclavos, los profetas» separa innecesariamente el sintagma y suena menos natural que «por medio de mis esclavos los profetas» o «por medio de mis esclavos, los profetas» según ritmo; además, «sino que» tras una cláusula no negativa completa es menos adecuado que «pero». Lo más importante es que «consilia» se acerca más a «consejos»/«designios» y el inglés auditado fijó «counsels»; «designios» es defendible, pero aquí conviene una opción más cercana al rastro POB o una nota. '
+  spanish_quality_summary: 'El español es claro y digno, pero tiene dos roces de naturalidad/precisión: 1) «Yo saqué» no necesita mayúscula interna en español corriente bíblico moderno; «yo» incluso puede omitirse. 2) «sino que invalidaron» no es la adversativa más natural aquí; «pero invalidaron» o «pero hicieron vanos» fluye mejor. 3) «escuchar» es aceptable, aunque «oír» refleja más directamente audire. El texto requiere solo reparación menor.'
+  glossary_alignment: Alineación parcial. «la esclavitud» y «mis esclavos» respetan bien la política POB. La decisión de mantener «el Señor» en vez de «Yahvé» es aceptable aquí por tratarse de fuente latina con dominus, aunque se aparta del valor por defecto del proyecto y está correctamente justificada. La mayor desviación es «designios» por el audit trail inglés «counsels»; no es erróneo, pero sí menos alineado léxicamente.
+  issues:
+  - severity: medium
+    issue: Uso de «sino que» en lugar de «pero»
+    rationale: El latín usa «sed» para contraste adversativo simple. En español, tras «a quienes no quisieron oír/escuchar», lo natural es «pero invalidaron...». «Sino que» suele corregir una negación previa más directa y aquí suena menos idiomático.
+  - severity: medium
+    issue: «mis designios» se aparta del inglés auditado «my counsels»
+    rationale: «Consilia» puede traducirse como «consejos» o «designios», pero dado el rastro POB auditado conviene una formulación más cercana como «mis consejos» o añadir nota. Sin nota, «designios» introduce una interpretación algo más teleológica.
+  - severity: low
+    issue: Mayúscula innecesaria en «Yo»
+    rationale: En español moderno no se capitaliza el pronombre por reverencia en medio de la oración. «Yo» debe ir en minúscula o simplemente omitirse.
+  - severity: low
+    issue: Puntuación/apposición de «mis esclavos, los profetas»
+    rationale: No es incorrecto, pero puede afinarse para mayor fluidez. La estructura puede mantenerse; el problema principal no es de fidelidad sino de estilo.
+  revised_spanish_text: 'Así dice el Señor: yo saqué a este pueblo de la esclavitud, y les di mandamientos por medio de mis esclavos, los profetas, a quienes no quisieron oír, pero invalidaron mis consejos.'
+  revision_rationale: Se hace una reparación menor para ajustar mejor la adversativa latina («sed» → «pero»), acercar «consilia» al inglés POB auditado («counsels» → «consejos»), y pulir el español («yo» en minúscula; «oír» más directo para audire). No se requiere adjudicación adicional.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ed37d64c6f66bda09f9b4835dbd6a99610b87a842536365cae69222d9d259485
+  timestamp: '2026-05-07T23:01:32Z'
+  output_hash: e2694e8bb1f50aac35219a030358a685405a6b99cfb509ed09e734ac3965db75
+  usage:
+    prompt_tokens: 3174
+    completion_tokens: 912
+    total_tokens: 4086
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021615
+  applied_revision: true

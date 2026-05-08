@@ -1,0 +1,136 @@
+id: 2ES.5.51
+reference: 2 Esdras 5:51
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'dixit : interroga quae parit, et dicet tibi. Dices enim ei : quare'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/005/051.yaml
+  text: And he said[a], 'Ask a woman who bears, and she will tell you. For you will say to her, "Why
+  footnotes:
+  - marker: a
+    text: Or "And he answered me and said, 'Ask the woman who bears, and she will tell you.".
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:45Z'
+    unchanged: false
+    changes_summary: Simplified the speech formula from 'answered me and said' to 'said' to match the Latin, which has only 'dixit.' Kept the rest unchanged as a faithful rendering of the extant source fragment.
+translation:
+  language: es
+  text: 'Y dijo[a]: «Pregunta a una mujer que da a luz, y ella te dirá. Porque le dirás: “¿Por qué...»'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «Y me respondió y dijo: “Pregunta a una mujer que da a luz, y ella te dirá...”».'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: dixit
+  english_pob_choice: And he said
+  chosen_spanish: Y dijo
+  alternatives_spanish:
+  - Y respondió
+  - Y le dijo
+  lexicon: Latin dixit
+  rationale: El latín solo tiene un verbo de decir, sin el matiz explícito de “responder”. En español, “Y dijo” reproduce con fidelidad esa forma simple y evita añadir información ausente en el texto fuente.
+- source_word: quae parit
+  english_pob_choice: a woman who bears
+  chosen_spanish: una mujer que da a luz
+  alternatives_spanish:
+  - una mujer que pare
+  - una mujer parturienta
+  lexicon: Latin parit
+  rationale: 'La forma relativa general pide un sustantivo indefinido: “una mujer”, no “la mujer”. Para el verbo, “da a luz” es claro y natural en español contemporáneo; conserva el sentido de parir sin sonar excesivamente técnico o arcaico.'
+- source_word: Dices enim ei
+  english_pob_choice: For you will say to her
+  chosen_spanish: Porque le dirás
+  alternatives_spanish:
+  - Pues le dirás
+  - Ya que le dirás
+  lexicon: Latin dices enim ei
+  rationale: En este contexto, enim introduce la continuación de la argumentación, y “Porque” transmite bien la relación explicativa. “Le dirás” mantiene el futuro y el destinatario indirecto del latín.
+- source_word: quare
+  english_pob_choice: Why
+  chosen_spanish: ¿Por qué…?
+  alternatives_spanish:
+  - ¿Por qué?
+  - ¿A qué…?
+  lexicon: Latin quare
+  rationale: El fragmento termina en una pregunta introducida pero no completada en el versículo conservado. Los puntos suspensivos reflejan que el texto se corta en esta unidad y preservan la alineación con el fragmento latino extenso.
+theological_decisions:
+- issue: Fragmento incompleto y cierre de discurso
+  english_pob_reading: The English audit trail keeps the final clause in verse 51 rather than shifting it to verse 52.
+  chosen_spanish_reading: Conservé la cláusula final en el versículo 51 y marqué la pregunta como incompleta.
+  alternative_spanish_readings:
+  - Cerrar la cita con una pregunta completa
+  - Mover la pregunta al versículo siguiente
+  rationale: La fuente latina preservada termina con quare, de modo que la traducción española debe mostrar esa incompletitud en este versículo. Así se respeta la segmentación del testimonio fuente y la corrección auditada del inglés.
+  doctrine_reference: Fidelidad textual y delimitación versicular
+translation_notes:
+  revision_awareness: La revisión más reciente corrigió la fórmula de habla para ajustarla al latín dixit, eliminando “answered me and said” y manteniendo solo “said”. También confirmó que la cláusula final pertenece a este versículo, por lo que la traducción española conserva la pregunta incompleta aquí.
+  spanish_consistency_notes:
+  - Se mantiene “Y dijo” para dixit, en coherencia con la revisión auditada.
+  - Se evita “SEÑOR” u otras convenciones no presentes en el fragmento.
+  - No se usa “Cristo” ni terminología teológica ajena al pasaje; la unidad es puramente narrativa.
+  - La puntuación española refleja la cita abierta y el corte del fragmento, sin completar el contenido que falta en el texto fuente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/005/051.yaml
+  source_text_sha256: 9c1181ff673aaf0853deccaa50b64c5fb3e7c355894cb71cd3280cb20244637c
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 6088ed3adcb717b4b55ff146db723226090c25be656be1fdfe2a1a1f84b0df5e
+  timestamp: '2026-05-07T21:28:36Z'
+  output_hash: 5f1f34846706925cfa602fe294854f1a8d79754001e63f912bb67b42486feb45
+  usage:
+    prompt_tokens: 2003
+    completion_tokens: 839
+    total_tokens: 2842
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005278
+status: spanish_reviewed
+revisions:
+- from: 'Y dijo[a]: «Pregunta a una mujer que da a luz, y ella te dirá. Porque le dirás: “¿Por qué…?”»'
+  to: 'Y dijo[a]: «Pregunta a una mujer que da a luz, y ella te dirá. Porque le dirás: “¿Por qué...»'
+  rationale: Se ajusta la puntuación final para reflejar con mayor fidelidad que el fragmento latino se interrumpe en «quare» sin completar la pregunta. Se conserva el resto del borrador, que está bien alineado con la fuente y con la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:12:02Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el latín conservado: «dixit» → «Y dijo», «interroga quae parit» → «Pregunta a una mujer que da a luz», y conserva correctamente en el v. 51 la cláusula «Dices enim ei : quare». También refleja la naturaleza fragmentaria de «quare». Sin embargo, la puntuación actual añade un cierre completo de comillas y paréntesis interrogativo con elipsis interna («“¿Por qué…?”»), lo que sugiere una pregunta ya formada; conviene dejar más claro que el texto queda truncado después de «¿Por qué».'
+  spanish_quality_summary: 'El español es claro, natural y digno. «da a luz» es buena opción contemporánea. La única reparación necesaria es estilístico-textual: marcar la interrupción del fragmento de forma más sobria y menos interpretativa, evitando el signo de cierre de interrogación si la pregunta no se completa.'
+  glossary_alignment: 'No hay términos del glosario mayor en juego. Las decisiones léxicas están bien fundamentadas: «Y dijo» respeta «dixit»; «una mujer» preserva el indefinido; «Porque le dirás» transmite adecuadamente «Dices enim ei».'
+  issues:
+  - severity: medium
+    issue: Marcación del fragmento incompleto en «quare»
+    rationale: 'El texto fuente solo conserva «quare» (‘por qué’), no una pregunta completa. La forma «“¿Por qué…?”» introduce un cierre interrogativo y una clausura de cita más completa de lo que el latín permite. En español es preferible mostrar la interrupción real: «“¿Por qué...».'
+  revised_spanish_text: 'Y dijo[a]: «Pregunta a una mujer que da a luz, y ella te dirá. Porque le dirás: “¿Por qué...»'
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Y me respondió y dijo: “Pregunta a una mujer que da a luz, y ella te dirá...”».'
+    reason: alternative_reading
+  revision_rationale: Se ajusta la puntuación final para reflejar con mayor fidelidad que el fragmento latino se interrumpe en «quare» sin completar la pregunta. Se conserva el resto del borrador, que está bien alineado con la fuente y con la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: cf513719ec76fd39270e82a34f421c09b93800a67d919f11d5d6cff3b3179b5b
+  timestamp: '2026-05-07T23:12:02Z'
+  output_hash: a26f0f4b1159aa08012c85100dedef1af2e011ff983a762958dcf1b930c43807
+  usage:
+    prompt_tokens: 2470
+    completion_tokens: 537
+    total_tokens: 3007
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01423
+  applied_revision: true

@@ -27,18 +27,15 @@ base_translation:
     changes_summary: Removed the unnecessary 'even' for smoother formal English, changed 'if a man has lived long' to 'when a man has lived long' to better fit the sense, and replaced 'yet they are evil' with 'and they are evil' to more closely reflect the source conjunction.
 translation:
   language: es
-  text: 'Entonces dirán: «Los días de los de antes[a] fueron muchos, hasta mil años, y buenos; pero he aquí, los días de nuestra vida, cuando un hombre ha vivido largo, son setenta años,[b] y si es fuerte, ochenta años, y son malos, y no hay paz siquiera[c] en los días de esta generación malvada».'
+  text: 'Entonces dirán: «Los días de los antiguos[a] fueron muchos, hasta mil años, y buenos; pero he aquí, los días de nuestra vida, cuando un hombre ha vivido muchos años,[b] son setenta años, y si es fuerte, ochenta años, y son malos, y no hay paz en los días de esta generación malvada».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Ge''ez ቀደምት (qadam''t): ''los que vinieron antes,'' referencia implícita a los patriarcas antediluvianos cuyas vidas alcanzaban hasta mil años según el cómputo de Jubileos (cf. Jub. 4:30).'
-    reason: cross_reference
+    text: 'Ge''ez ቀደምት (qadam''t): ''los que vinieron antes / los anteriores''. Aquí alude implícitamente a las generaciones antiguas de gran longevidad en Jubileos.'
+    reason: lexical
   - marker: b
-    text: 'Eco de Sal 90:10 (LXX 89:10): «Los días de nuestra vida son setenta años; si hay vigor, ochenta.» Jubileos interpreta estas cifras como evidencia del deterioro moral acumulado de la humanidad.'
+    text: 'Eco de Sal 90:10 (LXX 89:10): «Los días de nuestra vida son setenta años; si hay vigor, ochenta.» Jubileos usa estas cifras para subrayar el deterioro de la condición humana.'
     reason: cross_reference
-  - marker: c
-    text: 'Ge''ez ምዝኒ (miznī): partícula enfática que equivale a ''ni siquiera / incluso.'' La traducción inglesa de la POB (''there is no peace'') no preservó este matiz; el español lo recupera con ''siquiera,'' reflejo directo del énfasis del texto fuente.'
-    reason: textual_variant
 lexical_decisions:
 - source_word: ቀደምት (qadam't)
   english_pob_choice: the former ones
@@ -131,4 +128,51 @@ ai_draft:
     estimated_cost_usd: 0.197408
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Entonces dirán: «Los días de los de antes[a] fueron muchos, hasta mil años, y buenos; pero he aquí, los días de nuestra vida, cuando un hombre ha vivido largo, son setenta años,[b] y si es fuerte, ochenta años, y son malos, y no hay paz siquiera[c] en los días de esta generación malvada».'
+  to: 'Entonces dirán: «Los días de los antiguos[a] fueron muchos, hasta mil años, y buenos; pero he aquí, los días de nuestra vida, cuando un hombre ha vivido muchos años,[b] son setenta años, y si es fuerte, ochenta años, y son malos, y no hay paz en los días de esta generación malvada».'
+  rationale: 'Se hizo una reparación menor para mejorar la naturalidad del español y mantener una alineación más limpia con el texto fuente y la auditoría inglesa: ''los antiguos'' eleva el registro frente a ''los de antes''; ''ha vivido muchos años'' expresa idiomáticamente la longevidad; y se eliminó ''siquiera'' del texto principal para evitar una ampliación estilísticamente forzada que la POB inglesa no retuvo. Las notas se simplificaron para conservar solo lo necesario y anclado en el texto revisado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:25:18Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue de cerca el sentido del Ge''ez y la revisión inglesa POB: contrasta la longevidad de los antiguos con la brevedad y maldad de la generación presente. Sin embargo, presenta dos puntos que conviene corregir para mayor fidelidad idiomática y de alineación: (1) ''cuando un hombre ha vivido largo'' es poco natural en español y no expresa bien la idea de longevidad; (2) la inserción de ''siquiera'' para ምዝኒ es defendible desde el Ge''ez, pero introduce una ampliación frente al texto inglés auditado y produce una colocación menos natural (''paz siquiera'').'
+  spanish_quality_summary: 'El registro general es digno y comprensible, pero hay giros poco naturales: ''los de antes'' suena demasiado coloquial para este contexto; ''ha vivido largo'' no es español idiomático; y ''no hay paz siquiera'' resulta forzado. Una leve revisión mejora la legibilidad sin perder precisión.'
+  glossary_alignment: No hay conflictos con la terminología troncal del proyecto. Las decisiones principales ('años', 'generación', 'malvada') son adecuadas. Conviene preferir 'los antiguos' sobre 'los de antes' por dignidad bíblica y claridad. No hay términos divinos o cristológicos implicados.
+  issues:
+  - severity: medium
+    issue: 'Expresión poco idiomática: ''cuando un hombre ha vivido largo'''
+    rationale: Aunque intenta reflejar la temporalidad de አመ, en español estándar y bíblico-natural esa construcción suena antinatural. 'Cuando un hombre ha vivido muchos años' conserva el sentido de longevidad y mejora la legibilidad.
+  - severity: medium
+    issue: Registro demasiado coloquial en 'los de antes'
+    rationale: El Ge'ez ቀደምት significa 'los anteriores / los que fueron antes'. 'Los de antes' es comprensible, pero en una traducción bíblica suena conversacional. 'Los antiguos' preserva el contraste temporal con mejor dignidad estilística.
+  - severity: low
+    issue: Recuperación enfática de ምዝኒ con 'siquiera' crea una frase menos natural
+    rationale: La nota lexical es razonable, pero 'no hay paz siquiera' es una colocación marcada. Dado que la POB inglesa auditada no preservó ese matiz, es preferible el texto principal 'no hay paz' y, si se desea, mantener la observación en nota; aquí la mejor reparación mínima es eliminar el añadido.
+  revised_spanish_text: 'Entonces dirán: «Los días de los antiguos[a] fueron muchos, hasta mil años, y buenos; pero he aquí, los días de nuestra vida, cuando un hombre ha vivido muchos años,[b] son setenta años, y si es fuerte, ochenta años, y son malos, y no hay paz en los días de esta generación malvada».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: 'Ge''ez ቀደምት (qadam''t): ''los que vinieron antes / los anteriores''. Aquí alude implícitamente a las generaciones antiguas de gran longevidad en Jubileos.'
+    reason: lexical
+  - marker: b
+    text: 'Eco de Sal 90:10 (LXX 89:10): «Los días de nuestra vida son setenta años; si hay vigor, ochenta.» Jubileos usa estas cifras para subrayar el deterioro de la condición humana.'
+    reason: cross_reference
+  revision_rationale: 'Se hizo una reparación menor para mejorar la naturalidad del español y mantener una alineación más limpia con el texto fuente y la auditoría inglesa: ''los antiguos'' eleva el registro frente a ''los de antes''; ''ha vivido muchos años'' expresa idiomáticamente la longevidad; y se eliminó ''siquiera'' del texto principal para evitar una ampliación estilísticamente forzada que la POB inglesa no retuvo. Las notas se simplificaron para conservar solo lo necesario y anclado en el texto revisado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 28e307ebced1a1ab0f82a0b6f32c0d2290b7c045c9270bc4797fae3b7e402b22
+  timestamp: '2026-05-07T23:25:18Z'
+  output_hash: 8c5ff4e10ca32b820cadde8a76d74e121144e6d2bb64bbd68e8b35e588a3dfa6
+  usage:
+    prompt_tokens: 3872
+    completion_tokens: 907
+    total_tokens: 4779
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023285
+  applied_revision: true

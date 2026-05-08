@@ -1,0 +1,172 @@
+id: 1EN.5.3
+reference: 1 Enoch 5:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ርእዩ፡ እፎ፡ አብሕርት፡ ወአፍላግ፡ ኅቡረ፡ ይፌጽሙ፡ ግብሮሙ፡
+  language: Geez
+  pages:
+  - 46
+  - 48
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/005/003.yaml
+  text: Look at how the seas and the rivers together accomplish their work[a][b].
+  footnotes:
+  - marker: a
+    text: The Ge'ez word rendered 'branches' can be difficult in isolation; a different sense would be possible in other contexts, but the surrounding focus on trees favors a botanical meaning here.
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'the trees and all the branches'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: daa305a6906690e4149f66d74ab0d703fcaa45fe72c4582444952f394a4a465e
+    timestamp: '2026-04-22T09:08:34Z'
+    output_hash: f1a63be21a42a7ef2e09e6aab3f2bd07b5ff1314f8483ba839ebca72fb47017c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:59Z'
+    unchanged: false
+    changes_summary: Replaced 'complete' with 'accomplish' for more natural formal English while preserving the sense of fulfilling their work; otherwise retained the structure and content.
+translation:
+  language: es
+  text: Miren cómo los mares y los ríos juntos realizan su obra.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: ርእዩ
+  english_pob_choice: Look at
+  chosen_spanish: Mira
+  alternatives_spanish:
+  - Observa
+  - Fíjate en
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Imperativo plural de 'ver'; en español, 'Mira' funciona como llamado directo a observar. Aunque la forma plural exacta sería 'miren', el singular impersonal puede sonar más natural y sigue el tono exhortativo del pasaje.
+- source_word: እፎ
+  english_pob_choice: how
+  chosen_spanish: cómo
+  alternatives_spanish:
+  - así como
+  - de qué manera
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La partícula introduce una observación retórica; 'cómo' conserva el matiz exclamativo/observacional mejor que una traducción literal vacía.
+- source_word: አብሕርት
+  english_pob_choice: the seas
+  chosen_spanish: los mares
+  alternatives_spanish:
+  - los mares
+  - las aguas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión del texto ge'ez identifica el plural de 'mar'. En español, 'mares' expresa con claridad la pluralidad de cuerpos de agua grandes.
+- source_word: ወአፍላግ
+  english_pob_choice: and the rivers
+  chosen_spanish: y los ríos
+  alternatives_spanish:
+  - y los ríos
+  - y los cursos de agua
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La lectura corregida entiende el término como plural de 'río'. 'Ríos' es la equivalencia directa y natural en español.
+- source_word: ኅቡረ
+  english_pob_choice: together
+  chosen_spanish: juntos
+  alternatives_spanish:
+  - en conjunto
+  - colectivamente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Adverbio de coordinación; 'juntos' conserva el valor de acción conjunta de manera idiomática.
+- source_word: ይፌጽሙ
+  english_pob_choice: accomplish
+  chosen_spanish: realizan
+  alternatives_spanish:
+  - acaban
+  - cumplen
+  - acometen
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa llevar a cabo o efectuar su actividad propia. 'Realizan' mantiene la idea de ejecución sin cargar demasiado el matiz de finalización que 'completar' podía sugerir.
+- source_word: ግብሮሙ
+  english_pob_choice: their work
+  chosen_spanish: su obra
+  alternatives_spanish:
+  - su trabajo
+  - su tarea
+  - su labor
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Obra'' mantiene un tono elevado y sigue la idea de la actividad propia de la creación; ''su trabajo'' sería más llano, pero menos solemne para este contexto sapiencial/cosmológico.'
+translation_notes:
+  revision_awareness: 'Se corrigió el error del borrador anterior que aplicaba por equivocación una lectura botánica a አብሕርት y ወአፍላግ. La versión actual sigue la revisión más reciente: mares y ríos. Se evitó además colocar notas al pie no ancladas en el texto, porque eso causó la validación fallida anterior.'
+  spanish_consistency_notes:
+  - Se mantuvo un registro digno y sobrio, acorde con POB.
+  - No se usó 'SEÑOR' ni terminología doctrinal ajena al verso.
+  - Se evitó traducir mecánicamente el inglés; la base fue el ge'ez corregido por la auditoría.
+  - No hay notas al pie porque el verso no requiere alternativas textuales en español una vez resuelta la lectura de 'mares y ríos'.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/005/003.yaml
+  source_text_sha256: be6729b35bf7e2ed45fcf1334c4aa296173768c763395c87180ed6573afccaa8
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 64e62532a864ae1c9c5170622cd4b2f5135259fbc7713fcd5e6c795417da6e08
+  timestamp: '2026-05-07T21:27:47Z'
+  output_hash: 8bd0ad6fb12d3d09a2e78050833c61a13760913ac471cb3527db604dfcd44e36
+  usage:
+    prompt_tokens: 2636
+    completion_tokens: 934
+    total_tokens: 3570
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00618
+status: spanish_reviewed
+revisions:
+- from: Mira cómo los mares y los ríos juntos realizan su obra.
+  to: Miren cómo los mares y los ríos juntos realizan su obra.
+  rationale: Se corrige el imperativo a plural para ajustarse mejor a ርእዩ sin afectar la naturalidad del español. Se mantiene 'realizan su obra', que comunica adecuadamente el sentido de 'accomplish their work' en un registro moderno y digno.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:23:16Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente la revisión fuente-céntrica principal: አብሕርት y ወአፍላግ se entienden como ''los mares y los ríos'', no como ''los árboles y las ramas''. También conserva bien la estructura observacional del ge''ez y el sentido de acción ordenada de la creación.'
+  spanish_quality_summary: El texto es claro y natural, pero 'Mira' no preserva el imperativo plural de ርእዩ y su propia nota léxica admite la pérdida. En español eclesial neutral, 'Miren' suena natural y fiel. El resto de la frase es legible y digna; 'realizan su obra' es aceptable, aunque 'llevan a cabo su obra' sería más pesado.
+  glossary_alignment: No hay términos del glosario doctrinal principal en juego. La decisión 'mares / ríos' está alineada con la adjudicación inglesa revisada. No se requieren notas al pie, ya que las notas inglesas heredadas quedaron obsoletas tras la corrección fuente-céntrica y el español no introduce nueva ambigüedad significativa.
+  issues:
+  - severity: medium
+    issue: Imperativo singular 'Mira' en lugar de plural
+    rationale: El ge'ez ርእዩ es imperativo plural. 'Miren' preserva mejor el número y sigue siendo idiomático en español neutral; no hay necesidad de singularizar la exhortación.
+  revised_spanish_text: Miren cómo los mares y los ríos juntos realizan su obra.
+  revision_rationale: Se corrige el imperativo a plural para ajustarse mejor a ርእዩ sin afectar la naturalidad del español. Se mantiene 'realizan su obra', que comunica adecuadamente el sentido de 'accomplish their work' en un registro moderno y digno.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2c9ef23638c87a7d4591dbd0c3da64ba6779d908fb5632b38131ad2f7f24c91e
+  timestamp: '2026-05-07T23:23:16Z'
+  output_hash: 0b9a5e909f0fc9859ef89f46e7ce8bc00c0fbb9bc1a9efcfe995defe79e57914
+  usage:
+    prompt_tokens: 3134
+    completion_tokens: 447
+    total_tokens: 3581
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01454
+  applied_revision: true

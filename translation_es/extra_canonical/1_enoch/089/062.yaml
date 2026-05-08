@@ -1,0 +1,215 @@
+id: 1EN.89.62
+reference: 1 Enoch 89:62
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ*ኵሎ፡ ጽጋበ፡ ወሐጕለ፡ ዘይትገበር፡ በኖሎት፡ ጻሐፍ፡ ሚመጠነ፡ ያሐጕሉ፡ በትእዛዝየ፡ ወሚመጠነ፡ ያሐጕሎሙ፡ በርእሶሙ፡ ኵሎ፡ ሐጕለ፡ ለ፯፯*ኖላዊ፡ ጻሐፍ፡ ዲቤሆሙ።
+  language: Geez
+  pages:
+  - 205
+  - 206
+  - 207
+  - 208
+  - 209
+  - 210
+  - 211
+  - 212
+  - 214
+  - 216
+  - 217
+  - 218
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/089/062.yaml
+  text: 'And all the excess and destruction that was done by the shepherds[a], the scribe wrote down: how many they destroyed by my command, and how many they destroyed of their own accord[e][d][c][b]; all the destruction of those seventy shepherds was recorded against them.'
+  footnotes:
+  - marker: a
+    text: The Ge'ez wording is difficult. The repeated root rendered 'plucked out / destruction' may cover a broader sense of violent removal or ruin.
+    reason: lexical_alternative
+  - marker: b
+    text: Literally 'by/on their heads' in the second clause; the idiom may mean 'on their own responsibility' rather than strictly 'by their own will.'
+    reason: lexical_alternative
+  - marker: c
+    text: The affected animals are given here as 'elephants' from the Ge'ez witness. Because this chapter's symbolic-animal sequence is textually difficult in places, the identification should be held with some caution.
+    reason: textual_variant
+  - marker: d
+    text: Or 'blindness'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'to those elephants'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 4c7d6bab4bac29a75d02a17278d76e8f4226248a278c58453964df508aaf852e
+    timestamp: '2026-04-22T17:23:34Z'
+    output_hash: 8290b8c128563894fb6e90f53c8e6fd0156fdae89862d3999f25c5720a0dfb7b
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:12Z'
+    unchanged: false
+    changes_summary: Removed duplicated and conflated wording from the draft; restored a single coherent sentence; rendered the verbs consistently as 'destroyed'; kept 'the scribe wrote down/was recorded' to reflect the writing motif naturally and formally.
+translation:
+  language: es
+  text: 'Y todo el exceso y la destrucción que hicieron los pastores[a], el escriba lo escribió: cuántos destruyeron por mi mandato, y cuántos destruyeron por su propia cuenta[b]; toda la destrucción de aquellos setenta pastores quedó registrada contra ellos.'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El ge'ez revisado aquí no significa 'ceguera', sino 'exceso', 'desmesura' o 'insolencia'. Se traduce 'exceso' para mantener la fuerza moral del término.
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión literal puede entenderse también como 'sobre sus propias cabezas', es decir, bajo su propia responsabilidad.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ጽጋበ
+  english_pob_choice: excess
+  chosen_spanish: exceso
+  alternatives_spanish:
+  - desmesura
+  - insolencia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término ge'ez no corresponde a 'ceguera' en la revisión más reciente, sino a una idea de exceso, desmesura o insolencia. 'Exceso' conserva el valor de desbordamiento moral sin forzar una paráfrasis.
+- source_word: ወሐጕለ
+  english_pob_choice: destruction / destroy
+  chosen_spanish: destrucción
+  alternatives_spanish:
+  - ruina
+  - arrasamiento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El lexema expresa ruina o destrucción violenta. En español, 'destrucción' mantiene la fuerza semántica y permite coordinarse con el sustantivo del primer miembro del verso.
+- source_word: በኖሎት
+  english_pob_choice: by the shepherds
+  chosen_spanish: los pastores
+  alternatives_spanish:
+  - por los pastores
+  - a manos de los pastores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El audit trail corrigió la lectura errónea 'elephants' y confirmó que el sintagma se refiere a los pastores. En español, la pasiva perifrástica 'que hicieron los pastores' expresa la agencia sin introducir un giro menos natural.
+- source_word: ጻሐፍ
+  english_pob_choice: wrote down / was recorded
+  chosen_spanish: lo escribió
+  alternatives_spanish:
+  - lo registró
+  - quedó escrito
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El contexto de contabilidad judicial/heavenly bookkeeping favorece un verbo de registro. 'Lo escribió' mantiene la acción del escriba con un español directo y formal.
+- source_word: ሚመጠነ
+  english_pob_choice: how many
+  chosen_spanish: cuántos
+  alternatives_spanish:
+  - el número de cuántos
+  - cuánto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma introduce un recuento exacto. 'Cuántos' es la opción natural en español para conservar el tono de contabilización.
+- source_word: በትእዛዝየ
+  english_pob_choice: by my command
+  chosen_spanish: por mi mandato
+  alternatives_spanish:
+  - por mi orden
+  - según mi decreto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Mandato'' conserva autoridad formal y refleja bien la voz primera del juez visionario. ''Por mi mandato'' mantiene el contraste con la segunda cláusula.'
+- source_word: በርእሶሙ
+  english_pob_choice: by their own will / on their own heads
+  chosen_spanish: por su propia cuenta
+  alternatives_spanish:
+  - por voluntad propia
+  - sobre sus propias cabezas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión ge'ez es idiomática y puede aludir a responsabilidad asumida por ellos mismos. 'Por su propia cuenta' comunica esa responsabilidad sin resolver del todo la tensión entre literalidad e interpretación.
+- source_word: ፯፯ ኖላዊ
+  english_pob_choice: those seventy shepherds
+  chosen_spanish: aquellos setenta pastores
+  alternatives_spanish:
+  - los setenta pastores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el grupo simbólico y la imaginería del texto apocalíptico. 'Aquellos' reproduce el valor de distancia referencial del pasaje.
+- source_word: ዲቤሆሙ
+  english_pob_choice: against them
+  chosen_spanish: contra ellos
+  alternatives_spanish:
+  - en su contra
+  - sobre ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase expresa un registro acusatorio, no meramente informativo. 'Contra ellos' es la opción más natural y precisa en español.
+theological_decisions:
+- issue: Responsabilidad dividida entre mandato divino y culpa de los pastores
+  english_pob_reading: The verse distinguishes actions done by my command from ruin attributable to the shepherds themselves.
+  chosen_spanish_reading: El verso distingue lo hecho por mandato del juez visionario de lo que los pastores hicieron por su propia cuenta.
+  alternative_spanish_readings:
+  - Todo el daño fue igualmente mandado por Dios.
+  - La segunda cláusula solo enfatiza castigo, no responsabilidad.
+  rationale: La traducción conserva la tensión del texto entre soberanía divina y responsabilidad de las criaturas. No se elimina la diferencia marcada por las dos cláusulas, porque el audit trail la trata como deliberada.
+  doctrine_reference: Preservar la tensión teológica del texto; no armonizarla prematuramente.
+translation_notes:
+  revision_awareness: 'Se siguió la revisión más reciente del audit trail, que corrige errores graves del borrador inglés anterior: no dice ''elephants'', no usa ''blindness'', y lee በኖሎት como ''by the shepherds''. También se respetó la forma final coherente del versículo con un único enunciado de registro judicial.'
+  spanish_consistency_notes:
+  - '''Pastores'' se conserva de manera literal para mantener la imaginería del Animal Apocalypse.'
+  - '''Exceso'' y ''destrucción'' se mantienen distintos para no diluir la doble carga del original.'
+  - '''Mandato'' y ''por su propia cuenta'' dejan visible la tensión entre orden y responsabilidad.'
+  - El registro contable/judicial se expresa con 'el escriba lo escribió' y 'quedó registrada contra ellos' para reflejar el libro de cuentas implícito en el pasaje.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/089/062.yaml
+  source_text_sha256: 91612f39a11d96f4aa6cc3eff599d1b0f2780c776a364dbbcca1b00d65899fc0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 778fac2176e7448fc8d429b0f5ac4ffc4c544256342783679b982f9b4eb9e29c
+  timestamp: '2026-05-07T21:27:45Z'
+  output_hash: b1a8892ec927ff3351f14c110d9390c4a8e4287e5db3d5b3227272abf303970e
+  usage:
+    prompt_tokens: 3910
+    completion_tokens: 1510
+    total_tokens: 5420
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009728
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'El borrador español refleja bien la revisión adjudicada del ge''ez: corrige correctamente ''ceguera'' a ''exceso'', corrige በኖሎት a referencia a los pastores, mantiene la distinción entre lo hecho ''por mi mandato'' y lo hecho por iniciativa/responsabilidad propia de los pastores, y preserva el cierre acusatorio ''contra ellos''. También conserva adecuadamente el motivo de registro por el escriba.'
+  spanish_quality_summary: El español es natural, claro y digno. La sintaxis fluye bien y evita calcos innecesarios. 'Quedó registrada contra ellos' suena idiomático en contexto judicial. 'Por su propia cuenta' expresa bien la idea general, aunque es un poco más coloquial que 'por cuenta propia' o 'por voluntad propia'; no obstante, no llega a requerir corrección.
+  glossary_alignment: No hay términos del glosario base especialmente activados aquí salvo la consistencia con 'pastores' para ፯፯ ኖላዊ y el manejo de matices léxicos. El borrador sigue fielmente las decisiones léxicas auditadas y no entra en conflicto con la terminología teológica del proyecto.
+  issues:
+  - severity: low
+    issue: Registro de ጻሐፍ como 'lo escribió'
+    rationale: El ge'ez fue objeto de revisión fuerte en el audit trail, y el español 'lo escribió' funciona bien; aun así, 'lo registró' habría resaltado un poco más el matiz de contabilidad judicial. No es necesario cambiarlo.
+  - severity: low
+    issue: '''Por su propia cuenta'' puede sonar levemente coloquial'
+    rationale: La nota al pie compensa bien el posible estrechamiento semántico al indicar la literalidad 'sobre sus propias cabezas' y el sentido de responsabilidad. La redacción actual sigue siendo aceptable y fiel.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: bb0277b5b6f3d1e89e44404ffe21a45fe52ccf69a93ad391a819ae7865d4b37c
+  timestamp: '2026-05-07T23:21:13Z'
+  output_hash: d782fba3ec1e5d05ff73e5fbb818bc38d35b2b049c7fe75944afd429fd2445cd
+  usage:
+    prompt_tokens: 5044
+    completion_tokens: 460
+    total_tokens: 5504
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01951
+  applied_revision: false

@@ -34,13 +34,10 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y Yahvé[a] dijo que destruiría todo lo que está sobre la tierra seca[b], desde el ser humano hasta el ganado, hasta las bestias, y hasta las aves del cielo, y hasta todo lo que se mueve sobre la tierra.
+  text: Y Dios dijo que destruiría todo lo que está sobre la tierra seca[a], desde el ser humano hasta el ganado, hasta las bestias, y hasta las aves del cielo, y hasta todo lo que se mueve sobre la tierra.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Ge'ez እግዚአብሔር (ʾƎgziʾabḥer), título honorífico que en la tradición etíope representa el nombre divino, equivalente funcional del griego κύριος del LXX. El POB en inglés traduce «the Lord» siguiendo la convención de las versiones secundarias; el POB en español usa «Yahvé» para preservar la transparencia sobre el nombre divino.
-    reason: theological_note
-  - marker: b
     text: O bien «la tierra firme». El Ge'ez የብስ (yabəs) subraya el carácter seco de la tierra en contraste con las aguas, en paralelo con el hebreo יַבָּשָׁה (Gn 1:9-10; 7:22).
     reason: lexical_alternative
 lexical_decisions:
@@ -153,4 +150,43 @@ ai_draft:
     estimated_cost_usd: 0.153704
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y Yahvé[a] dijo que destruiría todo lo que está sobre la tierra seca[b], desde el ser humano hasta el ganado, hasta las bestias, y hasta las aves del cielo, y hasta todo lo que se mueve sobre la tierra.
+  to: Y Dios dijo que destruiría todo lo que está sobre la tierra seca[a], desde el ser humano hasta el ganado, hasta las bestias, y hasta las aves del cielo, y hasta todo lo que se mueve sobre la tierra.
+  rationale: Se reemplaza 'Yahvé' por 'Dios' porque la fuente inmediata Ge'ez usa እግዚአብሔር, y en esta unidad no hay base suficiente para transparentarlo como el Tetragrama sin sobreinterpretar la evidencia. Se elimina la nota asociada al nombre divino por la misma razón. Se conserva el resto del texto porque refleja fielmente la sintaxis de discurso indirecto y la enumeración léxica del original.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:33:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente la revisión clave del Ge''ez: discurso indirecto con verbo activo (''dijo que destruiría'') y no discurso directo/pasivo. La enumeración de seres sobre la tierra seca también sigue bien la fuente: ser humano, ganado, bestias, aves del cielo y lo que se mueve sobre la tierra. Sin embargo, hay un problema de anclaje terminológico: la nota sobre ''Yahvé'' atribuye al Ge''ez una representación transparente del nombre divino que la evidencia inmediata no permite afirmar con esa fuerza; እግዚአብሔር en esta fuente es mejor tratado como título divino ''Dios/Señor'', y la política del proyecto sobre ''Yahvé'' requiere cautela cuando la fuente inmediata no usa explícitamente el Tetragrama.'
+  spanish_quality_summary: El español es claro, digno y natural. 'tierra seca' funciona bien, y la serie 'desde... hasta...' es comprensible, aunque estilísticamente puede simplificarse con 'desde... y hasta...' o mantenerse como está. El único ajuste necesario es reemplazar 'Yahvé' por 'Dios' para evitar sobreinterpretación de la fuente Ge'ez y eliminar la nota asociada, que resulta demasiado cargada para el dato disponible.
+  glossary_alignment: Alineación general buena, salvo la política de יהוה > 'Yahvé', que aquí no debe aplicarse mecánicamente porque la fuente inmediata usa እግዚአብሔር y no ofrece evidencia directa del Tetragrama en este versículo. 'ser humano', 'ganado', 'bestias', 'aves del cielo' y 'todo lo que se mueve' están bien resueltos. La nota de 'tierra seca' es adecuada y preserva el matiz léxico de የብስ.
+  issues:
+  - severity: high
+    issue: Uso de 'Yahvé' para እግዚአብሔር en esta unidad
+    rationale: La fuente inmediata Ge'ez presenta እግዚአብሔር, un título divino estándar. Aunque pueda reflejar una tradición ligada al nombre divino, el expediente dado no documenta suficientemente que deba transparentarse como 'Yahvé' en este versículo concreto. Traducirlo como 'Dios' evita afirmar más de lo que la evidencia muestra.
+  - severity: medium
+    issue: Nota teológica sobre el nombre divino demasiado fuerte para la evidencia aportada
+    rationale: La nota actual afirma equivalencia funcional con el nombre divino y justifica 'Yahvé' como si fuera un dato asentado del versículo. Eso excede lo que el material fuente y el audit trail establecen aquí. Debe eliminarse en esta revisión.
+  revised_spanish_text: Y Dios dijo que destruiría todo lo que está sobre la tierra seca[a], desde el ser humano hasta el ganado, hasta las bestias, y hasta las aves del cielo, y hasta todo lo que se mueve sobre la tierra.
+  revised_footnotes:
+  - marker: a
+    text: O bien «la tierra firme». El Ge'ez የብስ (yabəs) subraya el carácter seco de la tierra en contraste con las aguas, en paralelo con el hebreo יַבָּשָׁה (Gn 1:9-10; 7:22).
+    reason: lexical_alternative
+  revision_rationale: Se reemplaza 'Yahvé' por 'Dios' porque la fuente inmediata Ge'ez usa እግዚአብሔር, y en esta unidad no hay base suficiente para transparentarlo como el Tetragrama sin sobreinterpretar la evidencia. Se elimina la nota asociada al nombre divino por la misma razón. Se conserva el resto del texto porque refleja fielmente la sintaxis de discurso indirecto y la enumeración léxica del original.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c3e87dafe3788243a83833fe14b85e304a143f02352da47339c768b11a565cb0
+  timestamp: '2026-05-07T23:33:22Z'
+  output_hash: 2df9dad82d74f04d2bd58520bce31330d570f414bc001ddd4f1c95d937f29ce2
+  usage:
+    prompt_tokens: 4236
+    completion_tokens: 889
+    total_tokens: 5125
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023925
+  applied_revision: true

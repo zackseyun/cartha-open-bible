@@ -1,0 +1,186 @@
+id: 1EN.29.1
+reference: 1 Enoch 29:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእምህየኒ፡ ሖርኩ፡ ውስተ፡ መካን፡ ካልእ፡ እምነ፡ መደባራ፡ ወመንገለ፡ ጽባሕ፡ *ለደብር፡ ዝንቱ፡ ቀረብኩ።
+  language: Geez
+  pages:
+  - 106
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch29.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 29, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/029/001.yaml
+  text: And from there I went into another place[a], away from the wilderness[c][b]; and I drew near to the east of this mountain.
+  footnotes:
+  - marker: a
+    text: The Ge'ez phrase literally refers to the direction of morning or sunrise; hence 'east.'
+    reason: lexical_alternative
+  - marker: b
+    text: The term rendered 'wilderness' may also be understood as 'desert' or a barren region.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'and I drew near to this mountain on the east.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: f5be38167318d9ef2e90bb438de39e8ee6280beabec829fb9c9221f32be55137
+    timestamp: '2026-04-22T09:10:11Z'
+    output_hash: 9c1d4c69aec37e3ae5f34b4cbca519f1c70223b0a9a89be4a29b2ffe900bb8be
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:05Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Y de allí fui a otro lugar, lejos del desierto[b]; y me acerqué al oriente[a] de este monte[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El ge'ez refiere literalmente la dirección de la mañana o del amanecer; por eso se traduce 'oriente'.
+    reason: lexical_alternative
+  - marker: b
+    text: También puede entenderse como 'desierto' o como una región árida y baldía.
+    reason: lexical_alternative
+  - marker: c
+    text: 'O: ''y me acerqué a este monte por el oriente''.'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ወእምህየኒ
+  english_pob_choice: And from there
+  chosen_spanish: Y de allí
+  alternatives_spanish:
+  - Y desde allí
+  - Y de ese lugar
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Expresa con naturalidad el valor de transición narrativa del ge'ez sin añadir matices que no están en el texto.
+- source_word: ሖርኩ
+  english_pob_choice: I went
+  chosen_spanish: fui
+  alternatives_spanish:
+  - me fui
+  - caminé
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo simple de movimiento se rinde con un pretérito directo y natural en español.
+- source_word: ውስተ መካን ካልእ
+  english_pob_choice: into another place
+  chosen_spanish: a otro lugar
+  alternatives_spanish:
+  - a otro sitio
+  - a otro lugar diferente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La estructura indica desplazamiento hacia otra localización; 'lugar' conserva la amplitud espacial sin sobreespecificar.
+- source_word: እምነ መደባራ
+  english_pob_choice: away from the wilderness
+  chosen_spanish: lejos del desierto
+  alternatives_spanish:
+  - lejos del desierto yermo
+  - fuera del desierto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Desierto'' comunica el valor de región árida o inculta, y en español resulta más inmediato que un calco técnico de ''wilderness''.'
+- source_word: ወመንገለ ጽባሕ
+  english_pob_choice: the east / east
+  chosen_spanish: el oriente
+  alternatives_spanish:
+  - el este
+  - la dirección del amanecer
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez alude a la dirección del amanecer; 'oriente' mantiene el registro bíblico y la referencia direccional.
+- source_word: ለደብር ዝንቱ
+  english_pob_choice: this mountain
+  chosen_spanish: este monte
+  alternatives_spanish:
+  - esta montaña
+  - este monte de aquí
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Monte'' conserva el tono bíblico y apocalíptico; el demostrativo preserva la deixis de ዝንቱ. '
+translation_notes:
+  revision_awareness: 'La revisión del audit trail corrige la sintaxis direccional: መንገለ ጽባሕ ለደብር ዝንቱ se entiende como ''el oriente de este monte'', no como un movimiento ''hacia este monte por el oriente''. La redacción española refleja esa relación genitiva/direccional revisada.'
+  spanish_consistency_notes:
+  - Se conservó 'oriente' para mantener la correlación con el sentido de 'dirección del amanecer' señalado en la auditoría.
+  - Se evitó 'SEÑOR' o términos de carga teológica no pertinentes; el verso es narrativo y geográfico.
+  - '''Monte'' se prefirió sobre ''montaña'' por registro bíblico, sin cambiar el sentido referencial.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/029/001.yaml
+  source_text_sha256: 56ac11a033b69d5a69c79f9177aa591cc32844928167a85eab6f132d0e38f4f1
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: ad2f8ec8f6070251f98eb7ab7e90560399c943e0a7f02f34db3884e7785cc62b
+  timestamp: '2026-05-07T21:27:33Z'
+  output_hash: ffca1450234b2aeff08a0ede4e218098bdc830150336a95ec73066c805fa4cf3
+  usage:
+    prompt_tokens: 2710
+    completion_tokens: 944
+    total_tokens: 3654
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00628
+status: spanish_reviewed
+revisions:
+- from: Y de allí fui a otro lugar[a], lejos del desierto[c][b]; y me acerqué al oriente de este monte.
+  to: Y de allí fui a otro lugar, lejos del desierto[b]; y me acerqué al oriente[a] de este monte[c].
+  rationale: Se mantiene la traducción principal porque es fiel al ge'ez y a la adjudicación inglesa ('al oriente de este monte'). Solo se corrige la ubicación de la nota [a] para que ancle en 'oriente', y se ajusta la nota [c] para representar correctamente una traducción alternativa previa, no una variante textual.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:17:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido general del ge''ez y la revisión inglesa auditada: movimiento desde un lugar previo hacia otro lugar, alejándose de una región desértica, y acercamiento al lado oriental del monte. Sin embargo, la nota [a] está mal anclada: explica ''oriente'' pero aparece en ''otro lugar''. Además, la nota [c] debería clasificarse y formularse como alternativa de traducción previa, no como variante textual.'
+  spanish_quality_summary: El español es claro, natural y de registro digno. 'Y de allí fui a otro lugar... y me acerqué al oriente de este monte' funciona bien. Conviene corregir solo la colocación de la nota [a] para evitar confusión lectora y ajustar la redacción de [c] para reflejar mejor el historial de revisión. El resto del texto es plenamente legible.
+  glossary_alignment: No hay términos teológicos de proyecto implicados. 'Oriente' refleja bien ወመንገለ ጽባሕ con tono bíblico; 'monte' preserva el registro; 'desierto' es una excepción contextual razonable frente al inglés 'wilderness' y está documentada por la nota [b].
+  issues:
+  - severity: medium
+    issue: La nota [a] está colocada sobre 'otro lugar' aunque explica 'oriente'.
+    rationale: La evidencia inglesa y la decisión léxica muestran que la nota sobre 'la dirección del amanecer' pertenece a la expresión direccional, no a 'otro lugar'. Tal como está, induce a error sobre qué palabra se comenta.
+  - severity: low
+    issue: La nota [c] está etiquetada como 'textual_variant' y su redacción es torpe.
+    rationale: El inglés la presenta como 'previous_rendering'/'Or ...', no como una variante textual del manuscrito. En español conviene reflejar que es una traducción alternativa o formulación anterior, no una diferencia de base textual.
+  revised_spanish_text: Y de allí fui a otro lugar, lejos del desierto[b]; y me acerqué al oriente[a] de este monte[c].
+  revised_footnotes:
+  - marker: a
+    text: El ge'ez refiere literalmente la dirección de la mañana o del amanecer; por eso se traduce 'oriente'.
+    reason: lexical_alternative
+  - marker: b
+    text: También puede entenderse como 'desierto' o como una región árida y baldía.
+    reason: lexical_alternative
+  - marker: c
+    text: 'O: ''y me acerqué a este monte por el oriente''.'
+    reason: previous_rendering
+  revision_rationale: Se mantiene la traducción principal porque es fiel al ge'ez y a la adjudicación inglesa ('al oriente de este monte'). Solo se corrige la ubicación de la nota [a] para que ancle en 'oriente', y se ajusta la nota [c] para representar correctamente una traducción alternativa previa, no una variante textual.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a41bd0817f255b29639fe6deeaeaaf189abe6c4eea08995ea23c6f8a10772dfe
+  timestamp: '2026-05-07T23:17:23Z'
+  output_hash: a91005d668a8032ce138b2b8817dc5c99871ac492336081ac0731dde86ea22d2
+  usage:
+    prompt_tokens: 3315
+    completion_tokens: 680
+    total_tokens: 3995
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018488
+  applied_revision: true

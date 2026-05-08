@@ -1,0 +1,139 @@
+id: 2BA.21.17
+reference: 2 Baruch 21:17
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 21
+  pages:
+  - 217
+  - 216
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 17
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/021/017.yaml
+  text: Look, for you alone are able to sustain all who are, those who have passed, and those who are to come,
+  footnotes:
+  - marker: a
+    text: Or 'the petition of those before you'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'and of those who have passed, and of those who are to come'.
+    reason: previous_rendering
+  - marker: c
+    text: Or 'bear'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:09:36Z'
+    unchanged: false
+    changes_summary: 'Smoothed phrasing for natural English: changed ''all those who are'' to ''all who are'' and removed the first redundant ''and'' in the series; no lexical or content changes.'
+translation:
+  language: es
+  text: Mira, porque solo tú puedes sustentar a todos los que existen, los que han pasado y los que han de venir.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: l-kullhōn aylēn d-ītayhōn
+  english_pob_choice: all who are
+  chosen_spanish: a todos los que existen
+  alternatives_spanish:
+  - a todos los que son
+  - a todos los que están
+  lexicon: ܐܝܬ / ܐܝܬܝܗܘܢ (existir, ser)
+  rationale: El siríaco apunta a la idea de existencia/presencia real, no solo a una mera categoría abstracta. "Los que existen" conserva mejor el sentido de all who are y evita volverlo innecesariamente pesado en español.
+- source_word: ṭʿn
+  english_pob_choice: sustain
+  chosen_spanish: sustentar
+  alternatives_spanish:
+  - sostener
+  - llevar
+  lexicon: ܛܥܢ
+  rationale: '"Sustentar" comunica mejor la acción de mantener en vida o en ser a todos, y corresponde al ajuste del POB inglés desde el literal "bear" hacia el sentido teológico de sostener la existencia.'
+- source_word: d-ʿabbrīn
+  english_pob_choice: those who have passed
+  chosen_spanish: a los que han pasado
+  alternatives_spanish:
+  - a los que han fallecido
+  - a los que han partido
+  lexicon: עבר
+  rationale: La forma española mantiene el paralelismo temporal sin introducir una interpretación más específica de muerte que el contexto no exige explícitamente.
+- source_word: d-ʿātīdīn
+  english_pob_choice: those who are to come
+  chosen_spanish: a los que han de venir
+  alternatives_spanish:
+  - a los que vendrán
+  - a los que están por venir
+  lexicon: עתד
+  rationale: '"Han de venir" es una fórmula natural y solemne en español para el futuro venidero, preservando el valor prospectivo del siríaco.'
+theological_decisions:
+- issue: Alcance universal de la sustentación divina
+  english_pob_reading: you alone are able to sustain all who are, those who have passed, and those who are to come
+  chosen_spanish_reading: solo tú puedes sustentar a todos los que existen, a los que han pasado y a los que han de venir
+  alternative_spanish_readings:
+  - solo tú puedes sostener a todos los que existen...
+  - solo tú puedes llevar a todos los que existen...
+  rationale: 'La frase expresa la exclusividad divina en el mantenimiento de toda la realidad: presente, pasada y futura. "Sustentar" mantiene esa carga teológica sin perder naturalidad.'
+  doctrine_reference: Providencia divina; preservación de toda la creación
+translation_notes:
+  revision_awareness: La lectura revisada del POB corrige una mala lectura previa ('the petition of those before you') y estabiliza el sentido como 'all who are'; también prefiere 'sustain' frente a 'bear'. La versión española sigue esa revisión y evita cualquier glosa que introduzca un objeto inexistente en el siríaco.
+  spanish_consistency_notes:
+  - Se usa "Yahvé" como terminología por defecto solo cuando el texto lo requiere; aquí no aparece el nombre divino explícito.
+  - '"Los que existen / han pasado / han de venir" conserva el paralelismo temporal y evita un lenguaje excesivamente eclesiástico.'
+  - No se usan notas al pie porque la revisión del POB ya despeja la ambigüedad principal y el español no introduce una nueva.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/021/017.yaml
+  source_text_sha256: 87329b2e2809acc8dbcf4fc5b4f32da755aebe56b756c455feb9dfcdf74c7d50
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: b3e85b2ad237e60de11c1b48bea01d26574f6f559ba5305d773df777fd69fb9d
+  timestamp: '2026-05-07T21:28:52Z'
+  output_hash: de8f3448bf2ad6742cb6447782a04676629111d32a0ce67e684ed64ba7509d8c
+  usage:
+    prompt_tokens: 2368
+    completion_tokens: 810
+    total_tokens: 3178
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005421
+status: spanish_reviewed
+revisions:
+- from: Mira, porque solo tú puedes sustentar a todos los que existen, a los que han pasado y a los que han de venir.
+  to: Mira, porque solo tú puedes sustentar a todos los que existen, los que han pasado y los que han de venir.
+  rationale: Se hace un ajuste menor de estilo y paralelismo para reflejar mejor la serie del original y del POB inglés, manteniendo intacto el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:19:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido siríaco y el ajuste del POB inglés: la exclusividad divina, el verbo de sostener/sustentar, y la triple referencia a los que existen, los que han pasado y los que han de venir. No obstante, la inserción de la preposición repetida (''a todos..., a los que..., y a los que...'') hace la serie un poco menos paralela que el inglés auditado y menos fluida en español.'
+  spanish_quality_summary: El español es claro, digno y comprensible. 'Sustentar' es defendible y teológicamente adecuado. Sin embargo, 'a todos los que existen, a los que han pasado y a los que han de venir' suena algo cargado. Una formulación más natural y paralela en español es 'a todos los que existen, los que han pasado y los que han de venir'.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. No aparecen nombres divinos ni términos con glosario sensible. Las decisiones léxicas principales ('sustentar', 'los que existen', 'los que han pasado', 'los que han de venir') son coherentes con el expediente inglés y con el siríaco.
+  issues:
+  - severity: low
+    issue: Paralelismo sintáctico algo recargado por la repetición de 'a'
+    rationale: El original y el inglés revisado presentan una serie directa y paralela. En español, repetir la preposición antes de cada miembro no es incorrecto, pero aquí vuelve la frase más pesada y menos elegante sin aportar precisión.
+  revised_spanish_text: Mira, porque solo tú puedes sustentar a todos los que existen, los que han pasado y los que han de venir.
+  revision_rationale: Se hace un ajuste menor de estilo y paralelismo para reflejar mejor la serie del original y del POB inglés, manteniendo intacto el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9183f895a863d602e4b488d9937f5f48fe8bb077d9d83d48f4f9d678d12b1da4
+  timestamp: '2026-05-07T23:19:01Z'
+  output_hash: 2ed7353152e75653b0d446bc49a52ab83adb1d0382cabd63dd33024443dc0d4e
+  usage:
+    prompt_tokens: 2732
+    completion_tokens: 448
+    total_tokens: 3180
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01355
+  applied_revision: true

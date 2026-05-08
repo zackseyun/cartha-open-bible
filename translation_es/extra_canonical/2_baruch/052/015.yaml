@@ -1,0 +1,146 @@
+id: 2BA.52.15
+reference: 2 Baruch 52:15
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 52
+  pages:
+  - 197
+  - 196
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 15
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/052/015.yaml
+  text: For the first will receive the last, whom they were expecting, and the last those they had heard had passed away.
+  footnotes:
+  - marker: a
+    text: Or 'those of whom they had heard that they had passed away'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4-mini
+    timestamp: '2026-05-03T07:41:44Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Porque los primeros recibirán a los últimos, a quienes esperaban, y los últimos a aquellos de quienes habían oído que habían fallecido.[a]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «a aquellos de quienes habían oído que habían pasado de esta vida»
+    reason: Preserva en español la alternativa sintáctica/estilística que el inglés POB documentó para la última cláusula, evitando ambigüedad y manteniendo el matiz eufemístico.
+lexical_decisions:
+- source_word: the first
+  english_pob_choice: the first
+  chosen_spanish: los primeros
+  alternatives_spanish:
+  - los primeros en llegar
+  - los primeros de ellos
+  lexicon: first
+  rationale: El texto contrasta dos grupos en orden; «los primeros» conserva el paralelismo y el valor ordinal sin añadir matices no presentes.
+- source_word: will receive
+  english_pob_choice: will receive
+  chosen_spanish: recibirán
+  alternatives_spanish:
+  - recibirán a
+  - acogerán
+  lexicon: receive
+  rationale: «Recibirán» reproduce la relación directa del verbo sin ampliar a una acción más interpretativa como «acogerán».
+- source_word: the last
+  english_pob_choice: the last
+  chosen_spanish: los últimos
+  alternatives_spanish:
+  - los postreros
+  - los últimos de ellos
+  lexicon: last
+  rationale: «Los últimos» es claro, natural y mantiene la simetría con «los primeros».
+- source_word: whom they were expecting
+  english_pob_choice: whom they were expecting
+  chosen_spanish: a quienes ellos esperaban
+  alternatives_spanish:
+  - a quienes esperaban
+  - a quienes aguardaban
+  lexicon: expect
+  rationale: Se conserva el sentido de expectativa personal. Mantener «ellos» hace visible la referencia pronominal implícita del original, aunque en español pueda omitirse sin pérdida.
+- source_word: those they had heard had passed away
+  english_pob_choice: those they had heard had passed away
+  chosen_spanish: a los que habían oído que habían pasado a la muerte
+  alternatives_spanish:
+  - a los que habían oído que habían fallecido
+  - de quienes habían oído que habían muerto
+  lexicon: pass away
+  rationale: «Habían pasado a la muerte» sigue de cerca el giro semítico-siríaco y conserva la solemnidad del eufemismo, evitando aplanarlo demasiado pronto en «murieron».
+translation_notes:
+  revision_awareness: Se tomó en cuenta la revisión reciente que simplificó la cláusula final en inglés para reflejar con mayor claridad la sintaxis siríaca subyacente. En español se preservó esa relación sintáctica sin añadir una nota al pie, porque la traducción resultante ya es legible y no requiere una alternativa textual anclada.
+  spanish_consistency_notes:
+  - Se mantuvo el contraste paralelo «los primeros / los últimos» para respetar la estructura retórica del versículo.
+  - Se conservó el orden relativo de la segunda cláusula para reflejar el encadenamiento de participios y subordinadas del original.
+  - No se usó «Cristo», «SEÑOR» ni terminología eclesiástica añadida, ya que este verso no los requiere.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/052/015.yaml
+  source_text_sha256: c993b0ec85651cf47941935ca08db98c6b5f8787ad7d1d1c86c180ac527b6534
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 2be3aabc6a745961c6432350e3e67ad1c7f896a10d4dd4f011ae6c47d4dbc4d7
+  timestamp: '2026-05-07T21:29:19Z'
+  output_hash: d070d5a55c466b5aabe8268b3e94ab8ed59a600fd2e41b36af4dbbc9250cbac7
+  usage:
+    prompt_tokens: 1793
+    completion_tokens: 659
+    total_tokens: 2452
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00431
+status: spanish_reviewed
+revisions:
+- from: Porque los primeros recibirán a los últimos, a quienes ellos esperaban, y los últimos a los que habían oído que habían pasado a la muerte.
+  to: Porque los primeros recibirán a los últimos, a quienes esperaban, y los últimos a aquellos de quienes habían oído que habían fallecido.[a]
+  rationale: Se suaviza un pronombre innecesario y se reemplaza un giro poco idiomático por «habían fallecido», que conserva el eufemismo de 'passed away' en español natural. Además, se añade una nota para reflejar la alternativa de formulación registrada en la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:38:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la estructura contrastiva del siríaco/POB: «los primeros»/«los últimos», con recepción mutua de grupos esperados o dados por muertos. Sin embargo, en la última cláusula «habían pasado a la muerte» no refleja con naturalidad el sentido de ''had passed away'' y suena forzado en español; además, el inglés auditado ya simplificó una construcción literal para ganar legibilidad sin pérdida de sentido.'
+  spanish_quality_summary: La frase es generalmente clara, pero «a quienes ellos esperaban» suena algo pesada por el pronombre explícito innecesario, y «habían pasado a la muerte» resulta poco idiomático y más duro que el eufemismo esperado. Una pequeña revisión mejora la fluidez y mantiene el tono digno.
+  glossary_alignment: No hay términos teológicos sensibles del glosario principal en este versículo. «Los primeros/los últimos» y «recibirán» están bien. Para 'passed away', el mejor equivalente español aquí es «habían fallecido», con nota que preserve la alternativa más literal heredada del inglés si se desea.
+  issues:
+  - severity: medium
+    issue: «a quienes ellos esperaban» es gramatical pero poco natural en español.
+    rationale: El pronombre «ellos» no añade información necesaria y vuelve la frase más rígida que el original exige. «a quienes esperaban» preserva el referente y mejora la lectura.
+  - severity: medium
+    issue: «habían pasado a la muerte» suena calcado y poco idiomático.
+    rationale: Aunque intenta conservar solemnidad, en español eclesial general no es una expresión natural para 'passed away'. «habían fallecido» mantiene el eufemismo del inglés POB y evita una formulación extraña.
+  - severity: low
+    issue: Falta reflejar la alternativa auditada del inglés en nota al pie.
+    rationale: El inglés POB conserva una variante de formulación ('those of whom they had heard...'). En español conviene preservar esa alternativa como nota, ya que la sintaxis puede formularse también como «de quienes habían oído...».
+  revised_spanish_text: Porque los primeros recibirán a los últimos, a quienes esperaban, y los últimos a aquellos de quienes habían oído que habían fallecido.[a]
+  revised_footnotes:
+  - marker: a
+    text: O «a aquellos de quienes habían oído que habían pasado de esta vida»
+    reason: Preserva en español la alternativa sintáctica/estilística que el inglés POB documentó para la última cláusula, evitando ambigüedad y manteniendo el matiz eufemístico.
+  revision_rationale: Se suaviza un pronombre innecesario y se reemplaza un giro poco idiomático por «habían fallecido», que conserva el eufemismo de 'passed away' en español natural. Además, se añade una nota para reflejar la alternativa de formulación registrada en la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a0c19613a4daeb54a8bb3197b5234374922c4a3cbfff9c75cdccccaeaeddea5f
+  timestamp: '2026-05-07T23:38:41Z'
+  output_hash: 49c54aa166962cd6a0aac270426b45845a5ec2449ffb64b5fcd3e94770b8874f
+  usage:
+    prompt_tokens: 2043
+    completion_tokens: 668
+    total_tokens: 2711
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015127
+  applied_revision: true

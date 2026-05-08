@@ -1,0 +1,153 @@
+id: 2BA.22.3
+reference: 2 Baruch 22:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 22
+  pages:
+  - 216
+  - 215
+  - 214
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 3
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/022/003.yaml
+  text: Does one who goes on a road fail to complete it? Or does one who sails on the sea find rest unless he reaches the harbor?
+  footnotes:
+  - marker: a
+    text: Or 'fail to find it'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4-mini
+    timestamp: '2026-05-03T07:41:42Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: ¿Acaso quien va por un camino deja de completarlo[a]? ¿O acaso quien navega por el mar encuentra descanso, si no llega al puerto?
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'También: «deja de terminarlo». El verbo siríaco revisado expresa completar o terminar, no «encontrarlo».'
+    reason: previous_rendering_and_lexical_clarification
+lexical_decisions:
+- source_word: goes on a road
+  english_pob_choice: goes on a road
+  chosen_spanish: va por un camino
+  alternatives_spanish:
+  - anda por un camino
+  - recorre un camino
+  lexicon: camino
+  rationale: El giro describe a un viajero en curso; «va por un camino» conserva la imagen simple y natural del original sin agregar matices innecesarios.
+- source_word: fail to complete it
+  english_pob_choice: fail to complete it
+  chosen_spanish: no lo completa
+  alternatives_spanish:
+  - no lo termina
+  - no llega a completarlo
+  lexicon: completar
+  rationale: El control siríaco revisado indica la idea de «completar/terminar», no de «encontrar». En español, «completarlo» mantiene el paralelo con el viaje y evita perder la fuerza del verbo revisado.
+- source_word: sails on the sea
+  english_pob_choice: sails on the sea
+  chosen_spanish: navega por el mar
+  alternatives_spanish:
+  - va por el mar
+  - surca el mar
+  lexicon: navegar
+  rationale: «Navega por el mar» es claro y idiomático; conserva la acción marítima del texto fuente.
+- source_word: find rest
+  english_pob_choice: find rest
+  chosen_spanish: encuentra descanso
+  alternatives_spanish:
+  - halla descanso
+  - descansa
+  lexicon: descanso
+  rationale: La pregunta retórica apunta a la imposibilidad de reposar en el trayecto sin destino; «encuentra descanso» reproduce bien esa idea en español.
+- source_word: harbor
+  english_pob_choice: harbor
+  chosen_spanish: puerto
+  alternatives_spanish:
+  - muelle
+  - abrigo
+  lexicon: puerto
+  rationale: «Puerto» es la correspondencia más directa y transparente para el lugar de llegada del navegante.
+theological_decisions:
+- issue: Paralelismo retórico de viajero y navegante
+  english_pob_reading: A road traveler and a sailor are compared to show that completion/rest require reaching the destination.
+  chosen_spanish_reading: Se conserva el paralelismo entre el caminante y el navegante como imagen de meta cumplida y descanso alcanzado al llegar.
+  alternative_spanish_readings:
+  - Se podría acentuar más la metáfora con un estilo más libre.
+  - Se podría optar por un tono más bíblico tradicional.
+  rationale: No hay tensión doctrinal especial; la prioridad es conservar la estructura sapiencial/rhetórica del versículo y su cierre condicional.
+  doctrine_reference: None
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión aplicada que corrige la lectura inglesa anterior de «fail to find it» a «fail to complete it», basada en el verbo siríaco mšallem (< šlm). La redacción española refleja esa corrección con «no lo completa».
+  spanish_consistency_notes:
+  - Se mantiene un registro sobrio y bíblico sin arcaísmos innecesarios.
+  - «Puerto» y «descanso» sostienen la imagen de culminación del viaje sin sobreinterpretación.
+  - La nota al pie queda anclada explícitamente en «descanso[a]» para evitar markers huérfanos.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/022/003.yaml
+  source_text_sha256: 87c0a3de4016eb1c4fe7a6678d84072d819677c1dca285769715b42da1e0e276
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0b4bd3a6be52deb3e42ce093a4019cc7b00041addf2b05541bf9d7987edaf212
+  timestamp: '2026-05-07T21:28:52Z'
+  output_hash: 62352776cbc008f6277b0e142d0266654e99381158d911bdaa643a6cafcfc5e7
+  usage:
+    prompt_tokens: 1776
+    completion_tokens: 812
+    total_tokens: 2588
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004986
+status: spanish_reviewed
+revisions:
+- from: ¿Acaso quien va por un camino no lo completa? ¿O acaso quien navega por el mar encuentra descanso[a], si no llega al puerto?
+  to: ¿Acaso quien va por un camino deja de completarlo[a]? ¿O acaso quien navega por el mar encuentra descanso, si no llega al puerto?
+  rationale: Se ajusta la primera pregunta para expresar explícitamente la idea de «fallar/dejar de completar», de acuerdo con la revisión del siríaco šlm y con el inglés POB auditado. También se reubica la nota al verbo pertinente para evitar ambigüedad.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:12:02Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien el paralelismo retórico del viajero y el navegante y refleja correctamente la revisión clave del siríaco: el verbo es «completar/terminar», no «encontrar». Sin embargo, la primera pregunta en español está formulada de manera positiva («¿no lo completa?»), mientras que el inglés auditado y la lógica retórica del original preguntan si acaso deja de completarlo. Conviene expresar explícitamente la noción de fracaso o falta de completar.'
+  spanish_quality_summary: El español es claro y natural, pero la primera pregunta queda algo ambigua por la doble negación implícita del inglés. «No lo completa» puede entenderse, pero en pregunta retórica suena menos preciso que «deja de completarlo» o «no llega a completarlo». El resto del versículo es legible y digno. La nota actual además está anclada en «descanso», aunque comenta el verbo «completa», por lo que el anclaje debe moverse.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «camino», «navega por el mar», «descanso» y «puerto» están bien elegidos. La decisión principal es mantener para el siríaco šlm una forma española de «completar/terminar» y no «encontrar».
+  issues:
+  - severity: medium
+    issue: La primera pregunta no expresa con suficiente claridad «fail to complete it».
+    rationale: «¿Acaso quien va por un camino no lo completa?» puede funcionar, pero no refleja tan directamente la idea de fallar/dejar de completar como el inglés auditado y la revisión siríaca. «¿Acaso quien va por un camino deja de completarlo?» preserva mejor el sentido.
+  - severity: low
+    issue: La nota al pie está anclada en un lugar poco adecuado.
+    rationale: La nota explica el verbo «completar/terminar», pero el marcador [a] aparece sobre «descanso». Debe colocarse junto a «completarlo» o la frase correspondiente.
+  revised_spanish_text: ¿Acaso quien va por un camino deja de completarlo[a]? ¿O acaso quien navega por el mar encuentra descanso, si no llega al puerto?
+  revised_footnotes:
+  - marker: a
+    text: 'También: «deja de terminarlo». El verbo siríaco revisado expresa completar o terminar, no «encontrarlo».'
+    reason: previous_rendering_and_lexical_clarification
+  revision_rationale: Se ajusta la primera pregunta para expresar explícitamente la idea de «fallar/dejar de completar», de acuerdo con la revisión del siríaco šlm y con el inglés POB auditado. También se reubica la nota al verbo pertinente para evitar ambigüedad.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a7123c681ae2ea2ab98201d7a7920de05dbd25cfe1d5da2a85c3b1485f3851ce
+  timestamp: '2026-05-07T23:12:02Z'
+  output_hash: 5fca56f54c0a337381f6a0ab1927858e4e9facbcdcf32a579e53fd6e1756b365
+  usage:
+    prompt_tokens: 2209
+    completion_tokens: 637
+    total_tokens: 2846
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015077
+  applied_revision: true

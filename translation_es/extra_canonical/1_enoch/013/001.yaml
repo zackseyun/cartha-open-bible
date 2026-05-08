@@ -1,0 +1,198 @@
+id: 1EN.13.1
+reference: 1 Enoch 13:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወሄኖክ፡ ኃሊፎ፡ ይቤሎ፡ ለ*አዛዝኤል፡ ኢይከውከ፡ *ሰላም፡ ዓቢይ፡ ኵነኔ፡ ወጽአ፡ ላዕሌከ፡ ይእስርከ።
+  language: Geez
+  pages:
+  - 70
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch13.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 13, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/013/001.yaml
+  text: 'And Enoch went and said to Azazel[a], “You shall have no peace; a great sentence has gone out against you: you will be bound.”'
+  footnotes:
+  - marker: a
+    text: Or 'judgment' or 'decree' for 'sentence'; the Ge'ez term is juridical and introduces the punishment that follows.
+    reason: lexical_alternative
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: b7ea6192f55e3787cb7a6d76834cee79fcf9cc464c4e7431c3c12371e2f9d287
+    timestamp: '2026-04-22T09:08:54Z'
+    output_hash: e31fe37b3fba3caaa50e2ca04511d341d45248aecb062bd35ad1e1da8bbb9fa8
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:41Z'
+    unchanged: false
+    changes_summary: Revised the final clause from infinitive-style 'to bind you' to finite passive 'you will be bound' to reflect the Geez more directly and improve natural English; retained the rest as accurate.
+translation:
+  language: es
+  text: 'Y Enoc fue y dijo a Azazel: «No tendrás paz; una gran sentencia[a] ha salido contra ti: serás atado».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «juicio» o «decreto» para «sentencia»; el término ge'ez es jurídico e introduce el castigo que sigue.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ኃሊፎ
+  english_pob_choice: went
+  chosen_spanish: fue
+  alternatives_spanish:
+  - fue y se encaminó
+  - partió
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo marca el movimiento de Enoc antes de hablar. «Fue» conserva la secuencia narrativa de forma natural en español sin añadir matices no presentes en el ge'ez.
+- source_word: ይቤሎ
+  english_pob_choice: said to
+  chosen_spanish: dijo a
+  alternatives_spanish:
+  - habló a
+  - declaró a
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Es un verbo de habla directo y neutro. «Dijo a» mantiene la dirección de la alocución sin cargarla de solemnidad adicional.
+- source_word: አዛዝኤል
+  english_pob_choice: Azazel
+  chosen_spanish: Azazel
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Nombre propio/sobrenatural transliterado conforme a la política del proyecto.
+- source_word: ኢይከውከ ሰላም
+  english_pob_choice: you shall have no peace
+  chosen_spanish: No tendrás paz
+  alternatives_spanish:
+  - no habrá paz para ti
+  - la paz no será tuya
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase niega bienestar o prosperidad favorable. «No tendrás paz» conserva el tono solemne de oráculo de juicio y su fuerza apocalíptica en español natural.
+- source_word: ዓቢይ
+  english_pob_choice: great
+  chosen_spanish: gran
+  alternatives_spanish:
+  - grande
+  - severo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El adjetivo intensifica el sustantivo de juicio. «Gran» es la forma idiomática más directa antes de un sustantivo en español y conserva la amplitud del calificativo sin especificarla más de lo que el texto permite.
+- source_word: ኵነኔ
+  english_pob_choice: sentence
+  chosen_spanish: sentencia
+  alternatives_spanish:
+  - juicio
+  - decreto
+  - condena
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El contexto es una proclamación jurídica contra Azazel. «Sentencia» refleja mejor una decisión formal con consecuencia punitiva; en español también preserva la tensión entre veredicto y castigo.
+- source_word: ወጽአ ላዕሌከ
+  english_pob_choice: has gone out against you
+  chosen_spanish: ha salido contra ti
+  alternatives_spanish:
+  - ha salido sobre ti
+  - ha salido en tu contra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El giro idiomático comunica que el decreto ya fue emitido y se dirige a Azazel. «Ha salido contra ti» reproduce la imagen de una resolución que avanza desde la esfera judicial hacia el destinatario.
+- source_word: ይእስርከ
+  english_pob_choice: you will be bound
+  chosen_spanish: serás atado
+  alternatives_spanish:
+  - te atarán
+  - serás encadenado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo indica atadura o encarcelamiento punitivo. «Serás atado» sigue de cerca la forma pasiva del ge'ez y conserva la imagen de castigo sin añadir el detalle de cadenas que el texto no explicita.
+theological_decisions:
+- issue: Fórmula de paz en un oráculo de juicio
+  english_pob_reading: Rendered as 'You shall have no peace'
+  chosen_spanish_reading: «No tendrás paz»
+  alternative_spanish_readings:
+  - «No habrá paz para ti»
+  - «La paz no será tuya»
+  rationale: No se trata de una despedida cordial, sino de una negación judicial de bienestar para un ser condenado. La fórmula en español mantiene el tono profético-apocalíptico sin suavizarlo ni convertirlo en prosa genérica.
+  doctrine_reference: Conservar el lenguaje de juicio apocalíptico y no neutralizarlo.
+- issue: Matiz jurídico de ኵነኔ
+  english_pob_reading: Rendered as 'sentence'
+  chosen_spanish_reading: «sentencia»
+  alternative_spanish_readings:
+  - «juicio»
+  - «decreto»
+  - «condena»
+  rationale: El texto no solo anuncia evaluación, sino una resolución formal que conduce a la atadura posterior. «Sentencia» transmite mejor la decisión judicial con consecuencia penal; «juicio» queda como alternativa más amplia, pero menos precisa.
+  doctrine_reference: Equivalencia óptima con preservación de la tensión legal del término.
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión más reciente del POB inglés, que ajustó la cláusula final de un infinitivo («to bind you») a una forma pasiva finita («you will be bound»). En español se reflejó directamente con «serás atado», evitando una construcción finalista y preservando el matiz punitivo del ge'ez.
+  spanish_consistency_notes:
+  - Se mantuvo «Azazel» como transliteración del nombre propio.
+  - Se eligió «sentencia» por su carga jurídica, alineada con la nota inglesa sobre el valor forense del término.
+  - La negación «No tendrás paz» conserva la fórmula solemne de juicio sin importar una fraseología eclesiástica ajena al pasaje.
+  - La cláusula final se expresó en pasiva («serás atado») para seguir la revisión inglesa y la estructura del original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/013/001.yaml
+  source_text_sha256: 81ef3a48b4c3e484132d3215457aa1d99d9f5f2d7b6ea62af70bb07cde5dfe06
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 68a47ad933bec4ec60977e4a3b1543c1736934ad17b09620827670fde0dc5d39
+  timestamp: '2026-05-07T21:27:28Z'
+  output_hash: 5885c2918510b536269ecf75c5d284b9a77b0ce5604688e68e80d1fea3581c3d
+  usage:
+    prompt_tokens: 2812
+    completion_tokens: 1414
+    total_tokens: 4226
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008472
+status: spanish_reviewed
+revisions:
+- from: 'Y Enoc fue y dijo a Azazel[a]: «No tendrás paz; una gran sentencia ha salido contra ti: serás atado».'
+  to: 'Y Enoc fue y dijo a Azazel: «No tendrás paz; una gran sentencia[a] ha salido contra ti: serás atado».'
+  rationale: Se conserva la traducción principal porque es fiel y natural; solo se reubica la nota al pie para que ancle correctamente en «sentencia», que es el término explicado por la nota.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la secuencia y el sentido del ge''ez: Enoc va, habla a Azazel, se le niega la paz, se anuncia una sentencia jurídica, y se declara su futura atadura. Sin embargo, la nota al pie está anclada incorrectamente en «Azazel[a]» aunque su contenido explica «sentencia», no el nombre propio. Eso rompe la correspondencia exigida entre anclaje y significado.'
+  spanish_quality_summary: El español es claro, natural y digno. «No tendrás paz» y «serás atado» funcionan bien en registro bíblico legible. La única reparación necesaria es mover la marca de nota al término pertinente para evitar confusión de lectura.
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «Azazel» como transliteración es correcto; «sentencia» preserva el matiz jurídico documentado; no aparecen términos sensibles del glosario global que requieran ajuste.
+  issues:
+  - severity: medium
+    issue: Anclaje incorrecto de la nota al pie
+    rationale: La nota explica alternativas para «sentencia», pero el marcador [a] está colocado después de «Azazel». Según las reglas del proyecto, el marcador debe aparecer en la palabra o frase relevante.
+  revised_spanish_text: 'Y Enoc fue y dijo a Azazel: «No tendrás paz; una gran sentencia[a] ha salido contra ti: serás atado».'
+  revised_footnotes:
+  - marker: a
+    text: O «juicio» o «decreto» para «sentencia»; el término ge'ez es jurídico e introduce el castigo que sigue.
+    reason: lexical_alternative
+  revision_rationale: Se conserva la traducción principal porque es fiel y natural; solo se reubica la nota al pie para que ancle correctamente en «sentencia», que es el término explicado por la nota.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2c93ee49ab3fc93565de70409f0fa1bd1a3393d2051fadbb25a7dfd99ae17915
+  timestamp: '2026-05-07T23:06:24Z'
+  output_hash: 639a0a3ea902e4afd4bdf030ae888b656c367473af37a56f1653188b8cb93424
+  usage:
+    prompt_tokens: 3849
+    completion_tokens: 436
+    total_tokens: 4285
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016162
+  applied_revision: true

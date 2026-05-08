@@ -1,0 +1,123 @@
+id: JUB.23.2
+reference: Jubilees 23:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles_1895
+  language: Geez
+  text: ወበዝ፡ ኵሉ፡ ሀሎ፡ ያዕቆብ፡ ይስክብ፡ ውስተ፡ ሕፅኑ፡ ወኢያእመረ፡ ከመ፡ ሞተ፡ አብርሃም፡ አቡ፡ አቡሁ።
+  pages:
+  - 152
+  - 153
+  - 154
+  - 156
+  - 158
+  validation_modes:
+  - vertex_targeted_refinement
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/jubilees/023/002.yaml
+  text: And through all this Jacob was lying in his bosom, and he did not know that Abraham, his father's father, had died.
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T14:50:31Z'
+    unchanged: false
+    changes_summary: Adjusted word order for more natural English while preserving the sense; retained 'his bosom' and clarified the clause flow without changing meaning.
+translation:
+  language: es
+  text: Y durante todo esto Jacob estaba recostado en su seno, y no sabía que Abraham, el padre de su padre, había muerto.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: ወበዝ፡ ኵሉ፡
+  english_pob_choice: And through all this
+  chosen_spanish: Y en todo esto
+  alternatives_spanish:
+  - Y durante todo esto
+  - Y en medio de todo esto
+  lexicon: adverbial temporal phrase
+  rationale: La secuencia ge'ez introduce una circunstancia global o simultánea; en español, «en todo esto» comunica la misma relación de marco temporal sin añadir elementos no presentes.
+- source_word: ሀሎ፡ ያዕቆብ፡ ይስክብ፡ ውስተ፡ ሕፅኑ፡
+  english_pob_choice: Jacob was lying in his bosom
+  chosen_spanish: Jacob estaba recostado en su seno
+  alternatives_spanish:
+  - Jacob estaba acostado en su seno
+  - Jacob yacía en su seno
+  lexicon: verb of reclining + bosom/chest/embrace
+  rationale: «Recostado» conserva la idea de estar tendido/reclinado y funciona con naturalidad en español; «seno» mantiene el valor relacional/anatómico que también tiene «bosom» en el inglés auditado.
+- source_word: ከመ፡ ሞተ፡ አብርሃም፡ አቡ፡ አቡሁ።
+  english_pob_choice: that Abraham, his father's father, had died
+  chosen_spanish: que Abraham, el padre de su padre, había muerto
+  alternatives_spanish:
+  - que Abraham, su abuelo paterno, había muerto
+  - que Abraham, el padre de su padre, murió
+  lexicon: kinship description + past perfect
+  rationale: Se conserva la relación genealógica explícita del texto («el padre de su padre») como en el inglés auditado, evitando una normalización interpretativa a «abuelo paterno» para no perder la forma original.
+theological_decisions:
+- issue: Relación de parentesco y precisión genealógica
+  english_pob_reading: his father's father
+  chosen_spanish_reading: el padre de su padre
+  alternative_spanish_readings:
+  - su abuelo paterno
+  - el padre de su padre
+  rationale: La redacción mantiene la expresión analítica del original y del audit trail inglés; en un texto breve no aparece un término doctrinalmente cargado, pero sí una elección de precisión histórica que conviene preservar.
+  doctrine_reference: Faithful preservation of genealogical specificity
+translation_notes:
+  revision_awareness: 'The English revision only adjusted word order for naturalness while preserving meaning. The Spanish draft follows that same balance: it keeps the temporal frame, the reclined posture, and the explicit genealogical phrasing without introducing interpretive expansion.'
+  spanish_consistency_notes:
+  - Se evitó «SEÑOR» o equivalentes no pertinentes, ya que no aparece el nombre divino en este verso.
+  - Se mantuvo una sintaxis simple y directa, acorde con un texto narrativo breve.
+  - «Seno» se usa como equivalente de «bosom» para conservar la imagen corporal y relacional sin sobreexplicarla.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/jubilees/023/002.yaml
+  source_text_sha256: 7f01a3f37ae356151daf35a82417f1a8c634a219cd9baed688f1ff312b251bac
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 37a37e26d0c3a8bfaa2040ca8099ae2da3c885e5d6de4a09d3897589c0504a7b
+  timestamp: '2026-05-07T21:28:16Z'
+  output_hash: 02a0fa36631cf356ddb460d6d6d81c7360ac4aa048aaa1a1567960416e92acc8
+  usage:
+    prompt_tokens: 1851
+    completion_tokens: 751
+    total_tokens: 2602
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004768
+status: spanish_reviewed
+revisions:
+- from: Y en todo esto Jacob estaba recostado en su seno, y no sabía que Abraham, el padre de su padre, había muerto.
+  to: Y durante todo esto Jacob estaba recostado en su seno, y no sabía que Abraham, el padre de su padre, había muerto.
+  rationale: Se ajusta únicamente la frase adverbial inicial para un español más natural y preciso temporalmente, manteniendo intactos el contenido, el orden informativo principal y la especificidad genealógica del original y del audit trail inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:05:20Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el sentido básico del ge''ez y del audit trail inglés: un marco circunstancial, Jacob recostado en el regazo/pecho de otro, e ignorancia de la muerte de Abraham. La única desalineación relevante está en «en todo esto», que en español suena menos natural para valor temporal-simultáneo que «durante todo esto».'
+  spanish_quality_summary: El texto es claro y mayormente natural. Sin embargo, «en todo esto» suena algo rígido o ambiguo en español, donde puede sugerir 'en todo este asunto' más que duración. «Durante todo esto» mejora la legibilidad sin alterar el sentido. «En su seno» es fiel al inglés auditado y aceptable en registro bíblico-digno.
+  glossary_alignment: No hay términos del glosario mayor en juego. La decisión de mantener «seno» preserva la fuerza de 'bosom' y es compatible con el estilo del proyecto. La relación genealógica «el padre de su padre» está bien conservada frente a la alternativa más interpretativa «abuelo paterno».
+  issues:
+  - severity: medium
+    issue: La frase inicial «Y en todo esto» suena poco idiomática para un valor temporal continuo.
+    rationale: El ge'ez y el inglés auditado expresan una circunstancia que abarca todo el episodio ('through all this'). En español, «durante todo esto» comunica mejor esa duración/simultaneidad que «en todo esto», que puede leerse como marco temático.
+  revised_spanish_text: Y durante todo esto Jacob estaba recostado en su seno, y no sabía que Abraham, el padre de su padre, había muerto.
+  revision_rationale: Se ajusta únicamente la frase adverbial inicial para un español más natural y preciso temporalmente, manteniendo intactos el contenido, el orden informativo principal y la especificidad genealógica del original y del audit trail inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 069dcadbbd100af1434e17d8fb9ae94faba0935f0095e72e433c3a763230bd8f
+  timestamp: '2026-05-07T23:05:20Z'
+  output_hash: 420d07688ab2e19726ba8818ac6db29f3457bfbd9e87195874cbfaa1da9e4f8e
+  usage:
+    prompt_tokens: 2212
+    completion_tokens: 456
+    total_tokens: 2668
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01237
+  applied_revision: true

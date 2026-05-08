@@ -1,0 +1,216 @@
+id: 1EN.1.3
+reference: 1 Enoch 1:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: በእንተ ፡ ኅሩያን ፡ እቤ ፡ ወአውሣእኩ ፡ በእንቲአሆሙ ፡ ምስለ ፡ ይወፅእ ፡ ቅዱስ ፡ ወዐቢይ ፡ እማኅደሩ ፡
+  language: Geez
+  pages:
+  - 40
+  - 42
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/001/003.yaml
+  text: 'Concerning the Chosen Ones I spoke[e][d][c][b][a], and I uttered a parable concerning them: The Holy and Great One will go forth from his dwelling.'
+  footnotes:
+  - marker: a
+    text: “Lifted up my parable” reflects a Semitic idiom for uttering a stylized saying (cf. Hebrew “to lift up a proverb”). “I uttered a parable” would be a smooth equivalent.
+    reason: cultural_note
+  - marker: b
+    text: “Chosen Ones” can also be rendered “Elect,” a traditional option.
+    reason: lexical_alternative
+  - marker: c
+    text: “Parable” (Geʿez məsəl) here means a prophetic or poetic saying, not necessarily a narrative story.
+    reason: cultural_note
+  - marker: d
+    text: “Will go forth” could also be rendered “will come forth.”
+    reason: lexical_alternative
+  - marker: e
+    text: Or 'I lifted up my parable'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5-2025-08-07
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 8ec5541b776c2444fabbd7950faaa8859956c03f01e1fffd803f5d68a4345ee1
+    timestamp: '2026-04-22T09:04:08Z'
+    output_hash: ebbc4fdd76c4bf2cb01d071f7247075f2a9d6aaf347006ab206a0655ca54fe6c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:26Z'
+    unchanged: false
+    changes_summary: Changed 'said' to 'spoke' for a slightly more formal and natural rendering while preserving the sense; otherwise retained the draft.
+translation:
+  language: es
+  text: 'En cuanto a los Escogidos[a], hablé, y pronuncié una parábola acerca de ellos[b]: el Santo y Grande saldrá[c] de su morada.'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: «Escogidos» también puede traducirse «Elegidos» o, de manera más tradicional, «Electos».
+    reason: lexical_alternative
+  - marker: b
+    text: «Parábola» aquí designa un dicho profético o poético; no necesariamente una narración breve con personajes y trama.
+    reason: cultural_note
+  - marker: c
+    text: «Saldrá» también puede traducirse «vendrá» o «vendrá de allí».
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: በእንተ
+  english_pob_choice: concerning
+  chosen_spanish: en cuanto a
+  alternatives_spanish:
+  - acerca de
+  - sobre
+  lexicon: Dillmann; Leslau
+  rationale: Marca el tema o referencia del enunciado. «En cuanto a» conserva la función temática sin sonar mecánico en español.
+- source_word: ኅሩያን
+  english_pob_choice: Chosen Ones
+  chosen_spanish: los Elegidos
+  alternatives_spanish:
+  - los Escogidos
+  - los Electos
+  lexicon: Leslau; Dillmann
+  rationale: El sentido básico es «elegidos/escogidos». «Elegidos» es natural en español bíblico y mantiene el plural nominal sin cargar innecesariamente con asociaciones confesionales adicionales.
+- source_word: እቤ
+  english_pob_choice: I spoke
+  chosen_spanish: hablé
+  alternatives_spanish:
+  - dije
+  - hablé públicamente
+  - declaré
+  lexicon: Dillmann
+  rationale: La revisión textual corrige la idea de «lifted up»; el ge’ez expresa simplemente hablar/decir/utter. «Hablé» refleja bien el acto verbal sin añadir un matiz no presente.
+- source_word: አውሣእኩ
+  english_pob_choice: I uttered
+  chosen_spanish: pronuncié
+  alternatives_spanish:
+  - dije
+  - emití
+  - proferí
+  lexicon: Dillmann; Leslau
+  rationale: Para 1ª singular con el valor de «uttered/spoke», «pronuncié» conserva un registro digno y la idea de enunciar una fórmula o dicho. Evita la falsa imagen de un gesto físico de «levantar».
+- source_word: ምስለ
+  english_pob_choice: parable
+  chosen_spanish: parábola
+  alternatives_spanish:
+  - dicho
+  - sentencia
+  - proverbio
+  lexicon: Leslau; Dillmann
+  rationale: En este contexto enóquico funciona como un dicho profético o poético. «Parábola» mantiene la tradición terminológica y el valor de enunciado figurado, sin implicar necesariamente una narración.
+- source_word: ቅዱስ ወዐቢይ
+  english_pob_choice: the Holy and Great One
+  chosen_spanish: el Santo y Grande
+  alternatives_spanish:
+  - el Santo Grande
+  - el Santo, el Grande
+  lexicon: Leslau; Dillmann
+  rationale: Se conserva la mayúscula para señalar el carácter titular/divino. «Santo y Grande» reproduce el paralelismo de los dos adjetivos sin suavizar la fórmula.
+- source_word: እማኅደሩ
+  english_pob_choice: from his dwelling
+  chosen_spanish: de su morada
+  alternatives_spanish:
+  - de su habitación
+  - de su habitación celestial
+  - de su habitación
+  lexicon: Leslau; Dillmann
+  rationale: «Morada» es idiomático, reverente y claro en español bíblico. Comunica el lugar de residencia sin introducir una especificación que el texto no da.
+theological_decisions:
+- issue: Identidad de «el Santo y Grande»
+  english_pob_reading: A divine title for the God of Israel (the Most High) who manifests in theophany.
+  chosen_spanish_reading: Un título divino para Dios, que viene en manifestación teofánica desde su morada.
+  alternative_spanish_readings:
+  - un ser santo y grande
+  - un ángel exaltado, santo y grande
+  rationale: El contexto habla de salir de su morada en un marco de venida solemne; por eso la lectura titular/divina es la más fuerte. La traducción conserva la ambigüedad relativa del ge’ez con mayúsculas, sin convertirla en una formulación dogmática posterior.
+  doctrine_reference: Principios de primacía de la fuente y preservación de tensiones interpretativas del POB.
+translation_notes:
+  revision_awareness: La draft final de referencia corrigió la lectura previa de «I lifted up my parable» a «I uttered a parable»; esta versión española sigue esa revisión y evita cualquier verbo que sugiera un gesto físico de levantar. También conserva el valor titular de «the Holy and Great One» sin sobreexplicar la identidad.
+  spanish_consistency_notes:
+  - Se mantiene «Elegidos» para el grupo destinatario, coherente con el valor de plural de ኅሩያን.
+  - Se mantiene «parábola» como término técnico para el dicho enóquico, con nota aclaratoria para evitar una lectura exclusivamente narrativa.
+  - «Morada» conserva el tono bíblico y no introduce una localización concreta no presente en el original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/001/003.yaml
+  source_text_sha256: a94545167d5383560398a2c3b82f48cd9757cd85010e12ecbb94ee135b8219c5
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 5c82a0240c9cc00183b8d384331e09ff184180e088348d8ebccd0fc0ea5c3079
+  timestamp: '2026-05-07T21:27:12Z'
+  output_hash: 7d96c1226c92b7dbc872a8ff571108938e6bdee2ed08f7958996ee33d39e6b3a
+  usage:
+    prompt_tokens: 3385
+    completion_tokens: 1186
+    total_tokens: 4571
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007876
+status: spanish_reviewed
+revisions:
+- from: 'En cuanto a los Elegidos[a], hablé, y pronuncié una parábola acerca de ellos[b]: el Santo y Grande saldrá de su morada.'
+  to: 'En cuanto a los Escogidos[a], hablé, y pronuncié una parábola acerca de ellos[b]: el Santo y Grande saldrá[c] de su morada.'
+  rationale: Se ajusta ኅሩያን a «Escogidos» para alinearlo mejor con la decisión auditada «Chosen Ones», manteniendo las alternativas en nota. Se conserva el resto de la sintaxis por su fidelidad y naturalidad, y se añade la alternativa documentada para ይወፅእ. No se requiere una relectura doctrinal o filológica mayor.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:47:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge’ez y la revisión inglesa auditada: tema introductorio sobre los escogidos/elegidos, doble verbo de habla, y la salida del personaje divino desde su morada. Sin embargo, «los Elegidos» se aparta del término preferido por el POB inglés («Chosen Ones») y de la nota léxica que preserva la alternativa «Elect» solo como opción secundaria. Además, «el Santo y Grande» suena elíptico en español donde el inglés y la decisión teológica tratan la expresión como título sustantivado: «el Santo y Grande» es comprensible, pero «el Santo y el Grande» sería demasiado interpretativo, y la solución más natural y fiel es mantener «el Santo y Grande» solo si se acepta esa elipsis. Aun así, el ajuste principal necesario es terminológico y de notas.'
+  spanish_quality_summary: El español es legible y digno, pero puede mejorar en fidelidad terminológica y en la gestión de notas. «En cuanto a» y «hablé» funcionan bien. «Pronuncié una parábola» también es natural. La frase final es clara. No obstante, conviene cambiar «Elegidos» por «Escogidos» para representar mejor «Chosen Ones» sin cargar tanto el lenguaje soteriológico eclesial, y añadir una nota que preserve la alternativa tradicional «Electos». También falta una nota para la alternativa de «saldrá / saldrá de su morada» frente a «vendrá / vendrá de», que el inglés sí conserva para «go forth / come forth».
+  glossary_alignment: 'No hay términos del glosario principal (Yahvé, Mesías, etc.) implicados directamente aquí. La principal cuestión de alineación es interna al proyecto: ኅሩያን fue documentado como «Chosen Ones», con «Elect» como alternativa. En español, «los Escogidos» se alinea mejor con esa decisión que «los Elegidos». «Parábola» se mantiene correctamente con nota explicativa. El título divino puede conservarse como «el Santo y Grande» por cercanía formal al original.'
+  issues:
+  - severity: medium
+    issue: «los Elegidos» no refleja óptimamente la decisión léxica auditada para ኅሩያን
+    rationale: El POB inglés escogió «Chosen Ones» y relegó «Elect» a alternativa. «Elegidos» en español se acerca más a «elect» que a «chosen». «Escogidos» preserva mejor la base léxica y evita connotaciones doctrinales más cargadas.
+  - severity: low
+    issue: La nota a sobre «Electos» no preserva la alternativa más natural/tradicional disponible
+    rationale: Si el texto principal pasa a «Escogidos», la nota puede ofrecer «Elegidos» o «Electos». La formulación actual depende de mantener «Elegidos» en el texto principal.
+  - severity: low
+    issue: Falta la alternativa documentada para ይወፅእ
+    rationale: El inglés conservó en nota que «will go forth» también puede ser «will come forth». En español conviene reflejarlo como «saldrá» / «vendrá» o «saldrá» / «vendrá de allí», para no perder una alternativa significativa ya auditada.
+  revised_spanish_text: 'En cuanto a los Escogidos[a], hablé, y pronuncié una parábola acerca de ellos[b]: el Santo y Grande saldrá[c] de su morada.'
+  revised_footnotes:
+  - marker: a
+    text: «Escogidos» también puede traducirse «Elegidos» o, de manera más tradicional, «Electos».
+    reason: lexical_alternative
+  - marker: b
+    text: «Parábola» aquí designa un dicho profético o poético; no necesariamente una narración breve con personajes y trama.
+    reason: cultural_note
+  - marker: c
+    text: «Saldrá» también puede traducirse «vendrá» o «vendrá de allí».
+    reason: lexical_alternative
+  revision_rationale: Se ajusta ኅሩያን a «Escogidos» para alinearlo mejor con la decisión auditada «Chosen Ones», manteniendo las alternativas en nota. Se conserva el resto de la sintaxis por su fidelidad y naturalidad, y se añade la alternativa documentada para ይወፅእ. No se requiere una relectura doctrinal o filológica mayor.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b3bda40cb850a87bd674f7003ab71c8ccefbfad14f6f3b046433be3bd3025fd7
+  timestamp: '2026-05-07T23:47:58Z'
+  output_hash: ed42929a0d0ecbdda488b1a6aeaecf413b969059df7b59f0d98b138bf5d13b32
+  usage:
+    prompt_tokens: 4241
+    completion_tokens: 1003
+    total_tokens: 5244
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025648
+  applied_revision: true

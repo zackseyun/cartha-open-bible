@@ -1,0 +1,198 @@
+id: 1EN.71.7
+reference: 1 Enoch 71:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወአውዶ፡ ሱራፌን፡ ወኪሩቤን፡ ወአፋኒን፡ ወእሉ፡ እሙንቱ፡ እለ፡ ኢይነውሙ፡ ወየዐቅቡ፡ መንበረ፡ ስብሐተ፡ ዚአሁ።
+  language: Geez
+  pages:
+  - 166
+  - 167
+  - 168
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch71.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 71, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/071/007.yaml
+  text: And around it were the seraphim and the cherubim and the ophannim[b][a], and these are those who do not sleep and who keep watch over the throne of his glory.
+  footnotes:
+  - marker: a
+    text: '''Ophannim'' is a transliterated name for a heavenly order; the underlying sense is related to ''wheels.'''
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'And around were'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: b4062c3ac390af947d5f6ad2b635cbb61723dfb75c3ac5214007ccf753322b1b
+    timestamp: '2026-04-22T09:15:59Z'
+    output_hash: e86ec03028b7913618443dfa6d81d6ee0601acdc590f2cb1ad87c202d5fbc734
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:41Z'
+    unchanged: false
+    changes_summary: Changed 'they' to 'those' for more natural formal English after 'these are,' while preserving the source sense and structure.
+translation:
+  language: es
+  text: Y alrededor de eso estaban los serafines, los querubines y los ofanim[a], y estos son los que no duermen y mantienen vigilancia sobre el trono de su gloria.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: «Ofanim» es una transliteración de un nombre de orden celestial; su sentido subyacente se relaciona con «ruedas».
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወአውዶ
+  english_pob_choice: around it were
+  chosen_spanish: Y alrededor de él estaban
+  alternatives_spanish:
+  - Y alrededor de él había
+  - Y en torno a él estaban
+  lexicon: Dillmann
+  rationale: El sufijo posesivo del ge'ez apunta al objeto mencionado antes, por lo que «de él» preserva la referencia. «Alrededor de él estaban» reproduce la relación espacial sin forzar una paráfrasis.
+- source_word: ሱራፌን
+  english_pob_choice: seraphim
+  chosen_spanish: serafines
+  alternatives_spanish:
+  - serafines
+  - serafines ardientes
+  lexicon: Dillmann
+  rationale: La transliteración tradicional al español es «serafines», que conserva la clase celestial distinguida en el contexto apocalíptico. «Serafines ardientes» explicaría el sentido etimológico, pero el texto aquí funciona como nombre de orden.
+- source_word: ኪሩቤን
+  english_pob_choice: cherubim
+  chosen_spanish: querubines
+  alternatives_spanish:
+  - querubines
+  - querubes
+  lexicon: Dillmann
+  rationale: «Querubines» es la forma española estable para este orden celestial y mantiene el tono elevado del listado paralelo.
+- source_word: አፋኒን
+  english_pob_choice: ophannim
+  chosen_spanish: ofanim
+  alternatives_spanish:
+  - ofanim
+  - ruedas
+  lexicon: Dillmann
+  rationale: Se conserva la transliteración del nombre de clase celestial para no reducir la figura a «ruedas», lo cual aplanaría la taxonomía apocalíptica del pasaje. La forma «ofanim» es la más transparente en español para un préstamo técnico.
+- source_word: እሙንቱ
+  english_pob_choice: these are those
+  chosen_spanish: estos son los
+  alternatives_spanish:
+  - estos son aquellos que
+  - éstos son los
+  lexicon: Dillmann
+  rationale: La identificación enfática se conserva con «estos son los», que suena natural en español y mantiene la fuerza demostrativa del original.
+- source_word: እለ ኢይነውሙ
+  english_pob_choice: who do not sleep
+  chosen_spanish: que no duermen
+  alternatives_spanish:
+  - que no duermen jamás
+  - que no se duermen
+  lexicon: Dillmann
+  rationale: El verbo simple de dormir se traduce directamente. «No duermen» preserva la afirmación sin añadir el matiz de «nunca» que el ge'ez no explicita.
+- source_word: የዐቅቡ
+  english_pob_choice: keep watch over
+  chosen_spanish: guardan vigilancia sobre
+  alternatives_spanish:
+  - vigilan sobre
+  - custodian
+  lexicon: Dillmann
+  rationale: «Guardar vigilancia sobre» expresa la vigilancia atenta y el cuidado protector que sugiere el verbo, con registro natural en español bíblico contemporáneo.
+- source_word: መንበረ ስብሐተ ዚአሁ
+  english_pob_choice: the throne of his glory
+  chosen_spanish: el trono de su gloria
+  alternatives_spanish:
+  - el trono de su majestad
+  - su glorioso trono
+  lexicon: Dillmann
+  rationale: Se conserva la construcción nominal «trono de su gloria» porque refleja más de cerca el genitivo del original y mantiene el peso apocalíptico sin suavizarlo en una frase adjetival.
+theological_decisions:
+- issue: Designación de los seres celestiales alrededor del trono
+  english_pob_reading: Use transliterated class names 'seraphim,' 'cherubim,' and 'ophannim'
+  chosen_spanish_reading: 'Usar nombres de orden celestial: «serafines», «querubines» y «ofanim»'
+  alternative_spanish_readings:
+  - Traducir «ofanim» como «ruedas»
+  - Reemplazar los tres nombres por «ángeles»
+  rationale: El pasaje enumera órdenes celestiales diferenciados en una escena de trono. Mantener los nombres preserva la especificidad cosmológica y evita reducir la visión a un lenguaje genérico de ángeles.
+  doctrine_reference: 'Principio de traducción POB: preservar la imaginería apocalíptica y distinguir términos técnicos cuando el texto presenta categorías celestiales específicas.'
+translation_notes:
+  revision_awareness: Se tomó en cuenta la revisión del audit trail que corrige la referencia a «around it» y la redacción inglesa final «these are those who do not sleep». La versión española refleja explícitamente la referencia pronominal a «él» y conserva la identificación enfática sin depender de la forma inglesa previa.
+  spanish_consistency_notes:
+  - Se mantuvo un registro elevado y bíblico sin recurrir a SEÑOR para el nombre divino, aunque aquí no aparece el tetragrámaton.
+  - «Ofanim» se dejó en transliteración para conservar la taxonomía celestial del texto; se añadió nota explicativa por la alternativa semántica «ruedas».
+  - «Gloria» se conservó para መንበረ ስብሐተ ዚአሁ porque el genitivo del original no requiere adjetivación en español.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/071/007.yaml
+  source_text_sha256: 71df3a42318f265cb63bb6cffde3f7864c23176d3c1ac3f19f148334df596d15
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: aef1c91bce602d96382f45dc3442c9d0910bf35240a3461a594e6799c98c735c
+  timestamp: '2026-05-07T21:27:32Z'
+  output_hash: a016a28e756ed3bf71c3dd273e148ba5128909c597550f6163e2c411b31952c2
+  usage:
+    prompt_tokens: 2969
+    completion_tokens: 1310
+    total_tokens: 4279
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008122
+status: spanish_reviewed
+revisions:
+- from: Y alrededor de él estaban los serafines, los querubines y los ofanim[a], y estos son los que no duermen y guardan vigilancia sobre el trono de su gloria.
+  to: Y alrededor de eso estaban los serafines, los querubines y los ofanim[a], y estos son los que no duermen y mantienen vigilancia sobre el trono de su gloria.
+  rationale: Se corrige la referencia pronominal para reflejar un antecedente no personal, en línea con la revisión inglesa documentada para el sufijo ge'ez. También se mejora la naturalidad de la frase verbal de vigilancia sin alterar el sentido fuente ni las decisiones léxicas principales.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:42:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura básica, las clases celestiales transliteradas y la identificación de quienes no duermen y vigilan el trono. Sin embargo, no refleja con precisión el sufijo pronominal de ወአውዶ tal como fue documentado en la auditoría inglesa: debe referirse a una cosa previa (''it''), no a una persona (''él'').'
+  spanish_quality_summary: El texto es mayormente claro y digno, pero 'alrededor de él' introduce una referencia personal innecesaria y potencialmente errónea. Además, 'guardan vigilancia sobre' suena algo forzado en español; 'mantienen vigilancia sobre' o 'vigilan' es más natural. Se puede mejorar levemente la fluidez sin perder literalidad.
+  glossary_alignment: 'La terminología principal está bien alineada: ''serafines'', ''querubines'' y ''ofanim'' preservan la taxonomía apocalíptica; ''trono de su gloria'' sigue la decisión auditada. No hay conflicto con los glosarios nucleares del proyecto. La nota sobre ''ofanim'' está bien justificada y debe mantenerse.'
+  issues:
+  - severity: high
+    issue: Referencia pronominal incorrecta en 'alrededor de él'
+    rationale: La auditoría inglesa documenta que ወአውዶ incluye un sufijo de tercera persona singular que apunta al referente previo como objeto/estructura ('it'). En español, 'de él' normalmente remite a una persona masculina y distorsiona la referencia.
+  - severity: medium
+    issue: 'Expresión poco natural: ''guardan vigilancia sobre'''
+    rationale: Aunque transmite el sentido de vigilancia, la combinación no es idiomática en español neutro. 'Mantienen vigilancia sobre' preserva mejor el matiz de vigilancia continua sin sonar calcado.
+  revised_spanish_text: Y alrededor de eso estaban los serafines, los querubines y los ofanim[a], y estos son los que no duermen y mantienen vigilancia sobre el trono de su gloria.
+  revised_footnotes:
+  - marker: a
+    text: «Ofanim» es una transliteración de un nombre de orden celestial; su sentido subyacente se relaciona con «ruedas».
+    reason: lexical_alternative
+  revision_rationale: Se corrige la referencia pronominal para reflejar un antecedente no personal, en línea con la revisión inglesa documentada para el sufijo ge'ez. También se mejora la naturalidad de la frase verbal de vigilancia sin alterar el sentido fuente ni las decisiones léxicas principales.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: bdab03a545e24698fa6edd0a6c8545ab31cb00db6fe91e7386e3809bb854a487
+  timestamp: '2026-05-07T23:42:01Z'
+  output_hash: 76dca1d063e66f16bffd1d9a1505337f74ecd5d0c6a5308ea516ab2657a5580b
+  usage:
+    prompt_tokens: 3916
+    completion_tokens: 588
+    total_tokens: 4504
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01861
+  applied_revision: true

@@ -1,0 +1,122 @@
+id: 2ES.16.25
+reference: 2 Esdras 16:25
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: non derelinquetur agricola, qui colitterram et qui seminat eam.
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/016/025.yaml
+  text: No farmer will be left to till the earth and to sow it[a].
+  footnotes:
+  - marker: a
+    text: Or 'There will be no one left to till the earth and to sow it.'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T20:29:49Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: No quedará ningún agricultor[a] para labrar la tierra y sembrarla.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «No quedará nadie para labrar la tierra y sembrarla»'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: agricola
+  english_pob_choice: farmer
+  chosen_spanish: agricultor
+  alternatives_spanish:
+  - campesino
+  - labrador
+  - labrador de la tierra
+  lexicon: agricola
+  rationale: 'El latín es específico: no dice simplemente ''nadie'', sino ''agricola'', es decir, una persona dedicada al cultivo. ''Agricultor'' conserva esa precisión semántica y funciona de manera natural en español.'
+- source_word: colit terram
+  english_pob_choice: to till the earth
+  chosen_spanish: labrar la tierra
+  alternatives_spanish:
+  - cultivar la tierra
+  - trabajar la tierra
+  lexicon: colere + terra
+  rationale: '''Labrar la tierra'' expresa con claridad la acción agrícola del original y mantiene un registro digno y bíblico sin depender de una calca pesada.'
+- source_word: seminat eam
+  english_pob_choice: to sow it
+  chosen_spanish: sembrarla
+  alternatives_spanish:
+  - sembrarla a ella
+  - sembrar en ella
+  lexicon: seminare
+  rationale: El infinitivo con pronombre enclítico 'sembrarla' transmite con naturalidad el objeto directo femenino referido a 'la tierra' y evita redundancia innecesaria.
+translation_notes:
+  revision_awareness: La versión inglesa POB fue revisada desde una formulación indefinida ('There will be no one left') a una más precisa ('No farmer will be left') para reflejar el sujeto explícito del latín 'agricola'. La redacción española sigue esa revisión y conserva la especificidad léxica del original.
+  spanish_consistency_notes:
+  - Se mantuvo 'agricultor' para 'agricola', en línea con la revisión auditada que rechaza la generalización a 'nadie'.
+  - Se prefirió 'labrar la tierra' frente a una paráfrasis más amplia para conservar la imagen agrícola concreta del latín.
+  - El pronombre enclítico en 'sembrarla' es una solución idiomática en español para referir nuevamente a 'la tierra' sin alterar el sentido.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/016/025.yaml
+  source_text_sha256: 06949c7897ec3574417b136dff480cf9a5d6999eca6304e72d8e224905ff585b
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: d51f1cae92c8f5a25603a632b44d7e07d5739c7b469b9d17950de620fd80f022
+  timestamp: '2026-05-07T21:29:13Z'
+  output_hash: b840fc2713da7b27092c50f8add61479c00f1a35fb4808c801f211998151e028
+  usage:
+    prompt_tokens: 1771
+    completion_tokens: 545
+    total_tokens: 2316
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.003781
+status: spanish_reviewed
+revisions:
+- from: No quedará ningún[a] agricultor para labrar la tierra y sembrarla.
+  to: No quedará ningún agricultor[a] para labrar la tierra y sembrarla.
+  rationale: Se conserva el texto principal, que es fiel y natural, pero se corrige la nota para reflejar la alternativa real documentada en el audit trail inglés y se mueve el anclaje a un punto más claro.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:04:52Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el latín: mantiene el sujeto específico `agricola` como `agricultor`, y traduce adecuadamente las acciones agrícolas de `colit terram` y `seminat eam`. Sin embargo, la nota no preserva la alternativa documentada en el rastro inglés, que contrasta la lectura específica `agricultor` con la más general `no habrá nadie`/`no quedará nadie`.'
+  spanish_quality_summary: 'El español principal es claro, natural y digno. `No quedará ningún agricultor para labrar la tierra y sembrarla` suena bien. El único problema relevante es estilístico-editorial: el marcador de nota está anclado en `ningún[a]`, lo que vuelve confusa la relación con la variante, y la propia variante española no corresponde a la alternativa inglesa preservada.'
+  glossary_alignment: '`agricola` → `agricultor` está bien y sigue la revisión adjudicada. No hay conflictos con la terminología teológica del proyecto. `labrar la tierra` y `sembrarla` son opciones españolas fieles y legibles.'
+  issues:
+  - severity: medium
+    issue: La nota al pie no conserva la alternativa semántica del audit trail inglés.
+    rationale: 'La nota inglesa preserva una alternativa con sujeto indefinido: `There will be no one left...`, mientras que la nota española solo ofrece una reordenación estilística (`No quedará agricultor alguno...`), que no aporta la variante significativa documentada.'
+  - severity: low
+    issue: El anclaje del marcador `[a]` en `ningún[a]` es poco natural.
+    rationale: La nota explica una alternativa de redacción para toda la cláusula, no para la palabra `ningún` en sí. Conviene anclarla al sintagma `agricultor[a]` o al final de la oración principal para mayor claridad editorial.
+  revised_spanish_text: No quedará ningún agricultor[a] para labrar la tierra y sembrarla.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «No quedará nadie para labrar la tierra y sembrarla»'
+    reason: alternative_reading
+  revision_rationale: Se conserva el texto principal, que es fiel y natural, pero se corrige la nota para reflejar la alternativa real documentada en el audit trail inglés y se mueve el anclaje a un punto más claro.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 4755a6f5a3cea175d16b0683b2ad99b8966507d1a525106495ace796b1d2e412
+  timestamp: '2026-05-07T23:04:52Z'
+  output_hash: 74c9bfc00e53b2a1348303d26021f6894e02a91d045574e326141998fba8d60d
+  usage:
+    prompt_tokens: 1953
+    completion_tokens: 550
+    total_tokens: 2503
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.013133
+  applied_revision: true

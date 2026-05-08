@@ -1,0 +1,204 @@
+id: 1EN.61.2
+reference: 1 Enoch 61:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወተስአልክዎ፡ ለመላእክ፡ እንዘ፡ እብሎ፡ ለምንት፡ ነሡ፡ እሎንቱ፡ አኅበለ፡ ወሖሩ፡ ወይቤለኒ፡ ሖሩ፡ ከመ፡ ይመጥኑ።
+  language: Geez
+  pages:
+  - 146
+  - 147
+  - 148
+  - 149
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch61.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 61, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/061/002.yaml
+  text: And I asked the angel[a], saying, “Why have they taken these cords and gone?” And he said to me[c][b], “They have gone so that they may measure.”
+  footnotes:
+  - marker: a
+    text: Or “companies,” “groups,” or “assemblies” for “bands.” The Ge'ez refers to gathered collectives, but their precise characterization is not explicit in this verse alone.
+    reason: lexical_alternative
+  - marker: b
+    text: The final clause may also mean “so that they may be apportioned” or “so that their measure may be determined.” Because this section is effectively preserved only in Ge'ez for this workflow, the more concrete wording “be measured” is retained.
+    reason: alternative_reading
+  - marker: c
+    text: Or '“Why have those bands risen and gone?” And he said to me, “They have gone so that they may be measured.”'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 5d04d0068929faba44f09a6c711c436fb0b779d1b2295041ca1f9bd7db398d36
+    timestamp: '2026-04-22T09:13:41Z'
+    output_hash: f334b2796eb6715a73b48dbd5e1f47ce27088f6293f14bf7086ad0a9a7aa4b73
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:47Z'
+    unchanged: false
+    changes_summary: Adjusted 'did they take' to 'have they taken' to better reflect the verbal sequence and improve natural formal English; retained the rest as accurate and complete.
+translation:
+  language: es
+  text: 'Y pregunté al ángel, diciendo: «¿Por qué han tomado estos cordeles[a] y se han ido?». Y él me dijo: «Se han ido para que midan[b]».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «estas cuerdas». El término ge'ez aquí se refiere a objetos físicos tomados para medir, no a «bandas» o «grupos».
+    reason: lexical_alternative
+  - marker: b
+    text: 'El verbo final se entiende aquí de forma activa: «midan», no pasiva: «sean medidos».'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: ተስአልክዎ
+  english_pob_choice: I asked
+  chosen_spanish: pregunté
+  alternatives_spanish:
+  - le pregunté
+  - interrogué
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo ge'ez introduce una pregunta directa en primera persona. «Pregunté» es natural y mantiene el movimiento narrativo sin sobrecargar el español.
+- source_word: መላእክ
+  english_pob_choice: the angel
+  chosen_spanish: al ángel
+  alternatives_spanish:
+  - al mensajero
+  - al ángel celestial
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En el contexto visionario apocalíptico, «ángel» es la equivalencia más precisa y transparente. El artículo definido sigue el interlocutor específico del pasaje.
+- source_word: እንዘ እብሎ
+  english_pob_choice: saying
+  chosen_spanish: diciendo
+  alternatives_spanish:
+  - mientras decía
+  - al decir
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción introductoria de habla se vierte de forma directa con «diciendo», que conserva el flujo semita del relato sin forzar una paráfrasis.
+- source_word: ነሡ
+  english_pob_choice: have ... taken
+  chosen_spanish: han tomado
+  alternatives_spanish:
+  - tomaron
+  - han llevado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión textual indica que el verbo significa «tomar» y no «levantarse» o «irse». «Han tomado» reproduce la acción concreta y sigue el orden narrativo del original.
+- source_word: እሎንቱ አኅበለ
+  english_pob_choice: these cords
+  chosen_spanish: estos cordeles
+  alternatives_spanish:
+  - estas cuerdas
+  - estos lazos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La corrección adjudicada muestra que el sustantivo se refiere a cordones/cuerdas y no a grupos. «Cordeles» conserva la imagen física y la referencia a los instrumentos de medición.
+- source_word: ሖሩ
+  english_pob_choice: gone
+  chosen_spanish: se han ido
+  alternatives_spanish:
+  - han partido
+  - han salido
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa desplazamiento. «Se han ido» es idiomático en español y mantiene la secuencia de movimiento del diálogo.
+- source_word: ይመጥኑ
+  english_pob_choice: so that they may measure
+  chosen_spanish: para que midan
+  alternatives_spanish:
+  - a fin de medir
+  - para que puedan medir
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'La lectura revisada entiende el verbo como activo: «medir». «Para que midan» conserva la finalidad sin introducir una pasiva interpretativa.'
+theological_decisions:
+- issue: 'Objeto de la acción final: medir vs. ser medidos'
+  english_pob_reading: They have gone so that they may be measured.
+  chosen_spanish_reading: Se han ido para que midan.
+  alternative_spanish_readings:
+  - Se han ido para que sean medidos.
+  - Se han ido para que se determine su medida.
+  rationale: El control revisado del ge'ez corrige la pasiva inicial. La traducción española mantiene la acción activa de medir y no convierte el propósito en un juicio o reparto implícito que el texto no afirma aquí.
+  doctrine_reference: Preservar la tensión apocalíptica sin resolverla de forma interpretativa; fidelidad al verbo activo del original.
+translation_notes:
+  revision_awareness: 'El borrador inglés anterior fue corregido por la revisión adjudicada: ነሡ significa «tomar» y ይመጥኑ es activo («medir»). La versión española sigue esa corrección y evita la antigua lectura de «bandas» o de una pasiva en el final.'
+  spanish_consistency_notes:
+  - Se mantiene «ángel» para መላእክ por el contexto visionario.
+  - Se usa «cordeles» para reflejar el objeto físico de medida señalado por la revisión textual.
+  - Se evita «SEÑOR» u otras sustituciones teológicas no presentes en el texto.
+  - La puntuación busca reflejar el diálogo directo y la clausura breve del original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/061/002.yaml
+  source_text_sha256: 365ea194de9e3ee237d1c001431ccb35dacc04824ce24e581fd7294c36a63ad3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 8b1ac2d2336bd391b5afc2a2a1b63f74782c2462c33485490fc734f24eea820f
+  timestamp: '2026-05-07T21:28:05Z'
+  output_hash: 62423cc0e05fa2f083e61ef080b14b1ceead36db69aa101cc43caf66165b121e
+  usage:
+    prompt_tokens: 3315
+    completion_tokens: 1232
+    total_tokens: 4547
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00803
+status: spanish_reviewed
+revisions:
+- from: 'Y pregunté al ángel[a], diciendo: «¿Por qué han tomado estos cordeles y se han ido?». Y él me dijo[b][c]: «Se han ido para que midan».'
+  to: 'Y pregunté al ángel, diciendo: «¿Por qué han tomado estos cordeles[a] y se han ido?». Y él me dijo: «Se han ido para que midan[b]».'
+  rationale: El texto principal es básicamente fiel, pero las notas necesitan corrección para no conservar una interpretación previa ya rechazada por la adjudicación. Se eliminó la nota redundante y se reescribieron las notas restantes para reflejar con precisión la evidencia ge'ez y la decisión léxica del POB.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:51:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español capta correctamente la revisión clave del ge''ez: ነሡ = «han tomado», አኅበለ = objetos físicos («cordeles/cuerdas»), y ይመጥኑ = propósito activo («midan»), no pasivo. También mantiene bien la secuencia narrativa de pregunta y respuesta. Sin embargo, una nota al pie conserva alternativas antiguas ya descartadas («bandas», «compañías», «grupos»), lo cual contradice la evidencia fuente y la adjudicación aplicada.'
+  spanish_quality_summary: El español es claro, natural y digno. «Cordeles» funciona, aunque «cuerdas» puede sonar un poco más transparente para lectura eclesial amplia; aun así, «cordeles» es aceptable por el contexto de medición. La principal mejora necesaria es limpiar las notas para que no introduzcan confusión ni una pseudo-variante inexistente. La nota c también es redundante porque repite el texto principal sin aportar alternativa real.
+  glossary_alignment: No hay conflicto con la terminología doctrinal base del proyecto. «Ángel» y «midan» están bien elegidos. La revisión propuesta solo corrige las notas para alinearlas con la decisión léxica ya documentada y evitar restos del antiguo error inglés sobre «bands».
+  issues:
+  - severity: medium
+    issue: La nota [a] menciona «bandas», «compañías» y «grupos» como alternativas.
+    rationale: Eso contradice la revisión textual adjudicada, que estableció que አኅበለ aquí se refiere a cordeles/cuerdas físicos, no a colectivos humanos.
+  - severity: low
+    issue: La nota [c] no aporta una alternativa significativa.
+    rationale: Solo repite la misma pregunta del texto principal y no preserva ninguna variante útil para el lector español.
+  - severity: low
+    issue: Orden de notas [b][c] tras «me dijo».
+    rationale: No es incorrecto, pero al eliminar la nota redundante queda un aparato más limpio y legible.
+  revised_spanish_text: 'Y pregunté al ángel, diciendo: «¿Por qué han tomado estos cordeles[a] y se han ido?». Y él me dijo: «Se han ido para que midan[b]».'
+  revised_footnotes:
+  - marker: a
+    text: O «estas cuerdas». El término ge'ez aquí se refiere a objetos físicos tomados para medir, no a «bandas» o «grupos».
+    reason: lexical_alternative
+  - marker: b
+    text: 'El verbo final se entiende aquí de forma activa: «midan», no pasiva: «sean medidos».'
+    reason: alternative_reading
+  revision_rationale: El texto principal es básicamente fiel, pero las notas necesitan corrección para no conservar una interpretación previa ya rechazada por la adjudicación. Se eliminó la nota redundante y se reescribieron las notas restantes para reflejar con precisión la evidencia ge'ez y la decisión léxica del POB.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5884369a433fe3443cf46bcc32618e93c120d0cd3c7d166dba06b62c2db24c36
+  timestamp: '2026-05-07T23:51:58Z'
+  output_hash: a4b5ef08bace247b812ad9aad9a3b73701c2bc573d844fde99768413cba56924
+  usage:
+    prompt_tokens: 4216
+    completion_tokens: 690
+    total_tokens: 4906
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02089
+  applied_revision: true

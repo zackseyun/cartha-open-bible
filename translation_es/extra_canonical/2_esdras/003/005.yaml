@@ -1,0 +1,134 @@
+id: 2ES.3.5
+reference: 2 Esdras 3:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: Et dedit tibi Adam, corpus mortuum ? sed et ipsum figmentum manuum tuarum erat, et insufflasti in eum spiritum uitae, et factus est uiuens coram te.
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/003/005.yaml
+  text: And you gave Adam a dead body? Yet he too was the work of your hands, and you breathed into him the spirit of life, and he became alive before you.
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:24Z'
+    unchanged: false
+    changes_summary: Corrected the subject from 'it' to 'you' to match the Latin verb, removed the awkward comma after 'Adam,' and revised 'became living' to the more natural 'became alive' while preserving the sense.
+translation:
+  language: es
+  text: ¿Y diste a Adán un cuerpo muerto? Sin embargo, él también era obra de tus manos, e insuflaste en él el espíritu de vida, y cobró vida delante de ti.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: Et dedit tibi Adam
+  english_pob_choice: And you gave Adam
+  chosen_spanish: Y diste a Adán
+  alternatives_spanish:
+  - Y le diste a Adán
+  - Y diste Adán
+  lexicon: dare -> dar; Adam -> Adán
+  rationale: El latín usa dedit con tibi como destinatario; por eso el sujeto implícito es «tú». En español, «diste a Adán» conserva el orden directo y la relación de dativo sin añadir elementos ajenos al texto.
+- source_word: corpus mortuum
+  english_pob_choice: a dead body
+  chosen_spanish: un cuerpo muerto
+  alternatives_spanish:
+  - un cadáver
+  - un cuerpo sin vida
+  lexicon: corpus -> cuerpo; mortuum -> muerto
+  rationale: «Cuerpo muerto» sigue de cerca la fuerza del latín y preserva la tensión retórica del pasaje. «Cadáver» sería más fuerte y menos neutral; «cuerpo sin vida» suaviza demasiado la expresión.
+- source_word: sed et ipsum figmentum manuum tuarum erat
+  english_pob_choice: Yet he too was the work of your hands
+  chosen_spanish: Sin embargo, él también era obra de tus manos
+  alternatives_spanish:
+  - Pero también él era la obra de tus manos
+  - Y sin embargo, él mismo era obra de tus manos
+  lexicon: figmentum -> obra/formación; manuum tuarum -> tus manos
+  rationale: «Obra de tus manos» es la equivalencia natural y transparente para figmentum manuum tuarum. Se mantiene «él también» para reflejar ipsum y conservar el contraste enfático con Adán como objeto del acto divino.
+- source_word: insufflasti in eum spiritum uitae
+  english_pob_choice: and you breathed into him the spirit of life
+  chosen_spanish: e insuflaste en él el espíritu de vida
+  alternatives_spanish:
+  - y soplaste en él el espíritu de vida
+  - e infundiste en él el aliento de vida
+  lexicon: insufflare -> insuflar; spiritus vitae -> espíritu de vida
+  rationale: «Insuflaste» reproduce con precisión el verbo latino y su imaginería de aliento dado por Dios. «Espíritu de vida» conserva la construcción tradicional del texto fuente sin forzarla hacia «aliento», que debilitaría la correspondencia con spiritum uitae.
+- source_word: factus est uiuens coram te
+  english_pob_choice: and he became alive before you
+  chosen_spanish: y quedó vivo delante de ti
+  alternatives_spanish:
+  - y se volvió vivo delante de ti
+  - y llegó a estar vivo delante de ti
+  lexicon: fieri -> hacerse/ quedar; vivens -> vivo; coram te -> delante de ti
+  rationale: La revisión inglesa prefirió «became alive» frente a «became living» por naturalidad. En español, «quedó vivo» transmite el estado resultante con fluidez y mantiene el matiz de cambio de condición ante Dios.
+theological_decisions:
+- issue: Relación entre la creación humana y la vivificación divina
+  english_pob_reading: And you gave Adam a dead body? Yet he too was the work of your hands, and you breathed into him the spirit of life, and he became alive before you.
+  chosen_spanish_reading: Y diste a Adán un cuerpo muerto? Sin embargo, él también era obra de tus manos, e insuflaste en él el espíritu de vida, y quedó vivo delante de ti.
+  alternative_spanish_readings:
+  - Y diste a Adán un cuerpo muerto? ... y quedó viviente delante de ti
+  - Y diste a Adán un cadáver? ... y se hizo vivo delante de ti
+  rationale: El versículo contrasta la condición corporal de Adán con la acción vivificadora directa de Dios. La traducción conserva ese contraste sin suavizar la afirmación de que la vida procede del soplo divino. «Delante de ti» mantiene la relación personal y judicial del hebraísmo/latín coram te.
+  doctrine_reference: Génesis 2:7; Sabiduría 15:11; 1 Corintios 15:45
+translation_notes:
+  revision_awareness: 'La versión inglesa fue revisada para corregir el sujeto de «it» a «you», eliminar una coma impropia tras «Adam» y preferir «became alive» por naturalidad. La redacción española sigue esa lectura revisada y la refleja con un verbo personal en segunda persona y con una expresión idiomática de resultado: «quedó vivo».'
+  spanish_consistency_notes:
+  - Se mantiene «Adán» como nombre propio, no «Adam».
+  - Se usa «espíritu» para spiritum, no «aliento», para conservar la correspondencia lexical del latín y el énfasis en la vivificación divina.
+  - Se evita «SEÑOR» porque el texto latino no contiene el Tetragrámaton ni una sustitución explícita de κύριος.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/003/005.yaml
+  source_text_sha256: 9876724b2d4844259fe7c393ffbb6df8a447bea99ac6b3231bf9b54329127a01
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 8ef0c61838bc0eb8b3a727e738629b429234bbcfc35973f089cdb8d8df743d65
+  timestamp: '2026-05-07T21:28:55Z'
+  output_hash: fa01ebc51fd427b2ebdb8dab36a0dba20849125118be531888a3bbc950c6455d
+  usage:
+    prompt_tokens: 1767
+    completion_tokens: 1164
+    total_tokens: 2931
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.006563
+status: spanish_reviewed
+revisions:
+- from: Y diste a Adán un cuerpo muerto? Sin embargo, él también era obra de tus manos, e insuflaste en él el espíritu de vida, y quedó vivo delante de ti.
+  to: ¿Y diste a Adán un cuerpo muerto? Sin embargo, él también era obra de tus manos, e insuflaste en él el espíritu de vida, y cobró vida delante de ti.
+  rationale: Se corrige la puntuación interrogativa según la norma del español y se ajusta la última cláusula a una formulación más natural y fiel al sentido de vivificación del latín.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:32:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el sentido básico del latín: Dios da a Adán un «cuerpo muerto», luego sopla en él el espíritu de vida y Adán llega a estar vivo ante Dios. También mantiene correctamente el sujeto divino en «diste» e «insuflaste» y el contraste de sed et. Sin embargo, la puntuación inicial omite el signo de apertura de interrogación exigido en español, y «quedó vivo» es comprensible pero menos fiel al matiz de factus est que una formulación más directa de cambio de estado como «cobró vida».'
+  spanish_quality_summary: El español es claro y digno, con buena legibilidad general. «Obra de tus manos» y «el espíritu de vida» funcionan bien. La principal reparación es ortográfica/puntuacional («¿...?»). Además, «cobró vida delante de ti» suena más natural y exacto que «quedó vivo delante de ti» en este contexto de vivificación.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. No aparecen Yahvé/Mesías/Cristo/etc. «Espíritu de vida» respeta spiritum vitae sin aplanarlo a «aliento»; «Adán» y «Dios» implícito están bien tratados.
+  issues:
+  - severity: medium
+    issue: Falta el signo inicial de interrogación en la primera oración.
+    rationale: En español debe escribirse «¿Y diste a Adán un cuerpo muerto?» para cumplir la ortografía estándar y marcar correctamente la pregunta retórica del latín/inglés.
+  - severity: low
+    issue: «quedó vivo» es algo menos preciso que una expresión de vivificación como «cobró vida».
+    rationale: factus est uiuens expresa un llegar a vivir; «cobró vida» conserva mejor el cambio de estado y suena más idiomático en español bíblico moderno.
+  revised_spanish_text: ¿Y diste a Adán un cuerpo muerto? Sin embargo, él también era obra de tus manos, e insuflaste en él el espíritu de vida, y cobró vida delante de ti.
+  revision_rationale: Se corrige la puntuación interrogativa según la norma del español y se ajusta la última cláusula a una formulación más natural y fiel al sentido de vivificación del latín.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 7025a58a71981027be89815f4377ef81dd3139550e4605493218b4c4ce36b4d3
+  timestamp: '2026-05-07T23:32:10Z'
+  output_hash: fa488a1764150d69c9fe73b599768f946232c2289a6dc186539ef4b5a7dc91df
+  usage:
+    prompt_tokens: 2542
+    completion_tokens: 543
+    total_tokens: 3085
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0145
+  applied_revision: true

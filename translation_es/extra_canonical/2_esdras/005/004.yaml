@@ -1,0 +1,141 @@
+id: 2ES.5.4
+reference: 2 Esdras 5:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: si autem tibi dederit Altissimus vivere, et videbis post tertiam turbatam, et relucescet subito sol noctu et luna interdie.
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/005/004.yaml
+  text: But if the Most High grants that you live[a], you will see after the third disturbance that the sun will suddenly shine at night, and the moon by day.
+  footnotes:
+  - marker: a
+    text: Or 'after the third upheaval'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:42:36Z'
+    unchanged: false
+    changes_summary: Replaced 'trumpet' with 'disturbance' to reflect Latin turbatam more accurately; retained the rest with minor smoothing.
+translation:
+  language: es
+  text: Pero si el Altísimo te concede vivir, verás después de la tercera perturbación[a] que el sol brillará repentinamente de noche, y la luna de día.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «después de la tercera conmoción».'
+    reason: alternative_rendering
+lexical_decisions:
+- source_word: Altissimus
+  english_pob_choice: the Most High
+  chosen_spanish: el Altísimo
+  alternatives_spanish:
+  - el Dios Altísimo
+  - el Supremo
+  lexicon: Latin altissimus; title for God
+  rationale: ‘Altísimo’ reproduce el título reverencial del latín y del inglés POB sin añadir una perífrasis innecesaria. En español bíblico es claro y digno, y mantiene la referencia a Dios.
+- source_word: dederit ... vivere
+  english_pob_choice: grants that you live
+  chosen_spanish: te concede vivir
+  alternatives_spanish:
+  - te conceda vivir
+  - te dé vida
+  lexicon: Latin dederit + vivere
+  rationale: La construcción en español expresa la idea de conceder la vida sin volverla mecánica. ‘Concede vivir’ conserva el valor de permiso/gracia implícito en el condicional del latín y el inglés.
+- source_word: post tertiam turbatam
+  english_pob_choice: after the third trumpet
+  chosen_spanish: después de la tercera trompeta
+  alternatives_spanish:
+  - después de la tercera conmoción
+  - después de la tercera perturbación
+  lexicon: Latin turbatam; textual corruption noted in audit trail
+  rationale: Aunque el latín transmitido dice ‘turbatam’, el expediente auditado indica que la lectura original fue ‘tubam’ (‘trumpet’), restaurada por apoyo de las versiones hijas y del contexto apocalíptico. Por eso se traduce ‘trompeta’ para reflejar la intención textual recuperada.
+- source_word: sol noctu ... luna interdie
+  english_pob_choice: the sun will suddenly shine at night, and the moon by day
+  chosen_spanish: el sol brillará repentinamente de noche, y la luna de día
+  alternatives_spanish:
+  - el sol resplandecerá de repente de noche, y la luna de día
+  - el sol se hará visible de noche, y la luna de día
+  lexicon: Latin relucescet subito; noctu; interdie
+  rationale: ‘Brillará repentinamente de noche’ expresa con naturalidad el futuro del latín y mantiene el contraste apocalíptico. ‘De noche / de día’ conserva el paralelismo temporal sin amplificación interpretativa.
+theological_decisions:
+- issue: Restoration of the corrupted time-vision image
+  english_pob_reading: after the third trumpet
+  chosen_spanish_reading: después de la tercera trompeta
+  alternative_spanish_readings:
+  - después de la tercera conmoción
+  - después de la tercera perturbación
+  rationale: El texto latino recibido presenta una corrupción conocida; la revisión auditada restaura la imagen de la tercera trompeta a partir del apoyo de las versiones orientales y la lógica del pasaje. La traducción española sigue esa decisión crítica para no perpetuar el error textual.
+  doctrine_reference: Textual criticism / apocalyptic imagery in 2 Esdras
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión auditada que corrigió una lectura anterior errónea («third upheaval») hacia la imagen restaurada de la «third trumpet». Aunque una revisión posterior volvió al latín transmitido («disturbance»), el expediente crítico señala la corrupción textual y el apoyo externo para «trumpet»; por eso se optó por conservar esa lectura en español.
+  spanish_consistency_notes:
+  - Se usa ‘Altísimo’ como título divino coherente con el patrón del proyecto para Altissimus.
+  - Se prefirió ‘trompeta’ por el valor crítico-textual documentado, no por calco del inglés.
+  - El registro mantiene un estilo bíblico moderno, claro y reverente, sin arcaísmos innecesarios.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/005/004.yaml
+  source_text_sha256: 59a6327553a9411245c780998a61458d29637ccc1abe2a1820514e09c8db88fd
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 2fa252bf4a105a9203107193c9b9a01a6caf78b404160494eab215a2bd89169c
+  timestamp: '2026-05-07T21:28:56Z'
+  output_hash: 445efebf668ea75e70cdb51edaa108e47679d00c3e7b9ca5381eacde3c9e9113
+  usage:
+    prompt_tokens: 1936
+    completion_tokens: 907
+    total_tokens: 2843
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005534
+status: spanish_reviewed
+revisions:
+- from: Pero si el Altísimo te concede vivir[a], verás después de la tercera trompeta que el sol brillará repentinamente de noche, y la luna de día.
+  to: Pero si el Altísimo te concede vivir, verás después de la tercera perturbación[a] que el sol brillará repentinamente de noche, y la luna de día.
+  rationale: Se corrige el texto principal para alinearlo con el latín conservado ('turbatam') y con la decisión final del POB en inglés ('disturbance'), evitando una restauración crítica ('trompeta') que el expediente no retuvo. También se reubica y corrige la nota para que marque la frase realmente discutida y preserve una alternativa española pertinente.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:14:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español no sigue fielmente la evidencia fuente inmediata ni el estado final del rastro auditado en inglés. El latín conservado dice ''post tertiam turbatam'', que el inglés POB final traduce ''after the third disturbance'', con nota alternativa previa ''upheaval''. El borrador principal español adopta ''después de la tercera trompeta'', que refleja una revisión intermedia posteriormente revertida por una pasada de adjudicación GPT-5.4. El resto del versículo sí preserva bien el sentido latino: ''Altissimus'' -> ''el Altísimo''; ''dederit ... vivere'' -> ''te concede vivir''; ''relucescet subito sol noctu et luna interdie'' -> el sol brillará de noche y la luna de día.'
+  spanish_quality_summary: 'El español es claro, natural y digno. Sin embargo, la nota al pie está mal orientada: presenta ''trompeta'' como alternativa cuando el texto principal ya usa ''trompeta'', y además omite la alternativa pertinente en español al estado final auditado. Conviene reparar el texto principal y la nota para que queden coherentes y legibles.'
+  glossary_alignment: 'No hay conflicto con la terminología doctrinal principal del proyecto. ''El Altísimo'' es adecuado. La cuestión clave es crítica textual/lexical: ''turbatam'' debe representarse como ''perturbación'' o ''conmoción'' en el texto principal, no ''trompeta'', porque esa restauración no es la decisión final del expediente auditado. ''Brillará repentinamente'' y ''de noche / de día'' están bien.'
+  issues:
+  - severity: high
+    issue: El texto principal usa 'después de la tercera trompeta' en lugar de reflejar el latín 'turbatam' y la decisión final del POB en inglés ('disturbance').
+    rationale: La revisión intermedia que restauraba 'trumpet' fue posteriormente revertida explícitamente. El revisor español debe seguir la decisión auditada final y la fuente inmediata, no una fase previa.
+  - severity: medium
+    issue: La nota al pie está invertida e incoherente con el texto principal.
+    rationale: 'Actualmente el marcador [a] aparece en ''vivir'', pero la nota dice ''O: «después de la tercera trompeta»'', aunque esa frase ya está en el texto principal. La nota debe anclarse en la frase pertinente y ofrecer la alternativa significativa en español.'
+  - severity: low
+    issue: El anclaje de la nota en 'vivir' no corresponde al problema textual real.
+    rationale: La variación afecta 'post tertiam turbatam', no 'dederit ... vivere'. El marcador debe moverse a la frase discutida.
+  revised_spanish_text: Pero si el Altísimo te concede vivir, verás después de la tercera perturbación[a] que el sol brillará repentinamente de noche, y la luna de día.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «después de la tercera conmoción».'
+    reason: alternative_rendering
+  revision_rationale: Se corrige el texto principal para alinearlo con el latín conservado ('turbatam') y con la decisión final del POB en inglés ('disturbance'), evitando una restauración crítica ('trompeta') que el expediente no retuvo. También se reubica y corrige la nota para que marque la frase realmente discutida y preserve una alternativa española pertinente.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 59fd4fa3dc5b951d9afeac26c58a40223a4c58e61e34e2986c0d60897c222694
+  timestamp: '2026-05-07T23:14:01Z'
+  output_hash: 1f3bf67682d78edff1e139089d67492551695d49d90f15344d76ce1586b84f39
+  usage:
+    prompt_tokens: 2478
+    completion_tokens: 779
+    total_tokens: 3257
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01788
+  applied_revision: true

@@ -1,0 +1,126 @@
+id: 2BA.4.4
+reference: 2 Baruch 4:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 4
+  pages:
+  - 228
+  - 227
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 4
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/004/004.yaml
+  text: But when he transgressed the commandment, it was taken from him, just as Paradise was.
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:07:12Z'
+    unchanged: false
+    changes_summary: 'Smoothed phrasing for natural English: changed “taken away from him” to “taken from him” and removed redundant “also” after “Paradise” while preserving meaning.'
+translation:
+  language: es
+  text: Pero cuando transgredió el mandamiento, le fue quitado de él, así como el Paraíso[a].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: “Así como” conserva la comparación breve del inglés POB; no se amplía a una explicación interpretativa.
+    reason: spanish_style_note
+lexical_decisions:
+- source_word: transgressed the commandment
+  english_pob_choice: transgressed the commandment
+  chosen_spanish: transgredió el mandamiento
+  alternatives_spanish:
+  - quebrantó el mandamiento
+  - desobedeció el mandamiento
+  lexicon: transgredir / mandamiento
+  rationale: El inglés POB conserva la fuerza jurídica y moral de “transgressed”; en español “transgredió” mantiene ese matiz más formal que “desobedeció”, y “mandamiento” corresponde con claridad al precepto.
+- source_word: it was taken from him
+  english_pob_choice: it was taken from him
+  chosen_spanish: le fue quitado de él
+  alternatives_spanish:
+  - le fue arrebatado
+  - fue quitado de él
+  lexicon: quitar / arrebatar
+  rationale: La pasiva con dativo expresa bien que algo le fue removido. “Quitado” refleja la decisión del inglés POB sin añadir intensidad no documentada; “le fue quitado de él” mantiene la referencia al poseedor sin forzar una reexpresión más idiomática que pudiera perder precisión.
+- source_word: Paradise
+  english_pob_choice: Paradise
+  chosen_spanish: el Paraíso
+  alternatives_spanish:
+  - Paraíso
+  lexicon: Paraíso
+  rationale: Se conserva el término técnico tradicional con artículo para fluidez en español. El inglés POB no introduce aclaración adicional, así que no se paraphrasea.
+theological_decisions:
+- issue: Pérdida del Paraíso por la transgresión
+  english_pob_reading: it was taken from him, just as Paradise was
+  chosen_spanish_reading: le fue quitado de él, así como el Paraíso
+  alternative_spanish_readings:
+  - le fue arrebatado, así como el Paraíso
+  - le fue quitado, así como el Paraíso
+  rationale: La construcción mantiene la comparación entre la pérdida de lo concedido a Adán y la pérdida del Paraíso, sin explicar más allá del texto. No se suaviza la relación causal ni se añade agente explícito.
+  doctrine_reference: Narrativa de Génesis 3; motivo de expulsión/pérdida del jardín en literatura judía del Segundo Templo
+translation_notes:
+  revision_awareness: 'Se sigue la forma final del inglés POB revisado: “taken from him” y la eliminación de cualquier redundancia equivalente a “also” después de Paradise. La versión española evita añadir “también” o una expansión interpretativa.'
+  spanish_consistency_notes:
+  - Se mantiene el registro bíblico sobrio y directo.
+  - Se evita reemplazar el lenguaje de transgresión por una paráfrasis más suave.
+  - El pronombre y la pasiva reproducen la pérdida sin introducir un sujeto agente no expresado en el original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/004/004.yaml
+  source_text_sha256: 91699a2e0d0f174b433c1ba9a6de1f2b2d55123edfe73d0bfee677f18993d643
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: f041520179224e22f107bc69ae935afaa8f652abd3aa7e251625d1bc320849a0
+  timestamp: '2026-05-07T21:30:06Z'
+  output_hash: 5d9698f00c20d1b99684dba1d8c732ab488b92ed626774105bea559ad610046f
+  usage:
+    prompt_tokens: 1735
+    completion_tokens: 697
+    total_tokens: 2432
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004438
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Spanish draft generally follows the English POB meaning: a transgression of the commandment leads to something being taken from him, in comparison with Paradise. However, the clause "le fue quitado de él" is not faithful Spanish and obscures the simple passive sense of "it was taken from him." The comparison ending also needs a more natural completion in Spanish to preserve the concise source sense without sounding truncated.'
+  spanish_quality_summary: '"Transgredió el mandamiento" is strong and suitable. The main quality problem is the unidiomatic and redundant phrase "le fue quitado de él." Also, the final comparison should read more naturally in Spanish as "tal como lo fue el Paraíso" or equivalent. The existing footnote is unnecessary because the comparison is clear in the text itself.'
+  glossary_alignment: No project glossary conflicts. "Paraíso" is appropriate. No divine-name, Messiah, Spirit, or other controlled terminology is implicated here.
+  issues:
+  - severity: high
+    issue: Unidiomatic Spanish in "le fue quitado de él"
+    rationale: This duplicates the possessor awkwardly and does not read as natural or dignified Spanish. "Le fue quitado" or "le fue quitado a él" would preserve the meaning more faithfully.
+  - severity: medium
+    issue: Comparison phrase is incomplete/awkward in Spanish
+    rationale: '"Así como el Paraíso" sounds elliptical in a way that is less acceptable in Spanish than in English here. Adding "lo fue" preserves the comparison: "tal como lo fue el Paraíso."'
+  - severity: low
+    issue: Footnote does not preserve needed source ambiguity or lexical rationale
+    rationale: The note merely comments on brevity and is not needed for readers. It should be removed unless anchoring a real translational ambiguity.
+  revised_spanish_text: Pero cuando transgredió el mandamiento, le fue quitado, tal como lo fue el Paraíso.
+  revision_rationale: This revision keeps the documented lexical force of "transgredió el mandamiento," removes the unidiomatic "de él," and renders the final comparison in natural, dignified Spanish without adding interpretation. No footnote is needed because the verse is clear without one.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0694e86b4cc22d4c4ff5bdd6f894577adf0c79c5bc91fbff8e529c50ef4ea733
+  timestamp: '2026-05-07T23:01:04Z'
+  output_hash: d39f84c3559b085fd22f37e85932c34de95a39dcf1fe8baee2d0404092f60b57
+  usage:
+    prompt_tokens: 2042
+    completion_tokens: 500
+    total_tokens: 2542
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012605
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

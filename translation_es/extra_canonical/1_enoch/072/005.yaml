@@ -1,0 +1,250 @@
+id: 1EN.72.5
+reference: 1 Enoch 72:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ሰረገላት፡ በኀበ፡ የዓርግ፡ ነፋስ፡ ይነፍኅ፡ ወየዓርብ፡ ፀሐይ፡ እምሰማይ፡ ወይገብእ፡ እንተ፡ መስዕ፡ ከመ፡ ይሑር፡ ምሥራቀ፡ ወይትመራኅ፡ ከመ፡ ይባእ፡ ኆኅተ፡ ወያበርህ፡ *በገጸ፡ ሰማይ።
+  language: Geez
+  pages:
+  - 169
+  - 170
+  - 171
+  - 172
+  - 173
+  - 174
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/072/005.yaml
+  text: And the chariots by which it ascends are driven by the wind[a], and the sun goes down from the sky and returns through the north in order to reach the east[e][d][c][b]; and it is led so that it may enter the gate and shine on the face of heaven.
+  footnotes:
+  - marker: a
+    text: The phrase rendered 'the winds' is difficult and may more literally suggest 'the wind of ascent' or 'the rising wind.'
+    reason: lexical_alternative
+  - marker: b
+    text: '''From the sky'' could also be rendered ''from heaven''; the Ge''ez term can cover both senses.'
+    reason: lexical_alternative
+  - marker: c
+    text: The word translated 'openings' may also be rendered 'gates' or 'portals,' a common image in this book for celestial entryways.
+    reason: lexical_alternative
+  - marker: d
+    text: Or 'And chariots drive on the winds'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'the openings'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 4253a515edf66d11ce601e2c5e352035791898a37400467bc1efa5dd56ba12ca
+    timestamp: '2026-04-22T09:17:53Z'
+    output_hash: 8ac57a6d28627735f95651e463a471fce45306c27b39f02f9f95145ded2ee86b
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:14Z'
+    unchanged: false
+    changes_summary: Changed 'on which' to 'by which' for more natural English with the instrumental sense; removed the comma before 'in order'; changed 'across the face of heaven' to 'on the face of heaven' for a more literal rendering of the preposition.
+translation:
+  language: es
+  text: Y los carros por los cuales asciende son impulsados por el viento[a], y el sol desciende desde el cielo y vuelve por el norte para llegar al oriente; y es conducido para entrar por la puerta[b] y brillar sobre la faz del cielo[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La secuencia ge'ez es difícil; más literalmente podría sugerir 'el viento de ascenso' o 'el viento ascendente'.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Puerta'' traduce aquí una forma singular; en este libro la imagen puede también abarcar un ''portal'' o ''entrada'' celestial.'
+    reason: lexical_alternative
+  - marker: c
+    text: '''Faz del cielo'' conserva una imagen apocalíptica del original; también puede traducirse ''rostro del cielo''.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ሰረገላት
+  english_pob_choice: chariots
+  chosen_spanish: carros
+  alternatives_spanish:
+  - carros de guerra
+  - carros celestiales
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sustantivo plural designa vehículos/carros; en este contexto astral y apocalíptico, 'carros' conserva la imagen sin sobrecargarla con una especificación bélica que el pasaje no exige.
+- source_word: የዓርግ ነፋስ
+  english_pob_choice: the winds
+  chosen_spanish: el viento
+  alternatives_spanish:
+  - los vientos
+  - el viento de ascenso
+  - el viento ascendente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La secuencia ge'ez es difícil. La revisión indica que 'viento' es el sujeto de 'impulsados'; en español, el singular 'el viento' reproduce mejor ese funcionamiento sintáctico, mientras que las alternativas más literales pueden explicarse aparte.
+- source_word: ይነፍኅ
+  english_pob_choice: drive on / are driven
+  chosen_spanish: son impulsados
+  alternatives_spanish:
+  - son llevados
+  - son movidos
+  - son dirigidos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo tiene la idea de soplar/impulsar. Con 'carros' como referente, 'son impulsados' comunica el movimiento provocado por el viento sin perder la dependencia causal del original.
+- source_word: የዓርብ ፀሐይ
+  english_pob_choice: the sun goes down
+  chosen_spanish: el sol desciende
+  alternatives_spanish:
+  - el sol se pone
+  - el sol baja
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El valor verbal es de descenso; 'desciende' conserva más de cerca la imagen cosmológica del texto que 'se pone', aunque ambas son posibles en español.
+- source_word: እምሰማይ
+  english_pob_choice: from the sky
+  chosen_spanish: desde el cielo
+  alternatives_spanish:
+  - desde el cielo
+  - desde el firmamento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término ge'ez puede abarcar 'cielo' y 'cielo/heaven'. En un pasaje astronómico, 'cielo' funciona de manera natural en español y mantiene el registro elevado.
+- source_word: እንተ መስዕ
+  english_pob_choice: through the north
+  chosen_spanish: por el norte
+  alternatives_spanish:
+  - a través del norte
+  - por la región del norte
+  - por el lado norte
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase indica la zona o trayectoria norteña del recorrido solar. 'Por el norte' es la forma más natural en español y evita añadir precisión espacial no explicitada.
+- source_word: ከመ ይሑር ምሥራቀ
+  english_pob_choice: in order to reach the east
+  chosen_spanish: para llegar al oriente
+  alternatives_spanish:
+  - para ir al oriente
+  - a fin de alcanzar el oriente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La cláusula expresa propósito. 'Oriente' conserva el tono bíblico-apocalíptico de la imagen, sin dejar de ser comprensible en español moderno.
+- source_word: ወይትመራኅ
+  english_pob_choice: it is led
+  chosen_spanish: es conducido
+  alternatives_spanish:
+  - es guiado
+  - es dirigido
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El pasaje presenta el curso del sol como ordenado por una agencia externa. 'Es conducido' mantiene la pasividad/causatividad sin sonar demasiado abstracto.
+- source_word: ኆኅተ
+  english_pob_choice: the gate
+  chosen_spanish: la puerta
+  alternatives_spanish:
+  - la puerta
+  - la entrada
+  - el portal
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La adjudicación textual corregida exige singular. En español, 'puerta' es la opción más directa y transparente; 'portal' puede reservarse como alternativa interpretativa en nota.
+- source_word: ያበርህ በገጸ ሰማይ
+  english_pob_choice: shine on the face of heaven
+  chosen_spanish: alumbrar sobre el rostro del cielo
+  alternatives_spanish:
+  - brillar sobre el rostro del cielo
+  - alumbrar en la faz del cielo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la imagen idiomática de 'rostro/faz del cielo', importante en el lenguaje apocalíptico. 'Alumbrar' expresa el efecto del sol con claridad moderna y dignidad textual.
+theological_decisions:
+- issue: Cómo traducir el movimiento solar cosmológico sin domesticación excesiva
+  english_pob_reading: The sun descends from the sky and returns through the north in order to reach the east; it is led so that it may enter the gate and shine on the face of heaven.
+  chosen_spanish_reading: El sol desciende desde el cielo y vuelve por el norte para llegar al oriente; es conducido para entrar por la puerta y alumbrar sobre el rostro del cielo.
+  alternative_spanish_readings:
+  - el sol se pone desde el cielo y regresa por el norte
+  - el sol baja del cielo y vuelve por el norte
+  rationale: La lectura española mantiene la cosmovisión del pasaje como descripción ordenada del recorrido solar, sin reducirla a una fórmula idiomática más moderna que borraría el carácter apocalíptico y astronómico.
+  doctrine_reference: Principio de preservación de la imaginería cosmológica del texto fuente.
+- issue: Si traducir ሰማይ como 'cielo' o 'cielo/heaven' en el marco astronómico
+  english_pob_reading: from the sky ... on the face of heaven
+  chosen_spanish_reading: desde el cielo ... sobre el rostro del cielo
+  alternative_spanish_readings:
+  - desde el cielo ... sobre el rostro del cielo
+  - desde el cielo ... sobre la faz del cielo
+  rationale: En español, 'cielo' funciona bien tanto para el espacio visible como para el registro elevado del pasaje. La expresión fija 'rostro del cielo' preserva el eco apocalíptico sin forzar una distinción artificial entre sky/heaven.
+  doctrine_reference: Principio de claridad moderna con preservación de fórmula imagética significativa.
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión que corrigió el sujeto de 'impulsados por el viento' y la lectura singular de ኆኅተ como 'la puerta'. La redacción española evita el error anterior de hacer a los carros el sujeto de 'impulsar' y conserva la dirección cosmológica final con una frase que respeta tanto la literalidad como la inteligibilidad.
+  spanish_consistency_notes:
+  - Se usa 'oriente' para mantener un registro bíblico-apocalíptico coherente con el pasaje.
+  - Se evita 'Señor' o 'SEÑOR' porque el verso no contiene el nombre divino.
+  - Se conserva el tono impersonal y cosmológico del original, sin introducir explicaciones interpretativas adicionales.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/072/005.yaml
+  source_text_sha256: 8854ebc23343bd3a3bb4ccc50e8c95f6e4907dc49ba74a81ed13cadf50762527
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: bcb33069df253c31dacddcb4e70060f9b32287a5261089ac2ffea5d628c5ca77
+  timestamp: '2026-05-07T21:27:51Z'
+  output_hash: 1a3b0eb4bc59cc441e6578db2e4ca24de4187e0740b53eed6a878adb4676b2e3
+  usage:
+    prompt_tokens: 4290
+    completion_tokens: 1919
+    total_tokens: 6209
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011853
+status: spanish_reviewed
+revisions:
+- from: Y los carros por los cuales asciende son impulsados por el viento[a], y el sol desciende desde el cielo y vuelve por el norte para llegar al oriente; y es conducido para entrar por la puerta[b] y alumbrar sobre el rostro del cielo[c].
+  to: Y los carros por los cuales asciende son impulsados por el viento[a], y el sol desciende desde el cielo y vuelve por el norte para llegar al oriente; y es conducido para entrar por la puerta[b] y brillar sobre la faz del cielo[c].
+  rationale: Se mantiene la traducción base, pero se sustituye 'alumbrar' por 'brillar' para reflejar mejor el verbo fuente y la decisión inglesa 'shine'. Además, se cambia 'rostro' por 'faz' en el texto principal para lograr una formulación más natural y digna en español eclesial, conservando la imagen idiomática. La nota c se ajusta para apoyar esa decisión de manera más útil.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura general del texto ge''ez y sigue las correcciones del rastro POB: mantiene que el sol asciende por medio de los carros, que estos son impulsados por el viento, que el sol desciende desde el cielo, vuelve por el norte, entra por una puerta singular y luego brilla sobre el cielo. Sin embargo, la frase final ''alumbrar sobre el rostro del cielo'' no suena natural en español y además ''alumbrar'' desplaza levemente el matiz de ''brillar''.'
+  spanish_quality_summary: La redacción es mayormente clara y digna, pero hay una aspereza importante en la cláusula final. En español bíblico legible, 'brillar sobre la faz del cielo' o 'brillar sobre el rostro del cielo' preserva mejor la imagen y evita la combinación poco idiomática 'alumbrar sobre'. También conviene ajustar la nota c para explicar la imagen sin presentar una alternativa innecesariamente estilística.
+  glossary_alignment: No hay conflictos con la terminología troncal del proyecto. 'Carros', 'viento', 'cielo', 'oriente' y 'puerta' son compatibles con las decisiones documentadas. La única mejora léxica recomendada es usar 'brillar' en vez de 'alumbrar' para corresponder mejor a 'shine' y al ge'ez ያበርህ.
+  issues:
+  - severity: medium
+    issue: La expresión 'alumbrar sobre el rostro del cielo' es poco natural en español.
+    rationale: '''Alumbrar sobre'' no es una combinación idiomática fluida en este contexto. El sentido fuente es ''brillar sobre'', no tanto ''iluminar sobre''.'
+  - severity: low
+    issue: La nota c está formulada como nota de estilo más que como nota lexical/imagética útil.
+    rationale: La nota debería justificar la preservación de la imagen 'faz/rostro del cielo' y, si ofrece alternativa, hacerlo de manera más directa y menos editorial.
+  revised_spanish_text: Y los carros por los cuales asciende son impulsados por el viento[a], y el sol desciende desde el cielo y vuelve por el norte para llegar al oriente; y es conducido para entrar por la puerta[b] y brillar sobre la faz del cielo[c].
+  revised_footnotes:
+  - marker: a
+    text: La secuencia ge'ez es difícil; más literalmente podría sugerir 'el viento de ascenso' o 'el viento ascendente'.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Puerta'' traduce aquí una forma singular; en este libro la imagen puede también abarcar un ''portal'' o ''entrada'' celestial.'
+    reason: lexical_alternative
+  - marker: c
+    text: '''Faz del cielo'' conserva una imagen apocalíptica del original; también puede traducirse ''rostro del cielo''.'
+    reason: lexical_alternative
+  revision_rationale: Se mantiene la traducción base, pero se sustituye 'alumbrar' por 'brillar' para reflejar mejor el verbo fuente y la decisión inglesa 'shine'. Además, se cambia 'rostro' por 'faz' en el texto principal para lograr una formulación más natural y digna en español eclesial, conservando la imagen idiomática. La nota c se ajusta para apoyar esa decisión de manera más útil.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 7c022abbe95c75724afc989132fe3336d64031050090fb38752082330c5f38d9
+  timestamp: '2026-05-07T23:06:44Z'
+  output_hash: 56f9bb2b53f3c4ca61c87a2e6767de12140f2f4fe52f75011f3086a54b364302
+  usage:
+    prompt_tokens: 5886
+    completion_tokens: 759
+    total_tokens: 6645
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0261
+  applied_revision: true

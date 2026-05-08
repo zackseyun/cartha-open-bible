@@ -1,0 +1,130 @@
+id: 2ES.10.33
+reference: 2 Esdras 10:33
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'commonebo te; et dixi: Loquere, domine meus, tantum me noli'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/010/033.yaml
+  text: I will remind you.” And I said[a], “Speak, my lord; only do not
+  footnotes:
+  - marker: a
+    text: Or 'And he said to me, “Stand up like a man, and I will instruct you.”'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T19:49:16Z'
+    unchanged: false
+    changes_summary: Changed “instruct” to “remind” for better lexical accuracy with Latin commonebo; left the final clause as-is since the source excerpt is incomplete.
+translation:
+  language: es
+  text: 'Te lo recordaré.” Y dije[a]: “Habla, mi señor; solo no me…'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O, según una lectura/traducción anterior basada en un límite de versículo distinto: «Y él me dijo: “Levántate como un hombre, y yo te instruiré.”».'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: commonebo te
+  english_pob_choice: I will remind you
+  chosen_spanish: Te lo recordaré
+  alternatives_spanish:
+  - Te lo recordaré de nuevo
+  - Te lo haré recordar
+  lexicon: commoneo
+  rationale: El latín commonebo expresa la idea de recordar o traer de nuevo a la memoria; por eso «recordaré» comunica mejor el matiz que «instruiré». Se evita una paráfrasis más fuerte que el origen.
+- source_word: domine meus
+  english_pob_choice: my lord
+  chosen_spanish: mi señor
+  alternatives_spanish:
+  - señor mío
+  - mi soberano
+  lexicon: dominus
+  rationale: «Mi señor» reproduce de manera natural y reverente el vocativo latino, sin introducir un registro demasiado arcaico ni cambiar el valor relacional del apelativo.
+- source_word: tantum me noli
+  english_pob_choice: only do not
+  chosen_spanish: solamente no me…
+  alternatives_spanish:
+  - solo no me…
+  - tan solo no me…
+  lexicon: noli + tantum
+  rationale: El fragmento latino está incompleto; se conserva la clausula abierta con puntos suspensivos para respetar la evidencia textual y no completar artificialmente el sentido.
+theological_decisions:
+- issue: Tratamiento del hablante y del tono reverente en la súplica
+  english_pob_reading: And I said, “Speak, my lord; only do not
+  chosen_spanish_reading: 'Y dije: “Habla, mi señor; solamente no me…'
+  alternative_spanish_readings:
+  - 'Y dije: “Habla, señor mío; solamente no me…”'
+  - 'Y dije: “Habla, mi señor; solo no me…”'
+  rationale: No hay contenido doctrinal desarrollado en este fragmento, pero sí un tono de deferencia personal. Se preserva la forma reverente sin convertirla en terminología eclesiástica fija.
+  doctrine_reference: Pragmatics of address / reverence in dialogue
+translation_notes:
+  revision_awareness: 'El texto inglés auditado fue corregido por desalineación versal: «I will instruct you» pasó a «I will remind you» para ajustarse al latín commonebo te. También se señaló que el cierre del verso es incompleto en el testimonio latino; por eso la traducción española mantiene la incompletud con suspensión.'
+  spanish_consistency_notes:
+  - Se usa «mi señor» como fórmula reverente de dirección personal, no como título dogmático.
+  - Se evita completar el último sintagma porque el testimonio latino proporcionado termina abruptamente.
+  - La nota a preserva la variante inglesa anterior relevante para la historia textual y de traducción.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/010/033.yaml
+  source_text_sha256: 523513f02ac787078ebf56f4e87acf70f80aa2a62bf0e1ed62cb634901ff7575
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 80f37776cd966d42458ffbccaa63a6aaba29bf51b6e365a623bae1cb9d961543
+  timestamp: '2026-05-07T21:28:40Z'
+  output_hash: b0495f6b425144771a3269fcaba458f31661ee28da1271124d0e1804198b7be4
+  usage:
+    prompt_tokens: 1960
+    completion_tokens: 679
+    total_tokens: 2639
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004526
+status: spanish_reviewed
+revisions:
+- from: 'Te lo recordaré.” Y dije[a]: “Habla, mi señor; solamente no me…'
+  to: 'Te lo recordaré.” Y dije[a]: “Habla, mi señor; solo no me…'
+  rationale: Se conserva la traducción principal porque refleja fielmente el latín de 10:33. Se revisa la nota para no presentar como variante textual de este versículo una lectura que en realidad pertenece al final del versículo anterior según la auditoría. También se ajusta «solamente» a «solo» por naturalidad, sin cambiar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:48:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el latín disponible: «commonebo te» = «Te lo recordaré», «et dixi» = «Y dije», «Loquere, domine meus» = «Habla, mi señor», y mantiene la cláusula final incompleta de «tantum me noli». Sin embargo, la nota al pie no está bien justificada como variante textual del versículo, sino como lectura/traducción anterior desplazada por la corrección de límites de versículo en el inglés auditado.'
+  spanish_quality_summary: El español es claro y natural. «Te lo recordaré» suena bien y conserva el matiz de commonebo. «Mi señor» es legible y digno. El uso de puntos suspensivos para reflejar la frase truncada es apropiado. La única reparación necesaria es la categorización y redacción de la nota para alinearla con el historial auditado; opcionalmente puede afinarse «solamente» a «solo» para mayor naturalidad, pero no es obligatorio.
+  glossary_alignment: No hay términos del glosario principal en conflicto. «Señor» aquí traduce dominus humano/vocativo, no el nombre divino. No hay cuestiones de Mesías/Cristo, Yahvé, Espíritu, etc. La decisión «recordaré» frente a «instruiré» coincide con la revisión inglesa documentada para commonebo.
+  issues:
+  - severity: medium
+    issue: La nota al pie se presenta como «textual_variant», pero el inglés auditado la documenta como lectura/traducción anterior debida a un error de límites de versículo.
+    rationale: 'La alternativa «Y él me dijo: “Levántate como un hombre, y yo te instruiré.”» no pertenece al tramo latino de 10:33 según la revisión aplicada; corresponde al final de 10:32. Mantenerla como simple variante textual en este versículo puede confundir al lector sobre la evidencia fuente.'
+  - severity: low
+    issue: «solamente no me…» es comprensible pero algo menos natural que «solo no me…» en español bíblico moderno.
+    rationale: No es un error de fidelidad; es un ajuste menor de fluidez. Aun así, «solamente» sigue siendo aceptable si se desea un tono más formal.
+  revised_spanish_text: 'Te lo recordaré.” Y dije[a]: “Habla, mi señor; solo no me…'
+  revised_footnotes:
+  - marker: a
+    text: 'O, según una lectura/traducción anterior basada en un límite de versículo distinto: «Y él me dijo: “Levántate como un hombre, y yo te instruiré.”».'
+    reason: previous_rendering
+  revision_rationale: Se conserva la traducción principal porque refleja fielmente el latín de 10:33. Se revisa la nota para no presentar como variante textual de este versículo una lectura que en realidad pertenece al final del versículo anterior según la auditoría. También se ajusta «solamente» a «solo» por naturalidad, sin cambiar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: bdd895fb87edafa596be0c6e2efcd4aae716af677677839e5e3b9635c27ae1d3
+  timestamp: '2026-05-07T23:48:26Z'
+  output_hash: 74a11925f498d18984b11ca85363b6fe66aa6441f7d0e7ecb11882bd03d44f81
+  usage:
+    prompt_tokens: 2289
+    completion_tokens: 689
+    total_tokens: 2978
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016057
+  applied_revision: true

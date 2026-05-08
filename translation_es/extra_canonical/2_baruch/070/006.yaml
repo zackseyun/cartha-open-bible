@@ -1,0 +1,148 @@
+id: 2BA.70.6
+reference: 2 Baruch 70:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 70
+  pages:
+  - 182
+  - 181
+  chapter_bucket_method: manual_rejected_item_rebucket_v1
+  overlap_expected: false
+  verse: 6
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/070/006.yaml
+  text: When those things that were foretold have come to pass, confusion will fall upon all people. Some will fall in war, some will perish in tribulations, and some will be destroyed by their own.
+  footnotes:
+  - marker: a
+    text: Or 'tribulations,'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'some will perish in tribulations.'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4-mini
+    timestamp: '2026-05-03T07:41:45Z'
+    unchanged: false
+    changes_summary: Retained the draft, as the available note indicates it now includes the previously omitted third clause and the wording is otherwise natural and formally appropriate.
+translation:
+  language: es
+  text: Cuando aquellas cosas que fueron predichas se hayan cumplido, caerá confusión sobre todos. Unos caerán en la guerra, otros perecerán en tribulaciones, y otros serán destruidos por los suyos.[a]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El siríaco de esta cláusula es ambiguo; «por los suyos» puede referirse a sus allegados o a los suyos propios, sin precisar más el sentido.
+    reason: lexical_ambiguity
+lexical_decisions:
+- source_word: foretold
+  english_pob_choice: foretold
+  chosen_spanish: predichas
+  alternatives_spanish:
+  - anunciadas de antemano
+  - profetizadas
+  lexicon: prophesy / foretell
+  rationale: «Predichas» comunica de forma natural la idea de eventos anunciados previamente sin forzar un tecnicismo más explícito que el texto español necesita aquí.
+- source_word: confusion
+  english_pob_choice: confusion
+  chosen_spanish: confusión
+  alternatives_spanish:
+  - consternación
+  - desorden
+  lexicon: confusion / turmoil
+  rationale: Mantengo «confusión» porque conserva el alcance de desconcierto general del original y coincide con la opción inglesa del POB.
+- source_word: tribulations
+  english_pob_choice: tribulations
+  chosen_spanish: tribulaciones
+  alternatives_spanish:
+  - aflicciones
+  - angustias
+  lexicon: tribulation / distress
+  rationale: «Tribulaciones» preserva el tono bíblico y la correspondencia léxica del POB; «aflicciones» o «angustias» serían más interpretativas.
+- source_word: their own
+  english_pob_choice: their own
+  chosen_spanish: los suyos
+  alternatives_spanish:
+  - los de ellos
+  - por los suyos
+  lexicon: their own / by their own
+  rationale: 'El giro «por los suyos» refleja la ambigüedad del sintagma final del siríaco y mantiene la tensión: puede aludir a personas cercanas, a los propios allegados o a una causa proveniente de los suyos. «Los suyos» es la forma más breve y publicable en español.'
+theological_decisions:
+- issue: Alcance de la tercera cláusula final
+  english_pob_reading: and some will be destroyed by their own
+  chosen_spanish_reading: y otros serán destruidos por los suyos
+  alternative_spanish_readings:
+  - y otros serán destruidos por los suyos mismos
+  - y otros serán destruidos por los propios
+  rationale: El audit trail indica que la cláusula omitida debe restaurarse. El siríaco admite una lectura relacionada con ser dañados o destruidos por los propios allegados/propios agentes; la formulación española conserva esa ambigüedad sin resolverla artificialmente.
+  doctrine_reference: 2 Baruch 70:6; control backed Syriac reading noted in revision review
+translation_notes:
+  revision_awareness: 'El borrador inglés revisado restablece la tercera cláusula del versículo, que había quedado omitida en una versión previa. La presente traducción española sigue esa revisión y conserva el encadenamiento completo: guerra, tribulaciones y destrucción por los suyos.'
+  spanish_consistency_notes:
+  - He evitado traducir mecánicamente desde el inglés cuando el siríaco sugiere ambigüedad en la última cláusula.
+  - «Tribulaciones» se mantiene por coherencia con el POB en inglés y por su registro bíblico natural en español.
+  - No se emplea «SEÑOR» ni terminología no presente en este versículo.
+  - El marcador de nota [a] se ancla en la frase con ambigüedad semántica para señalar la alternativa textual sin romper la lectura fluida.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/070/006.yaml
+  source_text_sha256: 20dbc2ea827f5453dd41c0fa5aa8ef42937daf9ed5a820ce102722ee4033636c
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e24715d70a725ca96f924b5b0cc851b6e74f370f31df8635f5fd06b327d59f90
+  timestamp: '2026-05-07T21:28:57Z'
+  output_hash: eb40613db4dc64407d718bb93e425998da1eb639344b9f1c49d7824a2a942ad1
+  usage:
+    prompt_tokens: 1946
+    completion_tokens: 849
+    total_tokens: 2795
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00528
+status: spanish_reviewed
+revisions:
+- from: Cuando aquellas cosas que fueron predichas se hayan cumplido, caerá la confusión sobre todo el pueblo. Unos caerán en la guerra, otros perecerán en las tribulaciones, y otros serán destruidos por los suyos.[a]
+  to: Cuando aquellas cosas que fueron predichas se hayan cumplido, caerá confusión sobre todos. Unos caerán en la guerra, otros perecerán en tribulaciones, y otros serán destruidos por los suyos.[a]
+  rationale: 'Se ajusta el alcance de «all people» con «sobre todos», que evita la restricción implícita de «todo el pueblo». También se suaviza la redacción de la primera cláusula principal y se conserva la ambigüedad de la última mediante una nota más directa. No hace falta adjudicación adicional: la corrección es menor y coherente con la auditoría inglesa.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:49:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite correctamente la estructura y el sentido global del siríaco tal como queda reflejado en la auditoría inglesa: cumplimiento de lo predicho, caída de confusión, tres grupos de destino, incluida la cláusula final restaurada. Sin embargo, «sobre todo el pueblo» estrecha innecesariamente el alcance de «upon all people», que en inglés refleja un referente más amplio que «todo el pueblo» singular.'
+  spanish_quality_summary: El texto es claro y digno, pero puede mejorarse para sonar más natural y fiel en español bíblico moderno. «Todos»/«la gente» funciona mejor que «todo el pueblo» aquí. Además, la nota al pie actual sobre «por los suyos» es útil, pero el texto base puede afinarse levemente para mayor naturalidad manteniendo la ambigüedad.
+  glossary_alignment: No hay términos de glosario mayor en juego. «Tribulaciones» está bien alineado con el POB. «Predichas» y «confusión» son aceptables. La cláusula final debe conservar la ambigüedad documentada; «por los suyos» lo hace razonablemente bien, aunque requiere nota explicativa.
+  issues:
+  - severity: medium
+    issue: «sobre todo el pueblo» reduce el alcance de «all people»
+    rationale: El inglés POB no dice «the whole people» sino «all people». En español, «todo el pueblo» puede sugerir un pueblo específico o una colectividad singular; «sobre todos» o «sobre toda la gente» preserva mejor el alcance general.
+  - severity: low
+    issue: La nota al pie explica bien la ambigüedad, pero su redacción puede simplificarse
+    rationale: La explicación actual es válida, pero puede expresarse con mayor claridad y economía sin perder la justificación lexical.
+  revised_spanish_text: Cuando aquellas cosas que fueron predichas se hayan cumplido, caerá confusión sobre todos. Unos caerán en la guerra, otros perecerán en tribulaciones, y otros serán destruidos por los suyos.[a]
+  revised_footnotes:
+  - marker: a
+    text: El siríaco de esta cláusula es ambiguo; «por los suyos» puede referirse a sus allegados o a los suyos propios, sin precisar más el sentido.
+    reason: lexical_ambiguity
+  revision_rationale: 'Se ajusta el alcance de «all people» con «sobre todos», que evita la restricción implícita de «todo el pueblo». También se suaviza la redacción de la primera cláusula principal y se conserva la ambigüedad de la última mediante una nota más directa. No hace falta adjudicación adicional: la corrección es menor y coherente con la auditoría inglesa.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f738cc373449edf08dbd7dc75c715d501fb76a5feb5b4ab5357003da0e40abce
+  timestamp: '2026-05-07T23:49:22Z'
+  output_hash: 53a4c5ab2f82f214495efc603a7390c3e8a8c53759271d56f2aad0901bb82829
+  usage:
+    prompt_tokens: 2410
+    completion_tokens: 622
+    total_tokens: 3032
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015355
+  applied_revision: true

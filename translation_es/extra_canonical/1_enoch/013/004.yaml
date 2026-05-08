@@ -1,0 +1,194 @@
+id: 1EN.13.4
+reference: 1 Enoch 13:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወተስእሉኒ፡ ከመ፡ እጽሐፍ፡ ሎሙ፡ *ተዝካረ፡ ስእለት፡ ከመ፡ ይኩኖሙ፡ ኅድገተ፡ ወ*ከመ፡ አነ፡ አዕርግ፡
+  language: Geez
+  pages:
+  - 70
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch13.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 13, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/013/004.yaml
+  text: And they asked me to write for them a petition of remembrance[a], so that there might be forgiveness for them[c][b], and that I might bring it up
+  footnotes:
+  - marker: a
+    text: Or 'a prayer of remembrance' or 'a written petition for remembrance.' The Ge'ez phrase combines ideas of remembrance and supplication.
+    reason: lexical_alternative
+  - marker: b
+    text: The unfinished final clause reflects the verse as transmitted here and leads into the next line, where Enoch's ascent or presentation of the petition is further developed.
+    reason: textual_variant
+  - marker: c
+    text: Or 'and that I might ascend'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 18cb037723ce9da8bef7aa7927d4e756a545851c996a49d1758818eb73c97312
+    timestamp: '2026-04-22T09:09:09Z'
+    output_hash: f73ee4ddb1fb63d6a8cb262eae8c854e6769d609eb05af17c1c8f9c795b5b768
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:42Z'
+    unchanged: false
+    changes_summary: Revised 'memorial petition' to 'petition of remembrance' for closer lexical correspondence to the Geez wording, and added 'it' after 'bring up' to account for the implied object in natural English.
+translation:
+  language: es
+  text: Y me pidieron que escribiera para ellos una petición memorial[a], para que hubiera perdón para ellos, y que yo la subiera[b].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «una oración de recuerdo» o «una petición escrita para memoria». La expresión ge''ez combina las ideas de memoria y súplica.'
+    reason: lexical_alternative
+  - marker: b
+    text: La frase final queda abierta en el texto transmitido y conduce al versículo siguiente, donde se desarrolla la subida o presentación de la petición.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ተስእሉኒ
+  english_pob_choice: they asked me
+  chosen_spanish: me pidieron
+  alternatives_spanish:
+  - me rogaron
+  - me solicitaron
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa una petición directa; «me pidieron» es natural en español y conserva el carácter inmediato de la súplica dirigida a Enoc.
+- source_word: እጽሐፍ
+  english_pob_choice: to write
+  chosen_spanish: escribiera
+  alternatives_spanish:
+  - que escribiera
+  - para escribir
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Tras la petición, el infinitivo/subjuntivo se vierte de modo natural con un subjuntivo dependiente en español; «escribiera» mantiene la relación subordinada sin sonar mecánico.
+- source_word: ተዝካረ ስእለት
+  english_pob_choice: petition of remembrance
+  chosen_spanish: petición de recuerdo
+  alternatives_spanish:
+  - petición memorial
+  - oración de recuerdo
+  - escrito de recuerdo y súplica
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión combina memoria/recuerdo con petición o súplica. «Petición de recuerdo» conserva ambos componentes sin convertirlo en una fórmula litúrgica posterior.
+- source_word: ይኩኖሙ ኅድገተ
+  english_pob_choice: there might be forgiveness for them
+  chosen_spanish: hubiera perdón para ellos
+  alternatives_spanish:
+  - hubiera perdón de parte de Dios para ellos
+  - se les concediera perdón
+  - hubiera liberación para ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «ኅድገተ» puede implicar perdón, liberación o remisión. En este contexto judicial-apocalíptico, «perdón» comunica bien la intención del ruego sin borrar el matiz de alivio frente al juicio.
+- source_word: አዕርግ
+  english_pob_choice: I might bring it up
+  chosen_spanish: la subiera
+  alternatives_spanish:
+  - la llevara arriba
+  - la hiciera subir
+  - la presentara en alto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El valor causativo indica «hacer subir / subir algo» más que simplemente «ascender». En español, «la subiera» conserva el objeto implícito de la petición y el movimiento vertical hacia el ámbito celestial.
+theological_decisions:
+- issue: Naturaleza de la petición de los Vigilantes
+  english_pob_reading: a petition of remembrance
+  chosen_spanish_reading: una petición de recuerdo
+  alternative_spanish_readings:
+  - una oración de recuerdo
+  - un escrito de memorial
+  - una súplica memorial
+  rationale: La frase sugiere un documento escrito para ser presentado ante la esfera celestial, no sólo una oración privada. «Petición de recuerdo» mantiene la tensión entre memorial y súplica sin imponerse como terminología litúrgica posterior.
+  doctrine_reference: Conservar el lenguaje de corte celestial y de juicio sin suavizarlo.
+- issue: Valor del verbo final
+  english_pob_reading: and that I might bring it up
+  chosen_spanish_reading: y que yo la subiera
+  alternative_spanish_readings:
+  - y que yo la llevara arriba
+  - y que yo la presentara
+  rationale: El cierre es incompleto en el testimonio transmitido y apunta hacia la línea siguiente. La traducción debe mantener esa apertura sin cerrar artificialmente la frase.
+  doctrine_reference: Respetar la forma transmitida y su enlace con el verso siguiente.
+translation_notes:
+  revision_awareness: 'Tomé en cuenta la revisión más reciente del audit trail: el cierre no debe leerse como un intransitivo «ascender», sino como una acción causativa de hacer subir la petición. Por eso elegí una forma española que conserva el objeto implícito («la») y el movimiento vertical sin añadir explicaciones ajenas al texto.'
+  spanish_consistency_notes:
+  - Usé «Yahvé» solo cuando el texto fuente lo requiera; aquí no aparece.
+  - Mantuve un registro neutral y bíblico, sin sustituir la terminología apocalíptica por fórmulas devocionales posteriores.
+  - Conservé «perdón» en lugar de una paráfrasis más amplia para no diluir el matiz judicial del pasaje.
+  - La nota [b] marca el final abierto, ya que el verso queda incompleto en la transmisión recibida.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/013/004.yaml
+  source_text_sha256: ec553382a383fa5f3653805f09a17a31b3e58e66665042ebbbc93f621530a4eb
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 3ae447341ce908b64a7342edd947a6b5cb33ab0defced22e76fb78951a45e8fc
+  timestamp: '2026-05-07T21:27:31Z'
+  output_hash: 763025d56d1ab90de04ad8bcd68fbbd70cfa864721517cb27f5dcdf665f353c3
+  usage:
+    prompt_tokens: 2926
+    completion_tokens: 1184
+    total_tokens: 4110
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007522
+status: spanish_reviewed
+revisions:
+- from: Y me pidieron que escribiera para ellos una petición de recuerdo[a], para que hubiera perdón para ellos, y que yo la subiera[b].
+  to: Y me pidieron que escribiera para ellos una petición memorial[a], para que hubiera perdón para ellos, y que yo la subiera[b].
+  rationale: Se revisa únicamente la expresión central para mejorar fidelidad semántica y naturalidad en español. «Petición memorial» preserva mejor el matiz de ተዝካረ ስእለት como documento/petición de recordación presentado ante la esfera celestial, mientras que «petición de recuerdo» suena menos natural y menos técnico. Se mantienen la estructura, el perdón y el sentido causativo-transitivo de «la subiera».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:46:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la secuencia básica del ge''ez: los Vigilantes le piden a Enoc que escriba una petición, con miras al perdón, y que la lleve hacia arriba. Sin embargo, «petición de recuerdo» suena poco idiomático y no transmite tan bien en español la idea de memorial/recordación presentada ante la corte celestial. Además, conviene conservar la nota sobre la cláusula final abierta y añadir una nota léxica que preserve las alternativas ya documentadas por el POB inglés.'
+  spanish_quality_summary: El texto es mayormente claro y natural, pero «petición de recuerdo» resulta extraño en español eclesial general. «Petición memorial» o «petición de memorial» serían más fieles al matiz técnico, pero «petición memorial» es la opción más legible. «Y que yo la subiera» es comprensible y mantiene el objeto implícito, aunque la nota debe dejar claro que la frase queda abierta hacia el verso siguiente.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto (no aparecen Yahvé, Mesías, etc.). La decisión clave es ተዝካረ ስእለት: el inglés auditado distingue recuerdo/remembrance y súplica/petition; en español conviene evitar «recuerdo» por su tono coloquial y preferir «memorial», que preserva mejor el matiz cultual/judicial. El verbo final አዕርግ está bien entendido como causativo transitivo, no como «ascender».'
+  issues:
+  - severity: medium
+    issue: «petición de recuerdo» es poco idiomático y semánticamente débil
+    rationale: Aunque calca de cerca 'petition of remembrance', en español 'recuerdo' suena subjetivo o coloquial, no como memorial presentado formalmente ante Dios. 'Petición memorial' conserva mejor el valor de ተዝካረ sin alejarse del source evidence.
+  - severity: low
+    issue: Falta reflejar en notas la alternativa «oración de recuerdo / petición escrita para memoria» con formulación más natural
+    rationale: La nota actual es aceptable, pero «escrito de recuerdo y súplica» puede pulirse para sonar menos forzado y más cercano al razonamiento léxico del POB inglés.
+  revised_spanish_text: Y me pidieron que escribiera para ellos una petición memorial[a], para que hubiera perdón para ellos, y que yo la subiera[b].
+  revised_footnotes:
+  - marker: a
+    text: 'O: «una oración de recuerdo» o «una petición escrita para memoria». La expresión ge''ez combina las ideas de memoria y súplica.'
+    reason: lexical_alternative
+  - marker: b
+    text: La frase final queda abierta en el texto transmitido y conduce al versículo siguiente, donde se desarrolla la subida o presentación de la petición.
+    reason: textual_variant
+  revision_rationale: Se revisa únicamente la expresión central para mejorar fidelidad semántica y naturalidad en español. «Petición memorial» preserva mejor el matiz de ተዝካረ ስእለት como documento/petición de recordación presentado ante la esfera celestial, mientras que «petición de recuerdo» suena menos natural y menos técnico. Se mantienen la estructura, el perdón y el sentido causativo-transitivo de «la subiera».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: dd465c688e974d89a0e6a03cb2ba539aac5c484777cba27c35316e9506d89464
+  timestamp: '2026-05-07T22:46:22Z'
+  output_hash: 1864e81f49b75f278988e72dc23f9dbcb0afa0d571b2415cb149f4b42d147e8e
+  usage:
+    prompt_tokens: 3733
+    completion_tokens: 776
+    total_tokens: 4509
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020972
+  applied_revision: true

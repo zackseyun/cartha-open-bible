@@ -1,0 +1,123 @@
+id: 2BA.22.8
+reference: 2 Baruch 22:8
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 22
+  pages:
+  - 216
+  - 215
+  - 214
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 8
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/022/008.yaml
+  text: Or who has acquired wealth and not left it?
+  footnotes:
+  - marker: a
+    text: Or 'Or one who builds a house …”'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'Or who builds a house and does not leave it?'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4-mini
+    timestamp: '2026-05-03T07:41:41Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: ¿O quién ha adquirido riqueza y no la ha dejado?
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: qna qenyana
+  english_pob_choice: has acquired wealth
+  chosen_spanish: ha adquirido riqueza
+  alternatives_spanish:
+  - ha ganado riqueza
+  - ha obtenido bienes
+  - ha adquirido bienes
+  lexicon: qna = adquirir/obtener; qenyana = riqueza, posesión, bienes
+  rationale: El siríaco indica la acción de adquirir y el objeto como riqueza/posesión. ‘Ha adquirido riqueza’ conserva el sentido posesivo y la pregunta retórica sin introducir matices ajenos. ‘Bienes’ es posible, pero ‘riqueza’ refleja mejor el paralelo semántico del contexto.
+- source_word: w-la shbaqhw
+  english_pob_choice: and not left it
+  chosen_spanish: y no la ha dejado
+  alternatives_spanish:
+  - y no la ha abandonado
+  - y no la ha soltado
+  - y no la ha dejado atrás
+  lexicon: shbaq = dejar, abandonar; sufijo de objeto = lo/la según antecedente implícito
+  rationale: La negación con verbo de ‘dejar’ se conserva de forma directa. ‘La’ concuerda con ‘riqueza’ como antecedente implícito en español. ‘Abandonado’ es posible, pero ‘dejar’ reproduce mejor la sobriedad del original.
+theological_decisions:
+- issue: Pregunta retórica sobre la posesión terrenal
+  english_pob_reading: Or who has acquired wealth and not left it?
+  chosen_spanish_reading: ¿O quien ha adquirido riqueza y no la ha dejado?
+  alternative_spanish_readings:
+  - ¿O quien ha adquirido bienes y no los ha dejado?
+  - ¿O quien ha acumulado riqueza y no la ha dejado?
+  rationale: El texto no desarrolla una doctrina explícita, sino una pregunta retórica sobre la imposibilidad de retener posesiones terrenales. Se mantiene sin explicación añadida para no suavizar la tensión del aforismo.
+  doctrine_reference: Eclesiastés 5:15; 1 Timoteo 6:7
+translation_notes:
+  revision_awareness: El contexto de revisión muestra que se corrigieron lecturas erróneas anteriores que hablaban de ‘construir una casa’; el control siríaco confirmado lee ‘adquirir riqueza/posesión’. La versión española sigue esa lectura revisada y no incorpora la variante descartada.
+  spanish_consistency_notes:
+  - Se mantiene un registro sobrio y bíblico, sin calco excesivo.
+  - Se usa ‘riqueza’ en singular para reflejar el sustantivo abstracto del siríaco; ‘bienes’ queda como alternativa contextual.
+  - Se conserva la pregunta retórica con ‘O’, siguiendo el arranque disyuntivo del inglés POB.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/022/008.yaml
+  source_text_sha256: a1269018ac29aa83764fc2cedd7d8302eea6903778855e40aaa58fac67092284
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: d9d5c606f92a47f2a8037b5309a9964ff7d22f09a45dff77f910a0d157b9648e
+  timestamp: '2026-05-07T21:29:26Z'
+  output_hash: 0e3f12392cc48cba34b7e12295fba0d16aa6c72df35f071cff64db49565a6c87
+  usage:
+    prompt_tokens: 1934
+    completion_tokens: 627
+    total_tokens: 2561
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004272
+status: spanish_reviewed
+revisions:
+- from: ¿O quien ha adquirido riqueza y no la ha dejado?
+  to: ¿O quién ha adquirido riqueza y no la ha dejado?
+  rationale: Se hace una reparación menor de ortografía ('quién'). No se requieren notas al pie porque no se preservó ninguna en el texto inglés como nota activa de traducción, sino solo historial de revisiones previas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:11:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador refleja correctamente el siríaco qna qenyana como 'ha adquirido riqueza' y w-la shbaqhw como 'y no la ha dejado'. Preserva bien la pregunta retórica y coincide con la corrección del rastro de auditoría inglés que descarta la lectura errónea sobre 'construir una casa'.
+  spanish_quality_summary: 'La frase es clara y natural, pero tiene un detalle ortográfico importante: en pregunta indirecta/relativa interrogativa corresponde ''quién'', no ''quien''. También conviene mantener la puntuación interrogativa completa en español, como ya está.'
+  glossary_alignment: No hay términos del glosario principal especialmente implicados. 'Riqueza' es una opción válida para qenyana y encaja con la decisión inglesa; 'bienes' sería posible, pero no necesaria. La redacción revisada mantiene fidelidad y buena legibilidad.
+  issues:
+  - severity: medium
+    issue: Falta tilde en 'quién'
+    rationale: En español debe escribirse '¿O quién...?' en este contexto interrogativo. La ausencia de tilde afecta la corrección ortográfica de la traducción publicada.
+  revised_spanish_text: ¿O quién ha adquirido riqueza y no la ha dejado?
+  revision_rationale: Se hace una reparación menor de ortografía ('quién'). No se requieren notas al pie porque no se preservó ninguna en el texto inglés como nota activa de traducción, sino solo historial de revisiones previas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1682f1c5c6b034ddeaaf77a0bd0615dd82a4a91d8b125aa54e505e4d562af52f
+  timestamp: '2026-05-07T23:11:54Z'
+  output_hash: e8bf2faedfcc545eca5b292d075ad6ec7cf1b2affd84175a482eae1819d796cb
+  usage:
+    prompt_tokens: 2235
+    completion_tokens: 358
+    total_tokens: 2593
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010958
+  applied_revision: true

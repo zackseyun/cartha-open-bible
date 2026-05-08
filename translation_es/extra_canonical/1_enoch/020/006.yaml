@@ -1,0 +1,196 @@
+id: 1EN.20.6
+reference: 1 Enoch 20:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ሰራቃኤል፡ ፩እምነ፡ መላእክት፡ ቅዱሳን፡ ዘዲበ፡ መናፍስት፡ [እስለ፡ እመሕያው፡] ዘመናፍስት፡ ያኃጥኡ።
+  language: Geez
+  pages:
+  - 90
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch20.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 20, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/020/006.yaml
+  text: Saraqael[a], one of the holy angels[b], who is over the spirits of the children of men who sin.
+  footnotes:
+  - marker: a
+    text: The middle of the Ethiopic OCR line is uncertain. A widely attested understanding of this verse is that Saraqael is set over 'the spirits of humankind who sin' or similar wording.
+    reason: textual_variant
+  - marker: b
+    text: Or 'the spirits of those who sin in the spirit.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 8382b5766ba6c5f6a9c79ece6de2f509bbc298c218821ae4ea49a5a136690f11
+    timestamp: '2026-04-22T17:21:34Z'
+    output_hash: a8e2b4a30613a15973fe969e34f89189f017ef75c67f7289f9cd4b80290d5048
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:26Z'
+    unchanged: false
+    changes_summary: Removed 'in the spirit,' which is not supported by the source as translated here. The verse more naturally and accurately reads 'the spirits of the children of men who sin.'
+translation:
+  language: es
+  text: Saraqael[a], uno de los ángeles santos, que está a cargo de los espíritus de los hijos de los hombres que pecan.[b]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La parte media de la línea etiópica del OCR es incierta. Una comprensión ampliamente atestiguada de este versículo es que Saraqael está puesto sobre «los espíritus de la humanidad que peca» o una formulación similar.
+    reason: textual_variant
+  - marker: b
+    text: 'O: «los espíritus de los que pecan en el espíritu».'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ሰራቃኤል
+  english_pob_choice: Saraqael
+  chosen_spanish: Saraqael
+  alternatives_spanish:
+  - Sariel
+  lexicon: Tradición onomástica ge'ez
+  rationale: Se translitera el nombre propio; la forma Saraqael conserva de cerca el testimonio etiópico y coincide con la opción principal del POB inglés.
+- source_word: ፩እምነ
+  english_pob_choice: one of
+  chosen_spanish: uno de
+  alternatives_spanish:
+  - uno entre
+  - uno de entre
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión partitiva indica que Saraqael pertenece a un grupo mayor; en español, 'uno de' es natural y preciso.
+- source_word: መላእክት፡ ቅዱሳን
+  english_pob_choice: the holy angels
+  chosen_spanish: los santos ángeles
+  alternatives_spanish:
+  - los ángeles santos
+  - los ángeles sagrados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Santos ángeles'' reproduce el registro apocalíptico y mantiene el matiz de seres apartados para Dios; ''santos'' es más idiomático que ''sagrados'' en este contexto.'
+- source_word: ዘዲበ
+  english_pob_choice: who is over
+  chosen_spanish: que está sobre
+  alternatives_spanish:
+  - que tiene a su cargo
+  - que ha sido puesto sobre
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La preposición y el verbo expresan supervisión o autoridad. 'Está sobre' conserva la idea de cargo sin cargar demasiado el español.
+- source_word: መናፍስት
+  english_pob_choice: the spirits
+  chosen_spanish: los espíritus
+  alternatives_spanish:
+  - espíritus
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene el plural y el artículo, porque el texto identifica una clase concreta bajo la vigilancia angélica.
+- source_word: እጓለ፡ እመሕያው / OCR uncertainty in bracketed middle phrase
+  english_pob_choice: the children of men
+  chosen_spanish: los hijos de los hombres
+  alternatives_spanish:
+  - la humanidad
+  - los seres humanos
+  lexicon: Charles 1906 OCR witness; Ge'ez idiom recognized in revision history
+  rationale: Aunque el OCR del paquete muestra una forma defectuosa, la revisión del propio POB inglés identifica el modismo ge'ez estándar 'hijos de los hombres'. En español se traduce de manera literal y transparente como 'los hijos de los hombres'.
+- source_word: ዘመናፍስት ያኃጥኡ
+  english_pob_choice: who sin
+  chosen_spanish: que pecan
+  alternatives_spanish:
+  - que cometen pecado
+  - que transgreden
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa acción moral de pecado. 'Pecan' es la forma más natural y fiel en español bíblico contemporáneo.
+theological_decisions:
+- issue: Identidad de quienes están bajo la autoridad de Saraqael
+  english_pob_reading: spirits of the children of men who sin
+  chosen_spanish_reading: los espíritus de los hijos de los hombres que pecan
+  alternative_spanish_readings:
+  - los espíritus de la humanidad que peca
+  - los espíritus de los hombres que pecan
+  rationale: Se sigue la revisión más reciente del POB inglés y el reconocimiento del modismo ge'ez para 'hijos de los hombres'. Así se conserva el objeto humano de la autoridad de Saraqael y la asociación con el pecado sin introducir interpretaciones adicionales.
+  doctrine_reference: Evitar resolver la tensión textual con una paráfrasis; mantener la referencia a la humanidad pecadora tal como la revisión textual la recupera.
+translation_notes:
+  revision_awareness: El texto etiópico recibido muestra una lectura OCR defectuosa en la parte media, pero la auditoría inglesa más reciente corrige esa zona a un modismo ge'ez estándar para «los hijos de los hombres». Por eso el español sigue la revisión más reciente y no conserva una redacción ambigua o corrupta en el cuerpo principal.
+  spanish_consistency_notes:
+  - Se usa 'Saraqael' para mantener coherencia con la transliteración principal del POB inglés.
+  - Se evita 'SEÑOR' o equivalentes de máscara porque el versículo no contiene el Tetragrámaton.
+  - Se conserva 'santos ángeles' como término de registro apocalíptico, no como simple adjetivo devocional.
+  - '''Pecan'' se mantiene en lenguaje bíblico natural y no se atenúa a una expresión más genérica.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/020/006.yaml
+  source_text_sha256: af79fa4726a4509d18ea4c23f10fb2515d7ccb182bc8e330d4b921fae17ceffd
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 78d16730f866db19374743f6a9e22644ce1914d1e0871bf75769f9589bdcb7ed
+  timestamp: '2026-05-07T21:27:31Z'
+  output_hash: d2497ce61ab1859d6be0f69e9368bda06f2a7e5fe99ae38f288ac84a713d6de1
+  usage:
+    prompt_tokens: 3105
+    completion_tokens: 1228
+    total_tokens: 4333
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007855
+status: spanish_reviewed
+revisions:
+- from: Saraqael[a], uno de los santos ángeles[b], que está sobre los espíritus de los hijos de los hombres que pecan.
+  to: Saraqael[a], uno de los ángeles santos, que está a cargo de los espíritus de los hijos de los hombres que pecan.[b]
+  rationale: La traducción principal es básicamente fiel, pero necesita una reparación menor para alinear las notas al pie con el rastro de auditoría del POB inglés y para mejorar la naturalidad del español. Se mantiene la lectura revisada 'los espíritus de los hijos de los hombres que pecan', pero se sustituyen las notas por las documentadas en el expediente y se mejora la formulación a 'ángeles santos' y 'está a cargo de'.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:27:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en lo esencial la lectura revisada del POB inglés: Saraqael es uno de los ángeles santos y está a cargo de los espíritus de los hijos de los hombres que pecan. Sin embargo, el texto principal conserva dos notas al pie que no reflejan las notas vigentes del expediente inglés: la nota [a] debería advertir la incertidumbre textual/OCR en la línea etiópica, y la nota [b] actual sobre el orden adjetival no corresponde al rastro de auditoría, que preserva una alternativa interpretativa sobre la frase final.'
+  spanish_quality_summary: El español es claro y digno, pero 'los santos ángeles' suena menos natural que 'los ángeles santos' en registro bíblico actual. 'Que está sobre' es comprensible, aunque 'que está a cargo de' expresa mejor la función supervisora en español natural. La frase 'los hijos de los hombres' es fiel, pero 'los hijos de los seres humanos' sería menos literal; aun así, puede mantenerse por cercanía al modismo fuente. Se requiere ajuste menor para mayor naturalidad y para alinear las notas.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. Se conserva 'espíritus' para መናፍስት y no aparecen términos sensibles como Yahvé/Mesías/etc. El nombre propio transliterado 'Saraqael' concuerda con la decisión del POB inglés. La principal desalineación está en las notas, no en el glosario.
+  issues:
+  - severity: medium
+    issue: Las notas al pie españolas no corresponden al expediente inglés vigente.
+    rationale: La nota [a] del inglés trata la incertidumbre textual del segmento etiópico; la española habla de transliteración del nombre. La nota [b] del inglés conserva una alternativa interpretativa sobre la cláusula final; la española solo da una variante estilística ('los ángeles santos').
+  - severity: low
+    issue: '''Los santos ángeles'' es menos idiomático que ''los ángeles santos''.'
+    rationale: Ambas opciones son fieles, pero en español bíblico-natural 'los ángeles santos' fluye mejor y además coincide con la alternativa ya reconocida en el propio borrador.
+  - severity: low
+    issue: '''Que está sobre'' suena algo calcado.'
+    rationale: La idea de supervisión de ዘዲበ se expresa con más naturalidad en español mediante 'que está a cargo de', sin perder el sentido jerárquico.
+  revised_spanish_text: Saraqael[a], uno de los ángeles santos, que está a cargo de los espíritus de los hijos de los hombres que pecan.[b]
+  revised_footnotes:
+  - marker: a
+    text: La parte media de la línea etiópica del OCR es incierta. Una comprensión ampliamente atestiguada de este versículo es que Saraqael está puesto sobre «los espíritus de la humanidad que peca» o una formulación similar.
+    reason: textual_variant
+  - marker: b
+    text: 'O: «los espíritus de los que pecan en el espíritu».'
+    reason: previous_rendering
+  revision_rationale: La traducción principal es básicamente fiel, pero necesita una reparación menor para alinear las notas al pie con el rastro de auditoría del POB inglés y para mejorar la naturalidad del español. Se mantiene la lectura revisada 'los espíritus de los hijos de los hombres que pecan', pero se sustituyen las notas por las documentadas en el expediente y se mejora la formulación a 'ángeles santos' y 'está a cargo de'.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 85eae81cc341de466f10d637457cf1d03feab049c31c7a8a36585ebfe9c1a3f1
+  timestamp: '2026-05-07T23:27:48Z'
+  output_hash: a473f2f0477a3707276c19c9494ead54f9eb09271306bca79f8073a1fbae91ae
+  usage:
+    prompt_tokens: 3968
+    completion_tokens: 818
+    total_tokens: 4786
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02219
+  applied_revision: true

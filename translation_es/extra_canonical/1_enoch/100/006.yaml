@@ -1,0 +1,229 @@
+id: 1EN.100.6
+reference: 1 Enoch 100:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ*እሙነ፡ ይሬእዩ፡ *ሰብአ፡ ጠቢባን፡ ወይሌብዉ፡ ውሉደ፡ ምድር፡ ኵሎ፡ ነገረ፡ ዛቲ፡ መጽሐፍ፡ ወ*ያእምሩ፡ ከመ፡ ኢይክል፡ ብዕሎሙ፡ አድኅኖቶሙ፡ በመዳቀ፡ ኃጢአቶሙ።
+  language: Geez
+  pages:
+  - 246
+  - 247
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/100/006.yaml
+  text: And wise men will see[a], and all the children of the earth will understand every matter of this book[c][b], and they will know that their wealth cannot save them from the destruction of their sins.
+  footnotes:
+  - marker: a
+    text: The final phrase is difficult. It may also be rendered 'by casting off their sins' or 'by diminishing their sins.' The main text chooses 'by denying their sins' because the verse emphasizes failed self-deliverance through evasion of guilt.
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'And the wise among men will see'.
+    reason: previous_rendering
+  - marker: c
+    text: Or 'they cannot save themselves by denying their sins'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: f4e9b78535a5b658d2418d2d952f29c63d13f39d7c852ab50f51b798e2c6ec2b
+    timestamp: '2026-04-22T09:23:47Z'
+    output_hash: 326d39cb637f512ffc6ac177092e52f0461defbaae088720a7238c3aaf1e1b57
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:48Z'
+    unchanged: false
+    changes_summary: Removed 'the truth' because it is not clearly present in the source, and revised the final clause to 'from the destruction of their sins' for a more direct and natural rendering of the source.
+translation:
+  language: es
+  text: Y los sabios verán, y todos los hijos de la tierra entenderán todo asunto de este libro, y sabrán que su riqueza[a] no puede salvarlos de la destrucción de sus pecados[b].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La revisión del texto fuente indica que el sujeto es «su riqueza»; por eso no se traduce aquí como una idea abstracta de habilidad o de medios.
+    reason: source_note
+  - marker: b
+    text: El giro final se entiende mejor como ruina o destrucción ligada a los pecados, no como una referencia a negarlos o apartarlos.
+    reason: theological_note
+lexical_decisions:
+- source_word: እሙነ
+  english_pob_choice: will see
+  chosen_spanish: verán
+  alternatives_spanish:
+  - verán la verdad
+  - verán ciertamente
+  - verán con claridad
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión inglesa descartó leer aquí una idea explícita de 'verdad' y dejó el verbo simple de visión. En español, 'verán' mantiene esa sobriedad y evita añadir un objeto no asegurado por el ge'ez.
+- source_word: ሰብአ ጠቢባን
+  english_pob_choice: wise men
+  chosen_spanish: los sabios
+  alternatives_spanish:
+  - los hombres sabios
+  - los sabios entre los hombres
+  - las personas sabias
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Sabios'' reproduce la fuerza sustantiva del grupo humano cualificado por la sabiduría. En español suena natural y conserva el rasgo antropológico sin sobrecargarlo.'
+- source_word: ይሬእዩ
+  english_pob_choice: will see
+  chosen_spanish: verán
+  alternatives_spanish:
+  - percibirán
+  - contemplarán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el valor directo de visión del verbo. 'Verán' es la opción más transparente y fiel al registro apocalíptico.
+- source_word: ውሉደ ምድር
+  english_pob_choice: the children of the earth
+  chosen_spanish: los hijos de la tierra
+  alternatives_spanish:
+  - los habitantes de la tierra
+  - los descendientes de la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene la expresión literal característica del texto. 'Hijos de la tierra' preserva el color apocalíptico mejor que una paráfrasis más plana.
+- source_word: ኵሎ ነገረ ዛቲ መጽሐፍ
+  english_pob_choice: every matter of this book
+  chosen_spanish: todo asunto de este libro
+  alternatives_spanish:
+  - todo lo de este libro
+  - toda materia de este libro
+  - todas las palabras de este libro
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Neger'' puede abarcar asunto, cosa o palabra. ''Todo asunto de este libro'' conserva amplitud semántica sin restringirlo solo a palabras escritas.'
+- source_word: ያእምሩ
+  english_pob_choice: they will understand / know
+  chosen_spanish: entenderán
+  alternatives_spanish:
+  - conocerán
+  - comprenderán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Aquí el movimiento principal es de comprensión del contenido del libro. 'Entenderán' expresa bien ese paso cognitivo y prepara el 'sabrán' final.
+- source_word: ብዕሎሙ
+  english_pob_choice: their wealth
+  chosen_spanish: su riqueza
+  alternatives_spanish:
+  - sus bienes
+  - su riqueza material
+  - sus posesiones
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión posterior corrigió la omisión de este término y lo entendió como 'their wealth'. 'Su riqueza' es fiel, breve y natural en español.
+- source_word: ኢይክል
+  english_pob_choice: cannot
+  chosen_spanish: no puede
+  alternatives_spanish:
+  - no podrán
+  - no es capaz de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El singular verbal se ajusta al sujeto 'su riqueza' y conserva la fuerza de incapacidad del original.
+- source_word: ብዕሎሙ አድኅኖቶሙ
+  english_pob_choice: save them
+  chosen_spanish: salvarlos
+  alternatives_spanish:
+  - librarlos
+  - rescatarlos
+  - darles salvación
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El valor reflexivo/casual del sentido es que su riqueza no puede producirles rescate. 'Salvarlos' sigue la línea del audit trail inglés y es idiomático en español.
+- source_word: በመዳቀ ኃጢአቶሙ
+  english_pob_choice: from the destruction of their sins
+  chosen_spanish: de la destrucción de sus pecados
+  alternatives_spanish:
+  - del derrumbe de sus pecados
+  - de la ruina de sus pecados
+  - en la destrucción de sus pecados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El audit trail más reciente corrigió la lectura previa: la frase apunta al ámbito de ruina/destrucción asociado a los pecados, no a negarlos. ''Destrucción'' preserva esa lectura sin resolver en exceso la imagen.'
+theological_decisions:
+- issue: Si el verso habla de arrepentimiento o de la inutilidad de la riqueza frente al juicio por el pecado
+  english_pob_reading: Their wealth cannot save them from the destruction of their sins.
+  chosen_spanish_reading: Su riqueza no puede salvarlos de la destrucción de sus pecados.
+  alternative_spanish_readings:
+  - No pueden salvarse a sí mismos negando sus pecados.
+  - Su riqueza no puede librarlos mediante su propia justicia.
+  rationale: La revisión del expediente indica que el sujeto es la riqueza y que el punto es la imposibilidad de auto-rescate frente a la ruina asociada al pecado. Por eso no se introduce una lectura de arrepentimiento que el texto no exige.
+  doctrine_reference: Preservar la tensión del texto sin convertirlo en una exhortación moralizante ajena al verso.
+translation_notes:
+  revision_awareness: 'El expediente de revisión muestra correcciones importantes: una lectura anterior añadió indebidamente «la verdad» y otra omitió el sujeto «su riqueza». La redacción española sigue la última revisión aprobada y refleja la corrección del sujeto y del marco final de destrucción/ruina.'
+  spanish_consistency_notes:
+  - Se mantiene «sabios» para ሰብአ ጠቢባን y «hijos de la tierra» para ውሉደ ምድር, conservando el registro apocalíptico.
+  - Se usa «Dios»/«Yahvé» solo cuando el verso lo exige; aquí no aparece lenguaje divino explícito.
+  - Se evita introducir «verdad» para እሙነ, siguiendo la revisión crítica del expediente.
+  - El paralelismo verbal 'verán / entenderán / sabrán' ayuda a reproducir el avance cognitivo del original sin añadir contenido doctrinal.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/100/006.yaml
+  source_text_sha256: e79cc505adb770cb909b81340571cd028cb15f07f093aec64781b3437c17d893
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0644cc6f0f04ca631406e4f5369aae255b333bf6a665f660f966f76ec1bd65c2
+  timestamp: '2026-05-07T21:27:39Z'
+  output_hash: 1f407ecab8989177c8f956af1c557652e906dc00cc45c6ecb5485df4f71b7c63
+  usage:
+    prompt_tokens: 3791
+    completion_tokens: 1742
+    total_tokens: 5533
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010682
+status: spanish_reviewed
+revisions:
+- from: Y los sabios verán[a], y todos los hijos de la tierra entenderán todo asunto de este libro, y sabrán que su riqueza[b] no puede salvarlos de la destrucción de sus pecados[c].
+  to: Y los sabios verán, y todos los hijos de la tierra entenderán todo asunto de este libro, y sabrán que su riqueza[a] no puede salvarlos de la destrucción de sus pecados[b].
+  rationale: 'Se aprueba el sentido general del borrador, pero se hace una reparación menor: se elimina una nota innecesaria sobre «verán» para dejar solo las notas que realmente documentan decisiones exegéticas relevantes. El texto principal se mantiene sustancialmente igual porque ya refleja bien el expediente fuente.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:19:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la revisión más reciente del expediente inglés: mantiene el sujeto «su riqueza», conserva la progresión ver/entender/saber y evita reintroducir la lectura anterior sobre «negar sus pecados». Sin embargo, la nota [a] ya no es necesaria y «todo asunto de este libro» suena algo rígido; una leve mejora de naturalidad puede hacerse sin perder fidelidad.'
+  spanish_quality_summary: 'El texto es claro y mayormente natural. «Los sabios» y «los hijos de la tierra» funcionan bien en registro bíblico legible. La principal mejora es estilística: «todo lo de este libro» sería demasiado suelto, pero «todo lo de este libro» no es necesario; «todo asunto de este libro» resulta algo forzado en español eclesial general. «Todo lo contenido en este libro» o «todo lo referente a este libro» cambiarían el matiz; la opción más fiel y natural es «todo asunto de este libro»? Aun así, puede mejorarse mejor a «todo lo que hay en este libro» pero pierde el valor de ነገር. La revisión mínima más segura es retirar la nota [a] superflua y dejar el texto con mejor puntuación fluida.'
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. No aparecen Yahvé, Mesías, Espíritu, etc. La elección «riqueza» para ብዕሎሙ está alineada con la corrección adjudicada, y «destrucción» respeta el expediente actual para በመዳቀ ኃጢአቶሙ.
+  issues:
+  - severity: low
+    issue: La nota [a] sobre «verán»/«la verdad» ya no aporta una alternativa necesaria al texto español final.
+    rationale: El expediente inglés actual eliminó «the truth», y en español «verán» no crea ambigüedad problemática que requiera nota. Mantenerla sobrecarga el verso sin beneficio claro.
+  - severity: low
+    issue: La secuencia de notas y anclajes puede simplificarse.
+    rationale: Solo las notas sobre «su riqueza» y «destrucción de sus pecados» añaden valor contextual real para el lector/revisor; eliminar [a] mejora limpieza editorial.
+  revised_spanish_text: Y los sabios verán, y todos los hijos de la tierra entenderán todo asunto de este libro, y sabrán que su riqueza[a] no puede salvarlos de la destrucción de sus pecados[b].
+  revised_footnotes:
+  - marker: a
+    text: La revisión del texto fuente indica que el sujeto es «su riqueza»; por eso no se traduce aquí como una idea abstracta de habilidad o de medios.
+    reason: source_note
+  - marker: b
+    text: El giro final se entiende mejor como ruina o destrucción ligada a los pecados, no como una referencia a negarlos o apartarlos.
+    reason: theological_note
+  revision_rationale: 'Se aprueba el sentido general del borrador, pero se hace una reparación menor: se elimina una nota innecesaria sobre «verán» para dejar solo las notas que realmente documentan decisiones exegéticas relevantes. El texto principal se mantiene sustancialmente igual porque ya refleja bien el expediente fuente.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 691b030307dec3a9640cfb06abe0d2e7a97c6d0b93b33e70e4a271514d5cb4be
+  timestamp: '2026-05-07T23:19:21Z'
+  output_hash: 52a47a2ddced3d664582bef7872c071934e8c52912c8bd7ef58b25e566720dbf
+  usage:
+    prompt_tokens: 5170
+    completion_tokens: 742
+    total_tokens: 5912
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024055
+  applied_revision: true

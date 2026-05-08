@@ -1,0 +1,136 @@
+id: 2ES.9.34
+reference: 2 Esdras 9:34
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: uel nauem mare uel uas aliud escas uel potus, et cum fuerit ut exterminetur quod seminatum est uel quod missum est uel
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/009/034.yaml
+  text: And behold[a], it is the custom that when the earth receives seed, or the sea a ship, or any other vessel food or drink,
+  footnotes:
+  - marker: a
+    text: Or 'or any vessel food or drink,'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T19:49:23Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Y he aquí[a], es costumbre que, cuando la tierra recibe semilla, o el mar una nave, o otro recipiente para comida o bebida[b],
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'También: «Y mira».'
+    reason: lexical_alternative
+  - marker: b
+    text: El latín dice «uas aliud», literalmente «otro recipiente»; por eso se mantiene «otro» en la traducción.
+    reason: source_note
+lexical_decisions:
+- source_word: uel nauem mare
+  english_pob_choice: the sea a ship
+  chosen_spanish: el mar una nave
+  alternatives_spanish:
+  - el mar un barco
+  - el mar una embarcación
+  lexicon: nauem → nave
+  rationale: En el latino, mare y nauem aparecen en paralelismo directo. «Nave» conserva el sustantivo concreto y el tono formal del pasaje mejor que alternativas más coloquiales.
+- source_word: uas aliud
+  english_pob_choice: or any other vessel food or drink
+  chosen_spanish: cualquier otro recipiente comida o bebida
+  alternatives_spanish:
+  - cualquier otro vaso comida o bebida
+  - cualquier otro utensilio comida o bebida
+  lexicon: uas aliud → recipiente / otro
+  rationale: El texto latino dice literalmente «vaso/recipiente» y el adjetivo aliud añade la idea de «otro». Se eligió «recipiente» para evitar la ambigüedad de «vaso» en español moderno y para conservar explícitamente «otro».
+- source_word: escas uel potus
+  english_pob_choice: food or drink
+  chosen_spanish: comida o bebida
+  alternatives_spanish:
+  - alimentos o bebida
+  - alimento o bebida
+  lexicon: escas / potus → comida / bebida
+  rationale: «Comida o bebida» es natural en español y mantiene la oposición básica del latín sin cargar el sustantivo con un registro más técnico de lo que el contexto exige.
+theological_decisions:
+- issue: Apertura enfática con "And behold"
+  english_pob_reading: And behold[a],
+  chosen_spanish_reading: Y he aquí[a],
+  alternative_spanish_readings:
+  - Y mira[a],
+  - Y he aquí que[a],
+  rationale: La fórmula latina no está completa en el fragmento, pero el inglés POB preserva la apertura enfática. «Y he aquí» es la correspondencia idiomática más estable en español y conserva el tono exhortativo/retórico.
+  doctrine_reference: None
+translation_notes:
+  revision_awareness: 'Se tuvo en cuenta la revisión aplicada en el audit trail que corrige la omisión de aliud: la traducción española conserva explícitamente «otro» en «cualquier otro recipiente». No se introdujeron cambios adicionales porque el latest_revision_pass indica que no hacían falta más ajustes.'
+  spanish_consistency_notes:
+  - Se mantuvo «nave» para uel nauem siguiendo el registro literario del pasaje.
+  - Se evitó «vaso» por su polisemia moderna en español; «recipiente» expresa mejor el sentido general del latín.
+  - La sintaxis reproduce la enumeración del original sin completar el fragmento más allá de lo atestiguado.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/009/034.yaml
+  source_text_sha256: 024b85f4e1ac891358f0d1a48e068dde582b908b6bdc38403ee9ffbff24076f0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: dc1f2c083261c2a6a6dfc98af4986bd0d6a2a903a057fe0b1b1061f3e095786c
+  timestamp: '2026-05-07T21:28:35Z'
+  output_hash: c450afa4748deb5d67f5654f295f97a653095a53b44a72dd8ff9f79c8b3e2584
+  usage:
+    prompt_tokens: 1785
+    completion_tokens: 720
+    total_tokens: 2505
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004579
+status: spanish_reviewed
+revisions:
+- from: Y he aquí[a], es costumbre que, cuando la tierra recibe semilla, o el mar una nave, o cualquier otro recipiente comida o bebida[b],
+  to: Y he aquí[a], es costumbre que, cuando la tierra recibe semilla, o el mar una nave, o otro recipiente para comida o bebida[b],
+  rationale: Se elimina «cualquier» porque no está respaldado por «uas aliud», y se añade «para» para que el español suene natural manteniendo la idea de un recipiente destinado a comida o bebida. El resto del borrador es fiel al sentido y al tono del pasaje.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:25:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador conserva bien la estructura del latín: tierra/semilla, mar/nave, y otro recipiente/comida o bebida. También preserva correctamente el matiz de aliud con «otro». Sin embargo, «cualquier otro recipiente» introduce una cuantificación («cualquier») que no está en el latín ni en el inglés auditado; basta con «cualquier» si se quisiera explicitar indefinición, pero el original dice simplemente «otro recipiente».'
+  spanish_quality_summary: El español es claro y digno, pero la secuencia «cualquier otro recipiente comida o bebida» suena algo trabada. «Otro recipiente para comida o bebida» mejora la naturalidad sin apartarse del sentido receptacular del latín. La nota b actual explica bien «otro», pero debería corresponder a la formulación revisada.
+  glossary_alignment: No hay conflictos con la terminología teológica del proyecto. Las decisiones léxicas principales («nave», «recipiente», «comida o bebida») son adecuadas. «Y he aquí» es aceptable y legible en registro bíblico.
+  issues:
+  - severity: medium
+    issue: «cualquier» añade un matiz no atestiguado
+    rationale: El latín «uas aliud» significa «otro recipiente/vasija», no «cualquier otro recipiente». La adición de «cualquier» amplía innecesariamente la referencia.
+  - severity: low
+    issue: Falta preposición para una lectura española más natural
+    rationale: «otro recipiente comida o bebida» es comprensible, pero «otro recipiente para comida o bebida» refleja mejor en español la función contenedora implícita en «uas» sin alterar el sentido.
+  revised_spanish_text: Y he aquí[a], es costumbre que, cuando la tierra recibe semilla, o el mar una nave, o otro recipiente para comida o bebida[b],
+  revised_footnotes:
+  - marker: a
+    text: 'También: «Y mira».'
+    reason: lexical_alternative
+  - marker: b
+    text: El latín dice «uas aliud», literalmente «otro recipiente»; por eso se mantiene «otro» en la traducción.
+    reason: source_note
+  revision_rationale: Se elimina «cualquier» porque no está respaldado por «uas aliud», y se añade «para» para que el español suene natural manteniendo la idea de un recipiente destinado a comida o bebida. El resto del borrador es fiel al sentido y al tono del pasaje.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1b81a269e50c592f3113b102578e64c84d9a0e56b08ae8c15fb1ed06d541f437
+  timestamp: '2026-05-07T23:25:06Z'
+  output_hash: b7a24ac454ce7e4b362d96aa8144d7151c2c57469faa44f7c8a0e410b5c02442
+  usage:
+    prompt_tokens: 2174
+    completion_tokens: 563
+    total_tokens: 2737
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01388
+  applied_revision: true

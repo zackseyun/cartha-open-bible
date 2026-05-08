@@ -1,0 +1,215 @@
+id: 1EN.15.5
+reference: 1 Enoch 15:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: በእንተዝ፡ ወሀብክዎሙ፡ አንስቲያ፡ ከመ፡ ይዝርኡ፡ ላዕሌሆን፡ ወይትወለዱ፡ ውሉደ፡ በላዕሌሆን፡ *ከመ፡ ከማሁ፡ ኢይትኀጐ፡ ግብር፡ †በላዕሌሆን፡† በዲበ፡ ምድር።
+  language: Geez
+  pages:
+  - 78
+  - 80
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch15.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 15, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/015/005.yaml
+  text: Therefore I gave them women[a], so that they might beget children by them and offspring might be born to them[b], so that thus no work on the earth might be lacking to them.
+  footnotes:
+  - marker: a
+    text: Literally, 'sow seed upon them.' The Ge'ez preserves a procreative metaphor drawn from sowing.
+    reason: lexical_alternative
+  - marker: b
+    text: The final clause is difficult. The sense appears to be that earthly life and activity would continue in the appointed way through procreation.
+    reason: textual_variant
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 91c302a09cc61e9b326508b68ab097d5ed9f2cbbc660c787e82b237f699d72cf
+    timestamp: '2026-04-22T17:19:37Z'
+    output_hash: b54874068220094e4ce7028c6ad1073b64d3b9fb74502038c20410738cbaf1d8
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:49Z'
+    unchanged: false
+    changes_summary: Replaced 'sow seed into them' with the more natural and formal 'beget children by them'; rendered ግብር as 'work' rather than 'deed'; adjusted the parallel birth clause to 'offspring might be born to them' for smoother English while preserving the source sense.
+translation:
+  language: es
+  text: Por tanto, les di mujeres[a], para que engendraran hijos con ellas y naciera descendencia de ellas[b], de modo que así no les faltara obra alguna en la tierra.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Literalmente, 'sembraran semilla sobre ellas'. El ge'ez conserva una metáfora procreativa tomada del acto de sembrar.
+    reason: lexical_alternative
+  - marker: b
+    text: La cláusula final es difícil. El sentido parece ser que, por medio de la procreación, continuaran en la tierra la vida y la actividad humanas conforme al orden establecido.
+    reason: textual_variant
+lexical_decisions:
+- source_word: በእንተዝ
+  english_pob_choice: therefore
+  chosen_spanish: Por tanto
+  alternatives_spanish:
+  - Por eso
+  - Así pues
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Mantiene el valor consecutivo del conector inicial sin hacerlo más fuerte de lo que exige el texto. 'Por tanto' es natural en español y conserva el tono explicativo.
+- source_word: ወሀብክዎሙ
+  english_pob_choice: I gave them
+  chosen_spanish: les di
+  alternatives_spanish:
+  - y les di
+  - yo les di
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma verbal reproduce la primera persona divina y el objeto indirecto plural. Se omite el pronombre explícito 'yo' porque el español verbal ya lo implica.
+- source_word: አንስቲያ
+  english_pob_choice: women
+  chosen_spanish: mujeres
+  alternatives_spanish:
+  - esposas
+  - hembras
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Mujeres'' refleja el sustantivo general del ge''ez sin añadir el matiz marital de ''esposas''. ''Hembras'' sería demasiado zoológico y no corresponde al registro.'
+- source_word: ከመ ይዝርኡ
+  english_pob_choice: so that they might sow seed
+  chosen_spanish: para que engendraran hijos
+  alternatives_spanish:
+  - para que sembraran semilla
+  - para que sembraran simiente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La POB inglesa preserva el trasfondo metafórico de 'sembrar', pero en español 'engendrar hijos' comunica con claridad la finalidad procreativa sin sonar forzado. Se mantiene el sentido, aunque se atenúa la metáfora agrícola por fluidez idiomática.
+- source_word: ላዕሌሆን
+  english_pob_choice: into them
+  chosen_spanish: por medio de ellas
+  alternatives_spanish:
+  - en ellas
+  - sobre ellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El giro español evita una literalidad extraña y expresa la relación procreativa indicada por el contexto. 'Por medio de ellas' conserva la función mediadora de las mujeres sin borrar la referencia biológica.
+- source_word: ወይትወለዱ ውሉደ በላዕሌሆን
+  english_pob_choice: and children might be born by them
+  chosen_spanish: y les naciera descendencia
+  alternatives_spanish:
+  - y nacieran hijos de ellas
+  - y se les diera descendencia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Descendencia'' cubre el valor amplio de ውሉደ (''children/offspring'') y el verbo impersonal ''les naciera'' conserva la idea de nacimiento sin atribuir agencia indebida al sujeto. Esta formulación también evita restringir el término a ''hijos'' varones.'
+- source_word: ከመ ከማሁ
+  english_pob_choice: so that thus
+  chosen_spanish: de modo que así
+  alternatives_spanish:
+  - para que de este modo
+  - así que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La doble marca de finalidad/resultados se reproduce con una combinación explícita pero natural en español. 'De modo que así' conserva la insistencia del original sin resultar mecánica.
+- source_word: ኢይትኀጐ ግብር
+  english_pob_choice: no work ... might be lacking
+  chosen_spanish: no les faltara ninguna obra
+  alternatives_spanish:
+  - no faltara ningún trabajo
+  - no les faltara ninguna labor
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Obra'' traduce ግብር en un registro amplio y algo más solemne, acorde con el texto. La construcción ''no les faltara'' expresa la idea de carencia o ausencia que subyace al verbo, siguiendo el sentido contextual que la POB inglesa identificó como continuidad de la actividad humana sobre la tierra.'
+- source_word: በዲበ ምድር
+  english_pob_choice: on the earth
+  chosen_spanish: sobre la tierra
+  alternatives_spanish:
+  - en la tierra
+  - sobre la faz de la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Sobre la tierra'' reproduce la localización cósmica de forma clara y tradicional en español, sin desplazar el foco hacia una frase más expansiva que el original.'
+theological_decisions:
+- issue: Finalidad de dar mujeres a los seres terrestres
+  english_pob_reading: The line presents procreation as part of the divinely ordered pattern for earthly creatures, in contrast to the Watchers' improper crossing of boundaries.
+  chosen_spanish_reading: La línea presenta la procreación como parte del orden dispuesto por Dios para las criaturas terrenales, en contraste con el cruce indebido de límites por parte de los Vigilantes.
+  alternative_spanish_readings:
+  - Una concesión meramente sexual o matrimonial
+  - Un acto punitivo después de la caída de los Vigilantes
+  rationale: 'La formulación española conserva el carácter ordenado y explicativo del versículo. No suaviza la tensión del contexto enochico: la donación de mujeres se entiende en función del ciclo de vida de las criaturas terrestres, no como legitimación genérica de una unión cualquiera.'
+  doctrine_reference: Preservar la tensión teológica del pasaje sin armonizarlo con lecturas posteriores; traducir primero el sentido local del texto.
+translation_notes:
+  revision_awareness: Este borrador sigue el texto etiópico recuperado y toma la POB inglesa como guía auditada, pero no la copia mecánicamente. En particular, reexpresa la metáfora de 'sembrar semilla' con una equivalencia española más natural ('engendraran hijos') y conserva la idea de continuación de la actividad en la cláusula final ('no les faltara ninguna obra').
+  spanish_consistency_notes:
+  - Se usa 'mujeres' y no 'esposas' para no añadir un matiz marital inexistente en el término fuente.
+  - '''Descendencia'' se eligió para abarcar el valor colectivo de ውሉደ sin limitarlo a un sexo o número específico.'
+  - '''Obra'' se prefirió a ''trabajo'' para mantener un registro bíblico amplio y porque el contexto alude a actividad/quehacer humano en la tierra.'
+  - La nota a explica la metáfora agrícola que el español principal atenúa por claridad; la nota b preserva la dificultad del cierre del versículo.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/015/005.yaml
+  source_text_sha256: cede6c4db50d823b869e58b83d9eefe6d8ceb020e050a84117b7096afa0be1e5
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: af0f3afc4944def0ee9070cc5db7c4474d33a20a01a296125d40261917d83e70
+  timestamp: '2026-05-07T21:27:41Z'
+  output_hash: 3d08501ead568a33212d5441b188e3b59f6b8a2fa15d11925be395b24f67f585
+  usage:
+    prompt_tokens: 3048
+    completion_tokens: 1709
+    total_tokens: 4757
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009976
+status: spanish_reviewed
+revisions:
+- from: Por tanto, les di mujeres[a], para que engendraran hijos por medio de ellas y les naciera descendencia[b], de modo que así no les faltara ninguna obra sobre la tierra.
+  to: Por tanto, les di mujeres[a], para que engendraran hijos con ellas y naciera descendencia de ellas[b], de modo que así no les faltara obra alguna en la tierra.
+  rationale: Se ajustó la cláusula de nacimiento para reflejar más de cerca la relación expresada en el original y en la auditoría POB, evitando el giro menos preciso 'les naciera descendencia'. También se mejoró la fluidez de la primera cláusula reproductiva con 'con ellas' y se volvió más idiomática la cláusula final con 'obra alguna en la tierra'. Se conservaron las notas existentes, con una leve mejora de estilo en la nota b.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:24:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido general del ge''ez y del rastro POB inglés: concesión de mujeres para la procreación y continuación de la actividad humana en la tierra. Sin embargo, en un punto significativo suaviza innecesariamente la relación entre las mujeres y el nacimiento al cambiar ''by them / to them'' por ''les naciera descendencia'', que desplaza la imagen hacia una posesión menos concreta. También conviene mejorar la naturalidad y precisión de la cláusula final.'
+  spanish_quality_summary: El español es claro y digno, pero 'engendraran hijos por medio de ellas' suena algo mecánico, y 'les naciera descendencia' es menos natural que una formulación paralela con 'nacieran hijos/descendencia'. 'Ninguna obra sobre la tierra' es entendible, pero 'faltara obra alguna en la tierra' suena más idiomático y mantiene el registro.
+  glossary_alignment: No hay conflictos con la terminología doctrinal principal del proyecto. 'Mujeres' respeta bien አንስቲያ. La decisión de no conservar en el texto la metáfora de 'sembrar semilla' es aceptable porque la nota la preserva. No se requieren ajustes de nombres divinos o títulos.
+  issues:
+  - severity: medium
+    issue: La frase 'les naciera descendencia' atenúa y reconfigura la relación del original con las mujeres y el nacimiento.
+    rationale: 'El ge''ez y la auditoría inglesa mantienen una relación más directa: hijos/descendencia que nacen por/de ellas o para ellos. ''Les naciera descendencia'' convierte la idea en un dativo de posesión menos transparente.'
+  - severity: low
+    issue: '''Engendraran hijos por medio de ellas'' es comprensible, pero algo rígido.'
+    rationale: En español bíblico natural, 'tuvieran hijos con ellas' o una solución semejante fluye mejor; sin embargo, para conservar mayor cercanía al POB puede mantenerse 'engendraran hijos con ellas'.
+  - severity: low
+    issue: La cláusula final puede sonar más idiomática.
+    rationale: '''No les faltara ninguna obra sobre la tierra'' es aceptable, pero ''no les faltara obra alguna en la tierra'' expresa mejor la carencia sin sonar calcado.'
+  revised_spanish_text: Por tanto, les di mujeres[a], para que engendraran hijos con ellas y naciera descendencia de ellas[b], de modo que así no les faltara obra alguna en la tierra.
+  revised_footnotes:
+  - marker: a
+    text: Literalmente, 'sembraran semilla sobre ellas'. El ge'ez conserva una metáfora procreativa tomada del acto de sembrar.
+    reason: lexical_alternative
+  - marker: b
+    text: La cláusula final es difícil. El sentido parece ser que, por medio de la procreación, continuaran en la tierra la vida y la actividad humanas conforme al orden establecido.
+    reason: textual_variant
+  revision_rationale: Se ajustó la cláusula de nacimiento para reflejar más de cerca la relación expresada en el original y en la auditoría POB, evitando el giro menos preciso 'les naciera descendencia'. También se mejoró la fluidez de la primera cláusula reproductiva con 'con ellas' y se volvió más idiomática la cláusula final con 'obra alguna en la tierra'. Se conservaron las notas existentes, con una leve mejora de estilo en la nota b.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 42911139affe76ccb3e9c655eb6cdfda0dc84d8e79900bffb53b994880bc4cd1
+  timestamp: '2026-05-07T23:24:59Z'
+  output_hash: ffe180ba59678c5ad9e404ee5a14c123183e5dc8cd373a25bb9ad3a13bf6c201
+  usage:
+    prompt_tokens: 4340
+    completion_tokens: 777
+    total_tokens: 5117
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022505
+  applied_revision: true

@@ -1,0 +1,162 @@
+id: 1EN.99.13
+reference: 1 Enoch 99:13
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: እሌ፡ ለክሙ፡ እለ፡
+  language: Geez
+  pages:
+  - 243
+  - 244
+  - 245
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/099/013.yaml
+  text: Woe to you..[a][b][c].
+  footnotes:
+  - marker: a
+    text: The supplied Ethiopic witness appears fragmentary or truncated at this verse. The English therefore renders only the extant words and preserves their abrupt repetition.
+    reason: textual_variant
+  - marker: b
+    text: The repeated demonstrative may be emphatic ('these, these') or may belong to a larger clause not preserved in the OCR snippet.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'These are for you, these—'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 1481301d4eecbb827fb8095915e296b77b86874c38d63dc0f31be5b7d7dbfd91
+    timestamp: '2026-04-22T09:26:05Z'
+    output_hash: 57f8acc0ef0646f53ce6d583a3e461e19a68b44d3a0cacee54db6acb4dc0adbe
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:46Z'
+    unchanged: false
+    changes_summary: Removed the unsupported phrase 'to you who' because the provided Geez fragment only supports 'Woe to you' in this excerpt.
+translation:
+  language: es
+  text: ¡Ay de ustedes...[a]!
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El testimonio ge'ez proporcionado es fragmentario en este versículo; por eso la traducción conserva la fórmula abrupta sin intentar completar la continuación no atestiguada.
+    reason: textual_variant
+lexical_decisions:
+- source_word: እሌ
+  english_pob_choice: Woe
+  chosen_spanish: ¡Ay!
+  alternatives_spanish:
+  - ¡Ay de ustedes!
+  - ¡Ay de vosotros!
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El auditorio etíope usa la interjección de lamento/juicio እሌ, que el audit trail inglés identifica como 'Woe'. En español, '¡Ay!' comunica la misma fuerza profética sin introducir palabras no atestiguadas. Como el contexto del texto previo ya fija la fórmula, la traducción puede conservar la brevedad abrupta del fragmento.
+- source_word: ለክሙ
+  english_pob_choice: for you
+  chosen_spanish: de ustedes
+  alternatives_spanish:
+  - para ustedes
+  - a ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La preposición con pronombre plural de segunda persona se refleja de modo natural en español dentro de una exclamación de juicio. 'De ustedes' mantiene la referencia directa al destinatario plural sin forzar una estructura completa que el fragmento ge'ez no preserva plenamente.
+- source_word: እለ
+  english_pob_choice: these
+  chosen_spanish: '[a]'
+  alternatives_spanish:
+  - estos
+  - estas
+  - los cuales
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El expediente inglés ya revisó y corrigió la lectura previa: እለ aquí no debe tratarse como demostrativo sino como parte de la fórmula ''Woe to you...''. Dado que el fragmento suministrado no conserva un complemento seguro para esta forma, no se introduce una palabra española adicional que pudiera falsear el testimonio; en su lugar, se marca la continuidad fragmentaria con la nota.'
+theological_decisions:
+- issue: Tratamiento de un testimonio etíope fragmentario e incompleto
+  english_pob_reading: Translate the surviving words only, preserving their abruptness
+  chosen_spanish_reading: Traducir solo la interjección y la referencia directa preservando la abrupta concisión del fragmento
+  alternative_spanish_readings:
+  - Reconstruir la frase completa a partir de la tradición posterior
+  - Suavizar el texto como una oración completa
+  rationale: La transparencia textual exige no importar una cláusula no atestiguada. El valor teológico y filológico del pasaje depende precisamente de mostrar que el testimonio conservado es mínimo y que la repetición/junción final no puede completarse con seguridad.
+  doctrine_reference: Primacía del texto fuente y preservación de la incertidumbre textual
+translation_notes:
+  revision_awareness: Se atendió la revisión más reciente que corrigió la lectura previa errónea de la secuencia como un demostrativo. El inglés auditado ya había reducido el segmento a 'Woe to you...', y la presente versión sigue esa corrección sin ampliar el fragmento más allá de lo atestiguado.
+  spanish_consistency_notes:
+  - Se evita 'SEÑOR' y toda terminología no pertinente; el texto no contiene el nombre divino.
+  - Se usa '¡Ay!' como equivalente profético estándar para la interjección de juicio.
+  - No se añade un complemento sintáctico no seguro; la nota explica la fragmentariedad en lugar de rellenarla.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/099/013.yaml
+  source_text_sha256: 9a1d2a33c6839ade86b9d34667829f6f4190d52d2dab662aa93799b581b97b96
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: c859360a539fc4f038a054298420b437e4ade88f2dcb968f8834f5e63b1f1594
+  timestamp: '2026-05-07T21:27:42Z'
+  output_hash: 08f3dd2a9510683cc10c620390d570da9d18efcd58d6bc59d3317982de008b88
+  usage:
+    prompt_tokens: 2596
+    completion_tokens: 820
+    total_tokens: 3416
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005637
+status: spanish_reviewed
+revisions:
+- from: ¡Ay de ustedes![a]
+  to: ¡Ay de ustedes...[a]!
+  rationale: Se añade la suspensión para reflejar fielmente el fragmento conservado y alinearse con la decisión inglesa auditada de preservar la abrupta incompletitud. La nota se ajusta para explicar que la continuación de la fórmula no está atestiguada con seguridad, sin introducir reconstrucciones.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:21:39Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El rastro auditado ya corrigió la lectura principal: el fragmento ge''ez en este contexto sostiene ''¡Ay de ustedes...!'' y no ''estos/estas''. El borrador español acierta en traducir la fórmula de juicio y en no reconstruir una cláusula completa, pero su aparato no refleja bien que el testimonio conservado incluye una continuación truncada, equivalente al inglés ''Woe to you...''.'
+  spanish_quality_summary: '''¡Ay de ustedes!'' es comprensible y natural, pero conviene conservar la suspensión abrupta con puntos suspensivos para reflejar el carácter fragmentario del testimonio y alinearse con el POB inglés. La nota actual es buena, aunque puede afinarse para explicar la truncación sin hablar de una reconstrucción más allá de lo atestiguado.'
+  glossary_alignment: No hay términos teológicos mayores del glosario en juego. La elección de '¡Ay de ustedes...!' encaja con español bíblico claro y digno. Se evita correctamente introducir 'vosotros' o una reconstrucción no atestiguada.
+  issues:
+  - severity: medium
+    issue: Falta la suspensión fragmentaria en el texto principal
+    rationale: El inglés auditado quedó en 'Woe to you...' precisamente para preservar que el fragmento continúa de forma truncada. '¡Ay de ustedes!' cierra demasiado el enunciado.
+  - severity: low
+    issue: La nota puede describir mejor la truncación específica
+    rationale: El problema no es solo brevedad abrupta, sino que el testimonio conservado no permite completar con seguridad la continuación de la fórmula de ay.
+  revised_spanish_text: ¡Ay de ustedes...[a]!
+  revised_footnotes:
+  - marker: a
+    text: El testimonio ge'ez proporcionado es fragmentario en este versículo; por eso la traducción conserva la fórmula abrupta sin intentar completar la continuación no atestiguada.
+    reason: textual_variant
+  revision_rationale: Se añade la suspensión para reflejar fielmente el fragmento conservado y alinearse con la decisión inglesa auditada de preservar la abrupta incompletitud. La nota se ajusta para explicar que la continuación de la fórmula no está atestiguada con seguridad, sin introducir reconstrucciones.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b81d38ac1422313fcddde1e94f6626c877352378dc5015c3b68ce33896d49589
+  timestamp: '2026-05-07T23:21:39Z'
+  output_hash: b49686513652b14a2f572f56d68d1692ed2a56ab41fb939597e2a49167060a56
+  usage:
+    prompt_tokens: 2987
+    completion_tokens: 510
+    total_tokens: 3497
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015118
+  applied_revision: true

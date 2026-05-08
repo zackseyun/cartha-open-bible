@@ -1,0 +1,206 @@
+id: 1EN.76.10
+reference: 1 Enoch 76:10
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእምድኅረ፡ እሉ፡ ነፋሳት፡ *ዘመንገለ፡ መስዕ፡ [ዘስሙ፡ ባሕር፡ ወዘወፅአ፡] እም*፯ኆኅት፡ እንተ፡ መንገለ፡ ምሥራቅ፡ [መንገለ፡ አዜብ፡] ይወፅእ፡ እምኔሃ፡ ጤለ፡
+  language: Geez
+  pages:
+  - 182
+  - 183
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch76.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 76, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/076/010.yaml
+  text: And after these[a], winds from the south—whose name is Sea[e][d][c][b], and which come out from the seventh opening that is toward the east—dew comes forth from it.
+  footnotes:
+  - marker: a
+    text: The clause 'whose name is Sea, and which come out' is textually difficult in the Ethiopic transmission and may reflect a variant or expansion, but it is retained here because it is present in the supplied witness.
+    reason: textual_variant
+  - marker: b
+    text: A bracketed phrase in the witness may read 'toward the west.' Because its placement is uncertain in the OCR text, it is not represented in the main translation.
+    reason: alternative_reading
+  - marker: c
+    text: Or 'from the south'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'from the seven openings'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'come forth from them as dew'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 73bf7a563943f92dcce2c142166c7758031feedb02c64e32757c332c0314ad60
+    timestamp: '2026-04-22T09:18:20Z'
+    output_hash: 67e35efe4dc513b5ff1dfb7bd6b412be99303a438293b35c2f84492c32200a39
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:34Z'
+    unchanged: false
+    changes_summary: Removed duplicated/corrupted wording, corrected 'north' to 'south' (መስዕ), preserved the appositional clause about the seventh opening toward the east, and smoothed the sentence into natural formal English while retaining 'dew comes forth from it.'
+translation:
+  language: es
+  text: Y después de estos, vientos del norte—cuyo nombre es Mar[a], y que salen de la séptima abertura que está hacia el oriente—, el rocío sale de ella.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La cláusula «cuyo nombre es Mar, y que salen» es textualmente difícil en la transmisión etiópica y puede reflejar una variante o expansión, pero se conserva aquí porque está presente en el testimonio provisto.
+    reason: textual_variant
+lexical_decisions:
+- source_word: እምድኅረ እሉ
+  english_pob_choice: after these
+  chosen_spanish: después de estos
+  alternatives_spanish:
+  - tras estos
+  - después de ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase introduce una secuencia temporal en la descripción de los vientos; «después de estos» conserva el orden sin añadir interpretación.
+- source_word: ነፋሳት
+  english_pob_choice: winds
+  chosen_spanish: los vientos
+  alternatives_spanish:
+  - las ráfagas
+  - los espíritus
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto cosmológico y meteorológico, «vientos» es el sentido natural; «espíritus» no corresponde aquí.
+- source_word: መስዕ
+  english_pob_choice: north
+  chosen_spanish: del norte
+  alternatives_spanish:
+  - septentrionales
+  - del norte
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El revisor del texto advirtió que መስዕ significa «norte», no «sur». Por eso se corrige la dirección y se traduce de manera directa.
+- source_word: ዘስሙ ባሕር
+  english_pob_choice: whose name is Sea
+  chosen_spanish: cuya nombre es Mar
+  alternatives_spanish:
+  - cuyo nombre es Mar
+  - que se llama Mar
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la fórmula nominal literal del testimonio, manteniendo visible el nombre cosmológico «Mar» en lugar de interpretarlo como un simple adjetivo.
+- source_word: እም፯ኆኅት
+  english_pob_choice: from the seventh opening
+  chosen_spanish: de la séptima abertura
+  alternatives_spanish:
+  - de la séptima apertura
+  - de la séptima puerta
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El numeral funciona como ordinal con un sustantivo singular. «Abertura» preserva la imagen cósmica de un orificio/portal sin forzar una equivalencia más doctrinal.
+- source_word: እንተ መንገለ ምሥራቅ
+  english_pob_choice: that is toward the east
+  chosen_spanish: que está hacia el oriente
+  alternatives_spanish:
+  - que mira al oriente
+  - que está al este
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Hacia el oriente» reproduce bien la dirección espacial del original y mantiene un registro bíblico claro en español.
+- source_word: ይወፅእ እምኔሃ
+  english_pob_choice: dew comes forth from it
+  chosen_spanish: el rocío sale de ella
+  alternatives_spanish:
+  - el rocío procede de ella
+  - el rocío brota de ella
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sujeto es «el rocío» y el sufijo singular femenino se refiere a la abertura; por eso se traduce «de ella». «Sale» conserva el verbo de salida sin recargar el verso.
+- source_word: ጤለ
+  english_pob_choice: as dew / dew
+  chosen_spanish: rocío
+  alternatives_spanish:
+  - como rocío
+  - humedad
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término designa un fenómeno meteorológico; en español, «rocío» es la opción más natural y fiel al campo semántico.
+theological_decisions:
+- issue: Conservación del marco cosmológico del libro
+  english_pob_reading: Retain 'whose name is Sea' literally; do not flatten cosmic language.
+  chosen_spanish_reading: Mantener «cuya nombre es Mar» de modo literal, sin convertirlo en una paráfrasis explicativa.
+  alternative_spanish_readings:
+  - el viento del mar
+  - el viento marino
+  rationale: La imagen apocalíptica/cosmológica del texto debe permanecer visible. Traducirlo interpretativamente como «viento marino» suavizaría una nomenclatura que el testimonio transmite como nombre propio o designación fija.
+  doctrine_reference: Preservar el lenguaje apocalíptico y la nomenclatura cósmica sin domesticación interpretativa.
+translation_notes:
+  revision_awareness: Se incorporó la corrección adjudicada de መስዕ como «norte», no «sur», y se evitó la lectura errónea previa. También se siguió la revisión que entiende ፯ኆኅት como «séptima abertura» singular, con el pronombre femenino singular «de ella». Se mantuvo el valor textual difícil de la cláusula nominal «cuya nombre es Mar» como parte de la nomenclatura cosmológica transmitida.
+  spanish_consistency_notes:
+  - Se usa «Yahvé» en otros contextos del proyecto, pero aquí no aparece el nombre divino.
+  - Se prefiere «rocío» para ጤለ, sin añadir «como» porque el testimonio revisado lo trata como sujeto de la oración.
+  - 'Se mantiene un registro bíblico sobrio: «oriente»/«abertura» en lugar de un español coloquial.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/076/010.yaml
+  source_text_sha256: fe93de8825a9096ee68ab9b2841e5a1e6367ee564e327da8c7b2eb2ba9619acf
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: ab2b04e764c27f42aa7a69e7044efa59dfabb862465931756f6eec34e32bd949
+  timestamp: '2026-05-07T21:27:40Z'
+  output_hash: 70190dd5e9594249f12d46ccec8972dca76dbc85f90075e96ec62b21b5b4d415
+  usage:
+    prompt_tokens: 4010
+    completion_tokens: 1353
+    total_tokens: 5363
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009096
+status: spanish_reviewed
+revisions:
+- from: Y después de estos, los vientos del norte, cuya nombre es Mar[a], y que salen de la séptima abertura que está hacia el oriente, el rocío sale de ella.
+  to: Y después de estos, vientos del norte—cuyo nombre es Mar[a], y que salen de la séptima abertura que está hacia el oriente—, el rocío sale de ella.
+  rationale: 'Se corrige la gramática española («cuyo nombre»), se elimina una nota de estilo que no corresponde a la evidencia fuente, y se sustituye por una nota textual alineada con la auditoría inglesa. Se preservan las decisiones sustanciales correctas del borrador: «norte», «séptima abertura», la fórmula cosmológica «Mar» y la sintaxis final con «el rocío» como sujeto.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:46:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español acierta en varios puntos clave del análisis fuente: መስዕ se refleja como «norte», ፯ኆኅት como singular ordinal «séptima abertura», y la cláusula final correctamente toma «el rocío» como sujeto que sale «de ella». También conserva la fórmula cosmológica «Mar». Sin embargo, la redacción española introduce un error gramatical innecesario en «cuya nombre», que no está exigido por el ge''ez ni por el rastro de auditoría inglés.'
+  spanish_quality_summary: El texto es mayormente legible, pero «cuya nombre» es incorrecto en español y la nota que lo defiende como literalidad no corresponde a una fidelidad real al original. «Cuyo nombre» preserva plenamente el sentido con español natural y digno. También conviene mantener la nota textual sobre la dificultad de la cláusula «cuyo nombre es Mar, y que salen», en vez de una nota de estilo español artificial.
+  glossary_alignment: 'No hay conflicto con la terminología doctrinal del proyecto. «vientos», «Mar», «rocío» y «oriente» son adecuados. La excepción principal es estilística/gramatical: debe usarse «cuyo nombre es Mar», no «cuya nombre es Mar».'
+  issues:
+  - severity: medium
+    issue: Uso de «cuya nombre» en el texto principal
+    rationale: Es una construcción incorrecta en español. El original no obliga a reproducir una incorrección gramatical española; la fidelidad exige conservar el sentido, no crear un solecismo inexistente en la lengua meta.
+  - severity: medium
+    issue: Nota al pie impropia sobre literalidad española
+    rationale: La nota actual explica y justifica una mala gramática del español en lugar de documentar una dificultad real del testimonio etiópico. Debe reemplazarse por una nota textual sobre la cláusula difícil, conforme al audit trail inglés.
+  revised_spanish_text: Y después de estos, vientos del norte—cuyo nombre es Mar[a], y que salen de la séptima abertura que está hacia el oriente—, el rocío sale de ella.
+  revised_footnotes:
+  - marker: a
+    text: La cláusula «cuyo nombre es Mar, y que salen» es textualmente difícil en la transmisión etiópica y puede reflejar una variante o expansión, pero se conserva aquí porque está presente en el testimonio provisto.
+    reason: textual_variant
+  revision_rationale: 'Se corrige la gramática española («cuyo nombre»), se elimina una nota de estilo que no corresponde a la evidencia fuente, y se sustituye por una nota textual alineada con la auditoría inglesa. Se preservan las decisiones sustanciales correctas del borrador: «norte», «séptima abertura», la fórmula cosmológica «Mar» y la sintaxis final con «el rocío» como sujeto.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5d12ee2018969fa22ce032e6264eeb582e6447e4b4165f42a59cbce211c3d878
+  timestamp: '2026-05-07T23:46:21Z'
+  output_hash: 2da6eb8926211ce389dc269fd793b4e06de9e47618bd3dfbaf1ed14494905e72
+  usage:
+    prompt_tokens: 4963
+    completion_tokens: 662
+    total_tokens: 5625
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022338
+  applied_revision: true

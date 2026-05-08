@@ -1,0 +1,188 @@
+id: 1EN.11.2
+reference: 1 Enoch 11:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወሰላም፡ ወርትዕ፡ ሱቱፋነ፡ ይከውኑ፡ በኵሉ፡ መዋዕለ፡ ዓለም፡ ወበኵሉ፡ ትውልደ፡ ዓለም።
+  language: Geez
+  pages:
+  - 68
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch11.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 11, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/011/002.yaml
+  text: And peace and truth shall be partners throughout all the days of the world and throughout all the generations of the world[a][b][c][d].
+  footnotes:
+  - marker: a
+    text: Ge'ez mäwa'ələ can mean 'courses' (as of heavenly bodies) or 'ages/periods.' With 'of the world' the temporal sense is most likely here; 'courses' is retained in technical contexts (e.g., chs. 72–82).
+    reason: lexical_alternative
+  - marker: b
+    text: The phrase sutūfānä + 'they shall be' idiomatically means 'shall be multiplied/abundant.' 'Shall abound' is a close English alternative.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'shall be multiplied'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'ages'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5-2025-08-07
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 9f53b57519859934a4478280c6583289e60b80bf9d030cae494480dd3a1b6019
+    timestamp: '2026-04-22T09:02:31Z'
+    output_hash: d138882f994dab2a141be1ce1e19dbaca5d82bb8d16e299fc82ad9b375decbd4
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @4d90b6541
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @4d90b6541
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:40Z'
+    unchanged: false
+    changes_summary: Removed duplicated text caused by a drafting error and rendered ሱቱፋነ as 'be partners,' which more directly reflects the source than 'be multiplied.'
+translation:
+  language: es
+  text: Y la paz y la verdad estarán unidas[a] durante todos los días del mundo y durante todas las generaciones del mundo.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El ge'ez ሱቱፋነ ይከውኑ expresa asociación o participación mutua; también podría traducirse 'serán asociadas'.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ሰላም
+  english_pob_choice: peace
+  chosen_spanish: paz
+  alternatives_spanish:
+  - bienestar
+  - plenitud
+  - prosperidad
+  lexicon: Leslau Ge'ez
+  rationale: El término ge'ez designa paz en sentido amplio; en español 'paz' conserva la coordinación idiomática con 'verdad' sin perder la idea de orden y bienestar implícita en el contexto.
+- source_word: ርትዕ
+  english_pob_choice: truth
+  chosen_spanish: verdad
+  alternatives_spanish:
+  - rectitud
+  - estabilidad
+  lexicon: Leslau Ge'ez
+  rationale: La pareja fija 'paz y verdad' se entiende naturalmente en español con 'verdad'; 'rectitud' sería posible, pero desplaza el equilibrio semántico de la expresión.
+- source_word: ሱቱፋነ ይከውኑ
+  english_pob_choice: shall be partners
+  chosen_spanish: serán compañeras
+  alternatives_spanish:
+  - serán compañeras y socias
+  - estarán unidas
+  - serán asociadas
+  lexicon: Leslau Ge'ez
+  rationale: El audit trail corrige una lectura previa de 'multiplicadas' y confirma la idea de asociación/participación. En español, 'compañeras' comunica la relación recíproca de modo natural; se evita 'socias' por su posible color comercial y 'asociadas' por su dureza técnica.
+- source_word: በኵሉ መዋዕለ ዓለም
+  english_pob_choice: throughout all the days of the world
+  chosen_spanish: durante todos los días del mundo
+  alternatives_spanish:
+  - a lo largo de todos los días del mundo
+  - en todos los días del mundo
+  lexicon: Leslau Ge'ez
+  rationale: La revisión más reciente del audit trail restablece literalmente 'días' para መዋዕለ. 'Durante todos los días del mundo' reproduce con claridad la extensión temporal total sin introducir una interpretación más abstracta como 'edades'.
+- source_word: ትውልደ ዓለም
+  english_pob_choice: throughout all the generations of the world
+  chosen_spanish: durante todas las generaciones del mundo
+  alternatives_spanish:
+  - a lo largo de todas las generaciones del mundo
+  - durante todas las generaciones humanas
+  lexicon: Leslau Ge'ez
+  rationale: Se conserva la referencia literal a 'generaciones del mundo' para mantener el alcance universal del texto y evitar restringir innecesariamente a 'humanas'.
+theological_decisions:
+- issue: Relación entre paz y verdad
+  english_pob_reading: Peace and truth shall be partners
+  chosen_spanish_reading: La paz y la verdad serán compañeras
+  alternative_spanish_readings:
+  - la paz y la verdad estarán unidas
+  - la paz y la verdad serán asociadas
+  rationale: El texto no pide una abstracción doctrinal, sino una relación de acompañamiento/participación. 'Compañeras' preserva la mutualidad sin forzar una terminología eclesiástica ni comercial.
+  doctrine_reference: Ninguna; decisión semántica y sintáctica basada en el ge'ez y la revisión auditada.
+- issue: Alcance temporal universal
+  english_pob_reading: throughout all the days... and throughout all the generations...
+  chosen_spanish_reading: durante todos los días del mundo y durante todas las generaciones del mundo
+  alternative_spanish_readings:
+  - por todas las edades del mundo y por todas las generaciones del mundo
+  - a lo largo de todos los días del mundo y a lo largo de todas las generaciones del mundo
+  rationale: Se retiene la amplitud temporal completa del texto sin reducirla a una sola era o a una lectura escatológica específica.
+  doctrine_reference: Ninguna; solo se evita una restricción interpretativa no exigida por el original.
+translation_notes:
+  revision_awareness: 'Se integró la revisión más reciente del audit trail, que corrige dos problemas del borrador inglés previo: 1) ሱቱፋነ ይከውኑ debe leerse como ''serán compañeras/asociadas'', no como ''serán multiplicadas''; 2) መዋዕለ ዓለም se restituye como ''días del mundo'', no ''edades del mundo''. También se evitó duplicación textual y se conservó el paralelismo de las dos cláusulas temporales.'
+  spanish_consistency_notes:
+  - Se usa 'paz' y 'verdad' como pareja idiomática estable y transparente.
+  - '''Compañeras'' mantiene una relación recíproca sin introducir un término técnico no atestiguado.'
+  - Se conservó 'mundo' en ambas frases genitivas para reflejar el alcance del original.
+  - La puntuación reproduce el ritmo coordinado de la oración sin añadir elementos interpretativos.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/011/002.yaml
+  source_text_sha256: c6574d06905be05f33a5d849c0d0386d3cbd2de5d986d54c0c2f810d8342522c
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 009cf6ab08383016206e1f9e4b6da416de7131e96bb01a361892e08377439aa4
+  timestamp: '2026-05-07T21:27:12Z'
+  output_hash: 688a5de03af6c0135b8592fcbf96a8a5d474ea77c50aae51f661733e646e87b3
+  usage:
+    prompt_tokens: 3411
+    completion_tokens: 1219
+    total_tokens: 4630
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008044
+status: spanish_reviewed
+revisions:
+- from: Y la paz y la verdad serán compañeras[a] durante todos los días del mundo y durante todas las generaciones del mundo.
+  to: Y la paz y la verdad estarán unidas[a] durante todos los días del mundo y durante todas las generaciones del mundo.
+  rationale: Se cambia 'serán compañeras' por 'estarán unidas' para expresar con más naturalidad en español la idea de asociación mutua entre dos abstracciones, sin introducir un matiz demasiado interpersonal. Se conserva 'días del mundo' y 'generaciones del mundo' conforme al audit trail. La nota se rehace para informar al lector sobre la alternativa léxica relevante, no sobre el proceso editorial.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:09:56Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente las correcciones principales del audit trail: ሱቱፋነ ይከውኑ ya no se entiende como ''ser multiplicadas'', y መዋዕለ se vierte como ''días''. Sin embargo, ''serán compañeras'' introduce un matiz más interpersonal y marcado por género que el original no exige; el sentido fuente es más bien ''serán asociadas / estarán unidas / serán compañeras entre sí''.'
+  spanish_quality_summary: El texto es claro y legible, pero 'compañeras' suena algo antropomórfico para dos abstracciones y puede distraer en registro bíblico. Una formulación más natural y digna en español eclesial general es 'estarán unidas', que preserva la idea de asociación sin tecnicismo ni color comercial. El resto de la frase fluye bien.
+  glossary_alignment: No hay conflicto con la terminología principal del proyecto. 'Paz' y 'verdad' están bien. La revisión propuesta ajusta solo la expresión de ሱቱፋነ ይከውኑ para mayor fidelidad semántica y naturalidad española.
+  issues:
+  - severity: medium
+    issue: '''serán compañeras'' para ሱቱፋነ ይከውኑ'
+    rationale: Aunque capta la idea de asociación, en español aplicado a 'la paz' y 'la verdad' suena personificante y algo coloquial. El ge'ez auditado apunta a asociación/unión, no necesariamente a 'compañeras' como relación personal.
+  - severity: low
+    issue: La nota al pie se enfoca en el historial de corrección más que en la alternativa léxica útil al lector
+    rationale: Las notas deben servir al lector final. Conviene explicar brevemente que el ge'ez expresa asociación/participación y que también podría entenderse como 'asociadas', en vez de centrar la nota en que 'fue corregido en el audit trail'.
+  revised_spanish_text: Y la paz y la verdad estarán unidas[a] durante todos los días del mundo y durante todas las generaciones del mundo.
+  revised_footnotes:
+  - marker: a
+    text: El ge'ez ሱቱፋነ ይከውኑ expresa asociación o participación mutua; también podría traducirse 'serán asociadas'.
+    reason: lexical_alternative
+  revision_rationale: Se cambia 'serán compañeras' por 'estarán unidas' para expresar con más naturalidad en español la idea de asociación mutua entre dos abstracciones, sin introducir un matiz demasiado interpersonal. Se conserva 'días del mundo' y 'generaciones del mundo' conforme al audit trail. La nota se rehace para informar al lector sobre la alternativa léxica relevante, no sobre el proceso editorial.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 737494e8eaf4b169c2487e9e954e56b17aae537d505c5557f60cf006326719a2
+  timestamp: '2026-05-07T23:09:56Z'
+  output_hash: e122c341a43d7f8e7706779874de2770f51213a756fd7e5c271fe4d873b9e7a9
+  usage:
+    prompt_tokens: 4212
+    completion_tokens: 660
+    total_tokens: 4872
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02043
+  applied_revision: true

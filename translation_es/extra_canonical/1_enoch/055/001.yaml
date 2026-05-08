@@ -1,0 +1,188 @@
+id: 1EN.55.1
+reference: 1 Enoch 55:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእምድኅረዝ፡ ነሥሐ፡ ርእሰ፡ መዋዕል፡ ወይቤ፡ በከ፡ ሕኵፖልክዎሙ፡ ለኵሎሙ፡ ለእለ፡ ይነብሩ፡ ውስተ፡ የብስ።
+  language: Geez
+  pages:
+  - 137
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch55.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 55, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/055/001.yaml
+  text: And after this the Head of Days relented and said[a], “In vain I have destroyed all those who dwell on the dry land.”
+  footnotes:
+  - marker: a
+    text: Or 'relented' or 'changed his mind.' The Ge'ez verb can express a reversal or regret, and with a divine subject the nuance may be less moral than English 'repented' can suggest.
+    reason: lexical_alternative
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: ea1799debef7de17d4b5e21352f7fd6066b0054adc54d9fd0e1e6146dfa3b070
+    timestamp: '2026-04-22T17:21:59Z'
+    output_hash: bcc846f46a9bc0bb27039ac2b5e270b0f894da91da9d7e2cdcf735bc9f9404ae
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:33Z'
+    unchanged: false
+    changes_summary: 'Changed ''repented'' to ''relented'' for more natural and contextually appropriate English, and removed the unnecessary ''have'' after ''vain'' so the clause reads naturally: ''In vain I have destroyed...''.'
+translation:
+  language: es
+  text: 'Y después de esto, la Cabeza de los Días cambió de parecer[a] y dijo: «En vano he destruido a todos los que habitan en la tierra seca».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «se arrepintió» o «se retractó». El verbo ge'ez puede expresar un giro, una reversión o un cambio de parecer; con un sujeto divino, el matiz puede ser menos moral que el que suele sugerir «arrepentirse» en español.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: እምድኅረዝ
+  english_pob_choice: after this
+  chosen_spanish: después de esto
+  alternatives_spanish:
+  - después
+  - luego de esto
+  - tras esto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La fórmula marca transición temporal narrativa; «después de esto» conserva el orden apocalíptico con español natural.
+- source_word: ነሥሐ
+  english_pob_choice: relented
+  chosen_spanish: se arrepintió
+  alternatives_spanish:
+  - se arrepintió
+  - cedió
+  - cambió de parecer
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo ge'ez admite la idea de giro, arrepentimiento o cambio de actitud. En español, «se arrepintió» mantiene la tensión teológica del original y el valor verbal fuerte, mientras la nota preserva alternativas menos moralizadas.
+- source_word: ርእሰ መዋዕል
+  english_pob_choice: the Head of Days
+  chosen_spanish: el Cabeza de los Días
+  alternatives_spanish:
+  - el Jefe de los Días
+  - el Principal de los Días
+  - el Cabeza de los Días
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el título apocalíptico de forma literal y transparente. Aunque suene inusual en español, refleja mejor la composición del ge'ez que una normalización teológica como «Anciano de días».
+- source_word: ሕኵፖልክዎሙ
+  english_pob_choice: I destroyed them
+  chosen_spanish: he destruido
+  alternatives_spanish:
+  - he aniquilado
+  - he arrasado
+  - he exterminado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «He destruido» reproduce la fuerza del acto judicial sin cargar el español con matices más interpretativos o más intensos de los que exige el texto.
+- source_word: ለኵሎሙ ለእለ ይነብሩ
+  english_pob_choice: all those who dwell
+  chosen_spanish: a todos los que habitan
+  alternatives_spanish:
+  - a todos los que viven
+  - a todos los que moran
+  - a quienes habitan
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La secuencia preserva la totalidad explícita y el sentido durativo de «habitar». En español, «habitan» suena más sobrio que «moran» y más preciso que «viven» en este contexto.
+- source_word: ውስተ የብስ
+  english_pob_choice: on the dry land
+  chosen_spanish: en la tierra seca
+  alternatives_spanish:
+  - sobre la tierra seca
+  - en el suelo seco
+  - en tierra seca
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Tierra seca» conserva el contraste concreto del ge'ez የብስ y evita suavizarlo a «tierra» sin más. «En» fluye mejor que una calca rígida de la preposición.
+theological_decisions:
+- issue: Cómo traducir el verbo divino ነሥሐ aplicado al Cabeza de los Días
+  english_pob_reading: 'relented; footnote: or changed his mind'
+  chosen_spanish_reading: 'se arrepintió; nota: también puede entenderse «cedió» o «cambió de parecer»'
+  alternative_spanish_readings:
+  - cedió
+  - cambió de parecer
+  - se ablandó
+  rationale: El texto presenta una expresión antropopática fuerte. La versión principal mantiene la tensión del original en lugar de neutralizarla. La nota ofrece alternativas que muchos lectores considerarán más naturales en español con sujeto divino.
+  doctrine_reference: 'Translation philosophy §3: preservar tensiones teológicas/textuales en vez de resolverlas; nota léxica sobre campos semánticos de arrepentimiento/cambio de mente.'
+translation_notes:
+  revision_awareness: 'La POB inglesa fue revisada desde «repented» a «relented» para reflejar mejor el tono contextual y evitar una carga moral innecesaria; la versión española conserva la tensión del verbo original con «se arrepintió», pero la nota mantiene las alternativas menos marcadas. También se atendió la puntuación inglesa final para reproducir en español una cláusula natural: «En vano he destruido...».'
+  spanish_consistency_notes:
+  - Se mantiene «Yahvé» solo cuando el original lo exija explícitamente; este verso no contiene el tetragrámaton.
+  - Se conserva el título apocalíptico literal «Cabeza de los Días» para coherencia con el léxico POB en contextos enóquicos.
+  - «habitan» se usa para sostener el valor durativo de ይነብሩ, evitando una simplificación a «viven».
+  - Se preserva el tono de juicio con «he destruido» sin intensificarlo a un equivalente más duro que el audit trail no demande.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/055/001.yaml
+  source_text_sha256: 43870b23a389019654b4cc27d08ee5d1daee136d5c79bf7f82908f16303a4159
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 98d82f43c73874440c98e35c05eb42e0eafa71410b7bca4ce9b9adac750b3f1a
+  timestamp: '2026-05-07T21:27:44Z'
+  output_hash: bbbee911fc477a9a900664a4637d00bc4a52ae40936b41effe7c839a10d1df5d
+  usage:
+    prompt_tokens: 2681
+    completion_tokens: 1300
+    total_tokens: 3981
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007861
+status: spanish_reviewed
+revisions:
+- from: 'Y después de esto, el Cabeza de los Días se arrepintió[a] y dijo: «En vano he destruido a todos los que habitan en la tierra seca».'
+  to: 'Y después de esto, la Cabeza de los Días cambió de parecer[a] y dijo: «En vano he destruido a todos los que habitan en la tierra seca».'
+  rationale: Se ajusta ነሥሐ en el texto principal a «cambió de parecer» para reflejar mejor la decisión auditada inglesa de evitar en el cuerpo del texto una lectura demasiado moralizada con sujeto divino, mientras se conserva la tensión en la nota mediante «se arrepintió». Se corrige el título a «la Cabeza de los Días», que mantiene la literalidad apocalíptica pero con español más natural y legible. Se mantiene «tierra seca», que representa bien የብስ.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:00:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura y el sentido general del ge''ez: transición temporal, título apocalíptico distintivo, destrucción de todos los que habitan en la tierra seca. Sin embargo, en ነሥሐ el expediente inglés ya ajustó el texto principal a ''relented'' y reservó ''repented/changed his mind'' para nota. En español, «se arrepintió» preserva una tensión posible, pero aquí carga más fuertemente una connotación moral que el inglés auditado decidió evitar en texto principal. También «el Cabeza de los Días» es demasiado poco idiomático en español.'
+  spanish_quality_summary: 'El español es mayormente claro, pero dos puntos afectan la legibilidad y naturalidad: «el Cabeza de los Días» suena gramaticalmente forzado en español; «la Cabeza de los Días» funciona mejor como título nominal, manteniendo la literalidad. Además, la nota con «cedió» no refleja bien el campo semántico documentado; suena demasiado débil y no equivale bien a ''relented''.'
+  glossary_alignment: 'No hay conflicto con la terminología base del proyecto (no aparecen Yahvé, Mesías, etc.). La decisión clave es teológica/lexical: para ነሥሐ conviene alinear el texto principal con el inglés POB auditado mediante «cambió de parecer», y dejar «se arrepintió» y «cedió/relentió» no; mejor «se retractó» o «se arrepintió» como alternativas. Para ርእሰ መዋዕል, conviene conservar el título distintivo sin armonizarlo a «Anciano de Días», pero con español más natural: «la Cabeza de los Días».'
+  issues:
+  - severity: medium
+    issue: «se arrepintió» en el texto principal no sigue la revisión auditada inglesa a «relented»
+    rationale: Aunque el ge'ez permite 'repentirse', el expediente inglés documentó y adoptó una formulación menos moralizada para sujeto divino. En español, «se arrepintió» suena más doctrinalmente cargado que el inglés final.
+  - severity: medium
+    issue: La nota ofrece «cedió», alternativa léxicamente imprecisa
+    rationale: «Ceder» sugiere rendirse o conceder ante presión, no necesariamente reversión, pesar o cambio de parecer, que son los matices documentados.
+  - severity: medium
+    issue: «el Cabeza de los Días» es poco natural en español
+    rationale: Como título puede mantenerse la literalidad, pero en español «la cabeza» funciona mejor como sustantivo y evita una construcción áspera o agramatical para lectura pública.
+  revised_spanish_text: 'Y después de esto, la Cabeza de los Días cambió de parecer[a] y dijo: «En vano he destruido a todos los que habitan en la tierra seca».'
+  revised_footnotes:
+  - marker: a
+    text: O «se arrepintió» o «se retractó». El verbo ge'ez puede expresar un giro, una reversión o un cambio de parecer; con un sujeto divino, el matiz puede ser menos moral que el que suele sugerir «arrepentirse» en español.
+    reason: lexical_alternative
+  revision_rationale: Se ajusta ነሥሐ en el texto principal a «cambió de parecer» para reflejar mejor la decisión auditada inglesa de evitar en el cuerpo del texto una lectura demasiado moralizada con sujeto divino, mientras se conserva la tensión en la nota mediante «se arrepintió». Se corrige el título a «la Cabeza de los Días», que mantiene la literalidad apocalíptica pero con español más natural y legible. Se mantiene «tierra seca», que representa bien የብስ.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f8885e1bf0d5ec460bed1ef9fd6bbaacf5b57dd3fbca69aae84ca9408625ced5
+  timestamp: '2026-05-07T23:00:30Z'
+  output_hash: 71a0f7eae6d25310d18f85fe98f1d5a72f7b30b333bd4682095b09a73fa79c7c
+  usage:
+    prompt_tokens: 3567
+    completion_tokens: 881
+    total_tokens: 4448
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022132
+  applied_revision: true

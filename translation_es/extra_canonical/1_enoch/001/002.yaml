@@ -1,0 +1,250 @@
+id: 1EN.1.2
+reference: 1 Enoch 1:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወአውሥአ ፡ ወይቤ ፡ ሄኖክ ፡ ብእሲ ፡ ጻድቅ ፡ ዘእምኀበ ፡ እግዚአብሔር ፡ [እንዘ ፡] አዕይን ቲሁ ፡ ክሡታት ፡ ወይሬኢ ፡ ራእየ ፡ ቅዱሰ ፡ ዘበሰማያት ፡ ዘአርአዩኒ ፡ መላእክት ፡ ወሰማዕኩ ፡ እምኀቤሆሙ ፡ ኵሎ ፡ ወአእመርኩ ፡ አነ ፡ ዘእሬኢ ፡ ወአኮ ፡ ለዛ ፡ ትውልድ ፡ አላ ፡ ለዘ ፡ ይመጽእ ፡ ርኁቃት ።
+  language: Geez
+  pages:
+  - 40
+  - 42
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/001/002.yaml
+  text: 'And Enoch answered and said: "A righteous man[a], whose eyes were opened by God, saw a holy vision in the heavens, which the angels showed me; and from them I heard everything, and I understood what I saw—but not for this generation[d][c][b], but for a distant one that is to come."'
+  footnotes:
+  - marker: a
+    text: The clause about Enoch's eyes being opened by God is textually awkward in the Ethiopic OCR, but the sense is that his visionary sight was divinely opened or uncovered.
+    reason: textual_variant
+  - marker: b
+    text: '''Heavens'' reflects the plural cosmological idiom common in Semitic and apocalyptic texts.'
+    reason: cultural_note
+  - marker: c
+    text: Or 'but for a generation far away that will come.' The final phrase may be taken collectively or as a singular future generation.
+    reason: lexical_alternative
+  - marker: d
+    text: Or 'And Enoch, a righteous man, answered and said—his eyes having been opened by God—"I saw'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 0bea2094c20410c1607d64ac349cc9bbf32022035b5ff01162b1ce714a1ac3e7
+    timestamp: '2026-04-22T09:07:49Z'
+    output_hash: 33635900a83f903ce66b354ea308b64e5a36963e06c975674a2f77a8279efbe1
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:26Z'
+    unchanged: false
+    changes_summary: Added commas for clarity, changed 'rather' to the more formal and direct 'but,' and revised 'one far off' to 'a distant one' to more naturally reflect the singular generation implied in the source while preserving the formal register.
+translation:
+  language: es
+  text: 'Y Enoc respondió y dijo: «Un hombre justo[a], cuyos ojos fueron abiertos por Dios, vio una visión santa en los cielos[b], que me mostraron los ángeles; y de ellos oí todo, y entendí lo que vi; pero no para esta generación, sino para una generación distante[c] que ha de venir[d]».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El giro «cuyos ojos fueron abiertos por Dios» sigue de cerca la construcción difícil del ge'ez; en contexto, se refiere a una apertura de la percepción visionaria, no solo física.
+    reason: textual_variant
+  - marker: b
+    text: «Los cielos» conserva el plural cosmológico semítico frecuente en textos apocalípticos.
+    reason: cultural_note
+  - marker: c
+    text: O también «lejana». El término conserva la idea de distancia, no solo de futuridad.
+    reason: lexical_alternative
+  - marker: d
+    text: La frase final también puede entenderse como «para una generación lejana que vendrá».
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: አውሥአ
+  english_pob_choice: answered
+  chosen_spanish: respondió
+  alternatives_spanish:
+  - contestó
+  - respondió y dijo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo narrativo abre una fórmula semítica de discurso; en español, «respondió y dijo» o «contestó» transmiten ese valor sin perder el tono solemne. Aquí se eligió una forma breve y natural, manteniendo la introducción oracional.
+- source_word: ብእሲ ጻድቅ
+  english_pob_choice: a righteous man
+  chosen_spanish: un hombre justo
+  alternatives_spanish:
+  - un hombre recto
+  - un hombre piadoso
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Justo» conserva la fuerza moral y también la resonancia judicial/covenantal posible de צדיק / δίκαιος. «Recto» o «piadoso» suavizan o desplazan el matiz.
+- source_word: ዘእምኀበ እግዚአብሔር [እንዘ] አዕይን ቲሁ ክሡታት
+  english_pob_choice: his eyes having been opened by God
+  chosen_spanish: cuyos ojos habían sido abiertos por Dios
+  alternatives_spanish:
+  - con sus ojos abiertos por Dios
+  - a quien Dios había abierto los ojos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción expresa una apertura divina de la percepción visionaria. En español, la relativa «cuyos ojos habían sido abiertos por Dios» preserva la dependencia y evita convertirla en una paráfrasis interpretativa.
+- source_word: እግዚአብሔር
+  english_pob_choice: God
+  chosen_spanish: Dios
+  alternatives_spanish:
+  - el Señor
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto etiópico, el término señala la agencia divina sin necesidad de la fórmula de nombre pactual. «Dios» es la equivalencia más directa y evita introducir una convención litúrgica no requerida.
+- source_word: ራእየ ቅዱሰ
+  english_pob_choice: a holy vision
+  chosen_spanish: una visión santa
+  alternatives_spanish:
+  - una visión sagrada
+  - la visión del Santo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El adjetivo califica naturalmente la visión; «santa» conserva el registro apocalíptico. «Sagrada» es válida, pero puede sonar más cultual que visionaria.
+- source_word: ዘበሰማያት
+  english_pob_choice: in the heavens
+  chosen_spanish: en los cielos
+  alternatives_spanish:
+  - en el cielo
+  - en los cielos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se retiene el plural cosmológico semítico. «En los cielos» comunica mejor el matiz plural que «en el cielo».
+- source_word: ዘአርአዩኒ መላእክት
+  english_pob_choice: which the angels showed me
+  chosen_spanish: que me mostraron los ángeles
+  alternatives_spanish:
+  - que los ángeles me revelaron
+  - que los ángeles me hicieron ver
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Mostrar» conserva el énfasis visual y la mediación angélica sin añadir una interpretación más abstracta como «revelaron».
+- source_word: ወሰማዕኩ እምኀቤሆሙ ኵሎ
+  english_pob_choice: and from them I heard everything
+  chosen_spanish: y de ellos oí todo
+  alternatives_spanish:
+  - y de ellos escuché todo
+  - y de ellos oí todas las cosas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Oí todo» mantiene la totalidad del contenido recibido y suena más natural que una forma pesada. «Escuché» podría sugerir atención voluntaria más que recepción de revelación.
+- source_word: ወአእመርኩ አነ ዘእሬኢ
+  english_pob_choice: and I understood what I saw
+  chosen_spanish: y entendí lo que vi
+  alternatives_spanish:
+  - y comprendí lo que vi
+  - y conocí lo que vi
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo ge'ez expresa comprensión cognitiva de la visión. «Entendí» es claro y conserva el paso de ver a comprender.
+- source_word: ወአኮ ለዛ ትውልድ አላ ለዘ ይመጽእ ርኁቃት
+  english_pob_choice: but not for this generation, rather for one far off that is to come
+  chosen_spanish: pero no para esta generación, sino para una distante que ha de venir
+  alternatives_spanish:
+  - pero no para esta generación, sino para una futura que ha de venir
+  - pero no para esta generación, sino para una lejana que vendrá
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la oposición entre la generación presente y una futura/distante. «Una distante» reproduce el carácter elíptico del original y evita fijar innecesariamente si se trata de una generación o de un colectivo, aunque el artículo permite leerlo naturalmente en español.
+theological_decisions:
+- issue: Cómo representar la identidad y función de la visión dada a Enoch
+  english_pob_reading: A righteous man whose eyes were opened by God saw a holy vision in the heavens, which the angels showed me
+  chosen_spanish_reading: Un hombre justo, cuyos ojos habían sido abiertos por Dios, vio una visión santa en los cielos, que me mostraron los ángeles
+  alternative_spanish_readings:
+  - Un hombre justo, con los ojos abiertos por Dios, vio una visión santa en los cielos
+  - Un hombre justo, a quien Dios le abrió los ojos, vio una visión santa en los cielos
+  rationale: La redacción mantiene la tensión entre percepción humana y apertura divina sin resolverla en una explicación más explícita de la que exige el texto. También conserva el papel mediador de los ángeles y el carácter visionario de la escena.
+  doctrine_reference: Preserve theological tension rather than smoothing it.
+- issue: Alcance temporal de la revelación
+  english_pob_reading: not for this generation, but for a distant one that is to come
+  chosen_spanish_reading: no para esta generación, sino para una distante que ha de venir
+  alternative_spanish_readings:
+  - no para esta generación, sino para una futura que ha de venir
+  - no para esta generación, sino para generaciones lejanas
+  rationale: La frase conserva el contraste escatológico y la distancia del destinatario. Se evita convertirlo en una generalidad sobre el futuro sin mantener el tono de lejanía del original.
+  doctrine_reference: Original-language primacy over translation tradition.
+translation_notes:
+  revision_awareness: La versión inglesa auditada pasó por una revisión que aclaró la puntuación, mantuvo la cláusula de apertura ocular como subordinada y fijó «but for a distant one that is to come»; la presente redacción española sigue esa última lectura y conserva la apertura divina, la mediación angélica y el contraste temporal sin introducir glosas doctrinales.
+  spanish_consistency_notes:
+  - Se usa «Dios» para እግዚአብሔር, conforme al audit trail.
+  - Se conserva el plural cosmológico con «los cielos».
+  - Se mantiene un registro solemne pero natural en español.
+  - No se usa «Cristo», «SEÑOR» ni otras sustituciones no justificadas por el contexto.
+  - Los marcadores de nota aparecen exactamente en el texto principal y cada uno corresponde a una sola nota.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/001/002.yaml
+  source_text_sha256: 0946228bc2819c2bbf08bd414b04f753bf64533eb64b7440f18065b6b895c534
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: eb1ab4ec25be44e17030fcd2a961ffb90e8d4eec0adebe1bb69d02d7568c4389
+  timestamp: '2026-05-07T21:27:29Z'
+  output_hash: 247079533893e9c14f5142a7245f191330c8362b2d8580fc96ae181c4dec1094
+  usage:
+    prompt_tokens: 4142
+    completion_tokens: 2136
+    total_tokens: 6278
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012718
+status: spanish_reviewed
+revisions:
+- from: 'Y respondió y dijo: «Un hombre justo[a], cuyos ojos habían sido abiertos por Dios, vio una visión santa en los cielos[b], que me mostraron los ángeles; y de ellos oí todo, y entendí lo que vi[c], pero no para esta generación, sino para una distante que ha de venir[d]».'
+  to: 'Y Enoc respondió y dijo: «Un hombre justo[a], cuyos ojos fueron abiertos por Dios, vio una visión santa en los cielos[b], que me mostraron los ángeles; y de ellos oí todo, y entendí lo que vi; pero no para esta generación, sino para una generación distante[c] que ha de venir[d]».'
+  rationale: La revisión restaura «Enoc» según la fuente, mejora la naturalidad de la frase final al explicitar «generación», y reordena las notas para que se concentren en los verdaderos puntos textuales y léxicos relevantes del audit trail sin añadir interpretaciones nuevas. También se mantiene la mezcla intencional de tercera y primera persona («vio... me mostraron... oí... entendí») presente en la fuente auditada.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura básica del ge''ez y del POB inglés auditado: mantiene la fórmula semítica «respondió y dijo», la caracterización de Enoc como «un hombre justo», la apertura divina de los ojos, la «visión santa», la mediación angélica, el oír/entender, y la orientación hacia una generación futura y distante. Sin embargo, hay dos desajustes relevantes: (1) falta «Enoc» al inicio, presente explícitamente en la fuente y en el inglés auditado; (2) los marcadores de notas no corresponden a las mismas funciones del rastro auditado inglés, pues la nota [b] en español está anclada a «los cielos», pero en el inglés auditado la nota cultural sobre «heavens» es [b] y la alternativa sobre la frase final es [c], mientras en el borrador español [c] se usa para «entendí lo que vi». Esto no altera el sentido principal, pero sí la fidelidad al aparato auditado. Además, «una distante» suena algo elíptico y menos natural en español que «una generación
+    distante», aunque el sentido es recuperable.'
+  spanish_quality_summary: El español es claro, digno y mayormente natural. «Visión santa», «de ellos oí todo» y «entendí lo que vi» funcionan bien. No obstante, la omisión de «Enoc» debilita la legibilidad narrativa, y «para una distante que ha de venir» resulta forzado en español general; una explicitación mínima como «para una generación distante que ha de venir» mejora la naturalidad sin traicionar la elipsis significativa, especialmente porque el sustantivo «generación» acaba de aparecer en la misma frase.
+  glossary_alignment: 'No hay conflicto con la terminología base del proyecto: «Dios» para እግዚአብሔር es correcto; no aparecen Yahvé, Mesías, Cristo, Espíritu, esclavo, etc. «Justo» para ጻድቅ y «santa» para ቅዱሰ son aceptables y coherentes con las decisiones léxicas documentadas.'
+  issues:
+  - severity: high
+    issue: Falta el nombre «Enoc» al inicio de la oración.
+    rationale: La fuente dice explícitamente «Y Enoc respondió y dijo», y el POB inglés auditado también lo conserva. Omitirlo reduce fidelidad textual y claridad narrativa.
+  - severity: medium
+    issue: La frase final «sino para una distante que ha de venir» es poco natural en español.
+    rationale: Aunque intenta preservar la elipsis del original, en español suena truncada. «Para una generación distante que ha de venir» mantiene el contraste temporal y la distancia semántica con mejor legibilidad.
+  - severity: medium
+    issue: El sistema de notas no sigue de manera óptima el aparato auditado inglés.
+    rationale: La nota cultural sobre «los cielos» está bien, pero la nota de alternativa léxica principal debería concentrarse en la frase final futura/distante, no en «entendí lo que vi», a menos que haya necesidad nueva en español. Conviene simplificar y alinear mejor las notas con los puntos realmente significativos.
+  revised_spanish_text: 'Y Enoc respondió y dijo: «Un hombre justo[a], cuyos ojos fueron abiertos por Dios, vio una visión santa en los cielos[b], que me mostraron los ángeles; y de ellos oí todo, y entendí lo que vi; pero no para esta generación, sino para una generación distante[c] que ha de venir[d]».'
+  revised_footnotes:
+  - marker: a
+    text: El giro «cuyos ojos fueron abiertos por Dios» sigue de cerca la construcción difícil del ge'ez; en contexto, se refiere a una apertura de la percepción visionaria, no solo física.
+    reason: textual_variant
+  - marker: b
+    text: «Los cielos» conserva el plural cosmológico semítico frecuente en textos apocalípticos.
+    reason: cultural_note
+  - marker: c
+    text: O también «lejana». El término conserva la idea de distancia, no solo de futuridad.
+    reason: lexical_alternative
+  - marker: d
+    text: La frase final también puede entenderse como «para una generación lejana que vendrá».
+    reason: lexical_alternative
+  revision_rationale: La revisión restaura «Enoc» según la fuente, mejora la naturalidad de la frase final al explicitar «generación», y reordena las notas para que se concentren en los verdaderos puntos textuales y léxicos relevantes del audit trail sin añadir interpretaciones nuevas. También se mantiene la mezcla intencional de tercera y primera persona («vio... me mostraron... oí... entendí») presente en la fuente auditada.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: bbaa57df433b89bb1923de87dbf7efaed9c743615e6635063acae8067ae2aee8
+  timestamp: '2026-05-07T23:06:07Z'
+  output_hash: c1f8f05cb0cfb9d29a02bedd8998c14f587fce9b69a335e2ca0a9a1c0dc6d649
+  usage:
+    prompt_tokens: 5827
+    completion_tokens: 1067
+    total_tokens: 6894
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.030573
+  applied_revision: true

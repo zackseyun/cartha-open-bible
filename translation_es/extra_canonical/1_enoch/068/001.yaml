@@ -1,0 +1,217 @@
+id: 1EN.68.1
+reference: 1 Enoch 68:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእምድኅረ'ዝ፡ ወሀበኒ፡ *ትእምርተ፡ ኵሎሙ፡ ኅቡኣት፡ በመጽሐፍ፡ እምሔውየ፡ ሄኖክ፡ ወምሳሌያተ፡ እለ፡ ተውህበ፡ ሎቱ፡ ወይመርሙ፡ ሊተ፡ በ*ነገረ፡ መጽሐፍ፡ ዘምሳሌ።
+  language: Geez
+  pages:
+  - 159
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch68.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 68, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/068/001.yaml
+  text: And after this my grandfather Hēnok gave me the explanation of all the hidden things in a book[a], and the parables that had been given to him[c][b]; and they shall recount them to me in the words of the book of the Parable.
+  footnotes:
+  - marker: a
+    text: The line is textually difficult in the Ge'ez witness, especially in the clauses 'from the words of Hēnok' and 'they shall recount them to me.' The translation stays close to the surviving wording rather than smoothing the syntax.
+    reason: textual_variant
+  - marker: b
+    text: The term rendered 'parables' may also be translated 'similitudes.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'he gave me the sign of all the hidden things in the book from the words of Hēnok'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 31075fe047bfa0755a77351f525ccd496e13e7f0ec58229d1863c8cd90b6b683
+    timestamp: '2026-04-22T09:14:58Z'
+    output_hash: 292b4c7972218b4abf4d45ca85ed6715737781a406568c4ae929ec95af7a274c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:02Z'
+    unchanged: false
+    changes_summary: Changed 'sign' to 'explanation' for better lexical accuracy of ትእምርተ; changed 'account' to 'words' to more naturally reflect ነገረ while staying close to the source. Kept the rest substantially unchanged.
+translation:
+  language: es
+  text: Y después de esto mi abuelo Henoc me dio[a] la explicación de todas las cosas ocultas en un libro, y las parábolas[b] que le habían sido dadas; y ellos me las contarán en las palabras del libro de la Parábola.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'La línea es textualmente difícil en el testimonio ge''ez, especialmente en esta cláusula y en la frase final. La traducción se mantiene cerca de la redacción conservada en vez de suavizar la sintaxis. Además, una revisión del audit trail corrigió aquí una lectura errónea: እምሔውየ significa «mi abuelo» o «mi antepasado», no «de las palabras de».'
+    reason: textual_variant
+  - marker: b
+    text: «Parábolas» también puede traducirse «similitudes». El término conserva el título tradicional de esta sección.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወሀበኒ
+  english_pob_choice: gave me
+  chosen_spanish: me dio
+  alternatives_spanish:
+  - me concedió
+  - me entregó
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa una acción de dar/otorgar; en español, 'me dio' es directo y fiel sin añadir matiz no sustentado por el contexto.
+- source_word: ትእምርተ
+  english_pob_choice: the sign / explanation
+  chosen_spanish: la explicación
+  alternatives_spanish:
+  - la señal
+  - el signo
+  - la indicación
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Siguiendo la revisión más reciente del audit trail, 'explicación' refleja mejor el valor aquí de una aclaración revelada del contenido oculto. Se conserva la tensión apocalíptica sin imponer 'misterio'.
+- source_word: ኵሎሙ ኅቡኣት
+  english_pob_choice: all the hidden things
+  chosen_spanish: todos los hechos ocultos
+  alternatives_spanish:
+  - todas las cosas ocultas
+  - todos los secretos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Hechos ocultos'' mantiene la referencia a realidades/elementos revelados sin forzar ''misterios''. ''Ocultos'' conserva el contraste revelación/ocultamiento del original.'
+- source_word: በመጽሐፍ
+  english_pob_choice: in the book
+  chosen_spanish: en un libro
+  alternatives_spanish:
+  - en el libro
+  - por medio de un libro
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez ubica el contenido dentro del libro. El artículo indefinido en español evita sobreespecificar un libro ya no explícito en esta cláusula.
+- source_word: ምሳሌያተ
+  english_pob_choice: the parables
+  chosen_spanish: las parábolas
+  alternatives_spanish:
+  - las similitudes
+  - las figuras
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Parábolas'' es la equivalencia natural y reconocible en español, coherente con el nombre tradicional de esta sección, sin perder el valor comparativo del término.'
+- source_word: ተውህበ ሎቱ
+  english_pob_choice: had been given to him
+  chosen_spanish: le habían sido dadas
+  alternatives_spanish:
+  - le habían sido concedidas
+  - le fueron dadas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La pasiva indica recepción por parte de Hēnok. 'Le habían sido dadas' conserva el valor retrospectivo y evita introducir una interpretación más fuerte que el texto no exige.
+- source_word: ይመርሙ ሊተ
+  english_pob_choice: they shall recount them to me
+  chosen_spanish: me las contarán
+  alternatives_spanish:
+  - me las explicarán
+  - me las relatarán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo es difícil y el audit trail inglés conserva un sentido de narración/exposición. 'Me las contarán' mantiene esa apertura sin resolver indebidamente el matiz técnico.
+- source_word: ነገረ መጽሐፍ ዘምሳሌ
+  english_pob_choice: the words of the book of the Parable
+  chosen_spanish: las palabras del libro de la Parábola
+  alternatives_spanish:
+  - el relato del libro de la Parábola
+  - el asunto del libro de la Parábola
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Palabras'' refleja el campo semántico de ነገር en un contexto literario y preserva la dificultad textual sin suavizarla. Se conserva el singular ''Parábola'' por fidelidad al testimonio inmediato.'
+theological_decisions:
+- issue: Cómo expresar el contenido revelado sin imponer una terminología doctrinal posterior
+  english_pob_reading: hidden things
+  chosen_spanish_reading: hechos ocultos
+  alternative_spanish_readings:
+  - secretos
+  - misterios
+  rationale: La escena es revelatoria, pero el ge'ez no obliga a un término técnico como 'misterios'. 'Hechos ocultos' preserva la tensión entre ocultamiento y revelación sin cargarla doctrinalmente.
+  doctrine_reference: 'Translation philosophy §3: preservar la tensión teológica en vez de resolverla'
+- issue: 'Relación entre Enoch y el hablante: no minimizar el vínculo familiar explícito'
+  english_pob_reading: my grandfather Hēnok
+  chosen_spanish_reading: mi abuelo Hēnok
+  alternative_spanish_readings:
+  - mi antepasado Hēnok
+  - mi ancestro Hēnok
+  rationale: El testimonio ge'ez contiene un posesivo explícito; 'abuelo' mantiene la relación familiar concreta que la revisión corrigió, y 'mi' preserva el sujeto narrativo.
+  doctrine_reference: 'Principio de revisión textual: mantener el sujeto explícito de እምሔውየ'
+translation_notes:
+  revision_awareness: El borrador sigue la revisión más reciente del audit trail, que corrige la antigua lectura de እምሔውየ como si significara «de las palabras de» y mantiene a Hēnok como sujeto explícito de «me dio». También refleja el cambio de 'sign' a 'explanation' y de 'account' a 'words' en la historia de revisiones del English POB.
+  spanish_consistency_notes:
+  - Se mantiene la transliteración Hēnok para concordar con el expediente auditado y evitar oscurecer la referencia textual.
+  - Se usó 'Parábola' en singular en el título interno de la cláusula, siguiendo el testimonio inmediato del ge'ez y el audit trail inglés.
+  - Se eligió un español sobrio y publication-readable, evitando tanto el calco rígido como la paráfrasis expansiva.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/068/001.yaml
+  source_text_sha256: ac424e34c0ba2ad9304a223990d3d4709418024871a59795de785cfd79e53f89
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 38c23911e7cc61048b499c58da4c273e77a06057436c4d05337b623c6ea602a8
+  timestamp: '2026-05-07T21:27:37Z'
+  output_hash: 99b531ceb63cef3c4a8c9e308c889d0f3cf8a7bb9eca03d638f6de04aa9c85ec
+  usage:
+    prompt_tokens: 3497
+    completion_tokens: 1566
+    total_tokens: 5063
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00967
+status: spanish_reviewed
+revisions:
+- from: Y después de esto mi abuelo Hēnok me dio[a] la explicación de todos los hechos ocultos en un libro, y las parábolas[b] que le habían sido dadas; y ellos me las contarán en las palabras del libro de la Parábola.
+  to: Y después de esto mi abuelo Henoc me dio[a] la explicación de todas las cosas ocultas en un libro, y las parábolas[b] que le habían sido dadas; y ellos me las contarán en las palabras del libro de la Parábola.
+  rationale: Se corrige «hechos ocultos» a «cosas ocultas» para ajustarse mejor a ኵሎሙ ኅቡኣት y al audit trail inglés («hidden things»). Se normaliza «Hēnok» a «Henoc» por legibilidad en español. Se amplía la nota [a] para reflejar la dificultad textual general de la línea, en consonancia con la documentación inglesa, mientras se conserva la corrección importante sobre «mi abuelo».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:33:52Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la corrección clave del audit trail: እምሔውየ = «mi abuelo / antepasado», no «de las palabras de». También conserva «explicación», «parábolas» y la construcción difícil final «las palabras del libro de la Parábola». Sin embargo, «todos los hechos ocultos» no corresponde bien a ኵሎሙ ኅቡኣት («todas las cosas ocultas / todos los ocultos» en sentido de contenidos escondidos) y desplaza el sentido hacia «eventos/hechos».'
+  spanish_quality_summary: El texto es mayormente legible y digno, pero «hechos ocultos» suena menos natural y menos fiel que «cosas ocultas». El resto del versículo funciona bien en español, incluyendo la rareza sintáctica final, que conviene conservar por la dificultad textual documentada. Añadir una nota para la dificultad general de la línea sería útil porque el inglés POB la conserva y el español también mantiene una sintaxis deliberadamente áspera.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. «Parábolas» concuerda con la decisión auditada, con nota alternativa «similitudes». «Hēnok» debería normalizarse idealmente a «Henoc» para la legibilidad ortográfica en español, pero no es un conflicto de glosario obligatorio. La decisión principal a corregir es léxica: ኅቡኣት debe ir como «cosas ocultas» o equivalente, no «hechos ocultos».'
+  issues:
+  - severity: medium
+    issue: «hechos ocultos» traduce de forma imprecisa ኵሎሙ ኅቡኣት
+    rationale: El original y el audit trail apuntan a «hidden things», no a «hechos» en sentido de acontecimientos. «Cosas ocultas» preserva mejor el referente amplio y revelatorio sin estrecharlo.
+  - severity: low
+    issue: Falta en español una nota equivalente a la nota inglesa sobre la dificultad textual general de la línea
+    rationale: La POB inglesa documenta que la línea ge'ez es difícil y que la traducción mantiene la aspereza. Dado que el español también conserva una sintaxis poco lisa, conviene explicarlo para transparencia textual.
+  - severity: low
+    issue: «Hēnok» resulta poco natural en una edición bíblica en español
+    rationale: «Henoc» sería la forma más legible y normal en español. No obstante, esto es una mejora estilística menor, no un error de fidelidad si la edición desea conservar la transliteración auditada.
+  revised_spanish_text: Y después de esto mi abuelo Henoc me dio[a] la explicación de todas las cosas ocultas en un libro, y las parábolas[b] que le habían sido dadas; y ellos me las contarán en las palabras del libro de la Parábola.
+  revised_footnotes:
+  - marker: a
+    text: 'La línea es textualmente difícil en el testimonio ge''ez, especialmente en esta cláusula y en la frase final. La traducción se mantiene cerca de la redacción conservada en vez de suavizar la sintaxis. Además, una revisión del audit trail corrigió aquí una lectura errónea: እምሔውየ significa «mi abuelo» o «mi antepasado», no «de las palabras de».'
+    reason: textual_variant
+  - marker: b
+    text: «Parábolas» también puede traducirse «similitudes». El término conserva el título tradicional de esta sección.
+    reason: lexical_alternative
+  revision_rationale: Se corrige «hechos ocultos» a «cosas ocultas» para ajustarse mejor a ኵሎሙ ኅቡኣት y al audit trail inglés («hidden things»). Se normaliza «Hēnok» a «Henoc» por legibilidad en español. Se amplía la nota [a] para reflejar la dificultad textual general de la línea, en consonancia con la documentación inglesa, mientras se conserva la corrección importante sobre «mi abuelo».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5de98ddf1baf62bdd589f01c5635b04fb90b981dcde159de6e72e699e696a764
+  timestamp: '2026-05-07T23:33:52Z'
+  output_hash: be61207ba7f164c91f1c31b0f6c4c8fb954566a7a4c97f4c1d24cc7ec8a7452b
+  usage:
+    prompt_tokens: 4691
+    completion_tokens: 938
+    total_tokens: 5629
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025798
+  applied_revision: true

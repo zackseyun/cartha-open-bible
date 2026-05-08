@@ -1,0 +1,126 @@
+id: 2ES.1.6
+reference: 2 Esdras 1:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'Quia peccata parentum illorum in illis creuerunt: obliti enim me sacrificauerunt diis alienis.'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/001/006.yaml
+  text: For the sins of their fathers have increased in them; for they forgot me and sacrificed to foreign gods.
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:40:46Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Porque los pecados de sus padres se han multiplicado en ellos; porque me olvidaron y sacrificaron a dioses extraños.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: peccata parentum illorum
+  english_pob_choice: the sins of their fathers
+  chosen_spanish: los pecados de sus padres
+  alternatives_spanish:
+  - los pecados de los padres de ellos
+  - las culpas de sus padres
+  lexicon: peccata -> pecados; parentum illorum -> sus padres
+  rationale: El latín habla de los 'pecados' de sus padres, y el posesivo simple 'sus padres' reproduce de forma natural la relación sin añadir matices inexistentes. 'Culpas' sería posible, pero 'pecados' conserva mejor la correspondencia léxica con peccata.
+- source_word: in illis creuerunt
+  english_pob_choice: have increased in them
+  chosen_spanish: se han multiplicado en ellos
+  alternatives_spanish:
+  - han crecido en ellos
+  - han aumentado en ellos
+  lexicon: creuerunt -> se han multiplicado / han aumentado
+  rationale: '''Crecer'' aquí comunica aumento, pero ''se han multiplicado'' refleja con más fuerza la idea de incremento acumulativo presente en el latín y mantiene el peso de la frase inglesa.'
+- source_word: obliti enim me
+  english_pob_choice: for they forgot me
+  chosen_spanish: pues me olvidaron
+  alternatives_spanish:
+  - porque me olvidaron
+  - ya que se olvidaron de mí
+  lexicon: obliti ... me -> olvidaron a mí / me olvidaron
+  rationale: Se mantiene la relación causal con 'pues' y el objeto directo 'me' del latín. 'Se olvidaron de mí' es idiomático, pero 'me olvidaron' conserva mejor la sobriedad del original y el paralelo con la primera cláusula.
+- source_word: sacrificauerunt diis alienis
+  english_pob_choice: and sacrificed to foreign gods
+  chosen_spanish: ofrecieron sacrificios a dioses extraños
+  alternatives_spanish:
+  - sacrificaron a dioses extraños
+  - ofrecieron sacrificios a dioses ajenos
+  lexicon: sacrificauerunt -> ofrecieron sacrificios; diis alienis -> a dioses extraños
+  rationale: '''Ofrecieron sacrificios'' expresa el acto cultual de modo claro en español y evita una lectura demasiado técnica. ''Dioses extraños'' sigue de cerca alienis y conserva el contraste religioso; ''ajenos'' sería posible, pero ''extraños'' comunica mejor la alteridad cultual.'
+theological_decisions:
+- issue: Causalidad moral entre los pecados de los padres y la situación del pueblo
+  english_pob_reading: For the sins of their fathers have increased in them
+  chosen_spanish_reading: Porque los pecados de sus padres se han multiplicado en ellos
+  alternative_spanish_readings:
+  - Porque los pecados de sus padres han crecido en ellos
+  - Porque los pecados de sus padres han aumentado en ellos
+  rationale: El latín presenta una afirmación fuerte sobre la propagación o incremento de los pecados paternos 'en ellos'. La redacción española conserva esa tensión sin suavizarla, evitando interpretarla como mera herencia cultural o simple imitación.
+  doctrine_reference: Responsabilidad generacional / continuidad del pecado en la historia del pueblo, sin resolver aquí la tensión teológica
+translation_notes:
+  revision_awareness: La revisión más reciente marcó el pasaje como sin cambios y con alta concordancia entre el latín limpio de Bensly y la traducción inglesa POB; por ello, la propuesta española sigue de cerca la estructura semántica confirmada por el audit trail, sin introducir variantes textuales.
+  spanish_consistency_notes:
+  - Se usa 'dioses extraños' para mantener el contraste religioso del latín alienis y la traducción inglesa 'foreign gods'.
+  - Se prefiere 'pecados' frente a alternativas moralmente suavizadas porque el original latino usa peccata.
+  - 'La puntuación reproduce la división causal del texto: una primera cláusula explicativa seguida de la razón introducida por ''pues''.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/001/006.yaml
+  source_text_sha256: a333fc9e1e18c3dc34ca500df57d9609408a9411b7b1465c04879f60f543a2cd
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: f28b0dd9c17c1c4fb4617e1c5ec68d95d913397f167081f7fb344f52efb4c5c8
+  timestamp: '2026-05-07T21:28:29Z'
+  output_hash: e70ea62e7cf8a4504cce0fb40150ff1641e2a002cd7a110de5a67093edf5e10a
+  usage:
+    prompt_tokens: 1512
+    completion_tokens: 920
+    total_tokens: 2432
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005274
+status: spanish_reviewed
+revisions:
+- from: Porque los pecados de sus padres se han multiplicado en ellos; pues me olvidaron y ofrecieron sacrificios a dioses extraños.
+  to: Porque los pecados de sus padres se han multiplicado en ellos; porque me olvidaron y sacrificaron a dioses extraños.
+  rationale: Se sustituye la perífrasis 'ofrecieron sacrificios' por 'sacrificaron' para corresponder más de cerca a sacrificauerunt y lograr una dicción más natural y compacta en español. También se ajusta 'pues' a 'porque' para reflejar de manera más directa el valor explicativo de enim. No se requieren notas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:33:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el sentido del latín: los pecados de los padres han crecido/aumentado en ellos, olvidaron a Dios y sacrificaron a dioses ajenos/extraños. Sin embargo, una formulación española puede ajustarse mejor al verbo latino sacrificauerunt y a la fluidez de la cláusula causal.'
+  spanish_quality_summary: El texto es claro y digno, pero 'ofrecieron sacrificios a dioses extraños' suena algo más pesado que el original y menos directo que el giro verbal simple disponible en español. También 'pues' tras punto y coma funciona, pero 'porque' mantiene mejor la simetría causal del latín enim.
+  glossary_alignment: No hay términos de glosario mayor en disputa. 'dioses extraños' es aceptable para diis alienis. La elección 'me olvidaron' es fiel y suficientemente natural en registro bíblico. La revisión propuesta mantiene la terminología y mejora la naturalidad sin alejarse del original.
+  issues:
+  - severity: medium
+    issue: '''ofrecieron sacrificios a dioses extraños'' es más perifrástico que sacrificauerunt diis alienis'
+    rationale: El latín usa un verbo simple ('sacrificaron'), y el español también lo permite con claridad. La perífrasis no es incorrecta, pero añade peso innecesario y reduce la cercanía formal al original.
+  - severity: low
+    issue: Conector 'pues' tras punto y coma
+    rationale: Es válido, pero 'porque' refleja más directamente el enim latino y encadena mejor la explicación causal en español bíblico moderno.
+  revised_spanish_text: Porque los pecados de sus padres se han multiplicado en ellos; porque me olvidaron y sacrificaron a dioses extraños.
+  revision_rationale: Se sustituye la perífrasis 'ofrecieron sacrificios' por 'sacrificaron' para corresponder más de cerca a sacrificauerunt y lograr una dicción más natural y compacta en español. También se ajusta 'pues' a 'porque' para reflejar de manera más directa el valor explicativo de enim. No se requieren notas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 548aa027d9c0fda60c7ad55f3dc666703ad1abc5bb327956db2e2a5c3406a987
+  timestamp: '2026-05-07T23:33:58Z'
+  output_hash: 3276089de1efd510230592b0cb8589ee4985250ba95a121f31c898ead4cbbf42
+  usage:
+    prompt_tokens: 2096
+    completion_tokens: 499
+    total_tokens: 2595
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012725
+  applied_revision: true

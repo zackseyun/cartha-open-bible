@@ -1,0 +1,119 @@
+id: 2ES.4.29
+reference: 2 Esdras 4:29
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: quod seminatum est, et discesserit locus ubi seminatum est malum, non ueniet ager ubi seminatum est bonum. Quoniam
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/004/029.yaml
+  text: For if what has been sown is not reaped[a], and the place where the evil has been sown does not pass away, the field where the good has been sown will not come.
+  footnotes:
+  - marker: a
+    text: Or 'So if what has been sown is not reaped, and the place where the evil was sown does not pass away, the field where the good is sown will not come.'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:32Z'
+    unchanged: false
+    changes_summary: Changed 'So' to 'For' to better reflect Latin 'quod/quoniam' connective and maintain formal register. Kept the rest unchanged, as it accurately represents the source.
+translation:
+  language: es
+  text: Porque si lo que ha sido sembrado no es cosechado, y el lugar donde ha sido sembrado el mal no desaparece, el campo donde ha sido sembrado el bien no vendrá.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: seminatum est
+  english_pob_choice: has been sown
+  chosen_spanish: ha sido sembrado
+  alternatives_spanish:
+  - ha sido sembrado
+  - ha sido sembrada
+  lexicon: Latin seminare -> sembrar
+  rationale: El latín repite la misma forma perfecta pasiva tres veces; en español, «ha sido sembrado» conserva el aspecto de acción ya realizada y el paralelismo estricto del texto. Se evita alternar tiempos verbales para no borrar la repetición retórica.
+- source_word: discesserit locus
+  english_pob_choice: the place ... does not pass away
+  chosen_spanish: el lugar ... no desaparece
+  alternatives_spanish:
+  - el lugar ... no se va
+  - el lugar ... no pasa
+  lexicon: Latin discedere / locus
+  rationale: «Desaparecer» comunica con naturalidad la idea de que el lugar deja de estar ahí o deja de subsistir, sin introducir una imagen distinta. «No pasa» sería demasiado literal y menos idiomático en español.
+- source_word: ager
+  english_pob_choice: field
+  chosen_spanish: campo
+  alternatives_spanish:
+  - campo
+  - campo cultivado
+  lexicon: Latin ager
+  rationale: «Campo» es el equivalente directo y natural para ager en este contexto agrícola-metafórico. Mantiene la imaginería del contraste entre el lugar del mal y el campo del bien.
+theological_decisions:
+- issue: Paralelismo escatológico entre mal ya sembrado y bien ya sembrado
+  english_pob_reading: both the place where the evil has been sown and the field where the good has been sown are described with the same perfect aspect
+  chosen_spanish_reading: el lugar donde ha sido sembrado el mal ... el campo donde ha sido sembrado el bien
+  alternative_spanish_readings:
+  - el lugar donde fue sembrado el mal ... el campo donde fue sembrado el bien
+  - el lugar donde se sembró el mal ... el campo donde se sembró el bien
+  rationale: Se conserva el perfecto compuesto para reflejar que ambas realidades ya han sido sembradas, conforme al ajuste del audit trail inglés. Esto preserva la simetría determinista del pasaje y evita que el español debilite la correspondencia entre mal y bien.
+  doctrine_reference: 4 Esdras 4:29; observación revisada sobre el aspecto verbal perfecto
+translation_notes:
+  revision_awareness: La revisión inglesa corrigió la conectiva inicial a «For» y unificó el aspecto perfecto en las tres ocurrencias de seminatum est. La versión española sigue esa revisión con «Porque» y «ha sido sembrado» de forma consistente en todo el versículo.
+  spanish_consistency_notes:
+  - Se mantiene un registro bíblico formal pero natural en español.
+  - No se introduce puntuación o marcadores de nota no anclados en el texto.
+  - Se conserva la estructura condicional-causal del latín sin sobreparafrasear.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/004/029.yaml
+  source_text_sha256: acf437b80526dba66de67457b28aa902cfbbef6fe7fe3f1d19dc4d3a53442089
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 6d604f43ec35ee5082c8a8ef84bf1313ebc43a600f7d2196d7f0f7f5f9a79faa
+  timestamp: '2026-05-07T21:28:41Z'
+  output_hash: 15eaf7811c3cd8b996025b63e8dd4cfcdf8868f8e3a8b4802387597b55c37bf8
+  usage:
+    prompt_tokens: 2221
+    completion_tokens: 711
+    total_tokens: 2932
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004865
+status: spanish_reviewed
+revisions:
+- from: Porque si lo que ha sido sembrado no se recoge, y el lugar donde ha sido sembrado el mal no desaparece, el campo donde ha sido sembrado el bien no vendrá.
+  to: Porque si lo que ha sido sembrado no es cosechado, y el lugar donde ha sido sembrado el mal no desaparece, el campo donde ha sido sembrado el bien no vendrá.
+  rationale: Se reemplaza «no se recoge» por «no es cosechado» para preservar con mayor fidelidad la imagen agrícola específica de «is not reaped» y mantener el registro formal del pasaje. Se conserva el perfecto pasivo repetido («ha sido sembrado») porque refleja correctamente el triple seminatum est del latín y el paralelismo enfatizado en el audit trail inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:41:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura del latín y del English POB: mantiene el triple paralelismo de seminatum est con una forma perfecta pasiva y refleja discesserit locus como la permanencia o desaparición del lugar. Sin embargo, «no se recoge» no preserva con suficiente precisión la imagen agrícola de «is not reaped»; en este contexto corresponde mejor «no es segado» o «no es cosechado».'
+  spanish_quality_summary: 'El español es claro y digno, pero «recoger» resulta algo genérico y debilita la metáfora agrícola estricta. El resto fluye bien: «Porque si...», «no desaparece», «el campo... no vendrá». La repetición de «ha sido sembrado» es algo pesada, pero está justificada por el paralelismo fuente.'
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. Las decisiones léxicas principales son adecuadas: seminatum est → «ha sido sembrado», ager → «campo». La única corrección recomendada es acercar «not reaped» a «no es cosechado» para respetar mejor la evidencia y la decisión inglesa documentada.'
+  issues:
+  - severity: medium
+    issue: «no se recoge» traduce de manera demasiado amplia «is not reaped»
+    rationale: El latín subyacente detrás de la decisión inglesa apunta a la acción agrícola de segar/cosechar, no simplemente recoger. «Recoger» puede entenderse como cualquier acto de juntar algo, y reduce la precisión metafórica del pasaje.
+  revised_spanish_text: Porque si lo que ha sido sembrado no es cosechado, y el lugar donde ha sido sembrado el mal no desaparece, el campo donde ha sido sembrado el bien no vendrá.
+  revision_rationale: Se reemplaza «no se recoge» por «no es cosechado» para preservar con mayor fidelidad la imagen agrícola específica de «is not reaped» y mantener el registro formal del pasaje. Se conserva el perfecto pasivo repetido («ha sido sembrado») porque refleja correctamente el triple seminatum est del latín y el paralelismo enfatizado en el audit trail inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1328d48a5ddf8a2481950f60023ead75c5538c1ba80b382119d481d0ed4868b9
+  timestamp: '2026-05-07T23:41:08Z'
+  output_hash: 86d90afb74887c7069b7a2000596da142bf24982dd991e6f6c9da62c1eb4d7dd
+  usage:
+    prompt_tokens: 2545
+    completion_tokens: 504
+    total_tokens: 3049
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.013923
+  applied_revision: true

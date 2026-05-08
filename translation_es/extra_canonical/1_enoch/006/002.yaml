@@ -1,0 +1,236 @@
+id: 1EN.6.2
+reference: 1 Enoch 6:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወርእዩ፡ ኪያሆን፡ መላእክት፡ ውሉደ፡ ሰማያት፡ ወፈተውዎን፡ ወይቤሉ፡ በበይናቲሆሙ፡ ንዑ፡ ንሕረይ፡ ለነ፡ አንስተ፡ እምውሉደ፡ ሰብእ፤ ወንለድ፡ ለነ፡ ውሉደ።
+  language: Geez
+  pages:
+  - 50
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch06.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 6, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/006/002.yaml
+  text: And the angels[a], the sons of heaven, saw them and desired them. And they said among themselves, “Come, let us choose for ourselves wives from the children of men[d][c][b], and let us beget children for ourselves.”
+  footnotes:
+  - marker: a
+    text: The pronoun 'them' refers back to the women mentioned in the previous verse; the Ge'ez here does not restate 'women' explicitly.
+    reason: cross_reference
+  - marker: b
+    text: '''Children of men'' is a literal, elevated expression contrasting human offspring with the heavenly beings in this scene; it may also be rendered ''children of humankind.'''
+    reason: lexical_alternative
+  - marker: c
+    text: The final clause literally has the sense of begetting offspring; 'father children' is used for natural modern English.
+    reason: lexical_alternative
+  - marker: d
+    text: Or 'And they saw them, the angels, the sons of heaven, and they desired them.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: d59c08bdb7211ab64b08792d0927b7d6dfc7bf941b29602069370c3f92d41130
+    timestamp: '2026-04-22T09:08:46Z'
+    output_hash: 5d71932bd7c011134b94b805ceee61dbb85925e44534d7478270726c1ecc7e93
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:31Z'
+    unchanged: false
+    changes_summary: Replaced 'father children' with 'beget children' for a more formal register and closer lexical fit to the source.
+translation:
+  language: es
+  text: 'Y los ángeles[a], los hijos del cielo, las vieron y las desearon. Y se dijeron entre sí: «Vengan, escojamos para nosotros esposas[b] de entre los hijos de los hombres[c], y engendremos para nosotros hijos».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El pronombre objeto remite a las mujeres mencionadas en el versículo anterior; el ge'ez no repite explícitamente «mujeres».
+    reason: cross_reference
+  - marker: b
+    text: «Esposas» explicita el matiz marital que el contexto requiere; la expresión subyacente también podría traducirse de manera más literal como «mujeres».
+    reason: lexical_alternative
+  - marker: c
+    text: «Hijos de los hombres» conserva el giro elevado y contrastivo del original; también puede entenderse como «hijos de la humanidad».
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወርእዩ
+  english_pob_choice: and they saw
+  chosen_spanish: y los vieron
+  alternatives_spanish:
+  - y los miraron
+  - y los observaron
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo ge'ez expresa visión directa y narrativa; «vieron» conserva esa sencillez sin añadir matiz interpretativo.
+- source_word: ኪያሆን
+  english_pob_choice: them
+  chosen_spanish: los
+  alternatives_spanish:
+  - las
+  - a ellos/ellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El referente son las mujeres del verso anterior; en español se requiere marcar el objeto directo. «Los» funciona aquí como objeto pronominal plural en estilo neutral, aunque el referente semántico sea femenino.
+- source_word: መላእክት ውሉደ ሰማያት
+  english_pob_choice: the angels, the sons of heaven
+  chosen_spanish: los ángeles, los hijos del cielo
+  alternatives_spanish:
+  - los ángeles, hijos del cielo
+  - los seres celestiales
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la apposición explícita entre «ángeles» e «hijos del cielo». «Cielo» traduce el contraste elevado del sintagma sin neutralizarlo en una categoría más genérica.
+- source_word: ወፈተውዎን
+  english_pob_choice: and they desired them
+  chosen_spanish: y los desearon
+  alternatives_spanish:
+  - y los codiciaron
+  - y sintieron deseo por ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Desearon» reproduce la fuerza del verbo sin añadir de forma demasiado explícita una carga sexual que el ge'ez no formula de manera literal. La gravedad moral queda en el contexto.
+- source_word: በበይናቲሆሙ
+  english_pob_choice: among themselves
+  chosen_spanish: entre sí
+  alternatives_spanish:
+  - entre ellos mismos
+  - unos con otros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Locución idiomática natural en español para hablar en consejo interno o conspirativo.
+- source_word: ንዑ
+  english_pob_choice: Come
+  chosen_spanish: Venid
+  alternatives_spanish:
+  - Ven
+  - Vamos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Como discurso colectivo, el imperativo plural comunica mejor la exhortación dirigida al grupo que habla.
+- source_word: ንሕረይ ለነ አንስተ
+  english_pob_choice: let us choose for ourselves wives
+  chosen_spanish: escojamos para nosotros esposas
+  alternatives_spanish:
+  - tomemos para nosotros esposas
+  - elijamos para nosotros mujeres
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Escojamos» conserva el valor de seleccionar/elegir; «esposas» explicita la relación marital que el contexto sugiere y que el inglés POB también interpretó así.
+- source_word: እምውሉደ ሰብእ
+  english_pob_choice: from the children of men
+  chosen_spanish: de entre los hijos de los hombres
+  alternatives_spanish:
+  - de entre los hijos de la humanidad
+  - de entre los seres humanos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene la expresión elevada y tradicional «hijos de los hombres» para conservar el contraste apocalíptico con los seres celestiales. El añadido «de entre» expresa mejor la selección del grupo.
+- source_word: ወንለድ ለነ ውሉደ
+  english_pob_choice: and let us beget children for ourselves
+  chosen_spanish: y engendremos para nosotros hijos
+  alternatives_spanish:
+  - y seamos padres de hijos para nosotros
+  - y procreemos para nosotros hijos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Engendremos» refleja con precisión el sentido de procrear/beget sin sonar demasiado técnico; «hijos» es el término más natural en español para el resultado del engendramiento.
+theological_decisions:
+- issue: Identificación doble de los seres como ángeles e hijos del cielo
+  english_pob_reading: 'Preserve both designations appositionally: ''the angels, the sons of heaven'''
+  chosen_spanish_reading: 'Conservar ambas designaciones en aposición: «los ángeles, los hijos del cielo»'
+  alternative_spanish_readings:
+  - «los ángeles» solamente
+  - «los hijos del cielo» solamente
+  - «los ángeles celestiales»
+  rationale: El ge'ez nombra explícitamente a estos seres con ambos títulos. Mantenerlos evita aplanar la autoidentificación del texto y respeta la tensión propia de la escena de los Vigilantes.
+  doctrine_reference: Preserve theological tension rather than resolve it; consistency of key terms, or documented exception.
+- issue: Grado de fuerza del verbo de deseo
+  english_pob_reading: Use 'desired them' in the main text
+  chosen_spanish_reading: Usar «los desearon»
+  alternative_spanish_readings:
+  - «los codiciaron»
+  - «se encapricharon de ellos»
+  - «los amaron»
+  rationale: El contexto deja claro que se trata de un deseo ilícito, pero el verbo fuente expresa deseo sin exigir una glosa sexual más fuerte. «Desearon» preserva esa tensión y deja que el contexto haga el resto.
+  doctrine_reference: Original-language primacy over translation tradition.
+translation_notes:
+  revision_awareness: 'La redacción sigue la revisión más reciente del audit trail, que prefirió un registro formal para el cierre verbal («beget children»). En español se optó por «engendremos» para reflejar ese ajuste y mantener cercanía léxica al ge''ez, sin perder fluidez. También se respetó la corrección sintáctica observada en la revisión: los ángeles son el sujeto de «vieron» y «desearon», no el objeto.'
+  spanish_consistency_notes:
+  - Se conserva «ángeles» y no se sustituye por una perífrasis más doctrinalmente interpretativa.
+  - Se traduce el contraste «hijos del cielo / hijos de los hombres» de forma paralela para mantener la estructura apocalíptica.
+  - «Desearon» se mantiene como término medio entre literalidad y claridad, sin intensificar indebidamente el verbo.
+  - El discurso directo mantiene un plural exhortativo («Venid», «escojamos», «engendremos») acorde con el sujeto plural.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/006/002.yaml
+  source_text_sha256: 530a3c26ed378b4eda6e59fd2f1b8a9dc0068ab4c3d097eb328085ce40c04f87
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 4cb7d50916a3e0eb96fca580a46a4c233e0b821852ff74bf90f038d60aea5c34
+  timestamp: '2026-05-07T21:27:51Z'
+  output_hash: 48f2be789faa22baf5fd8cf69b72b343967fad74e712389710ce9cb12efcdf57
+  usage:
+    prompt_tokens: 3572
+    completion_tokens: 1768
+    total_tokens: 5340
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010635
+status: spanish_reviewed
+revisions:
+- from: 'Y los ángeles[a], los hijos del cielo, los vieron y los desearon. Y se dijeron entre sí: «Venid, escojamos para nosotros esposas[b] de entre los hijos de los hombres[c], y engendremos para nosotros hijos».'
+  to: 'Y los ángeles[a], los hijos del cielo, las vieron y las desearon. Y se dijeron entre sí: «Vengan, escojamos para nosotros esposas[b] de entre los hijos de los hombres[c], y engendremos para nosotros hijos».'
+  rationale: Se corrigió la concordancia del pronombre objeto al femenino plural para reflejar fielmente que el referente son las mujeres del versículo anterior, sin perder la nota de que el ge'ez no repite el sustantivo. También se reemplazó «Venid» por «Vengan» para adecuar el registro al español neutral latinoamericano del proyecto. No fue necesario alterar las demás decisiones léxicas principales.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:37:04Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura básica del ge''ez y preserva correctamente la doble designación «los ángeles, los hijos del cielo», el deseo sin sobreinterpretarlo y la selección de esposas de entre la humanidad. Sin embargo, falla en un punto importante de alineación semántica y gramatical: el pronombre objeto que remite a las mujeres del versículo anterior aparece como masculino («los vieron», «los desearon»), cuando en español debe concordar con el referente femenino. También conviene ajustar el imperativo «Venid» a un registro neutral latinoamericano más natural.'
+  spanish_quality_summary: El texto es generalmente claro y digno, pero «los vieron y los desearon» suena incorrecto por discordancia de género respecto de «las mujeres» implícitas. «Venid» es comprensible, pero menos natural para un español neutral latinoamericano que «Vengan». El resto fluye bien y mantiene un tono bíblico moderno legible.
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. «Los ángeles, los hijos del cielo» está bien preservado. «Esposas», «hijos de los hombres» y «engendremos» concuerdan con la justificación léxica documentada, aunque el objeto pronominal debe corregirse a femenino.
+  issues:
+  - severity: high
+    issue: Pronombre objeto masculino para referente femenino implícito
+    rationale: El ge'ez usa un pronombre que remite a las mujeres del versículo anterior. En español, mantener «los» distorsiona la referencia y produce una lectura gramaticalmente anómala. Debe ser «las vieron» y «las desearon», con nota aclaratoria si se quiere conservar que el original no repite «mujeres».
+  - severity: medium
+    issue: Imperativo «Venid» poco natural para el español meta del proyecto
+    rationale: Aunque es correcto, «Venid» suena más peninsular/tradicional. Para un español neutral latinoamericano y ampliamente eclesial, «Vengan» conserva la exhortación colectiva con mejor naturalidad.
+  - severity: low
+    issue: La nota léxica del pronombre justifica indebidamente «los» como neutro
+    rationale: En español estándar no corresponde usar «los» para un referente femenino plural en este contexto. La explicación debe revisarse para reflejar una forma femenina natural y fiel.
+  revised_spanish_text: 'Y los ángeles[a], los hijos del cielo, las vieron y las desearon. Y se dijeron entre sí: «Vengan, escojamos para nosotros esposas[b] de entre los hijos de los hombres[c], y engendremos para nosotros hijos».'
+  revised_footnotes:
+  - marker: a
+    text: El pronombre objeto remite a las mujeres mencionadas en el versículo anterior; el ge'ez no repite explícitamente «mujeres».
+    reason: cross_reference
+  - marker: b
+    text: «Esposas» explicita el matiz marital que el contexto requiere; la expresión subyacente también podría traducirse de manera más literal como «mujeres».
+    reason: lexical_alternative
+  - marker: c
+    text: «Hijos de los hombres» conserva el giro elevado y contrastivo del original; también puede entenderse como «hijos de la humanidad».
+    reason: lexical_alternative
+  revision_rationale: Se corrigió la concordancia del pronombre objeto al femenino plural para reflejar fielmente que el referente son las mujeres del versículo anterior, sin perder la nota de que el ge'ez no repite el sustantivo. También se reemplazó «Venid» por «Vengan» para adecuar el registro al español neutral latinoamericano del proyecto. No fue necesario alterar las demás decisiones léxicas principales.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 01b14735d510d6fdfa7f16dcc16150f240a35a6eb3b98e336e3c77adea346235
+  timestamp: '2026-05-07T23:37:04Z'
+  output_hash: 21555f40ebb21a3045c629d616fb749b873378e67f139b7c7eaf44f8e6daf971
+  usage:
+    prompt_tokens: 4978
+    completion_tokens: 849
+    total_tokens: 5827
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02518
+  applied_revision: true

@@ -1,0 +1,145 @@
+id: 2ES.8.42
+reference: 2 Esdras 8:42
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: Quoniam semen agricolae si non ascenderit, non enim accepit
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/008/042.yaml
+  text: For if the farmer’s seed does not come up[a], for it did not receive,
+  footnotes:
+  - marker: a
+    text: Or 'If the farmer’s seed does not come up because it did not receive your rain in its season, or if it is ruined by too much rain,'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:42:36Z'
+    unchanged: false
+    changes_summary: Removed material not present in the Latin source ('your rain in its season' and 'or if it is ruined by too much rain') and revised to reflect the extant wording more closely and completely without interpretive expansion.
+translation:
+  language: es
+  text: Porque si la semilla del agricultor no brota, porque no recibió[a].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'La frase latina queda elíptica: «porque no recibió»; no se añade aquí el complemento implícito para no sobretraducir el testimonio conservado.'
+    reason: source_note
+lexical_decisions:
+- source_word: Quoniam
+  english_pob_choice: For
+  chosen_spanish: Porque
+  alternatives_spanish:
+  - pues
+  - ya que
+  - porque
+  lexicon: conector causal / lógico
+  rationale: El latín abre con una partícula causal que enlaza la ilustración con el argumento previo; en español, «porque» mantiene ese enlace con naturalidad y sin debilitar el tono argumentativo.
+- source_word: semen agricolae
+  english_pob_choice: the farmer’s seed
+  chosen_spanish: la semilla del agricultor
+  alternatives_spanish:
+  - la semilla del labrador
+  - la simiente del agricultor
+  lexicon: semen / agricola
+  rationale: «Semilla» expresa bien semen en español actual; «agricultor» conserva el referente simple del agricultor sin introducir un registro excesivamente rural o arcaico.
+- source_word: si non ascenderit
+  english_pob_choice: if ... does not come up
+  chosen_spanish: no brota
+  alternatives_spanish:
+  - no sale
+  - no asciende
+  - no crece
+  lexicon: ascendere
+  rationale: En este contexto agrícola, «brotar» comunica de modo natural que la semilla no emerge de la tierra, manteniendo el sentido sin forzar un calco literal de «subir».
+- source_word: non enim accepit
+  english_pob_choice: for it did not receive
+  chosen_spanish: pues no recibió
+  alternatives_spanish:
+  - porque no recibió
+  - ya que no recibió
+  lexicon: accipere
+  rationale: El latín es elíptico; en español conviene mantener la misma brevedad y dejar el complemento tácito, como en el texto fuente, sin añadir «lluvia» u otro objeto no atestiguado.
+theological_decisions:
+- issue: Mantenimiento de la elipsis en la cláusula final
+  english_pob_reading: for it did not receive
+  chosen_spanish_reading: pues no recibió
+  alternative_spanish_readings:
+  - porque no recibió la lluvia
+  - pues no recibió el agua
+  rationale: La revisión eliminó ampliaciones interpretativas ajenas al latín. En español se conserva la tensión de una frase incompleta que remite al contexto inmediato sin explicitar un objeto no presente en el testimonio latino.
+  doctrine_reference: Fidelidad al testimonio textual y a la economía retórica del pasaje; sin implicaciones doctrinales directas
+- issue: Valor causal de la partícula inicial
+  english_pob_reading: For if ...
+  chosen_spanish_reading: Porque si ...
+  alternative_spanish_readings:
+  - Pues si ...
+  - Ya que si ...
+  rationale: 'La partícula inicial no es ornamental: introduce una justificación. «Porque» preserva mejor el registro causal del latín y la conexión lógica con el argumento anterior.'
+  doctrine_reference: Coherencia discursiva del texto bíblico; no afecta una doctrina específica
+translation_notes:
+  revision_awareness: 'La versión sigue la revisión más reciente que eliminó expansiones no presentes en el latín («tu lluvia en su tiempo» y «o si se echa a perder por demasiada lluvia») y conserva solo lo atestiguado: la conexión causal inicial y la cláusula breve y elíptica final.'
+  spanish_consistency_notes:
+  - Se usa «semilla» para semen y «agricultor» para agricola en un registro natural y bíblico.
+  - Se mantiene la elipsis final del latín; no se introduce un objeto implícito en el cuerpo del verso.
+  - La puntuación separa la prótasis causal y la razón explicativa con una pausa natural en español.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/008/042.yaml
+  source_text_sha256: 514fae49b07a02508b616a74e781987d00b4db1aa7ea5bc81d004c6034776e8f
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 9f03397325faa3a3789b74eca9053df0109f0b84add76dd4c4c0a5590563597d
+  timestamp: '2026-05-07T21:28:51Z'
+  output_hash: 2f882dc22e4a2ee745a45e1b01c2d4cf54f3af87a943365d4d0e09520599c409
+  usage:
+    prompt_tokens: 2095
+    completion_tokens: 886
+    total_tokens: 2981
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005558
+status: spanish_reviewed
+revisions:
+- from: Porque si la semilla del agricultor no brota, pues no recibió[a].
+  to: Porque si la semilla del agricultor no brota, porque no recibió[a].
+  rationale: 'Se hizo una reparación menor para mejorar la naturalidad del español sin alterar el sentido del latín ni la elipsis preservada por la revisión inglesa: «porque» funciona mejor que «pues» después de «si».'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:50:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el latín extante: conserva el conector causal inicial, el sentido agrícola de «si non ascenderit», y la elipsis de «non enim accepit» sin añadir el complemento perdido. Sin embargo, «Porque si ... pues ...» suena redundante y poco natural en español para reproducir dos conectores latinos seguidos.'
+  spanish_quality_summary: 'La redacción es clara, pero puede mejorarse su fluidez. «La semilla del agricultor» y «brota» son buenas opciones. El principal ajuste es estilístico-sintáctico: reemplazar «pues» por «porque» en la cláusula final produce un español más natural y mantiene la fuerza causal. También conviene evitar el punto dentro de una frase claramente truncada por el testimonio; aun así, cerrar con punto es aceptable si se mantiene la nota.'
+  glossary_alignment: 'No hay términos del glosario doctrinal principal implicados. Las decisiones léxicas son apropiadas: «semilla», «agricultor», «brota». La preservación de la elipsis está bien justificada y concuerda con la revisión inglesa auditada.'
+  issues:
+  - severity: medium
+    issue: Redundancia poco natural de conectores en «Porque si ... pues no recibió»
+    rationale: Aunque ambos conectores reflejan elementos latinos distintos (Quoniam / enim), en español la combinación suena torpe. «Porque si ... porque no recibió» reproduce mejor la relación causal inmediata y resulta más idiomático.
+  revised_spanish_text: Porque si la semilla del agricultor no brota, porque no recibió[a].
+  revised_footnotes:
+  - marker: a
+    text: 'La frase latina queda elíptica: «porque no recibió»; no se añade aquí el complemento implícito para no sobretraducir el testimonio conservado.'
+    reason: source_note
+  revision_rationale: 'Se hizo una reparación menor para mejorar la naturalidad del español sin alterar el sentido del latín ni la elipsis preservada por la revisión inglesa: «porque» funciona mejor que «pues» después de «si».'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 127616667acc23d4f35866941e972811754e06b9fd3b1f86b8d84ed5a468c111
+  timestamp: '2026-05-07T23:50:46Z'
+  output_hash: 895a4d84456987b46bcbb03c83a3fd1722a4b1a39c38b9791bbc8884aa1db133
+  usage:
+    prompt_tokens: 2565
+    completion_tokens: 488
+    total_tokens: 3053
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.013732
+  applied_revision: true

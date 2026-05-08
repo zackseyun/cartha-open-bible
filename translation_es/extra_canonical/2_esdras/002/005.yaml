@@ -1,0 +1,146 @@
+id: 2ES.2.5
+reference: 2 Esdras 2:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: misericordiam. Ego autem te, pater, testem inuoco super matrem filiorum, quia noluerunt testamentum meum seruare,
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/002/005.yaml
+  text: But I call on you[a], Father, as a witness against the mother of the children, because they were unwilling to keep my covenant,
+  footnotes:
+  - marker: a
+    text: Or 'over the mother of these children'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:05Z'
+    unchanged: false
+    changes_summary: Changed 'call upon' to 'call on' for more natural formal English, and added 'a' before 'witness' to reflect the idiomatic sense of the Latin.
+translation:
+  language: es
+  text: Pero yo te invoco, Padre, como testigo contra la madre de los hijos,[a] porque no quisieron guardar mi pacto.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Lit. ''sobre la madre de los hijos''; aquí se entiende en sentido judicial: ''contra la madre de los hijos''.'
+    reason: previous_rendering_clarification
+lexical_decisions:
+- source_word: testem invoco
+  english_pob_choice: I call on you ... as a witness
+  chosen_spanish: te invoco ... como testigo
+  alternatives_spanish:
+  - te llamo ... como testigo
+  - te invoco ... en testimonio
+  lexicon: invocar; testigo
+  rationale: El latín usa una fórmula jurídica solemne ('testem invoco'). 'Invoco' conserva el valor formal de llamada solemne; 'como testigo' refleja el sentido idiomático de 'testem' sin volverlo más teológico de lo que el texto exige.
+- source_word: super
+  english_pob_choice: against
+  chosen_spanish: contra
+  alternatives_spanish:
+  - sobre
+  - en contra de
+  lexicon: super; contra
+  rationale: En el contexto judicial del latín tardío, 'super' con acusativo expresa adversidad/hostilidad. 'Contra' comunica mejor esa fuerza que 'sobre', que sería equívoco en español.
+- source_word: matrem filiorum
+  english_pob_choice: the mother of the children
+  chosen_spanish: la madre de los hijos
+  alternatives_spanish:
+  - la madre de los niños
+  - la madre de los hijos de ellos
+  lexicon: mater; filii
+  rationale: Se conserva la relación literal del genitivo ('de los hijos') sin añadir demostrativos ni suavizar el registro. 'Hijos' sigue más de cerca el latín que 'niños'.
+- source_word: noluerunt ... seruare
+  english_pob_choice: they were unwilling to keep
+  chosen_spanish: no quisieron guardar
+  alternatives_spanish:
+  - no quisieron observar
+  - no estuvieron dispuestos a guardar
+  lexicon: nolle; servare
+  rationale: '''No quisieron'' reproduce la negativa volitiva de ''noluerunt''. ''Guardar'' es una forma bíblica clara y fiel para ''servar'' en el sentido de observar/guardar un pacto.'
+- source_word: testamentum meum
+  english_pob_choice: my covenant
+  chosen_spanish: mi pacto
+  alternatives_spanish:
+  - mi testamento
+  - mi alianza
+  lexicon: testamentum; pacto
+  rationale: En este contexto, 'testamentum' se entiende como pacto/covenio. 'Pacto' es transparente en español y evita la ambigüedad hereditaria de 'testamento'.
+theological_decisions:
+- issue: Lenguaje judicial y hostil en 'testem invoco super ...'
+  english_pob_reading: against the mother of the children
+  chosen_spanish_reading: como testigo contra la madre de los hijos
+  alternative_spanish_readings:
+  - como testigo sobre la madre de los hijos
+  - como testigo en favor de la madre de los hijos
+  rationale: La revisión latina señala que la frase es adversativa en un marco judicial. 'Contra' preserva esa tensión y prepara el v. 6, donde continúa la imprecación contra la madre.
+  doctrine_reference: None
+translation_notes:
+  revision_awareness: Se siguió la revisión más reciente que corrige el valor de 'super' de 'sobre' a 'contra' en el contexto judicial, y se evitó el demostrativo 'these' porque no está en el latín. También se mantuvo 'a witness' como 'como testigo' en forma idiomática natural para el español.
+  spanish_consistency_notes:
+  - Se usa 'pacto' para testamentum en este pasaje por el sentido de alianza del texto.
+  - Se conserva 'Padre' en vocativo directo, con puntuación natural en español.
+  - La nota [a] preserva la alternativa histórica/ambigua señalada en el aparato inglés, aunque el texto principal sigue la lectura revisada.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/002/005.yaml
+  source_text_sha256: 4304061392af3c2ed3b6ce075b6966e193d027119a18f8a3233633f8d17442d9
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: aebc087e90844c9894fe7184e4dfa49f421089f5fc50edcf790d8673bf837ed0
+  timestamp: '2026-05-07T21:28:01Z'
+  output_hash: e9c997a62efd92ce6eb329f2c9b7e8e32ffa29cd44b807db14c25bda05956533
+  usage:
+    prompt_tokens: 2010
+    completion_tokens: 879
+    total_tokens: 2889
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005463
+status: spanish_reviewed
+revisions:
+- from: Pero yo te invoco, Padre, como testigo[a] contra la madre de los hijos, porque no quisieron guardar mi pacto.
+  to: Pero yo te invoco, Padre, como testigo contra la madre de los hijos,[a] porque no quisieron guardar mi pacto.
+  rationale: 'Se conserva el texto principal, que ya es fiel y natural, y se corrige la nota para alinearla con la decisión auditada sobre ''super'': no como alternativa española equiparable, sino como renderizado más literal del latín que en este contexto debe entenderse adversativamente.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:19:26Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el latín: ''te invoco, Padre, como testigo'' refleja con fidelidad la fórmula jurídica ''testem invoco''; ''contra'' preserva correctamente el valor adversativo de ''super'' en este contexto; ''no quisieron guardar mi pacto'' comunica bien ''noluerunt testamentum meum servare''. La única desviación relevante está en la nota al pie: presenta ''sobre'' como alternativa, cuando el expediente inglés ya documentó que esa lectura fue corregida por ser menos fiel al sentido judicial hostil del latín.'
+  spanish_quality_summary: 'El español es claro, natural y digno. ''Pero yo te invoco, Padre, como testigo contra la madre de los hijos'' suena bien en registro bíblico moderno. Puede mejorarse mínimamente la naturalidad con ''de ellos'' en la nota alternativa, pero no es necesario en el texto principal. El principal problema de calidad es editorial: la nota actual reintroduce una alternativa que el historial de auditoría considera inferior.'
+  glossary_alignment: 'No hay conflicto con la terminología base del proyecto. ''Padre'', ''pacto'' y el lenguaje jurídico están bien resueltos. La revisión necesaria no afecta el glosario principal, sino la gestión de la nota: debe reflejar la alternativa histórica inglesa (''over the mother of the children'') de manera informativa, sin presentarla como opción española recomendable equivalente al texto principal.'
+  issues:
+  - severity: medium
+    issue: 'La nota al pie reintroduce una alternativa semánticamente inferior: ''sobre la madre de los hijos''.'
+    rationale: El expediente inglés documenta explícitamente que 'super' aquí debe entenderse en sentido judicial adversativo ('against'), no espacial o neutro ('over/sobre'). Mantener 'sobre' como simple alternativa de lectura en español debilita la rationale auditada y puede confundir al lector sobre el sentido correcto.
+  - severity: low
+    issue: La nota actual no deja claro que 'sobre' corresponde a un renderizado previo, no a una alternativa igualmente válida.
+    rationale: La nota inglesa está marcada como 'previous_rendering', no como variante preferible del sentido fuente. En español conviene preservar ese carácter histórico en la razón y el texto de nota.
+  revised_spanish_text: Pero yo te invoco, Padre, como testigo contra la madre de los hijos,[a] porque no quisieron guardar mi pacto.
+  revised_footnotes:
+  - marker: a
+    text: 'Lit. ''sobre la madre de los hijos''; aquí se entiende en sentido judicial: ''contra la madre de los hijos''.'
+    reason: previous_rendering_clarification
+  revision_rationale: 'Se conserva el texto principal, que ya es fiel y natural, y se corrige la nota para alinearla con la decisión auditada sobre ''super'': no como alternativa española equiparable, sino como renderizado más literal del latín que en este contexto debe entenderse adversativamente.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b6c6fbca8d780a4948ea9f71e57b0839f079e5994e16699c7ddefc16f25706e9
+  timestamp: '2026-05-07T23:19:26Z'
+  output_hash: 2b4687174fe8452d365aace288c6560074c73b411a59909f1533a23ab24b2144
+  usage:
+    prompt_tokens: 2537
+    completion_tokens: 647
+    total_tokens: 3184
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016047
+  applied_revision: true

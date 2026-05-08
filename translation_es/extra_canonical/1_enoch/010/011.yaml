@@ -1,0 +1,226 @@
+id: 1EN.10.11
+reference: 1 Enoch 10:11
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወለሚካኤል፡ ይቤ፡ *እግዚእ፡ ሑር፡ †አይድዕ፡ †ለስምያዛ፡ ወለካልኣን፡ እለ፡ ምስሌሁ፡ እለ፡ ሐብሩ፡ ምስለ፡ አንስት፡ ከመ፡ ይማስኑ፡ ምስሌሆን፡ በ ርኵሶ፡ ዚአሆን።
+  language: Geez
+  pages:
+  - 62
+  - 64
+  - 66
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch10.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 10, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/010/011.yaml
+  text: And to Michael the Lord said[a], “Go, bind Shemihazah and the others with him[c][b], who joined themselves with women so as to defile themselves with them in their uncleanness.”
+  footnotes:
+  - marker: a
+    text: The command verb before 'Shemihazah' is textually difficult in the OCR, but the chapter context and broader witness support the sense 'bind.'
+    reason: textual_variant
+  - marker: b
+    text: Mikael is the Ge'ez-form transliteration of the angel's name, more familiar in English as Michael.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And to Mikael he said, “Go, bind Shemihazah and the others with him, who joined themselves with women so as to defile themselves with them in all their uncleanness.”'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 9d021ee4a39e11693bae1d546e53fb1569d78d2635a72429a5bf11a27d97165b
+    timestamp: '2026-04-22T09:08:43Z'
+    output_hash: c3eaf76bcd9ce83df4353f65b5c1133785506a2a0aba9dffcf66fdd05ce93a55
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:38Z'
+    unchanged: false
+    changes_summary: Updated 'Mikael' to the standard English form 'Michael' for natural English and consistency; otherwise retained the draft wording.
+translation:
+  language: es
+  text: 'Y a Miguel el Señor le dijo: «Ve, ata a Shemihazá y a los otros con él[a], quienes se unieron a mujeres para contaminarse con ellas en su inmundicia[b]».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: «Los otros con él» reproduce el valor colectivo del ge'ez sin añadir una precisión como «compañeros» o «asociados» que no está explicitada en la frase.
+    reason: lexical_alternative
+  - marker: b
+    text: «Contaminarse» e «inmundicia» procuran conservar el registro de profanación moral y cultual del original, sin reducirlo a una lectura exclusivamente sexual ni exclusivamente ritual.
+    reason: theological_note
+lexical_decisions:
+- source_word: ለሚካኤል
+  english_pob_choice: to Michael / to Mikael
+  chosen_spanish: a Miguel
+  alternatives_spanish:
+  - a Miguel
+  - a Mikael
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El nombre se vierte con la forma española corriente «Miguel», que comunica de inmediato al lector la identidad del ángel. «Mikael» conservaría más transparentemente la transliteración ge'ez, pero sería menos natural en español y menos reconocible.
+- source_word: እግዚእ
+  english_pob_choice: the Lord
+  chosen_spanish: el Señor
+  alternatives_spanish:
+  - el Señor
+  - Yahvé
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez incluye un título divino explícito. En español, «el Señor» traduce con naturalidad ese título en una cita angélica directa. «Yahvé» sería más específico para el nombre divino, pero aquí el texto fuente usa el título, no el nombre propio.
+- source_word: ይቤ
+  english_pob_choice: he said
+  chosen_spanish: le dijo
+  alternatives_spanish:
+  - dijo
+  - le dijo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la introducción de habla con un dativo natural en español, porque el destinatario está marcado explícitamente por la frase precedente. «Le dijo» fluye mejor que una repetición más pesada de sujeto y objeto.
+- source_word: እግዚእ ሑር
+  english_pob_choice: Go, bind
+  chosen_spanish: Ve, ata
+  alternatives_spanish:
+  - Ve, ata
+  - Ve, encadena
+  - Ve, sujeta
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El contexto de juicio angélico exige una acción coercitiva, y la revisión inglesa ya reconoce que el verbo oscuro apunta a «bind». En español, «ata» preserva ese valor sin sobrerinterpretar con un término más técnico o más gráfico.
+- source_word: ለስምያዛ
+  english_pob_choice: Shemihazah
+  chosen_spanish: Shemihazá
+  alternatives_spanish:
+  - Shemihazá
+  - Semjaza
+  - Semyaza
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene una transliteración del nombre del líder de los Vigilantes, adaptada a ortografía española con acento final para la pronunciación. Esto conserva la forma del source sin imponer una tradición inglesa fija.
+- source_word: ወለካልኣን እለ ምስሌሁ
+  english_pob_choice: and the others with him
+  chosen_spanish: y a los otros con él
+  alternatives_spanish:
+  - y a los otros con él
+  - y a los demás con él
+  - y a sus compañeros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión identifica a los asociados de Shemihazá de modo colectivo. «Los otros con él» sigue de cerca el sentido del ge'ez sin introducir una relación jerárquica o explicativa que no está en el texto.
+- source_word: እለ ሐብሩ ምስለ አንስት
+  english_pob_choice: who joined themselves with women
+  chosen_spanish: los que se unieron con mujeres
+  alternatives_spanish:
+  - los que se unieron con mujeres
+  - los que se juntaron con mujeres
+  - los que se asociaron con mujeres
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Se unieron con mujeres» mantiene el acto deliberado de asociación/adhesión del verbo ge'ez y conserva la tensión moral del pasaje. Evita suavizar el sentido o volverlo meramente relacional.
+- source_word: ከመ ይማስኑ
+  english_pob_choice: so as to defile themselves
+  chosen_spanish: para contaminarse
+  alternatives_spanish:
+  - para contaminarse
+  - para defilearse
+  - para volverse impuros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo comunica profanación/impureza en registro cultual-moral. «Contaminarse» funciona en español para esa idea sin sonar artificial; por eso se explicita luego con «impureza».
+- source_word: በርኵሶ ዚአሆን
+  english_pob_choice: in their uncleanness
+  chosen_spanish: en su impureza
+  alternatives_spanish:
+  - en su impureza
+  - en su contaminación
+  - en su inmundicia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez habla de un estado de impureza/uncleanness ligado a su acción. «Impureza» es el equivalente más claro en español; «contaminación» se usa arriba para el proceso, y aquí se conserva el estado resultante.
+theological_decisions:
+- issue: Naturaleza de la transgresión de los Vigilantes
+  english_pob_reading: Preserve defilement and uncleanness language without narrowing it to one later doctrinal category.
+  chosen_spanish_reading: Conservar el lenguaje de contaminarse e impureza sin especificar si el énfasis es solo sexual, solo ritual o una combinación.
+  alternative_spanish_readings:
+  - corrupción sexual
+  - impureza ritual solamente
+  - maldad general
+  rationale: El texto ge'ez enfatiza la contaminación y la impureza como consecuencia de la unión ilícita. El español mantiene esa tensión sin resolverla, porque el pasaje no obliga a una sola categoría teológica posterior.
+  doctrine_reference: Preservar la tensión teológica del texto apocalíptico en lugar de cerrarla.
+translation_notes:
+  revision_awareness: 'La revisión inglesa más reciente corrigió dos puntos importantes del audit trail: mantuvo explícito «the Lord» y eliminó el añadido «all» antes de «their uncleanness». El español sigue esa corrección al incluir «el Señor» y al decir simplemente «en su impureza», sin intensificador adicional. También se evita trasladar mecánicamente la forma anglicada «Michael» cuando el objetivo español puede representar mejor el nombre mediante «Miguel».'
+  spanish_consistency_notes:
+  - Se mantiene la transliteración «Shemihazá» con acento final para facilitar lectura española, mientras que el ángel receptor se vierte como «Miguel» por uso común en español.
+  - Se conserva «el Señor» para el título divino presente en el ge'ez, en coherencia con la fuente, sin sustituirlo por un ocultamiento del nombre divino.
+  - Se usa «contaminarse»/«impureza» para sostener la tensión entre acto y estado resultante en el pasaje.
+  - La puntuación y las comillas siguen el uso español moderno de cita directa.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/010/011.yaml
+  source_text_sha256: 625b2d8add6b028146742f316d365024fcce71c3e708a3b8bdbe9ea6c63265d0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: b2ceb42509ce5a245b8497817deb40656d4d726288f6a55b366826b49cc100c7
+  timestamp: '2026-05-07T21:27:37Z'
+  output_hash: 2312ec0492c5c24328de27ff4540d0e521498a87f1874bd6baa11352d457fc62
+  usage:
+    prompt_tokens: 3412
+    completion_tokens: 1821
+    total_tokens: 5233
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010754
+status: spanish_reviewed
+revisions:
+- from: 'Y a Miguel el Señor le dijo: «Ve, ata a Shemihazá[a] y a los otros con él[b], los que se unieron con mujeres para contaminarse con ellas en su impureza[c]».'
+  to: 'Y a Miguel el Señor le dijo: «Ve, ata a Shemihazá y a los otros con él[a], quienes se unieron a mujeres para contaminarse con ellas en su inmundicia[b]».'
+  rationale: 'La revisión es menor y autoaplicable: mejora la fidelidad al registro de «uncleanness», aligera una nota innecesaria y pule la fluidez del relativo sin alterar el sentido básico del verso.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:59:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge''ez y del POB inglés auditado: Miguel, el Señor, la orden de ir y atar, Shemihazá y los otros con él, la unión con mujeres y el resultado de contaminación/impureza. Sin embargo, «los que se unieron con mujeres» queda algo más explicativo y menos integrado que el relativo inglés/ge''ez, y «en su impureza» suena algo plano frente al registro de uncleanness. También conviene evitar una nota en Shemihazá que no responde a una ambigüedad real del verso.'
+  spanish_quality_summary: 'El español es claro y natural, pero puede ganar dignidad y precisión con una leve revisión de fluidez: «quienes se unieron a mujeres» encaja mejor tras «los otros con él», y «en su inmundicia» preserva mejor el matiz ritual-moral de uncleanness sin sonar arcaico en exceso. La puntuación y el tono general son adecuados.'
+  glossary_alignment: No hay conflictos con la terminología troncal del proyecto. «el Señor» es aceptable porque el ge'ez presenta título divino, no el nombre Yahvé. Los nombres propios están razonablemente tratados; «Miguel» es natural en español y está justificado. La preferencia POB por preservar registros de impureza cultual-moral se sirve mejor con «inmundicia» que con «impureza» en este caso.
+  issues:
+  - severity: medium
+    issue: «Impureza» atenúa el registro de uncleanness del original y del POB inglés.
+    rationale: El expediente inglés justifica «uncleanness» por su textura ritual-moral. En español, «inmundicia» comunica mejor ese peso que «impureza», que puede sonar más abstracto o clínico.
+  - severity: low
+    issue: La nota [a] sobre Shemihazá no preserva una alternativa significativa del expediente, sino que añade explicación innecesaria.
+    rationale: El verso no crea una ambigüedad nueva en español en ese nombre. Las notas deben reservarse para variantes, alternativas relevantes o ambigüedades reales.
+  - severity: low
+    issue: «los que se unieron con mujeres» puede refinarse estilísticamente.
+    rationale: «quienes se unieron a mujeres» enlaza mejor con el antecedente y suena más idiomático y digno en español bíblico moderno, sin cambiar el sentido.
+  revised_spanish_text: 'Y a Miguel el Señor le dijo: «Ve, ata a Shemihazá y a los otros con él[a], quienes se unieron a mujeres para contaminarse con ellas en su inmundicia[b]».'
+  revised_footnotes:
+  - marker: a
+    text: «Los otros con él» reproduce el valor colectivo del ge'ez sin añadir una precisión como «compañeros» o «asociados» que no está explicitada en la frase.
+    reason: lexical_alternative
+  - marker: b
+    text: «Contaminarse» e «inmundicia» procuran conservar el registro de profanación moral y cultual del original, sin reducirlo a una lectura exclusivamente sexual ni exclusivamente ritual.
+    reason: theological_note
+  revision_rationale: 'La revisión es menor y autoaplicable: mejora la fidelidad al registro de «uncleanness», aligera una nota innecesaria y pule la fluidez del relativo sin alterar el sentido básico del verso.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 6c9e34b0fc2ac4c17e13933fe1f10e5a43a51e5da49893c3cefb7743d92c552d
+  timestamp: '2026-05-07T22:59:34Z'
+  output_hash: 8224dff7721a8632f4d3750506a8534dcffd96b5fa235e56e2024aeaa18af2cd
+  usage:
+    prompt_tokens: 4853
+    completion_tokens: 776
+    total_tokens: 5629
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023772
+  applied_revision: true

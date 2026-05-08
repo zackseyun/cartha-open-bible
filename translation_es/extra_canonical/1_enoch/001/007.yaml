@@ -1,0 +1,205 @@
+id: 1EN.1.7
+reference: 1 Enoch 1:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወትሠጠጥ፡ ምድር፡ ወኵሉ፡ ዘውስተ፡ ምድር፡ ይትሐጐል፡ ወይከውን፡ ፍትሕ፡ *ላዕለ፡ ኵሉ፡
+  language: Geez
+  pages:
+  - 40
+  - 42
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/001/007.yaml
+  text: And the earth shall be rent asunder[a], and everything that is in the earth shall be destroyed[c][b], and judgment shall come upon all.
+  footnotes:
+  - marker: a
+    text: Or 'everything that is on the earth.' The Ge'ez reads literally 'everything that is in the earth.'
+    reason: lexical_alternative
+  - marker: b
+    text: The noun rendered 'judgment' can also be understood as 'justice' or 'righteousness,' but here it functions as a coming act against all.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And the earth shall be shaken,'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 33190e2298c1d69e92ff331a7b980d21290a245377e2627be1f5a2f1d5cb9b74
+    timestamp: '2026-04-22T09:08:36Z'
+    output_hash: fce16a57756efd0fe89b1e76a2fa5ea4a982385e172b38c7bb8c6269677655e6
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:27Z'
+    unchanged: false
+    changes_summary: Removed the accidental duplicated clause at the end. Kept the existing wording, which accurately and naturally reflects the source.
+translation:
+  language: es
+  text: Y la tierra será rasgada[a], y todo lo que está dentro de la tierra[b] será destruido, y el juicio[c] vendrá sobre todos.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «será hendida» o «será partida». El ge'ez apunta a una ruptura o desgarramiento físico, no solo a una sacudida.
+    reason: lexical_alternative
+  - marker: b
+    text: O «todo lo que está en la tierra» o «todo lo que está sobre la tierra». El ge'ez dice literalmente «todo lo que está en la tierra», pero en español «dentro de la tierra» comunica mejor ese matiz sin suavizarlo.
+    reason: lexical_alternative
+  - marker: c
+    text: O «la justicia» o «la rectitud». Aquí el término funciona como un acto de juicio que vendrá sobre todos.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ትሠጠጥ
+  english_pob_choice: shall be rent asunder
+  chosen_spanish: será rasgada
+  alternatives_spanish:
+  - será hendida
+  - será partida
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo etiópico describe una acción violenta de abrir o rasgar, no solo sacudir. «Será rasgada» conserva la imagen apocalíptica de ruptura física sin añadir detalles no explícitos.
+- source_word: ምድር
+  english_pob_choice: the earth
+  chosen_spanish: la tierra
+  alternatives_spanish:
+  - el mundo
+  - la tierra firme
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto cósmico y universal, «la tierra» es la correspondencia más natural y fiel. «El mundo» podría sonar más interpretativo.
+- source_word: ኵሉ ዘውስተ ምድር
+  english_pob_choice: everything that is in the earth
+  chosen_spanish: todo lo que está en la tierra
+  alternatives_spanish:
+  - todo lo que hay en la tierra
+  - todo lo que está dentro de la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase ge'ez es literalmente «todo lo que está en la tierra». En español, «todo lo que está en la tierra» mantiene la fuerza del original y evita suavizarla hacia «sobre la tierra».
+- source_word: ይትሐጐል
+  english_pob_choice: shall be destroyed
+  chosen_spanish: será destruido
+  alternatives_spanish:
+  - perecerá
+  - será consumido
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa ruina o destrucción. «Será destruido» es la forma más clara y amplia en español, y encaja con la secuencia de juicio cósmico.
+- source_word: ፍትሕ
+  english_pob_choice: judgment
+  chosen_spanish: el juicio
+  alternatives_spanish:
+  - la justicia
+  - la rectitud
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Aunque el término puede abarcar «justicia» o «rectitud», aquí la cláusula «vendrá sobre todos» indica un acto de rendición de cuentas, no solo una cualidad moral. «El juicio» preserva esa tensión sin resolverla artificialmente.
+- source_word: ላዕለ ኵሉ
+  english_pob_choice: upon all
+  chosen_spanish: sobre todos
+  alternatives_spanish:
+  - contra todos
+  - encima de todos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La preposición comunica una acción que cae encima de todos. «Sobre todos» suena natural en español y conserva la idea de alcance universal.
+theological_decisions:
+- issue: Si ፍትሕ debe entenderse como cualidad moral («justicia/rectitud») o como acto escatológico («juicio»).
+  english_pob_reading: judgment
+  chosen_spanish_reading: el juicio
+  alternative_spanish_readings:
+  - la justicia
+  - la rectitud
+  rationale: La estructura verbal «vendrá sobre todos» favorece una acción divina de juicio. Traducirlo como «el juicio» mantiene el carácter apocalíptico del versículo y evita convertirlo en una afirmación abstracta.
+  doctrine_reference: 'Principio POB: preservar la tensión teológica cuando el término admite más de una lectura; tabla de términos disputados justicia/rectitud'
+- issue: Si la imagen del verbo debe atenuarse como simple agitación o mantenerse como ruptura física.
+  english_pob_reading: shall be rent asunder
+  chosen_spanish_reading: será rasgada
+  alternative_spanish_readings:
+  - será sacudida
+  - será estremecida
+  rationale: La revisión textual y la evidencia léxica apoyan una imagen de ruptura, no de mera vibración. «Será rasgada» sigue esa lectura y refleja mejor el paralelismo apocalíptico del pasaje.
+  doctrine_reference: 'Principio POB: no borrar la tensión o el impacto del lenguaje fuente; mantener la imaginería cuando está respaldada por el texto'
+translation_notes:
+  revision_awareness: La versión inglesa más temprana leía «shall be shaken», pero la revisión posterior corrigió el sentido a «shall be rent asunder» con respaldo del ge'ez y del testimonio griego. La redacción española sigue esa corrección y evita la lectura suavizada.
+  spanish_consistency_notes:
+  - Se usa «tierra» para ምድር por el alcance cósmico del pasaje.
+  - Se mantiene «juicio» para ፍትሕ, con nota que preserva las alternativas «justicia» y «rectitud».
+  - Se conserva la imagen fuerte de ruptura para ትሠጠጥ, acorde con la revisión textual.
+  - No se traduce mecánicamente «sobre la tierra» porque el ge'ez es más literal con «en la tierra» y el español permite esa formulación sin pérdida de claridad.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/001/007.yaml
+  source_text_sha256: aec0fd2a5d5b424f6d25fd2b7b4cf08ad62225d69580d9c71971df8f7c03e2c8
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 564745b67953ac970b3de1d4299053fe6da21a1a3c5c0243e4f96c8a5efc0c07
+  timestamp: '2026-05-07T21:27:39Z'
+  output_hash: bb4af75cd7750b38657c531c7e3aabe7f25fc38d0dd5e4c274334988faf5f86d
+  usage:
+    prompt_tokens: 2928
+    completion_tokens: 1351
+    total_tokens: 4279
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008275
+status: spanish_reviewed
+revisions:
+- from: Y la tierra será rasgada[a], y todo lo que está en la tierra[b] será destruido, y el juicio[c] vendrá sobre todos.
+  to: Y la tierra será rasgada[a], y todo lo que está dentro de la tierra[b] será destruido, y el juicio[c] vendrá sobre todos.
+  rationale: Se hace una corrección menor para alinear mejor el español con la decisión léxica auditada sobre ኵሉ ዘውስተ ምድር y para resolver la incoherencia de la nota b. El resto del versículo puede mantenerse.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge''ez y sigue la revisión inglesa en los puntos principales: ruptura de la tierra, destrucción total y venida del juicio. Sin embargo, en ኵሉ ዘውስተ ምድር el español principal usa «en la tierra», lo cual en español normalmente se oye como ''sobre la tierra'' y no preserva con suficiente fidelidad la rareza literal «in the earth» que el POB decidió mantener. También la nota b está internamente confusa, porque ofrece «dentro de la tierra» como alternativa pero luego dice que la forma literal es «en la tierra»; en español, para comunicar la intención del original, conviene llevar «dentro de la tierra» al texto principal.'
+  spanish_quality_summary: El texto es claro y digno, pero requiere un ajuste menor para mayor precisión semántica y mejor coherencia entre texto principal y nota. «La tierra será rasgada» es entendible, aunque «se abrirá en grietas» sería más interpretativo; «será rasgada» es aceptable. «Todo lo que está en la tierra» suena natural, pero no transmite bien el matiz documentado. Con «todo lo que está dentro de la tierra» el español sigue siendo legible y preserva mejor la decisión auditada.
+  glossary_alignment: No hay conflictos con la terminología global del proyecto. «Juicio» para ፍትሕ está bien justificado por el contexto apocalíptico. No aparecen términos sensibles del glosario mayor como Yahvé, Mesías, Espíritu o δοῦλος.
+  issues:
+  - severity: medium
+    issue: La frase principal «todo lo que está en la tierra» no preserva suficientemente la literalidad significativa de ኵሉ ዘውስተ ምድር.
+    rationale: El audit trail inglés decidió mantener la rareza de «everything that is in the earth» en vez de suavizar a «on the earth». En español, «en la tierra» tenderá a entenderse como ubicación superficial/general, no como contenido interior. «Dentro de la tierra» comunica mejor la decisión documentada.
+  - severity: medium
+    issue: La nota b contradice o desdibuja la decisión léxica.
+    rationale: 'Presenta «dentro de la tierra» como mera alternativa mientras afirma que el ge''ez literal dice «en la tierra». Dado el valor semántico en español, conviene invertir la relación: poner «dentro de la tierra» en el texto y notar que también puede entenderse como «en la tierra» o «sobre la tierra».'
+  revised_spanish_text: Y la tierra será rasgada[a], y todo lo que está dentro de la tierra[b] será destruido, y el juicio[c] vendrá sobre todos.
+  revised_footnotes:
+  - marker: a
+    text: O «será hendida» o «será partida». El ge'ez apunta a una ruptura o desgarramiento físico, no solo a una sacudida.
+    reason: lexical_alternative
+  - marker: b
+    text: O «todo lo que está en la tierra» o «todo lo que está sobre la tierra». El ge'ez dice literalmente «todo lo que está en la tierra», pero en español «dentro de la tierra» comunica mejor ese matiz sin suavizarlo.
+    reason: lexical_alternative
+  - marker: c
+    text: O «la justicia» o «la rectitud». Aquí el término funciona como un acto de juicio que vendrá sobre todos.
+    reason: lexical_alternative
+  revision_rationale: Se hace una corrección menor para alinear mejor el español con la decisión léxica auditada sobre ኵሉ ዘውስተ ምድር y para resolver la incoherencia de la nota b. El resto del versículo puede mantenerse.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 44ba2e29e6c5d9a0d6a0ad422a39874cebafe38ff1a7fb865fd03fd18b39b11c
+  timestamp: '2026-05-07T23:06:41Z'
+  output_hash: 8c808fb7e0115c560f8156a4c6543b22ede3f9bf8848697bd9f024bcfa1fee70
+  usage:
+    prompt_tokens: 3917
+    completion_tokens: 872
+    total_tokens: 4789
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022873
+  applied_revision: true

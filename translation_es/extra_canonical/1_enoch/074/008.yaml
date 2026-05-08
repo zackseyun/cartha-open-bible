@@ -1,0 +1,185 @@
+id: 1EN.74.8
+reference: 1 Enoch 74:8
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ*ካዕበ፡ ይገብእ፡ ሰቡዐ፡ መዋዕለ፡ በራብዕት፡ ኆኅት፡ እንተ፡ እምኔሃ፡ ይወፅእ፡ ፀሐይ።
+  language: Geez
+  pages:
+  - 177
+  - 178
+  - 179
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/074/008.yaml
+  text: And again[a], it returns for seven days to the fourth gate[c][b], from which the sun comes out.
+  footnotes:
+  - marker: a
+    text: The subject of 'it enters' is implicit in the Ge'ez and, in context, refers to the sun's course in the sequence of gates described in this chapter.
+    reason: lexical_alternative
+  - marker: b
+    text: The Ge'ez can also be rendered 'through the fourth gate'; the imagery is of the sun's ordered movement in and out of heavenly gates.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'for seven days it enters by'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 520ffb5d7c425148c2e7330473cbee78cc5159d13c55ce39325ceaa484a7dbe8
+    timestamp: '2026-04-22T09:17:17Z'
+    output_hash: 3a475ec8a0f9690d5cec091f08001744eec1d5a22725398f861242063bd52fb9
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:27Z'
+    unchanged: false
+    changes_summary: Changed 'through the fourth gate' to 'to the fourth gate' for more accurate rendering of the motion toward/at the gate rather than passage through it; otherwise retained the draft.
+translation:
+  language: es
+  text: Y de nuevo[a], vuelve por siete días a la cuarta puerta[b][c], de la cual sale el sol.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El sujeto de 'vuelve' es implícito en el ge'ez y, por el contexto de este capítulo, se refiere al curso del sol en la secuencia de puertas.
+    reason: lexical_alternative
+  - marker: b
+    text: El ge'ez también puede entenderse como 'por la cuarta puerta'; la imagen es el movimiento ordenado del sol hacia y desde las puertas celestiales.
+    reason: lexical_alternative
+  - marker: c
+    text: 'O: ''por siete días vuelve a la cuarta puerta''.'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ካዕበ
+  english_pob_choice: again
+  chosen_spanish: de nuevo
+  alternatives_spanish:
+  - otra vez
+  - nuevamente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Expresa la continuidad repetitiva del movimiento del astro sin sonar mecánico; mantiene el valor de repetición que POB documenta para 'again'.
+- source_word: ይገብእ
+  english_pob_choice: it returns
+  chosen_spanish: vuelve
+  alternatives_spanish:
+  - retorna
+  - regresa
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión del audit trail corrige la lectura previa 'enter' y establece el sentido de 'return/go back'. En español, 'vuelve' transmite ese movimiento cíclico con naturalidad y fidelidad.
+- source_word: ሰቡዐ መዋዕለ
+  english_pob_choice: for seven days
+  chosen_spanish: por siete días
+  alternatives_spanish:
+  - durante siete días
+  - por siete jornadas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conserva la duración temporal indicada por el ge'ez. 'Por siete días' es idiomático en español y preserva la precisión calendárica.
+- source_word: በራብዕት ኆኅት
+  english_pob_choice: to the fourth gate
+  chosen_spanish: a la cuarta puerta
+  alternatives_spanish:
+  - hasta la cuarta puerta
+  - en la cuarta puerta
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión más reciente del POB inglés prefirió 'to the fourth gate'. En español, 'a la cuarta puerta' refleja el movimiento hacia/at esa puerta sin sugerir indebidamente atravesarla.
+- source_word: እንተ እምኔሃ
+  english_pob_choice: from which
+  chosen_spanish: de la cual
+  alternatives_spanish:
+  - de ella
+  - desde la cual
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Mantiene la referencia relativa a la puerta mencionada con claridad y concisión, reproduciendo el vínculo causal/local del original.
+- source_word: ይወፅእ ፀሐይ
+  english_pob_choice: the sun comes out
+  chosen_spanish: sale el sol
+  alternatives_spanish:
+  - el sol sale
+  - el sol emerge
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Sale el sol'' es la formulación española más natural para ''comes out'' y conserva la imaginería concreta del astro que emerge desde la puerta cósmica.'
+translation_notes:
+  revision_awareness: 'El inglés de trabajo pasó por una corrección importante: de ''it enters for seven days by'' a ''it returns for seven days to'', basada en el valor léxico de ይገብእ como ''return/go back'' y no ''enter''. La versión española sigue esa revisión y evita una lectura de ''entrar'' que el audit trail ya descartó.'
+  spanish_consistency_notes:
+  - Se mantiene 'puerta' para ኆኅት, coherente con el registro del pasaje y con la imaginería celestial del capítulo.
+  - Se evitó 'Señor' u այլ terminología teológica no pertinente; el verso es cosmológico y no requiere ajustes doctrinales.
+  - La coordinación temporal 'de nuevo... por siete días...' refleja la progresión repetitiva del texto sin añadir elementos no atestiguados.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/074/008.yaml
+  source_text_sha256: 98beb72fa68bd1cd50252ef7b8ffbc4d3933012d2ffd23ede6fb3de1589577f6
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0afc1604bf77e14c5e8d5b5c9a583b331b2f0032021f5bae69109e4cb8baa3a9
+  timestamp: '2026-05-07T21:27:53Z'
+  output_hash: 0fed18d9648607250835d659e439b5a0aa10b412373e851e103eb08fa2a215d4
+  usage:
+    prompt_tokens: 2826
+    completion_tokens: 995
+    total_tokens: 3821
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.006597
+status: spanish_reviewed
+revisions:
+- from: Y de nuevo[a], vuelve por siete días a la cuarta puerta[b], de la cual sale el sol[c].
+  to: Y de nuevo[a], vuelve por siete días a la cuarta puerta[b][c], de la cual sale el sol.
+  rationale: Se conserva el texto principal porque es fiel y natural. Solo se corrige la nota [c] para alinearla con el aparato del POB inglés y con la instrucción de preservar alternativas significativas, eliminando un sinónimo innecesario ('emerge') que no añade valor documental.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:00:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido fuente y el audit trail inglés revisado: ካዕበ = ''de nuevo'', ይገብእ = ''vuelve'', ሰቡዐ መዋዕለ = duración ''por siete días'', በራብዕት ኆኅት = movimiento hacia ''la cuarta puerta'', y እንተ እምኔሃ ይወፅእ ፀሐይ = ''de la cual sale el sol''. No hay problemas teológicos ni terminológicos de proyecto.'
+  spanish_quality_summary: 'El texto es natural y digno en español. La única reparación necesaria es de aparato crítico: la nota [c] en español no corresponde a una nota preservada en el POB inglés ni resuelve una ambigüedad nueva del español; además desplaza la función de la nota inglesa [c], que trataba una traducción previa de toda la secuencia verbal. Conviene reemplazarla por una nota equivalente a ''O: por siete días vuelve a la cuarta puerta'', anclada en la cláusula pertinente.'
+  glossary_alignment: 'No hay términos del glosario mayor en juego. Las decisiones léxicas están bien alineadas con el audit trail: ''vuelve'' refleja la revisión adjudicada de ይገብእ; ''a la cuarta puerta'' respeta la revisión posterior desde ''through'' a ''to''.'
+  issues:
+  - severity: medium
+    issue: La nota [c] del borrador no coincide con la nota [c] del POB inglés ni con una ambigüedad española necesaria.
+    rationale: 'El inglés preserva como nota [c] la alternativa de orden/frase completa: ''Or “for seven days it enters by”'' (en el estado revisado, aplicable como variante histórica de la secuencia verbal). La nota española actual ''También: "el sol emerge"'' solo ofrece un sinónimo menor de ''sale el sol'', no documentado como decisión relevante y sin necesidad exegética.'
+  revised_spanish_text: Y de nuevo[a], vuelve por siete días a la cuarta puerta[b][c], de la cual sale el sol.
+  revised_footnotes:
+  - marker: a
+    text: El sujeto de 'vuelve' es implícito en el ge'ez y, por el contexto de este capítulo, se refiere al curso del sol en la secuencia de puertas.
+    reason: lexical_alternative
+  - marker: b
+    text: El ge'ez también puede entenderse como 'por la cuarta puerta'; la imagen es el movimiento ordenado del sol hacia y desde las puertas celestiales.
+    reason: lexical_alternative
+  - marker: c
+    text: 'O: ''por siete días vuelve a la cuarta puerta''.'
+    reason: previous_rendering
+  revision_rationale: Se conserva el texto principal porque es fiel y natural. Solo se corrige la nota [c] para alinearla con el aparato del POB inglés y con la instrucción de preservar alternativas significativas, eliminando un sinónimo innecesario ('emerge') que no añade valor documental.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ceea6b0c66002ba38a3250165487d6902e904c3db2c18fb35cdb6adb5c0e2c80
+  timestamp: '2026-05-07T23:00:32Z'
+  output_hash: 3ead9f3ee1c46572ba3c3b4164fc232b6a89a51cb9961a728d2b7375be46a851
+  usage:
+    prompt_tokens: 3441
+    completion_tokens: 714
+    total_tokens: 4155
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019313
+  applied_revision: true

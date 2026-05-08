@@ -1,0 +1,133 @@
+id: 2BA.5.3
+reference: 2 Baruch 5:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Ceriani 1871 primary Syriac (control-backed chapter corpus)
+  language: Syriac
+  chapter: 5
+  pages:
+  - 227
+  - 226
+  chapter_bucket_method: tentative_page_interpolation_v1
+  overlap_expected: true
+  verse: 3
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_baruch/005/003.yaml
+  text: And you will see with your eyes that it is not the enemies who overthrow Zion, nor those who burn Jerusalem, but that they are ministers of the Judge for a time.
+  footnotes:
+  - marker: a
+    text: Or 'serving judgment'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5
+    timestamp: '2026-05-03T05:07:30Z'
+    unchanged: false
+    changes_summary: Improved natural English and clarity by supplying an explicit subject in the second negative clause (“nor those who burn Jerusalem”); no semantic change from the draft.
+translation:
+  language: es
+  text: Y verás con tus ojos que no son los enemigos los que derriban a Sión, ni los que queman Jerusalén, sino que por un tiempo son ministros del Juez.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: mshamshane
+  english_pob_choice: ministers
+  chosen_spanish: ministros
+  alternatives_spanish:
+  - siervos
+  - servidores
+  lexicon: N/A
+  rationale: El siriaco denota agentes que prestan servicio; en español, «ministros» conserva la idea de funcionarios al servicio de una autoridad, y corresponde al giro ya corregido en el texto inglés. «Siervos» sería posible, pero aquí atenúa la función representativa.
+- source_word: dayana
+  english_pob_choice: the Judge
+  chosen_spanish: el Juez
+  alternatives_spanish:
+  - el juez
+  - el Juez
+  lexicon: N/A
+  rationale: Se mantiene el título con artículo definido y mayúscula reverencial en el nombre/función divina, siguiendo el sentido del original y del inglés auditado.
+- source_word: overthrow Zion
+  english_pob_choice: overthrow Zion
+  chosen_spanish: derriban a Sión
+  alternatives_spanish:
+  - derriban Sión
+  - subvierten a Sión
+  lexicon: N/A
+  rationale: «Derribar» reproduce bien el acto de ruina/destrucción. Se añade la preposición «a» por fluidez al personificar el nombre propio en español.
+- source_word: burn Jerusalem
+  english_pob_choice: those who burn Jerusalem
+  chosen_spanish: los que queman Jerusalén
+  alternatives_spanish:
+  - quienes queman Jerusalén
+  - los incendiarios de Jerusalén
+  lexicon: N/A
+  rationale: Se conserva el sujeto explícito introducido en la revisión inglesa para claridad, sin añadir interpretación.
+theological_decisions:
+- issue: Agencia divina de los destructores
+  english_pob_reading: they are ministers of the Judge for a time
+  chosen_spanish_reading: sino que por un tiempo son ministros del Juez
+  alternative_spanish_readings:
+  - sino que por un tiempo sirven al juicio del Juez
+  - sino que por un tiempo son siervos del Juez
+  rationale: 'La frase preserva la tensión teológica: quienes ejecutan la destrucción no quedan exculpados, pero son descritos como instrumentos temporales bajo la autoridad del Juez. No se suaviza la agencia ni se transforma en una abstracción de «juicio».'
+  doctrine_reference: Providencia divina y juicio soberano en literatura apocalíptica
+- issue: Duración limitada de la función
+  english_pob_reading: for a time
+  chosen_spanish_reading: por un tiempo
+  alternative_spanish_readings:
+  - por un tiempo solamente
+  - durante un tiempo
+  rationale: Se mantiene la limitación temporal explícita del original, importante para evitar que la función de estos agentes se lea como permanente o autónoma.
+  doctrine_reference: Soberanía divina sobre agentes históricos
+translation_notes:
+  revision_awareness: La redacción sigue la revisión más reciente del inglés, que aclara el segundo miembro negativo como «los que queman Jerusalén» y corrige el sentido de la frase siriaca a «ministers of the Judge». No se adoptó la lectura anterior «serving judgment», porque el audit trail la identifica como mistranslation.
+  spanish_consistency_notes:
+  - Se conserva «Sión» con mayúscula por tratarse del nombre propio bíblico.
+  - «Juez» se usa como título sustantivado; no se reemplaza por «juez» común para mantener el paralelismo con el inglés auditado.
+  - No se introducen notas al pie porque el verso no requiere una variante alternativa textual o lexical que deba anclarse en el texto.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_baruch/005/003.yaml
+  source_text_sha256: 22e4f079e07a58a10534bac82d908853de7ce4f204b8bb84ee0bbf9b517758f1
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 6ce2d9ce99cbe8592e1ea2f208fdf359fd400cf85e7ced282ae9ba3ae0968a81
+  timestamp: '2026-05-07T21:29:09Z'
+  output_hash: af9f9ffd116339b68ebaf3ba649432771ec6102663ef4c0930101ccf8d94f9cf
+  usage:
+    prompt_tokens: 1902
+    completion_tokens: 841
+    total_tokens: 2743
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005211
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'El borrador español conserva fielmente el sentido del siriaco según la auditoría inglesa: niega que los enemigos sean la causa última de la caída de Sión y del incendio de Jerusalén, y afirma que actúan temporalmente como agentes subordinados del Juez. También refleja correctamente la revisión clave de ''ministers of the Judge'' frente a la lectura anterior ''serving judgment''.'
+  spanish_quality_summary: El español es natural, claro y digno. La sintaxis con repetición de sujeto ('los que... ni los que...') mejora la legibilidad. 'Derriban a Sión' suena aceptable en español bíblico moderno, y 'por un tiempo son ministros del Juez' expresa bien la limitación temporal y la subordinación funcional.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. 'Sión', 'Jerusalén', 'Juez' y 'ministros' están bien elegidos en contexto. La decisión de usar 'ministros' para mshamshane está alineada con la corrección inglesa y preserva mejor la agencia representativa que 'siervos' o una abstracción como 'juicio'.
+  issues:
+  - severity: low
+    issue: Posible alternativa estilística en el orden de 'por un tiempo'
+    rationale: '''Sino que son ministros del Juez por un tiempo'' también sería natural, pero el orden actual no distorsiona el sentido y mantiene énfasis suficiente en la temporalidad.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 851953a4512052728ef8c94327906b8d987f5fa75647207f1d7a4a799a7be887
+  timestamp: '2026-05-07T23:20:17Z'
+  output_hash: 20ea9352a8444c6bdf7c9502e409da771ec242cbb339ba62f37a923452f62615
+  usage:
+    prompt_tokens: 2373
+    completion_tokens: 362
+    total_tokens: 2735
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011363
+  applied_revision: false

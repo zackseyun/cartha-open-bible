@@ -1,0 +1,120 @@
+id: 2ES.8.1
+reference: 2 Esdras 8:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'Et respondit ad me et dixit: hoc saeculum fecit altissimus propter multos, futurum autem propter paucos.'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/008/001.yaml
+  text: And he answered me and said[a], “The Most High made this age for many, but the age to come for few.”
+  footnotes:
+  - marker: a
+    text: Or 'this present age'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:42:28Z'
+    unchanged: false
+    changes_summary: Added the closing quotation mark and period; wording otherwise accurately reflects the Latin and is natural English.
+translation:
+  language: es
+  text: 'Y él me respondió y dijo[a]: «El Altísimo hizo esta era para muchos, pero la venidera para pocos».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «esta era presente».
+    reason: alternative_reading
+lexical_decisions:
+- source_word: hoc saeculum
+  english_pob_choice: this age
+  chosen_spanish: esta era
+  alternatives_spanish:
+  - este siglo
+  - este tiempo presente
+  lexicon: saeculum
+  rationale: El latín dice literalmente "este siglo/era"; "esta era" conserva el contraste con "la venidera" y evita introducir "presente" sin base en este versículo. "Siglo" podría sonar más técnico o eclesiástico en español moderno.
+- source_word: futurum
+  english_pob_choice: the age to come
+  chosen_spanish: la venidera
+  alternatives_spanish:
+  - la era venidera
+  - la edad futura
+  - la venidera era
+  lexicon: future age
+  rationale: El latín contrapone una realidad futura a "hoc saeculum" sin repetir "saeculum". "La venidera" mantiene la economía del original y la oposición temporal; se entiende naturalmente como sustantivo elíptico en español bíblico.
+- source_word: Altissimus
+  english_pob_choice: The Most High
+  chosen_spanish: el Altísimo
+  alternatives_spanish:
+  - el Dios Altísimo
+  - el Altísimo Dios
+  lexicon: Altissimus
+  rationale: '"Altísimo" es el equivalente idiomático directo de "Most High" y preserva el título divino tradicional sin añadir elementos ausentes del latín.'
+theological_decisions:
+- issue: Distinción entre "esta era" y "la venidera"
+  english_pob_reading: The Most High made this age for many, but the age to come for few.
+  chosen_spanish_reading: El Altísimo hizo esta era para muchos, pero la venidera para pocos.
+  alternative_spanish_readings:
+  - El Altísimo hizo este siglo para muchos, pero el siglo venidero para pocos.
+  - El Altísimo hizo esta era para muchos, pero la era por venir para pocos.
+  rationale: Se conserva la antítesis escatológica del texto latino sin armonizarla con otros versículos donde aparece otro vocabulario. La traducción mantiene que el contraste es entre dos órdenes/eras, no entre simple actualidad y futuro abstracto.
+  doctrine_reference: 4 Esdras 8:1; distinción lexical mantenida según el latín de esta perícopa.
+translation_notes:
+  revision_awareness: 'El inglés auditado fue revisado para reflejar con exactitud la distinción del latín: aquí aparece solo hoc saeculum, sin equivalente de "present"; por eso la versión española evita introducir "presente" y sigue esa distinción lexical.'
+  spanish_consistency_notes:
+  - Se evitó "SEÑOR" para el título divino, siguiendo el texto fuente que dice "Altissimus".
+  - Se prefirió "era" a "siglo" porque en español comunica mejor el contraste escatológico sin perder fidelidad.
+  - La nota alternativa se limita a una posible explicitación de "esta era presente" para reflejar la opción interpretativa, no para afirmar un término del original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/008/001.yaml
+  source_text_sha256: 4a3c9d40815f603148b925b71f517222adfc5d5621edd6a916246fc540a88d88
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 7905d74af7d88660fdb3663cb658d6bfac1c0bffdf79cbf5f20f7a0d02de7296
+  timestamp: '2026-05-07T21:28:58Z'
+  output_hash: 54a81396adefccd64efb2d6640d6eb4eed1e204be30f822c3d31e242518dd9b7
+  usage:
+    prompt_tokens: 1923
+    completion_tokens: 731
+    total_tokens: 2654
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004732
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el latín: ''respondit ... dixit'' = ''respondió y dijo''; ''altissimus'' = ''el Altísimo''; ''hoc saeculum ... futurum autem'' mantiene el contraste entre esta era y la venidera. Sin embargo, la nota ''esta era presente'' contradice el rastro de auditoría inglés, que corrigió precisamente la introducción de ''present/presente'' por no estar en el texto fuente de este versículo.'
+  spanish_quality_summary: El español principal es claro, natural y digno. 'Esta era ... la venidera' funciona bien en registro bíblico moderno. La única reparación necesaria es la nota al pie, que hoy introduce una alternativa menos fiel al latín y a la decisión documentada del proyecto.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. 'El Altísimo' corresponde bien a Altissimus. La elección de 'era' para saeculum es defendible y legible en español; además preserva la distinción con v. 3, donde sí aparece 'presente'.
+  issues:
+  - severity: medium
+    issue: La nota al pie ofrece 'esta era presente' como alternativa.
+    rationale: El latín dice solo 'hoc saeculum' y la auditoría inglesa documenta una revisión explícita de 'this present age' a 'this age' para no añadir 'present/presente'. Mantener esa nota erosionaría la fidelidad y la distinción léxica con el v. 3.
+  revised_spanish_text: 'Y él me respondió y dijo: «El Altísimo hizo esta era para muchos, pero la venidera para pocos».'
+  revision_rationale: Se elimina la nota porque introduce 'presente', palabra ausente del latín y ya descartada por la auditoría del POB. El texto principal no requiere cambios.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1d161f7f700df204847c5b64107339a54ee4b56b233096d320575d565f65bca7
+  timestamp: '2026-05-07T23:14:31Z'
+  output_hash: 8d950f7ba57640aef4556525cee14ce2f8a0dc3eba144dce9ca3fb35aa80a63a
+  usage:
+    prompt_tokens: 2311
+    completion_tokens: 435
+    total_tokens: 2746
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012303
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

@@ -1,0 +1,95 @@
+id: 2ES.3.25
+reference: 2 Esdras 3:25
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: et factum est hoc annis multis. et dereliquerunt qui habitabant civitatem,
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/003/025.yaml
+  text: And this happened for many years. And those who lived in the city forsook it,
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:28Z'
+    unchanged: false
+    changes_summary: Replaced 'went on' with 'happened' for closer alignment with factum est; removed the unsupported 'sinned'; rendered dereliquerunt as 'forsook it' to reflect the Latin verb and account for the implied object, the city.
+translation:
+  language: es
+  text: Y esto sucedió durante muchos años. Y los que habitaban en la ciudad la abandonaron,
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: factum est hoc annis multis
+  english_pob_choice: And this happened for many years.
+  chosen_spanish: Y esto sucedió durante muchos años.
+  alternatives_spanish:
+  - Y esto ocurrió durante muchos años.
+  - Y esto pasó durante muchos años.
+  lexicon: factum est
+  rationale: sucedió comunica el hecho consumado y continuo del latino factum est sin añadir una idea de desarrollo o permanencia que no está explícita; durante muchos años conserva annis multis de manera natural en español.
+- source_word: dereliquerunt
+  english_pob_choice: forsook it
+  chosen_spanish: la abandonaron
+  alternatives_spanish:
+  - la dejaron
+  - la desampararon
+  lexicon: derelinquo
+  rationale: dereliquerunt expresa abandonar, dejar atrás; en español, la abandonaron transmite de forma natural que el objeto implícito es la ciudad. Se prefiere el pronombre directo femenino por el antecedente ciudad, siguiendo la inferencia del audit trail inglés.
+theological_decisions:
+- issue: Implied object of dereliquerunt
+  english_pob_reading: forsook it
+  chosen_spanish_reading: la abandonaron
+  alternative_spanish_readings:
+  - la dejaron
+  - la desampararon
+  rationale: El latín omite el objeto explícito, pero el contexto inmediato lo identifica con la ciudad. Mantener el pronombre ayuda a preservar la referencia sin explicitar más de lo que el texto da.
+  doctrine_reference: N/A
+translation_notes:
+  revision_awareness: Se siguió la revisión más reciente del audit trail, que corrigió el inglés de una lectura moralizante no sustentada ('sinned') a una traducción más literal de factum est y dereliquerunt. La versión española evita introducir culpa o juicio no presentes en el latín.
+  spanish_consistency_notes:
+  - Se mantiene un registro sobrio y bíblico, pero con español moderno y claro.
+  - Se conserva la referencia implícita a la ciudad mediante el pronombre la, sin añadir palabra explicativa entre corchetes.
+  - No se usó SEÑOR ni terminología teológica no pertinente, porque este versículo no contiene nombres divinos ni títulos cristológicos.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/003/025.yaml
+  source_text_sha256: 5b1145a987ace0d1983457c44d583e3a8e45e899f09738254b0c1ade11c1c943
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 4fad9302087b97249110061970b14a43f7b0b1c83225506fef2c385c6f6e3290
+  timestamp: '2026-05-07T21:28:34Z'
+  output_hash: 18c45ac41dc311e2d61204987001604a210fecd241ef3556c07dff1d18c189d9
+  usage:
+    prompt_tokens: 1697
+    completion_tokens: 524
+    total_tokens: 2221
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.003631
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: El borrador español refleja fielmente el latín y el audit trail inglés. 'Y esto sucedió durante muchos años' corresponde bien a et factum est hoc annis multis, evitando la lectura previa incorrecta de continuidad/proceso. 'Y los que habitaban en la ciudad la abandonaron' conserva correctamente dereliquerunt con el objeto implícito referido a 'la ciudad'.
+  spanish_quality_summary: El español es natural, claro y digno. La sintaxis fluye bien y el pronombre 'la' resuelve de forma idiomática el objeto elidido en latín sin sobreexplicarlo. No hay calcos torpes ni problemas de legibilidad.
+  glossary_alignment: No hay términos teológicos o de glosario mayor en este versículo que entren en conflicto con las directrices del proyecto. La elección de 'la abandonaron' para dereliquerunt está bien justificada y coincide con la revisión inglesa documentada.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 623825d56e358dc30e5076c5fafde0c1fb6b6147a681040a97217350aaf16db7
+  timestamp: '2026-05-07T23:19:36Z'
+  output_hash: 3bcdf3ac637140c0abdb38c5e548e670469fa836b389168021328b300f21472e
+  usage:
+    prompt_tokens: 1840
+    completion_tokens: 252
+    total_tokens: 2092
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00838
+  applied_revision: false

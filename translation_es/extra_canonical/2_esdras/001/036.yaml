@@ -1,0 +1,131 @@
+id: 2ES.1.36
+reference: 2 Esdras 1:36
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: non uiderunt et memorabuntur antiquitatu[m] eorum. Testor
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/001/036.yaml
+  text: They have not seen[1:36], yet they will remember their antiquity[a]. I call to witness
+  footnotes:
+  - marker: '1:36'
+    text: 'The Latin text here is uncertain: ''they will remember their former times'' could also be understood as remembering ''the men/things of old.'''
+    reason: textual_variant
+  - marker: a
+    text: Or 'their former times'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:00Z'
+    unchanged: false
+    changes_summary: Removed the duplicated phrase, omitted unsupported 'prophets' since it is not in the provided Latin, rendered memorabuntur antiquitatum eorum more naturally as 'they will remember their antiquity,' and translated Testor as 'I call to witness'.
+translation:
+  language: es
+  text: No han visto, y recordarán su antigüedad[a]. Pongo por testigo
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «sus tiempos antiguos». El latín *antiquitatum eorum* puede entenderse como «su antigüedad», «sus tiempos antiguos» o, de modo más amplio, «las cosas antiguas de ellos».
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: non uiderunt
+  english_pob_choice: They have not seen
+  chosen_spanish: No han visto
+  alternatives_spanish:
+  - No vieron
+  - No han contemplado
+  lexicon: Latín non + videre
+  rationale: El latín niega la acción de ver; «No han visto» conserva el tiempo verbal abierto del perfecto y su fuerza resultativa sin añadir un objeto no atestiguado. Se evita introducir «profetas», que no está en el texto fuente.
+- source_word: memorabuntur
+  english_pob_choice: they will remember
+  chosen_spanish: recordarán
+  alternatives_spanish:
+  - se acordarán
+  - recordarán en su memoria
+  lexicon: Latín memorari / memorabuntur
+  rationale: El futuro pasivo latino en este contexto expresa que algo llegará a ser recordado. «Recordarán» comunica bien en español la acción memorial sin sobrecargar la frase.
+- source_word: antiquitatum eorum
+  english_pob_choice: their antiquity
+  chosen_spanish: su antigüedad
+  alternatives_spanish:
+  - sus tiempos antiguos
+  - las cosas antiguas de ellos
+  - sus antigüedades
+  lexicon: Latín antiquitas
+  rationale: La forma latina es ambigua entre «antigüedad», «tiempos antiguos» o incluso «cosas antiguas». «Su antigüedad» mantiene esa amplitud y sigue de cerca la revisión inglesa más reciente, sin fijar indebidamente el sentido en un solo aspecto.
+- source_word: Testor
+  english_pob_choice: I call to witness
+  chosen_spanish: Yo llamo a testigo
+  alternatives_spanish:
+  - Doy testimonio
+  - Yo testifico
+  - Pongo por testigo
+  lexicon: Latín testor
+  rationale: «Testor» admite un valor solemne de invocación testimonial. «Yo llamo a testigo» reproduce ese matiz mejor que un simple «testifico», y preserva el arranque de la siguiente cláusula.
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión más reciente que eliminó la repetición accidental, descartó «profetas» por no estar en el latín dado y prefirió una traducción más natural de *memorabuntur antiquitatum eorum* como «they will remember their antiquity». La versión española sigue esa decisión y conserva la ambigüedad legítima con una nota.
+  spanish_consistency_notes:
+  - Se mantuvo el tratamiento neutral y público de la línea, evitando arcaísmos innecesarios.
+  - Se evitó traducir mecánicamente desde la versión inglesa anterior cuando ésta había sido corregida por la revisión del latín.
+  - La nota textual en español preserva la ambigüedad semántica del sintagma latino sin expandir el contenido más allá de la evidencia.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/001/036.yaml
+  source_text_sha256: 1c8f86bcfc04aaab7e690a2b4936aeafffe0edb19ac26916bc684ab7e095f831
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 91c2832bdc62b54ae0345eb530b3f1da989d9d2fc64f4592754764a14f6eef89
+  timestamp: '2026-05-07T21:29:13Z'
+  output_hash: 9bbd929a5f40910aa5fa7a71ca932add71a41d3b5c37665a96e1505f1aacda08
+  usage:
+    prompt_tokens: 2025
+    completion_tokens: 722
+    total_tokens: 2747
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004768
+status: spanish_reviewed
+revisions:
+- from: No han visto, y recordarán su antigüedad[a]. Yo llamo a testigo
+  to: No han visto, y recordarán su antigüedad[a]. Pongo por testigo
+  rationale: 'Se conserva la traducción principal porque es fiel al latín y a la auditoría inglesa, pero se ajusta la última frase a un español más natural y solemne: «Pongo por testigo» refleja mejor testor que «Yo llamo a testigo».'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:56:04Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el latín: «No han visto» refleja non uiderunt sin añadir objeto; «recordarán» transmite memorabuntur; «su antigüedad» preserva la amplitud de antiquitatum eorum; y «Testor» se mantiene como fórmula testimonial. Sin embargo, «Yo llamo a testigo» suena menos idiomático en español bíblico y puede mejorarse sin pérdida de sentido.'
+  spanish_quality_summary: El español es generalmente claro y fiel, pero «Yo llamo a testigo» resulta algo forzado; «Pongo por testigo» o «Llamo por testigo» suena más natural y solemne. También conviene omitir el pronombre «Yo» por no ser necesario. El resto del verso está bien construido y la nota maneja adecuadamente la ambigüedad léxica.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. La decisión «su antigüedad» está en línea con la revisión inglesa y la nota conserva las alternativas pertinentes. No hay términos teológicos sensibles aquí.
+  issues:
+  - severity: medium
+    issue: «Yo llamo a testigo» es poco idiomático en español
+    rationale: Aunque reproduce de cerca el inglés, en español suena torpe e incompleto para una fórmula solemne. «Pongo por testigo» comunica mejor el valor de testor y preserva la dignidad del registro.
+  revised_spanish_text: No han visto, y recordarán su antigüedad[a]. Pongo por testigo
+  revised_footnotes:
+  - marker: a
+    text: O «sus tiempos antiguos». El latín *antiquitatum eorum* puede entenderse como «su antigüedad», «sus tiempos antiguos» o, de modo más amplio, «las cosas antiguas de ellos».
+    reason: lexical_alternative
+  revision_rationale: 'Se conserva la traducción principal porque es fiel al latín y a la auditoría inglesa, pero se ajusta la última frase a un español más natural y solemne: «Pongo por testigo» refleja mejor testor que «Yo llamo a testigo».'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9b8acc00635e1d5e9f9f12816e1a076ea1686826ad0dff2ead9e1d66add6c49a
+  timestamp: '2026-05-07T22:56:04Z'
+  output_hash: d26da26ebe1c57be25b380854f53ecca8f9f110ad3eb147b49bd0bafb970a7d7
+  usage:
+    prompt_tokens: 2358
+    completion_tokens: 493
+    total_tokens: 2851
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01329
+  applied_revision: true

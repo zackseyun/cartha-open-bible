@@ -1,0 +1,203 @@
+id: 1EN.72.21
+reference: 1 Enoch 72:21
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይወፅእ፡ ፀሐይ፡ እምይእቲ፡ ኆኅት፡ ወያዓርብ፡ በምዕራብ፡ *ወይገብእ፡ በጽባሕ፡ ወይወፅእ፡ በ*ሣልስት፡ ኆኅት፡ ሠላሳ፡ ጸባሐ፡ ወያዓርብ፡ በምዕራብ፡ በ*ሣልስት፡ ኆኅት።
+  language: Geez
+  pages:
+  - 169
+  - 170
+  - 171
+  - 172
+  - 173
+  - 174
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/072/021.yaml
+  text: And the sun comes out from that gate[a], and sets in the west, and returns to the east, and comes out from the third gate for thirty mornings[c][b], and sets in the west at the third gate.
+  footnotes:
+  - marker: a
+    text: Or 'gate' in each occurrence of 'window'; the Astronomical Book depicts the heavens with fixed openings for the luminaries.
+    reason: lexical_alternative
+  - marker: b
+    text: Literally 'for thirty mornings.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And the sun goes out from that window, and sets in the west, and returns in the morning, and comes out from the third window for thirty mornings, and sets in the west at the third window.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 0f1c30b6abbbbc087248c2d2395de1dbea10ad5760d416563bb1e8ff93ab79db
+    timestamp: '2026-04-22T09:16:34Z'
+    output_hash: 2763212c3d0e8334104f261087f112adc9912a482462795d538df750ba7107b0
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:19Z'
+    unchanged: false
+    changes_summary: Changed 'goes out' to 'comes out' for more natural English and better consistency with the later repeated verb in the verse. No other changes needed.
+translation:
+  language: es
+  text: Y el sol sale de aquella puerta[a], y se pone en el occidente, y vuelve al oriente, y sale de la tercera puerta durante treinta mañanas[b], y se pone en el occidente en la tercera puerta.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O 'ventana' en cada ocurrencia de 'puerta'; el Libro Astronómico describe el cielo con aberturas fijas para los astros, aunque aquí la lectura principal preserva la arquitectura de 'puertas' documentada en la revisión textual.
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, 'durante treinta mañanas'; el texto cuenta por mañanas, no simplemente por días.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወይወፅእ
+  english_pob_choice: comes out / goes out
+  chosen_spanish: sale
+  alternatives_spanish:
+  - sale afuera
+  - sale de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa salida o emergencia; en español, 'sale' comunica con naturalidad el movimiento del sol sin perder la concreción astronómica.
+- source_word: ፀሐይ
+  english_pob_choice: the sun
+  chosen_spanish: el sol
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Referente astronómico directo; se mantiene el sustantivo común sin figurarlo.
+- source_word: ኆኅት
+  english_pob_choice: gate
+  chosen_spanish: puerta
+  alternatives_spanish:
+  - portón
+  - entrada
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión del inglés POB corrige 'window' por 'gate'; en español 'puerta' transmite mejor la abertura/umbral cosmológico que 'ventana' y conserva la arquitectura apocalíptica.
+- source_word: ያዓርብ በምዕራብ
+  english_pob_choice: sets in the west
+  chosen_spanish: se pone en el occidente
+  alternatives_spanish:
+  - se pone en el oeste
+  - se oculta en el occidente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Se pone'' es el equivalente natural para la puesta del sol. ''Occidente'' conserva un registro bíblico y geográfico más elevado que ''oeste''.'
+- source_word: ወይገብእ በጽባሕ
+  english_pob_choice: returns to the east
+  chosen_spanish: vuelve hacia el oriente
+  alternatives_spanish:
+  - vuelve al oriente
+  - regresa hacia el oriente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión inglesa entiende ጽባሕ como 'east' en este contexto espacial. 'Hacia el oriente' preserva el sentido direccional y evita mezclarlo con 'mañana' en la misma línea.
+- source_word: ሠላሳ ጸባሐ
+  english_pob_choice: for thirty mornings
+  chosen_spanish: para treinta mañanas
+  alternatives_spanish:
+  - por treinta mañanas
+  - durante treinta mañanas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la literalidad de 'mornings' para no suavizar a 'días'; el texto cuenta por amaneceres/madrugadas en su imaginería astronómica.
+theological_decisions:
+- issue: Arquitectura cósmica de ኆኅት
+  english_pob_reading: gate, not window
+  chosen_spanish_reading: puerta, no ventana
+  alternative_spanish_readings:
+  - portal
+  - entrada
+  rationale: La escena presenta aberturas fijas del cielo por donde el sol entra y sale. 'Puerta' preserva la imaginería apocalíptica y evita borrar la distinción señalada por la revisión textual.
+  doctrine_reference: Preservar la imaginería cosmológica del libro astronómico sin aplanarla en prosa general.
+- issue: Valor de ጽባሕ en 1 Enoc 72:21
+  english_pob_reading: east, not morning, in the directional clause
+  chosen_spanish_reading: oriente, no mañana, en la cláusula direccional
+  alternative_spanish_readings:
+  - este
+  - oriente
+  rationale: La revisión inglesa muestra que aquí la palabra funciona espacialmente. Traducirla como 'mañana' en esa posición introduciría una ambigüedad ajena al movimiento descrito del sol.
+  doctrine_reference: Respetar el sentido contextual del léxico geográfico dentro de una cosmología poética.
+translation_notes:
+  revision_awareness: 'La base inglesa pasó por una corrección léxica importante: ኆኅት se adjudicó correctamente como ''gate'' y ጽባሕ se leyó como ''east'' en la cláusula direccional. La versión española sigue esa corrección y evita la lectura previa ''ventana''/''mañana'' donde el contexto exige arquitectura cósmica y orientación espacial.'
+  spanish_consistency_notes:
+  - Se mantiene 'puerta' para ኆኅት en toda la sección.
+  - '''Occidente'' y ''oriente'' se usan de forma consistente como pares direccionales.'
+  - '''Mañanas'' se conserva solo en la expresión cuantificadora de treinta amaneceres, no como dirección.'
+  - Se evita 'SEÑOR' o lenguaje de máscara divina, pues el verso no contiene el nombre divino.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/072/021.yaml
+  source_text_sha256: 1032efc849a46230c1783b290b8d2c56087e2a3181e9b9c1481e22bae1d5613b
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 1056e61a1824e4998f5ceb37bed5543eb5818a9bf75dc0706ca6e4f891e3cd77
+  timestamp: '2026-05-07T21:27:52Z'
+  output_hash: d6cfc122d31d70017398fcf39f1147dda7b7d81ed1e1a124a1634cbf10ac80e8
+  usage:
+    prompt_tokens: 3397
+    completion_tokens: 1250
+    total_tokens: 4647
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008173
+status: spanish_reviewed
+revisions:
+- from: Y el sol sale por aquella puerta[a], y se pone en el occidente, y vuelve hacia el oriente, y sale por la tercera puerta para treinta mañanas[b], y se pone en el occidente, en la tercera puerta.
+  to: Y el sol sale de aquella puerta[a], y se pone en el occidente, y vuelve al oriente, y sale de la tercera puerta durante treinta mañanas[b], y se pone en el occidente en la tercera puerta.
+  rationale: 'Se corrige la nota [a] para que no contradiga la lectura principal ''puerta'', y se hacen ajustes menores de naturalidad y precisión: ''de'' en vez de ''por'', ''al oriente'' en vez de ''hacia el oriente'', y ''durante treinta mañanas'' en lugar de la construcción más rígida ''para treinta mañanas''. No hay necesidad de nueva adjudicación, porque los cambios son editoriales y consistentes con la decisión fuente ya resuelta.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:54:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la revisión fuente→inglés en los puntos clave: ኆኅት como ''puerta'' y ጽባሕ como ''oriente'' en la cláusula direccional, además de conservar ''treinta mañanas''. Sin embargo, la nota [a] quedó desalineada con esa misma revisión, porque presenta ''puerta'' como alternativa cuando ya es la lectura principal; debería preservar la alternativa ''ventana'' o explicar la variación cosmológica. También conviene suavizar ''para treinta mañanas'' a una construcción más natural en español sin perder la literalidad.'
+  spanish_quality_summary: El texto es claro y digno, pero 'para treinta mañanas' suena algo calcado; 'durante treinta mañanas' es más natural y fiel al valor durativo. 'Sale por aquella puerta' y 'vuelve hacia el oriente' son comprensibles, aunque 'sale de aquella puerta' y 'vuelve al oriente' fluyen mejor en español bíblico-natural. La puntuación y el registro general son adecuados.
+  glossary_alignment: No hay conflictos con la terminología global del proyecto. La decisión 'puerta' para ኆኅት está correctamente alineada con la adjudicación inglesa. No intervienen términos teológicos principales del glosario. La única desalineación está en la nota [a], que contradice la decisión léxica ya fijada.
+  issues:
+  - severity: medium
+    issue: La nota [a] está mal formulada
+    rationale: Dice 'O “puerta”' como si fuera una alternativa, pero 'puerta' ya es la traducción principal en el texto. Debe reflejar la alternativa real ('ventana') o explicar la arquitectura cósmica sin contradecir la lectura adoptada.
+  - severity: low
+    issue: '''para treinta mañanas'' suena poco natural en español'
+    rationale: Aunque literal, en español durativo resulta más idiomático 'durante treinta mañanas'. Se preserva mejor la legibilidad sin perder el sentido fuente.
+  - severity: low
+    issue: '''sale por aquella puerta'' puede mejorarse a ''sale de aquella puerta'''
+    rationale: Con el verbo 'salir', la preposición 'de' expresa con más precisión el punto de origen. 'Por' no es incorrecto, pero es menos directo frente al ge'ez 'desde'.
+  revised_spanish_text: Y el sol sale de aquella puerta[a], y se pone en el occidente, y vuelve al oriente, y sale de la tercera puerta durante treinta mañanas[b], y se pone en el occidente en la tercera puerta.
+  revised_footnotes:
+  - marker: a
+    text: O 'ventana' en cada ocurrencia de 'puerta'; el Libro Astronómico describe el cielo con aberturas fijas para los astros, aunque aquí la lectura principal preserva la arquitectura de 'puertas' documentada en la revisión textual.
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, 'durante treinta mañanas'; el texto cuenta por mañanas, no simplemente por días.
+    reason: lexical_alternative
+  revision_rationale: 'Se corrige la nota [a] para que no contradiga la lectura principal ''puerta'', y se hacen ajustes menores de naturalidad y precisión: ''de'' en vez de ''por'', ''al oriente'' en vez de ''hacia el oriente'', y ''durante treinta mañanas'' en lugar de la construcción más rígida ''para treinta mañanas''. No hay necesidad de nueva adjudicación, porque los cambios son editoriales y consistentes con la decisión fuente ya resuelta.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 7a054f270444fc8b2158fee063cccf678661c81d0a85df11d9143f949a815f3c
+  timestamp: '2026-05-07T22:54:32Z'
+  output_hash: 0f861671dd74f4b805f2fb0521478ad0dd438523af191be424ac9e6a1cb5c658
+  usage:
+    prompt_tokens: 4273
+    completion_tokens: 812
+    total_tokens: 5085
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022863
+  applied_revision: true

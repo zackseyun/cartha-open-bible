@@ -1,0 +1,233 @@
+id: 1EN.65.6
+reference: 1 Enoch 65:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወትእዛዝ፡ ወጽአ፡ እምቅድመ፡ *ገጸ፡ እግዚአ፡ ዲበ፡ እለ፡ የሐድሩ፡ የብስ፡ ከመ፡ ውእቱ፡ ይኩን፡ ሕልቀትሙ፡ እስመ፡ አእመሩ፡ ኵሎ፡ ኅቡኣተ፡ መላእክት፡ ወኵሎ፡ ግፍዐ፡ ሰይጣናት፡ ወኵሎ፡ ኃይሎሙ፡ *ኅቡአ፡ ኅቡኣት፡
+  language: Geez
+  pages:
+  - 155
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch65.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 65, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/065/006.yaml
+  text: And a command went out from before the Lord against those who dwell on the dry land[a], that their end should come; for they knew all the hidden things of the angels, and all the violence of the satans[c][b], and all their secret powers.
+  footnotes:
+  - marker: a
+    text: Or 'from the presence of the Lord.' The Ge'ez expression is a reverential formula for something issuing from before God.
+    reason: lexical_alternative
+  - marker: b
+    text: '''The satans'' renders a plural form, not the later singular proper name ''Satan.'''
+    reason: lexical_alternative
+  - marker: c
+    text: The final words are difficult in this Ethiopic witness. The sense may be 'all their hidden powers' or may refer to practitioners of hidden arts/sorcery.
+    reason: textual_variant
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: bc3ea516fe7cdde197097342cc04ea88cc800839c23f369778ac2879b26bbd80
+    timestamp: '2026-04-22T09:17:23Z'
+    output_hash: 8ecdcbb9f186fe27868a8ac77208fb692a19a2a74eb11c927e232f0c979bf595
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:01Z'
+    unchanged: false
+    changes_summary: Removed the final phrase about those who practice sorcery, which is not supported by the provided Ge'ez text. Also adjusted 'power' to 'powers' for better agreement with the plural context.
+translation:
+  language: es
+  text: Y salió un mandamiento de delante de Yahvé[a] contra los que habitan en la tierra seca, para que llegara su fin; porque conocieron todas las cosas ocultas de los ángeles, y toda la violencia de los satanes[b], y todos sus poderes secretos[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «de la presencia de Yahvé». La expresión ge'ez es una fórmula reverencial para algo que procede de delante de Dios.
+    reason: lexical_alternative
+  - marker: b
+    text: «Satanes» reproduce el plural del ge'ez y no el nombre propio singular «Satanás».
+    reason: lexical_alternative
+  - marker: c
+    text: La expresión final es difícil en este testimonio etíope; el sentido puede ser «todos sus poderes secretos» o aludir a poderes ocultos, pero no se añade aquí una referencia a practicantes de artes ocultas porque no está sustentada por el texto proporcionado.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ትእዛዝ
+  english_pob_choice: command
+  chosen_spanish: mandamiento
+  alternatives_spanish:
+  - orden
+  - decreto
+  lexicon: Dillmann Lexicon
+  rationale: El término ge'ez expresa una disposición autoritativa. En español, 'mandamiento' conserva mejor el peso de una orden emitida con autoridad, sin forzar un registro jurídico excesivo.
+- source_word: ወጽአ እምቅድመ ገጸ እግዚአ
+  english_pob_choice: went out from before the Lord
+  chosen_spanish: salió de delante del Señor
+  alternatives_spanish:
+  - salió de la presencia del Señor
+  - vino de delante del Señor
+  lexicon: Dillmann Lexicon
+  rationale: La fórmula semítica se mantiene con 'de delante del Señor', que reproduce bien el valor reverencial y la imagen de procedencia desde la presencia divina.
+- source_word: ዲበ እለ የሐድሩ የብስ
+  english_pob_choice: against those who dwell on the dry land
+  chosen_spanish: contra los que habitan en la tierra seca
+  alternatives_spanish:
+  - contra los que habitan en la tierra
+  - contra los que viven en la tierra seca
+  lexicon: Dillmann Lexicon
+  rationale: '''Tierra seca'' conserva el sentido literal de የብስ y la imagen contrastiva del juicio en contexto de diluvio; ''habitan'' transmite bien el participio con sentido durativo.'
+- source_word: ከመ ውእቱ ይኩን ሕልቀትሙ
+  english_pob_choice: that their end should come
+  chosen_spanish: para que viniera su fin
+  alternatives_spanish:
+  - para que llegara su fin
+  - para que viniera su destrucción
+  lexicon: Dillmann Lexicon
+  rationale: '''Fin'' reproduce la amplitud de ሕልቀት, que puede ser fin o destrucción, sin especificar más de lo que exige el texto. La subordinación final expresa el propósito o resultado del mandamiento.'
+- source_word: አእመሩ
+  english_pob_choice: they knew
+  chosen_spanish: conocieron
+  alternatives_spanish:
+  - supieron
+  - llegaron a conocer
+  lexicon: Dillmann Lexicon
+  rationale: '''Conocieron'' refleja el conocimiento adquirido sin cargarlo de inferencia interpretativa; en español suena natural y mantiene el matiz de posesión de conocimiento.'
+- source_word: ኵሎ ኅቡኣተ መላእክት
+  english_pob_choice: all the hidden things of the angels
+  chosen_spanish: todas las cosas ocultas de los ángeles
+  alternatives_spanish:
+  - todos los secretos de los ángeles
+  - todos los misterios de los ángeles
+  lexicon: Dillmann Lexicon
+  rationale: '''Cosas ocultas'' es fiel a ኅቡኣት y evita introducir un tecnicismo como ''misterios'' que el texto no requiere.'
+- source_word: ግፍዐ ሰይጣናት
+  english_pob_choice: the violence of the satans
+  chosen_spanish: la violencia de los satanes
+  alternatives_spanish:
+  - la violencia de los satánes
+  - la violencia de los adversarios
+  - la violencia de los satanes
+  lexicon: Dillmann Lexicon
+  rationale: Se conserva el plural del ge'ez, evitando singularizarlo como nombre propio. 'Satanes' funciona en español como plural transliterado y preserva la rareza demonológica del texto.
+- source_word: ኃይሎሙ
+  english_pob_choice: their secret powers
+  chosen_spanish: todos sus poderes secretos
+  alternatives_spanish:
+  - sus poderes ocultos
+  - todas sus fuerzas secretas
+  lexicon: Dillmann Lexicon
+  rationale: El plural español responde al plural contextual ya ajustado en el audit trail y mantiene el sentido de fuerzas/poderes ocultos.
+theological_decisions:
+- issue: Plural de ሰይጣናት
+  english_pob_reading: satans
+  chosen_spanish_reading: satanes
+  alternative_spanish_readings:
+  - Satanás
+  - adversarios
+  - demonios
+  rationale: El ge'ez usa plural; la traducción conserva esa pluralidad para no armonizar el pasaje con el uso posterior de Satanás como nombre singular. Así se preserva la textura demonológica propia de 1 Enoc.
+  doctrine_reference: Preservar el número gramatical y el horizonte semántico del texto fuente.
+- issue: Alcance de 'los que habitan en la tierra seca'
+  english_pob_reading: a terrestrial humanity under flood judgment
+  chosen_spanish_reading: humanidad sometida al juicio del diluvio
+  alternative_spanish_readings:
+  - habitantes de la tierra en general
+  - un grupo específico de pecadores
+  rationale: La imagen de la tierra seca encaja con el marco del diluvio y sugiere a la humanidad expuesta al juicio. La traducción conserva la imagen sin volverla una categoría moral abstracta.
+  doctrine_reference: Mantener la imaginería apocalíptica y el trasfondo narrativo del juicio.
+- issue: Última frase sobre poderes secretos
+  english_pob_reading: all their secret powers
+  chosen_spanish_reading: todos sus poderes secretos
+  alternative_spanish_readings:
+  - todo su poder secreto
+  - sus poderes ocultos
+  rationale: Se sigue la revisión del auditor que elimina una frase final no sustentada por el ge'ez dado, y se mantiene el plural para concordar con el contexto de 'todos'.
+  doctrine_reference: Respetar la base textual recibida y evitar expansiones no apoyadas por el testimonio fuente.
+translation_notes:
+  revision_awareness: 'He seguido la revisión más reciente del audit trail: no añadí la frase sobre practicantes de artes ocultas, que fue descartada por no estar apoyada por el ge''ez provisto. También ajusté el final a plural («poderes secretos») para concordar con el contexto plural y con el cierre del pasaje en el testimonio dado.'
+  spanish_consistency_notes:
+  - Se mantiene 'Señor' como equivalente de እግዚአ en la fórmula reverencial, tal como el audit trail inglés usa 'the Lord'.
+  - Se preserva el plural demonológico 'satanes' para no neutralizar el número gramatical del original.
+  - Se evita 'tierra' sin más para no perder la imagen literal de 'tierra seca' en un contexto de juicio por diluvio.
+  - '''Mandamiento'' se usa como término elevado y autoritativo, coherente con la procedencia desde delante del Señor.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/065/006.yaml
+  source_text_sha256: 11312c1caa15bc785e3886f44ded32931bff8a61388f28848a8df62e82ee82ad
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e43f0d7905719c6e3cbc5a02156d868d7d76ab4db9685027f1b185c78699aab2
+  timestamp: '2026-05-07T21:27:46Z'
+  output_hash: 9193606517a15fcba6dc7255b9ee68fefddc106fd3a8f0f4056bc481748aadb3
+  usage:
+    prompt_tokens: 3343
+    completion_tokens: 1753
+    total_tokens: 5096
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010396
+status: spanish_reviewed
+revisions:
+- from: Y salió un mandamiento[a] de delante del Señor contra los que habitan en la tierra seca, para que viniera su fin; porque conocieron todas las cosas ocultas de los ángeles, y toda la violencia de los satanes[b], y todos sus poderes secretos[c].
+  to: Y salió un mandamiento de delante de Yahvé[a] contra los que habitan en la tierra seca, para que llegara su fin; porque conocieron todas las cosas ocultas de los ángeles, y toda la violencia de los satanes[b], y todos sus poderes secretos[c].
+  rationale: Se corrige el nombre divino según la política terminológica del proyecto («Yahvé»), se mueve la nota [a] para que ancle la frase que realmente comenta, y se suaviza «viniera su fin» a «llegara su fin» por mayor naturalidad en español sin alterar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:17:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue de cerca el ge''ez y el audit trail inglés: conserva la salida de un mandato desde la presencia divina, el juicio contra los habitantes de la tierra seca, la causalidad por conocimiento ilícito, el plural de «satanes» y la cláusula final reducida a «poderes secretos» sin reintroducir a los practicantes de artes ocultas. Sin embargo, hay un ajuste importante de terminología del proyecto: «the Lord» debe reflejarse como «Yahvé» en el texto principal, no «Señor».'
+  spanish_quality_summary: El español es claro y digno, pero puede sonar más natural con «de parte de Yahvé» o «de delante de Yahvé». También conviene evitar la nota anclada en «mandamiento[a]», porque la alternativa explica la fórmula de procedencia divina, no el sustantivo «mandamiento». El resto es legible y fiel.
+  glossary_alignment: 'Buen alineamiento general con las decisiones léxicas documentadas, excepto la política de proyecto sobre el nombre divino: donde el inglés auditado dice «the Lord» como referencia divina directa, el español principal debe usar «Yahvé». «Satanes» es defendible y está bien explicado en nota. «Tierra seca», «cosas ocultas» y «poderes secretos» concuerdan con el razonamiento del expediente.'
+  issues:
+  - severity: high
+    issue: Uso de «Señor» en lugar de «Yahvé»
+    rationale: La guía del proyecto exige «Yahvé» en el texto principal para el nombre divino, no la convención de enmascaramiento «SEÑOR/Señor». Aunque el ge'ez aquí tenga un título, el encargo de revisión pide preservar la terminología POB documentada en español.
+  - severity: medium
+    issue: Anclaje incorrecto de la nota [a]
+    rationale: La nota explica la locución «de delante/de la presencia de...», pero el marcador está pegado a «mandamiento». Debe anclarse en la frase de procedencia divina.
+  - severity: low
+    issue: «para que viniera su fin» suena menos natural que «para que llegara su fin»
+    rationale: Ambas son fieles, pero «llegara su fin» resulta más idiomático en español general sin perder el matiz del original.
+  revised_spanish_text: Y salió un mandamiento de delante de Yahvé[a] contra los que habitan en la tierra seca, para que llegara su fin; porque conocieron todas las cosas ocultas de los ángeles, y toda la violencia de los satanes[b], y todos sus poderes secretos[c].
+  revised_footnotes:
+  - marker: a
+    text: O «de la presencia de Yahvé». La expresión ge'ez es una fórmula reverencial para algo que procede de delante de Dios.
+    reason: lexical_alternative
+  - marker: b
+    text: «Satanes» reproduce el plural del ge'ez y no el nombre propio singular «Satanás».
+    reason: lexical_alternative
+  - marker: c
+    text: La expresión final es difícil en este testimonio etíope; el sentido puede ser «todos sus poderes secretos» o aludir a poderes ocultos, pero no se añade aquí una referencia a practicantes de artes ocultas porque no está sustentada por el texto proporcionado.
+    reason: textual_variant
+  revision_rationale: Se corrige el nombre divino según la política terminológica del proyecto («Yahvé»), se mueve la nota [a] para que ancle la frase que realmente comenta, y se suaviza «viniera su fin» a «llegara su fin» por mayor naturalidad en español sin alterar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3e8c3471e02868114063d5dce51348843ec0219e17c6d8402f75584e2b69ed95
+  timestamp: '2026-05-07T23:17:55Z'
+  output_hash: 54041025f0ded351d30f2975e1f9ebb31efe70cdf8ff50c818797ec743622651
+  usage:
+    prompt_tokens: 4724
+    completion_tokens: 838
+    total_tokens: 5562
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02438
+  applied_revision: true

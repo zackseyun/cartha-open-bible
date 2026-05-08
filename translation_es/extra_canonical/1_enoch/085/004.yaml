@@ -1,0 +1,201 @@
+id: 1EN.85.4
+reference: 1 Enoch 85:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ*ጐድአ፡ ዝኩ፡ ጸሊም፡ ጣዕዋ፡ ለቀይሕ፡ ወተለዎ፡ *ውስተ፡ ምድር፡ ወአክሀልኩ፡ እምሶቤሃ፡ ርእዮቶ፡ ለዝኩ፡ ቀይሕ፡ ጣዕዋ።
+  language: Geez
+  pages:
+  - 201
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/085/004.yaml
+  text: And that black calf struck the red calf and pursued it onto the earth[c][b][a], and after that I could no longer see that red calf.
+  footnotes:
+  - marker: a
+    text: The Ge'ez wording suggests violent contact followed by pursuit. 'Struck' could also be rendered 'gored' in light of the bovine imagery.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Onto the earth'' may also be understood as ''to the ground'' or ''into the earth,'' depending on how concretely the motion is taken.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And that black heifer struck the red one and pursued it onto the earth, and after that I could no longer see that red heifer.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 01249e0cc6b5df6f6bb07f14b5d86c8b521b5e47c931a709e7285d6cf0c5c3a1
+    timestamp: '2026-04-22T09:21:40Z'
+    output_hash: 3a9b2f2a364e45ad0b6fbb62db317e0503ab72ad34c737ce956328afd6709876
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:53Z'
+    unchanged: false
+    changes_summary: Added 'calf' after 'red one' for consistency with the repeated source term and to avoid ellipsis not present in the text.
+translation:
+  language: es
+  text: Y aquel becerro negro golpeó[a] al becerro rojo y lo persiguió hasta la tierra[b], y después de eso ya no pude volver a ver a aquel becerro rojo.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El verbo también podría traducirse 'corneó', dado el contexto de bovinos; aquí se prefiere 'golpeó' porque conserva la violencia del acto sin especificar de más la manera.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Hasta la tierra'' también puede entenderse como ''hasta el suelo'', ''a tierra'' o ''en la tierra'', según cuán concretamente se tome el movimiento.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ጐድአ
+  english_pob_choice: struck
+  chosen_spanish: golpeó
+  alternatives_spanish:
+  - hirió
+  - azotó
+  - hirió con un golpe
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa un contacto violento o herida; 'golpeó' conserva la violencia sin añadir la especificación de 'corneó' o 'empujó', que sería más interpretativa. En español suena natural en una escena visionaria con animales.
+- source_word: ጸሊም
+  english_pob_choice: black
+  chosen_spanish: negro
+  alternatives_spanish:
+  - oscuro
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Es el término básico de color y el más directo en español para el contraste simbólico del pasaje.
+- source_word: ጣዕዋ
+  english_pob_choice: calf
+  chosen_spanish: becerro
+  alternatives_spanish:
+  - ternero
+  - novillo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término designa un bovino joven. 'Becerro' preserva mejor el valor léxico sin imponer sexo femenino, lo cual evita la tensión corregida por el audit trail inglés.
+- source_word: ለቀይሕ
+  english_pob_choice: the red calf
+  chosen_spanish: el becerro rojo
+  alternatives_spanish:
+  - el rojo
+  - el becerro encarnado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El texto lo identifica por el color; en español conviene explicitar el sustantivo para evitar la elipsis demasiado marcada. 'Rojo' mantiene la referencia visual del original.
+- source_word: ተለዎ
+  english_pob_choice: pursued
+  chosen_spanish: lo persiguió
+  alternatives_spanish:
+  - lo siguió
+  - lo fue tras él
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La acción es hostil después del golpe; 'persiguió' comunica mejor la agresividad que 'siguió'.
+- source_word: ውስተ ምድር
+  english_pob_choice: onto the earth
+  chosen_spanish: hasta la tierra
+  alternatives_spanish:
+  - sobre la tierra
+  - a tierra
+  - hasta el suelo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La locución ge'ez señala dirección hacia la tierra/suelo. 'Hasta la tierra' preserva el movimiento sin decidir si entra en la tierra o simplemente llega al suelo.
+- source_word: አክሀልኩ እምሶቤሃ ርእዮቶ
+  english_pob_choice: I could no longer see
+  chosen_spanish: ya no pude ver más
+  alternatives_spanish:
+  - dejé de verlo
+  - ya no lo vi
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La clausula indica el cese de la visión profética. 'Ya no pude ver más' mantiene el sentido de pérdida de vista sin sonar demasiado técnico o arcaico.
+theological_decisions:
+- issue: Mantener la imaginería animal visionaria sin decodificarla en el texto principal
+  english_pob_reading: Retain the black and red calf imagery as symbolic animals
+  chosen_spanish_reading: Conservar el becerro negro y el becerro rojo como figuras visionarias
+  alternative_spanish_readings:
+  - identificarlo como Caín y Abel en la traducción
+  - parafrasear la escena en términos humanos
+  rationale: La visión apocalíptica debe leerse en su superficie simbólica. La traducción no debe resolver el símbolo ni sustituirlo por una interpretación, porque eso iría más allá del testimonio del texto.
+  doctrine_reference: Principio de preservación de la imaginería apocalíptica y de no paráfrasis interpretativa
+translation_notes:
+  revision_awareness: 'El audit trail inglés registra una corrección importante: la forma del bovino joven debe ser ''calf''/''becerro'', no ''heifer'', para no imponer femenino al símbolo. Esta propuesta sigue esa revisión y evita la lectura femenina. También conserva la fuerza de ''struck'' y ''pursued'' sin sobreespecificar el modo del golpe.'
+  spanish_consistency_notes:
+  - Se evitó 'SEÑOR' y cualquier terminología litúrgica ajena al pasaje, ya que no aparece el Tetragrámaton ni lenguaje divino aquí.
+  - '''Becerro'' se usa de manera consistente para ጣዕዋ, en línea con la revisión que corrige el error de género del inglés.'
+  - La escena permanece literal y visionaria; no se introducen identificaciones narrativas de Caín y Abel en el texto principal.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/085/004.yaml
+  source_text_sha256: c8a7ef701882cd3602e58fcf27cb0d0e8e0b88935feae04ccd65604a64d5ecc3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 0f1a4b73bcc1e4ee20bcc3b6023c33318fd445edacde837c64eea74920a02156
+  timestamp: '2026-05-07T21:27:58Z'
+  output_hash: cac7527fc0b8905c27539d14234edc79c0c9ad8fbea60feb8e15c95bca5e4c2a
+  usage:
+    prompt_tokens: 3173
+    completion_tokens: 1308
+    total_tokens: 4481
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008266
+status: spanish_reviewed
+revisions:
+- from: Y aquel becerro negro[a] golpeó al becerro rojo[b] y lo persiguió hasta la tierra[c], y después de eso ya no pude ver más a aquel becerro rojo.
+  to: Y aquel becerro negro golpeó[a] al becerro rojo y lo persiguió hasta la tierra[b], y después de eso ya no pude volver a ver a aquel becerro rojo.
+  rationale: 'Se elimina la nota errónea que introducía ''carnero joven'', se añade la alternativa léxica importante del verbo (''corneó'') conforme al audit trail inglés, y se pule la cláusula final a un español más natural: ''ya no pude volver a ver''.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:30:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la secuencia básica del ge''ez y del POB inglés: el becerro negro golpea al becerro rojo, lo persigue hacia la tierra/suelo y luego el vidente deja de verlo. También preserva correctamente la corrección del audit trail inglés al usar ''becerro'' en vez de una forma femenina. Sin embargo, una nota al pie introduce un error léxico serio al sugerir ''carnero joven'', que cambia de bovino a ovino. Además, el anclaje de notas [a][b] sobre ''becerro negro'' y ''becerro rojo'' no corresponde a alternativas significativas preservadas por el POB inglés; la nota realmente importante omitida es la alternativa de ጐድአ como ''corneó''.'
+  spanish_quality_summary: El español principal es claro y legible, con tono adecuado. No obstante, 'hasta la tierra' suena algo duro en español bíblico contemporáneo; 'hasta el suelo' o 'hacia la tierra' sería más natural, pero como el POB inglés mantuvo la literalidad espacial, puede conservarse con nota aclaratoria. La expresión 'ya no pude ver más' es comprensible, aunque 'ya no pude volver a ver' suena más natural y evita redundancia.
+  glossary_alignment: No hay conflictos con la terminología teológica del proyecto. 'Becerro' alinea bien con la revisión inglesa de ጣዕዋ como 'calf'. Se mantiene la imaginería animal sin decodificarla. Debe corregirse la nota que propone 'carnero joven', porque contradice el campo semántico bovino documentado.
+  issues:
+  - severity: high
+    issue: La nota [a] propone 'carnero joven' como alternativa para ጣዕዋ.
+    rationale: Esto altera la especie del animal de bovino a ovino/caprino y contradice tanto la evidencia léxica como la decisión inglesa auditada de 'calf'. Es un error de contenido, no una mera preferencia estilística.
+  - severity: medium
+    issue: Faltó una nota para la alternativa léxica de ጐድአ ('corneó').
+    rationale: El POB inglés preserva explícitamente esta alternativa por la imaginería bovina. En español conviene mantenerla como nota al verbo principal, ya que es una alternativa significativa de traducción.
+  - severity: low
+    issue: '''Ya no pude ver más'' suena menos natural que ''ya no pude volver a ver''.'
+    rationale: La redacción actual se entiende, pero la propuesta revisada mejora fluidez sin cambiar sentido.
+  revised_spanish_text: Y aquel becerro negro golpeó[a] al becerro rojo y lo persiguió hasta la tierra[b], y después de eso ya no pude volver a ver a aquel becerro rojo.
+  revised_footnotes:
+  - marker: a
+    text: El verbo también podría traducirse 'corneó', dado el contexto de bovinos; aquí se prefiere 'golpeó' porque conserva la violencia del acto sin especificar de más la manera.
+    reason: lexical_alternative
+  - marker: b
+    text: '''Hasta la tierra'' también puede entenderse como ''hasta el suelo'', ''a tierra'' o ''en la tierra'', según cuán concretamente se tome el movimiento.'
+    reason: lexical_alternative
+  revision_rationale: 'Se elimina la nota errónea que introducía ''carnero joven'', se añade la alternativa léxica importante del verbo (''corneó'') conforme al audit trail inglés, y se pule la cláusula final a un español más natural: ''ya no pude volver a ver''.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f64faace9b88319270e0de4511260f69d61f6ee796defc167682e19cbfeef1f2
+  timestamp: '2026-05-07T23:30:10Z'
+  output_hash: 51b12f894a420bf48f875f508cfdef0f1a43557a5cde6f1e86d0222cc3948c67
+  usage:
+    prompt_tokens: 4122
+    completion_tokens: 815
+    total_tokens: 4937
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02253
+  applied_revision: true

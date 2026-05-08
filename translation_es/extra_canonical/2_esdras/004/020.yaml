@@ -1,0 +1,134 @@
+id: 2ES.4.20
+reference: 2 Esdras 4:20
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'ad me et dixit: bene tu iudicasti, et quare non iudicasti tibi'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/004/020.yaml
+  text: to me and said, “You have judged rightly, so why have you not judged for yourself?”
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:31Z'
+    unchanged: false
+    changes_summary: Added the missing 'to' for completeness; revised the second clause to more naturally reflect Latin 'tibi' as 'for yourself' rather than 'in your own case.'
+translation:
+  language: es
+  text: 'y me dijo: «Bien has juzgado, así que ¿por qué no has juzgado por ti mismo?»'
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: ad me
+  english_pob_choice: to me
+  chosen_spanish: a mí
+  alternatives_spanish:
+  - para mí
+  - hacia mí
+  lexicon: ad + pronombre personal
+  rationale: 'El latín ad me expresa dirección hacia la persona: «a mí». En este contexto de diálogo, «a mí» es la forma más natural y exacta en español para reproducir el movimiento del discurso.'
+- source_word: dixit
+  english_pob_choice: said
+  chosen_spanish: me dijo
+  alternatives_spanish:
+  - dijo
+  - me respondió
+  lexicon: dico, dicere
+  rationale: El verbo introduce palabra dirigida al hablante; por eso «me dijo» conserva tanto el valor de habla como la relación directa del pronombre dativo implícita en ad me.
+- source_word: bene tu iudicasti
+  english_pob_choice: You have judged rightly
+  chosen_spanish: Bien has juzgado
+  alternatives_spanish:
+  - Has juzgado bien
+  - Juzgaste bien
+  lexicon: iudico, iudicare
+  rationale: «Bien has juzgado» mantiene el adverbio bene y el valor perfecto de iudicasti sin forzar un giro demasiado literal. Es claro, digno y cercano al orden semántico del latín.
+- source_word: quare
+  english_pob_choice: so why
+  chosen_spanish: ¿y por qué
+  alternatives_spanish:
+  - ¿por qué entonces
+  - ¿así que por qué
+  lexicon: quare
+  rationale: 'Quare introduce una pregunta inferencial: «¿y por qué?» expresa la consecuencia lógica del juicio previo sin añadir matices que el latín no exige.'
+- source_word: non iudicasti tibi
+  english_pob_choice: have you not judged for yourself?
+  chosen_spanish: no has juzgado para ti mismo
+  alternatives_spanish:
+  - no te has juzgado a ti mismo
+  - no has juzgado en tu propio caso
+  lexicon: tibi
+  rationale: 'El dativo tibi se entiende mejor como beneficio/relación personal: «para ti mismo». Esta opción sigue la revisión inglesa que prefirió ''for yourself'' y evita la lectura más interpretativa de ''en tu propio caso''.'
+theological_decisions:
+- issue: Valor del dativo tibi en una pregunta moral/reflexiva
+  english_pob_reading: for yourself
+  chosen_spanish_reading: para ti mismo
+  alternative_spanish_readings:
+  - en tu propio caso
+  - a ti mismo
+  rationale: 'No hay contenido doctrinal complejo aquí, pero sí una tensión de matiz: el latín permite un sentido personal y reflexivo. «Para ti mismo» preserva esa relación sin convertirla en una formulación judicial más estrecha de lo que el texto ofrece.'
+  doctrine_reference: N/A
+translation_notes:
+  revision_awareness: La versión inglesa revisó la segunda cláusula desde 'in your own case' a 'for yourself' para reflejar mejor tibi. La propuesta española sigue explícitamente esa revisión y no la neutraliza con una paráfrasis más interpretativa.
+  spanish_consistency_notes:
+  - Se mantiene «Bien has juzgado» como correspondencia breve y directa de bene tu iudicasti.
+  - Se conserva el tono de pregunta retórica en una sola cláusula, sin expansión explicativa.
+  - No se introduce terminología eclesiástica ni doctrinal ajena al latín del pasaje.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/004/020.yaml
+  source_text_sha256: 4736091be62bc5500de7f08b429270b4b54266c596907dc06a30c0281bf8bd0f
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 1f00a6dbb760db356aa31415a7428b48d42e5aef54928db3b8202573d88ac8cc
+  timestamp: '2026-05-07T21:28:38Z'
+  output_hash: 88c2442bd11acf1a8105c1be468b43a7951341cf5c660d78fde751a94241d6c8
+  usage:
+    prompt_tokens: 1673
+    completion_tokens: 787
+    total_tokens: 2460
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004796
+status: spanish_reviewed
+revisions:
+- from: 'y me dijo: «Bien has juzgado; ¿y por qué no has juzgado para ti mismo?»'
+  to: 'y me dijo: «Bien has juzgado, así que ¿por qué no has juzgado por ti mismo?»'
+  rationale: Se ajusta la segunda cláusula para que el español sea natural y fiel al valor personal/reflexivo de tibi sin reducirlo a «tu propio caso». También se hace explícita la relación inferencial de quare con «así que», en línea con la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:57:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el latín: «me dijo» corresponde al conjunto ad me et dixit; «Bien has juzgado» reproduce bene tu iudicasti; y la pregunta final intenta conservar el dativo tibi según la revisión inglesa «for yourself». Sin embargo, «juzgar para ti mismo» suena poco idiomático en español y debilita la fuerza reflexiva/práctica del original.'
+  spanish_quality_summary: El texto es claro en general, pero «¿por qué no has juzgado para ti mismo?» resulta forzado y poco natural en español eclesial general. Una formulación como «¿por qué no has juzgado por ti mismo?» conserva mejor la inferencia y mejora la legibilidad sin sobreinterpretar el sentido.
+  glossary_alignment: No hay términos del glosario doctrinal principal en juego. La principal decisión léxica es tibi; conviene evitar «para ti mismo» por naturalidad española, y también evitar «en tu propio caso» porque estrecha demasiado el sentido. «Por ti mismo» mantiene un valor personal/reflexivo aceptable y legible.
+  issues:
+  - severity: medium
+    issue: La expresión «juzgado para ti mismo» es poco idiomática en español.
+    rationale: Aunque intenta seguir literalmente «for yourself», en español suena antinatural. «Por ti mismo» o «en tu propio caso» serían más normales; de estas, «por ti mismo» preserva mejor la amplitud del latín sin añadir una precisión judicial no explícita.
+  - severity: low
+    issue: La conjunción inicial «y» antes de la pregunta puede simplificarse.
+    rationale: El latín quare ya introduce la consecuencia/interrogación. «Así que ¿por qué...?» o simplemente «¿por qué...?» fluye mejor. Dado el inglés auditado «so why», conviene conservar la relación inferencial con «así que».
+  revised_spanish_text: 'y me dijo: «Bien has juzgado, así que ¿por qué no has juzgado por ti mismo?»'
+  revision_rationale: Se ajusta la segunda cláusula para que el español sea natural y fiel al valor personal/reflexivo de tibi sin reducirlo a «tu propio caso». También se hace explícita la relación inferencial de quare con «así que», en línea con la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 6d7864a7552f0d8b63c1c0746b98e26db5eb0a9588a7d114cada8bfdfec15144
+  timestamp: '2026-05-07T22:57:59Z'
+  output_hash: 28d1af7530f8510841a2e3407adc0d57c89f3065bb123362245492d47e8e2426
+  usage:
+    prompt_tokens: 2142
+    completion_tokens: 543
+    total_tokens: 2685
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0135
+  applied_revision: true

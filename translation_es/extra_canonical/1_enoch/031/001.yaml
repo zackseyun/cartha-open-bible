@@ -1,0 +1,204 @@
+id: 1EN.31.1
+reference: 1 Enoch 31:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወርኢኩ፡ *ካልአነ፡ አደባረ፡ *ዘቦ፡ ውስቴቶሙ፡ ዕፀወ፡ ወይወፅእ፡ እምኔሁ፡ ከመ፡ ኔቄጥር፡ ዘ*ስሙ፡ ሰረራ፡ ወ*ከልበኔ።
+  language: Geez
+  pages:
+  - 108
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch31.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 31, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/031/001.yaml
+  text: And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.
+  footnotes:
+  - marker: a
+    text: The botanical identification of serera is uncertain; the Ge'ez appears to preserve the name of an aromatic substance rather than a common descriptive noun.
+    reason: lexical_alternative
+  - marker: b
+    text: Galbanum is an aromatic resin known from ancient incense traditions; the underlying Ge'ez term may also be left transliterated as kelbene.
+    reason: cultural_note
+  - marker: c
+    text: Or 'another mountain, in which'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 5fe9c738a31c967bab2b284f6cabc63420c74e690f79a7f807fb4c977d94e3f3
+    timestamp: '2026-04-22T09:11:10Z'
+    output_hash: ea03221e18b3d677cf26de65996757817f6f82ba8b2480d539da932638588c6c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:08Z'
+    unchanged: false
+    changes_summary: Changed 'from it' to 'from them' to agree with the plural 'mountains' and better reflect the source context; otherwise retained the draft wording.
+translation:
+  language: es
+  text: Y vi otras montañas[c], en las cuales había árboles, y de ellas salió algo como néctar[b], cuyo nombre era serera[a] y galbano.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La identificación botánica de serera es incierta; el ge’ez parece conservar el nombre de una sustancia aromática más que un sustantivo descriptivo común.
+    reason: lexical_alternative
+  - marker: b
+    text: Galbano es una resina aromática conocida en antiguas tradiciones de incienso; el término subyacente del ge’ez también podría dejarse transliterado como kelbene.
+    reason: cultural_note
+  - marker: c
+    text: O «otra montaña, en la cual».
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ወርኢኩ
+  english_pob_choice: And I saw
+  chosen_spanish: Y vi
+  alternatives_spanish:
+  - Y contemplé
+  - Y observé
+  lexicon: Dillmann
+  rationale: La fórmula visionaria se expresa naturalmente en español con el perfecto simple «vi», que conserva el carácter de relato apocalíptico sin rigidizar la frase.
+- source_word: ካልአነ
+  english_pob_choice: other
+  chosen_spanish: otras
+  alternatives_spanish:
+  - segundas
+  - más
+  lexicon: Dillmann
+  rationale: El ge’ez es plural; «otras» refleja con claridad el valor distributivo y evita la singularización corregida por la revisión.
+- source_word: አደባረ
+  english_pob_choice: mountains
+  chosen_spanish: montañas
+  alternatives_spanish:
+  - montes
+  - cerros
+  lexicon: Dillmann
+  rationale: «Montañas» comunica bien el plural y la elevación del paisaje; mantiene la escala visionaria del texto.
+- source_word: ዘቦ ውስቴቶሙ ዕፀወ
+  english_pob_choice: in which there were trees
+  chosen_spanish: en las cuales había árboles
+  alternatives_spanish:
+  - que tenían árboles en ellas
+  - donde había árboles
+  lexicon: Dillmann
+  rationale: La construcción española con «en las cuales» conserva la relación locativa plural del ge’ez sin volverla pesada.
+- source_word: ወይወፅእ እምኔሁ
+  english_pob_choice: and from them there came out
+  chosen_spanish: y de ellas salió
+  alternatives_spanish:
+  - y de ellas salía
+  - y de ellas brotó
+  lexicon: Dillmann
+  rationale: «Salió» reproduce la salida de una sustancia desde esas montañas; «de ellas» sigue la corrección plural del texto fuente y del audit trail.
+- source_word: ከመ ኔቄጥር
+  english_pob_choice: something like nectar
+  chosen_spanish: algo como néctar
+  alternatives_spanish:
+  - algo parecido a néctar
+  - una sustancia como néctar
+  lexicon: Dillmann
+  rationale: La comparación exige un equivalente comparativo; «algo como néctar» conserva la imagen concreta de una exudación sin identificarla de manera indebida.
+- source_word: ዘስሙ ሰረራ ወከልበኔ
+  english_pob_choice: whose name was serera and galbanum
+  chosen_spanish: cuyo nombre era serera y galbano
+  alternatives_spanish:
+  - llamado serera y galbano
+  - cuyo nombre era serera y galbán
+  lexicon: Dillmann
+  rationale: «Serera» se translitera porque su identificación es incierta; «galbano» es el nombre español establecido para el aromático asociado a ከልበኔ, más claro que un simple préstamo.
+theological_decisions:
+- issue: Preservar la imaginería material de la visión en vez de espiritualizarla como mero aroma
+  english_pob_reading: 'Retain a concrete exudation/substance image: ''there came out something like nectar'''
+  chosen_spanish_reading: 'Conservar una imagen concreta de sustancia que sale de las montañas: «de ellas salió algo como néctar»'
+  alternative_spanish_readings:
+  - de ellas emanó un perfume
+  - de ellas brotó una fragancia
+  rationale: El pasaje describe rasgos visionarios concretos del paisaje; una sustancia comparada con néctar mantiene mejor la fuerza apocalíptica que una abstracción olfativa.
+  doctrine_reference: Preservar la imaginería apocalíptica sin diluirla en prosa religiosa general.
+translation_notes:
+  revision_awareness: 'La revisión reciente corrigió un error importante de número: el ge’ez exige plural («otras montañas» / «de ellas»), no singular. La redacción española sigue esa corrección y conserva la estructura visionaria del original, junto con la identificación incierta de serera y la posible equivalencia de ከልበኔ con galbano.'
+  spanish_consistency_notes:
+  - Se mantiene «Dios/Yahvé» fuera de este versículo porque no aparecen en el texto fuente.
+  - Se conserva «galbano» como término establecido en español para la resina aromática, mientras «serera» queda transliterado por incertidumbre lexical.
+  - El orden de los complementos sigue el paralelismo del inglés auditado, pero la base es el ge’ez y su pluralidad explícita.
+  - El estilo evita arcaísmos innecesarios y usa un español bíblico moderno, claro y publicable.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/031/001.yaml
+  source_text_sha256: 75229d7e3dd61a6a25ab00e1008df846089c7ffb66aee42d8189fa5fc505013e
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 613a64003c2c8871c1557139f24456eb4318d43d1cb4c6dfe8e23dd8326c6278
+  timestamp: '2026-05-07T21:27:43Z'
+  output_hash: 8502321224e556bdc0319df97e3b291b9336240a6e0f38de5f41b469942029fc
+  usage:
+    prompt_tokens: 3019
+    completion_tokens: 1263
+    total_tokens: 4282
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007948
+status: spanish_reviewed
+revisions:
+- from: Y vi otras montañas[a], en las cuales había árboles, y de ellas salió algo como néctar[c][b], cuyo nombre era serera y galbano.
+  to: Y vi otras montañas[c], en las cuales había árboles, y de ellas salió algo como néctar[b], cuyo nombre era serera[a] y galbano.
+  rationale: 'Se conserva el texto español principal con mínimos ajustes de notas: la nota sobre la lectura alternativa se corrige para reflejar de verdad la alternativa singular documentada en el expediente inglés, y se reubican los anclajes para que cada nota corresponda al segmento pertinente del texto. No se requieren cambios de fondo en la traducción misma.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:29:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge’ez y sigue la corrección auditada al plural: «otras montañas», «en las cuales», «de ellas». También preserva correctamente la imaginería concreta de una sustancia que sale, en lugar de reducirla a fragancia. Sin embargo, una nota al pie no corresponde al punto textual relevante y la puntuación de notas sobre «néctar» puede ordenarse mejor para no sugerir erróneamente una variante textual donde no la hay.'
+  spanish_quality_summary: El español es claro, natural y digno. «Y vi otras montañas…» fluye bien y «galbano» es una forma española válida. El único problema real de legibilidad/documentación es la nota [c], que actualmente repite la lectura principal («otras montañas, en las cuales») y no comunica adecuadamente la alternativa inglesa documentada («another mountain, in which» / singular previa).
+  glossary_alignment: 'No hay términos del glosario teológico principal en juego. Las decisiones léxicas relevantes están bien alineadas con el expediente inglés: «montañas», «algo como néctar», «serera», «galbano». La transliteración de «serera» y la identificación más informativa de «galbano» concuerdan con la justificación documentada.'
+  issues:
+  - severity: medium
+    issue: La nota [c] está mal formulada y no preserva la alternativa documentada en el audit trail.
+    rationale: La nota inglesa [c] dice «Or 'another mountain, in which'», es decir, conserva una lectura/renderización previa en singular. La nota española actual «O «otras montañas, en las cuales»» simplemente repite el texto principal y no aporta información real.
+  - severity: low
+    issue: El orden de las notas [c][b] sobre «néctar» y la mención de variante textual pueden confundir.
+    rationale: La nota [c] no trata de «néctar» sino del sintagma previo sobre la montaña; conviene mantener el anclaje donde aparece en el texto, pero con contenido correcto para evitar que el lector piense que la variante afecta a «néctar».
+  revised_spanish_text: Y vi otras montañas[c], en las cuales había árboles, y de ellas salió algo como néctar[b], cuyo nombre era serera[a] y galbano.
+  revised_footnotes:
+  - marker: a
+    text: La identificación botánica de serera es incierta; el ge’ez parece conservar el nombre de una sustancia aromática más que un sustantivo descriptivo común.
+    reason: lexical_alternative
+  - marker: b
+    text: Galbano es una resina aromática conocida en antiguas tradiciones de incienso; el término subyacente del ge’ez también podría dejarse transliterado como kelbene.
+    reason: cultural_note
+  - marker: c
+    text: O «otra montaña, en la cual».
+    reason: previous_rendering
+  revision_rationale: 'Se conserva el texto español principal con mínimos ajustes de notas: la nota sobre la lectura alternativa se corrige para reflejar de verdad la alternativa singular documentada en el expediente inglés, y se reubican los anclajes para que cada nota corresponda al segmento pertinente del texto. No se requieren cambios de fondo en la traducción misma.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8e0ab4606c8b7d91c1b200e35efe68c19c4e3259bfe8f558321a3daf9b919acd
+  timestamp: '2026-05-07T23:29:59Z'
+  output_hash: e9dbdff55fbed80430ca6e1cc3482e30577bab18e5e49dbcebd44767e7c06894
+  usage:
+    prompt_tokens: 3903
+    completion_tokens: 748
+    total_tokens: 4651
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020977
+  applied_revision: true

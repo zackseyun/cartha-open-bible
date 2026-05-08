@@ -1,0 +1,127 @@
+id: 2ES.7.8
+reference: 2 Esdras 7:8
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: semita autem est una sola inter eos posita, hoc est ignis et aqua, ut non capiat semita nisi solummodo vestigium hominis.
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/007/008.yaml
+  text: But there is only one path laid between them[a], that is, between the fire and the water, so that the path can hold only a man's footprint.
+  footnotes:
+  - marker: a
+    text: Or 'between the fire and the water'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:59Z'
+    unchanged: false
+    changes_summary: Added 'But' for autem, clarified that the path lies between the fire and the water, and rendered vestigium hominis more naturally as 'a man's footprint.'
+translation:
+  language: es
+  text: Pero hay una sola senda puesta entre ellos[a], esto es, entre el fuego y el agua, de modo que la senda pueda contener solo la huella de un hombre.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «entre el fuego y el agua».
+    reason: alternative_reading
+lexical_decisions:
+- source_word: semita
+  english_pob_choice: path
+  chosen_spanish: senda
+  alternatives_spanish:
+  - camino
+  - ruta
+  - vereda
+  lexicon: semantic field of a narrow way/path
+  rationale: El latín semita indica una senda o paso angosto; "senda" comunica mejor la idea de un trayecto estrecho que solo admite una huella. "Camino" sería más general y menos preciso en español.
+- source_word: autem
+  english_pob_choice: But
+  chosen_spanish: Pero
+  alternatives_spanish:
+  - Y
+  - Ahora bien
+  lexicon: discourse connector
+  rationale: Se conserva el valor adversativo de autem con "Pero", acorde con el giro del texto.
+- source_word: hoc est
+  english_pob_choice: that is
+  chosen_spanish: esto es
+  alternatives_spanish:
+  - es decir
+  - o sea
+  lexicon: epexegetical formula
+  rationale: La fórmula explicativa del latín se rinde naturalmente con "esto es", que mantiene el valor aclaratorio sin sobreexplicar.
+- source_word: vestigium hominis
+  english_pob_choice: a man's footprint
+  chosen_spanish: la huella de un hombre
+  alternatives_spanish:
+  - la pisada de un hombre
+  - la marca de un hombre
+  lexicon: footprint / track
+  rationale: '"Vestigium" aquí es la huella o marca dejada por el pie; "huella" conserva la imagen concreta y el límite de espacio que el texto enfatiza.'
+theological_decisions:
+- issue: La imagen del único paso entre fuego y agua
+  english_pob_reading: There is only one path laid between them, that is, between the fire and the water
+  chosen_spanish_reading: hay una sola senda puesta entre ellos, esto es, entre el fuego y el agua
+  alternative_spanish_readings:
+  - hay un solo camino entre ellos, es decir, entre el fuego y el agua
+  rationale: No hay un conflicto doctrinal explícito; se preserva la imagen extrema de un paso único y angosto entre dos peligros opuestos, sin suavizarla ni generalizarla.
+  doctrine_reference: none
+translation_notes:
+  revision_awareness: Se tomó en cuenta la revisión que insistió en conservar la glosa explicativa de hoc est y en mantener explícito que la senda está situada entre el fuego y el agua; por eso se prefirió "esto es, entre el fuego y el agua" en lugar de fusionar la explicación en una sola frase.
+  spanish_consistency_notes:
+  - Se mantiene "senda" para el matiz de paso angosto en este versículo.
+  - Se conserva "esto es" para reflejar el valor explicativo del latín.
+  - '"Huella" reproduce la limitación física del vestigium hominis sin introducir un matiz interpretativo adicional.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/007/008.yaml
+  source_text_sha256: 97b8c490930b70050319ec5a0fbfa47bc571482f806a0e0ebdb392e8a29ffef3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: eda19eb4500dc92415b83a5db39765dc1ba4e71b64c21030b99e129805e9fc3a
+  timestamp: '2026-05-07T21:29:07Z'
+  output_hash: 249c73ddb6707a0fd744962cf8b3f265659d63273e84f7cc55ed2b66f76cb4db
+  usage:
+    prompt_tokens: 1988
+    completion_tokens: 700
+    total_tokens: 2688
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004641
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el latín: conserva autem con «Pero», semita con «senda», la aclaración epexegética hoc est, y la imagen de estrechez extrema de vestigium hominis. Sin embargo, el pronombre «ellos[a]» introduce una nota innecesaria y algo confusa, porque la alternativa no ofrece una lectura distinta real sino que explicita el referente ya aclarado en la misma oración.'
+  spanish_quality_summary: El español es claro y digno. La única mejora necesaria es eliminar la nota al pie redundante y dejar la frase más limpia. «Puesta» es aceptable; «de modo que la senda pueda contener solo la huella de un hombre» suena natural y fiel.
+  glossary_alignment: 'No hay términos del glosario principal en juego. Las decisiones léxicas son apropiadas: «senda» para semita, «esto es» para hoc est, y «huella de un hombre» para vestigium hominis.'
+  issues:
+  - severity: medium
+    issue: Nota al pie redundante y mal anclada en «ellos[a]».
+    rationale: La nota «O «entre el fuego y el agua»» no preserva una alternativa significativa del original ni del rastro auditado inglés; además, anclarla en «ellos» puede sugerir incertidumbre textual donde no la hay. El propio texto ya aclara inmediatamente «esto es, entre el fuego y el agua».
+  revised_spanish_text: Pero hay una sola senda puesta entre ellos, esto es, entre el fuego y el agua, de modo que la senda pueda contener solo la huella de un hombre.
+  revision_rationale: Se elimina la nota al pie porque es redundante, no añade una alternativa textual útil en español y entorpece una oración que ya contiene la aclaración explícita del referente.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1c5bd47c0c4550dc9eddcf6270199113085add4a014259c2c9340f5e906eb289
+  timestamp: '2026-05-07T23:45:55Z'
+  output_hash: 1bf752fde0f2375997610bfda03c94760e560bff2e3739d66600259490a51aa5
+  usage:
+    prompt_tokens: 2346
+    completion_tokens: 431
+    total_tokens: 2777
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01233
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

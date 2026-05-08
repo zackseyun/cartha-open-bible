@@ -1,0 +1,244 @@
+id: 1EN.62.2
+reference: 1 Enoch 62:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወአንበረ፡ እግዚእ፡ መናፍስት፡ ዲበ፡ መንበረ፡ ስብሐቲሁ፡ ወመንፈሰ፡ ጽድቅ፡ ተክዕወ፡ ዲቤሁ፡ ወነገረ፡ አፉሁ፡ ይቀትል፡ ኵሎሙ፡ ኃጥኣነ፡ ወ*ኵሎሙ፡ ዐማፂያን፡ እምገጹ፡ ይትሐጐሉ።
+  language: Geez
+  pages:
+  - 150
+  - 151
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch62.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 62, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/062/002.yaml
+  text: And the Lord of Spirits seated him on the throne of his glory[a], and the spirit of righteousness was poured out upon him, and the word of his mouth slays all the sinners[d][c][b], and all the lawless are destroyed from before his face.
+  footnotes:
+  - marker: a
+    text: Or 'rested upon him' if the verb is taken less vividly; the Ethiopic wording naturally supports the stronger image 'was poured out upon him.'
+    reason: lexical_alternative
+  - marker: b
+    text: Literally, 'from before his face,' a judgment idiom for removal or destruction in the presence of the enthroned figure.
+    reason: cultural_note
+  - marker: c
+    text: Or 'And the Lord of Spirits sat upon the throne of his glory'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'put all the sinners to death, and all the lawless were destroyed'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 5a6b1c439397bfd6dca475ffb26675de1d339094457f35250a45ce5436ae1204
+    timestamp: '2026-04-22T09:14:24Z'
+    output_hash: 8017e03d5f275b9961c808ceaafcbbde6d1e78239a32484d1c77c011d71f20bb
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:52Z'
+    unchanged: false
+    changes_summary: Changed 'upon' to 'on' for more natural English; otherwise retained the draft as accurate and complete.
+translation:
+  language: es
+  text: Y el Señor de los Espíritus[a] lo sentó sobre el trono de su gloria, y el espíritu de rectitud[b] fue derramado sobre él, y la palabra de su boca mata a todos los pecadores, y todos los rebeldes son destruidos de delante de él[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'También puede entenderse: «el Señor de los Espíritus lo hizo sentar»; el ge''ez es causativo, no intransitivo.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «espíritu de justicia».'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Literalmente: «de delante de su rostro», un modismo judicial de remoción o destrucción ante la presencia del entronizado.'
+    reason: cultural_note
+lexical_decisions:
+- source_word: እግዚእ መናፍስት
+  english_pob_choice: Lord of Spirits
+  chosen_spanish: Señor de los Espíritus
+  alternatives_spanish:
+  - Señor de los espíritus
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conserva el título fijo y su registro apocalíptico. En español, la mayúscula en "Espíritus" ayuda a reflejar el carácter titulativo, sin volverlo una fórmula eclesiástica ajena al texto.
+- source_word: አንበረ
+  english_pob_choice: seated him
+  chosen_spanish: lo sentó
+  alternatives_spanish:
+  - lo hizo sentar
+  - lo colocó sentado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El ge''ez es causativo: el Señor de los Espíritus no se sienta a sí mismo, sino que hace sentar al sujeto implícito. "Lo sentó" comunica con naturalidad esa causalidad y preserva el error corregido en la revisión.'
+- source_word: መንበረ ስብሐቲሁ
+  english_pob_choice: the throne of his glory
+  chosen_spanish: el trono de su gloria
+  alternatives_spanish:
+  - su trono glorioso
+  - el trono de su majestad
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene la estructura genitiva explícita del original y del audit trail inglés. "Gloria" conserva el tono visionario y judicial del pasaje.
+- source_word: መንፈሰ ጽድቅ
+  english_pob_choice: the spirit of righteousness
+  chosen_spanish: el espíritu de justicia
+  alternatives_spanish:
+  - el espíritu de rectitud
+  - un espíritu de justicia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Aquí "justicia" expresa bien el sentido jurídico-moral del pasaje y su paralelismo con el juicio. Se evita fijar innecesariamente "rectitud" porque el contexto es de investidura y sentencia.
+- source_word: ተክዕወ ዲቤሁ
+  english_pob_choice: was poured out upon him
+  chosen_spanish: fue derramado sobre él
+  alternatives_spanish:
+  - descansó sobre él
+  - fue concedido sobre él
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '"Derramado" conserva la imagen fuerte del verbo y evita debilitarla a un mero "reposó". El pasivo español mantiene la acción recibida por el sujeto implícito.'
+- source_word: ነገረ አፉሁ
+  english_pob_choice: the word of his mouth
+  chosen_spanish: la palabra de su boca
+  alternatives_spanish:
+  - el dicho de su boca
+  - lo que sale de su boca
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '"Palabra" mantiene el singular colectivo y la fuerza judicial del dicho pronunciado. Es la opción más fiel y natural en español.'
+- source_word: ይቀትል ኵሎሙ ኃጥኣነ
+  english_pob_choice: slays all the sinners
+  chosen_spanish: mata a todos los pecadores
+  alternatives_spanish:
+  - da muerte a todos los pecadores
+  - mata a todos los impíos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El imperfecto en ge'ez permite un presente gnómico o durativo; en español, "mata" preserva el valor actual/general sin convertirlo en pasado. Se traduce con literalidad suficiente el sentido letal del verbo.
+- source_word: ዐማፂያን
+  english_pob_choice: the lawless
+  chosen_spanish: los impíos
+  alternatives_spanish:
+  - los sin ley
+  - los rebeldes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Aunque el sentido literal admite "sin ley" o "rebeldes", "impíos" funciona mejor en español bíblico para el conjunto del juicio moral del versículo, sin perder la oposición a Dios implícita en el término.
+- source_word: እምገጹ ይትሐጐሉ
+  english_pob_choice: were destroyed from before his face
+  chosen_spanish: son destruidos de delante de su rostro
+  alternatives_spanish:
+  - perecen delante de él
+  - son apartados de su presencia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el idiomático "de delante de su rostro", aunque en español suena más natural con "su rostro" que con "su faz". El presente pasivo mantiene el aspecto imperfectivo y la escena judicial de presencia.
+theological_decisions:
+- issue: Referente de 'him' en 'the spirit of righteousness was poured out upon him'
+  english_pob_reading: Retain the direct pronoun 'upon him' without interpretive substitution.
+  chosen_spanish_reading: Conservar "sobre él" sin identificar explícitamente el referente.
+  alternative_spanish_readings:
+  - sobre el trono
+  - sobre el Elegido
+  - sobre el Hijo del Hombre
+  rationale: El ge'ez no obliga a resolver el referente en esta línea. La traducción española preserva la ambigüedad controlada del texto y evita sobreinterpretar más allá de la evidencia disponible.
+  doctrine_reference: Preservar tensión interpretativa sin resolverla
+- issue: Fuerza judicial de la palabra de su boca
+  english_pob_reading: 'Render as an effective judicial utterance: ''the word of his mouth put all the sinners to death.'''
+  chosen_spanish_reading: La palabra de su boca ejecuta juicio mortal sobre los pecadores sin añadir una glosa interpretativa.
+  alternative_spanish_readings:
+  - la palabra de su boca pone a muerte a todos los pecadores
+  - la palabra de su boca condena a muerte a todos los pecadores
+  rationale: El texto presenta la palabra como instrumento eficaz de juicio. En español, "mata" mantiene la fuerza letal sin introducir vocabulario posterior ajeno al pasaje.
+  doctrine_reference: Juicio por la palabra eficaz
+- issue: Valor aspectual de los verbos finales
+  english_pob_reading: '''slays'' / ''are destroyed'' in imperfect aspect, not a simple past.'
+  chosen_spanish_reading: 'Usar presente gnómico: "mata" / "son destruidos".'
+  alternative_spanish_readings:
+  - matará / serán destruidos
+  - mata / serán destruidos
+  rationale: El imperfectivo ge'ez no debe aplastarse en pasado narrativo. El presente español conserva mejor el valor habitual, actual o profético del original.
+  doctrine_reference: Respeto del aspecto verbal original
+translation_notes:
+  revision_awareness: 'La revisión más reciente corrigió un error importante: አንበረ es causativo, por lo que el sujeto es quien sienta a otro, no quien se sienta. También ajustó los verbos finales al imperfecto. La presente versión incorpora ambas correcciones y conserva la ambigüedad del referente de "sobre él".'
+  spanish_consistency_notes:
+  - Mantengo 'Señor de los Espíritus' como título estable, en paralelo con el inglés auditado.
+  - Uso 'justicia' en lugar de 'rectitud' por fluidez bíblica y coherencia con el marco judicial del versículo.
+  - Conservo el presente 'mata / son destruidos' para reflejar el valor imperfectivo del ge'ez.
+  - Evito 'SEÑOR' como sustituto reverencial para no ocultar el título específico del texto.
+  - '''rostro'' se mantiene en el modismo final para reflejar el hebraísmo/judicialism semítico subyacente.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/062/002.yaml
+  source_text_sha256: 1c90fcbd7b37abfed31dd829a2bdb2e5bdc37dd1788d7b74a069eecef773cc0b
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 1066e12358b671ba35d65e559b4ee57780f61aa44601c9b92a75cd2355daec0d
+  timestamp: '2026-05-07T21:27:38Z'
+  output_hash: 008dc0bca710c86e5bc12927638a92a9f0f76684cdab9aaddb6f39646b5ed309
+  usage:
+    prompt_tokens: 3967
+    completion_tokens: 1975
+    total_tokens: 5942
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011863
+status: spanish_reviewed
+revisions:
+- from: Y el Señor de los Espíritus[a] lo sentó sobre el trono de su gloria, y el espíritu de justicia[b] fue derramado sobre él, y la palabra de su boca mata a todos los pecadores, y todos los impíos son destruidos de delante de su rostro[c].
+  to: Y el Señor de los Espíritus[a] lo sentó sobre el trono de su gloria, y el espíritu de rectitud[b] fue derramado sobre él, y la palabra de su boca mata a todos los pecadores, y todos los rebeldes son destruidos de delante de él[c].
+  rationale: Se ajusta «justicia» a «rectitud» para seguir mejor la decisión léxica documentada para መንፈሰ ጽድቅ; se cambia «impíos» por «rebeldes» para preservar mejor el sentido de ዐማፂያን como oposición al orden divino; y se aligera «de delante de su rostro» a «de delante de él» en el texto principal, manteniendo el literal en nota.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:16:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La base del sentido está bien preservada: el causativo de አንበረ se refleja correctamente en «lo sentó», se mantiene la imagen de «fue derramado sobre él», y los imperfectos finales se vierten con presente («mata», «son destruidos»). También se conserva la ambigüedad del pronombre «él». Sin embargo, hay dos desajustes relevantes con el audit trail y la evidencia léxica: «espíritu de justicia» debilita la preferencia documentada por «righteousness» y en español conviene más «rectitud» para no reducirlo al campo forense; y «los impíos» para ዐማፂያን no preserva bien el valor de «lawless / rebeldes / transgresores», desplazándolo hacia piedad/impiedad.'
+  spanish_quality_summary: El español es claro y digno, pero puede afinarse para mayor fidelidad y naturalidad bíblica. «De delante de su rostro» suena algo rígido; «de delante de él» conserva el modismo de presencia con mejor legibilidad. El resto del fraseo funciona bien.
+  glossary_alignment: No entra en conflicto con los términos troncales del proyecto, pero sí conviene alinear mejor መንፈሰ ጽድቅ con «espíritu de rectitud» y ዐማፂያን con «los rebeldes» (o similar) en vez de «los impíos», conforme a la rationale inglesa que evita estrechar el término a mera impiedad.
+  issues:
+  - severity: medium
+    issue: «espíritu de justicia» para መንፈሰ ጽድቅ
+    rationale: Aunque «justicia» es posible, el audit trail inglés prefiere explícitamente «righteousness» frente a «justice». En español, «rectitud» preserva mejor el matiz moral-judicial sin reducirlo a justicia forense.
+  - severity: medium
+    issue: «los impíos» para ዐማፂያን
+    rationale: El término fuente fue documentado como «the lawless», con alternativas «rebels/transgressors». «Impíos» cambia el eje semántico hacia irreverencia o falta de piedad, no tanto oposición al orden/ley divina.
+  - severity: low
+    issue: «de delante de su rostro» suena innecesariamente pesado en español
+    rationale: La nota puede conservar el literal «de delante de su rostro», pero en el texto principal «de delante de él» comunica el mismo modismo judicial con mejor fluidez.
+  revised_spanish_text: Y el Señor de los Espíritus[a] lo sentó sobre el trono de su gloria, y el espíritu de rectitud[b] fue derramado sobre él, y la palabra de su boca mata a todos los pecadores, y todos los rebeldes son destruidos de delante de él[c].
+  revised_footnotes:
+  - marker: a
+    text: 'También puede entenderse: «el Señor de los Espíritus lo hizo sentar»; el ge''ez es causativo, no intransitivo.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «espíritu de justicia».'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Literalmente: «de delante de su rostro», un modismo judicial de remoción o destrucción ante la presencia del entronizado.'
+    reason: cultural_note
+  revision_rationale: Se ajusta «justicia» a «rectitud» para seguir mejor la decisión léxica documentada para መንፈሰ ጽድቅ; se cambia «impíos» por «rebeldes» para preservar mejor el sentido de ዐማፂያን como oposición al orden divino; y se aligera «de delante de su rostro» a «de delante de él» en el texto principal, manteniendo el literal en nota.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e47affbb8a599bbfb512e10f329d396703b38b7b3957c2bc0cb6dbca5f7d601b
+  timestamp: '2026-05-07T23:16:46Z'
+  output_hash: a0a67214066ae52f1b216b6a98532132f194d14249cacd1cb4c806e4556145b3
+  usage:
+    prompt_tokens: 5590
+    completion_tokens: 910
+    total_tokens: 6500
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.027625
+  applied_revision: true

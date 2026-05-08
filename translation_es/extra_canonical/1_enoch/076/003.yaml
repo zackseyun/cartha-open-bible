@@ -1,0 +1,230 @@
+id: 1EN.76.3
+reference: 1 Enoch 76:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ፫*ቀዳማያት፡ እለ፡ መንገለ፡ ጽባሕ፡ ወ፫*ለ መንገለ፡ መስዕ፡ ወ፫[በድኅረ፡ እሉ፡ በፀጋም፡] ለመንገለ፡ አዜብ፡ ወ፫*ለዓረብ።
+  language: Geez
+  pages:
+  - 182
+  - 183
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch76.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 76, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/076/003.yaml
+  text: And the first three are toward the east[a], and three toward the north, and three after these, on the left, toward the south[c][b], and three toward the west.
+  footnotes:
+  - marker: a
+    text: The phrase 'on the left' reflects the ancient convention of facing east; in that scheme, the left side corresponds to the north, just as the right side corresponds to the south.
+    reason: cultural_note
+  - marker: b
+    text: The bracketed portion in the supplied Ethiopic witness suggests some textual uncertainty around 'after these, on the left'; the translation keeps the phrase but signals the uncertainty here.
+    reason: textual_variant
+  - marker: c
+    text: Or 'And three of them are on the east side, and three on the south side, and after these, on the left, three on the north side and three on the west.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 4c1bc6bfbaac94fa40f875abf0df05706de918bd84df2274e18fd450886dfcb8
+    timestamp: '2026-04-22T09:17:22Z'
+    output_hash: 43737d5f6a71b19ee26a7278a564d42b54f3ef00f1f868bb31b2848067e8598f
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:32Z'
+    unchanged: false
+    changes_summary: Removed the em dashes around 'after these, on the left' for a more formal, natural rendering while preserving all source elements and directional terms.
+translation:
+  language: es
+  text: Y los tres primeros están hacia el oriente, y tres hacia el norte, y tres después de estos, a la izquierda[a][b], hacia el sur[c], y tres hacia el occidente.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La expresión 'a la izquierda' refleja la convención antigua de orientarse mirando hacia el oriente; en ese esquema, el lado izquierdo corresponde al norte, así como el lado derecho corresponde al sur.
+    reason: cultural_note
+  - marker: b
+    text: La porción entre corchetes en el testimonio etiópico disponible sugiere cierta incertidumbre textual en torno a 'después de estos, a la izquierda'; la traducción conserva la frase, pero señala aquí esa incertidumbre.
+    reason: textual_variant
+  - marker: c
+    text: 'O bien: ''Y los tres primeros están hacia el oriente, y tres hacia el sur, y después de estos, a la izquierda, tres hacia el norte y tres hacia el occidente''.'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ቀዳማያት
+  english_pob_choice: on the east side / toward the east
+  chosen_spanish: los primeros tres están hacia el oriente
+  alternatives_spanish:
+  - los tres primeros están hacia el oriente
+  - los primeros tres, hacia el oriente
+  - los tres de primero, hacia el oriente
+  lexicon: Dillmann
+  rationale: El ge’ez marca prioridad/primacía con sentido ordinal, no solo una dirección. En español, 'los primeros tres' conserva ese valor y 'hacia el oriente' expresa la orientación espacial.
+- source_word: መንገለ
+  english_pob_choice: side
+  chosen_spanish: hacia
+  alternatives_spanish:
+  - del lado de
+  - en la dirección de
+  - por la parte de
+  lexicon: Dillmann
+  rationale: En esta lista direccional, el sustantivo ge’ez funciona como marcador de orientación. En español, una construcción con 'hacia' resulta más natural y mantiene la relación espacial.
+- source_word: ጽባሕ
+  english_pob_choice: east
+  chosen_spanish: oriente
+  alternatives_spanish:
+  - este
+  - levante
+  lexicon: Dillmann
+  rationale: Aunque el término está asociado etimológicamente con la mañana/amanecer, aquí la función es claramente direccional. 'Oriente' es solemne y preciso en este contexto.
+- source_word: መስዕ
+  english_pob_choice: south
+  chosen_spanish: el sur
+  alternatives_spanish:
+  - sur
+  - la parte sur
+  - el lado derecho
+  lexicon: Dillmann
+  rationale: El contexto astronómico exige la dirección cardinal. Se evita 'lado derecho' en el texto principal para no oscurecer la referencia espacial, aunque esa orientación antigua queda sugerida por la nota.
+- source_word: በድኅረ እሉ
+  english_pob_choice: after these
+  chosen_spanish: después de estos
+  alternatives_spanish:
+  - después de ellos
+  - tras éstos
+  - luego de estos
+  lexicon: Dillmann
+  rationale: La frase introduce la continuación del catálogo. 'Después de estos' es fiel y formal en español.
+- source_word: በፀጋም
+  english_pob_choice: on the left
+  chosen_spanish: a la izquierda
+  alternatives_spanish:
+  - del lado izquierdo
+  - a mano izquierda
+  lexicon: Dillmann
+  rationale: Se conserva la orientación corporal antigua porque el texto la mantiene explícitamente. 'A la izquierda' es la forma más natural en español contemporáneo.
+- source_word: አዜብ
+  english_pob_choice: north
+  chosen_spanish: el norte
+  alternatives_spanish:
+  - norte
+  - la parte norte
+  - el lado izquierdo
+  lexicon: Dillmann
+  rationale: La referencia geográfica es la dirección cardinal. Se traduce por 'el norte' y no por 'izquierda' para preservar la claridad del catálogo direccional.
+- source_word: ዓረብ
+  english_pob_choice: west
+  chosen_spanish: el occidente
+  alternatives_spanish:
+  - el oeste
+  - occidente
+  - poniente
+  lexicon: Dillmann
+  rationale: '''Occidente'' mantiene el registro elevado del pasaje y corresponde a la dirección occidental en el esquema cósmico.'
+theological_decisions:
+- issue: Preservar la tensión entre orientación corporal antigua y direcciones cardinales
+  english_pob_reading: Retain 'on the left' alongside 'north'
+  chosen_spanish_reading: Mantener 'a la izquierda' junto con 'el norte'
+  alternative_spanish_readings:
+  - Eliminar la referencia corporal y dejar solo direcciones cardinales
+  - 'Traducir solo con lenguaje corporal: ''a la izquierda'''
+  rationale: El texto refleja una cosmología antigua en la que se orienta el espacio mirando al oriente. Conservar ambas expresiones evita borrar esa lógica histórica y mantiene la ambigüedad documentada por la tradición textual.
+  doctrine_reference: Translation philosophy §3, preserve tension/ambiguity where present
+- issue: Tratamiento de la variante textual señalada en el testimonio etiópico
+  english_pob_reading: The bracketed portion suggests uncertainty around 'after these, on the left'
+  chosen_spanish_reading: Marcar la incertidumbre con una nota sin alterar el texto principal
+  alternative_spanish_readings:
+  - Suavizar la frase para eliminar la incertidumbre
+  - Reescribir el orden para resolver la variante
+  rationale: El testimonio etiópico presenta una zona textual incierta. La versión española conserva la secuencia recibida y explica la variante en nota para no ocultar la tensión del texto fuente.
+  doctrine_reference: Translation philosophy §3, preserve textual uncertainty where documented
+translation_notes:
+  revision_awareness: 'La revisión más reciente corrigió dos problemas del borrador inglés precedente: la omisión de ''los primeros'' y el intercambio de norte/sur. Esta versión española sigue la lectura revisada y conserva también la referencia explícita a la izquierda sin resolverla artificialmente.'
+  spanish_consistency_notes:
+  - Se usa 'oriente' / 'occidente' en estilo elevado y consistente con un registro bíblico sobrio.
+  - Se mantiene 'a la izquierda' como huella de la orientación antigua, pero el texto principal identifica claramente el norte y el sur por su valor cardinal.
+  - No se introduce 'Yahvé' ni otros términos divinos porque el versículo es puramente direccional.
+  - La puntuación busca reflejar la enumeración del original sin añadir interpretación.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/076/003.yaml
+  source_text_sha256: e7fc8c951520e96f6935dc668462b1b01f15d23694f1c0ae6e83ed7d1934a43e
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 2a7c700bc0739f83eb8a858bb4e22d3bb7c9b1ba48af2d3c39820e1437dd0935
+  timestamp: '2026-05-07T21:28:07Z'
+  output_hash: 84c916755d4c73681d23061ee13a4234972c27d271f53de0dccdd6c70c923a94
+  usage:
+    prompt_tokens: 3123
+    completion_tokens: 1380
+    total_tokens: 4503
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008552
+status: spanish_reviewed
+revisions:
+- from: Y los primeros tres están hacia el oriente[a], y tres hacia el norte, y tres después de estos, a la izquierda[b], hacia el sur, y tres hacia el occidente.
+  to: Y los tres primeros están hacia el oriente, y tres hacia el norte, y tres después de estos, a la izquierda[a][b], hacia el sur[c], y tres hacia el occidente.
+  rationale: 'Se mantiene el sentido del texto base y de la revisión inglesa, pero se corrige la presentación editorial para alinearla plenamente con el expediente: se conserva la secuencia principal del POB, se añade la alternativa preservada en inglés y se reubica la nota cultural al punto textual más pertinente. También se mejora ligeramente la naturalidad con ''los tres primeros''.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:23:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español preserva bien la estructura del verso y mantiene ''los primeros tres'', ''después de estos'' y ''a la izquierda'', en línea con el texto ge’ez y la revisión inglesa. Sin embargo, invierte las dos direcciones cardinales centrales respecto del expediente auditado: donde el POB inglés corregido tiene ''tres hacia el norte'' para መስዕ y luego ''a la izquierda, hacia el sur'' para አዜብ, el español actual pone primero ''norte'' y luego ''sur'', pero sus decisiones léxicas explicativas atribuyen መስዕ al sur y አዜብ al norte, lo que contradice el expediente y crea inconsistencia interna. Además, faltan en español la nota alternativa equivalente a la nota inglesa c y la ancla adecuada para esa información si se decide conservarla.'
+  spanish_quality_summary: 'El español es claro, digno y natural. ''Oriente'' y ''occidente'' son aceptables en este registro. No obstante, la nota [a] está anclada en ''oriente'' aunque la explicación principal trata de la orientación izquierda/derecha; sería más natural anclar la nota cultural en ''a la izquierda''. También conviene ajustar levemente el orden para que suene más fluido: ''los tres primeros'' es algo más idiomático que ''los primeros tres''.'
+  glossary_alignment: 'No hay términos teológicos sensibles del glosario general en juego. En el léxico direccional, la versión debe alinearse con el expediente POB: ቀዳማያት = ''primeros''; መንገለ = marcador direccional, bien expresado con ''hacia''; ጽባሕ = ''oriente''; መስዕ = ''norte'' según la corrección auditada; በድኅረ እሉ = ''después de estos''; በፀጋም = ''a la izquierda''; አዜብ = ''sur'' según la corrección auditada; ዓረብ = ''occidente''. Las decisiones léxicas del borrador deben concordar con ese mapeo.'
+  issues:
+  - severity: high
+    issue: Inconsistencia entre el texto español y el expediente auditado sobre መስዕ / አዜብ
+    rationale: 'El historial aplicado exige mantener la tensión textual tal como quedó corregida en inglés: primero ''norte'' y luego, tras ''a la izquierda'', ''sur''. El borrador español refleja esa secuencia en el texto, pero sus decisiones léxicas asignan መስዕ al sur y አዜብ al norte, contradiciendo la corrección documentada y generando un problema de fidelidad editorial.'
+  - severity: medium
+    issue: Falta la nota de alternativa de traducción equivalente a la nota inglesa c
+    rationale: La auditoría inglesa preserva una traducción alternativa importante por la dificultad del pasaje. Dado que el proyecto pide conservar alternativas significativas cuando el inglés las preservó, la revisión española debe incluir esa nota.
+  - severity: low
+    issue: Anclaje menos natural de la nota cultural
+    rationale: La nota [a] se coloca en 'oriente', pero su contenido explica sobre todo la expresión 'a la izquierda' dentro del esquema de orientación antigua. Reubicarla mejora la legibilidad y la correspondencia entre texto y nota.
+  revised_spanish_text: Y los tres primeros están hacia el oriente, y tres hacia el norte, y tres después de estos, a la izquierda[a][b], hacia el sur[c], y tres hacia el occidente.
+  revised_footnotes:
+  - marker: a
+    text: La expresión 'a la izquierda' refleja la convención antigua de orientarse mirando hacia el oriente; en ese esquema, el lado izquierdo corresponde al norte, así como el lado derecho corresponde al sur.
+    reason: cultural_note
+  - marker: b
+    text: La porción entre corchetes en el testimonio etiópico disponible sugiere cierta incertidumbre textual en torno a 'después de estos, a la izquierda'; la traducción conserva la frase, pero señala aquí esa incertidumbre.
+    reason: textual_variant
+  - marker: c
+    text: 'O bien: ''Y los tres primeros están hacia el oriente, y tres hacia el sur, y después de estos, a la izquierda, tres hacia el norte y tres hacia el occidente''.'
+    reason: previous_rendering
+  revision_rationale: 'Se mantiene el sentido del texto base y de la revisión inglesa, pero se corrige la presentación editorial para alinearla plenamente con el expediente: se conserva la secuencia principal del POB, se añade la alternativa preservada en inglés y se reubica la nota cultural al punto textual más pertinente. También se mejora ligeramente la naturalidad con ''los tres primeros''.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b2aeedc9fb9c3bc42352c2cc477a3dd38d1159ad6e05aab829ad07642a4211e9
+  timestamp: '2026-05-07T23:23:31Z'
+  output_hash: d182455ca3ab2a3f8e8c71ffe4331881ac3ff0b339ad47a9d8da3bca8f26d8b4
+  usage:
+    prompt_tokens: 4190
+    completion_tokens: 1097
+    total_tokens: 5287
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02693
+  applied_revision: true

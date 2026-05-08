@@ -1,0 +1,229 @@
+id: 1EN.9.4
+reference: 1 Enoch 9:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይቤሉ፡ ለ*እግዚኦሙ፡ †ለነገሥት፡ እስመ፡† እግዚኦሙ፡ ለአጋእዝት፡ ወአምላኮሙ፡ ለአማልክት፡ ወንጉሦሙ፡ ለነገሥት፡ ወመንበረ፡ ስብሐቲከ፡ ውስተ፡ ኵሉ፡ *ትውልደ፡ ዓለም፡ ወ*ስምከ፡ ቅዱስ፡ ወስቡሕ፡ *ውስተ፡ ኵሉ፡ ዓለም፡ ወቡሩክ፡ [ወከቡድ፡]
+  language: Geez
+  pages:
+  - 56
+  - 58
+  - 60
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch09.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 9, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/009/004.yaml
+  text: And they said to their Lord[a], the King, “For you are Lord of lords, God of gods, and King of kings, and the throne of your glory is through all the generations of eternity, and your name is holy and glorious through all eternity[d][c][b], and blessed.”
+  footnotes:
+  - marker: a
+    text: A bracketed Ethiopic reading adds 'and glorious' or 'and honored' after 'blessed.'
+    reason: textual_variant
+  - marker: b
+    text: The opening address is textually compressed in Ethiopic; the sense is a royal and divine acclamation addressed to God.
+    reason: alternative_reading
+  - marker: c
+    text: Or 'to their Lord, the King, “Lord of lords'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'through all the generations of the world, and your name is holy and blessed and praised through all the world.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 7e4866b5f86d7db1bb058a2ca9b3c96a2c51e37397cee6494f9fad532a2dedbf
+    timestamp: '2026-04-22T09:08:47Z'
+    output_hash: 3d005d40c68d1a6526d70c2d3bfb6dcadb42e166acf46e5e3b50d3f0efa58a5f
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:34Z'
+    unchanged: false
+    changes_summary: Adjusted the opening address to reflect the possessive and appositional structure more naturally; changed 'unto' to 'through' for better idiomatic rendering of repeated temporal phrases; replaced 'praised' with 'glorious' to match the adjective 'holy and glorious'; removed the extra quotation mark and smoothed punctuation.
+translation:
+  language: es
+  text: 'Y dijeron al Señor[a] de los reyes: «Porque tú eres Señor de señores, Dios de dioses y Rey de reyes, y el trono de tu gloria permanece por todas las generaciones de la eternidad, y tu nombre es santo y glorioso por toda la eternidad, y bendito[b]».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La apertura etiópica es sintácticamente comprimida y ha sido entendida de distintas maneras; aquí se sigue la lectura «al Señor de los reyes», que refleja mejor la construcción genitival de la expresión inicial.
+    reason: alternative_reading
+  - marker: b
+    text: 'Una lectura etiópica entre corchetes añade después de «bendito»: «y glorioso» o «y honrado».'
+    reason: textual_variant
+lexical_decisions:
+- source_word: እግዚኦሙ
+  english_pob_choice: their Lord
+  chosen_spanish: su Señor
+  alternatives_spanish:
+  - su Amo
+  - su Soberano
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma es un posesivo con valor reverencial dirigido a la deidad suprema. En español, «su Señor» conserva la relación posesiva y el tono de reverencia sin rebajar el matiz a mera soberanía política.
+- source_word: ለነገሥት
+  english_pob_choice: Lord of lords / the King (opening address compression issue in audit trail)
+  chosen_spanish: Rey
+  alternatives_spanish:
+  - de reyes
+  - el Rey
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El contexto del acatamiento hace que el primer miembro de la serie funcione como título real de aclamación. En español, «el Rey» en aposición dentro de la invocación evita una lectura forzada y conserva el tono honorífico del saludo inicial.
+- source_word: እግዚኦሙ ለአጋእዝት
+  english_pob_choice: Lord of lords
+  chosen_spanish: Señor de señores
+  alternatives_spanish:
+  - Señor sobre señores
+  - Señor de los señores
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene la fórmula superlativa y paralela propia del doxología. «Señor de señores» es la correspondencia española más directa y solemne.
+- source_word: አምላኮሙ ለአማልክት
+  english_pob_choice: God of gods
+  chosen_spanish: Dios de dioses
+  alternatives_spanish:
+  - Dios sobre dioses
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción de superioridad se conserva literalmente en la cadena titulary. «Dios de dioses» reproduce la fuerza comparativa sin suavizarla.
+- source_word: ንጉሦሙ ለነገሥት
+  english_pob_choice: King of kings
+  chosen_spanish: Rey de reyes
+  alternatives_spanish:
+  - Rey sobre reyes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La fórmula triádica culmina con el mismo patrón de excelencia. «Rey de reyes» es el equivalente español asentado y fiel al paralelismo del texto.
+- source_word: መንበረ ስብሐቲከ
+  english_pob_choice: the throne of your glory
+  chosen_spanish: el trono de tu gloria
+  alternatives_spanish:
+  - tu trono glorioso
+  - el asiento de tu gloria
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la imagen concreta del trono, importante en el lenguaje apocalíptico. «De tu gloria» mantiene la construcción sustantiva en lugar de convertirla en adjetivo.
+- source_word: ውስተ ኵሉ ትውልደ ዓለም
+  english_pob_choice: through all the generations of eternity
+  chosen_spanish: por todas las generaciones de la eternidad
+  alternatives_spanish:
+  - en todas las generaciones de la eternidad
+  - a través de todas las generaciones de la eternidad
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión auditada muestra que ዓለም aquí equivale a «eternidad/edad», no a «mundo». «Por todas las generaciones de la eternidad» conserva la fórmula temporal sin borrar el tono apocalíptico ni el paralelismo del original.
+- source_word: ስምከ ቅዱስ ወስቡሕ ... ወቡሩክ
+  english_pob_choice: your name is holy and glorious through all eternity, and blessed
+  chosen_spanish: tu nombre es santo y glorioso por toda la eternidad, y bendito
+  alternatives_spanish:
+  - tu nombre es santo, glorioso y bendito por toda la eternidad
+  - tu nombre es santo y alabado por toda la eternidad, y bendito
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La evidencia revisada favorece «glorioso» frente a «alabado» para ስቡሕ en esta cadena doxológica, y el término bracketed final se deja fuera del cuerpo principal. «Santo y glorioso» preserva la doble predicación explícita, mientras «bendito» mantiene el último predicado seguro.
+theological_decisions:
+- issue: Cómo reflejar la titulatura divina repetida sin diluir su intensidad
+  english_pob_reading: Preserve the threefold formula 'Lord of lords, God of gods, and King of kings'
+  chosen_spanish_reading: Mantener la tríada «Señor de señores, Dios de dioses y Rey de reyes»
+  alternative_spanish_readings:
+  - Resumirla como «Soberano supremo»
+  - Parafrasearla como «que gobierna sobre todo señor, dios y rey»
+  rationale: La doxología depende de la repetición acumulativa. Traducirla explícitamente preserva la retórica de supremacía absoluta y evita neutralizar la cadencia solemne del pasaje.
+  doctrine_reference: 'Principios de traducción POB: transparencia y preservación de la forma retórica del texto fuente.'
+- issue: Cómo tratar el inicio de la invocación con እግዚኦሙ ለነገሥት
+  english_pob_reading: Textually compressed opening address with royal and divine acclamation
+  chosen_spanish_reading: «a su Señor, el Rey» como apertura reverencial y apposicional
+  alternative_spanish_readings:
+  - «al Señor de los reyes»
+  - «al Rey, su Señor»
+  rationale: La secuencia ge'ez es comprimida y honorífica. El español necesita explicitar la relación sin imponer una reescritura. La aposición mantiene el carácter de aclamación y evita borrar la tensión entre posesión, realeza y adoración.
+  doctrine_reference: 'Principios de traducción POB: fidelidad auditada al sentido sintáctico y respeto por la ambigüedad controlada del original.'
+- issue: Si incluir o no la lectura bracketed final [ወከቡድ]
+  english_pob_reading: Exclude from the main text and note as a textual variant
+  chosen_spanish_reading: Excluirla del texto principal y dejar la variación indicada en nota
+  alternative_spanish_readings:
+  - Incluirla como «y glorioso/honrado»
+  - Fundirla en la serie final de predicados
+  rationale: El marcador bracketed señala incertidumbre textual. Para transparencia, el texto principal debe apoyarse sólo en las lecturas seguras; la posible adición se documenta aparte para no nivelar indebidamente el testimonio manuscrito.
+  doctrine_reference: Principios POB sobre variantes textuales y trazabilidad.
+translation_notes:
+  revision_awareness: 'El material auditado muestra que la lectura inglesa pasó por correcciones importantes: se rechazó una simplificación de la apertura («to their Lord, the King») y luego se afirmó que la secuencia inicial es sintácticamente comprimida; también se corrigió la frase temporal para entender ዓለም como «eternidad/edad», no como «mundo». Asimismo, la nota final bracketed fue tratada como variante textual, y la última revisión inglesa prefirió «glorious» frente a «praised». Mi español sigue esa línea revisada, pero usa «santo y glorioso» para reflejar la cadena adjetival segura y mantener el tono doxológico.'
+  spanish_consistency_notes:
+  - He conservado «Yahvé» fuera del versículo porque no aparece en la fuente.
+  - He usado «Señor de señores / Dios de dioses / Rey de reyes» como fórmula fija y paralela, sin sustituirla por equivalentes más interpretativos.
+  - He elegido «eternidad» para ዓለም en la fórmula temporal, de acuerdo con la revisión auditada.
+  - He mantenido el texto principal libre de la lectura bracketed incierta, conforme a la transparencia textual del proyecto.
+  - La puntuación española sigue el orden de la aclamación y el cierre doxológico, sin añadir material explicativo al versículo.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/009/004.yaml
+  source_text_sha256: 7c52a4e6b78506ab04337100ab20fc35541c586cdcd561d51a898878202be8e0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 16bcc8efbb74b42f659cf0be08dcae34ecac344b09d11fc5271ac04631b2b39a
+  timestamp: '2026-05-07T21:27:31Z'
+  output_hash: c3b72085057a22c666c7e9f50f16dfc4fda03a3b91e61053ad430a2358972c0f
+  usage:
+    prompt_tokens: 4127
+    completion_tokens: 2080
+    total_tokens: 6207
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012455
+status: spanish_reviewed
+revisions:
+- from: 'Y dijeron a su Señor[a], el Rey: «Porque tú eres Señor de señores, Dios de dioses y Rey de reyes, y el trono de tu gloria está por todas las generaciones de la eternidad, y tu nombre es santo y glorioso por toda la eternidad, y bendito».'
+  to: 'Y dijeron al Señor[a] de los reyes: «Porque tú eres Señor de señores, Dios de dioses y Rey de reyes, y el trono de tu gloria permanece por todas las generaciones de la eternidad, y tu nombre es santo y glorioso por toda la eternidad, y bendito[b]».'
+  rationale: Se revisa la apertura para alinearla con la adjudicación auditada que corrige la interpretación de la secuencia inicial; se añade la nota de variante textual final que el expediente inglés preserva; y se suaviza ligeramente la duración del trono con «permanece» para mejor español sin alterar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:20:37Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: La base del verso está bien captada en la tríada doxológica y en la fórmula temporal de «eternidad», pero el borrador español conserva una decisión de apertura («a su Señor, el Rey») que no sigue la corrección adjudicada en el rastro auditado, donde se señaló que la secuencia inicial debe reflejar mejor «al Señor de los reyes» y no una aposición singular. Además, la nota actual no documenta la variante textual bracketed final que el expediente inglés sí preserva.
+  spanish_quality_summary: El español es claro y digno, pero «a su Señor, el Rey» queda menos fiel al valor genitival/superlativo señalado en la adjudicación. El resto del verso suena natural; puede mejorarse ligeramente «está por todas las generaciones» a una formulación más idiomática como «permanece por todas las generaciones».
+  glossary_alignment: No hay conflicto con los términos principales del glosario del proyecto. «Señor de señores», «Dios de dioses» y «Rey de reyes» están bien. La revisión necesaria afecta la sintaxis inicial y la preservación de la nota sobre la variante textual final.
+  issues:
+  - severity: high
+    issue: La apertura «a su Señor, el Rey» no refleja la corrección auditada de la secuencia etiópica inicial.
+    rationale: 'El rastro de revisiones incluye una adjudicación de nivel 3 que rechazó la aposición singular «el Rey» y exigió reflejar la construcción como «Lord of kings». El español debe alinearse con esa decisión auditada: «al Señor de los reyes».'
+  - severity: medium
+    issue: Falta la nota sobre la variante textual bracketed final.
+    rationale: El expediente inglés documenta que una lectura etiópica entre corchetes añade «y glorioso / y honrado» después de «bendito». La traducción española menciona esta política en decisiones teológicas, pero no la preserva en notas.
+  - severity: low
+    issue: «el trono de tu gloria está por todas las generaciones de la eternidad» puede sonar algo rígido en español.
+    rationale: No es incorrecto, pero «permanece por todas las generaciones de la eternidad» o «es por...» suena más natural y sigue expresando duración continuada.
+  revised_spanish_text: 'Y dijeron al Señor[a] de los reyes: «Porque tú eres Señor de señores, Dios de dioses y Rey de reyes, y el trono de tu gloria permanece por todas las generaciones de la eternidad, y tu nombre es santo y glorioso por toda la eternidad, y bendito[b]».'
+  revised_footnotes:
+  - marker: a
+    text: La apertura etiópica es sintácticamente comprimida y ha sido entendida de distintas maneras; aquí se sigue la lectura «al Señor de los reyes», que refleja mejor la construcción genitival de la expresión inicial.
+    reason: alternative_reading
+  - marker: b
+    text: 'Una lectura etiópica entre corchetes añade después de «bendito»: «y glorioso» o «y honrado».'
+    reason: textual_variant
+  revision_rationale: Se revisa la apertura para alinearla con la adjudicación auditada que corrige la interpretación de la secuencia inicial; se añade la nota de variante textual final que el expediente inglés preserva; y se suaviza ligeramente la duración del trono con «permanece» para mejor español sin alterar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3e5109347d29b75b20d7102e307e552699905b7c6d10133c7cc46a4967e70104
+  timestamp: '2026-05-07T23:20:37Z'
+  output_hash: 5624b49a8d76a0d949bed78571f26f5e0038eeae3b00c4018a2d6a5ace0d958e
+  usage:
+    prompt_tokens: 5704
+    completion_tokens: 784
+    total_tokens: 6488
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02602
+  applied_revision: true

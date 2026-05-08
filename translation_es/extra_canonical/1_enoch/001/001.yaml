@@ -1,0 +1,251 @@
+id: 1EN.1.1
+reference: 1 Enoch 1:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ቃለ ፡ በረከት ፡ ዘሄኖክ ፡ በከመ ፡ ባረከ ፡ ኅሩያነ ፡ ወጻድቃነ ፡ እለ ፡ ሀለዉ ፡ ይኩኑ ፡ በዕለተ ፡ ምንዳቤ ፡ ለአሰስሎ ፡ ኵሎ ፡ እኩያነ ፡ ወረሲዓነ ፡
+  language: Geez
+  pages:
+  - 40
+  - 42
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/001/001.yaml
+  text: The words of the blessing of Henok[a], with which he blessed the chosen and the righteous who will be present on the day of affliction[c][b], for the removal of all the wicked and godless.
+  footnotes:
+  - marker: a
+    text: '''Henok'' follows the Ge''ez form of the name; the more familiar English form is ''Enoch.'''
+    reason: lexical_alternative
+  - marker: b
+    text: The phrase rendered 'day of affliction' may also be understood as 'day of distress' or 'day of tribulation.'
+    reason: lexical_alternative
+  - marker: c
+    text: 'The final pair distinguishes two classes of the condemned: the wicked and the godless/impious.'
+    reason: cultural_note
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: ac57e9b67fe674565b8e9c996a1c8f132a67cb0a47d59e060bd201d744c29510
+    timestamp: '2026-04-22T09:07:21Z'
+    output_hash: 3f9cc35c2ecb11efea6c58a9944dc2e26fe2911684b4e25fa21110927253689d
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:26Z'
+    unchanged: false
+    changes_summary: Changed 'word' to 'words' for more natural rendering of the opening expression, and removed 'the' before 'godless' for smoother, more idiomatic English while preserving the sense.
+translation:
+  language: es
+  text: Las palabras de la bendición de Henoc[a], con las que bendijo a los escogidos y a los justos que estarán presentes en el día de aflicción[b], para eliminar a todos los malvados e impíos[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: '''Henoc'' sigue la forma del ge''ez; la forma bíblica más conocida en español es ''Enoc''.'
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión 'día de aflicción' también puede entenderse como 'día de angustia' o 'día de tribulación'.
+    reason: lexical_alternative
+  - marker: c
+    text: 'El par final distingue dos clases de condenados: los malvados y los impíos.'
+    reason: cultural_note
+lexical_decisions:
+- source_word: ቃለ
+  english_pob_choice: words
+  chosen_spanish: palabras
+  alternatives_spanish:
+  - palabra
+  - mensajes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El arranque es una fórmula titular en plural; 'palabras' refleja mejor el giro revisado del POB inglés y conserva el carácter de encabezamiento sin forzar un singular artificial.
+- source_word: በረከት
+  english_pob_choice: blessing
+  chosen_spanish: bendición
+  alternatives_spanish:
+  - benedición
+  - bendición
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Bendición'' es el equivalente natural en español para el sustantivo de bendecir/benediction y funciona bien en un título de introducción.'
+- source_word: ዘሄኖክ
+  english_pob_choice: Henok
+  chosen_spanish: Henoc
+  alternatives_spanish:
+  - Enoc
+  - Henoc
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene la forma basada en el ge'ez que refleja la política del POB inglés; en español, 'Henoc' preserva esa transliteración sin imponer la forma bíblica más familiar 'Enoc'.
+- source_word: በከመ ባረከ
+  english_pob_choice: with which he blessed
+  chosen_spanish: con las que bendijo
+  alternatives_spanish:
+  - con la cual bendijo
+  - con que bendijo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción relativa/instrumental pide una relación de medio o contenido. En español, 'con las que bendijo' suena natural y mantiene el vínculo con 'las palabras de la bendición'.
+- source_word: ኅሩያነ
+  english_pob_choice: the chosen
+  chosen_spanish: los escogidos
+  alternatives_spanish:
+  - los elegidos
+  - los escogidos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Escogidos'' conserva la idea de elección sin cargar de forma innecesaria un tecnicismo doctrinal; sigue de cerca el valor del término y el criterio del POB de no introducir ''elect'' cuando no es necesario.'
+- source_word: ወጻድቃነ
+  english_pob_choice: and the righteous
+  chosen_spanish: y a los justos
+  alternatives_spanish:
+  - y a los justos
+  - y a los rectos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Justos'' mantiene el campo ético-covenantal del término y suena natural en español bíblico contemporáneo.'
+- source_word: እለ ሀለዉ ይኩኑ
+  english_pob_choice: who will be present
+  chosen_spanish: que estarán presentes
+  alternatives_spanish:
+  - que estarán presentes
+  - que estarán allí
+  - que serán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción apunta a la presencia en un tiempo futuro, no solo a existir; 'estarán presentes' expresa esa localización temporal y situacional con claridad.
+- source_word: በዕለተ ምንዳቤ
+  english_pob_choice: on the day of affliction
+  chosen_spanish: en el día de aflicción
+  alternatives_spanish:
+  - en el día de aflicción
+  - en el día de angustia
+  - en el día de tribulación
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Aflicción'' conserva la gravedad apocalíptica sin resolverla prematuramente hacia un tecnicismo escatológico único; es fiel y comprensible en español.'
+- source_word: ለአሰስሎ
+  english_pob_choice: for the removal of
+  chosen_spanish: para la remoción de
+  alternatives_spanish:
+  - para la remoción de
+  - para quitar
+  - para la eliminación de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Remoción'' reproduce el valor nominal y el tono de sentencia/expulsión del original mejor que una frase más verbalizada.'
+- source_word: ኵሎ እኩያነ
+  english_pob_choice: all the wicked
+  chosen_spanish: todos los malvados
+  alternatives_spanish:
+  - todos los malvados
+  - todos los perversos
+  - todos los impíos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Malvados'' recoge el totalizador ''todos'' y el valor moral negativo de manera clara; se separa de ''impíos'' para respetar la distinción final del original.'
+- source_word: ወረሲዓነ
+  english_pob_choice: and the godless
+  chosen_spanish: y los impíos
+  alternatives_spanish:
+  - y los impíos
+  - y los irreverentes
+  - y los sin Dios
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Impíos'' preserva la dimensión religiosa específica de la falta de piedad, distinguiéndola de la maldad general del término anterior.'
+theological_decisions:
+- issue: 'Distinción entre dos grupos destinatarios: los escogidos y los justos'
+  english_pob_reading: the chosen and the righteous
+  chosen_spanish_reading: los escogidos y los justos
+  alternative_spanish_readings:
+  - los elegidos y los justos
+  - los escogidos, es decir, los justos
+  rationale: El ge'ez coordina dos designaciones; mantener ambas evita fusionarlas y conserva la estructura categorial del texto, que puede distinguir entre elección y rectitud sin identificarlas por completo.
+  doctrine_reference: Translation philosophy §3 preserve theological tension rather than resolve it
+- issue: Valor de በዕለተ ምንዳቤ como momento de sufrimiento y crisis
+  english_pob_reading: on the day of affliction
+  chosen_spanish_reading: en el día de aflicción
+  alternative_spanish_readings:
+  - en el día de angustia
+  - en el día de tribulación
+  - en el día del juicio
+  rationale: '''Aflicción'' mantiene la carga de sufrimiento/trouble sin adelantar una interpretación más específica como ''juicio''. Así se preserva la tensión entre calamidad y juicio implícito en el contexto.'
+  doctrine_reference: Translation philosophy §3 preserve theological tension rather than resolve it
+translation_notes:
+  revision_awareness: Se tomó en cuenta la revisión más reciente del POB inglés que cambió 'word' por 'words' y eliminó el artículo antes de 'godless'. Por eso el español usa 'Las palabras de la bendición' y mantiene dos sustantivos coordinados al final ('los malvados y los impíos') sin añadir matices no sustentados.
+  spanish_consistency_notes:
+  - Se conserva 'Henoc' como transliteración basada en ge'ez, coherente con la política auditada del POB.
+  - '''Escogidos'' evita importar innecesariamente la terminología doctrinal ''elegidos'' cuando el contexto solo requiere el término de elección.'
+  - '''Impíos'' se reserva para la segunda categoría para no borrar la distinción semántica entre maldad general y falta de piedad.'
+  - Se usa un registro bíblico moderno y claro, evitando calcos innecesarios pero sin paraphrasear el encabezamiento apocalíptico.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/001/001.yaml
+  source_text_sha256: d32ba60c9a4003b12743f33df53f510882943e199e1a5560e5969e837a5b9d94
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 5e2e4e757c501060bb0ffc3ecd7905bb5c10e6d2d31f5a3bb4a2550ba8781b83
+  timestamp: '2026-05-07T21:27:43Z'
+  output_hash: 1d79edb00cf1d0c8cbe09398362bd87439d2123f0d03559fd7fc298bb66aa305
+  usage:
+    prompt_tokens: 3314
+    completion_tokens: 1884
+    total_tokens: 5198
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010963
+status: spanish_reviewed
+revisions:
+- from: Las palabras de la bendición de Henoc[a], con las que bendijo a los escogidos y a los justos que estarán presentes en el día de aflicción[b], para la remoción de todos los malvados y los impíos[c].
+  to: Las palabras de la bendición de Henoc[a], con las que bendijo a los escogidos y a los justos que estarán presentes en el día de aflicción[b], para eliminar a todos los malvados e impíos[c].
+  rationale: Se revisa 'para la remoción de' a 'para eliminar a' por mayor naturalidad en español sin perder la finalidad judicial del original. También se aligera la coordinación final con 'malvados e impíos', manteniendo intacta la distinción léxica documentada en el POB inglés. El resto del texto puede conservarse.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:17:38Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura y el sentido general del ge''ez y del POB inglés: encabezamiento de bendición, dos grupos coordinados (''escogidos'' y ''justos''), presencia futura en un ''día de aflicción'', y finalidad de eliminación de dos clases de condenados. Sin embargo, conviene ajustar dos puntos para mayor fidelidad al expediente léxico: el inglés auditado distingue ''wicked and godless'' sin artículo repetido ante el segundo término, y el infinitivo final tiene mejor tono en español como ''eliminar'' o ''quitar'' que ''remoción'', que suena menos natural.'
+  spanish_quality_summary: 'El texto es claro y digno, pero ''para la remoción de'' suena algo forzado en español eclesial general. ''Para eliminar'' mantiene la finalidad y mejora la legibilidad. También ''los malvados y los impíos'' es correcto, aunque omitir el segundo artículo da una coordinación más fluida: ''los malvados e impíos''. El resto del registro es bueno y ampliamente legible.'
+  glossary_alignment: 'No hay conflicto con la terminología base del proyecto. ''Henoc'' sigue la política de transliteración desde ge''ez; ''escogidos'' y ''justos'' preservan la distinción; ''aflicción'' refleja adecuadamente በዕለተ ምንዳቤ; ''impíos'' mantiene la dimensión religiosa de ወረሲዓነ. La principal mejora es estilística-lexical: reemplazar ''remoción'' por una forma más natural en español sin perder la finalidad judicial.'
+  issues:
+  - severity: medium
+    issue: '''para la remoción de'' suena poco natural en español'
+    rationale: Aunque reproduce nominalmente el inglés, en español bíblico contemporáneo resulta rígido. 'para eliminar a' o 'para quitar de en medio a' comunica mejor el sentido de ለአሰስሎ sin alejarse del original.
+  - severity: low
+    issue: 'Coordinación final algo pesada: ''los malvados y los impíos'''
+    rationale: Es fiel, pero 'los malvados e impíos' suena más fluido y sigue bien la coordinación de dos categorías condenadas. No es un problema de sentido, sino de estilo.
+  revised_spanish_text: Las palabras de la bendición de Henoc[a], con las que bendijo a los escogidos y a los justos que estarán presentes en el día de aflicción[b], para eliminar a todos los malvados e impíos[c].
+  revised_footnotes:
+  - marker: a
+    text: '''Henoc'' sigue la forma del ge''ez; la forma bíblica más conocida en español es ''Enoc''.'
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión 'día de aflicción' también puede entenderse como 'día de angustia' o 'día de tribulación'.
+    reason: lexical_alternative
+  - marker: c
+    text: 'El par final distingue dos clases de condenados: los malvados y los impíos.'
+    reason: cultural_note
+  revision_rationale: Se revisa 'para la remoción de' a 'para eliminar a' por mayor naturalidad en español sin perder la finalidad judicial del original. También se aligera la coordinación final con 'malvados e impíos', manteniendo intacta la distinción léxica documentada en el POB inglés. El resto del texto puede conservarse.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 64e4d81977cc85895741d8f61e2413efa7ea12a5cbea1fe13d1cbdab22771205
+  timestamp: '2026-05-07T23:17:38Z'
+  output_hash: 7d8762feac5f7b47ee0322cd597df9965ba026db8dbade122cac01ba6ec8ad88
+  usage:
+    prompt_tokens: 4862
+    completion_tokens: 788
+    total_tokens: 5650
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023975
+  applied_revision: true

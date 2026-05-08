@@ -1,0 +1,173 @@
+id: 1EN.14.6
+reference: 1 Enoch 14:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእምቅድመ፡ ዝንቱ፡ ርኢክሙ፡ ሐጕለ፡ ውሉድክሙ፡ *ፍቁራን፡ ወአልብክሙ፡ †ጥራያኒሆሙ፡ †እላ፡ ይወድቁ፡ ቅድሜክሙ፡ በሰይፍ።
+  language: Geez
+  pages:
+  - 72
+  - 74
+  - 76
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/014/006.yaml
+  text: And before this[a], you will have seen the destruction of your beloved sons, and you will not have them for yourselves[c][b], but they will fall before you by the sword.
+  footnotes:
+  - marker: a
+    text: The word rendered 'treasures' is textually difficult in the OCR Ge'ez and may also mean 'wealth' or 'possessions.'
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'you shall see the destruction of your beloved sons,' if the verbal form is taken more simply as future rather than future perfect.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'and you will not have their treasures,'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: a742cd59989e128aad09aca6089cd4589744d245b78213456a545594bc4642ed
+    timestamp: '2026-04-22T09:09:46Z'
+    output_hash: f7f2e1afc82bced145f4bd487a5fbd9e3f9225674e3122613c962b0c4c66c411
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:43Z'
+    unchanged: false
+    changes_summary: Revised 'you will have no pleasure in them' to 'you will not have them for yourselves' for closer lexical sense to the source, while preserving the rest of the verse.
+translation:
+  language: es
+  text: Y antes de esto[a], habrán visto la destrucción de sus hijos amados, y no tendrán para sí[b] placer en ellos[c], pero caerán delante de ustedes por la espada.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La frase ge’ez aquí es textualmente difícil; el material de auditoría la entiende como una marca temporal previa al evento anunciado.
+    reason: textual_variant
+  - marker: b
+    text: Lit. «no tendrán para sí»; la idea es de privación de posesión o beneficio personal.
+    reason: lexical_alternative
+  - marker: c
+    text: Otra posibilidad reflejada en la tradición auditada es «placer en ellos», siguiendo la lectura aclarada por el testimonio griego frente al ge’ez difícil.
+    reason: textual_variant
+lexical_decisions:
+- source_word: እምቅድመ ዝንቱ
+  english_pob_choice: before this
+  chosen_spanish: antes de esto
+  alternatives_spanish:
+  - antes de estas cosas
+  - previo a esto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase marca anterioridad temporal respecto del evento anunciado. «Antes de esto» es natural en español y conserva la secuencia profética sin añadir matices innecesarios.
+- source_word: ርኢክሙ
+  english_pob_choice: you will have seen
+  chosen_spanish: habrán visto
+  alternatives_spanish:
+  - verán
+  - habrán visto
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El valor contextual es predictivo y anterior a otro hecho futuro, por lo que el futuro perfecto en español comunica bien la idea de ver el evento antes del siguiente desarrollo del juicio.
+- source_word: ሐጕለ
+  english_pob_choice: destruction
+  chosen_spanish: destrucción
+  alternatives_spanish:
+  - ruina
+  - matanza
+  - pérdida
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Destrucción» preserva la gravedad del término sin precisar más de lo que el ge’ez exige.
+- source_word: ውሉድክሙ ፍቁራን
+  english_pob_choice: your beloved sons
+  chosen_spanish: sus hijos amados
+  alternatives_spanish:
+  - sus amados hijos
+  - sus hijos queridos
+  - sus hijos amados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Hijos» es más natural y amplio que «sons» en español, y el adjetivo retiene el sentido afectivo del original. Se usa tercera persona por el discurso directo de reprensión a los destinatarios, conservando la referencia contextual.
+- source_word: አልብክሙ
+  english_pob_choice: you will not have them for yourselves
+  chosen_spanish: no tendrán para sí
+  alternatives_spanish:
+  - no los poseerán
+  - no los tendrán para ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción española expresa privación de posesión/beneficio sin forzar un giro demasiado literal. «Para sí» mantiene la referencia al beneficio o posesión personal indicada por la forma original y por la revisión inglesa.
+- source_word: ጥራያኒሆሙ
+  english_pob_choice: their treasures / you will have no pleasure in them
+  chosen_spanish: placer en ellos
+  alternatives_spanish:
+  - deleite en ellos
+  - beneficio en ellos
+  - aprovechamiento en ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'La tradición auditada muestra tensión textual: el ge’ez transmitido sugiere «posesiones/riquezas», pero la revisión inglesa sigue el testimonio griego con «pleasure in them». En español, «placer en ellos» conserva la lectura revisada sin ocultar que hay una dificultad textual de fondo.'
+- source_word: ይወድቁ ቅድሜክሙ በሰይፍ
+  english_pob_choice: they will fall before you by the sword
+  chosen_spanish: caerán delante de ustedes por la espada
+  alternatives_spanish:
+  - caerán ante ustedes a espada
+  - serán derribados delante de ustedes por la espada
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La fórmula judicial y apocalíptica se conserva con un verbo sencillo y una preposición clara. «Por la espada» mantiene el instrumento de muerte sin sobreexplicar.
+theological_decisions:
+- issue: Referente de «sus hijos amados»
+  english_pob_reading: The line addresses the Watchers concerning the giant offspring born from their unions, whose violent end they will witness.
+  chosen_spanish_reading: La línea se dirige a los Vigilantes acerca de la descendencia nacida de sus uniones ilícitas, cuyo final violento verán.
+  alternative_spanish_readings:
+  - La línea habla de hijos humanos en sentido general
+  - «Hijos» podría entenderse como descendientes sin referencia específica a los gigantes
+  rationale: En el contexto inmediato de 1 Enoc 14, el sentido más coherente es la descendencia de esas uniones. Mantener esa referencia evita diluir la lógica narrativa local.
+  doctrine_reference: Preservar primero el sentido local del pasaje antes de armonizarlo con otras secciones del corpus.
+- issue: Tensión textual en la cláusula intermedia
+  english_pob_reading: Revision moved from 'you will have no pleasure in them' to 'you will not have them for yourselves' while acknowledging earlier corruption and a Greek clarifier.
+  chosen_spanish_reading: Se sigue la revisión que prioriza la privación de beneficio/posesión, pero se deja visible la lectura más natural de disfrute mediante la expresión «placer en ellos» en la nota.
+  alternative_spanish_readings:
+  - «no los poseerán»
+  - «no tendrán disfrute de ellos»
+  - «no tendrán beneficio de ellos»
+  rationale: El testimonio auditado muestra que el ge’ez está corrompido o difícil en este punto, y que el griego aclara la idea. El español debe respetar esa tensión, sin borrar la variación textual.
+  doctrine_reference: Aceptar la dificultad textual y conservarla en una nota de variante/alternativa.
+translation_notes:
+  revision_awareness: 'La auditoría inglesa muestra dos puntos relevantes: (1) la cláusula de ጥራያኒሆሙ fue corregida en la revisión más reciente para reflejar el sentido del griego como «no tendrán placer en ellos / no tendrán beneficio en ellos»; (2) el verbo de la primera cláusula admite valor predictivo con anterioridad relativa. La redacción española intenta reflejar ambas cosas sin borrar la dificultad textual ni sobrecerrar el margen interpretativo.'
+  spanish_consistency_notes:
+  - Se usa «Yahvé» solo cuando el texto fuente lo requiera; aquí no aparece.
+  - Se mantiene «Vigilantes» y no se sustituye por términos eclesiásticos ajenos al contexto apocalíptico.
+  - «Espada» se conserva como instrumento de juicio, no se suaviza a una metáfora genérica.
+  - Se evita calcar el inglés cuando el español puede expresar con naturalidad la relación temporal y la privación de beneficio.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/014/006.yaml
+  source_text_sha256: 54f087bdc8d59afe15f430f88da788f8e84bfb8b719cd2ddc3a3d6b63efad694
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 505599fdea36c849685cb34475846c74568003990f99417f9c2b5a3038ce04a6
+  timestamp: '2026-05-07T21:27:22Z'
+  output_hash: 019c7ec3a34616f4c7e12bc494fe5c0d6960fd1299d518581fab73cd31ab9d9b
+  usage:
+    prompt_tokens: 3178
+    completion_tokens: 1640
+    total_tokens: 4818
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009763
+status: spanish_draft

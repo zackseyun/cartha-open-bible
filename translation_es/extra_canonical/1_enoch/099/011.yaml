@@ -1,0 +1,218 @@
+id: 1EN.99.11
+reference: 1 Enoch 99:11
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: እሌ፡ ለክሙ፡ እለ፡ ትሰፍሕዋ፡ ለእኩይ፡ በቢጽክሙ፡ እስመ፡ በቢጸል፡ ትትቀተሉ።
+  language: Geez
+  pages:
+  - 243
+  - 244
+  - 245
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/099/011.yaml
+  text: Woe to you who spread evil to your neighbors[c][b][a], for by your neighbors you will be slain.
+  footnotes:
+  - marker: a
+    text: 'The Ge''ez repeats the companion-word in both clauses, likely for rhetorical effect: those acting with companions are judged by companions.'
+    reason: lexical_alternative
+  - marker: b
+    text: The first companion-phrase could also be rendered 'through your companions' if taken instrumentally rather than associatively.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'spread out evil with your companions, for by companions you will be slain.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: df3ecfd8e9d1232aae1cfa94028de17ec738a159d86c81de1d29cc2b0a8cdb56
+    timestamp: '2026-04-22T09:26:07Z'
+    output_hash: aa321979ecb534aedad4a62d5b0379b540f0ca46466e1b309cd9a090e4b48c13
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:46Z'
+    unchanged: false
+    changes_summary: Replaced 'in Sheol' with 'by your neighbors' to reflect በቢጸል ('by/through neighbors, companions') rather than Sheol, and preserved the reciprocal wording of the verse more accurately.
+translation:
+  language: es
+  text: ¡Ay de ustedes, que esparcen el mal a sus prójimos[a], porque por sus prójimos[b] serán matados[c]!
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «contra sus vecinos». La frase también puede entenderse con matiz de dirección hostil hacia personas cercanas.
+    reason: lexical_alternative
+  - marker: b
+    text: 'El mismo término relacional reaparece en ambas cláusulas, creando una inversión retributiva: quienes difunden el mal respecto de sus prójimos perecerán por sus prójimos.'
+    reason: lexical_alternative
+  - marker: c
+    text: O «serán muertos». Se prefiere «serán matados» por ser más natural en español actual, mientras conserva el pasivo de sentencia judicial.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: እሌ
+  english_pob_choice: Woe to
+  chosen_spanish: ¡Ay de ustedes!
+  alternatives_spanish:
+  - ¡Ay de ti!
+  - ¡Ay de ustedes!
+  - ¡Ay de vosotros!
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La interjección de denuncia profética/apocalíptica se expresa naturalmente en español con «¡Ay de…!», que conserva el tono oracular de juicio sin suavizarlo.
+- source_word: ለክሙ
+  english_pob_choice: you
+  chosen_spanish: ustedes
+  alternatives_spanish:
+  - ti
+  - vosotros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El dativo del destinatario del ay se vuelve un destinatario plural natural en español. «Ustedes» funciona en registro neutral latinoamericano.
+- source_word: እለ ትሰፍሕዋ ለእኩይ
+  english_pob_choice: who spread out evil
+  chosen_spanish: que esparcen el mal
+  alternatives_spanish:
+  - que extienden el mal
+  - que propagan el mal
+  - que hacen abundar el mal
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo tiene la idea concreta de expandir o esparcir. «Esparcen el mal» conserva esa imagen sin volverla demasiado abstracta.
+- source_word: በቢጽክሙ
+  english_pob_choice: your neighbors
+  chosen_spanish: sus prójimos
+  alternatives_spanish:
+  - sus vecinos
+  - sus semejantes
+  - sus compañeros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión inglesa más reciente entiende aquí la relación como objetivo o dirección del mal, no asociación instrumental. En español, «prójimos» comunica bien el sentido de personas cercanas/afectadas sin introducir una lectura más doméstica que «vecinos».
+- source_word: እስመ
+  english_pob_choice: for
+  chosen_spanish: porque
+  alternatives_spanish:
+  - pues
+  - ya que
+  - porque
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Introduce la razón del ay con causalidad directa. «Porque» es claro y fiel al vínculo explicativo del texto.
+- source_word: በቢጸል
+  english_pob_choice: by your neighbors
+  chosen_spanish: por sus prójimos
+  alternatives_spanish:
+  - por medio de sus prójimos
+  - a manos de sus prójimos
+  - por sus prójimos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'Sigo el sentido revisado de la fuente: el paralelismo reaparece con una inversión retributiva. «Por» mantiene la posibilidad instrumental/mediadora sin obligar a una sola matización en español.'
+- source_word: ትትቀተሉ
+  english_pob_choice: you will be slain
+  chosen_spanish: serán muertos
+  alternatives_spanish:
+  - serán asesinados
+  - serán muertos a espada
+  - serán abatidos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En una denuncia de juicio, el pasivo conserva el carácter de sentencia. «Serán muertos» es sobrio y sigue el tono solemne del original.
+theological_decisions:
+- issue: Forma de retribución medida-por-medida
+  english_pob_reading: those who spread evil with/against neighbors will be slain by/through neighbors
+  chosen_spanish_reading: los que esparcen el mal contra sus prójimos serán muertos por sus prójimos
+  alternative_spanish_readings:
+  - los que hacen abundar el mal con sus asociados serán muertos por sus asociados
+  - los que propagan el mal entre sus vecinos perecerán por medio de sus vecinos
+  rationale: 'La lectura debe conservar el paralelismo retributivo visible en el verso: el mismo término reaparece en ambas cláusulas y articula una inversión de juicio. El español mantiene esa reciprocidad sin explicar de más la mecánica de la retribución.'
+  doctrine_reference: Preservar fórmulas apocalípticas de juicio y su lógica de medida por medida.
+translation_notes:
+  revision_awareness: La revisión más reciente corrige una lectura previa que dependía de una confusión textual; el verso fue reanclado en el paralelismo retributivo de la fuente etiopica, y la traducción española evita introducir una referencia ajena al manuscrito base. Se conservó el carácter de amenaza judicial y el juego de repetición del término clave en ambas cláusulas.
+  spanish_consistency_notes:
+  - Se prefirió un español neutral latinoamericano y de registro bíblico digno.
+  - Se evitó «SEÑOR» o equivalentes de ocultación porque aquí no aparece el nombre divino.
+  - Se mantuvo el pasivo solemne «serán muertos» para conservar el tono de sentencia.
+  - Los términos relacionales se resolvieron con «prójimos» para no forzar una lectura doméstica de «vecinos».
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/099/011.yaml
+  source_text_sha256: eb4991820a4c8e7680b627306460096029367eb30fd5ef9e805d6123fdd4bd15
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e6f2a3758a94927e51e6c82d3416fcfaebd6ebb57d30ad16cfe195f2fe556e35
+  timestamp: '2026-05-07T21:28:17Z'
+  output_hash: e2ffaf8c8228337e650e094d6591bc5c6d4e9c5bb044bbdd1b9c7d0591859878
+  usage:
+    prompt_tokens: 3149
+    completion_tokens: 1315
+    total_tokens: 4464
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008279
+status: spanish_reviewed
+revisions:
+- from: ¡Ay de ustedes, que esparcen el mal contra sus prójimos[a], porque por sus prójimos[b] serán muertos[c].
+  to: ¡Ay de ustedes, que esparcen el mal a sus prójimos[a], porque por sus prójimos[b] serán matados[c]!
+  rationale: Se ajusta la primera preposición a «a sus prójimos» para no sobreinterpretar el original más allá del English POB fijado; se conserva «por sus prójimos» en la segunda cláusula para mantener la reciprocidad; y se reemplaza «serán muertos» por «serán matados» para mejorar la naturalidad del español sin perder el tono solemne ni el pasivo judicial. También se normaliza la puntuación y se rehacen las notas para que apoyen mejor las decisiones realmente relevantes.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:52:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español capta bien la estructura básica de juicio y la reciprocidad del verso, siguiendo la revisión inglesa final que entiende ambas formas con el término relacional repetido. Sin embargo, «contra sus prójimos» interpreta demasiado específicamente la primera preposición, cuando el inglés POB fijado dice «to your neighbors» y la nota inglesa preserva alternativas instrumentales/asociativas. Además, la puntuación final está incompleta y «serán muertos» resulta menos natural en español que una forma pasiva más idiomática como «serán matados» o una perífrasis agentiva. La mejor solución fiel y legible es mantener «a sus prójimos» en la primera cláusula y «por sus prójimos» en la segunda, preservando el paralelismo.
+  spanish_quality_summary: 'El texto es mayormente claro y de registro adecuado, pero tiene tres problemas de calidad: falta el signo de cierre/coma final de cita; «contra sus prójimos» suena más hostil-interpretativo que el original auditado; y «serán muertos» es comprensible pero torpe en español bíblico moderno neutral. Una formulación más natural y digna es «serán matados por sus prójimos» o «morirán a manos de sus prójimos». Para conservar mejor el pasivo y la correspondencia con el inglés POB, recomiendo «serán matados por sus prójimos».'
+  glossary_alignment: No hay términos del glosario maestro especialmente activados aquí. «Prójimos» es aceptable y eclesialmente legible, aunque «vecinos» también sería posible. La decisión revisada conserva la repetición del mismo término en ambas cláusulas, en línea con la racionalidad léxica y teológica documentada.
+  issues:
+  - severity: medium
+    issue: «contra sus prójimos» sobreinterpreta la primera frase preposicional
+    rationale: El English POB fijado traduce «to your neighbors», no «against your neighbors». La traducción española debería dejar abierta la relación sin cargarla con oposición explícita, especialmente dado que las notas inglesas conservan ambigüedad.
+  - severity: medium
+    issue: «serán muertos» es poco idiomático en español moderno neutral
+    rationale: Aunque se entiende, suena forzado. Un equivalente más natural que mantiene el tono judicial/apocalíptico es «serán matados» o una construcción como «morirán a manos de...».
+  - severity: low
+    issue: La oración carece de puntuación de cierre adecuada
+    rationale: El borrador termina con «[c].» pero falta el cierre completo de la frase tal como está presentada; conviene normalizar la puntuación final en el texto revisado.
+  - severity: low
+    issue: Las notas heredadas no reflejan con precisión el conjunto de notas del English POB
+    rationale: El rastro inglés tenía tres notas sobre repetición retórica y posibles lecturas alternativas, mientras que el español introduce una nota sobre «serán asesinados» que no es necesaria si se mejora el texto principal.
+  revised_spanish_text: ¡Ay de ustedes, que esparcen el mal a sus prójimos[a], porque por sus prójimos[b] serán matados[c]!
+  revised_footnotes:
+  - marker: a
+    text: O «contra sus vecinos». La frase también puede entenderse con matiz de dirección hostil hacia personas cercanas.
+    reason: lexical_alternative
+  - marker: b
+    text: 'El mismo término relacional reaparece en ambas cláusulas, creando una inversión retributiva: quienes difunden el mal respecto de sus prójimos perecerán por sus prójimos.'
+    reason: lexical_alternative
+  - marker: c
+    text: O «serán muertos». Se prefiere «serán matados» por ser más natural en español actual, mientras conserva el pasivo de sentencia judicial.
+    reason: lexical_alternative
+  revision_rationale: Se ajusta la primera preposición a «a sus prójimos» para no sobreinterpretar el original más allá del English POB fijado; se conserva «por sus prójimos» en la segunda cláusula para mantener la reciprocidad; y se reemplaza «serán muertos» por «serán matados» para mejorar la naturalidad del español sin perder el tono solemne ni el pasivo judicial. También se normaliza la puntuación y se rehacen las notas para que apoyen mejor las decisiones realmente relevantes.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 15f0a3ac07cf6d9de8377870dd37f625ee4b3a8237e5e9ccf29d3e7cc14a8d80
+  timestamp: '2026-05-07T23:52:36Z'
+  output_hash: a29db4b2c7c6c66821df427fa55a60c8fd40991a923e5d0b7d0cef6b3ed3fd5b
+  usage:
+    prompt_tokens: 4017
+    completion_tokens: 982
+    total_tokens: 4999
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024772
+  applied_revision: true

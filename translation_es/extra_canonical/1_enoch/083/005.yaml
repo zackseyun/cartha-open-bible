@@ -1,0 +1,212 @@
+id: 1EN.83.5
+reference: 1 Enoch 83:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ*እምኔሁ፡ ወድቀ፡ ነገር፡ ውስተ፡ አፉየ፡ ወ*አንሣእኩ፡ እጽራሕ፡ ወእቤ፡ ተሐጕለት፡ ምድር።
+  language: Geez
+  pages:
+  - 197
+  - 198
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch83.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 83, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/083/005.yaml
+  text: And a word fell into my mouth because of it[a], and I lifted up a cry and said[d][c][b], “The earth is destroyed.”
+  footnotes:
+  - marker: a
+    text: Or 'from it' or 'thereupon'; the opening phrase may mark source, cause, or sequence from the preceding vision.
+    reason: lexical_alternative
+  - marker: b
+    text: Literally, 'a word fell into my mouth,' an idiom for an utterance that came upon the speaker.
+    reason: cultural_note
+  - marker: c
+    text: The verb behind 'is swallowed up' may also be understood more generally as 'is overwhelmed' or 'has perished.'
+    reason: lexical_alternative
+  - marker: d
+    text: Or 'The earth is swallowed up.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 1d629b8bddb13489cb04e75291d7523e951701b460c7daa4bc5c1ebf4122ffa5
+    timestamp: '2026-04-22T09:20:14Z'
+    output_hash: ab1176cc37dac061b89dd66489e952ffa3639026bd04f445a7b9c1d985cbe28a
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:48Z'
+    unchanged: false
+    changes_summary: Removed the accidental duplicated clause and retained the sense of the source. Reordered the opening slightly for more natural English while preserving 'because of it,' 'a word fell into my mouth,' 'I lifted up a cry,' and 'The earth is destroyed.'
+translation:
+  language: es
+  text: 'Y por ello cayó una palabra en mi boca[a][b], y alcé un grito y dije: «La tierra está destruida»'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'También puede entenderse: «de ello», «desde ello» o «entonces». La expresión puede señalar causa, origen o secuencia a partir de la visión anterior.'
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, «cayó una palabra en mi boca», un giro idiomático para una expresión que sobreviene al hablante.
+    reason: cultural_note
+lexical_decisions:
+- source_word: እምኔሁ
+  english_pob_choice: because of it
+  chosen_spanish: de ello
+  alternatives_spanish:
+  - por ello
+  - a causa de ello
+  - desde ello
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El preverbio con sufijo puede expresar causa, origen o secuencia. En este contexto visionario, «de ello» conserva la relación con lo anterior sin fijarla demasiado en una sola matización, y permite leer la frase como resultativa o causal.
+- source_word: ወድቀ ነገር ውስተ አፉየ
+  english_pob_choice: a word fell into my mouth
+  chosen_spanish: cayó una palabra en mi boca
+  alternatives_spanish:
+  - una palabra cayó en mi boca
+  - me vino una palabra a la boca
+  - cayó una palabra en mi boca, a mí
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se preserva el giro idiomático en vez de reducirlo a «hablé». «Palabra» es la opción más transparente en español y mantiene la idea de una expresión que irrumpe sobre el hablante.
+- source_word: አንሣእኩ
+  english_pob_choice: I lifted up
+  chosen_spanish: alcé
+  alternatives_spanish:
+  - levanté
+  - elevé
+  - alzé
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Alcé» reproduce con naturalidad el gesto de elevar la voz o el clamor, conservando el dinamismo del verbo sin volverlo interpretativo.
+- source_word: እጽራሕ
+  english_pob_choice: a cry
+  chosen_spanish: un grito
+  alternatives_spanish:
+  - un clamor
+  - un alarido
+  - una voz
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Grito» comunica bien el carácter fuerte e inmediato del sustantivo, con un registro claro y digno en español.
+- source_word: ተሐጕለት
+  english_pob_choice: is destroyed
+  chosen_spanish: está destruida
+  alternatives_spanish:
+  - ha sido destruida
+  - perece
+  - está arruinada
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'La revisión auditada corrige el valor del verbo frente al versículo anterior: aquí no significa «ser tragada» sino «ser destruida / perecer». «Está destruida» conserva la afirmación directa y el impacto apocalíptico.'
+- source_word: ምድር
+  english_pob_choice: the earth
+  chosen_spanish: la tierra
+  alternatives_spanish:
+  - la tierra
+  - el mundo
+  - el suelo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En español, «tierra» mantiene la amplitud cósmica del pasaje y permite la lectura apocalíptica sin forzar «mundo» ni restringirlo a un terreno local.
+theological_decisions:
+- issue: Alcance cósmico de ምድር en visión apocalíptica
+  english_pob_reading: the earth
+  chosen_spanish_reading: la tierra
+  alternative_spanish_readings:
+  - el mundo
+  - la tierra/país
+  rationale: La visión opera en escala amplia; «la tierra» preserva ese alcance universal y no rebaja el lenguaje a una geografía limitada. A la vez, sigue siendo natural en español bíblico contemporáneo.
+  doctrine_reference: Conservar imaginería apocalíptica sin aplanar el lenguaje cósmico.
+- issue: Valor semántico de ተሐጕለት frente al verbo del versículo anterior
+  english_pob_reading: is destroyed
+  chosen_spanish_reading: está destruida
+  alternative_spanish_readings:
+  - ha sido destruida
+  - perece
+  - está arruinada
+  rationale: La nota de revisión indica un cambio léxico deliberado respecto del verbo anterior. «Está destruida» refleja el estado resultante con fuerza declarativa, sin confundirlo con «ser tragada».
+  doctrine_reference: Respetar el contraste léxico del texto etiópico y no armonizarlo indebidamente con el versículo precedente.
+translation_notes:
+  revision_awareness: 'Se tuvo en cuenta la corrección más reciente del audit trail: el verbo final no debe verterse como «tragada» o «engullida», sino como destruida / perece. También se evitó duplicar la cláusula inicial y se mantuvo el orden natural del español sin perder el matiz causal del comienzo.'
+  spanish_consistency_notes:
+  - Se usó «tierra» para ምድር, coherente con el alcance apocalíptico y con el uso bíblico natural en español.
+  - Se evitó «Cristo» o terminología cristológica ajena al pasaje, ya que no aparece en la fuente.
+  - Se mantuvo «palabra» para el giro idiomático, en vez de paraphrasearlo como mera declaración.
+  - La puntuación y las comillas siguen normas tipográficas españolas y conservan el tono solemne del texto.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/083/005.yaml
+  source_text_sha256: e9905d7898b59c04904007b8f550219ba1c55d91d77b8caa862816bb3559985b
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 00628fa020713a173e804caa7f8f73d6870b9755d66272742121202612511f7b
+  timestamp: '2026-05-07T21:27:45Z'
+  output_hash: 45e78b9fc72042f564015b445439c54967d8c937e6c19f05f2d54b886607a55a
+  usage:
+    prompt_tokens: 3046
+    completion_tokens: 1323
+    total_tokens: 4369
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008238
+status: spanish_reviewed
+revisions:
+- from: 'Y de ello cayó una palabra en mi boca[a], y alcé un grito y dije: «La tierra está destruida»[b].'
+  to: 'Y por ello cayó una palabra en mi boca[a][b], y alcé un grito y dije: «La tierra está destruida»'
+  rationale: Se ajusta እምኔሁ a «por ello» para reflejar mejor la lectura causal principal documentada y mejorar la naturalidad del español. Se mantiene el modismo «cayó una palabra en mi boca» y se reubica correctamente la nota cultural sobre ese modismo al punto donde aparece en el texto.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:30:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura básica del ge''ez: mantiene el modismo «cayó una palabra en mi boca», el verbo de alzar el clamor y la lectura auditada «la tierra está destruida» en vez de «tragada». Sin embargo, la apertura «de ello» no refleja tan bien como «por ello / a causa de ello» la decisión auditada principal «because of it» y su fuerza causal/resultativa en contexto.'
+  spanish_quality_summary: 'El español es claro y digno, pero «Y de ello cayó una palabra en mi boca» suena algo forzado en español contemporáneo. Reordenar a «Y por ello cayó una palabra en mi boca» mejora la naturalidad sin perder la imagen idiomática. También hay un problema de anclaje de notas: la nota [b] explica el modismo «cayó una palabra en mi boca», pero en el texto actual está anclada al cierre de la cita «La tierra está destruida».'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «La tierra» para ምድር y «destruida» para ተሐጕለት están alineadas con la revisión inglesa y la rationale teológica/lexical. La principal corrección es preferir una formulación causal más natural en español para እምኔሁ.
+  issues:
+  - severity: medium
+    issue: La apertura «de ello» subrepresenta la lectura causal principal de እምኔሁ.
+    rationale: El expediente auditado privilegia «because of it» como lectura principal, con «from it/thereupon» como alternativas. En español, «de ello» suena menos natural y más ambiguo que «por ello» o «a causa de ello».
+  - severity: medium
+    issue: La nota [b] está anclada al lugar equivocado.
+    rationale: La nota [b] explica literalmente «cayó una palabra en mi boca», pero el marcador aparece tras «La tierra está destruida». Esto incumple la disciplina de anclaje de notas.
+  - severity: low
+    issue: La redacción inicial es algo rígida en español.
+    rationale: «Y de ello cayó una palabra en mi boca» es comprensible, pero «Y por ello cayó una palabra en mi boca» fluye mejor y sigue siendo fiel al original.
+  revised_spanish_text: 'Y por ello cayó una palabra en mi boca[a][b], y alcé un grito y dije: «La tierra está destruida»'
+  revised_footnotes:
+  - marker: a
+    text: 'También puede entenderse: «de ello», «desde ello» o «entonces». La expresión puede señalar causa, origen o secuencia a partir de la visión anterior.'
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, «cayó una palabra en mi boca», un giro idiomático para una expresión que sobreviene al hablante.
+    reason: cultural_note
+  revision_rationale: Se ajusta እምኔሁ a «por ello» para reflejar mejor la lectura causal principal documentada y mejorar la naturalidad del español. Se mantiene el modismo «cayó una palabra en mi boca» y se reubica correctamente la nota cultural sobre ese modismo al punto donde aparece en el texto.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2b9a5a2d3d5b5f88595b5c285f76b1b9090c5ecd60cc52e8c72e94d446e6d0ea
+  timestamp: '2026-05-07T23:30:58Z'
+  output_hash: 0116fd5cee8db4976f5cc062de82d14709b565a82b315d3edb3920460dc3ab10
+  usage:
+    prompt_tokens: 3934
+    completion_tokens: 756
+    total_tokens: 4690
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021175
+  applied_revision: true

@@ -1,0 +1,218 @@
+id: 1EN.69.3
+reference: 1 Enoch 69:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእሉ፡ እሙንቱ፡ አርእስተ፡ መላእክቲሆሙ፡ ወአስማቲሆሙ፡ ወመኰንነ፡ ምእት፡ ዚአሆሙ፡ ወመኰንነ፡ ኀምሳ፡ ዚአሆሙ፡ ወመኰንነ፡ ዐሠርተ፡ ዚአሆሙ።
+  language: Geez
+  pages:
+  - 160
+  - 161
+  - 162
+  - 163
+  - 164
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/069/003.yaml
+  text: And these are the chiefs of their angels[a], and their names, and the commanders of their hundreds, and the commanders of their fifties[c][b], and the commanders of their tens.
+  footnotes:
+  - marker: a
+    text: 'The Ge''ez lists a hierarchy by numerical units: hundreds, fifties, and tens. This likely reflects ranked divisions or ordered companies rather than simple arithmetic totals.'
+    reason: cultural_note
+  - marker: b
+    text: The possessive 'their' is repeated throughout the verse in Ge'ez. Its exact referent is supplied by the surrounding context.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'the commander of their hundreds, and the commander of their fifties, and the commander of their tens'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 3273c5a7af69b248f9cf188c7125aa89a16dbe590cb7a8caec2310c2bbbc64ce
+    timestamp: '2026-04-22T09:15:08Z'
+    output_hash: 8779f5cc858be4932405d31dc2250a4a302ae4becc863ca242a2cac391ef8315
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:34Z'
+    unchanged: false
+    changes_summary: 'Added articles for natural English and adjusted the possessive placement in the repeated phrases to better reflect the source structure: ''the commanders of their hundreds/fifties/tens.'''
+translation:
+  language: es
+  text: Y estos son los jefes de sus ángeles[a], y sus nombres, y los comandantes de sus grupos de cien[b], y los comandantes de sus grupos de cincuenta[c], y los comandantes de sus grupos de diez.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'El ge''ez enumera una jerarquía por unidades numéricas: cientos, cincuentas y decenas. Esto probablemente refleja divisiones ordenadas o compañías jerarquizadas, no simples totales aritméticos.'
+    reason: cultural_note
+  - marker: b
+    text: El posesivo «sus» se repite en la frase ge'ez a lo largo de esta serie. Su referente exacto lo determina el contexto inmediato.
+    reason: lexical_alternative
+  - marker: c
+    text: O «el comandante de sus cientos, y el comandante de sus cincuentas, y el comandante de sus decenas».
+    reason: previous_rendering
+lexical_decisions:
+- source_word: እሉ
+  english_pob_choice: these
+  chosen_spanish: estos
+  alternatives_spanish:
+  - aquellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El demostrativo introduce una lista identificadora inmediata; «estos» conserva mejor la deixis cercana del original que «aquellos».
+- source_word: አርእስተ
+  english_pob_choice: chiefs
+  chosen_spanish: jefes
+  alternatives_spanish:
+  - cabezas
+  - líderes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sentido literal es «cabezas», pero en español «jefes» comunica de forma clara el rango o la función de autoridad sin volver la frase innecesariamente extraña.
+- source_word: መላእክቲሆሙ
+  english_pob_choice: their angels
+  chosen_spanish: sus ángeles
+  alternatives_spanish:
+  - sus mensajeros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En 1 Enoc, el término se refiere normalmente a seres angélicos; «ángeles» conserva esa referencia. Se mantiene el posesivo porque el texto lo repite, aunque su referente exacto depende del contexto.
+- source_word: አስማቲሆሙ
+  english_pob_choice: their names
+  chosen_spanish: sus nombres
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Es una equivalencia directa y formal; la secuencia de nombres encaja con el tono de un registro o catálogo.
+- source_word: መኰንነ
+  english_pob_choice: commander
+  chosen_spanish: comandantes
+  alternatives_spanish:
+  - jefes
+  - capitanes
+  - gobernantes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término aparece en una cadena jerárquica de tipo militar/administrativo. En español, el plural «comandantes» preserva mejor la estructura distributiva que un singular o una traducción más general.
+- source_word: ምእት
+  english_pob_choice: hundreds
+  chosen_spanish: centenas
+  alternatives_spanish:
+  - cientos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se traduce como unidad de rango, no como cantidad matemática aislada. «Centenas» mantiene el valor distributivo y la simetría con «cincuentas» y «decenas».
+- source_word: ኀምሳ
+  english_pob_choice: fifties
+  chosen_spanish: cincuentas
+  alternatives_spanish:
+  - cincuenta
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el plural de unidad jerárquica para reflejar el patrón de rangos sobre unidades de cincuenta.
+- source_word: ዐሠርተ
+  english_pob_choice: tens
+  chosen_spanish: decenas
+  alternatives_spanish:
+  - diez
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Decenas» reproduce el escalonamiento del original y evita reducir la expresión a un número aislado.
+- source_word: ዚአሆሙ
+  english_pob_choice: their
+  chosen_spanish: sus
+  alternatives_spanish:
+  - de ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El posesivo se repite en la construcción ge'ez; en español se naturaliza como «sus» manteniendo la referencia posesiva a cada unidad jerárquica.
+theological_decisions:
+- issue: Cómo representar la jerarquía angélica numerada sin imponer terminología eclesiástica
+  english_pob_reading: commander of their hundreds ... fifties ... tens
+  chosen_spanish_reading: comandantes de sus centenas ... cincuentas ... decenas
+  alternative_spanish_readings:
+  - jefes de sus centenas ... cincuentas ... decenas
+  - comandantes de sus cientos ... cincuenta ... decenas
+  rationale: El pasaje presenta una estructura ordenada de rangos. «Comandantes» conserva el tono administrativo-militar de la cadena de mando sin trasladarlo a vocabulario eclesiástico ni suavizar la fuerza del listado.
+  doctrine_reference: Conservar la imaginería apocalíptica y la estructura jerárquica del texto; equivalencia óptima con transparencia formal.
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión que corrigió la colocación posesiva en la frase jerárquica inglesa. En español se reflejó esa estructura con «sus comandantes de sus centenas/cincuentas/decenas», manteniendo el posesivo repetido del ge'ez y la pluralidad de los cargos. También se preservó el carácter distributivo de las unidades numéricas.
+  spanish_consistency_notes:
+  - Se prefirió «jefes» para አርእስተ como equivalente natural, pero se reservó «comandantes» para መኰንነ por la fuerza jerárquica del cargo.
+  - Se usaron plurales de unidad («centenas», «cincuentas», «decenas») para mantener el paralelismo del original.
+  - Se evitó «SEÑOR» y demás convenciones de sustitución porque este versículo no contiene el tetragrámaton ni un caso de κύριος relevante.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/069/003.yaml
+  source_text_sha256: 037a25c45774314701f9fd4ae537551812c9c22c117c9aa32c892e55572abb66
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 8441db86bcf965dba3e99e8b418f27219030f973278a301cc0b88a3f97bb0784
+  timestamp: '2026-05-07T21:28:03Z'
+  output_hash: 7c7bb9cb6304c515830a0f065987963e70aa420ad2be00e776f07ed7edef74f5
+  usage:
+    prompt_tokens: 3212
+    completion_tokens: 1413
+    total_tokens: 4625
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008767
+status: spanish_reviewed
+revisions:
+- from: Y estos son los jefes de sus ángeles[a], y sus nombres, y los comandantes de sus centenas, y los comandantes de sus cincuentas[b], y los comandantes de sus decenas.
+  to: Y estos son los jefes de sus ángeles[a], y sus nombres, y los comandantes de sus grupos de cien[b], y los comandantes de sus grupos de cincuenta[c], y los comandantes de sus grupos de diez.
+  rationale: 'Se ajustó la serie numérica para que suene natural en español sin perder la jerarquía del original: ''grupos de cien/cincuenta/diez'' comunica mejor unidades bajo mando que ''centenas/cincuentas/decenas'' usadas como posesivos. También se restauró la nota de alternativa presente en el POB inglés y se reubicó la nota sobre el posesivo repetido para que corresponda a la fórmula entera.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:37:20Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura catalogadora del ge''ez: demostrativo inicial, ''jefes de sus ángeles'', ''sus nombres'' y la secuencia jerárquica por centenas, cincuentas y decenas. Sin embargo, hay un desajuste importante con el rastro auditado en inglés: falta la nota de alternativa/previsión para la serie repetida (''commander ... hundreds/fifties/tens''), y el marcador [b] quedó colocado solo en ''cincuentas'', cuando en el POB inglés [b] explica la repetición del posesivo en toda la fórmula. Además, ''cincuentas'' como sustantivo de unidad jerárquica suena poco natural en español bíblico moderno; ''grupos de cincuenta'' o ''cincuentenas'' resolvería mejor, pero para mínima intervención puede mantenerse con nota aclaratoria solo si se busca máxima formalidad. Aun así, la redacción requiere ajuste por legibilidad.'
+  spanish_quality_summary: 'El texto es mayormente comprensible, pero ''sus cincuentas'' resulta torpe y poco idiomático. También conviene anclar mejor las notas: [a] funciona en ''ángeles'', mientras que la explicación del posesivo repetido debe corresponder a toda la serie de rangos, no solo a ''cincuentas''. La frase completa fluye mejor si se usa ''grupos de cien / de cincuenta / de diez'', que expresa la jerarquía sin calco extraño.'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Ángeles' y 'jefes' son aceptables en contexto. 'Comandantes' preserva la decisión teológica/lexical del inglés. La principal mejora es estilística y de fidelidad a la función de las notas, no de glosario doctrinal.
+  issues:
+  - severity: medium
+    issue: '''cincuentas'' es poco natural en español'
+    rationale: Aunque reproduce formalmente 'fifties', en español común y eclesial 'cincuentas' casi no se usa para unidades jerárquicas; dificulta la lectura.
+  - severity: medium
+    issue: Falta la nota equivalente a la nota inglesa c
+    rationale: El inglés POB preservó una alternativa significativa para la serie 'commander(s) of ...'; el español debe conservarla en nota, especialmente porque el pasaje es formulaico.
+  - severity: low
+    issue: El marcador [b] está anclado de forma demasiado estrecha
+    rationale: La nota sobre el posesivo repetido describe toda la fórmula ge'ez, no solo 'cincuentas'; conviene anclarla donde abarque la serie repetida o al primer elemento de esa serie.
+  revised_spanish_text: Y estos son los jefes de sus ángeles[a], y sus nombres, y los comandantes de sus grupos de cien[b], y los comandantes de sus grupos de cincuenta[c], y los comandantes de sus grupos de diez.
+  revised_footnotes:
+  - marker: a
+    text: 'El ge''ez enumera una jerarquía por unidades numéricas: cientos, cincuentas y decenas. Esto probablemente refleja divisiones ordenadas o compañías jerarquizadas, no simples totales aritméticos.'
+    reason: cultural_note
+  - marker: b
+    text: El posesivo «sus» se repite en la frase ge'ez a lo largo de esta serie. Su referente exacto lo determina el contexto inmediato.
+    reason: lexical_alternative
+  - marker: c
+    text: O «el comandante de sus cientos, y el comandante de sus cincuentas, y el comandante de sus decenas».
+    reason: previous_rendering
+  revision_rationale: 'Se ajustó la serie numérica para que suene natural en español sin perder la jerarquía del original: ''grupos de cien/cincuenta/diez'' comunica mejor unidades bajo mando que ''centenas/cincuentas/decenas'' usadas como posesivos. También se restauró la nota de alternativa presente en el POB inglés y se reubicó la nota sobre el posesivo repetido para que corresponda a la fórmula entera.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3dedb80465bd76a6e5c634d8ca72cf2ff699fec6df03df3a39100e383f841c50
+  timestamp: '2026-05-07T23:37:20Z'
+  output_hash: 3dd96f2a93290c68d26a31c7633b5e69e42b366c52adc90b2031261d191c2943
+  usage:
+    prompt_tokens: 4211
+    completion_tokens: 905
+    total_tokens: 5116
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024102
+  applied_revision: true

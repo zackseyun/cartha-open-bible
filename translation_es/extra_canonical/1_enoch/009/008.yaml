@@ -1,0 +1,205 @@
+id: 1EN.9.8
+reference: 1 Enoch 9:8
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወሖሩ፡ ኀበ፡ አዋልደ፡ ሰብእ፡ *በዲበ፡ ምድር፡ ወስከቡ፡ *ምስሌሆን፡ ምስለ፡ እልኩ፡ አንስት፡ ወረኵሱ፡ ወአግሀዱ፡ *ሎን፡ ኵሎ፡ ኃጢአተ።
+  language: Geez
+  pages:
+  - 56
+  - 58
+  - 60
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch09.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 9, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/009/008.yaml
+  text: And they went to the daughters of men on the earth[a], and they lay with them, with those women[c][b], and they defiled themselves and revealed to them every sin.
+  footnotes:
+  - marker: a
+    text: Or 'revealed to them'; the verb can denote disclosure, and in context may refer to forbidden knowledge associated with the Watchers' transgression.
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'went in to'.
+    reason: previous_rendering
+  - marker: c
+    text: Or 'made known'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 522d3f9a45f685067da7ac6b143d477d0553dd6c29a97708db2c732f3d6ed4d5
+    timestamp: '2026-04-22T09:08:42Z'
+    output_hash: 8c923dcc491cf27465400c6a7c974fdb996cba1188c9aa70e43f23b2b62d13be
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:34Z'
+    unchanged: false
+    changes_summary: Changed 'upon the earth' to 'on the earth' for more natural English; otherwise retained the draft as accurate and complete.
+translation:
+  language: es
+  text: Y fueron a las hijas de los hombres en la tierra, y se acostaron con ellas, con aquellas mujeres, y se contaminaron y les revelaron[a] todo pecado.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «les dieron a conocer»; el verbo puede significar también «dar a conocer», pero aquí se mantiene «revelaron» por su fuerza apocalíptica y por la revisión del audit trail inglés.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወሖሩ
+  english_pob_choice: they went
+  chosen_spanish: fueron
+  alternatives_spanish:
+  - fueron a
+  - se fueron
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez ሖሩ significa simplemente ‘ir/fueron’; no requiere un idiomático ‘entraron’. ‘Fueron a’ es claro en español y mantiene el movimiento hacia las mujeres sin sobretraducir la carga sexual, que ya queda expresada en la cláusula siguiente.
+- source_word: አዋልደ ሰብእ
+  english_pob_choice: the daughters of men
+  chosen_spanish: las hijas de los hombres
+  alternatives_spanish:
+  - las hijas de la humanidad
+  - las hijas de los seres humanos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la expresión tradicional y suficientemente literal para el contraste narrativo entre seres celestiales y mujeres humanas. ‘Hombres’ funciona aquí como colectivo humano, no como varones solamente.
+- source_word: በዲበ ምድር
+  english_pob_choice: on the earth
+  chosen_spanish: sobre la tierra
+  alternatives_spanish:
+  - en la tierra
+  - en la tierra, sobre la superficie
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ‘Sobre la tierra’ reproduce de forma transparente la localización espacial del ge'ez y conserva el contraste cielo/tierra propio del relato. Es una equivalencia natural en español bíblico.
+- source_word: ወስከቡ ምስሌሆን
+  english_pob_choice: they lay with them
+  chosen_spanish: se acostaron con ellas
+  alternatives_spanish:
+  - y yacieron con ellas
+  - y se unieron a ellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La idea es unión sexual ilícita. ‘Se acostaron con ellas’ es el equivalente español más claro y sobrio para ese valor, mejor que un calco más duro o más ambiguo.
+- source_word: ምስለ እልኩ አንስት
+  english_pob_choice: with those women
+  chosen_spanish: con aquellas mujeres
+  alternatives_spanish:
+  - con esas mujeres
+  - con aquellas esposas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ‘Aquellas mujeres’ conserva el demostrativo reforzador del texto y evita introducir la idea de matrimonio, que no está en el original.
+- source_word: ወረኵሱ
+  english_pob_choice: and they defiled themselves
+  chosen_spanish: y se contaminaron
+  alternatives_spanish:
+  - y se defilaron
+  - y se hicieron impuros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo refleja impureza moral y cultual. ‘Se contaminaron’ mantiene esa amplitud semántica en un español bíblico comprensible, sin reducirlo solo a una noción ritual.
+- source_word: ወአግሀዱ ሎን
+  english_pob_choice: and revealed to them
+  chosen_spanish: y les revelaron
+  alternatives_spanish:
+  - y les hicieron conocer
+  - y les dieron a conocer
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ajuste de revisión en la tradición inglesa confirma ‘revealed’ como mejor opción que ‘made known’. En español, ‘revelaron’ conserva el sentido de desvelar/disclose propio del contexto apocalíptico y de la transgresión de secretos prohibidos.
+- source_word: ኵሎ ኃጢአተ
+  english_pob_choice: every sin
+  chosen_spanish: todo pecado
+  alternatives_spanish:
+  - cada pecado
+  - toda clase de pecado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión singular colectiva del ge'ez admite una formulación totalizante en singular. ‘Todo pecado’ suena natural en español y conserva el alcance universal de la acusación.
+theological_decisions:
+- issue: Naturaleza de la corrupción de los Vigilantes
+  english_pob_reading: The verse describes both illicit sexual union and the disclosure of sinful knowledge.
+  chosen_spanish_reading: El versículo describe tanto la unión sexual ilícita como la revelación de todo pecado.
+  alternative_spanish_readings:
+  - Solo describe corrupción sexual, con la última cláusula como glosa secundaria.
+  - La última cláusula se refiere específicamente a artes ocultas o técnicas, no al pecado en general.
+  rationale: 'El ge''ez expresa explícitamente ambos elementos: acostarse con las mujeres y revelarles todo pecado. La traducción conserva esa doble acusación sin estrechar el texto hacia una sola categoría de corrupción.'
+  doctrine_reference: Conservar la tensión teológica y apocalíptica del texto; no neutralizar su denuncia moral ni su dimensión de conocimiento prohibido.
+translation_notes:
+  revision_awareness: 'El audit trail inglés corrigió dos puntos relevantes: abandonó ‘went in to’ por un simple movimiento (‘went’), y prefirió ‘revealed’ frente a ‘made known’. Esta versión española sigue esas revisiones: evita un ‘entraron’ o un equivalente de penetración implícita en el primer verbo, y conserva ‘revelaron’ en la cláusula final para reflejar la terminología apocalíptica del texto y la decisión revisada de la POB inglesa. También se adopta ‘on the earth’ como ‘sobre la tierra’ por naturalidad y fidelidad espacial.'
+  spanish_consistency_notes:
+  - Se mantiene ‘Yahvé’ solo cuando el texto lo exija; aquí no aparece ninguna forma del nombre divino.
+  - ‘Hombres’ se usa en sentido colectivo humano, no sexista restrictivo, por fidelidad al contraste narrativo tradicional.
+  - ‘Se contaminaron’ conserva una ambigüedad moral/cultual útil para textos apocalípticos; no se reduce a higiene ritual.
+  - ‘Revelaron’ se alinea con la revisión inglesa más reciente y con el tono de disclosure prohibido del relato.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/009/008.yaml
+  source_text_sha256: 953299c2281dd8d78fbb4198d348e9b700a8d640f29b137fd36d359ae8a9b8a8
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 55019f21b0667c84bf946266ee8a61376c173ac5f3c03a648eeb64d812ffefa2
+  timestamp: '2026-05-07T21:27:37Z'
+  output_hash: 21121f4a304c6bfc9fa6113d5640f5d3f584c45a2eb946336c501d71c77463c7
+  usage:
+    prompt_tokens: 3475
+    completion_tokens: 1584
+    total_tokens: 5059
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009734
+status: spanish_reviewed
+revisions:
+- from: Y fueron a las hijas de los hombres sobre la tierra[a], y se acostaron con ellas, con aquellas mujeres[b], y se contaminaron y les revelaron[c] todo pecado.
+  to: Y fueron a las hijas de los hombres en la tierra, y se acostaron con ellas, con aquellas mujeres, y se contaminaron y les revelaron[a] todo pecado.
+  rationale: Se corrigió el anclaje de la nota para que corresponda a «les revelaron», se eliminó una nota no necesaria sobre el demostrativo, y se sustituyó «sobre la tierra» por «en la tierra» para lograr un español más natural sin pérdida de sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:20:00Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido del ge''ez y el audit trail inglés: movimiento hacia las mujeres humanas, unión sexual, autocontaminación y revelación de pecado. Sin embargo, la colocación de la nota [a] en «tierra» no corresponde al contenido de esa nota, que trata de una alternativa para «les revelaron». Además, «sobre la tierra» suena algo calcado en español en este contexto, y «en la tierra» mantiene suficientemente la localización espacial con mejor naturalidad.'
+  spanish_quality_summary: El texto es generalmente claro y digno. «Se acostaron con ellas» y «se contaminaron» funcionan bien. Conviene ajustar «sobre la tierra» a «en la tierra» para mayor naturalidad. También es necesario corregir el sistema de notas para que cada marcador ancle exactamente la palabra o frase pertinente y no crear una nota redundante para «aquellas mujeres» cuando el inglés no la exige.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen términos sensibles como Yahvé, Mesías, Espíritu, etc. Las decisiones léxicas principales («hijas de los hombres», «se acostaron con ellas», «se contaminaron», «revelaron», «todo pecado») son compatibles con el registro y la justificación documentada.
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada en «tierra», pero su contenido ofrece una alternativa para «les revelaron».
+    rationale: Las notas deben aparecer exactamente en la palabra o frase relevante. Tal como está, induce a confusión y no cumple la disciplina de anclaje exigida.
+  - severity: low
+    issue: «Sobre la tierra» suena menos natural que «en la tierra» en español bíblico corriente.
+    rationale: Aunque es defendible como literal, «en la tierra» transmite el mismo contraste cielo/tierra sin rigidez innecesaria.
+  - severity: low
+    issue: La nota [b] sobre «con esas mujeres» no preserva una alternativa significativa del audit trail y añade carga innecesaria.
+    rationale: El demostrativo español no genera una ambigüedad nueva que requiera nota; basta con mantener «aquellas mujeres» en el texto.
+  revised_spanish_text: Y fueron a las hijas de los hombres en la tierra, y se acostaron con ellas, con aquellas mujeres, y se contaminaron y les revelaron[a] todo pecado.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «les dieron a conocer»; el verbo puede significar también «dar a conocer», pero aquí se mantiene «revelaron» por su fuerza apocalíptica y por la revisión del audit trail inglés.'
+    reason: lexical_alternative
+  revision_rationale: Se corrigió el anclaje de la nota para que corresponda a «les revelaron», se eliminó una nota no necesaria sobre el demostrativo, y se sustituyó «sobre la tierra» por «en la tierra» para lograr un español más natural sin pérdida de sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e457cc11fc828f655b147c02d8eca1f9e49f75602c8f80b2df40221d6364ae11
+  timestamp: '2026-05-07T23:20:00Z'
+  output_hash: dedba97b529b789b3d5b732c336266f3970c1171b83b7f71a860d89a460b7f0e
+  usage:
+    prompt_tokens: 4652
+    completion_tokens: 681
+    total_tokens: 5333
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021845
+  applied_revision: true

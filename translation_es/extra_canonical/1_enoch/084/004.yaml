@@ -1,0 +1,203 @@
+id: 1EN.84.4
+reference: 1 Enoch 84:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይእዜኒ፡ *መላእክተ፡ ሰማያቲከ፡ ይጼብቡ፡ ወዲበ፡ ሥጋ፡ ሰብእ፡ ትከውን፡ መዐትከ፡ እስከ፡ ዕለት፡ ዐባይ፡ እንተ፡ ጽጌ።
+  language: Geez
+  pages:
+  - 199
+  - 200
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch84.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 84, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/084/004.yaml
+  text: And now the angels of your heavens have transgressed[c][b][a], and your wrath is upon the flesh of men until the great day of judgment.
+  footnotes:
+  - marker: a
+    text: The closing words are difficult in the Ethiopic OCR. The sense is likely a qualifier such as 'of judgment' or 'of recompense' attached to 'the great day.'
+    reason: textual_variant
+  - marker: b
+    text: '''The flesh of man'' preserves the source imagery; the phrase likely refers collectively to humankind in its mortal condition.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'let the angels of your heavens make petition, and let your wrath be upon the flesh of man until the great day that belongs to judgment.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 90afe68feb143574b7122d5383f5f65f96feac40e40d71bfda0d57937555970f
+    timestamp: '2026-04-22T09:19:00Z'
+    output_hash: 32295336f4013d9981a61ffab5728d1529d1fbd5cbac140071b03a819f5e9413
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:51Z'
+    unchanged: false
+    changes_summary: Changed 'are guilty of sin' to 'have transgressed' for a more direct and formal rendering of the verb, while preserving the rest of the verse.
+translation:
+  language: es
+  text: Y ahora los ángeles de tus cielos han transgredido[a], y tu ira está sobre la carne de los hombres[b] hasta el gran día de juicio.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La traducción sigue la revisión inglesa más reciente, que entiende el verbo como 'han transgredido' y no como una súplica; la alternativa anterior en inglés fue descartada por problemas graves de OCR en el amárico/etiópico.
+    reason: textual_variant
+  - marker: b
+    text: '''Carne de los hombres'' conserva la imagen literal del original y su sentido colectivo para la humanidad mortal; podría entenderse también como ''carne humana''.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: መላእክተ
+  english_pob_choice: angels
+  chosen_spanish: ángeles
+  alternatives_spanish:
+  - mensajeros
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto apocalíptico, la referencia son seres celestiales; 'ángeles' conserva el valor del original y evita una lectura humana.
+- source_word: ሰማያቲከ
+  english_pob_choice: your heavens
+  chosen_spanish: tus cielos
+  alternatives_spanish:
+  - tu cielo
+  - los cielos que son tuyos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El plural se preserva naturalmente en español como 'cielos', y el posesivo se mantiene con 'tus'.
+- source_word: ይጼብቡ
+  english_pob_choice: have transgressed
+  chosen_spanish: han transgredido
+  alternatives_spanish:
+  - han pecado
+  - han faltado
+  - han cometido pecado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión inglesa más reciente opta por un verbo de infracción directa. 'Han transgredido' mantiene el tono formal y el matiz de quebrantar un límite o mandato.
+- source_word: ዲበ ሥጋ ሰብእ
+  english_pob_choice: upon the flesh of man
+  chosen_spanish: sobre la carne de los hombres
+  alternatives_spanish:
+  - sobre la carne del hombre
+  - sobre la carne humana
+  - sobre la humanidad
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la imagen antropológica de 'carne' y el sentido colectivo señalado por la POB inglesa. En español, el plural 'los hombres' comunica mejor el referente colectivo sin borrar la literalidad básica.
+- source_word: ትከውን መዐትከ
+  english_pob_choice: your wrath is
+  chosen_spanish: tu ira está
+  alternatives_spanish:
+  - tu ira será
+  - permanece tu ira
+  - tu furor está
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La construcción copulativa transmite el estado/resultante continuo que exige el contexto. 'Ira' es el equivalente más natural y digno para መዐት en este pasaje.
+- source_word: እስከ፡ ዕለት፡ ዐባይ
+  english_pob_choice: until the great day
+  chosen_spanish: hasta el gran día
+  alternatives_spanish:
+  - hasta el día grande
+  - hasta aquel gran día
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La fórmula apocalíptica se conserva de forma concisa; 'gran día' es la opción más idiomática y solemne en español.
+- source_word: እንተ፡ ጽጌ
+  english_pob_choice: of judgment
+  chosen_spanish: de juicio
+  alternatives_spanish:
+  - de juicio y sentencia
+  - de condena
+  - de recompensas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Dado el estado textual incierto reflejado en la POB inglesa, se prefiere una solución sobria y semánticamente segura. 'De juicio' comunica el valor judicial/apocalíptico sin sobreinterpretar la forma problemática.
+theological_decisions:
+- issue: Interpretación de la acción de los ángeles
+  english_pob_reading: The angels of your heavens have transgressed.
+  chosen_spanish_reading: Los ángeles de tus cielos han transgredido.
+  alternative_spanish_readings:
+  - los ángeles de tus cielos han pecado
+  - los ángeles de tus cielos son culpables de pecado
+  rationale: Se preserva la afirmación histórica y acusatoria de la revisión inglesa más reciente, evitando la lectura de súplica descartada por la revisión textual. 'Transgredido' mantiene la tensión moral sin añadir especificación doctrinal no contenida explícitamente en la línea.
+  doctrine_reference: Preservar la afirmación narrativa/judicial sin convertirla en oración imperativa.
+- issue: Alcance de 'la carne de los hombres'
+  english_pob_reading: your wrath is upon the flesh of men
+  chosen_spanish_reading: tu ira está sobre la carne de los hombres
+  alternative_spanish_readings:
+  - tu ira está sobre la humanidad
+  - tu ira está sobre la carne humana
+  rationale: Se conserva la imaginería de 'carne' y su alcance colectivo, como indicó la POB inglesa. Esto mantiene la tensión antropológica y apocalíptica del texto.
+  doctrine_reference: Consistencia con la antropología bíblica que usa 'carne' para la condición mortal humana.
+translation_notes:
+  revision_awareness: 'La base inglesa mostró una historia de revisión conflictiva: primero se leyó el pasaje como una petición/jussivo, pero una revisión posterior y el control textual identificaron errores graves de OCR y corrigieron el sentido a una afirmación histórica sobre la transgresión de los ángeles y la ira divina sobre la humanidad. La versión española adopta esa lectura revisada y evita la interpretación imperativa descartada.'
+  spanish_consistency_notes:
+  - Se mantiene 'Yahvé' como norma del proyecto cuando el texto lo requiera; aquí el pasaje se dirige a Dios en segunda persona, por lo que se usa simplemente 'tus/tu' sin introducir un nombre divino no presente en la línea.
+  - Se conserva 'carne' por fidelidad antropológica, sin sustituirla por 'humanidad' en el texto principal.
+  - '''Juicio'' se usa como equivalente sobrio para el final textual incierto, en línea con la revisión inglesa ''of judgment''.'
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/084/004.yaml
+  source_text_sha256: 1c314d43e19d8d32cebb99f12d837f9893b0016d8f28c6a1108134a00c8df536
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 324489c3e087bbafaedd926e0e2da291c89459ab6546d0a4cdcf9c85a0af56d7
+  timestamp: '2026-05-07T21:27:46Z'
+  output_hash: 7bf68a7f8730d6e59601eaa67d01a4c14d50e45287fe54b6a492a1d5afaa869b
+  usage:
+    prompt_tokens: 3209
+    completion_tokens: 1471
+    total_tokens: 4680
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009026
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la revisión adjudicada del sentido fuente: declara que los ángeles han transgredido y que la ira divina está sobre la carne humana hasta el gran día de juicio. Conserva bien los elementos clave: ''ángeles'', ''tus cielos'', ''ira'', ''carne'' y ''gran día de juicio''. Sin embargo, la nota [a] introduce una inexactitud al hablar de ''amárico/etiópico'' cuando la evidencia fuente es ge''ez/etiópico clásico; además, conviene anclar mejor la nota al problema textual sin sobrecargar el texto principal.'
+  spanish_quality_summary: El español es claro, digno y natural. La frase principal fluye bien y mantiene tono bíblico legible. 'Han transgredido' funciona, y 'la carne de los hombres' preserva la imagen original. La única reparación necesaria es de precisión metatextual en la nota [a].
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparece YHWH ni vocabulario sensible del glosario principal. Se preserva bien 'carne' para la imaginería antropológica, y 'juicio' refleja adecuadamente el valor judicial/apocalíptico documentado.
+  issues:
+  - severity: medium
+    issue: La nota [a] identifica erróneamente la lengua como 'amárico/etiópico'.
+    rationale: La evidencia y la auditoría trabajan con ge'ez (etiópico clásico), no con amárico. La nota debe corregirse para no confundir al lector sobre la base textual.
+  - severity: low
+    issue: La nota [a] puede expresarse con mayor sobriedad y precisión.
+    rationale: Conviene explicar que la lectura anterior fue descartada por errores graves de OCR en el texto etiópico/ge'ez, sin mezclar categorías lingüísticas ni recargar la nota.
+  revised_spanish_text: Y ahora los ángeles de tus cielos han transgredido[a], y tu ira está sobre la carne de los hombres[b] hasta el gran día de juicio.
+  revised_footnotes:
+  - marker: a
+    text: La traducción sigue la revisión inglesa más reciente, que entiende el verbo como 'han transgredido' y no como una súplica; la alternativa anterior en inglés fue descartada por graves errores de OCR en el texto etiópico (ge'ez).
+    reason: textual_variant
+  - marker: b
+    text: '''Carne de los hombres'' conserva la imagen literal del original y su sentido colectivo para la humanidad mortal; también podría entenderse como ''carne humana''.'
+    reason: lexical_alternative
+  revision_rationale: 'El texto principal puede mantenerse tal como está, pero la nota [a] necesita corrección de precisión lingüística y textual: debe referirse al ge''ez/etiópico, no al amárico. También se pulió levemente la redacción de la nota [b] sin cambiar su contenido sustancial.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 89ec900493af629445ecc184cacdbfbf2169e26cda801f7a1292f35cfff53209
+  timestamp: '2026-05-07T22:57:07Z'
+  output_hash: fbf48044ea4212e15f822eed4b201f87c47b09d00d5cec06822fbc00b80729b8
+  usage:
+    prompt_tokens: 4306
+    completion_tokens: 675
+    total_tokens: 4981
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02089
+  applied_revision: false

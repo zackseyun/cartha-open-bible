@@ -1,0 +1,210 @@
+id: 1EN.101.2
+reference: 1 Enoch 101:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: እመ፡ ዐፀወ፡ መስኮተ፡ ሰማይ፡ ወከለአ፡ ዝናመ፡ ወጠለ፡ ከመ፡ ኢይረድ፡ ዲበ፡ ምድር፡ በእንቲአክሙ፡ ሚሀለወክሙ፡ ትግበሩ።
+  language: Geez
+  pages:
+  - 248
+  - 249
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/101/002.yaml
+  text: If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?
+  footnotes:
+  - marker: a
+    text: The imagery of 'the windows of heaven' reflects ancient cosmological language for the source of rain; the translation preserves the image rather than reducing it to a modern meteorological expression.
+    reason: cultural_note
+  - marker: b
+    text: The final clause is a rhetorical question. It may also be rendered more literally, 'what is it that you will do?'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And if he shuts'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: c15ea16fe2c91035001ff418a0422554d858ca62d12d55530843382d95f38b1a
+    timestamp: '2026-04-22T09:23:51Z'
+    output_hash: 96b48c02b01b8a34427d0cbf9da9465e8f2235a4b4fef92725ecd4d7b7ef379d
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:50Z'
+    unchanged: false
+    changes_summary: Removed the interpretive addition 'then' and adjusted punctuation for a smoother, more formal rendering. The rest of the draft accurately reflects the source.
+translation:
+  language: es
+  text: Si[c] él cierra las ventanas del cielo[a] y retiene la lluvia y el rocío, de modo que no descienda sobre la tierra por causa de ustedes, ¿qué harán[b]?
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La imagen de «las ventanas del cielo» refleja un lenguaje cosmológico antiguo para el origen de la lluvia; se conserva la imagen en vez de convertirla en una expresión meteorológica moderna.
+    reason: cultural_note
+  - marker: b
+    text: 'La pregunta final es retórica. También puede traducirse de forma más literal: «¿qué es lo que harán?».'
+    reason: lexical_alternative
+  - marker: c
+    text: La versión inglesa previa permitía «And if he shuts»; el ajuste textual preferido aquí sigue el ge'ez, que empieza simplemente con «Si».
+    reason: textual_variant
+lexical_decisions:
+- source_word: ዐፀወ
+  english_pob_choice: shuts
+  chosen_spanish: cierra
+  alternatives_spanish:
+  - sella
+  - cierra de golpe
+  - barre
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Cierra» expresa con naturalidad la acción concreta de cerrar y conserva la imagen apocalíptica de una apertura celestial. Evita un giro más pesado como «sella», que introduciría una matización no exigida por el texto.
+- source_word: መስኮተ ሰማይ
+  english_pob_choice: the windows of heaven
+  chosen_spanish: las ventanas del cielo
+  alternatives_spanish:
+  - las aberturas del cielo
+  - las ventanas de los cielos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se preserva la imagen cosmológica tradicional sin reducirla a una explicación meteorológica. «Del cielo» suena natural en español y mantiene el valor imagístico del original.
+- source_word: ከለአ ዝናመ
+  english_pob_choice: withholds the rain
+  chosen_spanish: retiene la lluvia
+  alternatives_spanish:
+  - restringe la lluvia
+  - detiene la lluvia
+  - contiene la lluvia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Retiene» comunica la idea de impedir que algo se dé o se libere, con un tono bíblico claro en español. Mantiene la agencia divina implícita sin añadir interpretación.
+- source_word: ወጠለ
+  english_pob_choice: and the dew
+  chosen_spanish: y el rocío
+  alternatives_spanish:
+  - y el rocío de la mañana
+  - y el relente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Rocío» es la equivalencia más directa y comprensible para el segundo elemento de humedad agrícola. Conservar el paralelo con «lluvia» y «rocío» refleja la acumulación del juicio sobre la fertilidad.
+- source_word: ከመ ኢይረድ ዲበ ምድር
+  english_pob_choice: so that it does not come down upon the earth
+  chosen_spanish: de modo que no desciendan sobre la tierra
+  alternatives_spanish:
+  - para que no caigan sobre la tierra
+  - de manera que no bajen a la tierra
+  - para que no descendiera sobre la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El plural verbal en español puede abarcar lluvia y rocío como conjunto, sin perder claridad. «Desciendan sobre la tierra» conserva el movimiento vertical del texto y su registro elevado.
+- source_word: በእንቲአክሙ
+  english_pob_choice: because of you
+  chosen_spanish: por causa de ustedes
+  alternatives_spanish:
+  - a causa de ustedes
+  - por ustedes
+  - debido a ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Por causa de ustedes» transmite con precisión el matiz causal/judicial del pasaje. Se mantiene el tono de consecuencia y responsabilidad colectiva implícito en la escena.
+- source_word: ሚሀለወክሙ ትግበሩ
+  english_pob_choice: what will you do?
+  chosen_spanish: ¿qué harán?
+  alternatives_spanish:
+  - ¿qué harán entonces?
+  - ¿qué es lo que harán?
+  - ¿qué podrán hacer?
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La pregunta funciona como desafío retórico sobre la impotencia humana frente al juicio divino. «¿Qué harán?» es fiel, sobrio y evita añadir un adverbio interpretativo que el texto revisado no requiere.
+theological_decisions:
+- issue: Sujeto implícito de la acción de cerrar el cielo
+  english_pob_reading: Render the subject as singular 'he' rather than explicitly 'God' or 'the Lord.'
+  chosen_spanish_reading: Conservar «él» sin explicitar «Dios» o «el Señor».
+  alternative_spanish_readings:
+  - Dios cierra las ventanas del cielo
+  - El Señor cierra las ventanas del cielo
+  rationale: El ge'ez presenta un sujeto singular no nombrado en este versículo. Mantener «él» respeta la sintaxis inmediata y evita resolver en la traducción una referencia que el texto no explicita, preservando la tensión teológica del pasaje.
+  doctrine_reference: Primacía del texto fuente y preservación de la ambigüedad referencial cuando el original no nombra al agente.
+translation_notes:
+  revision_awareness: 'El contexto de revisión del POB inglés corrigió una lectura previa con «And if» a «If he shuts», y eliminó la adición interpretativa de «then». La redacción española sigue esa revisión: inicia con «Si», no añade equivalente de «then», y conserva la secuencia condicional y la pregunta retórica sin amplificaciones.'
+  spanish_consistency_notes:
+  - Se mantiene «ventanas del cielo» de forma consistente con la imaginería bíblica preservada por el POB inglés.
+  - «Rocío» se usa como equivalente natural y directo de ወጠለ, sin sustituirlo por un término explicativo.
+  - Se conserva el sujeto implícito «él» para reflejar la ausencia de un nombre divino explícito en el versículo.
+  - La puntuación prioriza la fluidez formal española y mantiene la pregunta final como desafío retórico.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/101/002.yaml
+  source_text_sha256: 810f37c9ce831a9b9464faa17aa326bd60d63baeb73a4b94645e277b63d14be0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 75d750e5eb0da1d27ed5629cc2fea3d0e86106303131e0bf305dfca3e2b61a98
+  timestamp: '2026-05-07T21:27:44Z'
+  output_hash: c88865ee72da2afa292416717d568756ee844dd00a77ab1a105d1bcfc02cebf2
+  usage:
+    prompt_tokens: 3076
+    completion_tokens: 1462
+    total_tokens: 4538
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008886
+status: spanish_reviewed
+revisions:
+- from: Si él cierra las ventanas del cielo[a] y retiene la lluvia y el rocío, de modo que no desciendan sobre la tierra por causa de ustedes[c], ¿qué harán[b]?
+  to: Si[c] él cierra las ventanas del cielo[a] y retiene la lluvia y el rocío, de modo que no descienda sobre la tierra por causa de ustedes, ¿qué harán[b]?
+  rationale: 'Se hace una reparación menor: se mueve la nota [c] al lugar correcto («Si»), y se ajusta «no desciendan» a «no descienda» para una lectura más natural en español con sentido colectivo de la precipitación retenida, sin cambiar el significado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:26:35Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido básico del ge''ez y sigue de cerca la auditoría inglesa: mantiene la imagen de «las ventanas del cielo», conserva el sujeto implícito como «él», expresa la retención de lluvia y rocío, y preserva la pregunta retórica final. Sin embargo, hay un pequeño desajuste de naturalidad y de correspondencia con la decisión inglesa en la cláusula de precipitación: el inglés POB suaviza colectivamente en singular («it does not come down»), mientras el español usa plural («no desciendan»), que es posible pero menos fluido aquí. Además, la colocación de notas en «por causa de ustedes[c]» sin el marcador [b] allí deja la secuencia inglesa algo confusa para el lector español, ya que la nota c trata del inicio «Si», no de esa frase.'
+  spanish_quality_summary: 'El texto es claro y digno, pero puede mejorarse con un ajuste menor de fluidez: en español suena más natural «no descienda sobre la tierra» tomando «la lluvia y el rocío» como una precipitación conjunta, o bien «no caigan». También conviene reubicar la nota [c] al inicio «Si» para que el anclaje corresponda con su contenido. Fuera de eso, el español es legible y apropiado.'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen términos sensibles como Yahvé, Mesías, esclavo, etc. La decisión de conservar «él» en vez de explicitar «Dios» está bien alineada con la rationale teológica auditada.
+  issues:
+  - severity: medium
+    issue: La nota [c] está anclada a «ustedes», pero su contenido explica el inicio «Si» frente a «And if».
+    rationale: El marcador debe aparecer en el lugar pertinente del texto. Tal como está, crea una asociación errónea para el lector y no refleja la disciplina de notas del proyecto.
+  - severity: low
+    issue: «No desciendan sobre la tierra» es gramaticalmente posible, pero menos natural en español que una formulación colectiva singular o «no caigan».
+    rationale: La auditoría inglesa optó por un singular colectivo por fluidez; en español conviene una solución igualmente natural sin perder el sentido de lluvia y rocío retenidos.
+  revised_spanish_text: Si[c] él cierra las ventanas del cielo[a] y retiene la lluvia y el rocío, de modo que no descienda sobre la tierra por causa de ustedes, ¿qué harán[b]?
+  revised_footnotes:
+  - marker: a
+    text: La imagen de «las ventanas del cielo» refleja un lenguaje cosmológico antiguo para el origen de la lluvia; se conserva la imagen en vez de convertirla en una expresión meteorológica moderna.
+    reason: cultural_note
+  - marker: b
+    text: 'La pregunta final es retórica. También puede traducirse de forma más literal: «¿qué es lo que harán?».'
+    reason: lexical_alternative
+  - marker: c
+    text: La versión inglesa previa permitía «And if he shuts»; el ajuste textual preferido aquí sigue el ge'ez, que empieza simplemente con «Si».
+    reason: textual_variant
+  revision_rationale: 'Se hace una reparación menor: se mueve la nota [c] al lugar correcto («Si»), y se ajusta «no desciendan» a «no descienda» para una lectura más natural en español con sentido colectivo de la precipitación retenida, sin cambiar el significado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 92145c2dcd0fcfea42111b3ad70addd083cb50225598159bffa95b8320ad3c42
+  timestamp: '2026-05-07T23:26:35Z'
+  output_hash: 5b7a05accab3d9daececf38d310fec80995e74f62890a9a61cc527b852cc10a7
+  usage:
+    prompt_tokens: 4174
+    completion_tokens: 789
+    total_tokens: 4963
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02227
+  applied_revision: true

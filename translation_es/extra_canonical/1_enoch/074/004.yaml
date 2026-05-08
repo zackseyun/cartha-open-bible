@@ -1,0 +1,187 @@
+id: 1EN.74.4
+reference: 1 Enoch 74:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወበአውራኅ፡ እመራት፡ ይዌልጥ፡ ምዕራባተ፡ ወበአውራኅ፡ እመራት፡ የሐውር፡ ምሕዋሪሁ፡ አሐዱ፡ አሐዱ።
+  language: Geez
+  pages:
+  - 177
+  - 178
+  - 179
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/074/004.yaml
+  text: And in certain months it changes its settings[a], and in certain months it travels its course[d][c][b], one by one.
+  footnotes:
+  - marker: a
+    text: 'The Ethiopic wording is difficult: the phrase rendered ''by the paths of the east'' appears twice, and the final repetition ''one, one'' likely has a distributive sense (''one by one'' / ''each separately'').'
+    reason: textual_variant
+  - marker: b
+    text: '''Goes down westward'' could also be rendered ''descends to the west'' or, more interpretively, ''sets in the west.'''
+    reason: lexical_alternative
+  - marker: c
+    text: The line belongs to the Astronomical Book's description of the ordered tracks of the luminaries; 'course' here refers to a fixed celestial route, not merely general movement.
+    reason: cultural_note
+  - marker: d
+    text: Or 'And by the paths of the east it goes down westward, and by the paths of the east it travels, each one by one, in its course.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 8f24436629df519ae8213e32af7b6624cb6b70ea845b838e0d333f806e642a84
+    timestamp: '2026-04-22T09:16:54Z'
+    output_hash: 36e99ee63f5e1798f3fce5c362f1349ab02524d03aef77063af31ca1e64cadbd
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:26Z'
+    unchanged: false
+    changes_summary: Replaced 'each one by one' with the more natural and idiomatic 'one by one' while preserving the sense of sequential movement. The rest of the draft is accurate and complete.
+translation:
+  language: es
+  text: Y en ciertos meses cambia sus puestas[a], y en ciertos meses recorre su curso, uno por uno[b].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El geʽez es difícil aquí, pero la revisión fuente-guiada entiende este término como las «puestas» del astro, no como una referencia a «occidente» ni como posiciones en sentido general.
+    reason: textual_variant
+  - marker: b
+    text: 'También puede entenderse: «recorre su curso, uno a uno», conservando el valor distributivo de la repetición final.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: በአውራኅ እመራት
+  english_pob_choice: in certain months
+  chosen_spanish: en ciertos meses
+  alternatives_spanish:
+  - en algunos meses
+  - en meses determinados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión confirmó que አውራኅ significa aquí “meses” y እመራት expresa selección o determinación; por eso se traduce con una expresión natural y precisa en español, sin introducir una relación espacial inexistente.
+- source_word: ይዌልጥ
+  english_pob_choice: it changes
+  chosen_spanish: cambia
+  alternatives_spanish:
+  - altera
+  - modifica
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo implica cambio o alteración. “Cambia” es breve, fiel y suficientemente general para el movimiento astronómico del contexto.
+- source_word: ምዕራባተ
+  english_pob_choice: its settings
+  chosen_spanish: sus posiciones
+  alternatives_spanish:
+  - sus puestas
+  - sus ocasos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La nota inglesa entiende el término como los ‘settings’ del astro, es decir, sus posiciones de puesta o alineación. “Posiciones” preserva el sentido sin forzar un tecnicismo demasiado interpretativo como “ocasos”.
+- source_word: የሐውር
+  english_pob_choice: it travels
+  chosen_spanish: recorre
+  alternatives_spanish:
+  - viaja
+  - prosigue
+  - se desplaza
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto cósmico, el verbo expresa un recorrido ordenado. “Recorre” transmite con claridad la idea de seguir una ruta fija.
+- source_word: ምሕዋሪሁ
+  english_pob_choice: its course
+  chosen_spanish: su curso
+  alternatives_spanish:
+  - su circuito
+  - su trayectoria
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La elección inglesa apunta a un recorrido regular y astronómico. “Curso” es el equivalente español más natural y mantiene la idea de trayectoria estable.
+- source_word: አሐዱ፡ አሐዱ
+  english_pob_choice: one by one
+  chosen_spanish: uno por uno
+  alternatives_spanish:
+  - cada uno
+  - sucesivamente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La repetición distributiva debe conservarse. “Uno por uno” reproduce el valor secuencial de la duplicación y suena idiomático en español.
+translation_notes:
+  revision_awareness: 'La revisión más reciente corrigió un error mayor del borrador inglés: አውራኅ no significa “paths” sino “months”, ይዌልጥ no significa “goes down” sino “changes”, y ምዕራባተ no es “westward” sino el objeto del cambio, entendido como “settings”. La versión española sigue esa corrección y mantiene el carácter astronómico del verso.'
+  spanish_consistency_notes:
+  - Se mantiene “Y” inicial para corresponder al encadenamiento narrativo del pasaje.
+  - Se evita “SEÑOR” o vocabulario cristológico porque el verso no contiene léxico teológico directo.
+  - “Curso” y “posiciones” conservan el marco astronómico del Libro Astronómico sin volverlo demasiado técnico.
+  - La repetición distributiva final se traduce de forma idiomática pero visible, para no perder la estructura del original.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/074/004.yaml
+  source_text_sha256: 10cc85c0389c99e21514981627c11de7c844bfdf72b05fe433557d2f13d43f0e
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: b8bb05d5963df0420db649813cada26dcf7475d0ca19e46b35ebc2fe6a8d17f2
+  timestamp: '2026-05-07T21:27:37Z'
+  output_hash: eb0df2d5658d2d1650aad23c72e9f2193f978eea653be0bd08d2395579565404
+  usage:
+    prompt_tokens: 3023
+    completion_tokens: 995
+    total_tokens: 4018
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.006745
+status: spanish_reviewed
+revisions:
+- from: Y en ciertos meses cambia sus posiciones[a], y en ciertos meses recorre su curso, uno por uno[b].
+  to: Y en ciertos meses cambia sus puestas[a], y en ciertos meses recorre su curso, uno por uno[b].
+  rationale: Se hizo una corrección menor para ajustar ምዕራባተ al sentido documentado de «settings» y mantener la imaginería astronómica específica del original. El resto del verso ya era fiel y natural en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:32:47Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la revisión fuente-guiada principal: በአውራኅ እመራት = «en ciertos meses», ይዌልጥ = «cambia», y የሐውር ምሕዋሪሁ = «recorre su curso». También preserva bien el distributivo final con «uno por uno». Sin embargo, «sus posiciones» para ምዕራባተ se aleja del audit trail inglés, que documenta específicamente «its settings», es decir, las puestas/ocasos del astro, no posiciones en general.'
+  spanish_quality_summary: El español es claro y natural, pero «sus posiciones» diluye demasiado la imagen astronómica específica. Una reparación menor a «sus puestas» mejora la precisión sin volver el texto oscuro. Además, la nota a debe ajustarse para explicar ese valor técnico de manera más fiel al expediente inglés.
+  glossary_alignment: No hay términos teológicos relevantes aquí. La terminología astronómica queda mejor alineada con el POB si ምዕራባተ se traduce como «sus puestas» en vez de «sus posiciones». «Curso» y «uno por uno» están bien alineados con las decisiones léxicas documentadas.
+  issues:
+  - severity: medium
+    issue: «sus posiciones» para ምዕራባተ es demasiado general.
+    rationale: El audit trail revisado identifica el sustantivo como «settings», o sea las puestas/ocasos del astro. «Posiciones» pierde esa especificidad y puede sugerir ubicaciones cualesquiera.
+  - severity: low
+    issue: La nota [a] explica más una lectura descartada que la decisión positiva adoptada.
+    rationale: Conviene que la nota aclare que el término apunta a las puestas del astro, no meramente a «cambios periódicos de las posiciones», para reflejar mejor la racionalidad léxica documentada.
+  revised_spanish_text: Y en ciertos meses cambia sus puestas[a], y en ciertos meses recorre su curso, uno por uno[b].
+  revised_footnotes:
+  - marker: a
+    text: El geʽez es difícil aquí, pero la revisión fuente-guiada entiende este término como las «puestas» del astro, no como una referencia a «occidente» ni como posiciones en sentido general.
+    reason: textual_variant
+  - marker: b
+    text: 'También puede entenderse: «recorre su curso, uno a uno», conservando el valor distributivo de la repetición final.'
+    reason: lexical_alternative
+  revision_rationale: Se hizo una corrección menor para ajustar ምዕራባተ al sentido documentado de «settings» y mantener la imaginería astronómica específica del original. El resto del verso ya era fiel y natural en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 12910dda168b721d217c4d1b1cead681bfa47a53960550b4992f06635486a693
+  timestamp: '2026-05-07T23:32:47Z'
+  output_hash: de360237873b68da4758ae2dbf1c62b6ea648e2d57a515e78ad32a1a347c9f36
+  usage:
+    prompt_tokens: 3619
+    completion_tokens: 666
+    total_tokens: 4285
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019037
+  applied_revision: true

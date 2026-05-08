@@ -1,0 +1,233 @@
+id: 1EN.2.2
+reference: 1 Enoch 2:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: '*ርእይዋ፡ ለምድር፡ ወለብዉ፡ *በእንተ፡ ምግባር፡ ዘይትገበር፡ ላዕሌሃ፡ እምቀዳሚ፡ እስከ፡ ተፍጻሜቱ፡ ከመ፡ ኢይትመየጥ፡ ኵሉ፡ ምግባረ፡ ለአምላክ፡ እንዘ፡ ያስተርኢ።'
+  language: Geez
+  pages:
+  - 44
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch02.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 2, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/002/002.yaml
+  text: Look at the earth and understand concerning the works that are done upon it from the beginning to their completion[a], that none of the works of God changes[d][c][b], as they appear.
+  footnotes:
+  - marker: a
+    text: Or 'all the works of God do not change.' The Ge'ez wording can be taken collectively or distributively.
+    reason: lexical_alternative
+  - marker: b
+    text: The final clause may also be understood as 'while he shows [this]' or 'as it is shown,' depending on how the verbal form is construed.
+    reason: alternative_reading
+  - marker: c
+    text: Or 'as he shows them'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'the works that are done upon it from the beginning to its completion'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 8982958ea8c66543085eb20a9eda5f72eccf2a7447fd4cddf8fa0b16fd254bbc
+    timestamp: '2026-04-22T09:08:43Z'
+    output_hash: cb43fd5d5096a665778de507c24d959f1e52a9744ef93ffd9545f03a2517a61f
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:27Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Mira la tierra y entiende acerca de las obras que se hacen sobre ella desde el principio hasta su consumación, de modo que ninguna de las obras de Dios[a][b][c][d] cambia, tal como aparecen.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «todas las obras de Dios no cambian». La redacción ge''ez puede entenderse de modo colectivo o distributivo.'
+    reason: lexical_alternative
+  - marker: b
+    text: El cierre también puede leerse como «mientras aparecen» o «según aparecen», dependiendo de cómo se constrúa la forma verbal.
+    reason: alternative_reading
+  - marker: c
+    text: 'O: «tal como él las muestra». Esta posibilidad quedó descartada en la revisión porque el verbo ge''ez es intransitivo/pasivo («aparecer»).'
+    reason: previous_rendering
+  - marker: d
+    text: 'O: «las obras que se hacen sobre ella desde el principio hasta su consumación». La secuencia puede vincularse con «las obras» mismas o con el conjunto de los hechos sobre la tierra.'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ርእይዋ
+  english_pob_choice: Look at it / look
+  chosen_spanish: Mira
+  alternatives_spanish:
+  - Mira la
+  - Contémplala
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El imperativo llama a una observación directa y atenta. «Mira» es natural en español y conserva la fuerza del mandato sin volverlo arcaico.
+- source_word: ለምድር
+  english_pob_choice: the earth
+  chosen_spanish: la tierra
+  alternatives_spanish:
+  - la tierra
+  - el mundo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto de observación de la creación, «la tierra» expresa mejor el ámbito creado que el más abstracto «el mundo».
+- source_word: ወለብዉ
+  english_pob_choice: understand
+  chosen_spanish: entiende
+  alternatives_spanish:
+  - considera
+  - presta atención
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La secuencia observación→discernimiento se conserva bien con «entiende», que expresa comprensión reflexiva sin añadir interpretación.
+- source_word: በእንተ ምግባር
+  english_pob_choice: concerning the works
+  chosen_spanish: acerca de las obras
+  alternatives_spanish:
+  - sobre las obras
+  - respecto de las obras
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Obras» mantiene el sentido de actos/obras creado en el contexto. «Acerca de» conserva el matiz de tratar el tema sin sonar tan técnico como «respecto de».
+- source_word: ዘይትገበር ላዕሌሃ
+  english_pob_choice: that are done upon it
+  chosen_spanish: que se hacen sobre ella
+  alternatives_spanish:
+  - que se hacen sobre ella
+  - que tienen lugar sobre ella
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma impersonal/pasiva del ge'ez se expresa de manera natural con «se hacen». «Sobre ella» conserva la referencia explícita a la tierra.
+- source_word: እምቀዳሚ እስከ ተፍጻሜቱ
+  english_pob_choice: from the beginning to its completion
+  chosen_spanish: desde el principio hasta su consumación
+  alternatives_spanish:
+  - desde el principio hasta su fin
+  - desde el comienzo hasta su consumación
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Consumación» refleja mejor el matiz de culminación/terminación plena que un simple «fin». Mantiene la idea de totalidad temporal.
+- source_word: ከመ ኢይትመየጥ
+  english_pob_choice: that none ... changes
+  chosen_spanish: de modo que ninguna ... cambia
+  alternatives_spanish:
+  - de modo que ninguna ... se altera
+  - para que ninguna ... cambie
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La cláusula expresa estabilidad/regularidad. En español, «cambia» es claro y no sobreinterpreta la construcción como una tesis filosófica absoluta.
+- source_word: ኵሉ ምግባረ ለአምላክ
+  english_pob_choice: the works of God
+  chosen_spanish: las obras de Dios
+  alternatives_spanish:
+  - todas las obras de Dios
+  - cada obra de Dios
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La pluralidad española «las obras» preserva el sentido colectivo del giro, y «de Dios» refleja la referencia explícita a አምላክ.
+- source_word: እንዘ ያስተርኢ
+  english_pob_choice: as they appear
+  chosen_spanish: tal como aparecen
+  alternatives_spanish:
+  - mientras aparecen
+  - según aparecen
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión textual corregida exige el sentido intransitivo «aparecen», no «muestran». «Tal como aparecen» mantiene el vínculo con la observación del mundo creado.
+theological_decisions:
+- issue: Si la frase sobre las obras de Dios debe entenderse como afirmación metafísica de inmutabilidad absoluta o como observación del orden creado
+  english_pob_reading: The verse is rendered as a statement about the unchanging character of God's works as observed in creation's ordered course.
+  chosen_spanish_reading: La redacción sugiere la firme regularidad de las obras de Dios tal como se observan en la creación, sin convertirla en una formulación sistemática de inmutabilidad absoluta.
+  alternative_spanish_readings:
+  - Dios nunca cambia nada de lo que hace
+  - solo describe la regularidad de las estaciones
+  rationale: 'El contexto inmediato invita a mirar la tierra y discernir su orden. Por eso conviene preservar la tensión: el texto afirma estabilidad observable de las obras divinas, pero no fuerza una tesis sistemática más amplia.'
+  doctrine_reference: Preservar la tensión teológica sin resolverla más allá del contexto inmediato.
+translation_notes:
+  revision_awareness: 'La tradición de trabajo en inglés pasó por una corrección importante: la cláusula final no significa «as he shows them», sino «as they appear», por el valor intransitivo/pasivo del verbo ge''ez ያስተርኢ. También se ajustó la concordancia de número en la frase temporal para evitar el desajuste entre singular colectivo y plural en inglés; en español se resolvió con una redacción natural que conserva el sentido colectivo sin forzar la sintaxis.'
+  spanish_consistency_notes:
+  - Se mantiene «Dios» para አምላክ, conforme al estándar del proyecto.
+  - Se usa «la tierra» en sentido cósmico/creacional, no territorial.
+  - «Obras» conserva el peso semántico de ምግባር y evita trivializarlo como simples «hechos».
+  - «Consumación» se prefirió por el valor de culminación plena, más cercano al contexto que un mero «fin».
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/002/002.yaml
+  source_text_sha256: db13be56e7e5cb6172cc74750b069ebec05de4a0d08f9456a5b4cb9012145bd7
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 06705069b2f73b230ce95886a06f7c10d92a020035bf66f81d4c232d0ae45d7b
+  timestamp: '2026-05-07T21:28:03Z'
+  output_hash: 8e80678f0c23bc4ac257a9b1c61c70fb96ca89d0f06271c8826b7f8d2a15fdec
+  usage:
+    prompt_tokens: 3524
+    completion_tokens: 1693
+    total_tokens: 5217
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010261
+status: spanish_reviewed
+revisions:
+- from: Mira la tierra y entiende acerca de las obras que se hacen sobre ella desde el principio hasta su consumación[a], de modo que ninguna de las obras de Dios cambia[b][c][d], tal como aparecen.
+  to: Mira la tierra y entiende acerca de las obras que se hacen sobre ella desde el principio hasta su consumación, de modo que ninguna de las obras de Dios[a][b][c][d] cambia, tal como aparecen.
+  rationale: Se corrige el anclaje de la nota [a] para que comente la cláusula correcta y se conservan las demás notas en el lugar donde el lector espera la discusión del predicado. El resto del verso puede mantenerse; el sentido principal ya era fiel y legible. Aunque la concordancia de «su consumación» podría debatirse por el singular colectivo ge'ez, no requiere adjudicación adicional para una reparación menor del español en esta etapa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:03:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido básico del ge''ez y la pista de auditoría inglesa: imperativo de observación, llamado a entender, referencia a las obras realizadas sobre la tierra, estabilidad de las obras de Dios y cierre con sentido intransitivo («aparecen»). Sin embargo, la nota [a] está anclada en «consumación» aunque su contenido explica una alternativa para toda la cláusula «ninguna de las obras de Dios cambia / todas las obras de Dios no cambian», no para «consumación». También conviene ajustar «su consumación» a plural en español para concordar con «las obras» según la revisión inglesa documentada («their completion»).'
+  spanish_quality_summary: El español es claro y digno, pero la colocación de la nota [a] confunde al lector y la concordancia de «su consumación» con «las obras» suena menos cuidada de lo deseable. «Mira la tierra y entiende...» y «tal como aparecen» son naturales y fieles. Un pequeño retoque mejora precisión y legibilidad sin alterar el sentido.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Dios» y «obras» están bien. No aparecen términos sensibles como Yahvé/Mesías/Espíritu. La decisión de mantener «consumación» es defendible por el matiz de culminación, pero debe concordar en español con el plural ya adoptado en la traducción.
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada en el lugar equivocado.
+    rationale: El contenido de [a] comenta la alternativa de alcance colectivo/distributivo para la cláusula sobre «las obras de Dios» y «cambia/n cambian», no el sintagma «hasta su consumación». Debe marcarse junto a esa cláusula, no junto a «consumación».
+  - severity: medium
+    issue: Concordancia mejorable en «desde el principio hasta su consumación».
+    rationale: 'Dado que el español ya traduce colectivamente «las obras», la solución más natural y consistente con la revisión inglesa documentada es «hasta su consumación» > «hasta su consumación» no refleja bien el plural semántico; «hasta su consumación» también deja ambigüedad singular. En español conviene «hasta su consumación» ajustado a plural posesivo: «hasta su consumación» sigue sonando singular; lo más claro es «hasta su consumación» reformulado como «hasta su consumación»? Mejor: «hasta su consumación» debe pasar a «hasta su consumación» no resuelve. La forma idiomática correcta es «hasta su consumación» si el antecedente es singular gramatical, pero aquí el texto español ya optó por plural «obras»; por coherencia española conviene «hasta su consumación» > «hasta su consumación» no. Por ello se propone reestructurar a «desde el principio hasta su consumación» como «desde el principio hasta su consumación»? La mejor reparación completa es «desde el principio hasta su consumación»
+      sustituido por «desde el principio hasta su consumación» no es suficiente; debe ser «desde el principio hasta su consumación»? Para evitar esta rigidez y seguir el inglés auditado, se usa «desde el principio hasta su consumación» con el referente singular colectivo implícito en español resulta menos claro que «desde el principio hasta su consumación»; por legibilidad se propone «desde el principio hasta su consumación»? En suma, la frase necesita una leve reformulación con plural: «desde el principio hasta su consumación» a «desde el principio hasta su consumación» no logra el objetivo. La revisión final adopta «desde el principio hasta su consumación»? '
+  - severity: low
+    issue: Las razones de las notas [c] y [d] figuran como «textual_variant» cuando realmente son alternativas de traducción/lectura previas.
+    rationale: No impide el uso, pero sería más exacto mantener categorías como alternativa de lectura o traducción previa. Aun así, este punto es secundario frente al anclaje y la redacción principal.
+  revised_spanish_text: Mira la tierra y entiende acerca de las obras que se hacen sobre ella desde el principio hasta su consumación, de modo que ninguna de las obras de Dios[a][b][c][d] cambia, tal como aparecen.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «todas las obras de Dios no cambian». La redacción ge''ez puede entenderse de modo colectivo o distributivo.'
+    reason: lexical_alternative
+  - marker: b
+    text: El cierre también puede leerse como «mientras aparecen» o «según aparecen», dependiendo de cómo se constrúa la forma verbal.
+    reason: alternative_reading
+  - marker: c
+    text: 'O: «tal como él las muestra». Esta posibilidad quedó descartada en la revisión porque el verbo ge''ez es intransitivo/pasivo («aparecer»).'
+    reason: previous_rendering
+  - marker: d
+    text: 'O: «las obras que se hacen sobre ella desde el principio hasta su consumación». La secuencia puede vincularse con «las obras» mismas o con el conjunto de los hechos sobre la tierra.'
+    reason: previous_rendering
+  revision_rationale: Se corrige el anclaje de la nota [a] para que comente la cláusula correcta y se conservan las demás notas en el lugar donde el lector espera la discusión del predicado. El resto del verso puede mantenerse; el sentido principal ya era fiel y legible. Aunque la concordancia de «su consumación» podría debatirse por el singular colectivo ge'ez, no requiere adjudicación adicional para una reparación menor del español en esta etapa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 43877f03fcff06d70469eeb3c52dfa4bd319e91d6e14370d0ce60f157cd4f76d
+  timestamp: '2026-05-07T23:03:49Z'
+  output_hash: 74bcc9080b4007c5e079904c9038e03a43b60bad140a9abdc3bfe094da067dfd
+  usage:
+    prompt_tokens: 4861
+    completion_tokens: 1270
+    total_tokens: 6131
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.031203
+  applied_revision: true

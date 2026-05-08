@@ -1,0 +1,187 @@
+id: 1EN.5.9
+reference: 1 Enoch 5:9
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወኢይደግሙ፡ አብሶ፡ ወኢይትኴነኑ፡ ኵሎ፡ መዋዕለ፡ ሕይወቶሙ፡
+  language: Geez
+  pages:
+  - 46
+  - 48
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/005/009.yaml
+  text: And they shall not again sin[c][b][a], and they shall not be condemned all the days of their life.
+  footnotes:
+  - marker: a
+    text: Or 'they will no longer sin.' The Ge'ez wording includes the sense of repetition/continuance ('again').
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'all the days of their lives.' The source uses a singular 'life' in an idiomatic expression with plural possessors.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And they shall not again commit sin, and they shall not be condemned all the days of their life.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: afd2b492d63d42280f39431d4198ac824670f4ba4e5755ee1c7dd99a37af6d6d
+    timestamp: '2026-04-22T09:08:36Z'
+    output_hash: da289475f39fe8abe6f425377b5f64916f1561dd50b38a42e0723b320e8c18b3
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:29Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Y no volverán a pecar[a][c], y no serán condenados todos los días de su vida[b].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: "ya no pecarán". El ge''ez incluye el matiz de repetición o continuidad ("de nuevo").'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: "todos los días de sus vidas". El original usa un singular "vida" con poseedores plurales en una expresión idiomática.'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Lit. alterna previa: "no volverán a cometer pecado".'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ኢይደግሙ
+  english_pob_choice: they shall not again
+  chosen_spanish: no pecarán
+  alternatives_spanish:
+  - no pecarán de nuevo
+  - ya no pecarán
+  - no volverán a pecar
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El ge'ez expresa repetición o continuidad negativa. En español, 'no pecarán' comunica el hecho sin sobrecargar la frase; la idea de repetición queda preservada por el contexto y por la nota textual que advierte el valor de 'again/de nuevo'.
+- source_word: አብሶ
+  english_pob_choice: sin
+  chosen_spanish: pecarán
+  alternatives_spanish:
+  - cometerán pecado
+  - harán mal
+  - pecarán
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término se usa de manera idiomática para 'pecado/ofensa'. En español, el verbo simple 'pecar' es natural y fiel; 'cometer pecado' sería más explicativo, pero menos fluido y menos directo.
+- source_word: ኢይትኴነኑ
+  english_pob_choice: they shall not be condemned
+  chosen_spanish: no serán condenados
+  alternatives_spanish:
+  - no serán declarados culpables
+  - no serán juzgados culpables
+  - no serán castigados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El pasivo conserva el sentido judicial/forense del original. 'Condenados' mantiene la tensión entre conducta y veredicto mejor que 'castigados', que desplaza el énfasis hacia la pena.
+- source_word: ኵሎ፡ መዋዕለ፡ ሕይወቶሙ
+  english_pob_choice: all the days of their life
+  chosen_spanish: todos los días de su vida
+  alternatives_spanish:
+  - todos los días de sus vidas
+  - durante toda su vida
+  - a lo largo de toda su vida
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión semítica se vierte de forma natural en español con un singular colectivo, 'su vida'. Esto conserva la estructura idiomática sin forzar una literalidad ajena al español.
+theological_decisions:
+- issue: Si la cláusula promete transformación moral o solamente ausencia de culpa/punición
+  english_pob_reading: The verse is rendered as a promise that they will not again commit sin, followed by the judicial result that they will not be condemned.
+  chosen_spanish_reading: El verso presenta primero la conducta ('no pecarán') y luego el veredicto judicial ('no serán condenados'), sin fusionarlos.
+  alternative_spanish_readings:
+  - no volverán a pecar, y no serán castigados
+  - ya no pecarán, y no serán declarados culpables
+  rationale: Conviene conservar la distinción entre el acto moral y la consecuencia forense. 'Condenados' preserva el lenguaje judicial sin resolverlo en una explicación doctrinal más específica que la del texto.
+  doctrine_reference: Mantener la tensión teológica entre conducta y juicio, sin armonizarla artificialmente.
+translation_notes:
+  revision_awareness: La traducción sigue el pasaje ge'ez recuperado y toma en cuenta la revisión auditada que unificó ኢይደግሙ፡ አብሶ como 'sin' en el verso paralelo inmediato. Por eso se evita 'cometer pecado' y se mantiene 'pecarán' de modo consistente con la repetición deliberada del original.
+  spanish_consistency_notes:
+  - He usado 'condenados' para mantener el matiz jurídico que el audit trail distingue de una mera idea de castigo.
+  - He preferido el singular idiomático 'su vida' para reflejar la construcción semítica del original.
+  - No se introdujo 'Cristo', 'SEÑOR' ni otra terminología litúrgica ajena al texto fuente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/005/009.yaml
+  source_text_sha256: 970c6ac33d82299de0117feae53b78785c4d57737de54d794b0c32f966b1b97a
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: edf28f5297aff35cab1465e9b073956d3581cc6e8e4c875859831cd31c3ac65d
+  timestamp: '2026-05-07T21:27:38Z'
+  output_hash: ccaf21fdc8767f146f249fd5ca141592b146ffe2f08d0783b613c8b7f58d0ce3
+  usage:
+    prompt_tokens: 2599
+    completion_tokens: 1070
+    total_tokens: 3669
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.006764
+status: spanish_reviewed
+revisions:
+- from: Y no pecarán[a], y no serán condenados todos los días de su vida[b][c].
+  to: Y no volverán a pecar[a][c], y no serán condenados todos los días de su vida[b].
+  rationale: La revisión restituye en el texto principal el valor iterativo de ኢይደግሙ mediante 'volverán a pecar', que es español natural y fiel a la decisión auditada en inglés. También corrige la nota c para que refleje de verdad la 'previous_rendering' documentada, en vez de una alternativa parcial no sustentada. Se mantiene 'condenados' por su fuerza forense y 'todos los días de su vida' como representación válida del idiomatismo semítico.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:15:37Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español conserva bien la estructura básica del ge'ez y la distinción entre conducta ('pecar') y veredicto forense ('ser condenados'). Sin embargo, omite en el texto principal el matiz iterativo de ኢይደግሙ ('again / de nuevo'), que el English POB decidió preservar explícitamente como elección principal, no solo en nota. Además, la nota c en español no corresponde a la nota inglesa de 'previous_rendering' y termina ofreciendo una alternativa incompleta y poco útil.
+  spanish_quality_summary: El español es claro y natural, pero 'Y no pecarán' pierde una precisión importante del original que puede expresarse de manera idiomática como 'Y no volverán a pecar'. El resto del versículo suena bien en español eclesial moderno. Las notas necesitan alinearse mejor con la auditoría inglesa y con el contenido real del texto.
+  glossary_alignment: No hay términos del glosario mayor en conflicto. 'Pecar' para አብሶ y 'condenados' para ኢይትኴነኑ están bien elegidos. El punto clave es reflejar de forma explícita el valor iterativo de ኢይደግሙ en el texto principal, en conformidad con la decisión léxica documentada del POB.
+  issues:
+  - severity: high
+    issue: Falta en el texto principal el matiz de repetición/continuidad de ኢይደግሙ.
+    rationale: La traducción auditada en inglés escogió 'not again' como lectura principal por razones léxicas y de consistencia con 1 Enoc 5:8. 'No pecarán' reduce el sentido a una negación simple y desplaza a una nota algo que el POB consideró parte del texto principal.
+  - severity: medium
+    issue: La nota c no refleja la nota inglesa de previous_rendering y resulta poco informativa.
+    rationale: La nota inglesa c preserva la redacción previa 'commit sin'. La nota española actual ofrece solo una cláusula parcial ('y no serán condenados...') y la describe como paralelismo del texto base, lo que no corresponde a la evidencia ni ayuda al lector.
+  - severity: low
+    issue: El anclaje de notas podría simplificarse y ordenarse mejor tras corregir el texto principal.
+    rationale: Si el texto principal ya incluye 'volverán a pecar', la nota a puede conservar la alternativa 'ya no pecarán'; las otras notas deben ajustarse a las alternativas reales sin sobrecargar el final del versículo.
+  revised_spanish_text: Y no volverán a pecar[a][c], y no serán condenados todos los días de su vida[b].
+  revised_footnotes:
+  - marker: a
+    text: 'O: "ya no pecarán". El ge''ez incluye el matiz de repetición o continuidad ("de nuevo").'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: "todos los días de sus vidas". El original usa un singular "vida" con poseedores plurales en una expresión idiomática.'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Lit. alterna previa: "no volverán a cometer pecado".'
+    reason: previous_rendering
+  revision_rationale: La revisión restituye en el texto principal el valor iterativo de ኢይደግሙ mediante 'volverán a pecar', que es español natural y fiel a la decisión auditada en inglés. También corrige la nota c para que refleje de verdad la 'previous_rendering' documentada, en vez de una alternativa parcial no sustentada. Se mantiene 'condenados' por su fuerza forense y 'todos los días de su vida' como representación válida del idiomatismo semítico.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 910abd8cc5b1c1a2d5a608b6be014fc1b3cdd3948f5d3ed9de9f8bbf3950badd
+  timestamp: '2026-05-07T23:15:37Z'
+  output_hash: 47616478c45d1d67567229beaa32dca0c01c4a82fc67472ec34671fa518182ba
+  usage:
+    prompt_tokens: 3341
+    completion_tokens: 861
+    total_tokens: 4202
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021267
+  applied_revision: true

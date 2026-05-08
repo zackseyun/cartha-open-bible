@@ -1,0 +1,122 @@
+id: 2ES.9.23
+reference: 2 Esdras 9:23
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: sed non ieiunabis in eis, Ibis autem in campum florum, ubi
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/009/023.yaml
+  text: But you shall not fast during them[a], but you shall go into a field of flowers, where
+  footnotes:
+  - marker: a
+    text: Or '“But you, if you will again withdraw for seven more days—though you shall not fast during them—'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T19:48:15Z'
+    unchanged: false
+    changes_summary: 'Revised to match the Latin more closely: removed the unsupported conditional and ''seven more days'' from this verse segment, retained the prohibition on fasting, and translated ''Ibis autem in campum florum, ubi'' as ''but you shall go into a field of flowers, where.'''
+translation:
+  language: es
+  text: Pero no ayunarás durante ese tiempo[a], sino que irás a un campo de flores, donde
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «Pero tú, si esperas siete días más—aunque no ayunarás durante ese tiempo—».'
+    reason: Alinear la nota con la alternativa documentada en el expediente inglés y mejorar la naturalidad temporal en español.
+lexical_decisions:
+- source_word: sed non ieiunabis in eis
+  english_pob_choice: But you shall not fast during them
+  chosen_spanish: Pero no ayunarás durante ellos
+  alternatives_spanish:
+  - Pero no ayunarás en ellos
+  - Pero no guardarás ayuno durante ellos
+  lexicon: ieiunabis -> ayunarás
+  rationale: El latín prohíbe el ayuno durante el período referido; "ayunar" es la equivalencia natural y fiel en español. "Durante ellos" conserva el sentido temporal del inglés POB y evita introducir un objeto distinto.
+- source_word: Ibis autem in campum florum
+  english_pob_choice: but you shall go into a field of flowers
+  chosen_spanish: sino que irás a un campo de flores
+  alternatives_spanish:
+  - pero irás a un campo de flores
+  - sino que entrarás en un campo de flores
+  lexicon: ibis -> irás; campum florum -> campo de flores
+  rationale: '"Irás" mantiene el futuro directo del latín; "campo de flores" sigue de cerca la imagen concreta. "Sino que" enlaza mejor la corrección contrastiva después de la prohibición.'
+theological_decisions:
+- issue: Temporal command versus spatial movement
+  english_pob_reading: But you shall not fast during them, but you shall go into a field of flowers, where
+  chosen_spanish_reading: Pero no ayunarás durante ellos[a], sino que irás a un campo de flores, donde
+  alternative_spanish_readings:
+  - Pero no ayunarás durante ellos, sino que irás a un campo de flores, donde
+  rationale: La revisión inglesa eliminó la lectura espacial previa de "withdraw" y dejó el foco temporal del ayuno, seguido por el movimiento hacia el campo de flores. El español refleja esa secuencia sin añadir contenido no presente en el segmento latino.
+  doctrine_reference: No doctrinal issue; narrative/imperative sequencing in 4 Ezra 9:23.
+translation_notes:
+  revision_awareness: 'Se siguió la revisión más reciente del inglés POB, que ajustó el segmento para ceñirse al latín: se conservó la prohibición de ayunar y se tradujo ''Ibis autem in campum florum, ubi'' como una cláusula de movimiento hacia un campo de flores. Se evitó introducir la idea descartada de ''withdraw'' o de ''siete días más''.'
+  spanish_consistency_notes:
+  - Se prefirió 'ayunar' para ieiunabis, en consonancia con el valor lexical directo del latín.
+  - '''Campo de flores'' mantiene la imagen concreta del texto sin suavizarla.'
+  - Se usó puntuación española con coma antes de 'sino que' para marcar el contraste.
+  - La nota [a] queda anclada explícitamente en el texto mediante el marcador visible en 'durante ellos[a]'.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/009/023.yaml
+  source_text_sha256: 0d6d12900e7761a82ada8e6bbd8ea13f73849f195b9263cb2dd8617e5e826da7
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 3f6e200a6c71d132681bd96be3afeaaf8024a8bdeb9c31a0a0208f50b465a8a0
+  timestamp: '2026-05-07T21:28:27Z'
+  output_hash: 3e9261d90690f4ebf465734b73463191d4d718fde4670d626d8859a9744deff5
+  usage:
+    prompt_tokens: 2128
+    completion_tokens: 706
+    total_tokens: 2834
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004773
+status: spanish_reviewed
+revisions:
+- from: Pero no ayunarás durante ellos[a], sino que irás a un campo de flores, donde
+  to: Pero no ayunarás durante ese tiempo[a], sino que irás a un campo de flores, donde
+  rationale: Se conserva el sentido del latín y de la revisión inglesa final, pero se corrige la nota alternativa para eliminar el matiz no respaldado de «vuelves» y se mejora la naturalidad de la referencia temporal en el texto principal con «durante ese tiempo».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:30:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el latín conservado: `sed non ieiunabis in eis` = «pero no ayunarás durante ellos» y `Ibis autem in campum florum, ubi` = «sino que irás a un campo de flores, donde». Sin embargo, la nota al pie no refleja fielmente el historial auditado en inglés: la alternativa documentada usa la idea temporal de «esperar/dejar pasar», no «vuelves a esperar».'
+  spanish_quality_summary: 'El español principal es claro y natural. Hay un pequeño ajuste de estilo preferible: «durante ese tiempo» suena más idiomático que «durante ellos» para referencia temporal en español. La coordinación con «sino que» funciona bien tras la negación.'
+  glossary_alignment: No hay términos de glosario mayor en juego. «Ayunarás» corresponde bien a `ieiunabis`; «campo de flores» reproduce adecuadamente `campum florum`. No hay conflicto terminológico teológico.
+  issues:
+  - severity: medium
+    issue: La nota alternativa introduce «vuelves a esperar», que no coincide con la revisión auditada.
+    rationale: El rastro inglés revisado documenta «if you will wait for seven more days—though you shall not fast during them—», no una acción iterativa de «volver». Añadir «vuelves» introduce un matiz no sustentado por el expediente final.
+  - severity: low
+    issue: «durante ellos» es comprensible pero poco idiomático en español para un período temporal.
+    rationale: Aunque refleja el inglés, en español bíblico-natural suena mejor «durante ese tiempo» o «durante esos días». Esto preserva el valor temporal de `in eis` sin rigidez innecesaria.
+  revised_spanish_text: Pero no ayunarás durante ese tiempo[a], sino que irás a un campo de flores, donde
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Pero tú, si esperas siete días más—aunque no ayunarás durante ese tiempo—».'
+    reason: Alinear la nota con la alternativa documentada en el expediente inglés y mejorar la naturalidad temporal en español.
+  revision_rationale: Se conserva el sentido del latín y de la revisión inglesa final, pero se corrige la nota alternativa para eliminar el matiz no respaldado de «vuelves» y se mejora la naturalidad de la referencia temporal en el texto principal con «durante ese tiempo».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2877a8b7d74fde3f0416e12e85c12840e9e1a5bc25861b546fd92ce30518cb42
+  timestamp: '2026-05-07T23:30:36Z'
+  output_hash: d54171fa9be24f1243d562f475ecbff93ccd3a28025a4778d06e223ece783601
+  usage:
+    prompt_tokens: 2349
+    completion_tokens: 564
+    total_tokens: 2913
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.014333
+  applied_revision: true

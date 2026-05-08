@@ -1,0 +1,205 @@
+id: 1EN.95.5
+reference: 1 Enoch 95:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: አሌ፡ ለክሙ፡ እለ፡ ትፈድዩ፡ እኩየ፡ ለቢጽክሙ፡ እስመ፡ ትትፈደዩ፡ በከመ፡ ምግባሪክሙ።
+  language: Geez
+  pages:
+  - 237
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 95, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/095/005.yaml
+  text: Woe to you who repay your neighbor with evil[a], for you will be repaid according to your deeds.
+  footnotes:
+  - marker: a
+    text: 'The same Ge''ez verbal root appears in both clauses: those who ''repay'' evil will themselves ''be repaid.'''
+    reason: lexical_alternative
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 6507f5df6cd7e79476df0ac421f56d8917212d50c4a0d16265dee6f38033068c
+    timestamp: '2026-04-22T09:23:07Z'
+    output_hash: 62e2bc6d1c3fc9564fb49d749b81dcde4ca0625003469a718d0019a66541d8e7
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:38Z'
+    unchanged: false
+    changes_summary: Adjusted word order to more naturally reflect the sense of repaying one's neighbor with evil while preserving the formal tone; retained the rest unchanged.
+translation:
+  language: es
+  text: ¡Ay de ustedes, que devuelven mal a su prójimo[a], porque se les devolverá según sus hechos!
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'El ge''ez usa la misma raíz verbal en ambas cláusulas: quienes «devuelven» mal recibirán que «se les devolverá» de la misma manera.'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: አሌ
+  english_pob_choice: Woe
+  chosen_spanish: ¡Ay de ustedes!
+  alternatives_spanish:
+  - ¡Ay!
+  - ¡Ay de vosotros!
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La fórmula introduce una denuncia profética; en español, «¡Ay de ustedes!» comunica bien el valor oracular de juicio sin sonar demasiado arcaico.
+- source_word: ለክሙ
+  english_pob_choice: to you
+  chosen_spanish: de ustedes
+  alternatives_spanish:
+  - a ustedes
+  - para ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Con «ay» en español, la construcción natural es «ay de ustedes», que conserva el tono de reproche dirigido al grupo.
+- source_word: ትፈድዩ
+  english_pob_choice: repay
+  chosen_spanish: pagan
+  alternatives_spanish:
+  - repagan
+  - retribuyen
+  - pagan de vuelta
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo se entiende aquí como devolver en retribución. «Pagan mal» expresa esa reciprocidad sin volver la frase poco idiomática; el eco verbal se preserva en la segunda cláusula con «se les pagará».
+- source_word: እኩየ
+  english_pob_choice: evil
+  chosen_spanish: mal
+  alternatives_spanish:
+  - maldad
+  - malvadamente
+  - maligno
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Mal» es más natural en español dentro de la expresión «pagar mal a alguien», y conserva el peso moral del término ge'ez.
+- source_word: ለቢጽክሙ
+  english_pob_choice: to your neighbor
+  chosen_spanish: a su prójimo
+  alternatives_spanish:
+  - a su vecino
+  - a su semejante
+  - a su compañero
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Prójimo» comunica una relación ética cercana y es el equivalente bíblico más transparente en español para este contexto.
+- source_word: ትትፈደዩ
+  english_pob_choice: you will be repaid
+  chosen_spanish: se les pagará
+  alternatives_spanish:
+  - serán retribuidos
+  - se les retribuirá
+  - se les pagará de vuelta
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El pasivo mantiene la forma de retribución sin nombrar explícitamente al agente, igual que la lectura auditada en inglés. «Se les pagará» conserva la relación léxica con «pagan».
+- source_word: በከመ
+  english_pob_choice: according to
+  chosen_spanish: según
+  alternatives_spanish:
+  - conforme a
+  - de acuerdo con
+  - en proporción a
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Según» expresa medida o norma de retribución de modo breve y natural.
+- source_word: ምግባሪክሙ
+  english_pob_choice: your deeds
+  chosen_spanish: sus obras
+  alternatives_spanish:
+  - sus hechos
+  - su conducta
+  - sus acciones
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Obras» es fiel al campo semántico de acciones juzgadas y mantiene el registro bíblico sin forzar una lectura técnica.
+theological_decisions:
+- issue: Pasivo de retribución y agente implícito
+  english_pob_reading: 'A divine or judicial passive is implied: the evildoers will themselves receive recompense proportionate to their actions.'
+  chosen_spanish_reading: Se conserva un pasivo impersonal que deja implícito al agente de la retribución, en el marco de una sentencia de juicio.
+  alternative_spanish_readings:
+  - Dios les pagará según sus obras.
+  - la consecuencia moral recaerá sobre ellos según sus hechos.
+  rationale: El texto no nombra explícitamente al agente; mantener el pasivo respeta esa tensión y preserva la formulación de juicio sin sobreespecificar la acción divina.
+  doctrine_reference: Preservar la tensión teológica entre pasivo divino y formulación impersonal del juicio.
+translation_notes:
+  revision_awareness: La redacción española sigue la revisión auditada que ajustó el orden para reflejar de manera más natural la idea de «pagar mal al prójimo», manteniendo el paralelismo entre la acción humana y la retribución recibida.
+  spanish_consistency_notes:
+  - Se usa «prójimo» como equivalente bíblico natural de la relación interpersonal cercana.
+  - Se mantiene la reciprocidad léxica con «pagan / se les pagará» para reflejar la raíz repetida del ge'ez.
+  - Se evita nombrar explícitamente a Dios como sujeto, siguiendo el pasivo judicial implícito del inglés auditado.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/095/005.yaml
+  source_text_sha256: b9247054d6532e60046f5f87147e9eb93d8164586ff47912b2100ef5322319a3
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 3e3c56a2bda7654d12bbc9ccf308df4701660097b78ad9603b30f410af7ec60c
+  timestamp: '2026-05-07T21:27:44Z'
+  output_hash: b76f08071acb91054d5ba7d7eb9604978a2f1490590524d880a2baddd03e61a6
+  usage:
+    prompt_tokens: 2848
+    completion_tokens: 1214
+    total_tokens: 4062
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007599
+status: spanish_reviewed
+revisions:
+- from: ¡Ay de ustedes, que pagan mal a su prójimo[a], porque se les pagará según sus obras!
+  to: ¡Ay de ustedes, que devuelven mal a su prójimo[a], porque se les devolverá según sus hechos!
+  rationale: Se ajusta el verbo principal para expresar con más naturalidad en español la reciprocidad moral del ge'ez y del POB inglés, evitando una lectura demasiado financiera de «pagar». También se cambia «obras» por «hechos» para una formulación más clara y general en contexto de juicio. La nota se actualiza para reflejar el eco verbal revisado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:31:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite correctamente el sentido básico del ge''ez y del POB inglés: un ay profético contra quienes devuelven mal a su prójimo, con una retribución proporcional según sus acciones. Conserva bien el pasivo/impersonal de juicio y el paralelismo del mismo verbo en ambas cláusulas. Sin embargo, «pagan mal a su prójimo» y «se les pagará» suenan algo económicos/idiomáticamente imprecisos en español para este contexto moral.'
+  spanish_quality_summary: El texto es claro y legible, con buen registro bíblico moderno. Aun así, puede mejorarse la naturalidad y precisión moral cambiando el primer verbo a «devuelven» y el segundo a «se les devolverá», lo que preserva mejor la reciprocidad sin la ambigüedad financiera de «pagar». Además, «sus hechos» fluye mejor que «sus obras» en este contexto de sentencia ética general, evitando posibles resonancias teológicas innecesarias.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Prójimo» está bien alineado con la decisión inglesa sobre neighbor. La nota léxica debe ajustarse para reflejar el eco verbal español revisado («devuelven / se les devolverá»).
+  issues:
+  - severity: medium
+    issue: «pagan mal a su prójimo» suena menos natural y más financiero que moral
+    rationale: Aunque es entendible, el source y el POB inglés enfatizan retribución recíproca de mal, no pago económico. «Devuelven a su prójimo mal» o «devuelven mal a su prójimo» expresa mejor el sentido ético.
+  - severity: medium
+    issue: «se les pagará» mantiene la misma ambigüedad financiera
+    rationale: El pasivo debe conservarse, pero «se les devolverá» refleja mejor la correspondencia léxica con la primera cláusula y el motivo de retribución judicial.
+  - severity: low
+    issue: «sus obras» puede sonar más técnico o teológico de lo necesario
+    rationale: El ge'ez apunta a acciones/deeds en sentido general. «Sus hechos» mantiene concreción y naturalidad en español contemporáneo sin perder solemnidad.
+  - severity: low
+    issue: La nota al pie debe acompasarse al verbo finalmente usado en español
+    rationale: Si se revisa el eco verbal principal, la glosa explicativa también debe reflejarlo con precisión.
+  revised_spanish_text: ¡Ay de ustedes, que devuelven mal a su prójimo[a], porque se les devolverá según sus hechos!
+  revised_footnotes:
+  - marker: a
+    text: 'El ge''ez usa la misma raíz verbal en ambas cláusulas: quienes «devuelven» mal recibirán que «se les devolverá» de la misma manera.'
+    reason: lexical_alternative
+  revision_rationale: Se ajusta el verbo principal para expresar con más naturalidad en español la reciprocidad moral del ge'ez y del POB inglés, evitando una lectura demasiado financiera de «pagar». También se cambia «obras» por «hechos» para una formulación más clara y general en contexto de juicio. La nota se actualiza para reflejar el eco verbal revisado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3c8c8acf5be67104e2ed3052d5fb37b0ed008ce435ba62c1fffe62ce354514e1
+  timestamp: '2026-05-07T23:31:31Z'
+  output_hash: e9af33d8ee46c75dd8f649fb48d7fb91f63ec2771ebbdc4951f090cbfcc43cd2
+  usage:
+    prompt_tokens: 3704
+    completion_tokens: 737
+    total_tokens: 4441
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020315
+  applied_revision: true

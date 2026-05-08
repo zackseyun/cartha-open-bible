@@ -1,0 +1,210 @@
+id: 1EN.75.6
+reference: 1 Enoch 75:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: '*ሶበ፡ ይትረኃዉ፡ ፲ሥሩ፡ ወካልእ፡ ኃዋላወ፡ በሰማይ፡ ዲበ፡ አጽናፈ፡ ምድር፡ እለ፡ እምኔሆሙ፡ ይወፅእ፡ ፀሐይ፡ ወወርኅ፡ ወከዋክብት፡'
+  language: Geez
+  pages:
+  - 180
+  - 181
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch75.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 75, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/075/006.yaml
+  text: When the twelve other portals in heaven[a], at the ends of the earth, are opened[c][b], from which the sun and the moon and the stars come out.
+  footnotes:
+  - marker: a
+    text: Or 'portals' or 'windows'; the Ge'ez term denotes apertures in the heavenly structure.
+    reason: lexical_alternative
+  - marker: b
+    text: The phrase 'ends of the earth' reflects ancient cosmological imagery, not a modern scientific description.
+    reason: cultural_note
+  - marker: c
+    text: Or 'Then there are twelve other openings'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 57dbccf45eb8cdab9fa2fe4283b397d863061b0cf20ae7196afbadac08a7519d
+    timestamp: '2026-04-22T09:17:21Z'
+    output_hash: b5b372a26d10c03e9afee4d39c9ce7f524faef4f7971c7cfdb25f058d5e84e73
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:31Z'
+    unchanged: false
+    changes_summary: Reordered the sentence for natural English and added 'other' to reflect ካልእ. Retained 'portals,' 'ends of the earth,' and 'come out' as accurate renderings of the source.
+translation:
+  language: es
+  text: Cuando se abran los otros doce portales[a] en el cielo, en los extremos de la tierra[b], de los cuales salen el sol, la luna y las estrellas.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «aperturas» o «ventanas»; el término ge'ez designa aberturas en la estructura celeste.
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión «los extremos de la tierra» refleja una imaginería cosmológica antigua, no una descripción científica moderna.
+    reason: cultural_note
+lexical_decisions:
+- source_word: ሶበ
+  english_pob_choice: When
+  chosen_spanish: Cuando
+  alternatives_spanish:
+  - Al tiempo que
+  - En el momento en que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La partícula introduce una cláusula temporal que en español se expresa naturalmente con «cuando», no con un adverbio de secuencia.
+- source_word: ይትረኃዉ
+  english_pob_choice: are opened
+  chosen_spanish: se abran
+  alternatives_spanish:
+  - se abren
+  - son abiertos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo ge'ez es pasivo/reflexivo y pide una construcción pasiva o media en español. «Se abran» conserva el valor de apertura y el matiz temporal de la cláusula.
+- source_word: ፲ሥሩ ወካልእ
+  english_pob_choice: twelve other
+  chosen_spanish: los doce
+  alternatives_spanish:
+  - otros doce
+  - doce más
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión auditada corrige «other» y deja simplemente el número doce. En esta sección, el contexto cosmológico ya identifica el conjunto de portales, por lo que «los doce» es fiel y natural.
+- source_word: ኃዋላወ
+  english_pob_choice: portals
+  chosen_spanish: portales
+  alternatives_spanish:
+  - aperturas
+  - ventanas
+  - aberturas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Portales» reproduce bien la imagen estructural y apocalíptica de aberturas celestes, y evita la ambigüedad arquitectónica de «ventanas» en español moderno.
+- source_word: በሰማይ
+  english_pob_choice: in heaven
+  chosen_spanish: en el cielo
+  alternatives_spanish:
+  - en el cielo celeste
+  - en el firmamento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Aquí el español «cielo» comunica de manera directa el ámbito cósmico del texto; «firmamento» sería posible, pero menos natural en esta sintaxis.
+- source_word: ዲበ አጽናፈ ምድር
+  english_pob_choice: at the ends of the earth
+  chosen_spanish: a los extremos de la tierra
+  alternatives_spanish:
+  - en los confines de la tierra
+  - en los bordes de la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión conserva la cosmología antigua sin modernizarla. «Extremos» refleja bien la idea de límites o confines geográficos/cósmicos.
+- source_word: እለ እምኔሆሙ ይወፅእ
+  english_pob_choice: from which ... come out
+  chosen_spanish: de los cuales salen
+  alternatives_spanish:
+  - de los cuales salen hacia afuera
+  - de donde salen
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La relativa se vierte con una forma plural concordante con «portales». «Salen» expresa el movimiento de salida de manera directa y literaria.
+- source_word: ፀሐይ ወወርኅ ወከዋክብት
+  english_pob_choice: the sun and the moon and the stars
+  chosen_spanish: el sol, la luna y las estrellas
+  alternatives_spanish:
+  - el sol y la luna y las estrellas
+  - sol, luna y estrellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La enumeración se mantiene clara y fluida en español con artículos definidos, conservando la secuencia del original.
+theological_decisions:
+- issue: Cosmología apocalíptica de portales celestiales y extremos de la tierra
+  english_pob_reading: Retain concrete imagery of 'openings in heaven' and 'ends of the earth'
+  chosen_spanish_reading: Conservar la imagen concreta de portales celestiales abiertos a los extremos de la tierra
+  alternative_spanish_readings:
+  - Interpretarlo de modo más abstracto como direcciones del cielo
+  - Reformularlo como zonas astronómicas
+  rationale: El texto pertenece a una cosmología apocalíptica que presenta una arquitectura del cosmos. La traducción no la aplana con lenguaje moderno ni la convierte en descripción científica.
+  doctrine_reference: 'Principio de traducción: preservar la imaginería apocalíptica y la tensión cosmológica del texto fuente.'
+translation_notes:
+  revision_awareness: Se siguió la revisión más reciente del audit trail, que corrige la lectura de ሶበ como «cuando», ይትረኃዉ como «son/se abren», y ፲ሥሩ ወካልእ como «doce» sin añadir «otros». También se conservó la imaginería cosmológica de los portales celestiales y de los extremos de la tierra.
+  spanish_consistency_notes:
+  - Se prefirió «portales» por coherencia con la terminología POB auditada para aperturas celestes.
+  - Se evitó «SEÑOR» u otras sustituciones no pertinentes porque el versículo no contiene el Nombre divino.
+  - La puntuación reproduce una cláusula temporal seguida de una relativa explicativa, en español natural y publication-readable.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/075/006.yaml
+  source_text_sha256: 50148b0bf2e84229c4275dd8a8fcc4adbd5c6b522a3d26960fcf257555a936db
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: c6afc4618061c9219bef88ea44ee1fe28df7ff2230d6f01734247d82cab0d12e
+  timestamp: '2026-05-07T21:27:59Z'
+  output_hash: 5985c622e9ec2c3f906facd654570030428e7883232dfc1ea97dd781424bf24a
+  usage:
+    prompt_tokens: 3256
+    completion_tokens: 1426
+    total_tokens: 4682
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008859
+status: spanish_reviewed
+revisions:
+- from: Cuando se abran los doce portales[a] en el cielo, a los extremos de la tierra[b], de los cuales salen el sol, la luna y las estrellas[c].
+  to: Cuando se abran los otros doce portales[a] en el cielo, en los extremos de la tierra[b], de los cuales salen el sol, la luna y las estrellas.
+  rationale: Se añade «otros» para reflejar fielmente ካልእ según el estado auditado final del English POB. Se mejora la naturalidad con «en los extremos de la tierra» y se elimina una nota [c] no necesaria ni respaldada por el aparato final. El resto del texto preserva bien la imaginería cosmológica y la sintaxis del original.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:26:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura temporal («Cuando»), la imaginería cosmológica («portales», «en el cielo», «extremos de la tierra») y la cláusula relativa de salida de los astros. Sin embargo, omite «other»/ካልእ, que el English POB auditado sí retiene como parte del sentido fuente: «twelve other portals».'
+  spanish_quality_summary: El español es claro y legible, pero «a los extremos de la tierra» suena menos idiomático que «en los extremos de la tierra». Además, la nota [c] introduce una alternativa no respaldada por el rastro auditado inglés; no hace falta una nota nueva para «de los cuales salen».
+  glossary_alignment: No hay términos del glosario teológico principal implicados de forma conflictiva. «Portales» encaja con la decisión léxica auditada para ኃዋላወ. La cosmología antigua se preserva adecuadamente.
+  issues:
+  - severity: medium
+    issue: Falta el matiz de «otros» en ፲ሥሩ ወካልእ
+    rationale: El English POB final y la revisión auditada restauran «other». El borrador español lo elimina basándose en una racionalización contextual que contradice el estado auditado final.
+  - severity: low
+    issue: «a los extremos de la tierra» es menos natural que «en los extremos de la tierra»
+    rationale: La preposición «en» expresa mejor ubicación en español para esta imagen cosmológica, sin alterar el significado.
+  - severity: low
+    issue: La nota [c] no corresponde al aparato auditado y es innecesaria
+    rationale: El inglés conserva notas para «portals/windows» y «ends of the earth», pero no una nota léxica separada para «from which ... come out» en la versión final. Añadirla aquí recarga el texto sin necesidad.
+  revised_spanish_text: Cuando se abran los otros doce portales[a] en el cielo, en los extremos de la tierra[b], de los cuales salen el sol, la luna y las estrellas.
+  revised_footnotes:
+  - marker: a
+    text: O «aperturas» o «ventanas»; el término ge'ez designa aberturas en la estructura celeste.
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión «los extremos de la tierra» refleja una imaginería cosmológica antigua, no una descripción científica moderna.
+    reason: cultural_note
+  revision_rationale: Se añade «otros» para reflejar fielmente ካልእ según el estado auditado final del English POB. Se mejora la naturalidad con «en los extremos de la tierra» y se elimina una nota [c] no necesaria ni respaldada por el aparato final. El resto del texto preserva bien la imaginería cosmológica y la sintaxis del original.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8e40d06ae629217bd19f6d47b93ee2999e62d3b36a116a19ff6ee814fdbc7ec2
+  timestamp: '2026-05-07T23:26:48Z'
+  output_hash: fbbfd833273f2d489032abef411e0a09239a0d7f0c8161961eb03b08637867b2
+  usage:
+    prompt_tokens: 4318
+    completion_tokens: 670
+    total_tokens: 4988
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020845
+  applied_revision: true

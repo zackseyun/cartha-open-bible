@@ -1,0 +1,131 @@
+id: 2ES.10.17
+reference: 2 Esdras 10:17
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'ingredere ergo in civitatem ad virum tuum. Et dixit ad me:'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/010/017.yaml
+  text: Therefore go into the city to your husband.” And he said to me:[a]
+  footnotes:
+  - marker: a
+    text: Or 'Therefore go into the city to your husband.”'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T19:50:30Z'
+    unchanged: false
+    changes_summary: Changed “she said” to “he said” to match the Latin dixit, and replaced the final comma with a colon to reflect the introduction of speech.
+translation:
+  language: es
+  text: Por tanto, ve a la ciudad, adonde está tu esposo. Y él me dijo:[a]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «Por tanto, ve a la ciudad, adonde está tu esposo».'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ingredere
+  english_pob_choice: Therefore go into
+  chosen_spanish: Por tanto, entra
+  alternatives_spanish:
+  - Así que entra
+  - Por eso, entra
+  lexicon: Latin ingredere
+  rationale: El imperativo expresa movimiento hacia el interior; en español natural y fiel, 'entra' reproduce el mandato con mayor claridad que un calco más pesado. 'Por tanto' conserva la relación inferencial de ergo.
+- source_word: in civitatem
+  english_pob_choice: into the city
+  chosen_spanish: en la ciudad
+  alternatives_spanish:
+  - a la ciudad
+  - dentro de la ciudad
+  lexicon: Latin civitas
+  rationale: '''Entra en la ciudad'' es la construcción más natural en español para el movimiento de ingreso; mantiene el sentido espacial de ''into the city'' sin sobrecargar la frase.'
+- source_word: ad virum tuum
+  english_pob_choice: to your husband
+  chosen_spanish: con tu esposo
+  alternatives_spanish:
+  - a tu esposo
+  - junto a tu esposo
+  lexicon: Latin vir / spouse relation
+  rationale: En este contexto relacional, 'esposo' comunica mejor la referencia matrimonial que 'hombre' o 'varón'. Se elige 'con' para reflejar el destino relacional implícito en el contexto narrativo, evitando una repetición torpe de 'a' tras 'entra'.
+theological_decisions:
+- issue: Identidad del hablante en 'Et dixit ad me'
+  english_pob_reading: 'And he said to me:'
+  chosen_spanish_reading: 'Y él me dijo:'
+  alternative_spanish_readings:
+  - 'Y ella me dijo:'
+  - 'Y me dijo:'
+  rationale: Se sigue la revisión más reciente del expediente auditado, que corrigió la lectura anterior. Mantener 'él' respeta el texto latino recibido en esta fase del proyecto y evita introducir una solución interpretativa no sustentada por el dato textual proporcionado.
+  doctrine_reference: Fidelidad textual al testimonio latino base; no hay afirmación doctrinal adicional.
+translation_notes:
+  revision_awareness: 'El expediente muestra una corrección reciente del segmento final: la frase introducida debe ser ''Y él me dijo:'' y no ''Y ella me dijo:''. También se ajustó la puntuación para reflejar una introducción directa de discurso. La versión española incorpora esa revisión y coloca la nota alternativa solo sobre la primera proposición, siguiendo el antiguo pie de nota inglés pero anclándolo correctamente en el texto.'
+  spanish_consistency_notes:
+  - Se mantiene 'Y él me dijo:' como reflejo del estado revisado del texto fuente auditado.
+  - Se conserva 'Por tanto' para ergo, en registro bíblico claro.
+  - No se introduce 'SEÑOR' ni terminología teológica ajena al pasaje.
+  - La nota [a] está anclada exactamente en la frase con variante posible, evitando notas sueltas.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/010/017.yaml
+  source_text_sha256: affc27d77974b01b700a91e005251fc72905e52c794dfc9bef5fc9c0ef7baee4
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 23a7ab0ad29defe9f7cec082c8482fb0815f0cb0c8cc62d497dce8627430e587
+  timestamp: '2026-05-07T21:29:13Z'
+  output_hash: f767e00b6b06f5e739429868c932e06179badb3d32557489ade77a9949f7352d
+  usage:
+    prompt_tokens: 1930
+    completion_tokens: 700
+    total_tokens: 2630
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004598
+status: spanish_reviewed
+revisions:
+- from: Por tanto, entra en la ciudad con tu esposo. Y él me dijo:[a]
+  to: Por tanto, ve a la ciudad, adonde está tu esposo. Y él me dijo:[a]
+  rationale: Se revisa 'con tu esposo' porque no refleja fielmente el valor direccional de 'ad virum tuum'. 'Ve a la ciudad, adonde está tu esposo' mantiene el mandato de movimiento y expresa de manera natural en español que el destino es el lugar donde está su esposo. Se conserva 'Y él me dijo:' según la revisión auditada más reciente y se mantiene la nota como alternativa previa en español idiomático.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:01:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El latín dice ''ingredere ergo in civitatem ad virum tuum. Et dixit ad me:''. La primera cláusula está bien representada en sentido general, pero ''con tu esposo'' no preserva con suficiente precisión el valor direccional de ''ad virum tuum'' ni el inglés auditado ''to your husband''. La segunda cláusula sí está presente y sigue correctamente la revisión auditada: ''Y él me dijo:''.'
+  spanish_quality_summary: El borrador es claro y legible, pero 'entra en la ciudad con tu esposo' suena como compañía ('junto con') más que como destino ('hacia/a tu esposo'). En español natural y fiel, 've a la ciudad, adonde está tu esposo' o 'entra en la ciudad, a tu esposo' requieren ajuste; la opción más clara y natural es reformular con 've a la ciudad, a donde está tu esposo'.
+  glossary_alignment: 'No hay términos teológicos mayores en juego. ''Esposo'' para ''virum tuum'' es adecuado. El problema es sintáctico-semántico: debe conservarse la dirección de ''ad''. La nota [a] del inglés puede conservarse como alternativa previa.'
+  issues:
+  - severity: medium
+    issue: '''con tu esposo'' cambia el sentido de ''ad virum tuum'''
+    rationale: La preposición 'con' introduce compañía y no el movimiento hacia una persona/lugar. El latín 'ad' y el inglés auditado 'to your husband' expresan dirección o destino relacional.
+  - severity: low
+    issue: La nota alternativa reproduce la misma imprecisión preposicional
+    rationale: Si se conserva la nota de rendering previo, conviene alinearla con una formulación española natural que refleje que es una alternativa de traducción previa, no perpetuar 'con' como si fuera equivalente pleno.
+  revised_spanish_text: Por tanto, ve a la ciudad, adonde está tu esposo. Y él me dijo:[a]
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Por tanto, ve a la ciudad, adonde está tu esposo».'
+    reason: previous_rendering
+  revision_rationale: Se revisa 'con tu esposo' porque no refleja fielmente el valor direccional de 'ad virum tuum'. 'Ve a la ciudad, adonde está tu esposo' mantiene el mandato de movimiento y expresa de manera natural en español que el destino es el lugar donde está su esposo. Se conserva 'Y él me dijo:' según la revisión auditada más reciente y se mantiene la nota como alternativa previa en español idiomático.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5cd2de4704b8c602463686937a0d58b014d399d4eb2eeb6879e5e9c0c37b0c5c
+  timestamp: '2026-05-07T23:01:41Z'
+  output_hash: 326dcfd2c925da61f110628f22853cf6ff7a719024e8846ec10b0afa0a941161
+  usage:
+    prompt_tokens: 2194
+    completion_tokens: 589
+    total_tokens: 2783
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01432
+  applied_revision: true

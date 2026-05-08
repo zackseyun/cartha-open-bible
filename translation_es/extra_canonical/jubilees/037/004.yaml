@@ -1,0 +1,135 @@
+id: JUB.37.4
+reference: Jubilees 37:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles_1895
+  language: Geez
+  pages:
+  - 226
+  - 228
+  - 229
+  - 230
+  validation_modes:
+  - jubilees_verse_parser
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/jubilees/037/004.yaml
+  text: Yet now our father has made us swear, me and him, that we should not seek evil, each against his brother,
+  footnotes:
+  - marker: a
+    text: Or 'made me swear, me and him'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4-mini
+    timestamp: '2026-05-03T07:41:52Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Pero ahora nuestro padre nos[a] hizo jurar, a mí y a él, que no buscaríamos el mal, cada uno contra su hermano.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O 'me hizo jurar, a mí y a él'.
+    reason: Preserva la alternativa documentada en la nota del POB inglés sobre una lectura singular previa.
+lexical_decisions:
+- source_word: made us swear
+  english_pob_choice: made us swear
+  chosen_spanish: nos hizo jurar
+  alternatives_spanish:
+  - nos obligó a jurar
+  - nos hizo prometer bajo juramento
+  lexicon: jurar
+  rationale: El inglés revisado corrige el sujeto/objeto a plural ('made us swear'). En español, 'nos hizo jurar' conserva el valor causativo y jurídico del juramento sin añadir una paraphrase excesiva.
+- source_word: our father
+  english_pob_choice: our father
+  chosen_spanish: nuestro padre
+  alternatives_spanish:
+  - nuestro padre
+  lexicon: padre
+  rationale: Se mantiene la referencia familiar directa y natural en español, sin necesidad de expansión.
+- source_word: each against his brother
+  english_pob_choice: each against his brother
+  chosen_spanish: el uno contra su hermano
+  alternatives_spanish:
+  - cada uno contra su hermano
+  - uno contra su hermano
+  lexicon: cada uno / el uno
+  rationale: La construcción refleja la reciprocidad distributiva del inglés y evita suavizar la tensión relacional del original.
+theological_decisions:
+- issue: Negarse a buscar el mal contra un hermano
+  english_pob_reading: we should not seek evil, each against his brother
+  chosen_spanish_reading: que no buscaríamos el mal el uno contra su hermano
+  alternative_spanish_readings:
+  - que no buscaríamos mal el uno contra su hermano
+  - que no procuraríamos el mal contra su hermano
+  rationale: '''Buscar el mal'' conserva la fuerza intencional y moral del inglés, en vez de interpretarlo como mero daño accidental.'
+  doctrine_reference: Ética fraterna / prohibición de hostilidad entre hermanos
+translation_notes:
+  revision_awareness: La revisión reciente corrigió el error anterior de número en 'made us swear' y no introdujo cambios posteriores; por eso la redacción española sigue el plural coherente con el inglés auditado.
+  spanish_consistency_notes:
+  - Se evitó 'SEÑOR' o sustituciones litúrgicas porque el versículo no involucra el nombre divino.
+  - Se prefirió 'jurar' frente a 'prometer' para conservar la fuerza del juramento.
+  - No se añadió nota al pie porque no queda una alternativa textual documentada que requiera anclaje en el verso.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/jubilees/037/004.yaml
+  source_text_sha256: 05cbb640a5650ab8d5ea8737dd2f07c78f33bfc4255550cb1100fee6a4ef45db
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: b8e7af53c500014bcfb5f3a43be12ab9408c365cd6ed5ccdfc2c296b6299ccd3
+  timestamp: '2026-05-07T21:28:25Z'
+  output_hash: ac367f83be6e10d13f0b2d2ff8fad63983425100b5fdb11187698fe917fb0ac3
+  usage:
+    prompt_tokens: 1801
+    completion_tokens: 559
+    total_tokens: 2360
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.003866
+status: spanish_reviewed
+revisions:
+- from: Pero ahora nuestro padre nos hizo jurar, a mí y a él, que no buscaríamos el mal el uno contra su hermano.
+  to: Pero ahora nuestro padre nos[a] hizo jurar, a mí y a él, que no buscaríamos el mal, cada uno contra su hermano.
+  rationale: Se ajusta la expresión distributiva para que suene natural en español sin perder el sentido de reciprocidad hostil entre hermanos, y se añade la nota alternativa ya conservada en el audit trail inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:07:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente los elementos principales del inglés auditado: ''nuestro padre'', el objeto plural en ''nos hizo jurar'', y la prohibición de buscar el mal entre hermanos. Sin embargo, la cola distributiva ''each against his brother'' queda algo forzada y menos natural en ''el uno contra su hermano'', y además falta preservar la nota alternativa del inglés sobre la posible lectura singular previa.'
+  spanish_quality_summary: La frase es comprensible, pero 'que no buscaríamos el mal el uno contra su hermano' suena trabada en español. Una formulación como 'que no buscaríamos el mal, cada uno contra su hermano' conserva el sentido distributivo y mejora la legibilidad. También conviene anclar una nota para reflejar la alternativa documentada en el historial inglés.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'nos hizo jurar' es una buena equivalencia de 'made us swear'. 'nuestro padre' y 'hermano' son adecuados. No intervienen términos teológicos sensibles del glosario principal.
+  issues:
+  - severity: medium
+    issue: Construcción distributiva poco natural en español
+    rationale: La expresión 'el uno contra su hermano' no es incorrecta, pero aquí suena rígida y menos idiomática que 'cada uno contra su hermano', especialmente después de 'buscaríamos el mal'.
+  - severity: medium
+    issue: Falta la nota alternativa preservada en el audit trail inglés
+    rationale: El inglés conserva una nota textual/importante de historial ('Or made me swear, me and him'). Dado que el registro exige preservar alternativas significativas cuando el inglés las mantiene, debe incluirse una nota en español.
+  revised_spanish_text: Pero ahora nuestro padre nos[a] hizo jurar, a mí y a él, que no buscaríamos el mal, cada uno contra su hermano.
+  revised_footnotes:
+  - marker: a
+    text: O 'me hizo jurar, a mí y a él'.
+    reason: Preserva la alternativa documentada en la nota del POB inglés sobre una lectura singular previa.
+  revision_rationale: Se ajusta la expresión distributiva para que suene natural en español sin perder el sentido de reciprocidad hostil entre hermanos, y se añade la nota alternativa ya conservada en el audit trail inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: dc3b89e0a8a286de3c0031cdbe6172267926564266de242a5a249672c3593662
+  timestamp: '2026-05-07T23:07:54Z'
+  output_hash: 8da3055accdf568f1c4228f832f7c9d5ad25b22ae5a10d78f9d2c64f74e3d29b
+  usage:
+    prompt_tokens: 1985
+    completion_tokens: 523
+    total_tokens: 2508
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012808
+  applied_revision: true

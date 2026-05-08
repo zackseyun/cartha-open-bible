@@ -1,0 +1,216 @@
+id: 1EN.95.4
+reference: 1 Enoch 95:4
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: አሌ፡ ለክሙ፡ እለ፡ ታወግዙ፡ ግዘታተ፡ ከመ፡ እ ይትፈትሑ፡ ወ*ፈውስ፡ ርኁቅ፡ እምኔክሙ፡ በእንተ፡ ኃጢአተ፡ ዚአክሙ።
+  language: Geez
+  pages:
+  - 237
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 95, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/095/004.yaml
+  text: Woe to you who pronounce curses that cannot be undone[c][b][a], and healing is far from you because of your sins.
+  footnotes:
+  - marker: a
+    text: The phrase rendered 'weigh out silver' is difficult. It may refer to measuring out money in a legal or corrupt setting; some interpreters understand an allusion to bribery.
+    reason: lexical_alternative
+  - marker: b
+    text: The clause 'so that you may be judged' is syntactically uncertain and could also be understood more specifically as the execution of sentence.
+    reason: alternative_reading
+  - marker: c
+    text: Or 'who weigh out silver so that you may be judged'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 3181822dfe03eeb29dbf1ff6f85e6b28f32243063588fbbc2679fe7e64716d39
+    timestamp: '2026-04-22T09:22:53Z'
+    output_hash: 47b03aa419333f045b5c043e7da62a551515d0308750c0fe9499e41dd6fade59
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:38Z'
+    unchanged: false
+    changes_summary: Replaced 'anathemas' with the more natural and accurate 'curses,' and 'cannot be loosed' with 'cannot be undone' for clearer formal English while preserving the sense.
+translation:
+  language: es
+  text: ¡Ay de ustedes, los que pronuncian maldiciones que no pueden deshacerse[a], y la curación está lejos de ustedes por causa de sus pecados!
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «anatemas que no pueden ser desatados»; la expresión ge’ez indica una maldición u obligación pronunciada que no puede revocarse fácilmente.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: አሌ
+  english_pob_choice: Woe
+  chosen_spanish: ¡Ay de ustedes!
+  alternatives_spanish:
+  - ¡Ay!
+  - ¡Ay de vosotros!
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conserva la fuerza profética de denuncia y lamentación del interjección ge’ez, en un español natural y apto para lectura pública.
+- source_word: ለክሙ
+  english_pob_choice: to you
+  chosen_spanish: de ustedes
+  alternatives_spanish:
+  - a ustedes
+  - para ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En español, después de «¡Ay!», la relación dativa se expresa de forma más natural con «de ustedes» en una fórmula de reproche dirigida al auditorio.
+- source_word: ታወግዙ ግዘታተ
+  english_pob_choice: who weigh out silver
+  chosen_spanish: los que pronuncian maldiciones
+  alternatives_spanish:
+  - los que pesan plata
+  - los que pesan dinero
+  - los que imponen maldiciones
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El estado textual y la revisión señalada en el audit trail muestran que la lectura correcta no es la imagen de plata, sino la de anatemas/maldiciones. «Pronuncian maldiciones» refleja la fuerza performativa del acto sin sobreinterpretarlo como una práctica específica no explicitada en el testimonio base.
+- source_word: ከመ እ ይትፈትሑ
+  english_pob_choice: so that you may be judged
+  chosen_spanish: que no pueden deshacerse
+  alternatives_spanish:
+  - que no pueden soltarse
+  - que no pueden ser anuladas
+  - para que no sean levantadas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión textual del audit trail indica que la forma contiene la idea de «no ser desatadas/absoltas»; en español, «deshacerse» comunica de manera clara y natural esa imposibilidad de revocación o liberación.
+- source_word: ወፈውስ
+  english_pob_choice: and healing
+  chosen_spanish: la sanidad
+  alternatives_spanish:
+  - la curación
+  - el remedio
+  - la sanación
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Sanidad» conserva el campo semántico de curación/restauración y suena bien en registro bíblico moderno, sin reducir la idea a lo meramente físico.
+- source_word: ርኁቅ እምኔክሙ
+  english_pob_choice: is far from you
+  chosen_spanish: está lejos de ustedes
+  alternatives_spanish:
+  - está distante de ustedes
+  - se ha alejado de ustedes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Expresa de modo directo y claro la metáfora espacial de distancia para la sanidad/restauración ausente.
+- source_word: በእንተ ኃጢአተ ዚአክሙ
+  english_pob_choice: because of your sins
+  chosen_spanish: por causa de sus pecados
+  alternatives_spanish:
+  - a causa de sus pecados
+  - por sus pecados
+  - debido a sus pecados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Mantiene la relación causal explícita del original y preserva el tono de reprensión colectiva.
+theological_decisions:
+- issue: Naturaleza de las «maldiciones» / anatemas en el texto
+  english_pob_reading: Woe to you who pronounce curses that cannot be undone
+  chosen_spanish_reading: ¡Ay de ustedes, los que pronuncian maldiciones que no pueden deshacerse!
+  alternative_spanish_readings:
+  - ¡Ay de ustedes, los que pronuncian anatemas que no pueden desatarse!
+  - ¡Ay de ustedes, los que imponen maldiciones irrevocables!
+  rationale: El audit trail corrigió una lectura equivocada de plata/silver y señaló una idea de anatemas o maldiciones irrevocables. En español, «maldiciones que no pueden deshacerse» conserva esa tensión entre palabra pronunciada y su carácter no revocable sin introducir tecnicismos eclesiásticos ajenos al pasaje.
+  doctrine_reference: Preservar la lectura corregida del original y no suavizar el juicio profético.
+- issue: Relación entre el juicio implícito y la imposibilidad de deshacer la maldición
+  english_pob_reading: who pronounce curses that cannot be undone
+  chosen_spanish_reading: los que pronuncian maldiciones que no pueden deshacerse
+  alternative_spanish_readings:
+  - los que pronuncian maldiciones irrevocables
+  - los que pronuncian maldiciones que no pueden ser retiradas
+  rationale: La formulación española evita resolver el matiz técnico de «looser/absolver» en una sola lectura doctrinal; mantiene la idea de irreversibilidad, que es lo decisivo en el pasaje.
+  doctrine_reference: Cuando el testimonio es difícil, conservar la ambigüedad útil en vez de sobreespecificar.
+- issue: Sentido de «healing» en el contexto de reprensión apocalíptica
+  english_pob_reading: and healing is far from you because of your sins
+  chosen_spanish_reading: y la sanidad está lejos de ustedes por causa de sus pecados
+  alternative_spanish_readings:
+  - y la curación está lejos de ustedes por causa de sus pecados
+  - y la sanación está lejos de ustedes por causa de sus pecados
+  rationale: «Sanidad» mantiene apertura entre restauración física y restauración integral, coherente con el campo bíblico del término y con el contexto de juicio.
+  doctrine_reference: No reducir el alcance del remedio/restauración donde el original no lo hace.
+translation_notes:
+  revision_awareness: 'La versión inglesa auditada pasó por una corrección importante: se descartó la lectura de «weigh out silver» y se adoptó la de maldiciones/anatemas que no pueden desatarse. La redacción española sigue esa revisión textual y evita arrastrar la interpretación errónea anterior.'
+  spanish_consistency_notes:
+  - Se usa «ustedes» por neutralidad latinoamericana y lectura pública amplia.
+  - Se evita «SEÑOR» porque no aparece aquí el Tetragrámaton ni una cita directa del nombre divino.
+  - Se evita «Cristo/Mesías» porque el versículo no los contiene.
+  - «Sanidad» se mantiene uniforme para el campo de healing/restoration en este verso.
+  - Las notas usan marcadores únicos a, b, c y aparecen ancladas en el texto en el punto pertinente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/095/004.yaml
+  source_text_sha256: 27ee7095111d4ddf1cc43425e8a6bbcedb2ea34f0dcb9efcbc7152400a0663d0
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 66236fc3265aaa9a8d68a5ae0d1f37c93b1b5763dd8f8e9837876ea8edbc8612
+  timestamp: '2026-05-07T21:28:20Z'
+  output_hash: e65d94803ba00a7755047a6f0fb70406ab4905c4b20e42b6c298801ea571e083
+  usage:
+    prompt_tokens: 3325
+    completion_tokens: 1720
+    total_tokens: 5045
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010234
+status: spanish_reviewed
+revisions:
+- from: ¡Ay de ustedes, los que pronuncian maldiciones que no pueden deshacerse[a][b][c], y la sanidad está lejos de ustedes por causa de sus pecados!
+  to: ¡Ay de ustedes, los que pronuncian maldiciones que no pueden deshacerse[a], y la curación está lejos de ustedes por causa de sus pecados!
+  rationale: Se conserva la lectura corregida del source/audit trail («maldiciones» y no «plata»), pero se simplifican las notas a una sola nota útil para el lector y se cambia «la sanidad» por «la curación» para un español más natural y ampliamente comprensible, sin pérdida de sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:31:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue la corrección principal del audit trail: ya no traduce la frase como dinero/plata ni como juicio legal, sino como maldiciones irrevocables. Eso alinea bien con la revisión adjudicada del ge’ez. Sin embargo, el texto y las notas conservan rastros confusos del historial inglés anterior, y una nota afirma como alternativa precisamente la misma frase ya usada en el texto. También conviene ajustar la expresión española de ፈውስ a una forma más natural y ampliamente legible.'
+  spanish_quality_summary: La frase principal es comprensible y digna, pero «la sanidad» suena algo regional/eclesial y menos natural que «la curación» o «la sanación» en español general. «Que no pueden deshacerse» funciona, aunque «ser revocadas» sería más preciso; aun así, puede mantenerse para claridad. El uso de tres notas sobre la misma expresión sobrecarga el verso y no mejora la lectura.
+  glossary_alignment: 'No hay términos del glosario principal en juego como Yahvé/Mesías/Espíritu. La decisión clave es léxica: ታወግዙ ግዘታተ debe reflejar maldiciones/anatemas, no plata. El borrador acierta en eso. También preserva la causalidad de «por causa de sus pecados».'
+  issues:
+  - severity: medium
+    issue: «la sanidad» suena menos natural en español general
+    rationale: Aunque no es imposible, «sanidad» puede percibirse como regional o denominacional. «La curación» comunica mejor ፈውስ en registro neutral y claro.
+  - severity: medium
+    issue: Las notas repiten y confunden el historial textual
+    rationale: La nota c presenta como alternativa «que no pueden deshacerse», que ya está en el texto; la nota a habla del error anterior de plata, pero eso pertenece al historial de revisión más que a una nota útil para el lector final.
+  - severity: low
+    issue: Exceso de notas en una sola frase
+    rationale: Tres notas sobre el mismo segmento hacen pesada la lectura y no añaden valor proporcional. Una sola nota léxica basta para preservar la alternativa «anatemas»/«desatadas».
+  revised_spanish_text: ¡Ay de ustedes, los que pronuncian maldiciones que no pueden deshacerse[a], y la curación está lejos de ustedes por causa de sus pecados!
+  revised_footnotes:
+  - marker: a
+    text: O «anatemas que no pueden ser desatados»; la expresión ge’ez indica una maldición u obligación pronunciada que no puede revocarse fácilmente.
+    reason: lexical_alternative
+  revision_rationale: Se conserva la lectura corregida del source/audit trail («maldiciones» y no «plata»), pero se simplifican las notas a una sola nota útil para el lector y se cambia «la sanidad» por «la curación» para un español más natural y ampliamente comprensible, sin pérdida de sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d916800dcf9534b14d1fd1c67ba1b094fad185007a57d563429c1a2bf79ef8c8
+  timestamp: '2026-05-07T23:31:33Z'
+  output_hash: 166fdb1c01310c6beb83eb1afdc97258de917cd20c94b3bb308114ad3de50489
+  usage:
+    prompt_tokens: 4702
+    completion_tokens: 700
+    total_tokens: 5402
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022255
+  applied_revision: true

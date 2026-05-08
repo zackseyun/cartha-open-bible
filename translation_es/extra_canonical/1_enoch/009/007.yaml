@@ -1,0 +1,203 @@
+id: 1EN.9.7
+reference: 1 Enoch 9:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: (ወዘ)ስምያዛ፡ ዘአንተ፡ ወሀብኮ፡ ስልጣነ፡ ይኵንን፡ እለ፡ ምስሌሁ፡ ኅቡረ።
+  language: Geez
+  pages:
+  - 56
+  - 58
+  - 60
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch09.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 9, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/009/007.yaml
+  text: And Semyaza[c][b][a], to whom you gave authority to rule over those who are with him.
+  footnotes:
+  - marker: a
+    text: The Ge'ez clause after 'authority' is textually difficult in this OCR witness. The sense appears to be that Semyaza had authority over the angels associated with him, likely the gathered Watchers under his leadership.
+    reason: textual_variant
+  - marker: b
+    text: Or 'those who are with him.' The underlying phrase may denote companions, associates, or those assembled together with him.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'to you I gave authority over those who are joined with him.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 34415d1eae94bf245c3354ee31f65c193de38f15073950563a855c15be6c4402
+    timestamp: '2026-04-22T09:08:38Z'
+    output_hash: 51c40f65406c9a493153c53543bc872a2f9707210e1d22b5e3638fc80ba019be
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @2ace96ea8
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @2ace96ea8
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:35:34Z'
+    unchanged: false
+    changes_summary: Adjusted punctuation for natural English and added 'over' after 'rule' to reflect standard English usage while preserving the source sense; rendered 'those who are with him' more naturally than 'those who are together with him.'
+translation:
+  language: es
+  text: Y Semyaza[a], a quien diste autoridad para gobernar sobre los que están con él[b].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: También puede transliterarse 'Semjaza' o 'Shemyaza'.
+    reason: lexical_alternative
+  - marker: b
+    text: La cláusula ge'ez aquí es textualmente difícil. La expresión final también puede entenderse como 'los que están unidos con él' o 'los asociados con él', probablemente los Vigilantes reunidos bajo su liderazgo.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ስምያዛ
+  english_pob_choice: Semyaza
+  chosen_spanish: Semyaza
+  alternatives_spanish:
+  - Semjaza
+  - Shemyaza
+  lexicon: Knibb
+  rationale: Se conserva el nombre propio por transliteración, no por traducción, siguiendo la práctica del proyecto para nombres propios.
+- source_word: ዘአንተ
+  english_pob_choice: to whom you
+  chosen_spanish: a quien tú
+  alternatives_spanish:
+  - a quien
+  - a quien tú mismo
+  lexicon: Dillmann
+  rationale: El giro relativo en español requiere una construcción con 'a quien'. Mantengo el valor de dirección/dative del original y el pronombre explícito para conservar la segunda persona divina del pasaje.
+- source_word: ወሀብኮ
+  english_pob_choice: you gave
+  chosen_spanish: le diste
+  alternatives_spanish:
+  - diste
+  - le concediste
+  - le otorgaste
+  lexicon: Dillmann
+  rationale: El contexto corregido exige segunda persona singular dirigida a Dios. 'Le diste' conserva el acto de concesión sin introducir una solemnidad ajena al registro.
+- source_word: ስልጣነ
+  english_pob_choice: authority
+  chosen_spanish: autoridad
+  alternatives_spanish:
+  - poder
+  - dominio
+  lexicon: Dillmann
+  rationale: '''Autoridad'' reproduce bien la idea de poder delegado y evita exagerar hacia ''dominio'', que suena más absoluto.'
+- source_word: ይኵንን
+  english_pob_choice: to rule
+  chosen_spanish: para gobernar
+  alternatives_spanish:
+  - para reinar
+  - para mandar
+  - para regir
+  lexicon: Dillmann
+  rationale: El verbo de la cláusula debe estar presente en español; 'gobernar' expresa la función de dirigir o ejercer autoridad. No reduzco el término a una preposición.
+- source_word: እለ ምስሌሁ ኅቡረ
+  english_pob_choice: those who are with him / those who are joined with him
+  chosen_spanish: sobre los que están con él
+  alternatives_spanish:
+  - sobre los que están unidos con él
+  - sobre sus compañeros
+  - sobre los que se juntaron con él
+  lexicon: Dillmann
+  rationale: La frase adverbial describe acompañamiento o asociación. 'Los que están con él' es la forma más natural y menos interpretativa en español, preservando la ambigüedad entre estar con, asociados con, o reunidos con él.
+theological_decisions:
+- issue: Dirección del discurso y sujeto de la acción
+  english_pob_reading: The angels address God; authority is something God gave to Semyaza.
+  chosen_spanish_reading: 'Los ángeles siguen hablando a Dios: es Dios quien dio autoridad a Semyaza.'
+  alternative_spanish_readings:
+  - Semyaza, a quien tú le diste autoridad
+  - Y Semyaza, a quien le diste autoridad
+  rationale: La revisión crítica indica que la frase se dirige a Dios en segunda persona, no a Semyaza. La traducción debe conservar esa relación para no invertir sujeto y destinatario.
+  doctrine_reference: Preservar la gramática y la dirección del discurso del texto fuente; primacía del original sobre una lectura heredada.
+- issue: Alcance de la autoridad conferida
+  english_pob_reading: delegated authority over the associated Watchers, not intrinsic dominion
+  chosen_spanish_reading: autoridad para gobernar sobre un grupo asociado con él, como autoridad delegada
+  alternative_spanish_readings:
+  - poder sobre los que están con él
+  - dominio sobre los que están con él
+  rationale: '''Autoridad'' y ''gobernar'' conservan la idea de encargo delegado sin convertirla en soberanía absoluta. Se evita ''dominio'' para no sobrerrepresentar el alcance teológico.'
+  doctrine_reference: Conservar la tensión teológica entre autoridad delegada y soberanía divina.
+translation_notes:
+  revision_awareness: El borrador inglés anterior fue revisado porque invertía sujeto y objeto; la lectura corregida entiende que los ángeles se dirigen a Dios y que el verbo central es 'gobernar'. También se corrigió la pérdida del matiz de compañía/asociación en la cláusula final.
+  spanish_consistency_notes:
+  - Se mantiene 'Semyaza' como transliteración estable de nombre propio.
+  - Se usa 'autoridad' en lugar de 'poder' o 'dominio' para reflejar una concesión delegada.
+  - Se conserva el registro bíblico sobrio y moderno, evitando calcos rígidos pero sin expandir el sentido más allá del texto.
+  - No se emplea 'Señor' como sustituto de YHWH porque el pasaje no contiene el nombre divino en esta línea; aquí el referente es el pronombre de segunda persona del discurso.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/009/007.yaml
+  source_text_sha256: 8cd49b02334399efbb732398933279201f2729cfd00cd340bf9901810f5fe055
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 015b33fa29dfe6c24bc13726b0cf63176ce0837c641cb2f1630f9fa50c8055a1
+  timestamp: '2026-05-07T21:27:27Z'
+  output_hash: 9f9f106edd452c2e53682074719f734a8bfbe7b47a759e32eba8d68bba27e117
+  usage:
+    prompt_tokens: 3003
+    completion_tokens: 1127
+    total_tokens: 4130
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007324
+status: spanish_reviewed
+revisions:
+- from: Y Semyaza, a quien tú le diste autoridad para gobernar sobre los que están con él.
+  to: Y Semyaza[a], a quien diste autoridad para gobernar sobre los que están con él[b].
+  rationale: Se hace una reparación menor para mejorar el español ('a quien diste' en vez de 'a quien tú le diste') y se añaden notas que preservan la incertidumbre textual y lexical documentada en el expediente inglés sin alterar el sentido principal ya correctamente captado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:28:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la corrección principal del expediente inglés: Dios es el sujeto que dio autoridad a Semyaza, y el verbo de gobernar está presente. Sin embargo, la formulación ''a quien tú le diste'' resulta algo redundante en español, y falta reflejar la nota textual/lexical preservada en el POB inglés sobre la dificultad de la cláusula final y la posible alternativa ''los que están con él''.'
+  spanish_quality_summary: La frase es clara y natural, pero puede pulirse a un español más limpio y digno eliminando el pronombre dativo redundante y evitando la sobreexpresión de 'tú' cuando no es necesaria. 'Gobernar sobre' es aceptable y fiel. El nombre propio queda bien conservado.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. La transliteración 'Semyaza' está bien. 'Autoridad' para ስልጣነ y 'gobernar' para ይኵንን concuerdan con las decisiones auditadas. Conviene conservar en nota la ambigüedad de እለ ምስሌሁ ኅቡረ.
+  issues:
+  - severity: medium
+    issue: Redundancia sintáctica en 'a quien tú le diste'
+    rationale: En español estándar, 'a quien diste' ya expresa el complemento indirecto; añadir 'le' y además 'tú' hace la línea más pesada sin aportar sentido nuevo del original.
+  - severity: medium
+    issue: Falta de nota textual/lexical heredada del POB inglés
+    rationale: El inglés conserva una nota sobre la dificultad textual de la cláusula y otra sobre la alternativa 'those who are with him / joined with him'. Dado que el español mantiene una opción concreta, conviene preservar esa incertidumbre en nota.
+  revised_spanish_text: Y Semyaza[a], a quien diste autoridad para gobernar sobre los que están con él[b].
+  revised_footnotes:
+  - marker: a
+    text: También puede transliterarse 'Semjaza' o 'Shemyaza'.
+    reason: lexical_alternative
+  - marker: b
+    text: La cláusula ge'ez aquí es textualmente difícil. La expresión final también puede entenderse como 'los que están unidos con él' o 'los asociados con él', probablemente los Vigilantes reunidos bajo su liderazgo.
+    reason: textual_variant
+  revision_rationale: Se hace una reparación menor para mejorar el español ('a quien diste' en vez de 'a quien tú le diste') y se añaden notas que preservan la incertidumbre textual y lexical documentada en el expediente inglés sin alterar el sentido principal ya correctamente captado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 05289e223d50e956101be9573eae0c9f97ae0a0830650c7c1c11e1d71fa79392
+  timestamp: '2026-05-07T23:28:23Z'
+  output_hash: 755cd3a59a92a2e2e265b1775d9b103fb7c538ec8d9c6cbef8b1d39d166aacb4
+  usage:
+    prompt_tokens: 3751
+    completion_tokens: 624
+    total_tokens: 4375
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018738
+  applied_revision: true

@@ -1,0 +1,233 @@
+id: 1EN.79.2
+reference: 1 Enoch 79:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ፴አርአየኒ፡ ኵሎ፡ ሥርዓቶሙ፡ *ለእሉ፡ እንተ፡ በኵሉ፡ ዕለት፡ ወበኵሉ፡ ዘመን፡ ዘበ፴፭ሥልጣን፡ ወበኵሉ፡ ዓመት፡ ወበሙጻኡ፡ ወበትእዛዙ፡ በኵሉ፡ ወርኅ፡ ወ፵ኵሉ፡ ሰንበት።
+  language: Geez
+  pages:
+  - 189
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch79.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 79, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/079/002.yaml
+  text: And he showed me all their ordinances—those for every day and every season[a], and for every year, and for its going out and its command[c][b], in every month and every sabbath.
+  footnotes:
+  - marker: a
+    text: The phrase 'under the authority of the three hundred and sixty-five' is difficult in the Ethiopic witness. It likely refers to the ordered rule of the 365-day year, but the wording is left relatively literal because the exact construction is uncertain.
+    reason: textual_variant
+  - marker: b
+    text: '''Sabbath'' could also be understood more broadly as ''week'' in a calendrical listing, but the literal term is retained.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'under the authority of the three hundred and sixty-five, and for every year, and in their going out and in their command'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 7081c208bdfbdd150745827c732a4f55e682bf59dc5f17a919bd3e0ac13695e0
+    timestamp: '2026-04-22T09:18:13Z'
+    output_hash: abdd0534772fb7e1294aa4c1cfe49d455483f1cb2b8f25093661426c7db3071a
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:38Z'
+    unchanged: false
+    changes_summary: Removed the awkward and unclear clause 'which has authority,' which does not fit the syntax here, and smoothed the coordination for more natural English while retaining all the listed time expressions and actions.
+translation:
+  language: es
+  text: 'Y me mostró todas sus ordenanzas[a]: las de cada día y de cada estación, y de cada año, y de su salida y de su mandato[b], cada mes y cada sábado.'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: «Ordenanzas» traduce el sentido de disposiciones fijas y reguladas del ge’ez ሥርዓቶሙ; también podría entenderse como «arreglos» o «cursos fijos», pero aquí se conserva la idea de orden prescrito.
+    reason: lexical_alternative
+  - marker: b
+    text: «Mandato» conserva la posible fuerza de orden autoritativa del original; también podría leerse como «orden» o «prescripción» en un sentido más regulado.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ፴አርአየኒ
+  english_pob_choice: he showed me
+  chosen_spanish: me mostró
+  alternatives_spanish:
+  - me hizo ver
+  - me reveló
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma ge’ez introduce una comunicación visionaria directa. «Me mostró» es natural en español y conserva el tono de relato sin sobrecargarlo como fórmula técnica de revelación.
+- source_word: ኵሎ ሥርዓቶሙ
+  english_pob_choice: all their ordinances
+  chosen_spanish: todos sus ordenamientos
+  alternatives_spanish:
+  - todas sus ordenanzas
+  - todos sus arreglos
+  - todos sus cursos fijos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En este contexto astronómico, ሥርዓት expresa un orden fijo y regulado. «Ordenamientos» preserva la idea de disposición normativa sin sonar tan jurídico como «ordenanzas».
+- source_word: ወበኵሉ ዕለት
+  english_pob_choice: for every day
+  chosen_spanish: de cada día
+  alternatives_spanish:
+  - para cada día
+  - en cada día
+  - cada día
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase marca ámbito temporal recurrente. «De cada día» encaja bien en la enumeración de ciclos y evita una repetición demasiado mecánica de «para».
+- source_word: ወበኵሉ ዘመን
+  english_pob_choice: for every season
+  chosen_spanish: de cada estación
+  alternatives_spanish:
+  - de cada tiempo
+  - de cada período señalado
+  - de cada tiempo fijado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ዘመን puede ser tiempo, estación o período. En una lista calendárica, «estación» comunica una división ordenada del tiempo y mantiene la ambigüedad razonable del original.
+- source_word: ወበኵሉ ዓመት
+  english_pob_choice: and for every year
+  chosen_spanish: y de cada año
+  alternatives_spanish:
+  - y para cada año
+  - y en cada año
+  - y año tras año
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Correspondencia directa y transparente con el patrón de la serie temporal.
+- source_word: ወበሙጻኡ
+  english_pob_choice: and in its going out
+  chosen_spanish: y de su salida
+  alternatives_spanish:
+  - y de su salida al aparecer
+  - y de su salida/proceder
+  - y de su surgimiento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sustantivo derivado de «salir» puede aludir a la salida, aparición o salida técnica de los astros. «Salida» es literal y deja abierta esa posible referencia astronómica.
+- source_word: ወበትእዛዙ
+  english_pob_choice: and in its command
+  chosen_spanish: y de su mandato
+  alternatives_spanish:
+  - y de su orden
+  - y de su prescripción
+  - y de su ordenamiento
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El término puede denotar mandato u orden prescrita. «Mandato» conserva la fuerza de dirección/autoridad presente en el texto sin diluirla demasiado.
+- source_word: በኵሉ ወርኅ
+  english_pob_choice: in every month
+  chosen_spanish: en cada mes
+  alternatives_spanish:
+  - para cada mes
+  - mes por mes
+  - en todo mes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Equivalencia simple y idiomática en español para una secuencia calendárica.
+- source_word: ወ፵ኵሉ ሰንበት
+  english_pob_choice: and every sabbath
+  chosen_spanish: y en cada sábado
+  alternatives_spanish:
+  - y en cada sabbat
+  - y cada sábado
+  - y en cada semana
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el término cultual literal del ge’ez mediante «sábado», que es inteligible en español y mantiene la tensión entre observancia litúrgica y posible valor calendárico amplio. Se evita normalizarlo a «semana» sin una base textual más fuerte.
+theological_decisions:
+- issue: Cómo renderizar ሰንበት
+  english_pob_reading: sabbath
+  chosen_spanish_reading: sábado
+  alternative_spanish_readings:
+  - semana
+  - sabbat
+  rationale: El POB inglés retiene «sabbath» por literalidad y por la tensión cultual/calendárica. En español, «sábado» es la forma natural y tradicionalmente asociada al Sabbat, y preserva la fuerza religiosa del término sin forzar un préstamo innecesario. Se evita «semana» porque resolvería prematuramente una ambigüedad del original.
+  doctrine_reference: Preservar la tensión léxica cuando el contexto no exige resolverla.
+- issue: Cómo tratar la secuencia temporal con posible trasfondo astronómico
+  english_pob_reading: all their ordinances—those for every day and every season, and for every year, and for its going out and its command, in every month and every sabbath
+  chosen_spanish_reading: todos sus ordenamientos—los de cada día y de cada estación, y de cada año, y de su salida y de su mandato, en cada mes y en cada sábado
+  alternative_spanish_readings:
+  - todos sus ordenamientos—los de cada día y de cada tiempo, y de cada año, y de su salida y de su orden, en cada mes y en cada sábado
+  - todos sus ordenamientos—los de cada día y de cada estación, y de cada año, y respecto de su salida y su orden, en cada mes y en cada sábado
+  rationale: La lectura mantiene la enumeración temporal y el probable trasfondo astronómico sin reconstruir más de lo que el ge’ez permite. «Salida» y «mandato» conservan la estructura de dependencia/orden del original, en vez de suavizarla a una paráfrasis general.
+  doctrine_reference: Primacía del texto fuente; evitar normalizaciones interpretativas no atestiguadas.
+translation_notes:
+  revision_awareness: La auditoría inglesa muestra que la frase previa con «three hundred and sixty-five» fue corregida por errores OCR y que la redacción final eliminó esa inserción. Por eso la versión española evita cualquier número inexistente y sigue la secuencia temporal establecida en la revisión más reciente. También se respeta el singular posesivo del original en «su salida» y «su mandato».
+  spanish_consistency_notes:
+  - Se usa «Yahvé» en otros registros cuando corresponde al Tetragrámaton; aquí no aparece.
+  - Se mantiene «sábado» como equivalente natural de ሰንበት para preservar el matiz cultual/calendárico.
+  - Se evita introducir «Cristo», «Señor» o fórmulas eclesiásticas no presentes en la fuente.
+  - La enumeración conserva la repetición preposicional del original para reflejar el catálogo temporal del pasaje.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/079/002.yaml
+  source_text_sha256: 2417c5edf03c8fc44799a19fcec15166bc81ec5bbc461582bd67a1450e3addf2
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: d3112474397452f3bb77e0d94f7f4710986675fd3235f66c8abbbd93cd46fd27
+  timestamp: '2026-05-07T21:27:43Z'
+  output_hash: 940a5431e0d19290f54e5a56d5a8ccd9a5bcd1cac360e2bbde9c2206bf69049d
+  usage:
+    prompt_tokens: 3863
+    completion_tokens: 1853
+    total_tokens: 5716
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.011236
+status: spanish_reviewed
+revisions:
+- from: Y me mostró todos sus ordenamientos[a]—los de cada día y de cada estación, y de cada año, y de su salida y de su mandato[b], en cada mes y en cada sábado.
+  to: 'Y me mostró todas sus ordenanzas[a]: las de cada día y de cada estación, y de cada año, y de su salida y de su mandato[b], cada mes y cada sábado.'
+  rationale: 'La revisión hace ajustes menores de naturalidad y léxico sin cambiar el sentido establecido por la auditoría inglesa: se prefiere «ordenanzas» por mayor idiomaticidad, se corrige la concordancia y fluidez de la aposición con «las de», y se simplifica la serie temporal final a «cada mes y cada sábado». No hace falta nueva adjudicación, porque no se altera ninguna decisión textual difícil del original.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:44:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: La base española sigue bien la revisión inglesa más reciente al omitir la lectura errónea sobre «trescientos sesenta y cinco» y al reflejar correctamente los posesivos singulares en «su salida» y «su mandato». También conserva el catálogo temporal del ge’ez y la tensión de ሰንበት. Sin embargo, «los de cada día...» queda algo elíptico y poco natural en español, y «en cada sábado» suena menos idiomático dentro de una serie calendárica que «cada sábado».
+  spanish_quality_summary: El borrador es en general claro y digno, pero «ordenamientos» suena algo pesado y menos natural que «ordenanzas» en este contexto de disposiciones fijas. La secuencia mejora si se explicita el referente con «las de» y si se alisa la cola final a «cada mes y cada sábado».
+  glossary_alignment: 'No hay conflicto con la terminología doctrinal del proyecto. «sábado» preserva adecuadamente ሰንበት frente a «semana». «Mandato» es defendible para ትእዛዝ. La principal mejora es estilística-lexical: preferir «ordenanzas» sobre «ordenamientos» para ሥርዓቶሙ en este contexto astronómico-regulativo.'
+  issues:
+  - severity: medium
+    issue: «Ordenamientos» suena poco natural en español bíblico general
+    rationale: Aunque semánticamente posible, «ordenanzas» comunica mejor disposiciones fijas o prescritas y resulta más idiomático y legible para un público eclesial amplio.
+  - severity: low
+    issue: «los de cada día...» queda elíptico
+    rationale: Tras «todas sus ordenanzas», la construcción «las de cada día...» fluye mejor en español que «los de cada día...», además de concordar con el sustantivo femenino elegido en la revisión.
+  - severity: low
+    issue: «en cada sábado» es algo rígido
+    rationale: En una enumeración temporal española, «cada sábado» conserva el sentido literal y mejora la naturalidad sin pérdida de fidelidad.
+  revised_spanish_text: 'Y me mostró todas sus ordenanzas[a]: las de cada día y de cada estación, y de cada año, y de su salida y de su mandato[b], cada mes y cada sábado.'
+  revised_footnotes:
+  - marker: a
+    text: «Ordenanzas» traduce el sentido de disposiciones fijas y reguladas del ge’ez ሥርዓቶሙ; también podría entenderse como «arreglos» o «cursos fijos», pero aquí se conserva la idea de orden prescrito.
+    reason: lexical_alternative
+  - marker: b
+    text: «Mandato» conserva la posible fuerza de orden autoritativa del original; también podría leerse como «orden» o «prescripción» en un sentido más regulado.
+    reason: lexical_alternative
+  revision_rationale: 'La revisión hace ajustes menores de naturalidad y léxico sin cambiar el sentido establecido por la auditoría inglesa: se prefiere «ordenanzas» por mayor idiomaticidad, se corrige la concordancia y fluidez de la aposición con «las de», y se simplifica la serie temporal final a «cada mes y cada sábado». No hace falta nueva adjudicación, porque no se altera ninguna decisión textual difícil del original.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 57bdd8822d1c97e5d8d2494df90d6dbc4b3ccb82acfae5f4edc157291729c13d
+  timestamp: '2026-05-07T23:44:21Z'
+  output_hash: 58a587f0add89ee33c9a47e8679f0d26e81bde60aec59d1ce459be8f12fddeef
+  usage:
+    prompt_tokens: 5373
+    completion_tokens: 769
+    total_tokens: 6142
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024968
+  applied_revision: true

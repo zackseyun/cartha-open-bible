@@ -123,4 +123,39 @@ ai_draft:
     estimated_cost_usd: 0.122263
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue de cerca el latín: anniculi infantes = «infantes de un año», loquentur uocibus suis = «hablarán con sus voces», praegnantes = «las embarazadas», immaturos… infantes trium et quatuor mensium = «infantes prematuros de tres y cuatro meses», et uiuent = «y vivirán». También respeta la revisión auditada del POB inglés al no incluir en el texto principal la cláusula sobre «saltar»/«moverse», ausente del latín base.'
+  spanish_quality_summary: 'La redacción es clara y natural, pero hay dos ajustes menores recomendables: 1) «con sus propias voces» sobretraduce el posesivo reflexivo suis; «con sus voces» basta y suena más sobrio. 2) La nota [a] no corresponde a una variante textual real en este registro, sino a una antigua decisión léxica/interpretativa del POB inglés sobre una cláusula ya eliminada; mantenerla aquí introduce ruido y da a entender una base textual más incierta de lo que muestra el source payload. La nota [b] tampoco es necesaria; «criaturas prematuras» no mejora la claridad.'
+  glossary_alignment: No hay términos teológicos de glosario mayor en juego. La repetición de «infantes» para ambas ocurrencias de infantes está bien alineada con la decisión auditada en inglés y con buena dignidad estilística en español.
+  issues:
+  - severity: medium
+    issue: «con sus propias voces» añade énfasis no exigido por el latín
+    rationale: suis puede reflejarse simplemente como «sus»; «propias» introduce un realce interpretativo adicional. En un texto breve y portentoso conviene mantener máxima sobriedad.
+  - severity: medium
+    issue: La nota [a] presenta como variante textual algo que en el expediente auditado aparece como decisión léxica previa ya corregida
+    rationale: El source payload latino no contiene la cláusula extra, y el inglés revisado la eliminó. La nota actual puede confundir al lector sobre la evidencia textual de base de este versículo.
+  - severity: low
+    issue: La nota [b] es innecesaria y el alternativo «criaturas prematuras» es menos preciso
+    rationale: El proyecto ya decidió mantener «infantes» en ambas ocurrencias por consistencia léxica; la nota no preserva una ambigüedad importante del original.
+  revised_spanish_text: Y los infantes de un año hablarán con sus voces, y las embarazadas darán a luz infantes prematuros de tres y cuatro meses, y vivirán.
+  revision_rationale: Se elimina la sobretraducción «propias» para ceñirse mejor a uocibus suis y se suprimen notas no necesarias que pueden confundir sobre la base textual o debilitar la consistencia léxica ya documentada.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 4bc3842d31e5065cc0c2670c6994f4ad3d2ece7e0781903cea1a0c54fa0a0ea9
+  timestamp: '2026-05-07T23:35:04Z'
+  output_hash: ca1032c67fd9d1d2cd625c34a7e2664bdd95ef8258df563efebd70cccb9f4ecf
+  usage:
+    prompt_tokens: 3236
+    completion_tokens: 673
+    total_tokens: 3909
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018185
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text
+  - footnote marker [b] not present in translation text

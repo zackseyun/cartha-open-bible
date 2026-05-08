@@ -1,0 +1,105 @@
+id: 2ES.7.49
+reference: 2 Esdras 7:49
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'non paucos, sed pene omnes qui creati sunt. Et respondit ad me et dixit: audi'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/007/049.yaml
+  text: Not a few[a], but nearly all who have been created. And he answered me and said, “Hear
+  footnotes:
+  - marker: a
+    text: Or 'I will correct you further.'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:42:08Z'
+    unchanged: false
+    changes_summary: Replaced the draft with the actual content of the provided Latin segment. The draft reflected a different clause; the revision restores 'Not a few, but nearly all who have been created' and the opening of the next sentence, 'And he answered me and said, “Hear'.
+translation:
+  language: es
+  text: 'No pocos, sino casi todos los que han sido creados. Y él me respondió y dijo: «Escucha[a]'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'Posible continuación del discurso: también podría entenderse como «Te reprenderé/reprocharé más», según el valor del latín corripiam en el contexto inmediato.'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: non paucos, sed pene omnes qui creati sunt
+  english_pob_choice: Not a few, but nearly all who have been created.
+  chosen_spanish: No pocos, sino casi todos los que han sido creados.
+  alternatives_spanish:
+  - No unos pocos, sino casi todos los que han sido creados.
+  - No pocos, sino prácticamente todos los que han sido creados.
+  lexicon: non paucos / pene omnes / creati sunt
+  rationale: La negación contrastiva se conserva con «No pocos, sino…». «pene» expresa cercanía o casi totalidad, por eso «casi todos» mantiene el matiz sin exagerarlo. «qui creati sunt» se rinde literalmente como «los que han sido creados».
+- source_word: respondit ad me et dixit
+  english_pob_choice: And he answered me and said, “Hear
+  chosen_spanish: 'Y él me respondió y dijo: «Escucha'
+  alternatives_spanish:
+  - 'Y me respondió y dijo: «Escucha'
+  - 'Y él respondió y me dijo: «Escucha'
+  lexicon: respondit ad me et dixit
+  rationale: Se conserva la secuencia narrativa y el sujeto explícito «él» para reflejar el latín y la cadencia del diálogo. «escucha» traduce el inicio del discurso directo abierto en el fragmento.
+translation_notes:
+  revision_awareness: Se siguió el texto latino proporcionado y la revisión más reciente del audit trail, que restituye la cláusula «No pocos, sino casi todos los que han sido creados» y deja abierto el inicio del discurso siguiente.
+  spanish_consistency_notes:
+  - Se evitó «SEÑOR» u otras sustituciones devocionales no presentes en el latín.
+  - «Han sido creados» conserva el pasivo perifrástico y el alcance universal relativo del original.
+  - El marcador [a] aparece exactamente en el punto de anclaje dentro del texto español.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/007/049.yaml
+  source_text_sha256: e164070b1eb8c6cd0d9037712a69146ea019066c8b429008c284396ad3d4ee3a
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 8129ea8f54fe36dbc9fb27cd3a6ca4e3d11663aa2df7a9ccf97db872c9b550b9
+  timestamp: '2026-05-07T21:28:39Z'
+  output_hash: 47b34d90070e1af65796cdd43cb0e3b97c70a978c4e10f4255c5c508f9ce669c
+  usage:
+    prompt_tokens: 2078
+    completion_tokens: 534
+    total_tokens: 2612
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.003961
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La primera cláusula está bien alineada con el latín: «non paucos, sed pene omnes qui creati sunt» se refleja fielmente como «No pocos, sino casi todos los que han sido creados». La segunda también sigue el fragmento «Et respondit ad me et dixit: audi» de forma básica. Sin embargo, la nota [a] no corresponde al texto anclado «Escucha», sino a una continuación alternativa procedente de otro estado textual/lectura previa en inglés («I will reprove you further»), y por tanto introduce una ambigüedad ajena al segmento fuente proporcionado.'
+  spanish_quality_summary: El español es claro y natural, pero puede mejorarse suprimiendo «él», que suena innecesario en español narrativo, y eliminando la nota al pie impropia. «Escucha» funciona bien para audi en este inicio truncado de discurso directo.
+  glossary_alignment: No hay términos del glosario doctrinal principal en juego. Las elecciones léxicas principales («casi todos», «han sido creados», «me respondió y dijo») son adecuadas y no presentan conflicto terminológico.
+  issues:
+  - severity: high
+    issue: La nota [a] conserva una alternativa que no pertenece al segmento fuente actual.
+    rationale: El latín dado termina en «audi»; la nota sobre «Te reprenderé/reprocharé más» deriva de otra cláusula revisada en el historial inglés y no de este fragmento. Mantenerla falsea la evidencia textual de este registro.
+  - severity: low
+    issue: «Y él me respondió» suena algo más pesado de lo necesario en español.
+    rationale: El sujeto explícito no es incorrecto, pero «Y me respondió y dijo» fluye mejor y preserva el sentido del latín sin rigidez innecesaria.
+  revised_spanish_text: 'No pocos, sino casi todos los que han sido creados. Y me respondió y dijo: «Escucha'
+  revision_rationale: Se elimina la nota al pie porque no está sustentada por el fragmento latino de este registro y se ajusta levemente la redacción para una cadencia más natural en español, sin cambiar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 883c63b61800a448fafc02bd59eec106e413260dd9f2c2307d1889b8e9b7cb45
+  timestamp: '2026-05-07T23:20:08Z'
+  output_hash: 5e7d8423e52e0c9e1f376c224bc523f2647b4667bbe8812d7b863b43a7f58b77
+  usage:
+    prompt_tokens: 2190
+    completion_tokens: 506
+    total_tokens: 2696
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.013065
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

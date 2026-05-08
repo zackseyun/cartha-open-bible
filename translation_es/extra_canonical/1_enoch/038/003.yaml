@@ -1,0 +1,229 @@
+id: 1EN.38.3
+reference: 1 Enoch 38:3
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ሶበ፡ ይትከሠት፡ ኅቡኣቲሆሙ፡ ለጻድቃን፡ ይትኴነኑ፡ ኃጥኣን፡ ወይትሀወዙ፡ ረስዓን፡ እምገጸ፡ ጻድቃን፡ ወኅሩያን።
+  language: Geez
+  pages:
+  - 115
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch38.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 38, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/038/003.yaml
+  text: When the hidden things of the righteous are revealed[a], sinners will be judged[c][b], and the wicked will be driven away from the presence of the righteous and the chosen.
+  footnotes:
+  - marker: a
+    text: Or 'their secrets.' The Ge'ez can denote what has been concealed, but the verse does not specify whether these are deeds, identities, or grounds of vindication.
+    reason: lexical_alternative
+  - marker: b
+    text: Literally 'from the face of the righteous and the chosen,' an exclusion-from-presence formula common in judgment scenes.
+    reason: cultural_note
+  - marker: c
+    text: Or 'Then the hidden things of the righteous will be revealed, and sinners will be judged'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 2cff50c524393b10bf0cf6d5c349ef3bad16aa37271702ee97c701d8577e28ab
+    timestamp: '2026-04-22T09:10:59Z'
+    output_hash: e9f47b30744e0247da64a5bed876cf73f41710479d4c8c9eaae9585d856c6a5e
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:14Z'
+    unchanged: false
+    changes_summary: Changed 'from the face of' to the more natural formal rendering 'from the presence of' for እምገጸ, while preserving the rest of the draft.
+translation:
+  language: es
+  text: Cuando se revelen[a] las cosas ocultas de los justos, los pecadores serán juzgados[c][b], y los impíos serán expulsados de la presencia de los justos y de los escogidos.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: También puede entenderse «sus secretos». El ge'ez puede abarcar lo que ha estado oculto, pero el verso no precisa si se trata de hechos, identidad o vindicación.
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, «de la faz de los justos y de los escogidos». La expresión conserva la imagen de exclusión de la presencia de la comunidad vindicada.
+    reason: cultural_note
+  - marker: c
+    text: 'O: «Cuando se revelen las cosas ocultas de los justos y los pecadores serán juzgados».'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: ሶበ
+  english_pob_choice: When
+  chosen_spanish: Cuando
+  alternatives_spanish:
+  - Al tiempo que
+  - Cuando llegue el momento en que
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La conjunción ge'ez introduce una cláusula temporal; «Cuando» conserva la relación protasis-apódosis y el impulso retórico apocalíptico, sin convertirlo en un «entonces» explicativo.
+- source_word: ይትከሠት
+  english_pob_choice: will be revealed
+  chosen_spanish: se revelen
+  alternatives_spanish:
+  - se descubran
+  - se manifiesten
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El pasivo encaja con una revelación de realidades ocultas al final del juicio. «Se revelen» mantiene la pasiva y el registro elevado.
+- source_word: ኅቡኣቲሆሙ
+  english_pob_choice: the hidden things of them
+  chosen_spanish: las cosas ocultas
+  alternatives_spanish:
+  - sus secretos
+  - las cosas escondidas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Las cosas ocultas» preserva el plural amplio del ge'ez sin decidir si se trata de hechos, identidades o vindicación; evita estrecharlo indebidamente a «secretos».
+- source_word: ለጻድቃን
+  english_pob_choice: of the righteous
+  chosen_spanish: de los justos
+  alternatives_spanish:
+  - de los rectos
+  - de los justos y rectos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En español bíblico, «los justos» comunica con claridad la categoría moral y judicial del pasaje, manteniendo la relación genitiva.
+- source_word: ይትኴነኑ
+  english_pob_choice: will be judged
+  chosen_spanish: serán juzgados
+  alternatives_spanish:
+  - serán condenados
+  - serán puestos a juicio
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma pasiva judicial se conserva con «serán juzgados», que no fuerza todavía el resultado a «condenados».
+- source_word: ኃጥኣን
+  english_pob_choice: sinners
+  chosen_spanish: los pecadores
+  alternatives_spanish:
+  - los que pecan
+  - los impíos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Pecadores» es el equivalente directo y mantiene la categoría moral estándar de la literatura de juicio.
+- source_word: ይትሀወዙ
+  english_pob_choice: will be driven away
+  chosen_spanish: serán expulsados
+  alternatives_spanish:
+  - serán alejados
+  - serán arrojados fuera
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa remoción forzosa; «serán expulsados» comunica mejor la fuerza judicial que una salida meramente pasiva.
+- source_word: ረስዓን
+  english_pob_choice: the wicked
+  chosen_spanish: los impíos
+  alternatives_spanish:
+  - los malvados
+  - los inicuos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En español bíblico «impíos» corresponde bien al paralelo con «justos» y conserva el contraste moral del texto apocalíptico.
+- source_word: እምገጸ
+  english_pob_choice: from the presence of
+  chosen_spanish: de la presencia de
+  alternatives_spanish:
+  - de delante de
+  - de la faz de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se sigue la revisión inglesa que prefirió la formulación más natural «presence». En español, «de la presencia de» conserva el valor espacial-judicial de exclusión sin perder claridad.
+- source_word: ወኅሩያን
+  english_pob_choice: and the chosen
+  chosen_spanish: y de los escogidos
+  alternatives_spanish:
+  - y de los elegidos
+  - y de los electos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Escogidos» expresa la categoría teológica del texto y es idiomático en español; mantiene el sentido de elección divina sin adoptar un tecnicismo menos natural.
+theological_decisions:
+- issue: Sentido de «las cosas ocultas» de los justos
+  english_pob_reading: the hidden things of the righteous
+  chosen_spanish_reading: las cosas ocultas de los justos
+  alternative_spanish_readings:
+  - los secretos de los justos
+  - los ocultos entre los justos
+  rationale: El ge'ez permite una amplitud semántica que no obliga a restringirlo a secretos privados ni a convertirlo en personas ocultas. «Cosas ocultas» preserva la tensión entre hechos, condición y vindicación revelada.
+  doctrine_reference: Preservar la tensión lexical sin resolverla por adelantado.
+- issue: Fuerza de la cláusula final de exclusión
+  english_pob_reading: driven away from the presence of the righteous and the chosen
+  chosen_spanish_reading: serán expulsados de la presencia de los justos y de los escogidos
+  alternative_spanish_readings:
+  - serán removidos de delante de los justos y de los escogidos
+  - serán alejados de la presencia de los justos y de los escogidos
+  rationale: La escena no describe solo vergüenza interior, sino expulsión judicial fuera del ámbito de los vindicados. «Expulsados» conserva la violencia forense del pasaje.
+  doctrine_reference: Primacía del lenguaje original en escenas de juicio.
+translation_notes:
+  revision_awareness: 'La base inglesa pasó por una corrección importante: el marcador temporal ሶበ se entendió finalmente como «When», no «Then», y እምገጸ fue revisado de «from the face of» a la formulación más natural «from the presence of». La versión española sigue ambas decisiones: mantiene la temporalidad con «Cuando» y conserva la exclusión de presencia con «de la presencia de».'
+  spanish_consistency_notes:
+  - Se usa «Yahvé» solo cuando el texto fuente lo exija; aquí no aparece el nombre divino.
+  - Se mantiene «justos/pecadores/impíos/escogidos» para respetar el paralelismo judicial del pasaje.
+  - No se suaviza «expulsados», porque el verbo ge'ez indica remoción forzosa, no simple alejamiento.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/038/003.yaml
+  source_text_sha256: 522cc4bd45f47c6117f4172f656681d26a30c26134e21bdcf0ef3d70286e74b2
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 2fc43ae9b0ec384c7b9ac8f54fb6563c5a7695cdf2e7ba4961ed67736e32c9fe
+  timestamp: '2026-05-07T21:27:38Z'
+  output_hash: a1d590ea70795ef5f0621c31598ab4a6afd2e04ecb6ea268722ca63d50d08a7a
+  usage:
+    prompt_tokens: 3316
+    completion_tokens: 1718
+    total_tokens: 5034
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010218
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura temporal de ሶበ como «Cuando», conserva adecuadamente «las cosas ocultas de los justos», mantiene el juicio pasivo sobre «los pecadores», y comunica con fidelidad la expulsión forzosa de «los impíos» fuera de la presencia de la comunidad vindicada. Sin embargo, la nota [c] introduce una lectura alternativa española deficiente: omite la coma y convierte la construcción en una coordinación menos clara, cuando la nota inglesa preserva una alternativa histórica con «Then», no una reformulación española torpe de «Cuando».'
+  spanish_quality_summary: El texto principal es claro, natural y de registro bíblico digno. «Escogidos» es aceptable, pero en combinación con «de los justos y de los escogidos» suena algo más pesado de lo necesario; aun así, no constituye error. El único problema real de calidad está en la nota [c], cuya redacción actual resulta poco idiomática y no representa bien la alternativa documentada. Conviene también ajustar levemente la nota [a] para sonar más natural en español («hechos, identidades o motivos de vindicación»).
+  glossary_alignment: No hay conflicto con la terminología marco del proyecto. No aparecen Yahvé, Mesías/Cristo, Espíritu, etc. Las decisiones «justos», «pecadores», «impíos» y «escogidos» concuerdan con el audit trail y con un español eclesial legible. «Presencia» sigue correctamente la revisión inglesa final para እምገጸ.
+  issues:
+  - severity: medium
+    issue: La nota [c] no reproduce fielmente la alternativa documentada en el audit trail inglés.
+    rationale: 'La nota inglesa dice: «Or ''Then the hidden things of the righteous will be revealed, and sinners will be judged''». La versión española actual: «Cuando se revelen las cosas ocultas de los justos y los pecadores serán juzgados» elimina la pausa necesaria y no representa la oposición principal «Then/When». Debe reformularse como alternativa histórica clara, por ejemplo con «Entonces».'
+  - severity: low
+    issue: La nota [a] puede expresarse con español más natural.
+    rationale: «Hechos, identidad o vindicación» es comprensible, pero en español suena más fluido «hechos, identidades o motivos de vindicación», manteniendo la amplitud semántica sin estrechar el sentido.
+  revised_spanish_text: Cuando se revelen[a] las cosas ocultas de los justos, los pecadores serán juzgados[c][b], y los impíos serán expulsados de la presencia de los justos y de los escogidos.
+  revised_footnotes:
+  - marker: a
+    text: También puede entenderse «sus secretos». El ge'ez puede abarcar lo que ha estado oculto, pero el verso no precisa si se trata de hechos, identidades o motivos de vindicación.
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, «de la faz de los justos y de los escogidos». La expresión conserva la imagen de exclusión de la presencia de la comunidad vindicada.
+    reason: cultural_note
+  - marker: c
+    text: 'O: «Entonces se revelarán las cosas ocultas de los justos, y los pecadores serán juzgados».'
+    reason: previous_rendering
+  revision_rationale: Se conserva intacto el texto principal porque es fiel al ge'ez y al audit trail inglés. Solo se corrigen las notas para que la alternativa [c] refleje de verdad la variante histórica documentada («Then/Entonces») y para mejorar ligeramente la naturalidad de [a] en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ddc1830e3f9116c20d18cb76af164cab83f73d65a256f5589f177eca362f4d13
+  timestamp: '2026-05-07T23:13:16Z'
+  output_hash: e83f1183d2a816c93896393a67486e0d2f4f08c3c960e5b7c5c61c6fb35f0839
+  usage:
+    prompt_tokens: 4687
+    completion_tokens: 820
+    total_tokens: 5507
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024018
+  applied_revision: false

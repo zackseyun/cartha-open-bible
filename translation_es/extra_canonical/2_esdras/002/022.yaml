@@ -1,0 +1,134 @@
+id: 2ES.2.22
+reference: 2 Esdras 2:22
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: Mortuos ubi inueneris, signans commenda sepulchro, et dabo
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/002/022.yaml
+  text: Wherever you find the dead, mark them and commit them to the grave, and I will give
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:12Z'
+    unchanged: false
+    changes_summary: Removed material not present in the provided Latin ('Keep safe within your walls the old and the young'). Rendered 'Mortuos ubi inueneris' as 'Wherever you find the dead,' retained 'mark them and commit them to the grave,' and translated the remaining 'et dabo' as 'and I will give'.
+translation:
+  language: es
+  text: Dondequiera que encuentres a los muertos, márcalos y encomiéndalos al sepulcro, y daré.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: Mortuos
+  english_pob_choice: the dead
+  chosen_spanish: los muertos
+  alternatives_spanish:
+  - los fallecidos
+  - los difuntos
+  lexicon: mortuus
+  rationale: «Mortuos» designa a los muertos de forma directa y concreta; «los muertos» conserva la fuerza lexical sin suavizar el referente.
+- source_word: ubi inueneris
+  english_pob_choice: Wherever you find
+  chosen_spanish: dondequiera que encuentres
+  alternatives_spanish:
+  - adondequiera que halles
+  - donde los encuentres
+  lexicon: ubi + invenio
+  rationale: La construcción expresa alcance indefinido de lugar; «dondequiera que encuentres» reproduce bien el valor distributivo del latín en español natural.
+- source_word: signans
+  english_pob_choice: mark them
+  chosen_spanish: márcalos
+  alternatives_spanish:
+  - señálalos
+  - pon una marca sobre ellos
+  lexicon: signo/signare
+  rationale: El verbo latino pide una acción visible de señalamiento; «márcalos» es la opción más breve y fiel, sin introducir explicaciones ajenas al texto.
+- source_word: commenda sepulchro
+  english_pob_choice: commit them to the grave
+  chosen_spanish: encomendalos al sepulcro
+  alternatives_spanish:
+  - entrégalos al sepulcro
+  - confíalos al sepulcro
+  lexicon: commendo + sepulchrum
+  rationale: El latín sugiere ponerlos bajo custodia o entrega al lugar de entierro; «encomendalos al sepulcro» conserva la idea de entrega y preserva el matiz verbal de commendo, aun con un español algo más elevado.
+- source_word: et dabo
+  english_pob_choice: and I will give
+  chosen_spanish: y yo daré
+  alternatives_spanish:
+  - y daré
+  - y yo les daré
+  lexicon: do/dare
+  rationale: El texto latino queda abrupto e incompleto en el fragmento proporcionado; por eso se traduce solo lo que está explícito, sin completar el objeto omitido.
+theological_decisions:
+- issue: Fragmento incompleto al final del versículo
+  english_pob_reading: and I will give
+  chosen_spanish_reading: y yo daré
+  alternative_spanish_readings:
+  - y daré
+  - y yo les daré
+  rationale: Se conserva la incompletitud del testigo latino y del audit trail inglés revisado. No se suministra un complemento implícito, porque el versículo termina de forma truncada en el fragmento fuente.
+  doctrine_reference: Fidelidad textual y respeto al estado del testimonio base; no se añade contenido no atestiguado.
+translation_notes:
+  revision_awareness: La revisión inglesa eliminó material ajeno al latino ('Keep safe within your walls the old and the young') y dejó únicamente 'Wherever you find the dead, mark them and commit them to the grave, and I will give'. La versión española sigue ese estado revisado y no reintroduce contenido ausente.
+  spanish_consistency_notes:
+  - Se usa «los muertos» para mantener el valor directo de mortuos.
+  - Se conserva el tono formal pero comprensible de «encomendalos al sepulcro» para reflejar commenda sepulchro.
+  - No se añade objeto a «y yo daré», porque el texto fuente termina abruptamente.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/002/022.yaml
+  source_text_sha256: 840b79c8e6b03848f7e442aecab406ca2c67db347943560997ce48df6f624e42
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 9d9d503fd0b7358ac6a18373fe4bf7cd864c8f3c1fe3a1cb54d9c0ebf213889c
+  timestamp: '2026-05-07T21:29:32Z'
+  output_hash: 3097de8ab09967b3cc8f5d23f774b290776df4d83889d2188267ca7ebfcacf28
+  usage:
+    prompt_tokens: 1798
+    completion_tokens: 797
+    total_tokens: 2595
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004935
+status: spanish_reviewed
+revisions:
+- from: Dondequiera que encuentres a los muertos, márcalos y encomendalos al sepulcro, y yo daré.
+  to: Dondequiera que encuentres a los muertos, márcalos y encomiéndalos al sepulcro, y daré.
+  rationale: Se corrige la acentuación obligatoria de «encomiéndalos» y se suaviza «y yo daré» a «y daré» para reflejar mejor el latín sin énfasis añadido, manteniendo la frase final truncada tal como aparece en la fuente.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:32:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el latín: «Mortuos ubi inueneris» = «Dondequiera que encuentres a los muertos»; «signans» = «márcalos»; «commenda sepulchro» mantiene la idea de entregar al entierro; «et dabo» conserva correctamente el final abrupto del fragmento sin añadir complemento.'
+  spanish_quality_summary: 'La redacción es clara y fiel, pero necesita una reparación ortográfica obligatoria: «encomendalos» debe llevar tilde: «encomiéndalos». También conviene omitir «yo» para ajustarse mejor al latín no enfático y sonar más natural en español.'
+  glossary_alignment: No hay términos de glosario mayor implicados. «los muertos» es adecuado y directo. «sepulcro» encaja con el registro digno del proyecto. «daré» preserva la incompletitud del testimonio fuente.
+  issues:
+  - severity: medium
+    issue: Error ortográfico en «encomendalos»
+    rationale: 'El imperativo con pronombre enclítico requiere acento: «encomiéndalos». La forma actual es incorrecta en español escrito.'
+  - severity: low
+    issue: Pronombre explícito innecesario en «y yo daré»
+    rationale: El latín «et dabo» no exige énfasis en el sujeto. «Y daré» suena más natural en español y sigue siendo plenamente fiel al fragmento.
+  revised_spanish_text: Dondequiera que encuentres a los muertos, márcalos y encomiéndalos al sepulcro, y daré.
+  revision_rationale: Se corrige la acentuación obligatoria de «encomiéndalos» y se suaviza «y yo daré» a «y daré» para reflejar mejor el latín sin énfasis añadido, manteniendo la frase final truncada tal como aparece en la fuente.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c669427e57c04676e8fd8bcf741758e1ab2b5edaa6733989c1a2ed25bb998812
+  timestamp: '2026-05-07T23:32:11Z'
+  output_hash: f73ed7425c9beef1e8c74dbb42c2b250efa675c50c1a860d8bad0ca8e2e99911
+  usage:
+    prompt_tokens: 2159
+    completion_tokens: 446
+    total_tokens: 2605
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012087
+  applied_revision: true

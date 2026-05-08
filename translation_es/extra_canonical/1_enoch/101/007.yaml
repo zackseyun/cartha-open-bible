@@ -1,0 +1,209 @@
+id: 1EN.101.7
+reference: 1 Enoch 101:7
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወበተግሣጹ፡ *ትፈርህ፡ ወትየብስ፡ ወ*ኵሉ፡ ዓሣቲሃ፡ ይመውት፡ ወኵሉ፡ ዘሀሎ፡ ውስቴታ፡ ወአንትሙ፡ ኃጥኣን፡ እለ፡ ዲበ፡ ምድር፡ ኢትፈርህዎ።
+  language: Geez
+  pages:
+  - 248
+  - 249
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/101/007.yaml
+  text: And at his rebuke it will be afraid and dry up[a], and all its fish will die, and everything that is in it[c][b]. But you sinners who are upon the earth do not fear him.
+  footnotes:
+  - marker: a
+    text: The repeated 'it' likely refers to the sea or waters in the preceding verse. The Ge'ez keeps the reference implicit.
+    reason: cross_reference
+  - marker: b
+    text: The final line is literally 'you sinners who are upon the earth do not fear it,' probably contrasting the fear of creation under rebuke with the fearlessness of the wicked.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And at its rebuke it will be afraid and dry up, and all its fish will die, and everything that is in it. But you sinners who are upon the earth do not fear it.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 278253eb3b625d37055af07c48b00b8100f25d276c0beb0b0c21b708136162b9
+    timestamp: '2026-04-22T09:24:06Z'
+    output_hash: 464c39cfcc2bbaf254f50b066e62a78bb5f4094689f77066e045ff34764cc620
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:51Z'
+    unchanged: false
+    changes_summary: Lowercased pronouns referring to God for consistency with translation style; otherwise retained the draft as accurate and natural.
+translation:
+  language: es
+  text: Y ante su reprensión, esta temblará y se secará, y todos sus peces morirán, y todo lo que está en ella. Pero ustedes, pecadores que están sobre la tierra, no le teman.
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: በተግሣጹ
+  english_pob_choice: at his rebuke
+  chosen_spanish: a su reprensión
+  alternatives_spanish:
+  - ante su reprensión
+  - por su reprensión
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sufijo posesivo ge'ez exige referir la reprensión a Dios, no al mar. En español, 'a su reprensión' conserva el valor circunstancial y el tono judicial/apocalíptico mejor que una paráfrasis más libre.
+- source_word: ትፈርህ
+  english_pob_choice: it will be afraid
+  chosen_spanish: él temblará
+  alternatives_spanish:
+  - temerá
+  - se asustará
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sujeto inmediato es el mar personificado, pero el español necesita una forma natural. 'Temblará' mantiene la reacción física del mar ante la reprensión divina sin perder la personificación.
+- source_word: ትየብስ
+  english_pob_choice: dry up
+  chosen_spanish: se secará
+  alternatives_spanish:
+  - se pondrá seco
+  - se desecará
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Para aguas, 'se secará' es la forma más idiomática y directa, conservando la imagen de juicio.
+- source_word: ዓሣቲሃ
+  english_pob_choice: its fish
+  chosen_spanish: sus peces
+  alternatives_spanish:
+  - los peces de él
+  - los peces que hay en él
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El posesivo explícito se conserva con 'sus', ya que el ge'ez marca el vínculo con el cuerpo de agua.
+- source_word: ይመውት
+  english_pob_choice: will die
+  chosen_spanish: morirán
+  alternatives_spanish:
+  - perecerán
+  - van a morir
+  lexicon: Dillmann, Lexicon Aethiopicae
+  rationale: El futuro simple comunica la secuencia de consecuencias del juicio de manera natural en español.
+- source_word: ኵሉ ዘሀሎ ውስቴታ
+  english_pob_choice: everything that is in it
+  chosen_spanish: todo lo que está en él
+  alternatives_spanish:
+  - todo lo que hay en él
+  - todo lo que se encuentra en él
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase amplía la devastación más allá de los peces. 'Todo lo que está en él' es suficientemente formal y conserva el contenido sin añadir explicaciones.
+- source_word: ኃጥኣን
+  english_pob_choice: sinners
+  chosen_spanish: pecadores
+  alternatives_spanish:
+  - malvados
+  - impíos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Pecadores'' mantiene el término moral estándar de la tradición apocalíptica y la oposición del versículo.'
+- source_word: እለ ዲበ ምድር
+  english_pob_choice: who are upon the earth
+  chosen_spanish: que están sobre la tierra
+  alternatives_spanish:
+  - que están en la tierra
+  - que habitan sobre la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Sobre la tierra'' reproduce bien el valor espacial elevado del original, sin convertirlo en una formulación doctrinal distinta.'
+- source_word: ኢትፈርህዎ
+  english_pob_choice: do not fear him
+  chosen_spanish: no le teman
+  alternatives_spanish:
+  - no lo teman
+  - no teman a él
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La revisión auditada corrige el referente al masculino divino. En español, el clítico dativo 'le' evita la ambigüedad de género y mantiene el objeto personal de la prohibición.
+theological_decisions:
+- issue: Referente del posesivo y del pronombre objeto
+  english_pob_reading: The final revised reading refers the rebuke and the feared object to God, while the sea remains the feminine personified subject.
+  chosen_spanish_reading: La reprensión es de Dios y el temor prohibido es hacia él; el mar sigue siendo el sujeto personificado que tiembla y se seca.
+  alternative_spanish_readings:
+  - La reprensión es del mar y el temor se refiere a él
+  - La frase final habla del mar como objeto temido
+  rationale: El análisis ge'ez revisado distingue entre el sufijo masculino de በተግሣጹ y el sujeto femenino del mar. La traducción española debe reflejar esa distinción para no borrar la tensión gramatical y teológica del versículo.
+  doctrine_reference: Preservar el referente divino distinguido por el texto fuente y evitar una neutralización que altere la escena apocalíptica.
+- issue: Personificación del mar ante la reprensión divina
+  english_pob_reading: The sea or body of water is personified as fearing and drying up under rebuke.
+  chosen_spanish_reading: El mar aparece personificado, reaccionando con temor y sequedad ante la reprensión divina.
+  alternative_spanish_readings:
+  - Una referencia impersonal al agua
+  - Una descripción puramente física sin personificación
+  rationale: La personificación forma parte del estilo apocalíptico y del valor retórico del pasaje; conviene mantenerla en español en vez de suavizarla.
+  doctrine_reference: Conservar la imaginería apocalíptica sin resolverla en prosa explicativa.
+translation_notes:
+  revision_awareness: Se tuvo en cuenta la revisión posterior que corrigió el referente de la reprensión y del mandato final desde un 'it' impersonal a un masculino referido a Dios ('his/him'). La versión española incorpora esa corrección y evita la lectura anterior.
+  spanish_consistency_notes:
+  - Se mantiene 'pecadores' como término moral estándar, coherente con el registro apocalíptico.
+  - Se conserva la personificación del mar sin introducir 'océano' o 'aguas' porque el texto fuente no lo explicita aquí.
+  - No se usa 'SEÑOR' ni 'Cristo'; el referente divino se expresa solo mediante pronombre, según el texto dado.
+  - Se evita el calco excesivo en 'sobre la tierra' por fidelidad al giro ge'ez y por naturalidad del español.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/101/007.yaml
+  source_text_sha256: fbe60f98eafb181eeafddbd97a8fa0303f3d5f3d26f060fd722af995b98f9a9c
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: af73f5b609c338a87f9b5873489b8c7594cc9a39ed0f71b27beba82ab592eabd
+  timestamp: '2026-05-07T21:28:07Z'
+  output_hash: 8fbafdb7ba4d07823cd0eabd7aa45e4d69d3bced537dfa6da9a600f8a3703329
+  usage:
+    prompt_tokens: 3723
+    completion_tokens: 1539
+    total_tokens: 5262
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.009718
+status: spanish_reviewed
+revisions:
+- from: Y a su reprensión, él temblará y se secará, y todos sus peces morirán, y todo lo que está en él. Pero ustedes, pecadores que están sobre la tierra, no le teman.
+  to: Y ante su reprensión, esta temblará y se secará, y todos sus peces morirán, y todo lo que está en ella. Pero ustedes, pecadores que están sobre la tierra, no le teman.
+  rationale: Se ajusta el español para preservar con más fidelidad la distinción fuente entre Dios como referente masculino de 'su' y 'le', y el cuerpo de agua como referente no masculino personificado. También se mejora la naturalidad idiomática con 'ante su reprensión'. No hace falta nota porque la ambigüedad principal se resuelve directamente en el texto español sin perder el sentido auditado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:34:05Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español acierta en el cambio adjudicado clave: la reprensión es de Dios y la cláusula final manda no temerle a él, mientras el cuerpo de agua sigue como sujeto personificado de las reacciones subsiguientes. Sin embargo, el texto español usa ''él'' y ''en él'' para el cuerpo de agua, lo que borra la distinción de género destacada en la revisión auditada y suena menos fiel al contraste del ge''ez, donde el sujeto del mar/agua es femenino y Dios es masculino.'
+  spanish_quality_summary: El borrador es generalmente legible, pero 'a su reprensión' resulta algo duro en español, y el uso de 'él' para el mar o las aguas introduce una ambigüedad innecesaria con Dios. 'Ante su reprensión' fluye mejor, y 'esta' / 'en ella' conserva mejor la referencia al masa de agua en español natural. 'No le teman' es correcto y claro para el objeto personal divino.
+  glossary_alignment: No hay términos del glosario mayor en juego salvo la referencia divina, que se conserva adecuadamente sin enmascararla. 'Pecadores' está bien para ኃጥኣን. La decisión de mantener la personificación apocalíptica es correcta, pero conviene reflejarla con un referente femenino natural en español para el mar/las aguas.
+  issues:
+  - severity: medium
+    issue: Uso de pronombres masculinos para el cuerpo de agua
+    rationale: El borrador dice 'él temblará' y 'en él', pero la auditoría inglesa destaca precisamente el contraste entre sufijos masculinos para Dios y formas femeninas para el mar/las aguas. En español puede mantenerse esa diferencia con 'esta' y 'en ella', evitando confusión con Dios.
+  - severity: low
+    issue: '''A su reprensión'' suena menos natural que ''ante su reprensión'''
+    rationale: La preposición original permite un valor circunstancial/instrumental. En español bíblico natural, 'ante su reprensión' comunica mejor la reacción del mar frente al reproche divino sin alterar el sentido.
+  revised_spanish_text: Y ante su reprensión, esta temblará y se secará, y todos sus peces morirán, y todo lo que está en ella. Pero ustedes, pecadores que están sobre la tierra, no le teman.
+  revision_rationale: Se ajusta el español para preservar con más fidelidad la distinción fuente entre Dios como referente masculino de 'su' y 'le', y el cuerpo de agua como referente no masculino personificado. También se mejora la naturalidad idiomática con 'ante su reprensión'. No hace falta nota porque la ambigüedad principal se resuelve directamente en el texto español sin perder el sentido auditado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1dae675d22bdc62e8e12493154e916a3702787585ca8b4e26a86159ee9630448
+  timestamp: '2026-05-07T23:34:05Z'
+  output_hash: e5883cb6e8c0d247093041ecc1ed9b940f646dca151eaba3176ed764eadd2433
+  usage:
+    prompt_tokens: 4854
+    completion_tokens: 634
+    total_tokens: 5488
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021645
+  applied_revision: true

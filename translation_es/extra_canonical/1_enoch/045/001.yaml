@@ -1,0 +1,232 @@
+id: 1EN.45.1
+reference: 1 Enoch 45:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወዝ፡ ካልእ፡ ምሳሌ፡ ዲበ፡ እለ፡ ይክሕዱ፡ ስሞ፡ ለማኅደረ፡ ቅዱሳን፡ ወእግዚአ፡ መናፍስት፡
+  language: Geez
+  pages:
+  - 123
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch45.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 45, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/045/001.yaml
+  text: And this is the second parable concerning those who deny the name of the dwelling of the holy ones and of the Lord of Spirits[a][b][c].
+  footnotes:
+  - marker: a
+    text: The Ge'ez wording after 'deny the name' is difficult. The phrase may mean 'the name of the dwelling of the holy ones and of the Lord of Spirits,' but other construals are possible.
+    reason: textual_variant
+  - marker: b
+    text: '''Holy ones'' may refer to heavenly holy beings, the righteous, or a deliberately overlapping idea in this apocalyptic context.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'another parable'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: f17e22a4195d5345121d34adee347f356056a546c7f8017605d32d71395ed767
+    timestamp: '2026-04-22T09:12:33Z'
+    output_hash: 5bcc0692b6f187e6aa0f90f02088cbf22d3fd4a441e5c05271ec3a0b8f672adf
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:22Z'
+    unchanged: false
+    changes_summary: Removed the accidental duplicated phrase at the beginning and end. Retained the draft wording otherwise, which adequately reflects the source in formal English.
+translation:
+  language: es
+  text: Y esta es la segunda parábola acerca de los que niegan el nombre de la morada de los seres santos[a] y del Señor de los espíritus[b][c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La expresión ge'ez después de «niegan el nombre» es difícil. La frase puede significar «el nombre de la morada de los seres santos y del Señor de los espíritus», aunque también son posibles otras construcciones. «Seres santos» puede referirse a seres celestiales santos, a los justos, o a una idea deliberadamente superpuesta en este contexto apocalíptico.
+    reason: textual_variant
+  - marker: b
+    text: «Seres santos» puede referirse a seres celestiales santos, a los justos, o a una idea deliberadamente superpuesta en este contexto apocalíptico.
+    reason: lexical_alternative
+  - marker: c
+    text: 'O, en una traducción anterior: «otra parábola».'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ወዝ
+  english_pob_choice: And this is
+  chosen_spanish: Y esta es
+  alternatives_spanish:
+  - Y esta
+  - Y estas son
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El giro introductorio marca transición a una nueva unidad visionaria; en español, «Y esta es» conserva la copulativa y la deixis sin forzar una formulación más pesada.
+- source_word: ካልእ ምሳሌ
+  english_pob_choice: the second parable
+  chosen_spanish: la segunda parábola
+  alternatives_spanish:
+  - otra parábola
+  - la otra parábola
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El contexto redaccional de las Parábolas indica una serie numerada; «segunda» reproduce mejor esa estructura que «otra» y evita perder la señal ordinal presente en la revisión inglesa.
+- source_word: ዲበ
+  english_pob_choice: concerning
+  chosen_spanish: acerca de
+  alternatives_spanish:
+  - sobre
+  - concerniente a
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La preposición introduce el tema de la parábola; «acerca de» es natural en español y mantiene el valor temático sin añadir interpretación.
+- source_word: እለ ይክሕዱ
+  english_pob_choice: those who deny
+  chosen_spanish: los que niegan
+  alternatives_spanish:
+  - los que rechazan
+  - los que reniegan de
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El valor sustantivado del relativo con el verbo imperfectivo se expresa de modo claro con «los que niegan». Conserva la fuerza de repudiación sin precisar indebidamente si es verbal, práctica o covenantal.
+- source_word: ስሞ
+  english_pob_choice: the name
+  chosen_spanish: el nombre
+  alternatives_spanish:
+  - su nombre
+  - la fama
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se mantiene «el nombre» por la evidencia léxica directa del ge'ez y porque la construcción siguiente es sintácticamente difícil; no se sustituye por «autoridad» o «majestad».
+- source_word: ለማኅደረ ቅዱሳን
+  english_pob_choice: of the dwelling of the holy ones
+  chosen_spanish: de la morada de los santos
+  alternatives_spanish:
+  - de la morada de los santos seres
+  - de la habitación de los santos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Morada» comunica de manera natural la idea de lugar de habitación y conserva la imaginería espacial apocalíptica. «Santos» es la opción más transparente en español, aunque el término puede abarcar seres celestiales o el pueblo justificado.
+- source_word: ቅዱሳን
+  english_pob_choice: the holy ones
+  chosen_spanish: los santos
+  alternatives_spanish:
+  - los seres santos
+  - los consagrados
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En español, «santos» es más idiomático y puede abarcar la ambigüedad entre seres celestiales y la comunidad de los justos. Se evita forzar una glosa técnica que resolvería indebidamente la referencia.
+- source_word: ወእግዚአ መናፍስት
+  english_pob_choice: and of the Lord of Spirits
+  chosen_spanish: y del Señor de los Espíritus
+  alternatives_spanish:
+  - y del Señor de los espíritus
+  - y del Dueño de los Espíritus
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva el título divino tradicionalmente reconocido en 1 Enoc, traducido al español. «Señor de los Espíritus» mantiene la mayúscula reverente y el plural, sin convertirlo en una fórmula eclesiástica distinta.
+theological_decisions:
+- issue: Ambigüedad de «los santos / la morada de los santos»
+  english_pob_reading: left ambiguous as 'the holy ones'
+  chosen_spanish_reading: se deja ambigua la referencia de «los santos»
+  alternative_spanish_readings:
+  - los ángeles santos
+  - la comunidad de los justos
+  rationale: El contexto apocalíptico permite varias identificaciones posibles. La traducción conserva la ambigüedad en vez de resolverla, siguiendo la disciplina de la POB de no cerrar indebidamente una tensión del texto fuente.
+  doctrine_reference: Preservar la tensión teológica y referencial cuando el original no la resuelve.
+- issue: Construcción difícil de «niegan el nombre de la morada de los santos y del Señor de los Espíritus»
+  english_pob_reading: rendered literally with minimal smoothing
+  chosen_spanish_reading: 'se mantiene una estructura cercana al original: «niegan el nombre de la morada de los santos y del Señor de los Espíritus»'
+  alternative_spanish_readings:
+  - niegan el nombre por el que habitan los santos
+  - niegan la morada de los santos y del Señor de los Espíritus
+  rationale: El ge'ez es sintácticamente difícil y no conviene una paráfrasis que oculte esa dificultad. La versión española conserva la relación genitiva problemática con el mínimo de suavizado necesario para legibilidad.
+  doctrine_reference: Primacía del idioma fuente; cuando la sintaxis es incierta, preferir transparencia antes que una solución demasiado segura.
+- issue: Título divino «Señor de los Espíritus»
+  english_pob_reading: and of the Lord of Spirits
+  chosen_spanish_reading: y del Señor de los Espíritus
+  alternative_spanish_readings:
+  - y del Señor de los espíritus
+  - y del Dueño de los Espíritus
+  rationale: Se conserva el título tal como un nombre reverente y técnico de 1 Enoc. «Espíritus» con mayúscula puede ayudar a distinguir el título divino de un uso genérico del sustantivo.
+  doctrine_reference: Mantener títulos divinos tradicionales del corpus enóquico sin diluirlos.
+translation_notes:
+  revision_awareness: La revisión inglesa más reciente resolvió ካልእ como «second» en lugar de «another», por la secuencia numerada de las Parábolas. La redacción española adopta «segunda parábola» para reflejar esa decisión adjudicada y mantiene la ambigüedad sintáctica documentada en la nota sobre la construcción difícil.
+  spanish_consistency_notes:
+  - Se usa «Yahvé» para el tetragrámaton en general, pero aquí el texto fuente trae el título «Señor de los Espíritus», por lo que se traduce ese título sin sustituirlo por «Yahvé».
+  - Se conserva «Espíritus» con mayúscula en el título divino para distinguirlo del uso común del sustantivo.
+  - La opción «santos» se emplea aquí como equivalente de «holy ones» para lograr naturalidad en español, aunque la nota mantiene la ambigüedad entre seres celestiales y los justos.
+  - Se evita «Cristo/Mesías» porque no aparece en el pasaje ni en el título fuente.
+  - La puntuación y el orden de los complementos siguen de cerca la sintaxis problemática del original para no borrar la tensión textual documentada.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/045/001.yaml
+  source_text_sha256: a45770a0e53feacdca7146d100a3df8115d0eeac809668a68f890978cb8eeb38
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: eb607770eadd3c2a97ec4d41609f38b80f38535107f9310fbf1a0c637b94d4c9
+  timestamp: '2026-05-07T21:27:33Z'
+  output_hash: f8489a5f450884b60ffa8f5a374fba75f6d2ef903f91abbb4f72d06b1d514fc9
+  usage:
+    prompt_tokens: 3270
+    completion_tokens: 1889
+    total_tokens: 5159
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010953
+status: spanish_reviewed
+revisions:
+- from: Y esta es la segunda parábola acerca de los que niegan el nombre de la morada de los santos[a] y del Señor de los Espíritus[b][c].
+  to: Y esta es la segunda parábola acerca de los que niegan el nombre de la morada de los seres santos[a] y del Señor de los espíritus[b][c].
+  rationale: 'La revisión mantiene la literalidad necesaria de una construcción ge''ez difícil, pero corrige dos matices importantes para la filosofía de la POB: preservar mejor la ambigüedad de ቅዱሳን y evitar una capitalización interpretativa en «espíritus». También se ajusta la nota c para reflejar la historia de revisión documentada. Aunque «seres santos» no es tan elegante como «santos», aquí sirve mejor al objetivo auditado de no resolver la referencia.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:12:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge''ez y sigue la revisión inglesa en «la segunda parábola», «los que niegan» y la construcción literal difícil. Sin embargo, en dos puntos se aparta de manera significativa del rastro auditado: traduce ቅዱሳን como «los santos», cuando la POB inglesa conservó deliberadamente «the holy ones» para evitar la carga eclesiástica de «saints»; y usa «Señor de los Espíritus», donde la mayúscula en «Espíritus» introduce una interpretación reverencial no exigida por la fuente ni por el inglés. Además, la nota c debe reflejar mejor que «otra parábola» es una traducción previa/alternativa de ካልእ, no una mera alternativa léxica sin contexto.'
+  spanish_quality_summary: El español es claro y digno, pero «los santos» suena más tradicional y más definido de lo que conviene aquí. «Los santos seres» sería torpe, pero «los seres santos» preserva mejor la ambigüedad sin caer en una glosa doctrinal cerrada. También conviene usar «espíritus» en minúscula dentro del título para no sugerir que el texto distingue una clase técnica llamada «Espíritus».
+  glossary_alignment: 'No hay conflicto con los términos nucleares del glosario general como Yahvé/Mesías. Sí hay que alinear mejor con la política contextual de preservar ambigüedad: ቅዱሳን debe evitar «santos» si eso empuja hacia «saints». El título «Lord of Spirits» se traduce correctamente como «Señor de los espíritus», manteniendo el plural contextual sin mayúscula interpretativa.'
+  issues:
+  - severity: medium
+    issue: «los santos» estrecha indebidamente ቅዱሳን
+    rationale: La documentación inglesa escogió «the holy ones» precisamente para preservar una ambigüedad entre seres celestiales y los justos. En español, «los santos» suele activar con más fuerza la idea eclesiástica de «saints», por lo que no conserva igual de bien la tensión del original.
+  - severity: low
+    issue: Mayúscula en «Espíritus» dentro de «Señor de los Espíritus»
+    rationale: La fuente y el POB inglés no exigen esa capitalización. En español puede introducir una distinción teológica innecesaria. «Señor de los espíritus» es más neutral y fiel.
+  - severity: low
+    issue: La nota c clasifica imperfectamente la alternativa «otra parábola»
+    rationale: El inglés la marca como previous_rendering. En español, la nota debería dejar claro que es una traducción alternativa o previa de ካልእ, no una preferencia paralela de igual peso en este contexto ya adjudicado.
+  revised_spanish_text: Y esta es la segunda parábola acerca de los que niegan el nombre de la morada de los seres santos[a] y del Señor de los espíritus[b][c].
+  revised_footnotes:
+  - marker: a
+    text: La expresión ge'ez después de «niegan el nombre» es difícil. La frase puede significar «el nombre de la morada de los seres santos y del Señor de los espíritus», aunque también son posibles otras construcciones. «Seres santos» puede referirse a seres celestiales santos, a los justos, o a una idea deliberadamente superpuesta en este contexto apocalíptico.
+    reason: textual_variant
+  - marker: b
+    text: «Seres santos» puede referirse a seres celestiales santos, a los justos, o a una idea deliberadamente superpuesta en este contexto apocalíptico.
+    reason: lexical_alternative
+  - marker: c
+    text: 'O, en una traducción anterior: «otra parábola».'
+    reason: previous_rendering
+  revision_rationale: 'La revisión mantiene la literalidad necesaria de una construcción ge''ez difícil, pero corrige dos matices importantes para la filosofía de la POB: preservar mejor la ambigüedad de ቅዱሳን y evitar una capitalización interpretativa en «espíritus». También se ajusta la nota c para reflejar la historia de revisión documentada. Aunque «seres santos» no es tan elegante como «santos», aquí sirve mejor al objetivo auditado de no resolver la referencia.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: cb5820fccb66a34227ab8d2870bf156e540eae70b83fc3cc19954b21502eb319
+  timestamp: '2026-05-07T23:12:01Z'
+  output_hash: 9ba84e42a1253543d8d237d8567fbba052e84658fb1b3e51997b7ee1810822c9
+  usage:
+    prompt_tokens: 4741
+    completion_tokens: 1002
+    total_tokens: 5743
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026883
+  applied_revision: true

@@ -1,0 +1,126 @@
+id: JUB.38.12
+reference: Jubilees 38:12
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles_1895
+  language: Geʿez
+  text: ወለአኩ፡ ኀበ፡ አቡሆሙ፡ እመ፡ ይገብሩ፡ ሰላመ፡ ምስሌሆሙ፡ ወእመ፡ ይቀትልዎሙ።
+  pages:
+  - 230
+  - 232
+  validation_modes:
+  - vertex_chapter_split
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/jubilees/038/012.yaml
+  text: And they sent to their father asking whether they should make peace with them or kill them.
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T14:52:17Z'
+    unchanged: false
+    changes_summary: Removed 'kill them' because it is not present in the provided source text, which ends with an unfinished 'or' (ወእመ፡). Preserved the apparent incompleteness rather than supplying missing content.
+translation:
+  language: es
+  text: Y enviaron a su padre preguntando si debían hacer la paz con ellos o[a]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La frase queda abierta porque el texto geʿez recibido termina de forma incompleta en la segunda alternativa.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ወለአኩ፡ ... ኀበ፡ አቡሆሙ፡
+  english_pob_choice: And they sent to their father
+  chosen_spanish: Y enviaron a su padre
+  alternatives_spanish:
+  - Y mandaron a su padre
+  - Y lo enviaron a su padre
+  lexicon: Leslau
+  rationale: El geʿez expresa un envío dirigido al padre; en español 'enviaron a su padre' conserva la relación de destino sin añadir elementos no presentes.
+- source_word: እመ፡
+  english_pob_choice: whether
+  chosen_spanish: si
+  alternatives_spanish:
+  - si acaso
+  - si es que
+  lexicon: Leslau
+  rationale: La partícula introduce una alternativa indirecta; 'si' reproduce adecuadamente la interrogación de contenido en español.
+- source_word: ይገብሩ፡ ሰላመ፡ ምስሌሆሙ፡
+  english_pob_choice: they should make peace with them
+  chosen_spanish: debían hacer la paz con ellos
+  alternatives_spanish:
+  - deberían hacer la paz con ellos
+  - hacer la paz con ellos
+  lexicon: Leslau
+  rationale: '''Hacer la paz'' comunica la expresión idiomática del original; ''debían'' refleja el valor de deliberación/consulta que aporta el contexto y el inglés POB.'
+theological_decisions:
+- issue: Verso aparentemente truncado en la fuente recibida
+  english_pob_reading: And they sent to their father asking whether they should make peace with them or kill them.
+  chosen_spanish_reading: Y enviaron a su padre preguntando si debían hacer la paz con ellos o
+  alternative_spanish_readings:
+  - Y enviaron a su padre preguntando si debían hacer la paz con ellos o matarlos.
+  - Y enviaron a su padre preguntando si debían hacer la paz con ellos o matarles.
+  rationale: La última partícula del texto geʿez recibido termina en 'o' (ወእመ፡), sin completar la segunda opción. Por fidelidad al texto provisto y a la revisión más reciente, se conserva la incompletitud en lugar de suplir 'matarlos'.
+  doctrine_reference: Principio textual de no completar lo que la fuente transmitida deja incompleto
+translation_notes:
+  revision_awareness: Se siguió la revisión más reciente que eliminó la segunda acción explícita; el texto geʿez suministrado termina en una partícula abierta y el español preserva esa incompletud con una conjunción final.
+  spanish_consistency_notes:
+  - Se prefirió 'hacer la paz' para ሰላመ፡, una expresión natural y fiel.
+  - No se añadió 'matarlos' porque el paquete fuente recibido no lo incluye en su forma actual.
+  - Se usó 'padre' sin especificación adicional porque el geʿez dice 'su padre'.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/jubilees/038/012.yaml
+  source_text_sha256: cdd501edca229d0defa53b05dcda4014b89b00c468ec8a82d041468e9b4b993b
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 5b6f99950f49c260180a65b1a55cfd4d3fee5c81224c6bc8285c556cd225c3d4
+  timestamp: '2026-05-07T21:28:10Z'
+  output_hash: e2c8c063445cca73daf5081c063de51fa084c127de6c467de05fb13c1d94c070
+  usage:
+    prompt_tokens: 2164
+    completion_tokens: 738
+    total_tokens: 2902
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.004944
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: La evidencia fuente y la pista de auditoría inglesa convergen en que el verso completo incluye la segunda alternativa 'o matarlos', restaurada tras un error de segmentación. El borrador español sigue una revisión intermedia que conservaba una truncación aparente, pero ya no refleja la lectura auditada final ni el verbo geʿez documentado ይቀትልዎሙ.
+  spanish_quality_summary: 'El español es legible, pero queda antinatural e incompleto al terminar en ''o[a]''. Además, ''preguntando'' es aceptable, aunque ''para preguntar'' o ''a preguntar'' sería posible; no hace falta cambiarlo. La reparación necesaria es pequeña: completar la segunda alternativa y eliminar la nota que explica una truncación ya superada.'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Hacer la paz' y 'matarlos' son adecuados. La decisión léxica debe alinearse con el POB inglés auditado, que restauró 'kill them'.
+  issues:
+  - severity: high
+    issue: El borrador omite la segunda alternativa 'matarlos'.
+    rationale: El source_payload incluye ይቀትልዎሙ y la decisión léxica inglesa la traduce 'kill them'; la revisión más reciente restauró esa palabra tras un error de segmentación.
+  - severity: medium
+    issue: La nota al pie afirma que el texto geʿez recibido termina de forma incompleta.
+    rationale: Esa explicación corresponde a una etapa previa de revisión y contradice el estado auditado actual, donde la cláusula final fue restaurada.
+  - severity: low
+    issue: La frase final 'o[a]' produce un español editorialmente defectuoso.
+    rationale: Aun si hubiera incertidumbre textual, dejar la oración suspendida en el texto principal perjudica la legibilidad; pero aquí además la restauración ya está documentada.
+  revised_spanish_text: Y enviaron a su padre preguntando si debían hacer la paz con ellos o matarlos.
+  revision_rationale: Se restaura la segunda alternativa 'o matarlos' porque el verbo geʿez final ይቀትልዎሙ está documentado en la evidencia fuente y en la auditoría inglesa como parte auténtica del verso. Se elimina la nota de truncación por haber quedado superada por la corrección de segmentación.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5b82a22aa5e3882adfab805dcc2697bc42d90ebfac497674ca44cf174af39575
+  timestamp: '2026-05-07T23:19:44Z'
+  output_hash: 215e05cfb33111d33a19977d138138d2764ec13727b0fc3f75746b1a411b8414
+  usage:
+    prompt_tokens: 2495
+    completion_tokens: 553
+    total_tokens: 3048
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.014533
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

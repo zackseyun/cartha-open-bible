@@ -1,0 +1,203 @@
+id: 1EN.26.1
+reference: 1 Enoch 26:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወእምህየ፡ ሖርኩ፡ ማእከለ፡ ምድር፡ ወርኢኩ፡ *መካነ፡ ቡሩከ፡ [ጥሉለ፡] (ዘቦቱ፡ ዕፀወ፡) ዘቦቱ፡ አዕፁቀ፡ ዘይነብር፡ ወይሠርፅ፡ [እምዕፅ፡ ዘ*ተመተረ።]
+  language: Geez
+  pages:
+  - 102
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch26.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 26, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/026/001.yaml
+  text: And from there I went to the middle of the earth[a], and I saw a blessed place, shaded[c][b], in which there were trees with abiding and sprouting branches from a tree that had been cut down.
+  footnotes:
+  - marker: a
+    text: The Ethiopic text is difficult in the botanical description. The wording likely refers to shaded, living growth associated with a tree or trees; some details may also be rendered 'with trees' or 'with boughs/shoots.'
+    reason: lexical_alternative
+  - marker: b
+    text: The final clause probably describes fresh growth coming from a tree that had been cut down, though the exact relation of the branches/shoots to the felled tree is textually difficult.
+    reason: textual_variant
+  - marker: c
+    text: Or 'with branches abiding and sprouting'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 1df974484b34b4cae67d2153c69dbdeae18b4226735131a51177840d6180484b
+    timestamp: '2026-04-22T09:10:06Z'
+    output_hash: 42a82f781fcfbc6b5e4dbe20e10d21ea951b4e10086c16a1861889c48ca675f4
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:36:04Z'
+    unchanged: false
+    changes_summary: 'Removed the accidental duplicated text. Smoothed the clause order to read naturally while preserving all elements: blessed/shaded place, trees, branches, and their relation to a tree that had been cut down.'
+translation:
+  language: es
+  text: Y desde allí fui al centro de la tierra[a], y vi un lugar bendito, sombreado[b], en el cual había árboles con ramas que permanecían y brotaban de un árbol que había sido cortado[c].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La expresión apunta a una localización visionaria amplia. También puede entenderse como ‘medio de la tierra’; ‘centro’ conserva bien la imagen geográfica en español.
+    reason: lexical_alternative
+  - marker: b
+    text: 'También puede entenderse como ‘con sombra’ o ‘lleno de sombra’. O: ‘con ramas que permanecían y brotaban’.'
+    reason: previous_rendering
+  - marker: c
+    text: La descripción botánica del etiópico es difícil. La cláusula final probablemente describe crecimiento nuevo que sale de un árbol que había sido cortado, aunque la relación exacta entre los árboles, las ramas o los brotes y el árbol talado es textualmente incierta.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ማእከለ ምድር
+  english_pob_choice: the middle of the earth
+  chosen_spanish: el centro de la tierra
+  alternatives_spanish:
+  - el medio de la tierra
+  - el centro del mundo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Conserva la imagen geográfico-cósmica del recorrido visionario. ‘Tierra’ mantiene el alcance amplio de la escena mejor que ‘país’ o ‘tierra’ en sentido local, y ‘centro’ reproduce con naturalidad la idea de un punto medio.
+- source_word: መካነ ቡሩከ
+  english_pob_choice: a blessed place
+  chosen_spanish: un lugar bendito
+  alternatives_spanish:
+  - un lugar de bendición
+  - una región bendita
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ‘Bendito’ conserva el valor adjetival del término sin convertirlo en una interpretación litúrgica o simbólica más allá del texto. ‘Lugar’ mantiene la referencia concreta a una ubicación.
+- source_word: ጥሉለ
+  english_pob_choice: shaded
+  chosen_spanish: sombreado
+  alternatives_spanish:
+  - con sombra
+  - sombreado por la sombra
+  - lleno de sombra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La forma describe un lugar caracterizado por sombra o cobertura. ‘Sombreado’ es una solución natural en español y conserva la imagen física de resguardo y frescura.
+- source_word: ዕፀወ / አዕፁቀ
+  english_pob_choice: branches
+  chosen_spanish: ramas
+  alternatives_spanish:
+  - árboles
+  - brotes
+  - ramajes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: 'El audit trail inglés reconoció la dificultad botánica y finalmente mantuvo ‘trees’ más ‘branches’. En español, ‘árboles con ramas’ reproduce mejor el sentido explícito del texto revisado: hay árboles y se los describe por sus ramas vivas. ‘Ramas’ es el equivalente más directo de la imagen de crecimiento continuo.'
+- source_word: ዘይነብር ወይሠርፅ
+  english_pob_choice: abiding and sprouting
+  chosen_spanish: que permanecen y brotan
+  alternatives_spanish:
+  - que permanecen y retoñan
+  - que duran y brotan
+  - que subsisten y echan brotes
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La pareja verbal comunica continuidad y crecimiento nuevo. ‘Permanecen’ y ‘brotan’ preservan el contraste entre persistencia y surgimiento vital sin introducir un matiz más técnico de ‘retoñar’ que no es necesario.
+- source_word: እምዕፅ ዘተመተረ
+  english_pob_choice: from a tree that had been cut down
+  chosen_spanish: de un árbol que había sido cortado
+  alternatives_spanish:
+  - de un árbol derribado
+  - de un árbol talado
+  - de un árbol que había sido talado
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: ‘Había sido cortado’ expresa con claridad el hecho previo de la tala sin cargar el pasaje con una elección más específica que el estado del texto permite. Mantiene la relación temporal que la revisión inglesa destacó.
+theological_decisions:
+- issue: Si el pasaje debe resolverse como geografía ordinaria o como imagen sagrada/visionaria
+  english_pob_reading: Retain concrete visionary geography ('middle of the earth,' 'blessed place,' shaded growth) without allegorical expansion.
+  chosen_spanish_reading: Mantener la geografía visionaria concreta (‘centro de la tierra’, ‘lugar bendito’, sombra y crecimiento vegetal) sin nombrar explícitamente el sitio como paraíso o Edén.
+  alternative_spanish_readings:
+  - identificar el lugar como paraíso en el texto principal
+  - generalizarlo como una región fértil cualquiera
+  rationale: El texto no identifica el lugar por nombre; solo presenta una escena visionaria con resonancias sagradas. La traducción conserva esa tensión teológica sin resolverla por anticipado.
+  doctrine_reference: Preservar la tensión teológica en lugar de resolverla.
+translation_notes:
+  revision_awareness: 'La redacción sigue la revisión más reciente del audit trail inglés, que corrigió la omisión de ‘trees’ y estabilizó la relación entre árboles, ramas y el árbol cortado. En español se preserva esa estructura: árboles con ramas que permanecen y brotan, provenientes de un árbol previamente cortado.'
+  spanish_consistency_notes:
+  - Se usa ‘Yahvé’ como forma estándar del proyecto cuando aparezca el nombre divino; aquí no aparece en el versículo.
+  - Se mantiene ‘bendito’ para el estado del lugar, evitando ‘bendecido’ porque el foco es la cualidad del sitio más que una acción verbal.
+  - Se evita introducir ‘paraíso’ o ‘Edén’, porque el original y el audit trail inglés no lo nombran.
+  - La sintaxis intenta ser publicable y fiel, sin sobrecargar el pasaje con glosas dentro del cuerpo del texto.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/026/001.yaml
+  source_text_sha256: af97d5ece093cc535f2618758274c647422aa80636c88a08752fe996b45c8527
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: c1459c8a4dd0ace88c278d2e07a6525e9a239caa98373a9c25e6ba9d6ae0be37
+  timestamp: '2026-05-07T21:27:39Z'
+  output_hash: e96dc1d8aec2d22e8fbfd76dd9fa2a8f414f378e693ecf42b3fc885b9ea6123f
+  usage:
+    prompt_tokens: 3226
+    completion_tokens: 1409
+    total_tokens: 4635
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.00876
+status: spanish_reviewed
+revisions:
+- from: Y desde allí fui al centro de la tierra[a], y vi un lugar bendito, sombreado[b], en el cual había árboles con ramas que permanecen y brotan[c], de un árbol que había sido cortado.
+  to: Y desde allí fui al centro de la tierra[a], y vi un lugar bendito, sombreado[b], en el cual había árboles con ramas que permanecían y brotaban de un árbol que había sido cortado[c].
+  rationale: Se ajustó la cláusula final para que el español exprese con más claridad que el crecimiento descrito procede de un árbol previamente cortado, preservando a la vez la tensión textual reconocida por el audit trail. También se restauró en notas la alternativa de formulación que el inglés POB conserva.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:57:03Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido general del ge''ez y del audit trail inglés: movimiento al centro/medio de la tierra, visión de un lugar bendito y sombreado, presencia de árboles y ramas, y crecimiento que procede de un árbol previamente cortado. Sin embargo, la sintaxis española actual (''árboles con ramas que permanecen y brotan, de un árbol...'') deja ambigua y algo forzada la relación de ''de un árbol que había sido cortado''; conviene ligar con más claridad el origen de las ramas/brotes al árbol cortado, como hace el inglés POB revisado.'
+  spanish_quality_summary: El español es mayormente natural y digno, pero 'sombreado' suena algo mecánico en este contexto y la puntuación/sintaxis final tropieza. 'A la sombra' o 'lleno de sombra' serían posibles, pero 'sombreado' sigue siendo aceptable. La mejora principal es ordenar la frase botánica para que suene idiomática sin perder la dificultad textual.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Bendito' para መካነ ቡሩከ y 'tierra' para ምድር son adecuados. La conservación explícita de 'árboles' más 'ramas' respeta correctamente la revisión adjudicada del inglés POB.
+  issues:
+  - severity: medium
+    issue: Relación sintáctica ambigua de la cláusula final
+    rationale: En 'árboles con ramas que permanecen y brotan, de un árbol que había sido cortado', la frase preposicional final queda colgante y puede parecer modificar a todo el enunciado o solo a 'brotan' de manera poco natural. El audit trail inglés quiere expresar que las ramas/brotes proceden de un árbol cortado.
+  - severity: low
+    issue: Nota a no refleja del todo la cautela del audit trail inglés
+    rationale: La nota inglesa menciona también la dificultad botánica del pasaje en conjunto, no solo la elección 'middle/center'. La nota española actual privilegia la defensa de 'centro', lo cual no es incorrecto, pero podría integrarse mejor con la incertidumbre general.
+  - severity: low
+    issue: Falta una nota equivalente a la alternativa inglesa 'Or with branches abiding and sprouting'
+    rationale: El inglés POB conserva una nota específica sobre una formulación alternativa de la relación entre sombra y ramas. En español conviene mantener una nota que preserve esa alternativa, además de la dificultad textual final.
+  revised_spanish_text: Y desde allí fui al centro de la tierra[a], y vi un lugar bendito, sombreado[b], en el cual había árboles con ramas que permanecían y brotaban de un árbol que había sido cortado[c].
+  revised_footnotes:
+  - marker: a
+    text: La expresión apunta a una localización visionaria amplia. También puede entenderse como ‘medio de la tierra’; ‘centro’ conserva bien la imagen geográfica en español.
+    reason: lexical_alternative
+  - marker: b
+    text: 'También puede entenderse como ‘con sombra’ o ‘lleno de sombra’. O: ‘con ramas que permanecían y brotaban’.'
+    reason: previous_rendering
+  - marker: c
+    text: La descripción botánica del etiópico es difícil. La cláusula final probablemente describe crecimiento nuevo que sale de un árbol que había sido cortado, aunque la relación exacta entre los árboles, las ramas o los brotes y el árbol talado es textualmente incierta.
+    reason: textual_variant
+  revision_rationale: Se ajustó la cláusula final para que el español exprese con más claridad que el crecimiento descrito procede de un árbol previamente cortado, preservando a la vez la tensión textual reconocida por el audit trail. También se restauró en notas la alternativa de formulación que el inglés POB conserva.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: bd13c3438f09f5b055459505e08d9e1871a1a92208d55b93d404506f0003da56
+  timestamp: '2026-05-07T22:57:03Z'
+  output_hash: 9f26ad70bd21a29dbb3b5597899b3b7b5503031027122da78ad2d89c5fe1d4d5
+  usage:
+    prompt_tokens: 4257
+    completion_tokens: 870
+    total_tokens: 5127
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023693
+  applied_revision: true

@@ -1,0 +1,205 @@
+id: 1EN.108.14
+reference: 1 Enoch 108:14
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወ*ይሬ እይዎሙ፡ ለእለ፡ ተወልዱ፡ በጽልመት፡ ይትወደዩ፡ በጽልመት፡ *እንዘ፡ ይትወሐውሑ፡ ጻድቃን።
+  language: Geez
+  pages:
+  - 261
+  - 262
+  - 263
+  - 264
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/108/014.yaml
+  text: And they will see those who were born in darkness cast into darkness[e][d][c][b][a], while the righteous shine.
+  footnotes:
+  - marker: a
+    text: The clause 'being loved in darkness' is textually and semantically difficult. Because the Ge'ez wording appears to derive from a verb of love or affection, the translation keeps that sense in the main text rather than replacing it with a smoother interpretive alternative.
+    reason: textual_variant
+  - marker: b
+    text: Or 'while the righteous were made bright.'
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And I saw'.
+    reason: previous_rendering
+  - marker: d
+    text: Or 'being loved in darkness'.
+    reason: previous_rendering
+  - marker: e
+    text: Or 'were shining'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: edc101af71a2bccc0485a032fab3dbe1a45250abbdd355249c8c5b86c64cec59
+    timestamp: '2026-04-22T09:25:59Z'
+    output_hash: bc32fde25f7c052ab9431fefefe3071ad967b6fc98488d32551f45b7b9a70000
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:39:08Z'
+    unchanged: false
+    changes_summary: Removed 'being' for a more formal, natural rendering; otherwise retained the draft's accurate sense and completeness.
+translation:
+  language: es
+  text: Y verán a los que nacieron en tinieblas, arrojados a las tinieblas, mientras los justos resplandecen[a].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'También: «mientras los justos brillan» o «son iluminados».'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ወይሬ
+  english_pob_choice: And they will see
+  chosen_spanish: Y verán
+  alternatives_spanish:
+  - Y vieron
+  - Y mirarán
+  lexicon: Dillmann
+  rationale: La forma verbal etiópica es futura en tercera persona plural; por eso el español debe expresar acción futura, no un pasado. «Verán» conserva el valor escénico de la visión apocalíptica.
+- source_word: እይዎሙ ለእለ ተወልዱ በጽልመት
+  english_pob_choice: those who were born in darkness
+  chosen_spanish: a los que fueron nacidos en tinieblas
+  alternatives_spanish:
+  - a los nacidos en tinieblas
+  - a los que nacieron en tinieblas
+  lexicon: Dillmann
+  rationale: El giro relativo señala a un grupo definido por su origen en la oscuridad. «Fueron nacidos» conserva el matiz pasivo de la construcción, mientras que «en tinieblas» mantiene la repetición enfática del original.
+- source_word: ይትወደዩ በጽልመት
+  english_pob_choice: being loved in darkness
+  chosen_spanish: arrojados a las tinieblas
+  alternatives_spanish:
+  - echados a las tinieblas
+  - lanzados a las tinieblas
+  lexicon: Dillmann
+  rationale: 'La revisión gramatical muestra que el verbo no es ‘amar’, sino un pasivo de ‘arrojar/poner’. Por eso el español debe expresar juicio y movimiento hacia la oscuridad: «arrojados a las tinieblas».'
+- source_word: በጽልመት
+  english_pob_choice: in darkness
+  chosen_spanish: a las tinieblas
+  alternatives_spanish:
+  - en tinieblas
+  - en la oscuridad
+  lexicon: Dillmann
+  rationale: En esta cláusula el valor de la preposición es direccional, no meramente locativo; por eso «a las tinieblas» refleja mejor el destino de los sujetos que «en tinieblas».
+- source_word: እንዘ ይትወሐውሑ
+  english_pob_choice: while ... were shining
+  chosen_spanish: mientras los justos resplandecen
+  alternatives_spanish:
+  - mientras los justos brillan
+  - mientras los justos están resplandeciendo
+  lexicon: Dillmann
+  rationale: El verbo imperfectivo en cláusula circunstancial pide un presente de escena o un presente atemporal en español. «Resplandecen» mantiene la imagen luminosa y el contraste con tinieblas.
+- source_word: ጻድቃን
+  english_pob_choice: the righteous
+  chosen_spanish: los justos
+  alternatives_spanish:
+  - los rectos
+  - los justos
+  lexicon: Dillmann
+  rationale: «Los justos» es la equivalencia estable para este término en contextos enóquicos y conserva la categoría moral y comunitaria del original.
+theological_decisions:
+- issue: La cláusula difícil sobre los que están asociados con tinieblas
+  english_pob_reading: The English POB preserved the difficult wording 'being loved in darkness' to avoid smoothing the text into a conventional judgment formula.
+  chosen_spanish_reading: La traducción española sigue la revisión gramatical del ge'ez y expresa la sentencia con 'arrojados a las tinieblas'.
+  alternative_spanish_readings:
+  - siendo amados en tinieblas
+  - siendo guardados en tinieblas
+  - abandonados a las tinieblas
+  rationale: La evidencia textual revisada indica que el verbo corresponde a 'arrojar/poner', no a 'amar'. En español no sería fiel conservar una lectura basada en un falso cognado; por eso se adopta la lectura corregida y se mantiene la imagen de condena en el movimiento hacia las tinieblas.
+  doctrine_reference: 'Principio editorial POB: priorizar la gramática del texto fuente y no preservar una falsa dificultad cuando la revisión crítica la ha resuelto.'
+- issue: La temporalidad de la visión
+  english_pob_reading: The English POB used 'And they will see' after revision from the earlier first-person rendering.
+  chosen_spanish_reading: «Y verán»
+  alternative_spanish_readings:
+  - Y verán
+  - Y verán ellos
+  rationale: El español debe seguir el sujeto plural y el valor futuro del verbo etiópico. La forma simple «Y verán» es la más natural y fiel al informe visionario.
+  doctrine_reference: 'Principio editorial POB: mantener la referencia verbal corregida por la revisión textual.'
+translation_notes:
+  revision_awareness: 'La base inglesa pasó por correcciones importantes: la forma verbal inicial se corrigió de un supuesto pasado en primera persona a un futuro en tercera persona plural; además, el segmento difícil ya no se entiende como ''being loved in darkness'', sino como ''cast into darkness''. La versión española adopta esas correcciones críticas y evita reproducir el error de lectura anterior.'
+  spanish_consistency_notes:
+  - He usado «tinieblas» en lugar de alternar con «oscuridad» para conservar la repetición del original y el registro bíblico.
+  - He mantenido «los justos» como término técnico estable para ጻድቃን.
+  - He evitado «Cristo» o fórmulas eclesiásticas porque este versículo no las exige.
+  - La puntuación sigue un único período coordinado con contraste final, adecuado al tono apocalíptico.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/108/014.yaml
+  source_text_sha256: a0ff0f5431fafdf0fb55805347d43dac3f58c56a580b08c3b4f17f50eb7d88fc
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 2a47b3e1e3199b745abe9a71a3346219132d680453e701f79429239052b6f4e9
+  timestamp: '2026-05-07T21:27:42Z'
+  output_hash: 75da9f2169f85f31c549f3907be134a592f00b3ca26cbc8d437cb274fc2e9475
+  usage:
+    prompt_tokens: 3591
+    completion_tokens: 1374
+    total_tokens: 4965
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008876
+status: spanish_reviewed
+revisions:
+- from: Y verán a los que fueron nacidos en tinieblas[a], arrojados a las tinieblas, mientras los justos resplandecen[b].
+  to: Y verán a los que nacieron en tinieblas, arrojados a las tinieblas, mientras los justos resplandecen[a].
+  rationale: Se corrige el único problema importante de estilo y fidelidad funcional en español, reemplazando el calco «fueron nacidos» por «nacieron». Se elimina una nota redundante y se conserva solo una nota léxica útil sobre el verbo final, formulada con alternativas naturales en español. No se requiere nueva adjudicación porque el sentido fuente ya fue resuelto en el historial inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:47:19Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente las revisiones adjudicadas del ge''ez: «Y verán» refleja el imperfecto plural; «arrojados a las tinieblas» refleja bien el pasivo de ‘arrojar’ con sentido direccional; y «mientras los justos resplandecen» preserva el contraste aspectual y la imagen luminosa. El único desajuste relevante con el sentido y el estilo natural del español está en «fueron nacidos», que suena calcado e innecesariamente rígido para expresar ተወልዱ.'
+  spanish_quality_summary: El texto es claro y mayormente fiel, pero «a los que fueron nacidos en tinieblas» es poco idiomático en español moderno y eclesial. «A los que nacieron en tinieblas» o «a los nacidos en tinieblas» comunica el mismo sentido con mejor legibilidad. Además, la nota [a] es prescindible porque no aporta una alternativa significativa preservada del POB; y la nota [b] conviene simplificarla para evitar la forma extraña «son resplandecidos».
+  glossary_alignment: '«Los justos» es adecuado para ጻድቃን y encaja con la terminología del proyecto. No hay conflicto con las pautas principales del glosario. El uso de «tinieblas» es apropiado y digno. '
+  issues:
+  - severity: medium
+    issue: 'Calco no natural: «fueron nacidos».'
+    rationale: Aunque intenta reflejar el pasivo del ge'ez, en español moderno esta formulación es torpe. «Nacieron» o «los nacidos» preserva suficientemente la idea de origen sin sacrificar naturalidad ni fidelidad.
+  - severity: low
+    issue: Nota [a] innecesaria.
+    rationale: La expresión «nacidos en tinieblas» ya aparece con claridad en el texto; la nota repite la idea sin resolver ambigüedad ni preservar una alternativa importante del aparato inglés.
+  - severity: low
+    issue: 'Alternativa de nota [b] poco idiomática: «son resplandecidos».'
+    rationale: Esa opción suena antinatural en español. Si se conserva una nota, conviene limitarla a alternativas naturales como «brillan» o «son iluminados».
+  revised_spanish_text: Y verán a los que nacieron en tinieblas, arrojados a las tinieblas, mientras los justos resplandecen[a].
+  revised_footnotes:
+  - marker: a
+    text: 'También: «mientras los justos brillan» o «son iluminados».'
+    reason: lexical_alternative
+  revision_rationale: Se corrige el único problema importante de estilo y fidelidad funcional en español, reemplazando el calco «fueron nacidos» por «nacieron». Se elimina una nota redundante y se conserva solo una nota léxica útil sobre el verbo final, formulada con alternativas naturales en español. No se requiere nueva adjudicación porque el sentido fuente ya fue resuelto en el historial inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 635dd22597691cc2c9b1b798cc5fec68f1fc6b80218452e5eca5480cbf2d6529
+  timestamp: '2026-05-07T23:47:19Z'
+  output_hash: 35b15c97df3c3333fffd0206eb9ad916b1ca019a360a2325ee7d3b1942bf465a
+  usage:
+    prompt_tokens: 4610
+    completion_tokens: 707
+    total_tokens: 5317
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02213
+  applied_revision: true

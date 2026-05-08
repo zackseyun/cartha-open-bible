@@ -1,0 +1,217 @@
+id: 1EN.77.5
+reference: 1 Enoch 77:5
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ፯*አፍላገ፡ ዲበ፡ ምድር፡ *ርኢኩ፡ ዓበይተ፡ እምኵሎሙ፡ አፍላገ፡ አሐዱ፡ እምኔሆሙ፡ ይመጽእ፡ እምዓረብ፡ ውስተ፡ ባሕር፡ ዐቢይ፡ ይከዑ፡ ማዮ።
+  language: Geez
+  pages:
+  - 184
+  - 185
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/077/005.yaml
+  text: And I saw seven rivers upon the earth[a], greater than all the rivers[b]; and one of them comes from the west and pours its waters into the Great Sea.
+  footnotes:
+  - marker: a
+    text: Or 'into the great sea.' The phrase may be read either as a geographic designation ('the Great Sea') or as a descriptive expression.
+    reason: lexical_alternative
+  - marker: b
+    text: Or 'And I saw rivers upon the earth'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 4a37a4ed629ff809d8248579b42ab4bde060fe0211e32eec28d61bd8097eaed3
+    timestamp: '2026-04-22T09:17:55Z'
+    output_hash: 7ec3d5560ca9426270ac7112abd5add916671b5676bc44aa43e75b9fb6799f37
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:05Z'
+    unchanged: false
+    changes_summary: Removed the accidental duplicated clause at the end. Retained the translation otherwise, which accurately and naturally reflects the source.
+translation:
+  language: es
+  text: Y vi siete ríos sobre la tierra, más grandes que todos los ríos[b]; y uno de ellos viene del occidente y derrama sus aguas en el Gran Mar[a].
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «en el gran mar». La frase puede leerse como una designación geográfica («el Gran Mar») o como una expresión descriptiva.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «Y vi ríos sobre la tierra».'
+    reason: previous_rendering
+lexical_decisions:
+- source_word: ፯ / seven
+  english_pob_choice: seven rivers
+  chosen_spanish: siete ríos
+  alternatives_spanish:
+  - siete corrientes
+  - siete cauces
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El numeral es explícito en el texto ge'ez y debe conservarse. 'Ríos' mantiene la imagen hidrográfica amplia usada por la POB en inglés, sin debilitar el dato numérico.
+- source_word: አፍላገ
+  english_pob_choice: rivers
+  chosen_spanish: ríos
+  alternatives_spanish:
+  - corrientes
+  - arroyos
+  - cauces
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El sustantivo plural denota ríos o corrientes de agua. 'Ríos' es la opción más natural en español y encaja con la comparación cósmico-geográfica del pasaje.
+- source_word: ዲበ ምድር
+  english_pob_choice: upon the earth
+  chosen_spanish: sobre la tierra
+  alternatives_spanish:
+  - sobre la tierra
+  - en la tierra
+  - por toda la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La locución locativa se vierte de modo directo. 'Sobre la tierra' conserva el registro visionario y evita una paráfrasis excesiva.
+- source_word: ርኢኩ
+  english_pob_choice: I saw
+  chosen_spanish: vi
+  alternatives_spanish:
+  - vi en visión
+  - contemplé
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La primera persona narrativa ya comunica la experiencia visionaria. 'Vi' es más natural en español; el contexto apocalíptico ya sugiere visión sin necesidad de añadirlo.
+- source_word: ዓበይተ እምኵሎሙ አፍላገ
+  english_pob_choice: greater than all the rivers
+  chosen_spanish: más grandes que todos los ríos
+  alternatives_spanish:
+  - mayores que todos los ríos
+  - más grandes que todas las corrientes
+  - más poderosos que todos los ríos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El comparativo expresa superioridad de magnitud; 'más grandes' mantiene la amplitud semántica sin forzar a 'poderosos', que sería más interpretativo.
+- source_word: አሐዱ እምኔሆሙ
+  english_pob_choice: one of them
+  chosen_spanish: uno de ellos
+  alternatives_spanish:
+  - uno entre ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Es una expresión partititiva simple. 'Uno de ellos' resulta idiomático y fiel al sentido.
+- source_word: ይመጽእ እምዓረብ
+  english_pob_choice: comes from the west
+  chosen_spanish: viene del occidente
+  alternatives_spanish:
+  - viene del oeste
+  - proviene del occidente
+  - sale del occidente
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Occidente'' es una elección digna y precisa para un registro bíblico en español. Conserva la dirección geográfica del original sin perder claridad.'
+- source_word: ውስተ ባሕር ዐቢይ
+  english_pob_choice: into the Great Sea
+  chosen_spanish: en el Gran Mar
+  alternatives_spanish:
+  - en el gran mar
+  - hacia el Gran Mar
+  - en el Mar Grande
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La POB en inglés trata la expresión como designación geográfica. 'Gran Mar' preserva esa posible nominalización; el artículo definido mantiene la referencia concreta a un mar conocido.
+- source_word: ይከዑ ማዮ
+  english_pob_choice: pours its waters
+  chosen_spanish: derrama sus aguas
+  alternatives_spanish:
+  - vacía sus aguas
+  - deposita sus aguas
+  - vierte sus aguas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo describe el flujo del río hacia el mar. 'Derrama sus aguas' conserva la imagen concreta y suena natural en español bíblico contemporáneo.
+theological_decisions:
+- issue: Tratamiento de 'Gran Mar' como nombre geográfico o descripción genérica
+  english_pob_reading: Great Sea
+  chosen_spanish_reading: Gran Mar
+  alternative_spanish_readings:
+  - gran mar
+  - el Gran Mar como designación geográfica
+  rationale: La evidencia contextual y la decisión auditada de la POB inglesa favorecen entender la expresión como designación geográfica reconocible, no como mera descripción. En español, 'Gran Mar' conserva esa posibilidad sin imponer una explicación extra.
+  doctrine_reference: 'Principio de transparencia textual: preservar la ambigüedad controlada y documentarla en lugar de normalizarla.'
+translation_notes:
+  revision_awareness: 'La revisión inglesa más reciente corrigió una omisión importante: el número explícito «siete» al comienzo del versículo. También eliminó una duplicación accidental al final. La presente redacción española incorpora el número y conserva el resto de la cláusula completa sin duplicaciones.'
+  spanish_consistency_notes:
+  - Se mantiene 'ríos' para አፍლაგ཈ en coherencia con la decisión inglesa y con el tono geográfico del pasaje.
+  - Se usa 'occidente' para reflejar la dirección de origen con un registro bíblico natural en español.
+  - '''Gran Mar'' se capitaliza para reflejar la posible designación geográfica, siguiendo la lectura auditada en inglés.'
+  - El texto evita introducir explicaciones interpretativas no presentes en la fuente, salvo las notas de alternativa léxica necesarias.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/077/005.yaml
+  source_text_sha256: 4d488f9d58b68b4249a024650575b727e2dfab77438b834624b6748b3c63ef37
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 359aa84068775d8f581e5a65e80cae5db8ab64243c2630965a7a2e7521aa2f27
+  timestamp: '2026-05-07T21:27:40Z'
+  output_hash: 36ce3ad78b74172d8885ad2a1b33b6a9a9abf8bb9d56c0cb5d0e25a20159f4de
+  usage:
+    prompt_tokens: 3039
+    completion_tokens: 1472
+    total_tokens: 4511
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.008903
+status: spanish_reviewed
+revisions:
+- from: Y vi siete ríos sobre la tierra[a], más grandes que todos los ríos[b]; y uno de ellos viene del occidente y derrama sus aguas en el Gran Mar.
+  to: Y vi siete ríos sobre la tierra, más grandes que todos los ríos[b]; y uno de ellos viene del occidente y derrama sus aguas en el Gran Mar[a].
+  rationale: Se conserva la traducción base porque es fiel y natural, pero se corrige la ubicación del marcador [a] para que ancle correctamente 'Gran Mar', que es el elemento explicado por la nota. También se armoniza la razón de la nota [b] con la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T22:47:57Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien el sentido principal del ge''ez y la auditoría inglesa: el numeral ''siete'', la localización ''sobre la tierra'', la comparación con todos los ríos, el origen desde el occidente y el flujo hacia el Gran Mar. Sin embargo, la nota [a] está mal anclada: en el texto español aparece sobre ''la tierra'', pero su contenido trata la ambigüedad de ''Gran Mar''.'
+  spanish_quality_summary: 'El español es claro, natural y de registro digno. ''Vi'', ''uno de ellos viene del occidente'' y ''derrama sus aguas'' son opciones legibles y fieles. ''Más grandes'' es aceptable, aunque ''mayores'' también habría funcionado. El problema principal es editorial: la nota [a] debe moverse a ''Gran Mar''.'
+  glossary_alignment: No hay términos del glosario teológico principal en juego. La decisión 'Gran Mar' concuerda con la auditoría inglesa como posible designación geográfica, y la alternativa en nota debe conservarse. No se observan conflictos con la terminología POB.
+  issues:
+  - severity: medium
+    issue: La nota [a] está colocada en el lugar equivocado.
+    rationale: El marcador [a] aparece después de 'la tierra', pero la nota explica la ambigüedad de 'Gran Mar'/'gran mar'. Esto rompe la correspondencia obligatoria entre ancla y nota.
+  - severity: low
+    issue: La razón de la nota [b] no coincide exactamente con la auditoría inglesa.
+    rationale: La nota inglesa [b] se clasifica como previous_rendering, mientras que el borrador español la marca como textual_variant. No afecta el texto traducido, pero conviene armonizar la documentación.
+  revised_spanish_text: Y vi siete ríos sobre la tierra, más grandes que todos los ríos[b]; y uno de ellos viene del occidente y derrama sus aguas en el Gran Mar[a].
+  revised_footnotes:
+  - marker: a
+    text: 'O: «en el gran mar». La frase puede leerse como una designación geográfica («el Gran Mar») o como una expresión descriptiva.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «Y vi ríos sobre la tierra».'
+    reason: previous_rendering
+  revision_rationale: Se conserva la traducción base porque es fiel y natural, pero se corrige la ubicación del marcador [a] para que ancle correctamente 'Gran Mar', que es el elemento explicado por la nota. También se armoniza la razón de la nota [b] con la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 23f82f1cc7c9fd57ef86a1740da92c23b9103c9b8cbd370e8a6ba175c7b06454
+  timestamp: '2026-05-07T22:47:57Z'
+  output_hash: c679706b2a395b45516b11ca2397069ad3fd0e47c334ac41262692100f5d6120
+  usage:
+    prompt_tokens: 4185
+    completion_tokens: 592
+    total_tokens: 4777
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019342
+  applied_revision: true

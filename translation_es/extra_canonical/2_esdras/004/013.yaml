@@ -1,0 +1,150 @@
+id: 2ES.4.13
+reference: 2 Esdras 4:13
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'profectus sum ad siluam lignorum campi, et cogitauerunt cogitationem, Et dixerunt: uenite et eamus et faciamus ad'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/004/013.yaml
+  text: I went out to a forest of the trees of the plain[a], and they devised a plan, and said, 'Come[b], let us go and make
+  footnotes:
+  - marker: a
+    text: Or '“Once I went out into a forest'.
+    reason: previous_rendering
+  - marker: b
+    text: Or 'and they formed a plan,'.
+    reason: previous_rendering
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:30Z'
+    unchanged: false
+    changes_summary: Changed 'formed a plan' to 'devised a plan' for a more natural and idiomatic rendering of cogitauerunt cogitationem. Left the final clause incomplete to match the source and draft.
+translation:
+  language: es
+  text: 'Salí[a] a un bosque de los árboles de la llanura, y ellos idearon un plan[b], y dijeron: «Venid, vayamos y hagamos'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'O: «Salí una vez a un bosque».'
+    reason: alternative_reading
+  - marker: b
+    text: 'O: «y formaron un plan».'
+    reason: alternative_reading
+lexical_decisions:
+- source_word: profectus sum
+  english_pob_choice: I went out
+  chosen_spanish: Salí
+  alternatives_spanish:
+  - Me fui
+  - Partí
+  lexicon: Latin proficiscor / perfect tense
+  rationale: El perfecto latino expresa una acción pasada simple sin añadir 'una vez'; 'salí' comunica de forma natural que el narrador partió o salió, sin sobreinterpretar el valor temporal.
+- source_word: siluam lignorum campi
+  english_pob_choice: a forest of the trees of the plain
+  chosen_spanish: un bosque de los árboles de la llanura
+  alternatives_spanish:
+  - un bosque de árboles de la llanura
+  - un bosque en la llanura
+  lexicon: Latin silva + lignorum campi
+  rationale: Mantengo la relación literal entre 'bosque' y 'árboles de la llanura', porque el giro es extraño pero transparente en el latín y no conviene suavizarlo sin base textual.
+- source_word: cogitauerunt cogitationem
+  english_pob_choice: they devised a plan
+  chosen_spanish: maquinaban un plan
+  alternatives_spanish:
+  - devisaron un plan
+  - concebían un plan
+  lexicon: Latin cogitare + cognate object
+  rationale: La construcción latina es un cognado enfático. 'Maquinaban un plan' conserva el sentido de idear/conspirar con algo de tensión, acorde con el contexto narrativo, sin perder la fuerza del objeto interno.
+- source_word: 'Et dixerunt: uenite et eamus et faciamus'
+  english_pob_choice: and said, 'Come, let us go and make
+  chosen_spanish: 'y dijeron: «Venid, vamos y hagamos'
+  alternatives_spanish:
+  - 'y dijeron: «Venid, vayamos y hagamos'
+  - 'y dijeron: «Venid, idnos y hagamos'
+  lexicon: Latin venite / eamus / faciamus
+  rationale: Conservo el imperativo plural 'Venid' y los cohortativos con 'vamos' y 'hagamos' para reflejar la secuencia exhortativa del latín. Dejo la cláusula abierta porque el testimonio fuente termina en 'faciamus ad'.
+theological_decisions:
+- issue: Tratamiento del nombre divino y títulos cristológicos
+  english_pob_reading: Not applicable in this verse
+  chosen_spanish_reading: No aplica en este versículo
+  alternative_spanish_readings:
+  - Yahvé
+  - Cristo
+  rationale: No aparecen términos divinos ni cristológicos en el texto fuente de este versículo; por tanto, no se introduce terminología confesional ajena al pasaje.
+  doctrine_reference: None
+translation_notes:
+  revision_awareness: La versión inglesa auditada retiró 'Once' por no estar sustentado por el latín y prefirió 'devised a plan' para cogitauerunt cogitationem. También retuvo la cláusula final incompleta para ajustarse al texto fuente; la versión española sigue esas decisiones y conserva la apertura sintáctica.
+  spanish_consistency_notes:
+  - He mantenido el registro bíblico sobrio y legible en español.
+  - He conservado la incompletud final de la frase para respetar el testimonio latino dado.
+  - Los marcadores de nota aparecen exactamente en el texto español en los dos puntos anotados.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/004/013.yaml
+  source_text_sha256: 50e21b989acdc32de46557c9a0ad4eadb645d2095d17ce8186073efb22e5b141
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 570ca5bd114f44fe5907355191e806baaaeec53412da97d4b1e5d932caa9d3c2
+  timestamp: '2026-05-07T21:28:50Z'
+  output_hash: 799af3b9c2359aa5e537d7d5bb46a813bfc6d576a1e362d609acbc253ea2abf2
+  usage:
+    prompt_tokens: 2381
+    completion_tokens: 840
+    total_tokens: 3221
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005566
+status: spanish_reviewed
+revisions:
+- from: 'Salí[a] a un bosque de los árboles de la llanura, y ellos maquinaban un plan[b], y dijeron: «Venid, vamos y hagamos'
+  to: 'Salí[a] a un bosque de los árboles de la llanura, y ellos idearon un plan[b], y dijeron: «Venid, vayamos y hagamos'
+  rationale: Se corrige `cogitauerunt` de imperfecto a perfecto en español y se sustituye «maquinaban» por «idearon» para una equivalencia más natural y menos cargada. También se ajusta «vamos» a «vayamos» para reflejar mejor el cohortativo latino `eamus` y mantener coherencia con «Venid». Se conservan la literalidad de «bosque de los árboles de la llanura», la nota sobre «una vez» como alternativa histórica, y la cláusula final abierta conforme al texto fuente y la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:21:37Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue de cerca el latín: `profectus sum` = «Salí», `siluam lignorum campi` se conserva con literalidad razonable, y la cláusula final incompleta `Et dixerunt: uenite et eamus et faciamus` se mantiene en este versículo, como exige la auditoría inglesa. Sin embargo, `cogitauerunt cogitationem` está en perfecto y el español «maquinaban» lo pasa indebidamente a imperfecto.'
+  spanish_quality_summary: El español es generalmente legible, pero «ellos maquinaban un plan» suena menos natural aquí y además introduce aspecto verbal incorrecto. También conviene evitar la mezcla de registro entre «Venid» y «vamos»; «vayamos» refleja mejor el cohortativo latino y mantiene coherencia con el tratamiento plural. «Bosque de los árboles de la llanura» es algo extraño, pero aceptable por fidelidad al original.
+  glossary_alignment: 'No hay términos del glosario teológico principal en este versículo. La revisión propuesta respeta la filosofía de equivalencia óptima y las decisiones auditadas en inglés: no añadir «una vez» al texto principal y conservar la frase incompleta al final del versículo.'
+  issues:
+  - severity: medium
+    issue: Tiempo verbal incorrecto en «maquinaban un plan»
+    rationale: 'El latín `cogitauerunt` es perfecto, no imperfecto. Debe expresarse como acción puntual pasada: «tramaron», «idearon» o similar.'
+  - severity: low
+    issue: Alternativa menos natural y algo sesgada en «maquinaban»
+    rationale: «Maquinar» puede sugerir intriga maliciosa más fuerte de lo que exige el latín. «Idearon» o «tramaron» comunican mejor el sentido de planear.
+  - severity: low
+    issue: Incoherencia de tratamiento en «Venid, vamos»
+    rationale: Con imperativo plural «Venid», el siguiente exhortativo suena más congruente como «vayamos». Además refleja mejor `eamus`.
+  revised_spanish_text: 'Salí[a] a un bosque de los árboles de la llanura, y ellos idearon un plan[b], y dijeron: «Venid, vayamos y hagamos'
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Salí una vez a un bosque».'
+    reason: alternative_reading
+  - marker: b
+    text: 'O: «y formaron un plan».'
+    reason: alternative_reading
+  revision_rationale: Se corrige `cogitauerunt` de imperfecto a perfecto en español y se sustituye «maquinaban» por «idearon» para una equivalencia más natural y menos cargada. También se ajusta «vamos» a «vayamos» para reflejar mejor el cohortativo latino `eamus` y mantener coherencia con «Venid». Se conservan la literalidad de «bosque de los árboles de la llanura», la nota sobre «una vez» como alternativa histórica, y la cláusula final abierta conforme al texto fuente y la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 4ed03475e2e4e0bfd22120a750d94c98408223d490fedd91100b96e58b03b229
+  timestamp: '2026-05-07T23:21:37Z'
+  output_hash: 3ec909d5e0996b27841a9f0b50b1e64da492a977d0ae78097f3a53c20447e988
+  usage:
+    prompt_tokens: 2813
+    completion_tokens: 712
+    total_tokens: 3525
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017712
+  applied_revision: true

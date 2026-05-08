@@ -1,0 +1,223 @@
+id: 1EN.101.8
+reference: 1 Enoch 101:8
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: አኮኑ፡ ውእቱ፡ ገብረ፡ ሰማየ፡ ወምድረ፡ ወኵሎ፡ ዘ*ሀሎ፡ ውስቴቶሙ፡ መኑ፡ ወሀበ፡ *ትምህርተ፡ ወጥበበ፡ ለኵሉ፡ እለ፡ ይትኀወሱ፡ ዲበ፡ ምድር፡ ወ*ለእለ፡ ባሕር።
+  language: Geez
+  pages:
+  - 248
+  - 249
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/101/008.yaml
+  text: Was it not he who made heaven and earth and everything that is in them? Who gave instruction and wisdom to all who move upon the earth and to those in the sea?[a][b][c]
+  footnotes:
+  - marker: a
+    text: Or 'all that is within them.'
+    reason: lexical_alternative
+  - marker: b
+    text: The phrase 'those at sea' may refer to seafarers or, more broadly, those associated with the sea; the Ge'ez is concise.
+    reason: lexical_alternative
+  - marker: c
+    text: Or 'And who gave'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 65e8dac876f0f2274752a8ca75ad8191aba4057b327c9b7530fe8e225e8b5f3e
+    timestamp: '2026-04-22T09:24:17Z'
+    output_hash: 3085c7ff6a11613c631ab3a24bd8b0528fdfad2d3e090168ae59820b18bfab13
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:38:51Z'
+    unchanged: false
+    changes_summary: Changed 'at sea' to 'in the sea' for closer alignment with the source while preserving natural formal English. No other changes needed.
+translation:
+  language: es
+  text: ¿No fue él quien hizo el cielo y la tierra y todo lo que hay en ellos? ¿Quién fue el que dio instrucción y sabiduría a todos los que se mueven sobre la tierra y a los que están en el mar?[a][b]
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'También: «y todo lo que está dentro de ellos».'
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión «los que están en el mar» puede aludir a marineros o, de manera más amplia, a quienes están asociados con el mar; el ge'ez es conciso.
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: አኮኑ
+  english_pob_choice: Was it not
+  chosen_spanish: ¿No fue
+  alternatives_spanish:
+  - ¿No es
+  - ¿No fue acaso
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La pregunta retórica en ge'ez espera asentimiento; en español, el pretérito mantiene la referencia a la acción ya realizada de crear y dar, y conserva el tono enfático sin añadir materia interpretativa.
+- source_word: ገብረ
+  english_pob_choice: made
+  chosen_spanish: hizo
+  alternatives_spanish:
+  - creó
+  - fabricó
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo es amplio y no exige el término técnico 'crear'. 'Hizo' reproduce esa amplitud y funciona naturalmente en español con el paralelismo de la pregunta retórica.
+- source_word: ሰማየ ወምድረ
+  english_pob_choice: heaven and earth
+  chosen_spanish: el cielo y la tierra
+  alternatives_spanish:
+  - los cielos y la tierra
+  - el cielo y la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En español, el singular colectivo 'el cielo y la tierra' es idiomático y conserva la merisma de toda la creación. Evita una pluralización no exigida por el ge'ez.
+- source_word: ወኵሎ ዘሀሎ ውስቴቶሙ
+  english_pob_choice: and everything that is in them
+  chosen_spanish: y todo lo que hay en ellos
+  alternatives_spanish:
+  - y todo lo que está en ellos
+  - y todo cuanto hay dentro de ellos
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La frase totalizante se traduce de forma natural sin perder el referente a 'el cielo y la tierra'. 'Hay en ellos' mantiene amplitud y evita un giro forzado.
+- source_word: ወሀበ
+  english_pob_choice: gave
+  chosen_spanish: dio
+  alternatives_spanish:
+  - ha dado
+  - otorgó
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El perfecto simple coordina bien con 'hizo' y reproduce la secuencia de acciones pasadas en la pregunta retórica.
+- source_word: ትምህርተ
+  english_pob_choice: instruction
+  chosen_spanish: instrucción
+  alternatives_spanish:
+  - enseñanza
+  - dirección
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Instrucción'' conserva el sentido de enseñanza impartida o guía comunicada, más cercano al sustantivo ge''ez que un abstracto como ''conocimiento''.'
+- source_word: ጥበበ
+  english_pob_choice: wisdom
+  chosen_spanish: sabiduría
+  alternatives_spanish:
+  - entendimiento
+  - prudencia
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Sabiduría'' es la equivalencia más natural y teológicamente reconocible en este contexto sapiencial-apocalíptico.'
+- source_word: ለኵሉ እለ ይትኀወሱ ዲበ ምድር
+  english_pob_choice: to all who move upon the earth
+  chosen_spanish: a todos los que se mueven sobre la tierra
+  alternatives_spanish:
+  - a todos los que caminan sobre la tierra
+  - a todos los que habitan sobre la tierra
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''Se mueven'' refleja el matiz amplio del verbo, que sugiere desplazamiento o actividad, no solo residencia. Conserva la amplitud del destinatario sin restringirlo a humanos.'
+- source_word: ወለእለ ባሕር
+  english_pob_choice: and to those in the sea
+  chosen_spanish: y a los que están en el mar
+  alternatives_spanish:
+  - y a los que están en el mar
+  - y a los que están en el mar o asociados al mar
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: '''En el mar'' sigue de cerca la revisión inglesa más reciente y mantiene el contraste con los que se mueven sobre la tierra. En español, ''mar'' es más natural que ''marino'' o una explicación más extensa.'
+theological_decisions:
+- issue: Alcance de los destinatarios de la instrucción y la sabiduría
+  english_pob_reading: to all who move upon the earth and to those in the sea
+  chosen_spanish_reading: a todos los que se mueven sobre la tierra y a los que están en el mar
+  alternative_spanish_readings:
+  - a todas las personas sobre la tierra y en el mar
+  - a todas las criaturas de la tierra y del mar
+  rationale: La formulación mantiene la amplitud del ge'ez y no restringe de antemano el alcance a humanos ni lo amplía explícitamente a todas las criaturas. Así se preserva la tensión interpretativa del texto.
+  doctrine_reference: Translation philosophy §3 preserve theological tension rather than resolve it
+- issue: Verbo para la acción creadora
+  english_pob_reading: made
+  chosen_spanish_reading: hizo
+  alternative_spanish_readings:
+  - creó
+  - fabricó
+  rationale: '''Hizo'' sigue el valor amplio del verbo ge''ez y evita introducir una precisión doctrinal que el término fuente no obliga a expresar. En el contexto, la pregunta afirma a Dios como autor de todo lo existente sin tecnicismo adicional.'
+  doctrine_reference: Translation philosophy §1 original-language primacy over translation tradition
+translation_notes:
+  revision_awareness: La redacción sigue la revisión más reciente que eliminó la conjunción inicial en la segunda pregunta por falta de base en el ge'ez; por eso se traduce «¿Quién dio...?» sin añadir «Y». También se alinea con la última revisión inglesa al usar «en el mar» para el contraste final, manteniendo la lectura amplia del pasaje.
+  spanish_consistency_notes:
+  - Se mantiene «Dios» implícito por el contexto interrogativo sin agregar el sujeto explícito, de acuerdo con la retórica de la pregunta.
+  - Se eligió «sabiduría» en vez de «entendimiento» para conservar la pareja léxica natural con «instrucción».
+  - La frase «el cielo y la tierra» se usa como merisma bíblica estándar y suena natural en español contemporáneo.
+  - No se introdujo la forma tradicional «SEÑOR» ni «Cristo», porque el texto no lo requiere y el pasaje trata del creador universal.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/101/008.yaml
+  source_text_sha256: 38a74add9853080362f89aad76679b159acecf52e5251c7464500842c2bd8fc6
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: 6f0e91e243640cdab02237ac4bd9cc1cec05a57c0e4c45065a020e086c21acb4
+  timestamp: '2026-05-07T21:28:07Z'
+  output_hash: f8fb4039e80383810b7be6e110de801fda8c0706ad20a124bc8b6266506d9836
+  usage:
+    prompt_tokens: 3254
+    completion_tokens: 1709
+    total_tokens: 4963
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.010131
+status: spanish_reviewed
+revisions:
+- from: ¿No fue él quien hizo el cielo y la tierra y todo lo que hay en ellos? ¿Quién dio instrucción y sabiduría a todos los que se mueven sobre la tierra y a los que están en el mar?[a][b][c]
+  to: ¿No fue él quien hizo el cielo y la tierra y todo lo que hay en ellos? ¿Quién fue el que dio instrucción y sabiduría a todos los que se mueven sobre la tierra y a los que están en el mar?[a][b]
+  rationale: Se ajusta la segunda pregunta a «¿Quién fue el que dio…?» para conservar en español la continuidad retórica con el antecedente ya introducido («él») y evitar que suene como una pregunta independiente de identificación. Se elimina la nota c porque documenta una alternativa («¿y quién dio?») que la auditoría inglesa ya descartó por no corresponder al ge'ez. Se mantienen las demás decisiones léxicas y notas, que son fieles y naturales.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:49:25Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura retórica y las decisiones principales del ge''ez: «¿No fue él quien hizo…?» preserva አኮኑ + ገብረ, «el cielo y la tierra» reproduce la merisma, y «todo lo que hay en ellos» representa adecuadamente ወኵሎ ዘሀሎ ውስቴቶሙ. También mantiene con acierto «instrucción y sabiduría» y el alcance amplio de «todos los que se mueven sobre la tierra». Sin embargo, la segunda pregunta en español introduce un sujeto interrogativo independiente («¿Quién dio…?»), mientras que en contexto la pregunta sigue refiriéndose al mismo antecedente: no se pregunta por identidad desconocida sino que refuerza retóricamente «¿quién sino él dio…?». Conviene ajustar la formulación para que el español preserve mejor esa continuidad retórica. Además, la nota c conserva una alternativa superada por la auditoría inglesa.'
+  spanish_quality_summary: El texto es claro, natural y digno en español. No hay problemas graves de estilo. La frase «los que están en el mar» es comprensible, aunque algo estática frente al paralelo dinámico anterior; aun así, es defendible por cercanía a la revisión inglesa. La reparación principal es de fuerza retórica y precisión discursiva, no de legibilidad general.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen términos sensibles como Yahvé, Mesías, esclavo, etc. «Sabiduría», «instrucción», «hizo», «cielo y tierra» y «mar» están bien alineados con las decisiones léxicas auditadas. La excepción necesaria es eliminar la nota c y su anclaje, porque la alternativa «¿y quién dio?» contradice la revisión documentada que descartó la conjunción inicial.
+  issues:
+  - severity: medium
+    issue: La segunda pregunta usa «¿Quién dio…?» de forma potencialmente desvinculada del antecedente
+    rationale: Aunque formalmente posible, en español puede sonar como una pregunta nueva de identificación. El ge'ez y la auditoría inglesa presentan una pregunta retórica que sigue señalando al mismo sujeto. «¿Quién fue el que dio…?» preserva mejor esa continuidad enfática.
+  - severity: medium
+    issue: La nota c preserva una alternativa ya rechazada por la auditoría
+    rationale: 'La nota «También: “¿y quién dio?”» contradice la revisión aplicada, que eliminó expresamente la conjunción inicial por ausencia en el ge''ez. No debe mantenerse como nota textual/alternativa.'
+  revised_spanish_text: ¿No fue él quien hizo el cielo y la tierra y todo lo que hay en ellos? ¿Quién fue el que dio instrucción y sabiduría a todos los que se mueven sobre la tierra y a los que están en el mar?[a][b]
+  revised_footnotes:
+  - marker: a
+    text: 'También: «y todo lo que está dentro de ellos».'
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión «los que están en el mar» puede aludir a marineros o, de manera más amplia, a quienes están asociados con el mar; el ge'ez es conciso.
+    reason: lexical_alternative
+  revision_rationale: Se ajusta la segunda pregunta a «¿Quién fue el que dio…?» para conservar en español la continuidad retórica con el antecedente ya introducido («él») y evitar que suene como una pregunta independiente de identificación. Se elimina la nota c porque documenta una alternativa («¿y quién dio?») que la auditoría inglesa ya descartó por no corresponder al ge'ez. Se mantienen las demás decisiones léxicas y notas, que son fieles y naturales.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c4645a69750f6cb62be206f20c8016b952058693ce727f59f664a2d1026217df
+  timestamp: '2026-05-07T23:49:25Z'
+  output_hash: 620e844913168156ed43fb42dfd66f3b5f51d810ff047f4641674a3563c4e31d
+  usage:
+    prompt_tokens: 4596
+    completion_tokens: 856
+    total_tokens: 5452
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02433
+  applied_revision: true

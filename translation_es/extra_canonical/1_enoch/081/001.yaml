@@ -1,0 +1,206 @@
+id: 1EN.81.1
+reference: 1 Enoch 81:1
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: ወይቤለኒ፡ *ነጽር፡ ሄኖክ፡ ዘፀፍፀፈ፡ ሰማይ፡ ወአንብብ፡ ዘጽሑፍ፡ ዲቤሆሙ፡ ወ*እእምር፡ ኵሎ፡ አሐደ፡ አሐደ።
+  language: Geez
+  pages:
+  - 191
+  - 192
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch81.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 81, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/081/001.yaml
+  text: And he said to me[a], “Look, Enoch, at the tablets of heaven, and read what is written on them, and understand everything[c][b], one by one.”
+  footnotes:
+  - marker: a
+    text: Or, more literally, “understand all things one by one.”
+    reason: lexical_alternative
+  - marker: b
+    text: The phrase “tablets of heaven” evokes heavenly written records in apocalyptic tradition, not merely a metaphor for abstract knowledge.
+    reason: cultural_note
+  - marker: c
+    text: Or 'every single thing'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: f097aa157167b3ff84cadf2ee95e69174b10a70dc8641a6d76ade22d495fcaae
+    timestamp: '2026-04-22T09:20:39Z'
+    output_hash: 5561a0ebed7862bb186556d912bc7eca52896019859820d0b6433861c4d2781c
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:39Z'
+    unchanged: false
+    changes_summary: Changed 'upon them' to the more natural 'on them' and revised 'every individual thing' to 'everything, one by one' to reflect the repeated phrase more accurately and naturally.
+translation:
+  language: es
+  text: 'Y me dijo: «Mira, Enoc, las tablas del cielo[a], y lee lo que está escrito en ellas, y entiende cada cosa, una por una[b][c]».'
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La expresión «tablas del cielo» evoca en la tradición apocalíptica registros escritos celestiales, no solo una metáfora del conocimiento abstracto.
+    reason: cultural_note
+  - marker: b
+    text: 'O, más literalmente: «entiende todas las cosas, una por una».'
+    reason: lexical_alternative
+  - marker: c
+    text: 'O: «cada cosa individualmente».'
+    reason: lexical_alternative
+lexical_decisions:
+- source_word: ነጽር
+  english_pob_choice: look
+  chosen_spanish: mira
+  alternatives_spanish:
+  - mira bien
+  - observa
+  - contempla
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El imperativo pide atención visual directa. «Mira» es natural en español y conserva el valor de mandato sin volver el estilo arcaico.
+- source_word: ዘፀፍፀፈ ሰማይ
+  english_pob_choice: the tablets of heaven
+  chosen_spanish: las tablas del cielo
+  alternatives_spanish:
+  - las tablas celestiales
+  - las tablas del cielo estrellado
+  - las tablas del cielo [registros]
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: Se conserva la imagen concreta de «tablas» y el complemento «del cielo», que refleja el imaginario apocalíptico de registros celestes. «Tablas» evita una paráfrasis demasiado interpretativa como «registros».
+- source_word: አንብብ
+  english_pob_choice: read
+  chosen_spanish: lee
+  alternatives_spanish:
+  - lee en voz alta
+  - lee
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El mandato es simplemente leer; «lee» reproduce con claridad la acción sin añadir oralidad que el texto no exige.
+- source_word: ዘጽሑፍ ዲቤሆሙ
+  english_pob_choice: what is written on them
+  chosen_spanish: lo que está escrito en ellas
+  alternatives_spanish:
+  - lo escrito en ellas
+  - aquello que está escrito en ellas
+  - lo que ha sido escrito sobre ellas
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Lo que está escrito en ellas» es una forma española natural y fiel al referente de las tablas. Mantiene el sentido pasivo sin sobrecargar la frase.
+- source_word: እእምር
+  english_pob_choice: understand
+  chosen_spanish: entiende
+  alternatives_spanish:
+  - comprende
+  - entiende
+  - discierne
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El verbo expresa captación mental del contenido, no solo lectura. «Entiende» conserva ese impulso cognitivo de manera idiomática.
+- source_word: ኵሎ አሐደ አሐደ
+  english_pob_choice: everything, one by one
+  chosen_spanish: todo, uno por uno
+  alternatives_spanish:
+  - todo, individualmente
+  - todo, uno tras otro
+  - cada cosa, una por una
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La repetición distributiva se refleja con «uno por uno», que mantiene el matiz de itemización. «Todo» recoge la amplitud del mandato sin perder la distribución.
+theological_decisions:
+- issue: Imagen apocalíptica de registro celeste
+  english_pob_reading: the tablets of heaven
+  chosen_spanish_reading: las tablas del cielo
+  alternative_spanish_readings:
+  - las tablas celestiales
+  - los registros del cielo
+  - los libros del cielo
+  rationale: Se preserva la concreción de la imagen apocalíptica en vez de sustituirla por un equivalente más abstracto. «Tablas» mantiene la materialidad del símbolo y evita suavizar la escena.
+  doctrine_reference: 'Translation philosophy: preservar la imaginería apocalíptica y su fuerza visual, no normalizarla hacia prosa abstracta.'
+translation_notes:
+  revision_awareness: Se siguió el último estado revisado del audit trail en inglés, que favorece la formulación «everything, one by one» y «on them». La versión española refleja esa naturalidad sin perder el valor distributivo del final ni la imagen concreta de las tablas celestes.
+  spanish_consistency_notes:
+  - Se mantuvo «Mira» como imperativo breve y directo, acorde con el registro del pasaje.
+  - Se eligió «tablas» para conservar la imagen material apocalíptica; no se sustituyó por «libros» o «registros».
+  - 'Se conservó la secuencia verbal imperativa: mirar, leer, entender.'
+  - «Uno por uno» expresa la distribución final sin volverla excesivamente coloquial o arcaica.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/081/001.yaml
+  source_text_sha256: e95e2b7eb90a52060a0e862b3b38dd493d34d7daff59ce5ae1cd719171304126
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e3d2da9b3d8ffbbb32cd62ed49c128e78bcc03c80eb03b4e930a34656ec7dd47
+  timestamp: '2026-05-07T21:28:02Z'
+  output_hash: cb3c2b6adc6e46edf1bdc21db7e02494e8f3c30b6a0a3ac15beafbd4f1871e4e
+  usage:
+    prompt_tokens: 2887
+    completion_tokens: 1148
+    total_tokens: 4035
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.007331
+status: spanish_reviewed
+revisions:
+- from: 'Y me dijo[a]: «Mira, Enoc, las tablas del cielo[b], y lee lo que está escrito en ellas, y entiende todo, uno por uno[c]».'
+  to: 'Y me dijo: «Mira, Enoc, las tablas del cielo[a], y lee lo que está escrito en ellas, y entiende cada cosa, una por una[b][c]».'
+  rationale: Se corrigió la frase distributiva final para que sea idiomática y fiel al ge'ez, y se recolocaron las notas en los segmentos que realmente explican. 'Cada cosa, una por una' preserva mejor la fuerza de ኵሎ አሐደ አሐደ en español natural.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del ge''ez: mandato de mirar, leer lo escrito en las tablas celestes y comprenderlo de manera distributiva. También preserva adecuadamente la imagen apocalíptica de las ''tablas del cielo''. Sin embargo, la expresión final ''todo, uno por uno'' no suena idiomática en español y además desajusta la concordancia distributiva, porque ''todo'' exige una formulación como ''cada cosa, una por una'' o ''todo, cosa por cosa''.'
+  spanish_quality_summary: 'El texto es claro y digno, pero requiere una reparación menor para lograr naturalidad y precisión. ''Las tablas del cielo'' es aceptable y fiel. La nota [a] está mal anclada: no corresponde a ''Y me dijo'' sino al segmento final sobre entender todas las cosas una por una. Además, la secuencia de notas debe seguir el orden de aparición en el texto.'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. Se conserva correctamente 'Enoc' y no hay términos teológicos sensibles del glosario principal implicados. La decisión 'tablas del cielo' está alineada con la racionalidad inglesa de preservar la imaginería apocalíptica concreta.
+  issues:
+  - severity: medium
+    issue: La nota [a] está colocada en 'Y me dijo[a]' pero su contenido explica la frase final 'entiende todas las cosas, una por una'.
+    rationale: Las notas deben anclarse en el lugar pertinente del texto. Tal como está, induce a pensar que existe una variante en 'me dijo', lo cual es incorrecto.
+  - severity: medium
+    issue: La expresión 'entiende todo, uno por uno' es poco natural en español.
+    rationale: Aunque intenta reflejar el distributivo 'one by one', en español 'todo' no combina bien con 'uno por uno'. 'Cada cosa, una por una' reproduce mejor el sentido itemizado y la sintaxis natural.
+  - severity: low
+    issue: El orden de marcadores no sigue bien la progresión textual y funcional.
+    rationale: Al mover la nota lexical alternativa al segmento final, conviene reordenar los marcadores para que aparezcan de forma secuencial donde corresponde.
+  revised_spanish_text: 'Y me dijo: «Mira, Enoc, las tablas del cielo[a], y lee lo que está escrito en ellas, y entiende cada cosa, una por una[b][c]».'
+  revised_footnotes:
+  - marker: a
+    text: La expresión «tablas del cielo» evoca en la tradición apocalíptica registros escritos celestiales, no solo una metáfora del conocimiento abstracto.
+    reason: cultural_note
+  - marker: b
+    text: 'O, más literalmente: «entiende todas las cosas, una por una».'
+    reason: lexical_alternative
+  - marker: c
+    text: 'O: «cada cosa individualmente».'
+    reason: lexical_alternative
+  revision_rationale: Se corrigió la frase distributiva final para que sea idiomática y fiel al ge'ez, y se recolocaron las notas en los segmentos que realmente explican. 'Cada cosa, una por una' preserva mejor la fuerza de ኵሎ አሐደ አሐደ en español natural.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 346821f01734be946e4c7e56292c2709c348ce3d909f4b971beaa427fa1dbfde
+  timestamp: '2026-05-07T23:06:59Z'
+  output_hash: 5fb2255e78f5d49b01ee6f6f6cf466377bd23f4620d76e5a36036d9bf3865bbe
+  usage:
+    prompt_tokens: 3689
+    completion_tokens: 740
+    total_tokens: 4429
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020323
+  applied_revision: true

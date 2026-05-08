@@ -1,0 +1,181 @@
+id: 1EN.81.6
+reference: 1 Enoch 81:6
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: charles-1906-enoch
+  text: '*ዓመተ፡ አሐደ፡ ነኅድገከ፡ በኀበ፡ ወልድከ፡ እስከ፡ ካዕበ፡ ትእዛዝ፡ ከመ፡'
+  language: Geez
+  pages:
+  - 191
+  - 192
+  confidence: medium
+  validation: verse_parser_ok
+  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch81.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 81, but verse-aligned extraction is not yet implemented in this prompt builder.
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/1_enoch/081/006.yaml
+  text: For one year we will leave you with your son[a], until a further command[b], so that...
+  footnotes:
+  - marker: a
+    text: The final clause is textually difficult in the OCR witness; the sense appears to be that Enoch will remain with his son for one year until a further command is given or comes again.
+    reason: textual_variant
+  - marker: b
+    text: Or 'For one year I will leave you with your son, until again the command comes.'.
+    reason: previous_rendering
+  ai_draft:
+    model_id: gpt-5.4
+    model_version: gpt-5.4-2026-03-05
+    prompt_id: enoch_verse_draft_v1
+    prompt_sha256: 95550567439f00eb3bf65248d61213f2bc744a951fb71a7d1bfb95e24f2bedb8
+    timestamp: '2026-04-22T09:18:11Z'
+    output_hash: ef6ccdf1f45d71eb9f400345bd011c19b62861172289edda1448c6771fd37d74
+    zone1_sources_at_draft:
+    - Charles 1906 Ethiopic Enoch (Gemini OCR + verse parser) @fd1a639d2
+    - Dillmann 1851 Ethiopic Enoch (chapter OCR only) @fd1a639d2
+    zone2_consults_known:
+    - 'Milik, The Books of Enoch: Aramaic Fragments of Qumrân Cave 4 (DJD XXXVI)'
+    - 'Nickelsburg, 1 Enoch 1: A Commentary (Hermeneia)'
+    - 'Nickelsburg & VanderKam, 1 Enoch 2: A Commentary (Hermeneia)'
+    - Knibb, The Ethiopic Book of Enoch (2 vols, Oxford)
+    - 'Black, The Book of Enoch or 1 Enoch: A New English Edition (Brill)'
+    - Isaac, '1 (Ethiopic Apocalypse of) Enoch' in OTP vol. 1 (Charlesworth, ed.)
+    temperature: 0.2
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:37:41Z'
+    unchanged: true
+    changes_summary: No changes needed.
+translation:
+  language: es
+  text: Por un año te dejaremos con tu hijo, hasta un nuevo mandato[a], para que…
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: El ge'ez auditado usa un verbo en primera persona plural («te dejaremos»). La cláusula final está truncada en el testimonio conservado; por eso se mantiene «hasta un nuevo mandato, para que…» sin completar la continuación incierta.
+    reason: textual_variant
+lexical_decisions:
+- source_word: ዓመተ፡ አሐደ፡
+  english_pob_choice: for one year
+  chosen_spanish: por un año
+  alternatives_spanish:
+  - durante un año
+  - un año
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: La expresión temporal es directa; en español, «por un año» reproduce con naturalidad la duración del período sin añadir matices no presentes en el ge'ez.
+- source_word: ነኅድገከ፡
+  english_pob_choice: we will leave you
+  chosen_spanish: te dejaremos
+  alternatives_spanish:
+  - te dejaremos permanecer
+  - te permitiremos quedarte
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El audit trail corrige la gramática a primera persona plural. «Te dejaremos» conserva la fuerza simple de «leave» y refleja que son varios los que hablan.
+- source_word: በኀበ፡ ወልድከ፡
+  english_pob_choice: with your son
+  chosen_spanish: con tu hijo
+  alternatives_spanish:
+  - junto a tu hijo
+  - en compañía de tu hijo
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: «Con tu hijo» es la equivalencia más natural y fiel para la relación de acompañamiento o asociación indicada por la preposición.
+- source_word: እስከ፡ ካዕበ፡ ትእዛዝ፡
+  english_pob_choice: until a further command
+  chosen_spanish: hasta una orden adicional
+  alternatives_spanish:
+  - hasta un nuevo mandato
+  - hasta que llegue otra orden
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: El texto no permite precisar más allá de una nueva orden o mandato; «orden adicional» mantiene la idea de una instrucción posterior sin forzar el verbo implícito.
+- source_word: ትእዛዝ፡
+  english_pob_choice: the command
+  chosen_spanish: orden
+  alternatives_spanish:
+  - mandato
+  - comando
+  lexicon: Dillmann, Lexicon Linguae Aethiopicae
+  rationale: En un contexto apocalíptico, la palabra expresa autoridad. «Orden» es claro en español moderno y no desplaza innecesariamente el sentido hacia lenguaje eclesiástico posterior.
+theological_decisions:
+- issue: Forma verbal plural del hablante
+  english_pob_reading: we will leave you
+  chosen_spanish_reading: te dejaremos
+  alternative_spanish_readings:
+  - te dejaré
+  - te dejamos
+  rationale: La revisión auditada indica que el sujeto es plural; por eso el español debe reflejar pluralidad, evitando una primera persona singular no sustentada por el ge'ez.
+  doctrine_reference: Fidelidad gramatical al sujeto plural del enunciado apocalíptico.
+- issue: Cláusula final truncada
+  english_pob_reading: until a further command, so that...
+  chosen_spanish_reading: hasta una orden adicional, para que…
+  alternative_spanish_readings:
+  - hasta una nueva orden, de modo que…
+  - hasta que haya una nueva orden, para que…
+  rationale: El testigo está truncado y no autoriza completar el verbo final. Mantener la elipsis en español respeta la incertidumbre textual y evita inventar una conclusión.
+  doctrine_reference: Respeto por variantes textuales y por la limitación del testimonio recuperado.
+translation_notes:
+  revision_awareness: 'El borrador toma en cuenta la corrección principal del audit trail: el verbo es de primera persona plural («te dejaremos»), y la cláusula final no debe cerrarse con un verbo inventado. También evita el cambio a una forma singular o a una paráfrasis que resuelva artificialmente la elipsis.'
+  spanish_consistency_notes:
+  - Se mantiene el tutear singular («te», «tu») porque el destinatario sigue siendo uno solo, aunque el hablante sea plural.
+  - Se eligió «orden» en vez de «mandato» para un español más natural, sin perder la fuerza autoritativa del término.
+  - La elipsis final se conserva con puntos suspensivos para señalar que el texto fuente está incompleto.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/1_enoch/081/006.yaml
+  source_text_sha256: 52cd49ac74febfe6d88b244df731b8c09616a5d0f8eeed5bc5c03088dc10c947
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: fdb4eb96ae6ef59763054d878f887243e884f44156f527df6560ac16f9c416a5
+  timestamp: '2026-05-07T21:27:34Z'
+  output_hash: 791bbcc8dbb258272d48639135b1036a9984f98d50fb8c16869b35ebad608341
+  usage:
+    prompt_tokens: 2692
+    completion_tokens: 1103
+    total_tokens: 3795
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.006982
+status: spanish_reviewed
+revisions:
+- from: Por un año te dejaremos con tu hijo[a], hasta una orden adicional[b], para que…
+  to: Por un año te dejaremos con tu hijo, hasta un nuevo mandato[a], para que…
+  rationale: Se reemplaza «orden adicional» por «nuevo mandato» para lograr un español más natural y con mejor fuerza autoritativa en contexto apocalíptico. También se simplifican y reubican las notas para que el comentario textual corresponda mejor al punto de incertidumbre principal y no quede anclado de manera confusa a «tu hijo».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:06:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente los puntos principales del ge''ez auditado: sujeto plural («te dejaremos»), compañía («con tu hijo»), y la cláusula truncada sin inventar un verbo final («para que…»). Sin embargo, «hasta una orden adicional» suena menos natural y menos preciso que una formulación que exprese mejor la idea de una instrucción posterior en contexto apocalíptico.'
+  spanish_quality_summary: El texto es claro y legible, pero «orden adicional» resulta algo mecánico en español bíblico-literario. «Hasta un nuevo mandato» o «hasta una nueva orden» suena más idiomático y conserva mejor la fuerza autoritativa. También conviene ajustar las notas para que expliquen la dificultad textual sin sobrecargar el anclaje en «tu hijo».
+  glossary_alignment: No hay términos del glosario mayor en juego. La decisión clave es ትእዛዝ, donde «mandato» encaja mejor que «orden adicional» por su fuerza y registro. La conservación del plural verbal está bien alineada con la revisión auditada.
+  issues:
+  - severity: medium
+    issue: «orden adicional» es poco idiomático en este contexto
+    rationale: Aunque transmite posterioridad, en español suena administrativo y menos natural que «nuevo mandato» o «nueva orden» en un marco revelatorio/apocalíptico.
+  - severity: low
+    issue: La nota [a] comenta el plural verbal en un anclaje sobre «tu hijo»
+    rationale: La nota no corresponde idealmente al segmento anotado; es mejor anclar la explicación textual al verbo plural o simplificar las notas para evitar desajuste entre anclaje y contenido.
+  revised_spanish_text: Por un año te dejaremos con tu hijo, hasta un nuevo mandato[a], para que…
+  revised_footnotes:
+  - marker: a
+    text: El ge'ez auditado usa un verbo en primera persona plural («te dejaremos»). La cláusula final está truncada en el testimonio conservado; por eso se mantiene «hasta un nuevo mandato, para que…» sin completar la continuación incierta.
+    reason: textual_variant
+  revision_rationale: Se reemplaza «orden adicional» por «nuevo mandato» para lograr un español más natural y con mejor fuerza autoritativa en contexto apocalíptico. También se simplifican y reubican las notas para que el comentario textual corresponda mejor al punto de incertidumbre principal y no quede anclado de manera confusa a «tu hijo».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 300044e724280e5f936971dd602993aee0dbf7b6a442dbc0806abd572b7e7107
+  timestamp: '2026-05-07T23:06:01Z'
+  output_hash: 3a9ace3eee4d2869eeb9e3129bb4d44bce0eb722479b71bb3e46da5bc10965b0
+  usage:
+    prompt_tokens: 3476
+    completion_tokens: 581
+    total_tokens: 4057
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017405
+  applied_revision: true

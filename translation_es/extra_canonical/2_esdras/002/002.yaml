@@ -1,0 +1,131 @@
+id: 2ES.2.2
+reference: 2 Esdras 2:2
+language:
+  code: es
+  name: Spanish
+  variant: neutral Latin American
+source:
+  edition: Bensly 1895 (Texts and Studies III.2) + Bensly 1875 Missing Fragment, cleaned Latin
+  text: 'Mater, quae eos generauit, dicit illis : ite, filii, quia ego uidua sum et derelicta :'
+  language: Latin
+base_translation:
+  language: en
+  yaml_path: translation/extra_canonical/2_esdras/002/002.yaml
+  text: The mother who bore them says to them, “Go, children, for I am a widow and forsaken.”
+  revision_pass:
+    model: gpt-5.4
+    timestamp: '2026-04-23T11:41:03Z'
+    unchanged: false
+    changes_summary: Removed 'my' before 'children' because it is not present in the Latin; otherwise retained the draft's accurate and natural rendering.
+translation:
+  language: es
+  text: 'La madre que los dio a luz les dice: «Vayan, hijos, porque soy viuda y desamparada.»'
+  philosophy: optimal-equivalence
+lexical_decisions:
+- source_word: Mater, quae eos generauit
+  english_pob_choice: The mother who bore them
+  chosen_spanish: La madre que los dio a luz
+  alternatives_spanish:
+  - La madre que los engendró
+  - La madre que los parió
+  lexicon: mater > madre; generauit > dio a luz / engendró
+  rationale: «Dio a luz» conserva el sentido de nacimiento/parto del latín generauit en un español natural y digno. «Los» mantiene el referente plural de eos. Evité una calca demasiado rígida y también «engendró», que en español puede sonar más abstracto o menos inmediato en este contexto.
+- source_word: dicit illis
+  english_pob_choice: says to them
+  chosen_spanish: les dice
+  alternatives_spanish:
+  - dice a ellos
+  - les habla
+  lexicon: dicit > dice; illis > les
+  rationale: «Les dice» expresa de modo idiomático el dativo latino illis y conserva la sencillez del original. «Les habla» añade un matiz no presente en el texto.
+- source_word: ite, filii
+  english_pob_choice: Go, children
+  chosen_spanish: Vayan, hijos
+  alternatives_spanish:
+  - Id, hijos
+  - Vayan, niños
+  lexicon: ite > vayan / id; filii > hijos
+  rationale: Opté por «Vayan» para un español neutral y ampliamente entendible. «Hijos» reproduce con fidelidad filii sin añadir posesivo, como ya refleja la revisión inglesa al eliminar «my». "Niños" sería menos preciso, pues filii aquí funciona como apelativo filial.
+- source_word: ego uidua sum
+  english_pob_choice: I am a widow
+  chosen_spanish: soy viuda
+  alternatives_spanish:
+  - estoy viuda
+  - soy una viuda
+  lexicon: ego sum > soy; uidua > viuda
+  rationale: «Soy viuda» sigue de cerca la construcción latina y suena natural en español. Se omitió el artículo por economía estilística y porque el latino no lo expresa.
+- source_word: derelicta
+  english_pob_choice: forsaken
+  chosen_spanish: desamparada
+  alternatives_spanish:
+  - abandonada
+  - dejada
+  lexicon: derelicta > desamparada / abandonada
+  rationale: «Desamparada» comunica el estado de haber sido dejada sin apoyo con un matiz más fuerte y literario que «abandonada», sin perder el sentido. Mantiene la tensión entre abandono social y desolación personal presente en forsaken/derelicta.
+theological_decisions:
+- issue: Autorretrato de la madre como viuda y desamparada
+  english_pob_reading: I am a widow and forsaken
+  chosen_spanish_reading: soy viuda y desamparada
+  alternative_spanish_readings:
+  - soy viuda y abandonada
+  - soy viuda y dejada
+  rationale: No hay una decisión doctrinal compleja, pero sí una carga retórica de lamento. «Desamparada» preserva el tono de desolación y vulnerabilidad sin intensificar el sentido más allá del latín. No se introduce ninguna inferencia teológica adicional.
+  doctrine_reference: N/A
+translation_notes:
+  revision_awareness: La revisión inglesa más reciente eliminó 'my' antes de 'children' por no estar en el latín. El español sigue esa decisión al usar simplemente «hijos», sin posesivo, y mantiene la misma estructura breve y directa del texto base.
+  spanish_consistency_notes:
+  - Se mantuvo el registro sobrio y literario propio de un texto apócrifo/extra canónico en la serie POB.
+  - No se empleó «Señor» ni otra terminología doctrinal ajena al versículo; el texto es descriptivo y narrativo.
+  - La puntuación mantiene la cita directa con comillas angulares para una lectura publica clara.
+source_grounding:
+  english_pob_role: consult_only
+  english_pob_path: translation/extra_canonical/2_esdras/002/002.yaml
+  source_text_sha256: 43c3c4972042e3c62d631c5cc5ac166d4591472ec854101940e03ce729bc25c6
+  english_pob_commit_sha: 08a154928aadfe515af0c9b91d5a7e91eabb66d7
+ai_draft:
+  model_id: gpt-5.4-mini
+  model_version: gpt-5.4-mini-2026-03-17
+  azure_deployment: gpt-5-4-mini-deployment
+  prompt_id: spanish_source_grounded_draft_v1
+  prompt_sha256: e7f07c4f058eb3bd3411d4b2306a1c45eab5dfc441833154d3f6a4b9f3163909
+  timestamp: '2026-05-07T21:29:02Z'
+  output_hash: 0a0b2100695812ef834a0482ef79ab696d409caff246b439c606d6d49af7392b
+  usage:
+    prompt_tokens: 1672
+    completion_tokens: 918
+    total_tokens: 2590
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.005385
+status: spanish_reviewed
+revisions:
+- from: 'La madre que los dio a luz les dice: «Vayan, hijos, porque soy viuda y desamparada»;'
+  to: 'La madre que los dio a luz les dice: «Vayan, hijos, porque soy viuda y desamparada.»'
+  rationale: Se conserva toda la redacción del borrador por ser fiel y natural; solo se corrige la puntuación final del discurso directo para ajustarla al original y al uso estándar del español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:33:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el latín: «Mater, quae eos generauit» = «La madre que los dio a luz»; «dicit illis» = «les dice»; «ite, filii» = «Vayan, hijos»; «ego uidua sum et derelicta» = «soy viuda y desamparada». La revisión inglesa que eliminó «my» también se respeta correctamente. Sin embargo, la puntuación final no preserva bien la estructura de cita del original: el latín termina con dos puntos introductorios y la cita concluye allí, no con punto y coma después de cerrar comillas.'
+  spanish_quality_summary: 'El español es natural, claro y digno. «Vayan, hijos» funciona bien en español neutro. «Desamparada» es una opción sólida para «derelicta». El único ajuste necesario es de puntuación: cerrar la cita con punto dentro de las comillas angulares y eliminar el punto y coma final.'
+  glossary_alignment: No hay términos del glosario mayor en juego. Las decisiones léxicas principales están bien alineadas con el sentido fuente y con el criterio POB de evitar añadidos no presentes en el original.
+  issues:
+  - severity: low
+    issue: Puntuación final incorrecta en el discurso directo
+    rationale: El texto español termina «desamparada»; con punto y coma fuera de comillas. Para reflejar adecuadamente la cita completa y la puntuación española estándar, debe cerrarse como «desamparada.» sin punto y coma posterior.
+  revised_spanish_text: 'La madre que los dio a luz les dice: «Vayan, hijos, porque soy viuda y desamparada.»'
+  revision_rationale: Se conserva toda la redacción del borrador por ser fiel y natural; solo se corrige la puntuación final del discurso directo para ajustarla al original y al uso estándar del español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5722f39c7e1af2dca83762561fe3e8a6d14f3f31e52f0765736c77acefaeb1d4
+  timestamp: '2026-05-07T23:33:42Z'
+  output_hash: f842f044b1f30d2fbb5491d2f75d7b158de2ef3cd0a95bde8e59c9bfabb51eec
+  usage:
+    prompt_tokens: 2261
+    completion_tokens: 451
+    total_tokens: 2712
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012417
+  applied_revision: true
