@@ -127,6 +127,11 @@ EXTRA_CANONICAL_BOOKS: list[tuple[str, str, int, int, str]] = [
     # Added 2026-04-27 — book had been silently drafted but not in
     # the public catalog so it was invisible on /progress.
     ("2 Baruch", "2BAR", 87, 359, "2_baruch"),
+    # Pseudepigrapha + Nag Hammadi additions promoted 2026-05-07.
+    ("Testaments of the Twelve Patriarchs", "T12P", 142, 945, "testaments_twelve_patriarchs"),
+    ("Gospel of Thomas", "GOSTH", 115, 115, "gospel_of_thomas"),
+    ("Thunder, Perfect Mind", "THUN", 123, 123, "thunder_perfect_mind"),
+    ("Gospel of Truth", "GOSTR", 16, 16, "gospel_of_truth"),
 ]
 
 # Books in EXTRA_CANONICAL_BOOKS that are presented as an Appendix
@@ -330,6 +335,21 @@ def count_extra_canonical_book(slug: str) -> dict[str, int]:
     book_dir = TRANSLATION_ROOT / "extra_canonical" / slug
     if not book_dir.is_dir():
         return {"chapters_drafted": 0, "verses_drafted": 0}
+
+    if slug == "testaments_twelve_patriarchs":
+        chapters: set[tuple[str, int]] = set()
+        verses_drafted = 0
+        for sub in book_dir.iterdir():
+            if not (sub.is_dir() and sub.name.isalpha()):
+                continue
+            for chapter_dir in sub.iterdir():
+                if not (chapter_dir.is_dir() and chapter_dir.name.isdigit()):
+                    continue
+                chapters.add((sub.name, int(chapter_dir.name)))
+                for vf in chapter_dir.iterdir():
+                    if vf.is_file() and vf.suffix == ".yaml" and vf.stem.isdigit():
+                        verses_drafted += 1
+        return {"chapters_drafted": len(chapters), "verses_drafted": verses_drafted}
 
     if slug == "1_enoch":
         expected = _enoch_expected_verse_map()

@@ -340,6 +340,8 @@ def release_lock(lock_path: pathlib.Path | None) -> None:
 
 
 def choose_source_files(book_dir: pathlib.Path) -> list[pathlib.Path]:
+    if book_dir.name == "testaments_twelve_patriarchs":
+        return sorted(book_dir.rglob("*.yaml"))
     nested = sorted(book_dir.glob("*/*.yaml"))
     if nested:
         return nested
