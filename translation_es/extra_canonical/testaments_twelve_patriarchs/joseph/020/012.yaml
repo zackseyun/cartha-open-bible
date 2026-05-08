@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque su reino será un reino eterno, que no pasará. Pero mi reino entre ustedes se está llevando a cumplimiento, como una choza de guardia en un huerto, que desaparece después del verano.
+  text: Porque su reino será un reino eterno, que no pasará. Pero mi reino entre ustedes se lleva a cumplimiento, como una choza de guardia en un huerto, que desaparece después del verano.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: βασιλεία
@@ -105,4 +105,40 @@ ai_draft:
     total_tokens: 2655
     reasoning_tokens: 0
     estimated_cost_usd: 0.005947
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque su reino será un reino eterno, que no pasará. Pero mi reino entre ustedes se está llevando a cumplimiento, como una choza de guardia en un huerto, que desaparece después del verano.
+  to: Porque su reino será un reino eterno, que no pasará. Pero mi reino entre ustedes se lleva a cumplimiento, como una choza de guardia en un huerto, que desaparece después del verano.
+  rationale: Simplified 'se está llevando a cumplimiento' to 'se lleva a cumplimiento' for a more natural gnomic present matching the Greek ἐπιτελεῖται. All other choices remain.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:35:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Greek source has both clauses: ''His kingdom will be an eternal kingdom that will not pass away. But my kingdom among you is brought to completion, like a watchman''s hut in an orchard, which disappears after the summer.'' The EN YAML (current revised text) reads: ''For his kingdom will be an everlasting kingdom that will not pass away. But my kingdom among you is brought to completion, like a watchman''s hut in an orchard, which disappears after the summer.'' The Spanish ES text renders BOTH clauses together: ''Porque su reino será un reino eterno, que no pasará. Pero mi reino entre ustedes se está llevando a cumplimiento, como una choza de guardia en un huerto, que desaparece después del verano.'' However, the base_translation.text in the ES file refers to the OLD pre-phase2-realign EN text that only had the second clause (''For my kingdom among you will be brought to completion...''). The Spanish has already incorporated both clauses, matching the updated
+    EN. The key issue: ''se está llevando a cumplimiento'' (present progressive) vs. EN ''is brought to completion'' (passive simple) — the Greek ἐπιτελεῖται is present passive, so ''se lleva a cumplimiento'' or ''se está llevando a cumplimiento'' both work, but the progressive form is slightly less natural for a gnomic/proverbial saying. Also ''choza de guardia'' is good for ὀπωροφυλάκιον. No footnote markers in EN text, none in Spanish — correct.'
+  spanish_quality_summary: 'The Spanish reads well overall. ''se está llevando a cumplimiento'' is slightly wordy compared to a simpler ''se lleva a cumplimiento'' but is not incorrect. The rest is natural and accurate. The simile with the watchman''s hut is well rendered. Minor: the EN uses ''hut'' and Spanish uses ''choza de guardia'' which is a good equivalent.'
+  glossary_alignment: No YHWH/tetragrámaton. No θεός/Χριστός/δοῦλος/πνεῦμα. All glossary rules complied with.
+  issues:
+  - severity: low
+    issue: '''se está llevando a cumplimiento'' is a present progressive; a simple present passive ''se lleva a cumplimiento'' better matches the Greek ἐπιτελεῖται in gnomic/proverbial context.'
+    rationale: The Greek present passive suggests a settled/ongoing state rather than a process in progress; simpler form is more natural for this type of saying.
+  revised_spanish_text: Porque su reino será un reino eterno, que no pasará. Pero mi reino entre ustedes se lleva a cumplimiento, como una choza de guardia en un huerto, que desaparece después del verano.
+  revision_rationale: Simplified 'se está llevando a cumplimiento' to 'se lleva a cumplimiento' for a more natural gnomic present matching the Greek ἐπιτελεῖται. All other choices remain.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: ae382ea9cdc008f8c6e6d6bc10e604bffe2544449c6a78971d98a77ededd3426
+  timestamp: '2026-05-08T06:35:41Z'
+  output_hash: ae382ea9cdc008f8c6e6d6bc10e604bffe2544449c6a78971d98a77ededd3426
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

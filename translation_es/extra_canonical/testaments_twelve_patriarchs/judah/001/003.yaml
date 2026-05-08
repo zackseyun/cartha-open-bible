@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: '«Escuchad, hijos míos, a Judá, vuestro padre. Yo fui el cuarto hijo que nació a mi padre Jacob, y Lea, mi madre, me llamó Judá, diciendo: “Doy gracias[a] al Señor, porque me ha dado también un cuarto hijo”.»'
+  text: '«Escuchen, hijos míos, a Judá, su padre. Yo fui el cuarto hijo que nació a mi padre Jacob, y Lea, mi madre, me llamó Judá, diciendo: "Doy gracias[a] al Señor, porque me ha dado también un cuarto hijo».»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -148,4 +148,44 @@ ai_draft:
     total_tokens: 3390
     reasoning_tokens: 0
     estimated_cost_usd: 0.00888
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '«Escuchad, hijos míos, a Judá, vuestro padre. Yo fui el cuarto hijo que nació a mi padre Jacob, y Lea, mi madre, me llamó Judá, diciendo: “Doy gracias[a] al Señor, porque me ha dado también un cuarto hijo”.»'
+  to: '«Escuchen, hijos míos, a Judá, su padre. Yo fui el cuarto hijo que nació a mi padre Jacob, y Lea, mi madre, me llamó Judá, diciendo: "Doy gracias[a] al Señor, porque me ha dado también un cuarto hijo».»'
+  rationale: Changed 'Escuchad' to 'Escuchen' and 'vuestro padre' to 'su padre' to conform to neutral Latin American Spanish. All other content retained.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: ''Ἀκούσατε, τέκνα μου, Ἰούδα τοῦ πατρὸς ὑμῶν· ἐγὼ τέταρτος υἱὸς ἐγενόμην τῷ πατρί μου Ἰακώβ, καὶ Λεία ἡ μήτηρ μου ἤμην, καὶ ἐπωνόμασέν με Ἰούδαν, λέγουσα· Ἀνθομολογοῦμαι τῷ Κυρίῳ, ὅτι ἔδωκέν μοι καὶ τέταρτον υἱόν.'' EN: ''Hear, my children, Judah your father. I was born the fourth son to my father Jacob, and Leah my mother named me Judah, saying, I give praise to the Lord, because he has given me also a fourth son.'' Spanish: ''«Escuchad, hijos míos, a Judá, vuestro padre. Yo fui el cuarto hijo que nació a mi padre Jacob, y Lea, mi madre, me llamó Judá, diciendo: "Doy gracias[a] al Señor, porque me ha dado también un cuarto hijo".»'' Issues: (1) ''Escuchad'' uses vosotros imperative which is peninsular Spanish, not neutral Latin American. Should be ''Escuchen''. (2) ''vuestro padre'' likewise uses vosotros possessive. Should be ''su padre''. (3) Footnote marker [a] appears on ''gracias[a]'' — marker present in text and footnote matches. (4) The source
+    has Ἀνθομολογοῦμαι → EN ''I give praise''; the Spanish chose ''Doy gracias'' which is defensible but shifts from praise to thanks. The footnote acknowledges this. (5) Κυρίῳ → ''al Señor'' is appropriate here since this is a formula in the mouth of Leah, and the EN POB used ''the Lord'' throughout; the ES theological note justifies it.'
+  spanish_quality_summary: Content is accurate overall. The main quality issue is vosotros forms ('Escuchad', 'vuestro padre') which violate the neutral Latin American standard. These must be changed to 'Escuchen' and 'su padre'. The footnote on 'Doy gracias' is useful. The rest of the translation is natural.
+  glossary_alignment: Κυρίῳ → 'el Señor' (acceptable here per project convention for this formula, consistent with EN 'the Lord'). No YHWH context. Compliant otherwise.
+  issues:
+  - severity: high
+    issue: '''Escuchad'' and ''vuestro padre'' are vosotros forms (peninsular Spanish), violating the neutral Latin American Spanish requirement.'
+    rationale: The project specifies neutral Latin American Spanish. Vosotros/vuestro forms are not used in Latin America. Should be 'Escuchen' and 'su padre'.
+  revised_spanish_text: '«Escuchen, hijos míos, a Judá, su padre. Yo fui el cuarto hijo que nació a mi padre Jacob, y Lea, mi madre, me llamó Judá, diciendo: "Doy gracias[a] al Señor, porque me ha dado también un cuarto hijo».»'
+  revised_footnotes:
+  - marker: a
+    text: «Doy gracias» traduce aquí un verbo griego que puede incluir también la idea de alabar; la redacción conserva el matiz agradecido y el de reconocimiento.
+    reason: lexical_alternative
+  revision_rationale: Changed 'Escuchad' to 'Escuchen' and 'vuestro padre' to 'su padre' to conform to neutral Latin American Spanish. All other content retained.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1a0b00fbebe6c2e4545f53154d964cf10e603bad9aa159c07e8edac08b534090
+  timestamp: '2026-05-08T06:36:41Z'
+  output_hash: 1a0b00fbebe6c2e4545f53154d964cf10e603bad9aa159c07e8edac08b534090
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

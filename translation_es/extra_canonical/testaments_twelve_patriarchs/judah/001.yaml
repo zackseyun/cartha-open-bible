@@ -45,23 +45,14 @@ base_translation:
     changes_summary: Adjusted 'was born the fourth son' to 'became the fourth son' for closer lexical correspondence; changed 'in every matter' to 'in every word' to reflect λόγον more directly; changed 'blessed me' to 'prayed for me' to match ηὔξατό μοι.
 translation:
   language: es
-  text: 'El Testamento de Judá, el cuarto hijo de Jacob y Lea.
-
-
-    Una copia de las palabras de Judá, que habló a sus hijos antes de morir.
-
-
-    2 Entonces se reunieron y vinieron a él, y les dijo:
-
-
-    3 «Oigan, hijos míos, Judá, su padre. Yo llegué a ser el cuarto hijo de mi padre Jacob, y Lea, mi madre, me nombró Judá, diciendo: “Doy alabanza a Yahvé, porque me ha dado también un cuarto hijo”. 4 Yo era agudo[a] en mi juventud, y obedecía a mi padre en cada palabra. 5 Y honraba a mi madre y a la hermana de mi madre. 6 Y cuando ya había crecido, mi padre me bendijo[b], diciendo: “Serás rey, prosperando en todo”».'
+  text: "El Testamento de Judá, el cuarto hijo de Jacob y Lea.\n\n\n    Una copia de las palabras de Judá, que habló a sus hijos antes de morir.\n\n\n    2 Entonces se reunieron y vinieron a él, y les dijo:\n\n\n    3 «Oigan, hijos míos, Judá, su padre. Yo llegué a ser el cuarto hijo de mi padre Jacob, y Lea, mi madre, me nombró Judá, diciendo: \"Doy alabanza al Señor, porque me ha dado también un cuarto hijo\". 4 Yo era agudo[a] en mi juventud, y obedecía a mi padre en cada palabra. 5 Y honraba a mi madre y a la hermana de mi madre. 6 Y cuando ya había crecido, mi padre oró por mí[b], diciendo: \"Serás rey, prosperando en todo\"»."
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: '«Agudo» conserva la amplitud del adjetivo griego: puede sugerir viveza, rapidez o filo, sin decidir una sola de esas matices.'
     reason: lexical_alternative
   - marker: b
-    text: El verbo griego puede sugerir oración pronunciada sobre Judá; aquí se traduce como bendición por la función que cumple en el contexto.
+    text: El verbo griego ηὔξατό indica oración o intercesión pronunciada; la revisión del inglés POB optó por «prayed for me» en lugar de «blessed me».
     reason: theological_note
 lexical_decisions:
 - source_word: Διαθήκη
@@ -262,4 +253,60 @@ ai_draft:
     total_tokens: 6618
     reasoning_tokens: 0
     estimated_cost_usd: 0.01414
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'El Testamento de Judá, el cuarto hijo de Jacob y Lea.
+
+
+    Una copia de las palabras de Judá, que habló a sus hijos antes de morir.
+
+
+    2 Entonces se reunieron y vinieron a él, y les dijo:
+
+
+    3 «Oigan, hijos míos, Judá, su padre. Yo llegué a ser el cuarto hijo de mi padre Jacob, y Lea, mi madre, me nombró Judá, diciendo: “Doy alabanza a Yahvé, porque me ha dado también un cuarto hijo”. 4 Yo era agudo[a] en mi juventud, y obedecía a mi padre en cada palabra. 5 Y honraba a mi madre y a la hermana de mi madre. 6 Y cuando ya había crecido, mi padre me bendijo[b], diciendo: “Serás rey, prosperando en todo”».'
+  to: "El Testamento de Judá, el cuarto hijo de Jacob y Lea.\n\n\n    Una copia de las palabras de Judá, que habló a sus hijos antes de morir.\n\n\n    2 Entonces se reunieron y vinieron a él, y les dijo:\n\n\n    3 «Oigan, hijos míos, Judá, su padre. Yo llegué a ser el cuarto hijo de mi padre Jacob, y Lea, mi madre, me nombró Judá, diciendo: \"Doy alabanza al Señor, porque me ha dado también un cuarto hijo\". 4 Yo era agudo[a] en mi juventud, y obedecía a mi padre en cada palabra. 5 Y honraba a mi madre y a la hermana de mi madre. 6 Y cuando ya había crecido, mi padre oró por mí[b], diciendo: \"Serás rey, prosperando en todo\"»."
+  rationale: Changed 'Yahvé' to 'el Señor' in Leah's praise formula to match EN POB 'the Lord' and per-verse YAML consistency. Changed 'me bendijo' to 'oró por mí' to follow the EN revision pass ('prayed for me' for ηὔξατό μοι). Updated footnote b to reflect this change accurately.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:37:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The chapter-level EN POB (revised) reads: ''The Testament of Judah, the fourth son of Jacob and Leah. A copy of the words of Judah, which he spoke to his sons before he died. 2 So they gathered and came to him, and he said to them: 3 "Hear, my children, Judah your father. I became the fourth son to my father Jacob, and Leah my mother named me Judah, saying, I give praise to the Lord, because he has given me also a fourth son. 4 I was keen in my youth, and I obeyed my father in every word. 5 And I honored my mother and my mother''s sister. 6 And when I had grown up, my father prayed for me, saying, You shall be a king[1:6], prospering in all things."'' The Spanish chapter-level text uses ''Oigan'' (correct for LatAm) but there are other issues. The Κυρίῳ in Leah''s formula is rendered as ''Yahvé'' in the chapter-level text — this is a theological decision that conflicts with the per-verse YAML (which uses ''el Señor''). Given the formula context and EN POB ''the
+    Lord'', ''el Señor'' is the more defensible choice here to match the EN POB citation formula. Also: footnote markers in EN text are [1:5] and [1:6]; the ES text uses markers [a] and [b], which is acceptable if content matches. Checking: EN footnote [1:5] = ''Greek says my mother''s sister...'' — the ES footnote [a] = ''Agudo conserva...'' — these do NOT match the EN footnotes. The ES chapter-level uses different footnotes than the EN source: ES [a] is about ὀξύς/agudo, ES [b] is about the prayer/blessing. But the EN footnote markers [1:5] and [1:6] attach to different content. The Spanish text must have its own footnote markers matching the Spanish text''s markers, not necessarily the EN markers. Checking the Spanish text: ''«Oigan, hijos míos, Judá, su padre. Yo llegué a ser el cuarto hijo de mi padre Jacob, y Lea, mi madre, me nombró Judá, diciendo: "Doy alabanza a Yahvé, porque me ha dado también un cuarto hijo". 4 Yo era agudo[a] en mi juventud, y obedecía a mi padre en cada palabra.
+    5 Y honraba a mi madre y a la hermana de mi madre. 6 Y cuando ya había crecido, mi padre me bendijo[b], diciendo: "Serás rey, prosperando en todo"».'' Footnote [a] on ''agudo'' → ES footnote a = about agudo. OK. Footnote [b] on ''bendijo'' → ES footnote b = about prayer/blessing. OK. Both markers appear in text and footnotes, matching. However: (1) ''Yahvé'' for Κυρίῳ in Leah''s formula — inconsistent with per-verse decision; should be ''el Señor'' for this formula. (2) ''me bendijo'' — the EN revision explicitly changed ''blessed me'' to ''prayed for me''; the per-verse ES correctly has ''oró por mí''; the chapter-level ES reverts to ''bendijo''. Should be ''oró por mí'' with footnote b updated accordingly.'
+  spanish_quality_summary: 'The chapter-level Spanish is generally fluent. Main issues: (1) ''Yahvé'' for Leah''s κύριος formula when EN POB uses ''the Lord'' — the per-verse decision used ''el Señor''; (2) ''me bendijo'' should be ''oró por mí'' per revised EN. The rest is good.'
+  glossary_alignment: Κυρίῳ in Leah's formula → should be 'el Señor' per EN POB choice and per-verse YAML. Using 'Yahvé' here diverges from the EN POB audit trail.
+  issues:
+  - severity: medium
+    issue: Κυρίῳ in Leah's praise formula rendered as 'Yahvé' but EN POB uses 'the Lord' and per-verse YAML uses 'el Señor'. This is a non-YHWH context (κύριος as title), so 'el Señor' is correct.
+    rationale: The project uses Yahvé for YHWH transliteration, not as a blanket replacement for all κύριος occurrences in formulaic speech.
+  - severity: medium
+    issue: '''me bendijo'' should be ''oró por mí'' to match the revised EN POB (''prayed for me'') and the per-verse ES YAML.'
+    rationale: The EN revision pass explicitly changed 'blessed me' to 'prayed for me' to reflect ηὔξατό μοι accurately. The chapter-level ES should follow suit.
+  revised_spanish_text: "El Testamento de Judá, el cuarto hijo de Jacob y Lea.\n\n\n    Una copia de las palabras de Judá, que habló a sus hijos antes de morir.\n\n\n    2 Entonces se reunieron y vinieron a él, y les dijo:\n\n\n    3 «Oigan, hijos míos, Judá, su padre. Yo llegué a ser el cuarto hijo de mi padre Jacob, y Lea, mi madre, me nombró Judá, diciendo: \"Doy alabanza al Señor, porque me ha dado también un cuarto hijo\". 4 Yo era agudo[a] en mi juventud, y obedecía a mi padre en cada palabra. 5 Y honraba a mi madre y a la hermana de mi madre. 6 Y cuando ya había crecido, mi padre oró por mí[b], diciendo: \"Serás rey, prosperando en todo\"»."
+  revised_footnotes:
+  - marker: a
+    text: '«Agudo» conserva la amplitud del adjetivo griego: puede sugerir viveza, rapidez o filo, sin decidir una sola de esas matices.'
+    reason: lexical_alternative
+  - marker: b
+    text: El verbo griego ηὔξατό indica oración o intercesión pronunciada; la revisión del inglés POB optó por «prayed for me» en lugar de «blessed me».
+    reason: theological_note
+  revision_rationale: Changed 'Yahvé' to 'el Señor' in Leah's praise formula to match EN POB 'the Lord' and per-verse YAML consistency. Changed 'me bendijo' to 'oró por mí' to follow the EN revision pass ('prayed for me' for ηὔξατό μοι). Updated footnote b to reflect this change accurately.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: df49030cc0d757a653bbe6afedcd5a0e1c55b9411608d90a4b9166e79ac9d65e
+  timestamp: '2026-05-08T06:37:40Z'
+  output_hash: df49030cc0d757a653bbe6afedcd5a0e1c55b9411608d90a4b9166e79ac9d65e
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
