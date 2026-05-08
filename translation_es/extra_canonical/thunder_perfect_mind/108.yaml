@@ -71,14 +71,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: el nombre de la voz y la voz del nombre[a]. Yo soy la señal de la letra y la manifestación de la división[b]. Y yo [...]
+  text: el nombre de la voz y la voz del nombre. Yo soy el signo de la letra y la manifestación de la división[a]. Y yo […]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El expediente de revisión indica que la alineación correcta aquí corresponde al encadenamiento “nombre de la voz / voz del nombre”; por eso se evita la traducción previa basada en el consult text desplazado.
-    reason: source_note
-  - marker: b
-    text: ‘Señal’ traduce con naturalidad el valor visible o indicativo del original; en un registro más técnico podría decirse ‘signo’.
+    text: O «separación». «División» conserva mejor el sustantivo abstracto del original auditado.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲡⲣⲁⲛ
@@ -146,4 +143,43 @@ ai_draft:
     total_tokens: 4047
     reasoning_tokens: 0
     estimated_cost_usd: 0.006624
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: el nombre de la voz y la voz del nombre[a]. Yo soy la señal de la letra y la manifestación de la división[b]. Y yo [...]
+  to: el nombre de la voz y la voz del nombre. Yo soy el signo de la letra y la manifestación de la división[a]. Y yo […]
+  rationale: 'Se conserva la alineación correcta con el OCR copto adjudicado, pero se mejora el español publicado: se sustituye «señal» por «signo» por mejor ajuste con «letra», y se elimina la nota editorial sobre el historial de revisión. Se mantiene una sola nota léxica útil sobre «división / separación».'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:13:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la alineación adjudicada al Coptic OCR, no el consult text desplazado. Conserva la secuencia básica: «el nombre de la voz y la voz del nombre. Yo soy la señal de la letra y la manifestación de la división. Y yo […]». Sin embargo, el uso de nota [a] para explicar la historia de revisión en vez de una cuestión textual o léxica del pasaje no sirve bien al lector final, y la nota [b] sobre «señal/signo» puede simplificarse dentro de una decisión léxica más directa.'
+  spanish_quality_summary: El español es legible y digno. La sintaxis es natural. No obstante, «señal de la letra» suena algo menos preciso que «signo de la letra» en un contexto de «letra» y «manifestación»; además, el par «signo / manifestación» mantiene mejor el registro simbólico del original. También conviene eliminar notas editoriales internas ajenas al texto.
+  glossary_alignment: No hay términos teológicos principales del glosario del proyecto en juego aquí. «Nombre», «voz», «letra», «manifestación» y «división» son compatibles con el expediente inglés y con el origen copto/griego auditado. Se recomienda «signo» en lugar de «señal» por mejor ajuste contextual con ⲥⲏⲙⲉⲓⲟⲛ.
+  issues:
+  - severity: medium
+    issue: La nota [a] es metatextual/editorial, no una nota útil de traducción para el lector.
+    rationale: Explica el historial de alineación del expediente en vez de aclarar una ambigüedad del texto fuente o una alternativa de traducción. Las notas deben servir al pasaje publicado.
+  - severity: low
+    issue: «señal de la letra» es posible, pero «signo de la letra» refleja mejor el campo semántico y la collocación simbólica.
+    rationale: Con «letra», «signo» suena más idiomático y más cercano a sign/signum en un contexto de símbolos, mientras que «señal» tiende a sonar más indicativa o funcional.
+  revised_spanish_text: el nombre de la voz y la voz del nombre. Yo soy el signo de la letra y la manifestación de la división[a]. Y yo […]
+  revised_footnotes:
+  - marker: a
+    text: O «separación». «División» conserva mejor el sustantivo abstracto del original auditado.
+    reason: lexical_alternative
+  revision_rationale: 'Se conserva la alineación correcta con el OCR copto adjudicado, pero se mejora el español publicado: se sustituye «señal» por «signo» por mejor ajuste con «letra», y se elimina la nota editorial sobre el historial de revisión. Se mantiene una sola nota léxica útil sobre «división / separación».'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 824a730714df0fdd8643bedbbe94ddc2f7a049f456cc8df30c5bc1a51cedb0e8
+  timestamp: '2026-05-08T03:13:06Z'
+  output_hash: 8dee22af2cdbcc401da433829939f0a4beeabf12db855183397fcfedf2cfc462
+  usage:
+    prompt_tokens: 3650
+    completion_tokens: 671
+    total_tokens: 4321
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01919
+  applied_revision: true

@@ -61,12 +61,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy aquella de quien ustedes se ocultaron[a], y se muestran ante mí.
+  text: Yo soy aquella de quien ustedes se ocultaron[b][a], y se muestran ante mí.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'La alineación del fragmento es incierta: el testimonio inglés advierte que el objeto visible parece apuntar a una lectura direccional alternativa (‘a ustedes’ / ‘a mí’), y que el motivo de ‘ocultarse’ puede pertenecer a la línea vecina.'
-    reason: textual_variant
+    text: El pronombre de objeto visible parece ser ⲉⲣⲱⲧⲛ (‘a ustedes’), lo que apoyaría la lectura alternativa ‘yo me aparezco a ustedes’. Esta traducción sigue el emparejamiento tradicional del bloque (‘ocultarse / mostrarse ante mí’), pero la dirección es incierta.
+    reason: alternative_reading
+  - marker: b
+    text: El texto cercano lee ⲛⲛⲁⲙⲉⲗⲟⲥ ϩⲛ ⲧⲏⲩⲧⲛ (‘los miembros dentro de ustedes’), lo que sugiere que material adyacente puede haberse entrometido en este segmento; el elemento ‘ocultarse’ podría pertenecer a la línea anterior o siguiente.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲟⲩⲟⲉⲓⲉ
   english_pob_choice: show yourselves
@@ -127,4 +130,49 @@ ai_draft:
     total_tokens: 3349
     reasoning_tokens: 0
     estimated_cost_usd: 0.005542
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy aquella de quien ustedes se ocultaron[a], y se muestran ante mí.
+  to: Yo soy aquella de quien ustedes se ocultaron[b][a], y se muestran ante mí.
+  rationale: 'Se mantiene el texto principal español, que ya es natural y fiel al sentido paradojal del pasaje, pero se corrige la documentación crítica para reflejar con precisión el rastro auditado: dos notas separadas, con marcadores en el mismo orden que el inglés principal ([b][a]), distinguiendo entre la incertidumbre de alineación y la lectura direccional alternativa.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español transmite correctamente la paradoja básica ‘ocultarse / mostrarse’, pero no preserva bien la estructura de incertidumbre documentada en el rastro inglés. El texto inglés principal opta por ‘to me’ en la segunda cláusula, con nota separada sobre la posible lectura ‘to you’; además conserva una nota distinta sobre la posible intrusión/alineación del motivo ‘hide’. El borrador español fusiona ambas incertidumbres en una sola nota y deja una decisión léxica interna inconsistente al registrar ‘a ustedes’ en la decisión del pronombre mientras el texto dice ‘ante mí’.
+  spanish_quality_summary: El español es claro, natural y digno. ‘Yo soy aquella de quien ustedes se ocultaron’ suena bien en voz literaria. ‘Se muestran ante mí’ también funciona, aunque ‘se muestran a mí’ sería menos idiomático. Sin embargo, para fidelidad al expediente auditado conviene separar las dos notas y ajustar su redacción para reflejar exactamente las dos incertidumbres distintas.
+  glossary_alignment: 'No hay terminología doctrinal sensible en este segmento. Las elecciones de español para el motivo de ocultamiento y aparición son apropiadas. La decisión de ‘aquella’ concuerda con la voz femenina del texto. La documentación léxica debe alinearse con el texto final: si el texto conserva ‘ante mí’, la nota sobre la dirección alternativa debe explicarlo, no presentar ‘a ustedes’ como elección española efectiva.'
+  issues:
+  - severity: medium
+    issue: La nota única fusiona dos observaciones textuales distintas del POB inglés.
+    rationale: El expediente inglés tiene una nota sobre la dirección del pronombre (‘a ti/ a mí’) y otra sobre posible intrusión de material adyacente/alineación. Conviene conservarlas separadas para no perder precisión documental.
+  - severity: medium
+    issue: Inconsistencia entre la decisión léxica del pronombre y el texto español principal.
+    rationale: 'En lexical_decisions se declara ‘chosen_spanish: a ustedes’ para el pronombre direccional, pero el texto traducido usa ‘ante mí’. Esto desalinearía la auditoría si se aprobara tal cual.'
+  - severity: low
+    issue: La redacción de la nota actual depende demasiado del comentario inglés en vez de formular directamente la incertidumbre textual en español.
+    rationale: Una nota más directa y segmentada mejora la legibilidad y la utilidad editorial sin cambiar el contenido.
+  revised_spanish_text: Yo soy aquella de quien ustedes se ocultaron[b][a], y se muestran ante mí.
+  revised_footnotes:
+  - marker: a
+    text: El pronombre de objeto visible parece ser ⲉⲣⲱⲧⲛ (‘a ustedes’), lo que apoyaría la lectura alternativa ‘yo me aparezco a ustedes’. Esta traducción sigue el emparejamiento tradicional del bloque (‘ocultarse / mostrarse ante mí’), pero la dirección es incierta.
+    reason: alternative_reading
+  - marker: b
+    text: El texto cercano lee ⲛⲛⲁⲙⲉⲗⲟⲥ ϩⲛ ⲧⲏⲩⲧⲛ (‘los miembros dentro de ustedes’), lo que sugiere que material adyacente puede haberse entrometido en este segmento; el elemento ‘ocultarse’ podría pertenecer a la línea anterior o siguiente.
+    reason: alignment_note
+  revision_rationale: 'Se mantiene el texto principal español, que ya es natural y fiel al sentido paradojal del pasaje, pero se corrige la documentación crítica para reflejar con precisión el rastro auditado: dos notas separadas, con marcadores en el mismo orden que el inglés principal ([b][a]), distinguiendo entre la incertidumbre de alineación y la lectura direccional alternativa.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d51bbad75e953b90dc201801b6109407707cfaed9dbaf29a898712647d4988a3
+  timestamp: '2026-05-08T03:07:22Z'
+  output_hash: 7e66df31ea181eb97cc4b95a3ded058c35eb5690380be542a167b4be6c1e7dc8
+  usage:
+    prompt_tokens: 3000
+    completion_tokens: 849
+    total_tokens: 3849
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020235
+  applied_revision: true

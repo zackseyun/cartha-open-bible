@@ -91,18 +91,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: '⟨Vieron⟩ a un samaritano que llevaba un cordero[a] y entraba en Judea. Él dijo a sus discípulos: «¿Ese, alrededor del cordero?». Ellos le dijeron: «Para que lo mate y lo coma». Él les dijo: «Mientras esté vivo, no lo comerá; pero si lo mata y llega a ser un cadáver[b], entonces no podrá hacerlo». Ellos dijeron: «De otro modo no podrá hacerlo». Él les dijo: «Ustedes mismos, busquen para ustedes un lugar de descanso[c], para que no lleguen a ser un cadáver y los coman».'
+  text: '⟨Vieron⟩ a un samaritano que llevaba un cordero y entraba en Judea. Él dijo a sus discípulos: «¿Ese, en torno al cordero?[a]». Ellos le dijeron: «Para que lo mate y lo coma». Él les dijo: «Mientras esté vivo, no lo comerá; pero si lo mata y llega a ser un cadáver[b], lo comerá». Ellos dijeron: «De otro modo no podrá hacerlo». Él les dijo: «Ustedes mismos busquen para ustedes un lugar de descanso[c], para que no lleguen a ser un cadáver y los coman[d]».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El manuscrito carece de un verbo principal explícito aquí; los editores suplen el sentido con «vieron».
-    reason: textual_variant
+    text: El copto es elíptico, literalmente «ese alrededor del cordero?». La respuesta de los discípulos muestra que lo entendieron como una pregunta sobre la intención del hombre.
+    reason: lexical_alternative
   - marker: b
     text: El copto emplea el préstamo griego para «cadáver»; se conserva este matiz físico y no se suaviza como «cuerpo» o «muerto».
     reason: lexical_alternative
   - marker: c
     text: ἀνάπαυσις puede traducirse también «reposo» o «descanso»; aquí se opta por «lugar de descanso» para conservar el sentido de búsqueda de un sitio concreto.
     reason: lexical_alternative
+  - marker: d
+    text: El copto usa un activo de tercera persona plural, «y los coman», más vívido que una pasiva impersonal como «y sean comidos».
+    reason: register_note
 lexical_decisions:
 - source_word: ⲁⲩⲛⲁⲩ
   english_pob_choice: They saw
@@ -213,4 +216,55 @@ ai_draft:
     total_tokens: 8855
     reasoning_tokens: 0
     estimated_cost_usd: 0.013016
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '⟨Vieron⟩ a un samaritano que llevaba un cordero[a] y entraba en Judea. Él dijo a sus discípulos: «¿Ese, alrededor del cordero?». Ellos le dijeron: «Para que lo mate y lo coma». Él les dijo: «Mientras esté vivo, no lo comerá; pero si lo mata y llega a ser un cadáver[b], entonces no podrá hacerlo». Ellos dijeron: «De otro modo no podrá hacerlo». Él les dijo: «Ustedes mismos, busquen para ustedes un lugar de descanso[c], para que no lleguen a ser un cadáver y los coman».'
+  to: '⟨Vieron⟩ a un samaritano que llevaba un cordero y entraba en Judea. Él dijo a sus discípulos: «¿Ese, en torno al cordero?[a]». Ellos le dijeron: «Para que lo mate y lo coma». Él les dijo: «Mientras esté vivo, no lo comerá; pero si lo mata y llega a ser un cadáver[b], lo comerá». Ellos dijeron: «De otro modo no podrá hacerlo». Él les dijo: «Ustedes mismos busquen para ustedes un lugar de descanso[c], para que no lleguen a ser un cadáver y los coman[d]».'
+  rationale: 'Se corrige un error sustancial de sentido en la cláusula sobre comer el cordero después de matarlo, se mejora levemente la naturalidad de la pregunta elíptica sin perder su rareza, y se añaden las notas que documentan dos decisiones auditadas por la POB inglesa: la elipsis de la pregunta y el plural activo «los coman».'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:38Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en gran parte el sentido del copto y la auditoría inglesa: conserva la elipsis inicial suplementada, mantiene la rareza de la pregunta sobre el hombre y el cordero, traduce ⲡⲧⲱⲙⲁ como «cadáver», y refleja bien el futuro de capacidad «no podrá». Sin embargo, hay un desajuste importante en la segunda cláusula de Jesús: el copto/inglés dicen que mientras el cordero está vivo, el hombre no lo comerá, pero cuando lo mate y llegue a ser cadáver, entonces sí lo comerá. El borrador español introduce «entonces no podrá hacerlo», que contradice el sentido fuente y duplica indebidamente la frase posterior de los discípulos.'
+  spanish_quality_summary: 'El español es claro y digno, pero «¿Ese, alrededor del cordero?» suena algo demasiado calcado; puede mantenerse la elipsis con mejor puntuación: «¿Ese, en torno al cordero?» o similar. Más importante, la secuencia lógica del diálogo queda dañada por la negación errónea. También conviene alinear las notas con los puntos realmente marcados en el texto y conservar una nota para la pregunta elíptica, como hace la POB inglesa.'
+  glossary_alignment: 'Buena alineación con decisiones clave: «cadáver» para ⲡⲧⲱⲙⲁ y «descanso» para ⲁⲛⲁⲡⲁⲩⲥⲓⲥ. No hay términos del glosario mayor en juego como Yahvé/Mesías. Falta, no obstante, reflejar en nota la elipsis de «ese alrededor del cordero», ya documentada en inglés; y la traducción de «alrededor de» puede suavizarse a «en torno al» para sonar más natural sin perder literalidad.'
+  issues:
+  - severity: high
+    issue: Negación incorrecta en la cláusula central
+    rationale: 'El borrador dice «pero si lo mata y llega a ser un cadáver, entonces no podrá hacerlo». El copto dice lo contrario: cuando lo mate y se vuelva cadáver, entonces podrá/comerá. La negación pertenece a la frase siguiente de los discípulos («De otro modo no podrá hacerlo»), no a la respuesta de Jesús.'
+  - severity: medium
+    issue: Falta una nota para la pregunta elíptica preservada por la POB inglesa
+    rationale: La rareza de «That one around the lamb?» es una decisión lexical/theological auditada. En español, la formulación elíptica también requiere aclaración breve para evitar falsa oscuridad gratuita.
+  - severity: low
+    issue: La formulación «¿Ese, alrededor del cordero?» es algo rígida en español
+    rationale: Preserva bien la extrañeza, pero «en torno al cordero» suena más natural en español sin resolver la elipsis ni paraphrasear en exceso.
+  revised_spanish_text: '⟨Vieron⟩ a un samaritano que llevaba un cordero y entraba en Judea. Él dijo a sus discípulos: «¿Ese, en torno al cordero?[a]». Ellos le dijeron: «Para que lo mate y lo coma». Él les dijo: «Mientras esté vivo, no lo comerá; pero si lo mata y llega a ser un cadáver[b], lo comerá». Ellos dijeron: «De otro modo no podrá hacerlo». Él les dijo: «Ustedes mismos busquen para ustedes un lugar de descanso[c], para que no lleguen a ser un cadáver y los coman[d]».'
+  revised_footnotes:
+  - marker: a
+    text: El copto es elíptico, literalmente «ese alrededor del cordero?». La respuesta de los discípulos muestra que lo entendieron como una pregunta sobre la intención del hombre.
+    reason: lexical_alternative
+  - marker: b
+    text: El copto emplea el préstamo griego para «cadáver»; se conserva este matiz físico y no se suaviza como «cuerpo» o «muerto».
+    reason: lexical_alternative
+  - marker: c
+    text: ἀνάπαυσις puede traducirse también «reposo» o «descanso»; aquí se opta por «lugar de descanso» para conservar el sentido de búsqueda de un sitio concreto.
+    reason: lexical_alternative
+  - marker: d
+    text: El copto usa un activo de tercera persona plural, «y los coman», más vívido que una pasiva impersonal como «y sean comidos».
+    reason: register_note
+  revision_rationale: 'Se corrige un error sustancial de sentido en la cláusula sobre comer el cordero después de matarlo, se mejora levemente la naturalidad de la pregunta elíptica sin perder su rareza, y se añaden las notas que documentan dos decisiones auditadas por la POB inglesa: la elipsis de la pregunta y el plural activo «los coman».'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 236fa489432c44c2ae7fe4161090bf048ffc58bb43571e9e6171a977e697ce7c
+  timestamp: '2026-05-08T03:05:38Z'
+  output_hash: 8a33b76f8a775d0fd0f58f9bb05ee13c2a22449acf500633b2d0e2bc46cb8014
+  usage:
+    prompt_tokens: 8503
+    completion_tokens: 1119
+    total_tokens: 9622
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.038042
+  applied_revision: true

@@ -59,15 +59,15 @@ base_translation:
     changes_summary: Added terminal punctuation for smoother English; retained the established lexical renderings and footnotes.
 translation:
   language: es
-  text: Yo soy el dominio de sí mismo y la falta de dominio de sí mismo.[a][b]
+  text: Yo soy autodominio y falta de autodominio.[a][b]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: También podría traducirse “autodominio”, “contención” o “disciplina”. El término contrario puede entenderse como “descontrol”, “intemperancia” o “licenciosidad”.
+    text: También podría traducirse «contención», «disciplina» o «templanza». El término contrario puede entenderse como «descontrol», «intemperancia» o «licenciosidad».
     reason: lexical_alternative
   - marker: b
-    text: El segmento parece continuar en la línea siguiente; el precepto final de la página se limita aquí a la afirmación “Yo soy …”. La preposición final del copto (ϩⲓϫⲙ) probablemente introduce un complemento que no aparece en este recorte.
-    reason: source_note
+    text: Las líneas precedentes («escuchen … reciban instrucción …») sugieren que este bloque limita con el proemio; aquí solo se traduce la afirmación final «Yo soy …». La preposición final del copto (ϩⲓϫⲙ, «sobre» o «encima de») probablemente continúa en la línea siguiente con un complemento no conservado en este recorte.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ ⲧⲉ
   english_pob_choice: I am the
@@ -121,4 +121,49 @@ ai_draft:
     total_tokens: 3231
     reasoning_tokens: 0
     estimated_cost_usd: 0.005202
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy el dominio de sí mismo y la falta de dominio de sí mismo.[a][b]
+  to: Yo soy autodominio y falta de autodominio.[a][b]
+  rationale: 'Se ajusta la línea a un español más natural y poético sin alterar el sentido fuente: «autodominio» expresa con claridad la virtud de ⲧⲁϣϭⲏⲗ y permite un contraste limpio con «falta de autodominio». También se corrige la nota b para evitar «precepto», que no corresponde al audit trail inglés ni al tono del original.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja correctamente la estructura antitética del copto y sigue bien el audit trail inglés: ⲁⲛⲟⲕ ⲧⲉ = «Yo soy», ⲧⲁϣϭⲏⲗ = virtud de dominio propio, y ⲉⲕⲟⲗ = su opuesto amplio, no limitado a lo sexual. La nota sobre ϩⲓϫⲙ también preserva adecuadamente la cautela de alineación.'
+  spanish_quality_summary: La redacción es comprensible, pero «el dominio de sí mismo» suena algo pesada y menos idiomática en español eclesial general que «el autodominio». Además, el artículo «el» tras «Yo soy» no aporta claridad y hace la frase más rígida. Una formulación más natural y fiel al valor ético contrastivo es «Yo soy autodominio y falta de autodominio».
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. La decisión léxica principal puede mejorarse por naturalidad española: «autodominio» corresponde bien a «self-control» y mantiene el paralelismo con «falta de autodominio». Las notas léxicas ya preservan alternativas pertinentes.'
+  issues:
+  - severity: medium
+    issue: «el dominio de sí mismo» es una formulación poco natural en esta línea poética.
+    rationale: Aunque semánticamente correcta, resulta pesada y menos idiomática que «autodominio», especialmente en una secuencia breve de autoidentificaciones paradójicas.
+  - severity: low
+    issue: El artículo en «Yo soy el dominio…» endurece innecesariamente la sintaxis.
+    rationale: El inglés usa «I am self-control», no una construcción nominal definida; en español la omisión del artículo suena más natural y conserva mejor el tono aforístico.
+  - severity: low
+    issue: La nota b dice «precepto final de la página», pero el original inglés habla del bloque/afirmación final, no de un precepto.
+    rationale: «Precepto» introduce una idea normativa no presente en el texto fuente ni en la nota inglesa; conviene una formulación más neutral.
+  revised_spanish_text: Yo soy autodominio y falta de autodominio.[a][b]
+  revised_footnotes:
+  - marker: a
+    text: También podría traducirse «contención», «disciplina» o «templanza». El término contrario puede entenderse como «descontrol», «intemperancia» o «licenciosidad».
+    reason: lexical_alternative
+  - marker: b
+    text: Las líneas precedentes («escuchen … reciban instrucción …») sugieren que este bloque limita con el proemio; aquí solo se traduce la afirmación final «Yo soy …». La preposición final del copto (ϩⲓϫⲙ, «sobre» o «encima de») probablemente continúa en la línea siguiente con un complemento no conservado en este recorte.
+    reason: alignment_note
+  revision_rationale: 'Se ajusta la línea a un español más natural y poético sin alterar el sentido fuente: «autodominio» expresa con claridad la virtud de ⲧⲁϣϭⲏⲗ y permite un contraste limpio con «falta de autodominio». También se corrige la nota b para evitar «precepto», que no corresponde al audit trail inglés ni al tono del original.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ca4d147f488308c6c23d020b7534006002ab1c9c2648b2aecfdd39cf8b8810d7
+  timestamp: '2026-05-08T03:07:33Z'
+  output_hash: e650af2a05eae6df0eff2906f4cea0efce75512e7f99329a08921e0c14e39da5
+  usage:
+    prompt_tokens: 2870
+    completion_tokens: 783
+    total_tokens: 3653
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01892
+  applied_revision: true

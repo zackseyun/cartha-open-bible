@@ -67,8 +67,12 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: '...te hizo un modelo dentro de ti. Y lo que ves afuera de ti, me ves a mí dentro de ti. Es visible, y es tu vestido. Escúchenme, ustedes los oyentes.'
+  text: '...a ti, él lo hizo una imagen dentro de ustedes. Y lo que ven fuera de ustedes, me ven a mí dentro de ustedes. Es visible, y es su vestidura. Escúchenme, oyentes.[a]'
   philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: La transmisión y el mapeo de este bloque siguen siendo algo inciertos. La cláusula inicial refleja la relación distinguida en la auditoría inglesa (‘él lo hizo una imagen dentro de ustedes’), aunque el referente de ‘lo’ no está explícito en español sin mayor paráfrasis.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲙⲡⲉⲧⲛⲥⲁϩⲟⲩⲛ
   english_pob_choice: within you
@@ -168,4 +172,46 @@ ai_draft:
     total_tokens: 4802
     reasoning_tokens: 0
     estimated_cost_usd: 0.008476
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '...te hizo un modelo dentro de ti. Y lo que ves afuera de ti, me ves a mí dentro de ti. Es visible, y es tu vestido. Escúchenme, ustedes los oyentes.'
+  to: '...a ti, él lo hizo una imagen dentro de ustedes. Y lo que ven fuera de ustedes, me ven a mí dentro de ustedes. Es visible, y es su vestidura. Escúchenme, oyentes.[a]'
+  rationale: Se corrige la primera cláusula para preservar la relación de participantes del texto auditado, se unifica el tratamiento en plural para concordar con ‘oyentes’, y se mejora el registro poético con ‘vestidura’. Se añade una nota mínima porque la cláusula inicial sigue siendo algo abrupta en español debido a la incertidumbre del mapeo y del referente pronominal.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La versión española sigue en general la revisión auditada correcta: motivo interior/exterior, ‘visible’ y ‘garment’, y el llamado final a los oyentes. Sin embargo, omite un elemento del inicio (‘you’ en aposición/vocativo elíptico) y, más importante, pierde la referencia masculina de ‘he made him a pattern within you’ al convertirla en ‘te hizo un modelo’, lo que cambia la relación entre los participantes. También mezcla tratamiento singular (‘ti’) con imperativo plural (‘Escúchenme, ustedes’), lo que debilita la coherencia del pasaje.'
+  spanish_quality_summary: El español es legible, pero ‘te hizo un modelo dentro de ti’ suena ambiguo y poco natural porque puede entenderse como ‘te convirtió en modelo’. ‘Afuera de ti’ es posible, aunque ‘fuera de ti’ suena algo más digno; ‘vestido’ funciona, pero ‘vestidura’ encaja mejor con el tono poético y con ‘garment’. El cierre ‘Escúchenme, ustedes los oyentes’ es comprensible, pero más natural y solemne sería ‘Escúchenme, oyentes’.
+  glossary_alignment: No hay conflictos con la terminología teológica principal del proyecto. Las decisiones léxicas clave del audit trail se conservan mejor con ‘dentro de ti / fuera de ti’, ‘visible’, ‘vestidura’ y ‘oyentes’.
+  issues:
+  - severity: high
+    issue: Cambio de objeto y participantes en la primera cláusula
+    rationale: El inglés auditado dice ‘...you, he made him a pattern within you’, no ‘te hizo un modelo’. La versión española actual hace de ‘ti’ el objeto directo de ‘hizo’, alterando el sentido relacional del original auditado.
+  - severity: medium
+    issue: Incoherencia de número/persona
+    rationale: El texto usa ‘ti’/‘ves’ (singular) y luego ‘Escúchenme, ustedes’ (plural). Dado que el pasaje termina con vocativo plural ‘hearers’, conviene uniformar el tratamiento para evitar choque estilístico.
+  - severity: low
+    issue: Registro poético mejorable en ‘vestido’ y ‘ustedes los oyentes’
+    rationale: ‘Vestidura’ refleja mejor el tono elevado de la pieza. ‘Escúchenme, oyentes’ evita una frase más pesada sin perder claridad.
+  revised_spanish_text: '...a ti, él lo hizo una imagen dentro de ustedes. Y lo que ven fuera de ustedes, me ven a mí dentro de ustedes. Es visible, y es su vestidura. Escúchenme, oyentes.[a]'
+  revised_footnotes:
+  - marker: a
+    text: La transmisión y el mapeo de este bloque siguen siendo algo inciertos. La cláusula inicial refleja la relación distinguida en la auditoría inglesa (‘él lo hizo una imagen dentro de ustedes’), aunque el referente de ‘lo’ no está explícito en español sin mayor paráfrasis.
+    reason: lexical_alternative
+  revision_rationale: Se corrige la primera cláusula para preservar la relación de participantes del texto auditado, se unifica el tratamiento en plural para concordar con ‘oyentes’, y se mejora el registro poético con ‘vestidura’. Se añade una nota mínima porque la cláusula inicial sigue siendo algo abrupta en español debido a la incertidumbre del mapeo y del referente pronominal.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 78f69f2291f833fcd2de1ce4f4c4d2dc3c64b4564171c75348fd45d50f4b4260
+  timestamp: '2026-05-08T03:07:59Z'
+  output_hash: d2dd1949184458091b18547078b5fbea997c21fd7e42e62ce8d302f4f7a05f92
+  usage:
+    prompt_tokens: 4398
+    completion_tokens: 772
+    total_tokens: 5170
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022575
+  applied_revision: true

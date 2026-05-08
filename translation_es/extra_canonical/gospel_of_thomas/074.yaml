@@ -48,14 +48,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Él dijo[a]: «Señor, hay muchas alrededor del bebedero[b], pero no hay nada en el pozo[c]».'
+  text: 'Él dijo[a]: «Señor, hay muchos reunidos alrededor del abrevadero[b], pero no hay nada en el pozo[c]».'
   philosophy: formal
   footnotes:
   - marker: a
     text: El copto dice literalmente «él dijo, Señor», dejando ambiguo quién habla y a quién se dirige. Se conserva esa ambigüedad en español, como en el aparato auditado en inglés.
     reason: textual_variant
   - marker: b
-    text: ⲧϫⲱⲧⲉ puede significar «pozo» o «cisterna»; aquí se traduce «bebedero» para mantener la distinción con el siguiente término y reflejar el lugar visible de acceso al agua.
+    text: ⲧϫⲱⲧⲉ puede significar «pozo» o «cisterna»; aquí se traduce «abrevadero» para mantener la distinción con el siguiente término y reflejar el lugar visible de acceso al agua.
     reason: lexical_alternative
   - marker: c
     text: ⲗⲁⲁⲩ con la negación puede significar «nada» o «nadie». En este contexto, «nada» es la lectura más natural; «nadie» también es posible si se entiende la imagen de personas que no descienden al pozo.
@@ -128,4 +128,52 @@ ai_draft:
     total_tokens: 4030
     reasoning_tokens: 0
     estimated_cost_usd: 0.006994
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Él dijo[a]: «Señor, hay muchas alrededor del bebedero[b], pero no hay nada en el pozo[c]».'
+  to: 'Él dijo[a]: «Señor, hay muchos reunidos alrededor del abrevadero[b], pero no hay nada en el pozo[c]».'
+  rationale: 'La revisión es menor y no cambia el sentido auditado: mejora la naturalidad del español al explicitar un referente humano implícito («muchos reunidos») y reemplaza «bebedero» por «abrevadero», que expresa mejor el contraste entre un punto superficial de acceso al agua y el «pozo» profundo.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:13:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador conserva bien la ambigüedad inicial de «Él dijo: “Señor…”», distingue correctamente ⲧϫⲱⲧⲉ de ⲧϣⲱⲛⲉ, y mantiene la lectura principal «nada» para ⲗⲁⲁⲩ. Sin embargo, «hay muchas» omite el referente femenino implícito y suena elíptico en español; además, «bebedero» puede entenderse como recipiente para animales más que como lugar de reunión junto al agua. Conviene una reparación menor para mayor naturalidad y precisión.'
+  spanish_quality_summary: 'El español es en general claro y digno, pero requiere un ajuste estilístico: «hay muchas alrededor del bebedero» resulta menos natural que «hay muchos reunidos alrededor del abrevadero» o similar. «Abrevadero» comunica mejor la idea de un punto de acceso superficial al agua en contraste con «pozo».'
+  glossary_alignment: No hay conflictos con la terminología doctrinal principal del proyecto. «Señor» para ⲡϫⲟⲉⲓⲥ está bien en este contexto vocativo ambiguo. «Pozo» para ⲧϣⲱⲛⲉ y «nada» para ⲗⲁⲁⲩ están alineados con el expediente inglés. Se recomienda «abrevadero» como mejor equivalente contextual de «drinking trough».
+  issues:
+  - severity: medium
+    issue: «hay muchas» deja el referente demasiado implícito
+    rationale: En español, el femenino plural sin sustantivo expreso suena incompleto aquí. El copto/inglés expresa cantidad de personas o entidades alrededor del lugar; «hay muchos» o «hay muchos reunidos» se lee con más naturalidad.
+  - severity: medium
+    issue: «bebedero» es menos preciso que «abrevadero» en este contraste metafórico
+    rationale: Aunque «bebedero» no es imposible, suele evocar un recipiente o dispositivo. «Abrevadero» comunica mejor un lugar donde muchos se congregan para beber y distingue con más claridad del «pozo» profundo.
+  - severity: low
+    issue: La nota [b] debe armonizar con el término revisado
+    rationale: Si se mejora el sustantivo principal, la nota léxica debe reflejar esa elección exacta para mantener consistencia editorial.
+  revised_spanish_text: 'Él dijo[a]: «Señor, hay muchos reunidos alrededor del abrevadero[b], pero no hay nada en el pozo[c]».'
+  revised_footnotes:
+  - marker: a
+    text: El copto dice literalmente «él dijo, Señor», dejando ambiguo quién habla y a quién se dirige. Se conserva esa ambigüedad en español, como en el aparato auditado en inglés.
+    reason: textual_variant
+  - marker: b
+    text: ⲧϫⲱⲧⲉ puede significar «pozo» o «cisterna»; aquí se traduce «abrevadero» para mantener la distinción con el siguiente término y reflejar el lugar visible de acceso al agua.
+    reason: lexical_alternative
+  - marker: c
+    text: ⲗⲁⲁⲩ con la negación puede significar «nada» o «nadie». En este contexto, «nada» es la lectura más natural; «nadie» también es posible si se entiende la imagen de personas que no descienden al pozo.
+    reason: lexical_alternative
+  revision_rationale: 'La revisión es menor y no cambia el sentido auditado: mejora la naturalidad del español al explicitar un referente humano implícito («muchos reunidos») y reemplaza «bebedero» por «abrevadero», que expresa mejor el contraste entre un punto superficial de acceso al agua y el «pozo» profundo.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 20272e1abe192500892e34499d897513dd260245fd7ccedeaf7780c2aa71f59a
+  timestamp: '2026-05-08T03:13:36Z'
+  output_hash: 99352966ab069d30163f1b1d7dc4c15e0312b9f5e29992df046d4d433a290dd3
+  usage:
+    prompt_tokens: 3717
+    completion_tokens: 886
+    total_tokens: 4603
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022582
+  applied_revision: true

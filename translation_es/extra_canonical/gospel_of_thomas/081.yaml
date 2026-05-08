@@ -64,7 +64,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Quien se haya hecho rico, que sea rey; y quien tenga poder[b], que lo renuncie[c]».'
+  text: 'Jesús dijo[a]: «Quien se haya hecho rico, que sea rey; y quien tenga poder[b], que renuncie a él[c]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -74,7 +74,7 @@ translation:
     text: ⲇⲩⲛⲁⲙⲓⲥ (préstamo griego) también puede significar «fuerza», «capacidad» o, en ciertos contextos, «poder milagroso»; se mantiene «poder» por amplitud y paralelismo.
     reason: lexical_alternative
   - marker: c
-    text: El objeto de ⲁⲣⲛⲁ es implícito en copto; en español se explicita con «lo», refiriéndose al poder mencionado inmediatamente antes.
+    text: El objeto de ⲁⲣⲛⲁ es implícito en copto; en español se explicita con «a él», refiriéndose al poder mencionado inmediatamente antes, porque «renunciar» normalmente exige esa construcción.
     reason: source_note
 lexical_decisions:
 - source_word: ⲡⲉϫⲉ ⲓⲏⲥⲟⲩⲥ
@@ -152,4 +152,49 @@ ai_draft:
     total_tokens: 5137
     reasoning_tokens: 0
     estimated_cost_usd: 0.009163
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Quien se haya hecho rico, que sea rey; y quien tenga poder[b], que lo renuncie[c]».'
+  to: 'Jesús dijo[a]: «Quien se haya hecho rico, que sea rey; y quien tenga poder[b], que renuncie a él[c]».'
+  rationale: 'La traducción es básicamente fiel, pero requiere una reparación pequeña y necesaria para la naturalidad y corrección del español: sustituir «que lo renuncie» por «que renuncie a él». Esto preserva el sentido del original y del POB inglés sin introducir paráfrasis.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura y el sentido básico del copto y del POB inglés: Jesús introduce el dicho; el relativo perfecto se transmite adecuadamente en «quien se haya hecho rico»; «que sea rey» preserva la elección marcada de ⲣⲣⲣⲟ; «quien tenga poder» representa bien la construcción posesiva con ⲇⲩⲛⲁⲙⲓⲥ; y el objeto implícito de ⲁⲣⲛⲁ se explicita correctamente. El único problema sustancial es que «lo renuncie» no es español idiomático para ‘renounce it’.'
+  spanish_quality_summary: La redacción es clara y digna, pero «que lo renuncie» suena antinatural e incorrecta en español general. La solución natural es «que renuncie a él», manteniendo el referente explícito. También conviene ajustar la nota correspondiente para explicar el cambio de régimen verbal en español.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. «Jesús», «poder» y la formulación verbal general están alineados. «Que sea rey» coincide con la justificación lexical del POB para ⲣⲣⲣⲟ. La revisión solo corrige la sintaxis española de «renunciar».
+  issues:
+  - severity: high
+    issue: «que lo renuncie» es una construcción no idiomática en español
+    rationale: Aunque el copto permite un objeto implícito y el inglés lo expresa con objeto directo, en español «renunciar» normalmente rige «a». Mantener «lo» produce una frase poco natural y gramaticalmente deficiente para lectura bíblica amplia.
+  - severity: low
+    issue: La nota c debe ajustarse al texto revisado
+    rationale: Si el texto dice «renuncie a él», la nota ya no debe hablar de «lo», sino de la explicitación del objeto implícito mediante un complemento preposicional, que es la forma natural en español.
+  revised_spanish_text: 'Jesús dijo[a]: «Quien se haya hecho rico, que sea rey; y quien tenga poder[b], que renuncie a él[c]».'
+  revised_footnotes:
+  - marker: a
+    text: ⲣⲣⲣⲟ puede traducirse también «reine» o «gobierne»; «que sea rey» conserva el matiz verbal ligado a «rey» y la dureza sentenciosa de Tomás.
+    reason: lexical_alternative
+  - marker: b
+    text: ⲇⲩⲛⲁⲙⲓⲥ (préstamo griego) también puede significar «fuerza», «capacidad» o, en ciertos contextos, «poder milagroso»; se mantiene «poder» por amplitud y paralelismo.
+    reason: lexical_alternative
+  - marker: c
+    text: El objeto de ⲁⲣⲛⲁ es implícito en copto; en español se explicita con «a él», refiriéndose al poder mencionado inmediatamente antes, porque «renunciar» normalmente exige esa construcción.
+    reason: source_note
+  revision_rationale: 'La traducción es básicamente fiel, pero requiere una reparación pequeña y necesaria para la naturalidad y corrección del español: sustituir «que lo renuncie» por «que renuncie a él». Esto preserva el sentido del original y del POB inglés sin introducir paráfrasis.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b9ccabf86582770da4929d330ea7542a466fbb4e08c40bdf43cc5c153a9d29ec
+  timestamp: '2026-05-08T03:06:49Z'
+  output_hash: 8d27dd5d0a3563a134a9ed4c5e03639bf0d2365096416904a35229384ab80e0e
+  usage:
+    prompt_tokens: 4815
+    completion_tokens: 811
+    total_tokens: 5626
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024203
+  applied_revision: true

@@ -50,11 +50,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: Sean pasajeros.'
+  text: 'Jesús dijo[a]: Sean transeúntes.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: Sean los que pasan; sean transitorios; sean viajeros. El verbo subyacente es un préstamo griego con el sentido de “pasar por” o “pasar de largo”.'
+    text: 'O: «Sean los que pasan»; «sean transitorios»; «sean viajeros». El verbo subyacente es un préstamo griego con el sentido de «pasar por» o «pasar de largo».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲡⲉϫⲉ ⲓⲏⲥⲟⲩⲥ
@@ -107,4 +107,43 @@ ai_draft:
     total_tokens: 2935
     reasoning_tokens: 0
     estimated_cost_usd: 0.004433
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: Sean pasajeros.'
+  to: 'Jesús dijo[a]: Sean transeúntes.'
+  rationale: Se sustituye «pasajeros» por «transeúntes» para reflejar con más fidelidad el sentido de «los que pasan / pasan de largo» y evitar la lectura dominante de «passengers». Se mantiene la brevedad aforística del dicho y la nota conserva las alternativas documentadas por la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:12:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador capta bien la estructura breve del dicho y la fuerza exhortativa de ϣⲱⲡⲉ como mandato/jusivo. Sin embargo, «pasajeros» en español se desvía del sentido principal de ⲡⲁⲣⲁⲅⲉ, que según la evidencia y la auditoría inglesa significa «los que pasan / pasan de largo», no «passengers».
+  spanish_quality_summary: '«Jesús dijo[a]: Sean pasajeros» es breve y fluido, pero «pasajeros» introduce una acepción moderna dominante de personas transportadas, lo que perjudica la inteligibilidad y fidelidad. Una forma como «Sean transeúntes» o «Sean los que pasan» se ajusta mejor al sentido. Para conservar tersura gnómica y evitar la ambigüedad de «pasajeros», se prefiere «transeúntes».'
+  glossary_alignment: 'No hay conflictos con la terminología principal del proyecto. «Jesús» está correcto. La decisión clave es léxica: ⲡⲁⲣⲁⲅⲉ debe reflejar «pasar por / pasar de largo», no «pasajero» en el sentido habitual español.'
+  issues:
+  - severity: high
+    issue: «pasajeros» falsea el núcleo semántico de ⲡⲁⲣⲁⲅⲉ
+    rationale: En español contemporáneo, «pasajeros» se entiende ante todo como personas que viajan en un medio de transporte. El source y la nota inglesa apuntan a «los que pasan», «passers-by», «travelers» solo como alternativa secundaria, no como sentido principal.
+  - severity: medium
+    issue: La nota al pie refuerza una base léxica correcta, pero no compensa la ambigüedad del texto principal
+    rationale: Aunque la nota menciona «los que pasan», el lector recibe primero una formulación principal equívoca. El texto base debe preservar mejor el significado sin depender de la nota.
+  revised_spanish_text: 'Jesús dijo[a]: Sean transeúntes.'
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Sean los que pasan»; «sean transitorios»; «sean viajeros». El verbo subyacente es un préstamo griego con el sentido de «pasar por» o «pasar de largo».'
+    reason: lexical_alternative
+  revision_rationale: Se sustituye «pasajeros» por «transeúntes» para reflejar con más fidelidad el sentido de «los que pasan / pasan de largo» y evitar la lectura dominante de «passengers». Se mantiene la brevedad aforística del dicho y la nota conserva las alternativas documentadas por la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 50868cf661f1469b3747efbe5cef1cd3baafb9082359cbfc7439f946762f6a54
+  timestamp: '2026-05-08T03:12:32Z'
+  output_hash: 50ef599fbcfa78b1f6d6e7f1e7cc98802f68dfd8e913bf8b0c0eaf7d5b638a57
+  usage:
+    prompt_tokens: 2620
+    completion_tokens: 647
+    total_tokens: 3267
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016255
+  applied_revision: true

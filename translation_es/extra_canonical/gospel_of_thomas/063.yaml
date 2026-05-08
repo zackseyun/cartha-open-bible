@@ -106,20 +106,23 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Había un hombre rico que tenía mucho dinero. Dijo: “Usaré mi dinero, para que yo siembre y yo siegue y yo plante, y llene mis graneros de produce[b], para no carecer de nada[c].” Estas eran las cosas que pensaba en su corazón. Y en aquella noche murió. Quien tiene oídos, que oiga»[d].'
+  text: 'Jesús dijo[a]: «Había un hombre rico que tenía mucho dinero. Dijo: “Usaré mi dinero, para que siembre, siegue y plante, y llene mis depósitos[b] de cosecha[c], para no carecer de nada[d].” Estas eran las cosas que pensaba en su corazón. Y en aquella noche murió. Quien tiene oídos, que oiga[e]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: En el texto copto, este es un dicho atribuido a Jesús; se conserva la fórmula introductoria breve sin añadir armonización con los evangelios canónicos.
-    reason: source_note
+    text: El copto ⲭⲣⲏⲙⲁ puede significar ‘dinero’, ‘riqueza’ o ‘bienes’ (griego χρῆμα). Se elige ‘dinero’ por su concreción; ‘riqueza’ también sería posible.
+    reason: lexical_alternative
   - marker: b
-    text: ⲕⲁⲣⲡⲟⲥ puede significar ‘fruto’, ‘cosecha’ o ‘produce’; se opta por ‘produce’ para mantener el sentido agrícola amplio.
+    text: ⲁϩⲟ puede referirse a depósitos, graneros o almacenes. Se elige ‘depósitos’ para evitar una especificación excesiva.
     reason: lexical_alternative
   - marker: c
-    text: 'Literalmente: ‘para no carecer de nada’ o ‘para no estar en necesidad de nada’.'
+    text: ⲕⲁⲣⲡⲟⲥ puede significar ‘fruto’, ‘cosecha’ o ‘producto’. Aquí se elige ‘cosecha’ por el contexto de almacenamiento agrícola.
     reason: lexical_alternative
   - marker: d
-    text: 'Literalmente: ‘Quien tiene oídos, que oiga.’ El copto no añade ‘para oír’.'
+    text: Literalmente, la expresión indica ‘no estar en necesidad de nada’.
+    reason: cultural_note
+  - marker: e
+    text: 'Literalmente: ‘Quien tiene oídos, que oiga’. El copto no añade ‘para oír’.'
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲗⲟⲩⲥⲓⲟⲥ
@@ -263,4 +266,61 @@ ai_draft:
     total_tokens: 9079
     reasoning_tokens: 0
     estimated_cost_usd: 0.014264
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Había un hombre rico que tenía mucho dinero. Dijo: “Usaré mi dinero, para que yo siembre y yo siegue y yo plante, y llene mis graneros de produce[b], para no carecer de nada[c].” Estas eran las cosas que pensaba en su corazón. Y en aquella noche murió. Quien tiene oídos, que oiga»[d].'
+  to: 'Jesús dijo[a]: «Había un hombre rico que tenía mucho dinero. Dijo: “Usaré mi dinero, para que siembre, siegue y plante, y llene mis depósitos[b] de cosecha[c], para no carecer de nada[d].” Estas eran las cosas que pensaba en su corazón. Y en aquella noche murió. Quien tiene oídos, que oiga[e]».'
+  rationale: 'La revisión corrige dos problemas principales: un anglicismo/impropiedad (‘produce’) y una sobreespecificación (‘graneros’) contraria a la rationale documentada. También realinea las notas con el expediente inglés, especialmente la de ⲭⲣⲏⲙⲁ, y suaviza la sintaxis española sin perder el sentido del copto.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:13Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador conserva bien la estructura básica del dicho y respeta decisiones clave del audit trail: ϫⲉⲕⲁⲁⲥ como finalidad (‘para que’) y la fórmula final sin añadir ‘para oír’. Sin embargo, no preserva fielmente varias decisiones léxicas documentadas ni la naturalidad española: ⲁϩⲟ fue reducido a ‘graneros’ aunque el inglés justificó un término más amplio (‘storehouses’), y ⲕⲁⲣⲡⲟⲥ quedó como el anglicismo ‘produce’, impropio en español. También la nota en [a] no corresponde al motivo de la nota inglesa, que trataba de ⲭⲣⲏⲙⲁ (‘dinero/riqueza/bienes’), no de la fórmula introductoria.'
+  spanish_quality_summary: El texto es mayormente legible, pero suena algo forzado por la repetición de ‘yo’ y por ‘produce’, que no es español natural en este contexto. ‘Graneros’ estrecha innecesariamente la imagen; ‘depósitos’ o ‘almacenes’ leen mejor con fidelidad a la amplitud del copto. Además, la puntuación de la cita funciona mejor sin desplazar la nota final fuera del miembro exhortativo.
+  glossary_alignment: 'No hay conflictos con la terminología teológica principal del proyecto. Las decisiones relevantes aquí son léxicas y estilísticas: mantener ‘Jesús’, respetar la finalidad de ϫⲉⲕⲁⲁⲥ, conservar la fórmula ‘Quien tiene oídos, que oiga’ sin armonización, y reflejar mejor ⲭⲣⲏⲙⲁ, ⲁϩⲟ y ⲕⲁⲣⲡⲟⲥ conforme al expediente inglés.'
+  issues:
+  - severity: high
+    issue: ‘produce’ no es una traducción española adecuada de ⲕⲁⲣⲡⲟⲥ en este contexto.
+    rationale: Es un anglicismo/uso impropio en español bíblico general. El sentido documentado es ‘produce/yield’, y en español natural aquí corresponde mejor ‘cosecha’ o ‘fruto’; en contexto de almacenamiento agrícola, ‘cosecha’ comunica bien el referente.
+  - severity: medium
+    issue: ‘graneros’ reduce indebidamente el alcance de ⲁϩⲟ.
+    rationale: El audit trail inglés eligió ‘storehouses’ precisamente para evitar sobreespecificar ‘barns’. En español, ‘depósitos’ o ‘almacenes’ preserva mejor esa amplitud semántica.
+  - severity: medium
+    issue: La nota [a] está desalineada con la nota fuente inglesa.
+    rationale: La nota inglesa marcada a explica ⲭⲣⲏⲙⲁ (‘money/wealth/property’). La nota española actual habla de la atribución a Jesús, lo que no corresponde al expediente auditado ni a una ambigüedad principal del versículo.
+  - severity: low
+    issue: La secuencia ‘para que yo siembre y yo siegue y yo plante’ suena innecesariamente pesada en español.
+    rationale: 'El copto marca la serie futura, pero el español no necesita repetir el pronombre en cada verbo. Puede conservarse la fuerza sin esa repetición: ‘para que siembre, siegue y plante’.'
+  revised_spanish_text: 'Jesús dijo[a]: «Había un hombre rico que tenía mucho dinero. Dijo: “Usaré mi dinero, para que siembre, siegue y plante, y llene mis depósitos[b] de cosecha[c], para no carecer de nada[d].” Estas eran las cosas que pensaba en su corazón. Y en aquella noche murió. Quien tiene oídos, que oiga[e]».'
+  revised_footnotes:
+  - marker: a
+    text: El copto ⲭⲣⲏⲙⲁ puede significar ‘dinero’, ‘riqueza’ o ‘bienes’ (griego χρῆμα). Se elige ‘dinero’ por su concreción; ‘riqueza’ también sería posible.
+    reason: lexical_alternative
+  - marker: b
+    text: ⲁϩⲟ puede referirse a depósitos, graneros o almacenes. Se elige ‘depósitos’ para evitar una especificación excesiva.
+    reason: lexical_alternative
+  - marker: c
+    text: ⲕⲁⲣⲡⲟⲥ puede significar ‘fruto’, ‘cosecha’ o ‘producto’. Aquí se elige ‘cosecha’ por el contexto de almacenamiento agrícola.
+    reason: lexical_alternative
+  - marker: d
+    text: Literalmente, la expresión indica ‘no estar en necesidad de nada’.
+    reason: cultural_note
+  - marker: e
+    text: 'Literalmente: ‘Quien tiene oídos, que oiga’. El copto no añade ‘para oír’.'
+    reason: textual_variant
+  revision_rationale: 'La revisión corrige dos problemas principales: un anglicismo/impropiedad (‘produce’) y una sobreespecificación (‘graneros’) contraria a la rationale documentada. También realinea las notas con el expediente inglés, especialmente la de ⲭⲣⲏⲙⲁ, y suaviza la sintaxis española sin perder el sentido del copto.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 80dea61af3d65660877e2a2ed0737a1c5b1d55b7bc6827bf7aa6e37ac192afbc
+  timestamp: '2026-05-08T03:08:13Z'
+  output_hash: 7a5f57d2f3e799b8bff3019d107bbfc4920a65314b00cbf14e190b8f7d8d87f2
+  usage:
+    prompt_tokens: 8776
+    completion_tokens: 1230
+    total_tokens: 10006
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.04039
+  applied_revision: true

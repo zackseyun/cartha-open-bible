@@ -68,10 +68,15 @@ base_translation:
     changes_summary: Removed the bracketed editorial notes from the draft and kept the verse as a clean translation while preserving the established wording.
 translation:
   language: es
-  text: 'Yo soy la que se encuentra en los que tienen miedo,
+  text: 'Yo soy la que[a] se encuentra en los que tienen miedo,
 
-    y soy fuerza en el temblor.'
+
+    y yo soy fuerza en el temblor.'
   philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: ‘La que’ refleja la voz femenina establecida de Thunder a lo largo del tratado; el copto ⲁⲛⲟⲕ en sí no está marcado por género.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ϯⲛⲁⲕⲣⲣⲱ
   english_pob_choice: is found
@@ -139,4 +144,51 @@ ai_draft:
     total_tokens: 3771
     reasoning_tokens: 0
     estimated_cost_usd: 0.005975
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Yo soy la que se encuentra en los que tienen miedo,
+
+    y soy fuerza en el temblor.'
+  to: 'Yo soy la que[a] se encuentra en los que tienen miedo,
+
+
+    y yo soy fuerza en el temblor.'
+  rationale: Se conserva la traducción base por ser fiel y natural, pero se añade la nota necesaria para preservar la decisión auditada sobre la voz femenina del texto. También se repone ‘yo’ en la segunda línea para mantener mejor la anáfora poética de ‘I am’.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido básico del copto auditado: primera persona enfática, presencia ‘en’ personas atemorizadas, y la paradoja ‘fuerza’/‘temblor’. Sin embargo, omite un matiz documentado del English POB: la voz femenina establecida de Thunder (‘I am she who…’). En español, el artículo femenino ya aparece (‘la que’), pero falta una nota que explique que ese femenino proviene de la voz literaria del tratado y no de un marcador gramatical explícito en ⲁⲛⲟⲕ. Además, ‘temblor’ es aceptable, pero ‘temblando’ suena menos natural; la redacción actual es fiel.'
+  spanish_quality_summary: 'El español es claro, poético y legible. ‘Yo soy la que se encuentra en los que tienen miedo’ suena natural y mantiene la anáfora. ‘Y soy fuerza en el temblor’ es comprensible, pero mejora con artículo para mayor naturalidad y paralelismo: ‘y yo soy fuerza en el temblor’. La nota sobre el femenino conviene preservarla porque forma parte del rastro de auditoría y evita ambigüedad interpretativa.'
+  glossary_alignment: 'No hay términos teológicos de glosario mayor en este segmento. Las decisiones léxicas principales están bien alineadas: ⲛⲉⲧⲛϣⲟϫⲛⲉ -> ‘los que tienen miedo’ conserva el valor personal; ⲟⲩϩⲟⲟⲩ (esperado) -> ‘fuerza’ es adecuado; ⲕⲗⲏϣ -> ‘temblor’ funciona como abstracto. La única alineación faltante es la preservación explícita de la rationale inglesa sobre ‘she who’.'
+  issues:
+  - severity: medium
+    issue: Falta la nota que justifica el femenino de ‘la que’.
+    rationale: El English POB documenta expresamente que ‘she’ refleja la voz femenina establecida del tratado, aunque ⲁⲛⲟⲕ no marque género. En español, ‘la que’ transmite bien esa voz, pero sin nota se pierde una decisión editorial auditada.
+  - severity: low
+    issue: La segunda línea puede afinarse para mejor paralelismo anafórico.
+    rationale: Agregar ‘yo’ en ‘y yo soy fuerza en el temblor’ refuerza la cadencia poética y refleja mejor la repetición de ‘I am’ del original/POB, sin cambiar el sentido.
+  revised_spanish_text: 'Yo soy la que[a] se encuentra en los que tienen miedo,
+
+
+    y yo soy fuerza en el temblor.'
+  revised_footnotes:
+  - marker: a
+    text: ‘La que’ refleja la voz femenina establecida de Thunder a lo largo del tratado; el copto ⲁⲛⲟⲕ en sí no está marcado por género.
+    reason: cultural_note
+  revision_rationale: Se conserva la traducción base por ser fiel y natural, pero se añade la nota necesaria para preservar la decisión auditada sobre la voz femenina del texto. También se repone ‘yo’ en la segunda línea para mantener mejor la anáfora poética de ‘I am’.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3002437d9850391330ff4ca54c8531297392ff0f5101d87bd50af7e490d9930c
+  timestamp: '2026-05-08T03:08:31Z'
+  output_hash: bf904e84550071403c3c119c0d7dd0737b81149a22bd3d8fbf10e09456f14a8d
+  usage:
+    prompt_tokens: 3350
+    completion_tokens: 757
+    total_tokens: 4107
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01973
+  applied_revision: true

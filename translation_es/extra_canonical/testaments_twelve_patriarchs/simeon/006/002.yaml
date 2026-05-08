@@ -149,4 +149,38 @@ ai_draft:
     total_tokens: 3336
     reasoning_tokens: 0
     estimated_cost_usd: 0.008637
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura y las imágenes del griego: φθόνον = «envidia», σκληροκαρδίαν = «dureza de corazón», ἀνθήσει / σάρξ / ὀσμή / κλάδοι están bien representados. Sin embargo, ἐξ ἐμοῦ significa origen/procedencia («de mí», «a partir de mí»), no mediación instrumental; «por medio de mí» desplaza el sentido. También el añadido de nota alternativa no corrige el hecho de que la lectura principal se aleja del griego y del inglés POB.'
+  spanish_quality_summary: El español es claro, digno y muy legible. Las imágenes poéticas funcionan bien. Conviene ajustar solo «por medio de mí» a una formulación de procedencia más natural y fiel, y puede mejorarse ligeramente «se extenderán lejos» a «se extenderán a lo lejos» para mejor fluidez, aunque no es indispensable.
+  glossary_alignment: No hay conflictos con la terminología principal del proyecto. «Los santos» para ἅγιοι es aceptable en este contexto. «Carne», «fragancia» y «dureza de corazón» están bien alineados. El único desajuste léxico relevante es ἐξ ἐμοῦ, que debe reflejar origen («de mí» / «a partir de mí») y no mediación.
+  issues:
+  - severity: high
+    issue: «por medio de mí» para ἐξ ἐμοῦ
+    rationale: La preposición ἐκ/ἐξ indica procedencia o fuente. El inglés POB lo refleja con «from me». «Por medio de mí» introduce un matiz instrumental/mediador que no está en el texto fuente.
+  - severity: low
+    issue: Nota al pie innecesaria bajo una lectura principal incorrecta
+    rationale: La nota ofrece «de mí» como alternativa, pero esa es precisamente la opción más fiel al griego. Conviene llevar esa lectura al texto principal y eliminar la nota.
+  - severity: low
+    issue: «se extenderán lejos» suena algo abrupto en español
+    rationale: Es comprensible y fiel, pero «se extenderán a lo lejos» fluye mejor en español sin alterar el sentido de εἰς μακράν ἔσονται / «will extend far away».
+  revised_spanish_text: Pero si apartan de ustedes la envidia y toda dureza de corazón, mis huesos florecerán como una rosa en Israel, y mi carne como un lirio en Jacob; y mi fragancia será como la fragancia del Líbano. Los santos se multiplicarán de mí para siempre jamás, y sus ramas se extenderán a lo lejos.
+  revision_rationale: Se corrige ἐξ ἐμοῦ de «por medio de mí» a «de mí» para preservar el sentido de procedencia del griego y del inglés POB. Se elimina la nota porque deja de ser necesaria al pasar la lectura más fiel al texto principal. Además, se pule la última cláusula con «a lo lejos» para una fluidez más natural en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e11be96a951ea4e440ed330f38d092d62a4a7577f9d25469807aa611d6b18bc4
+  timestamp: '2026-05-08T03:01:00Z'
+  output_hash: 1d3f9f8a04917035c45acef11494fb99559658025be19bfcb485a090ae32a604
+  usage:
+    prompt_tokens: 3095
+    completion_tokens: 713
+    total_tokens: 3808
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018433
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

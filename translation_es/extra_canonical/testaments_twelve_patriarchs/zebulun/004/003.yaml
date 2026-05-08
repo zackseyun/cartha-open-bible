@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y viéndome a mí también sin comer, me puso a guardarlo hasta que fue entregado a los ismaelitas.
+  text: Y cuando vieron que yo tampoco comía, me pusieron a guardarlo hasta que fue entregado a los ismaelitas.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ὁρῶντές με δὲ μὴ ἐσθίοντα
@@ -80,4 +80,39 @@ ai_draft:
     total_tokens: 2317
     reasoning_tokens: 0
     estimated_cost_usd: 0.00485
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y viéndome a mí también sin comer, me puso a guardarlo hasta que fue entregado a los ismaelitas.
+  to: Y cuando vieron que yo tampoco comía, me pusieron a guardarlo hasta que fue entregado a los ismaelitas.
+  rationale: Se ajusta el sujeto a plural para concordar con el sentido contextual y con la línea auditada en inglés ('they set me'), y se sustituye el giro inicial por una formulación más natural en español sin perder el valor del griego. Se conserva 'fue entregado a los ismaelitas' porque refleja mejor ἀπεδόθη τοῖς Ἰσμαηλίταις que una reducción automática a 'fue vendido'.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura básica del griego: percepción de que el hablante no comía, encargo de custodiarlo, y duración hasta su transferencia a los ismaelitas. Sin embargo, hay dos desajustes: Ὁρῶντές ... es plural (''cuando vieron''), no singular implícito en ''viéndome'' con ''me puso''; y ἔθετό με, aunque formalmente singular en esta edición, en contexto con sujeto previo plural y la traducción inglesa auditada (''they set me'') se entiende mejor en español con sujeto plural. Además, ''entregado a los ismaelitas'' preserva bien ἀπεδόθη τοῖς Ἰσμαηλίταις.'
+  spanish_quality_summary: El español es comprensible, pero 'Y viéndome a mí también sin comer, me puso...' suena algo trabado y genera discordancia de número. 'Y cuando vieron que yo tampoco comía, me pusieron a guardarlo...' es más natural y claro para lectura eclesial general. El cierre con 'fue entregado a los ismaelitas' es digno y fiel.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'ismaelitas' está bien. 'guardarlo' transmite adecuadamente τηρεῖν. La elección de 'entregado' para ἀπεδόθη es defendible frente a la simplificación inglesa 'sold', y de hecho se alinea mejor con la fuente griega.
+  issues:
+  - severity: medium
+    issue: Discordancia de número en el sujeto narrativo
+    rationale: 'El texto español pasa de un participio con referente plural implícito (''viéndome'') a un verbo singular (''me puso''), mientras la evidencia contextual y la traducción inglesa auditada favorecen un sujeto plural: ''cuando vieron... me pusieron''.'
+  - severity: low
+    issue: Giro inicial poco natural
+    rationale: '''Y viéndome a mí también sin comer'' es entendible, pero suena menos idiomático que ''Y cuando vieron que yo tampoco comía'' o ''Y al ver que yo tampoco comía''.'
+  revised_spanish_text: Y cuando vieron que yo tampoco comía, me pusieron a guardarlo hasta que fue entregado a los ismaelitas.
+  revision_rationale: Se ajusta el sujeto a plural para concordar con el sentido contextual y con la línea auditada en inglés ('they set me'), y se sustituye el giro inicial por una formulación más natural en español sin perder el valor del griego. Se conserva 'fue entregado a los ismaelitas' porque refleja mejor ἀπεδόθη τοῖς Ἰσμαηλίταις que una reducción automática a 'fue vendido'.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3b4db7476571b46135bcbe40645fd65165195c10d95258f13a640eccfa5aea9a
+  timestamp: '2026-05-08T03:04:49Z'
+  output_hash: 5e5cf002a080e4a77afbc4af8e50c47abdde01eedb3d67c08dab456f11e13af7
+  usage:
+    prompt_tokens: 2074
+    completion_tokens: 628
+    total_tokens: 2702
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.014605
+  applied_revision: true

@@ -73,26 +73,25 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Griegos y bárbaros[a],
+  text: 'Griegos y bárbaros,
 
 
-    yo soy la que tiene gran imagen en Egipto,
+    yo soy la que tiene una imagen grande en Egipto,
+
 
     y la que no tiene imagen entre los bárbaros.
 
 
-    Yo soy la que ellos odiaron en todo lugar[b][c],
+    Yo soy la que odiaron en todo lugar[a][b],
 
-    y la que ellos amaron.'
+
+    y la que amaron.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: ‘Griegos y bárbaros’ conserva la antítesis étnica del original. También podría entenderse, de modo explicativo, como ‘griegos y no griegos’, pero el par tradicional mantiene mejor el contraste literario del texto.
-    reason: lexical_alternative
-  - marker: b
     text: 'La frase copta fue revisada: aquí ‘en todo lugar’ modifica ‘odiaron’, no ‘amaron’.'
     reason: textual_variant
-  - marker: c
+  - marker: b
     text: El original también permite la lectura ‘entre todos [los pueblos]’; se traduce aquí ‘en todo lugar’ siguiendo la revisión textual adoptada.
     reason: alternative_reading
 lexical_decisions:
@@ -193,4 +192,83 @@ ai_draft:
     total_tokens: 5349
     reasoning_tokens: 0
     estimated_cost_usd: 0.009652
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Griegos y bárbaros[a],
+
+
+    yo soy la que tiene gran imagen en Egipto,
+
+    y la que no tiene imagen entre los bárbaros.
+
+
+    Yo soy la que ellos odiaron en todo lugar[b][c],
+
+    y la que ellos amaron.'
+  to: 'Griegos y bárbaros,
+
+
+    yo soy la que tiene una imagen grande en Egipto,
+
+
+    y la que no tiene imagen entre los bárbaros.
+
+
+    Yo soy la que odiaron en todo lugar[a][b],
+
+
+    y la que amaron.'
+  rationale: 'La revisión es pequeña pero conveniente: elimina una nota prescindible, mejora la naturalidad del español, y conserva exactamente las decisiones textuales ya adjudicadas sobre ‘imagen’, ‘no tiene imagen’, y el alcance de ‘en todo lugar’.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:57Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la relectura adjudicada del copto: ‘imagen’ en vez de ‘silencio’, ‘entre los bárbaros’ ligado a la cláusula de ‘no tiene imagen’, y ‘en todo lugar’ ligado a ‘odiaron’. Sin embargo, ‘tiene gran imagen’ suena poco idiomático y no refleja tan claramente la relación posesiva/relativa de ⲧⲛⲁϣⲉ ⲡⲉⲥⲉⲓⲛⲉ como una formulación con ‘cuya imagen es grande’.'
+  spanish_quality_summary: 'El texto es legible, pero tiene dos puntos de estilo mejorables: ‘gran imagen’ resulta extraño en español bíblico-literario, y la repetición de ‘ellos’ es innecesaria y algo pesada. Una revisión mínima puede hacer el texto más natural y digno sin apartarse del original ni del rastro auditado.'
+  glossary_alignment: No hay términos teológicos del glosario principal implicados aquí. ‘Griegos’, ‘bárbaros’, ‘imagen’, ‘odiaron’ y ‘amaron’ están bien alineados con las decisiones léxicas auditadas. Mantengo ‘Yo soy la que’ para preservar la voz femenina del poema.
+  issues:
+  - severity: medium
+    issue: ‘tiene gran imagen’ es poco idiomático en español
+    rationale: Aunque intenta representar ‘whose image is great’, en español suena forzado y ambiguo. ‘cuya imagen es grande’ o ‘cuya imagen es grande en Egipto’ expresa mejor la construcción relativa y el sentido del original.
+  - severity: low
+    issue: La repetición de ‘ellos’ en ‘la que ellos odiaron / amaron’ recarga el ritmo
+    rationale: El sujeto agente ya está implícito en español. Omitirlo mejora la cadencia poética sin pérdida de sentido.
+  - severity: low
+    issue: La nota a sobre ‘Griegos y bárbaros’ no responde a una ambigüedad real del texto español
+    rationale: No es errónea, pero tampoco necesaria. Las notas b y c sí preservan información útil del rastro inglés sobre el alcance de ‘en todo lugar’ y la alternativa ‘entre todos [los pueblos]’.
+  revised_spanish_text: 'Griegos y bárbaros,
+
+
+    yo soy la que tiene una imagen grande en Egipto,
+
+
+    y la que no tiene imagen entre los bárbaros.
+
+
+    Yo soy la que odiaron en todo lugar[a][b],
+
+
+    y la que amaron.'
+  revised_footnotes:
+  - marker: a
+    text: 'La frase copta fue revisada: aquí ‘en todo lugar’ modifica ‘odiaron’, no ‘amaron’.'
+    reason: textual_variant
+  - marker: b
+    text: El original también permite la lectura ‘entre todos [los pueblos]’; se traduce aquí ‘en todo lugar’ siguiendo la revisión textual adoptada.
+    reason: alternative_reading
+  revision_rationale: 'La revisión es pequeña pero conveniente: elimina una nota prescindible, mejora la naturalidad del español, y conserva exactamente las decisiones textuales ya adjudicadas sobre ‘imagen’, ‘no tiene imagen’, y el alcance de ‘en todo lugar’.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f173bc7180b8d20fdf69bbd73c2d729cd9b05abcf5977c03f2294aa9349961eb
+  timestamp: '2026-05-08T03:06:57Z'
+  output_hash: 697e08b7eee29ecd6121dddcab171b42bed4052b2ad0243811196afd53857a36
+  usage:
+    prompt_tokens: 4954
+    completion_tokens: 737
+    total_tokens: 5691
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02344
+  applied_revision: true

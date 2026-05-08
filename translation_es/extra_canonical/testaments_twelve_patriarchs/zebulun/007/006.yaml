@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation matching the source: ''For this reason,'' ''the Lord,'' ''filled me with many fish,'' ''in the fishing net,'' and the reciprocal saying about sharing with one''s neighbor receiving much more from the Lord.'
 translation:
   language: es
-  text: Por esta razón, el Señor también me llenó de muchos peces en la red de pesca. Porque el que comparte con su prójimo recibe mucho más del Señor.
+  text: Por esta razón, el Señor también me llenó de muchos peces en la pesca. Porque el que comparte con su prójimo recibe muchas veces más del Señor.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Διὰ τοῦτο
@@ -129,4 +129,39 @@ ai_draft:
     total_tokens: 3101
     reasoning_tokens: 0
     estimated_cost_usd: 0.007321
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Por esta razón, el Señor también me llenó de muchos peces en la red de pesca. Porque el que comparte con su prójimo recibe mucho más del Señor.
+  to: Por esta razón, el Señor también me llenó de muchos peces en la pesca. Porque el que comparte con su prójimo recibe muchas veces más del Señor.
+  rationale: Se corrige 'red de pesca' a 'pesca' para evitar introducir un detalle ausente del griego y se fortalece 'mucho más' a 'muchas veces más' para reflejar mejor πολλαπλασίονα. No se requieren notas para estas mejoras, porque el español revisado ya comunica con fidelidad el sentido de la fuente.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:38Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura y el sentido general del griego: razón inferencial, acción del Señor, abundancia de peces y principio de reciprocidad hacia el prójimo. Sin embargo, ἐν τῇ ἄγρᾳ τῶν ἰχθύων significa mejor ''en la pesca/captura de peces'' que ''en la red de pesca''; y πολλαπλασίονα expresa más claramente ''muchas veces más'' o ''mucho más abundantemente'' que el más débil ''mucho más''.'
+  spanish_quality_summary: El español es natural y claro, pero 'en la red de pesca' concreta indebidamente la imagen al introducir un instrumento no presente en el griego. 'Recibe mucho más' es legible, aunque una formulación que conserve la fuerza comparativa de πολλαπλασίονα mejora la fidelidad. El resto del texto suena bien en español eclesial contemporáneo.
+  glossary_alignment: '''el Señor'' para κύριος es aceptable aquí porque la fuente inmediata es griega y no hay base suficiente para sustituirlo por ''Yahvé'' en el texto principal. ''Prójimo'' para πλησίον y ''peces'' para ἰχθύας están bien. No hay conflicto relevante con la terminología base del proyecto.'
+  issues:
+  - severity: medium
+    issue: '''en la red de pesca'' añade un instrumento no expresado en ἐν τῇ ἄγρᾳ τῶν ἰχθύων'
+    rationale: ἄγρη se refiere a caza/captura/pesca, es decir, al acto o resultado de capturar, no específicamente a una red. La revisión inglesa previa también se apartó del source_payload al decir 'fishing net'.
+  - severity: medium
+    issue: '''recibe mucho más'' debilita la fuerza de πολλαπλασίονα'
+    rationale: El adjetivo comparativo apunta a una recompensa multiplicada, no solo a un aumento genérico. En español, 'muchas veces más' o 'mucho más' con nota sería mejor; sin nota, conviene una formulación más fuerte.
+  revised_spanish_text: Por esta razón, el Señor también me llenó de muchos peces en la pesca. Porque el que comparte con su prójimo recibe muchas veces más del Señor.
+  revision_rationale: Se corrige 'red de pesca' a 'pesca' para evitar introducir un detalle ausente del griego y se fortalece 'mucho más' a 'muchas veces más' para reflejar mejor πολλαπλασίονα. No se requieren notas para estas mejoras, porque el español revisado ya comunica con fidelidad el sentido de la fuente.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ba8e7bb9aa862c32c5840a831321693ce2f6006d2e55e615cce3132ef1f5a7c6
+  timestamp: '2026-05-08T03:03:38Z'
+  output_hash: d273de30f6bffd30d84ce73cf710d601baa3130a12b786362543fd574d937d92
+  usage:
+    prompt_tokens: 2788
+    completion_tokens: 630
+    total_tokens: 3418
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01642
+  applied_revision: true

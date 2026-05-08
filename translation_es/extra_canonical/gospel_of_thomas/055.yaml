@@ -197,4 +197,40 @@ ai_draft:
     total_tokens: 6370
     reasoning_tokens: 0
     estimated_cost_usd: 0.010103
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido base del copto y sigue decisiones clave del POB: conserva «odiar» para ⲙⲟⲥⲧⲉ, mantiene la distinción de incapacidad en «no puede ser mi discípulo», respeta la lectura manuscrita «hermanos y hermanas», y no armoniza ⲛⲡⲁϩⲉ con «seguir». Sin embargo, la nota [c] no preserva la función de referencia comparativa del aparato inglés y además describe una decisión estilística más que un dato útil para el lector.'
+  spanish_quality_summary: 'El español es claro, natural y de registro digno. La frase «como yo» funciona, aunque «como yo lo hago» sería más explícita; no es necesario cambiarla. La puntuación y el ritmo son buenos. La principal mejora necesaria está en las notas: [c] debe convertirse en una referencia comparativa a Lucas 14:26–27 y Mateo 10:37–38, como en el rastro de auditoría inglés.'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Jesús», «discípulo», «cruz» y «digno» están bien. No aplica terminología de Yahvé/Mesías/esclavo, etc. Se mantiene correctamente «odiar» en vez de suavizarlo.
+  issues:
+  - severity: medium
+    issue: La nota [c] no refleja el contenido documentado del POB inglés.
+    rationale: La nota inglesa [c] es una referencia comparativa a Lucas 14:26–27 y Mateo 10:37–38, subrayando que Tomás tiene dicción distinta. La nota española actual habla de cadencia y no ofrece esa información textual relevante.
+  revised_spanish_text: 'Jesús dijo: «Quien no odia[a] a su padre y a su madre no puede ser mi discípulo; y quien no odia a sus hermanos y a sus hermanas, y no lleva su cruz como yo[b], no será digno de mí»[c].'
+  revised_footnotes:
+  - marker: a
+    text: El copto usa un verbo fuerte. Aquí se conserva «odiar» para no atenuar la tensión del dicho.
+    reason: lexical_alternative
+  - marker: b
+    text: El copto compara la manera de Jesús; no dice explícitamente «seguir». Por eso se traduce «como yo».
+    reason: source_note
+  - marker: c
+    text: Compárese Lucas 14:26–27 y Mateo 10:37–38 para motivos relacionados, aunque la dicción de Tomás es distinta.
+    reason: cross_reference
+  revision_rationale: Se conserva intacto el texto principal porque es fiel y natural. Solo se corrige la nota [c] para alinearla con la documentación del POB inglés y aportar la referencia comparativa pertinente en vez de una observación estilística interna.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 22b4ab39e4111287288307c99fdf34bc4ec5da13d8407d5648a372f118df87e1
+  timestamp: '2026-05-08T03:07:54Z'
+  output_hash: ef239d16b65d5fdd2247c94168ff11e576422baaea2b2a08a3658a01ac292650
+  usage:
+    prompt_tokens: 6002
+    completion_tokens: 660
+    total_tokens: 6662
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024905
+  applied_revision: false

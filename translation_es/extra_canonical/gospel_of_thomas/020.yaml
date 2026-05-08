@@ -93,7 +93,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Los discípulos dijeron a Jesús[a]: «Dinos a qué se parece el reino de los cielos[b]». Él les dijo: «Se parece a un grano de mostaza[c], el más pequeño de todas las semillas; pero cuando cae sobre tierra trabajada[d], produce una gran rama[f] y llega a ser un refugio[e] para las aves del cielo».'
+  text: 'Los discípulos dijeron a Jesús[a]: «Dinos a qué se parece el reino de los cielos[b]». Él les dijo: «Se parece a una semilla de mostaza[c], la más pequeña de todas las semillas; pero cuando cae sobre tierra trabajada[d], produce una gran rama[f] y llega a ser un refugio[e] para las aves del cielo».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -103,7 +103,7 @@ translation:
     text: El copto lee «cielos» en plural (ⲡⲡⲉ). Se mantiene esa forma en el texto principal por fidelidad al original.
     reason: source_note
   - marker: c
-    text: Literalmente, «un grano de mostaza». Se conserva «grano» porque corresponde mejor al copto ⲃⲗⲃⲓⲗⲉ que una reformulación más técnica.
+    text: Literalmente, «un grano de mostaza». El copto ⲃⲗⲃⲓⲗⲉ designa un grano o semilla; en el texto principal se usa «semilla» por mayor naturalidad en español.
     reason: lexical_alternative
   - marker: d
     text: La cláusula relativa alude a tierra labrada o preparada para sembrar.
@@ -112,8 +112,8 @@ translation:
     text: ⲥⲕⲉⲡⲏ también puede significar «sombra» o «cobertura».
     reason: lexical_alternative
   - marker: f
-    text: La revisión textual seguida aquí entiende ⲧⲁⲣ como «rama» o «brote», no como «planta».
-    reason: textual_variant
+    text: La revisión léxica seguida aquí entiende ⲧⲁⲣ como «rama» o «brote», no como «planta».
+    reason: lexical_decision
 lexical_decisions:
 - source_word: ϫⲱⲛⲧⲟⲥ ⲉⲁⲛⲟⲛ
   english_pob_choice: tell us
@@ -266,4 +266,61 @@ ai_draft:
     total_tokens: 8846
     reasoning_tokens: 0
     estimated_cost_usd: 0.015083
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Los discípulos dijeron a Jesús[a]: «Dinos a qué se parece el reino de los cielos[b]». Él les dijo: «Se parece a un grano de mostaza[c], el más pequeño de todas las semillas; pero cuando cae sobre tierra trabajada[d], produce una gran rama[f] y llega a ser un refugio[e] para las aves del cielo».'
+  to: 'Los discípulos dijeron a Jesús[a]: «Dinos a qué se parece el reino de los cielos[b]». Él les dijo: «Se parece a una semilla de mostaza[c], la más pequeña de todas las semillas; pero cuando cae sobre tierra trabajada[d], produce una gran rama[f] y llega a ser un refugio[e] para las aves del cielo».'
+  rationale: Se propone una revisión menor para mejorar la naturalidad y precisión del español sin apartarse del original ni del audit trail inglés. El cambio principal es «semilla de mostaza» en el texto principal, con nota que preserva la literalidad «grano de mostaza», evitando la torpeza de «grano… el más pequeño de todas las semillas». También se corrige la caracterización de la nota sobre «rama» para reflejar que se trata de una decisión léxica auditada, no de una variante textual.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite correctamente la estructura y el sentido general del dicho: la pregunta de los discípulos, «el reino de los cielos», el grano/semilla de mostaza, la tierra trabajada, la gran rama y el refugio para las aves del cielo. También incorpora bien la revisión auditada de ⲧⲁⲣ como «rama». Sin embargo, hay un problema de concordancia/antecedente en «Se parece a un grano de mostaza, el más pequeño de todas las semillas», porque en español «el más pequeño» modifica naturalmente «grano», no «mostaza» ni el conjunto «grano de mostaza» de forma del todo limpia; además, «de todas las semillas» choca semánticamente con «grano». Conviene ajustar a «una semilla de mostaza[a], la más pequeña de todas las semillas» o similar. También la nota f habla de «revisión textual» cuando en realidad se trata de una revisión léxica ya adjudicada en el audit trail.'
+  spanish_quality_summary: 'El español es claro y digno, con buena legibilidad eclesial. «Dinos a qué se parece…», «tierra trabajada», «produce una gran rama» y «las aves del cielo» son naturales. Los principales reparos son de precisión idiomática y de paratexto: 1) la secuencia «grano de mostaza… el más pequeño de todas las semillas» suena menos natural que «semilla de mostaza… la más pequeña…»; 2) la nota sobre «rama» debe describirse como decisión léxica/auditada, no como variante textual; 3) si se cambia a «semilla» en el texto principal, debe preservarse en nota la literalidad «grano de mostaza», tal como el English POB conserva la alternativa literal.'
+  glossary_alignment: No hay conflicto con la terminología de proyecto. «Jesús», «reino», «cielos», «refugio» y «aves» están bien. No aplica Yahvé/Mesías/etc. La decisión contextual de «de los cielos» al inicio y «del cielo» al final es coherente con el audit trail inglés.
+  issues:
+  - severity: medium
+    issue: «un grano de mostaza, el más pequeño de todas las semillas» suena semántica y sintácticamente torpe en español
+    rationale: El superlativo concuerda con «grano», pero luego compara con «semillas». En español fluye y corresponde mejor al sentido fuente decir «una semilla de mostaza, la más pequeña de todas las semillas», mientras una nota conserva la literalidad «grano de mostaza».
+  - severity: low
+    issue: La nota f clasifica «rama» como «revisión textual»
+    rationale: Según el audit trail, el cambio de «plant» a «branch» responde a la identificación léxica de ⲧⲁⲣ, no a una variante textual del manuscrito. Debe etiquetarse y explicarse como decisión léxica/auditada.
+  - severity: low
+    issue: La nota c necesita ajustarse si el texto principal pasa a «semilla de mostaza»
+    rationale: El English POB conserva la alternativa literal «grain of mustard». En español, si se elige la forma idiomática «semilla», la nota debe preservar explícitamente la literalidad «grano de mostaza».
+  revised_spanish_text: 'Los discípulos dijeron a Jesús[a]: «Dinos a qué se parece el reino de los cielos[b]». Él les dijo: «Se parece a una semilla de mostaza[c], la más pequeña de todas las semillas; pero cuando cae sobre tierra trabajada[d], produce una gran rama[f] y llega a ser un refugio[e] para las aves del cielo».'
+  revised_footnotes:
+  - marker: a
+    text: 'Literalmente: «Dinos como-qué es el reino de los cielos». ⲉⲛⲓⲙ funciona como una interrogación de semejanza («cómo / como qué»).'
+    reason: alternative_reading
+  - marker: b
+    text: El copto lee «cielos» en plural (ⲡⲡⲉ). Se mantiene esa forma en el texto principal por fidelidad al original.
+    reason: source_note
+  - marker: c
+    text: Literalmente, «un grano de mostaza». El copto ⲃⲗⲃⲓⲗⲉ designa un grano o semilla; en el texto principal se usa «semilla» por mayor naturalidad en español.
+    reason: lexical_alternative
+  - marker: d
+    text: La cláusula relativa alude a tierra labrada o preparada para sembrar.
+    reason: cultural_note
+  - marker: e
+    text: ⲥⲕⲉⲡⲏ también puede significar «sombra» o «cobertura».
+    reason: lexical_alternative
+  - marker: f
+    text: La revisión léxica seguida aquí entiende ⲧⲁⲣ como «rama» o «brote», no como «planta».
+    reason: lexical_decision
+  revision_rationale: Se propone una revisión menor para mejorar la naturalidad y precisión del español sin apartarse del original ni del audit trail inglés. El cambio principal es «semilla de mostaza» en el texto principal, con nota que preserva la literalidad «grano de mostaza», evitando la torpeza de «grano… el más pequeño de todas las semillas». También se corrige la caracterización de la nota sobre «rama» para reflejar que se trata de una decisión léxica auditada, no de una variante textual.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5aadfb67b92628767508bf721509a0533c5d15a7e4cf61ac3dcde34523ee267d
+  timestamp: '2026-05-08T03:04:24Z'
+  output_hash: 863f877ad8d40db0c2418e321b9803fad3153d75c7be20beee52af16c7b3f641
+  usage:
+    prompt_tokens: 8574
+    completion_tokens: 1269
+    total_tokens: 9843
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.04047
+  applied_revision: true

@@ -97,12 +97,12 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Una mujer le dijo en medio de la multitud: «¡Bendito el vientre que te llevó y los pechos que te amamantaron!» Él le respondió: «¡Benditos los que han oído la palabra del Padre y la han guardado en verdad![a] Porque vendrán días en que dirán: “¡Bendito el vientre que no concibió, y los pechos que no dieron leche!”»'
+  text: 'Una mujer le dijo en medio de la multitud: «¡Bendito sea el vientre que te dio a luz y los pechos[a] que te amamantaron!». Él le respondió: «¡Benditos sean los que han oído la palabra del Padre y la han guardado en verdad! Porque vendrán días en que ustedes dirán: “¡Bendito sea el vientre que no concibió, y los pechos que no dieron leche!”»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El copto aquí usa una construcción posesiva equivalente a «los pechos que te amamantaron»; no significa literalmente «tus pechos».
-    reason: lexical_alternative
+    text: El copto literalmente dice «tus pechos», una construcción posesiva que se refiere idiomáticamente a los pechos de los que fuiste amamantado; por eso se traduce en español como «los pechos que te amamantaron».
+    reason: dialect_note
 lexical_decisions:
 - source_word: ⲟⲩⲥϩⲓⲙⲉ
   english_pob_choice: a woman
@@ -256,4 +256,49 @@ ai_draft:
     total_tokens: 8823
     reasoning_tokens: 0
     estimated_cost_usd: 0.014815
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Una mujer le dijo en medio de la multitud: «¡Bendito el vientre que te llevó y los pechos que te amamantaron!» Él le respondió: «¡Benditos los que han oído la palabra del Padre y la han guardado en verdad![a] Porque vendrán días en que dirán: “¡Bendito el vientre que no concibió, y los pechos que no dieron leche!”»'
+  to: 'Una mujer le dijo en medio de la multitud: «¡Bendito sea el vientre que te dio a luz y los pechos[a] que te amamantaron!». Él le respondió: «¡Benditos sean los que han oído la palabra del Padre y la han guardado en verdad! Porque vendrán días en que ustedes dirán: “¡Bendito sea el vientre que no concibió, y los pechos que no dieron leche!”»'
+  rationale: Se corrige un punto léxico importante para preservar la distinción fuente entre ‘dar a luz’ y ‘concebir’; se recupera la 2ª persona plural del futuro; se mejora la naturalidad litúrgica del español con «sea»; y se ajusta la nota al pie para reflejar fielmente la explicación documentada en la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido general del copto y del rastro de auditoría inglés: mujer anónima en la multitud, bendición del vientre y los pechos, respuesta sobre oír y guardar la palabra del Padre, y futura inversión con el vientre que no concibió y los pechos que no dieron leche. Sin embargo, hay dos desajustes importantes: ϥⲓ ϩⲁ se ha vertido como «te llevó», lo cual atenúa indebidamente el sentido de ‘llevar/dar a luz/bear’ señalado por la auditoría y lo acerca demasiado a gestación en vez de parto; además, el sujeto futuro plural se tradujo «dirán» cuando el copto/inglés tiene 2ª persona plural «dirán ustedes».'
+  spanish_quality_summary: El español es claro, digno y ampliamente legible. No obstante, «Bendito el vientre» suena menos natural que «Bendito sea el vientre» en español eclesial; y conviene reflejar la 2ª persona plural con «ustedes dirán» para no perder la referencia interlocutiva. También la nota actual sobre «tus pechos» contradice levemente la explicación inglesa, que dice que el copto literalmente sí lee una construcción posesiva equivalente a ‘your breasts’, aunque idiomáticamente no debe entenderse como autorreferencia corporal de Jesús.
+  glossary_alignment: 'No hay conflictos con terminología de proyecto como Yahvé/Mesías/etc. Las decisiones clave concuerdan en general con POB: «la palabra», «el Padre», «en verdad», «no concibió», «no dieron leche». La principal corrección léxica es cambiar ϥⲓ ϩⲁ de «te llevó» a «te dio a luz», que preserva mejor el contraste con «no concibió».'
+  issues:
+  - severity: high
+    issue: «te llevó» para ϥⲓ ϩⲁ
+    rationale: El verbo inicial fue auditado como ‘bore’ y contrasta con el posterior ‘has not conceived’. «Te llevó» desplaza el foco hacia gestación/cargar y debilita el contraste léxico; «te dio a luz» o «te llevó en su vientre» no equivalen igual. Aquí conviene «te dio a luz» para expresar el nacimiento.
+  - severity: medium
+    issue: «dirán» pierde la 2ª persona plural
+    rationale: El copto y la traducción inglesa tienen ‘you will say’. En español neutro debe reflejarse como «ustedes dirán» para mantener el destinatario del dicho.
+  - severity: low
+    issue: Falta del verbo copulativo en la bienaventuranza
+    rationale: «Bendito el vientre» es entendible, pero «Bendito sea el vientre» suena más natural y solemne en español bíblico moderno sin añadir significado.
+  - severity: medium
+    issue: Nota al pie imprecisa sobre la construcción posesiva
+    rationale: La nota dice que no significa literalmente «tus pechos», pero la auditoría inglesa afirma que el copto literalmente sí usa ‘your breasts’ como construcción posesiva idiomática. La nota española debe explicar eso con precisión.
+  revised_spanish_text: 'Una mujer le dijo en medio de la multitud: «¡Bendito sea el vientre que te dio a luz y los pechos[a] que te amamantaron!». Él le respondió: «¡Benditos sean los que han oído la palabra del Padre y la han guardado en verdad! Porque vendrán días en que ustedes dirán: “¡Bendito sea el vientre que no concibió, y los pechos que no dieron leche!”»'
+  revised_footnotes:
+  - marker: a
+    text: El copto literalmente dice «tus pechos», una construcción posesiva que se refiere idiomáticamente a los pechos de los que fuiste amamantado; por eso se traduce en español como «los pechos que te amamantaron».
+    reason: dialect_note
+  revision_rationale: Se corrige un punto léxico importante para preservar la distinción fuente entre ‘dar a luz’ y ‘concebir’; se recupera la 2ª persona plural del futuro; se mejora la naturalidad litúrgica del español con «sea»; y se ajusta la nota al pie para reflejar fielmente la explicación documentada en la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b470e75b2a10af39ea583a597af1e0dc208a67f5aefcee88844afaaf5e5afbc1
+  timestamp: '2026-05-08T03:08:44Z'
+  output_hash: ad360926f749d5f8c9751ab8085493e85fe198f2c38222258d65559844002f01
+  usage:
+    prompt_tokens: 8526
+    completion_tokens: 995
+    total_tokens: 9521
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.03624
+  applied_revision: true

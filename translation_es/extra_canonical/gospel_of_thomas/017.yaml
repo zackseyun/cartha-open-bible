@@ -78,24 +78,24 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Yo les daré lo que ojo no ha visto, y lo que oído no ha escuchado[e][d][c][b], y lo que mano no ha tocado; y no ha surgido sobre el corazón del ser humano».'
+  text: 'Jesús dijo[a]: «Les daré lo que ojo no ha visto, y lo que oído no ha oído[e][d][c][b], y lo que mano no ha tocado, y no ha surgido sobre el corazón del ser humano».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: «Ustedes» es plural en el copto (ⲛⲁⲛⲧⲱⲧⲛ).
-    reason: cultural_note
+    reason: dialect_note
   - marker: b
-    text: La frase preposicional es literalmente «sobre el corazón» (ϩⲓ ⲡϩⲏⲧ), no la más idiomática «en/para el corazón».
+    text: La frase preposicional es literalmente «sobre el corazón» (ϩⲓ ⲡϩⲏⲧ), no la más idiomática «en el corazón» o «dentro del corazón».
     reason: lexical_alternative
   - marker: c
-    text: Cf. Isaías 64:4 y 1 Corintios 2:9 para un tríptico relacionado («ojo no ha visto …»), aunque aquí Tomás se traduce directamente desde el copto.
+    text: Cf. Isaías 64:4 y 1 Corintios 2:9 para una tríada relacionada («ojo no ha visto …»), aunque aquí Tomás se traduce directamente desde el copto.
     reason: cross_reference
   - marker: d
-    text: El objeto marcado en los verbos de percepción aparece de forma variable en el manuscrito; la normalización de Dilley da sentido a la serie como «ver / oír / tocarlo».
+    text: 'En el manuscrito, el marcado del objeto tras los verbos de percepción aparece como ⲉⲣⲟϥ en la primera cláusula; Dilley normaliza con ⲛⲧⲟϥ a través de toda la tríada. El sentido es: «verlo / oírlo / tocarlo».'
     reason: textual_variant
   - marker: e
     text: 'O también: «Yo mismo les daré».'
-    reason: alternative_reading
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ϯⲛⲁϯ
   english_pob_choice: I will give
@@ -187,4 +187,61 @@ ai_draft:
     total_tokens: 6089
     reasoning_tokens: 0
     estimated_cost_usd: 0.010447
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Yo les daré lo que ojo no ha visto, y lo que oído no ha escuchado[e][d][c][b], y lo que mano no ha tocado; y no ha surgido sobre el corazón del ser humano».'
+  to: 'Jesús dijo[a]: «Les daré lo que ojo no ha visto, y lo que oído no ha oído[e][d][c][b], y lo que mano no ha tocado, y no ha surgido sobre el corazón del ser humano».'
+  rationale: 'Se hacen reparaciones menores para alinear el español con la adjudicación del POB inglés y mejorar la naturalidad: se elimina el pronombre enfático no exigido por el copto, se ajusta la tríada a un español más idiomático («oído no ha oído»), se suaviza la puntuación para mantener la coordinación original, y se corrige la categorización de la nota e como traducción previa/alternativa de renderizado en vez de lectura textual.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido básico del copto y del POB inglés: Jesús habla en futuro simple, el destinatario es plural, se conserva la tríada ver/oír/tocar y también la formulación distintiva de que eso no ha surgido sobre el corazón humano. Sin embargo, hay pequeños desajustes: «Yo les daré» introduce un pronombre explícito innecesario frente al cambio adjudicado a «I will give you», y el signo de puntuación antes de la última cláusula debería reflejar mejor el guion coordinante del inglés/las copulativas coptas, no un punto y coma que suena más separador.'
+  spanish_quality_summary: El español es generalmente claro y digno. No obstante, «oído no ha escuchado» suena menos natural y menos bíblico que «oído no ha oído» o «el oído no ha oído»; además, la serie funciona mejor sin el pronombre sujeto inicial y con una coordinación más fluida. El resto —«mano no ha tocado», «sobre el corazón del ser humano»— es legible y fiel.
+  glossary_alignment: No hay conflictos con la terminología principal del proyecto. «Jesús» y «ser humano» están bien. No aplican aquí Yahvé/Mesías/etc. La decisión de mantener «sobre el corazón» concuerda con la nota léxica del POB. Conviene ajustar la nota e sobre la alternativa, porque no es una lectura textual alternativa del manuscrito sino un renderizado previo/posible del supuesto énfasis; en español debe presentarse como alternativa de traducción, no como lectura fuente.
+  issues:
+  - severity: medium
+    issue: Pronombre explícito «Yo» en «Yo les daré»
+    rationale: El rastro de auditoría indica que el énfasis de «I myself» fue rechazado y que el sentido correcto es simplemente «I will give you». En español, el sujeto ya va incorporado en «daré», por lo que «Yo» puede sonar enfático sin base suficiente.
+  - severity: medium
+    issue: «oído no ha escuchado» es poco idiomático
+    rationale: Aunque semánticamente posible, la combinación suena forzada en español bíblico y general. «Oído no ha oído» preserva mejor el paralelismo proverbial sin añadir matiz de atención voluntaria que puede tener «escuchar».
+  - severity: low
+    issue: Punto y coma antes de la cláusula final
+    rationale: El copto repite la conjunción y el inglés usa un guion coordinante. Una coma con «y» mantiene mejor la continuidad de la serie que un punto y coma más fuerte.
+  - severity: low
+    issue: Razón de la nota e
+    rationale: 'La nota «O también: “Yo mismo les daré”» no corresponde a una lectura alternativa del manuscrito; en el expediente inglés quedó como previous_rendering, no como variante textual. Debe etiquetarse y formularse como alternativa de traducción histórica, si se conserva.'
+  revised_spanish_text: 'Jesús dijo[a]: «Les daré lo que ojo no ha visto, y lo que oído no ha oído[e][d][c][b], y lo que mano no ha tocado, y no ha surgido sobre el corazón del ser humano».'
+  revised_footnotes:
+  - marker: a
+    text: «Ustedes» es plural en el copto (ⲛⲁⲛⲧⲱⲧⲛ).
+    reason: dialect_note
+  - marker: b
+    text: La frase preposicional es literalmente «sobre el corazón» (ϩⲓ ⲡϩⲏⲧ), no la más idiomática «en el corazón» o «dentro del corazón».
+    reason: lexical_alternative
+  - marker: c
+    text: Cf. Isaías 64:4 y 1 Corintios 2:9 para una tríada relacionada («ojo no ha visto …»), aunque aquí Tomás se traduce directamente desde el copto.
+    reason: cross_reference
+  - marker: d
+    text: 'En el manuscrito, el marcado del objeto tras los verbos de percepción aparece como ⲉⲣⲟϥ en la primera cláusula; Dilley normaliza con ⲛⲧⲟϥ a través de toda la tríada. El sentido es: «verlo / oírlo / tocarlo».'
+    reason: textual_variant
+  - marker: e
+    text: 'O también: «Yo mismo les daré».'
+    reason: previous_rendering
+  revision_rationale: 'Se hacen reparaciones menores para alinear el español con la adjudicación del POB inglés y mejorar la naturalidad: se elimina el pronombre enfático no exigido por el copto, se ajusta la tríada a un español más idiomático («oído no ha oído»), se suaviza la puntuación para mantener la coordinación original, y se corrige la categorización de la nota e como traducción previa/alternativa de renderizado en vez de lectura textual.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: aca31c26d564e7d7a4d37c998a850e81508bce85914db2e760710ee6c2e76a1d
+  timestamp: '2026-05-08T03:04:55Z'
+  output_hash: efe12fb0e90030b6b22c8920162b42faef92c4b2024791878ea43430e5d5b36b
+  usage:
+    prompt_tokens: 5775
+    completion_tokens: 1123
+    total_tokens: 6898
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.031283
+  applied_revision: true

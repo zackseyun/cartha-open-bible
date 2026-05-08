@@ -65,15 +65,15 @@ translation:
   text: 'Sus discípulos le dijeron: «¿En qué día acontecerá el descanso de los muertos, y en qué día vendrá el mundo nuevo?»
 
 
-    Él les dijo: «Lo que ustedes están esperando ya ha venido[a], pero ustedes mismos no lo conocen[b]».'
+    Él les dijo: «Lo que[a] ustedes están esperando ha venido, pero ustedes mismos[b] no lo conocen».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El coptico usa el perfecto ⲁⲥⲉⲓ, que expresa «ha venido»; no hay un adverbio equivalente a «ya» en el texto, pero se añade en español para reflejar el contraste con la ignorancia de los discípulos y la fuerza del contexto.
-    reason: textual_variant
-  - marker: b
-    text: La forma coptica emplea el pronombre independiente enfático ⲛⲧⲱⲧⲛ antes del verbo, por eso se traduce «ustedes mismos» para conservar el énfasis.
+    text: El copto usa el demostrativo femenino ⲧⲏ, que gramaticalmente remite al sustantivo femenino «descanso» (ⲁⲛⲁⲡⲁⲩⲥⲓⲥ).
     reason: lexical_alternative
+  - marker: b
+    text: La forma copta usa el pronombre independiente enfático ⲛⲧⲱⲧⲛ antes del verbo; por eso se traduce «ustedes mismos» para conservar el énfasis.
+    reason: register_note
 lexical_decisions:
 - source_word: ⲁϣ ⲛϩⲟⲟⲩ
   english_pob_choice: On what day
@@ -153,4 +153,60 @@ ai_draft:
     total_tokens: 6489
     reasoning_tokens: 0
     estimated_cost_usd: 0.009577
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Sus discípulos le dijeron: «¿En qué día acontecerá el descanso de los muertos, y en qué día vendrá el mundo nuevo?»
+
+
+    Él les dijo: «Lo que ustedes están esperando ya ha venido[a], pero ustedes mismos no lo conocen[b]».'
+  to: 'Sus discípulos le dijeron: «¿En qué día acontecerá el descanso de los muertos, y en qué día vendrá el mundo nuevo?»
+
+
+    Él les dijo: «Lo que[a] ustedes están esperando ha venido, pero ustedes mismos[b] no lo conocen».'
+  rationale: Se elimina «ya» porque no está en el texto copto y el audit trail inglés lo rechazó expresamente. También se reemplaza la nota que defendía esa adición por una nota fiel sobre el demostrativo femenino, y se conserva la nota de énfasis para «ustedes mismos». No se requiere una reescritura mayor.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español capta bien la estructura básica del dicho y corrige correctamente «mundo nuevo». Sin embargo, introduce un añadido no respaldado por el copto: «ya» en «ya ha venido». El expediente inglés documenta explícitamente que ⲁⲥⲉⲓ significa solo «ha venido» y que no hay adverbio equivalente a «ya». También conviene reflejar mejor la nota inglesa sobre el demostrativo femenino ⲧⲏ, que remite a «el descanso», mediante una nota léxica en español.'
+  spanish_quality_summary: El español es claro y legible, con registro digno. «Acontecerá» y «mundo nuevo» funcionan bien. «¿En qué día...?» es aceptable aunque algo rígido; se puede conservar por formalidad. La segunda frase suena natural si se elimina «ya».
+  glossary_alignment: 'No hay conflictos con la terminología principal del proyecto. Las decisiones «descanso», «mundo nuevo», «ustedes mismos» y «lo que» son en general adecuadas. El problema central no es terminológico sino de fidelidad verbal: no debe añadirse «ya».'
+  issues:
+  - severity: high
+    issue: Se añadió «ya» en «ya ha venido» aunque el copto no lo contiene.
+    rationale: El expediente inglés y la revisión adjudicada indican que ⲁⲥⲉⲓ significa simplemente «ha venido»; añadir «ya» altera la fuerza temporal y contradice una corrección explícita del audit trail.
+  - severity: medium
+    issue: La nota [a] justifica una adición que el audit trail rechaza.
+    rationale: La nota dice que «ya» se añade por contraste contextual, pero el proyecto ya decidió eliminar precisamente esa sobretraducción. Debe suprimirse y reemplazarse, si se desea, por una nota fiel al valor del perfecto o al demostrativo femenino.
+  - severity: low
+    issue: Falta en español una nota que preserve la referencia del demostrativo femenino ⲧⲏ a «descanso».
+    rationale: El inglés conservó esta observación léxica. En español «Lo que» es idiomático, pero una nota ayuda a no perder el vínculo gramatical con «el descanso».
+  revised_spanish_text: 'Sus discípulos le dijeron: «¿En qué día acontecerá el descanso de los muertos, y en qué día vendrá el mundo nuevo?»
+
+
+    Él les dijo: «Lo que[a] ustedes están esperando ha venido, pero ustedes mismos[b] no lo conocen».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: El copto usa el demostrativo femenino ⲧⲏ, que gramaticalmente remite al sustantivo femenino «descanso» (ⲁⲛⲁⲡⲁⲩⲥⲓⲥ).
+    reason: lexical_alternative
+  - marker: b
+    text: La forma copta usa el pronombre independiente enfático ⲛⲧⲱⲧⲛ antes del verbo; por eso se traduce «ustedes mismos» para conservar el énfasis.
+    reason: register_note
+  revision_rationale: Se elimina «ya» porque no está en el texto copto y el audit trail inglés lo rechazó expresamente. También se reemplaza la nota que defendía esa adición por una nota fiel sobre el demostrativo femenino, y se conserva la nota de énfasis para «ustedes mismos». No se requiere una reescritura mayor.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2bbf63accd826999451568a9feae2b77209eb61df24a910d5fbed8c18ec2395d
+  timestamp: '2026-05-08T03:01:45Z'
+  output_hash: 9659cd79fbb30cecf1c9c9f88e747463a3ca9f671c263c7e849600885b56dd72
+  usage:
+    prompt_tokens: 6157
+    completion_tokens: 808
+    total_tokens: 6965
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.027513
+  applied_revision: true

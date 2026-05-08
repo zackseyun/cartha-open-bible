@@ -48,11 +48,14 @@ base_translation:
     changes_summary: Removed bracketed annotations from the main text, smoothed the opening to 'said to you,' and punctuated the clause so the third-person shift and 'a single one' stand clearly in English.
 translation:
   language: es
-  text: 'Jesús les dijo: «Yo los escogeré, uno de cada mil y dos de cada diez mil, un solo[a] uno; ellos se pondrán en pie, y se pondrán en pie como un solo[a] uno».'
+  text: 'Jesús les dijo a ustedes[a]: «Yo los escogeré, uno de cada mil y dos de cada diez mil, uno solo[b]; ellos se pondrán en pie, y se pondrán en pie como uno solo[b]».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: La expresión copta ⲟⲩⲁ ⲟⲩⲱⲧ dice literalmente 'uno solo' o 'un solo uno'. Se conserva aquí para no perder el énfasis de unidad total propio de Tomás.
+    text: El copto usa la forma ⲧⲏⲛⲉ, una variante regional/licopolitana del pronombre plural de segunda persona. Por eso se explicita aquí 'a ustedes'.
+    reason: dialect_note
+  - marker: b
+    text: La expresión copta ⲟⲩⲁ ⲟⲩⲱⲧ significa literalmente 'uno solo' y es un concepto importante en Tomás, que alude a una unidad o integración total. Se traduce así para conservar su peso teológico sin usar un giro español demasiado forzado.
     reason: theological_note
 lexical_decisions:
 - source_word: ⲥⲉⲧⲡ / ⲥⲱⲧⲡ
@@ -148,4 +151,49 @@ ai_draft:
     total_tokens: 5225
     reasoning_tokens: 0
     estimated_cost_usd: 0.008475
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús les dijo: «Yo los escogeré, uno de cada mil y dos de cada diez mil, un solo[a] uno; ellos se pondrán en pie, y se pondrán en pie como un solo[a] uno».'
+  to: 'Jesús les dijo a ustedes[a]: «Yo los escogeré, uno de cada mil y dos de cada diez mil, uno solo[b]; ellos se pondrán en pie, y se pondrán en pie como uno solo[b]».'
+  rationale: Se ajusta la apertura para reflejar el destinatario plural documentado en el copto y en el expediente inglés, y se sustituye 'un solo uno' por 'uno solo', que preserva mejor el sentido con buena legibilidad en español. Se añaden notas para conservar tanto la observación dialectal como la importancia teológica de ⲟⲩⲁ ⲟⲩⲱⲧ.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja correctamente la estructura básica del dicho: elección ''uno de mil y dos de diez mil'', preserva el cambio abrupto de segunda a tercera persona, y mantiene el concepto central de ⲟⲩⲁ ⲟⲩⲱⲧ. Sin embargo, ''Jesús les dijo'' pierde el matiz auditado de ''said to you'' y neutraliza la nota dialectal del pronombre plural. Además, ''un solo uno'' es demasiado tosco en español y dificulta la legibilidad sin necesidad, cuando puede preservarse la carga teológica con ''uno solo'' acompañado de nota.'
+  spanish_quality_summary: El texto es mayormente claro, pero 'un solo uno' suena artificioso y poco idiomático en español e interfiere con la comprensión. 'Se pondrán en pie' es aceptable, aunque 'estarán de pie' o 'se mantendrán en pie' también serían posibles; no exige cambio. Conviene ajustar la apertura a 'Jesús les dijo a ustedes' para reflejar mejor el dativo/pronombre plural señalado en el expediente inglés.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto (Jesús, etc.). La decisión clave es ⲟⲩⲁ ⲟⲩⲱⲧ: en español, ''uno solo'' preserva mejor la fuerza de unidad sin caer en un calco duro. También conviene conservar en nota el rasgo dialectal del pronombre ''ustedes''.'
+  issues:
+  - severity: medium
+    issue: La frase inicial 'Jesús les dijo' omite el matiz explícito de destinatario plural presente en el texto auditado ('said to you').
+    rationale: El expediente inglés conservó y anotó el pronombre plural dialectal ⲧⲏⲛⲉ. En español, 'les dijo a ustedes' refleja mejor ese destinatario sin sonar antinatural.
+  - severity: medium
+    issue: '''Un solo uno'' es excesivamente literal y poco natural en español.'
+    rationale: Aunque busca preservar ⲟⲩⲁ ⲟⲩⲱⲧ, en español produce una expresión torpe. 'Uno solo' mantiene la idea de unidad singular y, con nota, preserva la intención teológica documentada.
+  - severity: low
+    issue: La única nota actual no cubre la observación dialectal del pronombre plural.
+    rationale: Dado que el inglés auditado la conservó expresamente, es mejor trasladarla al español para no perder evidencia textual relevante.
+  revised_spanish_text: 'Jesús les dijo a ustedes[a]: «Yo los escogeré, uno de cada mil y dos de cada diez mil, uno solo[b]; ellos se pondrán en pie, y se pondrán en pie como uno solo[b]».'
+  revised_footnotes:
+  - marker: a
+    text: El copto usa la forma ⲧⲏⲛⲉ, una variante regional/licopolitana del pronombre plural de segunda persona. Por eso se explicita aquí 'a ustedes'.
+    reason: dialect_note
+  - marker: b
+    text: La expresión copta ⲟⲩⲁ ⲟⲩⲱⲧ significa literalmente 'uno solo' y es un concepto importante en Tomás, que alude a una unidad o integración total. Se traduce así para conservar su peso teológico sin usar un giro español demasiado forzado.
+    reason: theological_note
+  revision_rationale: Se ajusta la apertura para reflejar el destinatario plural documentado en el copto y en el expediente inglés, y se sustituye 'un solo uno' por 'uno solo', que preserva mejor el sentido con buena legibilidad en español. Se añaden notas para conservar tanto la observación dialectal como la importancia teológica de ⲟⲩⲁ ⲟⲩⲱⲧ.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5eb3881bea7a372a5f90852f301c0134bc43cbdb6d970031e6c84569fa4e50ad
+  timestamp: '2026-05-08T03:06:59Z'
+  output_hash: 5ed5b848b212bb4df78f692362c93f1de22d996404a3845834c208922c635810
+  usage:
+    prompt_tokens: 4894
+    completion_tokens: 886
+    total_tokens: 5780
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025525
+  applied_revision: true

@@ -77,15 +77,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: No den lo santo a los perros[a], para que no las[b] arrojen al montón de estiércol. No arrojen perlas a los cerdos, para que no hagan de ellas [...]
+  text: No den lo santo[a] a los perros, para que no lo arrojen[b] al montón de estiércol[c]. No arrojen perlas a los cerdos, para que no hagan eso con ellas [...][d]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Lo santo» traduce un sustantivo/adjetivo sustantivado (ⲡⲉⲧⲟⲩⲁⲁⲃ), literalmente «la cosa santa» o «lo santo».
+    text: «Lo santo» traduce un adjetivo sustantivado (ⲡⲉⲧⲟⲩⲁⲁⲃ), literalmente «la cosa santa» o «lo santo».
     reason: lexical_alternative
   - marker: b
-    text: El Coptico conserva un objeto plural («las»), de modo que el sujeto implícito de la primera prohibición se entiende en plural en la segunda mitad de la frase.
+    text: El copto conserva aquí un objeto plural en el verbo («las/ellos»), aunque el antecedente sea singular/neutro en español; la traducción principal usa «lo» para mantener la naturalidad del español, y la nota preserva esa discordancia del manuscrito.
     reason: source_note
+  - marker: c
+    text: «Montón de estiércol» traduce el préstamo griego ⲕⲟⲡⲣⲓⲁ, el montón de desechos o estiércol común en la vida aldeana.
+    reason: cultural_note
+  - marker: d
+    text: El copto conserva un verbo legible antes de la laguna («hagan eso con ellas» / «lo hagan»), pero el complemento posterior no se preserva; muchos editores conjeturan una idea como «pisotear», influenciados por Mt 7:6, pero el manuscrito no la conserva.
+    reason: lacuna_or_restoration
 lexical_decisions:
 - source_word: ⲡⲉⲧⲟⲩⲁⲁⲃ
   english_pob_choice: what is holy
@@ -174,4 +180,58 @@ ai_draft:
     total_tokens: 6325
     reasoning_tokens: 0
     estimated_cost_usd: 0.010384
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: No den lo santo a los perros[a], para que no las[b] arrojen al montón de estiércol. No arrojen perlas a los cerdos, para que no hagan de ellas [...]
+  to: No den lo santo[a] a los perros, para que no lo arrojen[b] al montón de estiércol[c]. No arrojen perlas a los cerdos, para que no hagan eso con ellas [...][d]
+  rationale: 'La revisión hace reparaciones pequeñas pero necesarias: mejora la naturalidad del español, mantiene la fidelidad al testimonio copto y al rastro de auditoría inglés, y conserva en nota tanto la discordancia gramatical del primer miembro como la laguna no restituida del segundo. No hace falta adjudicación adicional porque las correcciones son directas y bien sustentadas por la evidencia dada.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español capta bien la estructura proverbial y conserva elementos importantes del testimonio copto, incluyendo el objeto plural en la primera cláusula y el verbo sobreviviente antes de la laguna en la segunda. Sin embargo, presenta dos problemas de fidelidad/claridad: (1) «las arrojen» para un antecedente neutro («lo santo») suena gramaticalmente forzado en español y además introduce una referencia femenina no motivada por el texto; conviene conservar la anomalía del plural mediante una nota, no mediante un pronombre español infeliz. (2) «hagan de ellas [...]» no refleja bien el copto legible ⲉⲓⲣⲉ ⲛⲧⲟϥ / ‘hacerlo / hacer eso a ello’; en español queda más fiel y natural «hagan eso con ellas [...]» o similar, sin inventar el complemento perdido.'
+  spanish_quality_summary: El español es generalmente claro y digno, pero «para que no las arrojen» resulta poco natural tras «lo santo», y «hagan de ellas [...]» suena torpe e idiomáticamente débil. También falta la nota cultural heredada del inglés para «montón de estiércol», útil para el préstamo griego y la imagen aldeana. Con ajustes menores, el texto queda más natural sin perder precisión.
+  glossary_alignment: No hay conflictos con la terminología teológica principal del proyecto. «Lo santo», «perlas» y «cerdos» son adecuados. La decisión de evitar una restitución tipo «pisoteen» es correcta y conforme al rastro de auditoría inglés. La anomalía gramatical del objeto plural debe explicarse en nota, no reproducirse de manera antiidiomática en el cuerpo del español.
+  issues:
+  - severity: medium
+    issue: Pronombre «las» en «para que no las arrojen»
+    rationale: El copto sí tiene objeto plural, pero en español «lo santo» no admite naturalmente un pronombre femenino plural. La fidelidad al rasgo textual se preserva mejor con una redacción natural en el texto y una nota que explique la discordancia del original.
+  - severity: medium
+    issue: «hagan de ellas [...]» no representa bien el verbo sobreviviente antes de la laguna
+    rationale: El inglés auditado corrigió precisamente para incluir el elemento legible ‘do it’. «Hagan de ellas» no corresponde bien a esa construcción y suena poco idiomático. «Hagan eso con ellas [...]» mantiene el verbo preservado y deja abierta la laguna sin conjeturar.
+  - severity: low
+    issue: Falta nota cultural para «montón de estiércol»
+    rationale: El inglés conserva una nota sobre ⲕⲟⲡⲣⲓⲁ como préstamo griego y su referente cultural concreto. Es útil mantenerla también en español.
+  - severity: low
+    issue: Acentuación en «copto» dentro de la nota
+    rationale: 'En español va en minúscula y sin mayúscula interna innecesaria: «copto».'
+  revised_spanish_text: No den lo santo[a] a los perros, para que no lo arrojen[b] al montón de estiércol[c]. No arrojen perlas a los cerdos, para que no hagan eso con ellas [...][d]
+  revised_footnotes:
+  - marker: a
+    text: «Lo santo» traduce un adjetivo sustantivado (ⲡⲉⲧⲟⲩⲁⲁⲃ), literalmente «la cosa santa» o «lo santo».
+    reason: lexical_alternative
+  - marker: b
+    text: El copto conserva aquí un objeto plural en el verbo («las/ellos»), aunque el antecedente sea singular/neutro en español; la traducción principal usa «lo» para mantener la naturalidad del español, y la nota preserva esa discordancia del manuscrito.
+    reason: source_note
+  - marker: c
+    text: «Montón de estiércol» traduce el préstamo griego ⲕⲟⲡⲣⲓⲁ, el montón de desechos o estiércol común en la vida aldeana.
+    reason: cultural_note
+  - marker: d
+    text: El copto conserva un verbo legible antes de la laguna («hagan eso con ellas» / «lo hagan»), pero el complemento posterior no se preserva; muchos editores conjeturan una idea como «pisotear», influenciados por Mt 7:6, pero el manuscrito no la conserva.
+    reason: lacuna_or_restoration
+  revision_rationale: 'La revisión hace reparaciones pequeñas pero necesarias: mejora la naturalidad del español, mantiene la fidelidad al testimonio copto y al rastro de auditoría inglés, y conserva en nota tanto la discordancia gramatical del primer miembro como la laguna no restituida del segundo. No hace falta adjudicación adicional porque las correcciones son directas y bien sustentadas por la evidencia dada.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c1f51eb804e5fa9c07bbe21c0a8357f14c62742c0d625db0af2092165b1a7508
+  timestamp: '2026-05-08T03:02:46Z'
+  output_hash: 6b882798c11214fa2f98473d6a69f7581432072f8e01ddd26305a6c0b893abc4
+  usage:
+    prompt_tokens: 5970
+    completion_tokens: 1120
+    total_tokens: 7090
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.031725
+  applied_revision: true

@@ -66,14 +66,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Mi padre[a], y la hermana de mi marido—y él es mi descendencia. Yo soy la esclava de mi marido[b], y yo soy la Señora[c].
+  text: Mi padre, y la hermana de mi marido—y él es mi descendencia[a]. Yo soy la esclava de mi marido[b], y yo soy la Señora[c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: '«Él es mi descendencia» sigue la revisión textual adoptada para ⲡⲁϫⲡⲟ: el coptico expresa «offspring / progeny», no «el que me engendró».'
+    text: '«Él es mi descendencia» sigue la revisión textual adoptada para ⲡⲁϫⲡⲟ: el copto expresa «offspring / progeny», no «el que me engendró».'
     reason: source_note
   - marker: b
-    text: La palabra coptica ⲧϩⲙϩⲁⲗ significa «esclava» o «servidora»; aquí se mantiene la opción más fuerte por su valor léxico y por el contraste con «la Señora».
+    text: La palabra copta ⲧϩⲙϩⲁⲗ significa «esclava» o «servidora»; aquí se mantiene la opción más fuerte por su valor léxico y por el contraste con «la Señora».
     reason: lexical_alternative
   - marker: c
     text: «Señora» traduce la contraparte femenina de «lord»; «Dama» o «dueña» son posibles, pero cambian el tono o la relación de dominio.
@@ -194,4 +194,49 @@ ai_draft:
     total_tokens: 5215
     reasoning_tokens: 0
     estimated_cost_usd: 0.010658
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Mi padre[a], y la hermana de mi marido—y él es mi descendencia. Yo soy la esclava de mi marido[b], y yo soy la Señora[c].
+  to: Mi padre, y la hermana de mi marido—y él es mi descendencia[a]. Yo soy la esclava de mi marido[b], y yo soy la Señora[c].
+  rationale: Se conserva la traducción sustantiva del borrador, pero se corrige la colocación de la nota para que ancle en «mi descendencia», que es el elemento comentado por la evidencia auditada, y se ajusta la ortografía de las notas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:15:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente las revisiones auditadas clave del copto: ⲡⲁϫⲡⲟ como «mi descendencia» y ⲧϩⲙϩⲁⲗ como «la esclava». También preserva bien la paradoja relacional y el contraste entre condición servil y título de autoridad. Sin embargo, la nota [a] está mal anclada: comenta ⲡⲁϫⲡⲟ pero aparece sobre «Mi padre», lo que falsea la referencia textual inmediata. Además, «coptico» debería llevar tilde.'
+  spanish_quality_summary: 'El español es claro, digno y legible. «Mi marido» funciona, aunque «mi esposo» sería algo más neutro panhispánico; no es un error. «La Señora» es defendible como título femenino y mantiene el contraste con «esclava». El principal problema es técnico-editorial: la ubicación de la nota y una pequeña corrección ortográfica.'
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. La elección «esclava» concuerda con la preferencia POB por la fuerza léxica de ‘slave’ cuando así se documenta. «Señora» refleja adecuadamente el valor titular femenino de ⲧϫⲟⲉⲓⲥ.
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada en «Mi padre» pero explica «mi descendencia» / ⲡⲁϫⲡⲟ.
+    rationale: Las notas deben aparecer en el punto exacto del texto al que se refieren. Aquí la nota induce a pensar que comenta «Mi padre» cuando en realidad trata la cláusula final «él es mi descendencia».
+  - severity: low
+    issue: Falta tilde en «copto»/«copto» adjetival dentro de la nota.
+    rationale: La ortografía estándar en español es «copto» como sustantivo/adjetivo, pero en la frase dada aparece «el coptico», que debe ser «el copto» o «el copto/cóptico» según formulación; la forma usada es ortográficamente defectuosa.
+  revised_spanish_text: Mi padre, y la hermana de mi marido—y él es mi descendencia[a]. Yo soy la esclava de mi marido[b], y yo soy la Señora[c].
+  revised_footnotes:
+  - marker: a
+    text: '«Él es mi descendencia» sigue la revisión textual adoptada para ⲡⲁϫⲡⲟ: el copto expresa «offspring / progeny», no «el que me engendró».'
+    reason: source_note
+  - marker: b
+    text: La palabra copta ⲧϩⲙϩⲁⲗ significa «esclava» o «servidora»; aquí se mantiene la opción más fuerte por su valor léxico y por el contraste con «la Señora».
+    reason: lexical_alternative
+  - marker: c
+    text: «Señora» traduce la contraparte femenina de «lord»; «Dama» o «dueña» son posibles, pero cambian el tono o la relación de dominio.
+    reason: cultural_note
+  revision_rationale: Se conserva la traducción sustantiva del borrador, pero se corrige la colocación de la nota para que ancle en «mi descendencia», que es el elemento comentado por la evidencia auditada, y se ajusta la ortografía de las notas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 899cc36d4103859f6c9f9ed67f8bf3354aeddb421b87e5501de082191d8e49aa
+  timestamp: '2026-05-08T03:15:24Z'
+  output_hash: 5db00101462fca70f3addd5dcbb644cf6e20a6cbaa99f23c1ff5b8889b49d0a3
+  usage:
+    prompt_tokens: 4888
+    completion_tokens: 818
+    total_tokens: 5706
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02449
+  applied_revision: true

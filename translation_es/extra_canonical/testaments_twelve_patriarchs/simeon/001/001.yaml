@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Copia de las palabras de Simeón[a], que habló a sus hijos, antes de morir, en el año ciento veinte de su vida, en el tiempo en que murió José, su hermano.
+  text: Copia de las palabras de Simeón[a], que dijo a sus hijos antes de que muriera, en el año ciento veinte de su vida, en el tiempo en que murió José, su hermano.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -108,4 +108,43 @@ ai_draft:
     total_tokens: 2764
     reasoning_tokens: 0
     estimated_cost_usd: 0.006161
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Copia de las palabras de Simeón[a], que habló a sus hijos, antes de morir, en el año ciento veinte de su vida, en el tiempo en que murió José, su hermano.
+  to: Copia de las palabras de Simeón[a], que dijo a sus hijos antes de que muriera, en el año ciento veinte de su vida, en el tiempo en que murió José, su hermano.
+  rationale: 'Se recomienda una revisión menor para mejorar la naturalidad del español sin alterar el sentido auditado: «dijo» encaja mejor con «palabras», y «antes de que muriera» expresa de forma más clara la cláusula temporal griega.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:02Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el griego y el POB inglés en la estructura principal: Ἀντίγραφον λόγων = «Copia de las palabras», τοῖς υἱοῖς αὐτοῦ = «a sus hijos», y la cláusula temporal final sobre la muerte de José está bien preservada. Sin embargo, «que habló» suena menos natural y ligeramente menos preciso que «que dijo» o «que habló ...» con objeto explícito; además, πρὸ τοῦ ἀποθανεῖν αὐτόν se expresa con más claridad en español como «antes de que muriera».'
+  spanish_quality_summary: El texto es comprensible y digno, pero necesita un ajuste menor para mejorar la naturalidad del español y evitar una sintaxis algo tosca. «Que habló a sus hijos» es posible, pero en este contexto de «palabras» resulta más idiomático «que dijo a sus hijos». También conviene suavizar «en el año ciento veinte de su vida» a «en el año ciento veinte de su vida» o equivalente; aquí puede mantenerse, pero la mejora principal es verbal y temporal.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. Los nombres propios «Simeón» y «José» están bien. No aparecen términos teológicos sensibles como Yahvé, Mesías, espíritu, etc. La nota sobre Ἀντίγραφον es adecuada y fiel.
+  issues:
+  - severity: medium
+    issue: «que habló a sus hijos» es poco idiomático en esta construcción
+    rationale: Con «palabras», el español natural prefiere «que dijo a sus hijos»; el griego ἐλάλησε permite «habló», pero aquí la combinación suena rígida.
+  - severity: low
+    issue: «antes de morir» deja implícito el sujeto de manera aceptable pero menos clara
+    rationale: πρὸ τοῦ ἀποθανεῖν αὐτόν corresponde más transparentemente a «antes de que muriera», que evita cualquier mínima ambigüedad en español.
+  revised_spanish_text: Copia de las palabras de Simeón[a], que dijo a sus hijos antes de que muriera, en el año ciento veinte de su vida, en el tiempo en que murió José, su hermano.
+  revised_footnotes:
+  - marker: a
+    text: «Copia» refleja el griego Ἀντίγραφον, que señala un documento transmitido como reproducción de palabras, no una composición nueva.
+    reason: source_note
+  revision_rationale: 'Se recomienda una revisión menor para mejorar la naturalidad del español sin alterar el sentido auditado: «dijo» encaja mejor con «palabras», y «antes de que muriera» expresa de forma más clara la cláusula temporal griega.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b1566e69f5916a3b3079054132cc5011cf62d6d2bed40f3b61b4ddb7d06efee6
+  timestamp: '2026-05-08T03:01:02Z'
+  output_hash: 57dcdb4e781ed2263f4a96308b0aff60b88226811a7a3abad19289870f281df4
+  usage:
+    prompt_tokens: 2491
+    completion_tokens: 634
+    total_tokens: 3125
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015738
+  applied_revision: true

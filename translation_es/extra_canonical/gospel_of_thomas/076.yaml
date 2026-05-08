@@ -98,15 +98,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «La Realeza del Padre es como un comerciante. Tenía una remesa de mercancías y encontró una perla. El comerciante fue prudente: vendió la remesa y compró para sí la única perla. También ustedes, busquen su tesoro que no se agota, que permanece: el lugar donde no entra la polilla para comerlo, ni el gusano lo destruye»[b].'
+  text: 'Jesús dijo: «El Reinado del Padre es como un comerciante. Tenía una remesa de mercancías y encontró una perla. El comerciante era prudente: vendió[a] la remesa y compró la perla única para él. También ustedes[b], busquen su[c] tesoro que no se agota, que permanece: el lugar donde no entra la polilla para comérselo, ni el gusano[d] lo destruye».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Jesús dijo: el copto usa una fórmula introductoria ordinaria; se mantiene la atribución directa sin añadir más contenido.'
-    reason: source_note
-  - marker: b
-    text: El copto tiene un énfasis explícito en la segunda persona plural («ustedes también»), no un reflexivo. Por eso no se traduce como «para ustedes mismos».
+    text: Lit. «dio la remesa fuera». En este contexto de compra y venta, el giro idiomático significa vender o liquidar la mercancía.
     reason: lexical_alternative
+  - marker: b
+    text: El copto tiene un énfasis explícito en la segunda persona plural («también ustedes»), no un reflexivo. Por eso no se traduce como «para ustedes mismos».
+    reason: lexical_alternative
+  - marker: c
+    text: '«Su tesoro»: hay una dificultad ortográfica en este punto en el manuscrito, normalizada como «su tesoro»; la traducción sigue esa lectura normalizada.'
+    reason: lacuna_or_restoration
+  - marker: d
+    text: Tomás dice «gusano», no «óxido» como en algunos paralelos sinópticos; la imagen es de deterioro orgánico, no de corrosión.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ⲡⲙⲛⲧⲣⲣⲟ ⲛⲡⲉⲓⲱⲧ
   english_pob_choice: the Reign of the Father
@@ -261,4 +267,58 @@ ai_draft:
     total_tokens: 9458
     reasoning_tokens: 0
     estimated_cost_usd: 0.016236
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «La Realeza del Padre es como un comerciante. Tenía una remesa de mercancías y encontró una perla. El comerciante fue prudente: vendió la remesa y compró para sí la única perla. También ustedes, busquen su tesoro que no se agota, que permanece: el lugar donde no entra la polilla para comerlo, ni el gusano lo destruye»[b].'
+  to: 'Jesús dijo: «El Reinado del Padre es como un comerciante. Tenía una remesa de mercancías y encontró una perla. El comerciante era prudente: vendió[a] la remesa y compró la perla única para él. También ustedes[b], busquen su[c] tesoro que no se agota, que permanece: el lugar donde no entra la polilla para comérselo, ni el gusano[d] lo destruye».'
+  rationale: La revisión corrige el principal punto léxico-estilístico («Reinado»), elimina un matiz reflexivo innecesario en la compra, y añade las notas esenciales ya documentadas en el audit trail inglés para no perder justificación léxica importante. El resultado queda más natural en español y más alineado con la evidencia fuente y la filosofía del POB.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido global del copto y del rastro de auditoría inglés: comerciante, remesa, perla, prudencia, venta, compra, tesoro perdurable, polilla y gusano. También respeta correctamente la revisión adjudicada sobre ϩⲱⲱⲛⲧⲱⲧⲛ como «también ustedes», no reflexivo. Sin embargo, hay dos desajustes relevantes: (1) «La Realeza del Padre» suena menos natural y menos fiel al matiz dinámico de ⲡⲙⲛⲧⲣⲣⲟ que «El Reinado del Padre»; (2) «compró para sí la única perla» añade un matiz reflexivo/benefactivo no expresado en el español necesario, y además pierde algo del énfasis de «la perla única / esa sola perla / la única perla» como objeto singular definido del original y del inglés auditado. También faltan en español notas que preserven decisiones documentadas del POB inglés sobre la venta idiomática, la lectura normalizada de «su tesoro», y la imagen de «gusano» frente a paralelos con ‘óxido’.'
+  spanish_quality_summary: El texto es claro y legible, con buen español eclesial moderno. No obstante, «La Realeza del Padre» resulta algo abstracto y poco idiomático en este contexto parabólico; «El Reinado del Padre» lee mejor. La colocación final de la nota [b] fuera de la frase enfatizada es funcional pero menos precisa; conviene anclarla en «También ustedes[a]» o similar. Además, «compró para sí» suena innecesariamente marcado. En conjunto, la reparación es menor pero conveniente.
+  glossary_alignment: 'Alineación general buena con la terminología del proyecto: Jesús, Padre, tesoro, polilla, gusano. No hay conflicto con Yahvé/Mesías/etc. La principal cuestión léxica es ⲡⲙⲛⲧⲣⲣⲟ: «Realeza» no es incorrecto, pero para reflejar mejor ‘reign’ y mantener naturalidad española, «Reinado» encaja mejor que «Realeza» o «Reino».'
+  issues:
+  - severity: medium
+    issue: «La Realeza del Padre» para ⲡⲙⲛⲧⲣⲣⲟ ⲛⲡⲉⲓⲱⲧ
+    rationale: Aunque intenta reflejar el matiz abstracto, en español suena menos idiomático y puede apuntar más a cualidad regia que a ejercicio de gobierno. «El Reinado del Padre» preserva mejor el valor dinámico de ‘reign’ documentado por el POB inglés.
+  - severity: medium
+    issue: «compró para sí la única perla» añade un matiz innecesario
+    rationale: El español introduce un benefactivo reflexivo que no hace falta explicitar aquí y que puede sobreinterpretar el original. Basta «compró la perla única» o «compró esa única perla».
+  - severity: medium
+    issue: Faltan notas españolas para decisiones relevantes preservadas por el POB inglés
+    rationale: El inglés documenta la idiomaticidad de ‘vendió’, la normalización ortográfica detrás de «su tesoro», y la diferencia ‘gusano’ vs. ‘óxido’. Dado que el proyecto pide preservar alternativas significativas, conviene mantenerlas en notas españolas.
+  - severity: low
+    issue: Anclaje de nota menos preciso
+    rationale: La nota sobre ϩⲱⲱⲛⲧⲱⲧⲛ debería anclarse en la frase correspondiente, no al cierre de toda la cita.
+  revised_spanish_text: 'Jesús dijo: «El Reinado del Padre es como un comerciante. Tenía una remesa de mercancías y encontró una perla. El comerciante era prudente: vendió[a] la remesa y compró la perla única para él. También ustedes[b], busquen su[c] tesoro que no se agota, que permanece: el lugar donde no entra la polilla para comérselo, ni el gusano[d] lo destruye».'
+  revised_footnotes:
+  - marker: a
+    text: Lit. «dio la remesa fuera». En este contexto de compra y venta, el giro idiomático significa vender o liquidar la mercancía.
+    reason: lexical_alternative
+  - marker: b
+    text: El copto tiene un énfasis explícito en la segunda persona plural («también ustedes»), no un reflexivo. Por eso no se traduce como «para ustedes mismos».
+    reason: lexical_alternative
+  - marker: c
+    text: '«Su tesoro»: hay una dificultad ortográfica en este punto en el manuscrito, normalizada como «su tesoro»; la traducción sigue esa lectura normalizada.'
+    reason: lacuna_or_restoration
+  - marker: d
+    text: Tomás dice «gusano», no «óxido» como en algunos paralelos sinópticos; la imagen es de deterioro orgánico, no de corrosión.
+    reason: cross_reference
+  revision_rationale: La revisión corrige el principal punto léxico-estilístico («Reinado»), elimina un matiz reflexivo innecesario en la compra, y añade las notas esenciales ya documentadas en el audit trail inglés para no perder justificación léxica importante. El resultado queda más natural en español y más alineado con la evidencia fuente y la filosofía del POB.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0b6e5a8f90d4b41aa12081e8ff8e1b1a7573f76106f171b83b2086e1bbdd4746
+  timestamp: '2026-05-08T03:06:14Z'
+  output_hash: 9e0bd124d893ce0be45c2ef52192081752ca7ffcc12503f2eaf512157e00e655
+  usage:
+    prompt_tokens: 9071
+    completion_tokens: 1262
+    total_tokens: 10333
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.041607
+  applied_revision: true

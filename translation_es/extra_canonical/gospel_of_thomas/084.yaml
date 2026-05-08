@@ -60,17 +60,17 @@ base_translation:
     changes_summary: Adjusted the temporal phrase to match the source more closely (“On the day you see”); removed the bracketed duplicate/garbled material so the clause reads cleanly while retaining all established lexical decisions.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «El día en que vean su semejanza, se alegrarán. Pero cuando vean sus imágenes, que llegaron a ser antes de ustedes[b], las cuales ni mueren ni se manifiestan[c]—¿cuánto soportarán?»'
+  text: 'Jesús dijo: «El día en que ven su semejanza, se alegran. Pero cuando vean sus imágenes[a], que llegaron a ser antes de ustedes[b], las cuales ni mueren ni se manifiestan[c], ¿cuánto soportarán?»'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El coptico usa aquí un préstamo griego equivalente a ‘imagen’; la traducción mantiene la oposición entre ‘semejanza’ e ‘imágenes’.
+    text: El texto copto usa aquí un préstamo griego equivalente a ‘imagen’; la traducción mantiene la oposición entre ‘semejanza’ e ‘imágenes’.
     reason: lexical_alternative
   - marker: b
     text: Lit. ‘antes de ustedes’; la frase indica prioridad temporal de las imágenes respecto de quienes las ven.
     reason: source_note
   - marker: c
-    text: El coptico emplea un giro negativo habitual regional; por eso se traduce de manera directa como ‘ni mueren ni se manifiestan’.
+    text: El copto emplea un giro negativo habitual regional; por eso se traduce de manera directa como ‘ni mueren ni se manifiestan’.
     reason: source_note
 lexical_decisions:
 - source_word: ⲉⲓⲛⲉ
@@ -172,4 +172,52 @@ ai_draft:
     total_tokens: 6292
     reasoning_tokens: 0
     estimated_cost_usd: 0.009845
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «El día en que vean su semejanza, se alegrarán. Pero cuando vean sus imágenes, que llegaron a ser antes de ustedes[b], las cuales ni mueren ni se manifiestan[c]—¿cuánto soportarán?»'
+  to: 'Jesús dijo: «El día en que ven su semejanza, se alegran. Pero cuando vean sus imágenes[a], que llegaron a ser antes de ustedes[b], las cuales ni mueren ni se manifiestan[c], ¿cuánto soportarán?»'
+  rationale: Se corrige ‘se alegrarán’ a ‘se alegran’ para reflejar la verdad general/habitual documentada en el audit trail y en el copto. Se reubica la nota léxica al término pertinente (‘imágenes’) y se corrige la ortografía de la nota. También se ajusta la puntuación del inciso final a una forma más natural en español con coma antes de la pregunta.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:25Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la distinción clave entre ⲉⲓⲛⲉ (‘semejanza’) y ϩⲓⲕⲱⲛ (‘imágenes’), y mantiene adecuadamente ‘antes de ustedes’ y ‘ni mueren ni se manifiestan’. Sin embargo, no refleja bien el valor aspectual documentado en el audit trail: el coptico/POB inglés expresa una verdad general (‘you rejoice’), no un futuro (‘se alegrarán’).'
+  spanish_quality_summary: El texto es mayormente claro y digno, pero la mezcla de ‘vean’ con ‘se alegrarán’ introduce una incongruencia temporal y debilita la naturalidad. También la nota [a] está anclada a ‘Jesús dijo’ aunque explica la oposición léxica entre ‘semejanza’ e ‘imágenes’; conviene moverla a ‘imágenes’ o suprimirla si no añade algo necesario. Además, ‘cóptico’ requiere tilde.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. La decisión ‘semejanza’ vs ‘imágenes’ está bien alineada con el rationale inglés. ‘Llegaron a ser’ es aceptable para ϣⲱⲡⲉ, aunque ‘llegaron a existir’ sería otra opción; no es necesario cambiarlo. ‘Soportarán’ puede mantenerse para ϥⲓ ϩⲁ.
+  issues:
+  - severity: medium
+    issue: ‘se alegrarán’ traduce como futuro una forma que el audit trail corrige como verdad general/habitual.
+    rationale: La revisión inglesa adjudicada rechazó explícitamente el futuro y estableció ‘you rejoice’. En español debe reflejarse mejor con ‘se alegran’.
+  - severity: low
+    issue: La nota [a] está colocada en un lugar inadecuado.
+    rationale: La nota explica el contraste léxico entre ‘semejanza’ e ‘imágenes’, no el nombre ‘Jesús dijo’. El anclaje actual puede confundir al lector.
+  - severity: low
+    issue: 'Error ortográfico en nota al pie: ‘coptico’.'
+    rationale: En español estándar debe escribirse ‘copto’ o ‘cóptico’.
+  revised_spanish_text: 'Jesús dijo: «El día en que ven su semejanza, se alegran. Pero cuando vean sus imágenes[a], que llegaron a ser antes de ustedes[b], las cuales ni mueren ni se manifiestan[c], ¿cuánto soportarán?»'
+  revised_footnotes:
+  - marker: a
+    text: El texto copto usa aquí un préstamo griego equivalente a ‘imagen’; la traducción mantiene la oposición entre ‘semejanza’ e ‘imágenes’.
+    reason: lexical_alternative
+  - marker: b
+    text: Lit. ‘antes de ustedes’; la frase indica prioridad temporal de las imágenes respecto de quienes las ven.
+    reason: source_note
+  - marker: c
+    text: El copto emplea un giro negativo habitual regional; por eso se traduce de manera directa como ‘ni mueren ni se manifiestan’.
+    reason: source_note
+  revision_rationale: Se corrige ‘se alegrarán’ a ‘se alegran’ para reflejar la verdad general/habitual documentada en el audit trail y en el copto. Se reubica la nota léxica al término pertinente (‘imágenes’) y se corrige la ortografía de la nota. También se ajusta la puntuación del inciso final a una forma más natural en español con coma antes de la pregunta.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 02e095e21bde74795ef220c4924b2d9dbc729db3f18fb8920796d0232150c879
+  timestamp: '2026-05-08T03:06:25Z'
+  output_hash: f8bd01f42dc52507b4fd1bd074cff7679b3cd968be8da9b1c4f084a5f13c568a
+  usage:
+    prompt_tokens: 5955
+    completion_tokens: 811
+    total_tokens: 6766
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.027053
+  applied_revision: true

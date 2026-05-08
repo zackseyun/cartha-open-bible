@@ -60,17 +60,17 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: El que busca, hallará; el que llama para entrar[b], se le abrirá[c].'
+  text: 'Jesús dijo[a]: El que busca, encontrará; el que toca para entrar[b], se le abrirá[c].'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El inicio «Jesús dijo» corresponde a una reconstrucción parcial del manuscrito, normalizada a partir de la lectura coptológica establecida.
-    reason: source_note
+    text: El inicio «Jesús dijo» está parcialmente reconstruido en el manuscrito (entre corchetes en Dilley) y normalizado como ⲡⲉϫⲉⲓⲏⲥⲟⲩⲥ.
+    reason: lacuna_or_restoration
   - marker: b
-    text: «Llama para entrar» procura conservar la dirección de ⲉϩⲟⲩⲛ (‘hacia adentro’) sin añadir «puerta», que no aparece en el texto.
-    reason: source_note
+    text: «Toca para entrar» refleja ⲧⲱϩⲙ con la dirección de ⲉϩⲟⲩⲛ («hacia adentro», «para entrar») sin añadir «puerta», que no aparece en el texto.
+    reason: cultural_note
   - marker: c
-    text: «Se le abrirá» refleja la construcción impersonal coptó; también puede entenderse como «le abrirán (algo)».
+    text: «Se le abrirá» traduce el futuro impersonal en tercera persona plural ⲛⲧⲟⲟⲩ con sentido pasivo; alternativamente, «le abrirán (algo)».
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲡⲉϫⲉⲓⲏⲥⲟⲩⲥ
@@ -156,4 +156,49 @@ ai_draft:
     total_tokens: 4520
     reasoning_tokens: 0
     estimated_cost_usd: 0.008164
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: El que busca, hallará; el que llama para entrar[b], se le abrirá[c].'
+  to: 'Jesús dijo[a]: El que busca, encontrará; el que toca para entrar[b], se le abrirá[c].'
+  rationale: 'La revisión es menor pero conveniente: cambia «llama» por «toca» para representar mejor ⲧⲱϩⲙ sin añadir objeto no expreso, y ajusta «encontrará» por mayor naturalidad en español neutral. También se afinan las notas para alinearlas más estrechamente con el rastro de auditoría inglés.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido del copto y del POB inglés: «el que busca … hallará» refleja correctamente la construcción proverbial; «se le abrirá» preserva bien el futuro impersonal con sentido pasivo. Sin embargo, «el que llama para entrar» debilita el valor léxico principal de ⲧⲱϩⲙ (‘golpear, tocar/llamar a la puerta’) y puede entenderse en español como ‘hacer una llamada’ o simplemente ‘llamar por nombre’. Conviene explicitar el acto físico de tocar sin añadir «puerta», que el original no expresa.'
+  spanish_quality_summary: El texto es claro y publicable, con tono digno. No obstante, «hallará» suena algo más tradicional; es aceptable, pero la combinación «busca / encontrará» resulta más natural para español neutral. El ajuste principal necesario es sustituir «llama» por un verbo más preciso como «toca», que conserva la imagen proverbial y evita ambigüedad moderna.
+  glossary_alignment: No hay conflictos con la terminología teológica del proyecto. Los nombres y conceptos relevantes están bien alineados. La revisión propuesta responde a precisión léxica del copto, no a glosario doctrinal.
+  issues:
+  - severity: medium
+    issue: «llama para entrar» es léxicamente menos preciso para ⲧⲱϩⲙ
+    rationale: El copto apunta al acto de golpear/tocar para entrar. En español actual, «llamar» puede sonar demasiado amplio o ambiguo. «Toca para entrar» mantiene la fuerza concreta sin introducir «puerta».
+  - severity: low
+    issue: La nota c tiene una leve imprecisión metalingüística
+    rationale: Dice «coptó» donde debe decir «copta» o «del copto». Conviene corregir la redacción técnica de la nota.
+  revised_spanish_text: 'Jesús dijo[a]: El que busca, encontrará; el que toca para entrar[b], se le abrirá[c].'
+  revised_footnotes:
+  - marker: a
+    text: El inicio «Jesús dijo» está parcialmente reconstruido en el manuscrito (entre corchetes en Dilley) y normalizado como ⲡⲉϫⲉⲓⲏⲥⲟⲩⲥ.
+    reason: lacuna_or_restoration
+  - marker: b
+    text: «Toca para entrar» refleja ⲧⲱϩⲙ con la dirección de ⲉϩⲟⲩⲛ («hacia adentro», «para entrar») sin añadir «puerta», que no aparece en el texto.
+    reason: cultural_note
+  - marker: c
+    text: «Se le abrirá» traduce el futuro impersonal en tercera persona plural ⲛⲧⲟⲟⲩ con sentido pasivo; alternativamente, «le abrirán (algo)».
+    reason: lexical_alternative
+  revision_rationale: 'La revisión es menor pero conveniente: cambia «llama» por «toca» para representar mejor ⲧⲱϩⲙ sin añadir objeto no expreso, y ajusta «encontrará» por mayor naturalidad en español neutral. También se afinan las notas para alinearlas más estrechamente con el rastro de auditoría inglés.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f639db7894f75e67a7db2088fc686558b2cdfc02b23522a8f2e03a2094fa16db
+  timestamp: '2026-05-08T03:08:21Z'
+  output_hash: d4231f4dad546b46a40664db3270de070655861a6f7b846d1dbc4da3053673c7
+  usage:
+    prompt_tokens: 4246
+    completion_tokens: 765
+    total_tokens: 5011
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02209
+  applied_revision: true

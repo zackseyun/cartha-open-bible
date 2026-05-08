@@ -71,17 +71,20 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Vengan a mí, porque mi yugo es bueno y mi señorío[b] es amable; y hallarán descanso para ustedes mismos»[c].'
+  text: 'Jesús dijo: «Vengan a mí, porque mi yugo es bueno[a] y mi señorío es gentil[b]; y encontrarán descanso[c] para ustedes mismos[d]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El término coptico es ⲭⲣⲏⲥⲧⲟⲥ, derivado de χρηστός (“bueno/agradable/amable”), no χριστός (“Cristo”). Por eso se traduce «bueno» y no como título.
+    text: El término copto es ⲭⲣⲏⲥⲧⲟⲥ, derivado de χρηστός (“bueno/agradable/amable”), no χριστός (“Cristo”). Por eso se traduce «bueno» y no como título.
     reason: lexical_alternative
   - marker: b
-    text: «Señorío» intenta reflejar el sustantivo abstracto coptico ⲙⲛⲧϫⲟⲉⲓⲥ, “dominio/autoridad de señor”, con una palabra española que conserve esa relación personal y jerárquica.
-    reason: lexical_alternative
+    text: «Señorío» intenta reflejar el sustantivo abstracto copto ⲙⲛⲧϫⲟⲉⲓⲥ, “dominio/autoridad de señor”. Compárese Mateo 11:28–30; Tomás, sin embargo, dice «mi señorío es gentil», no la formulación canónica.
+    reason: cross_reference
   - marker: c
-    text: El coptico dice literalmente “para ustedes mismos” (dativo de ventaja con matiz reflexivo), no solo “para ustedes”.
+    text: «Descanso» traduce el préstamo griego ⲁⲛⲁⲡⲁⲩⲥⲓⲥ (ἀνάπαυσις). El códice muestra una leve incertidumbre ortográfica en la upsilon, pero la lectura es segura.
+    reason: lacuna_or_restoration
+  - marker: d
+    text: El copto dice literalmente «para ustedes mismos» (dativo de ventaja con matiz reflexivo), no solo «para ustedes». A diferencia de Mateo 11:29, aquí no dice «para sus almas».
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲉⲓⲛⲧⲱⲧⲛ ϣⲁⲁⲛⲟⲕ
@@ -191,4 +194,58 @@ ai_draft:
     total_tokens: 5581
     reasoning_tokens: 0
     estimated_cost_usd: 0.010647
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Vengan a mí, porque mi yugo es bueno y mi señorío[b] es amable; y hallarán descanso para ustedes mismos»[c].'
+  to: 'Jesús dijo: «Vengan a mí, porque mi yugo es bueno[a] y mi señorío es gentil[b]; y encontrarán descanso[c] para ustedes mismos[d]».'
+  rationale: 'Se corrigen los anclajes de notas para que coincidan con las palabras relevantes, se reincorpora la nota comparativa del POB inglés, y se ajusta ligeramente el español a un registro más natural y preciso: «gentil» para el matiz de ⲟⲩⲣⲙⲣⲁϣ y «encontrarán» para mayor claridad contemporánea. También se añade la nota textual sobre ⲁⲛⲁⲡⲁⲩⲥⲓⲥ presente en el expediente inglés.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:14:05Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido básico del copto y sigue en general el rastro del POB inglés: imperativo plural «Vengan a mí», «mi yugo», «descanso», y el matiz reflexivo de «para ustedes mismos». También preserva correctamente la distinción léxica entre ⲭⲣⲏⲥⲧⲟⲥ y «Cristo». Sin embargo, la ubicación de las notas no refleja bien el contenido: la nota sobre ⲭⲣⲏⲥⲧⲟⲥ está anclada a «Jesús dijo» en vez de al adjetivo correspondiente, y falta la nota comparativa con Mateo 11:28–30 presente en el POB inglés.'
+  spanish_quality_summary: El español es claro y legible, pero «amable» para ⲟⲩⲣⲙⲣⲁϣ aplicado a «señorío» suena algo menos preciso que «gentil» o «suave». Además, «hallarán» resulta algo más literario que el registro neutral buscado; «encontrarán» fluye mejor en español latinoamericano eclesial general. La puntuación puede simplificarse quitando el punto y coma innecesario antes de la última cláusula.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. «Jesús», «yugo», «descanso» y «señorío» son compatibles con el expediente léxico. Se mantiene correctamente «bueno» para ⲟⲩⲭⲣⲏⲥⲧⲟⲥ en vez de un título cristológico. La principal mejora es de anclaje de notas y matiz estilístico, no de glosario doctrinal.
+  issues:
+  - severity: medium
+    issue: La nota sobre ⲭⲣⲏⲥⲧⲟⲥ está anclada a «Jesús dijo»
+    rationale: La nota explica por qué se traduce «bueno» y no «Cristo»; por disciplina editorial, el marcador debe ir en la palabra o frase relevante dentro del texto español.
+  - severity: medium
+    issue: Falta la nota comparativa con Mateo 11:28–30 documentada en el POB inglés
+    rationale: El expediente inglés preserva una observación importante de intertexto y diferencia de formulación; debe conservarse también en español.
+  - severity: low
+    issue: «Amable» para «mi señorío» es menos preciso que el sentido de «gentle»
+    rationale: «Amable» suele describir trato cortés o afable; para una cualidad de gobierno o señorío, «gentil» comunica mejor suavidad/mansedumbre sin desviar el sentido.
+  - severity: low
+    issue: «Hallarán» suena más arcaizante/literario que el registro meta
+    rationale: «Encontrarán» es más natural en español neutro contemporáneo sin pérdida semántica.
+  revised_spanish_text: 'Jesús dijo: «Vengan a mí, porque mi yugo es bueno[a] y mi señorío es gentil[b]; y encontrarán descanso[c] para ustedes mismos[d]».'
+  revised_footnotes:
+  - marker: a
+    text: El término copto es ⲭⲣⲏⲥⲧⲟⲥ, derivado de χρηστός (“bueno/agradable/amable”), no χριστός (“Cristo”). Por eso se traduce «bueno» y no como título.
+    reason: lexical_alternative
+  - marker: b
+    text: «Señorío» intenta reflejar el sustantivo abstracto copto ⲙⲛⲧϫⲟⲉⲓⲥ, “dominio/autoridad de señor”. Compárese Mateo 11:28–30; Tomás, sin embargo, dice «mi señorío es gentil», no la formulación canónica.
+    reason: cross_reference
+  - marker: c
+    text: «Descanso» traduce el préstamo griego ⲁⲛⲁⲡⲁⲩⲥⲓⲥ (ἀνάπαυσις). El códice muestra una leve incertidumbre ortográfica en la upsilon, pero la lectura es segura.
+    reason: lacuna_or_restoration
+  - marker: d
+    text: El copto dice literalmente «para ustedes mismos» (dativo de ventaja con matiz reflexivo), no solo «para ustedes». A diferencia de Mateo 11:29, aquí no dice «para sus almas».
+    reason: lexical_alternative
+  revision_rationale: 'Se corrigen los anclajes de notas para que coincidan con las palabras relevantes, se reincorpora la nota comparativa del POB inglés, y se ajusta ligeramente el español a un registro más natural y preciso: «gentil» para el matiz de ⲟⲩⲣⲙⲣⲁϣ y «encontrarán» para mayor claridad contemporánea. También se añade la nota textual sobre ⲁⲛⲁⲡⲁⲩⲥⲓⲥ presente en el expediente inglés.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a6172348d6f3845923db708b805854e05add40b1c253da3015ed3d7150e35aed
+  timestamp: '2026-05-08T03:14:05Z'
+  output_hash: 4784f7dbf28d126b6338fa0d57e6955071fdf3ae3b7e801048557ad00d1fdf5e
+  usage:
+    prompt_tokens: 5206
+    completion_tokens: 1192
+    total_tokens: 6398
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.030895
+  applied_revision: true

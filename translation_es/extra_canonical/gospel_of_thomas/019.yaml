@@ -91,20 +91,20 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Bienaventurado[b] el que ha llegado a ser antes de llegar a ser. Si ustedes llegan a ser mis discípulos y escuchan mi palabra[c], estas piedras[d] les servirán; pues ustedes tienen cinco árboles en el Paraíso, que no se mueven en verano ni en invierno, y sus hojas no caen. Quien llegue a conocerlos no probará la muerte».'
+  text: 'Jesús dijo[a]: «Bienaventurado[b] el que ha llegado a ser antes de llegar a ser. Si ustedes llegan a ser mis discípulos y escuchan mis palabras[c], estas piedras[d] les ministrarán, pues ustedes tienen cinco árboles en el Paraíso, que no se mueven en verano ni en invierno, y sus hojas no caen. Quien llegue a conocerlos no probará la muerte».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La frase inicial retoma el patrón de los dichos de Thomas; el nombre ‘Jesús’ se mantiene como forma identificable y estable en español.
+    text: La frase inicial retoma el patrón de los dichos de Thomas; el nombre «Jesús» se mantiene como forma identificable y estable en español.
     reason: source_note
   - marker: b
-    text: ‘Bienaventurado’ expresa el matiz de beatitud del préstamo griego ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ; alternativas como ‘feliz’ o ‘afortunado’ serían más débiles en registro.
+    text: «Bienaventurado» expresa el matiz de beatitud del préstamo griego ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ; alternativas como «feliz» o «afortunado» serían más débiles en registro.
     reason: lexical_alternative
   - marker: c
-    text: 'El copto manuscrito transmite aquí el plural: ‘mis palabras’ y ‘estas piedras’. La lectura normalizada del testimonio publicado por Dilley prefiere el singular (‘mi palabra’, ‘esta piedra’).'
+    text: 'El testimonio manuscrito puede leerse en plural: «mis palabras»; una lectura normalizada publicada prefiere el singular «mi palabra». Aquí se sigue el plural manuscrito.'
     reason: textual_variant
   - marker: d
-    text: ‘Piedras’ traduce el plural explícito del manuscrito; la POB inglesa normalizada ofrece como alternativa una lectura singular (‘this stone’).
+    text: «Estas piedras» sigue el plural explícito del manuscrito; una lectura normalizada ofrece como alternativa el singular «esta piedra».
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ
@@ -271,4 +271,55 @@ ai_draft:
     total_tokens: 9130
     reasoning_tokens: 0
     estimated_cost_usd: 0.015926
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Bienaventurado[b] el que ha llegado a ser antes de llegar a ser. Si ustedes llegan a ser mis discípulos y escuchan mi palabra[c], estas piedras[d] les servirán; pues ustedes tienen cinco árboles en el Paraíso, que no se mueven en verano ni en invierno, y sus hojas no caen. Quien llegue a conocerlos no probará la muerte».'
+  to: 'Jesús dijo[a]: «Bienaventurado[b] el que ha llegado a ser antes de llegar a ser. Si ustedes llegan a ser mis discípulos y escuchan mis palabras[c], estas piedras[d] les ministrarán, pues ustedes tienen cinco árboles en el Paraíso, que no se mueven en verano ni en invierno, y sus hojas no caen. Quien llegue a conocerlos no probará la muerte».'
+  rationale: Se corrige el singular «mi palabra» a «mis palabras» para alinearlo con la revisión auditada final y con las notas textuales. También se ajusta «servirán» a «ministrarán» para reflejar mejor el valor marcado de ⲛⲁⲣⲇⲓⲁⲕⲟⲛⲉⲓ documentado en el rastro inglés. Se simplifica levemente la puntuación y se conservan las notas necesarias con anclajes consistentes.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:00:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien la estructura general del dicho y preserva la paradoja de ϣⲱⲡⲉ con «llegar a ser». Sin embargo, no sigue de forma consistente el estado auditado más reciente: el expediente de revisiones adjudicado cambió la traducción base a plural manuscrito («mis palabras … estas piedras»), mientras que el texto español mantiene «mi palabra» singular pese a anclar una nota que reconoce el plural. También sería mejor reflejar el matiz marcado de ⲛⲁⲣⲇⲓⲁⲕⲟⲛⲉⲓ con «ministrarán» o equivalente más cercano que el simple «servirán».'
+  spanish_quality_summary: El español es claro, natural y de registro bíblico moderno. «Bienaventurado», «llegar a ser», «Paraíso» y «probar la muerte» funcionan bien. El principal problema de legibilidad/fidelidad es la incoherencia entre texto y notas sobre singular/plural. Además, el punto y coma antes de «pues» no es necesario; una coma fluye mejor.
+  glossary_alignment: 'No hay conflictos con la terminología nuclear del proyecto. Las decisiones clave «Jesús», «Bienaventurado», «discípulos», «Paraíso» y «probar la muerte» son apropiadas. La excepción principal es ⲛⲁⲣⲇⲓⲁⲕⲟⲛⲉⲓ: dado que el rastro inglés documenta deliberadamente «minister to», conviene mantener en español un verbo más marcado («ministrarán») y no rebajarlo a «servirán» sin necesidad contextual fuerte.'
+  issues:
+  - severity: high
+    issue: El texto español dice «mi palabra» pero la revisión auditada final favorece el plural manuscrito «mis palabras».
+    rationale: La revisión aplicada en el expediente cambió explícitamente de singular normalizado a plural manuscrito. Mantener el singular en el cuerpo contradice el estado auditado y crea incoherencia con la nota textual.
+  - severity: medium
+    issue: «les servirán» atenúa el registro de ⲛⲁⲣⲇⲓⲁⲕⲟⲛⲉⲓ documentado como «minister to».
+    rationale: Aunque «servirán» es comprensible, el préstamo de diakonein está marcado; «ministrarán» preserva mejor la elección léxica auditada sin volverse ininteligible en contexto eclesial amplio.
+  - severity: low
+    issue: Las notas c y d son parcialmente redundantes.
+    rationale: Ambas notas explican la variante singular/plural. Puede simplificarse para mayor limpieza editorial, dejando una nota para «mis palabras» y otra para «piedras» si se desea mantener el historial.
+  revised_spanish_text: 'Jesús dijo[a]: «Bienaventurado[b] el que ha llegado a ser antes de llegar a ser. Si ustedes llegan a ser mis discípulos y escuchan mis palabras[c], estas piedras[d] les ministrarán, pues ustedes tienen cinco árboles en el Paraíso, que no se mueven en verano ni en invierno, y sus hojas no caen. Quien llegue a conocerlos no probará la muerte».'
+  revised_footnotes:
+  - marker: a
+    text: La frase inicial retoma el patrón de los dichos de Thomas; el nombre «Jesús» se mantiene como forma identificable y estable en español.
+    reason: source_note
+  - marker: b
+    text: «Bienaventurado» expresa el matiz de beatitud del préstamo griego ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ; alternativas como «feliz» o «afortunado» serían más débiles en registro.
+    reason: lexical_alternative
+  - marker: c
+    text: 'El testimonio manuscrito puede leerse en plural: «mis palabras»; una lectura normalizada publicada prefiere el singular «mi palabra». Aquí se sigue el plural manuscrito.'
+    reason: textual_variant
+  - marker: d
+    text: «Estas piedras» sigue el plural explícito del manuscrito; una lectura normalizada ofrece como alternativa el singular «esta piedra».
+    reason: textual_variant
+  revision_rationale: Se corrige el singular «mi palabra» a «mis palabras» para alinearlo con la revisión auditada final y con las notas textuales. También se ajusta «servirán» a «ministrarán» para reflejar mejor el valor marcado de ⲛⲁⲣⲇⲓⲁⲕⲟⲛⲉⲓ documentado en el rastro inglés. Se simplifica levemente la puntuación y se conservan las notas necesarias con anclajes consistentes.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e793f577c0f1cbe123830ad813988e12d5d8d8fce66e6913ff4434cb89ca7006
+  timestamp: '2026-05-08T03:00:49Z'
+  output_hash: 3c916c48d5671e8ddaea2ce874bac5318ffc6cb9c4a472a665de1c6edf210fff
+  usage:
+    prompt_tokens: 8813
+    completion_tokens: 1097
+    total_tokens: 9910
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.038488
+  applied_revision: true

@@ -57,14 +57,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy la sustancia[a] y la que está sin sustancia[b].
+  text: Yo soy la sustancia[a] y la que no tiene sustancia[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: «Sustancia» puede abarcar tanto ‘bienes/posesiones’ como ‘consistencia/esencia’.
     reason: lexical_alternative
   - marker: b
-    text: La forma privativa puede entenderse también como ‘sin propiedad’ o ‘insustancial’; el texto transmitido parece afectado por OCR y por material vecino.
+    text: La forma privativa también puede entenderse como ‘sin propiedad’ o ‘insustancial’. El OCR parece haber leído mal la forma esperada, y quizá haya intrusión de material vecino en este segmento.
     reason: source_note
 lexical_decisions:
 - source_word: ⲁⲙⲡⲉ (as in ⲛ̄ⲁⲙⲡⲉ)
@@ -129,4 +129,46 @@ ai_draft:
     total_tokens: 3155
     reasoning_tokens: 0
     estimated_cost_usd: 0.005749
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy la sustancia[a] y la que está sin sustancia[b].
+  to: Yo soy la sustancia[a] y la que no tiene sustancia[b].
+  rationale: Se reemplaza «está sin» por «no tiene» para lograr un español más natural sin perder la oposición privativa ni la ambigüedad léxica documentada. También se afina la nota textual para alinearla mejor con la auditoría inglesa sobre el problema de OCR y la posible intrusión de líneas vecinas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la paradoja básica del copto auditado: ⲁⲙⲡⲉ / probable ⲁⲧⲁⲙⲡⲉ = «sustancia / sin sustancia». También refleja adecuadamente la nota de incertidumbre textual por OCR e intrusión de material vecino. Sin embargo, «la que está sin sustancia» añade un verbo de estado no presente en la formulación inglesa auditada y suena menos directo que la antítesis fuente.'
+  spanish_quality_summary: El español es comprensible, pero «la que está sin sustancia» resulta algo forzado y más pesado que la estructura paralela del original y del inglés POB. Una forma más natural y fiel en español es «la que no tiene sustancia», que mantiene la paradoja y evita una construcción poco idiomática. Las notas son útiles, pero conviene afinar la segunda para reflejar más explícitamente la observación textual del inglés POB.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Sustancia» es una buena decisión léxica para ⲁⲙⲡⲉ, y «sin/no tiene sustancia» preserva la oposición privativa documentada. No hay términos teológicos de la lista global implicados aquí.
+  issues:
+  - severity: medium
+    issue: 'Construcción española poco natural: «la que está sin sustancia»'
+    rationale: Aunque inteligible, suena más calcada y menos idiomática que una antítesis nominal simple. «La que no tiene sustancia» conserva mejor el sentido privativo y la legibilidad.
+  - severity: low
+    issue: La nota b puede reflejar con más precisión la incertidumbre textual auditada
+    rationale: El inglés POB especifica que el OCR probablemente leyó mal una forma correspondiente a «sin sustancia/sin posesiones» y que material adyacente pudo invadir el segmento. Conviene expresarlo de manera un poco más exacta.
+  revised_spanish_text: Yo soy la sustancia[a] y la que no tiene sustancia[b].
+  revised_footnotes:
+  - marker: a
+    text: «Sustancia» puede abarcar tanto ‘bienes/posesiones’ como ‘consistencia/esencia’.
+    reason: lexical_alternative
+  - marker: b
+    text: La forma privativa también puede entenderse como ‘sin propiedad’ o ‘insustancial’. El OCR parece haber leído mal la forma esperada, y quizá haya intrusión de material vecino en este segmento.
+    reason: source_note
+  revision_rationale: Se reemplaza «está sin» por «no tiene» para lograr un español más natural sin perder la oposición privativa ni la ambigüedad léxica documentada. También se afina la nota textual para alinearla mejor con la auditoría inglesa sobre el problema de OCR y la posible intrusión de líneas vecinas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 21665faaceaa92f4ec803f4519ca2f1c8a04fa5dfc9b78481496fb764c00972d
+  timestamp: '2026-05-08T03:09:30Z'
+  output_hash: 2acf174df8307b1c92eb148da2087fdf4f1d198afaf9d104d998913594c73401
+  usage:
+    prompt_tokens: 2860
+    completion_tokens: 659
+    total_tokens: 3519
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017035
+  applied_revision: true

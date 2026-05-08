@@ -54,11 +54,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy el conocer de mi nombre[a].
+  text: Yo soy el conocimiento de mi nombre[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El fragmento OCR muestra ⲡϫⲓⲛⲓ (“llamada, convocatoria”), pero la capa de alineación lo relaciona con la lectura conocida “el conocer de mi nombre”. Por eso la traducción principal se considera provisional.
+    text: El fragmento OCR muestra ⲡϫⲓⲛⲓ («llamada, convocatoria»), pero la capa de alineación relaciona este lugar con la lectura atestiguada «el conocimiento de mi nombre». Por eso esta traducción es provisional.
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ ⲡⲉ (implied “I am” formula)
@@ -127,4 +127,43 @@ ai_draft:
     total_tokens: 3221
     reasoning_tokens: 0
     estimated_cost_usd: 0.005682
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy el conocer de mi nombre[a].
+  to: Yo soy el conocimiento de mi nombre[a].
+  rationale: Se ajusta la línea para que el español sea natural y poético sin apartarse del sentido auditado. «Conocimiento» preserva la referencia a saber/conocer vinculada al nombre, mientras que la nota sigue documentando la incertidumbre textual del OCR y la provisionalidad de la alineación.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:12:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la lectura principal auditada por POB: la fórmula copta implícita de primera persona («I am») y la lectura provisional «the knowing of my name», con nota que conserva la incertidumbre por el OCR que muestra ⲡϫⲓⲛⲓ. La relación con la evidencia fuente está bien representada, pero la formulación española elegida no suena natural ni suficientemente digna.'
+  spanish_quality_summary: «Yo soy el conocer de mi nombre» reproduce la extrañeza del inglés, pero en español resulta demasiado forzado y poco legible. «Yo soy el conocimiento de mi nombre» preserva mejor el sentido nominal y la inteligibilidad poética sin introducir paráfrasis sustancial. La nota está bien encaminada, pero conviene afinar «lectura conocida» a «lectura atestiguada» para reflejar mejor la base textual/auditada.
+  glossary_alignment: 'No hay términos del glosario principal en juego. La decisión clave es estilística-lexical: para ⲥⲟⲟⲩⲛ/ⲥⲟⲟⲩⲛⲉ, el inglés optó por «the knowing» para conservar extrañeza, pero en español «el conocer» aquí suena más antinatural que significativo. «Conocimiento» mantiene el sentido de «knowledge» aceptado en el consult text y sigue siendo fiel a la decisión auditada, aunque con menos rareza superficial.'
+  issues:
+  - severity: medium
+    issue: «el conocer de mi nombre» es poco natural en español
+    rationale: Aunque calca la nominalización inglesa, en español esta construcción suena rígida y torpe, y dificulta la lectura poética. «El conocimiento de mi nombre» comunica el mismo contenido con mayor dignidad y claridad.
+  - severity: low
+    issue: La nota dice «lectura conocida»
+    rationale: «Conocida» puede sonar vaga; «atestiguada» o «habitual» describe mejor que la alineación sigue una lectura textual reconocida, no simplemente popular.
+  revised_spanish_text: Yo soy el conocimiento de mi nombre[a].
+  revised_footnotes:
+  - marker: a
+    text: El fragmento OCR muestra ⲡϫⲓⲛⲓ («llamada, convocatoria»), pero la capa de alineación relaciona este lugar con la lectura atestiguada «el conocimiento de mi nombre». Por eso esta traducción es provisional.
+    reason: textual_variant
+  revision_rationale: Se ajusta la línea para que el español sea natural y poético sin apartarse del sentido auditado. «Conocimiento» preserva la referencia a saber/conocer vinculada al nombre, mientras que la nota sigue documentando la incertidumbre textual del OCR y la provisionalidad de la alineación.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 042cc0847eb3b4abe685215d29c8b9bf02e09c95710cec288391076f2de30057
+  timestamp: '2026-05-08T03:12:55Z'
+  output_hash: f1431adcf44067f837a857013046e250716abfd461c0530bf94a976bb77d5984
+  usage:
+    prompt_tokens: 2895
+    completion_tokens: 645
+    total_tokens: 3540
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016913
+  applied_revision: true

@@ -71,7 +71,7 @@ base_translation:
     changes_summary: Revised to reflect the established lexical decision for ⲙⲡⲙⲁ ⲉⲧⲙⲙⲁⲩ as “the place that is there,” and smoothed the final clause for natural English while preserving the source meaning.
 translation:
   language: es
-  text: Y me encontrarán en el lugar que está allí, y vivirán, y no perecerán. Por eso, no me desobedezcan.
+  text: Me encontrarán en el lugar que está allí, y vivirán, y no perecerán. Por eso, no se resistan a oírme.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ⲥⲉⲛⲁϭⲓⲛⲉ
@@ -140,4 +140,39 @@ ai_draft:
     total_tokens: 4438
     reasoning_tokens: 0
     estimated_cost_usd: 0.006857
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y me encontrarán en el lugar que está allí, y vivirán, y no perecerán. Por eso, no me desobedezcan.
+  to: Me encontrarán en el lugar que está allí, y vivirán, y no perecerán. Por eso, no se resistan a oírme.
+  rationale: Se quita la conjunción inicial para mejorar la naturalidad del español en un bloque independiente y se ajusta la última cláusula para reflejar mejor el matiz de ‘oír/atender’ documentado en el copto y en la auditoría inglesa, sin apartarse del sentido exhortativo.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:19Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en general la revisión inglesa correcta: refleja ‘me encontrarán’, ‘el lugar que está allí’, ‘vivirán’ y ‘no perecerán’, y evita la antigua alucinación sobre ángeles y espíritus. Sin embargo, la apertura con ‘Y’ no está motivada en español como inicio autónomo del bloque y suena demasiado dependiente del contexto previo; además, la cláusula final puede alinearse mejor con el matiz auditivo/obediencial documentado en el rastro de auditoría.'
+  spanish_quality_summary: El texto es claro y legible, pero ‘Y me encontrarán…’ como arranque de unidad queda algo tosco en español. ‘No me desobedezcan’ es comprensible, aunque reduce el matiz de atender/escuchar presente en el copto y en las decisiones léxicas auditadas. Una formulación como ‘no se resistan a oírme’ preserva mejor ese valor sin volverse rígida.
+  glossary_alignment: No hay términos del glosario principal especialmente implicados aquí. El borrador respeta bien las decisiones léxicas relevantes del pasaje, salvo que en ⲙⲡⲣⲣⲁⲧⲥⲱⲧⲙ ⲛⲥⲱⲓ conviene reflejar el componente de ‘oír/escuchar’ documentado en la rationale, no solo ‘desobedecer’.
+  issues:
+  - severity: medium
+    issue: 'Conjunción inicial innecesaria: ‘Y me encontrarán…’'
+    rationale: Como segmento autónomo en español, comenzar con ‘Y’ suena dependiente y menos natural. El valor conjuntivo no necesita conservarse si perjudica la fluidez; ‘Me encontrarán…’ mantiene el sentido.
+  - severity: medium
+    issue: La cláusula final ‘no me desobedezcan’ estrecha demasiado el matiz del copto
+    rationale: El audit trail documenta para ⲙⲡⲣⲣⲁⲧⲥⲱⲧⲙ ⲛⲥⲱⲓ una idea de no demorarse/no resistirse a oír. ‘No me desobedezcan’ comunica resultado pragmático, pero pierde el componente explícito de oír/escuchar que conviene conservar en español.
+  revised_spanish_text: Me encontrarán en el lugar que está allí, y vivirán, y no perecerán. Por eso, no se resistan a oírme.
+  revision_rationale: Se quita la conjunción inicial para mejorar la naturalidad del español en un bloque independiente y se ajusta la última cláusula para reflejar mejor el matiz de ‘oír/atender’ documentado en el copto y en la auditoría inglesa, sin apartarse del sentido exhortativo.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3b9f94e72149a47ced3649f4b96621026b91d6cc4f64cdadc8f4b568adc1ec53
+  timestamp: '2026-05-08T03:08:19Z'
+  output_hash: 43d251105afccdc036e0a405ae5d886e6f878b747dd9979e54ab9896e88a7001
+  usage:
+    prompt_tokens: 3983
+    completion_tokens: 663
+    total_tokens: 4646
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019903
+  applied_revision: true

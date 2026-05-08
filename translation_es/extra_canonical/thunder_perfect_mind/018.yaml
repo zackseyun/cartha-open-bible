@@ -73,14 +73,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: '[...] y el que se jacta me trae estas cosas. Yo soy el silencio que no se puede comprender, y el pensamiento cuyo recuerdo es grande. Yo soy la voz cuyo sonido es múltiple[a], y la palabra que es múltiple[b].'
+  text: '[...] y el que se jacta me trae esto. Yo soy el silencio que no se puede comprender, y el pensamiento cuyo recuerdo es grande. Yo soy la voz cuyo sonido es múltiple[a], y la palabra que es múltiple[b].'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: ‘cuyo sonido es múltiple’ traduce el sintagma corregido; también puede entenderse como ‘de sonido variado’.
     reason: lexical_alternative
   - marker: b
-    text: ‘palabra’ refleja λόγος/ⲡⲗⲟⲅⲟⲥ; una alternativa posible, más solemne, sería ‘Palabra’.
+    text: ‘palabra’ refleja λόγος/ⲡⲗⲟⲅⲟⲥ; una alternativa posible, con registro más elevado, sería ‘Palabra’.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲡⲕⲁⲣⲱϥ
@@ -165,4 +165,46 @@ ai_draft:
     total_tokens: 5434
     reasoning_tokens: 0
     estimated_cost_usd: 0.009757
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '[...] y el que se jacta me trae estas cosas. Yo soy el silencio que no se puede comprender, y el pensamiento cuyo recuerdo es grande. Yo soy la voz cuyo sonido es múltiple[a], y la palabra que es múltiple[b].'
+  to: '[...] y el que se jacta me trae esto. Yo soy el silencio que no se puede comprender, y el pensamiento cuyo recuerdo es grande. Yo soy la voz cuyo sonido es múltiple[a], y la palabra que es múltiple[b].'
+  rationale: 'La revisión es menor: elimino la sobretraducción ‘cosas’ para ajustarme mejor al referente demostrativo del texto auditado y afino la nota sobre λόγος sin cambiar la decisión principal del español.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La mayor parte del borrador español sigue correctamente la revisión adjudicada del copto: ‘silencio’, ‘pensamiento cuyo recuerdo es grande’, ‘voz cuyo sonido es múltiple’ y ‘palabra’ corresponden bien al estado actual del expediente inglés. Sin embargo, ‘me trae estas cosas’ añade ‘cosas’, que no está en el inglés auditado (‘brings these to me’) y suena menos preciso que ‘me trae esto’.'
+  spanish_quality_summary: 'El texto es claro y natural, con registro digno y legible. La principal mejora es estilística y de precisión: ‘me trae esto’ fluye mejor que ‘me trae estas cosas’. También conviene armonizar la nota sobre λόγος con el texto revisado, ya que la alternativa más pertinente en español es ‘Palabra’ con mayúscula, no una explicación ambigua.'
+  glossary_alignment: No hay conflictos con los términos doctrinales principales del proyecto. La decisión de mantener ‘palabra’ para λόγος es defendible en este contexto extracanonical, pero debe explicarse como elección de registro frente a la alternativa ‘Palabra’.
+  issues:
+  - severity: medium
+    issue: ‘me trae estas cosas’ sobretraduce el demostrativo
+    rationale: El inglés POB dice ‘brings these to me’, sin ‘cosas’. En español ‘esto’ transmite mejor el referente deíctico sin añadir un sustantivo ausente.
+  - severity: low
+    issue: La nota b sobre λόγος puede formularse con más precisión
+    rationale: El texto usa ‘palabra’, pero la nota debería dejar claro que la alternativa elevada es ‘Palabra’, no presentar una vacilación innecesaria sobre el valor léxico básico.
+  revised_spanish_text: '[...] y el que se jacta me trae esto. Yo soy el silencio que no se puede comprender, y el pensamiento cuyo recuerdo es grande. Yo soy la voz cuyo sonido es múltiple[a], y la palabra que es múltiple[b].'
+  revised_footnotes:
+  - marker: a
+    text: ‘cuyo sonido es múltiple’ traduce el sintagma corregido; también puede entenderse como ‘de sonido variado’.
+    reason: lexical_alternative
+  - marker: b
+    text: ‘palabra’ refleja λόγος/ⲡⲗⲟⲅⲟⲥ; una alternativa posible, con registro más elevado, sería ‘Palabra’.
+    reason: lexical_alternative
+  revision_rationale: 'La revisión es menor: elimino la sobretraducción ‘cosas’ para ajustarme mejor al referente demostrativo del texto auditado y afino la nota sobre λόγος sin cambiar la decisión principal del español.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 52a1572921b6cc8108db997b637520c5a4cada7f8b15e8c4d77d35df59a510af
+  timestamp: '2026-05-08T03:04:40Z'
+  output_hash: 0803a661e0c18a26bd74d9c2bd23fc869146fee3b40fbac3474d518a876e4f00
+  usage:
+    prompt_tokens: 4826
+    completion_tokens: 606
+    total_tokens: 5432
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021155
+  applied_revision: true

@@ -64,14 +64,14 @@ base_translation:
     changes_summary: Removed the inline footnote markers from the main text formatting, and adjusted punctuation for clarity while preserving the established renderings 'set your mind' and 'reject'.
 translation:
   language: es
-  text: Yo soy aquel en quien has puesto tu mente,[a] y me has rechazado.[b]
+  text: Yo soy aquel en quien has fijado tu mente,[a] y me has rechazado.[b]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Lit. ‘puesto en tu corazón sobre mí’; alternativas: ‘meditado en mí’, ‘considerado’.'
+    text: 'Lit. ‘has puesto tu corazón en mí’; alternativas: ‘has meditado en mí’, ‘me has considerado’.'
     reason: lexical_alternative
   - marker: b
-    text: O ‘y me has echado fuera’. El verbo coptico con ⲉⲃⲟⲗ suele llevar la idea de expulsión.
+    text: O ‘y me has echado fuera’. El verbo copto con ⲉⲃⲟⲗ suele llevar la idea de expulsión.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲕⲁϩ ⲛϩⲏⲧ + ϣⲟⲡ
@@ -125,4 +125,49 @@ ai_draft:
     total_tokens: 3505
     reasoning_tokens: 0
     estimated_cost_usd: 0.005092
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy aquel en quien has puesto tu mente,[a] y me has rechazado.[b]
+  to: Yo soy aquel en quien has fijado tu mente,[a] y me has rechazado.[b]
+  rationale: Se ajusta la primera cláusula para un español más natural y digno, manteniendo la fuerza cognitiva de la construcción copta. Se rehace la nota literal para evitar un calco extraño y se corrige la ortografía en la nota b).
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido base del copto según el audit trail inglés: la primera cláusula conserva la idea de atención deliberada hacia la hablante, y la segunda refleja adecuadamente el contraste con ⲧⲱⲡ ⲉⲃⲟⲗ como ‘rechazar’, con la alternativa de expulsión en nota. No hay indicios de desviación teológica o semántica mayor.'
+  spanish_quality_summary: 'El español es claro, pero ‘en quien has puesto tu mente’ suena menos natural en español que una formulación con ‘en mí’ o ‘has fijado tu mente en mí’. Además, la nota a) necesita mejor español: ‘puesto en tu corazón sobre mí’ es un calco torpe; conviene ‘has puesto tu corazón en mí’ y mantener las alternativas. También falta tilde en ‘copto’.'
+  glossary_alignment: No hay términos del glosario doctrinal principal en juego. La decisión ‘mente’ para ϩⲏⲧ es coherente con el rationale documentado, con ‘corazón’ reservado para la nota literal. ‘Rechazado’ sigue correctamente la elección inglesa para ⲧⲱⲡ ⲉⲃⲟⲗ, preservando en nota la alternativa ‘echado fuera’.
+  issues:
+  - severity: medium
+    issue: La frase principal ‘aquel en quien has puesto tu mente’ es poco idiomática en español.
+    rationale: Aunque comprensible, suena traducida del inglés. Una forma como ‘aquel en quien has fijado tu mente’ preserva mejor el valor deliberado de la construcción copta y lee con más naturalidad.
+  - severity: medium
+    issue: 'La nota a) contiene un calco poco natural: ‘puesto en tu corazón sobre mí’.'
+    rationale: La nota debe reflejar el literal de manera inteligible en español. ‘Has puesto tu corazón en mí’ comunica mejor la imagen subyacente sin perder el vínculo con la explicación léxica.
+  - severity: low
+    issue: Falta tilde en ‘copto’ en la nota b).
+    rationale: Corrección ortográfica menor, pero conviene normalizarla.
+  revised_spanish_text: Yo soy aquel en quien has fijado tu mente,[a] y me has rechazado.[b]
+  revised_footnotes:
+  - marker: a
+    text: 'Lit. ‘has puesto tu corazón en mí’; alternativas: ‘has meditado en mí’, ‘me has considerado’.'
+    reason: lexical_alternative
+  - marker: b
+    text: O ‘y me has echado fuera’. El verbo copto con ⲉⲃⲟⲗ suele llevar la idea de expulsión.
+    reason: lexical_alternative
+  revision_rationale: Se ajusta la primera cláusula para un español más natural y digno, manteniendo la fuerza cognitiva de la construcción copta. Se rehace la nota literal para evitar un calco extraño y se corrige la ortografía en la nota b).
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 74846759790308dd8b88c57587a319ca683a20acead16778a057c11a583c06c3
+  timestamp: '2026-05-08T03:05:48Z'
+  output_hash: 49f5322fca51fbe483d6d1bc4d59aacc529a67df3f9d7b0746159f471967eaf0
+  usage:
+    prompt_tokens: 3151
+    completion_tokens: 686
+    total_tokens: 3837
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018168
+  applied_revision: true

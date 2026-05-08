@@ -74,27 +74,27 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a][d]: «Si tienes dinero, no lo prestes con interés; más bien[f][e][c][b], dáselo a aquel de quien no lo volverás a recibir».'
+  text: 'Jesús dijo[d]: «Si tienes dinero, no prestes con interés[a]; más bien[f][e][c][b], dáselo a aquel de quien no lo volverás a recibir»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Interés» traduce el copto ⲙⲏⲥⲉ; en la Antigüedad podía equivaler a «usura», término que históricamente podía abarcar todo interés, no solo el excesivo.
+    text: «Interés» traduce el copto ⲙⲏⲥⲉ, que en la Antigüedad a menudo equivalía a «usura»; históricamente, «usura» podía referirse a cualquier interés, no solo al excesivo.
     reason: cultural_note
   - marker: b
-    text: El copto usa aquí una referencia plural para el dinero, probablemente por la idea de monedas; en español se prefiere el singular estilístico «lo» con «dinero».
-    reason: textual_variant
+    text: El pronombre objeto en copto es plural («ellos»/«las»), probablemente porque el dinero se concibe como monedas; en español se prefiere el singular estilístico «lo» con «dinero».
+    reason: dialect_note
   - marker: c
-    text: El manuscrito presenta una lectura dañada en esta parte; el sentido general es «dar a una persona determinada» definida por la cláusula relativa.
+    text: 'La frase del destinatario es incierta: el manuscrito puede leerse como ⲙ[ⲙⲟϥ] («dalo»), mientras que el texto normalizado lee ϯ ⲛⲛⲧⲟϥ («da a él»). El sentido general —dirigir el don a cierto tipo de persona definida por la cláusula relativa— no cambia.'
     reason: textual_variant
   - marker: d
-    text: «Jesús dijo» se restaura al inicio por una pequeña laguna en NHAM02.48/lb35.
-    reason: textual_variant
+    text: «Jesús dijo» al inicio se restaura debido a un daño menor en NHAM02.48/lb35.
+    reason: lacuna_or_restoration
   - marker: e
-    text: La relativa también puede entenderse como «de quien no se lo darás de vuelta a ti»; la redacción elegida sigue el sentido más natural de recuperar lo prestado.
-    reason: alternative_reading
+    text: 'La cláusula relativa también puede entenderse como «al que no te lo devolverá»; la redacción elegida sigue la lectura más común: «de quien no lo volverás a recibir».'
+    reason: lexical_alternative
   - marker: f
-    text: 'También puede leerse: «dáselo al que no lo volverás a recibir».'
-    reason: alternative_reading
+    text: 'O: «dáselo al que no te lo devolverá».'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲉϣⲱⲡⲉ
   english_pob_choice: if (it happens that)
@@ -186,4 +186,64 @@ ai_draft:
     total_tokens: 5702
     reasoning_tokens: 0
     estimated_cost_usd: 0.010764
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a][d]: «Si tienes dinero, no lo prestes con interés; más bien[f][e][c][b], dáselo a aquel de quien no lo volverás a recibir».'
+  to: 'Jesús dijo[d]: «Si tienes dinero, no prestes con interés[a]; más bien[f][e][c][b], dáselo a aquel de quien no lo volverás a recibir»'
+  rationale: 'Se propone una revisión menor: el texto principal se pule para mayor naturalidad en español, y las notas se rehacen para reflejar con precisión el expediente auditado del POB inglés, especialmente en la variante textual del destinatario y en la alternativa sintáctica de la cláusula relativa. No hace falta adjudicación adicional porque el sentido global está claro y las correcciones son rutinarias.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:20Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido básico del copto y sigue la línea del POB inglés: condición general, prohibición de prestar con interés y exhortación a dar a quien no se le reclamará devolución. Sin embargo, varias notas no preservan con suficiente precisión el rastro auditado en inglés: la nota sobre la variante textual de ϯ ⲛⲛⲧⲟϥ simplifica demasiado la incertidumbre; la alternativa de la cláusula relativa está mal formulada en español y no refleja correctamente «quien no te los devolverá» / «de quien no los tomarás de vuelta»; y los motivos de las notas b/c/d deberían alinearse mejor con plural pronominal, variante textual y restauración.'
+  spanish_quality_summary: 'El texto principal es legible y digno, pero puede mejorarse ligeramente para sonar más natural en español eclesial amplio: «no prestes con interés» fluye mejor que «no lo prestes con interés» tras «dinero», y «dáselo más bien a aquel» mejora el orden. La relativa final «de quien no lo volverás a recibir» es entendible, aunque «de quien no lo reclamarás de vuelta» o «de quien no lo recuperarás» harían más explícita la idea de no cobrarlo de regreso; con todo, puede mantenerse una formulación sencilla. Las notas requieren reparación más que el cuerpo del versículo.'
+  glossary_alignment: No hay conflictos con terminología doctrinal mayor. «Jesús» es correcto. «Dinero» para ϩⲟⲙⲧ y «interés» para ⲙⲏⲥⲉ concuerdan con el expediente inglés, con «usura» reservado a nota explicativa. No hay léxico del glosario principal (Yahvé, Mesías, etc.) implicado aquí.
+  issues:
+  - severity: medium
+    issue: La nota c no refleja con precisión la variante textual documentada.
+    rationale: El inglés distingue entre una posible lectura manuscrita «give it» y la normalizada «give to him»; la nota española actual habla solo de daño manuscrito y pierde el contraste léxico relevante.
+  - severity: medium
+    issue: La nota e formula de manera incorrecta la alternativa de la relativa.
+    rationale: «de quien no se lo darás de vuelta a ti» es español antinatural y además no representa bien la alternativa auditada «to one who will not give them back to you».
+  - severity: low
+    issue: La nota d usa reason/énfasis de variante textual en vez de restauración por laguna.
+    rationale: 'No cambia mucho para el lector, pero conviene conservar la razón editorial correcta del expediente: restauración por daño menor al inicio.'
+  - severity: low
+    issue: El texto principal puede sonar más natural sin el pronombre anticipado en la prohibición.
+    rationale: Tras «Si tienes dinero», el español no necesita «lo» en «no lo prestes con interés»; «no prestes con interés» evita leve pesadez y mantiene el sentido.
+  revised_spanish_text: 'Jesús dijo[d]: «Si tienes dinero, no prestes con interés[a]; más bien[f][e][c][b], dáselo a aquel de quien no lo volverás a recibir»'
+  revised_footnotes:
+  - marker: a
+    text: «Interés» traduce el copto ⲙⲏⲥⲉ, que en la Antigüedad a menudo equivalía a «usura»; históricamente, «usura» podía referirse a cualquier interés, no solo al excesivo.
+    reason: cultural_note
+  - marker: b
+    text: El pronombre objeto en copto es plural («ellos»/«las»), probablemente porque el dinero se concibe como monedas; en español se prefiere el singular estilístico «lo» con «dinero».
+    reason: dialect_note
+  - marker: c
+    text: 'La frase del destinatario es incierta: el manuscrito puede leerse como ⲙ[ⲙⲟϥ] («dalo»), mientras que el texto normalizado lee ϯ ⲛⲛⲧⲟϥ («da a él»). El sentido general —dirigir el don a cierto tipo de persona definida por la cláusula relativa— no cambia.'
+    reason: textual_variant
+  - marker: d
+    text: «Jesús dijo» al inicio se restaura debido a un daño menor en NHAM02.48/lb35.
+    reason: lacuna_or_restoration
+  - marker: e
+    text: 'La cláusula relativa también puede entenderse como «al que no te lo devolverá»; la redacción elegida sigue la lectura más común: «de quien no lo volverás a recibir».'
+    reason: lexical_alternative
+  - marker: f
+    text: 'O: «dáselo al que no te lo devolverá».'
+    reason: previous_rendering
+  revision_rationale: 'Se propone una revisión menor: el texto principal se pule para mayor naturalidad en español, y las notas se rehacen para reflejar con precisión el expediente auditado del POB inglés, especialmente en la variante textual del destinatario y en la alternativa sintáctica de la cláusula relativa. No hace falta adjudicación adicional porque el sentido global está claro y las correcciones son rutinarias.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a1ab7cff020f71d848cbd5f7bc718faef3ac4b8cd13c39a9a71a153850047474
+  timestamp: '2026-05-08T03:09:20Z'
+  output_hash: 8eb24df0cb259fe35759e1b46b387639d9dbddf3759d090029311f0f1e9a3b78
+  usage:
+    prompt_tokens: 5363
+    completion_tokens: 1179
+    total_tokens: 6542
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.031092
+  applied_revision: true

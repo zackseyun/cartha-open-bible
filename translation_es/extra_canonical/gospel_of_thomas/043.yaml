@@ -64,15 +64,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: "Sus discípulos le dijeron: «¿Quién eres tú, que nos dices estas cosas?». \n\nJesús les respondió: «De lo que les digo a ustedes, no saben quién soy yo[a]. Pero han llegado a ser como los judíos: aman el árbol y odian su fruto, y aman el fruto y odian el árbol[b]»."
+  text: 'Sus discípulos le dijeron: «¿Quién eres tú, que nos dices estas cosas?».
+
+
+    «Por lo que les digo, no saben quién soy yo[a]. Pero se han vuelto semejantes a los judíos, porque aman el árbol y odian su fruto[b], y aman el fruto y odian el árbol».'
   philosophy: formal
   footnotes:
   - marker: a
     text: La forma copta permite leer este segmento como afirmación («no saben») o como pregunta retórica («¿no saben?»). Ambas posibilidades encajan con la reprensión de Jesús.
     reason: textual_variant
   - marker: b
-    text: El copto presenta las acciones en yuxtaposición, sin una conjunción adversativa explícita entre «aman» y «odian». En español se conserva la coordinación simple para reflejar ese paralelismo.
-    reason: textual_variant
+    text: El copto presenta «aman» y «odian» en yuxtaposición, sin una conjunción adversativa explícita, lo que intensifica la contradicción. El español conserva esa coordinación simple para reflejar el paralelismo del original.
+    reason: register_note
 lexical_decisions:
 - source_word: ⲉⲓⲙⲉ
   english_pob_choice: know
@@ -164,4 +167,57 @@ ai_draft:
     total_tokens: 6402
     reasoning_tokens: 0
     estimated_cost_usd: 0.009695
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: "Sus discípulos le dijeron: «¿Quién eres tú, que nos dices estas cosas?». \n\nJesús les respondió: «De lo que les digo a ustedes, no saben quién soy yo[a]. Pero han llegado a ser como los judíos: aman el árbol y odian su fruto, y aman el fruto y odian el árbol[b]»."
+  to: 'Sus discípulos le dijeron: «¿Quién eres tú, que nos dices estas cosas?».
+
+
+    «Por lo que les digo, no saben quién soy yo[a]. Pero se han vuelto semejantes a los judíos, porque aman el árbol y odian su fruto[b], y aman el fruto y odian el árbol».'
+  rationale: La revisión elimina el añadido no atestiguado «Jesús les respondió», que contradice la evidencia copta y la auditoría inglesa. También mejora la naturalidad de la frase inicial de la respuesta sin alterar el sentido, y ajusta la nota sobre la yuxtaposición amor/odio para describir correctamente el fenómeno retórico documentado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite correctamente la estructura básica del dicho y sigue bien las decisiones auditadas del inglés: declaración en vez de pregunta, ϣⲱⲡⲉ como cambio de estado, y el paralelismo árbol/fruto con amor/odio. Sin embargo, añade explícitamente «Jesús les respondió», que no está en el copto y ya fue corregido en la auditoría inglesa como añadido indebido. Además, «como los judíos» puede sonar más natural como «se han vuelto semejantes a los judíos», manteniendo el valor perfectivo sin rigidez.'
+  spanish_quality_summary: El español es claro y legible, con buen registro general. No obstante, conviene eliminar el verbo introductorio añadido para no sobretraducir. También es preferible simplificar «les digo a ustedes» a «les digo» y ajustar la puntuación para que el cambio de hablante se entienda sin insertar material ausente del original.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. Las decisiones léxicas principales son adecuadas: «saben», «han llegado a ser / se han vuelto», «árbol», «odian». El tratamiento de «judíos» es formalmente fiel al copto/inglés, aunque requiere prudencia estilística; aquí se conserva por fidelidad a la fuente.'
+  issues:
+  - severity: high
+    issue: Se añadió «Jesús les respondió» en la segunda parte.
+    rationale: El copto no contiene un nuevo verbo introductor de habla en este punto, y la auditoría inglesa ya documentó que no debe añadirse un «He said to them». La traducción española debe reflejar el cambio de hablante sin insertar contenido no atestiguado.
+  - severity: low
+    issue: «De lo que les digo a ustedes» suena algo pesado.
+    rationale: El sentido es correcto, pero «De lo que les digo» o «Por lo que les digo» suena más natural en español sin perder fidelidad. Conviene mantener la relación con «From what I say to you» sin sobrecargar el pronombre.
+  - severity: low
+    issue: La nota b clasifica el fenómeno más como observación de registro/retórica que como variante textual.
+    rationale: No afecta el texto principal, pero el motivo real es la asíndeton/yuxtaposición retórica, no una variante textual.
+  revised_spanish_text: 'Sus discípulos le dijeron: «¿Quién eres tú, que nos dices estas cosas?».
+
+
+    «Por lo que les digo, no saben quién soy yo[a]. Pero se han vuelto semejantes a los judíos, porque aman el árbol y odian su fruto[b], y aman el fruto y odian el árbol».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: La forma copta permite leer este segmento como afirmación («no saben») o como pregunta retórica («¿no saben?»). Ambas posibilidades encajan con la reprensión de Jesús.
+    reason: textual_variant
+  - marker: b
+    text: El copto presenta «aman» y «odian» en yuxtaposición, sin una conjunción adversativa explícita, lo que intensifica la contradicción. El español conserva esa coordinación simple para reflejar el paralelismo del original.
+    reason: register_note
+  revision_rationale: La revisión elimina el añadido no atestiguado «Jesús les respondió», que contradice la evidencia copta y la auditoría inglesa. También mejora la naturalidad de la frase inicial de la respuesta sin alterar el sentido, y ajusta la nota sobre la yuxtaposición amor/odio para describir correctamente el fenómeno retórico documentado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2a738191b6003d3a02889855cc6cbea2cb5d38a51bc2cda796bc216bdc07a89b
+  timestamp: '2026-05-08T03:01:34Z'
+  output_hash: ae8a728a17d255fd5064262b5c985298c93e267096358a4037f4a853f3cb2f9c
+  usage:
+    prompt_tokens: 6121
+    completion_tokens: 809
+    total_tokens: 6930
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.027438
+  applied_revision: true

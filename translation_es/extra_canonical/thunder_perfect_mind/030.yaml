@@ -60,15 +60,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: No me dejes[a] fuera, y me encontrarás en riquezas[b].
+  text: No me dejes expulsada[a], y me encontrarás en riquezas[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «No me dejes excluida».'
+    text: 'O: «No me dejes fuera» o «No me dejes excluida».'
     reason: lexical_alternative
   - marker: b
-    text: 'O: «y me hallarás en abundancia».'
-    reason: lexical_alternative
+    text: El historial de revisión inglés indica que este segmento fue desalineado antes con «Yo soy guerra y paz»; aquí corresponde más bien una exhortación a los oyentes seguida de una promesa de hallazgo en riquezas.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲙⲡⲣⲕⲁⲁⲧ ⲉⲓⲛⲏϫ ⲉⲃⲟⲗ
   english_pob_choice: Do not leave me cast out
@@ -129,4 +129,49 @@ ai_draft:
     total_tokens: 3633
     reasoning_tokens: 0
     estimated_cost_usd: 0.006561
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: No me dejes[a] fuera, y me encontrarás en riquezas[b].
+  to: No me dejes expulsada[a], y me encontrarás en riquezas[b].
+  rationale: Se recomienda un ajuste menor para reflejar mejor la fuerza de «cast out» en el original/audit trail. «Expulsada» conserva la exclusión activa mejor que «fuera», mientras que «riquezas» ya está bien. También se añade la nota de desalineación porque forma parte del contexto textual auditado y evita reintroducir la lectura errónea anterior.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:35Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la revisión principal del audit trail: este segmento no dice «Yo soy guerra y paz», sino una exhortación a no dejar a la hablante en condición de exclusión, seguida de la promesa «y me encontrarán/ encontrarás en riquezas». Sin embargo, «No me dejes fuera» suaviza demasiado el matiz de ⲉⲓⲛⲏϫ ⲉⲃⲟⲗ, que el inglés auditado fijó como «cast out».'
+  spanish_quality_summary: El español es natural y legible, pero «dejes fuera» queda algo coloquial e impreciso frente al peso idiomático de expulsión/exclusión. Además, la combinación singular «No me dejes… me encontrarás» puede mantenerse, pero conviene reforzar el primer miembro para reflejar mejor el original. Las notas actuales son aceptables, aunque falta una nota de alineación, ya documentada en inglés, y la alternativa «excluida» funciona mejor como posible glosa que como texto principal.
+  glossary_alignment: 'No hay términos doctrinales del glosario mayor en juego. La decisión clave es lexical: conservar el sentido de «cast out» con un español más fiel que «fuera». «Riquezas» está bien alineado con el audit trail inglés y preferible a «abundancia», que diluye el matiz material.'
+  issues:
+  - severity: medium
+    issue: «No me dejes fuera» atenúa el sentido de «cast out».
+    rationale: El Coptico y el audit trail inglés apuntan a una exclusión/expulsión más fuerte que la mera localización «fuera». En español, «No me dejes expulsada» o «No me dejes echada fuera» preserva mejor la fuerza.
+  - severity: low
+    issue: Falta la nota de desalineación heredada del audit trail inglés.
+    rationale: El historial inglés documenta que el segmento fue previamente mal alineado con «I am war and peace». Esa información textual sigue siendo útil en español.
+  - severity: low
+    issue: La nota «No me dejes excluida» como alternativa es mejor que el texto principal, no solo una variante estilística.
+    rationale: Si se mantiene «fuera» en el texto, la nota no compensa plenamente la pérdida semántica. Conviene subir la fuerza lexical al texto principal y dejar «fuera» o «excluida» como alternativas según corresponda.
+  revised_spanish_text: No me dejes expulsada[a], y me encontrarás en riquezas[b].
+  revised_footnotes:
+  - marker: a
+    text: 'O: «No me dejes fuera» o «No me dejes excluida».'
+    reason: lexical_alternative
+  - marker: b
+    text: El historial de revisión inglés indica que este segmento fue desalineado antes con «Yo soy guerra y paz»; aquí corresponde más bien una exhortación a los oyentes seguida de una promesa de hallazgo en riquezas.
+    reason: alignment_note
+  revision_rationale: Se recomienda un ajuste menor para reflejar mejor la fuerza de «cast out» en el original/audit trail. «Expulsada» conserva la exclusión activa mejor que «fuera», mientras que «riquezas» ya está bien. También se añade la nota de desalineación porque forma parte del contexto textual auditado y evita reintroducir la lectura errónea anterior.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 7e6a2ae174daeada3b768b014bb3294e2fa50f06f4fdb4aa8e5e067036025c80
+  timestamp: '2026-05-08T03:08:35Z'
+  output_hash: bb1e7cdc86c1937137dcb1e0277a8a6eab8d63147af6ffa4481bcbc2dc4cd467
+  usage:
+    prompt_tokens: 3308
+    completion_tokens: 771
+    total_tokens: 4079
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019835
+  applied_revision: true

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'a man' to 'the man' to reflect the Greek article more closely and improve lexical accuracy; otherwise retained the draft.
 translation:
   language: es
-  text: Porque las mujeres son malas, hijos míos; y como no tienen autoridad ni poder sobre el hombre, urden con sus apariencias cómo atraerlo hacia sí mismas.
+  text: Porque las mujeres son malas, mis hijos; y puesto que no tienen autoridad ni poder sobre el hombre, urden por medio de su apariencia cómo atraerlo hacia sí mismas.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Πονηραὶ
@@ -125,4 +125,42 @@ ai_draft:
     total_tokens: 3051
     reasoning_tokens: 0
     estimated_cost_usd: 0.006961
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque las mujeres son malas, hijos míos; y como no tienen autoridad ni poder sobre el hombre, urden con sus apariencias cómo atraerlo hacia sí mismas.
+  to: Porque las mujeres son malas, mis hijos; y puesto que no tienen autoridad ni poder sobre el hombre, urden por medio de su apariencia cómo atraerlo hacia sí mismas.
+  rationale: 'Se hace una reparación menor de estilo y precisión: se sustituye ''hijos míos'' por ''mis hijos'' para mayor naturalidad, y ''con sus apariencias'' por ''por medio de su apariencia'' para expresar de manera más idiomática el valor instrumental de ἐν σχήμασιν, sin alterar el sentido ni la dureza del original.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:00:32Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el sentido global del griego y el audit trail inglés: afirmación causal inicial, apelación paternal, falta de autoridad o poder sobre el hombre, maquinación, y finalidad de atraerlo hacia ellas. Sin embargo, dos puntos piden ajuste menor: ἐν σχήμασιν se refleja con más naturalidad y precisión como ''por medio de su apariencia'' o similar, no ''con sus apariencias'', que en español suena algo forzado; y el conector causal después del punto y coma se entiende mejor como ''puesto que'' o ''ya que'' para evitar repetición pesada de ''porque/como''.'
+  spanish_quality_summary: El español es claro y digno, pero 'urden con sus apariencias' resulta poco idiomático. 'Urden por medio de su apariencia' mejora la fluidez y preserva el valor instrumental. También conviene 'mis hijos' en vez de 'hijos míos' por naturalidad corriente, aunque ambas opciones son válidas.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'malas' para Πονηραὶ, 'el hombre' para τὸν ἄνδρα, y 'atraerlo hacia sí mismas' son coherentes con el expediente inglés y con el sentido fuente.
+  issues:
+  - severity: medium
+    issue: '''con sus apariencias'' suena poco natural para ἐν σχήμασιν'
+    rationale: El plural griego puede conservarse semánticamente, pero en español esa formulación se percibe rígida. Una expresión instrumental más idiomática como 'por medio de su apariencia' comunica mejor el sentido de usar la apariencia para seducir o atraer.
+  - severity: low
+    issue: Orden y enlace algo pesados en 'Porque...; y como...'
+    rationale: La estructura es fiel, pero puede aligerarse sin perder sentido con 'Pues...; y puesto que...' o 'Porque...; y puesto que...'.
+  - severity: low
+    issue: '''hijos míos'' es correcto pero menos natural que ''mis hijos'' en este contexto'
+    rationale: Ambas traducciones sirven para τέκνα μου, pero 'mis hijos' suele leerse con mayor naturalidad en español general contemporáneo.
+  revised_spanish_text: Porque las mujeres son malas, mis hijos; y puesto que no tienen autoridad ni poder sobre el hombre, urden por medio de su apariencia cómo atraerlo hacia sí mismas.
+  revision_rationale: 'Se hace una reparación menor de estilo y precisión: se sustituye ''hijos míos'' por ''mis hijos'' para mayor naturalidad, y ''con sus apariencias'' por ''por medio de su apariencia'' para expresar de manera más idiomática el valor instrumental de ἐν σχήμασιν, sin alterar el sentido ni la dureza del original.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f5cae7862817d4094e9180c82eafd77b53f19ac036ea4ceef5ad5f55de56f5b5
+  timestamp: '2026-05-08T03:00:32Z'
+  output_hash: cc994f24f94f7aa7cb8fa3ea0587379cbe18ea6f8f596291002462f9de03f0f8
+  usage:
+    prompt_tokens: 2723
+    completion_tokens: 640
+    total_tokens: 3363
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016408
+  applied_revision: true

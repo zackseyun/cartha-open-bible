@@ -19,8 +19,12 @@ base_translation:
     changes_summary: Improved English naturalness by changing 'meat did not enter my mouth' to 'no meat entered my mouth' and smoothed the final clause from 'such a thing had not happened in Israel' to 'such as had not happened in Israel' for a more formal, natural rendering while preserving the source sense.
 translation:
   language: es
-  text: Y no bebí vino ni bebida fuerte, y ninguna carne entró en mi boca, y no comí pan de deseo; pero estaba de duelo por mi pecado, porque era grande, tal como no había acontecido en Israel.
+  text: Y no bebí vino ni bebida fuerte, y no entró carne en mi boca, y no comí pan de deseo[a]; pero estaba de duelo por mi pecado, porque era grande, como no había sucedido en Israel.
   philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: O «pan deseable» o «pan de deleite»; la expresión indica alimento apetecible o placentero, del cual se abstuvo en señal de duelo y penitencia.
+    reason: Aclara una expresión literal potencialmente oscura en español mientras preserva la formulación principal cercana al griego y al inglés POB.
 lexical_decisions:
 - source_word: οἶνον
   english_pob_choice: wine
@@ -111,4 +115,46 @@ ai_draft:
     total_tokens: 3162
     reasoning_tokens: 0
     estimated_cost_usd: 0.006616
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y no bebí vino ni bebida fuerte, y ninguna carne entró en mi boca, y no comí pan de deseo; pero estaba de duelo por mi pecado, porque era grande, tal como no había acontecido en Israel.
+  to: Y no bebí vino ni bebida fuerte, y no entró carne en mi boca, y no comí pan de deseo[a]; pero estaba de duelo por mi pecado, porque era grande, como no había sucedido en Israel.
+  rationale: 'Se hicieron ajustes menores para mejorar la naturalidad del español sin apartarse del griego ni del audit trail inglés: «no entró carne en mi boca» en lugar de «ninguna carne entró en mi boca», y «como no había sucedido en Israel» en lugar de «tal como no había acontecido en Israel». Se conservó «pan de deseo» por fidelidad formal, añadiendo una nota aclaratoria para la legibilidad.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:56Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la secuencia del griego: abstinencia de vino y σίκερα, ausencia de carne, rechazo de ἄρτον ἐπιθυμίας, y duelo por el pecado. Sin embargo, dos puntos requieren ajuste para fidelidad y español natural: «ninguna carne entró en mi boca» suena poco idiomático en español bíblico actual, y la cláusula final «tal como no había acontecido en Israel» no expresa con suficiente naturalidad el valor de οἷα οὐ γέγονεν… οὕτως, mejor como «como no había sucedido en Israel».'
+  spanish_quality_summary: 'El texto es generalmente claro y digno, pero contiene literalismos algo duros: «ninguna carne entró en mi boca» y «pan de deseo». El segundo puede conservarse por fidelidad, aunque es una expresión marcada; el primero conviene suavizarlo a «no entró carne en mi boca», que mantiene la imagen original y mejora la lectura. La frase final también se beneficia de una formulación más natural.'
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «vino», «bebida fuerte», «carne» y «pecado» están bien alineados. «Pan de deseo» es aceptable como conservación formal del original y del audit trail inglés, aunque su rareza semántica justifica una nota aclaratoria en español para evitar ambigüedad innecesaria.
+  issues:
+  - severity: medium
+    issue: «ninguna carne entró en mi boca» es poco idiomático
+    rationale: Aunque formalmente posible, en español suena más torpe que el griego y que la solución inglesa revisada. «No entró carne en mi boca» conserva la metáfora sin extrañeza innecesaria.
+  - severity: medium
+    issue: «tal como no había acontecido en Israel» es forzado
+    rationale: La cláusula comparativa-superlativa del griego se expresa más naturalmente en español con «como no había sucedido en Israel», sin pérdida de sentido.
+  - severity: low
+    issue: «pan de deseo» puede resultar ambiguo para el lector español
+    rationale: La literalidad preserva bien ἄρτον ἐπιθυμίας, pero en español conviene una nota para indicar que se refiere a pan deseable/de deleite, no a un tecnicismo establecido.
+  revised_spanish_text: Y no bebí vino ni bebida fuerte, y no entró carne en mi boca, y no comí pan de deseo[a]; pero estaba de duelo por mi pecado, porque era grande, como no había sucedido en Israel.
+  revised_footnotes:
+  - marker: a
+    text: O «pan deseable» o «pan de deleite»; la expresión indica alimento apetecible o placentero, del cual se abstuvo en señal de duelo y penitencia.
+    reason: Aclara una expresión literal potencialmente oscura en español mientras preserva la formulación principal cercana al griego y al inglés POB.
+  revision_rationale: 'Se hicieron ajustes menores para mejorar la naturalidad del español sin apartarse del griego ni del audit trail inglés: «no entró carne en mi boca» en lugar de «ninguna carne entró en mi boca», y «como no había sucedido en Israel» en lugar de «tal como no había acontecido en Israel». Se conservó «pan de deseo» por fidelidad formal, añadiendo una nota aclaratoria para la legibilidad.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 6b35b8de395be5e80aa54491793b224a809b9308e7e2ed30d661dfcbee64e4bb
+  timestamp: '2026-05-08T03:01:56Z'
+  output_hash: 552c811e9ce4573941ae22939ecfd7f622138c4d7d5a6b88f0c96c27aeaf2f00
+  usage:
+    prompt_tokens: 2703
+    completion_tokens: 776
+    total_tokens: 3479
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018398
+  applied_revision: true

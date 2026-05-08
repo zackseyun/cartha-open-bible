@@ -70,21 +70,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: ¿Por qué, ustedes que me aman, me odian, y odian a los que me aman? Ustedes que me niegan, me confiesan[b], y ustedes que me confiesan, me niegan[c][d][e]. Ustedes que dicen—
+  text: ¿Por qué[a], ustedes que me odian, me aman, y odian a los que me aman? Ustedes que me niegan, me confiesan[b], y ustedes que me confiesan, me niegan[c]. Ustedes que dicen—
   philosophy: optimal-equivalence
   footnotes:
+  - marker: a
+    text: 'La secuencia copta ⲉⲧⲃⲉ ⲟⲩ se entiende aquí como interrogativa: «¿Por qué?». Una lectura anterior la tomó en sentido tópico («con respecto a»), pero la revisión auditada favorece claramente el valor causal/interrogativo.'
+    reason: source_note
   - marker: b
     text: «Confiesan» traduce ϩⲟⲙⲟⲗⲟⲅⲉⲓ (del griego ὁμολογέω); también podría vertirse «reconocen» o «profesan», pero «confesar» mantiene el paralelo con «negar».
     reason: lexical_alternative
   - marker: c
-    text: «Niegan» representa ⲁⲣⲛⲁ; otras posibilidades son «reniegan» o «repudian», aunque «negar» conserva mejor la simetría verbal.
+    text: «Niegan» representa ⲁⲣⲛⲁ; otras posibilidades son «reniegan» o «desconocen», aunque «negar» conserva mejor la simetría verbal.
     reason: lexical_alternative
-  - marker: d
-    text: El texto copt. usa una construcción vocativa dirigida a «ustedes», no una simple tercera persona («los que...»).
-    reason: source_note
-  - marker: e
-    text: El final del segmento queda truncado en el manuscrito; por eso la frase termina en raya.
-    reason: textual_variant
 lexical_decisions:
 - source_word: ⲉⲧⲃⲉ ⲟⲩ
   english_pob_choice: Why
@@ -177,4 +174,52 @@ ai_draft:
     total_tokens: 5231
     reasoning_tokens: 0
     estimated_cost_usd: 0.009136
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: ¿Por qué, ustedes que me aman, me odian, y odian a los que me aman? Ustedes que me niegan, me confiesan[b], y ustedes que me confiesan, me niegan[c][d][e]. Ustedes que dicen—
+  to: ¿Por qué[a], ustedes que me odian, me aman, y odian a los que me aman? Ustedes que me niegan, me confiesan[b], y ustedes que me confiesan, me niegan[c]. Ustedes que dicen—
+  rationale: 'La revisión corrige el error principal de alineación con la fuente: el vocativo inicial debe dirigirse a «ustedes que me odian», no a «ustedes que me aman». También se depuran las notas para dejar solo las que ayudan de verdad al lector y están ancladas en el texto revisado. El resto de la redacción conserva el tono poético y la paradoja antitética del original.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español no preserva fielmente el sentido fuente en la primera cláusula principal: invierte el referente vocativo y dice «ustedes que me aman, me odian», cuando el copt. y la auditoría inglesa revisada exigen «ustedes que me odian, me aman». El resto del segmento sí sigue adecuadamente la lectura adjudicada: vocativo de segunda persona plural, imperativos «confiesen/nieguen» entendidos aquí en superficie española como presente dirigido a los interlocutores, y final truncado.'
+  spanish_quality_summary: El español es legible y digno, pero la inversión amar/odiar en la apertura altera la paradoja central del pasaje. Además, suena más natural repetir menos el pronombre explícito en español («ustedes») sin perder el valor vocativo. Conviene también suavizar la puntuación para que la cadena antitética fluya mejor.
+  glossary_alignment: 'No hay conflicto con la terminología doctrinal del proyecto. Las decisiones léxicas principales son buenas: ⲙⲟⲥⲧⲉ > «odiar», ⲙⲉ > «amar», ⲁⲣⲛⲁ > «negar», ϩⲟⲙⲟⲗⲟⲅⲉⲓ > «confesar». La nota b está bien fundada. La nota c también sirve, aunque «repudian» es menos ajustado que «reniegan/disocian».'
+  issues:
+  - severity: high
+    issue: Inversión del contraste inicial amar/odiar
+    rationale: El texto español dice «ustedes que me aman, me odian», pero la fuente revisada y la traducción inglesa auditada dicen «you who hate me, do you love me». Esto cambia el sujeto definido por el vocativo y desfigura la antítesis del pasaje.
+  - severity: medium
+    issue: Redundancia de «ustedes» en cada miembro
+    rationale: Aunque no es incorrecto, la repetición completa en español resulta algo pesada. Puede mantenerse el vocativo con una sola mención inicial y luego coordinar con «y ustedes que…» solo donde ayuda a la claridad.
+  - severity: low
+    issue: Marcadores de notas reordenados respecto al inglés
+    rationale: No es obligatorio copiar el orden inglés, pero conviene conservar solo las notas necesarias y anclarlas donde realmente aclaran algo en español. La nota d del borrador es más metalingüística que necesaria para el lector final.
+  revised_spanish_text: ¿Por qué[a], ustedes que me odian, me aman, y odian a los que me aman? Ustedes que me niegan, me confiesan[b], y ustedes que me confiesan, me niegan[c]. Ustedes que dicen—
+  revised_footnotes:
+  - marker: a
+    text: 'La secuencia copta ⲉⲧⲃⲉ ⲟⲩ se entiende aquí como interrogativa: «¿Por qué?». Una lectura anterior la tomó en sentido tópico («con respecto a»), pero la revisión auditada favorece claramente el valor causal/interrogativo.'
+    reason: source_note
+  - marker: b
+    text: «Confiesan» traduce ϩⲟⲙⲟⲗⲟⲅⲉⲓ (del griego ὁμολογέω); también podría vertirse «reconocen» o «profesan», pero «confesar» mantiene el paralelo con «negar».
+    reason: lexical_alternative
+  - marker: c
+    text: «Niegan» representa ⲁⲣⲛⲁ; otras posibilidades son «reniegan» o «desconocen», aunque «negar» conserva mejor la simetría verbal.
+    reason: lexical_alternative
+  revision_rationale: 'La revisión corrige el error principal de alineación con la fuente: el vocativo inicial debe dirigirse a «ustedes que me odian», no a «ustedes que me aman». También se depuran las notas para dejar solo las que ayudan de verdad al lector y están ancladas en el texto revisado. El resto de la redacción conserva el tono poético y la paradoja antitética del original.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 557adc9acd30d51012d2c51548678b22b75f39c591fd1af679284c41f4cef36e
+  timestamp: '2026-05-08T03:10:36Z'
+  output_hash: 3769daaf00b28ba564f553738e8f87ce2aa844417b2dc8eb225a216ef5ba8dc8
+  usage:
+    prompt_tokens: 4871
+    completion_tokens: 968
+    total_tokens: 5839
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026697
+  applied_revision: true

@@ -48,12 +48,15 @@ base_translation:
     changes_summary: Revised “in this matter” to “in it” for closer lexical correspondence to ἐν αὐτῷ, avoiding interpretive expansion. Kept the rest unchanged as accurate and natural.
 translation:
   language: es
-  text: Primero, entonces, hice una barca para navegar en el mar, porque el Señor me dio entendimiento y sabiduría en ella. Y sujeté un trozo de madera detrás de ella[a], y
+  text: Primero[a], hice una barca para navegar en el mar, porque el Señor me dio entendimiento y sabiduría para ello[b]. Y sujeté un trozo de madera detrás de ella, y
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: El griego conservado aquí es fragmentario y se corta a mitad de oración después de «y sujeté un trozo de madera detrás de ella, y».
     reason: textual_variant
+  - marker: b
+    text: «Sabiduría» aquí también puede implicar habilidad práctica para la construcción, no solo sabiduría en sentido abstracto.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Πρῶτος οὖν
   english_pob_choice: First, then
@@ -171,4 +174,49 @@ ai_draft:
     total_tokens: 3741
     reasoning_tokens: 0
     estimated_cost_usd: 0.007572
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Primero, entonces, hice una barca para navegar en el mar, porque el Señor me dio entendimiento y sabiduría en ella. Y sujeté un trozo de madera detrás de ella[a], y
+  to: Primero[a], hice una barca para navegar en el mar, porque el Señor me dio entendimiento y sabiduría para ello[b]. Y sujeté un trozo de madera detrás de ella, y
+  rationale: Se suavizó el calco «Primero, entonces» a «Primero» para un español más natural, se añadió la nota léxica que preserva la amplitud de σοφία documentada en el audit trail inglés, y se reemplazó «en ella» por «para ello» para evitar una formulación poco idiomática y ambigua, manteniendo el sentido de que el Señor dio la capacidad necesaria para la tarea.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el fragmento griego y el audit trail inglés en la mayor parte: σκάφος→«barca», ἐπιπλέειν→«navegar», σύνεσιν/σοφίαν→«entendimiento y sabiduría», καθῆκα ξύλον→«sujeté un trozo de madera». También preserva correctamente el carácter fragmentario con una nota. Sin embargo, falta la nota léxica equivalente a la inglesa sobre σοφία, y «en ella» para ἐν αὐτῷ suena forzado y potencialmente ambiguo en español; conviene una solución más natural que siga siendo cercana al original.'
+  spanish_quality_summary: El español es claro, pero «Primero, entonces» resulta algo calcado; «Entonces, primero» tampoco mejora, así que es preferible simplificar a «Primero» o «Así, primero». Además, «en ella» después de «me dio entendimiento y sabiduría» suena poco idiomático en español y puede sugerir que la sabiduría está físicamente en la barca. «Para ello» comunica mejor la relación instrumental sin expandir demasiado. Añadir la nota léxica ayuda a conservar la justificación documentada.
+  glossary_alignment: La elección «el Señor» para κύριος es aceptable aquí, ya que la fuente inmediata es griega y no hay cita explícita del nombre divino hebreo que exija «Yahvé». No hay conflictos con otras preferencias terminológicas del proyecto.
+  issues:
+  - severity: medium
+    issue: Falta la nota léxica sobre σοφία
+    rationale: 'El audit trail inglés conserva una nota significativa: «wisdom» puede implicar también habilidad práctica para la construcción. Esa tensión léxica y teológica debe preservarse también en español.'
+  - severity: medium
+    issue: «en ella» para ἐν αὐτῷ es poco natural y ambiguo
+    rationale: Aunque formalmente puede concordar con «barca», en español la frase «me dio entendimiento y sabiduría en ella» suena extraña y puede malinterpretarse. «Para ello» mantiene la referencia al proyecto de construcción/navegación con mejor legibilidad.
+  - severity: low
+    issue: «Primero, entonces» suena calcado
+    rationale: Reproduce mecánicamente Πρῶτος οὖν, pero en español resulta tieso. «Primero» por sí solo conserva bien el arranque secuencial sin pérdida sustancial en un fragmento ya abrupto.
+  revised_spanish_text: Primero[a], hice una barca para navegar en el mar, porque el Señor me dio entendimiento y sabiduría para ello[b]. Y sujeté un trozo de madera detrás de ella, y
+  revised_footnotes:
+  - marker: a
+    text: El griego conservado aquí es fragmentario y se corta a mitad de oración después de «y sujeté un trozo de madera detrás de ella, y».
+    reason: textual_variant
+  - marker: b
+    text: «Sabiduría» aquí también puede implicar habilidad práctica para la construcción, no solo sabiduría en sentido abstracto.
+    reason: lexical_alternative
+  revision_rationale: Se suavizó el calco «Primero, entonces» a «Primero» para un español más natural, se añadió la nota léxica que preserva la amplitud de σοφία documentada en el audit trail inglés, y se reemplazó «en ella» por «para ello» para evitar una formulación poco idiomática y ambigua, manteniendo el sentido de que el Señor dio la capacidad necesaria para la tarea.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: fbc44ee36755e7701f80a38067bb34ca2ffe06f459ceb28c352c505599a9a307
+  timestamp: '2026-05-08T03:02:43Z'
+  output_hash: 090bb245bce61a1cc7e608ad6833be831b98f20916a7103274617e2740ad0a88
+  usage:
+    prompt_tokens: 3435
+    completion_tokens: 821
+    total_tokens: 4256
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020902
+  applied_revision: true

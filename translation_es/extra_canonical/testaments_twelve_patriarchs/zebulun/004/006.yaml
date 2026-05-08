@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y tomando la plata, corrió tras los mercaderes, pero no encontró a ninguno; porque habían dejado el camino principal y habían seguido una ruta más corta por entre los trogloditas.
+  text: Y tomando la plata, corrió tras los mercaderes; pero, como no los halló, volvió lamentándose, porque los mercaderes habían dejado el camino principal y habían pasado por una ruta más corta por entre los trogloditas.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: τὸ ἀργύριον
@@ -105,4 +105,39 @@ ai_draft:
     total_tokens: 2919
     reasoning_tokens: 0
     estimated_cost_usd: 0.007023
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y tomando la plata, corrió tras los mercaderes, pero no encontró a ninguno; porque habían dejado el camino principal y habían seguido una ruta más corta por entre los trogloditas.
+  to: Y tomando la plata, corrió tras los mercaderes; pero, como no los halló, volvió lamentándose, porque los mercaderes habían dejado el camino principal y habían pasado por una ruta más corta por entre los trogloditas.
+  rationale: Se restaura el contenido explícito del griego ‘volvió lamentándose’ sin perder la inferencia contextual de que no logró alcanzarlos. La nueva redacción mantiene la fluidez del español y conserva la cláusula causal sobre haber dejado el camino principal para tomar una ruta más corta por entre los trogloditas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la mayor parte del sentido: tomar la plata, correr tras los mercaderes, y la explicación de que ellos dejaron el camino principal para ir por una vía más corta entre/por los trogloditas. Sin embargo, omite un elemento explícito del griego: ὑπέστρεψεν ὀδυρόμενος, ‘volvió/regresó lamentándose’. El inglés POB lo comprime en ‘found no one’, pero la revisión española debe trabajar desde la fuente griega y no perder ese regreso dolorido.'
+  spanish_quality_summary: El español es claro y natural. ‘Mercaderes’, ‘camino principal’ y ‘ruta más corta’ son legibles y dignos. No obstante, ‘pero no encontró a ninguno’ introduce un resultado compatible con el contexto, pero no traduce de manera suficiente la acción y el matiz afectivo expresos en el griego. Conviene restaurar ‘volvió lamentándose’ y mantener la cláusula causal posterior.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. ‘La plata’ para τὸ ἀργύριον y ‘mercaderes’ para ἔμποροι son adecuados. ‘Trogloditas’ preserva correctamente el etnónimo. La principal corrección es de fidelidad sintáctico-semántica al griego, no de glosario.
+  issues:
+  - severity: high
+    issue: Se omite ‘ὑπέστρεψεν ὀδυρόμενος’
+    rationale: La fuente griega dice explícitamente que él ‘regresó/volvió lamentándose’. El borrador lo sustituye por ‘no encontró a ninguno’, siguiendo en exceso la compresión del inglés POB y perdiendo una acción y un matiz emocional presentes en la fuente.
+  - severity: medium
+    issue: ‘no encontró a ninguno’ no tiene objeto expreso en el griego
+    rationale: Aunque se infiere que no halló a los mercaderes, el griego conservado aquí no formula esa idea con el verbo ‘encontrar’, sino con el regreso lamentoso y luego la explicación causal. En español conviene no añadir ese detalle como sustituto del texto fuente.
+  revised_spanish_text: Y tomando la plata, corrió tras los mercaderes; pero, como no los halló, volvió lamentándose, porque los mercaderes habían dejado el camino principal y habían pasado por una ruta más corta por entre los trogloditas.
+  revision_rationale: Se restaura el contenido explícito del griego ‘volvió lamentándose’ sin perder la inferencia contextual de que no logró alcanzarlos. La nueva redacción mantiene la fluidez del español y conserva la cláusula causal sobre haber dejado el camino principal para tomar una ruta más corta por entre los trogloditas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 11b0bb677c3e2c6aab090051e9b2d58ca142b4cbaea14ede04e665a0153bcd63
+  timestamp: '2026-05-08T03:07:55Z'
+  output_hash: 7d0887e983ead3bc9a5e8938815bfbf9d0c4deae8e0f27a79b3bad1c971af012
+  usage:
+    prompt_tokens: 2589
+    completion_tokens: 640
+    total_tokens: 3229
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016073
+  applied_revision: true

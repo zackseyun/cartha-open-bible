@@ -73,21 +73,24 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Quien tenga algo en su mano, se lo darán; y a quien no tenga[b], le quitarán aun[c] lo poco[d] que tiene de él».'
+  text: 'Jesús dijo[a]: «Quien tenga algo en su mano, se lo darán[b]; y a quien no tenga, le quitarán hasta[c] lo poco[d] que tiene[e]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El coptico usa una construcción posesiva con valor expletivo; por eso se traduce de forma natural como «quien tenga algo».
+    text: El copto usa una construcción posesiva con valor expletivo; por eso se traduce de forma natural como «quien tenga algo».
     reason: lexical_alternative
   - marker: b
-    text: La forma verbal de tercera plural funciona de manera impersonal en sahídico; el español la vierte aquí con una construcción impersonal idiomática.
-    reason: source_note
+    text: Las formas verbales de tercera plural («darán», y también «quitarán» más adelante) funcionan de manera impersonal en sahídico; el español las vierte aquí con una construcción idiomática equivalente.
+    reason: dialect_note
   - marker: c
-    text: La partícula ⲕⲉ- añade el matiz de «aún/e incluso», que se conserva con «aun».
+    text: La partícula ⲕⲉ- añade el matiz de «incluso / hasta», que aquí se conserva con «hasta».
     reason: lexical_alternative
   - marker: d
     text: ⲡⲕⲉϣⲏⲙ puede significar literalmente «lo pequeño / lo poco»; se conserva la tersa ambigüedad con «lo poco».
     reason: lexical_alternative
+  - marker: e
+    text: El texto copto termina con una expresión equivalente a «de él / de su mano». En español, «le quitarán … lo poco que tiene» comunica de manera natural la misma idea de privación.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲉϫⲉⲓⲏⲥⲟⲩⲥ
   english_pob_choice: Jesus said
@@ -193,4 +196,58 @@ ai_draft:
     total_tokens: 6195
     reasoning_tokens: 0
     estimated_cost_usd: 0.011017
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Quien tenga algo en su mano, se lo darán; y a quien no tenga[b], le quitarán aun[c] lo poco[d] que tiene de él».'
+  to: 'Jesús dijo[a]: «Quien tenga algo en su mano, se lo darán[b]; y a quien no tenga, le quitarán hasta[c] lo poco[d] que tiene[e]».'
+  rationale: La revisión conserva el sentido del original y del POB inglés, pero mejora la naturalidad del español. Reubica correctamente la nota sobre la tercera plural impersonal, evita el final forzado «de él» mediante una formulación idiomática que sigue expresando privación, y ajusta el énfasis de ⲕⲉ- con «hasta», más claro en español contemporáneo.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:37Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien la estructura básica del dicho y conserva «algo en su mano» y «lo poco». Sin embargo, no preserva plenamente dos decisiones auditadas del POB inglés: (1) la nota sobre la impersonalidad de los dos verbos en tercera plural quedó aplicada de manera inconsistente, porque el español usa una construcción idiomática («se lo darán / le quitarán») pero la nota b está anclada solo a «no tenga» en vez de a los verbos relevantes; (2) el complemento final «de él» suena poco natural en español después de «le quitarán», y conviene reformular para expresar claramente la separación «se lo quitarán» sin perder el sentido de ‘from him’. Además, «aun» sin tilde es posible, pero «hasta» o «incluso» evita vacilación ortográfica y suena más natural en registro bíblico moderno.'
+  spanish_quality_summary: El texto es legible y digno, pero tiene una aspereza final en «de él», y la distribución de notas no ayuda al lector. Una leve revisión mejora naturalidad, precisión y correspondencia con el expediente inglés sin parafrasear.
+  glossary_alignment: 'No hay conflictos con la terminología teológica del proyecto. Las decisiones léxicas principales («Jesús», «mano», «lo poco») son adecuadas. La principal cuestión es estilístico-sintáctica: cómo reflejar en español la tercera plural impersonal y el complemento separativo final.'
+  issues:
+  - severity: medium
+    issue: «de él» al final suena poco natural y redundante tras «le quitarán».
+    rationale: El copto expresa separación ‘from him’, pero en español la forma más idiomática y clara es «se lo quitarán», que incorpora el objeto y evita una clausura torpe.
+  - severity: medium
+    issue: La nota sobre la tercera plural impersonal está mal ubicada.
+    rationale: La observación aplica a «darán» y «quitarán», no a «no tenga». Debe anclarse donde el lector vea el fenómeno relevante.
+  - severity: low
+    issue: «aun lo poco» es defendible, pero menos natural que «hasta lo poco» o «incluso lo poco».
+    rationale: El expediente inglés documenta el matiz de ⲕⲉ- como ‘even/also’. «Hasta lo poco» comunica bien ese énfasis en español contemporáneo y evita la vacilación gráfica de aun/aún.
+  revised_spanish_text: 'Jesús dijo[a]: «Quien tenga algo en su mano, se lo darán[b]; y a quien no tenga, le quitarán hasta[c] lo poco[d] que tiene[e]».'
+  revised_footnotes:
+  - marker: a
+    text: El copto usa una construcción posesiva con valor expletivo; por eso se traduce de forma natural como «quien tenga algo».
+    reason: lexical_alternative
+  - marker: b
+    text: Las formas verbales de tercera plural («darán», y también «quitarán» más adelante) funcionan de manera impersonal en sahídico; el español las vierte aquí con una construcción idiomática equivalente.
+    reason: dialect_note
+  - marker: c
+    text: La partícula ⲕⲉ- añade el matiz de «incluso / hasta», que aquí se conserva con «hasta».
+    reason: lexical_alternative
+  - marker: d
+    text: ⲡⲕⲉϣⲏⲙ puede significar literalmente «lo pequeño / lo poco»; se conserva la tersa ambigüedad con «lo poco».
+    reason: lexical_alternative
+  - marker: e
+    text: El texto copto termina con una expresión equivalente a «de él / de su mano». En español, «le quitarán … lo poco que tiene» comunica de manera natural la misma idea de privación.
+    reason: textual_variant
+  revision_rationale: La revisión conserva el sentido del original y del POB inglés, pero mejora la naturalidad del español. Reubica correctamente la nota sobre la tercera plural impersonal, evita el final forzado «de él» mediante una formulación idiomática que sigue expresando privación, y ajusta el énfasis de ⲕⲉ- con «hasta», más claro en español contemporáneo.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 624f74cd0932a1a207652133c805a3181ace8bed38d81b7a76a0cb22685cce6f
+  timestamp: '2026-05-08T03:05:37Z'
+  output_hash: 593c11e2ef08511b9fd3794302aad7dcc731e222ad8eb5ec26cb79751af8656d
+  usage:
+    prompt_tokens: 5882
+    completion_tokens: 965
+    total_tokens: 6847
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02918
+  applied_revision: true

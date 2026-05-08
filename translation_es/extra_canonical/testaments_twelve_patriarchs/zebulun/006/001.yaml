@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the bracketed footnote marker from 'First[a]' for a clean verse text; otherwise retained the draft as accurate and natural.
 translation:
   language: es
-  text: Primero, pues, hice una barca para navegar sobre el mar, porque el Señor me dio entendimiento y sabiduría en ella.
+  text: Primero, pues, hice una embarcación para navegar en el mar, porque Yahvé me dio entendimiento y sabiduría en ella.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Πρῶτος οὖν
@@ -111,4 +111,42 @@ ai_draft:
     total_tokens: 2692
     reasoning_tokens: 0
     estimated_cost_usd: 0.005829
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Primero, pues, hice una barca para navegar sobre el mar, porque el Señor me dio entendimiento y sabiduría en ella.
+  to: Primero, pues, hice una embarcación para navegar en el mar, porque Yahvé me dio entendimiento y sabiduría en ella.
+  rationale: Se ajusta Κύριος a «Yahvé» según la terminología por defecto del proyecto, y se mejora la naturalidad del español con «embarcación» y «navegar en el mar», manteniendo intacto el sentido del griego y del POB auditado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:15Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del griego: Πρῶτος οὖν → «Primero, pues», ἐποίησα σκάφος ἐπιπλέειν ἐν τῇ θαλάσσῃ → la fabricación de una embarcación con propósito de navegar en el mar, y la cláusula causal final con «entendimiento y sabiduría». Sin embargo, «sobre el mar» suena menos natural que «en el mar» en este contexto, y «el Señor» no sigue el valor por defecto terminológico del proyecto para referencias divinas, sin que aquí haya una razón fuerte auditada para apartarse de «Yahvé».'
+  spanish_quality_summary: 'La redacción es clara y digna, pero puede hacerse más natural y alineada con el estilo meta: «barca» funciona, aunque «embarcación» evita una imagen demasiado pequeña; «navegar en el mar» fluye mejor que «navegar sobre el mar». El conjunto revisado queda más idiomático sin alejarse del original.'
+  glossary_alignment: 'Hay una desviación relevante del glosario del proyecto en Κύριος → «el Señor». Dado que la instrucción general pide «Yahvé» en el texto principal y no se documenta aquí una excepción litúrgica fija ni una cita que exija mantener «Señor», conviene normalizar a «Yahvé». Los demás términos principales están bien alineados: σύνεσις → «entendimiento», σοφία → «sabiduría».'
+  issues:
+  - severity: medium
+    issue: Κύριος se tradujo como «el Señor» en lugar de «Yahvé».
+    rationale: La preferencia del proyecto para referencias divinas es «Yahvé» en el texto principal. En este pasaje no se aporta una justificación suficientemente fuerte para apartarse de esa norma.
+  - severity: low
+    issue: «sobre el mar» suena poco idiomático en español para el uso normal de una embarcación.
+    rationale: Aunque reproduce la idea espacial, en español bíblico-natural «navegar en el mar» o «por el mar» resulta más fluido y no pierde sentido.
+  - severity: low
+    issue: «barca» puede estrechar innecesariamente σκάφος.
+    rationale: σκάφος es amplio. «Embarcación» preserva mejor esa amplitud sin tecnicismo excesivo en este contexto.
+  revised_spanish_text: Primero, pues, hice una embarcación para navegar en el mar, porque Yahvé me dio entendimiento y sabiduría en ella.
+  revision_rationale: Se ajusta Κύριος a «Yahvé» según la terminología por defecto del proyecto, y se mejora la naturalidad del español con «embarcación» y «navegar en el mar», manteniendo intacto el sentido del griego y del POB auditado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: dfeb9ccdda80ff5fd799402d45f2a45760bad202744908f92487348eb2acf4c4
+  timestamp: '2026-05-08T03:08:15Z'
+  output_hash: 90adee54e404e862b83b194b13ba795ad1e58ffbb360a3fa4b4691844cfe9714
+  usage:
+    prompt_tokens: 2441
+    completion_tokens: 670
+    total_tokens: 3111
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016153
+  applied_revision: true

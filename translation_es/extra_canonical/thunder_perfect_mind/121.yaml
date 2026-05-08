@@ -65,16 +65,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Porque de esto[a], no permitan que se me oiga[b];
-
-    y no permitan que se me conozca por juicio ni por ningún otro poder.'
+  text: Por eso, no permitan que se me oiga; y no permitan que se me conozca por juicio[a] ni por ningún otro poder[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La secuencia coptica probablemente refleja el préstamo griego ⲕⲣⲓⲙⲁ (“juicio”); si la OCR omitió ⲣⲓ, el sentido permanece probable pero no absolutamente seguro.
+    text: La secuencia copta probablemente refleja el préstamo griego ⲕⲣⲓⲙⲁ (“juicio”); si la OCR omitió ⲣⲓ, el sentido sigue siendo probable, aunque no absolutamente seguro.
     reason: textual_variant
   - marker: b
-    text: ⲟⲉⲓϣ suele significar “fuerza” o “poder”; por eso el cierre puede leerse como “por cualquier otro poder”.
+    text: ⲟⲉⲓϣ suele significar “fuerza” o “poder”; por eso el cierre también puede entenderse como “por cualquier otro poder”.
     reason: cultural_note
 lexical_decisions:
 - source_word: ⲉⲧⲃⲉ ⲡⲁⲓ
@@ -143,4 +141,51 @@ ai_draft:
     total_tokens: 3824
     reasoning_tokens: 0
     estimated_cost_usd: 0.007121
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Porque de esto[a], no permitan que se me oiga[b];
+
+    y no permitan que se me conozca por juicio ni por ningún otro poder.'
+  to: Por eso, no permitan que se me oiga; y no permitan que se me conozca por juicio[a] ni por ningún otro poder[b].
+  rationale: 'Se ajusta la expresión causal a un español más natural (‘Por eso’) y se recolocan las notas al lugar que realmente explican en el texto: [a] sobre ‘juicio’ y [b] sobre ‘poder’. El resto de la redacción se mantiene porque preserva bien el sentido del copto y el paralelismo del POB inglés.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español conserva bien el paralelismo prohibitivo del copto y la idea instrumental de la cláusula final. Sin embargo, desplaza indebidamente la nota [a] al inicio de la frase, cuando en el rastro inglés y en la evidencia léxica esa nota pertenece a la lectura probable de ‘juicio’ (ⲕⲣⲓⲙⲁ), no a ‘Porque de esto’. Además, ‘Porque de esto’ suena poco natural en español; ‘Por eso’ o ‘Por esta razón’ expresa mejor ⲉⲧⲃⲉ ⲡⲁⲓ sin perder la fuerza causal.
+  spanish_quality_summary: El español es mayormente claro, pero puede mejorarse en naturalidad y en la colocación de las notas. ‘No permitan que se me oiga / conozca’ es aceptable y mantiene el matiz causativo-permisivo. La frase inicial necesita ajuste idiomático.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. ‘Juicio’ para la probable lectura de ⲕⲣⲓⲙⲁ y ‘poder’ para ⲟⲉⲓϣ están bien. No intervienen términos teológicos sensibles del glosario principal.
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada en ‘Porque de esto’ en lugar de en ‘juicio’.
+    rationale: La nota explica la probable lectura textual de ⲕⲣⲓⲙⲁ (‘juicio’), no la expresión causal ⲉⲧⲃⲉ ⲡⲁⲓ. Tal como está, induce a error sobre qué elemento del texto es incierto.
+  - severity: low
+    issue: ‘Porque de esto’ es poco idiomático en español.
+    rationale: Aunque refleja formalmente el inglés, en español suena forzado. ‘Por eso’ conserva el valor causal y mejora la legibilidad sin añadir contenido.
+  - severity: low
+    issue: La nota [b] podría anclarse con mayor precisión en ‘poder’.
+    rationale: La explicación sobre ⲟⲉⲓϣ corresponde directamente al término ‘poder’; su ubicación actual es menos problemática que la de [a], pero conviene mantener anclajes semánticamente exactos.
+  revised_spanish_text: Por eso, no permitan que se me oiga; y no permitan que se me conozca por juicio[a] ni por ningún otro poder[b].
+  revised_footnotes:
+  - marker: a
+    text: La secuencia copta probablemente refleja el préstamo griego ⲕⲣⲓⲙⲁ (“juicio”); si la OCR omitió ⲣⲓ, el sentido sigue siendo probable, aunque no absolutamente seguro.
+    reason: textual_variant
+  - marker: b
+    text: ⲟⲉⲓϣ suele significar “fuerza” o “poder”; por eso el cierre también puede entenderse como “por cualquier otro poder”.
+    reason: cultural_note
+  revision_rationale: 'Se ajusta la expresión causal a un español más natural (‘Por eso’) y se recolocan las notas al lugar que realmente explican en el texto: [a] sobre ‘juicio’ y [b] sobre ‘poder’. El resto de la redacción se mantiene porque preserva bien el sentido del copto y el paralelismo del POB inglés.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a1c73058f768c21ec64844e54963759ef5949bfac6552e7f53af387d4495dae3
+  timestamp: '2026-05-08T03:10:33Z'
+  output_hash: fbf2e6664312e136a41c0b36ec8767412f82fa78c088f79e82f6baf224d39b7f
+  usage:
+    prompt_tokens: 3453
+    completion_tokens: 798
+    total_tokens: 4251
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020602
+  applied_revision: true

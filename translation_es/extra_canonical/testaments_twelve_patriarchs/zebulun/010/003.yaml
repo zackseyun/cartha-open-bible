@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Adjusted ‘zeal for him’ to ‘his jealousy’ to better reflect παραζήλωσιν; changed ‘form of a man’ to ‘human form’ for natural English; preserved the clause about the Lord choosing him and kept the Jerusalem name clause while smoothing punctuation.
 translation:
   language: es
-  text: 'Y él volverá a todas las naciones para su celos[a], y veréis a Dios en forma humana[b], a quien el Señor escogerá para él: Jerusalén es su nombre.'
+  text: 'Y él hará que todas las naciones se vuelvan a sus celos[a], y veréis a Dios en forma humana[b], a quien el Señor escogerá para él: Jerusalén es su nombre.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Alternativa posible: «celo»; se eligió «celos» para reflejar mejor la fuerza de παραζήλωσις y mantener la tensión del texto.'
+    text: 'Alternativa posible: «celo». Se eligió «celos» para reflejar mejor la fuerza de παραζήλωσις y mantener la tensión relacional del texto.'
     reason: lexical_alternative
   - marker: b
     text: También puede entenderse «en figura humana» o «con apariencia humana»; «forma humana» sigue el matiz del griego y la revisión inglesa.
@@ -128,4 +128,49 @@ ai_draft:
     total_tokens: 3289
     reasoning_tokens: 0
     estimated_cost_usd: 0.008114
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y él volverá a todas las naciones para su celos[a], y veréis a Dios en forma humana[b], a quien el Señor escogerá para él: Jerusalén es su nombre.'
+  to: 'Y él hará que todas las naciones se vuelvan a sus celos[a], y veréis a Dios en forma humana[b], a quien el Señor escogerá para él: Jerusalén es su nombre.'
+  rationale: 'Se corrige la agramaticalidad de «su celos» a «sus celos» y se rehace la primera cláusula para expresar de forma natural y fiel el sentido causativo/resultativo del griego: no simplemente «volverá a» las naciones, sino que hará que ellas se vuelvan hacia esa reacción de celos. Se conservan «Dios en forma humana», «el Señor» y «Jerusalén es su nombre», que son defendibles y legibles en español.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:39Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La mayor parte del sentido fuente está presente: el giro a todas las naciones, la visión de Dios en forma humana y la cláusula final «Jerusalén es su nombre». Sin embargo, «volverá a todas las naciones para su celos[a]» no preserva bien la sintaxis ni la legibilidad del griego/inglés; en español queda agramatical («su celos») y «volver a ... para» no comunica naturalmente la idea de hacer que las naciones se vuelvan hacia/entren en esa reacción de celos.'
+  spanish_quality_summary: El borrador tiene buen tono bíblico y «Dios en forma humana» funciona bien. Pero presenta un error gramatical serio en «su celos», y la construcción verbal inicial suena calcada y poco natural. Además, el anclaje de nota está mal colocado dentro de la palabra. Conviene una reparación menor para lograr español claro y fiel.
+  glossary_alignment: '«Dios» y «forma humana» están bien alineados. «el Señor» es defendible aquí porque la fuente inmediata es κύριος y no hay base suficiente para imponer «Yahvé». El problema principal no es terminológico sino sintáctico-lexical: para παραζήλωσιν, «celos» puede mantenerse, pero debe expresarse idiomáticamente como resultado provocado en las naciones.'
+  issues:
+  - severity: high
+    issue: «su celos» es gramaticalmente incorrecto en español
+    rationale: El posesivo singular con «celos» produce una forma agramatical y entorpece la fidelidad del texto meta.
+  - severity: high
+    issue: «volverá a todas las naciones para...» no refleja de manera natural el valor de ἐπιστρέψει + εἰς
+    rationale: 'La idea es causativa/resultativa: hacer volver o mover a las naciones hacia esa reacción. La redacción actual suena literalista y oscura.'
+  - severity: medium
+    issue: Marcador de nota mal incrustado en «celos[a]»
+    rationale: El marcador debe anclarse al término o frase relevante sin romper la palabra ni crear una forma inexistente.
+  revised_spanish_text: 'Y él hará que todas las naciones se vuelvan a sus celos[a], y veréis a Dios en forma humana[b], a quien el Señor escogerá para él: Jerusalén es su nombre.'
+  revised_footnotes:
+  - marker: a
+    text: 'Alternativa posible: «celo». Se eligió «celos» para reflejar mejor la fuerza de παραζήλωσις y mantener la tensión relacional del texto.'
+    reason: lexical_alternative
+  - marker: b
+    text: También puede entenderse «en figura humana» o «con apariencia humana»; «forma humana» sigue el matiz del griego y la revisión inglesa.
+    reason: lexical_alternative
+  revision_rationale: 'Se corrige la agramaticalidad de «su celos» a «sus celos» y se rehace la primera cláusula para expresar de forma natural y fiel el sentido causativo/resultativo del griego: no simplemente «volverá a» las naciones, sino que hará que ellas se vuelvan hacia esa reacción de celos. Se conservan «Dios en forma humana», «el Señor» y «Jerusalén es su nombre», que son defendibles y legibles en español.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 29429cab7019a2df22c9317558e8147b87c28eb41008a73de2ac999c66b274d8
+  timestamp: '2026-05-08T03:05:39Z'
+  output_hash: 341a80d48bec2632b7ba99a6a14e02bc6ea34ce05c14049ddaef47aa52eb3b56
+  usage:
+    prompt_tokens: 2947
+    completion_tokens: 760
+    total_tokens: 3707
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018767
+  applied_revision: true

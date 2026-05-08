@@ -69,7 +69,7 @@ base_translation:
     changes_summary: Restored the prior translation because the current draft is a misaligned hallucination and does not match the verse context.
 translation:
   language: es
-  text: Miren, entonces, sus palabras; vuelvan la mirada[a] hacia todos los escritos[b] que han sido completados.
+  text: Miren, entonces, sus palabras; vuelvan la mirada[a] hacia todos los escritos[b] que han sido completados[c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -77,6 +77,9 @@ translation:
     reason: lexical_alternative
   - marker: b
     text: ‘Escritos’ traduce de manera prudente el término incierto del original; según el caso, también podría entenderse ‘libros’ o ‘rollos’.
+    reason: lexical_alternative
+  - marker: c
+    text: El término subyacente puede significar ‘completos’, ‘terminados’ o incluso, por extensión, ‘perfectos’. Aquí ‘han sido completados’ evita sugerir perfección moral.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲟⲩⲉⲓϣ
@@ -153,4 +156,52 @@ ai_draft:
     total_tokens: 4339
     reasoning_tokens: 0
     estimated_cost_usd: 0.007016
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Miren, entonces, sus palabras; vuelvan la mirada[a] hacia todos los escritos[b] que han sido completados.
+  to: Miren, entonces, sus palabras; vuelvan la mirada[a] hacia todos los escritos[b] que han sido completados[c].
+  rationale: La traducción española es básicamente fiel y natural, pero necesita una pequeña reparación para conservar la justificación léxica documentada sobre ‘completed’ frente a ‘perfect’. Se añade una nota [c] sin alterar sustancialmente el texto.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:18:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: La redacción española sigue el texto inglés auditado, pero el expediente presenta una fuerte inestabilidad de alineación y una nota inglesa explícita sobre ⲧⲉⲗⲓⲟⲛ = “completed” frente a “perfect.” La traducción base puede mantenerse dentro del marco auditado actual, pero conviene reparar la nota faltante sobre “completados” para reflejar la justificación léxica documentada.
+  spanish_quality_summary: El español es claro, natural y digno. “Miren, entonces, sus palabras” y “vuelvan la mirada hacia” son legibles, aunque algo interpretativos. “Han sido completados” suena un poco pesado, pero es aceptable y fiel al rationale inglés. La omisión de la nota sobre “completados” deja incompleta la trazabilidad.
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. “Escritos” para the uncertain loanword concuerda con el audit trail. No aplica terminología como Yahvé, Mesías, esclavo, etc.
+  issues:
+  - severity: medium
+    issue: Falta una nota para “han sido completados”
+    rationale: 'El inglés conserva una nota léxica importante: el término puede significar “completo/terminado” e incluso “perfecto”, y “completed” evita sugerir perfección moral. El español debería preservar esa decisión documentada.'
+  - severity: low
+    issue: No se reflejó la nota inglesa de rendering alternativo global
+    rationale: La nota d inglesa repite básicamente la misma formulación y no es imprescindible en español, así que su omisión no es grave.
+  - severity: low
+    issue: No se trasladó la nota de desalineación OCR
+    rationale: La nota c inglesa es de alineación editorial, no necesariamente una nota al lector en español. Puede omitirse en el texto español final sin afectar la fidelidad del segmento traducido.
+  revised_spanish_text: Miren, entonces, sus palabras; vuelvan la mirada[a] hacia todos los escritos[b] que han sido completados[c].
+  revised_footnotes:
+  - marker: a
+    text: ‘Vuelvan la mirada’ conserva la imagen direccional de ‘turn toward’; también podría verterse ‘vuelvan hacia’ o ‘dirijan la atención a’.
+    reason: lexical_alternative
+  - marker: b
+    text: ‘Escritos’ traduce de manera prudente el término incierto del original; según el caso, también podría entenderse ‘libros’ o ‘rollos’.
+    reason: lexical_alternative
+  - marker: c
+    text: El término subyacente puede significar ‘completos’, ‘terminados’ o incluso, por extensión, ‘perfectos’. Aquí ‘han sido completados’ evita sugerir perfección moral.
+    reason: lexical_alternative
+  revision_rationale: La traducción española es básicamente fiel y natural, pero necesita una pequeña reparación para conservar la justificación léxica documentada sobre ‘completed’ frente a ‘perfect’. Se añade una nota [c] sin alterar sustancialmente el texto.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 06aa3e2a1752338e1bebae9a7cf90c1b765dd89ebd0c54e26fdd0601b0938902
+  timestamp: '2026-05-08T03:18:08Z'
+  output_hash: 5fda78995a97dd4c7f031b1c1624a51d5cbce1982c758bc76d380cb2d9bca7c3
+  usage:
+    prompt_tokens: 3933
+    completion_tokens: 698
+    total_tokens: 4631
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020303
+  applied_revision: true

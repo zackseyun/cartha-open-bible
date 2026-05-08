@@ -61,12 +61,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy el nombre de la voz[a] y la voz del nombre.
+  text: Yo soy el nombre de la voz[a] y la voz del nombre[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: «Voz» también puede entenderse como «sonido»; ambas opciones reflejan el copt. ⲫⲱⲛⲏ. Se prefiere «voz» por su matiz personal y audible.
     reason: lexical_alternative
+  - marker: b
+    text: La región del OCR muestra vocativos vecinos («oyentes», «ángeles»). Algunas letras pueden estar mal leídas (ⲥ por ⲫ; omisión de ⲣ), por lo que ⲡⲓⲛⲁ se entiende como ⲡⲣⲁⲛ («el nombre») y ⲧⲥⲙⲏ como ⲧⲫⲱⲛⲏ («la voz»).
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ
   english_pob_choice: I am
@@ -138,4 +141,43 @@ ai_draft:
     total_tokens: 3367
     reasoning_tokens: 0
     estimated_cost_usd: 0.005912
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy el nombre de la voz[a] y la voz del nombre.
+  to: Yo soy el nombre de la voz[a] y la voz del nombre[b].
+  rationale: 'La traducción principal es buena y solo necesita una reparación menor: añadir la nota textual que ya forma parte de la auditoría inglesa y anclarla en el texto. Esto preserva no solo el sentido traducido sino también la justificación documental de la lectura copta reconstruida.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:09Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite fielmente la línea copta reconstruida según la auditoría inglesa: la autoidentificación enfática, el paralelismo quiasmático entre «nombre» y «voz», y la relación genitiva están bien conservados. Sin embargo, falta en español la nota de alineación/lectura textual que el English POB preserva como nota b, importante porque la lectura depende de una corrección del OCR.'
+  spanish_quality_summary: El español es claro, natural y digno. «Yo soy el nombre de la voz y la voz del nombre» suena bien y conserva la cadencia del original. La nota léxica sobre «voz/sonido» está bien formulada. Solo requiere completar la documentación textual con la segunda nota anclada en el texto.
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «Voz», «nombre», «Yo soy», «de» y «y» reflejan adecuadamente las decisiones léxicas auditadas. No hay términos teológicos especiales en juego.
+  issues:
+  - severity: medium
+    issue: Falta la nota de alineación textual equivalente a la nota inglesa b
+    rationale: La auditoría inglesa documenta que la lectura «name/voice» depende de corregir posibles errores del OCR (ⲡⲓⲛⲁ por ⲡⲣⲁⲛ; ⲥⲙⲏ por ⲧⲫⲱⲛⲏ). Omitir esa nota hace que el español pierda una parte relevante del respaldo textual.
+  revised_spanish_text: Yo soy el nombre de la voz[a] y la voz del nombre[b].
+  revised_footnotes:
+  - marker: a
+    text: «Voz» también puede entenderse como «sonido»; ambas opciones reflejan el copt. ⲫⲱⲛⲏ. Se prefiere «voz» por su matiz personal y audible.
+    reason: lexical_alternative
+  - marker: b
+    text: La región del OCR muestra vocativos vecinos («oyentes», «ángeles»). Algunas letras pueden estar mal leídas (ⲥ por ⲫ; omisión de ⲣ), por lo que ⲡⲓⲛⲁ se entiende como ⲡⲣⲁⲛ («el nombre») y ⲧⲥⲙⲏ como ⲧⲫⲱⲛⲏ («la voz»).
+    reason: alignment_note
+  revision_rationale: 'La traducción principal es buena y solo necesita una reparación menor: añadir la nota textual que ya forma parte de la auditoría inglesa y anclarla en el texto. Esto preserva no solo el sentido traducido sino también la justificación documental de la lectura copta reconstruida.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3416c9c4643304e6e8032d4d86bac9a97a672697c1ea476adff6bae8bb63bf33
+  timestamp: '2026-05-08T03:08:09Z'
+  output_hash: e27a90a155b0d1d2e5a8d47a03e12c9a02d5440663cf03526a27872e7b4ca089
+  usage:
+    prompt_tokens: 3016
+    completion_tokens: 650
+    total_tokens: 3666
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01729
+  applied_revision: true

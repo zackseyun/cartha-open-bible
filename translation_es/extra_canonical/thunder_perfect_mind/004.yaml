@@ -60,18 +60,18 @@ base_translation:
     changes_summary: Restored the footnote markers and retained the draft’s wording; no substantive lexical change was made because the source text is unavailable and the current rendering is already natural and suitably cautious.
 translation:
   language: es
-  text: No seas ignorante de mí en ningún lugar ni en ningún momento.[a][b][c]
+  text: No me desconozcas en ningún lugar ni en ningún momento.[a][b][c]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: 'O: «en cualquier hora».'
     reason: lexical_alternative
   - marker: b
-    text: Algunos testigos o segmentaciones sugieren una estructura más explícita del tipo «ustedes que oyen, óiganme...», lo que podría llevar a una traducción con «óiganme» en esta línea.
-    reason: textual_variant
+    text: Algunos testigos o segmentaciones sugieren una estructura más explícita del tipo «ustedes que oyen, óiganme...», lo que podría llevar aquí a una traducción con «óiganme».
+    reason: alignment_note
   - marker: c
-    text: 'O: «Y no seas ignorante de mí en ningún lugar ni en ningún momento».'
-    reason: alternative_reading
+    text: 'O: «Y no me desconozcas en ningún lugar ni en ningún momento».'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲙⲡⲣⲧⲣⲉ
   english_pob_choice: do not be unknowing of me
@@ -156,4 +156,52 @@ ai_draft:
     total_tokens: 4113
     reasoning_tokens: 0
     estimated_cost_usd: 0.007435
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: No seas ignorante de mí en ningún lugar ni en ningún momento.[a][b][c]
+  to: No me desconozcas en ningún lugar ni en ningún momento.[a][b][c]
+  rationale: Se reemplaza «No seas ignorante de mí» por «No me desconozcas» para lograr un español más natural y fiel al matiz relacional de no permanecer sin conocimiento/reconocimiento de la hablante. Se conservan la distribución espacial y temporal, la omisión de una conjunción inicial en el texto principal, y las tres notas del rastro inglés, ajustando la nota c a la nueva redacción.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:05Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La idea base está bien alineada con el inglés POB y con el sentido del copto: una prohibición de permanecer sin conocimiento de la hablante, con alcance distributivo espacial y temporal. También acierta al no conservar una conjunción inicial, en línea con la revisión adjudicada. Sin embargo, «ser ignorante de alguien» suena poco idiomático en español y endurece el sentido hacia una cualidad personal más que hacia un estado de desconocimiento. Además, la decisión léxica que vincula ⲥⲱⲧⲙ con «seas ignorante de» no está bien formulada frente al rastro de auditoría, que trata «hear me» como posibilidad alternativa, no como base de la línea principal.'
+  spanish_quality_summary: El borrador es comprensible, pero «No seas ignorante de mí» resulta forzado y poco natural en español eclesiástico general. «No me desconozcas» es más claro, más idiomático y conserva mejor el matiz relacional de awareness/recognition sin reducirlo a simple audición. «En ningún lugar ni en ningún momento» funciona bien; también las notas son mayormente claras, aunque conviene ajustar la nota c para reflejar la nueva redacción.
+  glossary_alignment: No hay términos del glosario principal especialmente implicados aquí. La revisión propuesta respeta la filosofía POB de no paraprasear de más, mantiene la ambigüedad entre conocer/reconocer sin sustituirla por «oír», y sigue la decisión auditada de omitir una conjunción inicial.
+  issues:
+  - severity: medium
+    issue: «No seas ignorante de mí» es poco idiomático en español
+    rationale: En español natural, «ser ignorante de» aplicado a una persona suena extraño y puede leerse como insulto o rasgo de carácter. «No me desconozcas» expresa mejor el mandato de no permanecer sin conocimiento/reconocimiento de la hablante.
+  - severity: low
+    issue: La nota c ya no coincidiría con la mejor redacción española
+    rationale: Si se mejora el texto principal, la alternativa previa también debe actualizarse para mantener consistencia documental con el cambio de formulación.
+  - severity: low
+    issue: La decisión léxica sobre ⲥⲱⲧⲙ está sobreinterpretada en el YAML
+    rationale: El rastro inglés trata «hear» como posibilidad vinculada a una segmentación alternativa, no como fundamento del texto principal. Esto no obliga a cambiar el texto, pero sí confirma que conviene una redacción centrada en conocer/reconocer, no en audición.
+  revised_spanish_text: No me desconozcas en ningún lugar ni en ningún momento.[a][b][c]
+  revised_footnotes:
+  - marker: a
+    text: 'O: «en cualquier hora».'
+    reason: lexical_alternative
+  - marker: b
+    text: Algunos testigos o segmentaciones sugieren una estructura más explícita del tipo «ustedes que oyen, óiganme...», lo que podría llevar aquí a una traducción con «óiganme».
+    reason: alignment_note
+  - marker: c
+    text: 'O: «Y no me desconozcas en ningún lugar ni en ningún momento».'
+    reason: previous_rendering
+  revision_rationale: Se reemplaza «No seas ignorante de mí» por «No me desconozcas» para lograr un español más natural y fiel al matiz relacional de no permanecer sin conocimiento/reconocimiento de la hablante. Se conservan la distribución espacial y temporal, la omisión de una conjunción inicial en el texto principal, y las tres notas del rastro inglés, ajustando la nota c a la nueva redacción.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a01919f73905a47e1e5fdbe6e701e8af6a9fb5bc3ddd63aea8644da5e6eca5cb
+  timestamp: '2026-05-08T03:10:05Z'
+  output_hash: bc2299bd856cdac51dc8a3405c7f3e9d05106de00ef4b51fc62d48207f948b10
+  usage:
+    prompt_tokens: 3760
+    completion_tokens: 826
+    total_tokens: 4586
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02179
+  applied_revision: true

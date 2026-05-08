@@ -81,27 +81,21 @@ translation:
   text: 'No maldigas mi jactancia[a].
 
 
-    Pero yo soy la que existe en todo temor
+    Pero yo soy la que existe en cada temor
 
 
-    y la fuerza en el temblor[d][c][b][a][c][b].
+    y la fuerza en el temblor.
 
 
-    Yo soy la que...'
+    Yo soy la que...[b]'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «No maldigas mi jactancia».'
+    text: «Jactancia» también puede entenderse como «orgullo» o «vanagloria» según el matiz del término copto.
     reason: lexical_alternative
   - marker: b
-    text: El segmentado del manuscrito parece cortarse aquí; la cláusula continúa en la línea siguiente.
-    reason: textual_variant
-  - marker: c
-    text: 'O: «...y la fuerza en el temblor».'
-    reason: alternative_reading
-  - marker: d
-    text: 'O: «Pero yo soy la que existe en todo temor».'
-    reason: alternative_reading
+    text: El texto está truncado aquí en el manuscrito; la cláusula probablemente continúa en la línea siguiente.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲥⲁϩⲟⲩ / negative imperative in context
   english_pob_choice: Do not curse
@@ -183,4 +177,79 @@ ai_draft:
     total_tokens: 5027
     reasoning_tokens: 0
     estimated_cost_usd: 0.008244
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'No maldigas mi jactancia[a].
+
+
+    Pero yo soy la que existe en todo temor
+
+
+    y la fuerza en el temblor[d][c][b][a][c][b].
+
+
+    Yo soy la que...'
+  to: 'No maldigas mi jactancia[a].
+
+
+    Pero yo soy la que existe en cada temor
+
+
+    y la fuerza en el temblor.
+
+
+    Yo soy la que...[b]'
+  rationale: 'Se mantiene la traducción fuente-corregida, pero se ajusta «todo temor» a «cada temor» para reflejar mejor el distributivo de «every fear». Se eliminan las notas espurias que solo repetían el texto, y se sustituyen por dos notas útiles: una léxica sobre «jactancia» y otra textual sobre la truncación final, anclada correctamente en «Yo soy la que...».'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en lo principal la revisión fuente-corregida del audit trail: «No maldigas», «mi jactancia», «yo soy la que existe», y «la fuerza en el temblor» reflejan adecuadamente las decisiones coptas revisadas. Sin embargo, el aparato de notas no preserva fielmente la evidencia auditada: las notas actuales repiten el mismo texto principal como supuestas alternativas, omiten la nota léxica real sobre el posible matiz de «jactancia/boast», y no explican correctamente la truncación de «Yo soy la que...».'
+  spanish_quality_summary: El español es claro y poético. «Todo temor» es aceptable, pero «cada temor» refleja mejor el distributivo de «every fear» y suena natural en español literario. El problema principal no es de fluidez sino de notas mal construidas y anclajes duplicados/copiados mecánicamente del inglés.
+  glossary_alignment: 'No hay conflictos con la terminología teológica del proyecto. Las decisiones léxicas relevantes están bien orientadas: «jactancia», «existe», «temblor». Conviene ajustar «todo temor» a «cada temor» por precisión distributiva, y rehacer las notas para que correspondan realmente al texto y a la justificación documentada.'
+  issues:
+  - severity: medium
+    issue: «en todo temor» no refleja tan bien como «en cada temor» el valor distributivo de «in every fear».
+    rationale: El audit trail fijó explícitamente «every fear» frente a «all fears». En español, «cada temor» transmite mejor esa distribución que «todo temor», que puede sonar más genérico o totalizante.
+  - severity: high
+    issue: Las notas actuales a, c y d no aportan variantes reales; simplemente repiten el texto principal como si fueran alternativas.
+    rationale: 'Esto no preserva el audit trail inglés ni cumple la disciplina de notas: deben explicar alternativas significativas o incertidumbres reales, no duplicar el texto.'
+  - severity: high
+    issue: La nota b está anclada en «temblor» pero describe la truncación de la cláusula siguiente.
+    rationale: La observación textual corresponde a «Yo soy la que...», no a «temblor». El anclaje debe aparecer donde ocurre la truncación efectiva.
+  - severity: medium
+    issue: La nota léxica sobre ⲡⲁϣⲟⲩϣⲟⲩ no conserva la alternativa documentada de sentido cercano a «orgullo/vanagloria».
+    rationale: El inglés conserva una nota léxica sobre el matiz del término; en español conviene mantener una nota breve que preserve esa amplitud semántica.
+  revised_spanish_text: 'No maldigas mi jactancia[a].
+
+
+    Pero yo soy la que existe en cada temor
+
+
+    y la fuerza en el temblor.
+
+
+    Yo soy la que...[b]'
+  revised_footnotes:
+  - marker: a
+    text: «Jactancia» también puede entenderse como «orgullo» o «vanagloria» según el matiz del término copto.
+    reason: lexical_alternative
+  - marker: b
+    text: El texto está truncado aquí en el manuscrito; la cláusula probablemente continúa en la línea siguiente.
+    reason: alignment_note
+  revision_rationale: 'Se mantiene la traducción fuente-corregida, pero se ajusta «todo temor» a «cada temor» para reflejar mejor el distributivo de «every fear». Se eliminan las notas espurias que solo repetían el texto, y se sustituyen por dos notas útiles: una léxica sobre «jactancia» y otra textual sobre la truncación final, anclada correctamente en «Yo soy la que...».'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f82a5108b070f17561d94c060ab5e5d93495fe40f8881c3a4e8982dadc3a4f93
+  timestamp: '2026-05-08T03:06:46Z'
+  output_hash: bab7d6164ba633cb0c7aea62b6582f45238fe9fa3dade3dc482d12fb3c8efddb
+  usage:
+    prompt_tokens: 4666
+    completion_tokens: 847
+    total_tokens: 5513
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02437
+  applied_revision: true

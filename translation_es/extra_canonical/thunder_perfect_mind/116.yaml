@@ -59,14 +59,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Sed obedientes[a], ustedes que obedecen[b]; recíbeme.
+  text: Sean obedientes[a], ustedes que obedecen[b]; recíbanme.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La forma cóptica del primer verbo suele expresar existencia o volverse; aquí se vierte como mandato breve ('Sed') para conservar la fuerza exhortativa del pasaje.
-    reason: lexical_alternative
+    text: La secuencia «ⲡⲓ ⲛⲟⲙⲟⲥ … ϩⲉⲛⲛⲟⲃⲉ» («la ley … pecados») probablemente pertenece a una amonestación adyacente; su inclusión en este bloque mapeado es de baja confianza debido a la alineación incierta del OCR y del borde de página.
+    reason: alignment_note
   - marker: b
-    text: ⲟⲩⲁⲁⲧ también puede significar 'solitario/único'; se sigue la lectura 'obedientes' por el contexto y la auditoría inglesa, pero la alternativa permanece posible.
+    text: ⲟⲩⲁⲁⲧ puede significar «obediente», pero también puede tener el sentido de «solitario/único»; aquí se elige la lectura «obediente(s)» porque encaja mejor con la exhortación recurrente de Thunder, aunque la alternativa sigue siendo posible.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ϣⲟⲟⲡ
@@ -136,4 +136,49 @@ ai_draft:
     total_tokens: 3624
     reasoning_tokens: 0
     estimated_cost_usd: 0.006059
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Sed obedientes[a], ustedes que obedecen[b]; recíbeme.
+  to: Sean obedientes[a], ustedes que obedecen[b]; recíbanme.
+  rationale: Se reemplaza 'Sed' por 'Sean obedientes' para ajustar el registro al español neutro latinoamericano sin perder fuerza exhortativa. Se cambia 'recíbeme' a 'recíbanme' para concordar con el tratamiento plural explícito ('ustedes'). Además, se restaura la nota de baja confianza de alineación del rastro inglés y se conserva la alternativa léxica de ⲟⲩⲁⲁⲧ en nota.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:13:19Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido exhortativo mínimo del bloque: un imperativo de ''ser/llegar a ser'', la lectura contextual de ⲟⲩⲁⲁⲧ como ''obedientes'', y un segundo mandato dirigido al hablante (''recíbeme''). Sin embargo, no preserva la nota de baja confianza de alineación que sí forma parte del rastro de auditoría inglesa para este bloque.'
+  spanish_quality_summary: El español es claro, pero 'Sed' suena marcadamente peninsular/litúrgico y choca con la meta de español neutro latinoamericano. 'Sean obedientes' mantiene la dignidad y mejora la naturalidad. 'ustedes que obedecen' es aceptable. La puntuación con punto y coma funciona.
+  glossary_alignment: No hay términos teológicos de glosario mayor en juego. La decisión léxica principal ('obedientes' para ⲟⲩⲁⲁⲧ) coincide con la auditoría inglesa y conviene conservar la alternativa 'solitario/único' en nota. También conviene conservar en nota la incertidumbre de alineación presente en el inglés.
+  issues:
+  - severity: medium
+    issue: Registro de 'Sed'
+    rationale: Aunque es fiel al imperativo, 'Sed' es poco natural en español neutro latinoamericano y suena más peninsular/arcaizante de lo deseado para el proyecto.
+  - severity: medium
+    issue: Falta la nota de baja confianza de alineación
+    rationale: La POB inglesa documenta que parte de la secuencia visible en OCR probablemente pertenece a una amonestación adyacente; esa cautela textual debe preservarse en la revisión española.
+  - severity: low
+    issue: La nota a explica una decisión distinta de la nota inglesa a
+    rationale: En el inglés, la marca a documenta la incertidumbre de alineación, no el valor imperativo de ϣⲟⲟⲡ. La revisión debe realinear las notas con el rastro auditado.
+  revised_spanish_text: Sean obedientes[a], ustedes que obedecen[b]; recíbanme.
+  revised_footnotes:
+  - marker: a
+    text: La secuencia «ⲡⲓ ⲛⲟⲙⲟⲥ … ϩⲉⲛⲛⲟⲃⲉ» («la ley … pecados») probablemente pertenece a una amonestación adyacente; su inclusión en este bloque mapeado es de baja confianza debido a la alineación incierta del OCR y del borde de página.
+    reason: alignment_note
+  - marker: b
+    text: ⲟⲩⲁⲁⲧ puede significar «obediente», pero también puede tener el sentido de «solitario/único»; aquí se elige la lectura «obediente(s)» porque encaja mejor con la exhortación recurrente de Thunder, aunque la alternativa sigue siendo posible.
+    reason: lexical_alternative
+  revision_rationale: Se reemplaza 'Sed' por 'Sean obedientes' para ajustar el registro al español neutro latinoamericano sin perder fuerza exhortativa. Se cambia 'recíbeme' a 'recíbanme' para concordar con el tratamiento plural explícito ('ustedes'). Además, se restaura la nota de baja confianza de alineación del rastro inglés y se conserva la alternativa léxica de ⲟⲩⲁⲁⲧ en nota.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f49dd87acbb929ccbac956a2ee4412d27e7685605a943b2d4dde94671cb83f44
+  timestamp: '2026-05-08T03:13:19Z'
+  output_hash: 0887bb0627ae6e56656462ea874439c58dcc0a5dc95436f640b7f330f3ff57f7
+  usage:
+    prompt_tokens: 3280
+    completion_tokens: 796
+    total_tokens: 4076
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02014
+  applied_revision: true

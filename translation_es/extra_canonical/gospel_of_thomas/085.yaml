@@ -57,17 +57,17 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Adán surgió[b] de un gran poder y de una gran riqueza, y no llegó a ser digno de ustedes[c]. Porque, si hubiera sido digno, no habría probado[d] la muerte».'
+  text: 'Jesús dijo[a]: «Adán surgió[b] de un gran poder y de una gran riqueza, y no llegó a ser digno de ustedes. Porque, si hubiera sido digno[c], no habría probado[d] la muerte».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El testimonio copto presenta lagunas en las palabras equivalentes a «digno» y «habría probado»; la restauración adoptada sigue la lectura estándar aceptada por el contexto y el espacio disponible.
+    text: El testimonio copto presenta lagunas en las palabras equivalentes a «digno» y «habría probado»; las restauraciones adoptadas siguen la lectura estándar aceptada por el contexto y el espacio disponible.
     reason: textual_variant
   - marker: b
     text: «Surgió» traduce el valor de origen o aparición de ϣⲱⲡⲉ ⲉⲃⲟⲗ, equivalente a «llegó a existir» o «vino a ser».
     reason: lexical_alternative
   - marker: c
-    text: 'La frase copta tiene sentido de condición irreal: «si hubiera sido digno».'
+    text: 'La construcción copta expresa aquí una condición irreal: «si hubiera sido digno».'
     reason: theological_note
   - marker: d
     text: La expresión copta ϫⲓ ϯⲡⲉ es idiomática y significa «probar / gustar»; no se trata de una referencia locativa.
@@ -175,4 +175,52 @@ ai_draft:
     total_tokens: 6300
     reasoning_tokens: 0
     estimated_cost_usd: 0.010988
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Adán surgió[b] de un gran poder y de una gran riqueza, y no llegó a ser digno de ustedes[c]. Porque, si hubiera sido digno, no habría probado[d] la muerte».'
+  to: 'Jesús dijo[a]: «Adán surgió[b] de un gran poder y de una gran riqueza, y no llegó a ser digno de ustedes. Porque, si hubiera sido digno[c], no habría probado[d] la muerte».'
+  rationale: El texto español está sustancialmente bien, pero requiere una corrección editorial menor para que las notas correspondan al segmento que explican. Se conserva la redacción principal salvo el reanclaje de [c] a «si hubiera sido digno» y un leve ajuste de [a] para reflejar con mayor precisión las restauraciones documentadas en el rastro inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido básico del copto y sigue las correcciones clave del rastro inglés: «un gran poder» en singular, «una gran riqueza», «no llegó a ser digno», y el idiomático «probar la muerte». Sin embargo, una nota está mal anclada: la nota [c] se coloca sobre «ustedes» aunque explica la condición irreal de «si hubiera sido digno», no ese pronombre. Además, la nota [a] comprime bien la laguna textual, pero conviene mantener más de cerca la formulación del rastro auditado indicando específicamente las palabras restauradas «digno» y «habría probado».'
+  spanish_quality_summary: 'El español es claro, natural y digno. «Surgió» es aceptable para ϣⲱⲡⲉ ⲉⲃⲟⲗ, aunque «llegó a existir» sería más explícito; no es necesario cambiarlo. La frase fluye bien y evita calcos duros. La única reparación necesaria es de aparato/legibilidad editorial: mover la nota [c] al segmento condicional pertinente y ajustar las notas para que correspondan exactamente a sus anclas.'
+  glossary_alignment: 'No hay conflicto con la terminología del proyecto. No aparecen Yahvé/Mesías ni otros términos sensibles del glosario. «Digno», «riqueza», «poder» y «muerte» son buenas decisiones léxicas; «probó la muerte» conserva el idiomatismo fuente. '
+  issues:
+  - severity: medium
+    issue: La nota [c] está anclada a «ustedes» pero su contenido explica la condición irreal del segmento «si hubiera sido digno».
+    rationale: Las notas deben aparecer en el lugar relevante del texto. Tal como está, el lector puede inferir erróneamente que la observación se refiere al pronombre «ustedes» en vez de a la prótasis/apódosis contrafactual.
+  - severity: low
+    issue: La nota textual [a] podría alinearse más estrechamente con el rastro inglés al mencionar explícitamente las dos restauraciones concretas.
+    rationale: No cambia el sentido, pero mejora la fidelidad al aparato auditado y deja más claro qué palabras están afectadas por las lagunas.
+  revised_spanish_text: 'Jesús dijo[a]: «Adán surgió[b] de un gran poder y de una gran riqueza, y no llegó a ser digno de ustedes. Porque, si hubiera sido digno[c], no habría probado[d] la muerte».'
+  revised_footnotes:
+  - marker: a
+    text: El testimonio copto presenta lagunas en las palabras equivalentes a «digno» y «habría probado»; las restauraciones adoptadas siguen la lectura estándar aceptada por el contexto y el espacio disponible.
+    reason: textual_variant
+  - marker: b
+    text: «Surgió» traduce el valor de origen o aparición de ϣⲱⲡⲉ ⲉⲃⲟⲗ, equivalente a «llegó a existir» o «vino a ser».
+    reason: lexical_alternative
+  - marker: c
+    text: 'La construcción copta expresa aquí una condición irreal: «si hubiera sido digno».'
+    reason: theological_note
+  - marker: d
+    text: La expresión copta ϫⲓ ϯⲡⲉ es idiomática y significa «probar / gustar»; no se trata de una referencia locativa.
+    reason: lexical_alternative
+  revision_rationale: El texto español está sustancialmente bien, pero requiere una corrección editorial menor para que las notas correspondan al segmento que explican. Se conserva la redacción principal salvo el reanclaje de [c] a «si hubiera sido digno» y un leve ajuste de [a] para reflejar con mayor precisión las restauraciones documentadas en el rastro inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 942ff1357a2afcfbb34dfef5fecf5f3fe1465a35c36dab2ddeb550a070860159
+  timestamp: '2026-05-08T03:02:30Z'
+  output_hash: 33e5247f3cfa9fe4f75054f2ed5ce062f5d7bab87dca51be3647a2807a0bd24c
+  usage:
+    prompt_tokens: 6042
+    completion_tokens: 878
+    total_tokens: 6920
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.028275
+  applied_revision: true

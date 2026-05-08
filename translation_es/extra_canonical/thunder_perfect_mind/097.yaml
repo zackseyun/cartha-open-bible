@@ -59,15 +59,15 @@ base_translation:
     changes_summary: Adjusted punctuation to match the footnoted wording and preserve the two parallel clauses cleanly; no lexical changes were needed.
 translation:
   language: es
-  text: Escúchame en mansedumbre,[b] y aprende de mí en dureza.[a]
+  text: Escúchame en mansedumbre,[b] y aprende de mí en aspereza.[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El coptico ⲧⲉⲣⲟⲟⲩ puede rendirse como «dureza», «aspereza» o «severidad». Se escogió «dureza» por ser una contrapartida clara de «mansedumbre» en español.
+    text: El cóptico ⲧⲉⲣⲟⲟⲩ puede rendirse como «aspereza», «dureza» o «severidad». Se escogió «aspereza» porque conserva con más naturalidad en español la antítesis con «mansedumbre».
     reason: lexical_alternative
   - marker: b
-    text: El OCR de este tramo incluye fragmentos cercanos con lenguaje de ‘juzgar’ y ‘fuerza’, pero el pareado aquí traducido se centra en la exhortación ‘escúchame / aprende de mí’.
-    reason: source_note
+    text: El OCR de este tramo incluye fragmentos cercanos con lenguaje de «juzgar» y «fuerza», pero el pareado aquí traducido se centra en la exhortación «escúchame / aprende de mí».
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲥⲱⲧⲙ (inferred)
   english_pob_choice: listen
@@ -145,4 +145,49 @@ ai_draft:
     total_tokens: 3825
     reasoning_tokens: 0
     estimated_cost_usd: 0.007121
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Escúchame en mansedumbre,[b] y aprende de mí en dureza.[a]
+  to: Escúchame en mansedumbre,[b] y aprende de mí en aspereza.[a]
+  rationale: Se propone un ajuste léxico menor para mejorar la naturalidad del español y reflejar con más precisión la contraposición retórica documentada en el POB inglés. «Aspereza» comunica mejor la idea de ‘roughness/harshness’ que «dureza» en esta construcción, sin alterar el sentido básico ni el paralelismo del original.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:52Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura paralela y las decisiones léxicas principales del copto auditado por el POB: imperativos dobles, ⲭⲣⲟⲉⲓ como cualidad suave y ⲧⲉⲣⲟⲟⲩ como cualidad áspera/severa. Sin embargo, «en dureza» suena menos idiomático y menos preciso que una opción que preserve mejor la antítesis retórica de ‘gentleness/harshness’.'
+  spanish_quality_summary: «Escúchame en mansedumbre» es claro y digno. «Aprende de mí» también es natural. El punto débil es «en dureza», que en español puede sugerir rigidez material o dureza de carácter de modo poco elegante; «en aspereza» o «con severidad» expresan mejor la cualidad abstracta. Además, «mansedumbre» frente a «aspereza» produce una antítesis más nítida y literaria sin sonar arcaica.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. La decisión relevante es retórico-lexical: mantener la oposición de cualidades. Se conserva «mansedumbre» para ⲭⲣⲟⲉⲓ y se ajusta ⲧⲉⲣⲟⲟⲩ de «dureza» a «aspereza» por mayor naturalidad y fidelidad al campo semántico ‘roughness/harshness’.'
+  issues:
+  - severity: medium
+    issue: «en dureza» es poco idiomático en este contexto
+    rationale: Aunque lexicamente posible, en español suena más tosco y menos claro que alternativas como «en aspereza» o «con severidad», y no reproduce tan bien el contraste retórico del original y del audit trail inglés.
+  - severity: low
+    issue: La nota a podría afinar la justificación léxica
+    rationale: La nota actual defiende «dureza» como contrapartida de «mansedumbre», pero si se revisa el texto conviene actualizarla para reflejar la opción más natural en español y mantener las alternativas documentadas por el POB.
+  - severity: low
+    issue: «El coptico» debe llevar tilde
+    rationale: 'Corrección ortográfica menor: «copto» no lleva tilde, pero «cóptico» sí si se usa esa forma.'
+  revised_spanish_text: Escúchame en mansedumbre,[b] y aprende de mí en aspereza.[a]
+  revised_footnotes:
+  - marker: a
+    text: El cóptico ⲧⲉⲣⲟⲟⲩ puede rendirse como «aspereza», «dureza» o «severidad». Se escogió «aspereza» porque conserva con más naturalidad en español la antítesis con «mansedumbre».
+    reason: lexical_alternative
+  - marker: b
+    text: El OCR de este tramo incluye fragmentos cercanos con lenguaje de «juzgar» y «fuerza», pero el pareado aquí traducido se centra en la exhortación «escúchame / aprende de mí».
+    reason: alignment_note
+  revision_rationale: Se propone un ajuste léxico menor para mejorar la naturalidad del español y reflejar con más precisión la contraposición retórica documentada en el POB inglés. «Aspereza» comunica mejor la idea de ‘roughness/harshness’ que «dureza» en esta construcción, sin alterar el sentido básico ni el paralelismo del original.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 39718b0138e5d5cdc53aa60a9d648465e10fa1828f1f117838fde7267c4b0cdc
+  timestamp: '2026-05-08T03:09:52Z'
+  output_hash: 7bd525aee886fee9e477218d2e73003bbfa089d65b35597a2f862a02cccf2885
+  usage:
+    prompt_tokens: 3498
+    completion_tokens: 821
+    total_tokens: 4319
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02106
+  applied_revision: true

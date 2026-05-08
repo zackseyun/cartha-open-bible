@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y ahora[a], hijos míos, escúchenme acerca de lo que vi sobre los siete espíritus del engaño en mi arrepentimiento.
+  text: Y ahora[a], mis hijos, escúchenme acerca de los siete espíritus del engaño que vi en mi arrepentimiento.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -101,4 +101,43 @@ ai_draft:
     total_tokens: 2399
     reasoning_tokens: 0
     estimated_cost_usd: 0.004983
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y ahora[a], hijos míos, escúchenme acerca de lo que vi sobre los siete espíritus del engaño en mi arrepentimiento.
+  to: Y ahora[a], mis hijos, escúchenme acerca de los siete espíritus del engaño que vi en mi arrepentimiento.
+  rationale: Se ajusta la sintaxis para evitar la secuencia poco natural «acerca de lo que vi sobre» y expresar con más claridad ἃ εἶδον περὶ τῶν ἑπτὰ πνευμάτων. También se adopta «mis hijos» por fluidez natural en español contemporáneo, sin cambiar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T02:59:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura griega: Καὶ νῦν = «Y ahora», τέκνα μου = «hijos míos», ἀκούσατέ μου = llamado imperativo directo, τῶν ἑπτὰ πνευμάτων τῆς πλάνης = «los siete espíritus del engaño», y ἐν τῇ μετανοίᾳ μου = «en mi arrepentimiento». La única mejora necesaria es estilística y de fidelidad idiomática en español: ἃ εἶδον περὶ... se expresa mejor como «lo que vi acerca de...» que «acerca de lo que vi sobre...», que suena redundante.'
+  spanish_quality_summary: El español es claro y mayormente natural, pero «escúchenme acerca de lo que vi sobre...» resulta algo pesado por la doble preposición y puede simplificarse sin perder sentido. También «mis hijos» fluye un poco mejor en este orden vocativo que «hijos míos», aunque ambos son aceptables. La nota [a] está bien anclada y no requiere cambio.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. πνεύματα se mantiene correctamente como «espíritus» y μετάνοια como «arrepentimiento». «Engaño» para πλάνη concuerda bien con la decisión auditada en inglés.
+  issues:
+  - severity: medium
+    issue: 'Construcción española redundante: «escúchenme acerca de lo que vi sobre...»'
+    rationale: Aunque comprensible, duplica relaciones semánticas («acerca de» + «sobre») donde el griego tiene ἃ εἶδον περὶ..., que en español se vierte más naturalmente como «escúchenme acerca de lo que vi de/sobre...» o mejor «escúchenme acerca de los siete espíritus... que vi». Una leve reestructuración mejora legibilidad y fidelidad idiomática.
+  - severity: low
+    issue: 'Orden vocativo menos fluido: «hijos míos»'
+    rationale: Es fiel y aceptable, pero «mis hijos» suele sonar más natural en español actual en esta posición intermedia sin pérdida de tono paternal.
+  revised_spanish_text: Y ahora[a], mis hijos, escúchenme acerca de los siete espíritus del engaño que vi en mi arrepentimiento.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Y ahora mismo».'
+    reason: alternative_reading
+  revision_rationale: Se ajusta la sintaxis para evitar la secuencia poco natural «acerca de lo que vi sobre» y expresar con más claridad ἃ εἶδον περὶ τῶν ἑπτὰ πνευμάτων. También se adopta «mis hijos» por fluidez natural en español contemporáneo, sin cambiar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: bbb3cceff78f3314575a8a331ddda9b1b7d5b39b16529369a0ba9336537db2ad
+  timestamp: '2026-05-08T02:59:59Z'
+  output_hash: 4973253ed123d2d661be4190736a0766f6908a1ea45788397aa1d04ac06875b3
+  usage:
+    prompt_tokens: 2086
+    completion_tokens: 651
+    total_tokens: 2737
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01498
+  applied_revision: true

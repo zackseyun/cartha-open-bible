@@ -193,4 +193,46 @@ ai_draft:
     total_tokens: 5354
     reasoning_tokens: 0
     estimated_cost_usd: 0.008834
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite correctamente el sentido básico del dicho: denuncia a los fariseos, comparación con un perro en el pesebre/comedero y la doble negación de comer/no dejar comer. Sin embargo, una nota introduce un anglicismo innecesario («manger») y la nota textual c no refleja con suficiente precisión la evidencia auditada, que contrasta una lectura visible semejante a «días» con la normalización «del ganado» confirmada por la frase siguiente.'
+  spanish_quality_summary: El español principal es claro, natural y digno. «¡Ay de los fariseos!», «son como», «perro tendido», «pesebre» y «ni come ni deja que el ganado coma» son legibles y fieles. Conviene pulir las notas para mejor español y mayor precisión técnica.
+  glossary_alignment: 'No hay términos teológicos del glosario principal implicados. Las decisiones léxicas clave siguen bien el expediente inglés: «¡Ay de!», «son como», «perro», «tendido», «sobre», «pesebre», «ganado», «deja que».'
+  issues:
+  - severity: medium
+    issue: La nota a usa «manger» como alternativa española.
+    rationale: «Manger» es inglés, no una alternativa léxica española válida. Debe reemplazarse por «comedero» o «artesa de alimento» si se quiere conservar la alternativa documentada.
+  - severity: medium
+    issue: La nota c no conserva con suficiente precisión la razón textual documentada en el expediente inglés.
+    rationale: El expediente inglés explica específicamente que las letras dañadas pueden parecer «días», pero la normalización lee «del ganado», confirmada por la siguiente mención del ganado. La redacción actual es más vaga y pierde ese contraste importante.
+  revised_spanish_text: 'Jesús dijo: «¡Ay de los fariseos! Porque son como un perro tendido sobre el pesebre[a] del ganado[b]: ni come ni deja que el ganado coma»[c][d].'
+  revised_footnotes:
+  - marker: a
+    text: «Pesebre» traduce ⲡⲟⲩⲟⲙϥ, que también puede entenderse como «comedero» o «artesa de alimento».
+    reason: lexical_alternative
+  - marker: b
+    text: El copto usa un término genérico para animales domésticos o ganado. Muchas traducciones ponen «bueyes», pero aquí el sentido es más general; por eso se traduce «ganado».
+    reason: cultural_note
+  - marker: c
+    text: Las letras dañadas del códice pueden parecer «días», pero la normalización de Dilley lee «del ganado», lo cual queda confirmado por la mención siguiente de «el ganado».
+    reason: lacuna_or_restoration
+  - marker: d
+    text: Aquí ⲕⲱ con infinitivo tiene el sentido de «dejar» o «permitir»; con la negación, la frase significa «no deja que el ganado coma».
+    reason: dialect_note
+  revision_rationale: El texto principal puede mantenerse. Se revisan solo las notas para eliminar un anglicismo impropio en español y para reflejar con mayor fidelidad la justificación textual y léxica del expediente inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ef9b60ca05b7fc2db369b8c425424931cc191abac9f497028af88241e3bde15c
+  timestamp: '2026-05-08T03:08:32Z'
+  output_hash: 268a23890d32202d89cded36ab7077d31d8a6fa463cb1b557bf2fae54c505862
+  usage:
+    prompt_tokens: 5058
+    completion_tokens: 744
+    total_tokens: 5802
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023805
+  applied_revision: false

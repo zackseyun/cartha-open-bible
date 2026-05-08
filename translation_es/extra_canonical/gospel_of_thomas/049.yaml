@@ -52,7 +52,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «Bienaventurados los solitarios[a] y los escogidos[b], porque encontrarán el reino[c]. Pues de él proceden[d], y de nuevo irán allí».'
+  text: 'Jesús dijo: «Bienaventurados los solitarios[a] y los escogidos[b], porque encontrarán el reino[c]. Pues ustedes proceden de él[d], y de nuevo irán allí».'
   philosophy: formal
   footnotes:
   - marker: a
@@ -62,10 +62,10 @@ translation:
     text: «Escogidos» traduce la forma relativa pasiva de ⲥⲱⲧⲡ; no significa que ellos se escogieron a sí mismos.
     reason: theological_note
   - marker: c
-    text: El manuscrito usa la forma dialectal con la preposición después de «encontrar»; el sentido sigue siendo «hallarán el reino».
+    text: El manuscrito usa una forma dialectal de la preposición después de «encontrar»; el sentido sigue siendo «hallarán el reino».
     reason: textual_variant
   - marker: d
-    text: 'Literalmente: «son de fuera de él» o «son provenientes de él».'
+    text: 'Literalmente, la expresión indica procedencia: «son de fuera de él» o «provienen de él».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲙⲟⲛⲁⲭⲟⲥ
@@ -162,4 +162,52 @@ ai_draft:
     total_tokens: 5542
     reasoning_tokens: 0
     estimated_cost_usd: 0.010007
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Bienaventurados los solitarios[a] y los escogidos[b], porque encontrarán el reino[c]. Pues de él proceden[d], y de nuevo irán allí».'
+  to: 'Jesús dijo: «Bienaventurados los solitarios[a] y los escogidos[b], porque encontrarán el reino[c]. Pues ustedes proceden de él[d], y de nuevo irán allí».'
+  rationale: La revisión corrige una desviación pequeña pero significativa de persona gramatical, preservando la segunda persona plural del original y del POB inglés. También pule levemente la redacción de las notas sin cambiar su contenido sustancial.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura plural auditada («Bienaventurados…»), el valor no monástico de ⲙⲟⲛⲁⲭⲟⲥ, la pasiva de «escogidos», y el movimiento origen/retorno respecto del reino. Sin embargo, la cláusula «Pues de él proceden» cambia innecesariamente la persona gramatical: el copto y el POB inglés tienen segunda persona plural («ustedes son de él / de allí»), no tercera persona. También conviene evitar que «de él» quede ambiguo sin apoyo suficiente en el texto principal.'
+  spanish_quality_summary: El español es claro y digno, pero puede mejorarse la naturalidad y fidelidad con «porque ustedes proceden de él» o «porque son de él». Mantener la segunda persona conserva la cohesión con «encontrarán» e «irán». «Bienaventurados» funciona bien; «solitarios» es aceptable con nota aclaratoria.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. «Reino» para ⲙⲛⲧⲉⲣⲟ es correcto. «Solitarios» sigue la decisión documentada para ⲙⲟⲛⲁⲭⲟⲥ y evita el anacronismo de «monjes». «Escogidos» es una opción válida para ⲥⲱⲧⲡ. La única desalineación real es gramatical: se perdió la segunda persona del original en la frase de procedencia.'
+  issues:
+  - severity: medium
+    issue: Cambio de segunda persona a tercera persona en «Pues de él proceden»
+    rationale: El original y la auditoría inglesa dicen «for you are from it ... and you will go there again». El borrador mezcla «encontrarán / irán» con «proceden», rompiendo la referencia directa a los destinatarios.
+  - severity: low
+    issue: La nota d explica bien la literalidad, pero el texto principal no refleja del todo esa relación con un sujeto explícito
+    rationale: Al restaurar «ustedes» o una forma equivalente, la nota queda mejor anclada y la frase resulta más clara en español.
+  revised_spanish_text: 'Jesús dijo: «Bienaventurados los solitarios[a] y los escogidos[b], porque encontrarán el reino[c]. Pues ustedes proceden de él[d], y de nuevo irán allí».'
+  revised_footnotes:
+  - marker: a
+    text: El cóptico ⲙⲟⲛⲁⲭⲟⲥ aquí designa a quienes son espiritualmente «solitarios» o indivisos, no necesariamente a monjes en sentido institucional posterior.
+    reason: lexical_alternative
+  - marker: b
+    text: «Escogidos» traduce la forma relativa pasiva de ⲥⲱⲧⲡ; no significa que ellos se escogieron a sí mismos.
+    reason: theological_note
+  - marker: c
+    text: El manuscrito usa una forma dialectal de la preposición después de «encontrar»; el sentido sigue siendo «hallarán el reino».
+    reason: textual_variant
+  - marker: d
+    text: 'Literalmente, la expresión indica procedencia: «son de fuera de él» o «provienen de él».'
+    reason: lexical_alternative
+  revision_rationale: La revisión corrige una desviación pequeña pero significativa de persona gramatical, preservando la segunda persona plural del original y del POB inglés. También pule levemente la redacción de las notas sin cambiar su contenido sustancial.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 6effa0b9a0e213e3ee3106f98a8d8b037e294ac21d2ee3161607a6bc986c2072
+  timestamp: '2026-05-08T03:05:49Z'
+  output_hash: 90365f102f8a212cb56a6595fdbedf512ba201dbfbc91f5af7bc049f960973b4
+  usage:
+    prompt_tokens: 5175
+    completion_tokens: 827
+    total_tokens: 6002
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025343
+  applied_revision: true

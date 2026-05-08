@@ -94,26 +94,29 @@ base_translation:
     changes_summary: Removed the extra ‘to see’ before ‘a person’ to keep the second rhetorical question closer to the source and avoid repetition.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «¿Qué saliste[n] al desierto[a] a ver? ¿Una caña sacudida por el viento? ¿Y una persona con ropa suave, con vestiduras puestas sobre él? Miren: los que llevan ropa suave están en la casa de su rey y de su magnate[b][c][d][e], y no pueden conocer la verdad[f]».'
+  text: 'Jesús dijo: «¿Qué salieron ustedes al desierto[a] a ver? ¿Una caña sacudida por el viento? ¿Y una persona con ropa suave[b], con vestiduras puestas sobre él? Miren: los que llevan ropa suave están en la casa de su rey y su magnate[f][e][d][c], y no pueden conocer la verdad[g]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El copto ⲡⲥⲱϣⲉ puede traducirse «desierto» o «wilderness»; aquí se adopta «desierto» por naturalidad en español y por su resonancia bíblica.
+    text: El copto ⲡⲥⲱϣⲉ puede traducirse «desierto» o «lugar desolado»; aquí se adopta «desierto» por naturalidad en español y por su resonancia bíblica.
     reason: lexical_alternative
   - marker: b
-    text: ⲙⲉⲅⲓⲥⲧⲁⲛⲟⲥ es un préstamo griego que puede rendirse también «gran señor» o «grande»; «magnate» conserva el rango social alto.
+    text: ⲛϣⲧⲏⲛ describe la suavidad de la ropa; también podría traducirse «fina» o «delicada».
     reason: lexical_alternative
   - marker: c
-    text: El copto normalizado conserva singulares («su rey» … «su magnate»), aunque algunos lectores esperarían plurales por analogía con fórmulas paralelas.
-    reason: textual_variant
+    text: En «en la casa de su rey y su magnate», el manuscrito está dañado en este tramo; la traducción sigue la normalización editada por Dilley y conserva los singulares.
+    reason: lacuna_or_restoration
   - marker: d
-    text: El manuscrito está dañado en este tramo; la lectura sigue la normalización editada por Dilley para este lugar.
-    reason: textual_variant
+    text: «Magnate» traduce el préstamo griego ⲙⲉⲅⲓⲥⲧⲁⲛⲟⲥ (μεγιστανός), que también puede verterse como «gran señor» o «gran hombre».
+    reason: lexical_alternative
   - marker: e
-    text: La secuencia de posesivos puede sonar más natural en español como «su rey y su magnate»; se mantiene una formulación cercana al original para preservar la tensión del número y la dependencia textual.
-    reason: spanish_style_note
+    text: El copto usa los singulares «su rey» y «su magnate»; se conservan aquí, aunque algunos lectores podrían esperar plurales por analogía con formulaciones canónicas.
+    reason: cultural_note
   - marker: f
-    text: ϣⲥⲟⲟⲩⲛ abarca «conocer», «entender» o «reconocer»; aquí se prefiere «conocer» sin excluir los otros matices.
+    text: La frase puede sonar más natural en español con el posesivo repetido («su rey y su magnate»); aquí se mantiene una formulación cercana al original sin perder naturalidad.
+    reason: spanish_style_note
+  - marker: g
+    text: 'ϣⲥⲟⲟⲩⲛ tiene un campo semántico amplio: «conocer», «entender» o «reconocer»; aquí se prefiere «conocer».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲉⲧⲃⲉⲟⲩ
@@ -303,4 +306,70 @@ ai_draft:
     total_tokens: 9104
     reasoning_tokens: 0
     estimated_cost_usd: 0.017452
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «¿Qué saliste[n] al desierto[a] a ver? ¿Una caña sacudida por el viento? ¿Y una persona con ropa suave, con vestiduras puestas sobre él? Miren: los que llevan ropa suave están en la casa de su rey y de su magnate[b][c][d][e], y no pueden conocer la verdad[f]».'
+  to: 'Jesús dijo: «¿Qué salieron ustedes al desierto[a] a ver? ¿Una caña sacudida por el viento? ¿Y una persona con ropa suave[b], con vestiduras puestas sobre él? Miren: los que llevan ropa suave están en la casa de su rey y su magnate[f][e][d][c], y no pueden conocer la verdad[g]».'
+  rationale: Se corrige el plural de segunda persona a un español publicable («salieron ustedes»), se reubica la nota del ‘desierto’ al lugar correcto, se añade la nota faltante sobre «ropa suave», y se reorganizan las notas sobre laguna, singulares, «magnate» y «conocer» para alinearlas mejor con la auditoría inglesa. También se suaviza la coordinación posesiva para lograr un español más natural sin perder la forma singular del original.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:55Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja en general el sentido del copto y del POB inglés: pregunta retórica sobre salir al desierto, caña sacudida por el viento, persona con ropa suave, y conclusión sobre quienes visten suavemente y no conocen la verdad. Sin embargo, hay varios desajustes formales y semánticos: «saliste[n]» no es texto publicable; la marca [a] está mal anclada también en «Jesús dijo[a]» aunque la nota trata de «desierto»; «con vestiduras puestas sobre él» suena demasiado calcado pero sí preserva el concreto original; y «están en la casa de su rey y de su magnate» introduce una repetición de preposición no necesaria frente al original singular coordinado. También faltó trasladar la nota inglesa sobre la suavidad de la ropa, mientras se añadieron notas de estilo no necesarias.'
+  spanish_quality_summary: 'La legibilidad es irregular. «saliste[n]» es impropio en texto final y rompe el registro. «¿Qué saliste[n] al desierto a ver?» además necesita el plural explícito o una formulación plenamente natural en español. «con ropa suave» funciona, aunque «ropa delicada/fina» sería alternativa; mantener «ropa suave» es defendible por fidelidad léxica. «Miren» está bien como imperativo plural para el giro demostrativo. Conviene simplificar y dignificar la frase de los posesivos: «en la casa de su rey y su magnate». Las notas deben ordenarse y limitarse a lo realmente sustentado por la auditoría inglesa y por necesidades del español.'
+  glossary_alignment: No hay conflictos mayores con la terminología base del proyecto. «Jesús» es correcto. No aparecen términos como Yahvé/Mesías/Espíritu. «magnate» está bien alineado con la decisión inglesa documentada para ⲙⲉⲅⲓⲥⲧⲁⲛⲟⲥ. «desierto» es aceptable como alternativa española para ⲡⲥⲱϣⲉ, pero debe explicarse como alternativa a «wilderness» sin mezclar inglés en la nota. Conviene añadir la nota sobre «ropa suave» y conservar las notas sobre laguna, singulares, magnate y conocer/reconocer.
+  issues:
+  - severity: high
+    issue: Uso de «saliste[n]» en el texto principal
+    rationale: Es una marca editorial interna, no español publicable. El copto es segunda persona plural; el texto debe decir «salieron ustedes» o equivalente natural.
+  - severity: high
+    issue: Anclaje incorrecto de la nota [a] en «Jesús dijo[a]»
+    rationale: La nota [a] explica ⲡⲥⲱϣⲉ (‘desierto’/‘wilderness’), no la fórmula «Jesús dijo». El marcador debe ir junto a «desierto».
+  - severity: medium
+    issue: Falta la nota léxica sobre «ropa suave»
+    rationale: El POB inglés documenta que ⲛϣⲧⲏⲛ también puede ser ‘fina’ o ‘delicada’. Esa decisión significativa debería preservarse en español.
+  - severity: medium
+    issue: Notas c/d/e del borrador están mal categorizadas o son innecesariamente metatraductológicas
+    rationale: La auditoría inglesa distingue nota cultural sobre singulares y nota de laguna/restauración; la nota de estilo española sobre ‘su rey y su magnate’ no hace falta si el texto se corrige naturalmente.
+  - severity: low
+    issue: «de su magnate» tras «de su rey» es menos natural de lo necesario
+    rationale: «en la casa de su rey y su magnate» preserva mejor la coordinación con menos pesadez, sin alterar el sentido.
+  revised_spanish_text: 'Jesús dijo: «¿Qué salieron ustedes al desierto[a] a ver? ¿Una caña sacudida por el viento? ¿Y una persona con ropa suave[b], con vestiduras puestas sobre él? Miren: los que llevan ropa suave están en la casa de su rey y su magnate[f][e][d][c], y no pueden conocer la verdad[g]».'
+  revised_footnotes:
+  - marker: a
+    text: El copto ⲡⲥⲱϣⲉ puede traducirse «desierto» o «lugar desolado»; aquí se adopta «desierto» por naturalidad en español y por su resonancia bíblica.
+    reason: lexical_alternative
+  - marker: b
+    text: ⲛϣⲧⲏⲛ describe la suavidad de la ropa; también podría traducirse «fina» o «delicada».
+    reason: lexical_alternative
+  - marker: c
+    text: En «en la casa de su rey y su magnate», el manuscrito está dañado en este tramo; la traducción sigue la normalización editada por Dilley y conserva los singulares.
+    reason: lacuna_or_restoration
+  - marker: d
+    text: «Magnate» traduce el préstamo griego ⲙⲉⲅⲓⲥⲧⲁⲛⲟⲥ (μεγιστανός), que también puede verterse como «gran señor» o «gran hombre».
+    reason: lexical_alternative
+  - marker: e
+    text: El copto usa los singulares «su rey» y «su magnate»; se conservan aquí, aunque algunos lectores podrían esperar plurales por analogía con formulaciones canónicas.
+    reason: cultural_note
+  - marker: f
+    text: La frase puede sonar más natural en español con el posesivo repetido («su rey y su magnate»); aquí se mantiene una formulación cercana al original sin perder naturalidad.
+    reason: spanish_style_note
+  - marker: g
+    text: 'ϣⲥⲟⲟⲩⲛ tiene un campo semántico amplio: «conocer», «entender» o «reconocer»; aquí se prefiere «conocer».'
+    reason: lexical_alternative
+  revision_rationale: Se corrige el plural de segunda persona a un español publicable («salieron ustedes»), se reubica la nota del ‘desierto’ al lugar correcto, se añade la nota faltante sobre «ropa suave», y se reorganizan las notas sobre laguna, singulares, «magnate» y «conocer» para alinearlas mejor con la auditoría inglesa. También se suaviza la coordinación posesiva para lograr un español más natural sin perder la forma singular del original.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9169e82b9a1ce23126b071109184a8b0ecf094841117b1bd6d1a97fefe267bf4
+  timestamp: '2026-05-08T03:07:55Z'
+  output_hash: 33a074461c209cf926d12a0a9626a59e9af02b60f69b8689ad28fb86d6bbc0ec
+  usage:
+    prompt_tokens: 8814
+    completion_tokens: 1494
+    total_tokens: 10308
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.044445
+  applied_revision: true

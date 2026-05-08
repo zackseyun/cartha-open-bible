@@ -91,17 +91,17 @@ base_translation:
     changes_summary: Removed the bracketed footnote markers from the running text and tightened punctuation/spacing for readability. No lexical changes to the translation itself.
 translation:
   language: es
-  text: 'Simón Pedro les dijo: “Que María salga de entre nosotros, porque la femenina[a] no es digna de la vida”. Jesús dijo: “Mira: yo mismo la guiaré[b], para hacerla varón, de modo que ella también llegue a ser un espíritu vivo, como ustedes varones. Porque toda femenina que se haga varón entrará en el reino de los cielos[d]”.'
+  text: 'Simón Pedro les dijo: «Que María salga de entre nosotros, porque la hembra[a] no es digna de la vida». Jesús dijo: «Mira: yo mismo la guiaré[b], para hacerla varón, de modo que ella también llegue a ser un espíritu vivo, como ustedes varones. Porque toda hembra que se haga varón entrará en el reino de los cielos[c]»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Se conserva “la femenina” para reflejar la oposición terminológica con “varón”. Otras versiones podrían decir “mujer”, pero eso suaviza la polaridad sexada que el texto enfatiza.
+    text: Se conserva «hembra» para reflejar la oposición terminológica con «varón». Otras versiones podrían decir «mujer», pero eso suaviza la polaridad sexada que el texto enfatiza.
     reason: lexical_alternative
   - marker: b
-    text: “La guiaré” traduce el verbo coptic de llevar/dirigir. También podría verterse “la conduciré” o “la llevaré”, pero “guiar” comunica bien la transición hacia el resultado sin cargarla de violencia física.
-    reason: lexical_alternative
-  - marker: d
-    text: “Los cielos” mantiene el plural del término coptic y el estilo del POB inglés. En español también es posible “el cielo”, pero aquí se conserva la forma plural.
+    text: «La guiaré» traduce el verbo copto de llevar/dirigir. El pronombre objeto femenino singular aparece como ⲙ̄ⲙⲟⲥ en la lineación del manuscrito; la normalización de Dilley presenta el equivalente ⲛⲛⲧⲟⲥ. Ambas formas significan «la».
+    reason: textual_variant
+  - marker: c
+    text: «Los cielos» mantiene el plural del término copto. En español también es posible «el cielo», pero aquí se conserva la forma plural para reflejar el color tradicional de la expresión.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲥϩⲓⲙⲉ
@@ -234,4 +234,52 @@ ai_draft:
     total_tokens: 8631
     reasoning_tokens: 0
     estimated_cost_usd: 0.014146
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Simón Pedro les dijo: “Que María salga de entre nosotros, porque la femenina[a] no es digna de la vida”. Jesús dijo: “Mira: yo mismo la guiaré[b], para hacerla varón, de modo que ella también llegue a ser un espíritu vivo, como ustedes varones. Porque toda femenina que se haga varón entrará en el reino de los cielos[d]”.'
+  to: 'Simón Pedro les dijo: «Que María salga de entre nosotros, porque la hembra[a] no es digna de la vida». Jesús dijo: «Mira: yo mismo la guiaré[b], para hacerla varón, de modo que ella también llegue a ser un espíritu vivo, como ustedes varones. Porque toda hembra que se haga varón entrará en el reino de los cielos[c]»'
+  rationale: Se reemplaza «la femenina» por «la hembra» para conservar la polaridad sexada del original con un español más inteligible; se incorpora la nota textual omitida sobre el pronombre 3fs; y se normaliza la puntuación y tipografía de las comillas en español. Se mantiene «varón», «espíritu vivo» y «reino de los cielos» por buena alineación con la evidencia fuente y el POB inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:14:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura y el sentido general del copto y del POB inglés: jussivo inicial, exclusión de María, contraste femenino/varón, acción de Jesús de llevarla/transformarla, y entrada en el reino de los cielos. Sin embargo, hay dos desajustes importantes: (1) «la femenina» suena antinatural y no preserva bien la fuerza lexical en español eclesial legible; (2) falta la nota textual sobre el pronombre objeto femenino singular documentada en el POB inglés. Además, la puntuación de las comillas debe ajustarse al español.'
+  spanish_quality_summary: El texto es mayormente claro, pero «la femenina» resulta marcadamente poco idiomático en español y distrae más de lo que aclara. «La hembra» conserva mejor la polaridad sexada con «varón», aunque sigue siendo duro, que aquí es precisamente el efecto buscado. «Guiaré» es aceptable, pero «la llevaré» o «la conduciré» se acercan más a ‘lead’; aun así no es un error grave. Conviene también corregir la colocación del punto respecto de las comillas.
+  glossary_alignment: No hay conflicto con la terminología doctrinal principal del proyecto. «Jesús», «espíritu», «reino» y «los cielos» están bien. Para ⲥϩⲓⲙⲉ, el objetivo del POB inglés es mantener la polaridad con ‘male’; en español, «hembra» cumple mejor esa función que «femenina». «Varón» para ϩⲟⲟⲩⲧ está bien por registro y contraste.
+  issues:
+  - severity: high
+    issue: «la femenina» es una elección española poco natural y poco legible
+    rationale: Aunque intenta calcar ‘female’, en español «la femenina» no funciona como sustantivo normal en registro bíblico o literario. «La hembra» preserva mejor la oposición sexada con «varón» y sigue comunicando la aspereza del dicho.
+  - severity: medium
+    issue: Falta la nota textual sobre el pronombre objeto 3fs
+    rationale: 'El POB inglés preservó una nota relevante: el manuscrito tiene ⲙ̄ⲙⲟⲥ y la normalización ⲛⲛⲧⲟⲥ, ambas ‘la’. Esa evidencia debe mantenerse también en español por fidelidad al rastro de auditoría.'
+  - severity: low
+    issue: Puntuación española mejorable
+    rationale: En español, el punto final debe ir fuera de las comillas cuando no pertenece a una cita independiente completa según la maquetación del conjunto; además conviene evitar el cierre «vida”.» y «cielos[d]”.» tal como está.
+  revised_spanish_text: 'Simón Pedro les dijo: «Que María salga de entre nosotros, porque la hembra[a] no es digna de la vida». Jesús dijo: «Mira: yo mismo la guiaré[b], para hacerla varón, de modo que ella también llegue a ser un espíritu vivo, como ustedes varones. Porque toda hembra que se haga varón entrará en el reino de los cielos[c]»'
+  revised_footnotes:
+  - marker: a
+    text: Se conserva «hembra» para reflejar la oposición terminológica con «varón». Otras versiones podrían decir «mujer», pero eso suaviza la polaridad sexada que el texto enfatiza.
+    reason: lexical_alternative
+  - marker: b
+    text: «La guiaré» traduce el verbo copto de llevar/dirigir. El pronombre objeto femenino singular aparece como ⲙ̄ⲙⲟⲥ en la lineación del manuscrito; la normalización de Dilley presenta el equivalente ⲛⲛⲧⲟⲥ. Ambas formas significan «la».
+    reason: textual_variant
+  - marker: c
+    text: «Los cielos» mantiene el plural del término copto. En español también es posible «el cielo», pero aquí se conserva la forma plural para reflejar el color tradicional de la expresión.
+    reason: lexical_alternative
+  revision_rationale: Se reemplaza «la femenina» por «la hembra» para conservar la polaridad sexada del original con un español más inteligible; se incorpora la nota textual omitida sobre el pronombre 3fs; y se normaliza la puntuación y tipografía de las comillas en español. Se mantiene «varón», «espíritu vivo» y «reino de los cielos» por buena alineación con la evidencia fuente y el POB inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 69d2cfb04fc24e966dfe5a82102671cc0fc667c10efa43b1b02743099b4b0043
+  timestamp: '2026-05-08T03:14:54Z'
+  output_hash: e5f53015f9d9dadbd393e5de730b196b543de5b3b9bb644a61db5c4e81d610e0
+  usage:
+    prompt_tokens: 8294
+    completion_tokens: 1056
+    total_tokens: 9350
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.036575
+  applied_revision: true

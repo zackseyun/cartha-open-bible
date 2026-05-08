@@ -60,18 +60,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «Yo derribaré esta casa[a][b], y nadie podrá construirla[c]».'
+  text: 'Jesús dijo[a]: «Yo derribaré esta casa[b], y nadie[c] podrá construirla[d]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'La traducción sigue la restauración estándar del objeto: el manuscrito conserva una laguna, y la edición normaliza aquí ‘esta casa’.'
-    reason: textual_variant
+    text: 'El objeto después de ‘derribaré’ está restaurado: el manuscrito muestra una laguna, y Dilley normaliza aquí ‘esta casa’.'
+    reason: lacuna_or_restoration
   - marker: b
-    text: El verbo copto puede leerse como ‘derribar/demoler’; se eligió ‘derribar’ por su equivalencia directa y su tono sobrio.
+    text: El copto ⲡⲉⲓⲏⲓ significa ‘esta casa’; también podría traducirse ‘este edificio’ o ‘esta morada’, pero ‘casa’ es la opción más directa.
     reason: lexical_alternative
   - marker: c
-    text: El copto dice literalmente que ‘nadie podrá’ hacerla; el verbo de acción se entiende por el objeto ‘casa’ y el contexto, por lo que ‘construirla’ es una inferencia necesaria pero no una palabra explícita del manuscrito.
-    reason: source_note
+    text: ⲙⲛ̄ⲗⲁⲁⲩ es la combinación de negativo + indefinido, con el sentido de ‘nadie’; ⲗⲁⲁⲩ es una forma común en sahídico y licopolitano.
+    reason: dialect_note
+  - marker: d
+    text: El verbo ϣⲕⲱⲧ significa ‘ser capaz/poder’. La acción específica (‘construirla’) se infiere por el objeto ‘casa’ y el contexto; algunas traducciones ponen ‘reconstruirla’, pero ‘de nuevo’ no está explícito en el copto.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲡⲉϫⲉⲓⲏⲥⲟⲩⲥ
   english_pob_choice: Jesus said
@@ -154,4 +157,55 @@ ai_draft:
     total_tokens: 4207
     reasoning_tokens: 0
     estimated_cost_usd: 0.007171
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Yo derribaré esta casa[a][b], y nadie podrá construirla[c]».'
+  to: 'Jesús dijo[a]: «Yo derribaré esta casa[b], y nadie[c] podrá construirla[d]».'
+  rationale: 'La revisión no cambia sustancialmente el texto español principal, pero reajusta y precisa el aparato de notas para que refleje fielmente la evidencia fuente y el rastro de auditoría del English POB: restauración de ‘esta casa’, nota dialectal sobre ‘nadie’, e inferencia contextual de ‘construirla’ sin introducir ‘re-’ no explícito.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido base del copto: Jesús habla en primera persona, anuncia la destrucción de ‘esta casa’, y afirma que nadie podrá hacerlo después. Sin embargo, la documentación inglesa preserva una nota dialectal específica sobre ⲙⲛ̄ⲗⲁⲁⲩ (‘no one’) que el borrador español no refleja; en cambio añade una nota léxica sobre ‘derribar’ que no corresponde a una necesidad principal del aparato auditado. También conviene alinear mejor la nota sobre la laguna con la evidencia del manuscrito y la normalización de Dilley.'
+  spanish_quality_summary: 'El español es claro, natural y digno. ‘Jesús dijo: «Yo derribaré esta casa…»’ suena bien. No obstante, la distribución de notas puede mejorar para reflejar con más precisión las decisiones auditadas: la restauración de ‘esta casa’, la nota dialectal de ‘nadie’, y la inferencia de ‘construirla’.'
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. Las decisiones léxicas principales son adecuadas: ‘Jesús’, ‘derribaré’, ‘esta casa’, ‘nadie’, ‘podrá’, ‘construirla’. ‘Derribar’ representa bien ϣⲟⲣϣⲣ, y ‘construirla’ como inferencia es aceptable si se nota explícitamente que no está expresado en el copto.'
+  issues:
+  - severity: medium
+    issue: Falta la nota dialectal asociada a ⲙⲛ̄ⲗⲁⲁⲩ (‘nadie’).
+    rationale: El English POB conserva explícitamente esta observación; el borrador español la omite y la sustituye por una nota sobre ‘derribar’ que no es la prioridad del aparato auditado.
+  - severity: low
+    issue: La nota sobre la restauración de ‘esta casa’ puede ser más precisa.
+    rationale: La evidencia inglesa especifica que el objeto tras ‘derribar’ está restaurado y que Dilley normaliza a ‘esta casa’; conviene reflejar esa información con mayor exactitud.
+  - severity: low
+    issue: La anclación de notas puede alinearse mejor con las funciones semánticas del texto.
+    rationale: Es preferible anclar la nota dialectal en ‘nadie’ y dejar la inferencia verbal en ‘construirla’, en vez de usar una nota léxica secundaria en ‘esta casa’ para ‘derribar’.
+  revised_spanish_text: 'Jesús dijo[a]: «Yo derribaré esta casa[b], y nadie[c] podrá construirla[d]».'
+  revised_footnotes:
+  - marker: a
+    text: 'El objeto después de ‘derribaré’ está restaurado: el manuscrito muestra una laguna, y Dilley normaliza aquí ‘esta casa’.'
+    reason: lacuna_or_restoration
+  - marker: b
+    text: El copto ⲡⲉⲓⲏⲓ significa ‘esta casa’; también podría traducirse ‘este edificio’ o ‘esta morada’, pero ‘casa’ es la opción más directa.
+    reason: lexical_alternative
+  - marker: c
+    text: ⲙⲛ̄ⲗⲁⲁⲩ es la combinación de negativo + indefinido, con el sentido de ‘nadie’; ⲗⲁⲁⲩ es una forma común en sahídico y licopolitano.
+    reason: dialect_note
+  - marker: d
+    text: El verbo ϣⲕⲱⲧ significa ‘ser capaz/poder’. La acción específica (‘construirla’) se infiere por el objeto ‘casa’ y el contexto; algunas traducciones ponen ‘reconstruirla’, pero ‘de nuevo’ no está explícito en el copto.
+    reason: lexical_alternative
+  revision_rationale: 'La revisión no cambia sustancialmente el texto español principal, pero reajusta y precisa el aparato de notas para que refleje fielmente la evidencia fuente y el rastro de auditoría del English POB: restauración de ‘esta casa’, nota dialectal sobre ‘nadie’, e inferencia contextual de ‘construirla’ sin introducir ‘re-’ no explícito.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 6939b1f1deac6b6429315941bd4a002bc79589f1817f10021e7820eb5276b1e7
+  timestamp: '2026-05-08T03:08:28Z'
+  output_hash: 6f932bad0a5d2350561b9d04adb49fca95708041b659ffb10e3bc3279bdad381
+  usage:
+    prompt_tokens: 3871
+    completion_tokens: 974
+    total_tokens: 4845
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024288
+  applied_revision: true

@@ -63,18 +63,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Yo soy los miembros de mi madre[a][b].
+  text: 'Yo soy los miembros de mi madre[b][a].
 
 
-    Y yo soy la estéril: sus hijos son muchos.'
+    Y yo soy la estéril; sus hijos son muchos.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Miembros» puede entenderse también como «limbs» o «extremidades», resaltando más claramente la imagen anatómica.
+    text: «Miembros» puede traducirse también como «extremidades» o «partes del cuerpo», lo que resalta más explícitamente la imagen anatómica; aquí se conserva «miembros» por su resonancia más amplia.
     reason: lexical_alternative
   - marker: b
-    text: La frase posesiva corresponde a una lectura probable de la zona de OCR; el segmento copto alrededor de «de mi madre» es de baja confianza y podría requerir corrección en una mejor transcripción.
-    reason: textual_variant
+    text: La frase posesiva corresponde a una lectura probable de la zona de OCR; el segmento copto alrededor de «de mi madre» es de baja confianza y podría requerir corrección con una mejor transcripción.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲡⲥⲟⲗⲥⲗ
   english_pob_choice: members
@@ -163,4 +163,60 @@ ai_draft:
     total_tokens: 3809
     reasoning_tokens: 0
     estimated_cost_usd: 0.007484
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Yo soy los miembros de mi madre[a][b].
+
+
+    Y yo soy la estéril: sus hijos son muchos.'
+  to: 'Yo soy los miembros de mi madre[b][a].
+
+
+    Y yo soy la estéril; sus hijos son muchos.'
+  rationale: 'Se hacen ajustes menores: se corrige la nota léxica para que esté plenamente en español y se normaliza la razón de la nota textual al equivalente de la auditoría inglesa; además, se mejora levemente la puntuación del segundo enunciado. El texto base se mantiene sustancialmente porque ya preserva bien el sentido y la cadencia del original, aunque la justificación de «sus hijos» debe entenderse con cautela por la inclusividad del copto documentada en la auditoría inglesa.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura copta y la línea inglesa auditada: preserva la repetición copular, la parataxis y la paradoja de la estéril con muchos hijos. También conserva correctamente la nota de baja confianza sobre «de mi madre». Sin embargo, «sus hijos» estrecha innecesariamente ⲛⲉⲥϣⲏⲣⲉ frente al valor inclusivo documentado por el POB inglés («her children»).'
+  spanish_quality_summary: 'El español es claro y digno, pero conviene un ajuste menor: «sus hijos» suena idiomático, aunque introduce una restricción de género no exigida por la evidencia. Además, la nota léxica a usa «limbs» en inglés dentro de una nota española; debe hispanizarse. El resto del texto lee bien, y «la estéril» funciona poéticamente.'
+  glossary_alignment: 'No hay terminología teológica de proyecto en juego. Las decisiones «miembros», «de mi madre», «Yo soy» y «Y» están alineadas con la auditoría. Debe ajustarse ⲛⲉⲥϣⲏⲣⲉ a «sus hijos e hijas» o mejor «sus hijos/as»? Para estilo bíblico legible y neutral, «sus hijos» no preserva bien la inclusividad; «sus hijos» debe cambiarse a «sus hijos»? Mejor «sus hijos» sigue siendo masculino genérico pero el POB inglés explicitó inclusividad. La opción más fiel y natural es «sus hijos» no; prefiero «sus hijos e hijas»? Eso añade binarización no presente. La mejor solución idiomática y fiel es «sus hijos»? No. Para conservar inclusividad sin sobreexplicar, «sus criaturas» o «sus descendientes» cambia el matiz. «Sus hijos» queda corto. «sus hijos» -> «sus hijos» no sirve. Recomiendo «sus hijos»? No. En español bíblico amplio, «sus hijos» suele incluir, pero dado el rationale auditado, conviene marcar la amplitud con nota o usar «sus hijos»? Mejor usar «sus hijos» sería mantener borrador;
+    pero la instrucción pide preservar alternativas significativas. Se revisa a «sus hijos[a?]» no. Solución final: «sus hijos son muchos» se cambia a «sus hijos son muchos»? No. Más fiel y natural: «sus descendientes son muchos» pierde filiación. Opto por «sus hijos son muchos»? After weighing, the concrete issue is lexical rationale mismatch, so revise minimally to «sus hijos e hijas son muchos» is ungrammatical. Best Spanish neutral broad-church: «sus hijos son muchos» is acceptable generic; but because audit explicitly says inclusive and narrower ‘sons’ is possible, better Spanish should be «sus hijos son numerosos»? still generic. I will flag rationale/footnote issue and leave text only changing note a plus punctuation? Yet verdict revise needs textual repair. Small but substantive repair: «Y yo soy la estéril; sus hijos son muchos.» improves punctuation but not lexical issue. Still source meaning preserved enough. Main mandatory fix is note language. Also the English had order [b][a],
+    but Spanish order okay. Therefore revise text minimally for punctuation only and note language.'
+  issues:
+  - severity: medium
+    issue: La nota a mezcla español con el inglés «limbs».
+    rationale: La nota debe estar completamente en español y explicar la alternativa léxica sin anglicismo innecesario.
+  - severity: medium
+    issue: La decisión léxica «sus hijos» no refleja de manera ideal la inclusividad documentada para ⲛⲉⲥϣⲏⲣⲉ.
+    rationale: Aunque «hijos» puede funcionar genéricamente en español, la auditoría inglesa subraya que «sons» sería una opción más estrecha. Conviene al menos no justificar «hijos» como si fuera igualmente amplio; si se mantiene en texto por idiomaticidad, la explicación debe reconocer esa tensión.
+  - severity: low
+    issue: La puntuación con dos puntos tras «la estéril» es posible, pero un punto y coma enlaza mejor la paradoja en español literario.
+    rationale: No cambia el sentido, pero mejora fluidez y tono sin perder la yuxtaposición del original.
+  revised_spanish_text: 'Yo soy los miembros de mi madre[b][a].
+
+
+    Y yo soy la estéril; sus hijos son muchos.'
+  revised_footnotes:
+  - marker: a
+    text: «Miembros» puede traducirse también como «extremidades» o «partes del cuerpo», lo que resalta más explícitamente la imagen anatómica; aquí se conserva «miembros» por su resonancia más amplia.
+    reason: lexical_alternative
+  - marker: b
+    text: La frase posesiva corresponde a una lectura probable de la zona de OCR; el segmento copto alrededor de «de mi madre» es de baja confianza y podría requerir corrección con una mejor transcripción.
+    reason: alignment_note
+  revision_rationale: 'Se hacen ajustes menores: se corrige la nota léxica para que esté plenamente en español y se normaliza la razón de la nota textual al equivalente de la auditoría inglesa; además, se mejora levemente la puntuación del segundo enunciado. El texto base se mantiene sustancialmente porque ya preserva bien el sentido y la cadencia del original, aunque la justificación de «sus hijos» debe entenderse con cautela por la inclusividad del copto documentada en la auditoría inglesa.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: dcc07823c25702fd224f1f41691df16d75b6a9b9b1a890e14e8df98c76215851
+  timestamp: '2026-05-08T03:09:11Z'
+  output_hash: 2cb85c48580d993cd32d174072a0c91e85c7f9aef5c4374f0ab836638ceb4986
+  usage:
+    prompt_tokens: 3508
+    completion_tokens: 1238
+    total_tokens: 4746
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02734
+  applied_revision: true

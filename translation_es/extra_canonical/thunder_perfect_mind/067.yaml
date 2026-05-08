@@ -84,13 +84,16 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'No te preocupes por [a] tus partes que están arrojadas fuera [b][c] [...]
+  text: 'No te preocupes por [a] tus partes echadas fuera [b][c] [...]
 
 
-    [...] la que [...] [d] establece [...]
+
+    [...] el que [...] establece [...]
+
 
 
     porque yo estoy entre los que
+
 
     son pequeños [...]'
   philosophy: optimal-equivalence
@@ -99,14 +102,11 @@ translation:
     text: El griego prestado en el copto puede entenderse como ‘preocuparse por / ocuparse de’; aquí se traduce con un mandato negativo de desatención.
     reason: lexical_alternative
   - marker: b
-    text: ‘arrojadas fuera’ sigue la advertencia del aparato crítico; no se adopta una lectura de ‘acercarse’ porque la evidencia del fragmento no la sostiene.
+    text: ‘echadas fuera’ sigue la advertencia del aparato crítico; no se adopta una lectura de ‘acercarse’ porque la evidencia del fragmento no la sostiene.
     reason: textual_variant
   - marker: c
     text: El tramo es fragmentario y no permite completar con seguridad el referente exacto de ‘partes’.
     reason: source_note
-  - marker: d
-    text: La forma final es incierta en el OCR; ‘serán levantados’ conserva la idea de elevación sin fijar una lectura más específica.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲙⲡⲣⲙⲉⲗⲉⲧⲁ
   english_pob_choice: Do not care
@@ -198,4 +198,82 @@ ai_draft:
     total_tokens: 4834
     reasoning_tokens: 0
     estimated_cost_usd: 0.008875
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'No te preocupes por [a] tus partes que están arrojadas fuera [b][c] [...]
+
+
+    [...] la que [...] [d] establece [...]
+
+
+    porque yo estoy entre los que
+
+    son pequeños [...]'
+  to: 'No te preocupes por [a] tus partes echadas fuera [b][c] [...]
+
+
+
+    [...] el que [...] establece [...]
+
+
+
+    porque yo estoy entre los que
+
+
+    son pequeños [...]'
+  rationale: 'Se corrige el principal problema formal del borrador: la nota [d] estaba mal anclada y además arrastraba una lectura (‘serán levantados’) que no aparecía en el texto español conservado. También se elimina el femenino injustificado ‘la que’ por una forma neutral más prudente (‘el que […]’ aquí como equivalente no marcado del inglés auditado ‘the one who […]’ en un tramo sumamente lacunoso). Finalmente, se suaviza ‘están arrojadas fuera’ a ‘echadas fuera’ para un español más natural sin perder el sentido de expulsión/separación.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La base española sigue en lo esencial la corrección fuente-céntrica del inglés: refleja un texto fragmentario, mantiene el imperativo negativo de ⲙⲡⲣⲙⲉⲗⲉⲧⲁ como ‘no te preocupes por/no te ocupes de’, conserva la idea de partes echadas fuera y no reintroduce la lectura errónea del consult text desalineado (‘acérquense a mí…’). Sin embargo, la ejecución actual no preserva bien la incertidumbre y tiene desajustes internos: la nota [d] habla de ‘serán levantados’, pero ese anclaje aparece junto a ‘la que […]’, no en un lugar donde el lector pueda asociarlo con ⲥⲉⲥⲱ; además, el femenino ‘la que’ no está justificado por la evidencia dada. Conviene reparar el español para que el fragmento siga siendo lacunoso sin introducir género o enlaces no sustentados.'
+  spanish_quality_summary: 'El español es legible, pero ‘partes que están arrojadas fuera’ suena algo pesado y calcado; ‘partes echadas fuera’ o ‘partes arrojadas fuera’ mejora el flujo. También hay un problema claro de legibilidad estructural: el texto coloca [d] tras ‘la que [...]’, mientras la nota explica otra palabra distinta. La línea intermedia debe quedarse más neutral y fragmentaria. ‘Porque yo estoy entre los que son pequeños’ es aceptable, aunque ‘entre los pequeños’ sería más natural; no obstante, dado que el inglés auditado conserva ‘those who are small’, puede mantenerse una formulación cercana.'
+  glossary_alignment: No hay términos teológicos del glosario principal en juego. La decisión léxica clave sobre el préstamo griego en ⲙⲉⲗⲉⲧⲁ está bien enfocada. La revisión propuesta también mantiene la cautela requerida para un texto gnóstico fragmentario y respeta la política de no completar más de lo que la fuente sostiene.
+  issues:
+  - severity: medium
+    issue: Anclaje incorrecto de la nota [d]
+    rationale: La nota [d] explica una posible lectura de elevación (‘serán levantados’), pero en el texto está anclada a ‘la que [...]’, creando confusión y una correspondencia errónea entre nota y segmento.
+  - severity: medium
+    issue: Introducción injustificada del femenino ‘la que’
+    rationale: La fuente y el inglés auditado solo dicen ‘the one who [...]’ en un tramo fragmentario; forzar femenino restringe el referente sin base suficiente.
+  - severity: low
+    issue: 'Expresión algo rígida: ‘están arrojadas fuera’'
+    rationale: Es inteligible, pero suena menos natural en español que ‘echadas fuera’ o ‘arrojadas fuera’ sin auxiliar, manteniendo el mismo sentido.
+  revised_spanish_text: 'No te preocupes por [a] tus partes echadas fuera [b][c] [...]
+
+
+
+    [...] el que [...] establece [...]
+
+
+
+    porque yo estoy entre los que
+
+
+    son pequeños [...]'
+  revised_footnotes:
+  - marker: a
+    text: El griego prestado en el copto puede entenderse como ‘preocuparse por / ocuparse de’; aquí se traduce con un mandato negativo de desatención.
+    reason: lexical_alternative
+  - marker: b
+    text: ‘echadas fuera’ sigue la advertencia del aparato crítico; no se adopta una lectura de ‘acercarse’ porque la evidencia del fragmento no la sostiene.
+    reason: textual_variant
+  - marker: c
+    text: El tramo es fragmentario y no permite completar con seguridad el referente exacto de ‘partes’.
+    reason: source_note
+  revision_rationale: 'Se corrige el principal problema formal del borrador: la nota [d] estaba mal anclada y además arrastraba una lectura (‘serán levantados’) que no aparecía en el texto español conservado. También se elimina el femenino injustificado ‘la que’ por una forma neutral más prudente (‘el que […]’ aquí como equivalente no marcado del inglés auditado ‘the one who […]’ en un tramo sumamente lacunoso). Finalmente, se suaviza ‘están arrojadas fuera’ a ‘echadas fuera’ para un español más natural sin perder el sentido de expulsión/separación.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 3dcb21da228fc2962769d1e3a72b3c688b8698bedc61f8f757b72abac46ddb40
+  timestamp: '2026-05-08T03:10:49Z'
+  output_hash: a2dc705f3ef746ceb93993f9840d5c85c005a48f9a79676197c43471bce2049d
+  usage:
+    prompt_tokens: 4529
+    completion_tokens: 978
+    total_tokens: 5507
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025992
+  applied_revision: true

@@ -57,7 +57,7 @@ base_translation:
     changes_summary: Removed the bracketed editorial gloss from the main text and smoothed the quotation punctuation and wording slightly while preserving the source meaning.
 translation:
   language: es
-  text: 'Jesús dijo: «Bienaventurado es el hombre que sabe en qué parte [a] entran los ladrones, para que se levante, reúna su reino [b] y se ciña antes, antes de que entren».'
+  text: 'Jesús dijo: «Bienaventurado es el hombre que sabe en qué parte[a] vienen a entrar los ladrones, para que se levante, reúna su reino[b] y se ciña los lomos de antemano, antes de que entren».'
   philosophy: formal
   footnotes:
   - marker: a
@@ -198,4 +198,51 @@ ai_draft:
     total_tokens: 7171
     reasoning_tokens: 0
     estimated_cost_usd: 0.012128
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Bienaventurado es el hombre que sabe en qué parte [a] entran los ladrones, para que se levante, reúna su reino [b] y se ciña antes, antes de que entren».'
+  to: 'Jesús dijo: «Bienaventurado es el hombre que sabe en qué parte[a] vienen a entrar los ladrones, para que se levante, reúna su reino[b] y se ciña los lomos de antemano, antes de que entren».'
+  rationale: 'La revisión hace tres ajustes menores sin cambiar el sentido auditado: (1) «vienen a entrar» representa mejor la idea de que los ladrones están por irrumpir; (2) «se ciña los lomos» explicita el modismo presente en el copto y en el inglés POB; (3) «de antemano» evita la repetición áspera de «antes, antes» mientras preserva ϩⲁⲡⲉϩⲏ más la cláusula final temporal.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien las decisiones auditadas clave del copto: mantiene el plural «ladrones», conserva la secuencia verbal activa del hombre («se levante, reúna… y se ciña»), y preserva «reino» para ⲙⲛⲧⲉⲣⲟ en vez de armonizar con los sinópticos. También retiene la literalidad de «en qué parte» con nota explicativa. Sin embargo, «entran los ladrones» debilita el matiz progresivo/futuro de «are coming in / vienen a entrar», y «se ciña antes, antes de que entren» suena poco natural y algo redundante en español.'
+  spanish_quality_summary: El texto es comprensible y bastante fiel, pero necesita un ajuste de fluidez. «En qué parte entran los ladrones» puede leerse como presente habitual, no como identificación del momento/sector por donde vienen. «Se ciña antes» resulta elíptico en español; la expresión idiomática más clara es «se ciña los lomos de antemano» o similar. Dado que el inglés POB explicitó «his loins», conviene recuperarlo para precisión e inteligibilidad de la imagen.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Jesús», «reino» y «Bienaventurado» son aceptables aquí. La decisión teológica sobre ⲙⲛⲧⲉⲣⲟ se preserva correctamente con «reino».
+  issues:
+  - severity: medium
+    issue: Aspecto verbal de la llegada de los ladrones
+    rationale: «Entran los ladrones» en español suena gnómico o instantáneo. El copto/inglés auditado expresa que los ladrones «are coming in», es decir, se aproximan para entrar. «Por dónde vienen a entrar» o «por dónde van a entrar» refleja mejor la situación.
+  - severity: medium
+    issue: Modismo incompleto en «se ciña antes»
+    rationale: El verbo «ceñirse» sin complemento queda abrupto y menos claro que el modismo completo. El texto fuente incluye explícitamente «upon his loins», y el inglés POB lo conserva. En español bíblico legible, «se ciña los lomos de antemano» transmite mejor la imagen.
+  - severity: low
+    issue: Redundancia poco elegante de «antes, antes de que entren»
+    rationale: Aunque fiel al adverbio más la cláusula temporal, la repetición inmediata de «antes» suena torpe. «De antemano, antes de que entren» conserva ambas piezas semánticas con mejor estilo.
+  revised_spanish_text: 'Jesús dijo: «Bienaventurado es el hombre que sabe en qué parte[a] vienen a entrar los ladrones, para que se levante, reúna su reino[b] y se ciña los lomos de antemano, antes de que entren».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: «En qué parte» traduce literalmente ϩⲛⲁϣ ⲙⲙⲉⲣⲟⲥ; probablemente alude a la parte o vigilia de la noche en que llegan los ladrones.
+    reason: cultural_note
+  - marker: b
+    text: Tomás usa «reino» (ⲙⲛⲧⲉⲣⲟ), no la imagen sinóptica de una casa; la versión conserva esa elección deliberada del texto.
+    reason: textual_variant
+  revision_rationale: 'La revisión hace tres ajustes menores sin cambiar el sentido auditado: (1) «vienen a entrar» representa mejor la idea de que los ladrones están por irrumpir; (2) «se ciña los lomos» explicita el modismo presente en el copto y en el inglés POB; (3) «de antemano» evita la repetición áspera de «antes, antes» mientras preserva ϩⲁⲡⲉϩⲏ más la cláusula final temporal.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1f33e643a339b96d8a16890252edf236a0e75fefefbc23a61943bc177d099136
+  timestamp: '2026-05-08T03:09:34Z'
+  output_hash: 12f01210cf8d2e2ed1e6a0f43e6189095cb26b28a120b9cad98cf9d97d653ef9
+  usage:
+    prompt_tokens: 6798
+    completion_tokens: 933
+    total_tokens: 7731
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.03099
+  applied_revision: true

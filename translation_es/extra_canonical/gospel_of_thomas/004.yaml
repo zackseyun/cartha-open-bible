@@ -62,12 +62,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Un anciano en sus días no vacilará en pedirle a un niño pequeño de siete días el lugar de la vida, y vivirá. Porque muchos de los primeros llegarán a ser los últimos, y llegarán a ser un solo uno».'
+  text: 'Jesús dijo[a]: «Un anciano en sus días no vacilará en preguntarle[b] a un niño pequeño de siete días por el lugar de la vida, y vivirá. Porque muchos de los primeros llegarán a ser los últimos[a], y llegarán a ser uno solo».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: P.Oxy. 654 añade la frase «y los últimos primeros» después de «llegarán a ser los últimos», pero el copto la omite.
     reason: textual_variant
+  - marker: b
+    text: El texto copto crea un juego de palabras entre ϫⲛⲁⲩ («vacilar») y ϫⲛⲉ («preguntar»), que se pierde en español.
+    reason: register_note
 lexical_decisions:
 - source_word: ⲡⲣⲱⲙⲉ ⲛϩⲗⲗⲟ ϩⲛⲡⲉϥϩⲟⲟⲩ
   english_pob_choice: An old man in his days
@@ -177,4 +180,49 @@ ai_draft:
     total_tokens: 6277
     reasoning_tokens: 0
     estimated_cost_usd: 0.010637
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Un anciano en sus días no vacilará en pedirle a un niño pequeño de siete días el lugar de la vida, y vivirá. Porque muchos de los primeros llegarán a ser los últimos, y llegarán a ser un solo uno».'
+  to: 'Jesús dijo[a]: «Un anciano en sus días no vacilará en preguntarle[b] a un niño pequeño de siete días por el lugar de la vida, y vivirá. Porque muchos de los primeros llegarán a ser los últimos[a], y llegarán a ser uno solo».'
+  rationale: 'La revisión corrige dos puntos clave para fidelidad y legibilidad: cambia «pedirle» por «preguntarle ... por» para alinearse con el verbo fuente «ask», y reemplaza «un solo uno» por «uno solo», que conserva la idea tomasina de unidad singular sin caer en un calco duro. También se añade la nota del juego de palabras preservada en el audit trail inglés. Se mantiene «vacilar» porque esta ficha auditada actualmente sigue esa línea editorial.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:51Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura básica del dicho copto y sigue de cerca el POB inglés en «no vacilará» y «el lugar de la vida». Sin embargo, no preserva suficientemente dos decisiones auditadas: (1) el eco verbal entre ϫⲛⲁⲩ / ϫⲛⲉ, que el inglés señaló en nota pero el español omitió; y (2) la fórmula final ⲟⲩⲁ ⲟⲩⲱⲧ, donde «un solo uno» suena demasiado calcado y poco inteligible en español. Además, «pedirle ... el lugar de la vida» se aleja de la fuerza básica de «preguntar»/«ask».'
+  spanish_quality_summary: El texto es mayormente claro y digno, pero «pedirle ... el lugar de la vida» resulta menos natural y menos exacto que «preguntarle por...». La clausura «llegarán a ser un solo uno» es torpe y difícilmente legible en español eclesial general. «Uno solo» conserva mejor el peso de unidad sin perder naturalidad.
+  glossary_alignment: No hay conflictos con terminología troncal del proyecto. «Jesús» está bien. La decisión «vacilar» es aceptable porque sigue el audit trail inglés actual. La principal corrección léxica necesaria es ϫⲛⲉ -> «preguntar/preguntarle por», no «pedirle», y ⲟⲩⲁ ⲟⲩⲱⲧ -> «uno solo» en vez de «un solo uno».
+  issues:
+  - severity: medium
+    issue: ϫⲛⲉ se tradujo como «pedirle»
+    rationale: El source evidence y la decisión inglesa auditada favorecen «ask». En español, «preguntarle por el lugar de la vida» expresa mejor el acto verbal y además permite reflejar mejor el eco con «vacilar» mediante una nota.
+  - severity: medium
+    issue: Se omitió la nota sobre el juego de palabras ϫⲛⲁⲩ / ϫⲛⲉ
+    rationale: El POB inglés preserva este matiz como nota significativa. En español también se pierde el eco fonético, por lo que conviene conservar la observación.
+  - severity: medium
+    issue: «Un solo uno» es poco natural en español
+    rationale: Aunque intenta preservar la extrañeza de ⲟⲩⲁ ⲟⲩⲱⲧ, en español produce opacidad innecesaria. «Uno solo» mantiene la unidad singular e indivisible con mucha mejor legibilidad.
+  revised_spanish_text: 'Jesús dijo[a]: «Un anciano en sus días no vacilará en preguntarle[b] a un niño pequeño de siete días por el lugar de la vida, y vivirá. Porque muchos de los primeros llegarán a ser los últimos[a], y llegarán a ser uno solo».'
+  revised_footnotes:
+  - marker: a
+    text: P.Oxy. 654 añade la frase «y los últimos primeros» después de «llegarán a ser los últimos», pero el copto la omite.
+    reason: textual_variant
+  - marker: b
+    text: El texto copto crea un juego de palabras entre ϫⲛⲁⲩ («vacilar») y ϫⲛⲉ («preguntar»), que se pierde en español.
+    reason: register_note
+  revision_rationale: 'La revisión corrige dos puntos clave para fidelidad y legibilidad: cambia «pedirle» por «preguntarle ... por» para alinearse con el verbo fuente «ask», y reemplaza «un solo uno» por «uno solo», que conserva la idea tomasina de unidad singular sin caer en un calco duro. También se añade la nota del juego de palabras preservada en el audit trail inglés. Se mantiene «vacilar» porque esta ficha auditada actualmente sigue esa línea editorial.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: eade9016f08051429185e7791e14ea3011844bcd58a9822d427343c5b2d27dfb
+  timestamp: '2026-05-08T03:03:51Z'
+  output_hash: fded60629bd4cf43fa23aa15aa04ce1e0a0f56d0a0d385c02be1a3f82fa7db12
+  usage:
+    prompt_tokens: 5972
+    completion_tokens: 918
+    total_tokens: 6890
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0287
+  applied_revision: true

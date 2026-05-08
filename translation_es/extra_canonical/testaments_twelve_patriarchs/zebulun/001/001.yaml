@@ -106,4 +106,38 @@ ai_draft:
     total_tokens: 3451
     reasoning_tokens: 0
     estimated_cost_usd: 0.007171
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español no refleja completamente el griego provisto ni el English POB actual para este registro. El griego sí incluye «μετὰ οὖν δύο ἔτη τοῦ θανάτου Ἰωσήφ», por lo que la omisión de «dos años después de la muerte de José» es una pérdida de contenido. Además, el encabezado griego tiene sentido testamentario-documental: «copia de las palabras… que dispuso/encargó a sus hijos antes de morir».'
+  spanish_quality_summary: El español es claro y legible, pero requiere una corrección de contenido. «dejó a sus hijos» es entendible, aunque «encargó a sus hijos» o «dirigió a sus hijos» refleja mejor διέθετο en este contexto. También conviene conservar la cláusula final sobre José. La nota sobre Zabulón es innecesaria si no se marca ninguna ambigüedad real.
+  glossary_alignment: No hay términos doctrinales mayores en juego. El nombre «Zabulón» es aceptable en español bíblico. No hay conflicto con el glosario del proyecto. La revisión se centra en fidelidad al griego y al sentido documental del encabezado.
+  issues:
+  - severity: high
+    issue: Se omite la cláusula «dos años después de la muerte de José»
+    rationale: El texto griego fuente incluido en el payload contiene explícitamente «μετὰ οὖν δύο ἔτη τοῦ θανάτου Ἰωσήφ». El borrador afirma incorrectamente que no debe incluirse, lo cual elimina información presente en la fuente.
+  - severity: medium
+    issue: «dejó a sus hijos» atenúa el sentido de διέθετο
+    rationale: Aunque natural en español, «dejó» puede sonar demasiado general. En este encabezado testamentario, «encargó a sus hijos» preserva mejor la idea de palabras dadas/dispuestas solemnemente a ellos.
+  - severity: low
+    issue: La nota [a] sobre «Zabulón» no aporta una alternativa necesaria
+    rationale: La forma española elegida es perfectamente normal; no se observa una ambigüedad que requiera nota textual o léxica en este registro.
+  revised_spanish_text: Una copia de las palabras de Zabulón, las cuales encargó a sus hijos antes de morir, en el año ciento catorce de su vida, dos años después de la muerte de José.
+  revision_rationale: Se restaura la cláusula final presente en el griego («dos años después de la muerte de José»), se ajusta el verbo para reflejar mejor διέθετο con un español natural («encargó a sus hijos»), y se elimina la nota innecesaria sobre el nombre propio.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 855ee8ecdadafaa37a73b76420a38c15d6eeed3b4aa427dc4f57ca1bb084f338
+  timestamp: '2026-05-08T03:00:38Z'
+  output_hash: bb49ee6add80c595087992c984902eaf32a03fa4ac92c7218e31bacc803908fb
+  usage:
+    prompt_tokens: 2970
+    completion_tokens: 635
+    total_tokens: 3605
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01695
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

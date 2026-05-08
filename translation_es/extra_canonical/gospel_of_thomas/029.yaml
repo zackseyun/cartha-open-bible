@@ -85,15 +85,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «Si la carne llegó a ser a causa del espíritu, es una maravilla[a]; pero si el espíritu llegó a ser a causa del cuerpo, es una maravilla de maravillas[a][b]. Sin embargo, yo mismo me maravillo de cómo esta gran riqueza ha hecho su morada en esta pobreza[c]».'
+  text: 'Jesús dijo: «Si la carne llegó a ser a causa del espíritu, es una maravilla; pero si el espíritu llegó a ser a causa del cuerpo, es una maravilla de maravillas[a]. Sin embargo, yo mismo me maravillo de cómo[b] esta gran riqueza ha hecho su morada en esta pobreza[c]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'También puede leerse: «si el espíritu llegó a ser a causa del cuerpo».'
-    reason: alternative_reading
-  - marker: b
-    text: La expresión «maravilla de maravillas» refleja el superlativo idiomático del copto; ϣⲡⲏⲣⲉ también puede significar «niño» en otros contextos, pero aquí el sentido es admirativo.
+    text: La expresión «maravilla de maravillas» refleja un superlativo idiomático del copto; ϣⲡⲏⲣⲉ también puede significar «niño» en otros contextos, pero aquí el sentido es admirativo.
     reason: lexical_alternative
+  - marker: b
+    text: Dilley imprime ϫⲉⲡⲱ[ⲥ], restaurando la sigma final; la forma normalizada es ⲡⲱⲥ, «cómo».
+    reason: lacuna_or_restoration
   - marker: c
     text: POxy 1 preserva «…esta pobreza», en acuerdo con la forma copta transmitida aquí.
     reason: cross_reference
@@ -220,4 +220,52 @@ ai_draft:
     total_tokens: 7769
     reasoning_tokens: 0
     estimated_cost_usd: 0.012907
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Si la carne llegó a ser a causa del espíritu, es una maravilla[a]; pero si el espíritu llegó a ser a causa del cuerpo, es una maravilla de maravillas[a][b]. Sin embargo, yo mismo me maravillo de cómo esta gran riqueza ha hecho su morada en esta pobreza[c]».'
+  to: 'Jesús dijo: «Si la carne llegó a ser a causa del espíritu, es una maravilla; pero si el espíritu llegó a ser a causa del cuerpo, es una maravilla de maravillas[a]. Sin embargo, yo mismo me maravillo de cómo[b] esta gran riqueza ha hecho su morada en esta pobreza[c]».'
+  rationale: La traducción base es sólida, pero necesita una reparación menor de notas para que el aparato español sea fiel y legible. Se elimina la nota alternativa mal anclada, se conserva la nota léxica verdaderamente relevante sobre «maravilla de maravillas», y se añade la nota textual sobre ⲡⲱⲥ/ϫⲉⲡⲱ[ⲥ] presente en el expediente inglés. El texto principal no requiere cambios de contenido, solo limpieza paratextual.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:00:44Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido copto y el rastro auditado en inglés: conserva la oposición carne/espíritu/cuerpo, incluye correctamente el contraste adversativo en la segunda cláusula, y refleja el giro superlativo «maravilla de maravillas». También acierta con «yo mismo me maravillo» frente a la antigua lectura inglesa «I—I». Sin embargo, la nota [a] está mal anclada y mal formulada: no ofrece una alternativa real del segmento donde aparece en el texto, sino que repite la segunda cláusula y además se coloca tras la primera «maravilla», creando confusión. Falta también la nota sobre la restauración de ⲡⲱⲥ / ϫⲉⲡⲱ[ⲥ], preservada en el audit trail inglés.'
+  spanish_quality_summary: 'El español es claro, natural y digno. «Llegó a ser», «maravilla de maravillas», «yo mismo me maravillo» y «ha hecho su morada» son lecturas fluidas y fieles. El principal problema de calidad es paratextual: el sistema de notas no es legible porque [a] se usa para una alternativa que no corresponde a su ubicación textual. Conviene simplificar y reordenar las notas para que cada una explique exactamente el punto marcado.'
+  glossary_alignment: 'Buena alineación con la terminología del proyecto y con las decisiones léxicas documentadas: ⲥⲁⲣⲝ = «carne», ⲥⲱⲙⲁ = «cuerpo», ⲡⲛⲉⲩⲙⲁ = «espíritu», ϣⲱⲡⲉ = «llegó a ser», ⲣϣⲡⲏⲣⲉ = «me maravillo», ⲡⲉⲓⲙⲛⲧϩⲏⲕⲉ = «esta pobreza». No hay conflictos con los defaults teológicos del proyecto.'
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada en un lugar incorrecto y no corresponde al segmento marcado.
+    rationale: 'En el texto, [a] aparece tras «es una maravilla», pero la nota dice «También puede leerse: “si el espíritu llegó a ser a causa del cuerpo”». Eso no explica la primera cláusula ni una variante textual real en ese punto; proviene del audit trail inglés de una manera que no debe reproducirse así en español.'
+  - severity: medium
+    issue: La nota de alternativa del inglés no debe conservarse como si fuera una lectura alternativa española.
+    rationale: El inglés marcó una nota heredada («Or 'if the spirit came into being because of the body'») que en el contexto actual no aporta una alternativa léxica genuina para el español y más bien duplica el texto principal. En español conviene omitirla para evitar confusión.
+  - severity: low
+    issue: Falta la nota sobre la restauración de ⲡⲱⲥ (“cómo”).
+    rationale: 'El audit trail inglés preserva una nota textual relevante: Dilley restaura la sigma final en ϫⲉⲡⲱ[ⲥ], con forma normalizada ⲡⲱⲥ. No es imprescindible para comprensión básica, pero sí para fidelidad al expediente documental.'
+  revised_spanish_text: 'Jesús dijo: «Si la carne llegó a ser a causa del espíritu, es una maravilla; pero si el espíritu llegó a ser a causa del cuerpo, es una maravilla de maravillas[a]. Sin embargo, yo mismo me maravillo de cómo[b] esta gran riqueza ha hecho su morada en esta pobreza[c]».'
+  revised_footnotes:
+  - marker: a
+    text: La expresión «maravilla de maravillas» refleja un superlativo idiomático del copto; ϣⲡⲏⲣⲉ también puede significar «niño» en otros contextos, pero aquí el sentido es admirativo.
+    reason: lexical_alternative
+  - marker: b
+    text: Dilley imprime ϫⲉⲡⲱ[ⲥ], restaurando la sigma final; la forma normalizada es ⲡⲱⲥ, «cómo».
+    reason: lacuna_or_restoration
+  - marker: c
+    text: POxy 1 preserva «…esta pobreza», en acuerdo con la forma copta transmitida aquí.
+    reason: cross_reference
+  revision_rationale: La traducción base es sólida, pero necesita una reparación menor de notas para que el aparato español sea fiel y legible. Se elimina la nota alternativa mal anclada, se conserva la nota léxica verdaderamente relevante sobre «maravilla de maravillas», y se añade la nota textual sobre ⲡⲱⲥ/ϫⲉⲡⲱ[ⲥ] presente en el expediente inglés. El texto principal no requiere cambios de contenido, solo limpieza paratextual.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 53ac222c83d85c0eb05b592dc70d562c100300d12ad815aba3f133b7dcbe5dfa
+  timestamp: '2026-05-08T03:00:44Z'
+  output_hash: 9e45177df5725a32437a3f08d2ae8813ba2db4c05eb1c4bcfcc530e2ef2cce52
+  usage:
+    prompt_tokens: 7316
+    completion_tokens: 1148
+    total_tokens: 8464
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.03551
+  applied_revision: true

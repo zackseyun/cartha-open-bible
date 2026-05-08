@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted the tense to match the Greek imperfect, rendered ἐνεπόδισέ με as 'hindered me' and ἀφείλετο τὴν ἐνέργειαν τῶν χειρῶν μου as 'took away the power of my hands.' Also included the final clause about the right hand becoming half-dead, which was missing from the draft.
 translation:
   language: es
-  text: Yahvé me quebrantó e impidió mi acción, porque mi mano derecha quedó medio seca por siete días.
+  text: Yahvé me quebrantó y me impidió actuar, porque mi mano derecha quedó semiseca durante siete días.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ὁ Κύριος
@@ -107,4 +107,42 @@ ai_draft:
     total_tokens: 2872
     reasoning_tokens: 0
     estimated_cost_usd: 0.006223
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yahvé me quebrantó e impidió mi acción, porque mi mano derecha quedó medio seca por siete días.
+  to: Yahvé me quebrantó y me impidió actuar, porque mi mano derecha quedó semiseca durante siete días.
+  rationale: Se reemplazó «impidió mi acción» por «me impidió actuar» para expresar de forma natural y fiel ἐκώλυσεν δράσιν ἀπʼ ἐμοῦ. También se ajustó «medio seca por siete días» a «semiseca durante siete días» para mejorar la idiomaticidad del español sin perder el sentido de ἡμίξηρος y de la duración temporal.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura básica del griego: agente divino, acción de impedir, y consecuencia en la mano derecha durante siete días. Sin embargo, «impidió mi acción» suena poco natural en español y no refleja con suficiente claridad ἐκώλυσεν δράσιν ἀπʼ ἐμοῦ, que expresa que Yahvé le impidió actuar o apartó de él la acción. «Medio seca» es defendible para ἡμίξηρος, pero «semiseca» suena más natural y precisa en registro bíblico-literario.'
+  spanish_quality_summary: El texto es comprensible, pero «impidió mi acción» resulta algo calcado y rígido. Una solución como «me impidió actuar» conserva el sentido y mejora la fluidez. El resto del verso es claro y digno; «me quebrantó» encaja bien, y «mi mano derecha quedó semiseca durante siete días» lee mejor en español general que «medio seca por siete días».
+  glossary_alignment: «Yahvé» está alineado con la política del proyecto para ὁ Κύριος en este contexto. No hay conflictos mayores de terminología teológica. La decisión sobre ἡμίξηρος debe buscar fidelidad y naturalidad; «semiseca» mantiene la imagen de marchitez parcial sin introducir otra noción médica.
+  issues:
+  - severity: medium
+    issue: «impidió mi acción» es una formulación poco natural
+    rationale: 'Aunque intenta reflejar δράσιν, en español suena calcada y ambigua. El sentido del griego se expresa mejor como impedimento de actuar: «me impidió actuar».'
+  - severity: low
+    issue: «medio seca» puede mejorarse estilísticamente
+    rationale: Es entendible, pero «semiseca» o «medio seca» con otra sintaxis más natural fluye mejor en español bíblico moderno. «Semiseca» preserva bien el matiz de ἡμίξηρος.
+  - severity: low
+    issue: «por siete días» es correcto, pero «durante siete días» suena más natural aquí
+    rationale: Ambas opciones son fieles, pero «durante siete días» se integra mejor con «quedó semiseca» en español estándar.
+  revised_spanish_text: Yahvé me quebrantó y me impidió actuar, porque mi mano derecha quedó semiseca durante siete días.
+  revision_rationale: Se reemplazó «impidió mi acción» por «me impidió actuar» para expresar de forma natural y fiel ἐκώλυσεν δράσιν ἀπʼ ἐμοῦ. También se ajustó «medio seca por siete días» a «semiseca durante siete días» para mejorar la idiomaticidad del español sin perder el sentido de ἡμίξηρος y de la duración temporal.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 34119031035129b0336f9e9f0af7c16e881fff213efbd87f986b2f10e6304a29
+  timestamp: '2026-05-08T03:03:10Z'
+  output_hash: 74218f7e245cf10ee818c5ce9dfbf0958a6ac6ea741bd9cda9b57c9fa0cc8437
+  usage:
+    prompt_tokens: 2514
+    completion_tokens: 660
+    total_tokens: 3174
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016185
+  applied_revision: true

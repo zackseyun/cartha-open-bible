@@ -61,14 +61,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Quien no odia a su padre y a su madre como yo, no puede llegar a ser mi discípulo[a]; y quien no ama a su padre y a su madre como yo, no puede llegar a ser mi discípulo. Porque mi madre [...][b], pero mi madre verdadera[c] me dio vida.
+  text: Quien no odia a su padre y a su madre como yo[a] no puede ser mi discípulo; y quien no ama a su padre y a su madre como yo no puede ser mi discípulo. Porque mi madre [...][b], pero mi verdadera madre[c] me dio vida.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: Lit. «en mi manera» o «como yo» (ⲛ̄ⲧⲁϩⲉ).
     reason: lexical_alternative
   - marker: b
-    text: El manuscrito está dañado aquí; los especialistas suelen reconstruir algo como «me llevó hasta la muerte» o «me dio falsedad», en contraste con la madre verdadera que da vida.
+    text: El manuscrito está dañado aquí (ⲛ̄ⲧⲁⲥ̣[.........] [..]ⲟ̣ⲗ̣). Los especialistas suelen reconstruir algo como «me llevó hasta la muerte» o «me dio falsedad», en contraste con la verdadera madre que da vida.
     reason: textual_variant
   - marker: c
     text: Lit. «de verdad» o «de la verdad» (ⲙ̄ⲙⲉ).
@@ -164,4 +164,52 @@ ai_draft:
     total_tokens: 5706
     reasoning_tokens: 0
     estimated_cost_usd: 0.009136
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Quien no odia a su padre y a su madre como yo, no puede llegar a ser mi discípulo[a]; y quien no ama a su padre y a su madre como yo, no puede llegar a ser mi discípulo. Porque mi madre [...][b], pero mi madre verdadera[c] me dio vida.
+  to: Quien no odia a su padre y a su madre como yo[a] no puede ser mi discípulo; y quien no ama a su padre y a su madre como yo no puede ser mi discípulo. Porque mi madre [...][b], pero mi verdadera madre[c] me dio vida.
+  rationale: Se corrige el anclaje de la nota léxica para que recaiga sobre «como yo», se simplifica «no puede llegar a ser» a «no puede ser» para evitar un matiz no exigido por el copto, y se mejora la naturalidad española con «mi verdadera madre» sin alterar el sentido ni la lógica teológica del texto auditado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido básico del copto y del POB inglés: mantiene el paralelismo odiar/amar, la incapacidad de ser discípulo, la laguna textual, y el contraste entre la madre biológica y la madre verdadera que da vida. Sin embargo, no preserva un detalle formal importante del inglés auditado: el primer miembro lleva una nota sobre la comparación «as I do» aplicada específicamente ahí, mientras que en español la nota [a] queda anclada a «discípulo» en vez de a «como yo», lo que desajusta el referente. Además, «llegar a ser» añade un matiz aspectual no exigido por el copto ni por el POB inglés.'
+  spanish_quality_summary: El español es claro, natural y digno. No obstante, «mi madre verdadera» suena menos idiomático y menos enfático que «mi verdadera madre» para el contraste español. También conviene mover la nota [a] al lugar exacto de la expresión comentada para mejorar legibilidad y precisión editorial.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. Las decisiones «odia», «ama», «discípulo», «vida» y «verdadera» son adecuadas. La excepción relevante es estilística/editorial: para ⲛ̄ⲧⲁϩⲉ la nota debe anclarse en «como yo[a]» y no en «discípulo[a]».'
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada al lugar equivocado.
+    rationale: La nota explica ⲛ̄ⲧⲁϩⲉ, es decir, «como yo / en mi manera», pero en el borrador aparece después de «discípulo». El anclaje debe ir junto a «como yo[a]» para reflejar fielmente la decisión léxica auditada.
+  - severity: low
+    issue: «Mi madre verdadera» es menos natural que «mi verdadera madre».
+    rationale: Ambas opciones son posibles, pero en español la anteposición del adjetivo funciona mejor para un contraste teológico-discursivo entre la madre biológica y la madre verdadera/espiritual.
+  - severity: low
+    issue: «Llegar a ser» sobretraduce levemente el valor del copto.
+    rationale: El texto fuente y el POB inglés dicen simplemente «cannot become my disciple». «No puede ser mi discípulo» es más directo y suficientemente natural en español.
+  revised_spanish_text: Quien no odia a su padre y a su madre como yo[a] no puede ser mi discípulo; y quien no ama a su padre y a su madre como yo no puede ser mi discípulo. Porque mi madre [...][b], pero mi verdadera madre[c] me dio vida.
+  revised_footnotes:
+  - marker: a
+    text: Lit. «en mi manera» o «como yo» (ⲛ̄ⲧⲁϩⲉ).
+    reason: lexical_alternative
+  - marker: b
+    text: El manuscrito está dañado aquí (ⲛ̄ⲧⲁⲥ̣[.........] [..]ⲟ̣ⲗ̣). Los especialistas suelen reconstruir algo como «me llevó hasta la muerte» o «me dio falsedad», en contraste con la verdadera madre que da vida.
+    reason: textual_variant
+  - marker: c
+    text: Lit. «de verdad» o «de la verdad» (ⲙ̄ⲙⲉ).
+    reason: lexical_alternative
+  revision_rationale: Se corrige el anclaje de la nota léxica para que recaiga sobre «como yo», se simplifica «no puede llegar a ser» a «no puede ser» para evitar un matiz no exigido por el copto, y se mejora la naturalidad española con «mi verdadera madre» sin alterar el sentido ni la lógica teológica del texto auditado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1e5ef518f7305d11a6893ddbbfa8c450494127d23a69f668dba488bed6de3d46
+  timestamp: '2026-05-08T03:02:59Z'
+  output_hash: 9e3b8a79117bb923ab409a91e4e61f3574c333184c4001ba81866ed15d8c2da1
+  usage:
+    prompt_tokens: 5410
+    completion_tokens: 894
+    total_tokens: 6304
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026935
+  applied_revision: true

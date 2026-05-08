@@ -62,15 +62,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: En el día del castigo[a], a vosotros[b] escuchasteis.
+  text: En el día del castigo[a] ... a ustedes[b] ... oyeron[c] ...
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El OCR sitúa aquí ϩⲙⲡⲉϩⲟⲟⲩ ⲉⲛⲕⲟⲗⲁⲥⲓⲥ, literalmente «en el día del castigo»; el campo inglés también advierte posible desajuste de línea.
+    text: El OCR conserva aquí ϩⲙⲡⲉϩⲟⲟⲩ ⲉⲛⲕⲟⲗⲁⲥⲓⲥ, «en el día del castigo». El expediente inglés también advierte posible desajuste de línea con el contexto vecino.
     reason: source_note
   - marker: b
-    text: ⲛⲉⲣⲱⲧⲛ es plural; por eso se vierte «a vosotros» en vez de una forma singular.
-    reason: spanish_style_note
+    text: ⲛⲉⲣⲱⲧⲛ indica un referente plural, aquí vertido en español neutro como «a ustedes».
+    reason: lexical_choice
+  - marker: c
+    text: ⲁⲕⲥⲱⲧⲙ se refleja aquí de forma provisional como «oyeron/oyeron ustedes» según la lectura OCR disponible; se mantienen los puntos suspensivos porque el fragmento es incompleto y la sintaxis exacta sigue incierta.
+    reason: fragment_note
 lexical_decisions:
 - source_word: ϩⲙⲡⲉϩⲟⲟⲩ ⲉⲛⲕⲟⲗⲁⲥⲓⲥ
   english_pob_choice: in the day of punishment
@@ -132,4 +135,52 @@ ai_draft:
     total_tokens: 3803
     reasoning_tokens: 0
     estimated_cost_usd: 0.006512
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: En el día del castigo[a], a vosotros[b] escuchasteis.
+  to: En el día del castigo[a] ... a ustedes[b] ... oyeron[c] ...
+  rationale: Se conserva solo el material legible del fragmento, pero se rehace la línea para evitar una construcción española incorrecta y para reflejar mejor el carácter lacunoso del texto. «A ustedes» se ajusta al español meta mejor que «a vosotros», y los puntos suspensivos muestran que no debe reconstruirse más de lo que permite la evidencia.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:17:08Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español sigue la corrección de alineación y ya no importa el antiguo hemistiquio de «honor y alabanza». Sin embargo, la secuencia traducida sigue siendo fragmentaria y la sintaxis española actual («a vosotros escuchasteis») no representa bien la relación entre ⲛⲉⲣⲱⲧⲛ (‘a ustedes/vosotros’) y ⲁⲕⲥⲱⲧⲙ (‘oíste/escuchaste’ o forma afín según la lectura OCR), además de mezclar personas gramaticales. Conviene mantener el carácter elíptico del fragmento sin forzar una frase española incorrecta.
+  spanish_quality_summary: «En el día del castigo, a vosotros escuchasteis» es poco natural y gramaticalmente defectuoso en español, porque combina un complemento indirecto plural con un verbo en segunda persona plural sin nexo claro. También «vosotros/escuchasteis» se aparta del objetivo de español neutro latinoamericano; «ustedes/oyeron» o una solución con puntos suspensivos refleja mejor el estado fragmentario. Hay un error menor en la nota («praisa»).
+  glossary_alignment: No hay terminología teológica sensible aquí. «castigo» para ⲕⲟⲗⲁⲥⲓⲥ es adecuado. Debe evitarse «vosotros» por registro regional, salvo necesidad fuerte; aquí no la hay. Dado el carácter fragmentario y la advertencia inglesa de desalineación, la mejor solución española es conservar elipsis y no sobreinterpretar la sintaxis.
+  issues:
+  - severity: medium
+    issue: Sintaxis española defectuosa en «a vosotros escuchasteis»
+    rationale: La frase mezcla un destinatario/complemento con un verbo en segunda persona plural de manera incoherente y no suena natural ni fiel al fragmento.
+  - severity: medium
+    issue: Registro no alineado con español neutro latinoamericano
+    rationale: «Vosotros/escuchasteis» es preciso formalmente, pero no corresponde al estilo meta del proyecto; «ustedes» o una formulación más neutral es preferible.
+  - severity: low
+    issue: Nota con errata menor
+    rationale: La explicación teológica/textual dice «praisa» en lugar de «alabanza» o «praise/alabanza», lo que conviene corregir si se rehace la nota.
+  revised_spanish_text: En el día del castigo[a] ... a ustedes[b] ... oyeron[c] ...
+  revised_footnotes:
+  - marker: a
+    text: El OCR conserva aquí ϩⲙⲡⲉϩⲟⲟⲩ ⲉⲛⲕⲟⲗⲁⲥⲓⲥ, «en el día del castigo». El expediente inglés también advierte posible desajuste de línea con el contexto vecino.
+    reason: source_note
+  - marker: b
+    text: ⲛⲉⲣⲱⲧⲛ indica un referente plural, aquí vertido en español neutro como «a ustedes».
+    reason: lexical_choice
+  - marker: c
+    text: ⲁⲕⲥⲱⲧⲙ se refleja aquí de forma provisional como «oyeron/oyeron ustedes» según la lectura OCR disponible; se mantienen los puntos suspensivos porque el fragmento es incompleto y la sintaxis exacta sigue incierta.
+    reason: fragment_note
+  revision_rationale: Se conserva solo el material legible del fragmento, pero se rehace la línea para evitar una construcción española incorrecta y para reflejar mejor el carácter lacunoso del texto. «A ustedes» se ajusta al español meta mejor que «a vosotros», y los puntos suspensivos muestran que no debe reconstruirse más de lo que permite la evidencia.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 6846c023086fe7c8c0f9a49ca32ca254d503cbe2611e2f01549353c735c27315
+  timestamp: '2026-05-08T03:17:08Z'
+  output_hash: bc1b3b4d6cec2c48cfb7ac406a7e0b14120ae4b75a446e55144fcb57363d83df
+  usage:
+    prompt_tokens: 3376
+    completion_tokens: 895
+    total_tokens: 4271
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021865
+  applied_revision: true

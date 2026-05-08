@@ -73,15 +73,12 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dice: «Donde hay tres dioses, son dioses. Donde hay dos o uno[a], yo estoy con él»[b].'
+  text: 'Jesús dice: «Donde hay tres dioses[a], son dioses. Donde hay dos o uno, yo estoy con él».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «yo estoy con él». El español puede omitir el pronombre explícito, pero se mantiene aquí por el énfasis del sujeto expresado en el coptico.'
-    reason: alternative_reading
-  - marker: b
-    text: El texto coptico y el testimonio griego asociado presentan una formulación breve y enigmática; no se añade material explicativo que el dicho no contenga.
-    reason: source_note
+    text: El códice impreso lee «ϩⲛ̄ⲛⲟⲩⲧⲉ ⲛⲉ» (lit. «están en un dios»), mientras que la forma normalizada presenta «ⲟⲩⲛⲟⲩⲧⲉ ⲡⲉ». Aquí se entiende como predicación plural, «son dioses», lo cual también concuerda con el testimonio griego (POxy 1).
+    reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲉϫⲉ
   english_pob_choice: says
@@ -180,4 +177,48 @@ ai_draft:
     total_tokens: 5190
     reasoning_tokens: 0
     estimated_cost_usd: 0.008636
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dice: «Donde hay tres dioses, son dioses. Donde hay dos o uno[a], yo estoy con él»[b].'
+  to: 'Jesús dice: «Donde hay tres dioses[a], son dioses. Donde hay dos o uno, yo estoy con él».'
+  rationale: La traducción principal puede conservarse casi intacta, pero las notas deben alinearse con la evidencia fuente y el rastro de auditoría. Se elimina la nota redundante sobre «yo» y la nota genérica final, y se añade la nota textual relevante sobre la lectura/predicación de «son dioses».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido básico del copto y del POB inglés: presente narrativo («dice»), plural literal «dioses», y la cláusula final «yo estoy con él». Sin embargo, no preserva adecuadamente el aparato auditado: omite la nota textual importante sobre la predicación «son dioses» y el testimonio griego, y añade en su lugar una nota inespecífica que no procede del rastro de auditoría. Además, la nota [a] no funciona como verdadera alternativa, porque repite esencialmente el mismo texto.'
+  spanish_quality_summary: El español es claro, natural y digno. «Donde hay…» y «yo estoy con él» leen bien. Aun así, las notas actuales son débiles y algo redundantes; conviene simplificarlas y sustituirlas por una nota textual fiel al expediente. También es más limpio evitar una nota de alternativa que no añade diferencia real al lector.
+  glossary_alignment: 'No hay conflicto con los términos de proyecto: «Jesús», «dioses» y «él» están bien. No hay términos teológicos mayores que requieran ajuste. La decisión de mantener «yo» es defendible en español para reflejar el sujeto explícito copto, aunque no exige nota aparte.'
+  issues:
+  - severity: medium
+    issue: Falta la nota textual principal sobre «son dioses».
+    rationale: El POB inglés documenta una variante/importante explicación textual para la predicación plural («they are gods») frente al impreso del códice y su relación con POxy 1. El borrador español la omite por completo.
+  - severity: medium
+    issue: La nota [a] es redundante y no ofrece una alternativa real útil.
+    rationale: 'Dice «O: “yo estoy con él”», que coincide sustancialmente con el texto principal; la observación sobre la omisión del pronombre es metalingüística y no corresponde a una alternativa de traducción preservada por el POB.'
+  - severity: low
+    issue: La nota [b] introduce un comentario genérico no sustentado por el aparato auditado.
+    rationale: La observación sobre una formulación ‘breve y enigmática’ no añade evidencia textual ni decisión léxica documentada; desplaza notas más pertinentes del expediente inglés.
+  revised_spanish_text: 'Jesús dice: «Donde hay tres dioses[a], son dioses. Donde hay dos o uno, yo estoy con él».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: El códice impreso lee «ϩⲛ̄ⲛⲟⲩⲧⲉ ⲛⲉ» (lit. «están en un dios»), mientras que la forma normalizada presenta «ⲟⲩⲛⲟⲩⲧⲉ ⲡⲉ». Aquí se entiende como predicación plural, «son dioses», lo cual también concuerda con el testimonio griego (POxy 1).
+    reason: textual_variant
+  revision_rationale: La traducción principal puede conservarse casi intacta, pero las notas deben alinearse con la evidencia fuente y el rastro de auditoría. Se elimina la nota redundante sobre «yo» y la nota genérica final, y se añade la nota textual relevante sobre la lectura/predicación de «son dioses».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8be887efd2892e1230013b1cd8bcefc02c95f2edae77cb82e09724943d2f4815
+  timestamp: '2026-05-08T03:06:23Z'
+  output_hash: 2c5ea831d1e2788759f51687c8815436d693996508db84a795992ced54e3e77d
+  usage:
+    prompt_tokens: 4805
+    completion_tokens: 764
+    total_tokens: 5569
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023473
+  applied_revision: true

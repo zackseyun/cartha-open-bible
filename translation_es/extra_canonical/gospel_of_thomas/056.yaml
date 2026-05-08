@@ -68,12 +68,12 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «El que ha llegado a conocer el mundo, ha hallado un cadáver[a]; y el que ha hallado el cadáver[c][b], el mundo no es digno de él».'
+  text: 'Jesús dijo: «El que ha llegado a conocer el mundo ha hallado un cadáver[a]; y el que ha hallado el cadáver[c][b], el mundo no es digno de él».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: El primer miembro usa el artículo indefinido («un cadáver»), mientras que el segundo usa el definido («el cadáver»), probablemente retomando el mismo hallazgo. Algunas versiones españolas los nivelan; aquí se conserva la distinción del copto.
-    reason: textual_variant
+    reason: dialect_note
   - marker: b
     text: «Ha llegado a conocer» intenta reflejar el matiz perfectivo de ⲥⲟⲟⲩⲛ en la construcción relativa; «conoce» sería una alternativa más llana.
     reason: lexical_alternative
@@ -182,4 +182,49 @@ ai_draft:
     total_tokens: 5064
     reasoning_tokens: 0
     estimated_cost_usd: 0.009168
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «El que ha llegado a conocer el mundo, ha hallado un cadáver[a]; y el que ha hallado el cadáver[c][b], el mundo no es digno de él».'
+  to: 'Jesús dijo: «El que ha llegado a conocer el mundo ha hallado un cadáver[a]; y el que ha hallado el cadáver[c][b], el mundo no es digno de él».'
+  rationale: Se propone una revisión menor para corregir la coma impropia tras «mundo» y así mejorar la gramática y fluidez del español sin alterar ninguna decisión exegética o léxica. También se normaliza la razón de la nota a para alinearla con la función que cumple en el expediente inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:12Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura y el sentido del copto: dicho introductorio en pasado, relativo indefinido, matiz resultativo de ‘llegar a conocer’, contraste ‘un cadáver / el cadáver’, y la cláusula final ‘el mundo no es digno de él’. Sin embargo, la puntuación española introduce una coma impropia entre sujeto y verbo en ambas cláusulas relativas, lo que afecta la naturalidad sin aportar fidelidad adicional.'
+  spanish_quality_summary: 'El español es claro, digno y ampliamente legible. ‘Ha llegado a conocer’, ‘ha hallado’ y ‘cadáver’ son opciones adecuadas. La principal corrección necesaria es estilística/gramatical: eliminar la coma tras ‘mundo’ en la primera cláusula y mantener una puntuación más natural en todo el dicho.'
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. No aparecen términos sensibles como Yahvé, Mesías, esclavo, etc. Las decisiones léxicas principales (‘mundo’, ‘cadáver’, ‘digno de él’) concuerdan con el expediente inglés y con el valor del copto.
+  issues:
+  - severity: low
+    issue: Coma indebida entre sujeto relativo y verbo principal
+    rationale: En «El que ha llegado a conocer el mundo, ha hallado…» la coma es antinatural en español y no refleja ninguna pausa exigida por el copto. Lo mismo vale para la articulación general del dicho.
+  - severity: low
+    issue: Puntuación mejorable dentro de la cita
+    rationale: El texto gana fluidez si se evita la coma innecesaria y se mantiene la coordinación simple propia del original terso.
+  revised_spanish_text: 'Jesús dijo: «El que ha llegado a conocer el mundo ha hallado un cadáver[a]; y el que ha hallado el cadáver[c][b], el mundo no es digno de él».'
+  revised_footnotes:
+  - marker: a
+    text: El primer miembro usa el artículo indefinido («un cadáver»), mientras que el segundo usa el definido («el cadáver»), probablemente retomando el mismo hallazgo. Algunas versiones españolas los nivelan; aquí se conserva la distinción del copto.
+    reason: dialect_note
+  - marker: b
+    text: «Ha llegado a conocer» intenta reflejar el matiz perfectivo de ⲥⲟⲟⲩⲛ en la construcción relativa; «conoce» sería una alternativa más llana.
+    reason: lexical_alternative
+  - marker: c
+    text: Compárese Hebreos 11:38 («de quienes el mundo no era digno»). La relación es solo temática; no se trata de un paralelo sinóptico.
+    reason: cross_reference
+  revision_rationale: Se propone una revisión menor para corregir la coma impropia tras «mundo» y así mejorar la gramática y fluidez del español sin alterar ninguna decisión exegética o léxica. También se normaliza la razón de la nota a para alinearla con la función que cumple en el expediente inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 36ca7664f7344abb40171527a81d61fa79f7d270c7d13054aec3e0a34ccd8135
+  timestamp: '2026-05-08T03:03:12Z'
+  output_hash: 2bd14bcb20012836bd54981b1d32b37531b667d6e3e1adb2f24542fbdbe18913
+  usage:
+    prompt_tokens: 4746
+    completion_tokens: 680
+    total_tokens: 5426
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022065
+  applied_revision: true

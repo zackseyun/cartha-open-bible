@@ -91,7 +91,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Los discípulos dijeron a Jesús[a]: «Dinos cómo será nuestro fin». Él dijo: «¿Han encontrado, entonces, el comienzo, que buscan el fin? Porque en el lugar donde está el comienzo, allí estará el fin[b]. Bienaventurado[c] el que se pondrá de pie en el comienzo; él conocerá el fin, y no gustará la muerte[d]».'
+  text: 'Los discípulos dijeron a Jesús: «Dinos cómo será nuestro fin». Él dijo: «¿Han encontrado el comienzo, entonces[a], para que busquen el fin? Porque en el lugar donde está el comienzo, allí estará el fin[b]. Bienaventurado[c] el que se pondrá de pie en el comienzo; él conocerá el fin y no gustará la muerte[d]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -249,4 +249,55 @@ ai_draft:
     total_tokens: 8281
     reasoning_tokens: 0
     estimated_cost_usd: 0.014416
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Los discípulos dijeron a Jesús[a]: «Dinos cómo será nuestro fin». Él dijo: «¿Han encontrado, entonces, el comienzo, que buscan el fin? Porque en el lugar donde está el comienzo, allí estará el fin[b]. Bienaventurado[c] el que se pondrá de pie en el comienzo; él conocerá el fin, y no gustará la muerte[d]».'
+  to: 'Los discípulos dijeron a Jesús: «Dinos cómo será nuestro fin». Él dijo: «¿Han encontrado el comienzo, entonces[a], para que busquen el fin? Porque en el lugar donde está el comienzo, allí estará el fin[b]. Bienaventurado[c] el que se pondrá de pie en el comienzo; él conocerá el fin y no gustará la muerte[d]».'
+  rationale: Se corrige la sintaxis de la pregunta central para reflejar mejor el valor retórico y consecutivo del copto, y se mueve la nota [a] al lugar que realmente comenta. El resto del texto se mantiene por ser fiel, legible y alineado con la auditoría inglesa.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:11:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien la macroestructura del dicho: pregunta sobre el fin, respuesta paradójica sobre hallar el comienzo, estructura locativa «en el lugar donde… allí…», bienaventuranza final y el modismo «gustar la muerte». Sin embargo, hay dos desajustes importantes con la auditoría inglesa y el copto: (1) la nota [a] está anclada a «Jesús», pero su contenido explica la partícula retórica de la pregunta siguiente; (2) la pregunta «¿Han encontrado, entonces, el comienzo, que buscan el fin?» suena gramaticalmente forzada y pierde el valor de «that/so that you are seeking the end».'
+  spanish_quality_summary: El español es mayormente claro y digno, con buenas elecciones como «Dinos», «en el lugar donde… allí…», «Bienaventurado» y «no gustará la muerte». No obstante, la cláusula interrogativa central necesita reparación para sonar natural en español contemporáneo sin apartarse del sentido fuente. También conviene recolocar la nota [a] al segmento pertinente.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Jesús», «Bienaventurado», «comienzo»/«fin» y «gustará la muerte» concuerdan con las decisiones documentadas. La excepción principal no es terminológica sino sintáctica y de anclaje de nota.
+  issues:
+  - severity: high
+    issue: La nota [a] está colocada en «Jesús[a]», pero su contenido trata la secuencia retórica «entonces …» de la pregunta de Jesús.
+    rationale: Las instrucciones exigen que el marcador aparezca en la palabra o frase relevante. Tal como está, induce a error y no preserva la relación auditada entre nota y fuente.
+  - severity: medium
+    issue: «¿Han encontrado, entonces, el comienzo, que buscan el fin?» es una construcción poco natural y ambigua en español.
+    rationale: El copto/inglés expresan una pregunta retórica del tipo «¿Han hallado el comienzo, entonces, para que/que estén buscando el fin?». El borrador actual puede leerse como aposición defectuosa y no refleja bien ⲕⲁⲁⲥ.
+  - severity: low
+    issue: «se pondrá de pie» es aceptable, pero «estará de pie» o «permanecerá de pie» podría sonar más sentencioso.
+    rationale: No es error de fidelidad; «se pondrá de pie» sigue siendo defendible y puede mantenerse para evitar cambio innecesario.
+  revised_spanish_text: 'Los discípulos dijeron a Jesús: «Dinos cómo será nuestro fin». Él dijo: «¿Han encontrado el comienzo, entonces[a], para que busquen el fin? Porque en el lugar donde está el comienzo, allí estará el fin[b]. Bienaventurado[c] el que se pondrá de pie en el comienzo; él conocerá el fin y no gustará la muerte[d]».'
+  revised_footnotes:
+  - marker: a
+    text: La secuencia copta de la pregunta funciona retóricamente; «entonces» conserva el tono sin sobretraducir el valor de la partícula.
+    reason: lexical_alternative
+  - marker: b
+    text: El copto expresa de forma explícita «en el lugar donde está el comienzo, allí estará el fin»; la traducción conserva esa estructura locativa.
+    reason: cultural_note
+  - marker: c
+    text: Literalmente, la construcción copta puede entenderse como «el que se pondrá de pie antes de él/en su presencia en el comienzo». Se conserva una formulación más transparente y menos especulativa.
+    reason: source_note
+  - marker: d
+    text: «Gustará la muerte» reproduce el giro idiomático copto para «experimentar la muerte».
+    reason: cultural_note
+  revision_rationale: Se corrige la sintaxis de la pregunta central para reflejar mejor el valor retórico y consecutivo del copto, y se mueve la nota [a] al lugar que realmente comenta. El resto del texto se mantiene por ser fiel, legible y alineado con la auditoría inglesa.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1454573cd4e808e28fc1d4ffd022744e7110c0bf8ca797dc85dba160b03b7ab1
+  timestamp: '2026-05-08T03:11:58Z'
+  output_hash: 5e22555b058b7cce4d37c368029b4f44870818ee38ffd90188d6a9b53077a467
+  usage:
+    prompt_tokens: 7990
+    completion_tokens: 930
+    total_tokens: 8920
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.033925
+  applied_revision: true

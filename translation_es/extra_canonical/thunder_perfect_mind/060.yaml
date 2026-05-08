@@ -68,16 +68,18 @@ base_translation:
     changes_summary: Removed the bracketed markup from the main text and slightly smoothed the first clause for clarity while preserving the source sense and structure.
 translation:
   language: es
-  text: 'Pero por vergüenza, recíbeme para vosotros en desvergüenza;
+  text: 'Pero por vergüenza, recíbeme entre vosotros en desvergüenza;
 
-    y por desvergüenza y vergüenza, reprended[a] mis miembros entre vosotros;
+
+    y por la desvergüenza y la vergüenza, reprended mis miembros entre vosotros[a];
+
 
     y acercaos a vosotros mismos.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «reprended también mis miembros»; el sentido exacto de la cláusula es incierto en el testimonio alineado.'
-    reason: textual_variant
+    text: O posiblemente «mis miembros/miembros entre vosotros»; la ubicación exacta de esta expresión en la cláusula es incierta en el testimonio alineado.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ϣⲟⲡⲧ
   english_pob_choice: receive me
@@ -178,4 +180,62 @@ ai_draft:
     total_tokens: 5027
     reasoning_tokens: 0
     estimated_cost_usd: 0.008983
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Pero por vergüenza, recíbeme para vosotros en desvergüenza;
+
+    y por desvergüenza y vergüenza, reprended[a] mis miembros entre vosotros;
+
+    y acercaos a vosotros mismos.'
+  to: 'Pero por vergüenza, recíbeme entre vosotros en desvergüenza;
+
+
+    y por la desvergüenza y la vergüenza, reprended mis miembros entre vosotros[a];
+
+
+    y acercaos a vosotros mismos.'
+  rationale: 'Se hacen reparaciones menores para mejorar fidelidad e idiomaticidad: «entre vosotros» sustituye a «para vosotros» para reflejar mejor el valor comunitario/reflexivo; se suaviza la coordinación de abstractos con artículos; y la nota se corrige para corresponder a la incertidumbre real documentada sobre «mis miembros … entre vosotros». No hace falta nueva adjudicación mayor.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:11:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en lo esencial la secuencia imperativa del copto ya corregida en el audit trail inglés: recibir, reprender y acercarse. Conserva además la antítesis «vergüenza / desvergüenza». Sin embargo, hay dos problemas de fidelidad/forma: «para vosotros» no refleja bien «to yourselves / among yourselves» y suena poco natural; «por desvergüenza y vergüenza» también suena forzado, mejor con artículo para expresar los sustantivos abstractos en español. La nota actual sobre «reprended también mis miembros» no corresponde al aparato inglés, que habla más bien de incertidumbre sobre «mis miembros / entre vosotros».'
+  spanish_quality_summary: 'El texto es legible, pero tiene giros poco idiomáticos para español eclesial neutral: «para vosotros» debería ser «entre vosotros» o «a vosotros mismos» según la cláusula; «en desvergüenza» es posible pero áspero, aunque aceptable por paralelismo. «Acercaos a vosotros mismos» es comprensible y conserva el carácter extraño del original. Conviene además alinear la nota con la incertidumbre real documentada.'
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal principal del proyecto. Las decisiones léxicas clave son razonables: ϣⲟⲡⲧ → «recíbeme», ϫⲡⲓⲟ → «reprended», ⲙⲉⲗⲟⲥ → «miembros». La pareja ϣⲓⲡⲉ / ⲙⲛⲧⲁⲧϣⲓⲡⲉ se preserva bien como «vergüenza / desvergüenza», aunque en español requiere leve ajuste sintáctico para sonar natural.'
+  issues:
+  - severity: medium
+    issue: «recíbeme para vosotros» es poco natural y no representa bien el valor reflexivo/comunitario
+    rationale: El inglés auditado tiene «receive me to yourselves». En español «para vosotros» introduce finalidad/beneficio, no incorporación al propio grupo. «entre vosotros» o «a vosotros mismos» refleja mejor el sentido sin falsearlo.
+  - severity: low
+    issue: La secuencia «por desvergüenza y vergüenza» suena antinatural
+    rationale: 'En español los abstractos paralelos se expresan mejor con artículo: «por la desvergüenza y la vergüenza». Esto mejora la legibilidad sin alterar el sentido.'
+  - severity: medium
+    issue: La nota al pie no coincide con la incertidumbre documentada en el audit trail
+    rationale: La nota inglesa b trata la posible lectura/ubicación de «miembros entre vosotros», no una variante «también». La nota española actual introduce una alternativa no apoyada por la evidencia suministrada.
+  revised_spanish_text: 'Pero por vergüenza, recíbeme entre vosotros en desvergüenza;
+
+
+    y por la desvergüenza y la vergüenza, reprended mis miembros entre vosotros[a];
+
+
+    y acercaos a vosotros mismos.'
+  revised_footnotes:
+  - marker: a
+    text: O posiblemente «mis miembros/miembros entre vosotros»; la ubicación exacta de esta expresión en la cláusula es incierta en el testimonio alineado.
+    reason: alignment_note
+  revision_rationale: 'Se hacen reparaciones menores para mejorar fidelidad e idiomaticidad: «entre vosotros» sustituye a «para vosotros» para reflejar mejor el valor comunitario/reflexivo; se suaviza la coordinación de abstractos con artículos; y la nota se corrige para corresponder a la incertidumbre real documentada sobre «mis miembros … entre vosotros». No hace falta nueva adjudicación mayor.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9bb8145f8a88f78529d8dceb5c67a793f3193b3c00f2535d1b85b97eabc91009
+  timestamp: '2026-05-08T03:11:42Z'
+  output_hash: 7a017e157de4de796f13de220d8fa7490202a7bc0aa7f22944037f52807f64b0
+  usage:
+    prompt_tokens: 4686
+    completion_tokens: 847
+    total_tokens: 5533
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02442
+  applied_revision: true

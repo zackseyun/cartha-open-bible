@@ -79,17 +79,17 @@ base_translation:
     changes_summary: Changed ‘who are hungry’ to ‘who have gone hungry’ to better match the perfective sense of the source and established lexical decision.
 translation:
   language: es
-  text: 'Jesús dijo[a]: “Bienaventurados los que han sido perseguidos en su corazón; esos son los que verdaderamente han conocido al Padre. Bienaventurados los que han pasado hambre[b][c], para que el vientre del que desea[c] sea llenado”.'
+  text: 'Jesús dijo: «Bienaventurados los que han sido perseguidos en su corazón[a]; esos son los que verdaderamente han conocido al Padre. Bienaventurados los que han pasado hambre[b], para que el vientre[c] del que desea sea llenado».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'La ambigüedad de ''en su corazón'' se conserva deliberadamente: el copt o permite entender que la persecución ocurre en el corazón de los perseguidores o en el interior del corazón de los perseguidos.'
-    reason: theological_note
+    text: 'La ambigüedad de «en su corazón» se conserva deliberadamente: el copto permite entender que la persecución ocurre en el corazón de los perseguidores o en el interior del corazón de los perseguidos.'
+    reason: dialect_note
   - marker: b
-    text: La forma copta es plural; se traduce con sujeto plural en español para mantener la concordancia con el manuscrito.
+    text: La forma copta es plural; se traduce con sujeto plural en español para mantener la concordancia con el manuscrito. «Han pasado hambre» también conserva el valor perfectivo elegido en la auditoría inglesa.
     reason: textual_variant
   - marker: c
-    text: '''Han pasado hambre'' conserva el valor concreto de ϩⲕⲟ y, en español, puede funcionar como equivalente perfectivo de la bienaventuranza.'
+    text: «Vientre» mantiene la imagen corporal concreta de ⲡϩⲏ; el verbo puede significar «ser llenado» o «quedar satisfecho», pero aquí se conserva la imagen de llenura para corresponder al original.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ
@@ -216,4 +216,57 @@ ai_draft:
     total_tokens: 7364
     reasoning_tokens: 0
     estimated_cost_usd: 0.012835
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: “Bienaventurados los que han sido perseguidos en su corazón; esos son los que verdaderamente han conocido al Padre. Bienaventurados los que han pasado hambre[b][c], para que el vientre del que desea[c] sea llenado”.'
+  to: 'Jesús dijo: «Bienaventurados los que han sido perseguidos en su corazón[a]; esos son los que verdaderamente han conocido al Padre. Bienaventurados los que han pasado hambre[b], para que el vientre[c] del que desea sea llenado».'
+  rationale: La revisión mantiene el sentido del original y la redacción principal del borrador, pero corrige la colocación y unicidad de los marcadores, repara la nota de ambigüedad, añade la nota léxica concreta sobre «vientre»/«ser llenado» que sí está documentada en el audit trail inglés, y corrige el error tipográfico.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:01Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura general del dicho: mantiene el plural de las bienaventuranzas, conserva la ambigüedad de «en su corazón» y traduce adecuadamente «el Padre». Sin embargo, no preserva fielmente toda la documentación inglesa: el marcador [a] está anclado a «Jesús dijo» en vez de la frase ambigua de persecución, y se omite la nota sobre el matiz concreto de «vientre»/«ser llenado». Además, «sea llenado» suena poco natural en español bíblico actual frente a «sea llenado»/«sea colmado», pero aquí conviene ajustar sobre todo la distribución y contenido de notas.'
+  spanish_quality_summary: 'El texto es legible y digno, pero la anotación está mal distribuida y hay un problema de calidad editorial: el mismo marcador [c] aparece en dos lugares para una sola nota, lo cual incumple la disciplina requerida. También hay un error tipográfico en la nota a («copt o»). La frase principal funciona bien en español; solo requiere una reparación menor de marcadores y notas, con una leve mejora opcional de estilo en el predicado final.'
+  glossary_alignment: 'La terminología principal está alineada con el proyecto y con las decisiones léxicas auditadas: «Bienaventurados», «perseguidos», «el Padre», «han pasado hambre», «vientre» y «desea» son defensables. No hay conflictos con las preferencias terminológicas globales. La principal desviación no es glosarial sino editorial y de preservación de notas.'
+  issues:
+  - severity: medium
+    issue: El marcador [a] está anclado a «Jesús dijo» en lugar de la expresión ambigua «en su corazón».
+    rationale: La nota a explica la ambigüedad de ϩⲣⲁⲓ ϩⲛⲡⲉⲩϩⲏⲧ, por lo que debe ir junto a esa frase, no junto a la fórmula introductoria.
+  - severity: high
+    issue: Se reutiliza el marcador [c] para dos lugares distintos y no se preserva correctamente la disciplina de notas.
+    rationale: Las instrucciones exigen marcadores únicos y no reutilizados para notas diferentes. Además, una sola nota no debe anclarse dos veces salvo necesidad explícita, que aquí no existe.
+  - severity: medium
+    issue: Falta una nota que preserve la justificación léxica de la imagen concreta «belly / be filled».
+    rationale: El rastro inglés documenta específicamente el valor concreto de ⲡϩⲏ y ⲥⲓⲟ; la revisión española debe reflejar esa decisión, idealmente anclada en «vientre» o en la cláusula final.
+  - severity: low
+    issue: 'Hay un error tipográfico en la nota a: «copt o».'
+    rationale: Debe decir «copto».
+  revised_spanish_text: 'Jesús dijo: «Bienaventurados los que han sido perseguidos en su corazón[a]; esos son los que verdaderamente han conocido al Padre. Bienaventurados los que han pasado hambre[b], para que el vientre[c] del que desea sea llenado».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: 'La ambigüedad de «en su corazón» se conserva deliberadamente: el copto permite entender que la persecución ocurre en el corazón de los perseguidores o en el interior del corazón de los perseguidos.'
+    reason: dialect_note
+  - marker: b
+    text: La forma copta es plural; se traduce con sujeto plural en español para mantener la concordancia con el manuscrito. «Han pasado hambre» también conserva el valor perfectivo elegido en la auditoría inglesa.
+    reason: textual_variant
+  - marker: c
+    text: «Vientre» mantiene la imagen corporal concreta de ⲡϩⲏ; el verbo puede significar «ser llenado» o «quedar satisfecho», pero aquí se conserva la imagen de llenura para corresponder al original.
+    reason: lexical_alternative
+  revision_rationale: La revisión mantiene el sentido del original y la redacción principal del borrador, pero corrige la colocación y unicidad de los marcadores, repara la nota de ambigüedad, añade la nota léxica concreta sobre «vientre»/«ser llenado» que sí está documentada en el audit trail inglés, y corrige el error tipográfico.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0ac6dd2e7003f0c06028c89143c030f55b0383455d9fa1fb3662c46f33759b57
+  timestamp: '2026-05-08T03:02:01Z'
+  output_hash: f938289c97dca53f6fe43499b42b928cf7a0e056629bd8bf40bbab0b2edc76ea
+  usage:
+    prompt_tokens: 6993
+    completion_tokens: 999
+    total_tokens: 7992
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.032468
+  applied_revision: true

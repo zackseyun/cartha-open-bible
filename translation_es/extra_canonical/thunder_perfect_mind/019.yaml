@@ -78,14 +78,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Soy la voz, cuya resonancia es múltiple[a], y la palabra cuya apariencia es múltiple[b]. Soy la expresión de mi nombre. ¿Por qué, ustedes que me odian, me aman, y odian a los que me aman?
+  text: Soy la voz cuyo sonido es múltiple[a], y la palabra cuya apariencia es múltiple[b]. Soy la enunciación de mi nombre. ¿Por qué ustedes, que me odian, me aman y odian a los que me aman?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: '''Resonancia'' intenta reflejar el sonido manifiesto y no solo el timbre literal; el griego/cóptico corregido apunta a la cualidad audible de la voz.'
+    text: «Sonido» traduce de forma más directa la lectura corregida del pasaje; «resonancia» sería una interpretación más libre del efecto audible de la voz.
     reason: lexical_alternative
   - marker: b
-    text: '''Apariencia'' mantiene el paralelo con ''voz'' y deja abierta la idea de manifestación visible sin imponer una interpretación técnica de ''forma''.'
+    text: «Apariencia» conserva el paralelo con «voz» y expresa manifestación visible sin imponer una lectura técnica como «forma».
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲧⲉⲥⲙⲏ
@@ -190,4 +190,49 @@ ai_draft:
     total_tokens: 5126
     reasoning_tokens: 0
     estimated_cost_usd: 0.008314
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Soy la voz, cuya resonancia es múltiple[a], y la palabra cuya apariencia es múltiple[b]. Soy la expresión de mi nombre. ¿Por qué, ustedes que me odian, me aman, y odian a los que me aman?
+  to: Soy la voz cuyo sonido es múltiple[a], y la palabra cuya apariencia es múltiple[b]. Soy la enunciación de mi nombre. ¿Por qué ustedes, que me odian, me aman y odian a los que me aman?
+  rationale: 'La revisión hace ajustes menores para acercar el español a las decisiones léxicas auditadas del Coptic-to-English: «sonido» refleja mejor ϩⲣⲟⲟⲩ, y «enunciación» transmite mejor el valor de ⲡϣⲁϫⲉ como «utterance». También se alisa la puntuación para un español más natural y digno.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:25Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la corrección principal del audit trail: voz/sonido múltiple, palabra/apariencia múltiple, expresión-oráculo del nombre y la pregunta final con la paradoja amor/odio. No reproduce la alucinación anterior sobre vara/consejo/juventud. Sin embargo, dos elecciones suavizan innecesariamente el sentido: «resonancia» se aleja de ϩⲣⲟⲟⲩ = “sonido”, y «expresión» es menos precisa que «enunciación» o «enunciado/expresión verbal» para ⲡϣⲁϫⲉ = “utterance”.'
+  spanish_quality_summary: El español es claro y legible, pero puede hacerse más fiel y natural. «La voz, cuya resonancia es múltiple» suena algo literaria pero menos directa que «la voz cuyo sonido es múltiple». Además, «ustedes que me odian» es comprensible, aunque en una línea poética de registro elevado suena más digno y natural «ustedes, que me odian».
+  glossary_alignment: 'No hay términos teológicos del glosario principal en juego. «Palabra» para ⲡⲗⲟⲅⲟⲥ es aceptable aquí, dado que el English POB en esta revisión ya no conservó «Logos». Las decisiones clave que sí importan son léxicas: voz, sonido, apariencia, nombre, odiar, amar. Conviene ajustar ⲡϣⲁϫⲉ a «enunciación» para reflejar mejor «utterance» y evitar una noción demasiado amplia de «expresión».'
+  issues:
+  - severity: medium
+    issue: «resonancia» por ϩⲣⲟⲟⲩ
+    rationale: El audit trail corregido entiende ϩⲣⲟⲟⲩ como «sound». «Resonancia» interpreta el efecto del sonido, no el sonido mismo; añade matiz no exigido por la fuente.
+  - severity: medium
+    issue: «expresión» por ⲡϣⲁϫⲉ
+    rationale: El inglés auditado escogió «utterance» para mantener tono oracular y distinguirlo de «word». «Expresión» es posible, pero más amplia y menos verbal/perfomativa que «enunciación».
+  - severity: low
+    issue: Puntuación vocativa en la pregunta final
+    rationale: Añadir coma en «ustedes, que me odian» mejora la lectura y el registro sin alterar el sentido.
+  revised_spanish_text: Soy la voz cuyo sonido es múltiple[a], y la palabra cuya apariencia es múltiple[b]. Soy la enunciación de mi nombre. ¿Por qué ustedes, que me odian, me aman y odian a los que me aman?
+  revised_footnotes:
+  - marker: a
+    text: «Sonido» traduce de forma más directa la lectura corregida del pasaje; «resonancia» sería una interpretación más libre del efecto audible de la voz.
+    reason: lexical_alternative
+  - marker: b
+    text: «Apariencia» conserva el paralelo con «voz» y expresa manifestación visible sin imponer una lectura técnica como «forma».
+    reason: lexical_alternative
+  revision_rationale: 'La revisión hace ajustes menores para acercar el español a las decisiones léxicas auditadas del Coptic-to-English: «sonido» refleja mejor ϩⲣⲟⲟⲩ, y «enunciación» transmite mejor el valor de ⲡϣⲁϫⲉ como «utterance». También se alisa la puntuación para un español más natural y digno.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2b002149559ca9f7b52801faad6924a61cf606a6b9e7d8314ee9781a04a999c5
+  timestamp: '2026-05-08T03:09:25Z'
+  output_hash: 26de4ba0455e131b214e501c1c7c0486c8d4c40bc06fb2fe761ab2714c0379a9
+  usage:
+    prompt_tokens: 4745
+    completion_tokens: 857
+    total_tokens: 5602
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024717
+  applied_revision: true

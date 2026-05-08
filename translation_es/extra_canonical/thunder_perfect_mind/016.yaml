@@ -79,9 +79,11 @@ translation:
   language: es
   text: 'Yo soy la madre de mi padre[a],
 
+
     y yo soy la hermana de mi esposo[d][c][b],
 
-    y él es mi descendencia.'
+
+    y él es mi descendiente.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,11 +93,11 @@ translation:
     text: La secuencia OCR ‘ⲧϫⲟⲉⲓⲥ ⲙⲡⲁϫⲡⲟ’ también puede leerse ‘señora de mi señor’; la línea recibida de Thunder es ‘hermana de mi esposo’ (ⲧⲥⲱⲛⲧ ⲙⲡⲁⲣⲱⲙⲉ).
     reason: lexical_alternative
   - marker: c
-    text: ‘Descendencia’ también puede verterse ‘hijo’ o ‘hija’; el copt o subyacente usa con frecuencia ⲣⲏⲣⲉ para ‘niño/hijo’.
+    text: ‘Descendiente’ también puede verterse ‘hijo’ o ‘niño’; el copto subyacente usa con frecuencia ⲣⲏⲣⲉ para ‘niño/hijo’.
     reason: lexical_alternative
   - marker: d
-    text: Este bloque de OCR se extiende hacia contenido adyacente, por lo que los límites de línea son inciertos; la traducción se limita al paralelismo paradojal atestiguado para el segmento 11.
-    reason: source_note
+    text: Este bloque de OCR se extiende hacia contenido adyacente, por lo que los límites de línea son inciertos; la traducción se limita al paralelismo paradójico atestiguado para el segmento 11.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ ⲧⲉ
   english_pob_choice: I am
@@ -159,4 +161,71 @@ ai_draft:
     total_tokens: 4445
     reasoning_tokens: 0
     estimated_cost_usd: 0.007935
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Yo soy la madre de mi padre[a],
+
+    y yo soy la hermana de mi esposo[d][c][b],
+
+    y él es mi descendencia.'
+  to: 'Yo soy la madre de mi padre[a],
+
+
+    y yo soy la hermana de mi esposo[d][c][b],
+
+
+    y él es mi descendiente.'
+  rationale: 'Se hace una reparación pequeña pero necesaria: cambiar ‘descendencia’ por ‘descendiente’ para respetar el referente singular y personal del original auditado y mejorar la naturalidad del español. También se corrige la nota c para ajustarla al audit trail inglés y se normaliza la razón de la nota d a ‘alignment_note’.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la línea recibida documentada por el POB inglés: ‘madre de mi padre’, ‘hermana de mi esposo’ y ‘él es mi offspring’. También preserva correctamente las notas sobre las lecturas OCR alternativas y la incertidumbre de alineación. Sin embargo, una decisión léxica principal no refleja bien el matiz del inglés auditado ni el valor probable de ⲣⲏⲣⲉ: ‘descendencia’ en español suele ser colectiva/abstracta, mientras que aquí se refiere a una persona singular (‘él’).'
+  spanish_quality_summary: El español es claro y digno, pero ‘y él es mi descendencia’ suena poco natural y semánticamente impreciso en español eclesial general. ‘Descendiente’ o ‘hijo’ serían más naturales; dado que el POB inglés eligió ‘offspring’ para mantener amplitud, ‘descendiente’ es la mejor equivalencia singular y genealógica. Además, en la nota c hay un error ortográfico (‘copt o’) y conviene ajustar ‘niño/hijo’ a ‘hijo’ o ‘hijo/niño’ según el inglés auditado, que da ‘child/son’, no ‘son/daughter’.
+  glossary_alignment: No hay términos del glosario mayor especialmente activados aquí. Las elecciones ‘madre’, ‘padre’, ‘hermana’, ‘esposo’ están alineadas con la evidencia y con la racionalidad lexical documentada. La única desalineación relevante es ‘offspring’ -> ‘descendencia’, que conviene cambiar a ‘descendiente’ para conservar singularidad personal y registro genealógico.
+  issues:
+  - severity: medium
+    issue: ‘descendencia’ no representa bien el referente singular personal de ‘he is my offspring’.
+    rationale: En español, ‘descendencia’ normalmente denota linaje o conjunto de descendientes, no una sola persona individual identificada por ‘él’. ‘Descendiente’ mantiene el tono genealógico y la paradoja sin cerrar indebidamente a ‘hijo’.
+  - severity: low
+    issue: La nota c introduce posibilidades no reflejadas en el audit trail inglés y contiene un error ortográfico.
+    rationale: El inglés dice ‘child’ o ‘son’; el borrador español pone ‘hijo’ o ‘hija’ y ‘copt o’. Conviene ajustarlo a ‘hijo’ o ‘niño’/‘hijo’ y corregir ‘copto’.
+  - severity: low
+    issue: La razón de la nota d usa ‘source_note’ en vez de la categoría inglesa ‘alignment_note’.
+    rationale: No afecta el texto bíblico, pero para consistencia de auditoría conviene reflejar la misma clase de nota documentada en el POB inglés.
+  revised_spanish_text: 'Yo soy la madre de mi padre[a],
+
+
+    y yo soy la hermana de mi esposo[d][c][b],
+
+
+    y él es mi descendiente.'
+  revised_footnotes:
+  - marker: a
+    text: El OCR muestra ‘cabeza’ (ⲧϩⲙϩⲁⲗ); la mayoría de las ediciones leen ‘madre’ (ⲧⲙⲁⲁⲩ) en esta línea.
+    reason: lexical_alternative
+  - marker: b
+    text: La secuencia OCR ‘ⲧϫⲟⲉⲓⲥ ⲙⲡⲁϫⲡⲟ’ también puede leerse ‘señora de mi señor’; la línea recibida de Thunder es ‘hermana de mi esposo’ (ⲧⲥⲱⲛⲧ ⲙⲡⲁⲣⲱⲙⲉ).
+    reason: lexical_alternative
+  - marker: c
+    text: ‘Descendiente’ también puede verterse ‘hijo’ o ‘niño’; el copto subyacente usa con frecuencia ⲣⲏⲣⲉ para ‘niño/hijo’.
+    reason: lexical_alternative
+  - marker: d
+    text: Este bloque de OCR se extiende hacia contenido adyacente, por lo que los límites de línea son inciertos; la traducción se limita al paralelismo paradójico atestiguado para el segmento 11.
+    reason: alignment_note
+  revision_rationale: 'Se hace una reparación pequeña pero necesaria: cambiar ‘descendencia’ por ‘descendiente’ para respetar el referente singular y personal del original auditado y mejorar la naturalidad del español. También se corrige la nota c para ajustarla al audit trail inglés y se normaliza la razón de la nota d a ‘alignment_note’.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 63a95f4c9a338dcc30d4c20f1b2f3aa5d5acbbaa803ca4451fc32b7e8e8abff3
+  timestamp: '2026-05-08T03:05:23Z'
+  output_hash: b8a748278a1888f133b5d6db54041c9685e4ee20f5e0239be7588f063052521f
+  usage:
+    prompt_tokens: 4112
+    completion_tokens: 1067
+    total_tokens: 5179
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026285
+  applied_revision: true

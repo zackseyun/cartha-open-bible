@@ -59,4 +59,35 @@ ai_draft:
     total_tokens: 2132
     reasoning_tokens: 0
     estimated_cost_usd: 0.003219
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El griego dice literalmente: «Y lo pusieron/colocaron en una σορός, hasta». El inglés auditado lo refleja como «And they placed him in a coffin until». El borrador español conserva bien ἔθεντο como «pusieron», pero «sepulcro» no corresponde bien a σορός, que aquí se refiere a un receptáculo funerario tipo féretro/ataúd, no a una tumba o sepultura.'
+  spanish_quality_summary: La frase española es gramatical y legible, pero «sepulcro» induce una imagen distinta de la fuente. «Ataúd» es más natural, preciso y fiel en español moderno. No hace falta nota al pie si se usa esa opción directa.
+  glossary_alignment: 'No hay términos teológicos sensibles en este fragmento. La decisión clave es léxica: σορός debe alinearse con «ataúd»/«féretro», no con «sepulcro».'
+  issues:
+  - severity: medium
+    issue: «Sepulcro» traduce inadecuadamente σορός.
+    rationale: «Sepulcro» suele referirse al lugar de entierro o tumba, mientras que σορός en este contexto corresponde al objeto funerario en que se coloca el cuerpo, como indica también la traducción inglesa auditada «coffin».
+  - severity: low
+    issue: La nota al pie defiende una imprecisión innecesaria.
+    rationale: El propio expediente inglés ya resolvió el sentido como «coffin». En español, «ataúd» no sobreinterpreta el fragmento; más bien evita desplazar el sentido a una tumba.
+  revised_spanish_text: Y lo pusieron en un ataúd, hasta
+  revision_rationale: Se reemplaza «sepulcro» por «ataúd» para reflejar con precisión σορός y alinearse con la decisión inglesa auditada «coffin». Se elimina la nota porque ya no hace falta justificar una alternativa menos fiel.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0e6a9e2f72d359cac508521dedbf421ec01df56b8cf48019265f83c888f74bd3
+  timestamp: '2026-05-08T03:02:56Z'
+  output_hash: 62f7df838aa88fe1b65e7b53cc220c79c0a8cee288ec0af8619f12ac64884681
+  usage:
+    prompt_tokens: 1704
+    completion_tokens: 454
+    total_tokens: 2158
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01107
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

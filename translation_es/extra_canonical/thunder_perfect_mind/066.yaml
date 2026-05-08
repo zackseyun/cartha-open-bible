@@ -74,24 +74,24 @@ base_translation:
     changes_summary: Changed ‘honor’ to ‘embrace’ to match the established lexical decision for ⲧⲁⲉⲓⲟ. Kept the remainder largely unchanged, but rendered ‘members’ as ‘limbs’ to follow the established decision for ⲗⲁⲁⲧⲉ.
 translation:
   language: es
-  text: Y me honras[a]. Me despreciaste, y me viste[e][d][c][b]. No desparramen las primeras cosas [...]. No mediten [...]. Sus miembros [...].
+  text: Y ustedes me abrazan[a]. Me despreciaron y me vieron[b]. No esparzan las primeras cosas[c] [...]. No mediten[d] [...]. Sus extremidades[e] [...].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'La forma revisada en el audit trail coptológico corrige la lectura anterior: aquí se toma ⲧⲁⲉⲓⲟ en el sentido de ‘honrar’, no ‘abrazar’.'
-    reason: textual_variant
-  - marker: b
-    text: El tramo coptológico incluye una laguna y una alineación incierta; por eso se deja la elipsis sin intentar reconstrucción excesiva.
-    reason: source_note
-  - marker: c
-    text: ⲗⲁⲁⲧⲉ conserva un sentido corporal; en español puede entenderse como ‘miembros’ o ‘miembros/limbs’ en sentido anatómico.
+    text: ⲧⲁⲉⲓⲟ también puede traducirse como «recibir» o «acoger». Se prefiere «abrazan» para conservar la resonancia afectiva y corporal que el POB inglés documenta en este poema.
     reason: lexical_alternative
+  - marker: b
+    text: La secuencia sigue la lectura auditada «me despreciaron y me vieron». Se usa plural para corresponder mejor a las formas fuente tal como se entienden en el expediente.
+    reason: source_alignment
+  - marker: c
+    text: El OCR incluye ⲛⲛϣⲟⲣⲡ, probablemente «las primeras cosas» o «los comienzos», pero la alineación exacta de este tramo sigue siendo incierta; por eso se conserva la elipsis.
+    reason: alignment_note
   - marker: d
-    text: La repetición ‘me viste’ conserva el paralelismo retórico de la línea revisada sin añadir explicaciones interpretativas.
-    reason: spanish_style_note
+    text: ⲙⲉⲗⲉⲧⲁ puede entenderse como «meditar», «ponderar» o «detenerse a pensar». Aquí se mantiene una formulación breve por la fragmentariedad del pasaje.
+    reason: lexical_alternative
   - marker: e
-    text: La secuencia ‘me despreciaste, y me viste’ sigue la lectura corregida del texto fuente y no la versión preliminar basada en una mala alineación.
-    reason: textual_variant
+    text: ⲗⲁⲁⲧⲉ también puede traducirse como «miembros». «Extremidades» mantiene el carácter corporal concreto sin sonar eclesiástico.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲧⲁⲉⲓⲟ
   english_pob_choice: embrace
@@ -215,4 +215,64 @@ ai_draft:
     total_tokens: 5628
     reasoning_tokens: 0
     estimated_cost_usd: 0.011901
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y me honras[a]. Me despreciaste, y me viste[e][d][c][b]. No desparramen las primeras cosas [...]. No mediten [...]. Sus miembros [...].
+  to: Y ustedes me abrazan[a]. Me despreciaron y me vieron[b]. No esparzan las primeras cosas[c] [...]. No mediten[d] [...]. Sus extremidades[e] [...].
+  rationale: 'Se corrige el borrador para alinearlo con el English POB auditado final, no con una revisión intermedia: ⲧⲁⲉⲓⲟ vuelve a «abrazan». También se corrige el número verbal al plural, se simplifica el aparato de notas para que no contradiga el expediente vigente, y se ajusta el registro español a un tono más natural y digno mientras se preserva la fragmentariedad y la incertidumbre de alineación.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:06Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español no sigue fielmente el estado auditado del English POB. La evidencia fuente es fragmentaria y la alineación es incierta, pero el rastro inglés vigente mantiene ‘And you embrace me’ para ⲧⲁⲉⲓⲟ, junto con ‘You despised me, and you saw me… Do not scatter the first things… Do not ponder… your limbs…’. El español adopta ‘honras’, que contradice la decisión léxica inglesa final documentada, y además trata varias formas plurales como singulares.
+  spanish_quality_summary: 'El texto es legible, pero presenta incoherencias de persona y número: ‘me despreciaste, y me viste’ contradice las formas plurales explicadas en sus propias notas; ‘Sus miembros’ suena desconectado y menos natural que ‘sus extremidades’ o ‘sus miembros’ dentro de una frase más completa, pero aquí debe conservarse la fragmentariedad. ‘Desparramen’ es posible, aunque ‘esparzan’ suena más digno y neutral para este registro.'
+  glossary_alignment: 'No hay términos teológicos principales en juego, pero sí una decisión léxica clave: ⲧⲁⲉⲓⲟ debe seguir la opción documentada del POB inglés, ‘embrace’, no la lectura anterior ‘honor’. ⲗⲁⲁⲧⲉ debe reflejar la corporeidad; en español ‘extremidades’ o ‘miembros’ sirven, pero conviene evitar notas que contradigan el audit trail. También debe respetarse la incertidumbre de alineación en notas, no convertir una revisión intermedia en base definitiva.'
+  issues:
+  - severity: high
+    issue: ‘Y me honras’ contradice la decisión léxica final auditada para ⲧⲁⲉⲓⲟ.
+    rationale: El English POB vigente fue revisado de nuevo para volver a ‘embrace’, y las notas inglesas explican esa elección como decisión establecida. El español no debe basarse en una revisión intermedia ya superada.
+  - severity: high
+    issue: 'Incoherencia de número y tratamiento: ‘me despreciaste, y me viste’ frente a formas explicadas como segunda persona plural.'
+    rationale: Aunque el español puede omitir el sujeto, las terminaciones singulares introducen un cambio no justificado. Debe decir ‘me despreciaron, y me vieron’ o una forma equivalente plural.
+  - severity: medium
+    issue: Las notas y decisiones léxicas españolas citan como normativo un estado del audit trail que ya no es el final.
+    rationale: Esto desinforma al lector editorial y hace que el aparato crítico español no corresponda al expediente inglés vigente.
+  - severity: medium
+    issue: ‘Sus miembros’ mantiene el sentido corporal, pero la nota actual mezcla inglés y español y no refleja bien la elección final ‘limbs’.
+    rationale: Conviene una nota limpia en español que preserve la alternativa ‘miembros’ mientras explique por qué se prefiere una forma corporal concreta.
+  - severity: low
+    issue: ‘No desparramen’ es idiomático, pero algo coloquial para el registro buscado.
+    rationale: ‘No esparzan’ conserva mejor la dignidad literaria neutral sin perder el sentido de dispersar.
+  revised_spanish_text: Y ustedes me abrazan[a]. Me despreciaron y me vieron[b]. No esparzan las primeras cosas[c] [...]. No mediten[d] [...]. Sus extremidades[e] [...].
+  revised_footnotes:
+  - marker: a
+    text: ⲧⲁⲉⲓⲟ también puede traducirse como «recibir» o «acoger». Se prefiere «abrazan» para conservar la resonancia afectiva y corporal que el POB inglés documenta en este poema.
+    reason: lexical_alternative
+  - marker: b
+    text: La secuencia sigue la lectura auditada «me despreciaron y me vieron». Se usa plural para corresponder mejor a las formas fuente tal como se entienden en el expediente.
+    reason: source_alignment
+  - marker: c
+    text: El OCR incluye ⲛⲛϣⲟⲣⲡ, probablemente «las primeras cosas» o «los comienzos», pero la alineación exacta de este tramo sigue siendo incierta; por eso se conserva la elipsis.
+    reason: alignment_note
+  - marker: d
+    text: ⲙⲉⲗⲉⲧⲁ puede entenderse como «meditar», «ponderar» o «detenerse a pensar». Aquí se mantiene una formulación breve por la fragmentariedad del pasaje.
+    reason: lexical_alternative
+  - marker: e
+    text: ⲗⲁⲁⲧⲉ también puede traducirse como «miembros». «Extremidades» mantiene el carácter corporal concreto sin sonar eclesiástico.
+    reason: lexical_alternative
+  revision_rationale: 'Se corrige el borrador para alinearlo con el English POB auditado final, no con una revisión intermedia: ⲧⲁⲉⲓⲟ vuelve a «abrazan». También se corrige el número verbal al plural, se simplifica el aparato de notas para que no contradiga el expediente vigente, y se ajusta el registro español a un tono más natural y digno mientras se preserva la fragmentariedad y la incertidumbre de alineación.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9084008dab5e8b5b41806bc25a09e477e23d6f3ac09313aacb1aedda1560cb66
+  timestamp: '2026-05-08T03:06:06Z'
+  output_hash: 4faa669d4965c549a8ffdb8c4d8289f5c351d0b122c0bdec22b618e3cf79c9a7
+  usage:
+    prompt_tokens: 5194
+    completion_tokens: 1221
+    total_tokens: 6415
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0313
+  applied_revision: true

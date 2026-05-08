@@ -59,15 +59,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Soy poder[a][b], y soy temor.
+  text: Soy fuerza[b][a], y soy pavor.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: 'Alternativamente: “Soy fuerza, y soy temor”.'
     reason: lexical_alternative
   - marker: b
-    text: El fragmento OCR disponible para este segmento parece desalineado; la lectura sigue el par de palabras atestiguado normalmente para esta línea.
-    reason: source_note
+    text: El fragmento OCR disponible para este segmento parece desalineado; las palabras coptas/griegas esperadas para “fuerza” (ⲓⲥⲭⲩⲥ) y “temor/pavor” (ⲫⲟⲃⲟⲥ) no son visibles. La lectura sigue el par comúnmente atestiguado para esta línea.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲓⲥⲭⲩⲥ (Gk. loan into Coptic)
   english_pob_choice: might
@@ -112,4 +112,49 @@ ai_draft:
     total_tokens: 2704
     reasoning_tokens: 0
     estimated_cost_usd: 0.004102
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Soy poder[a][b], y soy temor.
+  to: Soy fuerza[b][a], y soy pavor.
+  rationale: Se ajusta ⲓⲥⲭⲩⲥ a “fuerza” para reflejar mejor el vigor concreto del original atestiguado y se eleva ⲫⲟⲃⲟⲥ a “pavor” para corresponder mejor a “dread”. Se conserva “temor” como alternativa léxica en nota. También se completa la nota textual para reflejar con más fidelidad la transparencia crítica del audit trail inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La línea fuente es textualmente incierta por desalineación del OCR, pero el rastro auditado inglés establece con buena razón el par léxico comúnmente atestiguado ⲓⲥⲭⲩⲥ / ⲫⲟⲃⲟⲥ. El borrador español transmite bien ese sentido general: una autoafirmación paradójica de fuerza/potencia y temor/pavor. No hay carga teológica especial en este segmento.'
+  spanish_quality_summary: El español es claro y digno, pero “poder” suena algo más abstracto o facultativo que la fuerza/vigor inherente de “might”. Además, la nota b omite el detalle útil de que no se ven en el OCR las palabras esperadas para ‘fuerza’ y ‘temor’, detalle presente en la auditoría inglesa y valioso para transparencia textual. “Temor” es aceptable, pero “pavor” refleja mejor el peso poético de “dread” sin introducir el matiz reverencial que “temor” puede sugerir en español bíblico.
+  glossary_alignment: 'No hay términos del glosario principal implicados. La decisión léxica debe seguir la justificación inglesa: para ⲓⲥⲭⲩⲥ conviene un sustantivo breve y elevado; en español “fuerza” encaja mejor que “poder”. Para ⲫⲟⲃⲟⲥ, “pavor” preserva mejor la intensidad de “dread”; “temor” queda posible como alternativa en nota.'
+  issues:
+  - severity: medium
+    issue: “poder” debilita el matiz de ⲓⲥⲭⲩⲥ / ‘might’.
+    rationale: Aunque natural, “poder” en español puede denotar autoridad, capacidad o potencia abstracta; “fuerza” conserva mejor el vigor inherente y se acerca más al par atestiguado señalado por la auditoría.
+  - severity: medium
+    issue: “temor” puede sonar demasiado amplio o reverencial para ‘dread’.
+    rationale: La auditoría inglesa eligió “dread” por su peso afectivo. En este contexto poético, “pavor” expresa mejor ese impacto sin la ambivalencia reverencial de “temor”.
+  - severity: low
+    issue: La nota b está abreviada respecto de la evidencia auditada.
+    rationale: Conviene conservar que el OCR parece desalineado y que las palabras coptas/griegas esperadas para ‘fuerza’ y ‘temor/pavor’ no son visibles, para máxima transparencia textual.
+  revised_spanish_text: Soy fuerza[b][a], y soy pavor.
+  revised_footnotes:
+  - marker: a
+    text: 'Alternativamente: “Soy fuerza, y soy temor”.'
+    reason: lexical_alternative
+  - marker: b
+    text: El fragmento OCR disponible para este segmento parece desalineado; las palabras coptas/griegas esperadas para “fuerza” (ⲓⲥⲭⲩⲥ) y “temor/pavor” (ⲫⲟⲃⲟⲥ) no son visibles. La lectura sigue el par comúnmente atestiguado para esta línea.
+    reason: alignment_note
+  revision_rationale: Se ajusta ⲓⲥⲭⲩⲥ a “fuerza” para reflejar mejor el vigor concreto del original atestiguado y se eleva ⲫⲟⲃⲟⲥ a “pavor” para corresponder mejor a “dread”. Se conserva “temor” como alternativa léxica en nota. También se completa la nota textual para reflejar con más fidelidad la transparencia crítica del audit trail inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: cb58b8a95b3e7ba0cc3096a1dc606e997a96ff2b8b1dedb8a8c8666e7f16f1d6
+  timestamp: '2026-05-08T03:06:31Z'
+  output_hash: 16b512bb38b7f9b32ebafed3b135702811a892ae422692835c1923ec69517a7a
+  usage:
+    prompt_tokens: 2337
+    completion_tokens: 870
+    total_tokens: 3207
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018892
+  applied_revision: true

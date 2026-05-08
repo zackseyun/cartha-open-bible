@@ -75,7 +75,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Les mostraron una moneda de oro,[a] y le dijeron: «Los que son de César nos exigen el impuesto.[b] Él les dijo: «Den las cosas de César a César; den las cosas de Dios a Dios; y lo que es mío, dármelo[a][c]».'
+  text: 'Les mostraron a Jesús una moneda de oro,[a] y le dijeron: «Los que pertenecen a César nos exigen el impuesto.[b]» Él les dijo: «Den las cosas de César a César; den las cosas de Dios a Dios; y lo que es mío, dénmelo[c]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -85,7 +85,7 @@ translation:
     text: La frase también puede leerse más literalmente como ‘los que [trabajan/están al servicio de] César buscan de nosotros el impuesto’. El verbo ⲥϣⲓⲧⲉ significa ‘buscar/pedir’; en contexto fiscal, ‘exigir’ es natural.
     reason: lexical_alternative
   - marker: c
-    text: 'Thomas añade aquí un tercer imperativo: ‘y lo que es mío, dármelo’, más allá de las versiones sinópticas.'
+    text: 'Tomás añade aquí un tercer imperativo: ‘y lo que es mío, dénmelo’, más allá de las versiones sinópticas.'
     reason: cross_reference
 lexical_decisions:
 - source_word: ⲥⲉⲃⲟⲓ (as in ⲧⲥⲉⲃⲟⲓ … ⲏⲥⲟⲩⲥ)
@@ -170,4 +170,54 @@ ai_draft:
     total_tokens: 6188
     reasoning_tokens: 0
     estimated_cost_usd: 0.009201
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Les mostraron una moneda de oro,[a] y le dijeron: «Los que son de César nos exigen el impuesto.[b] Él les dijo: «Den las cosas de César a César; den las cosas de Dios a Dios; y lo que es mío, dármelo[a][c]».'
+  to: 'Les mostraron a Jesús una moneda de oro,[a] y le dijeron: «Los que pertenecen a César nos exigen el impuesto.[b]» Él les dijo: «Den las cosas de César a César; den las cosas de Dios a Dios; y lo que es mío, dénmelo[c]».'
+  rationale: Se corrige el uso indebido del marcador [a], se mejora la naturalidad de ‘Los que son de César’, se explicita ‘a Jesús’ como en la fuente y se pule la puntuación/comillas. También se ajusta ‘dármelo’ a ‘dénmelo’ para reflejar claramente el imperativo directo del copto en español idiomático.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:57Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el sentido general del copto y del POB inglés: mostrar una moneda de oro, la exigencia del impuesto por parte de los de César, el doble mandato sobre César y Dios, y la cláusula final distintiva de Tomás. Sin embargo, hay un problema formal importante: el marcador [a] aparece dos veces en el texto pero corresponde solo a la nota sobre ‘moneda de oro’; la cláusula final no debe llevar ese marcador. También conviene suavizar ‘Los que son de César’ a una formulación más natural en español que preserve la nota alternativa documentada (‘los que están al servicio de César’).'
+  spanish_quality_summary: El español es generalmente claro y digno, pero tiene detalles de puntuación y naturalidad mejorables. La cita anidada debe cerrarse correctamente con comillas españolas, y ‘dármelo’ funciona mejor como imperativo independiente tras punto y coma, no pegado de forma ambigua. ‘Los que pertenecen a César’ suena más natural que ‘Los que son de César’ sin perder el sentido básico.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto: ‘Dios’, ‘César’, ‘Jesús’ y ‘impuesto’ están bien. La decisión ‘las cosas de César / las cosas de Dios’ sí preserva correctamente la distinción gramatical plural documentada en la auditoría inglesa frente al singular final ‘lo que es mío’.'
+  issues:
+  - severity: high
+    issue: Marcador de nota [a] reutilizado incorrectamente en la cláusula final
+    rationale: El texto pone [a] tras ‘dármelo’, pero la nota a explica únicamente ⲉⲟⲩⲛⲟⲩⲃ (‘una moneda de oro’). Las instrucciones exigen que cada marcador corresponda exactamente a su anclaje y no se reutilice para otra nota distinta.
+  - severity: medium
+    issue: ‘Los que son de César’ suena poco natural en español
+    rationale: Aunque es comprensible, resulta rígido. ‘Los que pertenecen a César’ o similar comunica mejor la relación de adscripción/servicio preservando la posibilidad explicativa de la nota.
+  - severity: low
+    issue: Puntuación y cierre de comillas mejorables
+    rationale: 'La forma actual con comillas anidadas y la cláusula final puede pulirse para lectura española más limpia: separar mejor los imperativos y cerrar correctamente la cita principal.'
+  revised_spanish_text: 'Les mostraron a Jesús una moneda de oro,[a] y le dijeron: «Los que pertenecen a César nos exigen el impuesto.[b]» Él les dijo: «Den las cosas de César a César; den las cosas de Dios a Dios; y lo que es mío, dénmelo[c]».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: ⲉⲟⲩⲛⲟⲩⲃ literalmente significa ‘un oro’; en este contexto designa una moneda de oro, no simplemente metal bruto.
+    reason: lexical_alternative
+  - marker: b
+    text: La frase también puede leerse más literalmente como ‘los que [trabajan/están al servicio de] César buscan de nosotros el impuesto’. El verbo ⲥϣⲓⲧⲉ significa ‘buscar/pedir’; en contexto fiscal, ‘exigir’ es natural.
+    reason: lexical_alternative
+  - marker: c
+    text: 'Tomás añade aquí un tercer imperativo: ‘y lo que es mío, dénmelo’, más allá de las versiones sinópticas.'
+    reason: cross_reference
+  revision_rationale: Se corrige el uso indebido del marcador [a], se mejora la naturalidad de ‘Los que son de César’, se explicita ‘a Jesús’ como en la fuente y se pule la puntuación/comillas. También se ajusta ‘dármelo’ a ‘dénmelo’ para reflejar claramente el imperativo directo del copto en español idiomático.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ddff919629917989516467e18b3588396f0362ba712b4af213c32eb33ffee08e
+  timestamp: '2026-05-08T03:06:57Z'
+  output_hash: 0ac16d6b344433a587ffacfff74b15654998aefd267a146fdb3dd7ee659883ba
+  usage:
+    prompt_tokens: 5898
+    completion_tokens: 894
+    total_tokens: 6792
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.028155
+  applied_revision: true

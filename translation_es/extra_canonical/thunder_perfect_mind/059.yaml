@@ -63,14 +63,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Soy la ignorante[a],
+  text: 'Soy la no instruida[a][b],
+
 
     y ustedes aprenden de mí.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La OCR también sugiere vocabulario de “conocimiento/ignorancia” y “pequeñez”, pero por la confianza media de alineación no se incorporan en este pareado.
-    reason: source_note
+    text: La OCR también incluye ⲟⲩϣⲓⲡⲉ / ⲙⲛⲧⲁⲧϣⲓⲡⲉ (“conocimiento/ignorancia”) y ⲙⲛⲧϭⲁ (“pequeñez”), que probablemente continúan en una línea adyacente. Dada la confianza media de alineación, no se reflejan en este pareado.
+    reason: alignment_note
+  - marker: b
+    text: También podría traducirse como “la no enseñada” o “la no educada”. Se prefiere “la no instruida” para evitar connotaciones modernas de escolarización formal y conservar la paradoja.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲉⲧϩⲁⲉⲓⲏⲟⲩ
   english_pob_choice: the unlearned one
@@ -122,4 +126,54 @@ ai_draft:
     total_tokens: 3152
     reasoning_tokens: 0
     estimated_cost_usd: 0.004824
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Soy la ignorante[a],
+
+    y ustedes aprenden de mí.'
+  to: 'Soy la no instruida[a][b],
+
+
+    y ustedes aprenden de mí.'
+  rationale: Se reemplaza ‘la ignorante’ por ‘la no instruida’ para ajustar el español al matiz documentado de ‘unlearned/untaught’ sin introducir el sentido más fuerte y potencialmente peyorativo de ‘ignorante’. Se añade además la nota léxica alternativa que el expediente inglés preserva.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador capta bien la estructura del pareado y la relación verbal principal: la hablante se describe como no instruida/no aprendida y el destinatario aprende de ella. Sin embargo, ‘la ignorante’ desplaza el matiz fuente desde ‘no enseñada / no instruida’ hacia ‘ignorant person’, que en español suele sugerir falta general de conocimiento más que ausencia de instrucción, y endurece innecesariamente el sentido respecto al expediente inglés.'
+  spanish_quality_summary: La línea es legible y natural en español. ‘y ustedes aprenden de mí’ funciona bien. El punto débil es ‘la ignorante’, que suena brusco y algo peyorativo; ‘la no instruida’ es más fiel al contraste paradójico aunque algo literal, y ‘la que no ha sido enseñada’ sería más natural pero más larga. Para conservar concisión y paralelismo poético, conviene ‘la no instruida’.
+  glossary_alignment: No hay términos de glosario mayor implicados. La revisión sigue la decisión léxica auditada para ⲉⲧϩⲁⲉⲓⲏⲟⲩ (‘the unlearned one’) y respeta el matiz documentado de evitar connotaciones modernas de escolarización estricta. ‘Ustedes aprenden de mí’ alinea bien con ⲛⲧⲉⲧⲛⲧⲱⲡ ... ⲉⲃⲟⲗ ϩⲛ.
+  issues:
+  - severity: medium
+    issue: ‘la ignorante’ no refleja con suficiente precisión ‘the unlearned one’
+    rationale: En español, ‘ignorante’ normalmente describe a alguien falto de conocimiento, no específicamente no instruido o no enseñado. Eso altera el matiz léxico documentado en el POB inglés y puede sonar más despectivo que el original.
+  - severity: low
+    issue: Falta la nota léxica alternativa presente en el inglés
+    rationale: El inglés conserva alternativas (‘untaught’, ‘uneducated’) por la incertidumbre de matiz. En español conviene preservar esa información porque la elección principal requiere explicación y evita malentendidos.
+  revised_spanish_text: 'Soy la no instruida[a][b],
+
+
+    y ustedes aprenden de mí.'
+  revised_footnotes:
+  - marker: a
+    text: La OCR también incluye ⲟⲩϣⲓⲡⲉ / ⲙⲛⲧⲁⲧϣⲓⲡⲉ (“conocimiento/ignorancia”) y ⲙⲛⲧϭⲁ (“pequeñez”), que probablemente continúan en una línea adyacente. Dada la confianza media de alineación, no se reflejan en este pareado.
+    reason: alignment_note
+  - marker: b
+    text: También podría traducirse como “la no enseñada” o “la no educada”. Se prefiere “la no instruida” para evitar connotaciones modernas de escolarización formal y conservar la paradoja.
+    reason: lexical_alternative
+  revision_rationale: Se reemplaza ‘la ignorante’ por ‘la no instruida’ para ajustar el español al matiz documentado de ‘unlearned/untaught’ sin introducir el sentido más fuerte y potencialmente peyorativo de ‘ignorante’. Se añade además la nota léxica alternativa que el expediente inglés preserva.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 15b1e4e79c7d9ba1e024cb8f28c11ad125c50c0c35b5a7525925b19122fa18f2
+  timestamp: '2026-05-08T03:10:34Z'
+  output_hash: 202b1c5bd8704315a589875ffa2567673b1983e54d83e7fbcc7ae1db3c08fcf7
+  usage:
+    prompt_tokens: 2841
+    completion_tokens: 792
+    total_tokens: 3633
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018982
+  applied_revision: true

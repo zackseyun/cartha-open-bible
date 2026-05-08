@@ -85,16 +85,19 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Sus discípulos le dijeron: «¿La circuncisión beneficia o no?» Él les dijo: «Si beneficiara, su padre los engendraría circuncidados desde su madre. Más bien, la circuncisión de verdad[a] en espíritu[b] ha llegado a ser totalmente provechosa[c].»'
+  text: 'Sus discípulos le dijeron: «¿La circuncisión beneficia o no?». Él les dijo: «Si beneficiara[a], su padre los engendraría circuncidados de su madre. Más bien, la circuncisión de verdad[b] en espíritu[c] ha llegado a ser totalmente provechosa[d]»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La expresión «de verdad» conserva el genitivo del copto; también puede entenderse como «verdadera circuncisión».
+    text: «Si beneficiara» refleja la construcción irreal del copto; también podría expresarse como «si fuera beneficiosa».
     reason: lexical_alternative
   - marker: b
+    text: La expresión «de verdad» conserva el genitivo del copto; también puede entenderse como «verdadera circuncisión».
+    reason: lexical_alternative
+  - marker: c
     text: Aquí «espíritu» mantiene la ambigüedad del original; no se fuerza una referencia explícita al Espíritu Santo.
     reason: theological_note
-  - marker: c
+  - marker: d
     text: 'La frase final completa una elipsis: literalmente, «ha llegado a ser totalmente [así]», con la idea de «provechosa» tomada del verbo anterior de beneficio.'
     reason: lexical_alternative
 lexical_decisions:
@@ -221,4 +224,52 @@ ai_draft:
     total_tokens: 6723
     reasoning_tokens: 0
     estimated_cost_usd: 0.012096
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Sus discípulos le dijeron: «¿La circuncisión beneficia o no?» Él les dijo: «Si beneficiara, su padre los engendraría circuncidados desde su madre. Más bien, la circuncisión de verdad[a] en espíritu[b] ha llegado a ser totalmente provechosa[c].»'
+  to: 'Sus discípulos le dijeron: «¿La circuncisión beneficia o no?». Él les dijo: «Si beneficiara[a], su padre los engendraría circuncidados de su madre. Más bien, la circuncisión de verdad[b] en espíritu[c] ha llegado a ser totalmente provechosa[d]»'
+  rationale: Se corrige una frase española poco natural («desde su madre») por «de su madre», que preserva mejor el sentido de procedencia del original. Además, se añade una nota para la condición irreal, ya que es una decisión de traducción importante documentada en el POB inglés. El resto del texto se mantiene por su buena fidelidad léxica y teológica.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el sentido general del copto y del POB inglés: pregunta sobre si la circuncisión aprovecha, condición irreal, sujeto paterno en «engendrar», contraste correctivo y la idea final de provecho pleno. También preserva adecuadamente «circuncisión de verdad» y «en espíritu». Sin embargo, «desde su madre» no reproduce con naturalidad ni precisión «from their mother / ebol hn peumau»; en español suena impropio en este contexto de nacimiento. Además, conviene anclar una nota para la condición irreal, ya que el POB inglés la documenta explícitamente.'
+  spanish_quality_summary: El español es generalmente claro y digno, pero «su padre los engendraría circuncidados desde su madre» resulta poco idiomático. «De su madre» comunica mejor el origen materno sin rareza innecesaria. También es preferible mantener el plural posesivo «su padre» dentro del distributivo del original, pero con una formulación más natural del segmento completo.
+  glossary_alignment: 'La terminología clave está bien alineada: «circuncisión», «engendraría», «de verdad», «en espíritu» y «provechosa» son compatibles con el expediente léxico inglés. No hay conflicto con los términos teológicos por defecto del proyecto. La minúscula en «espíritu» está bien justificada.'
+  issues:
+  - severity: medium
+    issue: «desde su madre» es una formulación poco natural y algo inexacta para ⲉⲃⲟⲗ ϩⲛ ⲡⲉⲩⲙⲁⲁⲩ.
+    rationale: El sentido es origen/procedencia materna («from their mother»), no un punto de inicio temporal o espacial marcado por «desde». «De su madre» preserva mejor el significado y la legibilidad.
+  - severity: low
+    issue: Falta una nota para la condición irreal en «Si beneficiara».
+    rationale: El POB inglés documenta expresamente el valor contrafactual de ⲛⲉⲣⲉ…; conviene preservarlo también en español por ser una decisión exegética significativa.
+  revised_spanish_text: 'Sus discípulos le dijeron: «¿La circuncisión beneficia o no?». Él les dijo: «Si beneficiara[a], su padre los engendraría circuncidados de su madre. Más bien, la circuncisión de verdad[b] en espíritu[c] ha llegado a ser totalmente provechosa[d]»'
+  revised_footnotes:
+  - marker: a
+    text: «Si beneficiara» refleja la construcción irreal del copto; también podría expresarse como «si fuera beneficiosa».
+    reason: lexical_alternative
+  - marker: b
+    text: La expresión «de verdad» conserva el genitivo del copto; también puede entenderse como «verdadera circuncisión».
+    reason: lexical_alternative
+  - marker: c
+    text: Aquí «espíritu» mantiene la ambigüedad del original; no se fuerza una referencia explícita al Espíritu Santo.
+    reason: theological_note
+  - marker: d
+    text: 'La frase final completa una elipsis: literalmente, «ha llegado a ser totalmente [así]», con la idea de «provechosa» tomada del verbo anterior de beneficio.'
+    reason: lexical_alternative
+  revision_rationale: Se corrige una frase española poco natural («desde su madre») por «de su madre», que preserva mejor el sentido de procedencia del original. Además, se añade una nota para la condición irreal, ya que es una decisión de traducción importante documentada en el POB inglés. El resto del texto se mantiene por su buena fidelidad léxica y teológica.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d548bd32bcee2947415d23f0e3be2d83e4f2c57559e3ded75b6a9f0a4af96600
+  timestamp: '2026-05-08T03:01:31Z'
+  output_hash: bb341a2e27dd4c7f72391cc87b80d7e8b65b2ed6f65b80a821d4632a5f6a0721
+  usage:
+    prompt_tokens: 6461
+    completion_tokens: 846
+    total_tokens: 7307
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.028843
+  applied_revision: true

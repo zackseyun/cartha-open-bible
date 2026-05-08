@@ -197,4 +197,51 @@ ai_draft:
     total_tokens: 6008
     reasoning_tokens: 0
     estimated_cost_usd: 0.01045
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la revisión fuente en los puntos principales: «Conóceme, que me conozcan» refleja correctamente el imperativo + yusivo; «conocimiento e ignorancia» y «fuerza, y» preservan el sentido y la continuidad. Sin embargo, «boldness» quedó sin traducir, y la línea «Yo soy una sin vergüenza; yo soy una avergonzada» introduce un femenino singular no motivado por el copto ni por el inglés auditado.'
+  spanish_quality_summary: 'La legibilidad general es buena, pero hay dos problemas de calidad publicable: un anglicismo crudo («boldness») y una formulación torpe/forzada con «una sin vergüenza ... una avergonzada». En español eclesial-neutral, la mejor solución es usar adjetivos predicativos paralelos: «Yo soy desvergonzada; yo soy avergonzada», que conserva la simetría retórica sin sonar antinatural. También conviene suavizar «que me conozcan» a «que ellos me conozcan» solo si se quisiera explicitar el sujeto; no es necesario.'
+  glossary_alignment: No hay términos del glosario doctrinal principal implicados. Léxicamente, «conocimiento», «ignorancia», «vergüenza» y «fuerza» están bien. Para παρρησία, el proyecto inglés documenta «boldness» con alternativa de «frank speech/outspokenness/confident boldness»; en español aquí corresponde «franqueza» o «osadía». Por el paralelismo con «vergüenza», «franqueza» funciona mejor que «osadía». Las notas a y b del borrador no son necesarias en español revisado, porque la redacción puede expresar el paralelismo sin crear ambigüedad nueva.
+  issues:
+  - severity: high
+    issue: 'Anglicismo sin traducir: «boldness».'
+    rationale: El texto español no es publicable con una palabra inglesa en el cuerpo. Además, el proyecto exige decisiones léxicas españolas, no auditoría interna en el texto final.
+  - severity: medium
+    issue: «Yo soy una[a] sin vergüenza; yo soy una[b] avergonzada» suena forzado y añade marcación femenina singular no exigida por la fuente.
+    rationale: El copto/inglés expresan una identidad paradójica en paralelismo; el artículo «una» en español crea una construcción poco natural y puede distraer o sobredeterminar el referente. Se puede preservar el paralelismo mejor con predicados adjetivales.
+  - severity: low
+    issue: Las notas a y b del borrador explican una torpeza de redacción que puede eliminarse en vez de anotarse.
+    rationale: Si la línea se formula naturalmente en español, esas notas dejan de aportar valor y solo cargan el texto.
+  revised_spanish_text: 'Conóceme, que me conozcan.
+
+
+    Porque yo soy conocimiento e ignorancia.
+
+
+    Yo soy vergüenza y franqueza.
+
+
+    Yo soy desvergonzada; yo soy avergonzada.
+
+
+    Yo soy fuerza, y'
+  revision_rationale: Se corrige el anglicismo «boldness» por «franqueza», que representa bien παρρησία en esta antítesis. Se rehace la línea de la doble paradoja con adjetivos predicativos paralelos («desvergonzada / avergonzada»), lo que conserva la fuerza retórica del copto y mejora mucho la naturalidad del español. Se eliminan notas innecesarias porque la redacción revisada ya no introduce ambigüedad que requiera explicación.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5d7aea56cfefddf4cad215b227cfa896c5271ba064ed8c773bd97ee8765ce817
+  timestamp: '2026-05-08T03:05:35Z'
+  output_hash: 1bc1a1025bcfe71344cdbfa83c20d1375f703036e34c7e18280e7452276f674e
+  usage:
+    prompt_tokens: 5497
+    completion_tokens: 831
+    total_tokens: 6328
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.026208
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text
+  - footnote marker [b] not present in translation text

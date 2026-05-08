@@ -65,7 +65,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: ¿Por qué me odian, oh griegos? ¿Porque soy una bárbara? Y yo soy el conocimiento del griego y de la bárbara. Yo soy el juicio.
+  text: Porque ¿por qué me odian, griegos? ¿Porque soy una bárbara? Y yo soy el conocimiento de griego y bárbaro. Yo soy el juicio.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ⲧⲉⲧⲛⲙⲉⲥⲧⲉ / hate me
@@ -133,4 +133,39 @@ ai_draft:
     total_tokens: 3825
     reasoning_tokens: 0
     estimated_cost_usd: 0.005437
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: ¿Por qué me odian, oh griegos? ¿Porque soy una bárbara? Y yo soy el conocimiento del griego y de la bárbara. Yo soy el juicio.
+  to: Porque ¿por qué me odian, griegos? ¿Porque soy una bárbara? Y yo soy el conocimiento de griego y bárbaro. Yo soy el juicio.
+  rationale: 'Se corrige únicamente lo necesario para alinear el español con la lectura fuente y con el audit trail inglés: se elimina la feminización indebida de «bárbaro» en la tercera cola y se suaviza la vocativa para un español más natural. Se conserva «bárbara» en la segunda pregunta porque allí sí predica de la hablante femenina.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en lo esencial la lectura corregida del copto y el cambio adjudicado del inglés POB: ya no reproduce la alucinación previa sobre «enferma/médico» y conserva la secuencia «¿por qué me odian…? … soy una bárbara … soy el conocimiento … soy el juicio». Sin embargo, en la tercera cola introduce una discordancia de género no apoyada por la evidencia: «del griego y de la bárbara» debería reflejar el par étnico genérico «del griego y del bárbaro / de griego y bárbaro», no convertir el segundo miembro en femenino singular determinado.'
+  spanish_quality_summary: El español es claro y digno, pero requiere un ajuste menor de naturalidad y fidelidad. «Oh griegos» suena algo acartonado; «griegos» sin interjección basta. Más importante, «del griego y de la bárbara» suena extrañamente específico e incoherente en español. Una formulación más natural y fiel es «de griego y bárbaro».
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. Las decisiones léxicas principales son adecuadas: «me odian», «bárbara», «conocimiento», «juicio». La única corrección necesaria es evitar feminizar indebidamente «bárbaro» en la tercera cola, ya que ahí funciona como categoría paralela a «griego», no como eco obligado de la voz femenina.'
+  issues:
+  - severity: medium
+    issue: «del griego y de la bárbara» distorsiona el paralelismo fuente
+    rationale: La línea inglesa auditada dice «the Greek and the barbarian», un contraste étnico/clasificatorio general. En español, pasar a «la bárbara» individualiza y feminiza el segundo término sin base textual suficiente y rompe el equilibrio idiomático de la frase.
+  - severity: low
+    issue: «oh griegos» resulta poco natural en este contexto
+    rationale: No es una mistraducción grave, pero en español moderno y digno la invocación funciona mejor como «griegos» o «griegos,» sin «oh», que suena más forzado que el tono del pasaje.
+  revised_spanish_text: Porque ¿por qué me odian, griegos? ¿Porque soy una bárbara? Y yo soy el conocimiento de griego y bárbaro. Yo soy el juicio.
+  revision_rationale: 'Se corrige únicamente lo necesario para alinear el español con la lectura fuente y con el audit trail inglés: se elimina la feminización indebida de «bárbaro» en la tercera cola y se suaviza la vocativa para un español más natural. Se conserva «bárbara» en la segunda pregunta porque allí sí predica de la hablante femenina.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 52041a3e849f957615c0b1fa73c0b053c0274669f7cc4fa76fa0be7206722f58
+  timestamp: '2026-05-08T03:05:22Z'
+  output_hash: c1288511f7696095f762fabb2802c5b47705f0b2865a7902de800df8c3583edd
+  usage:
+    prompt_tokens: 3450
+    completion_tokens: 648
+    total_tokens: 4098
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018345
+  applied_revision: true

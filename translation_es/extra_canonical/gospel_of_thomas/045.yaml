@@ -226,4 +226,44 @@ ai_draft:
     total_tokens: 8227
     reasoning_tokens: 0
     estimated_cost_usd: 0.012422
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura proverbial y la mayor parte del sentido del copto y del English POB: uvas/espinos, higos/cardos, fruto, depósito interior, hablar mal y la relación con el corazón. Sin embargo, hay dos desajustes relevantes con el audit trail: (1) ⲟⲩⲁⲅⲁⲑⲟⲥ / ⲟⲩⲕⲁⲕⲟⲥ se documentó como ''a good person / an evil person'', pero el español introduce ''hombre'' y además rebaja ''evil'' a ''malo''; (2) ⲁϩⲟ se documentó como ''storehouse'', y ''granero'' estrecha demasiado la imagen a cereal. También conviene acercar ⲡϩⲟⲩⲟ a ''rebosamiento'' para conservar la metáfora de overflow mejor que ''abundancia''.'
+  spanish_quality_summary: El texto es legible y digno, pero puede sonar más natural y preciso con 'persona' en vez de 'hombre', 'depósito' en vez de 'granero' y 'mal' en vez de 'lo malo' al final, donde el original habla de cosas malas/mal y no exige una sustantivación repetitiva. La puntuación actual funciona, aunque una coma antes de la relativa ayuda a seguir la sintaxis heredada del POB inglés.
+  glossary_alignment: No hay términos divinos sensibles aquí. La principal divergencia de glosario es la preferencia del proyecto y del audit trail por 'persona' y por conservar el contraste 'bueno / malvado' o equivalente de fuerza moral, no 'hombre / malo'. También el valor concreto de ⲁϩⲟ como depósito/almacén debe preservarse sin reducirse a 'granero'.
+  issues:
+  - severity: high
+    issue: Uso de «hombre» para ⲟⲩⲁⲅⲁⲑⲟⲥ / ⲟⲩⲕⲁⲕⲟⲥ
+    rationale: El source/audit trail decidió explícitamente 'a good person / an evil person'. «Hombre» añade marca masculina no exigida por el copto ni por el POB y requiere una nota innecesaria. «Persona» preserva mejor la referencia humana genérica.
+  - severity: medium
+    issue: «malo» debilita la fuerza de «evil»
+    rationale: La decisión inglesa mantiene consistentemente 'good/evil'. En español, «malvado» o «malo» pueden variar en fuerza, pero aquí conviene un equivalente con carga moral más marcada para no rebajar ⲡⲟⲛⲏⲣⲟⲛ/evil.
+  - severity: medium
+    issue: «granero» es demasiado específico para ⲁϩⲟ
+    rationale: El audit trail eligió 'storehouse', no un lugar específico de grano. «Depósito» o «almacén» conserva mejor la idea de lugar donde se guarda, especialmente porque luego se ubica metafóricamente en el corazón.
+  - severity: low
+    issue: «abundancia» atenúa la imagen de «overflow»
+    rationale: ⲡϩⲟⲩⲟ fue resuelto como 'overflow' por su viveza metafórica. «Rebosamiento» o «desbordamiento» reproduce mejor la imagen de lo que sale por exceso.
+  - severity: low
+    issue: La nota [a] ya no sería necesaria si se corrige el sustantivo humano
+    rationale: La nota explica una elección española evitable, no una dificultad del original que el lector necesite. Puede eliminarse en una revisión limpia.
+  revised_spanish_text: 'Jesús dijo: «No se recogen uvas de espinos, ni se juntan higos de cardos; porque no dan fruto. Una persona buena saca algo bueno de su depósito; una persona malvada saca algo malo de su depósito, lo que está en su corazón, y habla mal, porque del rebosamiento del corazón saca algo malo».'
+  revision_rationale: 'Se corrige el borrador para alinearlo mejor con el source y el audit trail: «persona» evita la masculinización añadida; «malvada» conserva mejor la fuerza moral de ''evil''; «depósito» refleja mejor ⲁϩⲟ que «granero»; «rebosamiento» sigue la decisión de ''overflow''. Se elimina la nota porque solo justificaba una elección española menos fiel y ya no hace falta.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e1a8e3220ba08d7824a8af6eee467e0e8a0993a6c090473f54ec58961108f8c4
+  timestamp: '2026-05-08T03:01:19Z'
+  output_hash: 2d2c391e4a13eb62ec2262bfe68702cc2fd3fa00f9a87f608324cf313a6cbeac
+  usage:
+    prompt_tokens: 7862
+    completion_tokens: 1057
+    total_tokens: 8919
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.03551
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

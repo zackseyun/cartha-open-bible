@@ -45,7 +45,7 @@ base_translation:
     changes_summary: Removed the bracketed gloss markers, standardized punctuation and quotation marks, and kept the translation aligned with the established lexical decisions while preserving the gnomic present tense.
 translation:
   language: es
-  text: 'Jesús dijo: «Si un ciego guía a otro ciego, ambos caen en un pozo».'
+  text: 'Jesús dijo: «Si un ciego guía a otro ciego, ambos caen en un foso».'
   philosophy: formal
 lexical_decisions:
 - source_word: ⲃⲗⲗⲉ
@@ -134,4 +134,39 @@ ai_draft:
     total_tokens: 4687
     reasoning_tokens: 0
     estimated_cost_usd: 0.007764
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Si un ciego guía a otro ciego, ambos caen en un pozo».'
+  to: 'Jesús dijo: «Si un ciego guía a otro ciego, ambos caen en un foso».'
+  rationale: Se ajusta «pozo» a «foso» para reflejar mejor ϩⲓⲉⲓⲧ (‘pit’) y la imagen de caída hacia abajo destacada en el audit trail, sin recargar el español con un adverbio redundante. Se conserva «caen» para mantener el presente gnómico del copto.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:12:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español capta bien el sentido básico: un ciego guía a otro ciego y ambos caen. También preserva correctamente el presente gnómico de ϣⲁⲩϩⲉ con «caen». Sin embargo, omite el adverbial ⲉⲡⲉⲥⲏⲧ («hacia abajo» / «abajo»), que en el audit trail inglés fue una corrección central frente a una lectura errónea previa. Además, «pozo» es posible para ϩⲓⲉⲓⲧ, pero «foso» o «hoyo» reflejan mejor «pit» en este dicho proverbial.'
+  spanish_quality_summary: El español es natural y claro, con buen registro y puntuación. «Guía» funciona bien para ⲥⲱⲕ ϩⲏⲧ. La frase, no obstante, queda ligeramente incompleta frente al original por la omisión de «caen en un foso» con matiz descendente explícito; «caen en un pozo» suena idiomático, pero «pozo» puede sugerir una estructura más específica que el original no exige.
+  glossary_alignment: 'No hay términos teológicos mayores en juego. Las decisiones léxicas están mayormente alineadas con el POB inglés: «ciego», «guía», «caen», «ambos». La principal desalineación es no reflejar ⲉⲡⲉⲥⲏⲧ («down»). Para ϩⲓⲉⲓⲧ, «foso» alinea mejor con «pit» que «pozo».'
+  issues:
+  - severity: medium
+    issue: Falta el sentido de ⲉⲡⲉⲥⲏⲧ
+    rationale: El original incluye un adverbial de descenso («down»), y el audit trail inglés subrayó explícitamente que no debe omitirse. En español puede integrarse naturalmente con «caen en un foso» sin necesidad de añadir un adverbio pesado, pero conviene al menos escoger una formulación que preserve mejor la imagen de caída hacia abajo.
+  - severity: low
+    issue: «Pozo» puede ser demasiado específico para ϩⲓⲉⲓⲧ
+    rationale: Aunque es una opción léxica posible, «pit» en este contexto proverbial se vierte más naturalmente como «foso» o «hoyo». «Pozo» puede evocar un pozo de agua o una estructura construida, mientras que el coptó permite una referencia más amplia.
+  revised_spanish_text: 'Jesús dijo: «Si un ciego guía a otro ciego, ambos caen en un foso».'
+  revision_rationale: Se ajusta «pozo» a «foso» para reflejar mejor ϩⲓⲉⲓⲧ (‘pit’) y la imagen de caída hacia abajo destacada en el audit trail, sin recargar el español con un adverbio redundante. Se conserva «caen» para mantener el presente gnómico del copto.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 76f98a966d817a4df9f49177066c7ef1b24ae985cdfa7554f2262d8aabd14064
+  timestamp: '2026-05-08T03:12:22Z'
+  output_hash: e30565e8f05d0fa343721a2deffce85d0742eec789247955889e584e360f0cc8
+  usage:
+    prompt_tokens: 4343
+    completion_tokens: 739
+    total_tokens: 5082
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021942
+  applied_revision: true

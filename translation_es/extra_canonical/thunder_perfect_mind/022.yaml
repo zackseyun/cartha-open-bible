@@ -63,23 +63,20 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Los que dicen la verdad acerca de mí[a], mienten acerca de mí,
+  text: 'Los que dicen la verdad acerca de mí, mienten acerca de mí,
 
 
     y los que han mentido acerca de mí, dicen la verdad acerca de mí.
 
 
-    Los que me conocen, ignórense de mí,
+    Los que me conocen, desconózcanme,
 
 
-    y los que no me han conocido[b], que me conozcan.'
+    y los que no me han conocido[a], que me conozcan.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: “claman/proclaman la verdad acerca de mí”. El verbo copt o ϫⲓϭⲟⲗ puede tener un matiz de proclamación; se opta por “dicen la verdad” para mantener el paralelo con “mienten”.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'La secuencia copt a este punto es fragmentaria; el POB inglés reconstruye la cola como una exhortación final: “que me conozcan”.'
+    text: 'La secuencia copta en este punto es fragmentaria; el POB inglés reconstruye la cola final como una exhortación: “que me conozcan”.'
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲙⲉ
@@ -170,4 +167,70 @@ ai_draft:
     total_tokens: 4136
     reasoning_tokens: 0
     estimated_cost_usd: 0.008457
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Los que dicen la verdad acerca de mí[a], mienten acerca de mí,
+
+
+    y los que han mentido acerca de mí, dicen la verdad acerca de mí.
+
+
+    Los que me conocen, ignórense de mí,
+
+
+    y los que no me han conocido[b], que me conozcan.'
+  to: 'Los que dicen la verdad acerca de mí, mienten acerca de mí,
+
+
+    y los que han mentido acerca de mí, dicen la verdad acerca de mí.
+
+
+    Los que me conocen, desconózcanme,
+
+
+    y los que no me han conocido[a], que me conozcan.'
+  rationale: Se corrige únicamente la formulación española defectuosa 'ignórense de mí' por 'desconózcanme', que preserva el mandato paradoxal y resulta natural e inteligible en español. Se elimina la nota léxica [a] porque ya no ayuda a explicar una decisión vigente del texto, y se conserva solo la nota sobre la reconstrucción final.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la lectura adjudicada del copto y del POB inglés: preserva la secuencia paradójica verdad/mentira y conocimiento/ignorancia, y mantiene el cierre exhortativo final. Sin embargo, una formulación clave no refleja bien el sentido del imperativo ''be ignorant of me'': ''ignórense de mí'' es gramatical y semánticamente defectuosa en español.'
+  spanish_quality_summary: La mayor parte del texto es clara y fiel, pero 'ignórense de mí' no es español natural ni comunica adecuadamente 'sean ignorantes de mí' / 'desconózcanme'. Conviene repararlo con una forma idiomática y comprensible que conserve la aspereza paradoxal. También la nota a remite a una alternativa léxica heredada que ya no corresponde bien al texto base adjudicado y puede simplificarse o eliminarse.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'verdad', 'mentir', y 'conocer' están bien elegidos. La única decisión léxica que requiere ajuste es la del imperativo ⲁⲣⲓⲁⲧⲥⲟⲟⲩⲛ, para el cual 'desconózcanme' funciona mejor que 'ignórense de mí' como equivalente imperativo y paradoxal en español.
+  issues:
+  - severity: high
+    issue: La frase 'Los que me conocen, ignórense de mí' es incorrecta e ininteligible en español.
+    rationale: 'El original, según el POB inglés, expresa un imperativo paradoxal: ''Those who know me, be ignorant of me''. ''Ignórense de mí'' sugiere un reflexivo/pronominal mal formado y no comunica ''ser ignorantes de mí'' ni ''dejar de conocerme''. Debe sustituirse por una forma imperativa natural, p. ej. ''desconózcanme''.'
+  - severity: medium
+    issue: La nota [a] conserva una explicación léxica desajustada respecto del texto adjudicado.
+    rationale: La nota habla de un matiz de 'claman/proclaman', pero el texto español ya traduce la cláusula entera como 'dicen la verdad acerca de mí'. Dado que la adjudicación corrigió una lectura previa errónea, esta nota ahora añade ruido más que claridad y puede omitirse.
+  revised_spanish_text: 'Los que dicen la verdad acerca de mí, mienten acerca de mí,
+
+
+    y los que han mentido acerca de mí, dicen la verdad acerca de mí.
+
+
+    Los que me conocen, desconózcanme,
+
+
+    y los que no me han conocido[a], que me conozcan.'
+  revised_footnotes:
+  - marker: a
+    text: 'La secuencia copta en este punto es fragmentaria; el POB inglés reconstruye la cola final como una exhortación: “que me conozcan”.'
+    reason: textual_variant
+  revision_rationale: Se corrige únicamente la formulación española defectuosa 'ignórense de mí' por 'desconózcanme', que preserva el mandato paradoxal y resulta natural e inteligible en español. Se elimina la nota léxica [a] porque ya no ayuda a explicar una decisión vigente del texto, y se conserva solo la nota sobre la reconstrucción final.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 85a805ccec7c26171810c030c7eb0300e3e79cedac12c9ed3ca83667bb93855a
+  timestamp: '2026-05-08T03:08:23Z'
+  output_hash: 82c4b5652aaf3e5f3651fa4f2d63697f8a42654c2d4090ad6c1cb8388bc17179
+  usage:
+    prompt_tokens: 3763
+    completion_tokens: 754
+    total_tokens: 4517
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020717
+  applied_revision: true

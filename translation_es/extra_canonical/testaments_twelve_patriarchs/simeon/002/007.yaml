@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Replaced the draft with a rendering that follows the extant Greek of this verse: restored ''were his god'' and ''the God of our fathers sent his angel and rescued him from his hands,'' and removed material not present in this Greek line. Kept ''set my liver against him'' as a formal rendering of the idiom.'
 translation:
   language: es
-  text: Y puse mi hígado contra él para matarlo, porque el príncipe del engaño y el espíritu de celos eran su dios, y el Dios de nuestros padres envió a su ángel y lo rescató de sus manos.
+  text: Y puse mi hígado contra él para matarlo, porque el príncipe del engaño y el espíritu de celos me cegaron la mente, de modo que no lo considerara como a un hermano, ni siquiera perdonara a Jacob, mi padre.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐστήριξα ἐπʼ αὐτὸν τὰ ἤπατά μου
@@ -137,4 +137,45 @@ ai_draft:
     total_tokens: 3581
     reasoning_tokens: 0
     estimated_cost_usd: 0.008779
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y puse mi hígado contra él para matarlo, porque el príncipe del engaño y el espíritu de celos eran su dios, y el Dios de nuestros padres envió a su ángel y lo rescató de sus manos.
+  to: Y puse mi hígado contra él para matarlo, porque el príncipe del engaño y el espíritu de celos me cegaron la mente, de modo que no lo considerara como a un hermano, ni siquiera perdonara a Jacob, mi padre.
+  rationale: Se reemplaza el contenido ajeno al source por una traducción fiel al griego atestiguado. Se conserva la imagen corporal extraña de 'mi hígado' por fidelidad léxica, y se vierte la construcción final con subjuntivo ('considerara', 'perdonara') para reflejar el resultado expresado por ὥστε / infinitivos de manera natural en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:12Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español no sigue el griego proporcionado. El source dice: ''porque el príncipe del engaño y el espíritu de celos cegaron mi mente, de modo que no lo mirara como hermano, ni siquiera perdonara a Jacob mi padre''. El borrador, en cambio, introduce la lectura revisada inglesa errónea sobre ''eran su dios'' y ''el Dios de nuestros padres envió a su ángel...'', material ausente de este griego. La primera cláusula sobre ''puse mi hígado contra él para matarlo'' sí coincide bien con el texto fuente.'
+  spanish_quality_summary: El español es legible y digno, pero la fidelidad está gravemente comprometida por haber traducido una línea distinta. Además, conviene ajustar 'como hermano' a 'como a un hermano' para sonar más natural, y usar una formulación fluida para la subordinación final.
+  glossary_alignment: No hay conflicto relevante con la terminología base del proyecto salvo que el borrador introduce 'Dios de nuestros padres' sin base textual aquí. 'espíritu', 'celos', 'Jacob' y la imagen corporal de 'hígado' pueden mantenerse. 'Príncipe del engaño' es aceptable para ἄρχων τῆς πλάνης.
+  issues:
+  - severity: high
+    issue: Se tradujo una lectura ajena al griego dado
+    rationale: El borrador contiene 'eran su dios, y el Dios de nuestros padres envió a su ángel y lo rescató de sus manos', pero el texto fuente dice 'cegaron mi mente... no atenderlo como hermano... ni perdonar a Jacob mi padre'.
+  - severity: medium
+    issue: Falta la cláusula sobre el cegamiento de la mente
+    rationale: ἐτύφλωσέ μου τὸν νοῦν es central para la lógica del versículo y debe aparecer explícitamente.
+  - severity: medium
+    issue: Faltan las dos cláusulas finales éticas/familiares
+    rationale: μὴ προσέχειν αὐτῷ ὡς ἀδελφῷ, μηδὲ φείσασθαι τῷ πατρί μου Ἰακώβ forman parte del sentido completo y no pueden omitirse.
+  - severity: low
+    issue: Puede mejorarse la naturalidad de 'como hermano'
+    rationale: En español amplio, 'como a un hermano' o 'como si fuera mi hermano' suena más idiomático sin perder sentido.
+  revised_spanish_text: Y puse mi hígado contra él para matarlo, porque el príncipe del engaño y el espíritu de celos me cegaron la mente, de modo que no lo considerara como a un hermano, ni siquiera perdonara a Jacob, mi padre.
+  revision_rationale: Se reemplaza el contenido ajeno al source por una traducción fiel al griego atestiguado. Se conserva la imagen corporal extraña de 'mi hígado' por fidelidad léxica, y se vierte la construcción final con subjuntivo ('considerara', 'perdonara') para reflejar el resultado expresado por ὥστε / infinitivos de manera natural en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ae5e110ba79f4de847709b96e05a4c8c7a89c5c34bd90cf89ce25842a8d37629
+  timestamp: '2026-05-08T03:05:12Z'
+  output_hash: 42c298fce6d7cd691b0b0174c6c49faac8c69e71dc66ffdf3bae855942a9eb18
+  usage:
+    prompt_tokens: 3153
+    completion_tokens: 726
+    total_tokens: 3879
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018773
+  applied_revision: true

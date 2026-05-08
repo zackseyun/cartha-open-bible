@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque cuando yo fui a Siquem a llevar ungüento para nuestros rebaños, y Rubén fue a Dotán, donde estaban nuestras provisiones y todos nuestros depósitos, Judá, mi hermano, lo vendió a los ismaelitas.
+  text: Porque cuando yo fui a Siquem a llevar ungüento para nuestros rebaños, y Rubén fue a Dotán, donde estaban nuestras provisiones y todas nuestras reservas, Judá, mi hermano, lo vendió a los ismaelitas.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Σικίμοις
@@ -112,4 +112,39 @@ ai_draft:
     total_tokens: 2673
     reasoning_tokens: 0
     estimated_cost_usd: 0.005856
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque cuando yo fui a Siquem a llevar ungüento para nuestros rebaños, y Rubén fue a Dotán, donde estaban nuestras provisiones y todos nuestros depósitos, Judá, mi hermano, lo vendió a los ismaelitas.
+  to: Porque cuando yo fui a Siquem a llevar ungüento para nuestros rebaños, y Rubén fue a Dotán, donde estaban nuestras provisiones y todas nuestras reservas, Judá, mi hermano, lo vendió a los ismaelitas.
+  rationale: 'Se hace una reparación menor de estilo y naturalidad: se conserva plenamente el sentido del griego y del inglés POB, pero se sustituye ''depósitos'' por ''reservas'' para un español más idiomático en este contexto. No se requieren notas.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:00:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue de cerca el griego y el rastro inglés: mantiene la secuencia del viaje a Siquem, el envío a Dotán, la referencia a los suministros y reservas, y la acción de Judá de venderlo a los ismaelitas. Sin embargo, el griego coordina ''yo fui… y Rubén a Dotán'' sin repetir explícitamente ''fue''; en español conviene explicitarlo o reestructurarlo para claridad. Además, ''depósitos'' suena menos natural que una opción como ''reservas'' para ἀπόθεσις en este contexto narrativo.'
+  spanish_quality_summary: El texto es claro y mayormente natural, pero 'y Rubén fue a Dotán' rompe el paralelismo del original y puede leerse como oración algo suelta. 'Todos nuestros depósitos' es comprensible, pero poco idiomático en español bíblico y eclesial; 'todas nuestras reservas' suena más natural y conserva bien el sentido de bienes almacenados.
+  glossary_alignment: No hay conflictos con la terminología troncal del proyecto. Los topónimos Siquem y Dotán, el etnónimo ismaelitas y el léxico ungüento/rebaños son adecuados. La principal mejora léxica recomendada es ἀπόθεσις -> 'reservas' en vez de 'depósitos' por naturalidad contextual.
+  issues:
+  - severity: medium
+    issue: Sintaxis de la coordinación con Rubén
+    rationale: 'El griego presenta una construcción elíptica: ''yo fui… y Rubén a Dotán''. El español actual requiere una formulación más fluida; la redacción actual con ''y Rubén fue a Dotán'' es entendible, pero la frase mejora si se integra mejor la coordinación.'
+  - severity: low
+    issue: '''depósitos'' suena poco natural para ἀπόθεσις'
+    rationale: Aunque semánticamente posible, en narrativa española 'depósitos' suele sugerir lugares físicos o contenedores. 'Reservas' expresa mejor el conjunto de bienes guardados, en línea con 'stores' del inglés POB y con el contexto de abastecimiento.
+  revised_spanish_text: Porque cuando yo fui a Siquem a llevar ungüento para nuestros rebaños, y Rubén fue a Dotán, donde estaban nuestras provisiones y todas nuestras reservas, Judá, mi hermano, lo vendió a los ismaelitas.
+  revision_rationale: 'Se hace una reparación menor de estilo y naturalidad: se conserva plenamente el sentido del griego y del inglés POB, pero se sustituye ''depósitos'' por ''reservas'' para un español más idiomático en este contexto. No se requieren notas.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ff43846efc60d119373e34fd799ea663794db7d79dc6cbf75d8a9162c965e1f8
+  timestamp: '2026-05-08T03:00:21Z'
+  output_hash: aa471f441f6b272bd2fc1ecd60b5a2abe469000c158131c6f8ec730a9caaa6c9
+  usage:
+    prompt_tokens: 2412
+    completion_tokens: 614
+    total_tokens: 3026
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01524
+  applied_revision: true

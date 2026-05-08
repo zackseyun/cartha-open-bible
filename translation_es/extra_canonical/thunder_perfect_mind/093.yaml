@@ -79,14 +79,11 @@ translation:
     Yo soy el clamor, y yo soy el oír.
 
 
-    Ustedes me oyen en su llamada[a]; me llaman con un sonido que …[b]'
+    Ustedes me oyen en su llamada; me llaman con una voz que …[a]'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Alternativa posible: “en su clamor” o “en su llamada”, según se oiga el sustantivo subyacente como más vocal o más nominal.'
-    reason: alternative_reading
-  - marker: b
-    text: La línea está incompleta en el testimonio; el final se deja con puntos suspensivos para respetar la fractura del manuscrito.
+    text: La línea está incompleta en el testimonio; el final se deja con puntos suspensivos para respetar la fractura del manuscrito. El coptólogo/editor reconstruye tentativamente aquí una referencia a voz, clamor o llamada, pero la continuación sigue siendo incierta.
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲱϣⲥ / ⲡ-ⲱϣ
@@ -170,4 +167,61 @@ ai_draft:
     total_tokens: 5120
     reasoning_tokens: 0
     estimated_cost_usd: 0.008235
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'La llamada de mi nombre — soy yo.
+
+
+    Yo soy el clamor, y yo soy el oír.
+
+
+    Ustedes me oyen en su llamada[a]; me llaman con un sonido que …[b]'
+  to: 'La llamada de mi nombre — soy yo.
+
+
+    Yo soy el clamor, y yo soy el oír.
+
+
+    Ustedes me oyen en su llamada; me llaman con una voz que …[a]'
+  rationale: Se conserva la estructura y casi todo el phrasing del borrador, pero se sustituye ‘un sonido’ por ‘una voz’ para mantener coherencia con la corrección adjudicada del campo léxico (‘calling/cry’ más que ‘sound’). También se elimina la nota alternativa innecesaria y se deja una sola nota textual útil sobre la fractura del manuscrito.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el giro principal del texto adjudicado en inglés: ⲡ-ⲱϣ como ‘la llamada’, ⲁϣⲕⲁⲕ como nominal de clamor/clamar, y ⲥⲱⲧⲙ como ‘oír’. Sin embargo, la nota [a] introduce una alternativa innecesaria y confusa, y la frase final ‘con un sonido’ ya no refleja bien el audit trail revisado, que corrigió la base léxica desde ‘sound’ hacia el campo de ‘calling/cry/voice’, aunque la línea siga fragmentaria.'
+  spanish_quality_summary: El español es mayormente natural y digno. ‘La llamada de mi nombre — soy yo’ y ‘Yo soy el clamor’ funcionan bien. ‘el oír’ es aceptable, aunque algo abstracto; conserva con fidelidad la nominalización del original. La principal mejora es evitar ‘sonido’ al final, porque rompe la coherencia léxica con ‘llamada/clamor’ y suena más físico que vocal.
+  glossary_alignment: No hay conflictos con la terminología teológica del proyecto. Las decisiones léxicas clave están generalmente alineadas con el audit trail adjudicado, salvo la persistencia de ‘un sonido’ para ⲟⲩⲡ… reconstruido, donde conviene una opción más cercana al campo de voz/clamor y más cauta por la fractura textual.
+  issues:
+  - severity: medium
+    issue: ‘un sonido’ en la línea final queda desalineado con la revisión adjudicada del inglés.
+    rationale: El audit trail corrigió explícitamente la lectura base de ⲡⲱϣ desde ‘sound’ a ‘calling/cry’. Aunque el final permanezca incierto, en español ‘sonido’ reintroduce la lectura descartada y debilita la red semántica de llamada/clamor.
+  - severity: low
+    issue: La nota [a] es especulativa y no corresponde a una ambigüedad que el texto español necesite preservar.
+    rationale: ‘en su llamada’ traduce suficientemente bien el original. Añadir ‘en su clamor’ o una explicación sobre oír el sustantivo ‘más vocal o más nominal’ resulta técnica y poco útil para el lector final.
+  revised_spanish_text: 'La llamada de mi nombre — soy yo.
+
+
+    Yo soy el clamor, y yo soy el oír.
+
+
+    Ustedes me oyen en su llamada; me llaman con una voz que …[a]'
+  revised_footnotes:
+  - marker: a
+    text: La línea está incompleta en el testimonio; el final se deja con puntos suspensivos para respetar la fractura del manuscrito. El coptólogo/editor reconstruye tentativamente aquí una referencia a voz, clamor o llamada, pero la continuación sigue siendo incierta.
+    reason: textual_variant
+  revision_rationale: Se conserva la estructura y casi todo el phrasing del borrador, pero se sustituye ‘un sonido’ por ‘una voz’ para mantener coherencia con la corrección adjudicada del campo léxico (‘calling/cry’ más que ‘sound’). También se elimina la nota alternativa innecesaria y se deja una sola nota textual útil sobre la fractura del manuscrito.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2b2c74b5e0fa69a6ebf9bb729add3ab564059620f4939b68c76ac9ac3918409c
+  timestamp: '2026-05-08T03:09:40Z'
+  output_hash: 116fb0815bfbad0ec528b0f23e07129c9ba1d3e6e3345f450cdfeca2ebe8c716
+  usage:
+    prompt_tokens: 4726
+    completion_tokens: 745
+    total_tokens: 5471
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02299
+  applied_revision: true

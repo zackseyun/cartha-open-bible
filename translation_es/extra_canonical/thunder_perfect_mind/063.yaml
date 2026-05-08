@@ -62,17 +62,17 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Pero cada vez que aparezcas[c][b][a], me ocultaré de ti.
+  text: Pero cada vez que aparezcan[c][b][a], me ocultaré de ustedes.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: “te reveles”.'
+    text: 'O: “se revelen”.'
     reason: lexical_alternative
   - marker: b
-    text: 'Esta línea forma una mitad de un par paradójico que suele transmitirse junto con su contraparte: “cuando te ocultas, aparezco”; “cuando apareces, me oculto”.'
-    reason: cross_reference
+    text: 'Esta línea forma una mitad de un par paradójico que suele transmitirse junto con su contraparte: “cuando se ocultan, aparezco”; “cuando aparecen, me oculto”.'
+    reason: parallelism_note
   - marker: c
-    text: 'O: “Porque cada vez que aparezcas, me ocultaré de ti”. La partícula coptó aquí es adversativa; por eso se prefirió “Pero”.'
+    text: 'O: “Porque cada vez que aparezcan, me ocultaré de ustedes”. La partícula copta aquí es adversativa; por eso se prefirió “Pero”.'
     reason: source_note
 lexical_decisions:
 - source_word: ⲟⲩⲟⲉⲓⲉ
@@ -124,4 +124,52 @@ ai_draft:
     total_tokens: 3326
     reasoning_tokens: 0
     estimated_cost_usd: 0.005108
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero cada vez que aparezcas[c][b][a], me ocultaré de ti.
+  to: Pero cada vez que aparezcan[c][b][a], me ocultaré de ustedes.
+  rationale: 'La corrección necesaria es limitada pero importante: ajustar el número gramatical al plural respaldado por la evidencia coptó auditada y hacer que texto y notas sean internamente consistentes. El resto del borrador ya refleja bien el contraste poético y la decisión adversativa documentada.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:16:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español preserva bien el sentido básico del coptó y sigue correctamente la adjudicación que prefiere un giro adversativo: “Pero…”. También mantiene la oposición aparecer/ocultarse y el matiz reflexivo de “conceal myself”. Sin embargo, la forma verbal de segunda persona singular (“aparezcas”, “te reveles”, “te ocultas”, “apareces”) no refleja con seguridad el sujeto plural del texto adjudicado citado en la auditoría coptó (ⲉⲧⲉⲧⲛ… / ⲉⲣⲱⲧⲛ, ‘ustedes’).'
+  spanish_quality_summary: El español es claro y poético, pero conviene ajustar el tratamiento pronominal y verbal para concordar con el plural y mantener consistencia interna en la nota paralela. “Cada vez que” es natural; no obstante, “cuando ustedes aparecen” / “cuando ustedes se ocultan” suena algo pesado, así que una solución más literaria y fiel es “cuando aparezcan” y “cuando se oculten”.
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. Las decisiones léxicas principales son sólidas: ⲟⲩⲟⲉⲓⲉ → “aparezcan”; ⲥⲧⲟ → “me ocultaré”; partícula adversativa → “Pero”. La nota alternativa debe acompañar ese mismo número y persona: “se revelen”, no “te reveles”.'
+  issues:
+  - severity: medium
+    issue: Uso de segunda persona singular donde la evidencia auditada apunta a segunda persona plural.
+    rationale: La revisión inglesa cita el coptó adjudicado con formas plurales (ⲉⲧⲉⲧⲛ… / ⲉⲣⲱⲧⲛ). El español “aparezcas… de ti” individualiza el destinatario y puede alterar la referencia del original.
+  - severity: low
+    issue: La nota de paralelismo repite el cambio indebido al singular.
+    rationale: La contraparte debe mantenerse alineada con el número del texto principal para no introducir inconsistencia interpretativa.
+  - severity: low
+    issue: La nota alternativa léxica usa singular (“te reveles”).
+    rationale: Si el texto principal se corrige al plural, la alternativa también debe hacerlo para corresponder exactamente al mismo segmento.
+  revised_spanish_text: Pero cada vez que aparezcan[c][b][a], me ocultaré de ustedes.
+  revised_footnotes:
+  - marker: a
+    text: 'O: “se revelen”.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'Esta línea forma una mitad de un par paradójico que suele transmitirse junto con su contraparte: “cuando se ocultan, aparezco”; “cuando aparecen, me oculto”.'
+    reason: parallelism_note
+  - marker: c
+    text: 'O: “Porque cada vez que aparezcan, me ocultaré de ustedes”. La partícula copta aquí es adversativa; por eso se prefirió “Pero”.'
+    reason: source_note
+  revision_rationale: 'La corrección necesaria es limitada pero importante: ajustar el número gramatical al plural respaldado por la evidencia coptó auditada y hacer que texto y notas sean internamente consistentes. El resto del borrador ya refleja bien el contraste poético y la decisión adversativa documentada.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f63f8f24eea56671722bc25dd8078d4b583984e9796f260d73fd9e15f87a7512
+  timestamp: '2026-05-08T03:16:36Z'
+  output_hash: f712c36f154b169dcbf28b0db2e44f389105aae4b5120896734e9ab6c88be920
+  usage:
+    prompt_tokens: 3003
+    completion_tokens: 778
+    total_tokens: 3781
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019178
+  applied_revision: true

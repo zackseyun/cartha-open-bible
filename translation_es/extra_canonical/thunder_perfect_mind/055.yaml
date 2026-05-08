@@ -62,14 +62,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy ella, delante de cuyo rostro ustedes se avergonzaron, y estuvieron sin vergüenza[a] hacia mí[b].
+  text: Yo soy ella, ante cuyo rostro ustedes se avergonzaron,[a] y estuvieron sin vergüenza hacia mí.[b]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «vergonzosamente».'
+    text: 'O: «en cuya presencia».'
     reason: lexical_alternative
   - marker: b
-    text: 'O: «en mi presencia».'
+    text: 'O: «desvergonzadamente»; o: «contra mí».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ
@@ -152,4 +152,49 @@ ai_draft:
     total_tokens: 3960
     reasoning_tokens: 0
     estimated_cost_usd: 0.007125
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy ella, delante de cuyo rostro ustedes se avergonzaron, y estuvieron sin vergüenza[a] hacia mí[b].
+  to: Yo soy ella, ante cuyo rostro ustedes se avergonzaron,[a] y estuvieron sin vergüenza hacia mí.[b]
+  rationale: 'Se ajusta la redacción a un español más natural («ante cuyo rostro»), se corrige la nota del primer hemistiquio para reflejar la alternativa auditada «presencia», y se reemplazan las notas equivocadas por alternativas que sí corresponden al expediente inglés: «desvergonzadamente» para «sin vergüenza» y «contra mí» para la orientación de «hacia mí». No hace falta adjudicación adicional porque la reparación es clara y de bajo riesgo.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:16:24Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador preserva bien la estructura básica del original y del POB inglés: mantiene la cadencia de «Yo soy», conserva correctamente la marca femenina con «ella», refleja la imagen concreta de «rostro», y reproduce la antítesis «avergonzaron / sin vergüenza». Sin embargo, una nota al pie importante está mal orientada respecto al inglés auditado: el alternativo de «hacia mí» no es «en mi presencia», sino algo como «contra mí» o «con respecto a mí».'
+  spanish_quality_summary: El español es generalmente claro y digno, pero «delante de cuyo rostro» suena algo rígido y menos natural que «ante cuyo rostro» o «ante cuya presencia». Además, la nota «vergonzosamente» no corresponde al sentido de «without shame / shamelessly»; debe decir «desvergonzadamente» o «sin vergüenza». El texto requiere una reparación menor para naturalidad y fidelidad de notas.
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. La decisión «ella» está correctamente alineada con la revisión inglesa que exige preservar la voz femenina. Las decisiones léxicas principales («Yo soy», «rostro», «sin vergüenza») son apropiadas. El único desajuste serio está en las alternativas de notas, no en el glosario principal.
+  issues:
+  - severity: medium
+    issue: La nota al pie [b] da un alternativo equivocado para «hacia mí».
+    rationale: El POB inglés documenta para ⲙⲙⲟⲉⲓ alternativas como «against me» / «with respect to me», no «in my presence». «En mi presencia» pertenece al primer hemistiquio («before whose face / in whose presence»), no al segundo.
+  - severity: medium
+    issue: La nota al pie [a] usa «vergonzosamente», que invierte el sentido.
+    rationale: El original y el POB inglés contrastan «you were ashamed» con «without shame / shamelessly». «Vergonzosamente» sugiere con vergüenza o de modo vergonzoso, no «sin vergüenza / desvergonzadamente».
+  - severity: low
+    issue: «Delante de cuyo rostro» suena algo forzado en español.
+    rationale: Aunque comprensible y semánticamente correcto, «ante cuyo rostro» suena más natural y digno en registro bíblico-literario, sin perder la concreción de «face».
+  revised_spanish_text: Yo soy ella, ante cuyo rostro ustedes se avergonzaron,[a] y estuvieron sin vergüenza hacia mí.[b]
+  revised_footnotes:
+  - marker: a
+    text: 'O: «en cuya presencia».'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «desvergonzadamente»; o: «contra mí».'
+    reason: lexical_alternative
+  revision_rationale: 'Se ajusta la redacción a un español más natural («ante cuyo rostro»), se corrige la nota del primer hemistiquio para reflejar la alternativa auditada «presencia», y se reemplazan las notas equivocadas por alternativas que sí corresponden al expediente inglés: «desvergonzadamente» para «sin vergüenza» y «contra mí» para la orientación de «hacia mí». No hace falta adjudicación adicional porque la reparación es clara y de bajo riesgo.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 367ed14c2a19197d83f316a6da9d9f10b2f5db56fd1099c81d5787973c815091
+  timestamp: '2026-05-08T03:16:24Z'
+  output_hash: 6b6f8bb335188b576a71f956e7cac056d02b1c6babfe7fa3fa2b27d65a963fea
+  usage:
+    prompt_tokens: 3545
+    completion_tokens: 765
+    total_tokens: 4310
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020338
+  applied_revision: true

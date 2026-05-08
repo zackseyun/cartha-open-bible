@@ -70,11 +70,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Me oyes en tu llamarme[a], en una [...] que pronuncias[b]. No has oído[c]. Yo soy la defensa[d].
+  text: Me oyes en tu llamado a mí[a], en una [...] [b]que pronuncias. No has oído[c]. Yo soy la defensa[d].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La forma copta reconstruida aquí funciona como «tu llamarme», es decir, un sustantivo verbal; no se toma como mandato.
+    text: La forma copta reconstruida aquí funciona como una nominalización de «llamar/invocar hacia mí», no como mandato; «llamado a mí» busca conservar esa función de modo natural en español.
     reason: lexical_alternative
   - marker: b
     text: El pasaje está truncado tras la preposición; el término omitido no puede recuperarse con seguridad, así que se deja la laguna.
@@ -179,4 +179,52 @@ ai_draft:
     total_tokens: 4716
     reasoning_tokens: 0
     estimated_cost_usd: 0.009327
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Me oyes en tu llamarme[a], en una [...] que pronuncias[b]. No has oído[c]. Yo soy la defensa[d].
+  to: Me oyes en tu llamado a mí[a], en una [...] [b]que pronuncias. No has oído[c]. Yo soy la defensa[d].
+  rationale: 'Se hace una reparación menor para mejorar la naturalidad del español sin perder la sintaxis auditada: «tu llamado a mí» preserva mejor la nominalización y la direccionalidad de ⲙⲟⲩⲧⲉ ⲉⲣⲟⲓ que «tu llamarme». También se mueve la nota de la laguna al lugar exacto del texto truncado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:11Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la revisión inglesa auditada: presente afirmativo («oyes»), nominalización de «llamar», cláusula relativa «que pronuncias», negación perfecta y cierre identificativo «Yo soy la defensa». Sin embargo, «tu llamarme» suena poco natural y no preserva bien la direccionalidad de ⲙⲟⲩⲧⲉ ⲉⲣⲟⲓ en español idiomático. También conviene reubicar la nota sobre la laguna al lugar exacto de la omisión en el texto.'
+  spanish_quality_summary: La redacción es mayormente clara y digna, pero «Me oyes en tu llamarme» resulta torpe y casi calcado. Una mejora pequeña a «Me oyes en tu llamado a mí» mantiene la nominalización y la dirección relacional, con español más legible. El resto del texto funciona bien. Las notas necesitan alinearse mejor con sus anclajes.
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. «Defensa» para ⲧⲁⲡⲟⲗⲟⲅⲓⲁ está bien justificado. «Oyes» / «has oído» preservan la distinción contextual de ⲥⲱⲧⲙ. La principal decisión léxica a ajustar es ⲙⲟⲩⲧⲉ ⲉⲣⲟⲓ: mejor «llamado a mí» que «llamarme» para reflejar tanto la nominalización como la dirección.'
+  issues:
+  - severity: medium
+    issue: «tu llamarme» es poco natural en español
+    rationale: Aunque intenta reflejar un sustantivo verbal, la frase suena forzada y difícil de leer en español eclesial general. «Tu llamado a mí» conserva mejor el valor nominal y la dirección de la construcción copta.
+  - severity: low
+    issue: La nota sobre la laguna está anclada a «que pronuncias» en vez de a la propia laguna
+    rationale: El requisito pide que los marcadores aparezcan en el lugar relevante del texto. La explicación de truncamiento corresponde al segmento omitido «[...]», no al verbo siguiente.
+  revised_spanish_text: Me oyes en tu llamado a mí[a], en una [...] [b]que pronuncias. No has oído[c]. Yo soy la defensa[d].
+  revised_footnotes:
+  - marker: a
+    text: La forma copta reconstruida aquí funciona como una nominalización de «llamar/invocar hacia mí», no como mandato; «llamado a mí» busca conservar esa función de modo natural en español.
+    reason: lexical_alternative
+  - marker: b
+    text: El pasaje está truncado tras la preposición; el término omitido no puede recuperarse con seguridad, así que se deja la laguna.
+    reason: source_note
+  - marker: c
+    text: La revisión del texto entiende este segmento como una negación perfecta («no has oído»), no como una condición («si no has oído»).
+    reason: textual_variant
+  - marker: d
+    text: «Defensa» traduce el préstamo griego ἀπολογία con su valor forense/apologético; «apología» sería más literal pero menos natural en español.
+    reason: lexical_alternative
+  revision_rationale: 'Se hace una reparación menor para mejorar la naturalidad del español sin perder la sintaxis auditada: «tu llamado a mí» preserva mejor la nominalización y la direccionalidad de ⲙⲟⲩⲧⲉ ⲉⲣⲟⲓ que «tu llamarme». También se mueve la nota de la laguna al lugar exacto del texto truncado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 999ef24f20ede75eed3dcaf868a9b03d5769e7ac7ab55dbc921f2d1affd4e051
+  timestamp: '2026-05-08T03:10:11Z'
+  output_hash: 52bde443a2d98daef52d2ba9029e3bd755efb178b95b3e9bc442ae364c178e19
+  usage:
+    prompt_tokens: 4351
+    completion_tokens: 864
+    total_tokens: 5215
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023837
+  applied_revision: true

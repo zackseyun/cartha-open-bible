@@ -65,7 +65,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: … de su audición. Yo soy la […] mi defensa […] si ellos […] y la injusticia […]
+  text: … de tu oído. Yo soy la […] mi defensa […] si ellos […] y la injusticia […]
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ⲥⲱⲧⲙ
@@ -120,4 +120,39 @@ ai_draft:
     total_tokens: 3731
     reasoning_tokens: 0
     estimated_cost_usd: 0.005104
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: … de su audición. Yo soy la […] mi defensa […] si ellos […] y la injusticia […]
+  to: … de tu oído. Yo soy la […] mi defensa […] si ellos […] y la injusticia […]
+  rationale: 'Se hace una reparación menor para mejorar la fidelidad y la legibilidad: «audición» se sustituye por «oído», más natural en español y adecuado al fragmento; «su» se corrige a «tu» para seguir el inglés auditado «your hearing» sin introducir una referencia distinta. Se mantiene la fragmentariedad y las demás opciones léxicas ya alineadas con la corrección fuente.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:17:33Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la revisión inglesa que corrigió una alucinación previa y ahora refleja un fragmento muy incompleto del copto real: «… de su/tu oído», «yo soy la […] mi defensa […] si ellos […] y la injusticia […]». No debe retrotraducirse el consult_text desalineado. Sin embargo, «audición» no es la mejor opción para un fragmento poético y eclesial; suena técnico y además «su» introduce una persona que el inglés base deja ambigua entre your/tu. Conviene conservar la fragmentariedad sin añadir precisión no garantizada.'
+  spanish_quality_summary: La redacción es comprensible, pero «audición» resulta poco natural en español literario-religioso. «oído» o «escucha» leen mejor; aquí «oído» preserva el carácter nominal del fragmento y encaja con la elipsis. También es preferible «tu» en vez de «su» porque el inglés auditado tiene «your hearing», no tercera persona. El resto («mi defensa», «si ellos», «la injusticia») es aceptable como traducción provisional de un texto roto.
+  glossary_alignment: No hay términos teológicos del glosario principal en juego. La decisión léxica clave es mantener ⲁⲡⲟⲗⲟⲅⲓⲁ como «defensa» y ⲡϫⲓⲛϭⲟⲛⲥ en el campo de «injusticia», conforme a la revisión fuente. Se recomienda cambiar ⲥⲱⲧⲙ de «audición» a «oído» por naturalidad española sin perder el sentido básico.
+  issues:
+  - severity: medium
+    issue: «audición» suena técnico y poco natural
+    rationale: Aunque semánticamente posible, en español general y literario «audición» se percibe como término médico/técnico o como prueba musical. En un fragmento poético, «oído» transmite mejor la facultad de oír.
+  - severity: medium
+    issue: «su audición» introduce una persona no apoyada por el inglés auditado
+    rationale: El texto inglés dice «your hearing», no «his/her/their hearing». Dado el carácter fragmentario, conviene no desplazar la referencia a tercera persona; «tu oído» es más fiel al rastro auditado.
+  revised_spanish_text: … de tu oído. Yo soy la […] mi defensa […] si ellos […] y la injusticia […]
+  revision_rationale: 'Se hace una reparación menor para mejorar la fidelidad y la legibilidad: «audición» se sustituye por «oído», más natural en español y adecuado al fragmento; «su» se corrige a «tu» para seguir el inglés auditado «your hearing» sin introducir una referencia distinta. Se mantiene la fragmentariedad y las demás opciones léxicas ya alineadas con la corrección fuente.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 1e7252a05c5980217809eb6a3f9c5bd4957bc5e6a94e5a11922ebc4882cf003d
+  timestamp: '2026-05-08T03:17:33Z'
+  output_hash: ee1a417bcc75ebe57da39e5769c627dfe8b01e684d9d4397a912ba9480308865
+  usage:
+    prompt_tokens: 3320
+    completion_tokens: 680
+    total_tokens: 4000
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0185
+  applied_revision: true

@@ -63,21 +63,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy ella[a] — la griega y la bárbara[a][c][d]; yo soy ella que será manifestada[b] en Egipto.
+  text: Yo soy ella — la griega y la bárbara[a][c][d]; yo soy ella que se manifestará[b] en Egipto.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: “Griega” y “bárbara” reproducen en singular la cadencia de autoidentificación que la POB inglesa preserva, aunque el copto tenga artículos plurales; el sentido sigue incluyendo a ambos colectivos.
-    reason: alternative_reading
+    text: «Griega» y «bárbara» reproducen en singular un binario grecorromano que contrasta a los griegos con los no griegos; Thunder abraza con frecuencia ambos lados de esos pares.
+    reason: cultural_note
   - marker: b
-    text: O, “aparecerá”. “Manifestada” se elige para conservar un matiz revelatorio y solemne.
+    text: O, «aparecerá». «Se manifestará» se elige para conservar un matiz revelatorio y solemne.
     reason: lexical_alternative
   - marker: c
-    text: El copto muestra artículos plurales (“las griegas … las bárbaras” en sentido literal), pero la POB inglesa usa un par singular para mantener la cadencia del dicho; el español sigue esa decisión.
-    reason: source_note
+    text: El copto muestra artículos plurales («los griegos … los bárbaros»). Aquí se usa un par singular para conservar la cadencia de autoidentificación; el sentido sigue siendo inclusivo de ambos colectivos.
+    reason: parallelism_note
   - marker: d
     text: El OCR de este bloque incluye segmentos iniciales inciertos y la consulta en inglés no corresponde exactamente a estas líneas; por eso la traducción se limita a las frases seguras del pasaje.
-    reason: textual_variant
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ ⲧⲉ
   english_pob_choice: I am she
@@ -153,4 +153,55 @@ ai_draft:
     total_tokens: 3577
     reasoning_tokens: 0
     estimated_cost_usd: 0.007051
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy ella[a] — la griega y la bárbara[a][c][d]; yo soy ella que será manifestada[b] en Egipto.
+  to: Yo soy ella — la griega y la bárbara[a][c][d]; yo soy ella que se manifestará[b] en Egipto.
+  rationale: Se reancla la nota [a] al sintagma que realmente comenta, se distingue mejor su función de la nota [c], y se sustituye «será manifestada» por «se manifestará» para mejorar la naturalidad del español sin perder el matiz revelatorio ni el sentido auditado.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:11:15Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español preserva bien el sentido básico del copto según el rastro auditado en inglés: la voz femenina de autoidentificación, el par cultural griego/bárbaro y la referencia a Egipto. Sin embargo, la nota [a] se ancla indebidamente en «ella», cuando su contenido explica el uso singular de «griega» y «bárbara». Además, la redacción «será manifestada» es fiel pero algo menos natural que «se manifestará», que mantiene mejor el matiz revelatorio sin perder dignidad.'
+  spanish_quality_summary: El texto es legible y digno, pero puede afinarse para mayor naturalidad española y mejor disciplina de notas. «Yo soy ella — la griega y la bárbara» funciona bien. El principal problema formal es la colocación del marcador [a], y en segundo lugar la elección pasiva «será manifestada», comprensible pero más pesada de lo necesario.
+  glossary_alignment: No hay conflictos con la terminología por defecto del proyecto. No aparecen términos teológicos controlados como Yahvé, Mesías, Espíritu, etc. La preservación de la voz femenina y del par identitario singular sigue correctamente la justificación documentada en inglés.
+  issues:
+  - severity: medium
+    issue: Marcador [a] mal anclado en «ella»
+    rationale: La nota [a] explica la decisión de traducir en singular «la griega y la bárbara», no la expresión «Yo soy ella». Debe anclarse donde corresponde para cumplir la disciplina de notas.
+  - severity: low
+    issue: Redundancia entre notas [a] y [c]
+    rationale: Ambas notas cubren casi el mismo punto sobre el singular frente al plural copto. Puede mantenerse la distinción si [a] explica el binario cultural y [c] la morfología plural, pero conviene clarificar el reparto.
+  - severity: low
+    issue: «será manifestada» suena algo forzado en español
+    rationale: Aunque fiel al inglés auditado, «se manifestará» conserva el matiz revelatorio con una sintaxis más natural y literaria en español.
+  revised_spanish_text: Yo soy ella — la griega y la bárbara[a][c][d]; yo soy ella que se manifestará[b] en Egipto.
+  revised_footnotes:
+  - marker: a
+    text: «Griega» y «bárbara» reproducen en singular un binario grecorromano que contrasta a los griegos con los no griegos; Thunder abraza con frecuencia ambos lados de esos pares.
+    reason: cultural_note
+  - marker: b
+    text: O, «aparecerá». «Se manifestará» se elige para conservar un matiz revelatorio y solemne.
+    reason: lexical_alternative
+  - marker: c
+    text: El copto muestra artículos plurales («los griegos … los bárbaros»). Aquí se usa un par singular para conservar la cadencia de autoidentificación; el sentido sigue siendo inclusivo de ambos colectivos.
+    reason: parallelism_note
+  - marker: d
+    text: El OCR de este bloque incluye segmentos iniciales inciertos y la consulta en inglés no corresponde exactamente a estas líneas; por eso la traducción se limita a las frases seguras del pasaje.
+    reason: alignment_note
+  revision_rationale: Se reancla la nota [a] al sintagma que realmente comenta, se distingue mejor su función de la nota [c], y se sustituye «será manifestada» por «se manifestará» para mejorar la naturalidad del español sin perder el matiz revelatorio ni el sentido auditado.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5e7152849e464188d81e28ab2e4ce825f6f131b90db27e1b0c336c6e820507da
+  timestamp: '2026-05-08T03:11:15Z'
+  output_hash: b3715c8c5c71485963447cead3140187bf409a77cd82344b272e69a83226ac8a
+  usage:
+    prompt_tokens: 3284
+    completion_tokens: 809
+    total_tokens: 4093
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020345
+  applied_revision: true

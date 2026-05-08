@@ -74,21 +74,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Porque ella es sabia[a], y ella es una pequeña[b];
+  text: 'Porque ella es sabia, y es una pequeña[a];
 
-    no apartes las cosas grandes en partes
 
-    lejos de la pequeñez—
+    ni se aparten las cosas grandes en partes
+
+
+    de la pequeñez—
+
 
     pues conocen la pequeñez.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Alternativa literal: ‘porque ella es sabia’.'
+    text: «Una pequeña» traduce el valor literal de ⲟⲩⲕⲟⲩⲉⲓ, ‘pequeña/niña’ o ‘ser pequeño’. La revisión fuente descarta aquí «necia», para preservar el contraste con «cosas grandes» y «pequeñez».
     reason: lexical_alternative
-  - marker: b
-    text: ‘Pequeña’ traduce el valor literal de ⲟⲩⲕⲟⲩⲉⲓ; la revisión textual descarta aquí ‘fool’/‘necia’.
-    reason: textual_variant
 lexical_decisions:
 - source_word: ϫⲉ
   english_pob_choice: for
@@ -204,4 +204,70 @@ ai_draft:
     total_tokens: 5622
     reasoning_tokens: 0
     estimated_cost_usd: 0.010625
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Porque ella es sabia[a], y ella es una pequeña[b];
+
+    no apartes las cosas grandes en partes
+
+    lejos de la pequeñez—
+
+    pues conocen la pequeñez.'
+  to: 'Porque ella es sabia, y es una pequeña[a];
+
+
+    ni se aparten las cosas grandes en partes
+
+
+    de la pequeñez—
+
+
+    pues conocen la pequeñez.'
+  rationale: Se ajusta la línea central para reflejar mejor la revisión fuente, evitando un imperativo de segunda persona demasiado específico y una locución espacial poco natural. Se conserva la oposición semántica «pequeña / pequeñez / cosas grandes» y se simplifican las notas a la única decisión léxica que realmente necesita aclaración.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:50Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español capta bien las correcciones clave del expediente inglés: sujeto femenino declarativo («ella es sabia… ella es una pequeña») y «pequeñez» en vez de «ignorancia». Sin embargo, «no apartes» introduce un imperativo de segunda persona que no refleja bien el valor de la línea inglesa auditada («nor turn away…») ni la sintaxis exhortativa/impersonal del pasaje en español; además, «lejos de la pequeñez» suena demasiado espacial y menos fiel que «de la pequeñez».'
+  spanish_quality_summary: 'El texto es legible, pero tiene dos tropiezos estilísticos: la repetición de «ella» es algo pesada, y «lejos de la pequeñez» resulta torpe y poco natural en un registro poético-digno. También la nota [a] es redundante y no aporta una alternativa real. Conviene suavizar la línea media para que suene natural y conserve la ambigüedad del original.'
+  glossary_alignment: No hay términos teológicos del glosario mayor implicados. La decisión clave «ⲟⲩⲕⲟⲩⲉⲓ» → «una pequeña» y «ⲙⲛⲧⲕⲟⲩⲉⲓ» → «pequeñez» está bien alineada con la revisión fuente. Mantengo esa oposición léxica y elimino notas innecesarias o mal justificadas.
+  issues:
+  - severity: medium
+    issue: «no apartes» usa segunda persona singular
+    rationale: El expediente fuente/inglés no presenta aquí un mandato dirigido a «tú» de forma tan explícita en español. Esa elección estrecha indebidamente la sintaxis y suena menos fiel que una formulación impersonal/exhortativa como «ni se aparten».
+  - severity: medium
+    issue: «lejos de la pequeñez» es una expansión poco natural
+    rationale: La construcción traduce de forma demasiado espacial «ⲉⲃⲟⲗ ϩⲛ». En español poético y fiel basta «de la pequeñez», que conserva mejor el contraste conceptual con «cosas grandes».
+  - severity: low
+    issue: La nota [a] es redundante
+    rationale: Dice como alternativa prácticamente lo mismo que ya está en el texto y no preserva una variante significativa del expediente inglés.
+  revised_spanish_text: 'Porque ella es sabia, y es una pequeña[a];
+
+
+    ni se aparten las cosas grandes en partes
+
+
+    de la pequeñez—
+
+
+    pues conocen la pequeñez.'
+  revised_footnotes:
+  - marker: a
+    text: «Una pequeña» traduce el valor literal de ⲟⲩⲕⲟⲩⲉⲓ, ‘pequeña/niña’ o ‘ser pequeño’. La revisión fuente descarta aquí «necia», para preservar el contraste con «cosas grandes» y «pequeñez».
+    reason: lexical_alternative
+  revision_rationale: Se ajusta la línea central para reflejar mejor la revisión fuente, evitando un imperativo de segunda persona demasiado específico y una locución espacial poco natural. Se conserva la oposición semántica «pequeña / pequeñez / cosas grandes» y se simplifican las notas a la única decisión léxica que realmente necesita aclaración.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ba9c7d0597ebffef28dacdf3dfdb9362e72594f8f76968e4044fb6ee7eff749b
+  timestamp: '2026-05-08T03:06:50Z'
+  output_hash: 2fe1468ec2010e05b1e504081ef83026f1c438c9bbe4ec314643a4df7fd465bb
+  usage:
+    prompt_tokens: 5202
+    completion_tokens: 766
+    total_tokens: 5968
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024495
+  applied_revision: true

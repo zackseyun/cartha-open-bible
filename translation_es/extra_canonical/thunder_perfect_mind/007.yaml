@@ -76,21 +76,24 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'No me ignores.[a]
+  text: 'No me desconozcas.
 
 
     Porque yo soy el primero y el último;
 
-    yo soy la honrada y la despreciada;
+
+    yo soy la honrada[a] y la despreciada[a];
+
 
     yo soy la ramera y la santa;[d]
+
 
     yo soy la esposa[b] y la virgen[c][e].'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El copto tiene aquí un imperativo negativo de tipo cognitivo; «No me ignores» expresa de manera natural la advertencia sin convertirla en una simple instrucción intelectual.
-    reason: lexical_alternative
+    text: 'El imperativo negativo copto tiene fuerza cognitiva: advierte contra desconocer a la hablante, no solo contra prestarle poca atención. Además, el OCR parece leer una forma que normalmente significaría algo como «grande/muchas», lo cual no contrasta bien con «honrada»; muchos editores suponen aquí una lectura del tipo «despreciada/escarnecida». La traducción sigue ese contraste esperado, pero la lectura sigue siendo tentativa.'
+    reason: alignment_note
   - marker: b
     text: Literalmente, el copto dice «mujer». Se traduce «esposa» para hacer más nítido el contraste con «virgen», siguiendo la opción ya documentada en el texto inglés de la POB.
     reason: lexical_alternative
@@ -102,7 +105,7 @@ translation:
     reason: lexical_alternative
   - marker: e
     text: 'O: «yo soy la honrada y la despreciada».'
-    reason: alternative_reading
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲙⲡⲣⲣⲁⲧⲥⲟⲟⲩⲛ
   english_pob_choice: do not be ignorant
@@ -213,4 +216,91 @@ ai_draft:
     total_tokens: 5246
     reasoning_tokens: 0
     estimated_cost_usd: 0.010437
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'No me ignores.[a]
+
+
+    Porque yo soy el primero y el último;
+
+    yo soy la honrada y la despreciada;
+
+    yo soy la ramera y la santa;[d]
+
+    yo soy la esposa[b] y la virgen[c][e].'
+  to: 'No me desconozcas.
+
+
+    Porque yo soy el primero y el último;
+
+
+    yo soy la honrada[a] y la despreciada[a];
+
+
+    yo soy la ramera y la santa;[d]
+
+
+    yo soy la esposa[b] y la virgen[c][e].'
+  rationale: 'La revisión corrige el único desvío importante de sentido: sustituye «No me ignores» por «No me desconozcas» para reflejar la advertencia cognitiva del copto y de la decisión inglesa auditada. También incorpora en una nota la incertidumbre textual sobre «la despreciada», que forma parte del expediente fuente y no debe perderse en español. El resto del texto puede mantenerse, porque conserva bien el paralelismo y el tono del original.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:15:12Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien la estructura paralelística, los contrastes paradoxales y la mayor parte de las decisiones léxicas del audit trail inglés. Sin embargo, en la primera línea se aparta de la decisión fuente principal: el copto y el inglés POB privilegian una advertencia de desconocimiento/ignorancia cognitiva, mientras que «No me ignores» desplaza el sentido hacia desatención voluntaria. También conviene alinear la nota textual sobre la lectura incierta de «la despreciada», que el inglés preserva y el español no refleja.'
+  spanish_quality_summary: El español es legible, poético y digno. «La honrada / la despreciada», «la ramera y la santa», y «la esposa y la virgen» funcionan bien. «No me desconozcan» sonaría plural y «No seas ignorante de mí» es torpe; una solución natural y fiel es «No me desconozcas». También es preferible mantener la nota sobre la incertidumbre textual de la línea «honrada / despreciada».
+  glossary_alignment: 'No hay conflictos con la glosario troncal (no aparecen Yahvé, Mesías, etc.). Las decisiones «ramera», «santa», «esposa», «virgen» son defendibles y coherentes con el audit trail. El principal desajuste es ⲙⲡⲣⲣⲁⲧⲥⲟⲟⲩⲛ: el inglés POB eligió «do not be ignorant», y el español debería reflejar mejor esa fuerza cognitiva que «ignorar».'
+  issues:
+  - severity: high
+    issue: «No me ignores» no preserva bien el valor cognitivo de ⲙⲡⲣⲣⲁⲧⲥⲟⲟⲩⲛ
+    rationale: El audit trail inglés fundamenta explícitamente «do not be ignorant» frente a «do not ignore». En español, «ignorar» normalmente significa hacer caso omiso, no desconocer. «No me desconozcas» mantiene mejor la advertencia sobre no desconocer la identidad de la hablante.
+  - severity: medium
+    issue: Falta una nota que preserve la incertidumbre textual detrás de «la despreciada»
+    rationale: La nota inglesa a explica que el OCR lee una forma que no encaja bien con el contraste esperado y que la traducción sigue una enmienda/lectura tentativa. El español actual traduce con seguridad sin dejar constancia de esa cautela documental.
+  - severity: low
+    issue: La nota a actual defiende la opción menos alineada con la fuente auditada
+    rationale: La nota explica por qué se eligió «No me ignores», pero esa justificación contradice la preferencia lexical ya establecida en inglés. Debe reformularse para sostener la opción corregida.
+  revised_spanish_text: 'No me desconozcas.
+
+
+    Porque yo soy el primero y el último;
+
+
+    yo soy la honrada[a] y la despreciada[a];
+
+
+    yo soy la ramera y la santa;[d]
+
+
+    yo soy la esposa[b] y la virgen[c][e].'
+  revised_footnotes:
+  - marker: a
+    text: 'El imperativo negativo copto tiene fuerza cognitiva: advierte contra desconocer a la hablante, no solo contra prestarle poca atención. Además, el OCR parece leer una forma que normalmente significaría algo como «grande/muchas», lo cual no contrasta bien con «honrada»; muchos editores suponen aquí una lectura del tipo «despreciada/escarnecida». La traducción sigue ese contraste esperado, pero la lectura sigue siendo tentativa.'
+    reason: alignment_note
+  - marker: b
+    text: Literalmente, el copto dice «mujer». Se traduce «esposa» para hacer más nítido el contraste con «virgen», siguiendo la opción ya documentada en el texto inglés de la POB.
+    reason: lexical_alternative
+  - marker: c
+    text: Abreviatura nag hammadi de παρθένος («virgen»).
+    reason: cultural_note
+  - marker: d
+    text: «Santa» conserva la resonancia de «santa/pura/casta» sin recurrir a un término eclesiástico más técnico.
+    reason: lexical_alternative
+  - marker: e
+    text: 'O: «yo soy la honrada y la despreciada».'
+    reason: previous_rendering
+  revision_rationale: 'La revisión corrige el único desvío importante de sentido: sustituye «No me ignores» por «No me desconozcas» para reflejar la advertencia cognitiva del copto y de la decisión inglesa auditada. También incorpora en una nota la incertidumbre textual sobre «la despreciada», que forma parte del expediente fuente y no debe perderse en español. El resto del texto puede mantenerse, porque conserva bien el paralelismo y el tono del original.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 874d4203a3e9f6484ab40176bb217e8e59c6e6af26c6e08bf89085d1a4626132
+  timestamp: '2026-05-08T03:15:12Z'
+  output_hash: d18126d17ce9f3ec17f3f3b047654e43d306aceda590b13db428c0eef99b7aba
+  usage:
+    prompt_tokens: 4856
+    completion_tokens: 1106
+    total_tokens: 5962
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02873
+  applied_revision: true

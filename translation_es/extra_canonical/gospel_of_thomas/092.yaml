@@ -81,24 +81,24 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «Busquen, y encontrarán. Pero las cosas acerca de las cuales me preguntaron en aquellos días, las cuales no les dije aquel día; ahora estoy dispuesto a decírselas[c], y ustedes no las están buscando»[a][b][d][e].'
+  text: 'Jesús dijo[a]: «Busquen, y encontrarán. Pero las cosas[b] por las que me preguntaron[d] en aquellos días, que no les dije aquel día[b], ahora estoy dispuesto a decírselas[c], y ustedes no las buscan[e]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El relativo copto puede entenderse en singular («lo que») o en plural («las cosas que»). El contexto y las referencias pronominales posteriores favorecen el plural; por eso se traduce en plural.
+    text: La construcción relativa copta puede entenderse en singular («lo que») o en plural («las cosas que»). El contexto y las referencias pronominales posteriores favorecen el plural; por eso se traduce en plural.
     reason: textual_variant
   - marker: b
     text: La secuencia copta subraya el contraste entre «aquellos días» y «aquel día»; por eso se conserva explícitamente la repetición temporal en español.
-    reason: spanish_style_note
+    reason: source_note
   - marker: c
     text: La construcción copta ⲉϩⲛⲁ + infinitivo expresa disposición o intención; también podría traducirse «estoy a punto de decírselas».
     reason: lexical_alternative
   - marker: d
-    text: El objeto de la pregunta está marcado como materia («acerca de»), no solo como destinatario; por eso se preserva esa relación en la frase.
+    text: El objeto de la pregunta está marcado como materia («por/sobre las cosas preguntadas»), no solo como destinatario; por eso se preserva esa relación en la frase.
     reason: source_note
   - marker: e
-    text: 'También es posible leer la cláusula final de modo más llano: «y ustedes no las buscan».'
-    reason: alternative_reading
+    text: 'También es posible ordenar la frase así: «Pero las cosas por las que me preguntaron en aquellos días, que no les dije aquel día, ahora estoy dispuesto a decírselas, y ustedes no las buscan».'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ϣⲓⲛⲉ
   english_pob_choice: seek
@@ -214,4 +214,61 @@ ai_draft:
     total_tokens: 6797
     reasoning_tokens: 0
     estimated_cost_usd: 0.01157
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Busquen, y encontrarán. Pero las cosas acerca de las cuales me preguntaron en aquellos días, las cuales no les dije aquel día; ahora estoy dispuesto a decírselas[c], y ustedes no las están buscando»[a][b][d][e].'
+  to: 'Jesús dijo[a]: «Busquen, y encontrarán. Pero las cosas[b] por las que me preguntaron[d] en aquellos días, que no les dije aquel día[b], ahora estoy dispuesto a decírselas[c], y ustedes no las buscan[e]».'
+  rationale: La revisión mantiene todas las decisiones semánticas importantes del source packet y del audit trail inglés, pero mejora la naturalidad del español y elimina añadidos innecesarios. «Las cosas por las que me preguntaron» expresa con claridad el valor temático de ⲉⲣⲟⲟⲩ sin la pesadez de «acerca de las cuales». Se conserva el contraste temporal reforzado por la adjudicación («en aquellos días / aquel día / ahora»). Se cambia «no las están buscando» por «no las buscan» para evitar un progresivo interpretativo no exigido por el copto. También se reubican las notas en los puntos pertinentes del texto y se adapta la nota final para reflejar la alternativa documentada sin contradecir la traducción principal.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español preserva bien la estructura básica y varios matices clave del copto y del audit trail inglés: «Busquen… encontrarán», el contraste «en aquellos días / aquel día / ahora», y la idea de disposición en ⲉϩⲛⲁ + infinitivo. Sin embargo, no refleja de manera óptima la sintaxis del relativo-circunstancial y añade un matiz aspectual no requerido en la cláusula final («no las están buscando»). También la puntuación con punto y coma antes de «ahora» debilita la continuidad del inciso que el inglés marca con raya.'
+  spanish_quality_summary: 'El texto es comprensible, pero «las cosas acerca de las cuales… las cuales…» suena pesado y poco natural en español eclesial legible. Puede mantenerse la precisión con una redacción más fluida: «las cosas por las que me preguntaron… que no les dije…». Además, la colocación de casi todas las notas al final de la cita deja sin anclaje local varias observaciones; conviene anclarlas en las palabras o frases relevantes.'
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. «Jesús» está correcto. Las decisiones léxicas principales («buscar», «encontrar», «pero», «estoy dispuesto a decírselas») concuerdan con el audit trail. La excepción recomendada es sustituir la forma progresiva «están buscando» por el presente simple «buscan», que representa mejor la neutralidad aspectual del original y del POB inglés.
+  issues:
+  - severity: medium
+    issue: Redacción relativa demasiado pesada
+    rationale: «las cosas acerca de las cuales me preguntaron… las cuales no les dije…» es gramatical, pero suena forzado y poco natural. El copto y el inglés permiten una formulación más clara en español sin perder precisión.
+  - severity: medium
+    issue: Aspecto añadido en la cláusula final
+    rationale: «y ustedes no las están buscando» introduce un progresivo que no está exigido por el copto ni por el inglés («you are not seeking them»). «no las buscan» preserva mejor el valor general.
+  - severity: low
+    issue: Puntuación menos fiel al giro contrastivo
+    rationale: El punto y coma antes de «ahora» separa más de la cuenta una construcción que funciona mejor como inciso contrastivo continuo. Una raya o coma reproduce mejor el giro del audit trail revisado.
+  - severity: low
+    issue: Anclaje de notas mejorable
+    rationale: Las notas [a][b][d][e] aparecen apiladas al final de toda la cita, aunque varias corresponden a segmentos específicos («las cosas», «aquellos días / aquel día», «preguntaron», etc.). Es preferible colocarlas junto a la expresión pertinente.
+  revised_spanish_text: 'Jesús dijo[a]: «Busquen, y encontrarán. Pero las cosas[b] por las que me preguntaron[d] en aquellos días, que no les dije aquel día[b], ahora estoy dispuesto a decírselas[c], y ustedes no las buscan[e]».'
+  revised_footnotes:
+  - marker: a
+    text: La construcción relativa copta puede entenderse en singular («lo que») o en plural («las cosas que»). El contexto y las referencias pronominales posteriores favorecen el plural; por eso se traduce en plural.
+    reason: textual_variant
+  - marker: b
+    text: La secuencia copta subraya el contraste entre «aquellos días» y «aquel día»; por eso se conserva explícitamente la repetición temporal en español.
+    reason: source_note
+  - marker: c
+    text: La construcción copta ⲉϩⲛⲁ + infinitivo expresa disposición o intención; también podría traducirse «estoy a punto de decírselas».
+    reason: lexical_alternative
+  - marker: d
+    text: El objeto de la pregunta está marcado como materia («por/sobre las cosas preguntadas»), no solo como destinatario; por eso se preserva esa relación en la frase.
+    reason: source_note
+  - marker: e
+    text: 'También es posible ordenar la frase así: «Pero las cosas por las que me preguntaron en aquellos días, que no les dije aquel día, ahora estoy dispuesto a decírselas, y ustedes no las buscan».'
+    reason: previous_rendering
+  revision_rationale: La revisión mantiene todas las decisiones semánticas importantes del source packet y del audit trail inglés, pero mejora la naturalidad del español y elimina añadidos innecesarios. «Las cosas por las que me preguntaron» expresa con claridad el valor temático de ⲉⲣⲟⲟⲩ sin la pesadez de «acerca de las cuales». Se conserva el contraste temporal reforzado por la adjudicación («en aquellos días / aquel día / ahora»). Se cambia «no las están buscando» por «no las buscan» para evitar un progresivo interpretativo no exigido por el copto. También se reubican las notas en los puntos pertinentes del texto y se adapta la nota final para reflejar la alternativa documentada sin contradecir la traducción principal.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2a3ccc881a9d68d8e626bff4841af48a8d4dc52b13766a9eadc5fde8ecf5cfff
+  timestamp: '2026-05-08T03:06:42Z'
+  output_hash: 5b475659daa48e0217eb1f4e90821e04ef18f97ba01d76d7d91b5fdfb1cb27f8
+  usage:
+    prompt_tokens: 6456
+    completion_tokens: 1143
+    total_tokens: 7599
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.033285
+  applied_revision: true

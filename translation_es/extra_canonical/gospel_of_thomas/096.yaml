@@ -72,18 +72,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «El reino del Padre es como una mujer. Tomó un poco de levadura[b], la escondió en masa y la hizo en grandes panes[c]. Quien tenga oídos, que oiga».'
+  text: 'Jesús dijo: «El reino del Padre es como una mujer. Tomó un poco de fermento[a], lo escondió en masa[c] e hizo con ella grandes panes[b]. Quien tenga oídos, que oiga».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: ‘Leaven’ (ⲥⲓⲣ) aquí designa la levadura o fermento tradicional usado en la elaboración del pan, no la levadura comercial moderna.
+    text: ⲥⲓⲣ aquí designa el fermento o levadura tradicional usado en la elaboración del pan, no la levadura comercial moderna.
     reason: cultural_note
   - marker: b
-    text: El copto puede sugerir tamaño o abundancia; por eso ‘grandes panes’ conserva la imagen concreta sin cerrar del todo la posible lectura de ‘muchos panes’.
+    text: El copto puede sugerir tamaño o abundancia; por eso «grandes panes» conserva la imagen concreta sin cerrar del todo la posible lectura de «muchos panes».
     reason: lexical_alternative
   - marker: c
-    text: La lectura del dicho en NHAM02.49 es segura en la secuencia ‘una mujer … la escondió en masa … y la hizo en grandes panes’.
-    reason: textual_variant
+    text: Aunque varias letras en NHAM02.49 están dañadas o restauradas, la lectura «una mujer … lo escondió en masa … e hizo con ella grandes panes» es segura.
+    reason: lacuna_or_restoration
 lexical_decisions:
 - source_word: ⲙⲛⲧⲣⲣⲟ
   english_pob_choice: kingdom
@@ -230,4 +230,52 @@ ai_draft:
     total_tokens: 6275
     reasoning_tokens: 0
     estimated_cost_usd: 0.01209
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «El reino del Padre es como una mujer. Tomó un poco de levadura[b], la escondió en masa y la hizo en grandes panes[c]. Quien tenga oídos, que oiga».'
+  to: 'Jesús dijo: «El reino del Padre es como una mujer. Tomó un poco de fermento[a], lo escondió en masa[c] e hizo con ella grandes panes[b]. Quien tenga oídos, que oiga».'
+  rationale: Se corrigen los marcadores de notas para que coincidan con las palabras relevantes, se mejora la naturalidad de la cláusula resultativa («e hizo con ella grandes panes»), y se usa «fermento» para reflejar mejor la nota cultural del POB sobre leaven tradicional. No hay cambio sustantivo de sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador conserva bien el sentido general del copto y del POB inglés: reino del Padre, mujer, pequeña cantidad de fermento, esconder en masa, resultado en panes grandes, y la exhortación final a oír. Sin embargo, la colocación de notas en el texto español no corresponde a su contenido: [a] aparece tras «dijo» aunque explica «levadura»; [b] aparece tras «levadura» aunque explica «grandes panes»; [c] aparece tras «grandes panes» y sí corresponde a la nota textual. Además, «la hizo en grandes panes» suena poco natural en español; una formulación como «hizo con ella grandes panes» conserva mejor la idea resultativa sin calco tosco.'
+  spanish_quality_summary: El español es mayormente claro y digno, pero requiere un pequeño ajuste de naturalidad y de anclaje de notas. «Levadura» es comprensible, pero dado que la nota cultural distingue el fermento tradicional, «fermento» en el texto evita la asociación inmediata con levadura comercial y sigue siendo legible para un público eclesial amplio. La frase verbal final del proceso panadero necesita mejora idiomática.
+  glossary_alignment: No hay conflicto con la terminología principal del proyecto. «El reino del Padre» está bien. La elección «fermento» aquí se justifica como mejor ajuste al rationale documentado para ⲥⲓⲣ (‘leaven’, no levadura comercial moderna), sin apartarse del sentido. «Panes» preserva el plural explícito de ⲛⲟⲉⲓⲕ.
+  issues:
+  - severity: medium
+    issue: Marcadores de notas mal anclados en el texto
+    rationale: La nota a explica el fermento/leaven, no «Jesús dijo»; la nota b explica «grandes panes»; la c corresponde a la seguridad de la lectura. El proyecto exige que cada marcador aparezca exactamente en la palabra o frase pertinente.
+  - severity: medium
+    issue: «la hizo en grandes panes» es poco idiomático
+    rationale: Aunque intenta reflejar el valor resultativo del copto, en español suena forzado. «Hizo con ella grandes panes» o «la convirtió en grandes panes» comunica mejor la acción sin perder el resultado.
+  - severity: low
+    issue: «levadura» puede chocar con la nota cultural anti-anacrónica
+    rationale: No es incorrecto, pero «fermento» armoniza mejor con la explicación de sourdough starter/tradicional y evita que el lector piense primero en levadura comercial moderna.
+  revised_spanish_text: 'Jesús dijo: «El reino del Padre es como una mujer. Tomó un poco de fermento[a], lo escondió en masa[c] e hizo con ella grandes panes[b]. Quien tenga oídos, que oiga».'
+  revised_footnotes:
+  - marker: a
+    text: ⲥⲓⲣ aquí designa el fermento o levadura tradicional usado en la elaboración del pan, no la levadura comercial moderna.
+    reason: cultural_note
+  - marker: b
+    text: El copto puede sugerir tamaño o abundancia; por eso «grandes panes» conserva la imagen concreta sin cerrar del todo la posible lectura de «muchos panes».
+    reason: lexical_alternative
+  - marker: c
+    text: Aunque varias letras en NHAM02.49 están dañadas o restauradas, la lectura «una mujer … lo escondió en masa … e hizo con ella grandes panes» es segura.
+    reason: lacuna_or_restoration
+  revision_rationale: Se corrigen los marcadores de notas para que coincidan con las palabras relevantes, se mejora la naturalidad de la cláusula resultativa («e hizo con ella grandes panes»), y se usa «fermento» para reflejar mejor la nota cultural del POB sobre leaven tradicional. No hay cambio sustantivo de sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 85cfeee46732da4d8aac88779d37ab83a256cc58cd49181862b559bd9101c943
+  timestamp: '2026-05-08T03:05:14Z'
+  output_hash: f9fa0b8d2ba24bbe8cd5bb13f2d8fe1c3cee9da0d1d917fc7f165eb1304ac342
+  usage:
+    prompt_tokens: 5997
+    completion_tokens: 875
+    total_tokens: 6872
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.028117
+  applied_revision: true

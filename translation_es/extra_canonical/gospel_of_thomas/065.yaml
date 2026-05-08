@@ -100,7 +100,7 @@ base_translation:
     changes_summary: Changed both occurrences of "servant" to "slave" for lexical consistency and to avoid softening the source term.
 translation:
   language: es
-  text: 'Él dijo[a]: «Un hombre bueno tenía una viña. Se la dio a unos labradores para que la trabajaran y él recibiera de ellos su fruto. Envió a su esclavo para que los labradores le entregaran el fruto de la viña. Ellos agarraron a su esclavo y lo golpearon; casi lo mataron[b]. El esclavo fue y se lo contó a su señor. Su señor dijo: “Tal vez no los conocía”. Envió a otro esclavo. Los labradores golpearon al otro. Entonces el señor envió a su hijo. Dijo: “Tal vez respetarán a mi hijo”. Pero esos labradores, al saber que él era el heredero de la viña, lo agarraron y lo mataron. El que tenga oídos[c], que oiga».'
+  text: 'Él dijo[a]: «Un hombre bueno tenía una viña. Se la dio a unos labradores para que la trabajaran y él recibiera de ellos su fruto. Envió a su esclavo para que los labradores le entregaran el fruto de la viña. Ellos se apoderaron de su esclavo y lo golpearon; casi lo mataron[b]. El esclavo fue y se lo contó a su señor. Su señor dijo: “Tal vez no los conocía[c]”. Envió a otro esclavo. Los labradores golpearon al otro. Entonces el señor envió a su hijo. Dijo: “Tal vez respetarán a mi hijo”. Pero esos labradores, al saber que él era el heredero de la viña, se apoderaron de él y lo mataron. El que tenga oídos, que oiga».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -110,7 +110,7 @@ translation:
     text: Literalmente, el copto dice “fue otra poca cosa y lo matan”, un modismo que significa “casi”.
     reason: lexical_alternative
   - marker: c
-    text: El copto puede leerse literalmente como “si no los conocía”; el inglés POB conserva esa lectura manuscrita en vez de enmendarla para hacerla coincidir con la lógica esperada de la parábola.
+    text: El copto lee literalmente “no los conocía” (ⲙⲡⲉϥⲥⲟⲩⲱⲛⲟⲩ). Muchos traductores enmiendan esto a “ellos no lo conocían” para ajustarlo a la lógica esperada de la parábola, pero aquí se conserva la lectura manuscrita.
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲭⲣⲏⲥⲧⲟⲥ
@@ -225,4 +225,52 @@ ai_draft:
     total_tokens: 11308
     reasoning_tokens: 0
     estimated_cost_usd: 0.015981
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Él dijo[a]: «Un hombre bueno tenía una viña. Se la dio a unos labradores para que la trabajaran y él recibiera de ellos su fruto. Envió a su esclavo para que los labradores le entregaran el fruto de la viña. Ellos agarraron a su esclavo y lo golpearon; casi lo mataron[b]. El esclavo fue y se lo contó a su señor. Su señor dijo: “Tal vez no los conocía”. Envió a otro esclavo. Los labradores golpearon al otro. Entonces el señor envió a su hijo. Dijo: “Tal vez respetarán a mi hijo”. Pero esos labradores, al saber que él era el heredero de la viña, lo agarraron y lo mataron. El que tenga oídos[c], que oiga».'
+  to: 'Él dijo[a]: «Un hombre bueno tenía una viña. Se la dio a unos labradores para que la trabajaran y él recibiera de ellos su fruto. Envió a su esclavo para que los labradores le entregaran el fruto de la viña. Ellos se apoderaron de su esclavo y lo golpearon; casi lo mataron[b]. El esclavo fue y se lo contó a su señor. Su señor dijo: “Tal vez no los conocía[c]”. Envió a otro esclavo. Los labradores golpearon al otro. Entonces el señor envió a su hijo. Dijo: “Tal vez respetarán a mi hijo”. Pero esos labradores, al saber que él era el heredero de la viña, se apoderaron de él y lo mataron. El que tenga oídos, que oiga».'
+  rationale: Se corrige el anclaje de la nota [c] para que corresponda a la cláusula que explica, se eleva ligeramente el registro de 'agarraron' a 'se apoderaron de', y se mantiene intacta la lógica textual auditada del POB inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue de cerca el sentido del copto y el audit trail inglés: hombre bueno, viña, labradores, esclavo, casi lo mataron, conservación de la lectura manuscrita ''tal vez no los conocía'', respeto al hijo, heredero, y cierre proverbial. No armoniza indebidamente con los Sinópticos. Sin embargo, hay un problema de anclaje de nota: la nota [c] está puesta en ''oídos'', pero su contenido trata de ''no los conocía''.'
+  spanish_quality_summary: 'El español es claro, natural y digno. ''Labradores'' y ''esclavo'' encajan bien con el registro. Hay leves mejoras posibles de precisión y estilo: usar ''se apoderaron de'' en vez de ''agarraron'' suena menos coloquial y más literario; además, la nota [c] debe moverse al lugar correcto. Fuera de eso, la redacción es sólida.'
+  glossary_alignment: 'Buena alineación con la terminología del proyecto y las decisiones léxicas documentadas: ⲭⲣⲏⲥⲧⲟⲥ -> ''bueno''; ⲟⲩⲟⲉⲓⲉ -> ''labradores''; ⲡⲉϥϩⲙϩⲁⲗ -> ''esclavo'' preservando la fuerza léxica; ϣⲓⲡⲉ -> ''respetarán''; ϭⲱⲡⲉ podría expresarse mejor como ''se apoderaron de'' o ''lo prendieron'' en vez de ''agarraron'', aunque ''agarraron'' no distorsiona el sentido.'
+  issues:
+  - severity: medium
+    issue: La nota [c] está anclada en 'oídos' pero explica la cláusula 'Tal vez no los conocía'.
+    rationale: El proyecto exige que cada nota tenga su marcador exacto en el lugar relevante del texto. Tal como está, el anclaje induce a error y rompe la correspondencia entre texto y nota.
+  - severity: low
+    issue: '''Agarraron'' suena algo coloquial para ϭⲱⲡⲉ en este registro.'
+    rationale: Aunque comunica la idea de apoderarse violentamente, 'se apoderaron de' mantiene mejor la dignidad del estilo bíblico legible y refleja bien 'seized' sin tono demasiado informal.
+  - severity: low
+    issue: Las comillas son mixtas en la cita interna.
+    rationale: No es un error grave, pero conviene uniformar la puntuación tipográfica española para mejor legibilidad editorial.
+  revised_spanish_text: 'Él dijo[a]: «Un hombre bueno tenía una viña. Se la dio a unos labradores para que la trabajaran y él recibiera de ellos su fruto. Envió a su esclavo para que los labradores le entregaran el fruto de la viña. Ellos se apoderaron de su esclavo y lo golpearon; casi lo mataron[b]. El esclavo fue y se lo contó a su señor. Su señor dijo: “Tal vez no los conocía[c]”. Envió a otro esclavo. Los labradores golpearon al otro. Entonces el señor envió a su hijo. Dijo: “Tal vez respetarán a mi hijo”. Pero esos labradores, al saber que él era el heredero de la viña, se apoderaron de él y lo mataron. El que tenga oídos, que oiga».'
+  revised_footnotes:
+  - marker: a
+    text: El manuscrito conserva ⲛⲭⲣ̣ⲏ̣[ⲥⲧⲟ]ⲥ̣, usualmente restaurado como χρηστός (“bueno” o “amable”). Algunos estudios proponen una lectura alternativa relacionada con “acreedor” o “usurero”; el texto principal sigue la restauración de “bueno”.
+    reason: textual_variant
+  - marker: b
+    text: Literalmente, el copto dice “fue otra poca cosa y lo matan”, un modismo que significa “casi”.
+    reason: lexical_alternative
+  - marker: c
+    text: El copto lee literalmente “no los conocía” (ⲙⲡⲉϥⲥⲟⲩⲱⲛⲟⲩ). Muchos traductores enmiendan esto a “ellos no lo conocían” para ajustarlo a la lógica esperada de la parábola, pero aquí se conserva la lectura manuscrita.
+    reason: textual_variant
+  revision_rationale: Se corrige el anclaje de la nota [c] para que corresponda a la cláusula que explica, se eleva ligeramente el registro de 'agarraron' a 'se apoderaron de', y se mantiene intacta la lógica textual auditada del POB inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: fde8d23086bb32d7fc83a7795ca895748cdeba298609a5dbd60222559903aa3e
+  timestamp: '2026-05-08T03:06:22Z'
+  output_hash: 080864f17d533c802fead5f1f929c21c0ed6841351591abd6c9b669cc3aa3eba
+  usage:
+    prompt_tokens: 10914
+    completion_tokens: 1113
+    total_tokens: 12027
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.04398
+  applied_revision: true

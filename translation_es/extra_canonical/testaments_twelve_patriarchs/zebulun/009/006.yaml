@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y tus enemigos os llevarán cautivos, y seréis afligidos entre las naciones, con muchas debilidades y angustias.
+  text: Y sus enemigos los llevarán cautivos, y serán afligidos entre las naciones, con muchas debilidades y tribulaciones.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: αἰχμαλωτεύσουσιν ὑμᾶς
@@ -103,4 +103,42 @@ ai_draft:
     total_tokens: 2528
     reasoning_tokens: 0
     estimated_cost_usd: 0.00571
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y tus enemigos os llevarán cautivos, y seréis afligidos entre las naciones, con muchas debilidades y angustias.
+  to: Y sus enemigos los llevarán cautivos, y serán afligidos entre las naciones, con muchas debilidades y tribulaciones.
+  rationale: Se corrige la inconsistencia pronominal para representar de manera natural la segunda persona plural en español neutro amplio, evitando la mezcla de «tus» con «os/seréis». También se ajusta θλίψεσιν a «tribulaciones», que refleja mejor el matiz de aflicciones o presiones sufridas en un registro bíblico claro.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el sentido griego básico: cautiverio por los enemigos, aflicción entre las naciones, y padecimiento en múltiples formas. Sin embargo, hay una inconsistencia pronominal importante: combina «tus» con «os» y «seréis», lo que debilita la fidelidad estilística y la legibilidad. Además, «angustias» para θλίψεσιν es posible, pero «tribulaciones» refleja mejor la presión/aflicción objetiva del término en registro bíblico.'
+  spanish_quality_summary: El español es generalmente claro y digno, pero la mezcla de voseo peninsular/plural («os», «seréis») con «tus» suena incorrecta en español neutro. Conviene unificar en segunda persona plural con «sus/ustedes» implícito o, mejor, usar una formulación plenamente natural en español eclesial amplio.
+  glossary_alignment: No hay términos de glosario mayor implicados. Las decisiones léxicas son en general aceptables, pero «llevarán cautivos» puede simplificarse a «llevarán al cautiverio» o mantenerse; «tribulaciones» es preferible a «angustias» para θλίψεσιν en este contexto.
+  issues:
+  - severity: high
+    issue: 'Mezcla inconsistente de personas y registros: «tus enemigos os llevarán cautivos, y seréis...»'
+    rationale: «Tus» es singular, mientras que «os» y «seréis» son segunda persona plural peninsular. El griego es segunda persona plural; en español neutro debe evitarse esta mezcla.
+  - severity: medium
+    issue: «Angustias» para θλίψεσιν puede resultar demasiado subjetivo
+    rationale: θλίψεις suele expresar aflicciones/tribulaciones objetivas, presiones o sufrimientos. «Tribulaciones» encaja mejor con el registro bíblico y el paralelismo con ἀσθενείαις.
+  - severity: low
+    issue: La decisión lexical sobre «tus enemigos» justifica incorrectamente un singular como plural implícito
+    rationale: Esa explicación no es sostenible gramaticalmente en español estándar; la revisión debe reflejar auténtica segunda persona plural.
+  revised_spanish_text: Y sus enemigos los llevarán cautivos, y serán afligidos entre las naciones, con muchas debilidades y tribulaciones.
+  revision_rationale: Se corrige la inconsistencia pronominal para representar de manera natural la segunda persona plural en español neutro amplio, evitando la mezcla de «tus» con «os/seréis». También se ajusta θλίψεσιν a «tribulaciones», que refleja mejor el matiz de aflicciones o presiones sufridas en un registro bíblico claro.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: eabb435dac7bfc01c8186aa5f9fa03bf8afd9d7d6ceeccb90384126e66c52721
+  timestamp: '2026-05-08T03:03:58Z'
+  output_hash: e47f0c21cb360a40a210c893a697d3d7806193d6d74770edd2b8440c40ba8824
+  usage:
+    prompt_tokens: 2300
+    completion_tokens: 638
+    total_tokens: 2938
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01532
+  applied_revision: true

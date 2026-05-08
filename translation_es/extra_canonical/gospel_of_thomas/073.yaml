@@ -49,8 +49,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «La cosecha[ a ] en verdad es abundante, pero los obreros son pocos. Rueguen, entonces, al maestro[ b ], para que envíe obreros a la cosecha».'
+  text: 'Jesús dijo[a]: «La cosecha en verdad es abundante, pero los obreros son pocos. Rueguen, entonces, al amo[b], para que envíe obreros a la cosecha».[c]'
   philosophy: formal
+  footnotes:
+  - marker: a
+    text: A diferencia de los paralelos canónicos en Mateo 9:38 y Lucas 10:2, Tomás no tiene la frase «de la cosecha» después de «amo» (o «Señor»).
+    reason: textual_variant
+  - marker: b
+    text: El copto ⲡϫⲟⲉⲓⲥ (pjoeis) puede traducirse como «Señor» o «amo». En el contexto de una propiedad agrícola, aquí se usa «amo».
+    reason: lexical_alternative
+  - marker: c
+    text: Tomás tampoco tiene «su» antes de la última mención de «cosecha», a diferencia de algunos paralelos canónicos.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲱϩⲥ
   english_pob_choice: harvest
@@ -139,4 +149,52 @@ ai_draft:
     total_tokens: 4881
     reasoning_tokens: 0
     estimated_cost_usd: 0.007808
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «La cosecha[ a ] en verdad es abundante, pero los obreros son pocos. Rueguen, entonces, al maestro[ b ], para que envíe obreros a la cosecha».'
+  to: 'Jesús dijo[a]: «La cosecha en verdad es abundante, pero los obreros son pocos. Rueguen, entonces, al amo[b], para que envíe obreros a la cosecha».[c]'
+  rationale: Se corrige «maestro» a «amo» para reflejar con más fidelidad el sentido contextual de 'master' en español. Se añaden notas al pie para preservar la documentación textual y léxica del POB inglés, y se corrigen los marcadores al formato requerido. La tercera nota separa con claridad la segunda mitad de la observación textual inglesa para evitar ambigüedad en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el sentido general del copto y del POB inglés: abundancia de la cosecha, escasez de obreros, exhortación a rogar al dueño/amo para que envíe obreros. Sin embargo, no preserva bien dos decisiones auditadas: (1) faltan las notas que documentan la ausencia de «de la cosecha» tras «maestro» y la alternativa léxica de ⲡϫⲟⲉⲓⲥ; (2) «maestro» no es la mejor equivalencia española para ''master'' en un contexto de hacienda/campo, donde suena a docente más que a dueño o patrón.'
+  spanish_quality_summary: El español es claro y legible, pero hay problemas formales y léxicos menores. Los marcadores de nota aparecen en el texto («[ a ]», «[ b ]») aunque no existe ningún objeto de nota; además, el espaciado del anclaje no sigue el formato requerido. «Rueguen» funciona bien para ⲥⲟⲡⲥ. «La cosecha en verdad es abundante» es natural; «ciertamente» también sería posible, pero no es necesario cambiarlo.
+  glossary_alignment: 'Sin conflicto con los términos globales principales. La cuestión clave es ⲡϫⲟⲉⲓⲥ: el POB inglés documenta ''master'' por contexto agrícola. En español, «amo» o «dueño» alinean mejor con esa decisión que «maestro». Se preserva mejor la rationale documentada con «amo», mientras una nota puede indicar la alternativa «señor».'
+  issues:
+  - severity: high
+    issue: Uso de «maestro» para ⲡϫⲟⲉⲓⲥ
+    rationale: Aunque el inglés auditado eligió 'master', en español «maestro» normalmente se entiende como teacher. En una escena agrícola, distorsiona el referente contextual. «Amo» o «dueño» preservan mejor el sentido de propietario/jefe de la cosecha y la decisión léxica del POB.
+  - severity: medium
+    issue: Faltan las notas al pie exigidas por el rastro de auditoría inglés
+    rationale: El POB inglés conserva una nota textual sobre la falta de «de la cosecha» tras «master/Lord» y otra nota léxica sobre «master»/«Lord». Deben preservarse en español, especialmente porque la segunda justifica la elección contextual.
+  - severity: medium
+    issue: Marcadores de nota inválidos en el texto
+    rationale: El borrador incluye «[ a ]» y «[ b ]» pero no hay notas, y el formato requerido es exactamente «[a]», «[b]» sin espacios.
+  revised_spanish_text: 'Jesús dijo[a]: «La cosecha en verdad es abundante, pero los obreros son pocos. Rueguen, entonces, al amo[b], para que envíe obreros a la cosecha».[c]'
+  revised_footnotes:
+  - marker: a
+    text: A diferencia de los paralelos canónicos en Mateo 9:38 y Lucas 10:2, Tomás no tiene la frase «de la cosecha» después de «amo» (o «Señor»).
+    reason: textual_variant
+  - marker: b
+    text: El copto ⲡϫⲟⲉⲓⲥ (pjoeis) puede traducirse como «Señor» o «amo». En el contexto de una propiedad agrícola, aquí se usa «amo».
+    reason: lexical_alternative
+  - marker: c
+    text: Tomás tampoco tiene «su» antes de la última mención de «cosecha», a diferencia de algunos paralelos canónicos.
+    reason: textual_variant
+  revision_rationale: Se corrige «maestro» a «amo» para reflejar con más fidelidad el sentido contextual de 'master' en español. Se añaden notas al pie para preservar la documentación textual y léxica del POB inglés, y se corrigen los marcadores al formato requerido. La tercera nota separa con claridad la segunda mitad de la observación textual inglesa para evitar ambigüedad en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: f178d9af77ece4ea532eab6449ffcbe81b4e37d9cba29b3e2980255fdeb983fb
+  timestamp: '2026-05-08T03:06:36Z'
+  output_hash: eb173cedd6ee9a009efd22058d1c5ebf53ec5799b454968ca11bfa49eb76e1ac
+  usage:
+    prompt_tokens: 4483
+    completion_tokens: 959
+    total_tokens: 5442
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025593
+  applied_revision: true

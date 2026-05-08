@@ -60,12 +60,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Yo soy la madre y la hija[a].
+  text: Yo soy la madre y la hija[a][b][c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El copto aquí puede significar literalmente 'mujer/femenina'; se vierte 'hija' para conservar el contraste poético con 'madre' en esta secuencia.
+    text: El copto ⲥϩⲓⲙⲉ normalmente significa 'mujer'; aquí se vierte 'hija' para conservar la pareja antitética con 'madre' en esta secuencia.
     reason: lexical_alternative
+  - marker: b
+    text: Es probable que el fragmento ⲑⲉⲛⲟⲥ continúe ⲡⲁⲣⲑⲉⲛⲟⲥ ('virgen') desde una línea adyacente, pero su ubicación dentro de este bloque es incierta.
+    reason: alignment_note
+  - marker: c
+    text: 'O: ''Yo soy la madre; yo soy la hija''.'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ ⲡⲉ / ⲧⲉ (marco copulativo de primera persona)
   english_pob_choice: I am
@@ -135,4 +141,49 @@ ai_draft:
     total_tokens: 3525
     reasoning_tokens: 0
     estimated_cost_usd: 0.006026
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Yo soy la madre y la hija[a].
+  to: Yo soy la madre y la hija[a][b][c].
+  rationale: Se conserva el texto principal, que ya es fiel y bien escrito, pero se completa la documentación con las dos notas relevantes del expediente inglés y se mejora levemente la naturalidad de la nota léxica.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite correctamente la estructura copta básica y la decisión auditada de una sola cláusula con conjunción: ''I am the mother and the daughter.'' También conserva bien la paradoja relacional. Sin embargo, omite dos notas significativas presentes en el rastro auditado inglés: la nota de incertidumbre de alineación sobre ⲑⲉⲛⲟⲥ/posible ''virgen'' y la alternativa de traducción previa ''Yo soy la madre; yo soy la hija''.'
+  spanish_quality_summary: El español es claro, natural y digno. 'Yo soy la madre y la hija' funciona bien estilísticamente. La nota actual es legible, pero 'femenina' suena algo forzado como glosa léxica; 'mujer/hembra' o simplemente 'mujer' sería más idiomático. Conviene además reflejar en notas toda la información relevante del expediente inglés.
+  glossary_alignment: No hay términos de glosario mayor implicados. La elección de 'hija' sigue adecuadamente la decisión lexical auditada en inglés para preservar la pareja antitética con 'madre'. El uso de 'Yo soy' también concuerda con la preservación del marco copulativo explícito.
+  issues:
+  - severity: medium
+    issue: Faltan dos notas del expediente inglés
+    rationale: El inglés conserva una nota de incertidumbre de alineación sobre el fragmento posiblemente relacionado con 'virgen' y una nota de traducción alternativa previa. El español debería preservarlas también, salvo razón fuerte para omitirlas, que aquí no existe.
+  - severity: low
+    issue: La glosa 'mujer/femenina' en la nota suena poco idiomática
+    rationale: Aunque intenta reflejar el campo léxico, 'femenina' como sustantivo/glosa aislada no es la opción más natural en español. Una formulación como 'mujer' o 'mujer/hembra' sería más clara.
+  revised_spanish_text: Yo soy la madre y la hija[a][b][c].
+  revised_footnotes:
+  - marker: a
+    text: El copto ⲥϩⲓⲙⲉ normalmente significa 'mujer'; aquí se vierte 'hija' para conservar la pareja antitética con 'madre' en esta secuencia.
+    reason: lexical_alternative
+  - marker: b
+    text: Es probable que el fragmento ⲑⲉⲛⲟⲥ continúe ⲡⲁⲣⲑⲉⲛⲟⲥ ('virgen') desde una línea adyacente, pero su ubicación dentro de este bloque es incierta.
+    reason: alignment_note
+  - marker: c
+    text: 'O: ''Yo soy la madre; yo soy la hija''.'
+    reason: previous_rendering
+  revision_rationale: Se conserva el texto principal, que ya es fiel y bien escrito, pero se completa la documentación con las dos notas relevantes del expediente inglés y se mejora levemente la naturalidad de la nota léxica.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: b94e047961b62e3872b8d3bee5e99f9f39a1c628c8202cfee134e7b33e0d78ec
+  timestamp: '2026-05-08T03:04:28Z'
+  output_hash: 79573890c73977d8880dd0a6f9c5c94ac731296fca99e72e6a3501597a1a031b
+  usage:
+    prompt_tokens: 3176
+    completion_tokens: 704
+    total_tokens: 3880
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0185
+  applied_revision: true

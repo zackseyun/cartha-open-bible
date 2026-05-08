@@ -69,21 +69,24 @@ base_translation:
     changes_summary: Changed “heart” to “nature” to match the established lexical decision for ⲙⲫⲏⲧ. Kept the rest of the draft unchanged.
 translation:
   language: es
-  text: '...del corazón que existe dentro de mí[a]. Yo soy el oído[b] que está al alcance de todos, y la palabra[c] que no puede ser aprehendida. Yo soy la llamada[d].'
+  text: '...de la naturaleza[a] que existe dentro de mí. Yo soy la escucha[b] al alcance de todos, y el habla[c] que no puede ser aprehendida[d]. Yo soy la llamada[e].'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El expediente de revisión favorece aquí “corazón” como lectura corregida de la línea; la formulación española sigue esa decisión.
-    reason: textual_variant
+    text: También podría leerse más genéricamente, o incluso en plural, como “naturalezas” o “clases”, debido a la ambigüedad del término copto y a la pista del texto de consulta.
+    reason: lexical_alternative
   - marker: b
-    text: Se traduce aquí con “el oído” para preservar una imagen concreta y fluida en español; el campo semántico incluye el acto de oír/escuchar.
+    text: El copto puede sugerir “la escucha”, “el oír” o “la audición”. Se elige “la escucha” para conservar el sustantivo abstracto y el paralelismo poético con “el habla”.
     reason: lexical_alternative
   - marker: c
-    text: “Palabra” conserva el paralelismo con “oído” y puede abarcar habla, enunciación o dicho sin estrechar demasiado el original.
+    text: También podría traducirse “la palabra” o “la expresión”; “el habla” preserva mejor el sentido amplio de enunciación o habla.
     reason: lexical_alternative
   - marker: d
-    text: También puede entenderse como “el llamado”; se eligió “la llamada” por su naturalidad y por mantener la idea de convocatoria.
-    reason: alternative_reading
+    text: 'La línea fue reevaluada en el expediente: la idea es que esta habla “no puede ser aprehendida/captada”, no que “aparece delante de ellos”.'
+    reason: alignment_note
+  - marker: e
+    text: También puede entenderse como “el llamado”, “el clamor” o “el grito”; se elige “la llamada” para destacar la idea de convocatoria.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲙ̄ⲡϩⲏⲧ / ⲙⲫⲏⲧ
   english_pob_choice: nature / heart (revision history shows this line was re-evaluated)
@@ -184,4 +187,61 @@ ai_draft:
     total_tokens: 5299
     reasoning_tokens: 0
     estimated_cost_usd: 0.009371
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: '...del corazón que existe dentro de mí[a]. Yo soy el oído[b] que está al alcance de todos, y la palabra[c] que no puede ser aprehendida. Yo soy la llamada[d].'
+  to: '...de la naturaleza[a] que existe dentro de mí. Yo soy la escucha[b] al alcance de todos, y el habla[c] que no puede ser aprehendida[d]. Yo soy la llamada[e].'
+  rationale: Se corrige la primera cláusula para alinearla con la forma vigente del English POB auditado ('nature ... within me'). Se reemplaza 'el oído' por 'la escucha' para reflejar el sustantivo abstracto de ⲡⲥⲱⲧⲙ, y 'la palabra' por 'el habla' para reproducir mejor 'the speech'. Se conservan 'no puede ser aprehendida' y 'la llamada' como soluciones fieles y legibles, con notas actualizadas y ancladas correctamente.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en parte una revisión intermedia del expediente (''corazón'') y no la forma vigente del English POB, que actualmente lee ''nature ... within me''. Además, varios giros léxicos españoles se apartan del balance fuente/POB: ⲡⲥⲱⲧⲙ se acerca mejor a ''la escucha/el oír'' que a ''el oído'', y ⲡϣⲁϫⲉ como ''speech'' se preserva mejor con ''el habla'' que con ''la palabra''. La cláusula ''que no puede ser aprehendida'' comunica bien la idea de ''cannot be grasped''.'
+  spanish_quality_summary: El texto es legible y digno, pero 'el oído' introduce una imagen anatómica más concreta que el abstracto del original, y 'aprehendida' suena algo técnica. 'La llamada' es natural, aunque 'el llamado' podría expresar mejor summons; no obstante, 'la llamada' es aceptable. Conviene alinear notas y texto con la versión inglesa auditada vigente y mejorar naturalidad poética.
+  glossary_alignment: 'No hay conflictos con la terminología teológica del proyecto. Las decisiones relevantes aquí son literarias/lexicales: conviene alinear con ''naturaleza'' (según el English POB vigente), ''la escucha'' para ⲡⲥⲱⲧⲙ, ''el habla'' para ⲡϣⲁϫⲉ, y mantener ''la llamada'' para ⲧⲉⲕⲱ.'
+  issues:
+  - severity: high
+    issue: La primera cláusula usa 'corazón' en vez de la lectura vigente del English POB, 'naturaleza'.
+    rationale: Aunque el historial muestra una revisión hacia 'heart', la versión auditada final fue revertida a 'nature'. La revisión española debe seguir el estado vigente del expediente, no una etapa intermedia.
+  - severity: medium
+    issue: '''El oído'' no preserva bien el abstracto de ⲡⲥⲱⲧⲙ (''the hearing'').'
+    rationale: '''Oído'' en español se entiende primariamente como órgano físico; el original y el POB inglés apuntan a la facultad/acto de oír. ''La escucha'' o ''el oír'' reflejan mejor el valor nominal abstracto y el paralelismo poético.'
+  - severity: medium
+    issue: '''La palabra'' estrecha ⲡϣⲁϫⲉ frente a ''the speech''.'
+    rationale: '''Palabra'' puede sugerir una unidad léxica singular; ''el habla'' o ''la expresión'' preservan mejor el sustantivo colectivo/abstracto y el paralelo con ''la escucha''.'
+  - severity: low
+    issue: Las notas actuales justifican decisiones que ya no deberían mantenerse en el texto revisado.
+    rationale: Si se cambia 'corazón', 'oído' y 'palabra', también deben actualizarse las notas para no contradecir el texto final ni el expediente auditado.
+  revised_spanish_text: '...de la naturaleza[a] que existe dentro de mí. Yo soy la escucha[b] al alcance de todos, y el habla[c] que no puede ser aprehendida[d]. Yo soy la llamada[e].'
+  revised_footnotes:
+  - marker: a
+    text: También podría leerse más genéricamente, o incluso en plural, como “naturalezas” o “clases”, debido a la ambigüedad del término copto y a la pista del texto de consulta.
+    reason: lexical_alternative
+  - marker: b
+    text: El copto puede sugerir “la escucha”, “el oír” o “la audición”. Se elige “la escucha” para conservar el sustantivo abstracto y el paralelismo poético con “el habla”.
+    reason: lexical_alternative
+  - marker: c
+    text: También podría traducirse “la palabra” o “la expresión”; “el habla” preserva mejor el sentido amplio de enunciación o habla.
+    reason: lexical_alternative
+  - marker: d
+    text: 'La línea fue reevaluada en el expediente: la idea es que esta habla “no puede ser aprehendida/captada”, no que “aparece delante de ellos”.'
+    reason: alignment_note
+  - marker: e
+    text: También puede entenderse como “el llamado”, “el clamor” o “el grito”; se elige “la llamada” para destacar la idea de convocatoria.
+    reason: lexical_alternative
+  revision_rationale: Se corrige la primera cláusula para alinearla con la forma vigente del English POB auditado ('nature ... within me'). Se reemplaza 'el oído' por 'la escucha' para reflejar el sustantivo abstracto de ⲡⲥⲱⲧⲙ, y 'la palabra' por 'el habla' para reproducir mejor 'the speech'. Se conservan 'no puede ser aprehendida' y 'la llamada' como soluciones fieles y legibles, con notas actualizadas y ancladas correctamente.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0c1d992b1292ffb38fcec4dd7626f125460d143461ef5202d0bdd9778f617ae0
+  timestamp: '2026-05-08T03:09:59Z'
+  output_hash: ca6e89efac16c49d1064d5691abb5f68475d67c5875436cf753ea16fc78491ab
+  usage:
+    prompt_tokens: 4916
+    completion_tokens: 1136
+    total_tokens: 6052
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02933
+  applied_revision: true

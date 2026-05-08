@@ -66,15 +66,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Y dijo: «Quien encuentre la interpretación[a] de estas palabras[b] no probará la muerte[c]».'
+  text: 'Y dijo: «Quien encuentre la interpretación[a] de estos dichos[b] no probará la muerte[c]».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: «Interpretación» conserva el matiz técnico de un préstamo griego; también puede entenderse como «explicación».
     reason: lexical_alternative
   - marker: b
-    text: El original coptó exhibe plural en los testigos del dicho; por eso se vierte en plural, aunque la lematización normalizada pueda leerse en singular.
-    reason: textual_variant
+    text: El manuscrito exhibe un demostrativo plural de tipo licopolitano («estos dichos»), mientras que la lematización normalizada puede leerse en singular; el fragmento griego POxy 654 también favorece el plural.
+    reason: dialect_note
   - marker: c
     text: '«Probar la muerte» es un modismo: significa «experimentar la muerte».'
     reason: cultural_note
@@ -153,4 +153,52 @@ ai_draft:
     total_tokens: 4365
     reasoning_tokens: 0
     estimated_cost_usd: 0.006769
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y dijo: «Quien encuentre la interpretación[a] de estas palabras[b] no probará la muerte[c]».'
+  to: 'Y dijo: «Quien encuentre la interpretación[a] de estos dichos[b] no probará la muerte[c]».'
+  rationale: Se revisa «estas palabras» a «estos dichos» para preservar mejor el valor semántico de los logia y alinearse con la decisión lexical del POB inglés y la evidencia textual. También se ajusta la nota b para reflejar con más precisión el dato dialectal/textual y el apoyo del testigo griego.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:22Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido básico del copto y del POB inglés: apertura narrativa breve, sujeto genérico, tecnicidad de «interpretación» y el modismo «probar la muerte». Sin embargo, «estas palabras» debilita un matiz importante del original y del rastro auditado, que favorece «these sayings» por el plural del manuscrito y el apoyo griego de POxy 654.'
+  spanish_quality_summary: El español es claro y natural, con registro digno y legible. La construcción general funciona bien. No obstante, «dichos» refleja mejor el género de logia/aforismos que «palabras», y evita una pérdida semántica relevante. También conviene afinar la nota b para mencionar explícitamente el apoyo del fragmento griego, como hace el audit trail.
+  glossary_alignment: 'No hay conflictos con la terminología marco del proyecto. «Interpretación» está bien justificado frente a «explicación». «Probar la muerte» preserva adecuadamente el idiomatismo. La principal desalineación es léxica-contextual: ⲛ̄ⲛⲉⲉⲓϣⲁϫⲉ se preserva mejor como «estos dichos» que como «estas palabras».'
+  issues:
+  - severity: medium
+    issue: «estas palabras» atenúa el valor de «sayings/logia»
+    rationale: El inglés auditado eligió «these sayings» por razones textuales y semánticas. «Palabras» es demasiado general y pierde el matiz de dichos o sentencias breves que caracteriza el Evangelio de Tomás.
+  - severity: low
+    issue: La nota b no menciona el apoyo del fragmento griego
+    rationale: El expediente inglés señala expresamente que POxy 654 favorece el plural. Incluirlo fortalece la trazabilidad del criterio textual en español.
+  - severity: low
+    issue: «testigos del dicho» en la nota b suena menos preciso
+    rationale: Puede leerse de manera algo confusa. Es más claro decir que el manuscrito exhibe un demostrativo plural de tipo licopolitano y que el fragmento griego también favorece el plural.
+  revised_spanish_text: 'Y dijo: «Quien encuentre la interpretación[a] de estos dichos[b] no probará la muerte[c]».'
+  revised_footnotes:
+  - marker: a
+    text: «Interpretación» conserva el matiz técnico de un préstamo griego; también puede entenderse como «explicación».
+    reason: lexical_alternative
+  - marker: b
+    text: El manuscrito exhibe un demostrativo plural de tipo licopolitano («estos dichos»), mientras que la lematización normalizada puede leerse en singular; el fragmento griego POxy 654 también favorece el plural.
+    reason: dialect_note
+  - marker: c
+    text: '«Probar la muerte» es un modismo: significa «experimentar la muerte».'
+    reason: cultural_note
+  revision_rationale: Se revisa «estas palabras» a «estos dichos» para preservar mejor el valor semántico de los logia y alinearse con la decisión lexical del POB inglés y la evidencia textual. También se ajusta la nota b para reflejar con más precisión el dato dialectal/textual y el apoyo del testigo griego.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 88c658f43dd0b90448ef5e72b17748b48b6d31911d89b4e59b3c901f1ff0e750
+  timestamp: '2026-05-08T03:04:22Z'
+  output_hash: 3b386cdf3c5d76674fdbc36a71ba087b079df1190b3e470c61ad501879153c8f
+  usage:
+    prompt_tokens: 4066
+    completion_tokens: 752
+    total_tokens: 4818
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021445
+  applied_revision: true

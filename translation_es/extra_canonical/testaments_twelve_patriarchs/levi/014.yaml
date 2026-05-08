@@ -37,18 +37,15 @@ base_translation:
     changes_summary: Changed 'know' to 'have known' to better reflect the Greek perfect ἔγνων, and changed 'an object of mockery' to 'a mockery' for a more direct rendering of χλευασμός. Kept the bracketed clause in verse 2 in the main text as represented in the draft.
 translation:
   language: es
-  text: 1[a]. Por tanto, yo, hijos míos, he sabido que al final de los siglos actuarán con impiedad contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones serán una burla[b]. 2. Pues nuestro padre Israel es puro de la impiedad de los sumos sacerdotes, que pondrán sus manos sobre el salvador del mundo[c]. 3. Porque así como el sol es puro delante del Señor sobre la tierra, así también...
+  text: 1. Por tanto, yo, hijos míos, he sabido que al final de los siglos actuarán con impiedad contra el Señor, echando mano de él con maldad, y entre todas las naciones serán una burla. 2. Pues nuestro padre Israel es puro de la impiedad de los principales sacerdotes,[a] que echarán mano del salvador del mundo. 3. Porque así como el sol es puro delante del Señor sobre la tierra, así también...[b]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La cláusula «que pondrán sus manos sobre el salvador del mundo» está entre corchetes en el testigo griego y puede reflejar una ampliación posterior en la transmisión; se traduce porque está presente en el texto proporcionado.
+    text: La cláusula «que echarán mano del salvador del mundo» está entre corchetes en el testigo griego y puede reflejar una ampliación posterior en la transmisión; se traduce porque está presente en el texto proporcionado.
     reason: textual_variant
   - marker: b
     text: El texto del capítulo en el testigo proporcionado se interrumpe después de «así también...», por lo que la traducción conserva solo lo que se ha transmitido.
     reason: textual_variant
-  - marker: c
-    text: Esta frase está marcada como textual y teológicamente problemática en el testigo; se mantiene en el texto principal por fidelidad al testimonio griego, no como afirmación doctrinal resuelta.
-    reason: theological_note
 lexical_decisions:
 - source_word: ἔγνων
   english_pob_choice: have known
@@ -178,4 +175,52 @@ ai_draft:
     total_tokens: 5035
     reasoning_tokens: 0
     estimated_cost_usd: 0.010616
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 1[a]. Por tanto, yo, hijos míos, he sabido que al final de los siglos actuarán con impiedad contra el Señor, poniendo manos sobre él en maldad, y entre todas las naciones serán una burla[b]. 2. Pues nuestro padre Israel es puro de la impiedad de los sumos sacerdotes, que pondrán sus manos sobre el salvador del mundo[c]. 3. Porque así como el sol es puro delante del Señor sobre la tierra, así también...
+  to: 1. Por tanto, yo, hijos míos, he sabido que al final de los siglos actuarán con impiedad contra el Señor, echando mano de él con maldad, y entre todas las naciones serán una burla. 2. Pues nuestro padre Israel es puro de la impiedad de los principales sacerdotes,[a] que echarán mano del salvador del mundo. 3. Porque así como el sol es puro delante del Señor sobre la tierra, así también...[b]
+  rationale: Se corrigen los anclajes de notas para que correspondan exactamente a las frases comentadas; se sustituye el calco duro «poner manos sobre» por «echar mano de», que suena natural en español bíblico y conserva la fuerza del griego; y se ajusta «sumos sacerdotes» a «principales sacerdotes» para seguir mejor la decisión documentada de ἀρχιερεῖς como ‘chief priests’. Se mantiene el resto del sentido, incluida la cláusula textual problemática en v. 2 y la interrupción del v. 3.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T02:59:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en lo esencial el sentido del griego y del rastro de auditoría inglés: conserva la acusación directa «contra el Señor ... poniendo manos sobre él», mantiene la cláusula entre corchetes de v. 2 en el texto principal y respeta la interrupción textual de v. 3. Sin embargo, hay varios desajustes de fidelidad y de legibilidad: «actuarán / serán» cambia indebidamente la segunda persona plural del griego a tercera persona; «poniendo manos sobre él» suena poco idiomático en español bíblico; y el anclaje de notas es incorrecto, porque [a] aparece en v. 1 pero comenta una cláusula de v. 2, mientras [b] aparece tras «una burla» aunque comenta la truncación de v. 3.'
+  spanish_quality_summary: 'La redacción es mayormente comprensible, pero necesita pulido para un español eclesial natural y preciso. «Yo, hijos míos» funciona, aunque «yo, hijos míos» puede mantenerse; el problema principal es gramatical: debe ser «actuarán»/«serán» en segunda persona plural («actuarán» -> «actuarán» no, debe «actuarán»? En español de ustedes sí coincide, pero el sujeto explícito «hijos míos» pide claridad; mejor «ustedes actuarán... serán» o mantener futuro plural sin ambigüedad). Más importante, «poniendo manos sobre él» y «pondrán sus manos sobre» son calcos duros; «echando mano de él» / «echarán mano del» preserva mejor el registro bíblico y la ambigüedad entre arresto y violencia. También conviene reubicar las notas a sus lugares correctos.'
+  glossary_alignment: 'No hay conflicto grave con la terminología del proyecto. «Señor» para κύριος aquí es admisible porque el texto griego tiene Κυρίου, no el Tetragrámaton hebreo. «salvador del mundo» refleja bien σωτῆρα τοῦ κόσμου. El punto mejorable es ἀρχιερέων: el inglés documenta «chief priests»; en español «principales sacerdotes» se alinea mejor que «sumos sacerdotes», que puede sugerir un oficio singular repetido más que el grupo dirigente sacerdotal.'
+  issues:
+  - severity: high
+    issue: Las notas al pie están ancladas en lugares incorrectos.
+    rationale: La nota [a] trata la cláusula entre corchetes de v. 2, pero el marcador está al inicio de v. 1. La nota [b] trata la interrupción después de «así también...», pero el marcador está tras «una burla». Esto incumple la disciplina requerida de anclar cada nota en la palabra o frase pertinente.
+  - severity: high
+    issue: La expresión «poniendo manos sobre él / pondrán sus manos sobre» es un calco poco natural.
+    rationale: Aunque intenta reflejar χεῖρας ἐπιβάλλοντες, en español suena forzado. «Echando mano de él» y «echarán mano del salvador del mundo» mantienen el registro bíblico y la ambigüedad hostil mejor que el calco literal.
+  - severity: medium
+    issue: «sumos sacerdotes» no sigue la decisión léxica auditada tan bien como «principales sacerdotes».
+    rationale: El griego plural ἀρχιερέων y la nota inglesa favorecen ‘chief priests’. «Principales sacerdotes» comunica mejor el grupo dirigente del período del Segundo Templo y evita la impresión de varios titulares del cargo de sumo sacerdote.
+  - severity: low
+    issue: La nota teológica adicional [c] no es necesaria como nota separada.
+    rationale: La preocupación textual-teológica ya queda cubierta por la nota sobre la cláusula entre corchetes. Mantener una nota extra recarga el aparato sin añadir información esencial distinta para este registro.
+  revised_spanish_text: 1. Por tanto, yo, hijos míos, he sabido que al final de los siglos actuarán con impiedad contra el Señor, echando mano de él con maldad, y entre todas las naciones serán una burla. 2. Pues nuestro padre Israel es puro de la impiedad de los principales sacerdotes,[a] que echarán mano del salvador del mundo. 3. Porque así como el sol es puro delante del Señor sobre la tierra, así también...[b]
+  revised_footnotes:
+  - marker: a
+    text: La cláusula «que echarán mano del salvador del mundo» está entre corchetes en el testigo griego y puede reflejar una ampliación posterior en la transmisión; se traduce porque está presente en el texto proporcionado.
+    reason: textual_variant
+  - marker: b
+    text: El texto del capítulo en el testigo proporcionado se interrumpe después de «así también...», por lo que la traducción conserva solo lo que se ha transmitido.
+    reason: textual_variant
+  revision_rationale: Se corrigen los anclajes de notas para que correspondan exactamente a las frases comentadas; se sustituye el calco duro «poner manos sobre» por «echar mano de», que suena natural en español bíblico y conserva la fuerza del griego; y se ajusta «sumos sacerdotes» a «principales sacerdotes» para seguir mejor la decisión documentada de ἀρχιερεῖς como ‘chief priests’. Se mantiene el resto del sentido, incluida la cláusula textual problemática en v. 2 y la interrupción del v. 3.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 078bfcecd645ebd4192e511f9fbcb03b8551a2bd917683dab6862363a37923e5
+  timestamp: '2026-05-08T02:59:34Z'
+  output_hash: f45a4fb10bf2105c51b5664d319e19aeb39ab7c18013cc5ad7e14691a61dd611
+  usage:
+    prompt_tokens: 4693
+    completion_tokens: 1240
+    total_tokens: 5933
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.030332
+  applied_revision: true

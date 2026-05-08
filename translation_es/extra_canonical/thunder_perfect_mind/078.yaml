@@ -84,21 +84,26 @@ base_translation:
     changes_summary: Removed the bracketed textual corruption at the end of the final line and restored a clean parallel clause. Kept the existing rendering of the source as revised in the latest grounded draft.
 translation:
   language: es
-  text: 'Los que existen fuera de mi asociación no me conocen[a],
+  text: 'Los que existen fuera de mi asociación[a] no me conocen,
 
-    y los que existen en mi sustancia son los que me conocen.
 
-    Los que están cerca de mí no me han conocido,
+    y los que están en mi sustancia son los que me conocen.
+
+
+    Los que están cerca de mí han sido ignorantes de mí,
+
 
     y los que están lejos de mí son los que me han conocido.
 
+
     En el día en que estoy cerca de ti, tú estás lejos de mí,
+
 
     y en el día en que tú estás cerca de mí, yo estoy lejos de ti.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: ⲥⲩⲛⲟⲩⲥⲓⲁ puede significar ‘estar con, asociación, compañía’; según el contexto también se traduce como ‘consejo’ o ‘conocimiento’.
+    text: ⲥⲩⲛⲟⲩⲥⲓⲁ puede significar ‘estar con, asociación, compañía’; según el contexto también puede traducirse como ‘consejo’ o ‘conocimiento’.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲥⲩⲛⲟⲩⲥⲓⲁ
@@ -220,4 +225,83 @@ ai_draft:
     total_tokens: 6013
     reasoning_tokens: 0
     estimated_cost_usd: 0.011837
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Los que existen fuera de mi asociación no me conocen[a],
+
+    y los que existen en mi sustancia son los que me conocen.
+
+    Los que están cerca de mí no me han conocido,
+
+    y los que están lejos de mí son los que me han conocido.
+
+    En el día en que estoy cerca de ti, tú estás lejos de mí,
+
+    y en el día en que tú estás cerca de mí, yo estoy lejos de ti.'
+  to: 'Los que existen fuera de mi asociación[a] no me conocen,
+
+
+    y los que están en mi sustancia son los que me conocen.
+
+
+    Los que están cerca de mí han sido ignorantes de mí,
+
+
+    y los que están lejos de mí son los que me han conocido.
+
+
+    En el día en que estoy cerca de ti, tú estás lejos de mí,
+
+
+    y en el día en que tú estás cerca de mí, yo estoy lejos de ti.'
+  rationale: 'La revisión es menor y fuente-fiel: conserva la estructura auditada, mejora la naturalidad del español en la segunda línea y recupera más claramente en la tercera la oposición entre conocimiento e ignorancia presente en el texto auditado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:39Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en gran parte la lectura inglesa ya corregida del pasaje auténtico: exterior/interior, conocimiento/desconocimiento, cercanía/lejanía. Sin embargo, en la tercera línea pierde el matiz de estado de ignorancia que el inglés POB conserva con ''have been ignorant of me''; ''no me han conocido'' es comprensible, pero no refleja tan directamente ''han sido ignorantes de mí''. Además, ''existen en mi sustancia'' suena algo rígido; una leve mejora a ''están en mi sustancia'' mantiene el contraste interior sin forzar el español.'
+  spanish_quality_summary: El texto es legible y digno, con buen paralelismo. No obstante, 'Los que existen en mi sustancia' resulta algo pesado en español, y la alternancia entre 'existen' y 'están' puede ajustarse mejor por naturalidad. También conviene afinar la tercera línea para evitar repetir simplemente 'conocer' donde el original y la auditoría marcan 'ignorancia'.
+  glossary_alignment: No hay conflictos con la terminología troncal del proyecto. La nota sobre ⲥⲩⲛⲟⲩⲥⲓⲁ está bien encaminada. La elección 'asociación' es defendible, aunque en español suena algo abstracta; se puede mantener por fidelidad al razonamiento léxico documentado.
+  issues:
+  - severity: medium
+    issue: La tercera línea no refleja explícitamente 'han sido ignorantes de mí'
+    rationale: El inglés POB distingue entre 'know me' y 'have been ignorant of me'. 'No me han conocido' suaviza esa oposición léxica y pierde parte del filo retórico del pasaje.
+  - severity: low
+    issue: '''Los que existen en mi sustancia'' suena rígido en español'
+    rationale: Aunque 'those who exist' está en el inglés, en español el segundo miembro funciona mejor con 'están en mi sustancia', que preserva la idea interior sin dureza innecesaria.
+  revised_spanish_text: 'Los que existen fuera de mi asociación[a] no me conocen,
+
+
+    y los que están en mi sustancia son los que me conocen.
+
+
+    Los que están cerca de mí han sido ignorantes de mí,
+
+
+    y los que están lejos de mí son los que me han conocido.
+
+
+    En el día en que estoy cerca de ti, tú estás lejos de mí,
+
+
+    y en el día en que tú estás cerca de mí, yo estoy lejos de ti.'
+  revised_footnotes:
+  - marker: a
+    text: ⲥⲩⲛⲟⲩⲥⲓⲁ puede significar ‘estar con, asociación, compañía’; según el contexto también puede traducirse como ‘consejo’ o ‘conocimiento’.
+    reason: lexical_alternative
+  revision_rationale: 'La revisión es menor y fuente-fiel: conserva la estructura auditada, mejora la naturalidad del español en la segunda línea y recupera más claramente en la tercera la oposición entre conocimiento e ignorancia presente en el texto auditado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5a5dd3f03b452fc2ab728a6f6a7f52c515125978312bed6659e16b7378570aed
+  timestamp: '2026-05-08T03:09:39Z'
+  output_hash: a6327649f76adafb9d966d8f973a04202dfc78e7775fd4570f1362c81a38e489
+  usage:
+    prompt_tokens: 5605
+    completion_tokens: 702
+    total_tokens: 6307
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.024543
+  applied_revision: true

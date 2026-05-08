@@ -98,22 +98,19 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Este cielo[b] pasará, y el que está sobre él pasará. Y los muertos no viven, y los vivos no morirán. En los días en que comían lo muerto, lo hiciste vivir[c]. Cuando lleguen a estar en la luz, ¿qué harán? En el día en que fueron uno[d], se volvieron dos. Pero cuando sean dos, ¿qué harán[e]?».'
+  text: 'Jesús dijo: «Este cielo[a] pasará, y el que está sobre él pasará. Y los muertos no viven, y los vivos no morirán. En el día en que comieron lo muerto, lo hicieron vivir[b]. Cuando lleguen a estar en la luz, ¿qué harán? En el día en que fueron uno[c], se volvieron dos. Pero cuando sean dos, ¿qué harán[d]?».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Jesús» sigue la forma consagrada para Ἰησοῦς; el texto copto nombra a Jesús al inicio del dicho.
-    reason: source_note
-  - marker: b
     text: ‘Cielo’ traduce aquí ⲡⲉⲓⲡⲉ. También puede entenderse como ‘firmamento’; se elige ‘cielo’ por el marco cosmológico sugerido por la cláusula siguiente.
     reason: lexical_alternative
-  - marker: c
-    text: 'El copto tiene una construcción causativa: “hiciste vivir” expresa mejor que el objeto muerto pasó a vida, sin añadir más explicación que la que el texto permite.'
+  - marker: b
+    text: 'El copto tiene una construcción causativa: ‘lo hicieron vivir’ expresa que lo muerto fue hecho vivo, sin añadir más explicación de la que el texto permite.'
     reason: cultural_note
-  - marker: d
+  - marker: c
     text: El copto permite una lectura de ‘ser uno’ o ‘hacerse uno’. Se conserva el pasado simple para respetar la secuencia con ‘se volvieron dos’.
     reason: alternative_reading
-  - marker: e
+  - marker: d
     text: La última pregunta repite la anterior con una variante manuscrita en el verbo. Se traduce con la misma pregunta abierta para conservar la fuerza retórica del dicho.
     reason: textual_variant
 lexical_decisions:
@@ -287,4 +284,55 @@ ai_draft:
     total_tokens: 9903
     reasoning_tokens: 0
     estimated_cost_usd: 0.017972
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Este cielo[b] pasará, y el que está sobre él pasará. Y los muertos no viven, y los vivos no morirán. En los días en que comían lo muerto, lo hiciste vivir[c]. Cuando lleguen a estar en la luz, ¿qué harán? En el día en que fueron uno[d], se volvieron dos. Pero cuando sean dos, ¿qué harán[e]?».'
+  to: 'Jesús dijo: «Este cielo[a] pasará, y el que está sobre él pasará. Y los muertos no viven, y los vivos no morirán. En el día en que comieron lo muerto, lo hicieron vivir[b]. Cuando lleguen a estar en la luz, ¿qué harán? En el día en que fueron uno[c], se volvieron dos. Pero cuando sean dos, ¿qué harán[d]?».'
+  rationale: Se corrige la concordancia para reflejar la segunda persona plural de la fuente, se ajusta ⲡϩⲟⲟⲩ a singular (‘En el día’) para mayor fidelidad al copto, y se eliminan notas no necesarias. El resto del texto se mantiene porque preserva bien el sentido, la ambigüedad y el tono del original y del POB inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:00:34Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue en general el sentido del copto y el rastro de auditoría inglés: preserva el paralelismo entre cielo/cielo superior, muertos/vivos, la construcción causativa de ‘hacer vivir’, el matiz prospectivo de ‘llegar a estar’, y la pregunta final repetida. Sin embargo, hay un desajuste importante de persona y tiempo en ‘En los días en que comían… lo hiciste vivir’: el copto y el inglés tienen segunda persona plural (‘ustedes comieron… ustedes hicieron vivir’), no un cambio a tercera plural seguido de singular. También ‘En los días’ no refleja bien que ⲡϩⲟⲟⲩ es singular en ambos casos (‘el día’ / ‘los días’ en inglés fue interpretativo, no exigido por la fuente).'
+  spanish_quality_summary: El español es legible y digno, pero presenta incoherencia pronominal grave (‘comían… hiciste’) y cierta irregularidad de tratamiento al alternar implícitamente ustedes con formas no concordantes. También conviene suavizar ‘lo hiciste vivir’ a plural y mantener la sintaxis más compacta. El resto fluye bien y conserva el tono enigmático de Tomás.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. ‘Jesús’, ‘luz’ y demás decisiones son adecuadas. ‘Este cielo’ encaja con la nota léxica. Las notas b, d y e están bien orientadas; la nota c debe ajustarse a la forma plural revisada. La nota a es innecesaria para el español porque no preserva una alternativa fuente significativa.
+  issues:
+  - severity: high
+    issue: Incoherencia de persona y número en la cláusula de comer/hacer vivir
+    rationale: El texto español dice ‘comían’ (3.ª plural) y ‘lo hiciste’ (2.ª singular), mientras que la fuente copta usa segunda plural en ambas acciones y el dicho entero se dirige a ‘ustedes’.
+  - severity: medium
+    issue: ‘En los días’ sobretraduce ⲡϩⲟⲟⲩ
+    rationale: La fuente tiene singular ‘el día’; el inglés ‘On the days’ es una decisión estilística, pero la propia ficha léxica española reconoce la alternativa. En español ‘En el día en que comieron…’ preserva mejor la forma fuente y el paralelismo con la cláusula posterior.
+  - severity: low
+    issue: Nota al pie sobre ‘Jesús’ no aporta una decisión léxica significativa
+    rationale: No hay ambigüedad ni alternativa preservada aquí; conviene eliminar notas no necesarias para mantener disciplina editorial.
+  revised_spanish_text: 'Jesús dijo: «Este cielo[a] pasará, y el que está sobre él pasará. Y los muertos no viven, y los vivos no morirán. En el día en que comieron lo muerto, lo hicieron vivir[b]. Cuando lleguen a estar en la luz, ¿qué harán? En el día en que fueron uno[c], se volvieron dos. Pero cuando sean dos, ¿qué harán[d]?».'
+  revised_footnotes:
+  - marker: a
+    text: ‘Cielo’ traduce aquí ⲡⲉⲓⲡⲉ. También puede entenderse como ‘firmamento’; se elige ‘cielo’ por el marco cosmológico sugerido por la cláusula siguiente.
+    reason: lexical_alternative
+  - marker: b
+    text: 'El copto tiene una construcción causativa: ‘lo hicieron vivir’ expresa que lo muerto fue hecho vivo, sin añadir más explicación de la que el texto permite.'
+    reason: cultural_note
+  - marker: c
+    text: El copto permite una lectura de ‘ser uno’ o ‘hacerse uno’. Se conserva el pasado simple para respetar la secuencia con ‘se volvieron dos’.
+    reason: alternative_reading
+  - marker: d
+    text: La última pregunta repite la anterior con una variante manuscrita en el verbo. Se traduce con la misma pregunta abierta para conservar la fuerza retórica del dicho.
+    reason: textual_variant
+  revision_rationale: Se corrige la concordancia para reflejar la segunda persona plural de la fuente, se ajusta ⲡϩⲟⲟⲩ a singular (‘En el día’) para mayor fidelidad al copto, y se eliminan notas no necesarias. El resto del texto se mantiene porque preserva bien el sentido, la ambigüedad y el tono del original y del POB inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 4a09418416e1fe5f9012d7ddd6beb3a4c552b60d87397b864702f54fc3b327e0
+  timestamp: '2026-05-08T03:00:34Z'
+  output_hash: 64080706b28983defe9bdc63a2b8425585fd6a2973e923546788bb6d66b0ec80
+  usage:
+    prompt_tokens: 9674
+    completion_tokens: 1010
+    total_tokens: 10684
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.039335
+  applied_revision: true

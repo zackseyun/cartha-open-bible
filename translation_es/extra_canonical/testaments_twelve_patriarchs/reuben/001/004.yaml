@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Adjusted word order for more natural English ('seeing Judah and Gad and Asher there') and revised 'I am failing' to 'I am passing away' to better reflect ἐκλείπω in this deathbed context.
 translation:
   language: es
-  text: 'Entonces, al ver allí a Judá, Gad y Aser, sus hermanos, les dijo: «Levántenme, para que pueda decir a mis hermanos y a mis hijos las cosas escondidas en mi corazón; porque, miren, ahora mismo estoy pasando[a]»'
+  text: 'Entonces, al ver allí a Judá, Gad y Aser, sus hermanos, les dijo: «Levántenme, para que pueda decir a mis hermanos y a mis hijos las cosas escondidas en mi corazón; porque miren, ahora mismo estoy por partir[a]»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Lit. «estoy pasando»; la expresión sigue de cerca el griego ἐκλείπω y refleja el matiz adoptado en la revisión inglesa: «I am passing away».'
+    text: 'O: «estoy pasando de esta vida». El griego ἐκλείπω aquí expresa muerte inminente; «estoy por partir» lo comunica con naturalidad en español.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἰδὼν ... Ἰούδαν καὶ Γὰδ καὶ ᾿Ασήρ
@@ -109,4 +109,43 @@ ai_draft:
     total_tokens: 3127
     reasoning_tokens: 0
     estimated_cost_usd: 0.006496
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Entonces, al ver allí a Judá, Gad y Aser, sus hermanos, les dijo: «Levántenme, para que pueda decir a mis hermanos y a mis hijos las cosas escondidas en mi corazón; porque, miren, ahora mismo estoy pasando[a]»'
+  to: 'Entonces, al ver allí a Judá, Gad y Aser, sus hermanos, les dijo: «Levántenme, para que pueda decir a mis hermanos y a mis hijos las cosas escondidas en mi corazón; porque miren, ahora mismo estoy por partir[a]»'
+  rationale: Se reemplaza 'estoy pasando' por 'estoy por partir' para expresar de manera natural y fiel la agonía o muerte inminente que ἐκλείπω comunica en este contexto testamentario. Se conserva el resto del versículo porque refleja bien el griego y el rastro de auditoría inglés. La nota se reformula para ofrecer una alternativa explicativa real en vez de defender un calco poco idiomático.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T02:59:49Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'La mayor parte del sentido fuente está bien preservada: Reubén ve a Judá, Gad y Aser, les pide que lo levanten para hablar a sus hermanos e hijos sobre lo que tiene oculto en su corazón, y anuncia su muerte inminente. Sin embargo, la cláusula final ἐκλείπω ἀπὸ τοῦ νῦν ἐγώ, auditada en inglés como ''I am passing away'', no queda fielmente expresada en español por ''estoy pasando'', que en español neutral resulta incompleta y opaca.'
+  spanish_quality_summary: El borrador es generalmente claro y digno, pero 'estoy pasando' no es una expresión idiomática para agonía o fallecimiento inminente en español e introduce extrañeza innecesaria. 'Porque, miren' también suena algo conversacional; 'porque miren' o 'porque he aquí' serían opciones, pero no exigen corrección. El ajuste principal es hacer natural y fiel la expresión de muerte inminente.
+  glossary_alignment: 'No hay términos del glosario mayor en disputa aquí. Los nombres Judá, Gad y Aser están bien; ἀδελφοί → ''hermanos'', καρδία → ''corazón'', κρυπτά → ''ocultas/escondidas'' son adecuados. La decisión problemática es ἐκλείπω: debe expresarse como ''estoy por partir'' o similar, no como ''estoy pasando''.'
+  issues:
+  - severity: high
+    issue: La expresión 'estoy pasando[a]' no comunica adecuadamente ἐκλείπω en español.
+    rationale: Aunque intenta seguir de cerca el inglés 'passing away', en español neutral 'estar pasando' no significa 'morirse' ni 'partir de esta vida' sin complemento. Produce ambigüedad y suena antinatural.
+  - severity: medium
+    issue: La nota al pie justifica una forma española no idiomática en vez de resolverla en el texto principal.
+    rationale: La política pide español legible y fiel, no un calco opaco sostenido por nota. Si se mantiene nota, debe aclarar una alternativa o matiz real, no defender una frase defectuosa.
+  revised_spanish_text: 'Entonces, al ver allí a Judá, Gad y Aser, sus hermanos, les dijo: «Levántenme, para que pueda decir a mis hermanos y a mis hijos las cosas escondidas en mi corazón; porque miren, ahora mismo estoy por partir[a]»'
+  revised_footnotes:
+  - marker: a
+    text: 'O: «estoy pasando de esta vida». El griego ἐκλείπω aquí expresa muerte inminente; «estoy por partir» lo comunica con naturalidad en español.'
+    reason: lexical_alternative
+  revision_rationale: Se reemplaza 'estoy pasando' por 'estoy por partir' para expresar de manera natural y fiel la agonía o muerte inminente que ἐκλείπω comunica en este contexto testamentario. Se conserva el resto del versículo porque refleja bien el griego y el rastro de auditoría inglés. La nota se reformula para ofrecer una alternativa explicativa real en vez de defender un calco poco idiomático.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0c0f3867d7d385f36107da5c2d598e42b30781e5aba4648300650ec7076c494e
+  timestamp: '2026-05-08T02:59:49Z'
+  output_hash: 959684445941427d9bd14e14004f0616e4b5563f9cf0a63c82ae5802fc63cf32
+  usage:
+    prompt_tokens: 2726
+    completion_tokens: 720
+    total_tokens: 3446
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017615
+  applied_revision: true

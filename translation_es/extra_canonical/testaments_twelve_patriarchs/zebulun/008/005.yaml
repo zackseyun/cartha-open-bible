@@ -19,14 +19,14 @@ base_translation:
     changes_summary: Removed the unnecessary 'then' to better match the source and improve naturalness; otherwise retained the draft.
 translation:
   language: es
-  text: Al prestar atención a él, ustedes también, hijos míos, ámense unos a otros, y que cada uno no [a]calcule mal[b] contra su hermano.
+  text: Al prestar atención a él, ustedes también, hijos míos, ámense unos a otros, y que cada uno no tome en cuenta[a] el mal[b] contra su hermano.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: '''calcule'' intenta conservar el matiz de λογίζομαι como contar, considerar o imputar; también puede entenderse ''lleve en cuenta''.'
+    text: O 'lo considere', 'lo cuente' o 'lo impute'. La expresión intenta conservar el matiz de λογίζομαι como considerar, contar o cargar a la cuenta de alguien.
     reason: lexical_alternative
   - marker: b
-    text: '''mal'' expresa κακίαν de manera amplia; puede abarcar malicia, maldad o daño.'
+    text: '''El mal'' expresa κακίαν de manera amplia; puede abarcar malicia, maldad o daño.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: προσέχοντες
@@ -108,4 +108,46 @@ ai_draft:
     total_tokens: 2783
     reasoning_tokens: 0
     estimated_cost_usd: 0.006261
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Al prestar atención a él, ustedes también, hijos míos, ámense unos a otros, y que cada uno no [a]calcule mal[b] contra su hermano.
+  to: Al prestar atención a él, ustedes también, hijos míos, ámense unos a otros, y que cada uno no tome en cuenta[a] el mal[b] contra su hermano.
+  rationale: Se reemplaza 'calcule mal' por 'tome en cuenta el mal', que suena natural en español y conserva mejor la idea de λογίζομαι como contabilizar, considerar o imputar. Se mantienen el orden exhortativo y el alcance amplio de κακίαν, con notas simplificadas y mejor ancladas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura griega: προσέχοντες = ''Al prestar atención'', ἀγαπᾶτε ἀλλήλους = ''ámense unos a otros'', y la prohibición final conserva la idea de no imputar/contabilizar mal contra el hermano. Sin embargo, ''calcule mal contra su hermano'' no suena idiomático en español y puede sugerir ''calcular incorrectamente'' más que ''tomar en cuenta/imputar mal''.'
+  spanish_quality_summary: La frase inicial y la exhortación al amor mutuo son claras y naturales. El problema principal es la colocación '[a]calcule mal[b] contra su hermano', que resulta forzada y poco legible para español eclesial general. Conviene una formulación más natural que mantenga el matiz de λογίζομαι sin perder claridad.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. La revisión propuesta mantiene fidelidad léxica mediante 'tome en cuenta el mal', con nota que preserva el matiz de contar/considerar/imputar de λογίζομαι. 'Mal' para κακίαν sigue siendo adecuado y suficientemente amplio.
+  issues:
+  - severity: medium
+    issue: 'Expresión no idiomática: ''calcule mal contra su hermano'''
+    rationale: En español, 'calcular mal' normalmente significa calcular de forma errónea, no imputar o llevar cuenta del mal de otro. Esto debilita la fidelidad semántica y la legibilidad.
+  - severity: low
+    issue: Anclaje de notas divide artificialmente la expresión
+    rationale: Separar notas entre 'calcule' y 'mal' fragmenta una unidad semántica que en español conviene tratar de forma más natural en una sola expresión.
+  revised_spanish_text: Al prestar atención a él, ustedes también, hijos míos, ámense unos a otros, y que cada uno no tome en cuenta[a] el mal[b] contra su hermano.
+  revised_footnotes:
+  - marker: a
+    text: O 'lo considere', 'lo cuente' o 'lo impute'. La expresión intenta conservar el matiz de λογίζομαι como considerar, contar o cargar a la cuenta de alguien.
+    reason: lexical_alternative
+  - marker: b
+    text: '''El mal'' expresa κακίαν de manera amplia; puede abarcar malicia, maldad o daño.'
+    reason: lexical_alternative
+  revision_rationale: Se reemplaza 'calcule mal' por 'tome en cuenta el mal', que suena natural en español y conserva mejor la idea de λογίζομαι como contabilizar, considerar o imputar. Se mantienen el orden exhortativo y el alcance amplio de κακίαν, con notas simplificadas y mejor ancladas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 2295c31428b8f25222d47d64686d5122416d7a274a3dad63274b65767e186136
+  timestamp: '2026-05-08T03:03:48Z'
+  output_hash: 643c6e83283e025bd2030dcaaf66f14040728959dda4119e0640aceabb41f315
+  usage:
+    prompt_tokens: 2518
+    completion_tokens: 635
+    total_tokens: 3153
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01582
+  applied_revision: true

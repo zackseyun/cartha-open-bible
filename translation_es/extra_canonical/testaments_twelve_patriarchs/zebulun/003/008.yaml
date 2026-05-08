@@ -19,11 +19,11 @@ base_translation:
     changes_summary: Changed 'raise up the life' to 'preserve the life' for more natural and accurate English; changed 'removed from them' to 'took from them' and 'which' to 'that' for smoother formal style.
 translation:
   language: es
-  text: Y los hermanos de José no quisieron preservar la vida de su hermano, y Yahvé les quitó el sandalia[a] que llevaban contra José, su hermano.
+  text: Y los hermanos de José no quisieron preservar la vida de su hermano, y Yahvé les quitó la sandalia[a] que llevaban contra José su hermano.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «la sandalia» traduce el singular griego ὑπόδημα; en español puede sonar colectivo, pero se conserva la imagen concreta del objeto.
+    text: «La sandalia» traduce el singular griego ὑπόδημα; en español se conserva la imagen concreta del objeto.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: οἱ ἀδελφοὶ τοῦ Ἰωσὴφ
@@ -105,4 +105,43 @@ ai_draft:
     total_tokens: 2849
     reasoning_tokens: 0
     estimated_cost_usd: 0.006153
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y los hermanos de José no quisieron preservar la vida de su hermano, y Yahvé les quitó el sandalia[a] que llevaban contra José, su hermano.
+  to: Y los hermanos de José no quisieron preservar la vida de su hermano, y Yahvé les quitó la sandalia[a] que llevaban contra José su hermano.
+  rationale: Se corrige el error gramatical 'el sandalia' por 'la sandalia'. Se mantiene el resto de la formulación porque refleja fielmente el griego y el audit trail inglés, incluida la elección de 'Yahvé' y la imagen concreta de la sandalia. También se simplifica levemente la puntuación final para una lectura más natural en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:51Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador conserva bien el sentido general del griego y sigue la revisión inglesa en los puntos principales: los hermanos no quisieron preservar la vida de José, y el Señor/Yahvé les quitó la sandalia que llevaban contra él. También mantiene adecuadamente la imagen concreta de ὑπόδημα y el matiz hostil de κατὰ Ἰωσὴφ.'
+  spanish_quality_summary: 'La redacción es mayormente clara y digna, pero contiene un error gramatical importante: ''el sandalia'' debe ser ''la sandalia''. Además, ''preservar la vida'' es fiel pero algo rígido; ''guardar la vida'' sería más idiomático, aunque no es necesario corregirlo si se prioriza cercanía con el audit trail inglés. La coma en ''José, su hermano'' es aceptable, pero puede aligerarse en una versión más fluida.'
+  glossary_alignment: La decisión de usar 'Yahvé' para ὁ Κύριος concuerda con la política del proyecto. 'José', 'vida', y 'sandalia' están bien alineados. No hay conflicto terminológico sustantivo, salvo el artículo incorrecto en español ante 'sandalia'.
+  issues:
+  - severity: high
+    issue: Error de género en el sintagma nominal
+    rationale: El texto dice 'el sandalia[a]', pero en español estándar debe ser 'la sandalia'. Es un error gramatical visible en el texto principal y debe corregirse.
+  - severity: low
+    issue: Leve rigidez en 'preservar la vida'
+    rationale: La frase es fiel al inglés auditado y comprensible, pero suena algo calcada en español. Aun así, no exige una reescritura mayor porque preserva bien el sentido.
+  revised_spanish_text: Y los hermanos de José no quisieron preservar la vida de su hermano, y Yahvé les quitó la sandalia[a] que llevaban contra José su hermano.
+  revised_footnotes:
+  - marker: a
+    text: «La sandalia» traduce el singular griego ὑπόδημα; en español se conserva la imagen concreta del objeto.
+    reason: lexical_alternative
+  revision_rationale: Se corrige el error gramatical 'el sandalia' por 'la sandalia'. Se mantiene el resto de la formulación porque refleja fielmente el griego y el audit trail inglés, incluida la elección de 'Yahvé' y la imagen concreta de la sandalia. También se simplifica levemente la puntuación final para una lectura más natural en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 148b9db367d50670c7c372cdbfc3bcbb91ea10ee048dd6a684f10165c5a033c3
+  timestamp: '2026-05-08T03:02:51Z'
+  output_hash: a9c8ebd56359b7dc88b518bbef48bf1b61ac8e6390d0f5fdabf134604f0b65db
+  usage:
+    prompt_tokens: 2582
+    completion_tokens: 586
+    total_tokens: 3168
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015245
+  applied_revision: true

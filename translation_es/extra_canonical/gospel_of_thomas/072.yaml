@@ -88,12 +88,21 @@ base_translation:
     changes_summary: Removed the spurious bracketed footnote markers from the final question and kept the wording aligned with the source.
 translation:
   language: es
-  text: 'Un hombre le dijo[a]: «Di a mis hermanos, para que repartan conmigo los bienes de mi padre». Él le respondió: «Hombre, ¿quién me ha puesto como repartidor?». Entonces se volvió a sus discípulos y les dijo: «No soy un repartidor, ¿verdad?»'
+  text: 'Un hombre le dijo[a]: «Diles a mis hermanos[b] que repartan conmigo los bienes[c] de mi padre». Él le dijo: «Hombre, ¿quién me ha puesto como el que reparte?». Luego se volvió[d] hacia sus discípulos y les dijo: «¿No soy yo el que reparte?»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La frase inicial está parcialmente restaurada en el códice; la reconstrucción afecta solo a la apertura narrativa.
-    reason: source_note
+    text: La frase inicial («Un hombre le dijo») está parcialmente restaurada en NH II, 46; los corchetes en la edición impresa indican una pequeña laguna.
+    reason: lacuna_or_restoration
+  - marker: b
+    text: El texto impreso tiene plural («mis hermanos»), mientras que la línea normalizada ofrece singular («mi hermano»). El contexto favorece el plural, pero ambas lecturas son gramaticalmente posibles.
+    reason: textual_variant
+  - marker: c
+    text: «Bienes» también puede entenderse como «posesiones» o «propiedad»; se evita «herencia» por su matiz legal más específico, no explícito en el copto.
+    reason: lexical_alternative
+  - marker: d
+    text: El verbo traducido «se volvió» refleja una variación ortográfica sahídica/licopolitana del verbo «volverse / girarse».
+    reason: dialect_note
 lexical_decisions:
 - source_word: ⲡⲉϫⲉⲟⲩⲣⲱⲙⲉ ⲛⲁⲛⲧⲟϥ
   english_pob_choice: A man said to him
@@ -252,4 +261,55 @@ ai_draft:
     total_tokens: 8573
     reasoning_tokens: 0
     estimated_cost_usd: 0.015115
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Un hombre le dijo[a]: «Di a mis hermanos, para que repartan conmigo los bienes de mi padre». Él le respondió: «Hombre, ¿quién me ha puesto como repartidor?». Entonces se volvió a sus discípulos y les dijo: «No soy un repartidor, ¿verdad?»'
+  to: 'Un hombre le dijo[a]: «Diles a mis hermanos[b] que repartan conmigo los bienes[c] de mi padre». Él le dijo: «Hombre, ¿quién me ha puesto como el que reparte?». Luego se volvió[d] hacia sus discípulos y les dijo: «¿No soy yo el que reparte?»'
+  rationale: Se ajusta la última cláusula a una interrogativa retórica negativa más fiel al valor de ⲙⲏ ya adjudicado en el audit trail; se mejora la naturalidad española de ⲛⲣⲉϥⲡⲱϣⲉ con «el que reparte»; y se clarifica la petición inicial con «Diles a mis hermanos…». También se preservan en notas las variantes y alternativas significativas que el POB inglés documentó y que afectan la comprensión del español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:35Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la estructura y el sentido general del copto y del POB inglés: petición del hombre, respuesta de Jesús, giro hacia los discípulos y pregunta retórica final. Sin embargo, hay dos puntos a corregir para mayor fidelidad: (1) ϫⲱⲛⲧⲟⲥ se refleja mejor como «Diles» o «Di a mis hermanos»; el texto actual «Di a mis hermanos, para que…» en español suena como si Jesús debiera hablarles directamente, pero con menor claridad del objeto indirecto. (2) La cláusula final con ⲙⲏ, ya adjudicada en el audit trail como pregunta retórica negativa, queda mejor preservada con una pregunta plena («¿No soy…?») que con la coletilla «¿verdad?», que en español puede sonar más coloquial y menos ligada a la sintaxis fuente.'
+  spanish_quality_summary: El español es claro y legible, con buen registro general. No obstante, «repartidor» suena algo mecánico y poco idiomático en ambos usos; «el que reparte» preserva mejor el agenteivo sin introducir lenguaje jurídico. Además, la puntuación final puede hacerse más natural y más fiel con una interrogativa directa. La frase inicial también mejora en fluidez con «Diles a mis hermanos…».
+  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. La decisión de no armonizar con «juez» es correcta. «Los bienes» para ⲛⲡϩⲛⲁⲁⲩ concuerda con la nota léxica inglesa. El punto principal es estilístico-lexical: para ⲛⲣⲉϥⲡⲱϣⲉ, «repartidor» es posible, pero «el que reparte» encaja mejor en español neutral manteniendo la fuerza agentiva documentada.'
+  issues:
+  - severity: medium
+    issue: La pregunta retórica final se vierte como «No soy un repartidor, ¿verdad?»
+    rationale: Aunque comunica negación esperada, el audit trail ya adjudicó ⲙⲏ como partícula interrogativa que introduce una pregunta retórica negativa. En español, «¿No soy el que reparte?» o «¿Acaso soy yo el que reparte?» refleja mejor esa forma y evita una coletilla más coloquial.
+  - severity: medium
+    issue: «repartidor» suena poco natural para ⲛⲣⲉϥⲡⲱϣⲉ
+    rationale: El copto expresa un nombre de agente, pero en español bíblico neutro «repartidor» resulta tosco. «El que reparte» conserva la función sin añadir ‘juez’ ni ‘árbitro’, en línea con la decisión léxica inglesa de evitar armonización.
+  - severity: low
+    issue: La petición inicial puede formularse con mayor claridad
+    rationale: «Di a mis hermanos…» es comprensible, pero «Diles a mis hermanos…» expresa más claramente el ruego dirigido a Jesús para que hable a los hermanos.
+  revised_spanish_text: 'Un hombre le dijo[a]: «Diles a mis hermanos[b] que repartan conmigo los bienes[c] de mi padre». Él le dijo: «Hombre, ¿quién me ha puesto como el que reparte?». Luego se volvió[d] hacia sus discípulos y les dijo: «¿No soy yo el que reparte?»'
+  revised_footnotes:
+  - marker: a
+    text: La frase inicial («Un hombre le dijo») está parcialmente restaurada en NH II, 46; los corchetes en la edición impresa indican una pequeña laguna.
+    reason: lacuna_or_restoration
+  - marker: b
+    text: El texto impreso tiene plural («mis hermanos»), mientras que la línea normalizada ofrece singular («mi hermano»). El contexto favorece el plural, pero ambas lecturas son gramaticalmente posibles.
+    reason: textual_variant
+  - marker: c
+    text: «Bienes» también puede entenderse como «posesiones» o «propiedad»; se evita «herencia» por su matiz legal más específico, no explícito en el copto.
+    reason: lexical_alternative
+  - marker: d
+    text: El verbo traducido «se volvió» refleja una variación ortográfica sahídica/licopolitana del verbo «volverse / girarse».
+    reason: dialect_note
+  revision_rationale: Se ajusta la última cláusula a una interrogativa retórica negativa más fiel al valor de ⲙⲏ ya adjudicado en el audit trail; se mejora la naturalidad española de ⲛⲣⲉϥⲡⲱϣⲉ con «el que reparte»; y se clarifica la petición inicial con «Diles a mis hermanos…». También se preservan en notas las variantes y alternativas significativas que el POB inglés documentó y que afectan la comprensión del español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e5d50ad0635fbbf0fcf586fbf5d430e14fc475df156b87ca8dd151702c898bfd
+  timestamp: '2026-05-08T03:04:35Z'
+  output_hash: cb14b6d92354c7b2234374e7c0eb4f5fac2ae2f07031c2a62ed0233526f9e376
+  usage:
+    prompt_tokens: 8273
+    completion_tokens: 1125
+    total_tokens: 9398
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.037558
+  applied_revision: true

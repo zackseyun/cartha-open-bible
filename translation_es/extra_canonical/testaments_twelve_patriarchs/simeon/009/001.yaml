@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'remained' to 'were' to more directly reflect the Greek ἦσαν without adding nuance not explicit in the source. The rest is accurate and natural.
 translation:
   language: es
-  text: Y lloraron los hijos de Simeón por su padre. Y estuvieron en Egipto hasta el día de su salida por mano de Moisés.
+  text: Y los hijos de Simeón lloraron a su padre. Y estaban en Egipto hasta el día de su salida por la mano de Moisés.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Καὶ ἔκλαυσαν
@@ -111,4 +111,42 @@ ai_draft:
     total_tokens: 2727
     reasoning_tokens: 0
     estimated_cost_usd: 0.005926
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y lloraron los hijos de Simeón por su padre. Y estuvieron en Egipto hasta el día de su salida por mano de Moisés.
+  to: Y los hijos de Simeón lloraron a su padre. Y estaban en Egipto hasta el día de su salida por la mano de Moisés.
+  rationale: Se ajusta la primera cláusula para reflejar mejor el objeto directo griego, se cambia «estuvieron» por «estaban» para un estado continuado más natural en español, y se añade el artículo en «por la mano de Moisés» para una expresión idiomática y bíblicamente reconocible.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:23Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la secuencia y el sentido básico del griego: los hijos de Simeón lloran por su padre y luego se indica su presencia en Egipto hasta su salida bajo Moisés. Sin embargo, «lloraron ... por su padre» introduce en español un matiz posible de causa o duelo general, mientras que el objeto directo griego τὸν πατέρα αὐτῶν se vierte mejor como «lloraron a su padre» o más idiomáticamente «lloraron por la muerte de su padre»; dado que el inglés POB preserva la forma simple, «lloraron a su padre» mantiene mejor la relación verbal directa. Además, «estuvieron en Egipto» es aceptable, pero «estaban en Egipto» suena más natural para un estado continuo hasta un punto temporal, sin añadir la continuidad enfática de «permanecieron».'
+  spanish_quality_summary: 'El español es claro y legible, pero dos giros pueden pulirse para mayor naturalidad y fidelidad: «lloraron ... por su padre» y «estuvieron en Egipto». La frase «por mano de Moisés» es comprensible, pero en español bíblico moderno suena más natural y fiel como «por la mano de Moisés», preservando la imagen instrumental del original.'
+  glossary_alignment: No hay términos del glosario maestro especialmente controvertidos en este versículo. «Simeón», «Egipto» y «Moisés» están bien. La revisión propuesta mantiene la literalidad donde importa y mejora la idiomaticidad española sin apartarse del griego ni del audit trail inglés, especialmente respetando ἦσαν como simple estado y ἐν χειρὶ como imagen instrumental.
+  issues:
+  - severity: medium
+    issue: «lloraron ... por su padre» no refleja con precisión el objeto directo griego
+    rationale: El griego tiene τὸν πατέρα αὐτῶν como objeto de ἔκλαυσαν. En español, «llorar por» puede sonar a causa o duelo, mientras que el original presenta más directamente a «su padre» como aquello por quien/ante quien se llora. «Lloraron a su padre» conserva mejor la sintaxis y el sentido.
+  - severity: low
+    issue: «estuvieron en Egipto» es menos natural que «estaban en Egipto» en este contexto narrativo
+    rationale: Aunque «estuvieron» no es imposible, para un estado continuado hasta un momento posterior «estaban» suena más natural en español. Evita también cualquier matiz de evento delimitado.
+  - severity: low
+    issue: Falta el artículo en «por mano de Moisés»
+    rationale: La expresión española más natural para calcar la imagen bíblica es «por la mano de Moisés». Mantiene la figura instrumental de ἐν χειρὶ sin sonar truncada.
+  revised_spanish_text: Y los hijos de Simeón lloraron a su padre. Y estaban en Egipto hasta el día de su salida por la mano de Moisés.
+  revision_rationale: Se ajusta la primera cláusula para reflejar mejor el objeto directo griego, se cambia «estuvieron» por «estaban» para un estado continuado más natural en español, y se añade el artículo en «por la mano de Moisés» para una expresión idiomática y bíblicamente reconocible.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 43ec8d90778bfc9f0553ed0bc205bd7164c88425b8930d7614b73e52dc10f315
+  timestamp: '2026-05-08T03:01:23Z'
+  output_hash: f89b455259e8ba826f0b50579f77313801474496e212272f3f88bacac31ac033
+  usage:
+    prompt_tokens: 2471
+    completion_tokens: 761
+    total_tokens: 3232
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017593
+  applied_revision: true

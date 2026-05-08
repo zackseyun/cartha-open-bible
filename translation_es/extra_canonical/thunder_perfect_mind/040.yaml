@@ -71,7 +71,7 @@ base_translation:
     changes_summary: Removed the footnote markers and retained the current draft wording as a clean formal translation.
 translation:
   language: es
-  text: ¿Por qué odias mi temor y maldices mi orgullo?
+  text: ¿Por qué odian mi temor y maldicen mi orgullo?
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ⲙⲁ
@@ -142,4 +142,36 @@ ai_draft:
     total_tokens: 4761
     reasoning_tokens: 0
     estimated_cost_usd: 0.006747
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: ¿Por qué odias mi temor y maldices mi orgullo?
+  to: ¿Por qué odian mi temor y maldicen mi orgullo?
+  rationale: Se ajusta la concordancia verbal al plural del original corregido (ⲧⲉⲧⲛ-), sin cambiar el sentido ni el registro. «Temor» y «orgullo» se conservan por fidelidad léxica y buena legibilidad en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:54Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El sentido fuente ya fue corregido en la auditoría inglesa a «Why do you hate my fear, and curse my pride?». El borrador español transmite bien esos dos núcleos semánticos («fear» / «pride») y el tono acusatorio, pero introduce un desajuste gramatical importante: el copto corregido lleva segunda persona plural, mientras que el español usa singular («odias», «maldices»).'
+  spanish_quality_summary: La redacción es clara, natural y digna. «Temor» y «orgullo» son opciones legibles y adecuadas. La única reparación necesaria es concordar la segunda persona plural para preservar la referencia del original y el paralelismo retórico.
+  glossary_alignment: No hay términos del glosario mayor en juego. «Temor» para ⲧⲁϩⲟⲧⲉ y «orgullo» para ⲧⲁϣⲟⲩϣⲟⲩ concuerdan con la justificación léxica documentada. No se requieren notas.
+  issues:
+  - severity: medium
+    issue: Cambio indebido de segunda persona plural a singular
+    rationale: La decisión léxica del propio borrador reconoce el prefijo copto ⲧⲉⲧⲛ- como segunda persona plural, pero el texto español dice «¿Por qué odias... y maldices...?». Debe ser plural para reflejar fielmente a los interlocutores del original.
+  revised_spanish_text: ¿Por qué odian mi temor y maldicen mi orgullo?
+  revision_rationale: Se ajusta la concordancia verbal al plural del original corregido (ⲧⲉⲧⲛ-), sin cambiar el sentido ni el registro. «Temor» y «orgullo» se conservan por fidelidad léxica y buena legibilidad en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d0b5d5b76c69f603e982a79763ffff1a338c42f47b8943b0ac35084f0f7030a6
+  timestamp: '2026-05-08T03:05:54Z'
+  output_hash: 77503d55018a24d982a744a2ae4c72c41fbcc4683b72fd5a3ef876ce15b17698
+  usage:
+    prompt_tokens: 4409
+    completion_tokens: 455
+    total_tokens: 4864
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017847
+  applied_revision: true

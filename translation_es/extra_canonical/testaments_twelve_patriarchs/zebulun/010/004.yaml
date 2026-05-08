@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted 'by the craftiness' to 'in the craftiness' to better match the source phrase and changed 'deeds' to 'works' for closer lexical consistency with ἔργων.
 translation:
   language: es
-  text: Y otra vez, en la astucia de sus obras, lo provocarán, y serán rechazados de él hasta el tiempo de la consumación.
+  text: Y otra vez, en la astucia de las obras de ustedes, lo provocarán, y serán apartados de él hasta el tiempo de la consumación.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐν τῇ πανουργίᾳ
@@ -112,4 +112,39 @@ ai_draft:
     total_tokens: 2842
     reasoning_tokens: 0
     estimated_cost_usd: 0.006275
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y otra vez, en la astucia de sus obras, lo provocarán, y serán rechazados de él hasta el tiempo de la consumación.
+  to: Y otra vez, en la astucia de las obras de ustedes, lo provocarán, y serán apartados de él hasta el tiempo de la consumación.
+  rationale: Se corrigió la persona de ὑμῶν para expresar claramente la segunda persona plural en español sin ambigüedad referencial, y se sustituyó 'rechazados' por 'apartados' para reflejar mejor la separación relacional de ἀπ᾽ αὐτοῦ en una forma más natural en español. Se mantuvieron 'en la astucia' y 'tiempo de la consumación' por su buena correspondencia con el source y el rastro de auditoría inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T02:59:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura del griego y la línea del English POB: ''otra vez'', ''en la astucia'', la provocación dirigida a él, y la duración ''hasta el tiempo de la consumación''. Sin embargo, hay un desajuste importante de persona en ὑμῶν: el griego y el inglés tienen segunda persona plural (''your works''), pero el español usa ''sus obras'', que en español normal se lee como tercera persona o trato de cortesía ambiguo. Además, ''serán rechazados de él'' es comprensible pero menos fiel al matiz de separación de ἀπορριφήσεσθε ἀπ᾽ αὐτοῦ que una formulación como ''serán apartados de él''.'
+  spanish_quality_summary: La redacción es digna y legible, pero 'sus obras' introduce ambigüedad referencial innecesaria, y 'rechazados de él' suena algo poco idiomático en español bíblico natural. Una leve reparación mejora claridad, fidelidad y fluidez sin alejarse del source. 'en la astucia de sus obras' también puede sonar ligeramente extraño; con el ajuste de persona a 'sus propias obras' o mejor 'sus obras' en voseo/ustedes sigue ambiguo, por lo que conviene pasar a 'vuestras obras' o reestructurar. Para español neutro eclesial, 'sus obras' no es ideal aquí; 'de las obras de ustedes' sería claro pero torpe. La mejor solución es 'en la astucia de las obras que hacen ustedes' o, más naturalmente, 'en la astucia de sus propias obras' solo si el referente ya es inequívoco, cosa que aquí no ocurre. Dado el texto aislado, conviene usar 'de las obras de ustedes'.
+  glossary_alignment: 'No hay términos de glosario mayor comprometidos. ''consumación'' para συντέλεια es defendible y coincide con la justificación auditada. ''astucia'' para πανουργία es aceptable. El ajuste principal es gramatical y semántico: preservar la segunda persona plural de ὑμῶν y expresar mejor la separación de ἀπ᾽ αὐτοῦ.'
+  issues:
+  - severity: high
+    issue: El posesivo 'sus' no preserva claramente la segunda persona plural de ὑμῶν.
+    rationale: En español neutro, 'sus obras' normalmente se entiende como tercera persona o tratamiento de cortesía; el source y el English POB exigen 'your works' dirigido a los oyentes.
+  - severity: medium
+    issue: '''serán rechazados de él'' suena poco idiomático y debilita el matiz de separación.'
+    rationale: ἀπορριφήσεσθε ἀπ᾽ αὐτοῦ combina exclusión con alejamiento 'de él'; 'serán apartados de él' o similar refleja mejor la relación espacial/relacional.
+  revised_spanish_text: Y otra vez, en la astucia de las obras de ustedes, lo provocarán, y serán apartados de él hasta el tiempo de la consumación.
+  revision_rationale: Se corrigió la persona de ὑμῶν para expresar claramente la segunda persona plural en español sin ambigüedad referencial, y se sustituyó 'rechazados' por 'apartados' para reflejar mejor la separación relacional de ἀπ᾽ αὐτοῦ en una forma más natural en español. Se mantuvieron 'en la astucia' y 'tiempo de la consumación' por su buena correspondencia con el source y el rastro de auditoría inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: add3fbd5037038b3fd571c1f1de2d8d2f067b344fdec9fa7f25f6dedd8ce1785
+  timestamp: '2026-05-08T02:59:43Z'
+  output_hash: 279e6b931af28bf70bcfe4b8a045a2a7969efcd4d3216a2126a583202e585929
+  usage:
+    prompt_tokens: 2560
+    completion_tokens: 821
+    total_tokens: 3381
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018715
+  applied_revision: true

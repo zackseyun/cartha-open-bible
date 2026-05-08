@@ -66,20 +66,21 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Soy paz[a], y la guerra ha venido por mí[b][c];
+  text: 'Soy paz[a], y la guerra ha venido a causa de mí[b][c];
+
 
     y soy una extranjera y una ciudadana.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Paz» traduce el préstamo copto del griego εἰρήνη; en español mantiene el contraste más directo con «guerra».
+    text: 'O: «forastera». Ambas son traducciones aceptables de ⲝⲉⲛⲟⲥ; «extranjera» destaca mejor el contraste cívico con «ciudadana».'
     reason: lexical_alternative
   - marker: b
-    text: «Ha venido» conserva el valor perfectivo del verbo copto; también podría traducirse «ha surgido», pero esa opción interpreta más el efecto que la llegada.
+    text: También podría traducirse «ha surgido» para el perfecto de «venir», conservando la idea de que la guerra irrumpe.
     reason: lexical_alternative
   - marker: c
-    text: 'La línea parece unir dos afirmaciones paradojales: la guerra irrumpe "por mí"; se conserva la causalidad literal sin convertirla en explicación teológica.'
-    reason: theological_note
+    text: El extracto OCR aquí muestra préstamos griegos no relacionados (kolasis, physis, ktisis, psychē), lo que indica una probable desalineación con este segmento.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ϩⲓⲣⲏⲛⲏ (loan from Greek εἰρήνη)
   english_pob_choice: peace
@@ -154,4 +155,60 @@ ai_draft:
     total_tokens: 3548
     reasoning_tokens: 0
     estimated_cost_usd: 0.006666
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Soy paz[a], y la guerra ha venido por mí[b][c];
+
+    y soy una extranjera y una ciudadana.'
+  to: 'Soy paz[a], y la guerra ha venido a causa de mí[b][c];
+
+
+    y soy una extranjera y una ciudadana.'
+  rationale: 'Se ajusta «por mí» a «a causa de mí» para reflejar con mayor precisión la causalidad documentada en el original auditado y evitar ambigüedad idiomática en español. También se restauran las notas del expediente inglés: la alternativa léxica para «extranjera» y la nota técnica sobre la probable desalineación del OCR. El resto del texto se mantiene porque comunica bien la paradoja y suena natural en español.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español preserva bien el sentido básico del segmento copto según el rastro auditado en inglés: la paradoja «Soy paz … la guerra ha venido por mí» y el contraste cívico «extranjera … ciudadana». Sin embargo, no refleja una nota importante del POB inglés: la advertencia de posible desalineación del OCR para este segmento. Además, la traducción de «because of me» como «por mí» es posible, pero «a causa de mí» transmite con más claridad la causalidad literal documentada en el audit trail.'
+  spanish_quality_summary: El español es claro y legible, pero «ha venido por mí» puede sonar algo ambiguo en español, rozando lectura de movimiento hacia la hablante más que causa. «Ha venido a causa de mí» o «ha venido por causa mía» evita esa ambigüedad. El uso del femenino («extranjera … ciudadana») es coherente con la voz del poema y suena natural.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. Las decisiones léxicas principales («paz», «guerra», «extranjera», «ciudadana») están bien alineadas con el inglés POB y el contraste del original. Falta trasladar la nota de desalineación del OCR presente en el inglés, y conviene ajustar la nota causal para que siga más de cerca la documentación inglesa.
+  issues:
+  - severity: medium
+    issue: «por mí» introduce ambigüedad donde el audit trail documenta causalidad literal
+    rationale: El inglés POB eligió «because of me» para una frase causal directa. En español, «ha venido por mí» puede entenderse como 'vino a buscarme' o 'vino en mi favor'. «A causa de mí» preserva mejor la relación causal sin interpretación adicional.
+  - severity: medium
+    issue: Falta la nota de desalineación del OCR presente en el inglés POB
+    rationale: La nota inglesa [c] informa que el extracto OCR muestra préstamos griegos no relacionados, indicando probable desalineación del segmento. Esa información forma parte del expediente auditado y debe preservarse en la revisión española.
+  - severity: low
+    issue: La nota actual [c] cambia la función de la nota inglesa
+    rationale: La nota española [c] introduce una explicación interpretativa sobre la paradoja, mientras que la nota inglesa [c] era una observación técnica de alineación. Conviene reemplazarla para mantener fidelidad al expediente.
+  revised_spanish_text: 'Soy paz[a], y la guerra ha venido a causa de mí[b][c];
+
+
+    y soy una extranjera y una ciudadana.'
+  revised_footnotes:
+  - marker: a
+    text: 'O: «forastera». Ambas son traducciones aceptables de ⲝⲉⲛⲟⲥ; «extranjera» destaca mejor el contraste cívico con «ciudadana».'
+    reason: lexical_alternative
+  - marker: b
+    text: También podría traducirse «ha surgido» para el perfecto de «venir», conservando la idea de que la guerra irrumpe.
+    reason: lexical_alternative
+  - marker: c
+    text: El extracto OCR aquí muestra préstamos griegos no relacionados (kolasis, physis, ktisis, psychē), lo que indica una probable desalineación con este segmento.
+    reason: alignment_note
+  revision_rationale: 'Se ajusta «por mí» a «a causa de mí» para reflejar con mayor precisión la causalidad documentada en el original auditado y evitar ambigüedad idiomática en español. También se restauran las notas del expediente inglés: la alternativa léxica para «extranjera» y la nota técnica sobre la probable desalineación del OCR. El resto del texto se mantiene porque comunica bien la paradoja y suena natural en español.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d094f713f62a3b9d4952195b243f79c68e15220844720931127fb034b1574011
+  timestamp: '2026-05-08T03:07:21Z'
+  output_hash: 30682eb0afba821e4cb97f7a2cc95ad1f9f9f2e0ac013221ed598819822f7ebf
+  usage:
+    prompt_tokens: 3187
+    completion_tokens: 861
+    total_tokens: 4048
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020882
+  applied_revision: true

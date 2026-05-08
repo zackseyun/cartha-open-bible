@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the extra article before 'rest' for a slightly more natural rendering while preserving the source meaning.
 translation:
   language: es
-  text: Pero yo, ahora, me apresuro hacia mi descanso, como también lo hicieron mis padres.
+  text: Pero yo ahora me apresuro hacia mi descanso, como también mis padres.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἀνάπαυσίν μου
@@ -88,4 +88,39 @@ ai_draft:
     total_tokens: 2340
     reasoning_tokens: 0
     estimated_cost_usd: 0.004496
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pero yo, ahora, me apresuro hacia mi descanso, como también lo hicieron mis padres.
+  to: Pero yo ahora me apresuro hacia mi descanso, como también mis padres.
+  rationale: Se suaviza la puntuación para una lectura más natural y se simplifica la cláusula final para reflejar con mayor sobriedad la comparación del griego, sin añadir un verbo explícito innecesario.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:03:37Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el sentido básico del griego: contraste personal («yo»), referencia temporal («ahora»), movimiento apresurado hacia «mi descanso» y comparación con los padres. Sin embargo, «como también lo hicieron mis padres» introduce en español un verbo suplido algo más pesado que el griego, que simplemente compara con los padres. Una formulación más directa preserva mejor la concisión del original.'
+  spanish_quality_summary: El español es claro y digno, pero la puntuación con comas alrededor de «ahora» suena algo trabada, y «como también lo hicieron mis padres» resulta ligeramente más forzado que una comparación simple. «Me apresuro hacia mi descanso» es aceptable y natural.
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «mi descanso» para ἀνάπαυσίν μου y «me apresuro» para ἀποτρέχω son elecciones adecuadas. «mis padres» conserva la forma del original y del POB inglés, aunque en contexto pueda tener sentido patriarcal más amplio; no requiere nota aquí.
+  issues:
+  - severity: medium
+    issue: Comparación final algo sobreexpresada
+    rationale: El griego ὡς καὶ οἱ πατέρες μου corresponde más naturalmente a «como también mis padres» o «como mis padres también», sin necesidad de añadir «lo hicieron», que explicita de más y vuelve la frase menos sobria.
+  - severity: low
+    issue: Puntuación algo rígida alrededor de «ahora»
+    rationale: «Pero yo, ahora, ...» es comprensible, pero «Pero yo ahora ...» fluye mejor en español moderno sin perder el matiz temporal de νῦν.
+  revised_spanish_text: Pero yo ahora me apresuro hacia mi descanso, como también mis padres.
+  revision_rationale: Se suaviza la puntuación para una lectura más natural y se simplifica la cláusula final para reflejar con mayor sobriedad la comparación del griego, sin añadir un verbo explícito innecesario.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: d9c89cdd6ef522be2128129ea88b0bfcc1223f4a4a2fcc3b372712475587530c
+  timestamp: '2026-05-08T03:03:37Z'
+  output_hash: 741c90e56319468b4bcd9dfe34fd66f7646e9cd2e192542194f61a8f20a0419b
+  usage:
+    prompt_tokens: 2098
+    completion_tokens: 473
+    total_tokens: 2571
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01234
+  applied_revision: true

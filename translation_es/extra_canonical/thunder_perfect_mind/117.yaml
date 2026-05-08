@@ -72,15 +72,12 @@ base_translation:
     changes_summary: Restored the footnoted temporal phrase 'at the end' and tightened the opening clause to preserve the relative force. Kept the lexical choices for sins, intemperances, empty passions, and temporary pleasures, with a small punctuation adjustment for readability.
 translation:
   language: es
-  text: El que me juzga por la ley[a]—¡júzgalo![b] Ustedes que están en muchos pecados, e intemperancias, y pasiones vacías, y placeres temporales.
+  text: El que me juzgará al final[a]—¡júzgalo! Los que están en muchos pecados, e intemperancias, y pasiones vacías, y placeres temporales!
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La revisión del expediente lee aquí ‘ley’ (νόμος), no ‘fin’.
-    reason: textual_variant
-  - marker: b
-    text: El imperativo es abrupto en el original; el español conserva la fuerza directa de la reprensión.
-    reason: spanish_style_note
+    text: '‘al final’: el OCR muestra ⲛⲉⲗⲟⲥ; aquí se entiende como ⲧⲉⲗⲟⲥ (griego τέλος) por razones contextuales.'
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲕⲣⲓⲛⲉ
   english_pob_choice: judge
@@ -197,4 +194,49 @@ ai_draft:
     total_tokens: 5736
     reasoning_tokens: 0
     estimated_cost_usd: 0.010654
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: El que me juzga por la ley[a]—¡júzgalo![b] Ustedes que están en muchos pecados, e intemperancias, y pasiones vacías, y placeres temporales.
+  to: El que me juzgará al final[a]—¡júzgalo! Los que están en muchos pecados, e intemperancias, y pasiones vacías, y placeres temporales!
+  rationale: Se corrige la apertura para alinearla con la revisión final auditada del English POB (‘at the end’), se elimina la nota basada en ‘ley’, y se suaviza levemente la sintaxis española con ‘Los que están…’. Se conserva el catálogo moral ya bien resuelto y se restituye la fuerza exclamativa del pasaje.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español no sigue fielmente el estado final auditado del English POB en la frase inicial: traduce ‘por la ley’ donde la revisión más reciente restauró ‘at the end’. También omite el tono exclamativo final y deja notas que sostienen una lectura textual superada por el expediente final. El resto del catálogo moral refleja bien las decisiones léxicas finales: ‘muchos pecados’, ‘intemperancias’, ‘pasiones vacías’ y ‘placeres temporales’.'
+  spanish_quality_summary: El español es generalmente claro, pero ‘El que me juzga…’ suena menos natural y menos cercano a la fuerza relativa del inglés que ‘El que me juzgará…’. ‘Ustedes que están…’ es legible, aunque ‘los que están…’ fluye mejor tras el imperativo y evita un cambio brusco de tratamiento. Conviene además cerrar con admiración para conservar la invectiva.
+  glossary_alignment: 'No hay conflictos mayores con la glosa del proyecto. ‘Pecados’ para ⲛⲟⲃⲉ y ‘pasiones’ para ⲡⲁⲑⲟⲥ están bien. ‘Intemperancias’ es fiel al audit trail, aunque algo poco común; aquí puede mantenerse por precisión. El problema principal no es terminológico sino textual: la nota y la traducción de ‘ley’ contradicen la revisión final inglesa que volvió a ‘fin/al final’.'
+  issues:
+  - severity: high
+    issue: La frase inicial traduce ‘por la ley’ en vez de ‘al final’.
+    rationale: El English POB auditado más reciente para este registro restablece ‘The one who will judge me at the end—judge him!’. El borrador español sigue una revisión intermedia ya superada.
+  - severity: high
+    issue: La nota [a] defiende una variante textual descartada en el estado final.
+    rationale: La footnote española afirma que debe leerse ‘ley’ y no ‘fin’, pero eso contradice la forma final auditada, por lo que induce al lector a una base textual equivocada.
+  - severity: medium
+    issue: Falta la admiración final del apóstrofe acusatorio.
+    rationale: El inglés final termina con exclamación; en español ayuda a preservar la fuerza retórica del pasaje.
+  - severity: low
+    issue: ‘Ustedes que están…’ es menos fluido que una relativa nominal.
+    rationale: Después de ‘¡júzgalo!’, ‘los que están…’ suena más natural en español escrito y mantiene el destinatario colectivo sin brusquedad innecesaria.
+  revised_spanish_text: El que me juzgará al final[a]—¡júzgalo! Los que están en muchos pecados, e intemperancias, y pasiones vacías, y placeres temporales!
+  revised_footnotes:
+  - marker: a
+    text: '‘al final’: el OCR muestra ⲛⲉⲗⲟⲥ; aquí se entiende como ⲧⲉⲗⲟⲥ (griego τέλος) por razones contextuales.'
+    reason: alignment_note
+  revision_rationale: Se corrige la apertura para alinearla con la revisión final auditada del English POB (‘at the end’), se elimina la nota basada en ‘ley’, y se suaviza levemente la sintaxis española con ‘Los que están…’. Se conserva el catálogo moral ya bien resuelto y se restituye la fuerza exclamativa del pasaje.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ae81472a2b5f7aa91d2378bd99d27cf4c3abba5f726918e7d51ee3c3c1e7acde
+  timestamp: '2026-05-08T03:10:10Z'
+  output_hash: 05f54839beef61b991892a49f772aec81131ee2c0bde94bf9d2b1cfd20691285
+  usage:
+    prompt_tokens: 5349
+    completion_tokens: 794
+    total_tokens: 6143
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025282
+  applied_revision: true

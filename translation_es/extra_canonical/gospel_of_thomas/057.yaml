@@ -81,18 +81,18 @@ base_translation:
     changes_summary: Removed the bracketed notes from the main text, slightly smoothed the opening punctuation, and tightened the quoted wording while preserving the established lexical decisions and source sense.
 translation:
   language: es
-  text: 'Jesús dijo: «El reino del Padre es semejante a un hombre que tenía buena semilla. Su enemigo vino de noche y sembró una cizaña[a] sobre la buena semilla. El hombre no les permitió arrancar la cizaña. Les dijo: “No sea que digan: ‘Arrancaremos la cizaña’, y arranquen con ella el trigo. Porque en el día de la cosecha, la cizaña[b] se hará visible; la arrancarán y la quemarán[c]”».'
+  text: 'Jesús dijo: «El reino del Padre es semejante a un hombre que tenía buena semilla. Su enemigo vino de noche y sembró una cizaña[a] en la buena semilla. El hombre no les permitió arrancar la cizaña. Les dijo: “No sea que digan: ‘Arrancaremos la cizaña’, y arranquen con ella el trigo. Porque en el día de la cosecha, las cizañas[b] aparecerán; las arrancarán y las quemarán[c]”».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El original usa aquí el singular indefinido ‘una cizaña’; el español ‘cizaña’ funciona como sustantivo colectivo y no siempre distingue con la misma naturalidad la singularidad marcada del cóptico.
+    text: El original usa aquí el singular indefinido ‘una cizaña’; en las cláusulas siguientes pasa al singular definido (‘la cizaña’) y al final cambia al plural.
     reason: textual_variant
   - marker: b
-    text: En el original reaparece el término en singular definido, pero en español se mantiene ‘cizaña’ para no volver artificial la alternancia singular/plural.
-    reason: spanish_style_note
+    text: Aquí el cóptico cambia al plural (‘las cizañas’), y el español lo refleja de forma explícita para conservar ese matiz del texto fuente.
+    reason: textual_variant
   - marker: c
-    text: El cóptico usa aquí formas plurales con valor de ‘las arrancarán y las quemarán’; el español lo expresa de manera natural con un plural implícito ya contenido en el contexto.
-    reason: lexical_alternative
+    text: 'Literalmente, el cóptico usa verbos activos con sujeto indefinido: ‘arrancan/queman’; en español se expresa naturalmente como ‘las arrancarán y las quemarán’.'
+    reason: register_note
 lexical_decisions:
 - source_word: ⲙⲛⲧⲣⲣⲟ / kingdom
   english_pob_choice: kingdom
@@ -200,4 +200,55 @@ ai_draft:
     total_tokens: 9808
     reasoning_tokens: 0
     estimated_cost_usd: 0.01345
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «El reino del Padre es semejante a un hombre que tenía buena semilla. Su enemigo vino de noche y sembró una cizaña[a] sobre la buena semilla. El hombre no les permitió arrancar la cizaña. Les dijo: “No sea que digan: ‘Arrancaremos la cizaña’, y arranquen con ella el trigo. Porque en el día de la cosecha, la cizaña[b] se hará visible; la arrancarán y la quemarán[c]”».'
+  to: 'Jesús dijo: «El reino del Padre es semejante a un hombre que tenía buena semilla. Su enemigo vino de noche y sembró una cizaña[a] en la buena semilla. El hombre no les permitió arrancar la cizaña. Les dijo: “No sea que digan: ‘Arrancaremos la cizaña’, y arranquen con ella el trigo. Porque en el día de la cosecha, las cizañas[b] aparecerán; las arrancarán y las quemarán[c]”».'
+  rationale: 'La revisión conserva las buenas decisiones centrales del borrador, pero corrige dos detalles importantes de fidelidad y estilo: sustituye ‘se hará visible’ por ‘aparecerán’ y hace explícito el plural final de ‘cizañas’, presente en el cóptico y preservado por el POB inglés. También mejora la naturalidad con ‘en la buena semilla’. No hace falta adjudicación adicional: los cambios son claros, menores y bien sustentados por el texto fuente y el audit trail.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en gran parte el sentido del cóptico y respeta correcciones clave del rastro POB: ϭⲣⲟϭ = ‘semilla’, ⲡⲱϩⲥ = ‘cosecha’, y la cita de intención futura ‘Arrancaremos…’. Sin embargo, dos puntos necesitan ajuste: (1) ⲟⲩⲱⲛϩ ⲉⲃⲟⲗ se traduce mejor como ‘aparecerá’ que ‘se hará visible’, por mayor naturalidad y mejor correspondencia con el audit trail inglés; (2) el cierre español debería reflejar más claramente el cambio final al plural en el cóptico (‘las cizañas… las arrancarán y las quemarán’), ya que el borrador actual vuelve a singular colectivo y depende demasiado de notas para conservar un matiz que el original sí marca.'
+  spanish_quality_summary: El texto es legible y digno, pero ‘sobre la buena semilla’ suena un poco más calco que ‘en la buena semilla’, y ‘la cizaña se hará visible’ resulta menos natural que ‘las cizañas aparecerán’. También conviene suavizar ‘No sea que digan’ a una forma más idiomática sin perder el matiz precautorio. La puntuación y el registro son buenos.
+  glossary_alignment: '‘Jesús’, ‘reino’, ‘Padre’, ‘buena semilla’ y ‘cosecha’ están bien alineados con las decisiones POB. ‘Cizaña’ es una buena elección española para ⲍⲓⲍⲁⲛⲓⲟⲛ, pero aquí debe manejarse con más precisión: el texto fuente pasa de singular indefinido a singular definido y finalmente a plural; en español conviene preservar al menos el plural final en el texto principal. No hay conflictos con la terminología teológica global.'
+  issues:
+  - severity: medium
+    issue: ‘se hará visible’ para ⲟⲩⲱⲛϩ ⲉⲃⲟⲗ
+    rationale: Aunque semánticamente posible, es menos natural en español bíblico corriente que ‘aparecerá/aparecerán’ y no mejora la precisión frente al original ni frente al audit trail inglés (‘appear’).
+  - severity: medium
+    issue: No se refleja en el texto principal el cambio final al plural de ⲛⲍⲓⲍⲁⲛⲓⲟⲛ
+    rationale: El cóptico termina con ‘las malezas/cizañas’ y con pronombres plurales en ‘las arrancarán y las quemarán’. Mantener ‘la cizaña’ hasta el final atenúa un rasgo textual significativo que el English POB sí conservó.
+  - severity: low
+    issue: ‘sobre la buena semilla’ suena más literal que natural
+    rationale: Para ‘sowed a weed on the good seed’, en español ‘en la buena semilla’ o ‘entre la buena semilla’ fluye mejor. ‘Entre’ podría sobreinterpretar, así que ‘en’ es la opción más segura y natural.
+  - severity: low
+    issue: ‘No sea que digan’ puede afinarse
+    rationale: 'La construcción con subjuntivo plural es comprensible, pero ‘No sea que vayan a decir’ o ‘No sea que digan: … y arranquen…’ debe mantener el matiz citado. Puede conservarse una formulación sencilla más idiomática.'
+  revised_spanish_text: 'Jesús dijo: «El reino del Padre es semejante a un hombre que tenía buena semilla. Su enemigo vino de noche y sembró una cizaña[a] en la buena semilla. El hombre no les permitió arrancar la cizaña. Les dijo: “No sea que digan: ‘Arrancaremos la cizaña’, y arranquen con ella el trigo. Porque en el día de la cosecha, las cizañas[b] aparecerán; las arrancarán y las quemarán[c]”».'
+  revised_footnotes:
+  - marker: a
+    text: El original usa aquí el singular indefinido ‘una cizaña’; en las cláusulas siguientes pasa al singular definido (‘la cizaña’) y al final cambia al plural.
+    reason: textual_variant
+  - marker: b
+    text: Aquí el cóptico cambia al plural (‘las cizañas’), y el español lo refleja de forma explícita para conservar ese matiz del texto fuente.
+    reason: textual_variant
+  - marker: c
+    text: 'Literalmente, el cóptico usa verbos activos con sujeto indefinido: ‘arrancan/queman’; en español se expresa naturalmente como ‘las arrancarán y las quemarán’.'
+    reason: register_note
+  revision_rationale: 'La revisión conserva las buenas decisiones centrales del borrador, pero corrige dos detalles importantes de fidelidad y estilo: sustituye ‘se hará visible’ por ‘aparecerán’ y hace explícito el plural final de ‘cizañas’, presente en el cóptico y preservado por el POB inglés. También mejora la naturalidad con ‘en la buena semilla’. No hace falta adjudicación adicional: los cambios son claros, menores y bien sustentados por el texto fuente y el audit trail.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 93e0803c45c050d8881a2887c56e750a362e9452784145fac6a3886be4a4c4ab
+  timestamp: '2026-05-08T03:06:07Z'
+  output_hash: f90f9df049bc77e6baece15f5dde5b6775d3d06b45eb1a1e898d11dd0b170493
+  usage:
+    prompt_tokens: 9377
+    completion_tokens: 1189
+    total_tokens: 10566
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.041277
+  applied_revision: true

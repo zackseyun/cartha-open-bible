@@ -20,7 +20,7 @@ base_translation:
     changes_summary: Replaced the unrelated narrative with a translation of the provided source clause; rendered the opening as a formal introductory heading and preserved the temporal phrase and age reference.
 translation:
   language: es
-  text: Copia de las palabras de Zabulón, las cuales pronunció a sus hijos antes de morir, en el año ciento veinte de su vida.
+  text: Copia de las palabras de Zebulón, que dirigió a sus hijos antes de morir, en el año ciento veinte de su vida, dos años después de la muerte de José.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Διαθήκη / Ἀντίγραφον λόγων
@@ -112,4 +112,42 @@ ai_draft:
     total_tokens: 3269
     reasoning_tokens: 0
     estimated_cost_usd: 0.006659
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Copia de las palabras de Zabulón, las cuales pronunció a sus hijos antes de morir, en el año ciento veinte de su vida.
+  to: Copia de las palabras de Zebulón, que dirigió a sus hijos antes de morir, en el año ciento veinte de su vida, dos años después de la muerte de José.
+  rationale: Se corrige el nombre propio a 'Zebulón' para mejor alineación bíblica y con el audit trail inglés, se completa la cláusula cronológica omitida sobre la muerte de José, y se pule la sintaxis con 'que dirigió a sus hijos' para una lectura más natural en español sin apartarse del griego.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la cláusula griega principal: Ἀντίγραφον λόγων Ζαβουλών… πρὶν ἢ ἀποθανεῖν… ἐν τῷ … ἔτει τῆς ζωῆς αὐτοῦ. Sin embargo, omite el dato temporal final μετὰ οὖν δύο ἔτη τοῦ θανάτου Ἰωσήφ (''dos años después de la muerte de José''), que sí pertenece al mismo encabezado fuente. Además, el nombre propio debería alinearse mejor con la forma inglesa auditada y el uso bíblico más reconocible en español: ''Zebulón'' en vez de ''Zabulón''.'
+  spanish_quality_summary: El español es claro y digno. 'Copia de las palabras' funciona bien, y 'antes de morir' suena natural. Conviene ajustar el nombre a 'Zebulón' y completar la frase cronológica omitida. También puede suavizarse 'las cuales pronunció' a 'que dirigió' o mantenerla; ambas son legibles, pero 'que dirigió' suena menos rígido en español moderno.
+  glossary_alignment: No hay términos teológicos de proyecto en juego aquí. La principal cuestión léxica es el nombre propio Ζαβουλών, para el cual 'Zebulón' alinea mejor con el inglés POB ('Zebulun') y con el uso español bíblico común. 'Copia de las palabras' preserva adecuadamente Ἀντίγραφον λόγων.
+  issues:
+  - severity: high
+    issue: Omisión de la cláusula temporal final sobre José
+    rationale: El griego fuente incluye μετὰ οὖν δύο ἔτη τοῦ θανάτου Ἰωσήφ, 'dos años después de la muerte de José'. Su ausencia hace que el borrador no preserve todo el sentido del encabezado fuente.
+  - severity: medium
+    issue: Forma del nombre propio 'Zabulón'
+    rationale: Aunque comprensible, 'Zebulón' es la forma española bíblica más estable y la más alineada con el inglés auditado 'Zebulun'.
+  - severity: low
+    issue: '''las cuales pronunció'' suena algo rígido'
+    rationale: No es incorrecto, pero 'que dirigió a sus hijos' o 'que habló a sus hijos' fluye mejor en español contemporáneo sin perder solemnidad.
+  revised_spanish_text: Copia de las palabras de Zebulón, que dirigió a sus hijos antes de morir, en el año ciento veinte de su vida, dos años después de la muerte de José.
+  revision_rationale: Se corrige el nombre propio a 'Zebulón' para mejor alineación bíblica y con el audit trail inglés, se completa la cláusula cronológica omitida sobre la muerte de José, y se pule la sintaxis con 'que dirigió a sus hijos' para una lectura más natural en español sin apartarse del griego.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 87f25601c925ca5dc1a3094a6edbd5bfe229c323bec42ec60f8b6c706e904926
+  timestamp: '2026-05-08T03:04:07Z'
+  output_hash: 79aa19421c0ae0d30632b00a1858406fb4eafdcd2b9c127969df390f0c55dcce
+  usage:
+    prompt_tokens: 2935
+    completion_tokens: 691
+    total_tokens: 3626
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017702
+  applied_revision: true

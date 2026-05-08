@@ -67,18 +67,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: No es mi defensa cuando llaman[a], sino la injusticia[b] que han considerado; la dejan para abrir sus bocas y juzgarme[c].
+  text: No es mi defensa cuando me llaman[a], y la injusticia[b] que ustedes han considerado, la dejan para abrir sus bocas y juzgarme[c].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El inicio del segmento está transmitido con una cláusula que puede rozar el valor de «cuando llaman»; el contexto del fragmento sugiere una escena de acusación o convocatoria, no una llamada en sentido simple.
+    text: El inicio del segmento incluye ⲁⲡⲟⲗⲟⲅⲓⲁ («defensa») y luego una forma de ⲙⲟⲩⲧ («llamar»). Dado el contexto forense, «cuando me llaman» expresa mejor una convocatoria o citación que una simple llamada.
     reason: source_note
   - marker: b
-    text: «Injusticia» refleja el compuesto coptico ϫⲓⲛϭⲟⲛⲥ; la lectura «número» del fragmento anterior en inglés no corresponde a este pasaje.
+    text: «Injusticia» refleja el compuesto copto ϫⲓⲛϭⲟⲛⲥ. La lectura anterior «número» pertenece a una alineación equivocada y no a este pasaje.
     reason: textual_variant
   - marker: c
-    text: La cláusula final mantiene la idea forense de «juzgarme», porque el fragmento coptico conserva el verbo judicial de origen griego.
-    reason: theological_note
+    text: La cláusula final conserva el verbo judicial de origen griego en el fragmento copto, de ahí «juzgarme».
+    reason: source_note
 lexical_decisions:
 - source_word: ⲁⲡⲟⲗⲟⲅⲓⲁ
   english_pob_choice: defense
@@ -166,4 +166,52 @@ ai_draft:
     total_tokens: 4843
     reasoning_tokens: 0
     estimated_cost_usd: 0.008751
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: No es mi defensa cuando llaman[a], sino la injusticia[b] que han considerado; la dejan para abrir sus bocas y juzgarme[c].
+  to: No es mi defensa cuando me llaman[a], y la injusticia[b] que ustedes han considerado, la dejan para abrir sus bocas y juzgarme[c].
+  rationale: La revisión corrige la persona gramatical para ajustarse al audit trail, precisa el sentido forense de la llamada con «me llaman», y alisa la sintaxis sin introducir interpretación nueva.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en general la reconstrucción forense del Coptic auditado: ⲁⲡⲟⲗⲟⲅⲓⲁ = «defensa», ϫⲓⲛϭⲟⲛⲥ = «injusticia», y la cláusula final conserva «abrir ... para juzgarme». Sin embargo, «cuando llaman» pierde el matiz potencialmente más directo de «cuando me llaman/convocan», y «han considerado» cambia innecesariamente la segunda persona del inglés auditado («you have considered») a tercera persona.'
+  spanish_quality_summary: El español es claro y digno, pero la puntuación con punto y coma suena algo trabada y la concordancia pronominal fluctúa entre una construcción impersonal y un sujeto tácito plural. Una leve revisión mejora naturalidad y coherencia sin apartarse del sentido fuente.
+  glossary_alignment: 'No hay terminología teológica mayor en juego. Las decisiones léxicas principales están bien alineadas: «defensa», «injusticia», «abrir», «juzgarme». La mejora principal es mantener la referencia de segunda persona plural en «ustedes han considerado» y precisar el verbo de llamada con objeto implícito.'
+  issues:
+  - severity: medium
+    issue: Cambio de persona en «que han considerado»
+    rationale: El English POB audit trail documenta «the injustice you have considered». Pasar a tercera persona plural («han considerado») debilita la correspondencia con el fragmento y la secuencia de acusación dirigida al interlocutor.
+  - severity: medium
+    issue: «cuando llaman» queda demasiado indeterminado
+    rationale: Dado el contexto forense/convocatorio, en español suena más fiel y natural «cuando me llaman» o «cuando convocan». La nota actual reconoce ese matiz, pero el texto principal debería cargarlo mejor.
+  - severity: low
+    issue: Puntuación y fluidez mejorables
+    rationale: «No es mi defensa cuando llaman..., sino la injusticia...» puede leerse como contraste excesivo. Una coma y una estructura más lineal reflejan mejor la sintaxis fragmentaria sin forzar una oposición fuerte.
+  revised_spanish_text: No es mi defensa cuando me llaman[a], y la injusticia[b] que ustedes han considerado, la dejan para abrir sus bocas y juzgarme[c].
+  revised_footnotes:
+  - marker: a
+    text: El inicio del segmento incluye ⲁⲡⲟⲗⲟⲅⲓⲁ («defensa») y luego una forma de ⲙⲟⲩⲧ («llamar»). Dado el contexto forense, «cuando me llaman» expresa mejor una convocatoria o citación que una simple llamada.
+    reason: source_note
+  - marker: b
+    text: «Injusticia» refleja el compuesto copto ϫⲓⲛϭⲟⲛⲥ. La lectura anterior «número» pertenece a una alineación equivocada y no a este pasaje.
+    reason: textual_variant
+  - marker: c
+    text: La cláusula final conserva el verbo judicial de origen griego en el fragmento copto, de ahí «juzgarme».
+    reason: source_note
+  revision_rationale: La revisión corrige la persona gramatical para ajustarse al audit trail, precisa el sentido forense de la llamada con «me llaman», y alisa la sintaxis sin introducir interpretación nueva.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0d461f85eb2a94543c0223e1e5befe4ab2f3166ab3de8e4e716143651fcb2cfb
+  timestamp: '2026-05-08T03:07:46Z'
+  output_hash: f71fca01a987d0ff4d8f83d7b7a24ccc790816d13a88b5421fb942c0abb447d5
+  usage:
+    prompt_tokens: 4464
+    completion_tokens: 797
+    total_tokens: 5261
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023115
+  applied_revision: true

@@ -53,17 +53,17 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Los cielos se enrollarán, y la tierra, en vuestra presencia; y el que vive[b] a partir del Viviente no verá la muerte. ¿No dice Jesús: “Quien se encuentra a sí mismo[c], del mundo no es digno”?»'
+  text: 'Jesús dijo[a]: «Los cielos y la tierra se enrollarán ante su presencia, y el que vive del viviente[b] no verá la muerte». ¿No dice Jesús[a]: «Quien se encuentra a sí mismo[c], el mundo no es digno de él»?'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El texto pasa de la voz directa de Jesús a una formulación en tercera persona («¿No dice Jesús...?»). Este cambio abrupto sugiere una glosa editorial o una capa redaccional incorporada al dicho.
+    text: El texto pasa abruptamente de la voz directa de Jesús a una formulación en tercera persona («¿No dice Jesús...?»). Este cambio sugiere una glosa editorial o una capa redaccional incorporada al dicho.
     reason: textual_variant
   - marker: b
-    text: '«El Viviente» conserva la ambigüedad del original: puede aludir al Padre, al Jesús vivo, o a la fuente divina de la vida. La traducción evita cerrar esa identificación.'
+    text: '«el viviente» conserva la ambigüedad del original: puede aludir al Padre, al Jesús vivo, o a la fuente divina de la vida. La traducción evita cerrar esa identificación.'
     reason: theological_note
   - marker: c
-    text: La construcción copt. admite el matiz reflexivo principal («se encuentra a sí mismo») y, secundariamente, la resonancia de «se encuentra solo». Se conserva aquí la lectura reflexiva.
+    text: La construcción copta admite el matiz reflexivo principal («se encuentra a sí mismo») y, secundariamente, la resonancia de «se encuentra solo». Se conserva aquí la lectura reflexiva.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ϭⲱⲗ
@@ -165,4 +165,55 @@ ai_draft:
     total_tokens: 6342
     reasoning_tokens: 0
     estimated_cost_usd: 0.010663
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Los cielos se enrollarán, y la tierra, en vuestra presencia; y el que vive[b] a partir del Viviente no verá la muerte. ¿No dice Jesús: “Quien se encuentra a sí mismo[c], del mundo no es digno”?»'
+  to: 'Jesús dijo[a]: «Los cielos y la tierra se enrollarán ante su presencia, y el que vive del viviente[b] no verá la muerte». ¿No dice Jesús[a]: «Quien se encuentra a sí mismo[c], el mundo no es digno de él»?'
+  rationale: La revisión corrige la inversión semántica grave en la cláusula final («el mundo no es digno de él»), hace más natural y fiel la coordinación inicial («Los cielos y la tierra se enrollarán ante su presencia»), y adapta el registro a un español neutral latinoamericano («su presencia» en vez de «vuestra presencia»). También se pone «el viviente» en minúscula para reflejar mejor la ambigüedad teológica preservada por el POB inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:53Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien la estructura general del logion y conserva los puntos clave del rastro POB: los cielos/la tierra que se enrollan, la expresión meta-textual «¿No dice Jesús...?», y el matiz reflexivo de «se encuentra a sí mismo». Sin embargo, hay dos desajustes importantes con el audit trail y el estilo meta: (1) el inglés adjudicado unifica la coordinación como «the heavens and the earth will roll up before you», mientras que el español deja «la tierra, en vuestra presencia» sin verbo explícito; aunque el verbo podría sobrentenderse, aquí queda más abrupto e innecesariamente quebrado. (2) El cierre «Quien se encuentra a sí mismo, del mundo no es digno» invierte el sujeto de «digno»: el copto/inglés dicen que el mundo no es digno de esa persona, no que esa persona no sea digna del mundo. Además, «vuestra» desentona con el objetivo de español neutral latinoamericano; «ustedes»/«su presencia» es preferible.'
+  spanish_quality_summary: El texto es legible y digno, pero presenta una construcción poco natural en «y la tierra, en vuestra presencia» y un giro final sintácticamente forzado. También la mezcla de comillas angulares con comillas dobles internas está bien, pero la puntuación puede simplificarse para sonar más natural en español moderno. «A partir del Viviente» es defendible, aunque «del viviente» o «del Viviente» fluye mejor; no obstante, no exige adjudicación. La mayúscula en «Viviente» introduce una especificación más titulada que la decisión inglesa en minúscula; en español conviene bajar a minúscula para preservar mejor la ambigüedad teológica documentada.
+  glossary_alignment: No hay conflicto con términos mayores del glosario del proyecto. Sí conviene ajustar «vuestra» a un registro neutral latinoamericano y alinear «el viviente» en minúscula con la decisión teológica inglesa de no sobre-especificar la referencia. El resto de decisiones léxicas son mayormente compatibles con el audit trail.
+  issues:
+  - severity: high
+    issue: El sentido de «worthy» está invertido en la cláusula final.
+    rationale: «del mundo no es digno» en español significa que la persona no es digna del mundo. Pero el copto y el POB inglés dicen «the world is not worthy of him», es decir, el mundo no es digno de esa persona.
+  - severity: medium
+    issue: Falta hacer explícito que tanto los cielos como la tierra «se enrollarán».
+    rationale: El audit trail adjudicado favorece una sola predicación coordinada para ambos sujetos. En español, la frase actual «Los cielos se enrollarán, y la tierra, en vuestra presencia» resulta elíptica y rígida.
+  - severity: medium
+    issue: «Vuestra presencia» no sigue bien el objetivo de español neutral latinoamericano.
+    rationale: Aunque gramaticalmente correcto, «vuestra» suena peninsular/litúrgico; «su presencia» preserva el plural sin marcar dialecto.
+  - severity: low
+    issue: La mayúscula en «Viviente» puede cerrar más de la cuenta la ambigüedad teológica.
+    rationale: El POB inglés mantuvo «living one» en minúscula para no identificarlo demasiado. En español, «el viviente» conserva mejor esa apertura.
+  revised_spanish_text: 'Jesús dijo[a]: «Los cielos y la tierra se enrollarán ante su presencia, y el que vive del viviente[b] no verá la muerte». ¿No dice Jesús[a]: «Quien se encuentra a sí mismo[c], el mundo no es digno de él»?'
+  revised_footnotes:
+  - marker: a
+    text: El texto pasa abruptamente de la voz directa de Jesús a una formulación en tercera persona («¿No dice Jesús...?»). Este cambio sugiere una glosa editorial o una capa redaccional incorporada al dicho.
+    reason: textual_variant
+  - marker: b
+    text: '«el viviente» conserva la ambigüedad del original: puede aludir al Padre, al Jesús vivo, o a la fuente divina de la vida. La traducción evita cerrar esa identificación.'
+    reason: theological_note
+  - marker: c
+    text: La construcción copta admite el matiz reflexivo principal («se encuentra a sí mismo») y, secundariamente, la resonancia de «se encuentra solo». Se conserva aquí la lectura reflexiva.
+    reason: lexical_alternative
+  revision_rationale: La revisión corrige la inversión semántica grave en la cláusula final («el mundo no es digno de él»), hace más natural y fiel la coordinación inicial («Los cielos y la tierra se enrollarán ante su presencia»), y adapta el registro a un español neutral latinoamericano («su presencia» en vez de «vuestra presencia»). También se pone «el viviente» en minúscula para reflejar mejor la ambigüedad teológica preservada por el POB inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 195bc41eeced8366587be19e9d5dd70850c777d27f8ecb346987b17e9f6e570c
+  timestamp: '2026-05-08T03:09:53Z'
+  output_hash: 7a86d88f484dd98da78e499fafdeb4349b12753ac00ee0956b4186ca3ad489b9
+  usage:
+    prompt_tokens: 6032
+    completion_tokens: 1119
+    total_tokens: 7151
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.031865
+  applied_revision: true

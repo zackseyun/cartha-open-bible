@@ -66,11 +66,11 @@ base_translation:
     changes_summary: Restored the third repeated unit noted in the source notes and preserved the repetitive cadence; kept the established renderings and maintained the ellipsis at the end.
 translation:
   language: es
-  text: el que ha de llegar[a]. Yo soy el perdón[b], y el que ha de llegar[a]. Yo soy el perdón[b], y el que ha de llegar[a]. Yo soy el perdón[b]...
+  text: el que ha de llegar a ser[a]. Yo soy el perdón[b], y el que ha de llegar a ser[a]. Yo soy el perdón[b], y el que ha de llegar a ser[a]. Yo soy el perdón[b]...
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El copto puede entenderse también como «lo que ha de acontecer» o «el que ha de hacerse»; se eligió «el que ha de llegar» para conservar la ambigüedad entre evento y persona sin sonar forzado en español.
+    text: El copto puede entenderse también como «lo que ha de suceder» o «lo que llegará a ser»; se eligió «el que ha de llegar a ser» para conservar, en la medida de lo posible, la ambigüedad entre referente personal e impersonal presente en el original.
     reason: alternative_reading
   - marker: b
     text: El término copto es un préstamo del griego συγγνώμη, que en uso cristiano puede significar perdón, indulgencia o clemencia; se eligió «perdón» por ser la opción más clara y natural.
@@ -133,4 +133,46 @@ ai_draft:
     total_tokens: 4000
     reasoning_tokens: 0
     estimated_cost_usd: 0.006202
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: el que ha de llegar[a]. Yo soy el perdón[b], y el que ha de llegar[a]. Yo soy el perdón[b], y el que ha de llegar[a]. Yo soy el perdón[b]...
+  to: el que ha de llegar a ser[a]. Yo soy el perdón[b], y el que ha de llegar a ser[a]. Yo soy el perdón[b], y el que ha de llegar a ser[a]. Yo soy el perdón[b]...
+  rationale: Se corrige el valor léxico de ⲡⲉⲧⲛⲁϣⲱⲡⲉ para reflejar «llegar a ser / suceder» en vez de «llegar». Esto preserva mejor la base copta y la nota inglesa auditada, sin perder la cadencia repetitiva del pasaje.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:12:21Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español preserva la triple repetición y la fórmula «Yo soy el perdón», pero «el que ha de llegar» no representa bien ⲡⲉⲧⲛⲁϣⲱⲡⲉ (‘lo que/el que llegará a ser, vendrá a ser, sucederá’). «Llegar» desplaza el sentido hacia movimiento/venida física y reduce la ambigüedad ontológica/eventiva documentada en el inglés POB.
+  spanish_quality_summary: El español es legible y mantiene la cadencia, pero puede mejorarse con una opción más fiel y natural como «el que ha de llegar a ser». También conviene ajustar la nota para reflejar con precisión las alternativas auditadas en inglés; «el que ha de hacerse» suena menos natural y menos preciso que «el que llegará a ser».
+  glossary_alignment: No hay términos del glosario principal especialmente implicados. «Perdón» para ⲥⲩⲛⲅⲛⲱⲙⲏ está bien alineado con la decisión inglesa «forgiveness». «Yo soy» para ⲁⲛⲟⲕ ⲡⲉ también es correcto. El único desajuste léxico importante está en ⲡⲉⲧⲛⲁϣⲱⲡⲉ.
+  issues:
+  - severity: high
+    issue: «el que ha de llegar» mistraduce ⲡⲉⲧⲛⲁϣⲱⲡⲉ
+    rationale: El verbo copto ϣⲱⲡⲉ significa «llegar a ser, suceder, acontecer», no «llegar» sin más. La versión española introduce una idea de venida física ausente del fundamento léxico y del rastro de auditoría inglés.
+  - severity: medium
+    issue: La nota a explica de forma imprecisa la ambigüedad
+    rationale: Dice que «el que ha de llegar» conserva la ambigüedad entre evento y persona, pero en realidad la reduce. Además, «el que ha de hacerse» no refleja tan bien la alternativa auditada como «el que llegará a ser» o «lo que ha de suceder».
+  revised_spanish_text: el que ha de llegar a ser[a]. Yo soy el perdón[b], y el que ha de llegar a ser[a]. Yo soy el perdón[b], y el que ha de llegar a ser[a]. Yo soy el perdón[b]...
+  revised_footnotes:
+  - marker: a
+    text: El copto puede entenderse también como «lo que ha de suceder» o «lo que llegará a ser»; se eligió «el que ha de llegar a ser» para conservar, en la medida de lo posible, la ambigüedad entre referente personal e impersonal presente en el original.
+    reason: alternative_reading
+  - marker: b
+    text: El término copto es un préstamo del griego συγγνώμη, que en uso cristiano puede significar perdón, indulgencia o clemencia; se eligió «perdón» por ser la opción más clara y natural.
+    reason: lexical_alternative
+  revision_rationale: Se corrige el valor léxico de ⲡⲉⲧⲛⲁϣⲱⲡⲉ para reflejar «llegar a ser / suceder» en vez de «llegar». Esto preserva mejor la base copta y la nota inglesa auditada, sin perder la cadencia repetitiva del pasaje.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ac527541f708ae8ded4cd45841420cb8d3146ff2a38dac861831baf1bc6d0e70
+  timestamp: '2026-05-08T03:12:21Z'
+  output_hash: bc306fb92ff90a97619f2c0d643648b5b167c4455460116070466f66b2e53a53
+  usage:
+    prompt_tokens: 3621
+    completion_tokens: 835
+    total_tokens: 4456
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.021577
+  applied_revision: true

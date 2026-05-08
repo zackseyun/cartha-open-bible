@@ -64,14 +64,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «He arrojado un fuego[b] sobre el mundo[c], y, mira, lo estoy guardando hasta que arda».'
+  text: 'Jesús dijo: «He arrojado un fuego sobre el mundo[c], y, mira[a], lo estoy guardando[b] hasta que arda».'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: «Mira» traduce el giro deíctico ⲉⲓⲥϩⲏⲏⲧⲉ, que también puede entenderse como «he aquí» o «presta atención».
     reason: lexical_alternative
   - marker: b
-    text: «Un fuego» refleja la indefinición del coptico; otras opciones posibles son «fuego» o «una llama».
+    text: ϩⲁⲣⲉϩ también puede entenderse como «vigilar» o «velar por», pero «guardar» conserva mejor el matiz protector.
     reason: lexical_alternative
   - marker: c
     text: Compárese con Lucas 12:49 («He venido a echar fuego sobre la tierra»), aunque aquí Tomás dice «mundo» y añade «lo estoy guardando hasta que arda».
@@ -165,4 +165,49 @@ ai_draft:
     total_tokens: 4827
     reasoning_tokens: 0
     estimated_cost_usd: 0.008754
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «He arrojado un fuego[b] sobre el mundo[c], y, mira, lo estoy guardando hasta que arda».'
+  to: 'Jesús dijo: «He arrojado un fuego sobre el mundo[c], y, mira[a], lo estoy guardando[b] hasta que arda».'
+  rationale: La traducción base es buena; solo requiere una corrección editorial y de trazabilidad para que las notas españolas correspondan exactamente a las decisiones léxicas documentadas en el audit trail inglés y a sus anclajes textuales apropiados.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:10:29Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido básico del copto y sigue de cerca el audit trail inglés: acción perfectiva («He arrojado»), objeto indefinido («un fuego»), alcance («sobre el mundo»), interjección deíctica («mira») y progresivo durativo («lo estoy guardando»). Sin embargo, la distribución de notas no preserva fielmente la lógica del audit trail inglés: en inglés la nota a explica «look», b explica «guarding» y c es referencia cruzada; en español la nota [a] quedó anclada a «Jesús dijo», [b] a «fuego» y [c] a «mundo», lo que desaline­a los apoyos léxicos y omite la nota sobre ϩⲁⲣⲉϩ.'
+  spanish_quality_summary: El español es claro, natural y digno. «He arrojado un fuego sobre el mundo» funciona, aunque «mira» queda mejor anclado directamente en el texto para que su nota tenga sentido. «Lo estoy guardando» es aceptable y fiel al matiz protector. La única reparación necesaria es reubicar y completar las notas para evitar confusión editorial y para conservar la justificación léxica documentada.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. Los términos clave están bien resueltos: «Jesús», «mundo», «fuego», «guardando». No hay vocabulario teológico sensible que requiera ajuste. La excepción principal es editorial: debe preservarse la nota léxica sobre ϩⲁⲣⲉϩ («guardar / vigilar») y no crear una nota sobre «un fuego» que no está sustentada como nota en el audit trail inglés.'
+  issues:
+  - severity: medium
+    issue: Los marcadores de notas no están anclados a las palabras/frases pertinentes.
+    rationale: La nota sobre ⲉⲓⲥϩⲏⲏⲧⲉ debe ir con «mira», no con «Jesús dijo»; la referencia cruzada debe anclarse al segmento correspondiente; y la nota léxica sobre ϩⲁⲣⲉϩ falta en el texto.
+  - severity: medium
+    issue: Se añadió una nota sobre «un fuego» que no corresponde a una nota preservada del audit trail inglés.
+    rationale: 'Aunque la indefinición está bien explicada en decisiones léxicas, aquí desplaza una nota más importante del inglés: la alternativa de «guardar / vigilar» para ϩⲁⲣⲉϩ.'
+  revised_spanish_text: 'Jesús dijo: «He arrojado un fuego sobre el mundo[c], y, mira[a], lo estoy guardando[b] hasta que arda».'
+  revised_footnotes:
+  - marker: a
+    text: «Mira» traduce el giro deíctico ⲉⲓⲥϩⲏⲏⲧⲉ, que también puede entenderse como «he aquí» o «presta atención».
+    reason: lexical_alternative
+  - marker: b
+    text: ϩⲁⲣⲉϩ también puede entenderse como «vigilar» o «velar por», pero «guardar» conserva mejor el matiz protector.
+    reason: lexical_alternative
+  - marker: c
+    text: Compárese con Lucas 12:49 («He venido a echar fuego sobre la tierra»), aunque aquí Tomás dice «mundo» y añade «lo estoy guardando hasta que arda».
+    reason: cross_reference
+  revision_rationale: La traducción base es buena; solo requiere una corrección editorial y de trazabilidad para que las notas españolas correspondan exactamente a las decisiones léxicas documentadas en el audit trail inglés y a sus anclajes textuales apropiados.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8bfb44fe73ac91ff91018baf9fef8f00939f72f77cff969dc4a343dc65d5b469
+  timestamp: '2026-05-08T03:10:29Z'
+  output_hash: 636eb035def9dd61c3ed48e0f877f199888586fc7a0b56192e4132a236a94b00
+  usage:
+    prompt_tokens: 4474
+    completion_tokens: 879
+    total_tokens: 5353
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02437
+  applied_revision: true

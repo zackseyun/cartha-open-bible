@@ -64,7 +64,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «¡Ay de la carne que depende del alma[c][b]; ay del alma que depende de la carne!»'
+  text: 'Jesús dijo: «¡Ay de la carne que depende[a] del alma[b][c]; ay del alma que depende de la carne!»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -74,8 +74,8 @@ translation:
     text: ⲯⲩⲭⲏ también puede significar «vida» o «yo», pero «alma» mantiene la oposición tajante entre carne y alma del copto.
     reason: lexical_alternative
   - marker: c
-    text: El manuscrito muestra ⲧⲁⲉⲓ en ambas cláusulas; la normalización editorial usa ⲡⲁⲓ. Aquí no afecta el sentido, porque funciona como un «que» relativo semánticamente bleached.
-    reason: textual_variant
+    text: El manuscrito muestra ⲧⲁⲉⲓ en ambas cláusulas; la normalización editorial usa ⲡⲁⲓ. Aquí no afecta el sentido, porque funciona como un «que» relativo con valor semántico debilitado.
+    reason: dialect_note
 lexical_decisions:
 - source_word: ⲟⲩⲟⲉⲓ / ⲟⲩⲟⲓ
   english_pob_choice: Woe
@@ -152,4 +152,49 @@ ai_draft:
     total_tokens: 4290
     reasoning_tokens: 0
     estimated_cost_usd: 0.007365
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «¡Ay de la carne que depende del alma[c][b]; ay del alma que depende de la carne!»'
+  to: 'Jesús dijo: «¡Ay de la carne que depende[a] del alma[b][c]; ay del alma que depende de la carne!»'
+  rationale: Se corrige el anclaje de la nota verbal para que corresponda al término fuente explicado y se mejora la naturalidad de la nota textual en español, sin cambiar el sentido de la traducción.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:41Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido básico del copto y sigue de cerca el rastro auditado en inglés: mantiene «carne/alma», conserva la estructura paralela de denuncia, y traduce ⲉⲓϣⲉ como dependencia. Sin embargo, la colocación de la nota [a] está desalineada: en inglés esa nota explica el verbo «depends on», no «Jesus said». Además, la nota c mezcla español con el anglicismo técnico «bleached», que conviene naturalizar.'
+  spanish_quality_summary: El texto principal es claro, natural y digno en español. «¡Ay de la carne…; ay del alma…!» suena bien y preserva la fuerza sentenciosa. La principal mejora necesaria es reanclar la nota [a] al verbo correspondiente y pulir la redacción de la nota c para mejor legibilidad en español eclesial general.
+  glossary_alignment: 'Alineación buena con las decisiones léxicas del proyecto: ⲥⲁⲣⲝ → «carne», ⲯⲩⲭⲏ → «alma», ⲉⲓϣⲉ → «depende de». No hay conflictos con la terminología por defecto del proyecto.'
+  issues:
+  - severity: medium
+    issue: La nota [a] está anclada a «Jesús dijo» en vez de al verbo «depende».
+    rationale: La nota [a] explica el valor léxico de ⲉⲓϣⲉ («depende de / se apoya en / cuelga de»). Debe aparecer donde ese verbo se traduce, para preservar la trazabilidad del audit trail inglés y evitar confusión.
+  - severity: low
+    issue: La nota [c] usa el anglicismo «bleached».
+    rationale: Aunque correcto en lingüística técnica, suena innecesariamente extranjero en esta edición española. «Semánticamente debilitado» o una paráfrasis equivalente comunica mejor la idea.
+  revised_spanish_text: 'Jesús dijo: «¡Ay de la carne que depende[a] del alma[b][c]; ay del alma que depende de la carne!»'
+  revised_footnotes:
+  - marker: a
+    text: El verbo ⲉⲓϣⲉ también puede verterse «se apoya en» o «cuelga de», para conservar una imagen más concreta.
+    reason: lexical_alternative
+  - marker: b
+    text: ⲯⲩⲭⲏ también puede significar «vida» o «yo», pero «alma» mantiene la oposición tajante entre carne y alma del copto.
+    reason: lexical_alternative
+  - marker: c
+    text: El manuscrito muestra ⲧⲁⲉⲓ en ambas cláusulas; la normalización editorial usa ⲡⲁⲓ. Aquí no afecta el sentido, porque funciona como un «que» relativo con valor semántico debilitado.
+    reason: dialect_note
+  revision_rationale: Se corrige el anclaje de la nota verbal para que corresponda al término fuente explicado y se mejora la naturalidad de la nota textual en español, sin cambiar el sentido de la traducción.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c8a06c21051b5dccfd909919625a4288d150f8c5fa5c899604dc6349e27d3833
+  timestamp: '2026-05-08T03:05:41Z'
+  output_hash: df81e740d97537d1f03cc5f3cf16a3fc95f666d33b0f756921d9d4846c71472c
+  usage:
+    prompt_tokens: 3970
+    completion_tokens: 732
+    total_tokens: 4702
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020905
+  applied_revision: true

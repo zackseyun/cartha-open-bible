@@ -19,7 +19,7 @@ base_translation:
     changes_summary: 'Restored the final clause absent from the draft: ‘and the commandments of Zebulun their father.’ Also tightened ‘all who’ to ‘those who’ for smoother formal English while preserving the source meaning.'
 translation:
   language: es
-  text: Porque me levantaré de nuevo en medio de ustedes, como un líder en medio de los hijos de justicia; y me gozaré en medio de mi tribu, los que guardan la ley del Señor y los mandamientos de Zabulón, su padre.
+  text: Porque me levantaré de nuevo en medio de ustedes, como un líder en medio de los hijos de justicia; y me gozaré en medio de mi tribu, aquellos que guardan la ley de Yahvé y los mandamientos de Zabulón, su padre.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Ἀναστήσομαι
@@ -141,4 +141,39 @@ ai_draft:
     total_tokens: 3652
     reasoning_tokens: 0
     estimated_cost_usd: 0.00959
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque me levantaré de nuevo en medio de ustedes, como un líder en medio de los hijos de justicia; y me gozaré en medio de mi tribu, los que guardan la ley del Señor y los mandamientos de Zabulón, su padre.
+  to: Porque me levantaré de nuevo en medio de ustedes, como un líder en medio de los hijos de justicia; y me gozaré en medio de mi tribu, aquellos que guardan la ley de Yahvé y los mandamientos de Zabulón, su padre.
+  rationale: Se corrige «Señor» a «Yahvé» para alinearse con la terminología obligatoria del proyecto respecto del nombre divino. También se suaviza la cláusula final con «aquellos que guardan» para mejor legibilidad en español, sin cambiar el contenido del griego ni del audit trail inglés.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:59Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja en gran medida el griego y el audit trail inglés: incluye la cláusula final restaurada, mantiene la triple repetición de «en medio de», y conserva bien «hijos de justicia» y «mandamientos». Sin embargo, no sigue el criterio terminológico del proyecto para κύριος/YHWH: «la ley del Señor» debe ajustarse a «la ley de Yahvé» en el texto principal, ya que no hay razón contextual suficiente para apartarse del estándar. Además, «los que guardan» después de «mi tribu» suena algo trabado; «aquellos que guardan» mejora la lectura sin perder fidelidad.'
+  spanish_quality_summary: El español es claro y digno, pero puede pulirse levemente. «Me gozaré» es aceptable en registro bíblico, aunque «me regocijaré» sería más natural para muchos lectores; no es necesario cambiarlo. El ajuste principal es terminológico («Yahvé») y una pequeña mejora de fluidez en la cláusula relativa final.
+  glossary_alignment: 'Buen alineamiento general con la terminología del proyecto en «justicia», «tribu», «mandamientos» y el tratamiento no sobreteologizado de Ἀναστήσομαι. Desalineación importante en κύριος: el proyecto pide «Yahvé» en el texto principal, no «Señor», incluso si el inglés auditado usa «Lord».'
+  issues:
+  - severity: high
+    issue: Uso de «Señor» en lugar de «Yahvé» para Κυρίου
+    rationale: El estándar del proyecto exige «Yahvé» en el texto principal cuando κύριος representa el nombre divino. La propia justificación del borrador reconoce la tensión pero privilegia indebidamente la coincidencia con el inglés auditado sobre la política terminológica española.
+  - severity: low
+    issue: Fluidez de «mi tribu, los que guardan»
+    rationale: Aunque es comprensible, la aposición relativa queda algo áspera en español. «Mi tribu, aquellos que guardan...» o una leve reestructuración mejora la naturalidad sin alterar el sentido.
+  revised_spanish_text: Porque me levantaré de nuevo en medio de ustedes, como un líder en medio de los hijos de justicia; y me gozaré en medio de mi tribu, aquellos que guardan la ley de Yahvé y los mandamientos de Zabulón, su padre.
+  revision_rationale: Se corrige «Señor» a «Yahvé» para alinearse con la terminología obligatoria del proyecto respecto del nombre divino. También se suaviza la cláusula final con «aquellos que guardan» para mejor legibilidad en español, sin cambiar el contenido del griego ni del audit trail inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 19bb29d8966723c16cf150565c644cdba02a144f797e8007ff598e38e19f6786
+  timestamp: '2026-05-08T03:09:59Z'
+  output_hash: d3d480fe692e84db413321721aa3c11e1b425bb25ba6c37701f82bb6b753346b
+  usage:
+    prompt_tokens: 3358
+    completion_tokens: 631
+    total_tokens: 3989
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01786
+  applied_revision: true

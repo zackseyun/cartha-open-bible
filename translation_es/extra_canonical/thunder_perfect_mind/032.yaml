@@ -71,11 +71,11 @@ base_translation:
     changes_summary: Changed 'wealth' to 'greatness' to match the established lexical decision for ⲙⲙⲛⲧⲣⲙⲁⲟ, and removed the bracketed footnote markers from the running text for readability and consistency.
 translation:
   language: es
-  text: Y me hallarás en grandeza[a]; y no me mires saliendo entre los que son honrados[b], y búscame en los lugares más pequeños.
+  text: Y me hallarán en grandeza[a]; y no me miren cuando salgo entre los que son honrados[b], y búsquenme en los lugares más humildes.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La voz coptа admite un campo semántico cercano a “grandeza”, “exaltación” o, en ciertos contextos, “riqueza”. Aquí se opta por “grandeza” por claridad y por seguir la revisión auditada.
+    text: La voz copta admite un campo semántico cercano a “grandeza”, “exaltación” o, en ciertos contextos, “riqueza”. Aquí se opta por “grandeza” por claridad y por seguir la revisión auditada.
     reason: lexical_alternative
   - marker: b
     text: Literalmente, “los que son honrados”. La frase conserva el valor resultativo del participio y evita reducirlo a un mero título social.
@@ -178,4 +178,49 @@ ai_draft:
     total_tokens: 5727
     reasoning_tokens: 0
     estimated_cost_usd: 0.009647
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y me hallarás en grandeza[a]; y no me mires saliendo entre los que son honrados[b], y búscame en los lugares más pequeños.
+  to: Y me hallarán en grandeza[a]; y no me miren cuando salgo entre los que son honrados[b], y búsquenme en los lugares más humildes.
+  rationale: Se corrige el futuro a segunda persona plural para ajustarlo al copto y a la traducción inglesa auditada; se mejora la fluidez de la prohibición verbal en español; y se reemplaza ‘lugares más pequeños’ por ‘lugares más humildes’ para reflejar mejor el contraste valorativo de ‘the least places’.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:47Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en lo esencial la línea inglesa auditada actual: ‘you will find me … do not look at me … among those who are honored … in the least places look for me’. Sin embargo, ‘Y me hallarás’ cambia indebidamente el sujeto/plural del futuro 2pl. a singular, y ‘lugares más pequeños’ debilita el valor comparativo/superlativo de ‘the least places’.'
+  spanish_quality_summary: 'El español es legible y digno, pero conviene corregir la concordancia de persona/número y pulir dos giros para mayor naturalidad: ‘me hallarán’ o ‘me encontrarán’ en plural; y mejor ‘los lugares más humildes’ o ‘los lugares más bajos’ que ‘más pequeños’, que suena demasiado físico/dimensional.'
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. Las decisiones léxicas principales son aceptables, pero la ejecución española debe reflejar con más precisión el plural del original y el contraste social/valorativo entre ‘honrados’ y ‘least places’.
+  issues:
+  - severity: high
+    issue: Cambio de plural a singular en ‘Y me hallarás’
+    rationale: El copto ⲧⲉⲧⲛⲁϭⲓⲛⲉ y la traducción inglesa auditada son de segunda persona plural (‘you [pl.] will find’). El español en singular altera el destinatario del texto.
+  - severity: medium
+    issue: ‘los lugares más pequeños’ no expresa bien ‘the least places’
+    rationale: ‘Pequeños’ suena principalmente espacial/físico. Aquí el contraste con ‘los que son honrados’ apunta mejor a condición baja, humilde o menor rango.
+  - severity: low
+    issue: ‘no me mires saliendo’ es comprensible pero algo rígido
+    rationale: Una formulación como ‘no me miren cuando salgo’ o ‘no me miren al salir’ suena más natural en español, preservando el valor verbal sin calco innecesario.
+  revised_spanish_text: Y me hallarán en grandeza[a]; y no me miren cuando salgo entre los que son honrados[b], y búsquenme en los lugares más humildes.
+  revised_footnotes:
+  - marker: a
+    text: La voz copta admite un campo semántico cercano a “grandeza”, “exaltación” o, en ciertos contextos, “riqueza”. Aquí se opta por “grandeza” por claridad y por seguir la revisión auditada.
+    reason: lexical_alternative
+  - marker: b
+    text: Literalmente, “los que son honrados”. La frase conserva el valor resultativo del participio y evita reducirlo a un mero título social.
+    reason: lexical_alternative
+  revision_rationale: Se corrige el futuro a segunda persona plural para ajustarlo al copto y a la traducción inglesa auditada; se mejora la fluidez de la prohibición verbal en español; y se reemplaza ‘lugares más pequeños’ por ‘lugares más humildes’ para reflejar mejor el contraste valorativo de ‘the least places’.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: a288239bdc6d1fb5737b673f456e9766e052f0c9123ff34ed0554432d6c34865
+  timestamp: '2026-05-08T03:05:47Z'
+  output_hash: 14672fc65f3789ce24d09df3c71b22effe61b5dfdb51faaa3f4837e2defe13ee
+  usage:
+    prompt_tokens: 5271
+    completion_tokens: 718
+    total_tokens: 5989
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023947
+  applied_revision: true

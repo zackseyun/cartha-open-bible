@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'against the sons of men' to 'to the sons of men' for closer alignment with the Greek dative without adding interpretation; otherwise retained the draft.
 translation:
   language: es
-  text: Y después de estas cosas, cuando recuerden al Señor, volverán, y él tendrá misericordia de ustedes, porque es misericordioso y compasivo, y no toma en cuenta la maldad para con los hijos de los hombres, porque son carne y se extravían en sus malas obras.
+  text: Y después de estas cosas, cuando recuerden a Yahvé, volverán, y él tendrá misericordia de ustedes, porque es misericordioso y compasivo, y no les atribuye maldad a los hijos de los hombres, porque son carne y se extravían en sus malas obras.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: μνησθέντες Κύριον
@@ -136,4 +136,39 @@ ai_draft:
     total_tokens: 3573
     reasoning_tokens: 0
     estimated_cost_usd: 0.009212
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y después de estas cosas, cuando recuerden al Señor, volverán, y él tendrá misericordia de ustedes, porque es misericordioso y compasivo, y no toma en cuenta la maldad para con los hijos de los hombres, porque son carne y se extravían en sus malas obras.
+  to: Y después de estas cosas, cuando recuerden a Yahvé, volverán, y él tendrá misericordia de ustedes, porque es misericordioso y compasivo, y no les atribuye maldad a los hijos de los hombres, porque son carne y se extravían en sus malas obras.
+  rationale: Se corrige 'Señor' a 'Yahvé' para cumplir la terminología base del proyecto y se reemplaza la construcción poco idiomática 'no toma en cuenta la maldad para con' por 'no les atribuye maldad a', que expresa de modo más natural en español la idea de no imputar maldad a los seres humanos, sin intensificar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:50Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la secuencia y el sentido general del griego: recuerdo del Señor, retorno, misericordia divina, atributos de misericordia/compasión, no imputación de maldad, y la razón antropológica de que los humanos son carne y se extravían. Sin embargo, hay un problema importante de alineación terminológica y un giro español poco idiomático en la cláusula de λογίζεται κακίαν τοῖς υἱοῖς τῶν ἀνθρώπων.'
+  spanish_quality_summary: El español es claro y legible, pero 'para con los hijos de los hombres' suena forzado aquí. Además, según la política del proyecto, Κύριον debe renderizarse como 'Yahvé' cuando funciona como referencia al Señor divino, y no hay razón fuerte en este contexto para mantener 'Señor'.
+  glossary_alignment: Debe corregirse 'Señor' a 'Yahvé' para ajustarse a la terminología por defecto del proyecto. 'Carne', 'misericordioso y compasivo' y 'los hijos de los hombres' están bien alineados. Para λογίζεται, 'no les atribuye maldad' refleja mejor el sentido de no imputar/contar a alguien y evita el español poco natural de 'para con'.
+  issues:
+  - severity: high
+    issue: Uso de 'Señor' en lugar de 'Yahvé'
+    rationale: La guía del proyecto establece יהוה / YHWH -> 'Yahvé' en el texto principal. Aunque aquí el griego dice Κύριον, el contexto devocional se refiere al Señor divino y la justificación del borrador no supera la preferencia terminológica del proyecto.
+  - severity: medium
+    issue: '''No toma en cuenta la maldad para con los hijos de los hombres'' es poco natural'
+    rationale: La frase intenta reflejar el dativo griego, pero en español resulta rígida y algo opaca. 'No les atribuye maldad a los hijos de los hombres' o similar conserva mejor el valor de imputación sin calco extraño.
+  revised_spanish_text: Y después de estas cosas, cuando recuerden a Yahvé, volverán, y él tendrá misericordia de ustedes, porque es misericordioso y compasivo, y no les atribuye maldad a los hijos de los hombres, porque son carne y se extravían en sus malas obras.
+  revision_rationale: Se corrige 'Señor' a 'Yahvé' para cumplir la terminología base del proyecto y se reemplaza la construcción poco idiomática 'no toma en cuenta la maldad para con' por 'no les atribuye maldad a', que expresa de modo más natural en español la idea de no imputar maldad a los seres humanos, sin intensificar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: ade28409258b84b5133964ee0f63a0e827e6c2d650f14f1e46d689ea7cd19b52
+  timestamp: '2026-05-08T03:09:50Z'
+  output_hash: f514fe5459c9b5b2a7457c79e867aade06e72de5c82e63ea9b9b779267d2a55c
+  usage:
+    prompt_tokens: 3276
+    completion_tokens: 651
+    total_tokens: 3927
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017955
+  applied_revision: true

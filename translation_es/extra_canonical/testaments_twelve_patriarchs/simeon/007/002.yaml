@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the duplicated bracketed text at the end and tightened the phrasing to match the source more closely while preserving the existing bracketed alternative reading.
 translation:
   language: es
-  text: Porque el Señor levantará de Leví a un sumo sacerdote, y de Judá a un rey, [Dios y hombre]; este salvará [a todas las naciones y] la raza de Israel.
+  text: Porque Yahvé levantará de Leví a un sumo sacerdote, y de Judá a un rey, [Dios y hombre]; este salvará [a todas las naciones y] el linaje de Israel.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Κύριος
@@ -126,4 +126,39 @@ ai_draft:
     total_tokens: 3272
     reasoning_tokens: 0
     estimated_cost_usd: 0.007884
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Porque el Señor levantará de Leví a un sumo sacerdote, y de Judá a un rey, [Dios y hombre]; este salvará [a todas las naciones y] la raza de Israel.
+  to: Porque Yahvé levantará de Leví a un sumo sacerdote, y de Judá a un rey, [Dios y hombre]; este salvará [a todas las naciones y] el linaje de Israel.
+  rationale: Se ajusta “el Señor” a “Yahvé” para alinearlo con la política terminológica del proyecto sobre el nombre divino, y se reemplaza “la raza de Israel” por “el linaje de Israel” para reflejar mejor γένος en español contemporáneo sin perder el matiz genealógico. No se requieren notas adicionales porque los corchetes ya preservan las lecturas textuales significativas.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:01:10Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura griega y conserva correctamente los corchetes textuales: el Señor/κύριος, un sumo sacerdote de Leví, un rey de Judá, [Dios y hombre], y la salvación de Israel con la lectura adicional [todas las naciones y]. Sin embargo, hay dos ajustes necesarios para mayor fidelidad y mejor español: 1) según la política terminológica del proyecto, Κύριος debe verterse como “Yahvé” aquí, ya que no hay razón suficiente en el audit trail para apartarse del valor por defecto; 2) “la raza de Israel” suena poco natural y potencialmente engañoso en español actual para γένος, donde “el linaje de Israel” preserva mejor el sentido genealógico sin la carga moderna de “raza”.'
+  spanish_quality_summary: El texto es claro y legible, pero “el Señor” incumple la preferencia editorial del proyecto y “la raza de Israel” no suena ideal en español eclesial contemporáneo. “Este salvará” es entendible, aunque “él salvará” o simplemente “salvará” serían también posibles; no requiere cambio. El resto del verso mantiene un registro digno y natural.
+  glossary_alignment: Se corrige κύριος -> “Yahvé” conforme al estándar del proyecto. Se mantiene “sumo sacerdote” para ἀρχιερέα, “rey” para βασιλέα, y “[Dios y hombre]” para la lectura entre corchetes. Para γένος se prefiere “linaje” sobre “raza” por fidelidad semántica y mejor español.
+  issues:
+  - severity: medium
+    issue: Κύριος se tradujo como “el Señor” en lugar de “Yahvé”.
+    rationale: La política base del proyecto exige “Yahvé” para el nombre divino en el texto principal. Aquí no hay evidencia suficiente en el expediente para mantener una convención enmascaradora en español solo porque el inglés dijo “the Lord”.
+  - severity: medium
+    issue: “la raza de Israel” es una elección poco natural y potencialmente equívoca para γένος.
+    rationale: Aunque refleja literalmente una decisión inglesa, en español actual “raza” introduce connotaciones modernas no necesarias. “Linaje” conserva mejor la idea de descendencia o estirpe de Israel.
+  revised_spanish_text: Porque Yahvé levantará de Leví a un sumo sacerdote, y de Judá a un rey, [Dios y hombre]; este salvará [a todas las naciones y] el linaje de Israel.
+  revision_rationale: Se ajusta “el Señor” a “Yahvé” para alinearlo con la política terminológica del proyecto sobre el nombre divino, y se reemplaza “la raza de Israel” por “el linaje de Israel” para reflejar mejor γένος en español contemporáneo sin perder el matiz genealógico. No se requieren notas adicionales porque los corchetes ya preservan las lecturas textuales significativas.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 7c4434571f8786d6ca6e4ef2a037faa1faf8b711f2daa4fbd65ca41b9cdd09c8
+  timestamp: '2026-05-08T03:01:10Z'
+  output_hash: d150ca0b07c16b24aad8068a20c5a9be28f1105090f29ef1b0955f461bdc8fc6
+  usage:
+    prompt_tokens: 2889
+    completion_tokens: 696
+    total_tokens: 3585
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017662
+  applied_revision: true

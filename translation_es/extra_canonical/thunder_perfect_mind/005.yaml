@@ -62,21 +62,18 @@ base_translation:
     changes_summary: Smoothed the second clause by adding a comma for readability while preserving the source sense and all established lexical decisions.
 translation:
   language: es
-  text: Mantente vigilante[a],[b] y, en cuanto a tu oír, no te hagas sordo a mí en ningún lugar ni según ningún otro pensamiento[c]; y no me ignores. Porque yo soy el primero[d][c], y yo soy el último.
+  text: Mantente vigilante[a]; y, en cuanto a tu oído, no te hagas sordo a mí en ningún lugar ni según ningún otro pensamiento[b]; y no me desconozcas. Porque yo soy el primero[c][b], y yo soy el último.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Or: Mantente en guardia; Estate atento.'
+    text: 'O: «Mantente en guardia»; «Estate atento»'
     reason: lexical_alternative
   - marker: b
-    text: La colocación de esta cláusula es incierta en las líneas mapeadas; algunas ediciones podrían unirla con la exhortación siguiente o la precedente.
-    reason: textual_variant
+    text: La colocación de esta cláusula es incierta en las líneas mapeadas; algunas ediciones podrían unirla con la exhortación precedente o con la siguiente.
+    reason: alignment_note
   - marker: c
-    text: La expresión puede entenderse también como 'en ningún lugar ni conforme a otro pensamiento'.
-    reason: alternative_reading
-  - marker: d
-    text: 'Or: ''y tú que oyes, óyeme, no según un lugar ni según otro pensamiento''.'
-    reason: alternative_reading
+    text: 'O bien, según una lectura anterior: «y tú que oyes, óyeme, no según un lugar ni según otro pensamiento».'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲧⲱⲉⲓ
   english_pob_choice: be watchful
@@ -197,4 +194,52 @@ ai_draft:
     total_tokens: 5034
     reasoning_tokens: 0
     estimated_cost_usd: 0.010237
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Mantente vigilante[a],[b] y, en cuanto a tu oír, no te hagas sordo a mí en ningún lugar ni según ningún otro pensamiento[c]; y no me ignores. Porque yo soy el primero[d][c], y yo soy el último.
+  to: Mantente vigilante[a]; y, en cuanto a tu oído, no te hagas sordo a mí en ningún lugar ni según ningún otro pensamiento[b]; y no me desconozcas. Porque yo soy el primero[c][b], y yo soy el último.
+  rationale: 'Se corrige ''no me ignores'' a ''no me desconozcas'' para preservar el sentido de no permanecer ignorante respecto de la hablante. Se mejora ''tu oír'' a ''tu oído'' por naturalidad sin perder el valor nominal. Se rehace por completo el sistema de notas para que refleje fielmente la auditoría inglesa: la alternativa léxica de ''watchful'', la nota de incertidumbre de colocación en la cláusula afectada y la lectura anterior solo como antecedente de traducción, no como opción principal actual. También se eliminan marcadores superfluos y se restablece su correspondencia exacta con el texto.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:58Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en gran parte la revisión inglesa auditada: conserva la exhortación inicial, la referencia al ''oír'' del destinatario, la advertencia contra la sordera hacia la hablante, y la autoidentificación ''el primero... el último''. Sin embargo, introduce dos problemas importantes: (1) ''no me ignores'' desplaza el sentido epistémico de ''no seas ignorante de mí / no me desconozcas'' hacia un acto volitivo de desatención; (2) las notas están mal ancladas y mezcladas: la nota de incertidumbre de colocación se puso sobre ''Mantente vigilante'' en vez de la cláusula cuya colocación es incierta, mientras que la nota d conserva una lectura previa descartada como si fuera alternativa válida. También la nota c en el texto se reutiliza para dos funciones distintas en el inglés auditado.'
+  spanish_quality_summary: 'El español es generalmente legible y digno, pero ''en cuanto a tu oír'' suena algo duro; ''en cuanto a tu oído'' o ''en cuanto a tu escuchar'' sería más natural. ''No te hagas sordo a mí'' es comprensible pero menos idiomático que ''no te hagas sordo a mi voz'' o ''no seas sordo conmigo''; aun así, puede mantenerse para cercanía fuente. El mayor problema de calidad está en el aparato crítico: las notas no corresponden bien al contenido ni a los marcadores, y se conserva una nota de lectura anterior ya corregida por la auditoría.'
+  glossary_alignment: No hay términos doctrinales del glosario principal en juego. Léxicamente, 'Mantente vigilante' para ⲧⲱⲉⲓ y 'el primero / el último' están bien. 'No me ignores' no alinea bien con la decisión inglesa 'do not be ignorant of me'; conviene 'no me desconozcas' o 'no seas ignorante de mí'.
+  issues:
+  - severity: high
+    issue: '''no me ignores'' para ⲙⲡⲣⲣⲁⲧⲥⲟⲟⲩⲛ'
+    rationale: La decisión inglesa auditada es 'do not be ignorant of me', no 'do not ignore me'. En español, 'ignorar' es ambiguo y en uso común significa 'hacer caso omiso', lo que cambia el foco de conocimiento a voluntad.
+  - severity: high
+    issue: Notas y marcadores desalineados con la auditoría inglesa
+    rationale: La nota b tras 'Mantente vigilante' traslada indebidamente la nota de incertidumbre de colocación; la nota d preserva la lectura previa descartada como si siguiera vigente; y la nota c se usa de forma confusa para una alternativa léxica y también como eco de la nota inglesa [2].
+  - severity: medium
+    issue: '''en cuanto a tu oír'' suena poco natural en español'
+    rationale: Aunque intenta reflejar el sustantivo implícito, en español 'tu oído' comunica mejor el valor nominal sin crear una formulación torpe.
+  revised_spanish_text: Mantente vigilante[a]; y, en cuanto a tu oído, no te hagas sordo a mí en ningún lugar ni según ningún otro pensamiento[b]; y no me desconozcas. Porque yo soy el primero[c][b], y yo soy el último.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «Mantente en guardia»; «Estate atento»'
+    reason: lexical_alternative
+  - marker: b
+    text: La colocación de esta cláusula es incierta en las líneas mapeadas; algunas ediciones podrían unirla con la exhortación precedente o con la siguiente.
+    reason: alignment_note
+  - marker: c
+    text: 'O bien, según una lectura anterior: «y tú que oyes, óyeme, no según un lugar ni según otro pensamiento».'
+    reason: previous_rendering
+  revision_rationale: 'Se corrige ''no me ignores'' a ''no me desconozcas'' para preservar el sentido de no permanecer ignorante respecto de la hablante. Se mejora ''tu oír'' a ''tu oído'' por naturalidad sin perder el valor nominal. Se rehace por completo el sistema de notas para que refleje fielmente la auditoría inglesa: la alternativa léxica de ''watchful'', la nota de incertidumbre de colocación en la cláusula afectada y la lectura anterior solo como antecedente de traducción, no como opción principal actual. También se eliminan marcadores superfluos y se restablece su correspondencia exacta con el texto.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 958f5899da31ca47c7223e2e7e5d3eff89983960c935eda16914748015c7cf90
+  timestamp: '2026-05-08T03:05:58Z'
+  output_hash: df3964395627fa5e353ee3e28271d4ab02737551a4fe0b045466e23760217bdc
+  usage:
+    prompt_tokens: 4684
+    completion_tokens: 1024
+    total_tokens: 5708
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02707
+  applied_revision: true

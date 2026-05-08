@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed “I told him” to the more literal “I said to him” to reflect ἔλεγον αὐτῷ more closely. No other changes needed.
 translation:
   language: es
-  text: 'Entonces mi padre seguía preguntando por mí, porque me había visto sombrío, y yo le decía: “Mi hígado está hinchado”.'
+  text: 'Entonces mi padre seguía preguntando por mí, porque me había visto cabizbajo, y yo le dije: “Mi hígado está hinchado”.'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἐρωτῶν περὶ ἐμοῦ
@@ -80,4 +80,39 @@ ai_draft:
     total_tokens: 2325
     reasoning_tokens: 0
     estimated_cost_usd: 0.004162
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Entonces mi padre seguía preguntando por mí, porque me había visto sombrío, y yo le decía: “Mi hígado está hinchado”.'
+  to: 'Entonces mi padre seguía preguntando por mí, porque me había visto cabizbajo, y yo le dije: “Mi hígado está hinchado”.'
+  rationale: Se ajusta “yo le decía” a “yo le dije” para respetar mejor la decisión auditada del inglés POB y evitar un matiz iterativo innecesario en español. También se cambia “sombrío” por “cabizbajo” para una descripción más natural del aspecto visible de la persona sin alterar el sentido.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:05:50Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura básica del griego: pregunta continuada del padre, causa introducida por ὅτι, y respuesta del hablante con la dolencia fingida. Sin embargo, ἔλεγον αὐτῷ se auditó explícitamente en inglés como “I said to him” frente a “I told him”, y el español propuesto “yo le decía” introduce un matiz iterativo/durativo más marcado que no conviene aquí en una narración simple. También “sombrío” es posible, pero para un rostro o estado visible “sombrío” suena algo literario; “cabizbajo” o “abatido” transmite mejor que el padre lo vio así.'
+  spanish_quality_summary: El español es claro y natural, pero requiere un ajuste menor para alinearse mejor con la decisión auditada de λέγω y con un registro narrativo más llano. “Entonces” funciona, aunque “Y”/“Ahora bien” sería más literal; no es necesario forzar cambio. La frase médica “Mi hígado está hinchado” es clara y fiel.
+  glossary_alignment: 'No hay términos teológicos sensibles en este versículo. Las decisiones léxicas principales son adecuadas: ἐρωτῶν περὶ ἐμοῦ → “seguía preguntando por mí”; τὰ ἤπατά μου → “mi hígado”; ὀγκοῦμαι → “está hinchado”. El punto principal a corregir es ἔλεγον αὐτῷ, donde el proyecto auditó una forma de habla simple dirigida a él, mejor representada aquí por “le dije” que por “le decía”.'
+  issues:
+  - severity: medium
+    issue: “yo le decía” sobretraduce ἔλεγον αὐτῷ en este contexto
+    rationale: Aunque el imperfecto puede tener valor durativo, el historial de revisión en inglés corrigió precisamente a “I said to him” para mantener una correspondencia más simple con λέγω en esta narración. En español, “le decía” sugiere repetición o hábito más fuertemente que el inglés auditado.
+  - severity: low
+    issue: “sombrío” es algo menos idiomático para apariencia visible de una persona
+    rationale: σκυθρωπόν describe que el padre lo vio con aspecto decaído/gloomy. En español narrativo general, “cabizbajo” o “abatido” suena más natural que “sombrío” aplicado a una persona vista por otro.
+  revised_spanish_text: 'Entonces mi padre seguía preguntando por mí, porque me había visto cabizbajo, y yo le dije: “Mi hígado está hinchado”.'
+  revision_rationale: Se ajusta “yo le decía” a “yo le dije” para respetar mejor la decisión auditada del inglés POB y evitar un matiz iterativo innecesario en español. También se cambia “sombrío” por “cabizbajo” para una descripción más natural del aspecto visible de la persona sin alterar el sentido.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8b29a99b12a9c2ed57d154ab9378ca5352566d2e413de904f0c8d3124eb6d3ab
+  timestamp: '2026-05-08T03:05:50Z'
+  output_hash: 3d2e1dd65229b4b3fe3825bcc35815f69ff17c2a46b9a3055d114509f226be2c
+  usage:
+    prompt_tokens: 2051
+    completion_tokens: 695
+    total_tokens: 2746
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.015553
+  applied_revision: true

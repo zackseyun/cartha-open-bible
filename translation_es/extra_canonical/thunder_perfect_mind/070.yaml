@@ -63,20 +63,17 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: el hallazgo de los que me buscan[a], y el mandato de los que me piden, y la voz de las voces del lugar de Dios, de los ángeles[b][c][d], que ellos pronuncian
+  text: el hallazgo de los que me buscan[a], y la orden de quienes me piden, y la voz de las voces del lugar de Dios, de los ángeles[b][c], que ellos pronuncian
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Hallazgo» intenta conservar el sustantivo resultativo del copto, mientras que otras posibilidades serían «encontrar» o «encuentro»; se prefiere aquí la opción que mejor mantiene el paralelismo con «me buscan».
+    text: «Hallazgo» intenta conservar el sustantivo resultativo del copto; otras posibilidades serían «encuentro» o «encontrar», pero aquí se prefiere la forma que mejor mantiene el paralelismo con «me buscan».
     reason: lexical_alternative
   - marker: b
-    text: El orden final sigue la fuente copta («del lugar de Dios, de los ángeles») y no una relectura explicativa; la repetición de «de» marca la concatenación poética del original.
+    text: El orden final sigue la fuente copta («del lugar de Dios, de los ángeles») y conserva su encadenamiento poético, sin relectura explicativa.
     reason: source_note
   - marker: c
-    text: «Ángeles» traduce directamente el préstamo griego del copto; no se introduce un matiz litúrgico adicional.
-    reason: lexical_alternative
-  - marker: d
-    text: La frase final es una traducción del cierre atestiguado («que ellos pronuncian»), no de la consult_text interrogativa que acompaña al expediente.
+    text: La frase final traduce el cierre atestiguado («que ellos pronuncian»), no la consult_text interrogativa que acompaña al expediente.
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲅⲓⲛⲉ ⲛⲛⲉⲧϣⲓⲛⲉ ⲛⲥⲱⲉⲓ
@@ -162,4 +159,49 @@ ai_draft:
     total_tokens: 4568
     reasoning_tokens: 0
     estimated_cost_usd: 0.009767
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: el hallazgo de los que me buscan[a], y el mandato de los que me piden, y la voz de las voces del lugar de Dios, de los ángeles[b][c][d], que ellos pronuncian
+  to: el hallazgo de los que me buscan[a], y la orden de quienes me piden, y la voz de las voces del lugar de Dios, de los ángeles[b][c], que ellos pronuncian
+  rationale: 'Se propone una reparación mínima para hacer el español más natural y claro: «la orden de quienes me piden» comunica mejor la relación nominal sin perder la aspereza del original auditado. El resto del texto se mantiene sustancialmente igual por su buena fidelidad al copto y a la revisión inglesa documentada.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:09:29Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la línea copta real y no la consult_text desalineada. Conserva la secuencia nominal «hallazgo / mandato / voz» y refleja bien «los que me buscan», «los que me piden», «del lugar de Dios», «de los ángeles» y el cierre verbal «que ellos pronuncian». La única reserva importante es de calidad idiomática y precisión semántica en español: «mandato de los que me piden» suena extraño, porque quienes piden normalmente no emiten un mandato; además, la construcción puede confundir la relación nominal del original.'
+  spanish_quality_summary: El texto es mayormente fiel y legible, pero «el mandato de los que me piden» resulta poco natural en español y puede desorientar al lector. Una reparación mínima a «la orden de quienes me piden» preserva mejor la fuerza nominal y mejora la fluidez. También conviene simplificar algo el aparato de notas para que documente lo verdaderamente necesario sin sobrecargar el verso.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Dios», «ángeles» y el resto del léxico están alineados. No intervienen términos sensibles como Yahvé, Mesías, Espíritu, etc. La revisión propuesta mantiene la fidelidad al audit trail inglés y a la decisión adjudicada de seguir el copto atestiguado, no la pregunta antitética de la consult_text.
+  issues:
+  - severity: medium
+    issue: «el mandato de los que me piden» es poco idiomático y semánticamente tenso
+    rationale: Aunque replica literalmente el inglés POB («the command of those who ask me»), en español «mandato» atribuido a quienes «me piden» suena contradictorio. «La orden» conserva la fuerza nominal del original y mejora la inteligibilidad sin alejarse del sentido auditado.
+  - severity: low
+    issue: Exceso de notas menores en una línea breve
+    rationale: Las notas b y c separan observaciones que pueden integrarse o simplificarse. El aparato sigue siendo válido, pero una versión más compacta mejora usabilidad editorial.
+  revised_spanish_text: el hallazgo de los que me buscan[a], y la orden de quienes me piden, y la voz de las voces del lugar de Dios, de los ángeles[b][c], que ellos pronuncian
+  revised_footnotes:
+  - marker: a
+    text: «Hallazgo» intenta conservar el sustantivo resultativo del copto; otras posibilidades serían «encuentro» o «encontrar», pero aquí se prefiere la forma que mejor mantiene el paralelismo con «me buscan».
+    reason: lexical_alternative
+  - marker: b
+    text: El orden final sigue la fuente copta («del lugar de Dios, de los ángeles») y conserva su encadenamiento poético, sin relectura explicativa.
+    reason: source_note
+  - marker: c
+    text: La frase final traduce el cierre atestiguado («que ellos pronuncian»), no la consult_text interrogativa que acompaña al expediente.
+    reason: textual_variant
+  revision_rationale: 'Se propone una reparación mínima para hacer el español más natural y claro: «la orden de quienes me piden» comunica mejor la relación nominal sin perder la aspereza del original auditado. El resto del texto se mantiene sustancialmente igual por su buena fidelidad al copto y a la revisión inglesa documentada.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 8c9e5fc17875c20191b973a040b1b706c9be453a998527e708a3a010bb0c2d24
+  timestamp: '2026-05-08T03:09:29Z'
+  output_hash: 7d1b1010a3e2ee6fa0feb1656720211a3f05c7b5e22b0c085f48293cbf593fee
+  usage:
+    prompt_tokens: 4230
+    completion_tokens: 774
+    total_tokens: 5004
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022185
+  applied_revision: true

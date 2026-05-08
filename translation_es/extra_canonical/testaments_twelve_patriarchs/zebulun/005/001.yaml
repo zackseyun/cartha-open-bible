@@ -83,4 +83,35 @@ ai_draft:
     total_tokens: 2162
     reasoning_tokens: 0
     estimated_cost_usd: 0.003887
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien la estructura básica del griego y del POB en inglés: introducción del habla a Jacob, imperativo de reconocimiento, referencia a la prenda del hijo y cierre con «y así lo hicieron». Sin embargo, contiene un error gramatical importante en español («este es el túnica») y la nota a Jacob[a] no está justificada por el griego ni por el inglés.'
+  spanish_quality_summary: La redacción es mayormente clara, pero «este es el túnica» es incorrecto; debe ser «esta es la túnica» o mejor, para reflejar εἰ con valor interrogativo indirecto, «si esta es la túnica de tu hijo». También conviene quitar la nota innecesaria y mantener un español natural y digno.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Reconoce» para Ἐπίγνωθι y «túnica» para χιτών están bien. «Y así lo hicieron» comunica adecuadamente καὶ ἐποίησαν οὕτως.
+  issues:
+  - severity: high
+    issue: Error de género y demostrativo en «si este es el túnica de tu hijo»
+    rationale: «Túnica» es femenino; la frase correcta es «si esta es la túnica de tu hijo». El error afecta la legibilidad y la calidad del español.
+  - severity: medium
+    issue: Nota al pie [a] innecesaria y poco ajustada al dato fuente
+    rationale: Ni el griego ni el POB inglés exigen una nota sobre «Jacob». La explicación propuesta introduce una interpretación («presentación breve del acto de mostrar la prenda») que no hace falta para este registro.
+  revised_spanish_text: 'Y dijeron a Jacob: «Reconoce, pues, si esta es la túnica de tu hijo». Y así lo hicieron.'
+  revision_rationale: Se corrige el error gramatical de género y demostrativo para concordar con «túnica» y se elimina una nota no sustentada por una variante relevante ni necesaria para la comprensión. El resto del texto ya preservaba bien el sentido del griego y del POB inglés.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: dfd40d765d8054501ddde81b8cc97854628daeecd2bf4df8e35d110738bbd835
+  timestamp: '2026-05-08T03:04:57Z'
+  output_hash: 977760c88c5957be19547047ef51f18dce513e200e77cb1c130e421bff8b6e01
+  usage:
+    prompt_tokens: 1889
+    completion_tokens: 500
+    total_tokens: 2389
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.012223
+  applied_revision: false
+  auto_apply_blocked_errors:
+  - footnote marker [a] not present in translation text

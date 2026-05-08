@@ -60,18 +60,18 @@ base_translation:
     changes_summary: Adjusted the first clause to omit the unsupported 'give heed' wording and kept the source sense of coming forth; changed 'find' to 'seek' per established lexical decision; retained the final clause while tightening it to match the draft's formal register.
 translation:
   language: es
-  text: …déjenme mientras yo salgo[a]. Y me buscarán en riquezas[c][b]. Y no me miren mientras yo salgo entre los que son honrados…
+  text: …déjenme al salir[a]. Y me buscarán en riquezas[c][b]. Y no me miren al salir entre los que son honrados…
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: La secuencia copt a se entiende aquí como “déjenme mientras yo salgo”; el sujeto y la forma verbal no son un imperativo plural “salgan”.
+    text: La secuencia copta se entiende aquí como “déjenme al salir”; la forma verbal se toma como primera persona singular circunstancial (“al salir / cuando salgo”), no como un imperativo plural “salgan”.
     reason: source_note
   - marker: b
-    text: “Riquezas” sigue la lectura del pasaje revisada desde una mala segmentación previa; no debe leerse como “grandeza” en esta línea.
+    text: “Riquezas” sigue la lectura revisada del pasaje y no la segmentación anterior que llevaba a “grandeza” en esta línea.
     reason: textual_variant
   - marker: c
-    text: 'El orden de los complementos en español se ajusta para mantener naturalidad: “me buscarán en riquezas”.'
-    reason: spanish_style_note
+    text: También puede entenderse con un matiz cercano a “en medio de riquezas” o “en lo rico”; “en riquezas” conserva la formulación breve y la extrañeza poética del original.
+    reason: lexical_note
 lexical_decisions:
 - source_word: ⲉⲧⲛⲕⲁⲁⲧ
   english_pob_choice: leave me as I come forth
@@ -150,4 +150,52 @@ ai_draft:
     total_tokens: 4727
     reasoning_tokens: 0
     estimated_cost_usd: 0.007925
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: …déjenme mientras yo salgo[a]. Y me buscarán en riquezas[c][b]. Y no me miren mientras yo salgo entre los que son honrados…
+  to: …déjenme al salir[a]. Y me buscarán en riquezas[c][b]. Y no me miren al salir entre los que son honrados…
+  rationale: 'La revisión es menor pero útil: ‘al salir’ representa mejor la cláusula circunstancial, evita una repetición prosaica de ‘mientras yo salgo’, y mantiene el tono poético del texto. Se conservan las decisiones centrales del audit trail adjudicado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:15:48Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue en gran parte la revisión adjudicada: entiende bien ‘déjenme’, la cláusula circunstancial ‘mientras yo salgo’, ‘me buscarán’, y el cierre ‘entre los que son honrados’. Sin embargo, ‘mientras yo salgo’ suena menos fiel al matiz de ‘come forth’ que ‘salgo’ solo o ‘salgo a la luz’, y ‘no me miren’ es correcto pero algo llano frente al tono elevado del pasaje.'
+  spanish_quality_summary: 'El español es generalmente claro y natural, pero puede refinarse para un registro más digno y para evitar una repetición algo pesada de ‘mientras yo salgo’ en ambas cláusulas. ‘No me miren’ funciona, aunque ‘no me miren’/‘no fijen su mirada en mí’ depende del tono; aquí basta conservar la forma breve. La principal mejora es estilística y de precisión: eliminar ‘yo’ innecesario y usar ‘salgo’ sin ‘mientras’ para una cadencia más literaria.'
+  glossary_alignment: 'No hay términos teológicos del glosario mayor en juego. Las decisiones léxicas clave del audit trail se respetan razonablemente: ‘leave me’, ‘seek me’, ‘riches’, y ‘those who are honored’. La nota b debe seguir aclarando que no corresponde ‘grandeza’.'
+  issues:
+  - severity: medium
+    issue: ‘mientras yo salgo’ introduce un valor temporal más explícito de lo necesario
+    rationale: La cláusula circunstancial copt a puede representarse en español de modo más sobrio como ‘al salir’ o ‘cuando salgo’. ‘Mientras yo salgo’ no es falsa, pero suena más prosaica y repetitiva en el contexto poético.
+  - severity: low
+    issue: Uso innecesario de ‘yo’
+    rationale: En español, el pronombre explícito añade énfasis no exigido por la fuente y endurece la cadencia.
+  - severity: low
+    issue: La nota c justifica orden de complementos pero no aporta una ambigüedad real del texto español
+    rationale: Puede conservarse, pero sería mejor que explicara la formulación elegida si se revisa el texto; de lo contrario, resulta algo editorial y débil frente a las otras notas.
+  revised_spanish_text: …déjenme al salir[a]. Y me buscarán en riquezas[c][b]. Y no me miren al salir entre los que son honrados…
+  revised_footnotes:
+  - marker: a
+    text: La secuencia copta se entiende aquí como “déjenme al salir”; la forma verbal se toma como primera persona singular circunstancial (“al salir / cuando salgo”), no como un imperativo plural “salgan”.
+    reason: source_note
+  - marker: b
+    text: “Riquezas” sigue la lectura revisada del pasaje y no la segmentación anterior que llevaba a “grandeza” en esta línea.
+    reason: textual_variant
+  - marker: c
+    text: También puede entenderse con un matiz cercano a “en medio de riquezas” o “en lo rico”; “en riquezas” conserva la formulación breve y la extrañeza poética del original.
+    reason: lexical_note
+  revision_rationale: 'La revisión es menor pero útil: ‘al salir’ representa mejor la cláusula circunstancial, evita una repetición prosaica de ‘mientras yo salgo’, y mantiene el tono poético del texto. Se conservan las decisiones centrales del audit trail adjudicado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 45b18e1010995834e0605c2c5dcaa0f7613cbd7960c730a20cf1ca86e773b4c7
+  timestamp: '2026-05-08T03:15:48Z'
+  output_hash: 711bc86d6b860cbe2e2beb3d273f4441bfae2ad55a959968f2ff33d0631a6046
+  usage:
+    prompt_tokens: 4351
+    completion_tokens: 791
+    total_tokens: 5142
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.022742
+  applied_revision: true

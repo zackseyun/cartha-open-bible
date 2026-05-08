@@ -81,7 +81,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Bienaventurado[b] es este león que el humano comerá, para que el león se vuelva humano; y maldito es este humano al que el león comerá[c][d], y el león se volverá humano».'
+  text: 'Jesús dijo: «Bienaventurado[a] es este león que el humano[b] se lo comerá, para que el león se vuelva humano[c]; y maldito es este humano[b] al que el león comerá[d], y el león se volverá humano».[e]'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,11 +91,14 @@ translation:
     text: «Humano» traduce el copto ⲣⲱⲙⲉ con valor genérico de persona; «hombre» es posible, pero en español puede sonar masculino de manera no deseada.
     reason: lexical_alternative
   - marker: c
-    text: 'El copto tiene dos construcciones distintas para las dos frases sobre el león volviéndose humano: la primera expresa resultado o finalidad; la segunda es un futuro independiente.'
+    text: La primera frase usa una construcción copta que expresa resultado o consecuencia estrechamente ligada a la cláusula previa; por eso aquí se traduce «para que el león se vuelva humano».
     reason: source_note
   - marker: d
-    text: 'También puede leerse: «…y el león se volverá humano; y maldito es este humano al que el león comerá, y el león se volverá humano».'
-    reason: textual_variant
+    text: 'El copto presenta una fluctuación dialectal/ortográfica en el complemento de ϣⲱⲡⲉ (r-/n-) sin cambio de sentido: «volverse humano».'
+    reason: dialect_note
+  - marker: e
+    text: 'También puede puntuarse así: «…y el león se volverá humano; y maldito es este humano al que el león comerá, y el león se volverá humano».'
+    reason: previous_rendering
 lexical_decisions:
 - source_word: ⲟⲩⲙⲁⲕⲁⲣⲓⲟⲥ
   english_pob_choice: blessed
@@ -207,4 +210,61 @@ ai_draft:
     total_tokens: 6489
     reasoning_tokens: 0
     estimated_cost_usd: 0.011467
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Bienaventurado[b] es este león que el humano comerá, para que el león se vuelva humano; y maldito es este humano al que el león comerá[c][d], y el león se volverá humano».'
+  to: 'Jesús dijo: «Bienaventurado[a] es este león que el humano[b] se lo comerá, para que el león se vuelva humano[c]; y maldito es este humano[b] al que el león comerá[d], y el león se volverá humano».[e]'
+  rationale: 'La revisión hace tres ajustes principales: explicita el objeto del verbo «comer» en la primera cláusula para reflejar el enclítico copto; reubica las notas en los términos pertinentes; y recupera la nota dialectal/ortográfica presente en el audit trail inglés. Se mantiene «humano» pese a su ligera rigidez por fidelidad a la decisión léxica auditada y al paralelismo del dicho.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:31Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien el sentido del copto y la distinción sintáctica auditada en inglés entre la primera cláusula consecutiva/subordinada («para que... se vuelva») y la segunda en futuro independiente («se volverá»). También conserva correctamente el paralelismo entre «bienaventurado» y «maldito», el demostrativo «este» y el valor genérico de ⲡⲣⲱⲙⲉ. Sin embargo, omite en la primera mitad el objeto pronominal de «comerá», presente en copto y explicitado en el inglés («will eat it»), lo que en español puede sonar menos preciso. Además, el anclaje de notas no corresponde del todo bien: la nota sobre «humano» está anclada a «dijo» en vez del término pertinente, y falta una nota para la fluctuación dialectal/ortográfica r-/n- documentada en el inglés.'
+  spanish_quality_summary: El español es claro, digno y legible, pero «el humano» resulta algo rígido en español corriente. Aun así, puede mantenerse por fidelidad al audit trail y por el paralelismo de la sentencia. Conviene mejorar la precisión con «se lo comerá» en la primera cláusula y reubicar las notas para que anclen donde corresponden. La nota d no describe una variante textual propiamente dicha, sino una posible puntuación/segmentación de la traducción previa.
+  glossary_alignment: No hay conflictos con la terminología doctrinal del proyecto. «Jesús», «bienaventurado», «león», «humano» y «maldito» son compatibles con las decisiones auditadas. La elección de «humano» es defendible aquí por el valor genérico de ⲣⲱⲙⲉ, aunque suena menos idiomática que «persona»; dado el fuerte paralelismo del dicho, conservarlo es razonable.
+  issues:
+  - severity: medium
+    issue: Falta el objeto pronominal en la primera cláusula («que el humano comerá»)
+    rationale: El copto ⲛⲁⲟⲩⲱⲙⲛⲧⲟϥ incluye enclítico de objeto que remite al león, y el inglés auditado lo hizo explícito con «will eat it». En español, dejarlo implícito es posible, pero aquí conviene expresarlo para no perder precisión semántica.
+  - severity: medium
+    issue: La nota sobre «humano» está mal anclada con el marcador [b] en «dijo»
+    rationale: La nota b explica ⲡⲣⲱⲙⲉ/«humano», por lo que el marcador debe aparecer junto a «humano», no junto a «Jesús dijo». La disciplina de salida exige anclar cada nota en la palabra o frase pertinente.
+  - severity: low
+    issue: Falta trasladar la nota inglesa sobre la fluctuación r-/n- con ϣⲱⲡⲉ
+    rationale: El inglés preserva una nota dialectal/ortográfica sin cambio de sentido. No es imprescindible para el texto principal, pero sí forma parte del audit trail significativo y puede conservarse en español sin dificultad.
+  - severity: low
+    issue: La razón de la nota d como «textual_variant» no es la mejor categoría conceptual
+    rationale: La nota inglesa d es una alternativa de puntuación/representación de una traducción previa, no una variante textual del manuscrito. Aunque esto no afecta mucho al lector, conviene describirla con mayor exactitud en la redacción revisada.
+  revised_spanish_text: 'Jesús dijo: «Bienaventurado[a] es este león que el humano[b] se lo comerá, para que el león se vuelva humano[c]; y maldito es este humano[b] al que el león comerá[d], y el león se volverá humano».[e]'
+  revised_footnotes:
+  - marker: a
+    text: «Bienaventurado» conserva el color sacro del préstamo griego μακάριος en copto; también podría traducirse «feliz» o «afortunado».
+    reason: lexical_alternative
+  - marker: b
+    text: «Humano» traduce el copto ⲣⲱⲙⲉ con valor genérico de persona; «hombre» es posible, pero en español puede sonar masculino de manera no deseada.
+    reason: lexical_alternative
+  - marker: c
+    text: La primera frase usa una construcción copta que expresa resultado o consecuencia estrechamente ligada a la cláusula previa; por eso aquí se traduce «para que el león se vuelva humano».
+    reason: source_note
+  - marker: d
+    text: 'El copto presenta una fluctuación dialectal/ortográfica en el complemento de ϣⲱⲡⲉ (r-/n-) sin cambio de sentido: «volverse humano».'
+    reason: dialect_note
+  - marker: e
+    text: 'También puede puntuarse así: «…y el león se volverá humano; y maldito es este humano al que el león comerá, y el león se volverá humano».'
+    reason: previous_rendering
+  revision_rationale: 'La revisión hace tres ajustes principales: explicita el objeto del verbo «comer» en la primera cláusula para reflejar el enclítico copto; reubica las notas en los términos pertinentes; y recupera la nota dialectal/ortográfica presente en el audit trail inglés. Se mantiene «humano» pese a su ligera rigidez por fidelidad a la decisión léxica auditada y al paralelismo del dicho.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0c3340f9be6e14aa94fe22b3069171a8e72475ef2f8f736c9251279188df464b
+  timestamp: '2026-05-08T03:06:31Z'
+  output_hash: 7cf3bd9dd6e5645b9d4ffd5315da4e1b128281b88df8ebb5aac04848ab2068a7
+  usage:
+    prompt_tokens: 6182
+    completion_tokens: 1263
+    total_tokens: 7445
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0344
+  applied_revision: true

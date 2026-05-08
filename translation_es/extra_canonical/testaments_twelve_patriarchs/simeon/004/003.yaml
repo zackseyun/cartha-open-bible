@@ -19,14 +19,14 @@ base_translation:
     changes_summary: Replaced 'distressed' with 'grieved' to more closely reflect ἐλυπούμην while keeping the rest of the draft intact and natural.
 translation:
   language: es
-  text: Y cuando descendimos a Egipto, y él me ató como a un espía[a], comprendí que sufría con justicia, y no me dolí[b].
+  text: Y cuando descendimos a Egipto, y él me ató como a un espía[a], supe que sufría con justicia, y no me entristecí[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: 'También: «como espía». El griego ὡς puede entenderse con un matiz comparativo o de trato.'
     reason: lexical_alternative
   - marker: b
-    text: 'También: «no me entristecí» o «no me afligí». ἐλυπούμην expresa dolor o pena interior; el español aquí busca conservar esa tensión sin endurecer el estilo.'
+    text: 'También: «no me afligí». ἐλυπούμην expresa tristeza o pena interior; «no me entristecí» lo comunica de manera más natural en español.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: κατέβημεν εἰς Αἴγυπτον
@@ -112,4 +112,46 @@ ai_draft:
     total_tokens: 2731
     reasoning_tokens: 0
     estimated_cost_usd: 0.005971
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y cuando descendimos a Egipto, y él me ató como a un espía[a], comprendí que sufría con justicia, y no me dolí[b].
+  to: Y cuando descendimos a Egipto, y él me ató como a un espía[a], supe que sufría con justicia, y no me entristecí[b].
+  rationale: Se sustituye «comprendí» por «supe» para acercarse más a ἔγνων, y sobre todo «no me dolí» por «no me entristecí», que refleja mejor ἐλυπούμην y suena natural en español contemporáneo sin perder sobriedad.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:00:42Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien la estructura y el sentido del griego: descenso a Egipto, ser atado como espía, reconocimiento de sufrir justamente, y ausencia de aflicción interior. Sin embargo, dos elecciones españolas no son las más fieles ni naturales: «me ató» puede sonar demasiado físico y algo rígido en contexto narrativo, aunque es defendible; más problemático, «no me dolí» no representa bien ἐλυπούμην, que apunta a entristecerse o afligirse, no a ''dolerse'' reflexivamente en español moderno.'
+  spanish_quality_summary: La frase es generalmente clara y digna, pero «no me dolí» resulta poco idiomático y distrae al lector. «Comprendí» funciona, aunque «supe» reflejaría mejor ἔγνων; no obstante, no exige corrección. La nota [a] es válida; la nota [b] señala correctamente alternativas mejores que la forma elegida en el texto.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. «Espía» y «justicia» están bien encaminados. La principal mejora necesaria es lexical/estilística para λυπέω: debe ir como «me entristecí» o «me afligí», no «me dolí».'
+  issues:
+  - severity: medium
+    issue: «no me dolí» traduce de manera deficiente ἐλυπούμην
+    rationale: λυπέω en este contexto expresa tristeza, pena o aflicción interior. «Dolerse» en español moderno no comunica de forma natural ese valor y puede sonar corporal o arcaizante.
+  - severity: low
+    issue: «me ató» puede sentirse demasiado literal en español
+    rationale: ἔδησέ με sí permite «me ató», pero en una escena de acusación/carcelación también podría percibirse mejor con «me encadenó» o similar. No obstante, no es un error que obligue a una revisión mayor.
+  revised_spanish_text: Y cuando descendimos a Egipto, y él me ató como a un espía[a], supe que sufría con justicia, y no me entristecí[b].
+  revised_footnotes:
+  - marker: a
+    text: 'También: «como espía». El griego ὡς puede entenderse con un matiz comparativo o de trato.'
+    reason: lexical_alternative
+  - marker: b
+    text: 'También: «no me afligí». ἐλυπούμην expresa tristeza o pena interior; «no me entristecí» lo comunica de manera más natural en español.'
+    reason: lexical_alternative
+  revision_rationale: Se sustituye «comprendí» por «supe» para acercarse más a ἔγνων, y sobre todo «no me dolí» por «no me entristecí», que refleja mejor ἐλυπούμην y suena natural en español contemporáneo sin perder sobriedad.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 61a251fcbf8a69eaac3b7ebb9fefa2e736a56322a4d24b91ef5745c21ad27a2d
+  timestamp: '2026-05-08T03:00:42Z'
+  output_hash: 1d92acf211a04919ca1ca16ad01a377340d4f61bd7c12abfa45a44a20871b67c
+  usage:
+    prompt_tokens: 2453
+    completion_tokens: 671
+    total_tokens: 3124
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016198
+  applied_revision: true

@@ -74,11 +74,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y ustedes me han llamado “Desorden”[a]. Yo soy la que ustedes persiguieron; y yo soy la que ustedes se apoderaron, la que ustedes dispersaron, y ustedes han conocido.
+  text: Y ustedes me han llamado «Ilegalidad»[a]. Yo soy aquella a quien ustedes persiguieron; y yo soy aquella de quien ustedes se apoderaron; yo soy aquella que ustedes dispersaron, y me han conocido.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Desorden» intenta reproducir el filo acusatorio de anomia. Otras opciones posibles son «sin ley» o «iniquidad», pero cada una desplaza el matiz del epíteto.
+    text: «Ilegalidad» reproduce el sentido de anomia (‘falta de ley’, ‘transgresión de la ley’) mejor que «Desorden». Otras opciones posibles son «sin ley» o «iniquidad», pero la primera suena menos nominal en español y la segunda añade un matiz más teologizado.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲁⲛⲟⲙⲓⲁ / anomia
@@ -170,4 +170,46 @@ ai_draft:
     total_tokens: 4898
     reasoning_tokens: 0
     estimated_cost_usd: 0.008095
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y ustedes me han llamado “Desorden”[a]. Yo soy la que ustedes persiguieron; y yo soy la que ustedes se apoderaron, la que ustedes dispersaron, y ustedes han conocido.
+  to: Y ustedes me han llamado «Ilegalidad»[a]. Yo soy aquella a quien ustedes persiguieron; y yo soy aquella de quien ustedes se apoderaron; yo soy aquella que ustedes dispersaron, y me han conocido.
+  rationale: Se revisa para alinear ⲁⲛⲟⲙⲓⲁ con el sentido auditado de ‘lawlessness’ y para corregir una construcción española incorrecta. Se conserva el paralelismo enfático de la voz femenina («aquella») y el perfecto afirmativo final.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:06:09Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: El borrador español acierta en la estructura general y en los verbos principales revisados por la auditoría (llamado, persiguieron, dispersaron, han conocido), pero falla de manera importante en ⲁⲛⲟⲙⲓⲁ al traducirlo como «Desorden», que no preserva el sentido de ‘lawlessness/anomia’. También la frase «la que ustedes se apoderaron» es gramaticalmente incorrecta en español y no expresa bien ‘whom you have seized’.
+  spanish_quality_summary: 'El texto es comprensible, pero tiene dos problemas de calidad: «Desorden» suena semánticamente desviado respecto del original y del POB, y «la que ustedes se apoderaron» es antinatural e incorrecto; debe decir «de la que ustedes se apoderaron» o mejor «a la que ustedes prendieron/apresaron». Conviene además suavizar la repetición de sujetos para un español más natural sin perder el paralelismo.'
+  glossary_alignment: 'No hay términos teológicos mayores del glosario del proyecto implicados aquí, pero sí una decisión léxica clave: ⲁⲛⲟⲙⲓⲁ debe reflejar ‘anomia / falta de ley / ilegalidad / iniquidad’ y no «Desorden». Para mantener el filo acusatorio sin teologizar en exceso, «Ilegalidad» funciona mejor que «Desorden»; «anarquía» introduciría matices ajenos, e «iniquidad» teologiza más de lo documentado.'
+  issues:
+  - severity: high
+    issue: «Desorden» para ⲁⲛⲟⲙⲓⲁ
+    rationale: El original y la auditoría inglesa insisten en ‘Lawlessness/anomia’. «Desorden» desplaza el sentido hacia caos o falta de orden, no hacia transgresión o ausencia de ley.
+  - severity: high
+    issue: Construcción «la que ustedes se apoderaron»
+    rationale: Es gramaticalmente defectuosa en español porque «apoderarse» exige «de». Además suena torpe dentro del paralelismo. Debe reformularse con un verbo transitivo o con la preposición requerida.
+  - severity: medium
+    issue: Registro y fluidez del paralelismo
+    rationale: La repetición de «yo soy la que ustedes...» puede mantenerse, pero conviene ajustar la sintaxis para que suene digna y natural en español eclesial amplio.
+  revised_spanish_text: Y ustedes me han llamado «Ilegalidad»[a]. Yo soy aquella a quien ustedes persiguieron; y yo soy aquella de quien ustedes se apoderaron; yo soy aquella que ustedes dispersaron, y me han conocido.
+  revised_footnotes:
+  - marker: a
+    text: «Ilegalidad» reproduce el sentido de anomia (‘falta de ley’, ‘transgresión de la ley’) mejor que «Desorden». Otras opciones posibles son «sin ley» o «iniquidad», pero la primera suena menos nominal en español y la segunda añade un matiz más teologizado.
+    reason: lexical_alternative
+  revision_rationale: Se revisa para alinear ⲁⲛⲟⲙⲓⲁ con el sentido auditado de ‘lawlessness’ y para corregir una construcción española incorrecta. Se conserva el paralelismo enfático de la voz femenina («aquella») y el perfecto afirmativo final.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: cac4faea5cb4ff9ba8e4a2d2adc951e959e08886586ded2211bcae042be5cf91
+  timestamp: '2026-05-08T03:06:09Z'
+  output_hash: e4041db36ae279ab1cb3948bce7eeaf55e7b7f9cff96a6a84e120a2f2c7d3718
+  usage:
+    prompt_tokens: 4484
+    completion_tokens: 796
+    total_tokens: 5280
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02315
+  applied_revision: true

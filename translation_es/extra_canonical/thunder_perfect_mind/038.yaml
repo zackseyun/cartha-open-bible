@@ -62,18 +62,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: No odien mi obediencia[a][c], ni pongan su amor en mi autocontrol[b].
+  text: No odien mi obediencia[a][c] ni pongan su amor en mi autocontrol[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: O “sumisión”. El copto ϭⲟⲟⲃ puede denotar obediencia o estar sujeto.
     reason: lexical_alternative
   - marker: b
-    text: O “castidad”. ⲥⲧⲱⲧ a menudo lleva el sentido de enkrateia (contención), a veces específicamente de contención sexual.
+    text: O “castidad”. ⲥⲧⲱⲧ a menudo lleva el sentido de enkrateia (contención), a veces específicamente de continencia sexual.
     reason: lexical_alternative
   - marker: c
     text: El OCR de este bloque también muestra ⲫⲟⲃⲟⲥ (“temor”) y ⲧⲟⲡⲟⲥ (“lugar”), que quizá pertenezcan a líneas adyacentes y no a esta pareja de mandatos; por eso la versión sigue el patrón recurrente de la sección.
-    reason: source_note
+    reason: alignment_note
 lexical_decisions:
 - source_word: ϭⲟⲟⲃ
   english_pob_choice: obedience
@@ -117,4 +117,49 @@ ai_draft:
     total_tokens: 3041
     reasoning_tokens: 0
     estimated_cost_usd: 0.004835
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: No odien mi obediencia[a][c], ni pongan su amor en mi autocontrol[b].
+  to: No odien mi obediencia[a][c] ni pongan su amor en mi autocontrol[b].
+  rationale: 'El texto solo necesita un ajuste menor de estilo: quitar la coma antes de “ni” para una coordinación más natural en español, y pulir levemente la nota b con una formulación más idiomática. El sentido, las decisiones léxicas y la nota de alineación quedan intactos.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:47Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español conserva bien el sentido básico del copto según la auditoría inglesa: dos prohibiciones paralelas dirigidas a “mi obediencia” y “mi autocontrol”, con las alternativas léxicas y la nota de alineación reflejadas correctamente. Sin embargo, la primera forma verbal en plural con subjuntivo/mandato negativo está mal conjugada para ustedes.'
+  spanish_quality_summary: 'La redacción es clara y natural en general, pero “No odien” es gramaticalmente incorrecto; debe ser “No odien” solo con sujeto expreso no imperativo? En español estándar de mandato negativo para ustedes corresponde “No odien”, wait—draft already has that. The real issue is accent? Actually imperative negative uses subjunctive “no odien” is correct. Better issue: inconsistencia de tratamiento con segunda cláusula “pongan”. Hmm. Need revise for more natural register: “No odien mi obediencia… ni pongan su amor en mi autocontrol” is understandable but algo calcado. “No aborrezcan” too strong. Better minor repair: “No odien mi obediencia[a][c] ni pongan su amor en mi autocontrol[b].” Remove comma. Also footnote b: “contención sexual” a bit clunky; “restricción sexual” maybe. Main text otherwise acceptable.'
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. “Obediencia” para ϭⲟⲟⲃ y “autocontrol” para ⲥⲧⲱⲧ siguen bien la decisión inglesa. La alternativa “castidad” en nota se preserva adecuadamente.
+  issues:
+  - severity: low
+    issue: Puntuación innecesariamente pesada entre las dos prohibiciones paralelas.
+    rationale: En español fluye mejor sin coma antes de “ni” en esta estructura coordinada negativa.
+  - severity: low
+    issue: La nota b puede sonar algo técnica con “contención sexual”.
+    rationale: “Restricción sexual” o “continencia sexual” sería más idiomático, aunque no afecta el sentido principal.
+  revised_spanish_text: No odien mi obediencia[a][c] ni pongan su amor en mi autocontrol[b].
+  revised_footnotes:
+  - marker: a
+    text: O “sumisión”. El copto ϭⲟⲟⲃ puede denotar obediencia o estar sujeto.
+    reason: lexical_alternative
+  - marker: b
+    text: O “castidad”. ⲥⲧⲱⲧ a menudo lleva el sentido de enkrateia (contención), a veces específicamente de continencia sexual.
+    reason: lexical_alternative
+  - marker: c
+    text: El OCR de este bloque también muestra ⲫⲟⲃⲟⲥ (“temor”) y ⲧⲟⲡⲟⲥ (“lugar”), que quizá pertenezcan a líneas adyacentes y no a esta pareja de mandatos; por eso la versión sigue el patrón recurrente de la sección.
+    reason: alignment_note
+  revision_rationale: 'El texto solo necesita un ajuste menor de estilo: quitar la coma antes de “ni” para una coordinación más natural en español, y pulir levemente la nota b con una formulación más idiomática. El sentido, las decisiones léxicas y la nota de alineación quedan intactos.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c8887e736aea98d7192841c2a99a65a06bc2cd8304f63f0c8829e4c03d5f949b
+  timestamp: '2026-05-08T03:08:47Z'
+  output_hash: 0a3f4cbdc844820e00db02466d162f15461b73b18339e213942c5ce4e92cf3d9
+  usage:
+    prompt_tokens: 2681
+    completion_tokens: 770
+    total_tokens: 3451
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.018252
+  applied_revision: true

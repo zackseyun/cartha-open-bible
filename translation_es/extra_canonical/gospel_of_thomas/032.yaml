@@ -54,14 +54,14 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «Una ciudad edificada sobre un monte alto y fortificada no puede caer[a], ni podrá ser escondida[b]».'
+  text: 'Jesús dijo[a]: «Una ciudad edificada sobre un monte alto y fortificada no puede caer, ni podrá quedar oculta[b]».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El copto dice literalmente «no tiene poder para caer»; el sentido español más natural es «no puede caer».
-    reason: lexical_alternative
+    text: El fragmento griego de este dicho (P.Oxy. 1) dice «sobre la cima de un monte alto», mientras que el copto no incluye «la cima de».
+    reason: textual_variant
   - marker: b
-    text: 'El copto pasa al futuro potencial en la última cláusula: «ni podrá ser escondida». El griego fragmentario paralelo usa presente, pero aquí se sigue el copto.'
+    text: El copto cambia al futuro potencial en la cláusula final («ni podrá quedar oculta»), mientras que el fragmento griego usa presente para ambos verbos («no puede ni caer ni ser ocultada»).
     reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲟⲗⲓⲥ
@@ -155,4 +155,51 @@ ai_draft:
     total_tokens: 5091
     reasoning_tokens: 0
     estimated_cost_usd: 0.008003
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Una ciudad edificada sobre un monte alto y fortificada no puede caer[a], ni podrá ser escondida[b]».'
+  to: 'Jesús dijo[a]: «Una ciudad edificada sobre un monte alto y fortificada no puede caer, ni podrá quedar oculta[b]».'
+  rationale: 'Se hace una revisión menor para mejorar la naturalidad española de la última cláusula y para alinear las notas con el aparato textual auditado en inglés: se añade la variante griega sobre «la cima» y se conserva la observación sobre el futuro potencial final. No se requieren cambios doctrinales ni de sentido principal.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:35Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido copto básico: ciudad construida sobre un monte/montaña alta, fortificada, incapaz de caer, y con cláusula final en futuro potencial. También evita armonizar indebidamente con Mateo. Sin embargo, conviene ajustar la formulación española de la última cláusula y las notas para alinearse mejor con la redacción auditada en inglés y con la legibilidad natural en español.'
+  spanish_quality_summary: El texto es claro y digno, pero «ser escondida» suena menos natural en español bíblico general que «quedar oculta». Además, la nota [a] explica una literalidad innecesaria que el inglés POB no preserva como nota, mientras falta la nota de variante griega sobre «la cima»/«lo alto» del monte si se desea conservar la evidencia documentada del audit trail. Una revisión menor mejorará naturalidad y correspondencia con las notas auditadas.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Jesús», «ciudad», «fortificada» y «caer» están bien. «Monte alto» es aceptable, aunque «montaña alta» sería también posible; no es necesario cambiarlo. La principal mejora léxica es preferir «quedar oculta» frente a «ser escondida» para expresar ϩⲱⲡ de forma idiomática sin perder la pasiva/resultado.
+  issues:
+  - severity: medium
+    issue: «ni podrá ser escondida» es comprensible pero poco natural en español
+    rationale: La cláusula final copta expresa posibilidad futura de quedar oculta; en español general y eclesial suena más idiomático «ni podrá quedar oculta» que «ser escondida», sin alterar el sentido.
+  - severity: medium
+    issue: La nota [a] introduce una explicación léxica no reflejada en el aparato inglés auditado
+    rationale: El inglés POB no conserva una nota para «cannot fall» sobre la literalidad «no tiene poder para caer»; esa observación es correcta pero no necesaria aquí, mientras sí existe una variante textual documentada sobre el griego que incluye «la cima» del monte.
+  - severity: low
+    issue: Falta la nota de variante textual sobre el fragmento griego con «la cima de un monte alto»
+    rationale: El aparato inglés incluye esta evidencia. No es obligatorio en todos los casos, pero dado que ya hay notas en español, conviene preservar también esa variante relevante.
+  revised_spanish_text: 'Jesús dijo[a]: «Una ciudad edificada sobre un monte alto y fortificada no puede caer, ni podrá quedar oculta[b]».
+
+    '
+  revised_footnotes:
+  - marker: a
+    text: El fragmento griego de este dicho (P.Oxy. 1) dice «sobre la cima de un monte alto», mientras que el copto no incluye «la cima de».
+    reason: textual_variant
+  - marker: b
+    text: El copto cambia al futuro potencial en la cláusula final («ni podrá quedar oculta»), mientras que el fragmento griego usa presente para ambos verbos («no puede ni caer ni ser ocultada»).
+    reason: textual_variant
+  revision_rationale: 'Se hace una revisión menor para mejorar la naturalidad española de la última cláusula y para alinear las notas con el aparato textual auditado en inglés: se añade la variante griega sobre «la cima» y se conserva la observación sobre el futuro potencial final. No se requieren cambios doctrinales ni de sentido principal.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0f3cf7a41a406754bbb10e49fe59b0c7313ea59b9460c7999306a1de09d28f62
+  timestamp: '2026-05-08T03:02:35Z'
+  output_hash: 50f374bf7783d7dc48f8d687c83098d71b03e5b942eb0bec77065c9f12d5e41f
+  usage:
+    prompt_tokens: 4815
+    completion_tokens: 789
+    total_tokens: 5604
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.023872
+  applied_revision: true

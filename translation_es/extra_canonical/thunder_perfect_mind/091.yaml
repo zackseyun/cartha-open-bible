@@ -63,15 +63,16 @@ translation:
   language: es
   text: 'Yo soy la que está debajo de la tierra[a],
 
-    y ellos suben a mí[b] desde la parte baja de la tierra.'
+
+    y ellos suben a mí[b] desde debajo de la tierra.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: El copto ⲡϩⲟ ⲙⲡⲕⲁϩ podría verterse «inframundo», pero esa opción introduce connotaciones míticas que no están explícitas en el texto; «debajo de la tierra» conserva el sentido locativo con menor carga interpretativa.
     reason: lexical_alternative
   - marker: b
-    text: 'La secuencia ⲉⲧⲛⲟⲩϫⲉ ⲙⲙⲟⲥ aparece partida por un salto de línea en el OCR; aquí se entiende como una sola unidad verbal: «suben a mí».'
-    reason: source_note
+    text: 'La secuencia ⲉⲧⲛⲟⲩϫⲉ ⲙⲙⲟⲥ aparece partida por un salto de línea en el OCR; aquí se entiende como una sola unidad: «suben a mí».'
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲡϩⲟ ⲙⲡⲕⲁϩ
   english_pob_choice: beneath the earth
@@ -160,4 +161,54 @@ ai_draft:
     total_tokens: 3757
     reasoning_tokens: 0
     estimated_cost_usd: 0.007509
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Yo soy la que está debajo de la tierra[a],
+
+    y ellos suben a mí[b] desde la parte baja de la tierra.'
+  to: 'Yo soy la que está debajo de la tierra[a],
+
+
+    y ellos suben a mí[b] desde debajo de la tierra.'
+  rationale: 'La revisión es menor: reemplaza «desde la parte baja de la tierra» por «desde debajo de la tierra» para lograr un español más natural y una correspondencia locativa más estrecha con el original y con el POB en inglés, sin introducir una interpretación adicional como «inframundo» o «profundidades».'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:11:30Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español refleja bien el sentido básico del copto y sigue de cerca el rastro del POB en inglés: identidad femenina, ubicación inferior respecto de la tierra, y movimiento ascendente hacia la hablante. Sin embargo, «debajo de la tierra» / «desde la parte baja de la tierra» crea una leve asimetría estilística y «parte baja» suena menos natural y algo mecánico en español. También conviene mantener con más claridad la correspondencia del segundo sintagma con la nota inglesa sobre «the lower part of the earth».'
+  spanish_quality_summary: El español es claro y fiel, pero puede pulirse para sonar más idiomático y poético sin perder precisión. «Yo soy la que está debajo de la tierra» es correcto; aun así, «debajo de la tierra» repetido luego con «parte baja» introduce una variación poco elegante. «desde lo profundo de la tierra» sería más literario pero más interpretativo; por eso es preferible una reparación menor a «desde debajo de la tierra», que conserva el paralelismo locativo y sigue siendo comprensible.
+  glossary_alignment: No hay conflictos con la terminología central del proyecto. Las decisiones «tierra», «suben» y el rechazo de «inframundo» están bien justificadas. No aparecen términos teológicos del glosario general que requieran ajuste.
+  issues:
+  - severity: medium
+    issue: «desde la parte baja de la tierra» suena poco natural en español literario y no reproduce tan bien la locución espacial del original/POB.
+    rationale: Aunque es comprensible, «parte baja» tiene un tono más anatómico o técnico que poético. «desde debajo de la tierra» conserva mejor la imaginería locativa y la repetición intencional del pasaje.
+  - severity: low
+    issue: La nota b está bien, pero el motivo puede alinearse mejor con el inglés como nota de alineación/lectura del OCR.
+    rationale: No afecta la fidelidad del texto, pero conviene mantener la explicación de que la secuencia partida se lee como una sola unidad verbal.
+  revised_spanish_text: 'Yo soy la que está debajo de la tierra[a],
+
+
+    y ellos suben a mí[b] desde debajo de la tierra.'
+  revised_footnotes:
+  - marker: a
+    text: El copto ⲡϩⲟ ⲙⲡⲕⲁϩ podría verterse «inframundo», pero esa opción introduce connotaciones míticas que no están explícitas en el texto; «debajo de la tierra» conserva el sentido locativo con menor carga interpretativa.
+    reason: lexical_alternative
+  - marker: b
+    text: 'La secuencia ⲉⲧⲛⲟⲩϫⲉ ⲙⲙⲟⲥ aparece partida por un salto de línea en el OCR; aquí se entiende como una sola unidad: «suben a mí».'
+    reason: alignment_note
+  revision_rationale: 'La revisión es menor: reemplaza «desde la parte baja de la tierra» por «desde debajo de la tierra» para lograr un español más natural y una correspondencia locativa más estrecha con el original y con el POB en inglés, sin introducir una interpretación adicional como «inframundo» o «profundidades».'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 303eb06f3001e7216542628e7aed0b4144d59d90562f30f22b0862ec493b9552
+  timestamp: '2026-05-08T03:11:30Z'
+  output_hash: c204f5117e3e500dfe7e4a826575e0e8c9192739b6d0cc9c48d50600a384c244
+  usage:
+    prompt_tokens: 3450
+    completion_tokens: 750
+    total_tokens: 4200
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.019875
+  applied_revision: true

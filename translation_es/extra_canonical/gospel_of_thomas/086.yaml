@@ -57,14 +57,14 @@ base_translation:
     changes_summary: Removed the placeholder marker after 'said' and smoothed the quotation punctuation. Capitalized 'Son of Man' for consistency with formal English style. Preserved the source's 'and rest' addition and the singular 'nest'.
 translation:
   language: es
-  text: 'Jesús dijo: «Las zorras tienen sus madrigueras, y las aves tienen su nido, pero el Hijo del Hombre no tiene un lugar para recostar[a] su cabeza ni descansar»[b].'
+  text: 'Jesús dijo: «Las zorras tienen sus madrigueras, y las aves tienen su nido, pero el Hijo del Hombre no tiene un lugar para recostar[a] su cabeza y descansar»[b].'
   philosophy: formal
   footnotes:
   - marker: a
     text: El copto usa un verbo que literalmente significa 'inclinar' o 'poner de lado'; aquí se traduce con la locución natural 'recostar su cabeza'.
     reason: lexical_alternative
   - marker: b
-    text: Thomas añade la frase 'ni descansar', que no aparece en los paralelos sinópticos de este dicho.
+    text: Thomas añade la frase 'y descansar', que no aparece en los paralelos sinópticos de este dicho.
     reason: cross_reference
 lexical_decisions:
 - source_word: ⲃⲁϣⲟⲣ
@@ -155,4 +155,46 @@ ai_draft:
     total_tokens: 5406
     reasoning_tokens: 0
     estimated_cost_usd: 0.008472
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Las zorras tienen sus madrigueras, y las aves tienen su nido, pero el Hijo del Hombre no tiene un lugar para recostar[a] su cabeza ni descansar»[b].'
+  to: 'Jesús dijo: «Las zorras tienen sus madrigueras, y las aves tienen su nido, pero el Hijo del Hombre no tiene un lugar para recostar[a] su cabeza y descansar»[b].'
+  rationale: 'Se corrigió la coordinación final para reflejar fielmente el copto y el audit trail inglés: el dicho añade una segunda acción positiva (''y descansar''), no una construcción con ''ni''. Se actualizó la nota correspondiente para que coincida con el texto revisado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:08:07Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien el sentido básico del copto y preserva varios rasgos importantes del audit trail: plural ''zorras'', singular ''nido'', y la adición final de ''descansar''. Sin embargo, cambia indebidamente la coordinación final del original y del inglés POB. El copto tiene dos acciones coordinadas (''lay his head and rest''), no una alternativa negativa; por eso ''ni descansar'' distorsiona levemente la sintaxis y el matiz. También la nota [b] debe alinearse con esa coordinación.'
+  spanish_quality_summary: El español es claro, natural y de registro bíblico legible. 'Madrigueras', 'aves' y 'recostar su cabeza' funcionan bien. La principal mejora estilística y de fidelidad es cambiar 'ni descansar' por 'y descansar', que suena natural en español y refleja mejor el original. La puntuación y la fluidez general son buenas.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Jesús' es correcto. No aparecen términos sensibles como Yahvé, Mesías/Cristo, Espíritu, etc. 'Hijo del Hombre' es aceptable en este contexto; aunque el trasfondo inglés había notado minúscula teológica posible, el audit trail revisado fijó mayúsculas y el español eclesial admite bien la forma tradicional.
+  issues:
+  - severity: medium
+    issue: La frase final usa 'ni descansar' en vez de una coordinación positiva.
+    rationale: El copto añade 'y descansar' (ⲛϥⲙⲧⲟⲛ/ⲙⲧⲟⲛ), y el inglés POB lo preserva explícitamente como 'and rest'. 'Ni descansar' convierte la segunda acción en parte de una negación coordinada, lo cual no refleja con precisión la forma ni el énfasis del original.
+  - severity: low
+    issue: La nota [b] cita 'ni descansar' en lugar de la formulación fuente-equivalente.
+    rationale: La nota explicativa debe reflejar la adición de Thomas como 'y descansar', no como una reformulación negativa creada por el español.
+  revised_spanish_text: 'Jesús dijo: «Las zorras tienen sus madrigueras, y las aves tienen su nido, pero el Hijo del Hombre no tiene un lugar para recostar[a] su cabeza y descansar»[b].'
+  revised_footnotes:
+  - marker: a
+    text: El copto usa un verbo que literalmente significa 'inclinar' o 'poner de lado'; aquí se traduce con la locución natural 'recostar su cabeza'.
+    reason: lexical_alternative
+  - marker: b
+    text: Thomas añade la frase 'y descansar', que no aparece en los paralelos sinópticos de este dicho.
+    reason: cross_reference
+  revision_rationale: 'Se corrigió la coordinación final para reflejar fielmente el copto y el audit trail inglés: el dicho añade una segunda acción positiva (''y descansar''), no una construcción con ''ni''. Se actualizó la nota correspondiente para que coincida con el texto revisado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: edfc7340832d69f19066894e8eb8e7f1ddc79e980e22ea9e8f49e6720c4fac49
+  timestamp: '2026-05-08T03:08:07Z'
+  output_hash: 79d26f308d8ac578a42e26e299e790b8659a7dad74c5954bbc836ac7c7a4f453
+  usage:
+    prompt_tokens: 5042
+    completion_tokens: 699
+    total_tokens: 5741
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.02309
+  applied_revision: true

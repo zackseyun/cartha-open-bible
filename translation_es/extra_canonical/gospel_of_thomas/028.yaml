@@ -110,20 +110,20 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo: «Me mantuve en medio del mundo, y me manifesté a ellos en carne. Hallé que todos estaban ebrios; no hallé a ninguno de ellos sediento.[a] Y mi alma se dolió por los hijos de los hombres,[b] porque son ciegos de corazón y no ven que entraron al mundo vacíos, buscando también salir del mundo vacíos.[c] Pero ahora están ebrios. Cuando hayan sacudido su vino,[d] entonces se arrepentirán.»'
+  text: 'Jesús dijo: «Estuve en medio del mundo, y me manifesté[a] a ellos en carne. Los hallé a todos ebrios; no hallé a ninguno sediento entre ellos.[b] Y mi alma se dolió por los hijos de la humanidad,[c] porque son ciegos en su corazón y no ven que entraron al mundo vacíos, buscando también salir[c] del mundo vacíos. Pero ahora están ebrios. Cuando hayan sacudido su vino,[d] entonces se arrepentirán.»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «cuando se sobrieren»; la imagen copta dice literalmente «sacudan su vino».'
+    text: ⲟⲩⲱⲛϩ ⲉⲃⲟⲗ también puede significar «aparecí» o «resplandecí»; «me manifesté» conserva el matiz revelatorio del original.
     reason: lexical_alternative
   - marker: b
-    text: Lit. «hijos de los hombres»; otra posibilidad es «hijos de la humanidad».
-    reason: cross_reference
+    text: La construcción copta es condensada; el testigo griego POxy hace explícito «no hallé a ninguno sediento entre ellos», lo que apoya el sentido negativo adoptado aquí.
+    reason: textual_variant
   - marker: c
-    text: El copto dice «salir del mundo»; también puede traducirse «irse del mundo».
-    reason: lexical_alternative
+    text: Lit. «hijos de los hombres» en el fragmento griego; el copto tiene «hijos del humano», aquí vertido inclusivamente como «hijos de la humanidad». Además, el copto dice literalmente «salir del mundo»; también puede traducirse «irse del mundo».
+    reason: cross_reference
   - marker: d
-    text: 'La expresión mantiene la metáfora del original; cf. también: «cuando el vino los deje».'
+    text: La expresión traduce literalmente la imagen de «sacudir su vino»; alternativas posibles son «cuando el vino los deje» o «cuando se sobrieren».
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ⲱϩⲉ / ‘stood’
@@ -321,4 +321,58 @@ ai_draft:
     total_tokens: 10424
     reasoning_tokens: 0
     estimated_cost_usd: 0.017733
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Me mantuve en medio del mundo, y me manifesté a ellos en carne. Hallé que todos estaban ebrios; no hallé a ninguno de ellos sediento.[a] Y mi alma se dolió por los hijos de los hombres,[b] porque son ciegos de corazón y no ven que entraron al mundo vacíos, buscando también salir del mundo vacíos.[c] Pero ahora están ebrios. Cuando hayan sacudido su vino,[d] entonces se arrepentirán.»'
+  to: 'Jesús dijo: «Estuve en medio del mundo, y me manifesté[a] a ellos en carne. Los hallé a todos ebrios; no hallé a ninguno sediento entre ellos.[b] Y mi alma se dolió por los hijos de la humanidad,[c] porque son ciegos en su corazón y no ven que entraron al mundo vacíos, buscando también salir[c] del mundo vacíos. Pero ahora están ebrios. Cuando hayan sacudido su vino,[d] entonces se arrepentirán.»'
+  rationale: La revisión corrige el problema principal de anclaje de notas, restituye una nota léxica importante omitida, acerca «hijos de la humanidad» a la decisión documentada del POB inglés, y simplifica «me mantuve» a «estuve» para reflejar mejor la tersura del original. Se conserva la metáfora extraña de «sacudido su vino» y la cláusula circunstancial «buscando también».
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien la estructura general y la mayor parte del sentido del copto y del audit trail inglés: Jesús en medio del mundo, manifestación en carne, hallazgo de todos ebrios, ceguera interior, entrar y buscar salir vacíos, y el arrepentimiento después de desprenderse del vino. Sin embargo, hay desajustes importantes en el aparato de notas y un par de decisiones léxicas mejorables frente al expediente inglés.'
+  spanish_quality_summary: 'El español es legible y digno, pero contiene problemas de anclaje de notas: la nota [a] está colocada sobre «sediento» aunque su contenido trata de «sacudido su vino»; las notas [c] y [d] también están intercambiadas respecto de sus anclajes. Además, «me mantuve» es aceptable pero menos directo que «estuve» para ⲱϩⲉ/‘stood’, y «hijos de los hombres» se aparta de la decisión inglesa documentada (‘children of humanity’) sin necesidad fuerte en español. Conviene reparar esos puntos.'
+  glossary_alignment: No hay conflicto con terminología de alto nivel del proyecto. «Jesús», «en carne», «alma», «corazón», «arrepentirán» y «mundo» están alineados. La principal divergencia es que el inglés auditado justificó una forma inclusiva para ⲛ̄ϣⲏⲣⲉ ⲛ̄ⲣ̄ⲣⲱⲙⲉ; en español conviene reflejarlo como «hijos de la humanidad» o similar, dejando la forma más literal en nota. También debe preservarse la nota de alternativa sobre «me manifesté / aparecí», que el inglés sí documenta y el borrador omitió.
+  issues:
+  - severity: high
+    issue: Notas mal ancladas y desordenadas
+    rationale: La nota [a] aparece tras «sediento», pero su contenido explica «cuando se sobrieren / sacudan su vino»; además [c] y [d] están asociadas a frases distintas de las que comentan. Esto incumple la disciplina requerida de marcadores exactos y confunde al lector.
+  - severity: medium
+    issue: Falta la nota léxica sobre ⲟⲩⲱⲛϩ ⲉⲃⲟⲗ
+    rationale: El audit trail inglés conserva la alternativa ‘shone forth / was manifested’ frente a ‘appeared’. El español eligió «me manifesté», pero no documentó la alternativa «aparecí», que sería útil para transparencia auditiva.
+  - severity: medium
+    issue: «Hijos de los hombres» no sigue la decisión inclusiva documentada
+    rationale: El expediente inglés optó por ‘children of humanity’ y explica la forma más literal en nota. En español, «hijos de la humanidad» preserva mejor esa decisión, mientras que «hijos de los hombres» puede sonar más tradicional pero menos alineado con el rationale documentado.
+  - severity: low
+    issue: «Me mantuve» suena algo interpretativo para ⲱϩⲉ
+    rationale: 'El copto y el inglés auditado favorecen una forma simple: ‘stood’. En español «estuve» mantiene tersura y evita añadir el matiz de permanencia deliberada que «me mantuve» sugiere.'
+  revised_spanish_text: 'Jesús dijo: «Estuve en medio del mundo, y me manifesté[a] a ellos en carne. Los hallé a todos ebrios; no hallé a ninguno sediento entre ellos.[b] Y mi alma se dolió por los hijos de la humanidad,[c] porque son ciegos en su corazón y no ven que entraron al mundo vacíos, buscando también salir[c] del mundo vacíos. Pero ahora están ebrios. Cuando hayan sacudido su vino,[d] entonces se arrepentirán.»'
+  revised_footnotes:
+  - marker: a
+    text: ⲟⲩⲱⲛϩ ⲉⲃⲟⲗ también puede significar «aparecí» o «resplandecí»; «me manifesté» conserva el matiz revelatorio del original.
+    reason: lexical_alternative
+  - marker: b
+    text: La construcción copta es condensada; el testigo griego POxy hace explícito «no hallé a ninguno sediento entre ellos», lo que apoya el sentido negativo adoptado aquí.
+    reason: textual_variant
+  - marker: c
+    text: Lit. «hijos de los hombres» en el fragmento griego; el copto tiene «hijos del humano», aquí vertido inclusivamente como «hijos de la humanidad». Además, el copto dice literalmente «salir del mundo»; también puede traducirse «irse del mundo».
+    reason: cross_reference
+  - marker: d
+    text: La expresión traduce literalmente la imagen de «sacudir su vino»; alternativas posibles son «cuando el vino los deje» o «cuando se sobrieren».
+    reason: lexical_alternative
+  revision_rationale: La revisión corrige el problema principal de anclaje de notas, restituye una nota léxica importante omitida, acerca «hijos de la humanidad» a la decisión documentada del POB inglés, y simplifica «me mantuve» a «estuve» para reflejar mejor la tersura del original. Se conserva la metáfora extraña de «sacudido su vino» y la cláusula circunstancial «buscando también».
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 557d54f76ab2944ac6056a0bb6899a9f4f7e357fc36aeab02fbe6e0171627c00
+  timestamp: '2026-05-08T03:04:43Z'
+  output_hash: 1fb957341e61eac71fb1ddc1d9b0175474a8a4e90ac4296db27ef89b47cc1ecb
+  usage:
+    prompt_tokens: 10141
+    completion_tokens: 1238
+    total_tokens: 11379
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.043923
+  applied_revision: true

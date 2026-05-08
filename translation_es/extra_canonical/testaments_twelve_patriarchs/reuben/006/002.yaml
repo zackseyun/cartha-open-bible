@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Adjusted 'the women' to 'those women' to reflect κἀκείνας, removed 'closely' since it is not explicit in συνδιάζειν, and rendered καθαρεύωσι τῇ διανοίᾳ more formally as 'be pure in mind.'
 translation:
   language: es
-  text: Y manda a esas mujeres igualmente que no se asocien con los hombres, para que también ellas sean puras en su mente.
+  text: Y ordena que esas mujeres tampoco se relacionen con hombres, para que también ellas permanezcan puras en su mente.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: Κἀκείνας
@@ -105,4 +105,42 @@ ai_draft:
     total_tokens: 2827
     reasoning_tokens: 0
     estimated_cost_usd: 0.005882
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y manda a esas mujeres igualmente que no se asocien con los hombres, para que también ellas sean puras en su mente.
+  to: Y ordena que esas mujeres tampoco se relacionen con hombres, para que también ellas permanezcan puras en su mente.
+  rationale: Se ajusta la sintaxis para evitar que ‘manda a esas mujeres’ se entienda como un mandato dirigido a ellas en lugar de una orden respecto de ellas; se mejora la naturalidad de συνδιάζειν con ‘se relacionen con’; y se suaviza la clausula final a un español más idiomático sin alterar el sentido de pureza interior.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:04:45Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador refleja bien el sentido básico del griego: κἀκείνας = ‘esas/aquellas mujeres’, ἐντέλλεσθε = mandato, μὴ συνδιάζειν = no asociarse/no relacionarse con, τοῖς ἀνδράσιν = hombres, y καθαρεύωσι τῇ διανοίᾳ = pureza en la mente/disposición interior. Sin embargo, ‘manda a esas mujeres’ en español tiende a significar ‘da la orden a esas mujeres’, mientras que el griego y el inglés auditado significan ‘manda respecto de esas mujeres / ordénales [a otros] acerca de ellas’. Además, ‘en su mente’ suena menos idiomático que una formulación más natural que preserve el sentido interior.'
+  spanish_quality_summary: El texto es claro y digno, pero requiere un pequeño ajuste sintáctico para evitar ambigüedad de objeto indirecto y mejorar la naturalidad española. ‘Manda respecto de esas mujeres...’ sigue siendo algo rígido; ‘ordena que esas mujeres tampoco se relacionen con hombres’ comunica mejor el mandato sin apartarse del original. Para la cláusula final, ‘permanezcan puras en su mente’ o ‘se mantengan puras en su manera de pensar’ serían opciones; la primera conserva mejor la brevedad y cercanía al original.
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. No aparecen términos como Yahvé, Mesías, esclavo, etc. La decisión ‘hombres’ para ἀνδράσιν es adecuada; ‘relacionarse con’ es más idiomático que ‘asociarse con’ en este contexto moral, sin intensificar indebidamente συνδιάζειν.
+  issues:
+  - severity: medium
+    issue: Ambigüedad en ‘manda a esas mujeres’
+    rationale: En español, esa construcción normalmente significa que el mandato va dirigido a las mujeres mismas. El griego κἀκείνας δὲ ἐντέλλεσθε μὴ συνδιάζειν... expresa más bien ‘ordenen también respecto de esas mujeres que no...’, como confirma el inglés auditado ‘command those women likewise not to associate with men’.
+  - severity: low
+    issue: ‘Se asocien con los hombres’ suena algo administrativo o corporativo
+    rationale: Aunque no es incorrecto, ‘relacionarse con hombres’ o ‘tener trato con hombres’ suena más natural en español en un contexto de exhortación moral y conserva el valor general de συνδιάζειν sin añadir ‘estrechamente’.
+  - severity: low
+    issue: ‘Sean puras en su mente’ es comprensible pero algo tieso
+    rationale: La frase transmite bien καθαρεύωσι τῇ διανοίᾳ, pero en español resulta más natural ‘permanezcan puras en su mente’ o ‘se mantengan puras en su mente’. Esto conserva el ámbito interior sin sobreinterpretar διάνοια.
+  revised_spanish_text: Y ordena que esas mujeres tampoco se relacionen con hombres, para que también ellas permanezcan puras en su mente.
+  revision_rationale: Se ajusta la sintaxis para evitar que ‘manda a esas mujeres’ se entienda como un mandato dirigido a ellas en lugar de una orden respecto de ellas; se mejora la naturalidad de συνδιάζειν con ‘se relacionen con’; y se suaviza la clausula final a un español más idiomático sin alterar el sentido de pureza interior.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 5f3df246405475889d12e1047f9df652b55478d5c47e785410191bbcf6a28ed5
+  timestamp: '2026-05-08T03:04:45Z'
+  output_hash: fe57f7d8805f021538b35d858708dfbe7061546f4ff9904ca97cb3b22e7818cf
+  usage:
+    prompt_tokens: 2390
+    completion_tokens: 788
+    total_tokens: 3178
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.017795
+  applied_revision: true

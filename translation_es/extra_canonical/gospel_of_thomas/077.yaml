@@ -61,18 +61,24 @@ base_translation:
     changes_summary: Removed stray bracketed note text from the draft and normalized punctuation for readability while preserving the established lexical choices and the full source content.
 translation:
   language: es
-  text: 'Jesús dijo: «Yo soy la luz que está sobre todos [a]. Yo soy el Todo [b]. De mí salió el Todo, y a mí llegó el Todo [c]. Parte un pedazo de madera; allí estoy. Levanta la piedra, y me encontrarás allí».'
+  text: 'Jesús dijo: «Yo soy la luz que está sobre todas las cosas.[a] Yo soy el Todo.[b] Es de mí de donde salió el Todo, y es a mí adonde llegó el Todo.[c] Parte un pedazo de madera; allí estoy yo.[d] Levanta la piedra,[e] y me encontrarás allí»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El copt. dice literalmente “está sobre todos”; se conserva la imagen espacial sin suavizarla a “supera” o “está por encima de” en el texto principal.
+    text: El copto dice literalmente «la luz ... que está sobre todas». En español se vierte «sobre todas las cosas» para expresar la totalidad de manera natural y evitar la impresión de que se refiere solo a personas.
     reason: lexical_alternative
   - marker: b
-    text: “El Todo” traduce el sustantivo absoluto ⲡⲧⲏⲣϥ, no un simple “todo” adjetival.
+    text: «El Todo» traduce el sustantivo absoluto ⲡⲧⲏⲣϥ, no un simple «todo» adjetival.
     reason: lexical_alternative
   - marker: c
-    text: En el original, la forma verbal y el orden de las frases enfatizan “de mí” y “a mí”; por eso la traducción mantiene esa estructura.
+    text: En el original, la forma verbal y el orden de las frases enfatizan «de mí» y «a mí»; por eso la traducción mantiene esa focalización.
     reason: source_note
+  - marker: d
+    text: 'El texto copto hace aquí un juego deliberado de palabras: el verbo traducido antes como «llegó» (ⲡⲱϩ) y el imperativo «parte» (ⲡⲱϩ) tienen la misma forma.'
+    reason: register_note
+  - marker: e
+    text: En el fragmento griego P.Oxy. 1, los mandatos de levantar la piedra y partir la madera aparecen en orden inverso y al final del dicho 30.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ⲡⲟⲩⲟⲉⲓⲛ
   english_pob_choice: the light
@@ -176,4 +182,58 @@ ai_draft:
     total_tokens: 6559
     reasoning_tokens: 0
     estimated_cost_usd: 0.010484
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo: «Yo soy la luz que está sobre todos [a]. Yo soy el Todo [b]. De mí salió el Todo, y a mí llegó el Todo [c]. Parte un pedazo de madera; allí estoy. Levanta la piedra, y me encontrarás allí».'
+  to: 'Jesús dijo: «Yo soy la luz que está sobre todas las cosas.[a] Yo soy el Todo.[b] Es de mí de donde salió el Todo, y es a mí adonde llegó el Todo.[c] Parte un pedazo de madera; allí estoy yo.[d] Levanta la piedra,[e] y me encontrarás allí»'
+  rationale: 'La revisión hace tres ajustes menores pero importantes: 1) refuerza en español el énfasis sintáctico que la fuente y el audit trail inglés consideran significativo («Es de mí... y es a mí...»); 2) añade las dos notas relevantes ya documentadas en inglés (juego de palabras y variante textual); 3) mejora la naturalidad y amplitud semántica de «sobre todas las cosas». El resto del borrador es fiel y bien logrado.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:02:16Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español transmite bien la estructura principal del dicho: identidad de Jesús como luz, identificación con «el Todo», procedencia y retorno del Todo, y las dos imágenes de madera/piedra. Sin embargo, no preserva plenamente el énfasis documentado en el rastro inglés para las cláusulas con segundo perfecto («Es de mí... y a mí...»), y omite dos notas relevantes del audit trail: el juego de palabras con ⲡⲱϩ («llegó» / «parte») y la variante textual griega sobre el orden de madera/piedra.'
+  spanish_quality_summary: El español es claro y legible, con buen registro general. No obstante, «sobre todos» suena algo menos natural y menos preciso que «sobre todas las cosas» para reflejar «over them all» sin sugerir solo personas. Además, «De mí salió el Todo» es aceptable, pero «Es de mí de donde salió el Todo» reproduce mejor el énfasis marcado por la fuente y por la decisión inglesa auditada.
+  glossary_alignment: 'Alinea bien con la terminología del proyecto en lo pertinente: «Jesús», «la luz», y especialmente «el Todo» con mayúscula para ⲡⲧⲏⲣϥ. No hay conflictos con glosario mayor. La única mejora necesaria es reflejar con más fidelidad la decisión inglesa sobre la focalización de «from me / to me», y conservar en notas la rationale lexical/textual ya documentada.'
+  issues:
+  - severity: medium
+    issue: No se preserva plenamente el énfasis de las cláusulas «from me / to me».
+    rationale: La fuente copta y la revisión inglesa destacaron explícitamente la focalización adverbial con el segundo perfecto. «De mí salió el Todo, y a mí llegó el Todo» es comprensible, pero debilita ese énfasis frente a una formulación española como «Es de mí de donde salió...».
+  - severity: medium
+    issue: Faltan notas del audit trail inglés sobre el juego de palabras y la variante textual griega.
+    rationale: 'El inglés preservó dos notas significativas: la homonimia deliberada de ⲡⲱϩ («reached» / «split») y la variante de P.Oxy. 1 con orden inverso y otra ubicación del dicho. Deben conservarse o adaptarse en español.'
+  - severity: low
+    issue: «sobre todos» puede sonar ambiguo o demasiado personal.
+    rationale: En español puede entenderse como «sobre todas las personas». «sobre todas las cosas» mantiene mejor la amplitud del referente sin apartarse del sentido fuente.
+  revised_spanish_text: 'Jesús dijo: «Yo soy la luz que está sobre todas las cosas.[a] Yo soy el Todo.[b] Es de mí de donde salió el Todo, y es a mí adonde llegó el Todo.[c] Parte un pedazo de madera; allí estoy yo.[d] Levanta la piedra,[e] y me encontrarás allí»'
+  revised_footnotes:
+  - marker: a
+    text: El copto dice literalmente «la luz ... que está sobre todas». En español se vierte «sobre todas las cosas» para expresar la totalidad de manera natural y evitar la impresión de que se refiere solo a personas.
+    reason: lexical_alternative
+  - marker: b
+    text: «El Todo» traduce el sustantivo absoluto ⲡⲧⲏⲣϥ, no un simple «todo» adjetival.
+    reason: lexical_alternative
+  - marker: c
+    text: En el original, la forma verbal y el orden de las frases enfatizan «de mí» y «a mí»; por eso la traducción mantiene esa focalización.
+    reason: source_note
+  - marker: d
+    text: 'El texto copto hace aquí un juego deliberado de palabras: el verbo traducido antes como «llegó» (ⲡⲱϩ) y el imperativo «parte» (ⲡⲱϩ) tienen la misma forma.'
+    reason: register_note
+  - marker: e
+    text: En el fragmento griego P.Oxy. 1, los mandatos de levantar la piedra y partir la madera aparecen en orden inverso y al final del dicho 30.
+    reason: textual_variant
+  revision_rationale: 'La revisión hace tres ajustes menores pero importantes: 1) refuerza en español el énfasis sintáctico que la fuente y el audit trail inglés consideran significativo («Es de mí... y es a mí...»); 2) añade las dos notas relevantes ya documentadas en inglés (juego de palabras y variante textual); 3) mejora la naturalidad y amplitud semántica de «sobre todas las cosas». El resto del borrador es fiel y bien logrado.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 9f4c9a786874fcb034d61d3b49cd9623387f8f628da88708eae98d3dcc9ec234
+  timestamp: '2026-05-08T03:02:16Z'
+  output_hash: ff35595e0b341379c5a04362b2467a9ccdd14f93b0d141c3e804a5ab9d38c92b
+  usage:
+    prompt_tokens: 6107
+    completion_tokens: 1058
+    total_tokens: 7165
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.031137
+  applied_revision: true

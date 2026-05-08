@@ -19,14 +19,14 @@ base_translation:
     changes_summary: 'Adjusted the wording to better reflect the source’s sequence and lexical elements: rendered the opening participle more directly as ''makes the law new,'' retained ''deceiver,'' kept the final clause about innocent blood upon your heads, and preserved ''height'' for ἀνάστημα.'
 translation:
   language: es
-  text: Y a un hombre que hace nueva la ley[a] en el poder del Altísimo ustedes lo llamarán engañador, y al fin se precipitarán para matarlo, sin conocer su estatura[b], tomando sangre inocente con maldad sobre sus cabezas.
+  text: Y a un hombre que hace nueva la ley[a] en el poder del Altísimo lo llamarán engañador, y al fin se precipitarán para matarlo, sin conocer su altura[b], echándose encima sangre inocente con maldad sobre sus cabezas.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Hace nueva la ley» sigue de cerca el griego καινοποιοῦντα νόμον; la revisión inglesa corrigió el sentido hacia una acción de renovar/hacer nuevo, no simplemente «promulgar otra ley».
+    text: «Hace nueva la ley» sigue de cerca el griego καινοποιοῦντα νόμον; el sentido es hacer nueva o renovar la ley, no simplemente promulgar otra distinta.
     reason: lexical_alternative
   - marker: b
-    text: La palabra griega ἀνάστημα puede referirse a la estatura o la altura; la revisión inglesa fijó «height», por eso se traduce aquí «estatura».
+    text: La palabra griega ἀνάστημα puede referirse a la altura o estatura; aquí se traduce «altura» para reflejar mejor el valor léxico señalado en la revisión inglesa («height») y sonar más natural en español.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: καινοποιοῦντα νόμον
@@ -144,4 +144,49 @@ ai_draft:
     total_tokens: 3575
     reasoning_tokens: 0
     estimated_cost_usd: 0.009075
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Y a un hombre que hace nueva la ley[a] en el poder del Altísimo ustedes lo llamarán engañador, y al fin se precipitarán para matarlo, sin conocer su estatura[b], tomando sangre inocente con maldad sobre sus cabezas.
+  to: Y a un hombre que hace nueva la ley[a] en el poder del Altísimo lo llamarán engañador, y al fin se precipitarán para matarlo, sin conocer su altura[b], echándose encima sangre inocente con maldad sobre sus cabezas.
+  rationale: 'Se hicieron ajustes menores de estilo y precisión: se omitió «ustedes» por fluidez, se cambió «estatura» a «altura» para una mejor correspondencia con ἀνάστημα/«height», y se reformuló la cláusula final para expresar con más naturalidad en español la asunción de culpa por sangre inocente.'
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T02:59:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador sigue bien el griego en la mayor parte: «hace nueva la ley», «engañador», «el Altísimo», «matarlo», «sangre inocente» y la imagen de culpa sobre las cabezas. Sin embargo, «sin conocer su estatura» suena poco natural y semánticamente débil en español para una persona; «altura» refleja mejor ἀνάστημα/«height». Además, «tomando sangre inocente con maldad sobre sus cabezas» es comprensible pero algo torpe; «echándose encima... sobre sus cabezas» o «cargando... sobre sus cabezas» expresa mejor ἀναδεχόμενοι como asumir/cargar culpa.'
+  spanish_quality_summary: El texto es legible y digno, pero requiere un ajuste menor para sonar más natural en español bíblico moderno. «Ustedes» es aceptable, aunque podría omitirse por fluidez. La principal mejora es cambiar «estatura» por «altura» y dar una formulación más idiomática a la cláusula final de culpa por sangre inocente.
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «Altísimo» y «engañador» están bien. No aparecen términos con directrices especiales como Yahvé, Mesías, esclavo, etc. La nota sobre καινοποιοῦντα νόμον es adecuada. La nota sobre ἀνάστημα debe actualizarse a «altura» si se revisa el texto.
+  issues:
+  - severity: medium
+    issue: «su estatura» no es la mejor opción aquí
+    rationale: Aunque ἀνάστημα puede referirse a estatura, el rastro auditado inglés fijó «height», y en español «altura» suena más natural y menos antropométrico rígido que «estatura» en esta construcción.
+  - severity: medium
+    issue: 'La cláusula final suena poco idiomática: «tomando sangre inocente con maldad sobre sus cabezas»'
+    rationale: ἀναδεχόμενοι aquí comunica asumir/cargar sobre sí la culpa de sangre inocente. «Tomando» calca demasiado la forma y debilita la imagen judicial en español.
+  - severity: low
+    issue: «ustedes» es innecesario
+    rationale: No es incorrecto, pero el futuro verbal ya marca la persona y omitirlo mejora la fluidez.
+  revised_spanish_text: Y a un hombre que hace nueva la ley[a] en el poder del Altísimo lo llamarán engañador, y al fin se precipitarán para matarlo, sin conocer su altura[b], echándose encima sangre inocente con maldad sobre sus cabezas.
+  revised_footnotes:
+  - marker: a
+    text: «Hace nueva la ley» sigue de cerca el griego καινοποιοῦντα νόμον; el sentido es hacer nueva o renovar la ley, no simplemente promulgar otra distinta.
+    reason: lexical_alternative
+  - marker: b
+    text: La palabra griega ἀνάστημα puede referirse a la altura o estatura; aquí se traduce «altura» para reflejar mejor el valor léxico señalado en la revisión inglesa («height») y sonar más natural en español.
+    reason: lexical_alternative
+  revision_rationale: 'Se hicieron ajustes menores de estilo y precisión: se omitió «ustedes» por fluidez, se cambió «estatura» a «altura» para una mejor correspondencia con ἀνάστημα/«height», y se reformuló la cláusula final para expresar con más naturalidad en español la asunción de culpa por sangre inocente.'
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 97378e25848b5a41af25fec17bc1e3d7b89b31f6c193bf62e122dbe9a80461b8
+  timestamp: '2026-05-08T02:59:46Z'
+  output_hash: 9a3b8e6cd40e0797c39ea3eda2bf68055cd0d3f16e9ab4b6a830f63650a4cd55
+  usage:
+    prompt_tokens: 3270
+    completion_tokens: 798
+    total_tokens: 4068
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.020145
+  applied_revision: true

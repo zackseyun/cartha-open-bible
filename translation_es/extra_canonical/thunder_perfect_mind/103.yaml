@@ -59,15 +59,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Soy Justicia[a]; soy la abogada[b].
+  text: Soy Justicia[a]; soy la defensora[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: '''Justicia'' traduce aquí el campo semántico de ⲥⲁⲃⲟⲗ, que también puede entenderse como ''rectitud'' o ''derechura''. Se conserva la personificación.'
     reason: lexical_alternative
   - marker: b
-    text: El cargo legal está inferido por el encuadre del segmento y el contexto cercano; el OCR no muestra un equivalente copt o inequívoco para esta función en esta sola línea.
-    reason: source_note
+    text: La función legal está inferida por el encuadre del segmento y el contexto cercano; el OCR no muestra un equivalente copto inequívoco para este papel en esta sola línea.
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲥⲁⲃⲟⲗ
   english_pob_choice: Justice
@@ -121,4 +121,46 @@ ai_draft:
     total_tokens: 3180
     reasoning_tokens: 0
     estimated_cost_usd: 0.005119
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Soy Justicia[a]; soy la abogada[b].
+  to: Soy Justicia[a]; soy la defensora[b].
+  rationale: Se reemplaza 'abogada' por 'defensora' para mantener el sentido legal inferido sin fijar una profesión jurídica demasiado específica. También se corrige y suaviza la nota b para reflejar mejor la incertidumbre documentada en el inglés POB.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:17:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue bien la línea inglesa auditada: mantiene la personificación de ⲥⲁⲃⲟⲗ como ''Justicia'' y refleja la segunda función legal inferida. Sin embargo, ''abogada'' introduce una especificidad de género y de profesión colegiada que el inglés ''advocate'' no exige, especialmente dado que el rol mismo es inferido y no visible inequívocamente en el OCR. Una opción más amplia y fiel al grado de certeza es ''defensora''.'
+  spanish_quality_summary: El español es claro y literario, pero 'la abogada' suena más técnico-moderno y algo más estrecho que el registro del original reconstruido. 'Defensora' conserva mejor el paralelismo, la personificación femenina del hablante y la amplitud semántica del papel legal sin sobreinterpretar.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Justicia' para ⲥⲁⲃⲟⲗ está bien documentado. El ajuste propuesto de 'abogada' a 'defensora' responde a la nota inglesa sobre incertidumbre de alineación y evita fijar una función jurídica demasiado precisa.
+  issues:
+  - severity: medium
+    issue: '''abogada'' sobreespecifica el rol legal inferido'
+    rationale: El inglés POB escogió 'advocate' con nota explícita de que no hay equivalente copto inequívoco visible en este fragmento. 'Abogada' en español sugiere una profesión/legalidad formal más precisa que 'advocate' y que el estado de la evidencia permite.
+  - severity: low
+    issue: 'Errata en la nota al pie b: ''copt o'''
+    rationale: Debe corregirse a 'copto' para legibilidad y corrección editorial.
+  revised_spanish_text: Soy Justicia[a]; soy la defensora[b].
+  revised_footnotes:
+  - marker: a
+    text: '''Justicia'' traduce aquí el campo semántico de ⲥⲁⲃⲟⲗ, que también puede entenderse como ''rectitud'' o ''derechura''. Se conserva la personificación.'
+    reason: lexical_alternative
+  - marker: b
+    text: La función legal está inferida por el encuadre del segmento y el contexto cercano; el OCR no muestra un equivalente copto inequívoco para este papel en esta sola línea.
+    reason: alignment_note
+  revision_rationale: Se reemplaza 'abogada' por 'defensora' para mantener el sentido legal inferido sin fijar una profesión jurídica demasiado específica. También se corrige y suaviza la nota b para reflejar mejor la incertidumbre documentada en el inglés POB.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e08953a913f57fa68b4b1f251585c7582832886d031529452fbe1393e15f1978
+  timestamp: '2026-05-08T03:17:43Z'
+  output_hash: f91698c897e7faeae43cb02ba2fa71aa74dc469d666e64556924ff4f41a0930a
+  usage:
+    prompt_tokens: 2860
+    completion_tokens: 619
+    total_tokens: 3479
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016435
+  applied_revision: true

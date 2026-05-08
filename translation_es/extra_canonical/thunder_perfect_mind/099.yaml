@@ -63,7 +63,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Estoy entre ustedes, ustedes que [...] se sacan fuera de [...]. ¿Quién es el que los soltará? O si los suelta de ello, ¿quién podrá [...]?
+  text: Estoy entre ustedes, ustedes que [...] salen de [...]. ¿Quién será el que los suelte? O, si los suelta de ello, ¿quién podrá [...]?
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ϣⲟⲟⲡ ⲛⲧⲏⲏⲧⲉ
@@ -134,4 +134,39 @@ ai_draft:
     total_tokens: 4231
     reasoning_tokens: 0
     estimated_cost_usd: 0.006762
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Estoy entre ustedes, ustedes que [...] se sacan fuera de [...]. ¿Quién es el que los soltará? O si los suelta de ello, ¿quién podrá [...]?
+  to: Estoy entre ustedes, ustedes que [...] salen de [...]. ¿Quién será el que los suelte? O, si los suelta de ello, ¿quién podrá [...]?
+  rationale: Se reemplaza el calco poco idiomático 'se sacan fuera de' por 'salen de', que conserva la idea de salida/separación en un contexto fragmentario sin introducir contenido nuevo. También se pule ligeramente la primera pregunta para mayor naturalidad poética en español.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:11:40Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la revisión adjudicada y evita la antigua alucinación sobre ''pan/molino''. Conserva bien la estructura fragmentaria: presencia ''entre ustedes'', relativo a ''ustedes que [...]'', pregunta sobre quién los liberará, y la ambigüedad de ''de ello''. Sin embargo, ''se sacan fuera'' suena demasiado calcado y poco idiomático para el español; puede preservarse mejor el sentido de extracción/separación con una formulación más natural y aún fragmentaria.'
+  spanish_quality_summary: La redacción es comprensible, pero 'ustedes que [...] se sacan fuera de [...]' resulta torpe y antinatural en español. También conviene preferir 'los soltará de ello' por paralelismo explícito con la frase siguiente, o bien usar 'los liberará' si se quiere mayor naturalidad. El resto del texto fluye adecuadamente y mantiene la dignidad del registro.
+  glossary_alignment: No hay términos del glosario teológico principal en juego. La decisión de mantener la ambigüedad de ⲛϩⲏⲧϥ como 'de ello' está bien alineada con la evidencia revisada. Para ⲕⲁ ... ⲉⲃⲟⲗ, 'soltar' es aceptable, aunque en español bíblico-legible 'liberar' o 'dejar salir' serían más naturales según contexto; aquí 'soltar' puede mantenerse por cercanía semántica.
+  issues:
+  - severity: medium
+    issue: Calco poco natural en 'se sacan fuera'
+    rationale: Aunque intenta reflejar ⲉⲃⲟⲗ, en español moderno suena forzado y poco legible. 'Se apartan de' o 'salen de' serían más idiomáticos, pero como el verbo está fragmentario conviene una solución que conserve la incompletud sin sonar antiespañola.
+  - severity: low
+    issue: Ligera falta de paralelismo en la segunda pregunta
+    rationale: '''¿Quién es el que los soltará?'' y ''O si los suelta de ello'' casi funcionan, pero puede leerse más natural como ''¿Quién será el que los suelte? O, si los suelta de ello...'' manteniendo el tono interrogativo-poético.'
+  revised_spanish_text: Estoy entre ustedes, ustedes que [...] salen de [...]. ¿Quién será el que los suelte? O, si los suelta de ello, ¿quién podrá [...]?
+  revision_rationale: Se reemplaza el calco poco idiomático 'se sacan fuera de' por 'salen de', que conserva la idea de salida/separación en un contexto fragmentario sin introducir contenido nuevo. También se pule ligeramente la primera pregunta para mayor naturalidad poética en español.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: 0e38cb8b7ec72341ae7a0c36f357ba81421928ba88ee8063ab123a6815bceb6c
+  timestamp: '2026-05-08T03:11:40Z'
+  output_hash: 05431ce29d2237538d8261564dc1c9b8ea1df991531448d5b94cd44fff25728c
+  usage:
+    prompt_tokens: 3794
+    completion_tokens: 643
+    total_tokens: 4437
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.01913
+  applied_revision: true

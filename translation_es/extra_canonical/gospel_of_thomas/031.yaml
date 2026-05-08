@@ -50,18 +50,18 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Jesús dijo[a]: «Ningún profeta es aceptable en su aldea[b]; un médico no cura a los que lo conocen[c]».'
+  text: 'Jesús dijo: «Ningún profeta es aceptable en su aldea[a][b]; un médico no cura[c] a los que lo conocen».'
   philosophy: formal
   footnotes:
   - marker: a
-    text: El griego de P.Oxy. 1 lee «Jesús dijo».
+    text: El griego de P.Oxy. 1 lee «en su patria» o «en su tierra natal» (πατρίδι) en vez de «en su aldea».
     reason: textual_variant
   - marker: b
-    text: El copto dice literalmente «en su aldea»; el testimonio griego paralelo tiene «en su patria» o «en su tierra natal».
-    reason: textual_variant
+    text: 'Compárese Lucas 4:24: «ningún profeta es aceptado en su patria». Tomás empareja de manera distintiva este dicho con el aforismo sobre el médico.'
+    reason: cross_reference
   - marker: c
-    text: La estructura copta usa un negativo aoristo dialectal; no significa «dejen que un médico…».
-    reason: lexical_alternative
+    text: El copto usa aquí la grafía dialectal ⲙⲁⲣⲉ- para el negativo aoristo (equivalente al sahídico estándar ⲙⲉⲣⲉ-), no un jussivo como «dejen que». El griego de P.Oxy. 1 también puede entenderse como «hace curaciones para».
+    reason: dialect_note
 lexical_decisions:
 - source_word: ⲙⲛ̄ⲡⲣⲟⲫⲏⲧⲏⲥ
   english_pob_choice: No prophet
@@ -154,4 +154,52 @@ ai_draft:
     total_tokens: 4989
     reasoning_tokens: 0
     estimated_cost_usd: 0.008902
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Jesús dijo[a]: «Ningún profeta es aceptable en su aldea[b]; un médico no cura a los que lo conocen[c]».'
+  to: 'Jesús dijo: «Ningún profeta es aceptable en su aldea[a][b]; un médico no cura[c] a los que lo conocen».'
+  rationale: La traducción principal está básicamente bien y no requiere cambios sustantivos. Se revisa el aparato porque una nota afirmaba una variante inexistente sobre «Jesús dijo» y faltaba alinear las notas con las variantes y observaciones realmente documentadas en el expediente inglés. También se precisa la explicación del negativo aoristo dialectal.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-08T03:07:14Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español preserva bien el sentido básico del copto y sigue las decisiones clave del POB: «Ningún profeta», «aceptable», «aldea» para ϯⲙⲉ, y «un médico no cura a los que lo conocen». Sin embargo, la nota a es errónea: no hay variante griega relevante sobre «Jesús dijo»; la nota textual del inglés se refiere a «en su patria» frente a «aldea» y a «hacer sanidades/curaciones» frente a «curar». También falta reflejar la nota comparativa con Lucas 4:24 si se conserva el aparato, y la nota c podría formularse con mayor precisión léxica y dialectal.'
+  spanish_quality_summary: El español es natural, claro y digno. «Aldea» es fiel, aunque algo menos idiomático que «pueblo» en muchas regiones; aquí es defendible por precisión léxica. La puntuación y la fluidez son buenas. La principal necesidad es reparar el aparato de notas para que no afirme una variante inexistente y para alinear mejor las notas con el expediente inglés.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. No aparecen términos sensibles como Yahvé/Mesías/etc. Las decisiones léxicas principales están bien alineadas con el POB: ϯⲙⲉ -> «aldea» para evitar armonización; ⲙⲁⲣⲉ- entendido correctamente como negativo aoristo; ⲣ̄ⲑⲉⲣⲁⲡⲉⲩⲉ -> «cura».'
+  issues:
+  - severity: high
+    issue: La nota [a] atribuye al griego P.Oxy. 1 la lectura «Jesús dijo».
+    rationale: El expediente inglés no documenta ninguna variante textual sobre la fórmula introductoria. Esa nota introduce información incorrecta y distrae de las variantes reales.
+  - severity: medium
+    issue: El aparato de notas omite la segunda parte de la variante griega documentada sobre el verbo del médico.
+    rationale: La nota inglesa 1 dice que P.Oxy. 1 tiene «en su hometown» y «perform healings for» en vez de «heal». El borrador español solo recoge la diferencia de «aldea/patria».
+  - severity: low
+    issue: La nota dialectal puede ser más precisa.
+    rationale: Conviene explicar que ⲙⲁⲣⲉ- aquí es una grafía dialectal del negativo aoristo, no un jussivo, y anclarla donde realmente afecta la lectura verbal.
+  revised_spanish_text: 'Jesús dijo: «Ningún profeta es aceptable en su aldea[a][b]; un médico no cura[c] a los que lo conocen».'
+  revised_footnotes:
+  - marker: a
+    text: El griego de P.Oxy. 1 lee «en su patria» o «en su tierra natal» (πατρίδι) en vez de «en su aldea».
+    reason: textual_variant
+  - marker: b
+    text: 'Compárese Lucas 4:24: «ningún profeta es aceptado en su patria». Tomás empareja de manera distintiva este dicho con el aforismo sobre el médico.'
+    reason: cross_reference
+  - marker: c
+    text: El copto usa aquí la grafía dialectal ⲙⲁⲣⲉ- para el negativo aoristo (equivalente al sahídico estándar ⲙⲉⲣⲉ-), no un jussivo como «dejen que». El griego de P.Oxy. 1 también puede entenderse como «hace curaciones para».
+    reason: dialect_note
+  revision_rationale: La traducción principal está básicamente bien y no requiere cambios sustantivos. Se revisa el aparato porque una nota afirmaba una variante inexistente sobre «Jesús dijo» y faltaba alinear las notas con las variantes y observaciones realmente documentadas en el expediente inglés. También se precisa la explicación del negativo aoristo dialectal.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: c5e8e3cf7fd4ec1eb180a3f86092f40efa3c377a5c040b5dcc4fcb71d290c421
+  timestamp: '2026-05-08T03:07:14Z'
+  output_hash: 6667a6187111fa12c9ede0528613aea6747bca877fdaa28d8a62d52cf49ed061
+  usage:
+    prompt_tokens: 4685
+    completion_tokens: 932
+    total_tokens: 5617
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.025693
+  applied_revision: true

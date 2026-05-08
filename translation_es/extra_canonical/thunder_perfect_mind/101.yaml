@@ -165,4 +165,37 @@ ai_draft:
     total_tokens: 4134
     reasoning_tokens: 0
     estimated_cost_usd: 0.008126
-status: spanish_draft
+status: spanish_needs_revision
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'El borrador español sigue correctamente la revisión auditada: imperativo de liberación, referencia a ‘él’, pregunta sobre ser apresados, y paralelismo interior/exterior con el mismo agente que forma ambos. No hay desalineación sustancial con la fuente tal como quedó adjudicada.'
+  spanish_quality_summary: 'El español es claro y digno, pero hay dos detalles mejorables: la nota [a] contiene ‘sueltense’ sin tilde, y ‘forma lo exterior’/‘forma lo interior’ suena algo más plano que ‘modela’ o ‘plasma’, aunque sigue siendo aceptable. El texto principal funciona bien y no requiere cambio; basta una reparación menor en notas.'
+  glossary_alignment: No hay términos del glosario principal comprometidos en este segmento. Las decisiones ‘Libérense’, ‘apresarlos’, ‘interior/exterior’ y ‘el que forma’ son compatibles con la terminología y con la rationale auditada.
+  issues:
+  - severity: low
+    issue: 'Error ortográfico en la nota [a]: «sueltense»'
+    rationale: En español debe escribirse «suéltense». Es una corrección menor de calidad editorial, no de sentido.
+  revised_spanish_text: Libérense.[a] O si se liberan de él, ¿quién podrá apresarlos? Porque su interior es su exterior,[b] y el que forma lo exterior es el que forma lo interior.
+  revised_footnotes:
+  - marker: a
+    text: 'O: «suéltense» / «desháganse». El copto aquí favorece una lectura de liberación o desprendimiento, no de «llamar» o «escuchar».'
+    reason: lexical_alternative
+  - marker: b
+    text: 'O: «lo de dentro es lo de fuera». La formulación española conserva el paralelismo interior/exterior del copto.'
+    reason: lexical_alternative
+  revision_rationale: Se conserva el texto principal porque es fiel y natural; se corrige únicamente la ortografía de la nota [a] y se normalizan las comillas españolas para pulcritud editorial.
+  requires_gpt54_adjudication: false
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  azure_deployment: gpt-5-4-deployment
+  prompt_id: spanish_source_review_v1
+  prompt_sha256: e45f93cf7c16178ae2bcfa321656e2b3b73c4321965c9222f8c210fa9db3a95a
+  timestamp: '2026-05-08T03:09:48Z'
+  output_hash: 4fc6b5dd79b28e02d2c9491201ba02a46d13ced90283c933084c45abaa9827e4
+  usage:
+    prompt_tokens: 3809
+    completion_tokens: 486
+    total_tokens: 4295
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.016813
+  applied_revision: false
