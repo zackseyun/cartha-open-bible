@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'we went down into Egypt' to 'I went into Egypt' to match the singular Greek verb and subject. Retained the rest as accurate and natural.
 translation:
   language: es
-  text: 'Y cuando entré en Egipto, José mi hermano me reconoció y me dijo: «Mancharon tu túnica con sangre y dijeron: ‹Mira si esta es la túnica de tu hijo›».'
+  text: 'Y cuando entré en Egipto, mi hermano me reconoció y me dijo: «Mancharon tu túnica con sangre», dijeron. «Mira si esta es la túnica».'
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: ἦλθον εἰς Αἴγυπτον
@@ -90,4 +90,42 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y cuando entré en Egipto, José mi hermano me reconoció y me dijo: «Mancharon tu túnica con sangre y dijeron: ‹Mira si esta es la túnica de tu hijo›».'
+  to: 'Y cuando entré en Egipto, mi hermano me reconoció y me dijo: «Mancharon tu túnica con sangre», dijeron. «Mira si esta es la túnica».'
+  rationale: 'Removed ''José'' (not in Greek; ὁ ἀδελφός μου = ''my brother'', unnamed) and removed ''de tu hijo'' (not in Greek; ὃ χιτὼν οὗτος = ''this tunic''). Also adjusted the quoted speech structure to match the phase2-realigned EN: ''They smeared your tunic with blood,'' they said. ''See whether this is the tunic.'' The awkward split of the quoted speech reflects the difficult Greek syntax of this verse.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:30:28Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'The Spanish draft follows the pre-realignment English text rather than the current Greek-faithful version. Greek reads: ὁ ἀδελφός μου (lit. ''my brother'', unnamed) and ''ὃ χιτὼν οὗτος'' (''this tunic'', no ''your son''s''). The ES has ''José mi hermano'' (adds name not in Greek) and ''la túnica de tu hijo'' (adds ''de tu hijo'' not in source). The phase2_realign pass of the EN explicitly removed these additions. ES must follow the Greek.'
+  spanish_quality_summary: Aside from the source-alignment issues, the Spanish prose is natural and the register is appropriate. The nested quotation marks (guillemets and ‹›) are correctly used.
+  glossary_alignment: No glossary terms triggered. 'Túnica' for χιτών correct. 'Egipto' standard.
+  issues:
+  - severity: high
+    issue: ES adds 'José' (names the brother) — not in Greek; ὁ ἀδελφός μου is unnamed
+    rationale: Greek has only 'my brother'. The phase2_realign pass removed this addition from the English. Spanish must not add it.
+  - severity: high
+    issue: ES adds 'de tu hijo' ('your son's') — not in Greek; Greek has just 'this tunic' (ὃ χιτὼν οὗτος)
+    rationale: Greek has 'See whether this is the tunic.' not 'this is your son's tunic.' The phase2_realign pass removed this from the English. Spanish must follow the Greek.
+  revised_spanish_text: 'Y cuando entré en Egipto, mi hermano me reconoció y me dijo: «Mancharon tu túnica con sangre», dijeron. «Mira si esta es la túnica».'
+  revision_rationale: 'Removed ''José'' (not in Greek; ὁ ἀδελφός μου = ''my brother'', unnamed) and removed ''de tu hijo'' (not in Greek; ὃ χιτὼν οὗτος = ''this tunic''). Also adjusted the quoted speech structure to match the phase2-realigned EN: ''They smeared your tunic with blood,'' they said. ''See whether this is the tunic.'' The awkward split of the quoted speech reflects the difficult Greek syntax of this verse.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a38731211da78d5880d020ffc90b8114b2a773acbde419d859e00b96c2f02344
+  timestamp: '2026-05-08T06:30:28Z'
+  output_hash: a38731211da78d5880d020ffc90b8114b2a773acbde419d859e00b96c2f02344
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Removed the footnote marker and kept the rest unchanged; the translation is otherwise accurate and complete.
 translation:
   language: es
-  text: 'Y habiendo dicho estas cosas a ellos, les ordenó, diciendo: «Enterradme en Hebrón». Y murió, habiendo dormido un buen sueño[a].'
+  text: 'Y habiendo dicho estas cosas a ellos, les ordenó, diciendo: «Entierrenme en Hebrón». Y murió, habiendo dormido un buen sueño[a].'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -116,4 +116,43 @@ ai_draft:
     estimated_cost_usd: 0.151169
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Y habiendo dicho estas cosas a ellos, les ordenó, diciendo: «Enterradme en Hebrón». Y murió, habiendo dormido un buen sueño[a].'
+  to: 'Y habiendo dicho estas cosas a ellos, les ordenó, diciendo: «Entierrenme en Hebrón». Y murió, habiendo dormido un buen sueño[a].'
+  rationale: Changed 'Enterradme' (Iberian vosotros imperative) to 'Entierrenme' (neutral Latin-American Spanish ustedes imperative) to align with the project register requirement and with the chapter-level file's consistent use of LatAm forms.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:27:51Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Translation faithfully renders the source: εἰπὼν αὐτοῖς ταῦτα → ''habiendo dicho estas cosas a ellos''; ἐνετείλατο λέγων → ''les ordenó, diciendo''; Θάψατέ με ἐν Χεβρών → ''Enterradme en Hebrón''; ἀπέθανεν ὕπνῳ καλῷ κοιμηθείς → ''murió, habiendo dormido un buen sueño''. Cognate dative construction preserved. Footnote [a] explains the daggers and the sleep idiom correctly.'
+  spanish_quality_summary: 'Generally good register and accuracy. One issue: ''Enterradme'' is the Iberian vosotros imperative 2nd plural of enterrar. Neutral Latin-American Spanish uses the ustedes form ''Entierrenme''. The chapter-level 008.yaml ES draft correctly uses ''Sepúltenme'' (LatAm). This per-verse file should align to the same register.'
+  glossary_alignment: No divine name or christological terms present. No glossary violations.
+  issues:
+  - severity: medium
+    issue: '''Enterradme'' is the Iberian vosotros imperative; neutral Latin-American Spanish requires ''Entierrenme'' (ustedes form)'
+    rationale: Project requires neutral Latin American Spanish. 'Enterradme' belongs to Iberian register. The chapter-level file already uses 'Sepúltenme' correctly.
+  revised_spanish_text: 'Y habiendo dicho estas cosas a ellos, les ordenó, diciendo: «Entierrenme en Hebrón». Y murió, habiendo dormido un buen sueño[a].'
+  revised_footnotes:
+  - marker: a
+    text: La frase griega ὕπνῳ καλῷ κοιμηθείς emplea un dativo cognado (durmiendo un sueño), figura semítica común en textos influenciados por la LXX. El obelisco (†) que precede a ὕπνῳ en la edición Charles 1908 señala una posible variante o problema textual en el testimonio manuscrito; la expresión se conserva como aparece en esa edición. El verbo κοιμάομαι funciona también como eufemismo de la muerte en la literatura judía del Segundo Templo.
+    reason: textual_variant
+  revision_rationale: Changed 'Enterradme' (Iberian vosotros imperative) to 'Entierrenme' (neutral Latin-American Spanish ustedes imperative) to align with the project register requirement and with the chapter-level file's consistent use of LatAm forms.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 647b27754cce13f29849418463f61965fe0b01bb7487f357eacec9d71280f748
+  timestamp: '2026-05-08T06:27:51Z'
+  output_hash: 647b27754cce13f29849418463f61965fe0b01bb7487f357eacec9d71280f748
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -109,4 +109,27 @@ ai_draft:
     estimated_cost_usd: 0.198604
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Despite the base_translation field containing the pre-realignment English, the Spanish text correctly follows the Greek source order: ἐξέδυσάν → ''despojaron''; δέδωκάν με τοῖς Ἰσμαηλίταις → ''me entregaron a los ismaelitas''; δέδωκάν μοι περίζωμα → ''me dieron un taparrabos''; φραγγελλώσαντες → ''habiéndome azotado''; εἰπόν μοι τρέχειν → ''me dijeron que corriera''. This matches the phase2-realigned EN. Footnote [a] documents the agency issue correctly; footnote [b] explains περίζωμα. Both markers match text.'
+  spanish_quality_summary: Natural neutral Latin-American Spanish. The 3rd-person plural unnamed subject correctly follows the Greek. Register is appropriate for the testamentary narrative genre.
+  glossary_alignment: No glossary terms triggered. 'Ismaelitas' correctly lowercase per Spanish orthography.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f7162e38adfcff08b57c5cfbacb6e854c5970401c548855b9008c71307d51730
+  timestamp: '2026-05-08T06:30:42Z'
+  output_hash: f7162e38adfcff08b57c5cfbacb6e854c5970401c548855b9008c71307d51730
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
