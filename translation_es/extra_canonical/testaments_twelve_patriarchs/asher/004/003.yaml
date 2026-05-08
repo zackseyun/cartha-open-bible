@@ -176,4 +176,27 @@ ai_draft:
     estimated_cost_usd: 0.197235
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: Ἔστι τις μισῶν τὸν ἐλεήμονα καὶ ἄδικον→Hay uno que odia al misericordioso y al injusto; τὸν μοιχὸν καὶ νηστεύοντα→al adúltero y al que ayuna; διπρόσωπον→de doble rostro; τὸ πᾶν ἔργον ἀγαθόν→toda la obra es buena; μιμεῖται Κύριον→imita al Señor; μὴ προσδοκώμενος τὸ δοκοῦν καλόν→sin esperar lo que parece bueno; τοῦ ἀληθινοῦ καλοῦ→lo verdaderamente bueno. EN revision choices (''along with'' rendered as ''junto con'') adopted. Textual dagger on †προσδοκώμενος documented in fn [c].'
+  spanish_quality_summary: Well-crafted Spanish. Footnotes [a][b][c] match markers. Κύριον→al Señor correct for pseudepigrapha. Personal accusative 'a' applied consistently. The cross-check 'needs-revision' flag (0.62) was due to EN cross-check issue, not ES quality.
+  glossary_alignment: Κύριον→al Señor (correct, T12P pseudepigrapha). θεός absent. No YHWH/Yahvé/δοῦλος/πνεῦμα.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e7680cfedefef7c34af445a5fbfa9fda468246146deaea0c8112a553020880a6
+  timestamp: '2026-05-08T06:15:57Z'
+  output_hash: e7680cfedefef7c34af445a5fbfa9fda468246146deaea0c8112a553020880a6
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

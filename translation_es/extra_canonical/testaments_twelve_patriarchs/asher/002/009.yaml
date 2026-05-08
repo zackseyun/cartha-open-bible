@@ -107,4 +107,27 @@ ai_draft:
     estimated_cost_usd: 0.129619
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek faithfully rendered: Οἱ τοιοῦτοί→Los tales, δασύποδες→liebres (with explicit simile ''como''), ἐξ ἡμισείας καθαροί→a medias puros, τὸ δ'' ἀληθὲς ἀκάθαρτοί→pero en verdad son impuros. Purity lexis καθαρός/ἀκάθαρτος correctly rendered as puros/impuros.'
+  spanish_quality_summary: Natural neutral Latin American Spanish. Footnotes [a][b] match markers exactly. Cultural note on δασύποδες and Levitical purity context is well documented. 'Los tales' preserves the deictic force of Οἱ τοιοῦτοί without over-translating.
+  glossary_alignment: No YHWH/κύριος/θεός/Χριστός/δοῦλος/πνεῦμα. Project glossary not triggered.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 98d250c66068eba48e04636ba922e3e465883463f990560d748a32d8cbbf8151
+  timestamp: '2026-05-08T06:13:21Z'
+  output_hash: 98d250c66068eba48e04636ba922e3e465883463f990560d748a32d8cbbf8151
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed 'He' to 'It' for consistency with the neuter subject and retained the rest, which accurately reflects the Greek and reads naturally.
 translation:
   language: es
-  text: Mancha el alma[a] y hace brillar[b] el cuerpo; mata a muchos y muestra misericordia a pocos. También esto es de doble faz[c], pero en su totalidad es malo.
+  text: Mancha el alma[a] y hace brillar[b] el cuerpo; mata a muchos y muestra misericordia a pocos. También esto es de doble rostro[c], pero en su totalidad es malo.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -142,4 +142,49 @@ ai_draft:
     estimated_cost_usd: 0.166541
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Mancha el alma[a] y hace brillar[b] el cuerpo; mata a muchos y muestra misericordia a pocos. También esto es de doble faz[c], pero en su totalidad es malo.
+  to: Mancha el alma[a] y hace brillar[b] el cuerpo; mata a muchos y muestra misericordia a pocos. También esto es de doble rostro[c], pero en su totalidad es malo.
+  rationale: Harmonizes 'de doble faz' to 'de doble rostro' to match the term used consistently in all other per-verse files within this shard (003/001, 003/002, 004/001–003). All other content approved without change.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:12:46Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Faithful rendering of all Greek verbs: σπιλοῖ→mancha, λαμπρύνει→hace brillar, ἀναιρεῖ→mata, ἐλεεῖ→muestra misericordia, διπρόσωπον→de doble faz, πονηρόν→malo. Source-grounded and accurate.'
+  spanish_quality_summary: 'Natural neutral Latin American Spanish. Footnotes [a][b][c] match text markers exactly. Minor terminological inconsistency: this verse uses ''de doble faz'' while adjacent per-verse files use ''de doble rostro'' and the chapter-level file uses ''de doble cara''. Within this shard ''de doble rostro'' is the dominant rendering. Harmonizing to ''de doble rostro'' improves consistency.'
+  glossary_alignment: No YHWH/κύριος/θεός/Χριστός/δοῦλος/πνεῦμα in this verse. Project glossary not triggered. N/A.
+  issues:
+  - severity: low
+    issue: 'Term inconsistency: ''de doble faz'' used here vs. ''de doble rostro'' in 002/008, 003/001, 003/002, 004/001–003 and ''de doble cara'' in chapter files 002.yaml, 003.yaml, 004.yaml.'
+    rationale: Within this shard the per-verse files for ch.3 and ch.4 consistently use 'de doble rostro'. Harmonizing 2:7 to 'de doble rostro' ensures consistency in the per-verse layer. The footnote [c] already defines the term so the change is transparent.
+  revised_spanish_text: Mancha el alma[a] y hace brillar[b] el cuerpo; mata a muchos y muestra misericordia a pocos. También esto es de doble rostro[c], pero en su totalidad es malo.
+  revised_footnotes:
+  - marker: a
+    text: Gr. ψυχή puede significar «alma», «vida» o «persona»; en contraste con σῶμα («cuerpo»), el sentido es el alma como sede interior del ser moral.
+    reason: lexical_alternative
+  - marker: b
+    text: 'Gr. λαμπρύνει: «hacer brillar» o «dar esplendor»; la imagen es de lustre exterior, en contraste irónico con «mancha el alma». Alternativa: «embellece el cuerpo».'
+    reason: lexical_alternative
+  - marker: c
+    text: 'Gr. διπρόσωπον, literalmente «de dos rostros» (δι- + πρόσωπον); concepto central en T.Ash. 2 para describir al que mezcla apariencia de bien con fondo de mal. Alternativa: «bifronte».'
+    reason: lexical_alternative
+  revision_rationale: Harmonizes 'de doble faz' to 'de doble rostro' to match the term used consistently in all other per-verse files within this shard (003/001, 003/002, 004/001–003). All other content approved without change.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: bf0b3cfa3478178a5c18e0f240844d866e4a9c000e3ce8f798fa45956ebed8cf
+  timestamp: '2026-05-08T06:12:46Z'
+  output_hash: bf0b3cfa3478178a5c18e0f240844d866e4a9c000e3ce8f798fa45956ebed8cf
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

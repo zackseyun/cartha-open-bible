@@ -141,4 +141,27 @@ ai_draft:
     estimated_cost_usd: 0.182777
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: μὴ γίνεσθε κατ'' αὐτοὺς διπρόσωποι→no se vuelvan de doble rostro como ellos; ἀγαθότητος καὶ κακίας→en bondad y maldad (correctly rendered as appositional genitive, matching EN revision); τῇ ἀγαθότητι μόνῃ κολλήθητε→aférrense únicamente a la bondad; Κύριος ὁ Θεὸς ἀναπαύεται ἐν αὐτῇ→el Señor Dios reposa en ella; οἱ ἄνθρωποι αὐτὴν ποθοῦσιν→la gente la anhela. Source fully covered.'
+  spanish_quality_summary: Natural neutral Latin American Spanish. 'Ustedes' (not vosotros) correct for LATAM. Footnote [a] and [b] match markers. Dashes for the appositional genitive are typographically correct. Theological decision on Κύριος as title (not YHWH substitution) is sound for pseudepigrapha.
+  glossary_alignment: 'Κύριος→el Señor (not Yahvé): correct, T12P pseudepigrapha without verified Hebrew YHWH substrate. θεός→Dios: correct.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 64e2092a1913cc23bfb365167fcb56c505756adc514a3626baa8a2ec503a5014
+  timestamp: '2026-05-08T06:14:32Z'
+  output_hash: 64e2092a1913cc23bfb365167fcb56c505756adc514a3626baa8a2ec503a5014
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

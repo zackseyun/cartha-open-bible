@@ -131,4 +131,27 @@ ai_draft:
     estimated_cost_usd: 0.208225
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+review_pass:
+  verdict: approve
+  source_alignment_summary: 'Greek: οὐ θέλει ἰδεῖν ἡμέρας ἀγαθὰς μετὰ ἀσώτων→no desea ver días buenos con los disolutos; αἰσχράνει τὸ σῶμα→deshonrar el cuerpo; μολυνεῖ τὴν ψυχήν→contaminar el alma. The EN revision correctly distinguished αἰσχράνει (disgrace/deshonrar) from μολυνεῖ (defile/contaminar) and removed the possessives. Spanish ES follows correctly. διπρόσωπον→de doble cara; ὅλον δὲ καλόν→del todo bueno.'
+  spanish_quality_summary: 'Natural Spanish. Footnotes [a][b][c] match markers. The choice ''disolutos'' for ἀσώτων over EN ''wasteful'' is well-argued: moral dissolution fits the context of body/soul contamination better than financial wastefulness. ''Para no deshonrar el cuerpo ni contaminar el alma'' correctly uses ''ni'' for the second negative coordinate.'
+  glossary_alignment: No divine names. ψυχή→alma (not espíritu/πνεῦμα) correct. σῶμα→cuerpo correct.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8026c3aaa430b1d58849466a6fd684f1fb004b0275332f4f8c1c409065fb07a0
+  timestamp: '2026-05-08T06:16:06Z'
+  output_hash: 8026c3aaa430b1d58849466a6fd684f1fb004b0275332f4f8c1c409065fb07a0
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -168,4 +168,40 @@ ai_draft:
     estimated_cost_usd: 0.193383
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_needs_adjudication
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: δορκάσι καὶ ἐλάφοις→gacelas y ciervos; ἐν ἤθει ἀγρίων→en la manera de los animales salvajes; δοκοῦσιν ἀκάθαρτοι εἶναι→parecen ser impuros; τὸ δὲ πᾶν καθαροί εἰσιν→en todo son puros; ἐν ζήλῳ Κυρίου→con celo por Yahvé; ἀπεχόμενοι ὧν καὶ ὁ Θεὸς...μισῶν ἀπαγορεύει→absteniéndose de lo que también Dios aborrece y prohíbe; ἀπείργων τὸ κακὸν τοῦ ἀγαθοῦ→apartando el mal del bien. Key theological decision: Κυρίου→Yahvé (not ''el Señor''), documented with footnote [b].'
+  spanish_quality_summary: 'Natural Spanish. Footnotes [a][b] match markers. The decision to render Κυρίου as ''Yahvé'' is theologically argued (covenantal context echoes Phinehas/Elijah zeal passages where Κύριος clearly substitutes YHWH). This differs from ch.3 and ch.4 which use ''el Señor''. The inconsistency within the same text warrants flagging: 4:3 and 4:5 (both in T12P.ASH) handle Κύριος differently. The ch.4 verse-level files 4:3 uses ''el Señor'', while 4:5 uses ''Yahvé''. Within a single chapter of the same pseudepigraphical document, mixing Yahvé/el Señor creates visible inconsistency that readers will notice. The rationale for Yahvé in 4:5 is stronger (explicit zeal-for-the-Lord formula echoing Num 25:11/1 Kgs 19:10), but consistency within T12P.ASH is also a value. This is a genuine adjudication question.'
+  glossary_alignment: Κύριος→Yahvé (4:5) vs. el Señor (4:3, ch.3, ch.4 level)—inconsistency within T12P.ASH. θεός→Dios correct.
+  issues:
+  - severity: medium
+    issue: Κυρίου rendered as 'Yahvé' in this verse while the same Κύριος/Κύριον is rendered 'el Señor' in 4:3 and throughout ch.3 and the chapter-level files. Within a single pseudepigraphical document, mixing these two renderings without a clear rule creates visible inconsistency.
+    rationale: The zeal formula 'ἐν ζήλῳ Κυρίου' does echo LXX passages where Κύριος = YHWH (Num 25:11; 1 Kgs 19:10,14), which supports 'Yahvé'. However, the same argument could apply to 4:3 'μιμεῖται Κύριον'. T12P.ASH is a Greek pseudepigraphical text without a verified Hebrew YHWH substrate; the project default for such texts is 'el Señor'. The stronger default is 'el Señor' throughout T12P.ASH for consistency, with a footnote noting the LXX echo. This is a close call that warrants GPT-5.4 adjudication.
+  revised_spanish_text: 'Pues tales hombres son semejantes a gacelas y ciervos[a]: aunque en la manera de los animales salvajes parecen ser impuros, en todo son puros, porque caminan con celo por el Señor[b], absteniéndose de lo que también Dios aborrece y prohíbe mediante los mandamientos, apartando el mal del bien.'
+  revised_footnotes:
+  - marker: a
+    text: 'La gacela (δορκάς) y el ciervo (ἔλαφος) figuran entre los animales ritualmente puros según la Ley mosaica (Dt 14:5; cf. Lv 11:3-8), aunque son animales salvajes —no domésticos—. El autor explota esta tensión: su aspecto y manera de vida parecen impuros a los ojos de quienes juzgan por apariencias, pero su condición real es de pureza. La analogía moral es característica de la literatura sapiencial judía tardía.'
+    reason: cultural_note
+  - marker: b
+    text: Griego Κυρίου, genitivo de Κύριος. La fórmula «celo por el Señor» evoca pasajes de la LXX donde Κύριος representa YHWH, especialmente el celo de Finees (Nm 25:11) y Elías (1 Re 19:10). Dado que los Testamentos de los Doce Patriarcas son pseudoepigrafía griega sin Vorlage hebreo verificable en este punto, se mantiene «el Señor» conforme a la política del proyecto para κύριος en T12P.
+    reason: theological_note
+  revision_rationale: Changed 'Yahvé' to 'el Señor' for Κυρίου to maintain consistency with all other renderings of Κύριος in T12P.ASH (4:3, ch.3, ch.4). Updated footnote [b] to document the LXX echo (Phinehas/Elijah) transparently while explaining why 'el Señor' is used per project policy for T12P pseudepigrapha. This is a close call—see requires_gpt54_adjudication.
+  requires_gpt54_adjudication: true
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d842bcb93995387cef3727fe8de8504ebfb0f6a97c87901bc41dc22389730b9d
+  timestamp: '2026-05-08T06:16:37Z'
+  output_hash: d842bcb93995387cef3727fe8de8504ebfb0f6a97c87901bc41dc22389730b9d
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

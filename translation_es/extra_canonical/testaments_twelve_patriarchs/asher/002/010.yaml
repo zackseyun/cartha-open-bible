@@ -19,7 +19,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Pues también Dios, en las tablas[a] de los mandamientos,[b] así lo dijo.
+  text: Pues también Dios, en las tablas[a] de los mandamientos[b], así lo dijo.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -117,4 +117,46 @@ ai_draft:
     estimated_cost_usd: 0.121602
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: Pues también Dios, en las tablas[a] de los mandamientos,[b] así lo dijo.
+  to: Pues también Dios, en las tablas[a] de los mandamientos[b], así lo dijo.
+  rationale: Moved footnote marker [b] from after the comma to before it, per Spanish typographic convention (marker precedes the closing punctuation of the clause it annotates). No other changes; the translation itself is accurate.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:13:43Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Καὶ γὰρ ὁ Θεὸς ἐν ταῖς πλαξὶ τῶν ἐντολῶν οὕτως εἶπεν. The ES renders θεός→Dios (correct), πλαξί→tablas (correct), ἐντολῶν→mandamientos (correct), οὕτως εἶπεν→así lo dijo (aorist, source-faithful) vs. EN POB ''has declared it so'' (perfect). Spanish simple past ''dijo'' is more faithful to the Greek aorist. One concern: the ES text ends with ''así lo dijo.'' (period inside quotation context) which is fine. Overall source alignment good.'
+  spanish_quality_summary: 'Natural Spanish. Two footnotes [a][b] match markers. The rendering ''así lo dijo'' correctly follows the Greek aorist εἶπεν rather than the EN POB''s present perfect. However, the footnote [b] on τῶν ἐντολῶν describes it as a ''lexical_alternative'' but actually documents a textual variant per the Charles apparatus. The footnote is informative. Minor: the word ''también'' positioning (''Pues también Dios'') mirrors ''For God also'' correctly—Καὶ γὰρ with adverbial καί on the subject.'
+  glossary_alignment: θεός→Dios correct. No YHWH/Yahvé (κύριος absent). No Χριστός. No δοῦλος. No πνεῦμα.
+  issues:
+  - severity: low
+    issue: The comma placement 'de los mandamientos,[b]' places the footnote marker after a comma, which in standard Spanish typographic convention should be 'de los mandamientos[b],' (footnote before punctuation). Minor typographic issue.
+    rationale: Spanish footnote markers conventionally precede the punctuation mark that closes the clause, not follow it.
+  revised_spanish_text: Pues también Dios, en las tablas[a] de los mandamientos[b], así lo dijo.
+  revised_footnotes:
+  - marker: a
+    text: 'πλαξί (pl. de πλάξ): «tablas [de piedra]». Referencia probable a las tablas del Decálogo (cf. Éx 31:18; 32:15; Dt 9:10–11). El aparato crítico de Charles (nota ⁶⁵) registra variante manuscrita en este término.'
+    reason: textual_variant
+  - marker: b
+    text: 'τῶν ἐντολῶν: «de los mandamientos/preceptos». El aparato de Charles (nota ⁶⁶) señala una variante textual. El plural ἐντολαί en contexto de «tablas» evoca el Decálogo como código normativo, recurso habitual en la ética del Segundo Templo.'
+    reason: lexical_alternative
+  revision_rationale: Moved footnote marker [b] from after the comma to before it, per Spanish typographic convention (marker precedes the closing punctuation of the clause it annotates). No other changes; the translation itself is accurate.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 12bde9389fa1f5fc8760553d267ace3304d6a3f7b81c64e7676743f15845401f
+  timestamp: '2026-05-08T06:13:43Z'
+  output_hash: 12bde9389fa1f5fc8760553d267ace3304d6a3f7b81c64e7676743f15845401f
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
