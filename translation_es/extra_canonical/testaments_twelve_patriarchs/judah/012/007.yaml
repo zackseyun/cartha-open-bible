@@ -19,11 +19,11 @@ base_translation:
     changes_summary: 'Revised for lexical accuracy and natural English: changed ''did this deceitfully'' to ''acted deceitfully'' for a more direct rendering of ἐποίησε ἐν δολιότητι, and removed ''woman'' since ἄλλης means simply ''another'' here and should not be over-specified.'
 translation:
   language: es
-  text: 'Porque dije: «Quizá actuó con engaño, habiendo recibido de otro[a] el prenda.»'
+  text: 'Porque dije: «Quizá actuó con engaño, habiendo recibido de otra[a] la prenda.»'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «de otro» conserva la ambigüedad del griego ἑτέρας/ἑτέρου; el texto no especifica aquí «de otra mujer».
+    text: «de otra» conserva la ambigüedad del griego ἑτέρας, que es gramaticalmente femenino; el texto no especifica de forma explícita de qué otra persona se trata.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἔλεγον γάρ
@@ -92,4 +92,46 @@ ai_draft:
     total_tokens: 2467
     reasoning_tokens: 0
     estimated_cost_usd: 0.004629
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 'Porque dije: «Quizá actuó con engaño, habiendo recibido de otro[a] el prenda.»'
+  to: 'Porque dije: «Quizá actuó con engaño, habiendo recibido de otra[a] la prenda.»'
+  rationale: 'Fixed grammatical gender: ''el prenda'' → ''la prenda''. Updated ''de otro'' to ''de otra'' to reflect the feminine genitive ἑτέρας; updated footnote accordingly.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:36:02Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἔλεγον γάρ· Μήποτε ἐν δολιότητι ἐποίησε παρὰ ἑτέρας λαβοῦσα τοὺς ἀρραβῶνας. EN POB: ''For I said, "Perhaps she acted deceitfully, having received the pledge from another."'' Spanish: ''Porque dije: «Quizá actuó con engaño, habiendo recibido de otro[a] el prenda.»'' Two issues: (1) ''el prenda'' — ''prenda'' is grammatically feminine in Spanish, so it should be ''la prenda''; (2) ''de otro'' instead of ''de otra'' — ἑτέρας is genitive feminine, and the footnote acknowledges the ambiguity, but ''de otro'' introduces an unwarranted masculine; the EN POB uses ''another'' (gender-neutral) and the Greek ἑτέρας is feminine (agreeing with an implied woman). Footnote [a] marker matches usage in text.'
+  spanish_quality_summary: Generally natural. The gender error 'el prenda' is a grammatical mistake needing correction. 'de otro' vs 'de otra' is a debatable point — the footnote acknowledges ambiguity — but in context 'de otra' is more faithful to the Greek genitive feminine.
+  glossary_alignment: ἀρραβῶνας rendered 'la prenda' — appropriate. No other glossary terms.
+  issues:
+  - severity: medium
+    issue: '''el prenda'' should be ''la prenda'' — ''prenda'' is feminine in Spanish.'
+    rationale: Grammatical gender agreement error.
+  - severity: low
+    issue: '''de otro'' could be ''de otra'' to reflect Greek ἑτέρας (feminine genitive).'
+    rationale: The Greek feminine suggests another woman; though the footnote notes ambiguity, 'de otra' is more source-faithful.
+  revised_spanish_text: 'Porque dije: «Quizá actuó con engaño, habiendo recibido de otra[a] la prenda.»'
+  revised_footnotes:
+  - marker: a
+    text: «de otra» conserva la ambigüedad del griego ἑτέρας, que es gramaticalmente femenino; el texto no especifica de forma explícita de qué otra persona se trata.
+    reason: lexical_alternative
+  revision_rationale: 'Fixed grammatical gender: ''el prenda'' → ''la prenda''. Updated ''de otro'' to ''de otra'' to reflect the feminine genitive ἑτέρας; updated footnote accordingly.'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c9a8c783f3cf5da85bfefa7f0e570979fd9e1e557f0db1a5288b0b58742069bd
+  timestamp: '2026-05-08T06:36:02Z'
+  output_hash: c9a8c783f3cf5da85bfefa7f0e570979fd9e1e557f0db1a5288b0b58742069bd
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Changed ‘the spirit of jealousy and of sexual immorality’ to ‘the spirit of jealousy and sexual immorality’ for smoother English while preserving the source; changed ‘I sinned’ to ‘I completed it’ to better reflect συνετέλεσα without adding a stronger claim than the Greek explicitly states.
 translation:
   language: es
-  text: y reprensé a Rubén, mi hermano, por causa de Bilha, la mujer de mi padre; y el espíritu de los celos y de la inmoralidad sexual se pusieron contra mí, hasta que lo consumé con Anán, la mujer cananea, y con Tamar, mi nuera.
+  text: y reprendí a Rubén, mi hermano, por causa de Bilha, la mujer de mi padre; y el espíritu de los celos y de la inmoralidad sexual se puso contra mí, hasta que lo consumé con Anán, la mujer cananea, y con Tamar, mi nuera.
   philosophy: optimal-equivalence
 lexical_decisions:
 - source_word: καὶ ὠνείδιζον Ῥουβὶμ τὸν ἀδελφόν μου
@@ -121,4 +121,42 @@ ai_draft:
     total_tokens: 3490
     reasoning_tokens: 0
     estimated_cost_usd: 0.008584
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: y reprensé a Rubén, mi hermano, por causa de Bilha, la mujer de mi padre; y el espíritu de los celos y de la inmoralidad sexual se pusieron contra mí, hasta que lo consumé con Anán, la mujer cananea, y con Tamar, mi nuera.
+  to: y reprendí a Rubén, mi hermano, por causa de Bilha, la mujer de mi padre; y el espíritu de los celos y de la inmoralidad sexual se puso contra mí, hasta que lo consumé con Anán, la mujer cananea, y con Tamar, mi nuera.
+  rationale: 'Two grammatical corrections: ''reprensé'' → ''reprendí'' (standard preterite of reprender); ''se pusieron'' → ''se puso'' (subject-verb agreement with singular ''el espíritu'').'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:38:00Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: καὶ ὠνείδιζον Ῥουβὶμ τὸν ἀδελφόν μου περὶ Βάλλας γυναικὸς τοῦ πατρός μου, καὶ τὸ πνεῦμα τοῦ ζήλου καὶ τῆς πορνείας παρετάξαντο ἐπʼ ἐμέ, ἕως συνετέλεσα εἰς Ἀνᾶν τὴν Χαναανίτιν καὶ εἰς Θαμὰρ τὴν νύμφην μου. EN POB final: ''and I reproached Reuben my brother concerning Bilhah, my father''s wife, and the spirit of jealousy and sexual immorality arrayed themselves against me, until I completed it with Anan the Canaanite woman and with Tamar my daughter-in-law.'' Spanish: ''y reprensé a Rubén, mi hermano, por causa de Bilha, la mujer de mi padre; y el espíritu de los celos y de la inmoralidad sexual se pusieron contra mí, hasta que lo consumé con Anán, la mujer cananea, y con Tamar, mi nuera.'' Issue: ''reprensé'' is not standard Spanish — the standard form is ''reprendí''. Also ''se pusieron'' should agree with the singular subject ''el espíritu'' — should be ''se puso''.'
+  spanish_quality_summary: '''reprensé'' is a non-standard conjugation of ''reprender''; the correct preterite is ''reprendí''. ''el espíritu...se pusieron'' — subject-verb agreement error; singular ''el espíritu'' requires ''se puso''. Otherwise the translation is accurate and natural.'
+  glossary_alignment: πνεῦμα → 'el espíritu' (lowercase, adversarial spirit) — correct. πορνεία → 'inmoralidad sexual' — consistent with POB. No violations.
+  issues:
+  - severity: medium
+    issue: '''reprensé'' is not a standard Spanish conjugation; should be ''reprendí''.'
+    rationale: The verb 'reprender' forms its preterite as 'reprendí', not 'reprensé'.
+  - severity: medium
+    issue: '''el espíritu...se pusieron'' — subject-verb agreement error; should be ''se puso''.'
+    rationale: The subject 'el espíritu' is singular; 'se pusieron' is plural.
+  revised_spanish_text: y reprendí a Rubén, mi hermano, por causa de Bilha, la mujer de mi padre; y el espíritu de los celos y de la inmoralidad sexual se puso contra mí, hasta que lo consumé con Anán, la mujer cananea, y con Tamar, mi nuera.
+  revision_rationale: 'Two grammatical corrections: ''reprensé'' → ''reprendí'' (standard preterite of reprender); ''se pusieron'' → ''se puso'' (subject-verb agreement with singular ''el espíritu'').'
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 72c2e50956546b13cdc8e6eeb17f673a5f2342165bcee418e4b1a108286604e1
+  timestamp: '2026-05-08T06:38:00Z'
+  output_hash: 72c2e50956546b13cdc8e6eeb17f673a5f2342165bcee418e4b1a108286604e1
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

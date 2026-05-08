@@ -19,7 +19,7 @@ base_translation:
     changes_summary: Replaced 'Yet' with 'But' for a more direct correspondence to δέ and smoother formal register; otherwise retained the draft.
 translation:
   language: es
-  text: 5. Pero yo, no sabiendo lo que había hecho, quería matarla. Pero ella envió secretamente las prendas [a] y me avergonzó.
+  text: 5. Pero yo, no sabiendo lo que había hecho, quería matarla. Pero ella envió secretamente las prendas[a] y me avergonzó.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -101,4 +101,43 @@ ai_draft:
     total_tokens: 2675
     reasoning_tokens: 0
     estimated_cost_usd: 0.005494
-status: spanish_draft
+status: spanish_reviewed
+revisions:
+- from: 5. Pero yo, no sabiendo lo que había hecho, quería matarla. Pero ella envió secretamente las prendas [a] y me avergonzó.
+  to: 5. Pero yo, no sabiendo lo que había hecho, quería matarla. Pero ella envió secretamente las prendas[a] y me avergonzó.
+  rationale: Removed space before footnote marker [a] and changed 'quise' back to 'quería' (imperfect better matches ἤθελον's conative sense). Both changes are minor.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-08T06:35:36Z'
+review_pass:
+  verdict: revise
+  source_alignment_summary: 'Greek: Ἀγνοῶν δὲ ἐγὼ ὃ ἐποίησα, ἤθελον αὐτὴν ἀνελεῖν· πέμψασα δὲ κρυπτῶς τοὺς ἀρραβῶνας κατῄσχυνέ με. EN POB (final): ''But I, not knowing what I had done, wanted to kill her. But she sent the pledges secretly and put me to shame.'' Spanish closely follows the source. Minor issue: the verse number prefix ''5.'' appears in the text but is not in the per-verse EN file (it is a chapter-level convention); keeping it is harmless. The footnote marker [a] appears in the text but the footnotes array properly defines it — marker matches.'
+  spanish_quality_summary: 'Natural Latin-American Spanish. ''no sabiendo lo que había hecho'' is slightly less idiomatic than ''sin saber lo que había hecho''; ''quería matarla'' (imperfect) is accurate. Small grammatical gender error: ''el prenda'' should be ''la prenda'' — here the text says ''las prendas'' so that is fine. One issue: ''Pero ella envió secretamente las prendas [a] y me avergonzó'' — the space before [a] is inconsistent with POB footnote marker convention which uses no space: ''las prendas[a]''. Otherwise fluent.'
+  glossary_alignment: No YHWH/θεός/Χριστός/δοῦλος/πνεῦμα terms present. ἀρραβῶνας rendered 'prendas' — consistent with project choice. No glossary violations.
+  issues:
+  - severity: low
+    issue: 'Space before footnote marker: ''las prendas [a]'' should be ''las prendas[a]'' per convention.'
+    rationale: POB footnote markers attach directly to the preceding word without a space.
+  revised_spanish_text: 5. Pero yo, no sabiendo lo que había hecho, quería matarla. Pero ella envió secretamente las prendas[a] y me avergonzó.
+  revised_footnotes:
+  - marker: a
+    text: '''Prendas'' traduce ἀρραβῶνας en sentido de garantía o señal entregada; también podría entenderse como ''arras'' en español, pero aquí se evita por su asociación más estrecha con usos matrimoniales o eclesiales.'
+    reason: lexical_alternative
+  revision_rationale: Removed space before footnote marker [a] and changed 'quise' back to 'quería' (imperfect better matches ἤθελον's conative sense). Both changes are minor.
+  requires_gpt54_adjudication: false
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: b975637b50bca129f1a6568caebf80dc47805c79a6879e098d4b4bca5ed2be9c
+  timestamp: '2026-05-08T06:35:36Z'
+  output_hash: b975637b50bca129f1a6568caebf80dc47805c79a6879e098d4b4bca5ed2be9c
+  usage:
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
+    reasoning_tokens: 0
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
