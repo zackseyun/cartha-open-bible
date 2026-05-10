@@ -20,6 +20,7 @@ of each YAML file byte-for-byte.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import pathlib
 import re
@@ -184,15 +185,72 @@ def selected_record(records: list[ReviewRecord]) -> ReviewRecord:
     )
 
 
-def summarize(records: list[ReviewRecord]) -> dict[str, Any]:
+def parse_timestamp(value: str | None) -> dt.datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = dt.datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=dt.timezone.utc)
+    return parsed
+
+
+def latest_revision_timestamp(yaml_path: pathlib.Path) -> str | None:
+    try:
+        data = yaml.safe_load(yaml_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    if not isinstance(data, dict):
+        return None
+
+    candidates: list[str] = []
+    revision_pass = data.get("revision_pass")
+    if (
+        isinstance(revision_pass, dict)
+        and revision_pass.get("unchanged") is False
+        and revision_pass.get("timestamp")
+    ):
+        candidates.append(str(revision_pass["timestamp"]))
+
+    for revision in data.get("revisions") or []:
+        if isinstance(revision, dict) and revision.get("timestamp"):
+            candidates.append(str(revision["timestamp"]))
+
+    parsed = [(parse_timestamp(value), value) for value in candidates]
+    parsed = [(stamp, value) for stamp, value in parsed if stamp is not None]
+    if not parsed:
+        return None
+    return max(parsed, key=lambda item: item[0])[1]
+
+
+def summarize(records: list[ReviewRecord], latest_revision_at: str | None = None) -> dict[str, Any]:
     selected = selected_record(records)
     scores = [r.agreement_score for r in records]
     verdict_counts = Counter(r.verdict for r in records)
     models = sorted({r.reviewer_model for r in records})
     strategies = sorted({r.strategy for r in records})
-    passes_with_issues = sum(1 for r in records if r.issues_found > 0)
+    issue_records = [r for r in records if r.issues_found > 0]
+    passes_with_issues = len(issue_records)
+    issue_count = sum(r.issues_found for r in issue_records)
 
-    return {
+    latest_revision_stamp = parse_timestamp(latest_revision_at)
+    open_issue_records = issue_records
+    superseded_issue_passes = 0
+    if latest_revision_stamp:
+        open_issue_records = [
+            r
+            for r in issue_records
+            if (parse_timestamp(r.reviewed_at) or dt.datetime.min.replace(tzinfo=dt.timezone.utc))
+            >= latest_revision_stamp
+        ]
+        superseded_issue_passes = passes_with_issues - len(open_issue_records)
+
+    open_issue_count = sum(r.issues_found for r in open_issue_records)
+    superseded_issue_count = issue_count - open_issue_count
+
+    summary = {
         "status": score_status(selected.agreement_score),
         # `agreement` is what the current website component reads; keep
         # `agreement_score` too because that is the repo schema/history term.
@@ -206,11 +264,22 @@ def summarize(records: list[ReviewRecord]) -> dict[str, Any]:
         "strategy": selected.strategy,
         "pass_count": len(records),
         "passes_with_issues": passes_with_issues,
+        "issue_count": issue_count,
         "models": models,
         "strategies": strategies,
         "verdict_counts": dict(sorted(verdict_counts.items())),
         "source_review": selected.rel_review_path,
     }
+    if latest_revision_at:
+        summary["latest_revision_at"] = latest_revision_at
+        summary["open_passes_with_issues"] = len(open_issue_records)
+        summary["open_issue_count"] = open_issue_count
+        summary["superseded_issue_passes"] = superseded_issue_passes
+        summary["superseded_issue_count"] = superseded_issue_count
+        if passes_with_issues and superseded_issue_passes == passes_with_issues:
+            summary["review_state"] = "needs_recheck_after_revision"
+            summary["needs_recheck_after_revision"] = True
+    return summary
 
 
 def render_cross_check_block(summary: dict[str, Any]) -> str:
@@ -261,7 +330,10 @@ def publish(dry_run: bool) -> dict[str, Any]:
     changed = 0
     already_current = 0
     for yaml_path, verse_records in sorted(grouped.items()):
-        summary = summarize(verse_records)
+        summary = summarize(
+            verse_records,
+            latest_revision_at=latest_revision_timestamp(yaml_path),
+        )
         rendered = render_cross_check_block(summary)
         original = yaml_path.read_text(encoding="utf-8")
         updated = replace_top_level_cross_check(original, rendered)
