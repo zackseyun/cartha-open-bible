@@ -4,7 +4,10 @@ All source texts the People's Open Bible translates from are vendored in
 this directory with their original licenses preserved. The repo's
 output (the English translation in `translation/`) is CC-BY 4.0 — but
 the upstream sources beneath it carry their own licenses and are
-**not** relicensed by including them here.
+**not** relicensed by including them here. Every vendored source is
+nonetheless freely redistributable under its own terms (Public Domain,
+CC-BY, CC-BY-SA, or an equivalent permissive license) — none impose a
+fee or restrict downstream use.
 
 Each per-verse YAML in `translation/` records which source(s) it drew
 from via the `edition` enum on its `source` block (see
