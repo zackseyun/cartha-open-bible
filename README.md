@@ -78,17 +78,17 @@ Two verses that illustrate what POB does differently, and why.
 - **Χριστοῦ → "Messiah"** (translated, not transliterated). "Christ" has become a name in English; Paul wrote a title. "Messiah" restores the Jewish messianic claim Paul was making.
 - **ἐπισκόποις → "overseers"** (not "bishops"). "Bishops" imports the later ecclesial office that didn't exist in 1st-century Philippi.
 
-### Romans 3:25
+### John 3:16
 
 | | Rendering |
 |---|---|
-| **POB** | "whom God put forward as an **atoning sacrifice** through faith in his blood, to demonstrate his righteousness, because of the **passing over** of previously committed sins." |
-| NKJV | "whom God set forth as a propitiation by His blood, through faith, to demonstrate His righteousness, because in His forbearance God had passed over the sins that were previously committed" |
-| NIV | "God presented **Christ** as a sacrifice of atonement, through the **shedding of his blood**—to be **received by faith**. He did this to demonstrate his righteousness, because in his forbearance he had left the sins committed beforehand unpunished" |
+| **POB** | "For God loved the world **in this way**: he gave his **only Son**, so that everyone who believes in him should not perish but have eternal life." |
+| NKJV | "For God **so loved** the world that He gave His **only begotten Son**, that whoever believes in Him should not perish but have everlasting life." |
+| NIV | "For God **so loved** the world that he gave his **one and only Son**, that whoever believes in him shall not perish but have eternal life." |
 
-- **NIV inserts three phrases not in the Greek**: "Christ," "shedding of," and "received by faith." Each is a defensible interpretation — but it's embedded in the main text where the reader can't see it's a choice.
-- **ἱλαστήριον → "atoning sacrifice"** — alternatives ("propitiation," "mercy seat") preserved in footnotes with rationale.
-- **πάρεσιν → "passing over"** preserves Paul's specific Greek distinction between παρίημι (overlook) and ἀφίημι (forgive). NIV collapses this to "left unpunished."
+- **Οὕτως → "in this way"** (not primarily "so much"). The Greek points to the manner of God's love: he loved the world *by giving* the Son. The traditional wording is beautiful, but it can make the verse sound mainly like a statement about the *amount* of God's love.
+- **μονογενῆ → "only Son"** keeps the main text direct and uncluttered. POB preserves "only begotten" and "unique Son" in the note layer instead of forcing the reader into one theological paraphrase in the sentence itself.
+- **The familiar wording is preserved visibly, not silently baked in.** Readers can still see the traditional "For God so loved the world" reading in the verse notes, but the main text keeps the Greek logic front and center.
 
 ### The philosophy behind these choices
 
@@ -96,7 +96,7 @@ POB's choice is **lexical accuracy in the main text + contextual understanding i
 
 "Slaves of Messiah Jesus" is harder on a modern reader's first pass than "servants of Christ Jesus," but it's what Paul actually wrote. Where a word's ancient meaning differs from modern English connotations, the responsibility is on the **reading experience** — the rationale recorded in each verse's YAML, footnotes, the in-app **Original context** AI tool, the public discussion forum — to restore the meaning. Not on the translation to quietly round it off.
 
-That's why NIV's Romans 3:25 is illustrative of what POB avoids: a *good* interpretation invisibly embedded in the main text. The reader can't see it's a choice; they can't audit it; they can't disagree with it. POB makes every such choice visible and defensible.
+That's why John 3:16 is a useful showcase: POB is willing to touch even the most familiar English wording when the Greek is more precise. The reader still gets the traditional reading in the visible notes, but the main text does not hide the choice. POB makes every such choice visible and defensible.
 
 **Is "slave" true to δοῦλος?** As close as a single English word can be. No single English word fully captures the ownership + submission + paradoxical honor + LXX "servant of YHWH" echo that Paul packed into δοῦλος. That's why one-tap context matters: the word is the foundation; the meaning lives in the layer you can read into.
 
