@@ -1,6 +1,9 @@
 # the People's Open Bible
 
-Managed by [cartha.com](https://cartha.com).
+Maintained by [cartha.com](https://cartha.com), which stewards the
+public revision process, hosting infrastructure, and this open-source
+project. The text, data, methods, and code remain open for public
+review, use, and contribution.
 
 This is the people’s Bible — the most accurate-to-original translation
 from Hebrew, Greek, and Latin into English that we can build. Every
