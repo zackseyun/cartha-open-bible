@@ -156,6 +156,27 @@ def resolve_gemini_key() -> str:
 MODEL_ID = "gemini-2.5-flash"
 
 
+def verse_footnotes(english: str, chapter_footnotes: list[Any]) -> list[dict[str, Any]]:
+    """Return chapter footnotes whose inline markers are present in one verse.
+
+    Chapter drafts carry footnotes at the chapter level, while the reader
+    consumes the derived per-verse YAMLs. If a verse keeps an inline marker like
+    ``[a]`` but the matching note is not copied down, the app renders the raw
+    marker in prose. Copying only markers that are actually present in the
+    verse keeps per-verse payloads small and avoids orphaned note pills.
+    """
+    if not english or not isinstance(chapter_footnotes, list):
+        return []
+    copied: list[dict[str, Any]] = []
+    for note in chapter_footnotes:
+        if not isinstance(note, dict):
+            continue
+        marker = str(note.get("marker") or "").strip()
+        if marker and f"[{marker}]" in english:
+            copied.append(dict(note))
+    return copied
+
+
 def call_gemini(api_key: str, user_text: str) -> str:
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
@@ -267,9 +288,17 @@ def split_chapter(
     chapter_dir.mkdir(exist_ok=True)
 
     written = 0
+    chapter_footnotes = ((doc.get("translation") or {}).get("footnotes") or [])
     for v in out_verses:
         vn = v["verse"]
         verse_path = chapter_dir / f"{vn:03d}.yaml"
+        translation = {
+            "text": v["english"],
+            "philosophy": (doc.get("translation") or {}).get("philosophy"),
+        }
+        notes = verse_footnotes(v["english"], chapter_footnotes)
+        if notes:
+            translation["footnotes"] = notes
         record = {
             "id": f"{testament['code']}.{chapter_num}.{vn}",
             "reference": f"{testament['display']} {chapter_num}:{vn}",
@@ -281,10 +310,7 @@ def split_chapter(
                 "text": v["greek"],
                 "language": "Greek",
             },
-            "translation": {
-                "text": v["english"],
-                "philosophy": (doc.get("translation") or {}).get("philosophy"),
-            },
+            "translation": translation,
             "note": (
                 f"Derived from chapter-level draft at "
                 f"translation/extra_canonical/testaments_twelve_patriarchs/"
