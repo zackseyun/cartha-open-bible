@@ -760,19 +760,61 @@ def extract_lemma_from_rationale(source_word: str, rationale: str) -> str | None
     return None
 
 
+def _insert_lemma_line(text: str, source_word: str, lemma: str) -> tuple[str, bool]:
+    """Insert `  lemma: <lemma>` immediately after the `- source_word: <sw>`
+    line, preserving all other formatting. Returns (new_text, inserted).
+
+    No-op if the entry already has a `lemma:` line in the immediate next
+    field, or if the source_word can't be located on a list-item line.
+    """
+    lines = text.split("\n")
+    # Build the marker line as it appears in YAML — a top-level list item
+    # under lexical_decisions: `- source_word: <sw>` with possible
+    # indentation. We match on the suffix to be lenient about indent.
+    sw_suffix = f"- source_word: {source_word}"
+    for i, line in enumerate(lines):
+        if not line.rstrip().endswith(sw_suffix):
+            continue
+        # Compute the indent of the following field (e.g. `  chosen:` —
+        # one indent level deeper than `- source_word:`). Find the next
+        # non-blank line and use its leading whitespace.
+        indent = ""
+        for j in range(i + 1, len(lines)):
+            stripped = lines[j].lstrip()
+            if not stripped:
+                continue
+            indent = lines[j][: len(lines[j]) - len(stripped)]
+            # If the next field is already `lemma:`, this entry has one already.
+            if stripped.startswith("lemma:"):
+                return text, False
+            break
+        if not indent:
+            # Last line in file or no following content — bail out cleanly.
+            return text, False
+        new_line = f"{indent}lemma: {lemma}"
+        lines.insert(i + 1, new_line)
+        return "\n".join(lines), True
+    return text, False
+
+
 def backfill_lemmas(dry_run: bool = True) -> dict:
     """Walk translation/ and, for every lexical_decisions entry without a
     lemma, try to extract one from its rationale text. In dry-run, returns
-    a proposals dict without writing. With dry_run=False, writes lemma:
-    fields back to the YAMLs.
+    a proposals dict without writing.
+
+    Writes use surgical line insertion (NOT yaml.safe_dump) to preserve
+    file formatting exactly. The only on-disk change per affected entry is
+    a single inserted `  lemma: <lemma>` line.
     """
     proposals: list[dict] = []
     written = 0
+    inserts_skipped = 0  # the entry was loadable but the line-marker scan couldn't find it
     skipped_no_match = 0
     skipped_has_lemma = 0
     for path in TRANSLATION_ROOT.rglob("*.yaml"):
         try:
-            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+            raw = path.read_text(encoding="utf-8")
+            data = yaml.safe_load(raw)
         except (yaml.YAMLError, UnicodeDecodeError):
             continue
         if not isinstance(data, dict):
@@ -780,7 +822,8 @@ def backfill_lemmas(dry_run: bool = True) -> dict:
         lex = data.get("lexical_decisions") or []
         if not lex:
             continue
-        modified = False
+        # Plan per-file: list of (source_word, lemma) inserts to apply.
+        file_inserts: list[tuple[str, str]] = []
         for ld in lex:
             if not isinstance(ld, dict):
                 continue
@@ -799,17 +842,26 @@ def backfill_lemmas(dry_run: bool = True) -> dict:
                 "source_word": sw,
                 "candidate_lemma": candidate,
             })
-            if not dry_run:
-                ld["lemma"] = candidate
-                modified = True
-        if modified and not dry_run:
-            path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+            file_inserts.append((sw, candidate))
+        if not file_inserts or dry_run:
+            continue
+        new_raw = raw
+        file_modified = False
+        for sw, lemma in file_inserts:
+            new_raw, inserted = _insert_lemma_line(new_raw, sw, lemma)
+            if inserted:
+                file_modified = True
+            else:
+                inserts_skipped += 1
+        if file_modified:
+            path.write_text(new_raw, encoding="utf-8")
             written += 1
     return {
         "proposals": proposals,
         "stats": {
             "proposals_count": len(proposals),
             "yamls_written": written,
+            "inserts_skipped": inserts_skipped,
             "skipped_no_match": skipped_no_match,
             "skipped_has_lemma": skipped_has_lemma,
             "dry_run": dry_run,
