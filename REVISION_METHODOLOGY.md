@@ -229,9 +229,14 @@ explicitly chose that public credit string.
 Public counters should keep this distinction clear: the complete
 revision index still reports every accepted applied edit from the
 machine-assisted and maintainer workflows, but the reader-facing
-"approved revisions" metric counts approved reader, contributor, and
-maintainer proposals separately from the larger machine-assisted
-applied-edit total.
+"approved revisions" metric is narrower than the full applied-edit log.
+It counts explicit reader/contributor/maintainer approvals plus material
+source-grounded review findings that were accepted into the public text
+(mistranslation, lexical, missing-nuance, source-correction,
+theological-weight/clarity, doctrine-realignment, verse-boundary,
+truncation/regression, and stacked-review fixes). It intentionally does
+not count routine Tier-1 cleanup, grammar-only polish, or purely
+metadata-only alignment as "approved revisions."
 
 ## What revisions are NOT
 

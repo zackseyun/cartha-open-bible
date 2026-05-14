@@ -94,9 +94,14 @@ books. Each language family forced a different OCR + parser stack.
 Public reader surfaces deliberately separate those numbers. The large
 `total_revisions` value means all accepted applied edits, including
 machine-assisted review-pass fixes. The small homepage badge uses
-`approved_proposed_revisions`: approved suggestions that came from a
-reader, contributor, or maintainer proposal. That is the more honest
-reader-facing metric for "people proposed this and it was accepted."
+`approved_significant_revisions` (with `approved_proposed_revisions`
+kept as a backwards-compatible alias): approved reader/maintainer
+proposals plus major source-grounded review findings that were accepted
+into the public text. It intentionally excludes routine Tier-1 cleanup,
+grammar-only polish, and the much larger machine-assisted full-pass
+total, so the badge represents revisions that materially changed
+meaning, source fidelity, doctrine alignment, verse boundaries, or
+restored broken/truncated text.
 
 The standing review pipeline is the project's current center of
 gravity. If you load a verse YAML at random today, the most likely

@@ -20,7 +20,8 @@ like `status.json`. Schema v3:
     "by_proposal_source": {...},
     "credited_contributors": N,
     "approved_credited_revisions": N,
-    "approved_proposed_revisions": N,
+    "approved_significant_revisions": N,
+    "approved_proposed_revisions": N,  # backwards-compatible alias
     "approved_community_revisions": N
   },
   "by_book": {
@@ -92,8 +93,13 @@ OUT_PATH = REPO_ROOT / "revisions.json"
 #   contributor: {source, display_name, account_id?, issue_url?}
 #   suggested_by: <string-or-dict>
 # The index passes that metadata through and aggregates it so public
-# clients can distinguish reader/maintainer proposals from the larger
-# machine-assisted applied-edit log.
+# clients can distinguish approved, significant proposals from the
+# larger machine-assisted applied-edit log. "Approved" is intentionally
+# narrower than "all applied": explicit reader/maintainer proposals,
+# tier-2/tier-3 source-grounded findings in material categories, and
+# high-impact repair passes (source correction, verse-boundary redraft,
+# truncation/regression repair, doctrine realignment, theological
+# weight, stacked review).
 SCHEMA_VERSION = 3
 SUMMARY_OUT_PATH = REPO_ROOT / "revisions-summary.json"
 
@@ -101,6 +107,27 @@ PROPOSAL_ADJUDICATORS = {
     "human",
     "human-maintainer",
     "maintainer",
+}
+
+SIGNIFICANT_APPROVED_TIER_CATEGORIES = {
+    "mistranslation",
+    "lexical",
+    "missing_nuance",
+    "source_correction",
+    "theological_weight",
+    "theological_clarity",
+    "doctrine_realignment",
+    "consistency_or_metadata_alignment",
+}
+
+SIGNIFICANT_APPROVED_REPAIR_CATEGORIES = {
+    "source_correction",
+    "verse_boundary_redraft",
+    "theological_weight",
+    "doctrine_realignment",
+    "truncation_fix",
+    "regression_fix",
+    "stacked_review",
 }
 
 # 3-letter codes (SBL / Paratext style) keyed by slug — drives the
@@ -226,15 +253,54 @@ def normalize_credit(rev: dict[str, Any]) -> dict[str, Any] | None:
     return out
 
 
-def proposal_source_for(rev: dict[str, Any], credit: dict[str, Any] | None) -> str | None:
-    """Classify approved revisions that began as reader/maintainer proposals."""
+def _truthy(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value != 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "y", "approved"}
+    return False
+
+
+def proposal_source_for(rev: dict[str, Any], credit: dict[str, Any] | None) -> tuple[str | None, str | None]:
+    """Classify significant approved revisions for the public badge.
+
+    This deliberately does not count every applied edit. It counts:
+      - explicit public credits / suggestions,
+      - explicit approved_revision / approved_proposal flags,
+      - human/maintainer adjudications,
+      - material tier-2/tier-3 source-grounded categories,
+      - high-impact repair categories even when no tier was recorded.
+
+    Returns: (source, reason) or (None, None).
+    """
     if credit:
-        return str(credit.get("source") or "community").strip() or "community"
+        return str(credit.get("source") or "community").strip() or "community", "explicit_credit"
+
+    explicit_source = str(
+        rev.get("proposal_source")
+        or rev.get("approved_revision_source")
+        or rev.get("approved_source")
+        or ""
+    ).strip()
+    if explicit_source:
+        return explicit_source, "explicit_source"
+
+    if _truthy(rev.get("approved_revision")) or _truthy(rev.get("approved_proposal")):
+        return "maintainer", "explicit_flag"
 
     adjudicator = str(rev.get("adjudicator") or "").strip().lower()
     if adjudicator in PROPOSAL_ADJUDICATORS or "maintainer" in adjudicator:
-        return "maintainer"
-    return None
+        return "maintainer", "human_or_maintainer"
+
+    category = str(rev.get("category") or "").strip()
+    tier = str(rev.get("tier") or "").strip()
+    if tier in {"2", "3"} and category in SIGNIFICANT_APPROVED_TIER_CATEGORIES:
+        return "source_grounded_review", "tier2_3_source_grounded"
+    if category in SIGNIFICANT_APPROVED_REPAIR_CATEGORIES:
+        return "source_grounded_review", "major_repair"
+    return None, None
 
 
 def walk_verses() -> list[dict[str, Any]]:
@@ -294,10 +360,11 @@ def walk_verses() -> list[dict[str, Any]]:
                         credit = normalize_credit(rev)
                         if credit:
                             item["credit"] = credit
-                        proposal_source = proposal_source_for(rev, credit)
+                        proposal_source, approval_reason = proposal_source_for(rev, credit)
                         if proposal_source:
                             item["approved_proposal"] = True
                             item["proposal_source"] = proposal_source
+                            item["approval_reason"] = approval_reason
                         out.append(item)
     return out
 
@@ -615,10 +682,13 @@ def build_index() -> dict[str, Any]:
             "by_proposal_source": dict(by_proposal_source),
             "credited_contributors": len(credited_contributors),
             "approved_credited_revisions": sum(by_credit_source.values()),
+            "approved_significant_revisions": sum(by_proposal_source.values()),
+            # Backwards-compatible aliases for deployed frontend builds that
+            # still read the older proposal-oriented field names.
             "approved_proposed_revisions": sum(by_proposal_source.values()),
-            # Backwards-compatible alias for older frontend builds. New UI copy
-            # should use approved_proposed_revisions and avoid this label.
             "approved_human_proposed_revisions": sum(by_proposal_source.values()),
+            "approved_source_grounded_revisions": by_proposal_source.get("source_grounded_review", 0),
+            "approved_maintainer_revisions": by_proposal_source.get("maintainer", 0),
             "approved_community_revisions": by_credit_source.get("community", 0),
         },
         "review_coverage": review_coverage,
