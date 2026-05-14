@@ -16,6 +16,13 @@ The harness is deliberately minimal in this first cut:
 Design rationale and rollout plan: tools/AGENTIC_REVISION.md.
 
 Usage:
+    # 0. (Optional, deterministic) Backfill `lemma` fields onto
+    #    lexical_decisions entries by extracting from rationale text.
+    #    Dry-run unless --apply-backfill is also set.
+    python3 tools/agentic_revise.py --backfill-lemmas --out /tmp/lemma.json
+    python3 tools/agentic_revise.py --backfill-lemmas --apply-backfill \\
+        --out /tmp/lemma.json
+
     # 1. Find candidate verses with contested terms or non-trivial
     #    lexical_decisions — no LLM calls.
     python3 tools/agentic_revise.py --audit-only --out /tmp/audit.json
@@ -128,7 +135,12 @@ def parse_doctrine_contested_terms() -> dict[str, dict[str, str]]:
 def build_lemma_index(force: bool = False) -> dict[str, list[dict]]:
     """Walk translation/ and index every source_word from lexical_decisions.
 
-    Returns: { source_word: [ {verse_id, reference, chosen, rationale_short}, ... ] }
+    When a `lemma` field is present on the lexical_decisions entry, the
+    occurrence is indexed under BOTH the inflected `source_word` and the
+    `lemma` — so `lookup_occurrences("νήφω")` and
+    `lookup_occurrences("νήψατε")` both hit the same verse.
+
+    Returns: { key: [ {verse_id, reference, chosen, source_word, lemma, rationale_short}, ... ] }
     Cached at /tmp/pob_lemma_index.json to avoid full re-walks.
     """
     if INDEX_CACHE.exists() and not force:
@@ -151,12 +163,20 @@ def build_lemma_index(force: bool = False) -> dict[str, list[dict]]:
             sw = ld.get("source_word")
             if not sw:
                 continue
-            index[sw].append({
+            lemma = ld.get("lemma") or ""
+            occurrence = {
                 "verse_id": verse_id,
                 "reference": reference,
                 "chosen": ld.get("chosen", ""),
+                "source_word": sw,
+                "lemma": lemma,
                 "rationale_short": str(ld.get("rationale") or "")[:200],
-            })
+            }
+            # Key by the inflected form always; also by lemma when present
+            # and distinct. Same occurrence dict is shared between keys.
+            index[sw].append(occurrence)
+            if lemma and lemma != sw:
+                index[lemma].append(occurrence)
 
     INDEX_CACHE.write_text(json.dumps(index))
     return index
@@ -185,15 +205,11 @@ def tool_lookup_doctrine(source_word: str) -> dict:
 def tool_lookup_occurrences(source_word: str, limit: int = 20) -> dict:
     """Return all corpus occurrences of `source_word` from lexical_decisions.
 
-    KNOWN LIMITATION: the index is keyed by the inflected form stored in
-    each verse's lexical_decisions (e.g. νήψατε), not by the lemma (e.g.
-    νήφω). Looking up the lemma form will miss inflected occurrences and
-    vice versa. Mitigation in this first cut: the reviewer should call
-    lookup_doctrine with the lemma form (the rationale text in
-    lexical_decisions typically mentions the lemma), and call
-    lookup_occurrences with the inflected form it sees in the source.
-    Iteration #2 plan: build an inflection→lemma map (or accept a
-    `lemma` field on lexical_decisions and index by both).
+    The index is keyed by BOTH the inflected `source_word` and the `lemma`
+    field (when present on a lexical_decisions entry). Either form resolves
+    to the same set of occurrences. Verses whose lexical_decisions entries
+    lack `lemma` are only findable by their inflected form — these are the
+    legacy backfill candidates.
     """
     global _INDEX_CACHE
     if _INDEX_CACHE is None:
@@ -698,6 +714,110 @@ def _write_audit_log(verse_path: pathlib.Path, result: dict) -> None:
 
 
 # ──────────────────────────────────────────────────────────────────
+# Lemma backfill (deterministic, no LLM) — extracts lemmas from rationale
+# ──────────────────────────────────────────────────────────────────
+
+# Greek + Hebrew Unicode ranges. We treat any sequence of letters in these
+# ranges (with diacritics) as a candidate lemma form.
+_GREEK_OR_HEBREW = r"[\u0370-\u03FF\u1F00-\u1FFF\u0590-\u05FF]+"
+
+# Patterns where rationales naming the lemma typically occur. Each pattern's
+# group(1) is the candidate lemma. Ordered most-specific → most-generic.
+_LEMMA_PATTERNS = [
+    rf"(?<![\w]){_GREEK_OR_HEBREW}\s+is\s+(?:the\s+)?(?:dictionary|lemma|root)\s+(?:form\s+)?of",
+    rf"(?:lemma|root|dictionary form)\s+(?:is\s+)?[\"']?({_GREEK_OR_HEBREW})",
+    rf"(?:verb|noun|adjective|particle|preposition)\s+({_GREEK_OR_HEBREW})",
+    rf"({_GREEK_OR_HEBREW})\s+(?:literally\s+(?:means|denotes)|in\s+the\s+sense|carries\s+the\s+sense)",
+    rf"from\s+(?:the\s+)?(?:Greek|Hebrew)?\s*({_GREEK_OR_HEBREW})",
+]
+
+
+def extract_lemma_from_rationale(source_word: str, rationale: str) -> str | None:
+    """Best-effort lemma extraction from rationale text.
+
+    Returns a candidate lemma if confidently found, else None. The caller
+    is responsible for validating before persisting (the function does NOT
+    do morphological verification — that requires a lemmatizer).
+
+    The function will not return:
+    - source_word itself (the inflected form already in the field)
+    - very short tokens (<3 chars — too noisy)
+    """
+    if not rationale:
+        return None
+    for pat in _LEMMA_PATTERNS:
+        for m in re.finditer(pat, rationale):
+            cand = m.group(1) if m.groups() else None
+            if not cand:
+                continue
+            cand = cand.strip("\"'.,;:")
+            if not cand or cand == source_word or len(cand) < 3:
+                continue
+            # Heuristic: lemma should share at least the first 2 chars with
+            # the inflected form (handles νήψατε→νήφω, ἀγαπήσατε→ἀγαπάω).
+            if cand[:2] == source_word[:2]:
+                return cand
+    return None
+
+
+def backfill_lemmas(dry_run: bool = True) -> dict:
+    """Walk translation/ and, for every lexical_decisions entry without a
+    lemma, try to extract one from its rationale text. In dry-run, returns
+    a proposals dict without writing. With dry_run=False, writes lemma:
+    fields back to the YAMLs.
+    """
+    proposals: list[dict] = []
+    written = 0
+    skipped_no_match = 0
+    skipped_has_lemma = 0
+    for path in TRANSLATION_ROOT.rglob("*.yaml"):
+        try:
+            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (yaml.YAMLError, UnicodeDecodeError):
+            continue
+        if not isinstance(data, dict):
+            continue
+        lex = data.get("lexical_decisions") or []
+        if not lex:
+            continue
+        modified = False
+        for ld in lex:
+            if not isinstance(ld, dict):
+                continue
+            if ld.get("lemma"):
+                skipped_has_lemma += 1
+                continue
+            sw = ld.get("source_word")
+            if not sw:
+                continue
+            candidate = extract_lemma_from_rationale(sw, str(ld.get("rationale") or ""))
+            if not candidate:
+                skipped_no_match += 1
+                continue
+            proposals.append({
+                "verse_path": str(path.relative_to(REPO_ROOT)),
+                "source_word": sw,
+                "candidate_lemma": candidate,
+            })
+            if not dry_run:
+                ld["lemma"] = candidate
+                modified = True
+        if modified and not dry_run:
+            path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+            written += 1
+    return {
+        "proposals": proposals,
+        "stats": {
+            "proposals_count": len(proposals),
+            "yamls_written": written,
+            "skipped_no_match": skipped_no_match,
+            "skipped_has_lemma": skipped_has_lemma,
+            "dry_run": dry_run,
+        },
+    }
+
+
+# ──────────────────────────────────────────────────────────────────
 # Audit (deterministic, no LLM) — finds candidate verses
 # ──────────────────────────────────────────────────────────────────
 
@@ -789,6 +909,8 @@ def apply_proposals(manifest_path: pathlib.Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--backfill-lemmas", action="store_true", help="Extract lemma fields from rationale text across the corpus. Deterministic, no LLM. Dry-run unless --apply-backfill is also set.")
+    parser.add_argument("--apply-backfill", action="store_true", help="When used with --backfill-lemmas, actually writes the lemma fields to YAMLs.")
     parser.add_argument("--audit-only", action="store_true", help="Find candidate verses; no LLM calls.")
     parser.add_argument("--from-audit", type=str, help="Run reviewer on verses listed in an audit JSON.")
     parser.add_argument("--verse", type=str, help="Run reviewer on a single verse YAML.")
@@ -803,6 +925,14 @@ def main() -> None:
     if args.rebuild_index:
         build_lemma_index(force=True)
         print(f"index rebuilt at {INDEX_CACHE}")
+        return
+
+    if args.backfill_lemmas:
+        result = backfill_lemmas(dry_run=not args.apply_backfill)
+        pathlib.Path(args.out).write_text(json.dumps(result, indent=2, ensure_ascii=False))
+        s = result["stats"]
+        mode = "APPLIED" if args.apply_backfill else "DRY-RUN"
+        print(f"backfill {mode}: proposals={s['proposals_count']} written={s['yamls_written']} no_match={s['skipped_no_match']} has_lemma={s['skipped_has_lemma']} → {args.out}")
         return
 
     if args.audit_only:

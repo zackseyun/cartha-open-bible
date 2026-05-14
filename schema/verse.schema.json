@@ -151,7 +151,11 @@
         "properties": {
           "source_word": {
             "type": "string",
-            "description": "The Greek or Hebrew word being rendered"
+            "description": "The Greek or Hebrew word as it appears in the source text (typically inflected — e.g. νήψατε)"
+          },
+          "lemma": {
+            "type": "string",
+            "description": "Optional dictionary form of source_word (e.g. νήφω for νήψατε). When present, the agentic revision index keys by both source_word and lemma so DOCTRINE.md contested-terms lookups resolve regardless of inflection."
           },
           "chosen": {
             "type": "string",
@@ -172,6 +176,10 @@
           "rationale": {
             "type": "string",
             "description": "Why this gloss was chosen over alternatives"
+          },
+          "doctrine_reference": {
+            "type": "string",
+            "description": "Optional reference to a binding rule in DOCTRINE.md (e.g. 'DOCTRINE.md contested-terms — νήφω'). Set when the chosen rendering is governed by a contested-terms entry rather than a free per-verse judgment."
           }
         }
       }

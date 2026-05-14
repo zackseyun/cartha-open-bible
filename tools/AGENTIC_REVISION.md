@@ -175,31 +175,43 @@ focused.
    just decided X" and the cleanest training data for a future
    project-specific reviewer.
 
-## Known limitations
+## Inflection / lemma resolution
 
-### Inflection / lemma mismatch in the corpus index
+The corpus stores `lexical_decisions[].source_word` in its **inflected
+form** as it appears in the verse (e.g. νήψατε at 1 Pet 5:8 — the
+aorist active imperative 2pl of νήφω). DOCTRINE.md's contested-terms
+table is keyed by the **lemma** (νήφω). The two used to not match,
+which made `lookup_occurrences("νήφω")` miss every νήψατε occurrence.
 
-`lexical_decisions[].source_word` stores the **inflected form** as it
-appears in the verse (e.g. νήψατε at 1 Pet 5:8 — the aorist active
-imperative 2pl of νήφω). DOCTRINE.md's contested-terms table is keyed
-by the **lemma** (νήφω). The two don't auto-match, so
-`lookup_occurrences("νήφω")` will miss νήψατε occurrences and vice
-versa.
+This is fixed via an optional `lemma` field on `lexical_decisions`
+entries. The schema (`schema/verse.schema.json`) defines it as
+optional; the agentic reviewer's index keys by BOTH `source_word`
+and `lemma` when present, so either form resolves to the same
+occurrence set.
 
-Mitigation in this first cut:
+**Backfill:** the `--backfill-lemmas` mode walks the corpus and
+extracts lemma candidates from rationale text using a deterministic
+regex (rationales typically include phrases like "νήφω literally
+means…" or "the verb ἀγαπάω…"). It is dry-run by default; pass
+`--apply-backfill` to write fields. Stem-match guard (lemma must
+share its first 2 characters with the inflected form) keeps the
+extraction safe — wrong-stem candidates are dropped rather than
+written.
 
-- `lookup_doctrine` accepts the lemma form. The reviewer should call
-  it with the lemma — typically discoverable from the rationale text
-  in `lexical_decisions`, which usually mentions the dictionary form.
-- `lookup_occurrences` and `lookup_book_context` accept either form
-  but only return exact-form matches.
+```bash
+# Preview what would be backfilled (no writes):
+python3 tools/agentic_revise.py --backfill-lemmas --out /tmp/lemma_backfill.json
 
-Iteration #2 plan: either (a) add a `lemma` field to the
-`lexical_decisions` schema and re-index by both inflected form and
-lemma, or (b) integrate a Greek lemmatizer (e.g. CLTK / GreekCNTK)
-during index build. (a) is cheaper and survives lemmatizer regressions;
-(b) is more accurate. Most likely we do (a) first and (b) when corpus
-breadth justifies it.
+# Apply:
+python3 tools/agentic_revise.py --backfill-lemmas --apply-backfill \
+    --out /tmp/lemma_backfill.json
+```
+
+Verses the regex can't extract a lemma for (e.g. rationales that
+don't name the dictionary form) are left without `lemma:` and stay
+findable only by inflected form. A future LLM-assisted backfill pass
+can fill the long tail; the deterministic pass covers the easy
+majority with zero cost and zero risk.
 
 ## What this does NOT do (yet)
 
