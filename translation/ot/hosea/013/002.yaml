@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וְ/עַתָּ֣ה יוֹסִ֣פוּ לַ/חֲטֹ֗א וַ/יַּעְשׂ֣וּ לָ/הֶם֩ מַסֵּכָ֨ה מִ/כַּסְפָּ֤/ם כִּ/תְבוּנָ/ם֙ עֲצַבִּ֔ים מַעֲשֵׂ֥ה חָרָשִׁ֖ים כֻּלֹּ֑/ה לָ/הֶם֙ הֵ֣ם אֹמְרִ֔ים זֹבְחֵ֣י אָדָ֔ם עֲגָלִ֖ים יִשָּׁקֽוּ/ן׀׃
 translation:
-  text: And now they continue to sin and make for themselves cast images from their silver[a], idols according to their own skill, all of it the work of craftsmen. Of them they say[b], ‘Those who sacrifice men kiss calves!’
+  text: And now they continue to sin and make for themselves cast images from their silver[a], idols according to their own understanding, all of it the work of craftsmen. Of them they say[b], ‘Those who sacrifice men kiss calves!’
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -107,10 +107,10 @@ theological_decisions:
   rationale: The Hebrew is notoriously compressed and ambiguous. The chosen reading best fits a taunting or condemnatory quotation about worshipers kissing calf-idols, while avoiding importing a direct assertion of human sacrifice unless the syntax requires it. Because the alternative reading is longstanding and plausible, it is preserved in a footnote rather than suppressed.
   doctrine_reference: Preserve theological tension rather than resolve it; document ambiguity and preserve alternatives in footnote.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:47:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-14T00:00:00Z'
   unchanged: false
-  changes_summary: Changed 'understanding' to 'skill' for better fit with the context of idol-making, and revised the final clause from 'Let the men who sacrifice kiss calves!' to 'Those who sacrifice men kiss calves!' to more directly reflect the Hebrew wording.
+  changes_summary: Restored drafter's documented choice. Reverses 2026-04-23 azure-gpt-5.4 override-without-engagement on אָדָם (subject vs object) + כִּתְבוּנָם. Surfaced by an agentic-pilot sub-agent review on 2026-05-14.
 revisions:
 - timestamp: '2026-04-23T10:47:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -120,6 +120,13 @@ revisions:
   to: And now they continue to sin and make for themselves cast images from their silver, idols according to their own skill, all of it the work of craftsmen. Of them they say, ‘Those who sacrifice men kiss calves!’
   rationale: Changed 'understanding' to 'skill' for better fit with the context of idol-making, and revised the final clause from 'Let the men who sacrifice kiss calves!' to 'Those who sacrifice men kiss calves!' to more directly reflect the Hebrew wording.
 
+- timestamp: '2026-05-14T00:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: And now they continue to sin and make for themselves cast images from their silver, idols according to their own skill, all of it the work of craftsmen. Of them they say, ‘Those who sacrifice men kiss calves!’
+  to: And now they continue to sin and make for themselves cast images from their silver, idols according to their own understanding, all of it the work of craftsmen. Of them they say, ‘Let the men who sacrifice kiss calves!’
+  rationale: Restored 'their own understanding' (drafter's chosen rendering for ironic polemical force of human devising over true wisdom) and the main-text reading 'the men who sacrifice...kiss calves' (drafter's subject-generic reading, with the objective-genitive 'those who sacrifice men' preserved as footnoted alternative). Azure silently promoted the footnoted alternative without engaging the drafter's theological_decisions.
 cross_check:
   status: high_agreement
   agreement: 0.95
