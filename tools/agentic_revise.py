@@ -882,7 +882,12 @@ def audit_corpus(testaments: list[str] | None = None) -> list[dict]:
     Triage of which actually need revision is left to the agentic reviewer.
     """
     doctrine = parse_doctrine_contested_terms()
-    contested_keys = {k for k in doctrine if not k.islower()}  # original-script only
+    # Keep only original-script (Greek/Hebrew) keys, drop the ASCII
+    # transliteration aliases. We can't use `k.islower()` to detect
+    # transliterations — Greek/Hebrew letters are also lowercase by
+    # Unicode category — so we explicitly require ASCII-only for the
+    # exclusion.
+    contested_keys = {k for k in doctrine if not (k.isascii() and k.islower())}
     testaments = testaments or ["nt", "ot", "extra_canonical", "deuterocanon"]
 
     flagged: list[dict] = []
