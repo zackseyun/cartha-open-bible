@@ -6,12 +6,13 @@ extra-canonical records accidentally used verse references as markers
 (``[1:21]``, ``[30:4-5]``), which can leak into the reading surface because
 client marker stripping intentionally expects simple labels.
 
-This tool rewrites files that contain colon-bearing footnote markers. In those
-files, every footnote marker is reassigned to ``a``..``z`` in the order the
-anchors appear in ``translation.text``. Existing non-colon markers in the same
-file are renumbered too, so there are no collisions. When a marker used to be a
-verse reference, the old value is preserved as ``anchor_ref`` for splitters that
-need to route chapter-level notes back to verse-level reader files.
+This tool rewrites files that contain unsafe footnote markers. In those files,
+every footnote marker is reassigned to ``a``..``z`` in the order the anchors
+appear in ``translation.text``. Existing safe markers in the same file are
+renumbered too, so there are no collisions. When a marker used to be a verse
+reference or phrase label, the old value is preserved as ``anchor_ref`` for
+splitters that need to route chapter-level notes back to verse-level reader
+files.
 """
 
 from __future__ import annotations
@@ -29,6 +30,7 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 TRANSLATION_ROOT = REPO_ROOT / "translation"
 INLINE_MARKER_RE = re.compile(r"\[([^\[\]\n]{1,40})\]")
 COLON_MARKER_RE = re.compile(r"\[[0-9]+:[0-9]+(?:[-–—][0-9]+)?\]")
+SAFE_MARKER_RE = re.compile(r"[A-Za-z0-9]{1,4}")
 
 
 def strip_orphan_colon_markers(text: str) -> str:
@@ -37,6 +39,10 @@ def strip_orphan_colon_markers(text: str) -> str:
     cleaned = re.sub(r"[ \t]{2,}", " ", cleaned)
     cleaned = re.sub(r"\s+([,;:!?])", r"\1", cleaned)
     return cleaned
+
+
+def is_safe_marker(marker: str) -> bool:
+    return bool(SAFE_MARKER_RE.fullmatch(marker)) and ":" not in marker
 
 
 def load_yaml(path: pathlib.Path) -> dict[str, Any] | None:
@@ -83,6 +89,7 @@ def normalize_file(path: pathlib.Path, *, write: bool) -> tuple[bool, dict[str, 
         marker = str(footnote.get("marker") or "").strip()
         if marker:
             markers.append(marker)
+    unsafe_marker_refs = any(not is_safe_marker(marker) for marker in markers)
     colon_marker_refs = any(":" in marker for marker in markers)
     colon_text_refs = bool(COLON_MARKER_RE.search(text))
     colon_note_refs = any(
@@ -91,7 +98,7 @@ def normalize_file(path: pathlib.Path, *, write: bool) -> tuple[bool, dict[str, 
         and COLON_MARKER_RE.search(footnote["text"])
         for footnote in footnotes
     )
-    if not colon_marker_refs and not colon_text_refs and not colon_note_refs:
+    if not unsafe_marker_refs and not colon_text_refs and not colon_note_refs:
         return False, {}
 
     ordered = marker_order(text, markers) if markers else []
@@ -118,7 +125,7 @@ def normalize_file(path: pathlib.Path, *, write: bool) -> tuple[bool, dict[str, 
             continue
         marker = str(footnote.get("marker") or "").strip()
         if marker in mapping:
-            if ":" in marker and not footnote.get("anchor_ref"):
+            if marker != mapping[marker] and not footnote.get("anchor_ref"):
                 footnote["anchor_ref"] = marker
             footnote["marker"] = mapping[marker]
         note_text = footnote.get("text")
@@ -133,8 +140,8 @@ def normalize_file(path: pathlib.Path, *, write: bool) -> tuple[bool, dict[str, 
     )
     # The marker loop above mutates footnotes before `changed` can compare old
     # values, so use the easier source-of-truth: this file was selected because
-    # it had a colon marker/ref that the normalization pass should remove.
-    changed = changed or colon_marker_refs or colon_text_refs or colon_note_refs
+    # it had a marker/ref that the normalization pass should remove.
+    changed = changed or unsafe_marker_refs or colon_text_refs or colon_note_refs
 
     if write and changed:
         translation["text"] = new_text
