@@ -825,9 +825,9 @@ def audit_corpus(testaments: list[str] | None = None) -> list[dict]:
     """Find verses where a contested term in DOCTRINE.md appears AND the
     current rendering may diverge from doctrine. No LLM calls.
 
-    Heuristic: a verse is flagged if any of its lexical_decisions source_words
-    matches a DOCTRINE.md contested term. Triage of which need actual revision
-    is left to the agentic reviewer.
+    A verse is flagged if any of its lexical_decisions entries has a
+    source_word OR lemma that matches a DOCTRINE.md contested term key.
+    Triage of which actually need revision is left to the agentic reviewer.
     """
     doctrine = parse_doctrine_contested_terms()
     contested_keys = {k for k in doctrine if not k.islower()}  # original-script only
@@ -846,12 +846,22 @@ def audit_corpus(testaments: list[str] | None = None) -> list[dict]:
             if not isinstance(data, dict):
                 continue
             lex = data.get("lexical_decisions") or []
-            hits = [ld.get("source_word") for ld in lex if ld.get("source_word") in contested_keys]
+            hits: list[str] = []
+            for ld in lex:
+                if not isinstance(ld, dict):
+                    continue
+                # Check both inflected source_word and lemma against contested keys.
+                # Either match flags the verse; we record the matched contested term.
+                for field in ("source_word", "lemma"):
+                    val = ld.get(field)
+                    if val and val in contested_keys:
+                        hits.append(val)
+                        break  # one match per ld is enough
             if hits:
                 flagged.append({
                     "verse_path": str(path.relative_to(REPO_ROOT)),
                     "reference": data.get("reference"),
-                    "contested_terms": hits,
+                    "contested_terms": sorted(set(hits)),
                     "has_revisions": bool(data.get("revisions")),
                 })
     return flagged
