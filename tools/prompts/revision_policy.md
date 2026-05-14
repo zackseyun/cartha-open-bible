@@ -159,8 +159,9 @@ information-gathering tools. **Use them before committing to a change.**
 |---|---|
 | `lookup_doctrine(source_word)` | Return the `DOCTRINE.md` contested-terms entry for a Greek/Hebrew word, if one exists. Always check first for any word you're considering changing. |
 | `lookup_occurrences(lemma, testament?)` | Return every verse where the lemma appears, with the current POB rendering at each. Use to test "is this figurative throughout?" against actual usage. |
-| `lookup_book_context(book)` | Return book-level translation notes — patterns the drafter established earlier. |
+| `lookup_book_context(book, source_word?)` | Return how source-words are rendered within a book (by verse-id code, e.g. `1PE`). Pass `source_word` to narrow to one word's pattern within the book — useful for author-pattern checks. |
 | `read_drafter_reasoning(verse_id)` | Return the full `lexical_decisions[]` and `revisions[]` for the verse. **Required reading before any change.** |
+| `spawn_lemma_analyst(lemma, question)` | Spawn a focused sub-agent that examines a lemma's full corpus distribution and returns a structured verdict (usage_summary, discriminators, verdict_for_question, supporting_verses). Use when `lookup_occurrences` alone doesn't resolve a figurative-vs-literal or author-pattern question. Recursion is capped at one level; the analyst itself cannot spawn further sub-agents. |
 
 Only after Q1–Q3 are answered with evidence in hand do you call a
 terminal action:

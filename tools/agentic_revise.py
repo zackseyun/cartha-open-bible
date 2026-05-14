@@ -58,10 +58,13 @@ TRANSLATION_ROOT = REPO_ROOT / "translation"
 DOCTRINE_FILE = REPO_ROOT / "DOCTRINE.md"
 POLICY_FILE = REPO_ROOT / "tools" / "prompts" / "revision_policy.md"
 INDEX_CACHE = pathlib.Path("/tmp/pob_lemma_index.json")
+AUDIT_LOG_DIR = REPO_ROOT / "state" / "agentic_pass"  # per-decision trace
 
 ANTHROPIC_API = "https://api.anthropic.com/v1/messages"
 DEFAULT_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
-MAX_ITERATIONS = 6  # per-verse hard cap on tool-call rounds
+ANALYST_MODEL = os.environ.get("ANTHROPIC_ANALYST_MODEL", "claude-sonnet-4-6")
+MAX_ITERATIONS = 6      # per-verse main reviewer cap
+MAX_ANALYST_ITERATIONS = 4  # sub-agent cap (must be lower than main)
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -180,6 +183,18 @@ def tool_lookup_doctrine(source_word: str) -> dict:
 
 
 def tool_lookup_occurrences(source_word: str, limit: int = 20) -> dict:
+    """Return all corpus occurrences of `source_word` from lexical_decisions.
+
+    KNOWN LIMITATION: the index is keyed by the inflected form stored in
+    each verse's lexical_decisions (e.g. νήψατε), not by the lemma (e.g.
+    νήφω). Looking up the lemma form will miss inflected occurrences and
+    vice versa. Mitigation in this first cut: the reviewer should call
+    lookup_doctrine with the lemma form (the rationale text in
+    lexical_decisions typically mentions the lemma), and call
+    lookup_occurrences with the inflected form it sees in the source.
+    Iteration #2 plan: build an inflection→lemma map (or accept a
+    `lemma` field on lexical_decisions and index by both).
+    """
     global _INDEX_CACHE
     if _INDEX_CACHE is None:
         _INDEX_CACHE = build_lemma_index()
@@ -196,16 +211,69 @@ def tool_lookup_occurrences(source_word: str, limit: int = 20) -> dict:
     }
 
 
-def tool_lookup_book_context(book: str) -> dict:
-    """Stub for now — book-level translation notes aren't yet structured.
-    Returns a deterministic empty-but-honest response.
+def _book_code_from_verse_id(verse_id: str) -> str:
+    """1PE.5.8 -> 1PE; ROM.1.1 -> ROM. Returns '' if format unrecognized."""
+    if not verse_id or "." not in verse_id:
+        return ""
+    return verse_id.split(".", 1)[0]
+
+
+def _normalize_book_filter(book: str) -> str:
+    """Accept either a slug ('1_peter') or a code ('1PE'). Return uppercase code-or-slug."""
+    return book.strip().upper().replace(" ", "_")
+
+
+def tool_lookup_book_context(book: str, source_word: str | None = None, top_n: int = 12) -> dict:
+    """Return the most frequently rendered source-words in this book, with
+    their chosen renderings. If source_word is given, narrow to that word's
+    occurrences within the book (useful for author-pattern verification:
+    "how has Peter rendered this word elsewhere in 1 Peter?").
+
+    Backed by the same /tmp lemma index used by lookup_occurrences.
     """
-    return {
-        "book": book,
-        "note": "Book-level translation notes are not yet indexed. Rely on "
-                "lookup_occurrences within the book and the verse's own "
-                "lexical_decisions for author-pattern evidence.",
-    }
+    global _INDEX_CACHE
+    if _INDEX_CACHE is None:
+        _INDEX_CACHE = build_lemma_index()
+    target_book = _normalize_book_filter(book)
+
+    # Build per-book aggregation lazily.
+    by_book: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
+    for sw, hits in _INDEX_CACHE.items():
+        for h in hits:
+            code = _book_code_from_verse_id(h.get("verse_id", ""))
+            # Match by code (1PE) OR by slug (the slug is in the path, not verse_id —
+            # tolerate either by matching prefix of the verse_id code).
+            if not code:
+                continue
+            if target_book and not (code == target_book or code.startswith(target_book[:3])):
+                continue
+            by_book[code][sw].append(h)
+
+    if not by_book:
+        return {
+            "book": book,
+            "note": "No verses indexed for that book code/slug. Pass a verse-id prefix like '1PE' or '1_PETER'.",
+            "patterns": [],
+        }
+
+    # Flatten to the top-N most-referenced source words across all matched books.
+    rows: list[dict] = []
+    for code, word_map in by_book.items():
+        for sw, occurrences in word_map.items():
+            if source_word and sw != source_word:
+                continue
+            distribution: dict[str, int] = defaultdict(int)
+            for occ in occurrences:
+                distribution[occ["chosen"]] += 1
+            rows.append({
+                "book_code": code,
+                "source_word": sw,
+                "count": len(occurrences),
+                "distribution": dict(distribution),
+                "sample_occurrences": occurrences[:4],
+            })
+    rows.sort(key=lambda r: r["count"], reverse=True)
+    return {"book": book, "patterns": rows[:top_n]}
 
 
 def tool_read_drafter_reasoning(verse_yaml_path: str) -> dict:
@@ -252,10 +320,14 @@ TOOL_SCHEMAS = [
     },
     {
         "name": "lookup_book_context",
-        "description": "Return book-level translation notes for a given book (e.g. '1_peter', 'romans'). Currently returns a stub — book-level notes are not yet indexed.",
+        "description": "Return how source-words have been rendered within a specific book (verse-id code like '1PE', 'ROM', 'MAT' — or pass with source_word to narrow to one word's pattern in that book). Use for author-pattern checks: 'has the same author rendered this word differently elsewhere in this book?'",
         "input_schema": {
             "type": "object",
-            "properties": {"book": {"type": "string"}},
+            "properties": {
+                "book": {"type": "string", "description": "Verse-id book code, e.g. '1PE' for 1 Peter."},
+                "source_word": {"type": "string", "description": "Optional: narrow to one source word's pattern within the book."},
+                "top_n": {"type": "integer", "default": 12},
+            },
             "required": ["book"],
         },
     },
@@ -266,6 +338,18 @@ TOOL_SCHEMAS = [
             "type": "object",
             "properties": {"verse_yaml_path": {"type": "string"}},
             "required": ["verse_yaml_path"],
+        },
+    },
+    {
+        "name": "spawn_lemma_analyst",
+        "description": "Spawn a focused sub-agent that examines a Greek/Hebrew lemma's full corpus distribution and returns a structured verdict on the question you pose. Use when lookup_occurrences alone leaves you unsure about a figurative-vs-literal call, an author-pattern question, or a 'is this rendering consistent with usage elsewhere?' question. The sub-agent has its own narrow tool surface (lookup_occurrences, lookup_book_context) and returns a verdict + supporting evidence. Recursion-capped — sub-agents cannot spawn further sub-agents.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "lemma": {"type": "string", "description": "Greek or Hebrew lemma in original script."},
+                "question": {"type": "string", "description": "Specific question for the analyst, e.g. 'Is νήφω figurative in every NT occurrence, or are there literal-sober uses?'"},
+            },
+            "required": ["lemma", "question"],
         },
     },
     {
@@ -295,9 +379,152 @@ TOOL_SCHEMAS = [
 TOOL_DISPATCH = {
     "lookup_doctrine": lambda i: tool_lookup_doctrine(i["source_word"]),
     "lookup_occurrences": lambda i: tool_lookup_occurrences(i["source_word"], i.get("limit", 20)),
-    "lookup_book_context": lambda i: tool_lookup_book_context(i["book"]),
+    "lookup_book_context": lambda i: tool_lookup_book_context(i["book"], i.get("source_word"), i.get("top_n", 12)),
     "read_drafter_reasoning": lambda i: tool_read_drafter_reasoning(i["verse_yaml_path"]),
+    "spawn_lemma_analyst": lambda i: run_lemma_analyst(i["lemma"], i["question"]),
 }
+
+
+# ──────────────────────────────────────────────────────────────────
+# Lemma-analyst sub-agent (focused reasoning over corpus distribution)
+# ──────────────────────────────────────────────────────────────────
+
+LEMMA_ANALYST_SYSTEM = """You are a lemma analyst for the People's Open Bible.
+
+A verse reviewer has spawned you with a specific question about a Greek or Hebrew \
+lemma. Your job is to examine the POB corpus's use of that lemma and return a \
+structured verdict.
+
+You have two information tools (lookup_occurrences, lookup_book_context) and \
+one terminal action (submit_verdict). You cannot spawn further sub-agents — \
+recursion is capped at one level.
+
+Process:
+1. Call lookup_occurrences for the lemma. Read the distribution.
+2. If the question is author- or book-specific, also call lookup_book_context.
+3. Reason about figurative vs literal, author patterns, or whatever the \
+reviewer asked.
+4. Submit a verdict via submit_verdict.
+
+Be concise. The reviewer is waiting on you. Submit a verdict within """ + \
+str(MAX_ANALYST_ITERATIONS) + """ rounds.
+
+The verdict structure must include:
+- usage_summary: one or two sentences on how the lemma is actually used in the corpus.
+- discriminators: when there are split uses (some literal, some figurative), name \
+the textual signals that mark the difference.
+- verdict_for_question: a direct answer to the reviewer's question.
+- supporting_verses: 2 to 4 most-illustrative occurrences (verse_id + current rendering)."""
+
+
+LEMMA_ANALYST_TOOLS = [
+    {
+        "name": "lookup_occurrences",
+        "description": "Return every POB verse where this source_word appears, with current renderings and distribution counts.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "source_word": {"type": "string"},
+                "limit": {"type": "integer", "default": 20},
+            },
+            "required": ["source_word"],
+        },
+    },
+    {
+        "name": "lookup_book_context",
+        "description": "How source-words are rendered within a specific book (by verse-id code, e.g. '1PE').",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "book": {"type": "string"},
+                "source_word": {"type": "string"},
+                "top_n": {"type": "integer", "default": 8},
+            },
+            "required": ["book"],
+        },
+    },
+    {
+        "name": "submit_verdict",
+        "description": "Terminal: return your structured verdict to the reviewer who spawned you.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "usage_summary": {"type": "string"},
+                "discriminators": {"type": "string"},
+                "verdict_for_question": {"type": "string"},
+                "supporting_verses": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "verse_id": {"type": "string"},
+                            "current_rendering": {"type": "string"},
+                            "note": {"type": "string"},
+                        },
+                        "required": ["verse_id", "current_rendering"],
+                    },
+                },
+            },
+            "required": ["usage_summary", "verdict_for_question"],
+        },
+    },
+]
+
+
+def run_lemma_analyst(lemma: str, question: str) -> dict:
+    """Sub-agent loop. Same Anthropic Messages plumbing as the main reviewer
+    but with a narrower tool surface and a tighter iteration cap.
+
+    Returns the analyst's verdict dict (or an error fallback). The main
+    reviewer receives this as the tool_result content.
+    """
+    user_msg = (
+        f"Lemma: {lemma}\n"
+        f"Question from reviewer: {question}\n\n"
+        f"Gather corpus evidence via tools, then submit_verdict."
+    )
+    messages: list[dict] = [{"role": "user", "content": user_msg}]
+
+    for iteration in range(MAX_ANALYST_ITERATIONS):
+        resp = anthropic_call(messages, LEMMA_ANALYST_SYSTEM, ANALYST_MODEL, tools=LEMMA_ANALYST_TOOLS)
+        content = resp.get("content", [])
+        messages.append({"role": "assistant", "content": content})
+
+        tool_results: list[dict] = []
+        verdict: dict | None = None
+        for block in content:
+            if block.get("type") != "tool_use":
+                continue
+            tname = block["name"]
+            tin = block.get("input") or {}
+            if tname == "submit_verdict":
+                verdict = {
+                    "lemma": lemma,
+                    "question": question,
+                    "iterations_used": iteration + 1,
+                    **tin,
+                }
+                break
+            if tname == "lookup_occurrences":
+                tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps(tool_lookup_occurrences(tin["source_word"], tin.get("limit", 20)))[:8000]})
+            elif tname == "lookup_book_context":
+                tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps(tool_lookup_book_context(tin["book"], tin.get("source_word"), tin.get("top_n", 8)))[:8000]})
+            else:
+                tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps({"error": f"analyst cannot call {tname}"}), "is_error": True})
+
+        if verdict is not None:
+            return verdict
+        if not tool_results:
+            messages.append({"role": "user", "content": "You did not call a tool. Use lookup_occurrences or call submit_verdict."})
+            continue
+        messages.append({"role": "user", "content": tool_results})
+
+    return {
+        "lemma": lemma,
+        "question": question,
+        "error": f"analyst cap reached ({MAX_ANALYST_ITERATIONS} iterations) without a verdict",
+        "iterations_used": MAX_ANALYST_ITERATIONS,
+    }
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -328,7 +555,7 @@ read_drafter_reasoning.
     return base
 
 
-def anthropic_call(messages: list[dict], system: str, model: str) -> dict:
+def anthropic_call(messages: list[dict], system: str, model: str, tools: list[dict] | None = None) -> dict:
     api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError("ANTHROPIC_API_KEY not set")
@@ -336,7 +563,7 @@ def anthropic_call(messages: list[dict], system: str, model: str) -> dict:
         "model": model,
         "max_tokens": 4096,
         "system": system,
-        "tools": TOOL_SCHEMAS,
+        "tools": tools if tools is not None else TOOL_SCHEMAS,
         "messages": messages,
     }
     req = urllib.request.Request(
@@ -416,15 +643,18 @@ def review_verse(verse_path: pathlib.Path, model: str = DEFAULT_MODEL) -> dict:
                 tool_results.append({"type": "tool_result", "tool_use_id": block["id"], "content": json.dumps({"error": str(exc)}), "is_error": True})
 
         if terminal is not None:
-            return {
+            result = {
                 "verse_path": str(verse_path.relative_to(REPO_ROOT)),
                 "reference": reference,
                 "current_text": current,
                 "decision": terminal,
                 "iterations_used": iteration + 1,
                 "trace": trace,
+                "messages": messages,  # full trace, including tool_results
                 "model": model,
             }
+            _write_audit_log(verse_path, result)
+            return result
 
         if not tool_results:
             # Model emitted text without tools and without terminal — re-prompt once.
@@ -434,15 +664,37 @@ def review_verse(verse_path: pathlib.Path, model: str = DEFAULT_MODEL) -> dict:
         messages.append({"role": "user", "content": tool_results})
 
     # Cap reached without terminal — fail safe to unchanged + flag for human.
-    return {
+    result = {
         "verse_path": str(verse_path.relative_to(REPO_ROOT)),
         "reference": reference,
         "current_text": current,
         "decision": {"kind": "cap_reached_unchanged", "brief_reason": f"Max {MAX_ITERATIONS} iterations exhausted without a terminal call. Flagged for human review."},
         "iterations_used": MAX_ITERATIONS,
         "trace": trace,
+        "messages": messages,
         "model": model,
     }
+    _write_audit_log(verse_path, result)
+    return result
+
+
+def _write_audit_log(verse_path: pathlib.Path, result: dict) -> None:
+    """Persist the full reviewer trace to state/agentic_pass/<verse_id>/<ts>.json.
+
+    state/ is gitignored — these are local artifacts for project-level
+    transparency, debugging, and future training data.
+    """
+    try:
+        verse_id = pathlib.Path(result.get("verse_path", "")).stem
+        book_dir = pathlib.Path(result.get("verse_path", "")).parts[-2] if "/" in result.get("verse_path", "") else "unknown"
+        target = AUDIT_LOG_DIR / book_dir / f"{verse_id}.json"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        # Strip non-JSON-serializable bits from messages (Anthropic returns content
+        # blocks as dicts already, so this should serialize cleanly).
+        target.write_text(json.dumps(result, indent=2, ensure_ascii=False, default=str))
+    except Exception:
+        # Audit log must not break the review pipeline.
+        pass
 
 
 # ──────────────────────────────────────────────────────────────────
