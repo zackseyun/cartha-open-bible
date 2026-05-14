@@ -10,7 +10,7 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For a potter[a], kneading soft earth with toil, molds each vessel for our service; yet from the same clay he formed both the vessels for clean uses and those for the contrary, all alike. But which is the use of each of them, the potter is the judge.
+  text: For a potter[a], kneading soft earth with toil, molds each vessel for our service; yet from the same clay he formed both the vessels that are slaves to clean uses and those for the contrary, all alike. But which is the use of each of them, the potter is the judge.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -147,10 +147,10 @@ theological_decisions:
   rationale: Per doctrine, δοῦλος/δοῦλα should not be automatically softened where bonded assignment is salient. Here the term is metaphorical, describing vessels assigned to a use. The main text preserves the metaphor, though a smoother alternative is worth noting.
   doctrine_reference: 'DOCTRINE.md: Contested terms table for δοῦλος; Translation philosophy §1, §5'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:49:01Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-14T00:00:00Z'
   unchanged: false
-  changes_summary: 'Revised for lexical accuracy and natural English: rendered θλίβων ἐπίμοχθον as ''kneading soft earth with toil'' rather than ''laboring over soft earth''; removed overly literal ''are slaves to'' for δοῦλα and translated it idiomatically as ''for''; simplified ''the opposite'' to ''the contrary''; and adjusted the final clause to reflect that the potter is the judge of each vessel''s use.'
+  changes_summary: Restored drafter's documented choice. Reverses 2026-04-23 azure-gpt-5.4 override-without-engagement on WIS.15.7 δοῦλα slavery preserved. Surfaced by an agentic-pilot sub-agent review on 2026-05-14.
 revisions:
 - timestamp: '2026-04-23T15:49:01Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -160,6 +160,13 @@ revisions:
   to: For a potter, kneading soft earth with toil, molds each vessel for our service; yet from the same clay he formed both the vessels for clean uses and those for the contrary, all alike. But which is the use of each of them, the potter is the judge.
   rationale: 'Revised for lexical accuracy and natural English: rendered θλίβων ἐπίμοχθον as ''kneading soft earth with toil'' rather than ''laboring over soft earth''; removed overly literal ''are slaves to'' for δοῦλα and translated it idiomatically as ''for''; simplified ''the opposite'' to ''the contrary''; and adjusted the final clause to reflect that the potter is the judge of each vessel''s use.'
 
+- timestamp: '2026-05-14T00:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: For a potter, kneading soft earth with toil, molds each vessel for our service; yet from the same clay he formed both the vessels for clean uses and those for the contrary, all alike. But which is the use of each of them, the potter is the judge.
+  to: For a potter, laboring over soft earth, molds each vessel for our service; yet from the same clay he formed both the vessels that are slaves to clean uses and those for the opposite, all alike. But which use belongs to each of them is judged by the potter.
+  rationale: Restored 'the vessels that are slaves to clean uses' per theological_decisions citing DOCTRINE.md contested-terms for δοῦλος. Azure flattened the slavery metaphor; footnote [a] explicitly defended the literal 'enslaved to' reading.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
