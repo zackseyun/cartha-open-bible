@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch63.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 63, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Now we know that we ought to praise and bless the Lord of kings[b][a], and the one who reigns over all kings.
+  text: Now we know that we ought to praise and bless the Lord of the kings[b][a], and the one who reigns over all the kings.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -126,7 +126,7 @@ revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:55Z'
   unchanged: false
-  changes_summary: Removed repeated articles for more natural formal English and rendered 'the kings' as 'kings' for a more idiomatic generic sense while preserving the meaning.
+  changes_summary: Removed repeated articles for more natural formal English and rendered 'the kings' as 'kings' for a more idiomatic generic sense while preserving the meaning. NOTE — doctrine_realignment revert applied 2026-05-15; article drops reverted because drafter explicitly documented 'the kings' as load-bearing for the two-part royal acclamation and to avoid collapsing into the traditional 'King of kings' title.
 revisions:
 - timestamp: '2026-04-23T11:36:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -135,6 +135,13 @@ revisions:
   from: Now we know that we ought to praise and bless the Lord of the kings and the one who reigns over all the kings.
   to: Now we know that we ought to praise and bless the Lord of kings, and the one who reigns over all kings.
   rationale: Removed repeated articles for more natural formal English and rendered 'the kings' as 'kings' for a more idiomatic generic sense while preserving the meaning.
+- timestamp: '2026-05-15T00:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: claude-sonnet-4-6
+  category: doctrine_realignment
+  from: Now we know that we ought to praise and bless the Lord of kings, and the one who reigns over all kings.
+  to: Now we know that we ought to praise and bless the Lord of the kings[b][a], and the one who reigns over all the kings.
+  rationale: Reverted azure-gpt-5.4 article drops. The drafter documented 'the Lord of the kings' and 'all the kings' as deliberate choices preserving the definite Ge'ez plural referent (earthly kings as a specific condemned class) and the verse's two-part royal acclamation structure, explicitly rejecting compression into the traditional 'King of kings' formula (see footnote b and theological_decisions). Azure's substitution was purely stylistic with no engagement of the drafter's documented rationale. The definite article is load-bearing; the revert restores it.
 
 cross_check:
   status: high_agreement
