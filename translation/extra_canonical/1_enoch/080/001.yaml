@@ -11,7 +11,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch80.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 80, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in those days Uriel the angel answered me and said to me[a], “Behold, I have shown you everything, Enoch, and I have revealed everything to you, that you may see this sun and this moon and those who lead the stars of heaven[c][b], and all those who make them turn—their works and their times and their risings.”
+  text: And in those days Uriel the angel answered me and said to me[a], “Behold, I have shown you everything, Enoch, and I have revealed everything to you, that you may look upon this sun and this moon and those who lead the stars of heaven[c][b], and all those who turn them—their works and their times and their risings.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -171,12 +171,18 @@ revisions:
   from: And in those days Uriel the angel answered me and said to me, “See, I have shown you everything, Enoch, and I have revealed everything to you, that you may look upon this sun and this moon and those who lead the stars of heaven, and all those who turn them—their works and their times and their settings.”
   to: And in those days Uriel the angel answered me and said to me, “Behold, I have shown you everything, Enoch, and I have revealed everything to you, that you may see this sun and this moon and those who lead the stars of heaven, and all those who make them turn—their works and their times and their risings.”
   rationale: Changed 'See' to 'Behold' for formal register; 'look upon' to 'see' for naturalness; 'turn them' to 'make them turn' to reflect causative sense; and 'settings' to 'risings' to better match the source term for goings/appearances.
+- timestamp: '2026-05-15T18:39:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And in those days Uriel the angel answered me and said to me[a], “Behold, I have shown you everything, Enoch, and I have revealed everything to you, that you may see this sun and this moon and those who lead the stars of heaven[c][b], and all those who make them turn—their works and their times and their risings.”'
+  to: 'And in those days Uriel the angel answered me and said to me[a], “Behold, I have shown you everything, Enoch, and I have revealed everything to you, that you may look upon this sun and this moon and those who lead the stars of heaven[c][b], and all those who turn them—their works and their times and their risings.”'
+  rationale: 'The most serious failure: azure reverted ''settings'' to ''risings'' for ሙባኢሆሙ (mubāʾ from boʾa = ''to enter'', i.e. astronomical setting), undoing a Gemini tier-3 confidence-1.0 correction with explicit Dillmann grounding — and getting the astronomy backwards. Plus three other stylistic-only overrides (See->Behold, look upon->see, turn them->make them turn).'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:38:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T18:39:35Z'
   unchanged: false
-  changes_summary: Changed 'See' to 'Behold' for formal register; 'look upon' to 'see' for naturalness; 'turn them' to 'make them turn' to reflect causative sense; and 'settings' to 'risings' to better match the source term for goings/appearances.
-
+  changes_summary: 'doctrine_realignment: 1En 80:1 settings (mubāʾ) / See / look upon / turn them. The most serious failure: azure reverted ''settings'' to ''risings'' for ሙባኢሆሙ (mubāʾ from boʾa = ''to enter'', i.e. astronomical setting), undoing a Gemini tier-3 confidence-1.0 correction with explicit Di'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
