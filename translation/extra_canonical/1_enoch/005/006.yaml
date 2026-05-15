@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In those days you will give your names for an everlasting curse to all the righteous[a], and the sinners will curse by you[d][c][b]; and for you there will be a joining together with sinners.
+  text: In those days you will give your names to an everlasting curse for all the righteous[a], and the sinners will curse you[d][c][b]; and for you there will be a joining together with sinners.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -161,12 +161,18 @@ revisions:
   from: In those days you will give your names to an everlasting curse for all the righteous, and the sinners will curse you; and for you there will be a joining together with the sinners.
   to: In those days you will give your names for an everlasting curse to all the righteous, and the sinners will curse by you; and for you there will be a joining together with sinners.
   rationale: 'Adjusted prepositions for closer lexical correspondence: ''for an everlasting curse to all the righteous'' instead of ''to an everlasting curse for all the righteous,'' and ''with sinners'' instead of ''with the sinners.'' Retained the awkward ''curse by you'' to reflect the apparent instrumental sense more closely without expanding beyond the source.'
+- timestamp: '2026-05-14T00:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: In those days you will give your names for an everlasting curse to all the righteous, and the sinners will curse by you; and for you there will be a joining together with sinners.
+  to: In those days you will give your names to an everlasting curse for all the righteous, and the sinners will curse you; and for you there will be a joining together with the sinners.
+  rationale: Restored Gemini tier-3 grammar correction (κίαν accusative direct object).
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-14T00:00:00Z'
   unchanged: false
-  changes_summary: 'Adjusted prepositions for closer lexical correspondence: ''for an everlasting curse to all the righteous'' instead of ''to an everlasting curse for all the righteous,'' and ''with sinners'' instead of ''with the sinners.'' Retained the awkward ''curse by you'' to reflect the apparent instrumental sense more closely without expanding beyond the source.'
-
+  changes_summary: Restored drafter's documented choice. Reverses 2026-04-23 azure-gpt-5.4 override-without-engagement on 1EN.5.6 curse you (not by you). Surfaced by an agentic-pilot sub-agent review on 2026-05-14.
 cross_check:
   status: needs_review
   agreement: 0.65

@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch63.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 63, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in the day of our trouble and our affliction[a], he will not save us, and we shall not find rest; for we trusted that our Lord is faithful in all his works and in his judgments and his righteousness[c][b], and his judgments show no partiality.
+  text: And on the day of our distress and our affliction[a], he will not save us, and we shall find no rest to believe that our Lord is faithful in all his works and in his judgments and his righteousness[c][b], and his judgments show no partiality.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -190,12 +190,18 @@ revisions:
   from: And on the day of our distress and our affliction, he will not save us, and we shall find no rest to believe, for our Lord is faithful in all his works, his judgments, and his righteousness; and his judgments show no partiality.
   to: And in the day of our trouble and our affliction, he will not save us, and we shall not find rest; for we trusted that our Lord is faithful in all his works and in his judgments and his righteousness, and his judgments show no partiality.
   rationale: Revised 'on' to 'in' and 'distress' to 'trouble' for more natural formal English; changed 'we shall find no rest to believe' to 'we shall not find rest; for we trusted' to better reflect the sense and account for ንእመን/faith-trust without awkward English; added repeated 'in' for clarity and smoothed punctuation while preserving the verse's meaning.
+- timestamp: '2026-05-14T00:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: And in the day of our trouble and our affliction, he will not save us, and we shall not find rest; for we trusted that our Lord is faithful in all his works and in his judgments and his righteousness, and his judgments show no partiality.
+  to: And on the day of our distress and our affliction, he will not save us, and we shall find no rest to believe, for our Lord is faithful in all his works, his judgments, and his righteousness; and his judgments show no partiality.
+  rationale: Restored 'on the day of', 'our distress', and 'we shall find no rest to believe' (theological_decisions preserved deliberate awkwardness).
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:36:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-14T00:00:00Z'
   unchanged: false
-  changes_summary: Revised 'on' to 'in' and 'distress' to 'trouble' for more natural formal English; changed 'we shall find no rest to believe' to 'we shall not find rest; for we trusted' to better reflect the sense and account for ንእመን/faith-trust without awkward English; added repeated 'in' for clarity and smoothed punctuation while preserving the verse's meaning.
-
+  changes_summary: Restored drafter's documented choice. Reverses 2026-04-23 azure-gpt-5.4 override-without-engagement on 1EN.63.8 distress + idiom preserved. Surfaced by an agentic-pilot sub-agent review on 2026-05-14.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
