@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 28:1
 translation:
-  text: Do not boast about tomorrow’s trouble[b][a], for you do not know what a day may bring forth.
+  text: The one who takes vengeance will find vengeance from the Lord, and he will surely keep his sins in mind.[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -101,10 +101,10 @@ theological_decisions:
   rationale: For Sirach we normally prefer surviving Hebrew, but here the supplied Hebrew is a clear mismatch to Sirach 28:1 and instead corresponds to a proverb-like line. Because the Hebrew witness does not represent this verse's content, the Greek parallel must govern the translation. The mismatch should be preserved transparently in a footnote rather than silently harmonized.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and from Greek where it does not; preserve source uncertainty honestly'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:44:18Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T17:57:42Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that matches the Hebrew source: a prohibition against concern/boasting regarding tomorrow, followed by the reason that one does not know what a day will bring forth.'
+  changes_summary: 'doctrine_realignment: Sir 28:1 LXX-sourced rendering restored. Azure substituted a translation of the mismatching Hebrew (Prov 27:1 parallel) for the drafter''s correct LXX Swete rendering, directly contradicting the file''s documented theological_decisions.'
 revisions:
 - timestamp: '2026-04-23T15:44:18Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -114,6 +114,13 @@ revisions:
   to: Do not boast about tomorrow’s trouble, for you do not know what a day may bring forth.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew source: a prohibition against concern/boasting regarding tomorrow, followed by the reason that one does not know what a day will bring forth.'
 
+- timestamp: '2026-05-15T17:57:42Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Do not boast about tomorrow’s trouble[b][a], for you do not know what a day may bring forth.'
+  to: 'The one who takes vengeance will find vengeance from the Lord, and he will surely keep his sins in mind.[a]'
+  rationale: 'Azure substituted a translation of the mismatching Hebrew (Prov 27:1 parallel) for the drafter''s correct LXX Swete rendering, directly contradicting the file''s documented theological_decisions.'
 cross_check:
   status: high_agreement
   agreement: 0.95
