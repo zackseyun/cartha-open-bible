@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: כֹּ֤ה אָמַר֙ יְהוָ֣ה צְבָא֔וֹת עֹ֤ד יֵֽשְׁבוּ֙ זְקֵנִ֣ים וּ/זְקֵנ֔וֹת בִּ/רְחֹב֖וֹת יְרוּשָׁלִָ֑ם וְ/אִ֧ישׁ מִשְׁעַנְתּ֛/וֹ בְּ/יָד֖/וֹ מֵ/רֹ֥ב יָמִֽים׃
 translation:
-  text: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with staff in hand because of great age.'
+  text: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with his staff in his hand because of great age.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -102,10 +102,10 @@ theological_decisions:
   rationale: The verse uses the Tetragrammaton יְהוָה directly. Per updated doctrine, the divine name is rendered 'Yahweh' rather than 'the LORD', preserving the covenant name God revealed at Sinai.
   doctrine_reference: 'DOCTRINE.md: Contested terms — יְהוָה YHWH → Yahweh'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:32:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:24:45Z'
   unchanged: false
-  changes_summary: Adjusted 'each with his staff in his hand' to 'each with staff in hand' for more natural formal English and to avoid masculine wording where the Hebrew refers collectively to old men and old women.
+  changes_summary: 'doctrine_realignment: Zech 8:4 his staff in his hand. Drafter chose ''his staff in his hand'' preserving the 3ms possessive suffixes on both Hebrew nouns (מִשְׁעַנְתּוֹ, בְּיָדוֹ) and the vividness of the source. Azure stripped both pronouns to bare ''staff'
 revisions:
 - timestamp: '2026-04-23T11:32:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -115,6 +115,13 @@ revisions:
   to: 'Thus says the LORD of hosts: Old men and old women will yet sit in the streets of Jerusalem, each with staff in hand because of great age.'
   rationale: Adjusted 'each with his staff in his hand' to 'each with staff in hand' for more natural formal English and to avoid masculine wording where the Hebrew refers collectively to old men and old women.
 
+- timestamp: '2026-05-15T20:24:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with staff in hand because of great age.'
+  to: 'Thus says Yahweh of hosts: Old men and old women will yet sit in the streets of Jerusalem[a], each with his staff in his hand because of great age.'
+  rationale: 'Drafter chose ''his staff in his hand'' preserving the 3ms possessive suffixes on both Hebrew nouns (מִשְׁעַנְתּוֹ, בְּיָדוֹ) and the vividness of the source. Azure stripped both pronouns to bare ''staff in hand'' on stylistic / gender-avoidance grounds — but the Hebrew unambiguously has masculine pronouns and the drafter''s ''each'' already handles distributive collective.'
 cross_check:
   status: high_agreement
   agreement: 1.0

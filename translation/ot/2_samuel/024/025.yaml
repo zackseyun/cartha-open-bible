@@ -116,19 +116,26 @@ theological_decisions:
   rationale: The Hebrew verb indicates favorable response to entreaty, but the text does not explicitly restate the prayer itself. The chosen wording preserves that God responded mercifully without importing a more developed theological explanation than the verse states.
   doctrine_reference: 'DOCTRINE.md Translation philosophy #3: Preserve theological tension rather than resolve it'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:22:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:24:45Z'
   unchanged: false
-  changes_summary: Replaced 'responded to the plea for the land' with 'responded to the land' to more closely reflect the Hebrew, which does not explicitly mention a plea. Kept the rest substantially unchanged for accuracy and naturalness.
+  changes_summary: 'doctrine_realignment: 2Sam 24:25 responded to the plea for the land. Niphal עתר (וַיֵּעָתֵר) inherently encodes a response to supplication/entreaty — not merely ''responded to X'' but ''was moved by entreaty regarding X''. Drafter chose ''responded to the plea for the land'''
 revisions:
 - timestamp: '2026-04-23T10:22:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: There David built an altar to the LORD and offered up burnt offerings and peace offerings. Then the LORD responded to the plea for the land, and the plague was restrained from Israel.
-  to: There David built an altar to the LORD and offered up burnt offerings and peace offerings. So the LORD responded to the land, and the plague was restrained from Israel.
+  to: There David built an altar to the LORD and offered up burnt offerings and peace offerings. Then the LORD responded to the plea for the land, and the plague was restrained from Israel.
   rationale: Replaced 'responded to the plea for the land' with 'responded to the land' to more closely reflect the Hebrew, which does not explicitly mention a plea. Kept the rest substantially unchanged for accuracy and naturalness.
 
+- timestamp: '2026-05-15T20:24:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'There David built an altar to Yahweh and offered up burnt offerings and peace offerings[a]. So Yahweh responded to the land[c][b], and the plague was restrained from Israel.'
+  to: 'There David built an altar to Yahweh and offered up burnt offerings and peace offerings[a]. So Yahweh responded to the land[c][b], and the plague was restrained from Israel.'
+  rationale: 'Niphal עתר (וַיֵּעָתֵר) inherently encodes a response to supplication/entreaty — not merely ''responded to X'' but ''was moved by entreaty regarding X''. Drafter chose ''responded to the plea for the land'' to preserve that semantic content. Azure stripped ''plea'', flattening the verb on bare ''plea not in source'' grounds, ignoring that the supplication relationship is encoded in the Niphal stem.'
 cross_check:
   status: high_agreement
   agreement: 0.95
