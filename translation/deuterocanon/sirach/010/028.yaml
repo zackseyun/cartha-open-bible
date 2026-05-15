@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 10:28
 translation:
-  text: My son[a], honor yourself with humility, and give yourself the esteem you deserve.
+  text: Who will justify the one who sins against his own soul[a], and who will honor the one who dishonors his own life?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -107,10 +107,10 @@ theological_decisions:
   rationale: The Zone 1 Hebrew and Greek are in major mismatch, and the Hebrew line as given is difficult and likely corrupt or from a divergent recension. Per project philosophy, the Hebrew is primary where it survives, but the prompt explicitly requires using the Greek parallel as actual translation input. Because the Greek yields a coherent bicola and the Hebrew is materially uncertain here, the draft follows the Greek while preserving the Hebrew-based alternative in a footnote.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives in Sirach, but use Swete Greek as source for deuterocanonical books and preserve source uncertainty honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T13:54:40Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that matches the Hebrew: addressed ''My son,'' rendered בַּעֲנָוָה as ''with humility,'' kept כַּבֵּד נַפְשֶׁךָ as ''honor yourself,'' and translated the final clause as giving oneself fitting esteem/honor.'
+  changes_summary: 'doctrine_realignment: Sir 10:28 Greek-primary (Who will justify the one who sins). Major_mismatch: Hebrew corrupt/divergent; drafter chose Greek bicola per documented theological_decision.'
 revisions:
 - timestamp: '2026-04-23T15:42:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -120,6 +120,13 @@ revisions:
   to: My son, honor yourself with humility, and give yourself the esteem you deserve.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew: addressed ''My son,'' rendered בַּעֲנָוָה as ''with humility,'' kept כַּבֵּד נַפְשֶׁךָ as ''honor yourself,'' and translated the final clause as giving oneself fitting esteem/honor.'
 
+- timestamp: '2026-05-15T13:54:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'My son[a], honor yourself with humility, and give yourself the esteem you deserve.'
+  to: 'Who will justify the one who sins against his own soul[a], and who will honor the one who dishonors his own life?'
+  rationale: 'Major_mismatch: Hebrew corrupt/divergent; drafter chose Greek bicola per documented theological_decision.'
 cross_check:
   status: needs_review
   agreement: 0.1

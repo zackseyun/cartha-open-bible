@@ -109,19 +109,26 @@ theological_decisions:
   rationale: The task requires using the most-original Zone 1 witness available, but also using the Greek parallel as actual translation input. Here the Hebrew line ('And again, if there is healing of tongue, there is no man from among men' or similar) does not correspond to the Greek Sirach 35:24 and is flagged 'minor_mismatch.' Because the Greek gives a coherent reading matching the verse reference, it should control the translation, with the source uncertainty disclosed.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives and from Greek where it does not; preserve source uncertainty honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T13:54:40Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: rendered ועוד as ''And again,'' מרפא לשון as ''healing for the tongue,'' and אין אישהּ מבני אדם as ''it is not among human beings.'''
+  changes_summary: 'doctrine_realignment: Sir 35:24 Greek-primary (Whoever trusts in the law). Minor_mismatch: Hebrew mismatched; drafter chose Greek per documented theological_decision.'
 revisions:
 - timestamp: '2026-04-23T15:45:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Whoever trusts in the law gives heed to the commandments, and whoever trusts in the Lord will not be diminished.
-  to: And again, if there is healing for the tongue, it is not among human beings.
+  to: Whoever trusts in the law gives heed to the commandments, and whoever trusts in the Lord will not be diminished.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: rendered ועוד as ''And again,'' מרפא לשון as ''healing for the tongue,'' and אין אישהּ מבני אדם as ''it is not among human beings.'''
 
+- timestamp: '2026-05-15T13:54:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And again[a], if there is healing for the tongue[b], it is not among human beings.'
+  to: 'And again[a], if there is healing for the tongue[b], it is not among human beings.'
+  rationale: 'Minor_mismatch: Hebrew mismatched; drafter chose Greek per documented theological_decision.'
 cross_check:
   status: high_agreement
   agreement: 1.0

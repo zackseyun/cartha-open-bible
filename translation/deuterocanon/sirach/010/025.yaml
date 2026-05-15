@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 10:25
 translation:
-  text: A wise servant will be exalted[a], but a foolish servant will not complain.
+  text: Do not act wisely in doing your work, and do not boast in a time of distress.[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -101,10 +101,10 @@ theological_decisions:
   rationale: This is primarily a textual-critical rather than doctrinal issue, but it materially affects translation. The project's deuterocanonical base text is Greek, while Hebrew Sirach is used where it survives. Here the supplied Hebrew and Greek are not parallel in sense, and the source metadata marks the Hebrew as 'major_mismatch.' To avoid presenting a conflated text, the translation follows the Greek and documents the Hebrew as an alternative witness.
   doctrine_reference: 'PHILOSOPHY.md: Swete LXX is the Greek source for every deuterocanonical book; Sefaria Ben Sira Hebrew is used where it survives, with source uncertainty preserved honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T13:54:40Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that matches the Hebrew: rendered עבד as ''servant,'' משכיל as ''wise,'' הורם as ''will be exalted,'' סכל as ''foolish,'' and יתאונן as ''will complain.'''
+  changes_summary: 'doctrine_realignment: Sir 10:25 Greek-primary (Do not act wisely/do not boast). Major_mismatch: drafter chose Greek per documented decision; azure reverted to Hebrew without engaging.'
 revisions:
 - timestamp: '2026-04-23T15:42:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -114,6 +114,13 @@ revisions:
   to: A wise servant will be exalted, but a foolish servant will not complain.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew: rendered עבד as ''servant,'' משכיל as ''wise,'' הורם as ''will be exalted,'' סכל as ''foolish,'' and יתאונן as ''will complain.'''
 
+- timestamp: '2026-05-15T13:54:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'A wise servant will be exalted[a], but a foolish servant will not complain.'
+  to: 'Do not act wisely in doing your work, and do not boast in a time of distress.[a]'
+  rationale: 'Major_mismatch: drafter chose Greek per documented decision; azure reverted to Hebrew without engaging.'
 cross_check:
   status: needs_review
   agreement: 0.4
