@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 37:15
 translation:
-  text: With an evil man[a], do not repay kindness, nor with a cruel man for the good of the flesh.
+  text: And more than all this, pray to the Most High that he may direct your way in truth.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -117,10 +117,10 @@ theological_decisions:
   rationale: Project policy gives primacy to Hebrew Sirach where it survives, but the prompt explicitly flags this verse as a major mismatch and instructs use of the Greek parallel as actual translation input. The Hebrew line does not produce a defensible sense in context, while the Greek yields a coherent admonition fitting the surrounding passage. The translation therefore follows the Greek while preserving the Hebrew problem in a footnote.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives, but use Greek alongside it for Sirach; preserve source uncertainty honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T13:25:15Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a rendering that reflects the Hebrew text. Accounted for both clauses: warning regarding an evil man and a cruel man, while keeping the wording formal and close to the source.'
+  changes_summary: 'doctrine_realignment: Sir 37:15 Greek-primary (pray to the Most High). Major_mismatch: azure rendered Hebrew instead of Greek per PHILOSOPHY.md Sirach policy.'
 revisions:
 - timestamp: '2026-04-23T15:45:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -130,6 +130,13 @@ revisions:
   to: With an evil man, do not repay kindness, nor with a cruel man for the good of the flesh.
   rationale: 'Replaced the unrelated draft with a rendering that reflects the Hebrew text. Accounted for both clauses: warning regarding an evil man and a cruel man, while keeping the wording formal and close to the source.'
 
+- timestamp: '2026-05-15T13:25:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'With an evil man[a], do not repay kindness, nor with a cruel man for the good of the flesh.'
+  to: 'And more than all this, pray to the Most High that he may direct your way in truth.'
+  rationale: 'Major_mismatch: azure rendered Hebrew instead of Greek per PHILOSOPHY.md Sirach policy.'
 cross_check:
   status: high_agreement
   agreement: 0.95

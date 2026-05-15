@@ -22,7 +22,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 1:23
 translation:
-  text: You will place an everlasting crown upon him[a], and everlasting merit among the holy ones.
+  text: Until the right time he will conceal his words, and the lips of many will recount his understanding.[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -99,10 +99,10 @@ theological_decisions:
   rationale: Zone 1 explicitly flags the Hebrew as 'major_mismatch,' and the supplied Hebrew text is not semantically parallel to the Greek Sirach 1:23. Since the task requires using the parallel Greek as actual translation input when present, the Greek provides the defensible base text for this verse. The divergent Hebrew should be preserved as an alternative reading note rather than silently harmonized.
   doctrine_reference: 'PHILOSOPHY.md: translate from the most-original witness available; use parallel source as actual translation input when present; preserve source uncertainty honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:41:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T13:25:15Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: rendered עֲטֶרֶת עוֹלָם as ''an everlasting crown,'' תָּשִׁית עָלָיו as ''You will place upon him,'' and וּזְכוּת עוֹלָמִים בֵּין קְדוֹשִׁים as ''and everlasting merit among the holy ones.'''
+  changes_summary: 'doctrine_realignment: Sir 1:23 Greek-primary. Major_mismatch: azure rendered Hebrew despite documented Greek-primary lexical_decisions.'
 revisions:
 - timestamp: '2026-04-23T15:41:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -112,6 +112,13 @@ revisions:
   to: You will place an everlasting crown upon him, and everlasting merit among the holy ones.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: rendered עֲטֶרֶת עוֹלָם as ''an everlasting crown,'' תָּשִׁית עָלָיו as ''You will place upon him,'' and וּזְכוּת עוֹלָמִים בֵּין קְדוֹשִׁים as ''and everlasting merit among the holy ones.'''
 
+- timestamp: '2026-05-15T13:25:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'You will place an everlasting crown upon him[a], and everlasting merit among the holy ones.'
+  to: 'Until the right time he will conceal his words, and the lips of many will recount his understanding.[a]'
+  rationale: 'Major_mismatch: azure rendered Hebrew despite documented Greek-primary lexical_decisions.'
 cross_check:
   status: high_agreement
   agreement: 0.95
