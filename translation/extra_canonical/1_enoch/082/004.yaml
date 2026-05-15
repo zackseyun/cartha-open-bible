@@ -14,7 +14,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole number of all their days, while the sun traverses heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.
+  text: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -206,12 +206,18 @@ revisions:
   from: Blessed are all the righteous who walk in the path of righteousness, and have no sin like sinners, in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year, which lead them and enter with them on four days.
   to: Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners, in the whole number of all their days, while the sun traverses heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year, which lead them and enter with them on four days.
   rationale: 'Smoothed English style and improved lexical precision: removed an unnecessary comma, changed ''count'' to ''number,'' rendered ''goes on its course in heaven'' as ''traverses heaven,'' and kept the rest substantially the same for accuracy and completeness.'
+- timestamp: '2026-05-15T18:25:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole number of all their days, while the sun traverses heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.'
+  to: 'Blessed are all the righteous who walk in the path of righteousness and have no sin like sinners[a], in the whole count of all their days, while the sun goes on its course in heaven, entering and going out through the gates for thirty days, together with the heads of the thousands of the order of the stars, and with the four that are added, which divide the four parts of the year[c][b], which lead them and enter with them on four days.'
+  rationale: 'Drafter chose ''count'' for ኍልቈ to preserve the Astronomical Book''s technical enumeration register; azure substituted ''number'' (more neutral). Drafter chose ''goes on its course in heaven'' as a deliberate structural echo of ''walk in the path of righteousness''; azure collapsed to ''traverses heaven'' destroying the parallel. Both stylistic-only.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:37:43Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T18:25:27Z'
   unchanged: false
-  changes_summary: 'Smoothed English style and improved lexical precision: removed an unnecessary comma, changed ''count'' to ''number,'' rendered ''goes on its course in heaven'' as ''traverses heaven,'' and kept the rest substantially the same for accuracy and completeness.'
-
+  changes_summary: 'doctrine_realignment: 1En 82:4 count / goes on its course in heaven. Drafter chose ''count'' for ኍልቈ to preserve the Astronomical Book''s technical enumeration register; azure substituted ''number'' (more neutral). Drafter chose ''goes on its course in heaven'' as a deliberat'
 cross_check:
   status: high_agreement
   agreement: 0.9

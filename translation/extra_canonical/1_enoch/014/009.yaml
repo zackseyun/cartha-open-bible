@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch14.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 14, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I went in until I drew near to a structure built of stones of hail[a], and a tongue of fire surrounded it[e][d][c][b], and its foundation made me afraid.
+  text: And I went in until I drew near to a wall built of stones of hail[a], and a tongue of fire surrounded it[e][d][c][b], and it began to make me afraid.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -172,12 +172,18 @@ revisions:
   from: And I went in until I drew near to a wall built of stones of hail, and a tongue of fire surrounded it, and it began to make me afraid.
   to: And I went in until I drew near to a structure built of stones of hail, and a tongue of fire surrounded it, and its foundation made me afraid.
   rationale: Revised 'wall' to 'structure' for better lexical fit with the broader building context; rendered the final clause as 'its foundation made me afraid' to reflect the source more closely than 'it began to make me afraid.'
+- timestamp: '2026-05-15T18:25:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I went in until I drew near to a structure built of stones of hail[a], and a tongue of fire surrounded it[e][d][c][b], and its foundation made me afraid.'
+  to: 'And I went in until I drew near to a wall built of stones of hail[a], and a tongue of fire surrounded it[e][d][c][b], and it began to make me afraid.'
+  rationale: 'Azure reverted Gemini tier-3''s ''wall'' (established via Dillmann col. 1235, Leslau p. 595, Greek τεῖχος, Aramaic שור) back to ''structure'' on stylistic grounds, with no counter-lexicographic argument; also substituted unsupported ''its foundation made me afraid'' for the drafter''s documented ወጠነ rendering ''it began to make me afraid''.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T18:25:27Z'
   unchanged: false
-  changes_summary: Revised 'wall' to 'structure' for better lexical fit with the broader building context; rendered the final clause as 'its foundation made me afraid' to reflect the source more closely than 'it began to make me afraid.'
-
+  changes_summary: 'doctrine_realignment: 1En 14:9 wall / it began to make me afraid. Azure reverted Gemini tier-3''s ''wall'' (established via Dillmann col. 1235, Leslau p. 595, Greek τεῖχος, Aramaic שור) back to ''structure'' on stylistic grounds, with no counter-lexicographic argument; a'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

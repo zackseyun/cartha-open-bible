@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch39.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 39, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw the dwelling place beneath the wings of the Lord of Spirits[a]; and all the righteous and chosen shone before him like the light of fire, and their mouths were filled with blessing, and their lips praised the name of the Lord of Spirits. And righteousness does not fail before him[c][b], and uprightness does not fail before him.
+  text: And I saw the dwelling-place beneath the wings of the Lord of Spirits[a]; and all the righteous and the chosen shone before him like the light of fire, and their mouths were filled with blessing, and their lips praised the name of the Lord of Spirits. And righteousness does not fail before him[c][b], and uprightness does not fail before him.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -170,10 +170,10 @@ theological_decisions:
   rationale: The repeated negative verb likely expresses enduring permanence in God's presence. 'Does not fail' is readable modern English while preserving the claim that these qualities remain unextinguished before him.
   doctrine_reference: 'Translation philosophy: optimal equivalence with preserved theological tension where wording is ambiguous.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:36:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T18:25:27Z'
   unchanged: false
-  changes_summary: Adjusted 'dwelling-place' to the more standard 'dwelling place' and removed the second article in 'the righteous and chosen' for slightly more natural English while preserving the source sense. No substantive lexical changes were needed.
+  changes_summary: 'doctrine_realignment: 1En 39:7 the chosen. Azure dropped the article before ''chosen'', collapsing ጻድቃን ወኄሩያን from two parallel definite noun-classes into a single noun + adjective reading. The drafter explicitly preserved the parallel structure'
 revisions:
 - timestamp: '2026-04-23T11:36:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -183,6 +183,13 @@ revisions:
   to: And I saw the dwelling place beneath the wings of the Lord of Spirits; and all the righteous and chosen shone before him like the light of fire, and their mouths were filled with blessing, and their lips praised the name of the Lord of Spirits. And righteousness does not fail before him, and uprightness does not fail before him.
   rationale: Adjusted 'dwelling-place' to the more standard 'dwelling place' and removed the second article in 'the righteous and chosen' for slightly more natural English while preserving the source sense. No substantive lexical changes were needed.
 
+- timestamp: '2026-05-15T18:25:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I saw the dwelling place beneath the wings of the Lord of Spirits[a]; and all the righteous and chosen shone before him like the light of fire, and their mouths were filled with blessing, and their lips praised the name of the Lord of Spirits. And righteousness does not fail before him[c][b], and uprightness does not fail before him.'
+  to: 'And I saw the dwelling-place beneath the wings of the Lord of Spirits[a]; and all the righteous and the chosen shone before him like the light of fire, and their mouths were filled with blessing, and their lips praised the name of the Lord of Spirits. And righteousness does not fail before him[c][b], and uprightness does not fail before him.'
+  rationale: 'Azure dropped the article before ''chosen'', collapsing ጻድቃን ወኄሩያን from two parallel definite noun-classes into a single noun + adjective reading. The drafter explicitly preserved the parallel structure (documented in lexical_decisions AND theological_decisions); azure cited only ''slightly more natural English''. Hyphen drop in ''dwelling-place'' is also stylistic-only.'
 cross_check:
   status: high_agreement
   agreement: 1.0

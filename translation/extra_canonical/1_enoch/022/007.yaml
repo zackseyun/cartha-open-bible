@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch22.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 22, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he answered me and said to me[a], “This is the spirit that came out from Abel, whom Qayin his brother killed; and it accuses him until his seed is destroyed from before the face of the earth[d][c][b], and his seed is blotted out from among the seed of men.”
+  text: And he answered me and said to me[a], “This is the spirit that came out from Abel, whom Qayin his brother killed; and it makes accusation against him until his seed is destroyed from before the face of the earth[d][c][b], and his seed is blotted out from among the seed of men.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -176,12 +176,18 @@ revisions:
   from: 'And he answered me and said to me, saying: “This is the spirit that came out from Abel, whom Qayin his brother killed; and it makes accusation against him until his seed is destroyed from before the face of the earth, and his seed is blotted out from the seed of men.”'
   to: And he answered me and said to me, “This is the spirit that came out from Abel, whom Qayin his brother killed; and it accuses him until his seed is destroyed from before the face of the earth, and his seed is blotted out from among the seed of men.”
   rationale: Removed the redundant 'saying' for more natural English; changed 'makes accusation against him' to 'accuses him' for smoother formal style; changed 'from the seed of men' to 'from among the seed of men' to better reflect the source.
+- timestamp: '2026-05-15T18:25:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he answered me and said to me[a], “This is the spirit that came out from Abel, whom Qayin his brother killed; and it accuses him until his seed is destroyed from before the face of the earth[d][c][b], and his seed is blotted out from among the seed of men.”'
+  to: 'And he answered me and said to me[a], “This is the spirit that came out from Abel, whom Qayin his brother killed; and it makes accusation against him until his seed is destroyed from before the face of the earth[d][c][b], and his seed is blotted out from among the seed of men.”'
+  rationale: 'Drafter chose ''makes accusation against him'' for ይሰኪ over ''accuses him'' (explicitly rejected alternative) citing the judicial-apocalyptic force of the verb; azure substituted exactly that rejected alternative citing only ''smoother formal style'', no lexical engagement.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T18:25:27Z'
   unchanged: false
-  changes_summary: Removed the redundant 'saying' for more natural English; changed 'makes accusation against him' to 'accuses him' for smoother formal style; changed 'from the seed of men' to 'from among the seed of men' to better reflect the source.
-
+  changes_summary: 'doctrine_realignment: 1En 22:7 makes accusation against him. Drafter chose ''makes accusation against him'' for ይሰኪ over ''accuses him'' (explicitly rejected alternative) citing the judicial-apocalyptic force of the verb; azure substituted exactly that rejected alt'
 cross_check:
   status: high_agreement
   agreement: 0.92
