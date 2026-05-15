@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch106.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 106, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And now[a], my father, hear me: a son has been born to Lamech my son, and his appearance and form are not like the form of a human being. His complexion is whiter than snow and redder than the blossom of a rose, and the hair of his head is whiter than white wool. And his eyes are like the rays of the sun[c][b]; and he opened his eyes and lit up the whole house.'
+  text: 'And now[a], my father, hear me: a son has been born to Lamech my son, and his appearance and form are not like the form of a human being. His color is whiter than snow and redder than the blossom of a rose, and the hair of his head is whiter than white wool. And his eyes are like the rays of the sun[c][b]; and he opened his eyes and lit up the whole house.'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -182,6 +182,14 @@ revisions:
   from: 'And now, my father, hear me: a son has been born to Lamech my son, whose appearance and form are not like the form of a human being. His color is whiter than snow and redder than a rose blossom, and the hair of his head is whiter than white wool. And his eyes are like the rays of the sun; when he opened his eyes, he lit up the whole house.'
   to: 'And now, my father, hear me: a son has been born to Lamech my son, and his appearance and form are not like the form of a human being. His complexion is whiter than snow and redder than the blossom of a rose, and the hair of his head is whiter than white wool. And his eyes are like the rays of the sun; and he opened his eyes and lit up the whole house.'
   rationale: Added 'and' after 'my son' to reflect the conjunction in the source. Changed 'whose appearance and form' to 'and his appearance and form' for closer alignment. Rendered 'color' as 'complexion' for more natural formal English. Replaced 'when he opened his eyes' with 'and he opened his eyes' to reflect the sequential conjunction rather than a temporal paraphrase.
+- timestamp: '2026-05-15T00:00:00Z'
+  adjudicator: doctrine_realignment
+  reviewer_model: claude-sonnet-4-6
+  category: doctrine_realignment
+  term: color
+  from: His complexion is whiter than snow and redder than the blossom of a rose
+  to: His color is whiter than snow and redder than the blossom of a rose
+  rationale: Azure's substitution of 'complexion' for 'color' (ኅብሩ) was a stylistic-only override. The drafter explicitly considered and rejected 'complexion' as an alternative, preferring 'color' as the most direct rendering of ኅብር. Azure offered no lexical or source-language argument — its sole justification was 'more natural formal English.' Reverting to drafter's chosen per doctrine_realignment criteria.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:04Z'
