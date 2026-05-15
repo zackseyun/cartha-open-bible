@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וְ/אִ֗ישׁ מָשַׁ֤ךְ בַּ/קֶּ֨שֶׁת֙ לְ/תֻמּ֔/וֹ וַ/יַּךְ֙ אֶת מֶ֣לֶךְ יִשְׂרָאֵ֔ל בֵּ֥ין הַ/דְּבָקִ֖ים וּ/בֵ֣ין הַ/שִּׁרְיָ֑ן וַ/יֹּ֣אמֶר לָֽ/רַכָּ֗ב הֲפֹ֧ךְ ידי/ך וְ/הוֹצֵאתַ֥/נִי מִן הַֽ/מַּחֲנֶ֖ה כִּ֥י הָחֳלֵֽיתִי־־׃
 translation:
-  text: But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate[a]. So he said to the charioteer, “Turn your hand and take me out of the camp[c][b], for I am wounded.”
+  text: But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate[a]. So he said to the charioteer, “Turn your hand and take me out of the camp[c][b], for I am wounded.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -92,19 +92,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:14:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T19:54:48Z'
   unchanged: false
-  changes_summary: Revised 'scale armor' to 'the joints of the armor' to better reflect the Hebrew, and simplified 'badly wounded' to 'wounded' since the source does not explicitly intensify the injury.
+  changes_summary: 'doctrine_realignment: 2Chr 18:33 scale armor / badly wounded. Drafter chose ''scale armor'' for דְּבָקִים (with ''joints of the armor'' as rejected alternative) — more specific rendering of clinging/attached pieces. Drafter chose ''badly wounded'' to convey the Hophal'
 revisions:
 - timestamp: '2026-04-23T10:14:09Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate. So he said to the charioteer, “Turn your hand and take me out of the camp, for I am badly wounded.”
-  to: But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate. So he said to the charioteer, “Turn your hand and take me out of the camp, for I am wounded.”
+  to: But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate. So he said to the charioteer, “Turn your hand and take me out of the camp, for I am badly wounded.”
   rationale: Revised 'scale armor' to 'the joints of the armor' to better reflect the Hebrew, and simplified 'badly wounded' to 'wounded' since the source does not explicitly intensify the injury.
 
+- timestamp: '2026-05-15T19:54:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate[a]. So he said to the charioteer, “Turn your hand and take me out of the camp[c][b], for I am wounded.”'
+  to: 'But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate[a]. So he said to the charioteer, “Turn your hand and take me out of the camp[c][b], for I am wounded.”'
+  rationale: 'Drafter chose ''scale armor'' for דְּבָקִים (with ''joints of the armor'' as rejected alternative) — more specific rendering of clinging/attached pieces. Drafter chose ''badly wounded'' to convey the Hophal intensifying force of הָחֳלֵיתִי (Hophal passive-causative). Azure substituted rejected alternative and stripped ''badly'' without engaging Hophal morphology.'
 cross_check:
   status: high_agreement
   agreement: 0.9
