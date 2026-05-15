@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר ל/וֹ֙ יְה֣וֹנָדָ֔ב שְׁכַ֥ב עַל מִשְׁכָּבְ/ךָ֖ וְ/הִתְחָ֑ל וּ/בָ֧א אָבִ֣י/ךָ לִ/רְאוֹתֶ֗/ךָ וְ/אָמַרְתָּ֣ אֵלָ֡י/ו תָּ֣בֹא נָא֩ תָמָ֨ר אֲחוֹתִ֜/י וְ/תַבְרֵ֣/נִי לֶ֗חֶם וְ/עָשְׂתָ֤ה לְ/עֵינַ/י֙ אֶת הַ/בִּרְיָ֔ה לְמַ֨עַן֙ אֲשֶׁ֣ר אֶרְאֶ֔ה וְ/אָכַלְתִּ֖י מִ/יָּדָֽ/הּ־־׃
 translation:
-  text: Jehonadab said to him[a], “Lie down on your bed and pretend to be sick. When your father comes to see you, say to him, ‘Please let Tamar my sister come and prepare food for me, and let her prepare the meal in my sight[c][b], so that I may see it and eat from her hand.’”
+  text: Jehonadab said to him[a], “Lie down on your bed and pretend to be sick. When your father comes to see you, say to him, ‘Please let Tamar my sister come and give me food, and let her prepare the meal in my sight[c][b], so that I may watch and eat from her hand.’”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -86,10 +86,10 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:39:59Z'
   unchanged: false
-  changes_summary: Adjusted 'give me food' to 'prepare food for me' to reflect the verb more accurately, and changed 'so that I may watch' to 'so that I may see it' to account for the explicit object in the Hebrew while keeping natural English.
+  changes_summary: 'doctrine_realignment: 2Sam 13:5 give me food / so that I may watch. Drafter chose ''give me food'' for ברה (providing nourishment to a sick person), distinguishing it from עָשָׂה (''prepare'') used later in the same verse. Azure conflated the two verbs. Drafter chose ''so '
 revisions:
 - timestamp: '2026-04-23T10:20:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -99,6 +99,13 @@ revisions:
   to: Jehonadab said to him, “Lie down on your bed and pretend to be sick. When your father comes to see you, say to him, ‘Please let Tamar my sister come and prepare food for me, and let her prepare the meal in my sight, so that I may see it and eat from her hand.’”
   rationale: Adjusted 'give me food' to 'prepare food for me' to reflect the verb more accurately, and changed 'so that I may watch' to 'so that I may see it' to account for the explicit object in the Hebrew while keeping natural English.
 
+- timestamp: '2026-05-15T20:39:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Jehonadab said to him[a], “Lie down on your bed and pretend to be sick. When your father comes to see you, say to him, ‘Please let Tamar my sister come and prepare food for me, and let her prepare the meal in my sight[c][b], so that I may see it and eat from her hand.’”'
+  to: 'Jehonadab said to him[a], “Lie down on your bed and pretend to be sick. When your father comes to see you, say to him, ‘Please let Tamar my sister come and give me food, and let her prepare the meal in my sight[c][b], so that I may watch and eat from her hand.’”'
+  rationale: 'Drafter chose ''give me food'' for ברה (providing nourishment to a sick person), distinguishing it from עָשָׂה (''prepare'') used later in the same verse. Azure conflated the two verbs. Drafter chose ''so that I may watch'' to avoid repetition of sight-language already in ''in my sight''; azure falsely claimed the Hebrew has an explicit object ''it''.'
 cross_check:
   status: high_agreement
   agreement: 1.0

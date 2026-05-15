@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וּ/מִ֤י כְ/עַמְּ/ךָ֙ כְּ/יִשְׂרָאֵ֔ל גּ֥וֹי אֶחָ֖ד בָּ/אָ֑רֶץ אֲשֶׁ֣ר הָלְכֽוּ אֱ֠לֹהִים לִ/פְדּֽוֹת ל֨/וֹ לְ/עָ֜ם וְ/לָ/שׂ֧וּם ל֣/וֹ שֵׁ֗ם וְ/לַ/עֲשׂ֨וֹת לָ/כֶ֜ם הַ/גְּדוּלָּ֤ה וְ/נֹֽרָאוֹת֙ לְ/אַרְצֶ֔/ךָ מִ/פְּנֵ֣י עַמְּ/ךָ֗ אֲשֶׁ֨ר פָּדִ֤יתָ לְּ/ךָ֙ מִ/מִּצְרַ֔יִם גּוֹיִ֖ם וֵ/אלֹהָֽי/ו־־׃
 translation:
-  text: And who is like your people[a], like Israel, the one nation on the earth whom God went to redeem for himself as a people, to make a name for himself, and to do great and fearsome things for your land before your people, whom you redeemed for yourself from Egypt[b], from nations and their gods?
+  text: And who is like your people[a], like Israel, the one nation on the earth whom God went to redeem for himself as a people, to make a name for himself, and to do for you great and fearsome things for your land before your people, whom you redeemed for yourself from Egypt[b], from nations and their gods?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -120,10 +120,10 @@ theological_decisions:
   rationale: The Hebrew ending is textually and syntactically compressed. The chosen reading best fits the broader biblical theme of God redeeming Israel and driving out nations and their gods before them, while preserving the difficult wording in a footnote.
   doctrine_reference: Preserve theological tension rather than resolve it
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:39:59Z'
   unchanged: false
-  changes_summary: Removed the second 'for you,' which was not supported by the source at that point and made the sentence less natural. Kept the rest essentially unchanged, preserving the verse's structure and key terms.
+  changes_summary: 'doctrine_realignment: 2Sam 7:23 for you (לָכֶם). Drafter chose ''and to do for you'' to render the MT לָכֶם (2sm plural dative present in וְלַעֲשׂוֹת לָכֶם), explicitly retaining rather than emending. Azure removed ''for you'' falsely claiming it ''lacke'
 revisions:
 - timestamp: '2026-04-23T10:19:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -133,6 +133,13 @@ revisions:
   to: And who is like your people, like Israel, the one nation on the earth whom God went to redeem for himself as a people, to make a name for himself, and to do great and fearsome things for your land before your people, whom you redeemed for yourself from Egypt, from nations and their gods?
   rationale: Removed the second 'for you,' which was not supported by the source at that point and made the sentence less natural. Kept the rest essentially unchanged, preserving the verse's structure and key terms.
 
+- timestamp: '2026-05-15T20:39:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And who is like your people[a], like Israel, the one nation on the earth whom God went to redeem for himself as a people, to make a name for himself, and to do great and fearsome things for your land before your people, whom you redeemed for yourself from Egypt[b], from nations and their gods?'
+  to: 'And who is like your people[a], like Israel, the one nation on the earth whom God went to redeem for himself as a people, to make a name for himself, and to do for you great and fearsome things for your land before your people, whom you redeemed for yourself from Egypt[b], from nations and their gods?'
+  rationale: 'Drafter chose ''and to do for you'' to render the MT לָכֶם (2sm plural dative present in וְלַעֲשׂוֹת לָכֶם), explicitly retaining rather than emending. Azure removed ''for you'' falsely claiming it ''lacked source support'' — לָכֶם is plainly in the MT at that syntactic position.'
 cross_check:
   status: high_agreement
   agreement: 0.9

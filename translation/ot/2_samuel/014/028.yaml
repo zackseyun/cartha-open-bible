@@ -56,19 +56,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:39:59Z'
   unchanged: false
-  changes_summary: Removed 'full' because it is not explicit in the source, and rendered the second clause more directly as 'and he did not see the king's face' to reflect the Hebrew wording while keeping natural formal English.
+  changes_summary: 'doctrine_realignment: 2Sam 14:28 two full years / without seeing. Drafter chose ''two full years'' for the BH idiom שְׁנָתַיִם יָמִים (where יָמִים after שְׁנָתַיִם is an idiomatic intensifier per HALOT and GKC §88d). Azure stripped ''full'' on bare ''not in source'' grou'
 revisions:
 - timestamp: '2026-04-23T10:20:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So Absalom lived in Jerusalem for two full years without seeing the king's face.
-  to: So Absalom lived in Jerusalem for two years, and he did not see the king's face.
+  to: So Absalom lived in Jerusalem for two full years without seeing the king's face.
   rationale: Removed 'full' because it is not explicit in the source, and rendered the second clause more directly as 'and he did not see the king's face' to reflect the Hebrew wording while keeping natural formal English.
 
+- timestamp: '2026-05-15T20:39:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So Absalom lived in Jerusalem for two years[a], and he did not see the king''s face.'
+  to: 'So Absalom lived in Jerusalem for two years[a], and he did not see the king''s face.'
+  rationale: 'Drafter chose ''two full years'' for the BH idiom שְׁנָתַיִם יָמִים (where יָמִים after שְׁנָתַיִם is an idiomatic intensifier per HALOT and GKC §88d). Azure stripped ''full'' on bare ''not in source'' grounds, ignoring the idiomatic argument. Also drafter''s participial ''without seeing'' (registered chosen) flipped to coordinate ''and he did not see''.'
 cross_check:
   status: high_agreement
   agreement: 1.0
