@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וּ/מִן בְּנֵי֙ יִשְׂרָאֵ֔ל אֲ֠שֶׁר לֹא נָתַ֧ן שְׁלֹמֹ֛ה לַ/עֲבָדִ֖ים לִ/מְלַאכְתּ֑/וֹ כִּי הֵ֜מָּה אַנְשֵׁ֤י מִלְחָמָה֙ וְ/שָׂרֵ֣י שָׁלִישָׁ֔י/ו וְ/שָׂרֵ֥י רִכְבּ֖/וֹ וּ/פָרָשָֽׁי/ו־־־׃פ
 translation:
-  text: But from the sons of Israel Solomon did not make slaves for his work[a], for they were men of war, and his captains[c][b], and the commanders of his chariots and his horsemen.
+  text: But from the sons of Israel Solomon did not make slaves for his work[a], for they were men of war, and his officers[c][b], and the commanders of his chariots and his horsemen.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,10 +91,10 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:13:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T19:39:42Z'
   unchanged: false
-  changes_summary: Removed 'any' for closer adherence to the source and smoother formal style; changed 'officers' to 'captains' to better reflect military context alongside 'men of war' and the following commanders.
+  changes_summary: 'doctrine_realignment: 2Chr 8:9 officers (vs captains). Drafter chose ''his officers'' for the lexically difficult שָׁלִישׁ explicitly to avoid false precision (HALOT: third-man/elite officer/aide-de-camp — ambiguous), with ''captains'' listed in rejected alte'
 revisions:
 - timestamp: '2026-04-23T10:13:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -104,6 +104,13 @@ revisions:
   to: But from the sons of Israel Solomon did not make slaves for his work, for they were men of war, and his captains, and the commanders of his chariots and his horsemen.
   rationale: Removed 'any' for closer adherence to the source and smoother formal style; changed 'officers' to 'captains' to better reflect military context alongside 'men of war' and the following commanders.
 
+- timestamp: '2026-05-15T19:39:42Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But from the sons of Israel Solomon did not make slaves for his work[a], for they were men of war, and his captains[c][b], and the commanders of his chariots and his horsemen.'
+  to: 'But from the sons of Israel Solomon did not make slaves for his work[a], for they were men of war, and his officers[c][b], and the commanders of his chariots and his horsemen.'
+  rationale: 'Drafter chose ''his officers'' for the lexically difficult שָׁלִישׁ explicitly to avoid false precision (HALOT: third-man/elite officer/aide-de-camp — ambiguous), with ''captains'' listed in rejected alternatives. The surviving footnote [c] flags ''captains'' as merely ''possible''. Azure substituted the rejected alternative on stylistic harmonization grounds.'
 cross_check:
   status: high_agreement
   agreement: 0.95
