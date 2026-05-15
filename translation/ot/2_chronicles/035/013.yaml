@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַֽ/יְבַשְּׁל֥וּ הַ/פֶּ֛סַח בָּ/אֵ֖שׁ כַּ/מִּשְׁפָּ֑ט וְ/הַ/קֳּדָשִׁ֣ים בִּשְּׁל֗וּ בַּ/סִּיר֤וֹת וּ/בַ/דְּוָדִים֙ וּ/בַ/צֵּ֣לָח֔וֹת וַ/יָּרִ֖יצוּ לְ/כָל בְּנֵ֥י הָ/עָֽם־׃
 translation:
-  text: They cooked the Passover in the fire according to the ordinance[a], and they boiled the holy offerings in pots, kettles, and bowls, and quickly brought them to all the people.
+  text: They cooked the Passover lamb in the fire according to the rule[a], and they boiled the holy offerings in pots, kettles, and bowls, and quickly brought them to all the people.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -110,10 +110,10 @@ theological_decisions:
   rationale: The syntax contrasts 'the Passover' with 'the holy offerings,' and the differing preparation methods support a distinction between them.
   doctrine_reference: Translation philosophy §1
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:15:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:09:45Z'
   unchanged: false
-  changes_summary: Changed 'Passover lamb' to 'Passover' to avoid adding 'lamb,' which is not explicit in the source here, and changed 'rule' to 'ordinance' for a more formal rendering of כמשפט. Kept the rest substantially the same as accurate and natural.
+  changes_summary: 'doctrine_realignment: 2Chr 35:13 Passover lamb / rule. Drafter chose ''Passover lamb'' for הַפֶּסַח (the sacrificial animal referent in the cooking-the-Passover ritual context). Azure stripped ''lamb'' on formal-literalism grounds. Drafter chose ''rule'' for כַ'
 revisions:
 - timestamp: '2026-04-23T10:15:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -123,6 +123,13 @@ revisions:
   to: They cooked the Passover in the fire according to the ordinance, and they boiled the holy offerings in pots, kettles, and bowls, and quickly brought them to all the people.
   rationale: Changed 'Passover lamb' to 'Passover' to avoid adding 'lamb,' which is not explicit in the source here, and changed 'rule' to 'ordinance' for a more formal rendering of כמשפט. Kept the rest substantially the same as accurate and natural.
 
+- timestamp: '2026-05-15T20:09:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They cooked the Passover in the fire according to the ordinance[a], and they boiled the holy offerings in pots, kettles, and bowls, and quickly brought them to all the people.'
+  to: 'They cooked the Passover lamb in the fire according to the rule[a], and they boiled the holy offerings in pots, kettles, and bowls, and quickly brought them to all the people.'
+  rationale: 'Drafter chose ''Passover lamb'' for הַפֶּסַח (the sacrificial animal referent in the cooking-the-Passover ritual context). Azure stripped ''lamb'' on formal-literalism grounds. Drafter chose ''rule'' for כַּמִּשְׁפָּט (clear modern English) over ''ordinance'' (listed as rejected alternative); azure substituted the rejected alternative citing only ''more formal''.'
 cross_check:
   status: high_agreement
   agreement: 1.0

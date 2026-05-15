@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: הִנֵּה֩ אֲנִ֨י בֽוֹנֶה בַּ֜יִת לְ/שֵׁ֣ם יְהוָ֣ה אֱלֹהָ֗/י לְ/הַקְדִּ֣ישׁ ל֡/וֹ לְ/הַקְטִ֣יר לְ/פָנָ֣י/ו קְטֹֽרֶת סַמִּים֩ וּ/מַעֲרֶ֨כֶת תָּמִ֤יד וְ/עֹלוֹת֙ לַ/בֹּ֣קֶר וְ/לָ/עֶ֔רֶב לַ/שַּׁבָּתוֹת֙ וְ/לֶ֣/חֳדָשִׁ֔ים וּֽ/לְ/מוֹעֲדֵ֖י יְהוָ֣ה אֱלֹהֵ֑י/נוּ לְ/עוֹלָ֖ם זֹ֥את עַל יִשְׂרָאֵֽל־׀־־׃
 translation:
-  text: Behold[a], I am building a house for the name of Yahweh my God, to consecrate it to him, to burn fragrant incense before him, and to set out the regular arrangement, and burnt offerings morning and evening, on the Sabbaths, at the new moons[b], and at the appointed feasts of Yahweh our God[c]. This is forever for Israel.
+  text: Behold[a], I am building a house for the name of Yahweh my God, to consecrate it to him, to burn fragrant incense before him, and to set out the regular arrangement of bread, and burnt offerings morning and evening, on the Sabbaths, at the new moons[b], and at the appointed feasts of Yahweh our God[c]. This is forever for Israel.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -159,10 +159,10 @@ theological_decisions:
   rationale: Avoids relying on traditional ecclesiastical jargon ('showbread') in the main text while still conveying the temple practice. A footnote preserves the familiar traditional term.
   doctrine_reference: DOCTRINE.md Translation philosophy §6, readable modern English, not archaic or academic
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:09:45Z'
   unchanged: false
-  changes_summary: Adjusted word order to 'burn fragrant incense before him' for more natural English, and changed 'the regular arrangement of bread' to 'set out the regular arrangement' to better reflect the Hebrew, which does not explicitly include 'bread' here.
+  changes_summary: 'doctrine_realignment: 2Chr 2:3 the regular arrangement of bread. Drafter chose ''the regular arrangement of bread'' for מַעֲרֶכֶת תָּמִיד (clarifying the temple-practice referent without importing ''showbread'', documented in both lexical_decisions and theological_deci'
 revisions:
 - timestamp: '2026-04-23T10:12:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -172,6 +172,13 @@ revisions:
   to: Behold, I am building a house for the name of the LORD my God, to consecrate it to him, to burn fragrant incense before him, and to set out the regular arrangement, and burnt offerings morning and evening, on the Sabbaths, at the new moons, and at the appointed feasts of the LORD our God. This is forever for Israel.
   rationale: Adjusted word order to 'burn fragrant incense before him' for more natural English, and changed 'the regular arrangement of bread' to 'set out the regular arrangement' to better reflect the Hebrew, which does not explicitly include 'bread' here.
 
+- timestamp: '2026-05-15T20:09:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Behold[a], I am building a house for the name of Yahweh my God, to consecrate it to him, to burn fragrant incense before him, and to set out the regular arrangement, and burnt offerings morning and evening, on the Sabbaths, at the new moons[b], and at the appointed feasts of Yahweh our God[c]. This is forever for Israel.'
+  to: 'Behold[a], I am building a house for the name of Yahweh my God, to consecrate it to him, to burn fragrant incense before him, and to set out the regular arrangement of bread, and burnt offerings morning and evening, on the Sabbaths, at the new moons[b], and at the appointed feasts of Yahweh our God[c]. This is forever for Israel.'
+  rationale: 'Drafter chose ''the regular arrangement of bread'' for מַעֲרֶכֶת תָּמִיד (clarifying the temple-practice referent without importing ''showbread'', documented in both lexical_decisions and theological_decisions per DOCTRINE.md §6). Azure stripped ''of bread'' on bare formal-literalism grounds.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
