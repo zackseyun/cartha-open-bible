@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וּ/מְפִבֹ֨שֶׁת֙ בֶּן שָׁא֔וּל יָרַ֖ד לִ/קְרַ֣את הַ/מֶּ֑לֶךְ וְ/לֹא עָשָׂ֨ה רַגְלָ֜י/ו וְ/לֹא עָשָׂ֣ה שְׂפָמ֗/וֹ וְ/אֶת בְּגָדָי/ו֙ לֹ֣א כִבֵּ֔ס לְ/מִן הַ/יּוֹם֙ לֶ֣כֶת הַ/מֶּ֔לֶךְ עַד הַ/יּ֖וֹם אֲשֶׁר בָּ֥א בְ/שָׁלֽוֹם־־־־־־־׃
 translation:
-  text: And Mephibosheth son of Saul came down to meet the king[a]. He had not cared for his feet, nor trimmed his mustache, nor washed his clothes[c][b], from the day the king departed until the day he came in peace.
+  text: And Mephibosheth son of Saul came down to meet the king[a]. He had not cared for his feet, nor trimmed his mustache, nor washed his clothes[c][b], from the day the king left until the day he came in peace.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -76,10 +76,10 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T20:54:49Z'
   unchanged: false
-  changes_summary: Changed 'left' to 'departed' for a slightly more formal register and changed 'came home in peace' to 'came in peace' to avoid adding 'home,' which is not explicit in the source.
+  changes_summary: 'doctrine_realignment: 2Sam 19:25 left. Drafter chose ''left'' for הלך (concise, register-neutral, accurately reflects the unmarked Hebrew verb). Azure substituted ''departed'' for ''slightly more formal register'' with no Hebrew lexical basis — '
 revisions:
 - timestamp: '2026-04-23T10:21:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -89,6 +89,13 @@ revisions:
   to: And Mephibosheth son of Saul came down to meet the king. He had not cared for his feet, nor trimmed his mustache, nor washed his clothes, from the day the king departed until the day he came in peace.
   rationale: Changed 'left' to 'departed' for a slightly more formal register and changed 'came home in peace' to 'came in peace' to avoid adding 'home,' which is not explicit in the source.
 
+- timestamp: '2026-05-15T20:54:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Mephibosheth son of Saul came down to meet the king[a]. He had not cared for his feet, nor trimmed his mustache, nor washed his clothes[c][b], from the day the king departed until the day he came in peace.'
+  to: 'And Mephibosheth son of Saul came down to meet the king[a]. He had not cared for his feet, nor trimmed his mustache, nor washed his clothes[c][b], from the day the king left until the day he came in peace.'
+  rationale: 'Drafter chose ''left'' for הלך (concise, register-neutral, accurately reflects the unmarked Hebrew verb). Azure substituted ''departed'' for ''slightly more formal register'' with no Hebrew lexical basis — הלך carries no elevated register. (''Came home in peace'' → ''came in peace'' was retained since בית is absent from the Hebrew.)'
 cross_check:
   status: high_agreement
   agreement: 1.0
