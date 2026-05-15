@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:44:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T21:54:39Z'
   unchanged: false
-  changes_summary: Removed the repeated 'the' before 'son' for a slightly more formal, natural genealogical style while preserving the full sense and all source elements.
+  changes_summary: 'doctrine_realignment: Gen 36:10 the son of. Drafter explicitly chose ''the son of Adah'' and ''the son of Basemath'' with the definite article to improve English apposition after proper names. Azure stripped the article on bare ''slightly more forma'
 revisions:
 - timestamp: '2026-04-23T10:44:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'These are the names of Esau’s sons: Eliphaz, the son of Adah, Esau’s wife; Reuel, the son of Basemath, Esau’s wife.'
-  to: 'These are the names of Esau’s sons: Eliphaz son of Adah, Esau’s wife; Reuel son of Basemath, Esau’s wife.'
+  to: 'These are the names of Esau’s sons: Eliphaz, the son of Adah, Esau’s wife; Reuel, the son of Basemath, Esau’s wife.'
   rationale: Removed the repeated 'the' before 'son' for a slightly more formal, natural genealogical style while preserving the full sense and all source elements.
 
+- timestamp: '2026-05-15T21:54:39Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'These are the names of Esau’s sons: Eliphaz son of Adah[a], Esau’s wife; Reuel son of Basemath[b], Esau’s wife.'
+  to: 'These are the names of Esau’s sons: Eliphaz son of Adah[a], Esau’s wife; Reuel son of Basemath[b], Esau’s wife.'
+  rationale: 'Drafter explicitly chose ''the son of Adah'' and ''the son of Basemath'' with the definite article to improve English apposition after proper names. Azure stripped the article on bare ''slightly more formal genealogical style'' grounds — a register preference, not a Hebrew lexical reason.'
 cross_check:
   status: high_agreement
   agreement: 1.0

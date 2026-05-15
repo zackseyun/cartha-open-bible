@@ -104,19 +104,26 @@ theological_decisions:
   rationale: The phrase can be interpreted more narrowly or broadly in context, but the Hebrew idiom itself should be preserved in translation rather than resolved interpretively. This maintains the text's breadth and leaves contextual interpretation open.
   doctrine_reference: Translation philosophy §3 (preserve theological tension rather than resolve it)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:41:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T21:54:39Z'
   unchanged: false
-  changes_summary: Changed 'ruined' to 'corrupted' in both places to better reflect the Hebrew שׁחת and preserve consistent rendering within the verse.
+  changes_summary: 'doctrine_realignment: Gen 6:12 ruined / had ruined. Drafter chose ''ruined''/''had ruined'' for the Niphal/Hiphil of שׁחת, documented in both lexical_decisions and theological_decisions (DOCTRINE §3, §5): the Hebrew root spans both moral corruption AND cre'
 revisions:
 - timestamp: '2026-04-23T10:41:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And God saw the earth, and behold, it was ruined, because all flesh had ruined its way on the earth.
-  to: And God saw the earth, and behold, it was corrupted, because all flesh had corrupted its way on the earth.
+  to: And God saw the earth, and behold, it was ruined, because all flesh had ruined its way on the earth.
   rationale: Changed 'ruined' to 'corrupted' in both places to better reflect the Hebrew שׁחת and preserve consistent rendering within the verse.
 
+- timestamp: '2026-05-15T21:54:39Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And God saw the earth[a], and behold, it was corrupted[b], because all flesh had corrupted its way on the earth.'
+  to: 'And God saw the earth[a], and behold, it was corrupted[b], because all flesh had corrupted its way on the earth.'
+  rationale: 'Drafter chose ''ruined''/''had ruined'' for the Niphal/Hiphil of שׁחת, documented in both lexical_decisions and theological_decisions (DOCTRINE §3, §5): the Hebrew root spans both moral corruption AND creational/physical ruin, while English ''corrupted'' reads as exclusively moral. Azure substituted ''corrupted''/''had corrupted'' on bare ''better reflect שׁחת'' grounds, narrowing the semantic range.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

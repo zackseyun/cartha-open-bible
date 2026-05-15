@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:45:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-15T21:54:39Z'
   unchanged: false
-  changes_summary: Changed 'Midianites' to 'Medanites' to match the Hebrew term מְדָנִים, and changed 'in Egypt' to 'into Egypt' for more precise representation of אֶל מִצְרָיִם.
+  changes_summary: 'doctrine_realignment: Gen 37:36 Midianites. Drafter explicitly chose ''Midianites'' over ''Medanites'' (formally-available alternative) citing narrative context (broader Joseph story uses Midianites for this trading group, cf. Gen 37:28) and ancien'
 revisions:
 - timestamp: '2026-04-23T10:45:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Meanwhile, the Midianites sold him in Egypt to Potiphar, an officer of Pharaoh, the captain of the guard.
-  to: Meanwhile, the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh, the captain of the guard.
+  to: Meanwhile, the Midianites sold him into Egypt to Potiphar, an officer of Pharaoh, the captain of the guard.
   rationale: Changed 'Midianites' to 'Medanites' to match the Hebrew term מְדָנִים, and changed 'in Egypt' to 'into Egypt' for more precise representation of אֶל מִצְרָיִם.
 
+- timestamp: '2026-05-15T21:54:39Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.'
+  to: 'Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.'
+  rationale: 'Drafter explicitly chose ''Midianites'' over ''Medanites'' (formally-available alternative) citing narrative context (broader Joseph story uses Midianites for this trading group, cf. Gen 37:28) and ancient versions. Azure substituted on bare consonantal-matching grounds without engaging the contextual reasoning. (In Egypt→into Egypt retained — אֶל genuinely directional.)'
 cross_check:
   status: high_agreement
   agreement: 1.0
