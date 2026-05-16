@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: נִֽאֻפַ֤יִ/ךְ וּ/מִצְהֲלוֹתַ֨יִ/ךְ֙ זִמַּ֣ת זְנוּתֵ֔/ךְ עַל גְּבָעוֹת֙ בַּ/שָּׂדֶ֔ה רָאִ֖יתִי שִׁקּוּצָ֑יִ/ךְ א֥וֹי לָ/ךְ֙ יְר֣וּשָׁלִַ֔ם לֹ֣א תִטְהֲרִ֔י אַחֲרֵ֥י מָתַ֖י עֹֽד־׃פ
 translation:
-  text: Your adulteries[a], your lustful neighings, the depravity of your prostitution on the hills in the field—I have seen your abominations. Woe to you, Jerusalem! You will not be made clean[d][c][b]. How much longer will it be?
+  text: Your adulteries[a], your lustful neighings, the depravity of your prostitution on the hills in the field—I have seen your abominations. Woe to you, Jerusalem! Will you not be made clean?[d][c][b] How long will it still be?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -102,10 +102,10 @@ theological_decisions:
   rationale: In context, the exclamation over Jerusalem followed by אַחֲרֵי מָתַי עוֹד naturally reads as an anguished rhetorical question rather than a flat prediction. This preserves the tension of judgment and appeal without over-resolving it.
   doctrine_reference: Translation philosophy §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:54:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-16T07:39:48Z'
   unchanged: false
-  changes_summary: 'Revised the final questions to better reflect the Hebrew: changed ''Will you not be made clean?'' to ''You will not be made clean,'' and ''How long will it still be?'' to ''How much longer will it be?'' Kept the rest unchanged.'
+  changes_summary: 'doctrine_realignment: Jer 13:27 rhetorical question / ''How long will it still be''. Azure flipped rhetorical question ''Will you not be made clean?'' to declarative ''You will not be made clean'' — drafter''s documented rejected reading per theological_decisions. Also substituted ''How muc'
 revisions:
 - timestamp: '2026-04-23T10:54:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -115,6 +115,13 @@ revisions:
   to: Your adulteries, your lustful neighings, the depravity of your prostitution on the hills in the field—I have seen your abominations. Woe to you, Jerusalem! You will not be made clean. How much longer will it be?
   rationale: 'Revised the final questions to better reflect the Hebrew: changed ''Will you not be made clean?'' to ''You will not be made clean,'' and ''How long will it still be?'' to ''How much longer will it be?'' Kept the rest unchanged.'
 
+- timestamp: '2026-05-16T07:39:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Your adulteries[a], your lustful neighings, the depravity of your prostitution on the hills in the field—I have seen your abominations. Woe to you, Jerusalem! You will not be made clean[d][c][b]. How much longer will it be?'
+  to: 'Your adulteries[a], your lustful neighings, the depravity of your prostitution on the hills in the field—I have seen your abominations. Woe to you, Jerusalem! Will you not be made clean?[d][c][b] How long will it still be?'
+  rationale: 'Azure flipped rhetorical question ''Will you not be made clean?'' to declarative ''You will not be made clean'' — drafter''s documented rejected reading per theological_decisions. Also substituted ''How much longer will it be?'' (functionally equivalent to rejected ''How much longer?'').'
 cross_check:
   status: high_agreement
   agreement: 0.95
