@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וְ/עַתָּה֙ הַשְׁכֵּ֣ם בַּ/בֹּ֔קֶר וְ/עַבְדֵ֥י אֲדֹנֶ֖י/ךָ אֲשֶׁר בָּ֣אוּ אִתָּ֑/ךְ וְ/הִשְׁכַּמְתֶּ֣ם בַּ/בֹּ֔קֶר וְ/א֥וֹר לָ/כֶ֖ם וָ/לֵֽכוּ־׃
 translation:
-  text: Now rise early in the morning[a], you and your master's servants who came with you. Rise early in the morning, and when it is light for you, go.
+  text: Now rise early in the morning[a], you and your master's servants who came with you. When you rise early in the morning and it is light for you, go.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -78,10 +78,10 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-16T05:09:35Z'
   unchanged: false
-  changes_summary: Removed the repeated explicit subject 'you' in the second clause for more natural English while preserving the Hebrew sequence; kept both occurrences of 'rise early in the morning' to reflect the repetition in the source.
+  changes_summary: 'doctrine_realignment: 1 Sam 29:10 וְהִשְׁכַּמְתֶּם ''When you rise early''. Azure substituted imperative ''Rise early'' for drafter''s chosen ''When you rise early'' (functionally equivalent to rejected ''and rise early'') and recast ''and it is light'' as ''when it is light'' (mirrors '
 revisions:
 - timestamp: '2026-04-23T10:12:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -91,6 +91,13 @@ revisions:
   to: Now rise early in the morning, you and your master's servants who came with you. Rise early in the morning, and when it is light for you, go.
   rationale: Removed the repeated explicit subject 'you' in the second clause for more natural English while preserving the Hebrew sequence; kept both occurrences of 'rise early in the morning' to reflect the repetition in the source.
 
+- timestamp: '2026-05-16T05:09:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now rise early in the morning[a], you and your master''s servants who came with you. Rise early in the morning, and when it is light for you, go.'
+  to: 'Now rise early in the morning[a], you and your master''s servants who came with you. When you rise early in the morning and it is light for you, go.'
+  rationale: 'Azure substituted imperative ''Rise early'' for drafter''s chosen ''When you rise early'' (functionally equivalent to rejected ''and rise early'') and recast ''and it is light'' as ''when it is light'' (mirrors rejected pattern). Drafter chose temporal-instruction framing.'
 cross_check:
   status: high_agreement
   agreement: 1.0

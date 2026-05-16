@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר דָּוִ֜ד אֶל אָכִ֗ישׁ כִּ֣י מֶ֤ה עָשִׂ֨יתִי֙ וּ/מַה מָּצָ֣אתָ בְ/עַבְדְּ/ךָ֔ מִ/יּוֹם֙ אֲשֶׁ֣ר הָיִ֣יתִי לְ/פָנֶ֔י/ךָ עַ֖ד הַ/יּ֣וֹם הַ/זֶּ֑ה כִּ֣י לֹ֤א אָבוֹא֙ וְ/נִלְחַ֔מְתִּי בְּ/אֹיְבֵ֖י אֲדֹנִ֥/י הַ/מֶּֽלֶךְ־־׃
 translation:
-  text: David said to Achish[a], “But what have I done? And what have you found in your servant from the day I have been before you until this day[b], that I should not go and fight against the enemies of my lord the king?”
+  text: David said to Achish[a], “But what have I done? And what have you found against your servant from the day I entered your service until this day[b], that I should not go and fight against the enemies of my lord the king?”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -79,10 +79,10 @@ theological_decisions:
   rationale: The Hebrew leaves David's intent unstated. Preserving the wording without interpretive expansion maintains the narrative tension rather than resolving it.
   doctrine_reference: 'Translation philosophy §3: Preserve theological tension rather than resolve it.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-16T05:09:35Z'
   unchanged: false
-  changes_summary: Replaced 'against your servant' with 'in your servant' to reflect the Hebrew more closely, and revised 'entered your service' to 'have been before you' to preserve the source wording without interpretive expansion.
+  changes_summary: 'doctrine_realignment: 1 Sam 29:8 ''against your servant'' / ''entered your service''. Azure substituted TWO documented rejected_alternatives: ''in your servant'' (rejected for מָצָאתָ בְעַבְדְּךָ — drafter chose ''against'' to make accusatory nuance of מצא+ב explicit) and ''have been before'
 revisions:
 - timestamp: '2026-04-23T10:12:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -92,6 +92,13 @@ revisions:
   to: David said to Achish, “But what have I done? And what have you found in your servant from the day I have been before you until this day, that I should not go and fight against the enemies of my lord the king?”
   rationale: Replaced 'against your servant' with 'in your servant' to reflect the Hebrew more closely, and revised 'entered your service' to 'have been before you' to preserve the source wording without interpretive expansion.
 
+- timestamp: '2026-05-16T05:09:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'David said to Achish[a], “But what have I done? And what have you found in your servant from the day I have been before you until this day[b], that I should not go and fight against the enemies of my lord the king?”'
+  to: 'David said to Achish[a], “But what have I done? And what have you found against your servant from the day I entered your service until this day[b], that I should not go and fight against the enemies of my lord the king?”'
+  rationale: 'Azure substituted TWO documented rejected_alternatives: ''in your servant'' (rejected for מָצָאתָ בְעַבְדְּךָ — drafter chose ''against'' to make accusatory nuance of מצא+ב explicit) and ''have been before you'' (rejected literal for מִיּוֹם הָיִיתִי לְפָנֶיךָ — drafter chose idiomatic ''entered your service'').'
 cross_check:
   status: high_agreement
   agreement: 1.0
