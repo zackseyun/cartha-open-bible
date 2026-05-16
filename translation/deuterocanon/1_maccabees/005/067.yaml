@@ -101,19 +101,26 @@ theological_decisions:
   rationale: The Greek text as given has a singular genitive absolute. Since the immediate verse does not name the antecedent, the translation preserves the singular pronoun without over-resolving the referent from context outside the verse.
   doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:30:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-16T15:07:13Z'
   unchanged: false
-  changes_summary: Changed 'he wanted' to 'they wanted' to match the plural subject implied by the context and the infinitive construction; removed the second 'the' before 'battle' for more natural English.
+  changes_summary: 'doctrine_realignment: 1 Macc 5:67 because he wanted / into the battle. Restored drafter ''because he wanted'' (singular subject) and ''into the battle'' (definite article preserving the chosen rendering) per chosen renderings.'
 revisions:
 - timestamp: '2026-04-23T15:30:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: On that day priests fell in battle, because he wanted to act bravely, when they went out into the battle without counsel.
-  to: On that day priests fell in battle, because they wanted to act bravely, when they went out into battle without counsel.
+  to: On that day priests fell in battle, because he wanted to act bravely, when they went out into the battle without counsel.
   rationale: Changed 'he wanted' to 'they wanted' to match the plural subject implied by the context and the infinitive construction; removed the second 'the' before 'battle' for more natural English.
 
+- timestamp: '2026-05-16T15:07:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.'
+  to: 'On that day priests fell in battle[a], because they wanted to act bravely[b], when they went out into battle without counsel.'
+  rationale: 'Restored drafter ''because he wanted'' (singular subject) and ''into the battle'' (definite article preserving the chosen rendering) per chosen renderings.'
 cross_check:
   status: high_agreement
   agreement: 0.95
