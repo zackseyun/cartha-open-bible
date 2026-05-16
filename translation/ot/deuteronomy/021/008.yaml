@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: כַּפֵּר֩ לְ/עַמְּ/ךָ֨ יִשְׂרָאֵ֤ל אֲשֶׁר פָּדִ֨יתָ֙ יְהוָ֔ה וְ/אַל תִּתֵּן֙ דָּ֣ם נָקִ֔י בְּ/קֶ֖רֶב עַמְּ/ךָ֣ יִשְׂרָאֵ֑ל וְ/נִכַּפֵּ֥ר לָ/הֶ֖ם הַ/דָּֽם־־׃
 translation:
-  text: Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not set innocent blood in the midst of your people Israel. Then the bloodguilt will be atoned for them.
+  text: Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -90,10 +90,10 @@ theological_decisions:
   rationale: The context is communal expiation for an unsolved murder. Rendering הַדָּם woodenly as 'the blood' in English can obscure that the concern is liability for bloodshed. 'Bloodguilt' makes explicit the juridical sense already present in the Hebrew context without adding foreign theology.
   doctrine_reference: DOCTRINE.md Translation philosophy §1, §5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-16T06:09:51Z'
   unchanged: false
-  changes_summary: Replaced 'let innocent blood remain among' with the more literal 'set innocent blood in the midst of' to reflect תִּתֵּן and בְּקֶרֶב more closely, while keeping the rest of the verse unchanged.
+  changes_summary: 'doctrine_realignment: Deut 21:8 ''do not let'' / ''among''. Azure substituted BOTH documented rejected_alternatives: ''do not set'' (rejected for תִּתֵּן — drafter chose ''do not let'' for idiomatic guilt-not-remaining sense) and ''in the midst of'' (rejected for בְ'
 revisions:
 - timestamp: '2026-04-23T10:26:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -103,6 +103,13 @@ revisions:
   to: Make atonement for your people Israel, whom you redeemed, O LORD, and do not set innocent blood in the midst of your people Israel. Then the bloodguilt will be atoned for them.
   rationale: Replaced 'let innocent blood remain among' with the more literal 'set innocent blood in the midst of' to reflect תִּתֵּן and בְּקֶרֶב more closely, while keeping the rest of the verse unchanged.
 
+- timestamp: '2026-05-16T06:09:51Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not set innocent blood in the midst of your people Israel. Then the bloodguilt will be atoned for them.'
+  to: 'Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.'
+  rationale: 'Azure substituted BOTH documented rejected_alternatives: ''do not set'' (rejected for תִּתֵּן — drafter chose ''do not let'' for idiomatic guilt-not-remaining sense) and ''in the midst of'' (rejected for בְּקֶרֶב — drafter chose ''among'' for idiomatic modern English).'
 cross_check:
   status: high_agreement
   agreement: 0.95
