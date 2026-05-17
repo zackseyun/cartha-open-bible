@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:58Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:21:16Z'
   unchanged: false
-  changes_summary: Replaced interpretive 'so that nothing was known' with the more literal 'and the matter was not known' to reflect וְלֹא נוֹדַע דָּבָר more accurately while preserving natural formal English.
+  changes_summary: 'doctrine_realignment: 2 Samuel 17:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that nothing was known''].'
 revisions:
 - timestamp: '2026-04-23T10:20:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the woman took a covering and spread it over the mouth of the well, and scattered crushed grain on it, so that nothing was known.
-  to: Then the woman took a covering and spread it over the mouth of the well, and scattered crushed grain on it, and the matter was not known.
+  to: Then the woman took a covering and spread it over the mouth of the well, and scattered crushed grain on it, so that nothing was known.
   rationale: Replaced interpretive 'so that nothing was known' with the more literal 'and the matter was not known' to reflect וְלֹא נוֹדַע דָּבָר more accurately while preserving natural formal English.
 
+- timestamp: '2026-05-17T05:21:16Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the woman took a covering and spread it over the mouth of the well[a], and scattered crushed grain on it[b], and the matter was not known.'
+  to: 'Then the woman took a covering and spread it over the mouth of the well[a], and scattered crushed grain on it[b], and the matter was not known.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that nothing was known''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

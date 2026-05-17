@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:21:16Z'
   unchanged: false
-  changes_summary: Replaced 'you shall be my help' with 'you shall help me' for more natural English while preserving the sense of לִישׁוּעָה. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 2 Samuel 10:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall be my help''].'
 revisions:
 - timestamp: '2026-04-23T10:20:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He said, “If Aram is too strong for me, then you shall be my help; but if the Ammonites are too strong for you, then I will go to help you.”
-  to: He said, “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you, then I will go to help you.”
+  to: He said, “If Aram is too strong for me, then you shall be my help; but if the Ammonites are too strong for you, then I will go to help you.”
   rationale: Replaced 'you shall be my help' with 'you shall help me' for more natural English while preserving the sense of לִישׁוּעָה. Kept the rest unchanged.
 
+- timestamp: '2026-05-17T05:21:16Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”'
+  to: 'He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall be my help''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

@@ -88,19 +88,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:21:16Z'
   unchanged: false
-  changes_summary: Revised 'sent his servants' to 'sent by the hand of his servants' to more fully reflect the Hebrew wording בְּיַד עֲבָדָיו while preserving formal register. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Samuel 10:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sent his servants''].'
 revisions:
 - timestamp: '2026-04-23T10:19:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And David said, “I will show kindness to Hanun son of Nahash, just as his father showed kindness to me.” So David sent his servants to comfort him concerning his father, and David’s servants came into the land of the Ammonites.
-  to: And David said, “I will show kindness to Hanun son of Nahash, just as his father showed kindness to me.” So David sent by the hand of his servants to comfort him concerning his father, and David’s servants came into the land of the Ammonites.
+  to: And David said, “I will show kindness to Hanun son of Nahash, just as his father showed kindness to me.” So David sent his servants to comfort him concerning his father, and David’s servants came into the land of the Ammonites.
   rationale: Revised 'sent his servants' to 'sent by the hand of his servants' to more fully reflect the Hebrew wording בְּיַד עֲבָדָיו while preserving formal register. No other changes needed.
 
+- timestamp: '2026-05-17T05:21:16Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And David said[a], “I will show kindness to Hanun son of Nahash, just as his father showed kindness to me.” So David sent by the hand of his servants to comfort him concerning his father, and David’s servants came into the land of the Ammonites.'
+  to: 'And David said[a], “I will show kindness to Hanun son of Nahash, just as his father showed kindness to me.” So David sent by the hand of his servants to comfort him concerning his father, and David’s servants came into the land of the Ammonites.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sent his servants''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

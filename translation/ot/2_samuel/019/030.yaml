@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:21:16Z'
   unchanged: false
-  changes_summary: Changed 'your matters' to 'your affairs' for more natural formal English while preserving the sense; retained the rest as accurate and complete.
+  changes_summary: 'doctrine_realignment: 2 Samuel 19:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your matters''].'
 revisions:
 - timestamp: '2026-04-23T10:21:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'Then the king said to him, “Why do you keep speaking of your matters? I have decided: you and Ziba shall divide the land.”'
-  to: 'Then the king said to him, “Why do you keep speaking of your affairs? I have decided: you and Ziba shall divide the land.”'
+  to: 'Then the king said to him, “Why do you keep speaking of your matters? I have decided: you and Ziba shall divide the land.”'
   rationale: Changed 'your matters' to 'your affairs' for more natural formal English while preserving the sense; retained the rest as accurate and complete.
 
+- timestamp: '2026-05-17T05:21:16Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king said to him[b][a], “Why do you keep speaking of your affairs? I have decided: you and Ziba shall divide the land.”'
+  to: 'Then the king said to him[b][a], “Why do you keep speaking of your affairs? I have decided: you and Ziba shall divide the land.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your matters''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -105,19 +105,26 @@ theological_decisions:
   rationale: The Hebrew simply reports what Ziba said to David. Adding explicit skepticism would import an interpretive judgment from the broader narrative rather than this verse itself. The translation preserves the statement as reported speech and lets context evaluate it.
   doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over interpretive tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:49Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:21:16Z'
   unchanged: false
-  changes_summary: Changed 'my father's kingdom' to 'the kingdom of my father' for closer correspondence to the source wording while preserving natural English. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Samuel 16:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["my father''s kingdom"].'
 revisions:
 - timestamp: '2026-04-23T10:20:49Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king said, “And where is your master's son?” Ziba said to the king, “Look, he is staying in Jerusalem, for he said, ‘Today the house of Israel will restore to me my father's kingdom.’”
-  to: Then the king said, “And where is your master's son?” Ziba said to the king, “Look, he is staying in Jerusalem, for he said, ‘Today the house of Israel will restore to me the kingdom of my father.’”
+  to: Then the king said, “And where is your master's son?” Ziba said to the king, “Look, he is staying in Jerusalem, for he said, ‘Today the house of Israel will restore to me my father's kingdom.’”
   rationale: Changed 'my father's kingdom' to 'the kingdom of my father' for closer correspondence to the source wording while preserving natural English. No other changes needed.
 
+- timestamp: '2026-05-17T05:21:16Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king said[a], “And where is your master''s son?” Ziba said to the king, “Look, he is staying in Jerusalem, for he said, ‘Today the house of Israel will restore to me the kingdom of my father.’”'
+  to: 'Then the king said[a], “And where is your master''s son?” Ziba said to the king, “Look, he is staying in Jerusalem, for he said, ‘Today the house of Israel will restore to me the kingdom of my father.’”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["my father''s kingdom"].'
 cross_check:
   status: high_agreement
   agreement: 1.0
