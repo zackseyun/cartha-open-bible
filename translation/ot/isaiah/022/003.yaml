@@ -97,19 +97,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:49:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T17:06:10Z'
   unchanged: false
-  changes_summary: Changed 'men' to 'fugitives' to reflect the sense of those who fled/fled ones in the source, and adjusted punctuation slightly for clarity while preserving the verse's meaning.
+  changes_summary: 'doctrine_realignment: Isaiah 22:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your men who were found''].'
 revisions:
 - timestamp: '2026-04-23T10:49:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: All your rulers have fled together; they were captured without the bow. All of your men who were found were captured together, though they had fled far away.
-  to: All your rulers have fled together; they were captured without the bow. All of your fugitives who were found were captured together; they had fled far away.
+  to: All your rulers have fled together; they were captured without the bow. All of your men who were found were captured together, though they had fled far away.
   rationale: Changed 'men' to 'fugitives' to reflect the sense of those who fled/fled ones in the source, and adjusted punctuation slightly for clarity while preserving the verse's meaning.
 
+- timestamp: '2026-05-17T17:06:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'All your rulers have fled together[a]; they were captured without the bow. All of your fugitives who were found were captured together[b]; they had fled far away.'
+  to: 'All your rulers have fled together[a]; they were captured without the bow. All of your fugitives who were found were captured together[b]; they had fled far away.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your men who were found''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
