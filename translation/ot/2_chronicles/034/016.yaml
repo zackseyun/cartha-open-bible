@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:15:43Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T03:06:31Z'
   unchanged: false
-  changes_summary: Changed 'put' to 'committed' for a more natural and formally appropriate rendering of the entrusted task, while preserving the idiom 'into the hand of your servants.'
+  changes_summary: 'doctrine_realignment: 2 Chronicles 34:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''All that was put into the hand of your servants''].'
 revisions:
 - timestamp: '2026-04-23T10:15:43Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Shaphan brought the book to the king and also brought back word to the king, saying, “All that was put into the hand of your servants, they are doing.”
-  to: Then Shaphan brought the book to the king and also brought back word to the king, saying, “All that was committed into the hand of your servants, they are doing.”
+  to: Then Shaphan brought the book to the king and also brought back word to the king, saying, “All that was put into the hand of your servants, they are doing.”
   rationale: Changed 'put' to 'committed' for a more natural and formally appropriate rendering of the entrusted task, while preserving the idiom 'into the hand of your servants.'
 
+- timestamp: '2026-05-17T03:06:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Shaphan brought the book to the king and also brought back word to the king[a], saying, “All that was committed into the hand of your servants, they are doing.”'
+  to: 'Then Shaphan brought the book to the king and also brought back word to the king[a], saying, “All that was committed into the hand of your servants, they are doing.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''All that was put into the hand of your servants''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
