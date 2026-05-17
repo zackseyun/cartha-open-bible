@@ -90,19 +90,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:41:58Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T08:21:07Z'
   unchanged: false
-  changes_summary: Replaced 'stay there for a while' with 'sojourn there' to more accurately reflect לָגוּר while preserving a formal translation register; retained the rest.
+  changes_summary: 'doctrine_realignment: Genesis 12:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to stay there for a while''].'
 revisions:
 - timestamp: '2026-04-23T10:41:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now there was a famine in the land, and Abram went down to Egypt to stay there for a while, because the famine was severe in the land.
-  to: Now there was a famine in the land, and Abram went down to Egypt to sojourn there, because the famine was severe in the land.
+  to: Now there was a famine in the land, and Abram went down to Egypt to stay there for a while, because the famine was severe in the land.
   rationale: Replaced 'stay there for a while' with 'sojourn there' to more accurately reflect לָגוּר while preserving a formal translation register; retained the rest.
 
+- timestamp: '2026-05-17T08:21:07Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now there was a famine in the land[a], and Abram went down to Egypt to sojourn there, because the famine was severe in the land.'
+  to: 'Now there was a famine in the land[a], and Abram went down to Egypt to sojourn there, because the famine was severe in the land.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to stay there for a while''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
