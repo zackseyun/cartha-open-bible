@@ -94,19 +94,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:32:05Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T01:00:36Z'
   unchanged: false
-  changes_summary: Changed 'choice like the cedars' to 'choice as the cedars' for more natural formal English while preserving the comparison. No other changes needed.
+  changes_summary: 'doctrine_realignment: Song of Songs 5:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like the cedars''].'
 revisions:
 - timestamp: '2026-04-23T11:32:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: His legs are pillars of marble, set on bases of fine gold. His appearance is like Lebanon, choice like the cedars.
-  to: His legs are pillars of marble, set on bases of fine gold. His appearance is like Lebanon, choice as the cedars.
+  to: His legs are pillars of marble, set on bases of fine gold. His appearance is like Lebanon, choice like the cedars.
   rationale: Changed 'choice like the cedars' to 'choice as the cedars' for more natural formal English while preserving the comparison. No other changes needed.
 
+- timestamp: '2026-05-17T01:00:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'His legs are pillars of marble[a], set on bases of fine gold. His appearance is like Lebanon[b], choice as the cedars.'
+  to: 'His legs are pillars of marble[a], set on bases of fine gold. His appearance is like Lebanon[b], choice as the cedars.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like the cedars''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:32:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T01:00:36Z'
   unchanged: false
-  changes_summary: Changed 'washed' to 'bathed' for more natural rendering of the participle, and 'sitting in fullness' to 'sitting by fullness' to more closely reflect the preposition while preserving the difficult Hebrew expression without over-paraphrasing.
+  changes_summary: 'doctrine_realignment: Song of Songs 5:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in fullness''].'
 revisions:
 - timestamp: '2026-04-23T11:32:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: His eyes are like doves beside streams of water, washed in milk, sitting in fullness.
-  to: His eyes are like doves beside streams of water, bathed in milk, sitting by fullness.
+  to: His eyes are like doves beside streams of water, washed in milk, sitting in fullness.
   rationale: Changed 'washed' to 'bathed' for more natural rendering of the participle, and 'sitting in fullness' to 'sitting by fullness' to more closely reflect the preposition while preserving the difficult Hebrew expression without over-paraphrasing.
 
+- timestamp: '2026-05-17T01:00:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'His eyes are like doves beside streams of water[a], bathed in milk, sitting by fullness.'
+  to: 'His eyes are like doves beside streams of water[a], bathed in milk, sitting by fullness.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in fullness''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
