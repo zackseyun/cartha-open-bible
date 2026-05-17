@@ -71,19 +71,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:15:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T01:36:34Z'
   unchanged: false
-  changes_summary: Changed 'in Jerusalem' to 'to Jerusalem' to reflect the verb of gathering with directional לְ. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 30:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in Jerusalem''].'
 revisions:
 - timestamp: '2026-04-23T10:15:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For they could not do it at that time, because the priests had not consecrated themselves sufficiently, and the people had not gathered in Jerusalem.
-  to: For they could not do it at that time, because the priests had not consecrated themselves sufficiently, and the people had not gathered to Jerusalem.
+  to: For they could not do it at that time, because the priests had not consecrated themselves sufficiently, and the people had not gathered in Jerusalem.
   rationale: Changed 'in Jerusalem' to 'to Jerusalem' to reflect the verb of gathering with directional לְ. Kept the rest unchanged.
 
+- timestamp: '2026-05-17T01:36:34Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For they could not do it at that time[a], because the priests had not consecrated themselves sufficiently[b], and the people had not gathered to Jerusalem.'
+  to: 'For they could not do it at that time[a], because the priests had not consecrated themselves sufficiently[b], and the people had not gathered to Jerusalem.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in Jerusalem''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

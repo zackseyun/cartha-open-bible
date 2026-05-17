@@ -93,19 +93,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:13:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T01:36:34Z'
   unchanged: false
-  changes_summary: Changed 'the cities for horsemen' to 'the cities of the horsemen' for closer correspondence to the Hebrew while preserving natural formal English.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 8:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the cities for horsemen''].'
 revisions:
 - timestamp: '2026-04-23T10:13:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: and Baalath, and all the storage cities that belonged to Solomon, and all the chariot cities, and the cities for horsemen, and all that Solomon desired to build in Jerusalem and in Lebanon and throughout all the land of his dominion.
-  to: and Baalath, and all the storage cities that belonged to Solomon, and all the chariot cities, and the cities of the horsemen, and all that Solomon desired to build in Jerusalem and in Lebanon and throughout all the land of his dominion.
+  to: and Baalath, and all the storage cities that belonged to Solomon, and all the chariot cities, and the cities for horsemen, and all that Solomon desired to build in Jerusalem and in Lebanon and throughout all the land of his dominion.
   rationale: Changed 'the cities for horsemen' to 'the cities of the horsemen' for closer correspondence to the Hebrew while preserving natural formal English.
 
+- timestamp: '2026-05-17T01:36:34Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and Baalath[a], and all the storage cities that belonged to Solomon, and all the chariot cities, and the cities of the horsemen[c][b], and all that Solomon desired to build in Jerusalem and in Lebanon and throughout all the land of his dominion.'
+  to: 'and Baalath[a], and all the storage cities that belonged to Solomon, and all the chariot cities, and the cities of the horsemen[c][b], and all that Solomon desired to build in Jerusalem and in Lebanon and throughout all the land of his dominion.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the cities for horsemen''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
