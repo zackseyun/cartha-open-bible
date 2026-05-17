@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T03:51:18Z'
   unchanged: false
-  changes_summary: Changed 'to the right of' to 'on the right side of' for more natural formal English while preserving the spatial sense; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 2 Samuel 24:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the right of the city''].'
 revisions:
 - timestamp: '2026-04-23T10:21:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They crossed the Jordan and camped at Aroer, to the right of the city that is in the middle of the valley of Gad, and toward Jazer.
-  to: They crossed the Jordan and camped at Aroer, on the right side of the city that is in the middle of the valley of Gad, and toward Jazer.
+  to: They crossed the Jordan and camped at Aroer, to the right of the city that is in the middle of the valley of Gad, and toward Jazer.
   rationale: Changed 'to the right of' to 'on the right side of' for more natural formal English while preserving the spatial sense; otherwise retained the draft.
 
+- timestamp: '2026-05-17T03:51:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They crossed the Jordan and camped at Aroer[a], on the right side of the city that is in the middle of the valley of Gad[c][b], and toward Jazer.'
+  to: 'They crossed the Jordan and camped at Aroer[a], on the right side of the city that is in the middle of the valley of Gad[c][b], and toward Jazer.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the right of the city''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
