@@ -85,19 +85,26 @@ theological_decisions:
   rationale: Project policy states 'Translate titles; transliterate names.' Therefore the Hebrew personal name is transliterated rather than replaced with the traditional Anglicized form.
   doctrine_reference: Translation philosophy §2
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:46:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T10:42:18Z'
   unchanged: false
-  changes_summary: Replaced 'But when' with 'And' to reflect the Hebrew narrative conjunction more directly and avoid adding a temporal nuance not explicit in the source; kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Genesis 45:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when they told him''].'
 revisions:
 - timestamp: '2026-04-23T10:46:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But when they told him all the words of Yosef that he had spoken to them, and he saw the wagons that Yosef had sent to carry him, the spirit of their father Yaakov revived.
-  to: And they told him all the words of Yosef that he had spoken to them, and he saw the wagons that Yosef had sent to carry him, and the spirit of their father Yaakov revived.
+  to: But when they told him all the words of Yosef that he had spoken to them, and he saw the wagons that Yosef had sent to carry him, the spirit of their father Yaakov revived.
   rationale: Replaced 'But when' with 'And' to reflect the Hebrew narrative conjunction more directly and avoid adding a temporal nuance not explicit in the source; kept the rest unchanged.
 
+- timestamp: '2026-05-17T10:42:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they told him all the words of Yosef that he had spoken to them[a], and he saw the wagons that Yosef had sent to carry him[b], and the spirit of their father Yaakov revived.'
+  to: 'And they told him all the words of Yosef that he had spoken to them[a], and he saw the wagons that Yosef had sent to carry him[b], and the spirit of their father Yaakov revived.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when they told him''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

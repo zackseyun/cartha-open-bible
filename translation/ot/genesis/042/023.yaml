@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:46:18Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T10:42:18Z'
   unchanged: false
-  changes_summary: Changed 'understood' to 'was listening' to more directly reflect the source verb 'hears/listens' and preserve lexical accuracy; retained the rest of the wording.
+  changes_summary: 'doctrine_realignment: Genesis 42:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''understood''].'
 revisions:
 - timestamp: '2026-04-23T10:46:18Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But they did not know that Joseph understood, because the interpreter was between them.
-  to: But they did not know that Joseph was listening, because the interpreter was between them.
+  to: But they did not know that Joseph understood, because the interpreter was between them.
   rationale: Changed 'understood' to 'was listening' to more directly reflect the source verb 'hears/listens' and preserve lexical accuracy; retained the rest of the wording.
 
+- timestamp: '2026-05-17T10:42:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But they did not know that Joseph was listening[a], because the interpreter was between them.'
+  to: 'But they did not know that Joseph was listening[a], because the interpreter was between them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''understood''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
