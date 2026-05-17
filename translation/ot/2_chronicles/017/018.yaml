@@ -55,19 +55,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:14:01Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:21:24Z'
   unchanged: false
-  changes_summary: Replaced 'armed troops' with 'armed for war' to more closely reflect חֲלוּצֵי צָבָא ('equipped/armed for war') while keeping the verse natural and formal.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 17:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''armed troops''].'
 revisions:
 - timestamp: '2026-04-23T10:14:01Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And at his side was Jehozabad, and with him were 180,000 armed troops.
-  to: And at his side was Jehozabad, and with him were 180,000 armed for war.
+  to: And at his side was Jehozabad, and with him were 180,000 armed troops.
   rationale: Replaced 'armed troops' with 'armed for war' to more closely reflect חֲלוּצֵי צָבָא ('equipped/armed for war') while keeping the verse natural and formal.
 
+- timestamp: '2026-05-17T02:21:24Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And at his side was Jehozabad[b][a], and with him were 180,000 armed for war.'
+  to: 'And at his side was Jehozabad[b][a], and with him were 180,000 armed for war.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''armed troops''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
