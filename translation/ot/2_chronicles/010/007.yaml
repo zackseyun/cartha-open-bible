@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:13:26Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:36:31Z'
   unchanged: false
-  changes_summary: Changed 'all the days' to 'all your days' to reflect the explicit second-person pronoun in the Hebrew and make the phrase more natural in English.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 10:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the days''].'
 revisions:
 - timestamp: '2026-04-23T10:13:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They spoke to him, saying, “If you will be good to this people, and if you please them and speak good words to them, then they will be your servants all the days.”
-  to: They spoke to him, saying, “If you will be good to this people, and if you please them and speak good words to them, then they will be your servants all your days.”
+  to: They spoke to him, saying, “If you will be good to this people, and if you please them and speak good words to them, then they will be your servants all the days.”
   rationale: Changed 'all the days' to 'all your days' to reflect the explicit second-person pronoun in the Hebrew and make the phrase more natural in English.
 
+- timestamp: '2026-05-17T02:36:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They spoke to him[a], saying, “If you will be good to this people, and if you please them and speak good words to them[b], then they will be your servants all your days.”'
+  to: 'They spoke to him[a], saying, “If you will be good to this people, and if you please them and speak good words to them[b], then they will be your servants all your days.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the days''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

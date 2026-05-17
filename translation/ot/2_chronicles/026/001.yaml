@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:14:49Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:36:31Z'
   unchanged: false
-  changes_summary: Replaced 'though he was' with 'who was' for a more natural and neutral rendering of the Hebrew conjunction, avoiding an unnecessary concessive nuance.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 26:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though he was sixteen years old''].'
 revisions:
 - timestamp: '2026-04-23T10:14:49Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then all the people of Judah took Uzziah, though he was sixteen years old, and made him king in place of his father Amaziah.
-  to: Then all the people of Judah took Uzziah, who was sixteen years old, and made him king in place of his father Amaziah.
+  to: Then all the people of Judah took Uzziah, though he was sixteen years old, and made him king in place of his father Amaziah.
   rationale: Replaced 'though he was' with 'who was' for a more natural and neutral rendering of the Hebrew conjunction, avoiding an unnecessary concessive nuance.
 
+- timestamp: '2026-05-17T02:36:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then all the people of Judah took Uzziah[a], who was sixteen years old[b], and made him king in place of his father Amaziah.'
+  to: 'Then all the people of Judah took Uzziah[a], who was sixteen years old[b], and made him king in place of his father Amaziah.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though he was sixteen years old''].'
 cross_check:
   status: high_agreement
   agreement: 0.9
