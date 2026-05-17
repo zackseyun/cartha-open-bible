@@ -87,19 +87,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:46:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T09:21:06Z'
   unchanged: false
-  changes_summary: Changed 'before your eyes' to 'before you' for a more direct and natural rendering of the Hebrew, while keeping the rest unchanged.
+  changes_summary: 'doctrine_realignment: Genesis 47:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before your eyes''].'
 revisions:
 - timestamp: '2026-04-23T10:46:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When the money from the land of Egypt and from the land of Canaan was gone, all the Egyptians came to Joseph, saying, "Give us bread. Why should we die before your eyes? For the money is gone."
-  to: When the money from the land of Egypt and from the land of Canaan was gone, all the Egyptians came to Joseph, saying, "Give us bread. Why should we die before you? For the money is gone."
+  to: When the money from the land of Egypt and from the land of Canaan was gone, all the Egyptians came to Joseph, saying, "Give us bread. Why should we die before your eyes? For the money is gone."
   rationale: Changed 'before your eyes' to 'before you' for a more direct and natural rendering of the Hebrew, while keeping the rest unchanged.
 
+- timestamp: '2026-05-17T09:21:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."'
+  to: 'When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before your eyes''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

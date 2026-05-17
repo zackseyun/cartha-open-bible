@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:45:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T09:21:06Z'
   unchanged: false
-  changes_summary: Replaced 'named Shua' with 'whose name was Shua' to more directly reflect the Hebrew wording and avoid any ambiguity while preserving natural formal English.
+  changes_summary: 'doctrine_realignment: Genesis 38:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''named Shua''].'
 revisions:
 - timestamp: '2026-04-23T10:45:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: There Judah saw the daughter of a Canaanite man named Shua, and he took her and went in to her.
-  to: There Judah saw the daughter of a Canaanite man whose name was Shua, and he took her and went in to her.
+  to: There Judah saw the daughter of a Canaanite man named Shua, and he took her and went in to her.
   rationale: Replaced 'named Shua' with 'whose name was Shua' to more directly reflect the Hebrew wording and avoid any ambiguity while preserving natural formal English.
 
+- timestamp: '2026-05-17T09:21:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'There Judah saw the daughter of a Canaanite man whose name was Shua[b][a], and he took her and went in to her.'
+  to: 'There Judah saw the daughter of a Canaanite man whose name was Shua[b][a], and he took her and went in to her.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''named Shua''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

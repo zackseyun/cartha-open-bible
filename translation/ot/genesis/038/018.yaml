@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:45:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T09:21:06Z'
   unchanged: false
-  changes_summary: Changed 'became pregnant' to 'conceived' for a more formal register and closer correspondence to the Hebrew verb.
+  changes_summary: 'doctrine_realignment: Genesis 38:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''she became pregnant by him''].'
 revisions:
 - timestamp: '2026-04-23T10:45:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He said, “What pledge shall I give you?” And she said, “Your seal, your cord, and your staff that is in your hand.” So he gave them to her and went in to her, and she became pregnant by him.
-  to: He said, “What pledge shall I give you?” And she said, “Your seal, your cord, and your staff that is in your hand.” So he gave them to her and went in to her, and she conceived by him.
+  to: He said, “What pledge shall I give you?” And she said, “Your seal, your cord, and your staff that is in your hand.” So he gave them to her and went in to her, and she became pregnant by him.
   rationale: Changed 'became pregnant' to 'conceived' for a more formal register and closer correspondence to the Hebrew verb.
 
+- timestamp: '2026-05-17T09:21:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He said[a], “What pledge shall I give you?” And she said, “Your seal, your cord, and your staff that is in your hand.” So he gave them to her and went in to her[c][b], and she conceived by him.'
+  to: 'He said[a], “What pledge shall I give you?” And she said, “Your seal, your cord, and your staff that is in your hand.” So he gave them to her and went in to her[c][b], and she conceived by him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''she became pregnant by him''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

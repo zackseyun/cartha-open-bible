@@ -103,19 +103,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:46:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T09:21:06Z'
   unchanged: false
-  changes_summary: Changed 'acquired' to 'bought' for more direct lexical accuracy, and rendered the final verb as 'and you shall sow the land' to reflect the Hebrew conjunction and verbal form more fully.
+  changes_summary: 'doctrine_realignment: Genesis 47:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I have acquired''].'
 revisions:
 - timestamp: '2026-04-23T10:46:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Joseph said to the people, “Look, today I have acquired you and your land for Pharaoh. Here is seed for you; sow the land.”
-  to: Then Joseph said to the people, “Look, today I have bought you and your land for Pharaoh. Here is seed for you, and you shall sow the land.”
+  to: Then Joseph said to the people, “Look, today I have acquired you and your land for Pharaoh. Here is seed for you; sow the land.”
   rationale: Changed 'acquired' to 'bought' for more direct lexical accuracy, and rendered the final verb as 'and you shall sow the land' to reflect the Hebrew conjunction and verbal form more fully.
 
+- timestamp: '2026-05-17T09:21:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Joseph said to the people[a], “Look, today I have bought you and your land for Pharaoh. Here is seed for you, and you shall sow the land.”'
+  to: 'Then Joseph said to the people[a], “Look, today I have bought you and your land for Pharaoh. Here is seed for you, and you shall sow the land.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I have acquired''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
