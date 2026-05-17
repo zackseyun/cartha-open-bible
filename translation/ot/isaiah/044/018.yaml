@@ -83,19 +83,26 @@ theological_decisions:
   rationale: The Hebrew verb is 3ms with no explicit subject. In context, the subject is left implicit; English requires one. 'He' preserves the grammatical singular without importing a specific named subject into the text. This avoids over-resolving whether the agent is God, the craftsman, or an impersonal statement, while still reflecting the Hebrew verbal form.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:51:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T18:51:11Z'
   unchanged: false
-  changes_summary: Replaced 'smeared' with 'shut' for more natural and contextually accurate English for טַח, and added 'and' before 'their hearts' for smoother, clearer syntax while preserving the source structure.
+  changes_summary: 'doctrine_realignment: Isaiah 44:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has smeared''].'
 revisions:
 - timestamp: '2026-04-23T10:51:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They do not know, nor do they understand, because he has smeared their eyes from seeing, their hearts from understanding.
-  to: They do not know, nor do they understand, because he has shut their eyes from seeing, and their hearts from understanding.
+  to: They do not know, nor do they understand, because he has smeared their eyes from seeing, their hearts from understanding.
   rationale: Replaced 'smeared' with 'shut' for more natural and contextually accurate English for טַח, and added 'and' before 'their hearts' for smoother, clearer syntax while preserving the source structure.
 
+- timestamp: '2026-05-17T18:51:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They do not know[a], nor do they understand, because he has shut their eyes from seeing[c][b], and their hearts from understanding.'
+  to: 'They do not know[a], nor do they understand, because he has shut their eyes from seeing[c][b], and their hearts from understanding.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has smeared''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
