@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:51:21Z'
   unchanged: false
-  changes_summary: Added 'very' to reflect מְאֹד with 'great abundance,' and changed 'because' to 'for' for a more formal, natural rendering of כִּי in this context.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 4:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in great abundance''].'
 revisions:
 - timestamp: '2026-04-23T10:12:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Solomon made all these vessels in great abundance, because the weight of the bronze could not be determined.
-  to: Solomon made all these vessels in very great abundance, for the weight of the bronze could not be determined.
+  to: Solomon made all these vessels in great abundance, because the weight of the bronze could not be determined.
   rationale: Added 'very' to reflect מְאֹד with 'great abundance,' and changed 'because' to 'for' for a more formal, natural rendering of כִּי in this context.
 
+- timestamp: '2026-05-17T02:51:21Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.'
+  to: 'Solomon made all these vessels in very great abundance[a], for the weight of the bronze could not be determined.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in great abundance''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
