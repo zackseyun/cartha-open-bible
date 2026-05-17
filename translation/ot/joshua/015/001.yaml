@@ -90,19 +90,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:05:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T06:06:11Z'
   unchanged: false
-  changes_summary: Changed 'came to' to 'was to' for a more literal and natural rendering of the Hebrew, and revised 'at the far end of the south' to 'at the farthest south' to better reflect the idiom without awkwardness.
+  changes_summary: 'doctrine_realignment: Joshua 15:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the far end of the south''].'
 revisions:
 - timestamp: '2026-04-23T11:05:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the lot for the tribe of the sons of Judah, according to their clans, came to the border of Edom, to the wilderness of Zin, southward, at the far end of the south.
-  to: And the lot for the tribe of the sons of Judah, according to their clans, was to the border of Edom, to the wilderness of Zin, southward, at the farthest south.
+  to: And the lot for the tribe of the sons of Judah, according to their clans, came to the border of Edom, to the wilderness of Zin, southward, at the far end of the south.
   rationale: Changed 'came to' to 'was to' for a more literal and natural rendering of the Hebrew, and revised 'at the far end of the south' to 'at the farthest south' to better reflect the idiom without awkwardness.
 
+- timestamp: '2026-05-17T06:06:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the lot for the tribe of the sons of Judah[a], according to their clans, was to the border of Edom, to the wilderness of Zin, southward[c][b], at the farthest south.'
+  to: 'And the lot for the tribe of the sons of Judah[a], according to their clans, was to the border of Edom, to the wilderness of Zin, southward[c][b], at the farthest south.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the far end of the south''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

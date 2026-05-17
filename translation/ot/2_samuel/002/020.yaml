@@ -52,19 +52,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T06:06:11Z'
   unchanged: false
-  changes_summary: Replaced the awkward and less accurate 'turned behind him' with the natural English 'turned' and simplified the question to 'Are you Asahel?' to reflect the Hebrew more naturally without adding 'that.'
+  changes_summary: 'doctrine_realignment: 2 Samuel 2:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Is that you''].'
 revisions:
 - timestamp: '2026-04-23T10:19:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Abner turned behind him and said, “Is that you, Asahel?” And he said, “I am.”
-  to: Abner turned behind him and said, “Are you Asahel?” And he said, “I am.”
+  to: Abner turned behind him and said, “Is that you, Asahel?” And he said, “I am.”
   rationale: Replaced the awkward and less accurate 'turned behind him' with the natural English 'turned' and simplified the question to 'Are you Asahel?' to reflect the Hebrew more naturally without adding 'that.'
 
+- timestamp: '2026-05-17T06:06:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Abner turned behind him and said[a], “Are you Asahel?” And he said, “I am.”'
+  to: 'Abner turned behind him and said[a], “Are you Asahel?” And he said, “I am.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Is that you''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
