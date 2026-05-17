@@ -72,19 +72,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:06:12Z'
   unchanged: false
-  changes_summary: 'Reordered the final phrase to reflect the Hebrew more clearly: first ''your two sons with you,'' then appositionally naming them. Kept ''Are you a seer?'' and ''in peace'' as accurate and natural.'
+  changes_summary: 'doctrine_realignment: 2 Samuel 15:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with Ahimaaz your son and Jonathan son of Abiathar''].'
 revisions:
 - timestamp: '2026-04-23T10:20:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king said to Zadok the priest, “Are you a seer? Return to the city in peace, with Ahimaaz your son and Jonathan son of Abiathar, your two sons with you.”
-  to: Then the king said to Zadok the priest, “Are you a seer? Return to the city in peace, and your two sons with you, Ahimaaz your son and Jonathan son of Abiathar.”
+  to: Then the king said to Zadok the priest, “Are you a seer? Return to the city in peace, with Ahimaaz your son and Jonathan son of Abiathar, your two sons with you.”
   rationale: 'Reordered the final phrase to reflect the Hebrew more clearly: first ''your two sons with you,'' then appositionally naming them. Kept ''Are you a seer?'' and ''in peace'' as accurate and natural.'
 
+- timestamp: '2026-05-17T04:06:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king said to Zadok the priest[a], “Are you a seer? Return to the city in peace, and your two sons with you, Ahimaaz your son and Jonathan son of Abiathar.”'
+  to: 'Then the king said to Zadok the priest[a], “Are you a seer? Return to the city in peace, and your two sons with you, Ahimaaz your son and Jonathan son of Abiathar.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with Ahimaaz your son and Jonathan son of Abiathar''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
