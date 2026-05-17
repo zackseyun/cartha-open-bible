@@ -66,19 +66,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:32:01Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T00:36:33Z'
   unchanged: false
-  changes_summary: 'Reordered the final phrase to more naturally reflect the Hebrew participle: ''streams flowing from Lebanon'' instead of ''flowing streams from Lebanon.'''
+  changes_summary: 'doctrine_realignment: Song of Songs 4:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and flowing streams''].'
 revisions:
 - timestamp: '2026-04-23T11:32:01Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: A spring of gardens, a well of living water, and flowing streams from Lebanon.
-  to: A spring of gardens, a well of living water, and streams flowing from Lebanon.
+  to: A spring of gardens, a well of living water, and flowing streams from Lebanon.
   rationale: 'Reordered the final phrase to more naturally reflect the Hebrew participle: ''streams flowing from Lebanon'' instead of ''flowing streams from Lebanon.'''
 
+- timestamp: '2026-05-17T00:36:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'A spring of gardens[a], a well of living water[c][b], and streams flowing from Lebanon.'
+  to: 'A spring of gardens[a], a well of living water[c][b], and streams flowing from Lebanon.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and flowing streams''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

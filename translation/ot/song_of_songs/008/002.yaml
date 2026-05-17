@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:32:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T00:36:33Z'
   unchanged: false
-  changes_summary: Replaced “she who used to teach me” with “where she taught me” to better reflect the Hebrew construction and improve natural English while preserving the sense.
+  changes_summary: 'doctrine_realignment: Song of Songs 8:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''she who used to teach me''].'
 revisions:
 - timestamp: '2026-04-23T11:32:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: I would lead you and bring you into my mother’s house—she who used to teach me; I would give you spiced wine to drink, from the juice of my pomegranate.
-  to: I would lead you and bring you into my mother’s house, where she taught me; I would give you spiced wine to drink, from the juice of my pomegranate.
+  to: I would lead you and bring you into my mother’s house—she who used to teach me; I would give you spiced wine to drink, from the juice of my pomegranate.
   rationale: Replaced “she who used to teach me” with “where she taught me” to better reflect the Hebrew construction and improve natural English while preserving the sense.
 
+- timestamp: '2026-05-17T00:36:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'I would lead you and bring you into my mother’s house[a], where she taught me; I would give you spiced wine to drink[b], from the juice of my pomegranate.'
+  to: 'I would lead you and bring you into my mother’s house[a], where she taught me; I would give you spiced wine to drink[b], from the juice of my pomegranate.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''she who used to teach me''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
