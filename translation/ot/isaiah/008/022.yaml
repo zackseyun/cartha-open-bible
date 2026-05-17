@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:49:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T18:24:09Z'
   unchanged: false
-  changes_summary: 'Revised the final clause to reflect the Hebrew/Aramaic wording more closely: the text describes thick darkness as ''driven away/banished,'' not the person being driven into it. Kept the rest substantially unchanged for accuracy and formal register.'
+  changes_summary: 'doctrine_realignment: Isaiah 8:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will be driven into''].'
 revisions:
 - timestamp: '2026-04-23T10:49:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he will look to the earth, and behold, distress and darkness, the gloom of anguish; and he will be driven into thick darkness.
-  to: And he will look to the earth, and behold, distress and darkness, the gloom of anguish; and thick darkness will be driven away.
+  to: And he will look to the earth, and behold, distress and darkness, the gloom of anguish; and he will be driven into thick darkness.
   rationale: 'Revised the final clause to reflect the Hebrew/Aramaic wording more closely: the text describes thick darkness as ''driven away/banished,'' not the person being driven into it. Kept the rest substantially unchanged for accuracy and formal register.'
 
+- timestamp: '2026-05-17T18:24:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he will look to the earth[a], and behold, distress and darkness, the gloom of anguish[b]; and thick darkness will be driven away.'
+  to: 'And he will look to the earth[a], and behold, distress and darkness, the gloom of anguish[b]; and thick darkness will be driven away.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will be driven into''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
