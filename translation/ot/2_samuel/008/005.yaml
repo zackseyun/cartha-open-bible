@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:51:10Z'
   unchanged: false
-  changes_summary: Changed 'the Arameans' to 'Aram' to reflect the Hebrew wording more directly and maintain consistency with the place/people designation in the verse.
+  changes_summary: 'doctrine_realignment: 2 Samuel 8:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the Arameans''].'
 revisions:
 - timestamp: '2026-04-23T10:19:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Aram of Damascus came to help Hadadezer king of Zobah, and David struck down twenty-two thousand men of the Arameans.
-  to: And Aram of Damascus came to help Hadadezer king of Zobah, and David struck down twenty-two thousand men of Aram.
+  to: And Aram of Damascus came to help Hadadezer king of Zobah, and David struck down twenty-two thousand men of the Arameans.
   rationale: Changed 'the Arameans' to 'Aram' to reflect the Hebrew wording more directly and maintain consistency with the place/people designation in the verse.
 
+- timestamp: '2026-05-17T04:51:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Aram of Damascus came to help Hadadezer king of Zobah[b][a], and David struck down twenty-two thousand men of Aram.'
+  to: 'And Aram of Damascus came to help Hadadezer king of Zobah[b][a], and David struck down twenty-two thousand men of Aram.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the Arameans''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

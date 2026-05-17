@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:51:10Z'
   unchanged: false
-  changes_summary: Replaced the awkward literal phrase 'turned behind him' with the natural and accurate English 'turned around.'
+  changes_summary: 'doctrine_realignment: 2 Samuel 1:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''behind him''].'
 revisions:
 - timestamp: '2026-04-23T10:19:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He turned behind him and saw me, and he called to me, and I said, “Here I am.”
-  to: He turned around and saw me, and he called to me, and I said, “Here I am.”
+  to: He turned behind him and saw me, and he called to me, and I said, “Here I am.”
   rationale: Replaced the awkward literal phrase 'turned behind him' with the natural and accurate English 'turned around.'
 
+- timestamp: '2026-05-17T04:51:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He turned around and saw me[a], and he called to me, and I said, “Here I am.”'
+  to: 'He turned around and saw me[a], and he called to me, and I said, “Here I am.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''behind him''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

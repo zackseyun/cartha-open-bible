@@ -71,19 +71,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:56Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:51:10Z'
   unchanged: false
-  changes_summary: Replaced 'a very great amount of bronze' with 'very much bronze' for a more direct and formal rendering of the Hebrew while preserving the emphasis.
+  changes_summary: 'doctrine_realignment: 2 Samuel 8:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a very great amount of''].'
 revisions:
 - timestamp: '2026-04-23T10:19:56Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And from Betah and from Berothai, cities of Hadadezer, King David took a very great amount of bronze.
-  to: And from Betah and from Berothai, cities of Hadadezer, King David took very much bronze.
+  to: And from Betah and from Berothai, cities of Hadadezer, King David took a very great amount of bronze.
   rationale: Replaced 'a very great amount of bronze' with 'very much bronze' for a more direct and formal rendering of the Hebrew while preserving the emphasis.
 
+- timestamp: '2026-05-17T04:51:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And from Betah and from Berothai[a], cities of Hadadezer[c][b], King David took very much bronze.'
+  to: 'And from Betah and from Berothai[a], cities of Hadadezer[c][b], King David took very much bronze.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a very great amount of''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
