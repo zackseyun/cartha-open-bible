@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:46:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T08:36:09Z'
   unchanged: false
-  changes_summary: Replaced 'someone said' with 'it was said' to reflect the unspecified subject in the source more formally and naturally.
+  changes_summary: 'doctrine_realignment: Genesis 48:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''someone said to Yoseph''].'
 revisions:
 - timestamp: '2026-04-23T10:46:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now after these things, someone said to Yoseph, “Look, your father is sick.” So he took his two sons with him, Manasseh and Ephraim.
-  to: Now after these things, it was said to Yoseph, “Look, your father is sick.” So he took his two sons with him, Manasseh and Ephraim.
+  to: Now after these things, someone said to Yoseph, “Look, your father is sick.” So he took his two sons with him, Manasseh and Ephraim.
   rationale: Replaced 'someone said' with 'it was said' to reflect the unspecified subject in the source more formally and naturally.
 
+- timestamp: '2026-05-17T08:36:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now after these things[a], it was said to Yoseph, “Look, your father is sick.” So he took his two sons with him, Manasseh and Ephraim.'
+  to: 'Now after these things[a], it was said to Yoseph, “Look, your father is sick.” So he took his two sons with him, Manasseh and Ephraim.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''someone said to Yoseph''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

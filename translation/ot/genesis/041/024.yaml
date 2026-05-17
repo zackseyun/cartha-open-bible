@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:45:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T08:36:09Z'
   unchanged: false
-  changes_summary: Replaced 'told it to the magicians' with 'told the magicians' for natural English and closer alignment with the source, which does not explicitly include 'it.'
+  changes_summary: 'doctrine_realignment: Genesis 41:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Then I told it to''].'
 revisions:
 - timestamp: '2026-04-23T10:45:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the thin ears swallowed up the seven good ears. Then I told it to the magicians, but there was no one who could explain it to me.
-  to: And the thin ears swallowed up the seven good ears. Then I told the magicians, but there was no one who could explain it to me.
+  to: And the thin ears swallowed up the seven good ears. Then I told it to the magicians, but there was no one who could explain it to me.
   rationale: Replaced 'told it to the magicians' with 'told the magicians' for natural English and closer alignment with the source, which does not explicitly include 'it.'
 
+- timestamp: '2026-05-17T08:36:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.'
+  to: 'And the thin ears swallowed up the seven good ears[a]. Then I told the magicians[c][b], but there was no one who could explain it to me.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Then I told it to''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

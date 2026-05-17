@@ -82,19 +82,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:45:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T08:36:09Z'
   unchanged: false
-  changes_summary: Changed 'was dreaming' to 'dreamed' for a more natural and formally appropriate rendering of the Hebrew verbal form; retained the rest as accurate and complete.
+  changes_summary: 'doctrine_realignment: Genesis 41:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was dreaming''].'
 revisions:
 - timestamp: '2026-04-23T10:45:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: At the end of two full years, Pharaoh was dreaming, and behold, he was standing by the Nile.
-  to: At the end of two full years, Pharaoh dreamed, and behold, he was standing by the Nile.
+  to: At the end of two full years, Pharaoh was dreaming, and behold, he was standing by the Nile.
   rationale: Changed 'was dreaming' to 'dreamed' for a more natural and formally appropriate rendering of the Hebrew verbal form; retained the rest as accurate and complete.
 
+- timestamp: '2026-05-17T08:36:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'At the end of two full years[a], Pharaoh dreamed, and behold[b], he was standing by the Nile.'
+  to: 'At the end of two full years[a], Pharaoh dreamed, and behold[b], he was standing by the Nile.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was dreaming''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

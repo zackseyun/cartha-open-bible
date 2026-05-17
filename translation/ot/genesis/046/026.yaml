@@ -65,19 +65,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:46:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T08:36:09Z'
   unchanged: false
-  changes_summary: Changed 'came with Jacob' to 'belonging to Jacob who came to Egypt' to better reflect the Hebrew construction and avoid implying only physical accompaniment; retained the rest with minor smoothing.
+  changes_summary: 'doctrine_realignment: Genesis 46:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who came with Jacob to Egypt''].'
 revisions:
 - timestamp: '2026-04-23T10:46:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: All the persons who came with Jacob to Egypt, who came from his loins, besides the wives of Jacob’s sons, were sixty-six persons in all.
-  to: All the persons belonging to Jacob who came to Egypt, who came from his loins, besides the wives of Jacob’s sons, were sixty-six persons in all.
+  to: All the persons who came with Jacob to Egypt, who came from his loins, besides the wives of Jacob’s sons, were sixty-six persons in all.
   rationale: Changed 'came with Jacob' to 'belonging to Jacob who came to Egypt' to better reflect the Hebrew construction and avoid implying only physical accompaniment; retained the rest with minor smoothing.
 
+- timestamp: '2026-05-17T08:36:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.'
+  to: 'All the persons belonging to Jacob who came to Egypt[a], who came from his loins, besides the wives of Jacob’s sons[b], were sixty-six persons in all.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who came with Jacob to Egypt''].'
 cross_check:
   status: high_agreement
   agreement: 0.9
