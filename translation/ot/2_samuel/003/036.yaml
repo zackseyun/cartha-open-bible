@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:51:11Z'
   unchanged: false
-  changes_summary: Replaced 'just as' with 'for' to better reflect the Hebrew construction and the verse's explanatory sense. Kept the rest essentially unchanged for accuracy and natural formal English.
+  changes_summary: 'doctrine_realignment: 2 Samuel 3:36 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''just as everything the king did''].'
 revisions:
 - timestamp: '2026-04-23T10:19:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And all the people recognized it, and it was good in their eyes; just as everything the king did was good in the eyes of all the people.
-  to: And all the people recognized it, and it was good in their eyes; for everything the king did was good in the eyes of all the people.
+  to: And all the people recognized it, and it was good in their eyes; just as everything the king did was good in the eyes of all the people.
   rationale: Replaced 'just as' with 'for' to better reflect the Hebrew construction and the verse's explanatory sense. Kept the rest essentially unchanged for accuracy and natural formal English.
 
+- timestamp: '2026-05-17T05:51:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And all the people recognized it[a], and it was good in their eyes; for everything the king did was good in the eyes of all the people.'
+  to: 'And all the people recognized it[a], and it was good in their eyes; for everything the king did was good in the eyes of all the people.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''just as everything the king did''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:51:11Z'
   unchanged: false
-  changes_summary: Reordered the sentence for natural English and removed the redundant clause 'who died,' since death is already conveyed by 'struck down.'
+  changes_summary: 'doctrine_realignment: 2 Samuel 2:31 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who died''].'
 revisions:
 - timestamp: '2026-04-23T10:19:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But David’s servants struck down from Benjamin and from Abner’s men three hundred and sixty men, who died.
-  to: But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men.
+  to: But David’s servants struck down from Benjamin and from Abner’s men three hundred and sixty men, who died.
   rationale: Reordered the sentence for natural English and removed the redundant clause 'who died,' since death is already conveyed by 'struck down.'
 
+- timestamp: '2026-05-17T05:51:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].'
+  to: 'But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who died''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

@@ -101,19 +101,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:51:11Z'
   unchanged: false
-  changes_summary: Changed 'struck him down' to 'struck him' for closer lexical accuracy to the source. Added commas for smoother formal English. Retained both 'removed his head' and 'took his head' to reflect both verbs in the Hebrew.
+  changes_summary: 'doctrine_realignment: 2 Samuel 4:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they struck him down''].'
 revisions:
 - timestamp: '2026-04-23T10:19:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They came into the house while he was lying on his bed in his bedroom, and they struck him down and put him to death. Then they removed his head and took his head and went by way of the Arabah all night.
-  to: They came into the house while he was lying on his bed in his bedroom, and they struck him and put him to death. Then they removed his head, took his head, and went by way of the Arabah all night.
+  to: They came into the house while he was lying on his bed in his bedroom, and they struck him down and put him to death. Then they removed his head and took his head and went by way of the Arabah all night.
   rationale: Changed 'struck him down' to 'struck him' for closer lexical accuracy to the source. Added commas for smoother formal English. Retained both 'removed his head' and 'took his head' to reflect both verbs in the Hebrew.
 
+- timestamp: '2026-05-17T05:51:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They came into the house while he was lying on his bed in his bedroom[a], and they struck him and put him to death. Then they removed his head, took his head[c][b], and went by way of the Arabah all night.'
+  to: 'They came into the house while he was lying on his bed in his bedroom[a], and they struck him and put him to death. Then they removed his head, took his head[c][b], and went by way of the Arabah all night.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they struck him down''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

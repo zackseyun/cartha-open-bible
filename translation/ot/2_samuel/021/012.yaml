@@ -98,19 +98,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:51:11Z'
   unchanged: false
-  changes_summary: Changed 'men of Jabesh-gilead' to 'citizens of Jabesh-gilead' for a more natural rendering of 'baale' while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Samuel 21:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the men of''].'
 revisions:
 - timestamp: '2026-04-23T10:21:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh-gilead, who had stolen them from the public square of Beth-shan, where the Philistines had hung them on the day the Philistines struck down Saul on Gilboa.
-  to: Then David went and took the bones of Saul and the bones of Jonathan his son from the citizens of Jabesh-gilead, who had stolen them from the public square of Beth-shan, where the Philistines had hung them on the day the Philistines struck down Saul on Gilboa.
+  to: Then David went and took the bones of Saul and the bones of Jonathan his son from the men of Jabesh-gilead, who had stolen them from the public square of Beth-shan, where the Philistines had hung them on the day the Philistines struck down Saul on Gilboa.
   rationale: Changed 'men of Jabesh-gilead' to 'citizens of Jabesh-gilead' for a more natural rendering of 'baale' while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-17T05:51:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then David went and took the bones of Saul and the bones of Jonathan his son from the citizens of Jabesh-gilead[a], who had stolen them from the public square of Beth-shan[c][b], where the Philistines had hung them on the day the Philistines struck down Saul on Gilboa.'
+  to: 'Then David went and took the bones of Saul and the bones of Jonathan his son from the citizens of Jabesh-gilead[a], who had stolen them from the public square of Beth-shan[c][b], where the Philistines had hung them on the day the Philistines struck down Saul on Gilboa.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the men of''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
