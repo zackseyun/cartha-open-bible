@@ -76,19 +76,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:21:12Z'
   unchanged: false
-  changes_summary: Revised the final clause from 'my name be called over it' to the more natural and accurate 'it be called by my name,' reflecting the idiom of the city being named after the captor.
+  changes_summary: 'doctrine_realignment: 2 Samuel 12:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and my name be called over it''].'
 revisions:
 - timestamp: '2026-04-23T10:20:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now gather the rest of the troops, camp against the city, and capture it, lest I capture the city and my name be called over it.
-  to: Now gather the rest of the troops, camp against the city, and capture it, lest I capture the city and it be called by my name.
+  to: Now gather the rest of the troops, camp against the city, and capture it, lest I capture the city and my name be called over it.
   rationale: Revised the final clause from 'my name be called over it' to the more natural and accurate 'it be called by my name,' reflecting the idiom of the city being named after the captor.
 
+- timestamp: '2026-05-17T04:21:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.'
+  to: 'Now gather the rest of the troops[a], camp against the city, and capture it, lest I capture the city and it be called by my name.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and my name be called over it''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

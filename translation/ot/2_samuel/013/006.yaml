@@ -92,19 +92,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:21:12Z'
   unchanged: false
-  changes_summary: Removed 'heart-shaped' because the Hebrew refers to cakes/bread-cakes (levivot) without explicitly specifying their shape here; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: 2 Samuel 13:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''two heart-shaped cakes''].'
 revisions:
 - timestamp: '2026-04-23T10:20:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So Amnon lay down and pretended to be sick. When the king came to see him, Amnon said to the king, “Please let Tamar my sister come and make two heart-shaped cakes before my eyes, so that I may eat from her hand.”
-  to: So Amnon lay down and pretended to be sick. When the king came to see him, Amnon said to the king, “Please let Tamar my sister come and make two cakes before my eyes, so that I may eat from her hand.”
+  to: So Amnon lay down and pretended to be sick. When the king came to see him, Amnon said to the king, “Please let Tamar my sister come and make two heart-shaped cakes before my eyes, so that I may eat from her hand.”
   rationale: Removed 'heart-shaped' because the Hebrew refers to cakes/bread-cakes (levivot) without explicitly specifying their shape here; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-17T04:21:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So Amnon lay down and pretended to be sick. When the king came to see him[a], Amnon said to the king, “Please let Tamar my sister come and make two cakes before my eyes, so that I may eat from her hand.”'
+  to: 'So Amnon lay down and pretended to be sick. When the king came to see him[a], Amnon said to the king, “Please let Tamar my sister come and make two cakes before my eyes, so that I may eat from her hand.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''two heart-shaped cakes''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -58,19 +58,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:20:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T04:21:12Z'
   unchanged: false
-  changes_summary: Changed 'and his name was' to 'whose name was' for more natural English while preserving the Hebrew sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Samuel 13:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and his name was''].'
 revisions:
 - timestamp: '2026-04-23T10:20:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now Amnon had a friend, and his name was Jonadab son of Shimeah, David’s brother; and Jonadab was a very shrewd man.
-  to: Now Amnon had a friend, whose name was Jonadab son of Shimeah, David’s brother; and Jonadab was a very shrewd man.
+  to: Now Amnon had a friend, and his name was Jonadab son of Shimeah, David’s brother; and Jonadab was a very shrewd man.
   rationale: Changed 'and his name was' to 'whose name was' for more natural English while preserving the Hebrew sense. No other changes needed.
 
+- timestamp: '2026-05-17T04:21:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now Amnon had a friend[a], whose name was Jonadab son of Shimeah, David’s brother; and Jonadab was a very shrewd man.'
+  to: 'Now Amnon had a friend[a], whose name was Jonadab son of Shimeah, David’s brother; and Jonadab was a very shrewd man.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and his name was''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
