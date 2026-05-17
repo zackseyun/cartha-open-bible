@@ -108,19 +108,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T20:35:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:06:38Z'
   unchanged: false
-  changes_summary: Changed 'with her wisdom' to 'in her wisdom' for a more natural rendering of the Hebrew while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Samuel 20:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with her wisdom''].'
 revisions:
 - timestamp: '2026-04-23T20:35:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the woman went to all the people with her wisdom, and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
-  to: Then the woman went to all the people in her wisdom, and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
+  to: Then the woman went to all the people with her wisdom, and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.
   rationale: Changed 'with her wisdom' to 'in her wisdom' for a more natural rendering of the Hebrew while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-17T05:06:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.'
+  to: 'Then the woman went to all the people in her wisdom[a], and they cut off the head of Sheba son of Bichri and threw it to Joab. Then he blew the trumpet, and they dispersed from the city, each man to his tent; and Joab returned to Jerusalem to the king.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with her wisdom''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
