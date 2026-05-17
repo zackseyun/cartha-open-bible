@@ -72,19 +72,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:15:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T01:21:35Z'
   unchanged: false
-  changes_summary: Replaced 'But' with 'And' to match the source conjunction and avoid introducing contrast not present in the text.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 36:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''But Neco took his brother Jehoahaz''].'
 revisions:
 - timestamp: '2026-04-23T10:15:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the king of Egypt made Eliakim his brother king over Judah and Jerusalem, and changed his name to Jehoiakim. But Neco took his brother Jehoahaz and brought him to Egypt.
-  to: And the king of Egypt made Eliakim his brother king over Judah and Jerusalem, and changed his name to Jehoiakim. And Neco took his brother Jehoahaz and brought him to Egypt.
+  to: And the king of Egypt made Eliakim his brother king over Judah and Jerusalem, and changed his name to Jehoiakim. But Neco took his brother Jehoahaz and brought him to Egypt.
   rationale: Replaced 'But' with 'And' to match the source conjunction and avoid introducing contrast not present in the text.
 
+- timestamp: '2026-05-17T01:21:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the king of Egypt made Eliakim his brother king over Judah and Jerusalem[a], and changed his name to Jehoiakim. And Neco took his brother Jehoahaz and brought him to Egypt.'
+  to: 'And the king of Egypt made Eliakim his brother king over Judah and Jerusalem[a], and changed his name to Jehoiakim. And Neco took his brother Jehoahaz and brought him to Egypt.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''But Neco took his brother Jehoahaz''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

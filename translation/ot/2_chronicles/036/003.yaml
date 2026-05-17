@@ -72,19 +72,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:15:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T01:21:35Z'
   unchanged: false
-  changes_summary: Changed 'removed him' to 'deposed him' for more precise and natural rendering of the verb in this context; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 36:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''removed him''].'
 revisions:
 - timestamp: '2026-04-23T10:15:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the king of Egypt removed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold.
-  to: And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold.
+  to: And the king of Egypt removed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold.
   rationale: Changed 'removed him' to 'deposed him' for more precise and natural rendering of the verb in this context; otherwise retained the draft.
 
+- timestamp: '2026-05-17T01:21:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].'
+  to: 'And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''removed him''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
