@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:36:06Z'
   unchanged: false
-  changes_summary: Changed 'had come' to 'came' to match the Hebrew narrative sequence and improve natural flow; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 2 Samuel 19:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had come''].'
 revisions:
 - timestamp: '2026-04-23T10:21:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king returned and came as far as the Jordan, and Judah had come to Gilgal to go to meet the king, to bring the king across the Jordan.
-  to: Then the king returned and came as far as the Jordan, and Judah came to Gilgal to go to meet the king, to bring the king across the Jordan.
+  to: Then the king returned and came as far as the Jordan, and Judah had come to Gilgal to go to meet the king, to bring the king across the Jordan.
   rationale: Changed 'had come' to 'came' to match the Hebrew narrative sequence and improve natural flow; otherwise retained the draft.
 
+- timestamp: '2026-05-17T05:36:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king returned and came as far as the Jordan[a], and Judah came to Gilgal to go to meet the king, to bring the king across the Jordan.'
+  to: 'Then the king returned and came as far as the Jordan[a], and Judah came to Gilgal to go to meet the king, to bring the king across the Jordan.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had come''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -76,19 +76,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:36:06Z'
   unchanged: false
-  changes_summary: Changed 'go a little way across the Jordan' to 'cross the Jordan a little way' for closer alignment with the source and more natural English.
+  changes_summary: 'doctrine_realignment: 2 Samuel 19:37 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''across the Jordan''].'
 revisions:
 - timestamp: '2026-04-23T10:21:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For your servant would only go a little way across the Jordan with the king; why should the king repay me with this reward?
-  to: For your servant would only cross the Jordan a little way with the king; why should the king repay me with this reward?
+  to: For your servant would only go a little way across the Jordan with the king; why should the king repay me with this reward?
   rationale: Changed 'go a little way across the Jordan' to 'cross the Jordan a little way' for closer alignment with the source and more natural English.
 
+- timestamp: '2026-05-17T05:36:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?'
+  to: 'For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''across the Jordan''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

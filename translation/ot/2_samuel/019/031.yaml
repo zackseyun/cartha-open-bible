@@ -90,19 +90,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:21:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T05:36:06Z'
   unchanged: false
-  changes_summary: Replaced 'now that' with 'since' for a slightly more formal and direct rendering of אַחֲרֵי אֲשֶׁר, while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Samuel 19:31 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''now that''].'
 revisions:
 - timestamp: '2026-04-23T10:21:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Mephibosheth said to the king, “Let him even take it all, now that my lord the king has come safely to his own house.”
-  to: Mephibosheth said to the king, “Let him even take it all, since my lord the king has come safely to his own house.”
+  to: Mephibosheth said to the king, “Let him even take it all, now that my lord the king has come safely to his own house.”
   rationale: Replaced 'now that' with 'since' for a slightly more formal and direct rendering of אַחֲרֵי אֲשֶׁר, while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-17T05:36:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Mephibosheth said to the king[a], “Let him even take it all, since my lord the king has come safely to his own house.”'
+  to: 'Mephibosheth said to the king[a], “Let him even take it all, since my lord the king has come safely to his own house.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''now that''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
