@@ -85,19 +85,26 @@ theological_decisions:
   rationale: The surrounding context rebukes priests for failing in their calling. Rendering the imperfects with 'should' preserves the verse as a statement of priestly duty rather than a simple future prediction.
   doctrine_reference: 'DOCTRINE.md Translation philosophy: optimal equivalence; preserve source sense without paraphrase'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:12:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T07:51:06Z'
   unchanged: false
-  changes_summary: Replaced 'people should seek' with 'they should seek' to avoid adding a word not explicit in the Hebrew while preserving the indefinite plural sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Malachi 2:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''people should seek instruction from his mouth''].'
 revisions:
 - timestamp: '2026-04-23T11:12:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For the lips of a priest should guard knowledge, and people should seek instruction from his mouth, because he is the messenger of the LORD of Armies.
-  to: For the lips of a priest should guard knowledge, and they should seek instruction from his mouth, because he is the messenger of the LORD of Armies.
+  to: For the lips of a priest should guard knowledge, and people should seek instruction from his mouth, because he is the messenger of the LORD of Armies.
   rationale: Replaced 'people should seek' with 'they should seek' to avoid adding a word not explicit in the Hebrew while preserving the indefinite plural sense. No other changes needed.
 
+- timestamp: '2026-05-17T07:51:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.'
+  to: 'For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''people should seek instruction from his mouth''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

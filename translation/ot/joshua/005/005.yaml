@@ -89,19 +89,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:03:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T07:51:06Z'
   unchanged: false
-  changes_summary: Removed the comma after 'way' and changed 'after they came out from Egypt' to 'as they came out from Egypt' for a more natural rendering of the Hebrew while preserving the sense.
+  changes_summary: 'doctrine_realignment: Joshua 5:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after they came out from Egypt''].'
 revisions:
 - timestamp: '2026-04-23T11:03:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For all the people who came out had been circumcised, but all the people born in the wilderness on the way, after they came out from Egypt, had not been circumcised.
-  to: For all the people who came out had been circumcised, but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.
+  to: For all the people who came out had been circumcised, but all the people born in the wilderness on the way, after they came out from Egypt, had not been circumcised.
   rationale: Removed the comma after 'way' and changed 'after they came out from Egypt' to 'as they came out from Egypt' for a more natural rendering of the Hebrew while preserving the sense.
 
+- timestamp: '2026-05-17T07:51:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.'
+  to: 'For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after they came out from Egypt''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
