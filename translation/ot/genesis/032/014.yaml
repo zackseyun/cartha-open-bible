@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:44:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T11:51:15Z'
   unchanged: false
-  changes_summary: Adjusted word order to more naturally and accurately reflect the Hebrew phrase 'from what came to his hand' modifying 'he took,' while preserving all source elements and formal register.
+  changes_summary: 'doctrine_realignment: Genesis 32:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from what came into his hand''].'
 revisions:
 - timestamp: '2026-04-23T10:44:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'So he spent that night there, and from what came into his hand he took a gift for Esau his brother:'
-  to: 'So he spent that night there, and he took from what came to his hand a gift for Esau his brother:'
+  to: 'So he spent that night there, and from what came into his hand he took a gift for Esau his brother:'
   rationale: Adjusted word order to more naturally and accurately reflect the Hebrew phrase 'from what came to his hand' modifying 'he took,' while preserving all source elements and formal register.
 
+- timestamp: '2026-05-17T11:51:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So he spent that night there[a], and he took from what came to his hand a gift for Esau his brother:'
+  to: 'So he spent that night there[a], and he took from what came to his hand a gift for Esau his brother:'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from what came into his hand''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

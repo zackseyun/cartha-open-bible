@@ -79,19 +79,26 @@ theological_decisions:
   rationale: This is primarily a textual decision rather than a doctrinal one. The shorter MT is abrupt and likely reflects accidental omission, while multiple ancient witnesses preserve the speech. Including the clause yields a coherent narrative and likely original sense, but transparency requires preserving the MT omission in a footnote.
   doctrine_reference: Translation philosophy §1 (original-language primacy) and §3 (preserve tension/alternatives in footnotes)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:41:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T11:51:15Z'
   unchanged: false
-  changes_summary: Removed the added quotation, “Let us go out to the field,” because it is not present in the provided source text. Kept the rest with minor punctuation adjustment for natural English.
+  changes_summary: 'doctrine_realignment: Genesis 4:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''“Let us go out to the field.”''].'
 revisions:
 - timestamp: '2026-04-23T10:41:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Cain said to Abel his brother, “Let us go out to the field.” Then, while they were in the field, Cain rose up against Abel his brother and killed him.
-  to: And Cain said to Abel his brother. Then, while they were in the field, Cain rose up against Abel his brother and killed him.
+  to: And Cain said to Abel his brother, “Let us go out to the field.” Then, while they were in the field, Cain rose up against Abel his brother and killed him.
   rationale: Removed the added quotation, “Let us go out to the field,” because it is not present in the provided source text. Kept the rest with minor punctuation adjustment for natural English.
 
+- timestamp: '2026-05-17T11:51:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Cain said to Abel his brother. Then[a], while they were in the field, Cain rose up against Abel his brother and killed him.'
+  to: 'And Cain said to Abel his brother. Then[a], while they were in the field, Cain rose up against Abel his brother and killed him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''“Let us go out to the field.”''].'
 cross_check:
   status: high_agreement
   agreement: 1.0
