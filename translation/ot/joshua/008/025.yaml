@@ -68,19 +68,26 @@ theological_decisions:
   rationale: The Hebrew uses gendered singulars in the range expression and then the idiom אַנְשֵׁי הָעָי. Following the doctrine's gender-accurate principle, the translation preserves the source's gendered wording rather than flattening it into gender-neutral English, while recognizing that the idiom may function corporately for the city's population.
   doctrine_reference: 'DOCTRINE.md §Translation philosophy #4'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:03:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T06:51:13Z'
   unchanged: false
-  changes_summary: Changed “all the men of Ai” to “all the people of Ai” for accuracy and completeness, since the verse explicitly includes both male and female (“from man to woman”).
+  changes_summary: 'doctrine_realignment: Joshua 8:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the men of Ai''].'
 revisions:
 - timestamp: '2026-04-23T11:03:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And all who fell that day, from man to woman, were twelve thousand—all the men of Ai.
-  to: And all who fell that day, from man to woman, were twelve thousand—all the people of Ai.
+  to: And all who fell that day, from man to woman, were twelve thousand—all the men of Ai.
   rationale: Changed “all the men of Ai” to “all the people of Ai” for accuracy and completeness, since the verse explicitly includes both male and female (“from man to woman”).
 
+- timestamp: '2026-05-17T06:51:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And all who fell that day[a], from man to woman, were twelve thousand—all the people of Ai.'
+  to: 'And all who fell that day[a], from man to woman, were twelve thousand—all the people of Ai.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the men of Ai''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
