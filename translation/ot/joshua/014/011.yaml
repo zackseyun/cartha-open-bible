@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:04:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T06:21:09Z'
   unchanged: false
-  changes_summary: 'Adjusted the second clause to more closely reflect the Hebrew comparison structure: ''as my strength was then, so my strength is now.'''
+  changes_summary: 'doctrine_realignment: Joshua 14:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''my strength now is as''].'
 revisions:
 - timestamp: '2026-04-23T11:04:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: I am still as strong today as I was on the day Moses sent me; my strength now is as my strength was then, for battle and for going out and coming in.
-  to: I am still as strong today as I was on the day Moses sent me; as my strength was then, so my strength is now, for battle and for going out and coming in.
+  to: I am still as strong today as I was on the day Moses sent me; my strength now is as my strength was then, for battle and for going out and coming in.
   rationale: 'Adjusted the second clause to more closely reflect the Hebrew comparison structure: ''as my strength was then, so my strength is now.'''
 
+- timestamp: '2026-05-17T06:21:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'I am still as strong today as I was on the day Moses sent me; as my strength was then[a], so my strength is now, for battle and for going out and coming in.'
+  to: 'I am still as strong today as I was on the day Moses sent me; as my strength was then[a], so my strength is now, for battle and for going out and coming in.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''my strength now is as''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
