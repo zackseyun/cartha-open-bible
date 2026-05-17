@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:13:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:06:36Z'
   unchanged: false
-  changes_summary: Removed the duplicated 'and city' to reflect the Hebrew idiom 'in every city' naturally in English. Kept the rest essentially unchanged, including 'strengthened them' referring to the cities and the concluding clause about Judah and Benjamin belonging to him.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 11:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in every city and city''].'
 revisions:
 - timestamp: '2026-04-23T10:13:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And in every city and city he put shields and spears, and he strengthened them very greatly; and Judah and Benjamin belonged to him.
-  to: And in every city he put shields and spears, and he strengthened them very greatly; and Judah and Benjamin belonged to him.
+  to: And in every city and city he put shields and spears, and he strengthened them very greatly; and Judah and Benjamin belonged to him.
   rationale: Removed the duplicated 'and city' to reflect the Hebrew idiom 'in every city' naturally in English. Kept the rest essentially unchanged, including 'strengthened them' referring to the cities and the concluding clause about Judah and Benjamin belonging to him.
 
+- timestamp: '2026-05-17T02:06:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And in every city he put shields and spears[a], and he strengthened them very greatly; and Judah and Benjamin belonged to him.'
+  to: 'And in every city he put shields and spears[a], and he strengthened them very greatly; and Judah and Benjamin belonged to him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in every city and city''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

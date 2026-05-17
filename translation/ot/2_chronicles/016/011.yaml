@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:13:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:06:36Z'
   unchanged: false
-  changes_summary: 'Revised to more fully reflect the Hebrew wording: retained both instances of ''behold,'' rendered ''the first and the last'' more literally, and preserved the formal register while keeping the standard ''acts of Asa.'''
+  changes_summary: 'doctrine_realignment: 2 Chronicles 16:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from first to last''].'
 revisions:
 - timestamp: '2026-04-23T10:13:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now behold, the acts of Asa, from first to last, are written in the Book of the Kings of Judah and Israel.
-  to: Now behold, the acts of Asa, the first and the last, behold, they are written in the Book of the Kings of Judah and Israel.
+  to: Now behold, the acts of Asa, from first to last, are written in the Book of the Kings of Judah and Israel.
   rationale: 'Revised to more fully reflect the Hebrew wording: retained both instances of ''behold,'' rendered ''the first and the last'' more literally, and preserved the formal register while keeping the standard ''acts of Asa.'''
 
+- timestamp: '2026-05-17T02:06:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now behold[a], the acts of Asa, the first and the last, behold, they are written in the Book of the Kings of Judah and Israel.'
+  to: 'Now behold[a], the acts of Asa, the first and the last, behold, they are written in the Book of the Kings of Judah and Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from first to last''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

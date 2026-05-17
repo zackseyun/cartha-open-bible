@@ -72,19 +72,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:14:07Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-17T02:06:36Z'
   unchanged: false
-  changes_summary: Changed 'I will disguise myself' to 'Disguise yourself' to match the Hebrew imperative הִתְחַפֵּשׂ addressed to Jehoshaphat. Kept the rest substantially the same.
+  changes_summary: 'doctrine_realignment: 2 Chronicles 18:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I will disguise myself''].'
 revisions:
 - timestamp: '2026-04-23T10:14:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king of Israel said to Jehoshaphat, “I will disguise myself and go into the battle, but you, put on your robes.” So the king of Israel disguised himself, and they went into the battle.
-  to: Then the king of Israel said to Jehoshaphat, “Disguise yourself and go into the battle, but you, put on your robes.” So the king of Israel disguised himself, and they went into the battle.
+  to: Then the king of Israel said to Jehoshaphat, “I will disguise myself and go into the battle, but you, put on your robes.” So the king of Israel disguised himself, and they went into the battle.
   rationale: Changed 'I will disguise myself' to 'Disguise yourself' to match the Hebrew imperative הִתְחַפֵּשׂ addressed to Jehoshaphat. Kept the rest substantially the same.
 
+- timestamp: '2026-05-17T02:06:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king of Israel said to Jehoshaphat[a], “Disguise yourself and go into the battle, but you, put on your robes.” So the king of Israel disguised himself, and they went into the battle.'
+  to: 'Then the king of Israel said to Jehoshaphat[a], “Disguise yourself and go into the battle, but you, put on your robes.” So the king of Israel disguised himself, and they went into the battle.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I will disguise myself''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
