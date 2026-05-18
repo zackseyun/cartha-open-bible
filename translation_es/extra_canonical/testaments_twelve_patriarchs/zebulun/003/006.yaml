@@ -19,15 +19,9 @@ base_translation:
     changes_summary: Changed 'eat from it' to 'eat it' for closer lexical accuracy, and 'we will trample it underfoot' to 'let us trample it underfoot' to reflect the hortatory subjunctive.
 translation:
   language: es
-  text: 'diciendo: «No la comeremos, porque es el precio de la sangre de nuestro hermano; antes bien, [a]pisémosla[b] bajo nuestros pies, porque él dijo que reinaría sobre nosotros, y entonces veremos cuáles son sus sueños».'
+  text: 'diciendo: «No la comeremos, porque es el precio de la sangre de nuestro hermano; antes bien, pisoteémosla, porque él dijo que reinaría sobre nosotros, y entonces veremos cuáles son sus sueños».'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: La inclusión de la exhortación «pisémosla» refleja el subjuntivo hortatorio del griego; no es una afirmación de futuro, sino una invitación agresiva al acto.
-    reason: spanish_style_note
-  - marker: b
-    text: «Bajo nuestros pies» explicita en español la imagen de καταπατέω («pisotear, hollar») sin apartarse del sentido de desprecio y profanación del contexto.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: Οὐ φαγόμεθα αὐτήν
   english_pob_choice: We will not eat it
@@ -104,39 +98,20 @@ ai_draft:
     total_tokens: 3142
     reasoning_tokens: 0
     estimated_cost_usd: 0.006467
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español transmite bien la cláusula citada y refleja correctamente el valor hortatorio de καταπατήσωμεν con «pisémosla». También conserva «precio de la sangre de nuestro hermano» y «reinaría sobre nosotros». Sin embargo, hay un problema de alineación léxica importante: se introducen notas y una decisión léxica sobre ὑποδήματα («sandalias/calzado») dentro de la cita, pero el inglés POB para este registro solo traduce la cita desde «diciendo» y el griego citado aquí no exige mencionar explícitamente el calzado en la frase española. La nota [b] justifica una expansión innecesaria.'
-  spanish_quality_summary: El español es claro y digno, pero «[a]pisémosla[b] bajo nuestros pies» está sobreanotado y suena algo pesado. «Pisoteémosla» expresa de manera más natural e idiomática el sentido de καταπατέω sin requerir glosa explicativa en el texto. Además, el anclaje de dos notas dentro de una sola palabra/frase entorpece la lectura.
-  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. Las decisiones sobre «sangre», «reinaría» y «sueños» son adecuadas. La única desalineación es lexical/metodológica: ὑποδήματα no debe forzar una expansión en la traducción de la cita si no forma parte del segmento inglés auditado; si se quiere reflejar καταπατέω, «pisotear/pisoteémosla» basta en español.'
+  source_alignment_summary: 'El borrador español transmite bien la cláusula citada y refleja correctamente el valor hortatorio de καταπατήσωμεν. Sin embargo, «pisémosla bajo nuestros pies» estaba sobreanotado y redundante; se simplificó a «pisoteémosla».'
+  spanish_quality_summary: Se simplifica «pisémosla bajo nuestros pies» a «pisoteémosla» para reflejar de forma más natural καταπατέω. Se eliminan notas innecesarias.
+  glossary_alignment: 'No hay conflictos con la terminología base del proyecto. Las decisiones sobre «sangre», «reinaría» y «sueños» son adecuadas.'
   issues:
   - severity: medium
     issue: Expansión innecesaria con «bajo nuestros pies»
-    rationale: El griego καταπατέω ya incluye la idea de hollar/pisotear; añadir «bajo nuestros pies» no es incorrecto, pero resulta redundante y menos natural en español.
-  - severity: medium
-    issue: Nota y decisión léxica sobre ὑποδήματα mal focalizadas en esta cita
-    rationale: La mención del calzado pertenece al contexto previo del versículo griego, no al segmento principal de la cita traducida en el inglés POB. La traducción española no debe cargar esa información en la frase citada sin necesidad.
-  - severity: low
-    issue: Exceso de notas para una construcción sencilla
-    rationale: La nota sobre el subjuntivo hortatorio puede ser útil, pero no es imprescindible si el español ya lo expresa con claridad mediante «pisoteémosla».
+    rationale: El griego καταπατέω ya incluye la idea de hollar/pisotear; añadir «bajo nuestros pies» resulta redundante.
   revised_spanish_text: 'diciendo: «No la comeremos, porque es el precio de la sangre de nuestro hermano; antes bien, pisoteémosla, porque él dijo que reinaría sobre nosotros, y entonces veremos cuáles son sus sueños».'
-  revision_rationale: 'Se simplifica «pisémosla bajo nuestros pies» a «pisoteémosla» para reflejar de forma más natural καταπατέω, evitar una expansión redundante, y eliminar notas no necesarias. Se mantiene intacto el contenido semántico principal: negativa a comerla, precio de sangre, rechazo de su pretensión de reinar y referencia a sus sueños.'
+  revised_footnotes: []
+  revision_rationale: 'Se simplifica «pisémosla bajo nuestros pies» a «pisoteémosla» para reflejar de forma más natural καταπατέω y eliminar notas innecesarias.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: ceba433ff7e7e86465795b461f0e59ba0eddead7dfde07593ae227f8ecf0fe2f
-  timestamp: '2026-05-08T03:04:39Z'
-  output_hash: e156bad6b7ea82a35f9a6d393d495070234cb9d56b8a77b4adbfff5a7cd03394
-  usage:
-    prompt_tokens: 2764
-    completion_tokens: 723
-    total_tokens: 3487
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.017755
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

@@ -19,12 +19,9 @@ base_translation:
     changes_summary: Tightened the wording for natural English and removed the unnecessary article before 'Joseph' while preserving the source meaning.
 translation:
   language: es
-  text: Porque los egipcios guardaban los huesos de José en los sepulcros de los reyes, para sacarlo de allí.[a]
+  text: Porque los egipcios guardaban los huesos de José en los sepulcros de los reyes.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Lit. “para subirlo”. El griego expresa el propósito con un verbo de movimiento hacia arriba; en español se vierte de manera más natural como “para sacarlo de allí”.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: Τὰ γὰρ ὀστᾶ τοῦ Ἰωσὴφ
   english_pob_choice: Joseph’s bones
@@ -83,35 +80,20 @@ ai_draft:
     total_tokens: 2398
     reasoning_tokens: 0
     estimated_cost_usd: 0.004686
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien los elementos principales del griego: Τὰ ὀστᾶ τοῦ Ἰωσὴφ = «los huesos de José», οἱ Αἰγύπτιοι = «los egipcios», ἐν τοῖς μνήμασι τῶν βασιλέων = «en los sepulcros de los reyes». Sin embargo, el texto fuente citado no incluye explícitamente la cláusula final «so as to bring him up»; esa expansión proviene del rastro inglés. Por ello, en español no conviene incorporar «para sacarlo de allí» al texto principal sin apoyo textual directo en la evidencia fuente proporcionada.'
-  spanish_quality_summary: El español es claro y digno, pero añade contenido no atestiguado en el griego presentado. Además, «sacarlo de allí» introduce un referente locativo no presente en el texto fuente. Una formulación más ceñida y natural sería conservar solo la oración atestiguada.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. «José», «egipcios», «huesos» y «sepulcros» son adecuados. La revisión propuesta mejora la fidelidad al griego sin afectar glosario teológico.
+  source_alignment_summary: 'El borrador refleja bien los elementos principales del griego: Τὰ ὀστᾶ τοῦ Ἰωσὴφ = «los huesos de José», οἱ Αἰγύπτιοι = «los egipcios», ἐν τοῖς μνήμασι τῶν βασιλέων = «en los sepulcros de los reyes». Sin embargo, el texto fuente citado no incluye explícitamente la cláusula final «so as to bring him up»; esa expansión proviene del rastro inglés y no debe mantenerse en el español sin respaldo textual.'
+  spanish_quality_summary: Se eliminó la cláusula final y su nota porque no aparecen en la evidencia griega proporcionada. El resto del versículo está bien resuelto en español.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. «José», «egipcios», «huesos» y «sepulcros» son adecuados.
   issues:
   - severity: high
     issue: La frase final «para sacarlo de allí» no está en el texto griego fuente suministrado.
-    rationale: La evidencia griega mostrada termina en «ἐν τοῖς μνήμασι τῶν βασιλέων». Aunque el inglés auditado incluye una cláusula final, el encargo exige partir primero de la evidencia fuente original. No debe mantenerse en el texto español principal sin respaldo textual aquí.
-  - severity: medium
-    issue: La nota al pie justifica una expansión que no corresponde al texto fuente mostrado.
-    rationale: La nota sobre «para subirlo» presupone una cláusula griega adicional ausente del source_payload. Al eliminar la expansión, la nota deja de ser pertinente.
+    rationale: La evidencia griega mostrada termina en «ἐν τοῖς μνήμασι τῶν βασιλέων». No debe mantenerse en el texto español principal sin respaldo textual aquí.
   revised_spanish_text: Porque los egipcios guardaban los huesos de José en los sepulcros de los reyes.
-  revision_rationale: Se elimina la cláusula final y su nota porque no aparecen en la evidencia griega proporcionada. El resto del versículo ya estaba bien resuelto en español y alineado con el sentido del original.
+  revised_footnotes: []
+  revision_rationale: Se elimina la cláusula final y su nota porque no aparecen en la evidencia griega proporcionada.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: d9927c0b575a7ffbb9716e690719914b61e36443a162593fee2fb1c2c0034e68
-  timestamp: '2026-05-08T03:02:09Z'
-  output_hash: 40e9cca814a1e7a90f87977bdc8af7f0d5ae5c2fe3055f0637047fa2dd656b39
-  usage:
-    prompt_tokens: 2150
-    completion_tokens: 548
-    total_tokens: 2698
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.013595
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

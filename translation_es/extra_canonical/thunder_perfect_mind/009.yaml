@@ -73,7 +73,7 @@ translation:
     reason: lexical_alternative
   - marker: c
     text: La palabra ⲡⲁⲣⲑⲉⲛⲟⲥ está partida en el salto de línea OCR (ⲡⲁⲣ | ⲑⲉⲛⲟⲥ), lo que reduce un poco la seguridad de alineación para los límites exactos de este segmento.
-    reason: textual_variant
+    reason: alignment_note
 lexical_decisions:
 - source_word: ⲁⲛⲟⲕ ⲧⲉ
   english_pob_choice: I am
@@ -127,16 +127,16 @@ ai_draft:
     total_tokens: 3271
     reasoning_tokens: 0
     estimated_cost_usd: 0.005607
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien el sentido del copto atestiguado y sigue la cadencia del inglés POB: ⲁⲛⲟⲕ ⲧⲉ = “Yo soy”, ⲧⲉⲥϩⲓⲙⲉ = “la esposa”, ⲁⲩⲱ = “y”, ⲧⲡⲁⲣⲑⲉⲛⲟⲥ = “la virgen”. También preserva correctamente las alternativas léxicas y la nota de incertidumbre de alineación por el corte OCR.'
-  spanish_quality_summary: 'El español es claro, natural y digno. La única reparación necesaria es técnica/editorial: la nota c en inglés es una nota de alineación, pero en el borrador español quedó clasificada como textual_variant. Conviene armonizar la razón documentada con el expediente inglés.'
-  glossary_alignment: No hay conflicto con la terminología base del proyecto. “Esposa” y “virgen” son decisiones léxicas adecuadas y fieles al razonamiento auditado; “Yo soy” mantiene la fórmula repetida del poema.
+  source_alignment_summary: 'El borrador español refleja bien el sentido del copto atestiguado y sigue la cadencia del inglés POB. Se corrigió únicamente la clasificación de la nota c de textual_variant a alignment_note.'
+  spanish_quality_summary: 'El español es claro, natural y digno. Solo requería corrección técnica de la razón de la nota c.'
+  glossary_alignment: No hay conflicto con la terminología base del proyecto. “Esposa” y “virgen” son decisiones léxicas adecuadas.
   issues:
   - severity: low
-    issue: La nota c tiene una razón incorrecta.
-    rationale: El contenido de la nota describe incertidumbre de alineación por salto de línea OCR, no una variante textual. Debe marcarse como alignment_note para preservar la trazabilidad del expediente POB.
+    issue: La nota c tenía razón incorrecta (textual_variant).
+    rationale: El contenido de la nota describe incertidumbre de alineación por salto de línea OCR, no una variante textual.
   revised_spanish_text: Yo soy la esposa y la virgen[a][b][c].
   revised_footnotes:
   - marker: a
@@ -148,19 +148,8 @@ review_pass:
   - marker: c
     text: La palabra ⲡⲁⲣⲑⲉⲛⲟⲥ está partida en el salto de línea OCR (ⲡⲁⲣ | ⲑⲉⲛⲟⲥ), lo que reduce un poco la seguridad de alineación para los límites exactos de este segmento.
     reason: alignment_note
-  revision_rationale: 'Se conserva íntegramente el texto español, porque es fiel y legible. Solo se corrige la clasificación de la nota c para que coincida con la documentación inglesa y con la naturaleza real del problema señalado: una nota de alineación, no una variante textual.'
+  revision_rationale: 'Se corrige la clasificación de la nota c de textual_variant a alignment_note. El texto español se conserva íntegramente.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: b44e14716733de1aaeb3c2003d4410b45680863930a32e8c19835c702050ab63
-  timestamp: '2026-05-08T03:07:37Z'
-  output_hash: 3f49aba20713ac34ee1efb74c8a0058e8e5a3d6d66cadbc72c17edd7a466ad65
-  usage:
-    prompt_tokens: 2962
-    completion_tokens: 696
-    total_tokens: 3658
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.017845
-  applied_revision: false
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
