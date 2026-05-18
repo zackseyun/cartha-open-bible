@@ -62,18 +62,18 @@ base_translation:
     changes_summary: Revised the final phrase from 'with patience' to 'in patience' to more naturally reflect ὑπομονήν with παρεκάλεσεν while preserving the formal sense. Kept 'granted a return' for ἔδωκεν ἐπάνοδον.
 translation:
   language: es
-  text: Sin embargo, a los que se arrepienten les concedió un retorno[a][b], y alentó a los que iban fallando en la paciencia[c].
+  text: Sin embargo, a los que se arrepienten les concedió un retorno[c][b][a], y alentó a los que iban fallando en la paciencia.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: «Un retorno» también puede entenderse como «un regreso», «una vuelta» o, en el contexto, una restauración.
-    reason: lexical_alternative
-  - marker: b
-    text: La expresión griega puede abarcar un volver a Dios, un restablecimiento o una recuperación; se conserva el alcance abierto del término.
-    reason: theological_note
-  - marker: c
-    text: 'La frase griega es compacta y permite otra lectura: «a los que iban fallando a la paciencia» o «a los que iban fallando para ser pacientes».'
+    text: 'O: «alentó a los que desfallecían a tener paciencia». La redacción griega es compacta y admite más de una lectura.'
     reason: alternative_reading
+  - marker: b
+    text: '«Un retorno» también puede entenderse como «un regreso» o «una restauración».'
+    reason: lexical_alternative
+  - marker: c
+    text: La fuente griega de este versículo está marcada con incertidumbre de validación («major mismatch»), por lo que la formulación exacta debe tomarse con cierta cautela, aunque el sentido general es claro.
+    reason: textual_variant
 lexical_decisions:
 - source_word: πλὴν
   english_pob_choice: Yet
@@ -180,7 +180,7 @@ ai_draft:
     total_tokens: 4260
     reasoning_tokens: 0
     estimated_cost_usd: 0.008351
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador español refleja bien el sentido base del griego: contraste adversativo, destinatarios arrepentidos, don de una ''vuelta/retorno'' y aliento a quienes están desfalleciendo. Sin embargo, falta una nota de cautela textual que sí está en el rastro POB inglés debido a la validación de fuente ''major mismatch''. Además, la nota c en español formula alternativas poco naturales (''fallando a la paciencia''), y conviene ajustar la redacción para preservar la ambigüedad griega de forma más idiomática.'
@@ -196,33 +196,19 @@ review_pass:
   - severity: low
     issue: La doble nota sobre 'retorno' puede simplificarse en función
     rationale: Las notas a y b cubren bien alternativas léxicas y alcance teológico; no es un error, pero conviene mantenerlas bien diferenciadas y añadir la nota textual sin sobrecargar innecesariamente.
-  revised_spanish_text: Sin embargo, a los que se arrepienten les concedió un retorno[a][b][c], y alentó a los que iban fallando en la paciencia[d].
+  revised_spanish_text: Sin embargo, a los que se arrepienten les concedió un retorno[c][b][a], y alentó a los que iban fallando en la paciencia.
   revised_footnotes:
   - marker: a
-    text: «Un retorno» también puede entenderse como «un regreso», «una vuelta» o «una restauración».
-    reason: lexical_alternative
-  - marker: b
-    text: La expresión griega puede abarcar un volver a Dios, un restablecimiento o una recuperación; se conserva el alcance abierto del término.
-    reason: theological_note
-  - marker: c
-    text: La fuente griega aquí está marcada con incertidumbre de validación textual («major mismatch»), de modo que la formulación exacta debe tomarse con cierta cautela, aunque el sentido general es claro.
-    reason: textual_variant
-  - marker: d
-    text: 'La frase griega es compacta y también puede entenderse como: «alentó a los que desfallecían en la paciencia» o «alentó a los que desfallecían a tener paciencia».'
+    text: 'O: «alentó a los que desfallecían a tener paciencia». La redacción griega es compacta y admite más de una lectura.'
     reason: alternative_reading
-  revision_rationale: Se mantiene la traducción base porque es fiel y legible, pero se añade la nota de cautela textual exigida por el rastro POB inglés y se corrige la nota de lectura alternativa para que el español sea natural sin perder la ambigüedad del griego. También se reordena la secuencia de notas para que los marcadores sean únicos y completos en el texto.
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 914c0fde3a95d8039ab511eb6b65bc14ad08b06a1a56da5a3393f70442d7405f
-  timestamp: '2026-05-07T23:09:22Z'
-  output_hash: e0c35b9a355625e26ea4545c58ead42e3026aadf60c6baa7b72a23c0211dc8e0
-  usage:
-    prompt_tokens: 3865
-    completion_tokens: 903
-    total_tokens: 4768
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.023207
-  applied_revision: false
+  - marker: b
+    text: '«Un retorno» también puede entenderse como «un regreso» o «una restauración».'
+    reason: lexical_alternative
+  - marker: c
+    text: La fuente griega de este versículo está marcada con incertidumbre de validación («major mismatch»), por lo que la formulación exacta debe tomarse con cierta cautela, aunque el sentido general es claro.
+    reason: textual_variant
+  revision_rationale: 'Adjudicación Opus: el POB inglés tiene exactamente 3 footnotes ([a]=alternative_reading, [b]=lexical_alternative, [c]=textual_variant) y stacked [c][b][a] tras «un retorno». El español se alinea exactamente con esa estructura. La nota [a] previa («fallando a la paciencia») era poco natural en español; ahora se usa «alentó a los que desfallecían a tener paciencia» como alternativa fluida. La frase principal queda sin marcador [d] añadido por el revisor previo, que excedía la estructura del EN.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

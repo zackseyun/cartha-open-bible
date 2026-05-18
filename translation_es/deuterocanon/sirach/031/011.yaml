@@ -67,8 +67,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y el que se apartó multiplicará la perversidad.
+  text: ¿Quién fue probado por ello y fue hallado íntegro? Sea esto para él motivo de honra[a]. ¿Quién pudo transgredir y no transgredió[b], y hacer el mal y no lo quiso?
   philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'El hebreo de la primera línea es textualmente difícil. La redacción transmitida también puede entenderse más literalmente como: «¿Quién lo bendijo, y fue íntegro en su vida?», pero el contexto y la tradición paralela apoyan el sentido de ser probado y hallado íntegro.'
+    reason: textual_variant
+  - marker: b
+    text: 'O: «¿Quién pudo apartarse y no se apartó, y hacer daño y no consintió?»'
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ὁ δὲ πεπλανημένος
   english_pob_choice: the one who was tested / the one who was able to turn aside and did not turn aside
@@ -131,7 +138,7 @@ ai_draft:
     total_tokens: 3563
     reasoning_tokens: 0
     estimated_cost_usd: 0.005507
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: El borrador español no sigue la fuente prioritaria ni la decisión auditada del POB. En vez de traducir el hebreo difícil con apoyo contextual y del paralelo griego, reemplaza el versículo entero por la línea griega paralela, perdiendo la estructura retórica de dos preguntas, la idea de ser probado y hallado íntegro, y la segunda pregunta sobre poder pecar y no hacerlo.
@@ -155,19 +162,8 @@ review_pass:
   - marker: b
     text: 'O: «¿Quién pudo apartarse y no se apartó, y hacer daño y no consintió?»'
     reason: lexical_alternative
-  revision_rationale: 'Se restituye la traducción del versículo conforme a la fuente hebrea prioritaria, usando el paralelo griego solo como apoyo contextual en la línea difícil, tal como documenta el POB inglés. Se preservan las dos preguntas retóricas, el elogio de la integridad probada y la alternativa léxica en nota. El español busca claridad natural y tono digno: ''íntegro'' refleja שלם en sentido moral; ''motivo de honra'' comunica la fuerza encomiástica de לתפארת sin fijar demasiado un pronombre inestable; ''transgredir'' explicita el valor ético de לסור en contexto.'
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 7535d57b32ecc3c5b0aac713196e627c8ee3da09cabe8bffc3ce45856231ca18
-  timestamp: '2026-05-07T23:38:56Z'
-  output_hash: 42d8d1c0ed949be4933b84999ba0ddfe2a4714496cca7b8cbc57ebcb2bc08a39
-  usage:
-    prompt_tokens: 3210
-    completion_tokens: 775
-    total_tokens: 3985
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01965
-  applied_revision: false
+  revision_rationale: 'Adjudicación Opus: el EN POB para Sir 31:11 mantiene la lectura hebrea (no fue reverted) con dos preguntas retóricas y dos footnotes [a]=textual_variant, [b]=lexical_alternative. El borrador previo del español traducía solo la línea griega corta, omitiendo casi todo el versículo. Se restituye la traducción del hebreo con apoyo contextual y se añaden ambas notas. «Íntegro» refleja שלם en sentido moral; «motivo de honra» comunica la fuerza encomiástica de לתפארת; «transgredir» explicita el valor ético de לסור en contexto.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

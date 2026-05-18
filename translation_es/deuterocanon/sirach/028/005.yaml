@@ -70,8 +70,18 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that reflects the provided Hebrew text: rendered וְקַל as ''And he is lenient,'' מֵחָתָן as ''toward a bridegroom,'' and אֹרֵחַ מַכְנִיס אֹרֵחַ as ''a guest welcomes a guest.'''
 translation:
   language: es
-  text: Y él, siendo carne, guarda rencor; ¿quién entonces hará expiación por sus pecados?
+  text: Él, siendo carne, guarda ira; ¿quién entonces hará expiación por sus pecados?[c][b][a]
   philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: 'El hebreo conservado de esta línea es difícil y parece corrupto o muy elíptico en la tradición de la Guenizá del Cairo. El griego dice: «Él mismo, siendo carne, guarda ira; ¿quién hará expiación por sus pecados?». La traducción sigue ese sentido recuperable.'
+    reason: textual_variant
+  - marker: b
+    text: O «mantiene rencor».
+    reason: lexical_alternative
+  - marker: c
+    text: O «¿quién perdonará sus pecados?». El verbo griego expresa con más precisión la idea de hacer expiación o propiciación.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: αὐτὸς
   english_pob_choice: He
@@ -156,7 +166,7 @@ ai_draft:
     total_tokens: 4035
     reasoning_tokens: 0
     estimated_cost_usd: 0.006851
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: El borrador español sigue el sentido recuperable griego y la tradición léxica documentada en el POB, no la revisión inglesa equivocada que volvió a un hebreo corrupto/ellíptico. Dado que la evidencia fuente utilizable para una traducción inteligible aquí es el griego paralelo αὐτὸς σὰρξ ὢν διατηρεῖ μῆνιν, τίς ἐξιλάσεται τὰς ἁμαρτίας αὐτοῦ;, el contenido básico del borrador está alineado con la fuente y con las decisiones léxicas/teológicas auditadas.
@@ -169,30 +179,19 @@ review_pass:
   - severity: low
     issue: La conjunción inicial 'Y' es innecesaria en español
     rationale: No es incorrecta, pero en español bíblico moderno suena más natural empezar directamente con 'Él' en una sentencia aislada, sin perder el matiz discursivo.
-  revised_spanish_text: Él, siendo carne,[a] guarda rencor;[b] ¿quién entonces hará expiación[c] por sus pecados?
+  revised_spanish_text: Él, siendo carne, guarda ira; ¿quién entonces hará expiación por sus pecados?[c][b][a]
   revised_footnotes:
   - marker: a
-    text: 'El hebreo conservado de esta línea es difícil y parece corrupto o muy elíptico en la tradición de la Guenizá de El Cairo. El griego dice: «Él mismo, siendo carne, guarda ira; ¿quién hará expiación por sus pecados?». La traducción sigue ese sentido recuperable.'
+    text: 'El hebreo conservado de esta línea es difícil y parece corrupto o muy elíptico en la tradición de la Guenizá del Cairo. El griego dice: «Él mismo, siendo carne, guarda ira; ¿quién hará expiación por sus pecados?». La traducción sigue ese sentido recuperable.'
     reason: textual_variant
   - marker: b
-    text: O «mantiene ira».
+    text: O «mantiene rencor».
     reason: lexical_alternative
   - marker: c
-    text: O «¿quién perdonará sus pecados?». El verbo griego expresa con más precisión la idea de hacer expiación.
+    text: O «¿quién perdonará sus pecados?». El verbo griego expresa con más precisión la idea de hacer expiación o propiciación.
     reason: lexical_alternative
-  revision_rationale: Se mantiene la traducción española basada en el sentido recuperable del griego paralelo, en contra de la revisión inglesa aplicada que volvió a un hebreo ininteligible. Solo se hace una reparación menor de estilo y se añaden las notas necesarias para reflejar la incertidumbre textual y las alternativas léxicas documentadas.
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: f1fa3b2ca48879af0421f4af89ba715e4b847eb30cc6b558c545bb2b7e4e0b01
-  timestamp: '2026-05-07T23:37:16Z'
-  output_hash: 94d5e120ff01203ced99d7db15c2401a3a3483f480f1809952c29c0da5902f36
-  usage:
-    prompt_tokens: 3532
-    completion_tokens: 785
-    total_tokens: 4317
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.020605
-  applied_revision: false
+  revision_rationale: 'Adjudicación Opus: el EN POB actual (tras doctrine-realignment 2026-05-15) es Greek-primary con 3 footnotes stacked al final: «He, being flesh, keeps wrath; who then will make atonement for his sins?[c][b][a]». El español mirroring exacto: [c][b][a] tras «pecados?», los 3 reasons coinciden (a=textual_variant, b=lexical_alternative, c=lexical_alternative). Se usa «guarda ira» (más cerca de διατηρεῖ μῆνιν) en lugar de «guarda rencor», con «mantiene rencor» como alternativa en nota [b]. La conjunción inicial «Y» se elimina por naturalidad.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

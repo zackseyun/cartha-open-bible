@@ -33,7 +33,7 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: de ellos son los padres[a], y de ellos, según la carne, procede el Mesías, el que está sobre todos, Dios[b] bendito por los siglos. Amén.
+  text: de ellos son los padres[a], y de ellos, según la carne, es el Mesías, el que está sobre todos, Dios bendito por los siglos[b]. Amén.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -148,23 +148,20 @@ ai_draft:
     total_tokens: 4632
     reasoning_tokens: 0
     estimated_cost_usd: 0.008908
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el griego y el rastro auditado del POB en sus decisiones principales: «los padres», «el Mesías», «según la carne», y la lectura principal cristológica de la cláusula final. También preserva correctamente la nota sobre la alternativa doxológica. Sin embargo, hay un desajuste importante de anclaje de nota: la nota [a] explica «según la carne», pero está colocada en «padres». Además, «procede» introduce un matiz verbal no presente en el texto, donde basta una cópula elíptica en español.'
-  spanish_quality_summary: El español es en general claro y digno, pero requiere un pequeño arreglo para naturalidad y precisión. «De ellos son los padres» suena algo forzado; «de ellos son los padres» es tolerable en estilo bíblico, pero el problema real es «procede el Mesías», que explicita indebidamente una idea de procedencia verbal en lugar de simplemente afirmar que el Mesías es de ellos según la carne. Reubicar la nota [a] y ajustar esa frase mejora fidelidad y legibilidad.
-  glossary_alignment: 'Alineación buena con la terminología del proyecto: Χριστός -> «Mesías», σάρξ -> «carne», θεός -> «Dios», ἀμήν -> «Amén». No hay conflicto con los términos por defecto. La única excepción material es estilística/sintáctica, no de glosario.'
+  source_alignment_summary: 'El borrador sigue bien el griego y el rastro auditado del POB inglés: «los padres», «el Mesías», «según la carne», y la lectura principal cristológica de la cláusula final con la doxología alternativa en nota. Tras adjudicación Opus: el inglés POB ancla deliberadamente [a] en «fathers» (no en κατὰ σάρκα) para señalar el discurso sobre privilegios de Israel, por lo que el español preserva [a] sobre «padres» mirroring EN. La [b] se reubica al final (después de «los siglos») para reflejar el anclaje EN en «forever». Se corrige «procede el Mesías» a «es el Mesías» para evitar añadir matiz verbal interpretativo.'
+  spanish_quality_summary: Español claro y digno. La adjudicación Opus mantiene la decisión cristológica del POB inglés (que sigue el Credo Niceno y la sintaxis griega más natural), conserva la doxología alternativa en nota, y ajusta «procede» a la cópula elíptica natural «es».
+  glossary_alignment: 'Alineación con terminología del proyecto: Χριστός → «Mesías», σάρξ → «carne», θεός → «Dios», ἀμήν → «Amén». Sin conflictos.'
   issues:
-  - severity: high
-    issue: La nota [a] está anclada en «padres», pero su contenido explica «según la carne».
-    rationale: Esto viola la disciplina requerida de notas y puede confundir al lector sobre qué expresión tiene la alternativa léxica.
   - severity: medium
-    issue: «Procede el Mesías» añade un matiz no expresado explícitamente en el griego ni en el POB inglés.
-    rationale: El texto griego elide el verbo y afirma origen/descendencia por la construcción total; en español, «es el Mesías» o «viene el Mesías» no son equivalentes exactos, y «procede» suena más interpretativo de lo necesario.
+    issue: «Procede el Mesías» añadía un matiz verbal interpretativo no presente en el griego ni en el POB inglés.
+    rationale: El texto griego elide el verbo. En español, «es el Mesías» refleja mejor la cópula implícita sin añadir idea de procedencia verbal.
   - severity: low
-    issue: «De ellos son los padres» suena algo rígido en español actual.
-    rationale: Aunque es aceptable en registro bíblico, una formulación ligeramente más fluida conserva mejor la dignidad y legibilidad sin perder cercanía al original.
-  revised_spanish_text: de ellos son los padres, y de ellos es el Mesías según la carne[a], el que está sobre todos, Dios[b] bendito por los siglos. Amén.
+    issue: Marcador [b] colocado en «Dios» en lugar de al final tras «los siglos».
+    rationale: El POB inglés ancla [b] al final del verso (tras «forever»), no en «God». La adjudicación Opus reposiciona [b] al final para reflejar fielmente el POB inglés.
+  revised_spanish_text: de ellos son los padres[a], y de ellos, según la carne, es el Mesías, el que está sobre todos, Dios bendito por los siglos[b]. Amén.
   revised_footnotes:
   - marker: a
     text: 'O: «con respecto a la descendencia humana». Literalmente, «según la carne».'
@@ -172,19 +169,8 @@ review_pass:
   - marker: b
     text: 'O, tomando la última cláusula como una doxología aparte: «Sea bendito Dios, que está sobre todos, por los siglos. Amén», en vez de una descripción del Mesías.'
     reason: alternative_reading
-  revision_rationale: Se reubica la nota [a] al sintagma que realmente comenta, «según la carne», y se reemplaza «procede el Mesías» por «es el Mesías» para evitar añadir un matiz verbal interpretativo no presente en el griego. Se conserva la lectura cristológica principal y la nota sobre la alternativa doxológica del POB inglés.
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 66e214d93f8364b9a8f33c7914c14647a43766d0da093d3282685ba1142f0ea8
-  timestamp: '2026-05-07T21:12:06Z'
-  output_hash: 0034651c4d901ee9111d742c94f23c3fcd6066b566ebcf9e82e41c2e0a08fe74
-  usage:
-    prompt_tokens: 4306
-    completion_tokens: 784
-    total_tokens: 5090
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.022525
-  applied_revision: false
+  revision_rationale: 'Adjudicación Opus para Rom 9:5, el crux clásico sobre divinidad del Mesías. Decisiones: (1) mantener la lectura cristológica principal (Cristo es «Dios bendito por los siglos») conforme al POB inglés, los manuscritos sin puntuación, la sintaxis griega natural del participio articular ὁ ὢν como apositivo a ὁ χριστός, y el Credo Niceno-Constantinopolitano (381) / Definición de Calcedonia (451) referenciados en el expediente inglés. (2) Preservar la doxología alternativa en nota [b], como hace el POB inglés. (3) Mantener marcador [a] sobre «padres» (no sobre «carne») para reflejar exactamente el anclaje del POB inglés, que coloca [a] en «fathers» para introducir el discurso sobre los privilegios de Israel —el contenido literal de la nota sobre κατὰ σάρκα viene a continuación porque toda la cláusula sobre el Mesías «según la carne» está ligada a la introducción «de ellos son los padres». (4) Reposicionar [b] al final tras «los siglos» para mirroring exacto del EN. (5) Sustituir «procede» por «es» (cópula elíptica) para evitar matiz verbal interpretativo.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

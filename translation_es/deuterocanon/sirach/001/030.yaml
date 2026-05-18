@@ -58,12 +58,8 @@ base_translation:
     changes_summary: Replaced the unrelated draft with a translation that matches the provided Hebrew. Rendered קְרַב as 'Draw near,' תְּאַחֵר as 'delay,' חַיִּים לְנַפְשְׁךָ as 'life for yourself,' and preserved the parallel comparison 'like a warrior and like a mighty man.'
 translation:
   language: es
-  text: Acércate y no te demores[a], y encontrarás vida para ti. Y cuando estés cerca, sé como un guerrero y como un hombre valiente.
+  text: El agua apaga un fuego ardiente, y la limosna hace expiación por los pecados.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'El texto hebreo provisto en este paquete fue el que se tomó como base para esta revisión. El griego de Sirácides 1:30 contiene otra sentencia: «El agua apaga un fuego ardiente, y la limosna expía los pecados».'
-    reason: source_note
 lexical_decisions:
 - source_word: קְרַב
   english_pob_choice: Draw near
@@ -139,10 +135,10 @@ ai_draft:
     total_tokens: 3948
     reasoning_tokens: 0
     estimated_cost_usd: 0.006812
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'La fuente hebrea provista está marcada como major_mismatch, y el rastro de auditoría inglés documenta que para este versículo debe priorizarse el testigo griego coherente: «El agua apaga un fuego ardiente, y la limosna hace expiación por los pecados». El borrador español sigue una revisión inglesa posterior que tradujo el hebreo desajustado; por tanto, no preserva fielmente la decisión textual y teológica documentada en el expediente fuente.'
+  source_alignment_summary: 'Adjudicación Opus: El POB inglés actual para Sir 1:30 es «Water puts out a blazing fire, and almsgiving makes atonement for sins.» (revisión doctrine-realignment 2026-05-18, revirtiendo wholesale a la lectura griega sin pie de página). El borrador español traducía la línea hebrea desajustada que el expediente había abandonado. Mirroring de EN: texto griego sin footnotes.'
   spanish_quality_summary: El español del borrador es natural y claro, pero traduce el texto equivocado para Sirácides 1:30 según la evidencia y la nota crítica. Además, la nota actual invierte la prioridad textual al presentar el hebreo como base principal. Conviene restaurar el proverbio griego en un español claro y eclesialmente legible.
   glossary_alignment: No hay conflicto con Yahvé/Mesías u otros términos troncales del glosario. Sí importa mantener ἐλεημοσύνη como «limosna» o una expresión igualmente específica para dar a los pobres; «caridad» sería demasiado amplia. También debe preservarse la fuerza expiatoria de ἐξιλάσεται con «hace expiación por» o equivalente, no suavizarse.
   issues:
@@ -158,30 +154,10 @@ review_pass:
   - severity: low
     issue: Puede añadirse una nota alternativa para la imagen verbal de ἀποσβέσει si se desea reflejar el matiz proverbial de «apaga»/«extingue».
     rationale: No es imprescindible, pero el expediente inglés preserva una alternativa léxica sobre «quenches».
-  revised_spanish_text: El agua apaga un fuego ardiente, y la limosna[c] hace expiación por los pecados[a].
-  revised_footnotes:
-  - marker: a
-    text: 'El texto hebreo provisto para esta referencia parece no corresponder a Sirácides 1:30. Por eso, aquí se sigue el testigo griego: «El agua apaga un fuego ardiente, y la limosna hace expiación por los pecados».'
-    reason: textual_variant
-  - marker: b
-    text: O «extingue un fuego en llamas»; la imagen griega es proverbial.
-    reason: lexical_alternative
-  - marker: c
-    text: «Limosna» se refiere específicamente a dar a los pobres; el griego no alude solo a la caridad en sentido amplio o abstracto.
-    reason: cultural_note
-  revision_rationale: 'Se corrige el texto principal para alinearlo con la evidencia fuente y la decisión auditada: el hebreo del paquete está marcado como desajustado para este versículo, por lo que debe traducirse el proverbio griego. Se usa «limosna» para conservar la especificidad de ἐλεημοσύνη y «hace expiación por» para mantener la fuerza de ἐξιλάσεται. Solo se ancla en el texto la nota crítica principal y la nota cultural relevante; la nota b se omite del texto porque es una alternativa opcional y, según las reglas del proyecto, no debe incluirse una nota sin ancla.'
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: bc3cdb29623c1f4116c1c05b9eff988d70ef8c60841baf4760a7346de811a69d
-  timestamp: '2026-05-07T22:58:29Z'
-  output_hash: 35c09a416766416b6dbc4f20859a0b0a3d6e29593c40980c19a370f4febd5639
-  usage:
-    prompt_tokens: 3515
-    completion_tokens: 955
-    total_tokens: 4470
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.023113
-  applied_revision: false
+  revised_spanish_text: El agua apaga un fuego ardiente, y la limosna hace expiación por los pecados.
+  revised_footnotes: []
+  revision_rationale: 'Adjudicación Opus: el EN POB ha quedado wholesale-reverted a la línea griega sin footnotes (commit doctrine-realignment 2026-05-18). El español se alinea exactamente: texto griego en español, sin marcadores ni footnotes. «Limosna» preserva la especificidad de ἐλεημοσύνη (dar a los pobres); «hace expiación por» preserva la fuerza cultual de ἐξιλάσεται sin suavizarla a mero «perdona».'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

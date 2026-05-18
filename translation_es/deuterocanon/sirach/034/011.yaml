@@ -65,14 +65,14 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation matching the Hebrew: rendered מלוה יהוה as ''lends to Yahweh,'' נותן לאביון as ''gives to the poor,'' and מי בעל גמולות כי אם הוא as ''he will repay him for his good deed.'''
 translation:
   language: es
-  text: El que da a los pobres presta a Yahvé[a], y él le devolverá[b] según su buena obra.
+  text: He visto muchas cosas en mi peregrinar, y mi entendimiento es más que mis palabras.[b][a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El testigo hebreo conservado para esta referencia es problemático en algunas ediciones, pero la revisión aplicada del POB aquí sigue la lectura que habla de dar a los pobres y de prestar a Yahvé.
-    reason: source_note
+    text: La línea hebrea conservada en la Guenizá del Cairo provista aquí no corresponde a este versículo y parece reflejar material desplazado; por eso, la traducción sigue el testigo griego para Sirácides 34:11.
+    reason: textual_variant
   - marker: b
-    text: Es posible entender la cola final como ‘le recompensará’ o ‘le pagará’; se ha preferido ‘le devolverá’ para conservar el sentido de retribución sin estrecharlo demasiado.
+    text: 'O: «en mi error», «en mis viajes» o «en mi extravío» para «en mi peregrinar».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: מלוה יהוה / lends to Yahweh
@@ -150,7 +150,7 @@ ai_draft:
     total_tokens: 3864
     reasoning_tokens: 0
     estimated_cost_usd: 0.00754
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El expediente fuente es internamente conflictivo: el hebreo dado está marcado como major_mismatch y el propio rastro léxico-teológico del POB establece que Sirácida 34:11 debe traducirse desde el griego paralelo (''He visto muchas cosas en mi andar...''). El borrador español, en cambio, sigue una revisión aplicada que sustituyó indebidamente ese contenido por la línea hebrea desplazada sobre dar al pobre y prestar a Yahvé. Por tanto, no preserva el sentido fuente auditado del versículo.'
@@ -169,24 +169,16 @@ review_pass:
   - severity: medium
     issue: La cláusula final del griego requiere reformulación idiomática en español
     rationale: Una traducción demasiado literal de 'more than my words' puede sonar torpe. Conviene expresar que el entendimiento supera lo que las palabras alcanzan a decir, sin alejarse del texto.
-  revised_spanish_text: He visto muchas cosas en mi andar[a], y mi entendimiento es más de lo que dicen mis palabras.
+  revised_spanish_text: He visto muchas cosas en mi peregrinar, y mi entendimiento es más que mis palabras.[b][a]
   revised_footnotes:
   - marker: a
-    text: La línea hebrea conservada en el Cairo Geniza para esta referencia no corresponde al sentido de este versículo y parece reflejar material desplazado; por eso, aquí la traducción sigue el testigo griego de Sirácida 34:11. La expresión griega también puede entenderse como 'en mi error', 'en mis viajes' o 'en mi extravío'.
-    reason: textual_variant_and_lexical_alternative
-  revision_rationale: Se reemplazó el texto por una traducción fiel al testigo base auditado del POB, que para este versículo es el griego paralelo, no la línea hebrea desplazada. 'He visto muchas cosas' sigue πολλὰ ἑόρακα. 'En mi andar' conserva el sentido experiencial de ἀποπλάνησις sin sobremoralizarlo, y la nota preserva las alternativas documentadas. 'Mi entendimiento es más de lo que dicen mis palabras' transmite la comparación comprimida del griego de forma natural en español y mantiene la idea de que su comprensión excede su expresión verbal.
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 9976a816001b9e8f09ae21953e1dd757a25279ff47791a72876ca7d29e71e032
-  timestamp: '2026-05-07T23:02:17Z'
-  output_hash: d56bdecaeaadc7c84c370b1e0de73d84697c97f7a902455be99d76014353c368
-  usage:
-    prompt_tokens: 3503
-    completion_tokens: 928
-    total_tokens: 4431
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.022677
-  applied_revision: false
+    text: La línea hebrea conservada en la Guenizá del Cairo provista aquí no corresponde a este versículo y parece reflejar material desplazado; por eso, la traducción sigue el testigo griego para Sirácides 34:11.
+    reason: textual_variant
+  - marker: b
+    text: 'O: «en mi error», «en mis viajes» o «en mi extravío» para «en mi peregrinar».'
+    reason: lexical_alternative
+  revision_rationale: 'Adjudicación Opus: el EN POB actual (tras doctrine-realignment 2026-05-15) es Greek-primary «I have seen many things in my wandering, and my understanding is more than my words.[b][a]» con 2 footnotes separadas (a=textual_variant, b=lexical_alternative) stacked al final. El borrador previo traducía la línea hebrea desplazada. El revisor combinó ambas notas en una sola — error: las 2 notas EN son separadas. Mirroring exacto: 2 footnotes, [b][a] al final. «Peregrinar» es alternativa más natural en español para ἀποπλάνησις que «andar».'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

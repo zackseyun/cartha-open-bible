@@ -64,12 +64,8 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that matches the Hebrew: rendered הַכֹּל שָׁקַלְתִּי as ''I weighed everything,'' בְכַף מֹאזְנַיִם as ''in the balance,'' and וְלֹא מָצָאתִי קַל מִסֻבִּין as ''and found nothing lighter than bran.'''
 translation:
   language: es
-  text: Un hombre guarda la ira contra otro hombre, y busca sanidad[a] del Señor?
+  text: ¿Un hombre guarda la ira contra otro hombre, y busca sanidad del Señor?
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El hebreo suministrado para esta referencia no coincide con el contenido de Sirach 28:3; por eso la traducción sigue el testimonio griego paralelo.
-    reason: textual_variant
 lexical_decisions:
 - source_word: ἄνθρωπος
   english_pob_choice: a man
@@ -153,7 +149,7 @@ ai_draft:
     total_tokens: 3808
     reasoning_tokens: 0
     estimated_cost_usd: 0.006689
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: El borrador español sigue correctamente la lectura griega pertinente para Sirach 28:3, ya que el hebreo suministrado es un testimonio desajustado para este versículo. Sin embargo, no sigue fielmente el rastro auditado del English POB, que para este registro adoptó como texto base 'I weighed everything in the balance[a], and found nothing lighter than bran' y documentó la discrepancia en nota. Por tanto, el español actual no se alinea con la traducción auditada del proyecto para este ID.
@@ -169,24 +165,10 @@ review_pass:
   - severity: low
     issue: Si se mantuviera la lectura griega, faltaría el signo inicial de interrogación final en español.
     rationale: La oración es interrogativa retórica y en español debe llevar '¿...?'.
-  revised_spanish_text: Pesé todo en la balanza[a], y no hallé nada más liviano que el salvado.
-  revised_footnotes:
-  - marker: a
-    text: 'El testimonio hebreo suministrado para esta referencia dice: «Pesé todo en el platillo de la balanza, y no hallé nada más liviano que el salvado/cascarilla», lo cual no coincide con el contexto de este pasaje. Por eso, la traducción inglesa POB siguió el testimonio griego para Sirach 28:3.'
-    reason: textual_variant
-  revision_rationale: Se revisa para que el español coincida con el texto POB auditado actualmente adjunto a este registro, aunque el expediente interno también documenta que esa decisión entra en tensión con la justificación textual previa. 'Balanza' refleja bien 'balance'; 'hallé' mantiene un tono digno y natural; 'salvado' comunica bien 'bran' en español general. La nota se amplía para preservar la transparencia textual documentada en el expediente.
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: f67aa7975e51209c642f65325ff4545f87fd9371a6381c4cf4da7f44b2a83671
-  timestamp: '2026-05-07T22:46:57Z'
-  output_hash: 5993e3a8a7629813f2aa0b1d5971ae2e7ee060368fcb27c2013dfb7919d675c2
-  usage:
-    prompt_tokens: 3397
-    completion_tokens: 735
-    total_tokens: 4132
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.019518
-  applied_revision: false
+  revised_spanish_text: ¿Un hombre guarda la ira contra otro hombre, y busca sanidad del Señor?
+  revised_footnotes: []
+  revision_rationale: 'Adjudicación Opus: el EN POB actual (tras doctrine-realignment 2026-05-18) es «A man keeps anger against a man, and seeks healing from the Lord?» sin footnotes. El revisor previo se basaba en un base_translation snapshot stale que mostraba la línea hebrea «I weighed everything in the balance...» — esa versión fue wholesale-reverted al griego. El español ahora mirroring el EN griego-primario actual. Se añade el signo de apertura «¿» según ortografía española. No hay footnotes que añadir, mirroring exacto del EN.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

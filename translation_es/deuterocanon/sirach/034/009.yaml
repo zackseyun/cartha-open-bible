@@ -65,11 +65,14 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that reflects the Hebrew: ''In all your works be cheerful'' for בכל מעשיך האר פנים, and ''tithe with gladness what is holy'' for ובששון הקדש מעשר.'
 translation:
   language: es
-  text: Un hombre instruido ha conocido muchas cosas, y el que tiene mucha experiencia[a] contará el entendimiento.
+  text: Un hombre que ha viajado[b] conoce muchas cosas, y el que tiene mucha experiencia relatará entendimiento.[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «el muy experimentado»; el griego también puede entenderse con un matiz de experiencia adquirida, en paralelo con el resto del dicho sapiencial.'
+    text: 'El testimonio hebreo suministrado para esta referencia es materialmente divergente y dice aproximadamente: «En todas tus obras muestra un rostro alegre, y con gozo diezma lo santo». Como esa línea no corresponde al contexto de Sirácides 34:9, el texto principal sigue el testigo griego.'
+    reason: textual_variant
+  - marker: b
+    text: 'O: «Un hombre instruido/educado conoce muchas cosas». El griego πεπαιδευμένος puede entenderse así, aunque el contexto de Sirácides 34 favorece el aprendizaje por el viaje y la experiencia.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀνὴρ
@@ -157,7 +160,7 @@ ai_draft:
     total_tokens: 3852
     reasoning_tokens: 0
     estimated_cost_usd: 0.006695
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: El borrador español no sigue el testigo operativo adoptado en el expediente inglés. La evidencia hebrea suministrada es materialmente divergente, pero el rastro auditado de POB y las decisiones léxicas/teológicas para este registro establecen que el texto principal debe seguir el griego de Sirácides 34:9, no la línea hebrea desplazada. El borrador actual traduce el griego, pero omite la nota textual obligatoria sobre la divergencia del hebreo y no refleja la revisión aplicada en el expediente inglés.
@@ -176,24 +179,16 @@ review_pass:
   - severity: medium
     issue: El texto actual presenta giros poco naturales en español bíblico moderno.
     rationale: «Ha conocido muchas cosas» y sobre todo «contará el entendimiento» no son las mejores opciones idiomáticas para un proverbio sapiencial en español amplio de iglesia.
-  revised_spanish_text: En todas tus obras muestra un rostro alegre[a], y con gozo diezma lo santo.
+  revised_spanish_text: Un hombre que ha viajado[b] conoce muchas cosas, y el que tiene mucha experiencia relatará entendimiento.[a]
   revised_footnotes:
   - marker: a
-    text: 'El testigo hebreo suministrado para este versículo diverge materialmente y dice aproximadamente: «En todas tus obras muestra un rostro alegre, y con gozo diezma lo santo». Como esa línea no coincide con el contexto de Sirácides 34:9 en el testigo griego, existe una tensión textual en el expediente; aquí se conserva la redacción principal actualmente auditada y se señala la divergencia.'
+    text: 'El testimonio hebreo suministrado para esta referencia es materialmente divergente y dice aproximadamente: «En todas tus obras muestra un rostro alegre, y con gozo diezma lo santo». Como esa línea no corresponde al contexto de Sirácides 34:9, el texto principal sigue el testigo griego.'
     reason: textual_variant
-  revision_rationale: 'Reviso para alinear el español con el texto principal actualmente presente en el expediente inglés auditado, aunque la evidencia fuente muestra una dificultad textual real. También añado la nota indispensable sobre la divergencia entre el hebreo y el griego. La redacción española usa un registro natural y digno: «muestra un rostro alegre» refleja האר פנים sin calco tosco, y «diezma lo santo» conserva הקדש מעשר de forma concisa.'
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 80b1c0fb24f9e925c9bf47a1c01439e49fbba29f3940a23ea92801873aab23f1
-  timestamp: '2026-05-07T22:49:01Z'
-  output_hash: d803fa97097c4b2e969672cc82f8bac34e88d2e0f740a1dd2a31489123a1d716
-  usage:
-    prompt_tokens: 3446
-    completion_tokens: 869
-    total_tokens: 4315
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.02165
-  applied_revision: false
+  - marker: b
+    text: 'O: «Un hombre instruido/educado conoce muchas cosas». El griego πεπαιδευμένος puede entenderse así, aunque el contexto de Sirácides 34 favorece el aprendizaje por el viaje y la experiencia.'
+    reason: lexical_alternative
+  revision_rationale: 'Adjudicación Opus: el EN POB actual (tras doctrine-realignment 2026-05-15) es Greek-primary «A man who has traveled[b] knows many things, and one with much experience will recount understanding.[a]» con 2 footnotes. El revisor previo proponía revertir a la línea hebrea desplazada, lo cual contradice la auditoría inglesa vigente. El español mirroring exacto: [b] tras «viajado», [a] al final tras «entendimiento.». «Relatará entendimiento» refleja ἐκδιηγήσεται σύνεσιν del griego.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'

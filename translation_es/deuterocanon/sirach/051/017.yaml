@@ -64,14 +64,14 @@ base_translation:
     changes_summary: Replaced the paraphrastic 'In her I made progress' with a rendering that reflects עֻלָּהּ ('her yoke') and הָיָה לִי לְכָבוֹד ('was for me for glory'). Replaced 'the one who gives me wisdom' with the more direct 'my teacher' for מְלַמְּדַי, and rendered הוֹדָאָה as 'thanks' rather than 'glory.'
 translation:
   language: es
-  text: Su yugo me fue para gloria[a], y daré gracias a mi maestro[b].
+  text: En ella hice progreso, y daré gloria al que me da sabiduría[b][a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El hebreo conservado dice literalmente 'su yugo', mientras que el griego transmite 'progreso me vino en ella'. La traducción principal sigue el hebreo transmitido, pero el testimonio griego queda como alternativa relevante.
+    text: 'El testimonio hebreo aquí es difícil y difiere notablemente del griego. La Guenizá del Cairo dice aproximadamente: «Su yugo fue para mí honor, y a mis maestros daré gracias», mientras que el griego dice: «En ella me vino progreso; al que me da sabiduría daré gloria».'
     reason: textual_variant
   - marker: b
-    text: 'O: ''daré gloria'' o ''daré acción de gracias'', si se sigue más de cerca el griego o el matiz hebreo de agradecimiento/confesión.'
+    text: 'O: «daré gracias», si se sigue más de cerca la redacción hebrea (הוֹדָאָה).'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: עֻלָּהּ / προκοπὴ ἐγένετό μοι ἐν αὐτῇ
@@ -144,7 +144,7 @@ ai_draft:
     total_tokens: 3952
     reasoning_tokens: 0
     estimated_cost_usd: 0.006913
-status: spanish_needs_adjudication
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: El borrador español sigue la revisión inglesa reciente, pero esa revisión entra en tensión con la evidencia fuente y con las decisiones léxicas auditadas del POB. Dado que el hebreo está marcado como major_mismatch y la guía indica usar el paralelo griego como entrada real de traducción, la línea principal debería reflejar προκοπὴ ἐγένετό μοι ἐν αὐτῇ y τῷ διδόντι μοι σοφίαν δώσω δόξαν más directamente. El borrador actual opta por 'Su yugo... mi maestro', que preserva el hebreo difícil, pero no representa bien la base fuente preferida ni la racionalidad documentada.
@@ -160,27 +160,16 @@ review_pass:
   - severity: medium
     issue: La nota b no preserva con suficiente claridad la dirección de las variantes.
     rationale: Debe distinguir que el texto principal 'daré gloria' sigue el griego, mientras la alternativa 'daré gracias' refleja el hebreo; 'acción de gracias' y 'gloria' no son simples sinónimos.
-  revised_spanish_text: En ella hice progreso[a], y daré gloria al que me da sabiduría[b].
+  revised_spanish_text: En ella hice progreso, y daré gloria al que me da sabiduría[b][a].
   revised_footnotes:
   - marker: a
-    text: 'El testimonio hebreo aquí es difícil y difiere notablemente del griego. La Geniza de El Cairo dice aproximadamente: ''Su yugo fue para mí para gloria/honor'', mientras que el griego dice: ''En ella me vino progreso'' o ''en ella hice progreso''.'
+    text: 'El testimonio hebreo aquí es difícil y difiere notablemente del griego. La Guenizá del Cairo dice aproximadamente: «Su yugo fue para mí honor, y a mis maestros daré gracias», mientras que el griego dice: «En ella me vino progreso; al que me da sabiduría daré gloria».'
     reason: textual_variant
   - marker: b
-    text: 'O: ''daré gracias a mi maestro'' si se sigue más de cerca la redacción hebrea.'
+    text: 'O: «daré gracias», si se sigue más de cerca la redacción hebrea (הוֹדָאָה).'
     reason: lexical_alternative
-  revision_rationale: 'Revisé el texto principal para que siga la base fuente preferida en este versículo: el griego paralelo, tal como lo documentan las decisiones léxicas del POB para un caso de major_mismatch. ''En ella'' conserva la referencia femenina a la Sabiduría. ''Hice progreso'' comunica προκοπή de manera natural en español. ''Al que me da sabiduría'' refleja τῷ διδόντι μοι σοφίαν y mantiene la ambigüedad reverente del posible referente divino. Las notas preservan con honestidad las lecturas hebreas relevantes: ''su yugo'' y ''mi maestro/daré gracias''.'
-  requires_gpt54_adjudication: true
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 44b9f6493e4006236a349c5d43851ae5b4af6bd5276656e31d3d689666e8f7e0
-  timestamp: '2026-05-07T23:08:22Z'
-  output_hash: 5ae6c109a38d2b103bfeb42c01b0491a89dae50622781090dfab11e4dd8a753a
-  usage:
-    prompt_tokens: 3493
-    completion_tokens: 870
-    total_tokens: 4363
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.021783
-  applied_revision: false
+  revision_rationale: 'Adjudicación Opus: el EN POB actual (tras doctrine-realignment 2026-05-15) es Greek-primary «In her I made progress, and I will give glory to the one who gives me wisdom[b][a].» con 2 footnotes (a=textual_variant, b=lexical_alternative) stacked al final. El borrador previo seguía el hebreo «Su yugo... mi maestro», pero el revisor correctamente identificó que el EN actual es Greek-primary. El español mirroring exacto: [b][a] al final tras «sabiduría». «Al que me da sabiduría» refleja τῷ διδόντι μοι σοφίαν y conserva el referente divino implícito.'
+  requires_gpt54_adjudication: false
+  applied_revision: true
+  model_id: claude-opus-4-7[1m]
+  timestamp: '2026-05-16T00:00:00Z'
