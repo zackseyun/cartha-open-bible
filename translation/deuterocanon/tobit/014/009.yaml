@@ -7,119 +7,17 @@ source:
   pages: []
   confidence: high
 translation:
-  text: But you[a], keep the law and the commandments, and be merciful and righteous, so that it may go well with you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'be just.' The Greek adjective can denote both moral righteousness and justice.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: τήρησον
-  chosen: keep
-  alternatives:
-  - observe
-  - guard
-  lexicon: BDAG
-  rationale: Imperative of τηρέω in legal/ethical context commonly means to keep or observe commandments. 'Keep' is idiomatic modern English and preserves the covenantal-ethical force without sounding wooden.
-- source_word: νόμον
-  chosen: the law
-  alternatives:
-  - law
-  lexicon: BDAG
-  rationale: With the article, the phrase naturally refers to the law as a recognized body of instruction. 'The law' best reflects the Greek and the Jewish scriptural setting.
-- source_word: προστάγματα
-  chosen: the commandments
-  alternatives:
-  - ordinances
-  - commands
-  - precepts
-  lexicon: BDAG
-  rationale: The term denotes authoritative injunctions. 'Commandments' fits the moral-exhortational context and pairs naturally with 'the law' in English.
-- source_word: γενοῦ
-  chosen: become
-  alternatives:
-  - be
-  lexicon: BDAG
-  rationale: Aorist middle imperative of γίνομαι is more literally 'become' than stative 'be.' Here it calls for entering into or showing oneself in a pattern of character, so 'become' preserves the verbal force.
-- source_word: φιλελεήμων
-  chosen: merciful
-  alternatives:
-  - compassionate
-  - kindly merciful
-  - loving the needy
-  lexicon: LSJ
-  rationale: The adjective denotes being loving or disposed toward mercy. 'Merciful' is concise, natural, and captures the ethical sense without overexpanding the compound.
-- source_word: δίκαιος
-  chosen: righteous
-  alternatives:
-  - just
-  lexicon: BDAG
-  rationale: In a moral exhortation alongside mercy, 'righteous' better preserves the ethical-religious dimension than the narrower civic sense 'just.'
-- source_word: ἵνα σοι καλῶς ἦν
-  chosen: so that it may go well with you
-  alternatives:
-  - so that it may be well with you
-  - that it may be well for you
-  lexicon: BDAG
-  rationale: This is a common idiomatic expression of well-being or prosperity. 'It may go well with you' is natural modern English while preserving the purposive/result nuance of ἵνα.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 556d5c325cf74b8393a78f5d68ab605fa0ce363a97939723b04e3a764bfb6215
-  timestamp: '2026-04-21T20:19:03Z'
-  output_hash: 5389e3de542c8275664ce0e9abff25d524fc49d976dd3a64f3db0cf479d32b5d
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @2cac4f49
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Fitzmyer 1995, Discoveries in the Judaean Desert XIX
-  - Moore 1996, Anchor Bible 40A
-  revision_candidates:
-  - reason: TOB 14:9 may improve when Qumran Tobit fragments become Zone 1 via direct access.
-    trigger: iaa_qumran_tobit_access_granted
-  - reason: TOB 14:9 should be re-checked if Fitzmyer DJD XIX becomes redistributable for prompt use.
-    trigger: djd_xix_copyright_expires
-status: revised
-theological_decisions:
-- issue: Rendering δίκαιος in ethical exhortation
-  chosen_reading: righteous
-  alternative_readings:
-  - just
-  rationale: The verse exhorts Tobit's son toward covenantal-moral conduct, not merely social fairness. 'Righteous' preserves the broader biblical ethical sense while remaining readable.
-  doctrine_reference: 'DOCTRINE.md: consistency of key terms; δικαιοσύνη default rationale informs related adjective usage'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:47:48Z'
-  unchanged: false
-  changes_summary: Changed 'become' to 'be' for more natural formal English while preserving the sense of γενοῦ; otherwise retained the draft.
+  text: 'But you, keep the law and the commandments, and become merciful and righteous, so that it may go well with you.'
 revisions:
-- timestamp: '2026-04-23T15:47:48Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: But you, keep the law and the commandments, and become merciful and righteous, so that it may go well with you.
-  to: But you, keep the law and the commandments, and be merciful and righteous, so that it may go well with you.
-  rationale: Changed 'become' to 'be' for more natural formal English while preserving the sense of γενοῦ; otherwise retained the draft.
-
-cross_check:
-  status: high_agreement
-  agreement: 0.95
-  agreement_score: 0.95
-  agreement_min: 0.95
-  agreement_max: 0.95
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T23:15:04Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    minor-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/014/009.job-52612.json
+- timestamp: '2026-05-18T04:00:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But you[a], keep the law and the commandments, and be merciful and righteous, so that it may go well with you.'
+  to: 'But you, keep the law and the commandments, and become merciful and righteous, so that it may go well with you.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''become'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:04Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Tobit 14:9 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''become'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '

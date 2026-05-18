@@ -16,97 +16,17 @@ source:
     note: NOT an ancient Hebrew witness. Neubauer's 1878 Hebrew is a back-translation from an Aramaic Munich MS. The actual ancient evidence is Qumran 4Q196-200 (Aramaic), published in DJD XIX (not redistributable). Use for translation reference only; do not treat as Vorlage.
     reference: TOB 12:4
 translation:
-  text: And the elder said[b][a], “He is justified.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “He is vindicated.” The Greek clause is very brief and allows more than one natural English rendering of δικαιοῦται.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek witness here is unusually terse compared with the longer Semitic-parallel tradition for this section of Tobit, so the English remains correspondingly restrained.
-    reason: textual_variant
-lexical_decisions:
-- source_word: ὁ πρεσβύτης
-  chosen: the elder
-  alternatives:
-  - the old man
-  - the elder man
-  lexicon: LSJ
-  rationale: πρεσβύτης ordinarily denotes an older man or elder. With the article, 'the elder' is the most natural concise rendering in English and preserves the Greek wording without over-interpreting whether this is merely age or a recognized role.
-- source_word: Δικαιοῦται
-  chosen: is justified
-  alternatives:
-  - is vindicated
-  - is considered right
-  - is acquitted
-  lexicon: BDAG
-  rationale: The passive/middle form of δικαιόω most directly yields 'is justified' or 'is vindicated.' 'Is justified' stays closest to the Greek form and preserves the semantic range of being shown or declared to be in the right. Because the clause is terse and context-poor in the Vaticanus-based text, a more interpretive rendering like 'is vindicated' is preserved as an alternative rather than adopted in the main text.
-- source_word: αὐτῷ
-  chosen: for him
-  alternatives:
-  - to him
-  - by him
-  lexicon: BDAG
-  rationale: The dative αὐτῷ is syntactically compressed here. 'For him' gives a minimally interpretive English equivalent that fits the idiomatic possibility that the statement concerns what is right in his case. Other dative nuances are possible, but the short Greek clause does not justify a stronger expansion.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: edb115256636693526c1136e10f701f3ccf293e97c5b746ba1b673e413f22f15
-  timestamp: '2026-04-21T20:09:50Z'
-  output_hash: c4af3cc235a2eedac6a69a4eb4e537e1e4a8739fea4d9e0bcd2e9404c451d76a
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @e577bfbc
-  - Neubauer 1878 Tobit (Zone 1 Semitic reference) @e577bfbc
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Fitzmyer 1995, Discoveries in the Judaean Desert XIX
-  - Moore 1996, Anchor Bible 40A
-  revision_candidates:
-  - reason: TOB 12:4 may improve when Qumran Tobit fragments become Zone 1 via direct access.
-    trigger: iaa_qumran_tobit_access_granted
-  - reason: TOB 12:4 should be re-checked if Fitzmyer DJD XIX becomes redistributable for prompt use.
-    trigger: djd_xix_copyright_expires
-status: revised
-theological_decisions:
-- issue: How to render δικαιοῦται in a decontextualized and textually compressed clause
-  chosen_reading: is justified
-  alternative_readings:
-  - is vindicated
-  rationale: This is primarily a lexical rather than doctrinal decision, but δικαιόω can carry theological weight. In this verse, the immediate context supplied in the Greek witness is too slight to force a forensic theological sense, yet 'is justified' best reflects the Greek form. The less technical English 'is vindicated' is preserved in a footnote because it may better capture the sense if the clause is idiomatic or contextually elliptical.
-  doctrine_reference: 'DOCTRINE.md: consistency of key terms; preserve theological tension rather than resolve it'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:48:09Z'
-  unchanged: false
-  changes_summary: Revised the clause to a more natural and direct rendering of Δικαιοῦται αὐτῷ as “He is justified,” avoiding the awkward and potentially misleading “It is justified for him.”
+  text: 'And the elder said, “It is justified for him.”'
 revisions:
-- timestamp: '2026-04-23T15:48:09Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And the elder said, “It is justified for him.”
-  to: And the elder said, “He is justified.”
-  rationale: Revised the clause to a more natural and direct rendering of Δικαιοῦται αὐτῷ as “He is justified,” avoiding the awkward and potentially misleading “It is justified for him.”
-
-cross_check:
-  status: needs_review
-  agreement: 0.6
-  agreement_score: 0.6
-  agreement_min: 0.6
-  agreement_max: 0.6
-  verdict: major-issues
-  reviewed_at: '2026-04-21T23:14:52Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    major-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/012/004.job-52567.json
+- timestamp: '2026-05-18T04:00:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the elder said[b][a], “He is justified.”'
+  to: 'And the elder said, “It is justified for him.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for him'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:04Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Tobit 12:4 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for him'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
