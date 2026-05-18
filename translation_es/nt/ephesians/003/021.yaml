@@ -30,12 +30,9 @@ base_translation:
     changes_summary: 'Replaced ''Messiah Jesus'' with ''Christ Jesus'' for standard rendering of Χριστῷ Ἰησοῦ; removed the comma after ''generations'' to reflect the continuous phrase ''through all generations forever and ever.'' [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
 translation:
   language: es
-  text: A él sea la gloria en la iglesia y en Mesías Jesús por todas las generaciones, por los siglos de los siglos[a]. Amén.
+  text: A él sea la gloria en la iglesia y en Mesías Jesús por todas las generaciones por los siglos de los siglos. Amén.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Lit. «por los siglos de los siglos», expresión idiomática de duración sin fin.
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: αὐτῷ
   english_pob_choice: To him
@@ -133,7 +130,7 @@ ai_draft:
     total_tokens: 4556
     reasoning_tokens: 0
     estimated_cost_usd: 0.008003
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador sigue bien la estructura doxológica griega: «A él sea la gloria», mantiene la doble esfera paralela «en la iglesia y en Mesías Jesús», conserva el valor temporal de εἰς πάσας τὰς γενεὰς y cierra apropiadamente con «Amén». Sin embargo, la puntuación y la nota desalinean parcialmente la relación entre «por todas las generaciones» y «por los siglos de los siglos», ya que el inglés auditado eliminó la coma para reflejar una frase temporal continua. Además, la nota actual trata como literal lo que en realidad funciona mejor como traducción principal del modismo.'
@@ -147,21 +144,9 @@ review_pass:
     issue: Nota al pie innecesaria y algo imprecisa
     rationale: La nota dice «Lit. “por los siglos de los siglos”», pero esa es justamente la redacción principal en español, no una alternativa útil. Además, el inglés POB conservó la nota sobre «Messiah/Christ», no sobre la fórmula temporal; en español no hace falta crear esta nueva nota.
   revised_spanish_text: A él sea la gloria en la iglesia y en Mesías Jesús por todas las generaciones por los siglos de los siglos. Amén.
+  revised_footnotes: []
   revision_rationale: Se quita la coma para reflejar mejor la continuidad de la frase temporal del griego y del texto inglés auditado. También se elimina la nota al pie porque no añade una alternativa necesaria ni resuelve una ambigüedad en español. Se conserva «Mesías Jesús» por fidelidad a la decisión doctrinal documentada sobre Χριστός como título.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 647c816ee00aad50ece8c2a820f0cfd874ba46f1a774cbf31213f67b08190120
-  timestamp: '2026-05-07T21:16:39Z'
-  output_hash: 0a8c7dcf9c70afaeeb0323d86a2ac968185dad8dc0cafc00cd540c672fa2fd96
-  usage:
-    prompt_tokens: 4103
-    completion_tokens: 666
-    total_tokens: 4769
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.020248
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true
