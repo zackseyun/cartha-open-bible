@@ -17,88 +17,17 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the text of the letter had been written as follows[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “the copy/text of the letter was written thus.” The Greek τύπος can denote the form, wording, or copy of a document.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: τύπος
-  chosen: form
-  alternatives:
-  - copy
-  - text
-  - content
-  lexicon: LSJ
-  rationale: τύπος here refers to the set form or wording of the letter being introduced. “Form” preserves the sense of the written model or formulation without over-specifying whether it is a verbatim copy or merely a summary.
-- source_word: ἐπιστολή
-  chosen: letter
-  alternatives:
-  - epistle
-  - written message
-  lexicon: LSJ
-  rationale: A straightforward rendering for a written communication. “Letter” is natural modern English and fits the narrative context.
-- source_word: ἐγέγραπτο
-  chosen: had been written
-  alternatives:
-  - was written
-  - stood written
-  lexicon: LSJ
-  rationale: The pluperfect/passive sense is best reflected by “had been written,” indicating the letter’s wording was already set down before the quotation that follows.
-- source_word: οὕτως
-  chosen: as follows
-  alternatives:
-  - thus
-  - in this way
-  lexicon: LSJ
-  rationale: Idiomatic English introducing the contents of a document. This is a standard contextual rendering of οὕτως before a citation.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 70e47283b48b88071f3633b1dfacf3326a346344e40dfc8fe792a058c4c68f69
-  timestamp: '2026-04-21T21:34:15Z'
-  output_hash: 89fde86971712a802a1203bdb0918a59eecc9fdc73186e4e14f33165195c7f9c
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @9c8b5d80
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Emmet 1913 (in Charles, APOT vol II)
-  revision_candidates: []
-status: revised
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:35:22Z'
-  unchanged: false
-  changes_summary: Changed 'form' to 'text' for a more natural and accurate rendering of τύπος in this context.
+  text: 'And the form of the letter had been written as follows.'
 revisions:
-- timestamp: '2026-04-23T15:35:22Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And the form of the letter had been written as follows.
-  to: And the text of the letter had been written as follows.
-  rationale: Changed 'form' to 'text' for a more natural and accurate rendering of τύπος in this context.
-
-cross_check:
-  status: high_agreement
-  agreement: 0.9
-  agreement_score: 0.9
-  agreement_min: 0.9
-  agreement_max: 0.9
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T22:55:20Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    minor-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/003/030.job-49570.json
+- timestamp: '2026-05-18T04:00:26Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the text of the letter had been written as follows[a].'
+  to: 'And the form of the letter had been written as follows.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''form'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:26Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 3 Maccabees 3:30 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''form'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote ma'
