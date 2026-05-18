@@ -4,104 +4,17 @@ source:
   edition: WLC
   text: וּ/בְ/שֵֽׁם יְהוָ֥ה אֶקְרָ֑א אָנָּ֥ה יְ֝הוָ֗ה מַלְּטָ֥/ה נַפְשִֽׁ/י־׃
 translation:
-  text: 'Then I called on the name of Yahweh: “Please[a], Yahweh, deliver my soul!”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'my soul.' The Hebrew nephesh here can mean 'life,' 'self,' or 'soul'; in this context of danger, 'life' best fits the sense.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: וּבְשֵׁם
-  chosen: Then ... on the name of
-  alternatives:
-  - And ... in the name of
-  - And ... on the name of
-  lexicon: HALOT
-  rationale: The prefixed conjunction plus beth with שֵׁם in the idiom קרא בשם means 'call on/upon the name of.' Rendering the conjunction as 'Then' fits the psalm's narrative sequence in context while preserving the basic sense. 'In the name of' would suggest agency or representation rather than invocation here.
-- source_word: יְהוָה
-  chosen: Yahweh
-  alternatives:
-  - Jehovah
-  lexicon: HALOT
-  rationale: Per doctrine, the Tetragrammaton יְהוָה is rendered 'Yahweh' — the transliteration of the divine name — rather than the traditional 'the LORD' substitution. This preserves the personal name God revealed to Israel rather than substituting a title.
-- source_word: אֶקְרָא
-  chosen: I called
-  alternatives:
-  - I call
-  - I cried out
-  lexicon: HALOT
-  rationale: Qal imperfect 1cs can be rendered with past narrative force in Hebrew poetry when recounting prior distress and deliverance. 'I called' fits the surrounding retrospective context. 'Cried out' is possible interpretively, but 'called' stays closer to the lexical value of קרא.
-- source_word: אָנָּה
-  chosen: Please
-  alternatives:
-  - Ah
-  - I pray
-  lexicon: HALOT
-  rationale: אָנָּה is a particle of entreaty. 'Please' is natural modern English and preserves the urgent supplicatory tone without archaic phrasing like 'I pray'.
-- source_word: מלטה
-  chosen: rescue
-  alternatives:
-  - deliver
-  - save
-  - let escape
-  lexicon: HALOT
-  rationale: The imperative of מלט asks for deliverance from danger. 'Rescue' is clear, vivid, and accessible modern English. 'Deliver' is traditional and viable, but 'rescue' better communicates the concrete plea in contemporary English.
-- source_word: נפשי
-  chosen: my life
-  alternatives:
-  - my soul
-  - my self
-  lexicon: HALOT
-  rationale: נפש often denotes the life or self of a person, not necessarily the immaterial soul in a later theological sense. In this context of mortal danger, 'my life' best reflects the psalmist's plea for preservation, while 'my soul' is preserved as a lexical alternative.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: nt_draft_v1
-  prompt_sha256: 14f9916b58de1755bb96d992c742f11137beb6c1a14e4a7b191b4b65927c3f12
-  timestamp: '2026-04-19T08:22:56Z'
-  output_hash: 619abc4d578c3f6b72ea0066784d3b536ec6603f63f24eed6e3211073bcba729
-  temperature: 0.2
-status: revised
-theological_decisions:
-- issue: Rendering of the divine name יְהוָה
-  chosen_reading: Yahweh
-  alternative_readings:
-  - Yahweh
-  - Jehovah
-  rationale: The verse uses the Tetragrammaton יְהוָה directly. Per updated doctrine, the divine name is rendered 'Yahweh' rather than 'the LORD', preserving the covenant name God revealed at Sinai.
-  doctrine_reference: 'DOCTRINE.md: Contested terms — יְהוָה YHWH → Yahweh'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:30:13Z'
-  unchanged: false
-  changes_summary: Changed “rescue my life” to “deliver my soul” to more closely reflect מלטה נפשי and preserve the formal register and lexical correspondence of נפשי.
+  text: 'Then I called on the name of the LORD: “Please, LORD, rescue my life!”'
 revisions:
-- timestamp: '2026-04-23T11:30:13Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: 'Then I called on the name of the LORD: “Please, LORD, rescue my life!”'
-  to: 'Then I called on the name of the LORD: “Please, LORD, deliver my soul!”'
-  rationale: Changed “rescue my life” to “deliver my soul” to more closely reflect מלטה נפשי and preserve the formal register and lexical correspondence of נפשי.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T22:25:52Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: weighted_vocab
-  pass_count: 2
-  passes_with_issues: 0
-  models:
-  - gemini-2.5-pro
-  - gemini-3.1-pro-preview
-  strategies:
-  - high_scrutiny
-  - weighted_vocab
-  verdict_counts:
-    agree: 2
-  source_review: state/reviews/gemini/weighted_vocab/ot/psalms/116/004.job-17556.json
+- timestamp: '2026-05-18T03:58:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then I called on the name of Yahweh: “Please[a], Yahweh, deliver my soul!”'
+  to: 'Then I called on the name of the LORD: “Please, LORD, rescue my life!”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''rescue'', ''my life'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:58:56Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Psalms 116:4 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''rescue'', ''my life'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh'
