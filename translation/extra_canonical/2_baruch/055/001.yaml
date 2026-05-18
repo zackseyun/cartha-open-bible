@@ -388,10 +388,10 @@ ai_draft:
   - 590
   - 595
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:47:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Revised several phrases for closer Syriac alignment and more natural formal English: changed “Man” to “Son of man,” “before you were formed” to “before you were created,” clarified “these things that are to come,” replaced the unclear clause about what was not shown with “from what until what,” rendered testimony as “for righteousness,” adjusted “many kinds” to “a multitude,” restored sitting “on the chariot of a cloud,” and refined the closing line to “works and labors are preserved … acted well/wickedly.”'
+  changes_summary: 'doctrine_realignment: 2 Baruch 55:1 skip-stamp (2 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And it happened, when I was praying, speaking the first words of this pr'
 revisions:
 - timestamp: '2026-04-23T19:47:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -453,6 +453,27 @@ revisions:
   from: were made known
   to: were promised
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: |
+    And it happened, when I was praying, speaking the first words of this prayer, that I was disturbed and I trembled; and I was reflecting on the seed of humankind—how many are those who have gone, and how few are those who are kept. And as I was considering these things, I heard a voice that said to me:
+    
+    “Son of man, why are you troubled, and why are you alarmed? For before you were created, you were known to me, and before you came forth from your mother’s womb, you were promised to me. And for this reason these things that are to come were shown to you.”
+    
+    And I said to him, “Lord, you have shown me the multitude of the times, and what has happened in them; but you have not shown me how long it will be. Therefore I ask that I may hear concerning those who have borne witness for righteousness, what is the reward kept for them.” And a multitude of good things and of evil things that are coming was promised to me, and then I went up to the mountain.
+    
+    And it came to pass, after seven days, that I came to that place where there was a spring. And as I was sitting there, I was taken up on the chariot of a cloud—not in the body, and I did not know it. And a mystery was shown to me, and I heard a voice that said to me: “See and know how, in this world, their works and their labors are preserved, of those who have acted well and of those who have acted wickedly.”
+  to: |
+    And it happened, when I was praying, speaking the first words of this prayer, that I was disturbed and I trembled; and I was reflecting on the seed of humankind—how many are those who have gone, and how few are those who are kept. And as I was considering these things, I heard a voice that said to me:
+    
+    “Son of man, why are you troubled, and why are you alarmed? For before you were created, you were known to me, and before you came forth from your mother’s womb, you were promised to me. And for this reason these things that are to come were shown to you.”
+    
+    And I said to him, “Lord, you have shown me the multitude of the times, and what has happened in them; but you have not shown me how long it will be. Therefore I ask that I may hear concerning those who have borne witness for righteousness, what is the reward kept for them.” And a multitude of good things and of evil things that are coming was promised to me, and then I went up to the mountain.
+    
+    And it came to pass, after seven days, that I came to that place where there was a spring. And as I was sitting there, I was taken up on the chariot of a cloud—not in the body, and I did not know it. And a mystery was shown to me, and I heard a voice that said to me: “See and know how, in this world, their works and their labors are preserved, of those who have acted well and of those who have acted wickedly.”
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And it happened, when I was praying, speaking the first words of this prayer, th'' vs to=''And it happened, when I was praying, speaking the first words of this prayer, th''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''afraid'', ''were formed''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

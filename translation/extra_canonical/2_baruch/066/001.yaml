@@ -192,10 +192,10 @@ ai_draft:
   - 184
   kmosko_control_pages: []
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:46:54Z'
-  unchanged: true
-  changes_summary: 'Condensed the duplicated draft material to the actual verse, removed later-verse content, and revised key phrases for closer lexical accuracy: ''was found in sinlessness before the Mighty One'' instead of ''submitted himself,'' and ''with fullness of heart'' to reflect the Syriac more closely. [TRUNCATION DETECTED — revision reverted]'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 2 Baruch 66:1 skip-stamp (5 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And the tenth bright waters that you saw-these are the purity of the gen'
 revisions:
 - timestamp: '2026-04-23T19:46:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -263,6 +263,13 @@ revisions:
   to: the king (or change source word to ܚܝܠܬܢܐ)
   rationale: The lexical decision incorrectly links the Syriac word ܡ̇ܠܟܐ (king, as in 'king of Judah') to the translation 'the Mighty One' (which translates ܚܝܠܬܢܐ). The translation text itself is correct, but the metadata mapping is flawed.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the tenth bright waters that you saw—these are the purity of the generation of Josiah king of Judah, who alone at that time submitted himself to the king (or change source word to ܚܝܠܬܢܐ) with the fullness of his heart and with all his soul.'
+  to: 'And the tenth bright waters that you saw—these are the purity of the generation of Josiah king of Judah, who alone at that time submitted himself to the king (or change source word to ܚܝܠܬܢܐ) with the fullness of his heart and with all his soul.'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And the tenth bright waters that you saw-these are the purity of the generation '' vs to=''And the bright tenth waters that you saw-these are the purity of the generation ''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''with all his heart and with all his soul'', ''the altar'', ''diviners'', ''the graves'', ''the brook''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

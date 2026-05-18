@@ -293,10 +293,10 @@ ai_draft:
   - 225
   kmosko_control_pages: []
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:44:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Adjusted wording for more natural English and closer verbal sense: changed ''saying'' to ''say'' after ''heard,'' and ''I was set there'' to ''I was standing there,'' which better fits the Syriac context.'
+  changes_summary: 'doctrine_realignment: 2 Baruch 7:1 skip-stamp (2 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And after these things I heard that angel say to those angels who were h'
 revisions:
 - timestamp: '2026-04-23T19:44:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -324,6 +324,13 @@ revisions:
   from: I left
   to: I heard
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And after these things I heard that angel say to those angels who were holding the torches, “Now pull down the supports of its walls and overthrow them, lest the enemies boast and say, ‘We ourselves have cast down the wall of Zion, and we have burned the place of the mighty God.’ And stand there in the place where I had been standing before.”'
+  to: 'And after these things I heard that angel say to those angels who were holding the torches, “Now pull down the supports of its walls and overthrow them, lest the enemies boast and say, ‘We ourselves have cast down the wall of Zion, and we have burned the place of the mighty God.’ And stand there in the place where I had been standing before.”'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And after these things I heard that angel say to those angels who were holding t'' vs to=''And after these things I heard that angel say to those angels who were holding t''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''the place of the Mighty God'', ''I was set there''].'
 cross_check:
   status: needs_review
   agreement: 0.7

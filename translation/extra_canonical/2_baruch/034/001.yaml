@@ -229,10 +229,10 @@ ai_draft:
   - 208
   kmosko_control_pages: []
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:45:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Replaced the draft, which imported material not present in 34:1, with a closer rendering of the Syriac: lifting eyes and weeping, plea for pity, mention of silence/forgetting, the house of the tombs of the fathers, crying out in distress with lamentation, and remembrance.'
+  changes_summary: 'doctrine_realignment: 2 Baruch 34:1 skip-stamp (1 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''Then I lifted up my eyes and wept, and I said at that time, "Far be it f'
 revisions:
 - timestamp: '2026-04-23T19:45:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -260,6 +260,13 @@ revisions:
   from: cry out from distress with lamentation
   to: in affliction and in the distress of lamentation cry aloud
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then I lifted up my eyes and wept, and I said at that time, “Far be it from me that I should be silent toward you or forget you. But only as far as the house of the tombs of my fathers, in affliction and in the distress of lamentation cry aloud, so that I may not be forgotten before you and afterward. And these things I have declared to you for your remembrance.”'
+  to: 'Then I lifted up my eyes and wept, and I said at that time, “Far be it from me that I should be silent toward you or forget you. But only as far as the house of the tombs of my fathers, in affliction and in the distress of lamentation cry aloud, so that I may not be forgotten before you and afterward. And these things I have declared to you for your remembrance.”'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''Then I lifted up my eyes and wept, and I said at that time, "Far be it from me t'' vs to=''Then I lifted up my eyes and wept, and I said at that time, "Have pity on me, th''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''Far be it from me''].'
 cross_check:
   status: needs_review
   agreement: 0.6

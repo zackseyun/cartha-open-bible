@@ -183,10 +183,10 @@ ai_draft:
   kmosko_control_pages:
   - 570
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:45:21Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: Revised to include 'your children' from the source, changed 'all your elders' to 'your elders' for accuracy, changed 'I will speak words to them' to 'I will speak words to you' to match the addressees, and changed 'I answered' to 'I asked' to reflect the Syriac verb. Removed material from following verses not present in 31:1.
+  changes_summary: 'doctrine_realignment: 2 Baruch 31:1 skip-stamp (3 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And it happened after these things, that I went to the people and said t'
 revisions:
 - timestamp: '2026-04-23T19:45:21Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -225,6 +225,23 @@ revisions:
   to: and I will speak my words with them."
   rationale: 'The draft omits the first-person suffix on ܡܠܝ (''my words''). Additionally, the AI explicitly changed the pronoun to ''you'' to match the addressees, but the standard Syriac text reads ܥܡܗܘܢ (''with them''). (Note: The provided source text reads ܘܐܡܪ ܒܥܘ ܡܠܝ, literally ''and I will say, Seek my words'', which is almost certainly an OCR error for the standard ܘܐܡܠܠ ܥܡܗܘܢ ܡܠܝ, ''and I will speak my words with them''). Either way, ''words to you'' is a mistranslation.'
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: |
+    And it happened after these things, that I went to the people and said to them, “Gather to me your elders and your children, and I will speak my words with them."”
+    
+    And they all assembled in the valley of Kidron.
+    
+    And I asked and said to them,
+  to: |
+    And it happened after these things, that I went to the people and said to them, “Gather to me your elders and your children, and I will speak my words with them."”
+    
+    And they all assembled in the valley of Kidron.
+    
+    And I asked and said to them,
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And it happened after these things, that I went to the people and said to them, '' vs to=''And it happened after these things, that I went to the people and said to them, ''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''Hear'', ''seed of Jacob'', ''distress of Jerusalem''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

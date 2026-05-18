@@ -307,10 +307,10 @@ ai_draft:
   - 613
   - 614
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:47:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Replaced the draft with a translation that matches the Syriac of 76:1 and following: removed material about departing the earth, the mountain, and forty days, which belongs elsewhere; restored the request to be shown what has happened and what is made, the teaching about Adam, death entering after sin, and the charge to instruct the people.'
+  changes_summary: 'doctrine_realignment: 2 Baruch 76:1 skip-stamp (6 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And he answered and said to me, "Because you have prayed that I show you'
 revisions:
 - timestamp: '2026-04-23T19:47:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -344,6 +344,13 @@ revisions:
   to: And he answered and said to me, “Because you have prayed that I show you what will happen to you after these things, for this reason I have shown you this vision, that you may see what will happen to you after these things. For you shall surely depart from this earth—but not unto death; rather, you shall be kept for the appointed times. Therefore go up to the summit of that mountain, and the regions of that land shall pass before you, and the form of the inhabited world, and the tops of the mountains, and the depths of the valleys, and the depths of the seas, and the number of the rivers, so that you may see what you are leaving and where you are going. And this shall be after forty days. Go therefore now, during these days, and instruct the people as much as you are able, so that they may learn, lest they die at the last time, but may learn so that they may live at the last time.”
   rationale: The revision pass incorrectly discarded the accurate original draft because it attempted to translate a severely corrupted OCR of the Syriac text. The provided Syriac text is a garbled OCR hallucination that completely distorts the actual manuscript text of 2 Baruch 76:1-5. Furthermore, the current draft hallucinates a coherent text (about Adam, sin, and sickness) that is not even present in the corrupted OCR. The original draft correctly translated the true Syriac text (which matches the lexical decisions in the metadata, such as ܡܫܢܐ, ܬܒܝܠ, etc.) and should be restored, with a slight correction to verse 1 to better match the Syriac.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he answered and said to me, “Because you have prayed that I show you what will happen to you after these things, for this reason I have shown you this vision, that you may see what will happen to you after these things. For you shall surely depart from this earth—but not unto death; rather, you shall be kept for the appointed times. Therefore go up to the summit of that mountain, and the regions of that land shall pass before you, and the form of the inhabited world, and the tops of the mountains, and the depths of the valleys, and the depths of the seas, and the number of the rivers, so that you may see what you are leaving and where you are going. And this shall be after forty days. Go therefore now, during these days, and instruct the people as much as you are able, so that they may learn, lest they die at the last time, but may learn so that they may live at the last time.”'
+  to: 'And he answered and said to me, “Because you have prayed that I show you what will happen to you after these things, for this reason I have shown you this vision, that you may see what will happen to you after these things. For you shall surely depart from this earth—but not unto death; rather, you shall be kept for the appointed times. Therefore go up to the summit of that mountain, and the regions of that land shall pass before you, and the form of the inhabited world, and the tops of the mountains, and the depths of the valleys, and the depths of the seas, and the number of the rivers, so that you may see what you are leaving and where you are going. And this shall be after forty days. Go therefore now, during these days, and instruct the people as much as you are able, so that they may learn, lest they die at the last time, but may learn so that they may live at the last time.”'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And he answered and said to me, "Because you have prayed that I show you what wi'' vs to=''And he answered and said to me, "Because you have asked me to show you what has ''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''revelation'', ''will happen'', ''depart from this earth'', ''be kept for the appointed times'', ''regions'', ''inhabited world''].'
 cross_check:
   status: needs_review
   agreement: 0.1

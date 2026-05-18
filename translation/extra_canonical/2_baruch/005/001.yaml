@@ -271,10 +271,10 @@ ai_draft:
   - 545
   - 548
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:46:47Z'
-  unchanged: true
-  changes_summary: Replaced the draft with a translation that matches 2 Baruch 5:1 itself rather than later verses. Removed duplicated opening, restored the key clauses about hoping in vain, Zion being built in vain, those loved being given over to exile, and the question about God's great name. [TRUNCATION DETECTED — revision reverted]
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 2 Baruch 5:1 skip-stamp (3 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And I said, "So then, I have hoped in vain, and in vain was Zion built. '
 revisions:
 - timestamp: '2026-04-23T19:46:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -328,6 +328,13 @@ revisions:
   to: And I said, “So then, I have hoped in vain, and in vain was Zion built. For if those who hate us have taken possession of her, what will you do for your great name?”
   rationale: There is a clear duplication of the opening phrase 'And I said, “' which also results in an extra closing quotation mark at the end of the verse. Removing the duplication resolves the issue.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I said, “So then, I have hoped in vain, and in vain was Zion built. For if those who hate us have taken possession of her, what will you do for your great name?”'
+  to: 'And I said, “So then, I have hoped in vain, and in vain was Zion built. For if those who hate us have taken possession of her, what will you do for your great name?”'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And I said, "So then, I have hoped in vain, and in vain was Zion built. For if t'' vs to=''And I said, "So then, I have hoped in vain, and Zion has been built in vain. And''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''its own right'', ''serving judgment for a time'', ''Kidron''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

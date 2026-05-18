@@ -287,10 +287,10 @@ ai_draft:
   kmosko_control_pages:
   - 565
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:46:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Replaced the draft with a translation that matches the Syriac of 25:1 more closely: restored Baruch as the speaker (‘Then I answered and said to him’), removed unsupported additions about being spared and a sign for the inhabitants of the earth, and rendered the verse’s actual wording about being shaken, the Mighty One making him know, seeing the beginning of coming anguish, many sufferings, and hope awakening.'
+  changes_summary: 'doctrine_realignment: 2 Baruch 25:1 skip-stamp (2 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''Then he answered me and said, "You too shall be spared until that time, '
 revisions:
 - timestamp: '2026-04-23T19:46:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -317,6 +317,13 @@ revisions:
   to: 'Then he answered me and said, “You too shall be spared until that time, until the sign that the Mighty One will perform for the inhabitants of the earth at the end of the days. And this will be the sign: bewilderment will seize the inhabitants of the earth, and they will fall into many afflictions; then again into great anguish. And when, because of the abundance of their distress, they say in their thoughts, ‘The Mighty One no longer remembers the earth,’ and they have given up hope, then the time will awaken.”'
   rationale: The revision pass incorrectly altered the translation based on severely garbled OCR in the source text, resulting in a complete mistranslation that hallucinates phrases ('shaken because of the dwelling', 'hope will awaken') and reverses the speaker. The original draft correctly reflected the actual Syriac of 2 Baruch 25:1-4 and aligned with the project's lexical decisions. Revert to the original draft, ensuring 'the Mighty One' is used for ܡܪܝܡܢܐ in the first sentence as well.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then he answered me and said, “You too shall be spared until that time, until the sign that the Mighty One will perform for the inhabitants of the earth at the end of the days. And this will be the sign: bewilderment will seize the inhabitants of the earth, and they will fall into many afflictions; then again into great anguish. And when, because of the abundance of their distress, they say in their thoughts, ‘The Mighty One no longer remembers the earth,’ and they have given up hope, then the time will awaken.”'
+  to: 'Then he answered me and said, “You too shall be spared until that time, until the sign that the Mighty One will perform for the inhabitants of the earth at the end of the days. And this will be the sign: bewilderment will seize the inhabitants of the earth, and they will fall into many afflictions; then again into great anguish. And when, because of the abundance of their distress, they say in their thoughts, ‘The Mighty One no longer remembers the earth,’ and they have given up hope, then the time will awaken.”'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''Then he answered me and said, "You too shall be spared until that time, until th'' vs to=''Then I answered and said to him, "I too have been shaken because of the dwelling''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''bewilderment'', ''afflictions''].'
 cross_check:
   status: needs_review
   agreement: 0.1

@@ -180,10 +180,10 @@ ai_draft:
   - 182
   kmosko_control_pages: []
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:49:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that matches 2 Baruch 71:1 in the provided Syriac: restored the time reference, delight and peace, rebuilding of the city, renewal of offerings, return of priests to service, the nations'' glory, and the subsequent fall of many nations with other dark waters among them.'
+  changes_summary: 'doctrine_realignment: 2 Baruch 71:1 skip-stamp (6 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And the holy land shall have mercy on its own, and at that time it shall'
 revisions:
 - timestamp: '2026-04-23T19:49:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -207,6 +207,13 @@ revisions:
   to: And the holy land shall have mercy on its own, and at that time it shall protect its inhabitants.
   rationale: The current translation is of 2 Baruch 68:5-69:1, not 71:1. The revision pass incorrectly replaced the accurate translation of 71:1 because the provided Syriac source text was misaligned (showing chapters 68-70). The text must be reverted to translate 2 Baruch 71:1.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the holy land shall have mercy on its own, and at that time it shall protect its inhabitants.'
+  to: 'And the holy land shall have mercy on its own, and at that time it shall protect its inhabitants.'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And the holy land shall have mercy on its own, and at that time it shall protect'' vs to=''And at that time there will be much delight, and there will be peace. And after ''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''the holy land'', ''shall have mercy on'', ''its own'', ''it shall protect'', ''interpretation'', ''your prayer has been heard before the Most High''].'
 cross_check:
   status: needs_review
   agreement: 0.0

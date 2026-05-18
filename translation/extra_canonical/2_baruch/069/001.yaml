@@ -294,10 +294,10 @@ ai_draft:
   - 604
   - 606
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:46:58Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: 'Revised to more closely match the Syriac: removed unsupported material about ''the whole world,'' ''the Most High made division from the beginning,'' and ''six kinds''; restored the contrast of evils/good things and the repeated ''stand as one fixed remembrance''; rendered the final line with ''times'' and ''hours'' rather than ''black'' and ''bright.'''
+  changes_summary: 'doctrine_realignment: 2 Baruch 69:1 skip-stamp (2 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''For the last waters that you saw, which were blacker than all those befo'
 revisions:
 - timestamp: '2026-04-23T19:46:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -339,6 +339,13 @@ revisions:
   to: these are they...
   rationale: The Syriac OCR text is truncated here, ending abruptly at 'ܗܢܘܢ ܗܘ' (likely missing 'ܕܥܠܡܐ ܟܠܗ ܐܢܘܢ', 'belong to the whole world'). The current rendering leaves a hanging clause that reads like a grammatical error. Adding an ellipsis better indicates the abrupt break in the provided source text.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For the last waters that you saw, which were blacker than all those before them—these are they...'
+  to: 'For the last waters that you saw, which were blacker than all those before them—these are they...'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''For the last waters that you saw, which were blacker than all those before them-'' vs to=''1. For the last waters that you saw, which were blacker than all those before th''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''six kinds'', ''bright''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

@@ -107,10 +107,10 @@ ai_draft:
   - 221
   kmosko_control_pages: []
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:45:22Z'
-  unchanged: true
-  changes_summary: Revised to match 2 Baruch 12:1 specifically, removing material from preceding verses and preserving the verse’s simple, formal wording. [TRUNCATION DETECTED — revision reverted]
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 2 Baruch 12:1 skip-stamp (2 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''But I will speak as I understand, and I will speak against you, land tha'
 revisions:
 - timestamp: '2026-04-23T19:45:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -150,6 +150,13 @@ revisions:
     5 And after I had spoken these things, I fasted seven days.'
   rationale: Revision pass truncated verse from 499 chars to 57 chars. Restored pre-revision text.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But I will speak as I understand, and I will speak against you, land that prospers.'
+  to: 'But I will speak as I understand, and I will speak against you, land that prospers.'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''But I will speak as I understand, and I will speak against you, land that prospe'' vs to=''And after I had spoken these things, I fasted seven days.''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''as I understand'', ''will awaken''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

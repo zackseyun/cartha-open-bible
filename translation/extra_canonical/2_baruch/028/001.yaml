@@ -190,10 +190,10 @@ ai_draft:
   - 212
   kmosko_control_pages: []
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T19:47:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: Replaced the unrelated draft with a translation matching the Syriac of 2 Baruch 28:1. Restored the full content about the division of the time into twelve parts and the first ten appointed calamities; used formal, natural English and preserved key terms consistently.
+  changes_summary: 'doctrine_realignment: 2 Baruch 28:1 skip-stamp (7 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''Therefore, whoever understands shall then be wise.'' vs to=''And I answere'
 revisions:
 - timestamp: '2026-04-23T19:47:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -223,6 +223,13 @@ revisions:
   to: Therefore, whoever understands shall then be wise.
   rationale: The AI revision pass incorrectly replaced the draft of 2 Baruch 28:1 with a translation of 2 Baruch 27:1-10. The provided Syriac source text ends at 27:10 and is missing chapter 28, causing the previous AI to translate chapter 27 instead. The original draft for 28:1 should be restored.
 
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Therefore, whoever understands shall then be wise.'
+  to: 'Therefore, whoever understands shall then be wise.'
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''Therefore, whoever understands shall then be wise.'' vs to=''And I answered and said to her, "After this, the time will be divided into twelv''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''measure'', ''reckoning'', ''weeks'', ''what is incorruptible'', ''what is corruptible'', ''show me'', ''in one place, or in one part of the earth''].'
 cross_check:
   status: needs_review
   agreement: 0.0

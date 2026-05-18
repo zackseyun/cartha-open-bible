@@ -127,10 +127,10 @@ theological_decisions:
   rationale: The Greek witness as supplied includes the incipit to the next testament immediately after Naphtali 9:3. Because it is present in the source layer but functions as a transition rather than part of Naphtali's speech, it is preserved transparently in brackets.
   doctrine_reference: PHILOSOPHY.md transparency principle; translate what is in the witness and signal paratext rather than silently omitting.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T14:57:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:59:37Z'
   unchanged: false
-  changes_summary: Changed 'instructing' to 'commanding' for closer alignment with ἐντειλάμενος, and simplified 'carry his bones over to Hebron' to 'carry his bones to Hebron' for more natural and accurate English.
+  changes_summary: 'doctrine_realignment: Testament of Naphtali 9 skip-stamp (1 override) [content divergence]. Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And after commanding them many such things[[Here begins ...]], he urged '
 revisions:
 - timestamp: '2026-04-23T14:57:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -157,3 +157,25 @@ revisions:
 
     [Here begins the Testament of Gad, the ninth son of Jacob and Zilpah.]'
   rationale: Changed 'instructing' to 'commanding' for closer alignment with ἐντειλάμενος, and simplified 'carry his bones over to Hebron' to 'carry his bones to Hebron' for more natural and accurate English.
+
+- timestamp: '2026-05-18T04:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: |
+    And after commanding them many such things[[Here begins ...]], he urged them to carry his bones to Hebron and bury him with his fathers.
+    
+    2. And after eating and drinking with gladness of soul, he covered his face and died.
+    
+    3. And his sons did in every respect all that Naphtali their father had commanded them.
+    
+    [Here begins the Testament of Gad, the ninth son of Jacob and Zilpah.]
+  to: |
+    And after commanding them many such things[[Here begins ...]], he urged them to carry his bones to Hebron and bury him with his fathers.
+    
+    2. And after eating and drinking with gladness of soul, he covered his face and died.
+    
+    3. And his sons did in every respect all that Naphtali their father had commanded them.
+    
+    [Here begins the Testament of Gad, the ninth son of Jacob and Zilpah.]
+  rationale: 'Wholesale revert NOT applied: current text has post-azure semantic edits that diverge from azure_to (fingerprint mismatch: cur=''And after commanding them many such things[[Here begins ...]], he urged them to '' vs to=''And after commanding them many such things, he urged them to carry his bones to ''). Reverting would clobber legitimate downstream work. Marking realignment-considered-and-skipped. Drafter renderings recorded for review: [''after instructing''].'
