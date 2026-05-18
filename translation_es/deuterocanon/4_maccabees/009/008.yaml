@@ -49,12 +49,8 @@ base_translation:
     changes_summary: Changed 'bear away' to 'carry off' for a more natural and idiomatic rendering of οἴσομεν with ἆθλα ('win/carry off the prizes').
 translation:
   language: es
-  text: Porque por este sufrimiento y esta perseverancia[a], ciertamente nos llevaremos los premios de la virtud.
+  text: Pues por este sufrimiento y perseverancia, ciertamente nos llevaremos los premios de la virtud.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O «paciencia». El griego ὑπομονή tiene el sentido de resistencia firme y perseverante bajo presión.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἡμεῖς μὲν γὰρ
   english_pob_choice: For ... we will indeed
@@ -141,38 +137,45 @@ ai_draft:
     total_tokens: 3613
     reasoning_tokens: 0
     estimated_cost_usd: 0.007071
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Porque por este sufrimiento y esta perseverancia[a], ciertamente nos llevaremos los premios de la virtud.
+  to: Pues por este sufrimiento y perseverancia, ciertamente nos llevaremos los premios de la virtud.
+  rationale: Se mejora la fluidez de γάρ con 'Pues', se evita el segundo demostrativo no expreso en el griego, y se suprime la nota innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:36:59Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido básico del griego: sufrimiento + ὑπομονή como medio, énfasis discursivo, y la metáfora de premios/virtud. Sin embargo, «esta perseverancia» añade un demostrativo no presente en ὑπομονῆς y hace menos ceñida la coordinación griega. Además, la nota al pie desplaza innecesariamente el enfoque desde la alternativa documentada en inglés.'
-  spanish_quality_summary: 'El español es claro y natural, pero puede afinarse para sonar más idiomático y más fiel al original: «Porque por» es algo pesado, y «nos llevaremos los premios» funciona mejor sin el pie forzado en «perseverancia». La frase revisada mejora fluidez y mantiene dignidad moderna.'
-  glossary_alignment: No hay conflictos con la terminología principal del proyecto. «Virtud» para ἀρετή está bien justificado. «Perseverancia» es aceptable para ὑπομονή, aunque la nota debe preservar mejor la alternativa «paciencia/endurance» sin sobreexplicar.
+  source_alignment_summary: 'El borrador refleja bien el sentido del griego: sufrimiento + ὑπομονή como medio, énfasis discursivo de μὲν γάρ, metáfora de premios atléticos. El arranque ''Porque por'' es torpe y el segundo demostrativo ''esta'' no está en el griego.'
+  spanish_quality_summary: El español es claro pero puede mejorarse. 'Porque por' suena repetitivo; 'Pues por' es más natural para γάρ. 'Esta perseverancia' añade un demostrativo no presente en el griego. La nota al pie es innecesaria.
+  glossary_alignment: No hay conflictos. 'Virtud' para ἀρετή está bien justificado.
   issues:
   - severity: medium
-    issue: Redundancia y peso en «Porque por este sufrimiento...»
-    rationale: Aunque no es incorrecto, la secuencia «Porque por» suena torpe en español. «Pues por» o una reestructuración ligera conserva γάρ con mejor fluidez.
+    issue: Redundancia en 'Porque por' para el inicio con γάρ
+    rationale: '''Pues por'' conserva γάρ con mejor fluidez.'
   - severity: medium
-    issue: «esta perseverancia» sobredetermina el segundo sustantivo
-    rationale: El griego tiene un solo demostrativo explícito con κακοπαθείας; repetir «esta» antes de «perseverancia» puede sugerir una deixis no marcada en el original.
+    issue: '''esta perseverancia'' añade demostrativo no presente en el griego'
+    rationale: Solo κακοπαθείας tiene demostrativo explícito; repetirlo en ὑπομονῆς es inexacto.
   - severity: low
-    issue: La nota al pie no sigue de cerca la alternativa preservada en el rastro inglés
-    rationale: El inglés conserva una alternativa de sentido para toda la expresión de premio/virtud, no para ὑπομονή. Aquí no es necesario mantener una nota léxica nueva; si se conserva, debe ser porque el español realmente la necesita, y no parece necesario.
+    issue: Nota al pie innecesaria
+    rationale: La metáfora atlética no requiere nota léxica adicional.
   revised_spanish_text: Pues por este sufrimiento y perseverancia, ciertamente nos llevaremos los premios de la virtud.
-  revision_rationale: Se elimina la nota innecesaria, se mejora la fluidez de γάρ con «Pues», y se evita añadir un segundo demostrativo no expreso en el griego. La revisión conserva la metáfora agonística de ἆθλα / οἴσομεν con «nos llevaremos los premios» y mantiene «virtud» como término clave de ἀρετή.
+  revision_rationale: Se mejora la fluidez de γάρ con 'Pues', se evita el segundo demostrativo no expreso en el griego, y se suprime la nota innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 0c2e66eeeab0db73a412440860c44defbc2297bdf8cf328fd11a28184463d7c5
-  timestamp: '2026-05-07T23:34:37Z'
-  output_hash: 6f82629b9cba395bab1dece20a0a47c95894165a227693e8aa6a4f2c3606e5a9
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 6e07ae9a6e6449be9fa535ab4dfed1d1f6adccc96a28088d27562dcad6a449c7
+  timestamp: '2026-05-18T12:36:59Z'
+  output_hash: 6e07ae9a6e6449be9fa535ab4dfed1d1f6adccc96a28088d27562dcad6a449c7
   usage:
-    prompt_tokens: 3257
-    completion_tokens: 602
-    total_tokens: 3859
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.017173
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

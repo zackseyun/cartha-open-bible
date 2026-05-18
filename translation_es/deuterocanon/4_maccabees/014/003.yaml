@@ -55,7 +55,7 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: O «el sagrado y armonioso concorde de los siete hermanos acerca de la piedad».
+    text: O «la sagrada y armoniosa concordia de los siete hermanos acerca de la piedad».
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἱερὰς
@@ -136,34 +136,37 @@ ai_draft:
     total_tokens: 3335
     reasoning_tokens: 0
     estimated_cost_usd: 0.006067
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador transmite bien el sentido básico del griego: una συμφωνία/sentido de unidad de los siete hermanos, calificada como ἱερὰς y ἐναρμόστους, y relacionada con τῆς εὐσεβείας. Sin embargo, la nota alternativa no es fiel léxicamente, porque «concorde» no funciona como sustantivo español para συμφωνίας.'
-  spanish_quality_summary: 'El texto principal es claro, natural y de registro digno: «el sagrado y armonioso acuerdo de los siete hermanos acerca de la piedad». No obstante, en español suena más natural el orden «sacuerdo sagrado y armonioso»? No; el orden actual es aceptable. La única reparación necesaria es la nota, cuya redacción actual es poco idiomática.'
-  glossary_alignment: No hay conflicto con los términos obligatorios del proyecto. La elección de «piedad» para εὐσέβεια está justificada por el propio expediente y es adecuada en este contexto de 4 Macabeos. «Acuerdo» para συμφωνίας también encaja bien, especialmente porque «armonioso» ya cubre el matiz de armonía/concordia.
+  source_alignment_summary: 'El borrador transmite bien el sentido del griego: la συμφωνία de los siete hermanos calificada como ἱερὰς y ἐναρμόστους respecto de εὐσέβεια. El texto principal es fiel. La nota usa ''concorde'' como sustantivo que no funciona bien en español.'
+  spanish_quality_summary: El texto principal es claro y digno. La nota usa 'concorde' como sustantivo español que normalmente es adjetivo; debe reemplazarse por 'concordia'.
+  glossary_alignment: No hay conflictos. 'Piedad' para εὐσέβεια está justificado. 'Acuerdo' para συμφωνίας evita redundancia con 'armonioso'.
   issues:
   - severity: medium
-    issue: La nota al pie usa «concorde» como sustantivo.
-    rationale: El inglés auditado ofrece «accord / concord» como alternativas para συμφωνίας. En español, «concorde» es normalmente adjetivo, no una traducción sustantiva natural aquí. Debe reemplazarse por «concordia» o «acuerdo»/«concordancia» según el matiz deseado.
+    issue: La nota usa 'concorde' como sustantivo no idiomático en español
+    rationale: '''Concorde'' es normalmente adjetivo; ''concordia'' es el sustantivo español correcto para la alternativa inglesa ''concord''.'
   revised_spanish_text: el sagrado y armonioso acuerdo de los siete hermanos acerca de la piedad[a].
   revised_footnotes:
   - marker: a
     text: O «la sagrada y armoniosa concordia de los siete hermanos acerca de la piedad».
     reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal, que es fiel y natural. Solo se corrige la nota alternativa para que use un sustantivo español idiomático («concordia») que refleje adecuadamente la alternativa inglesa «concord».
+  revision_rationale: Se conserva el texto principal fiel y natural. Se corrige la nota para usar 'concordia' como sustantivo idiomático español equivalente a la alternativa inglesa 'concord'.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: e1a1c76abacdd0fab4674cd28730ea1578a70400099ada0e0d5c4bfc443d6441
-  timestamp: '2026-05-07T23:42:55Z'
-  output_hash: e3c746023ef97134e73669a7adce4e806577c4d786d3bc2054c386eb9692628b
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9b8f7214b58a08c7f82fb4ae91696d3afd3eb56d64790982c51c92171dda5db8
+  timestamp: '2026-05-18T12:37:48Z'
+  output_hash: 9b8f7214b58a08c7f82fb4ae91696d3afd3eb56d64790982c51c92171dda5db8
   usage:
-    prompt_tokens: 2950
-    completion_tokens: 508
-    total_tokens: 3458
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.014995
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

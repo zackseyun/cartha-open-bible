@@ -37,12 +37,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: 'Entonces, habiendo mandado llamar a Hermón con una amenaza, dijo: «¿Cuántas veces tengo que mandarte acerca de estas mismas cosas, [a] tú, el más miserable?»'
+  text: 'Entonces, mandó llamar a Hermón con una amenaza y dijo: «¿Cuántas veces tengo que mandarte sobre estos mismos asuntos, miserable infeliz?»'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «tú» se mantiene en el discurso directo para reflejar el vocativo insultante del griego; en español puede sonar redundante junto con «el más miserable», pero ayuda a conservar la aspereza de la reprensión.
-    reason: spanish_style_note
 lexical_decisions:
 - source_word: τὸν δὲ Ἕρμωνα
   english_pob_choice: Hermon
@@ -132,38 +128,45 @@ ai_draft:
     total_tokens: 3370
     reasoning_tokens: 0
     estimated_cost_usd: 0.006367
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: 'Entonces, habiendo mandado llamar a Hermón con una amenaza, dijo: «¿Cuántas veces tengo que mandarte acerca de estas mismas cosas, [a] tú, el más miserable?»'
+  to: 'Entonces, mandó llamar a Hermón con una amenaza y dijo: «¿Cuántas veces tengo que mandarte sobre estos mismos asuntos, miserable infeliz?»'
+  rationale: Se simplifica el arranque narrativo, se ajusta la expresión de περὶ τούτων αὐτῶν, y se elimina el pronombre redundante con su nota para un vocativo más fluido y fiel al tono del griego.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:35:52Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador transmite bien el sentido básico del griego: Hermón es llamado, hay una amenaza, y sigue una reprensión sobre órdenes repetidas respecto de los mismos asuntos. Sin embargo, «habiendo mandado llamar» introduce un matiz causativo más fuerte que el participio medio simplemente exige, y «acerca de estas mismas cosas» suena algo rígido; «estos mismos asuntos» refleja mejor el énfasis de περὶ τούτων αὐτῶν en español natural. Además, el vocativo insultante ἀθλιώτατε está mejor representado como apelativo directo sin el pronombre redundante.'
-  spanish_quality_summary: 'El español es claro, pero algo acartonado en «habiendo mandado llamar» y en la nota sobre «tú», que intenta justificar una redundancia innecesaria. Un ajuste a «mandó llamar» mejora la fluidez sin perder anterioridad narrativa, y eliminar «tú» hace más natural la invectiva en español: «miserable infeliz» o «el más miserable» funcionan mejor como vocativo directo. También conviene evitar la coma antes del vocativo final si se reestructura la frase de modo más idiomático.'
-  glossary_alignment: No hay términos teológicos o glosario de proyecto en juego. El nombre Hermon/Hermón está bien adaptado como «Hermón». La revisión se centra en fidelidad sintáctica y naturalidad del español, no en terminología doctrinal.
+  source_alignment_summary: 'El borrador capta bien el sentido del griego: convocación de Hermón con amenaza, pregunta de reproche sobre órdenes repetidas, y el vocativo insultante. Sin embargo, ''habiendo mandado llamar'' sobreinterpreta el participio medio y el pronombre ''tú'' junto con su nota son innecesarios.'
+  spanish_quality_summary: El español es comprensible pero algo acartonado. 'Mandó llamar a Hermón' es más natural. La nota sobre 'tú' intenta justificar una redundancia que empeora la naturalidad. El vocativo 'miserable infeliz' es más fluido.
+  glossary_alignment: No hay términos del glosario mayor. El nombre 'Hermón' es la transliteración correcta.
   issues:
   - severity: medium
-    issue: «habiendo mandado llamar» sobreinterpreta προσκαλεσάμενος
-    rationale: El griego indica que lo hizo llamar/summonó, pero la perífrasis con pluscuamperfecto participial y el causativo «mandado llamar» suenan más pesados de lo necesario. «Mandó llamar a Hermón» conserva bien el sentido narrativo.
-  - severity: low
-    issue: «acerca de estas mismas cosas» suena poco idiomático
-    rationale: Aunque es fiel, en español bíblico natural «sobre estos mismos asuntos» o «acerca de estos mismos asuntos» expresa mejor la referencia enfática a los asuntos ya tratados.
+    issue: '''habiendo mandado llamar'' sobreinterpreta προσκαλεσάμενος'
+    rationale: El participio simplemente indica convocar; 'mandó llamar' es más natural en español.
   - severity: medium
-    issue: El pronombre «tú» y su nota no son necesarios
-    rationale: El vocativo insultante ἀθλιώτατε puede expresarse directamente en español sin añadir «tú». La nota explica una decisión que más bien empeora la naturalidad del texto.
+    issue: El pronombre 'tú' y su nota son innecesarios
+    rationale: El vocativo insultante no necesita pronombre redundante ni justificación en nota.
+  - severity: low
+    issue: '''acerca de estas mismas cosas'' suena poco idiomático'
+    rationale: '''sobre estos mismos asuntos'' refleja mejor el énfasis.'
   revised_spanish_text: 'Entonces, mandó llamar a Hermón con una amenaza y dijo: «¿Cuántas veces tengo que mandarte sobre estos mismos asuntos, miserable infeliz?»'
-  revision_rationale: Se simplifica el arranque narrativo para reflejar mejor προσκαλεσάμενος en español natural, se ajusta la expresión de περὶ τούτων αὐτῶν a una formulación más idiomática, y se elimina el pronombre redundante con su nota para dejar un vocativo insultante más fluido y fiel al tono del griego.
+  revision_rationale: Se simplifica el arranque narrativo, se ajusta la expresión de περὶ τούτων αὐτῶν, y se elimina el pronombre redundante con su nota para un vocativo más fluido y fiel al tono del griego.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 08cccd5a060d6c6fd76bcdebf4875b2752deec71381e91cb9c4c34bef600b72e
-  timestamp: '2026-05-07T23:14:44Z'
-  output_hash: 42e426f782f7f17d073650e3fc8abe330c01b224abd948a3eae8d94ff2b725e3
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 7d97a6ef1b247a07729aebde3d5b1fd72a999e67b241defe64b42cc855e03679
+  timestamp: '2026-05-18T12:35:52Z'
+  output_hash: 7d97a6ef1b247a07729aebde3d5b1fd72a999e67b241defe64b42cc855e03679
   usage:
-    prompt_tokens: 3060
-    completion_tokens: 693
-    total_tokens: 3753
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.018045
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

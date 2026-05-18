@@ -45,12 +45,8 @@ base_translation:
     changes_summary: Revised the first clause for closer lexical accuracy to μανῇς and τὴν αὐτὴν μανίαν, avoiding the awkward 'be as insane as your brothers with the same madness' and preserving the repeated madness language. Added 'also' for καὶ σὺ.
 translation:
   language: es
-  text: No te vuelvas también loco[a] con la misma locura que tus hermanos, sino, persuadido por el rey, sálvate.
+  text: No te vuelvas también loco como tus hermanos, con la misma locura, sino, persuadido por el rey, sálvate.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Volverse loco» conserva el tono fuerte de μανῇς y mantiene la cercanía con «locura» en la segunda mitad del versículo.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Μὴ μανῇς
   english_pob_choice: Do not be driven mad
@@ -133,35 +129,42 @@ ai_draft:
     total_tokens: 3491
     reasoning_tokens: 0
     estimated_cost_usd: 0.006192
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: No te vuelvas también loco[a] con la misma locura que tus hermanos, sino, persuadido por el rey, sálvate.
+  to: No te vuelvas también loco como tus hermanos, con la misma locura, sino, persuadido por el rey, sálvate.
+  rationale: Se sustituye la relación imprecisa por 'como tus hermanos' (comparativa), se mantiene la repetición 'loco/locura' y se elimina la nota innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:37:23Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador capta bien el sentido global del griego: una prohibición de compartir la locura de los hermanos, seguida por el llamado a dejarse persuadir por el rey y salvar la vida. Sin embargo, «con la misma locura que tus hermanos» no refleja con suficiente precisión la relación comparativa de τοῖς ἀδελφοῖς σου; en español suena más natural y más fiel «como tus hermanos» o «igual que tus hermanos».'
-  spanish_quality_summary: El español es claro y digno, pero la combinación «volverse también loco con la misma locura que tus hermanos» resulta algo trabada por mezclar asociación («con») y comparación («que»). Una leve reparación mejora la fluidez y la fidelidad sin perder la fuerza retórica del cognado loco/locura.
-  glossary_alignment: No hay términos del glosario mayor en disputa aquí. «Persuadido por el rey» y «sálvate» están bien alineados con las decisiones auditadas. La principal corrección es sintáctico-lexical en la comparación con los hermanos.
+  source_alignment_summary: El borrador capta bien la prohibición de compartir la locura de los hermanos y el llamado a dejarse persuadir por el rey. Sin embargo, 'con la misma locura que tus hermanos' mezcla asociación y comparación de forma imprecisa, y la nota al pie es innecesaria.
+  spanish_quality_summary: El español es comprensible pero la construcción 'no te vuelvas también loco con la misma locura que tus hermanos' resulta trabada. 'como tus hermanos' es más natural y fiel al dativo comparativo/asociativo griego.
+  glossary_alignment: No hay términos del glosario mayor. La terminología léxica está correctamente alineada.
   issues:
   - severity: medium
-    issue: «con la misma locura que tus hermanos» representa de manera imprecisa τοῖς ἀδελφοῖς σου
-    rationale: 'El dativo aquí es comparativo/asociativo: el sentido es que no comparta la misma locura que sus hermanos, es decir, ‘como tus hermanos’, no ‘con tus hermanos’. En español, «con» sugiere compañía más que conformidad de conducta.'
+    issue: '''con la misma locura que tus hermanos'' impreciso para τοῖς ἀδελφοῖς σου'
+    rationale: '''como tus hermanos'' expresa mejor la comparación sin mezclar asociación y conformidad.'
   - severity: low
-    issue: La nota al pie sobre «loco» no es necesaria
-    rationale: El giro «no te vuelvas loco ... con la misma locura» ya es suficientemente claro en español y no crea una ambigüedad nueva que requiera nota. El proyecto pide conservar notas cuando el inglés las preserve o cuando el español necesite aclaración; aquí no hace falta.
+    issue: Nota al pie sobre 'loco' innecesaria
+    rationale: El giro 'no te vuelvas loco ... con la misma locura' ya es suficientemente claro.
   revised_spanish_text: No te vuelvas también loco como tus hermanos, con la misma locura, sino, persuadido por el rey, sálvate.
-  revision_rationale: 'Se sustituye la relación impropia «con ... que tus hermanos» por una construcción comparativa fiel y natural en español: «como tus hermanos». Se mantiene la repetición «loco / locura» para reflejar μανῇς / μανίαν y se conserva «persuadido por el rey» por cercanía al participio pasivo griego.'
+  revision_rationale: Se sustituye la relación imprecisa por 'como tus hermanos' (comparativa), se mantiene la repetición 'loco/locura' y se elimina la nota innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 4c7645bde800bb562fa7f58353f7c24b9d2b04168a345dc88c4e12d770540348
-  timestamp: '2026-05-07T22:47:31Z'
-  output_hash: 339989fe92d4d45d83cc38058de003ec7b4d00e91dc58838f2a96d10bf78baf5
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 5c602554c479311105dcc0f0e56b3a83ace2da7a43d33862d736efe9997f9279
+  timestamp: '2026-05-18T12:37:23Z'
+  output_hash: 5c602554c479311105dcc0f0e56b3a83ace2da7a43d33862d736efe9997f9279
   usage:
-    prompt_tokens: 3040
-    completion_tokens: 571
-    total_tokens: 3611
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.016165
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -55,7 +55,7 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: O «la declaración»; en este contexto la palabra también evoca el trasfondo de martirio.
+    text: O «el testimonio de mis hermanos» puede entenderse como «el testimonio dado por mis hermanos»; en este contexto la palabra también evoca matices asociados con el martirio.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Οὐκ
@@ -125,34 +125,37 @@ ai_draft:
     total_tokens: 2806
     reasoning_tokens: 0
     estimated_cost_usd: 0.004891
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien el griego: Οὐκ + ἀπαντυμολοῶ se vierte naturalmente como «No renunciaré», y τῆς τῶν ἀδελφῶν μου μαρτυρίας como «al testimonio de mis hermanos». Se preserva correctamente la tensión de μαρτυρία como «testimonio» con resonancia martirial, sin sobretraducirla como «martirio».'
-  spanish_quality_summary: 'La frase principal es clara, natural y digna en español. La única reparación necesaria está en la nota: «la declaración» no corresponde bien al campo semántico ni a la alternativa documentada en la auditoría inglesa, que es «the witness». En español conviene «el testimonio» / «el testimonio dado» o mejor «el testimonio de mis hermanos» frente a «la declaración».'
-  glossary_alignment: No hay conflictos con la terminología del proyecto. «Hermanos» respeta el referente masculino contextual. «Testimonio» sigue la decisión lexical y teológica del POB. No se requiere ajuste de nombres divinos, mesiánicos ni otros términos de glosario global.
+  source_alignment_summary: 'El borrador refleja bien el griego: Οὐκ ἀπαντυμολοῶ = ''No renunciaré'', τῆς τῶν ἀδελφῶν μου μαρτυρίας = ''al testimonio de mis hermanos[a]''. La tensión de μαρτυρία como testimonio con resonancia martirial está bien preservada. La nota usa ''declaración'' que no corresponde a la alternativa auditada ''witness''.'
+  spanish_quality_summary: 'El texto principal es claro, natural y digno. La corrección necesaria es en la nota: ''declaración'' no corresponde al campo semántico de μαρτυρία ni a la alternativa inglesa auditada ''witness''.'
+  glossary_alignment: No hay conflictos. 'Testimonio' sigue la decisión lexical y teológica del POB. 'Hermanos' respeta el referente masculino contextual.
   issues:
   - severity: medium
-    issue: La nota léxica usa «la declaración» como alternativa para μαρτυρίας.
-    rationale: La auditoría inglesa documenta «witness» como alternativa, no «declaration». «Declaración» en español reduce el matiz de testimonio/witness y pierde la resonancia martirial que sí conserva «testimonio» o «dar testimonio».
+    issue: La nota usa 'declaración' que no corresponde a μαρτυρία ni a la alternativa auditada 'witness'
+    rationale: '''Declaración'' reduce el matiz de testimonio/witness y pierde la resonancia martirial.'
   revised_spanish_text: No renunciaré al testimonio de mis hermanos[a].
   revised_footnotes:
   - marker: a
     text: O «el testimonio de mis hermanos» puede entenderse como «el testimonio dado por mis hermanos»; en este contexto la palabra también evoca matices asociados con el martirio.
     reason: lexical_alternative
-  revision_rationale: Se mantiene intacto el texto principal porque es fiel, idiomático y teológicamente preciso. Solo se corrige la nota para alinearla con la alternativa léxica auditada («witness») y evitar «declaración», que es menos fiel al griego μαρτυρία.
+  revision_rationale: Se mantiene el texto principal. Se corrige la nota para alinearla con la alternativa léxica auditada 'witness' y evitar 'declaración'.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: cd892858ad1cc944f75741185f454871b2ab9711251936762aebf47edfcad5b1
-  timestamp: '2026-05-07T22:57:29Z'
-  output_hash: 5cc088ec9add16bfda2fa3d1228cff6de8769778a144ec6abd00b5f6052844e7
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 060235d7357e60515ff1da12fcf0dd6f2aa56bdb98c88b9ced6f9e579a89d583
+  timestamp: '2026-05-18T12:37:33Z'
+  output_hash: 060235d7357e60515ff1da12fcf0dd6f2aa56bdb98c88b9ced6f9e579a89d583
   usage:
-    prompt_tokens: 2501
-    completion_tokens: 514
-    total_tokens: 3015
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.013963
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

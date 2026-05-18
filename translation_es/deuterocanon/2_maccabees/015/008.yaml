@@ -50,12 +50,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y lo exhortaba a los que estaban con él a no temer[a] el ataque de las naciones, sino a tener presentes los auxilios que antes les habían venido del cielo, y ahora a esperar la victoria que les vendría del Todopoderoso.
+  text: Y exhortaba a los que estaban con él a no temer el ataque de las naciones, sino a tener presentes los auxilios que antes les habían venido del cielo, y ahora a esperar la victoria que les vendría del Todopoderoso.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «temer» traduce aquí el verbo griego en su sentido práctico de no encogerse ante el peligro; también podría expresarse como «acobardarse», pero eso intensifica el matiz moral.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: παρεκάλει
   english_pob_choice: urged
@@ -156,35 +152,42 @@ ai_draft:
     total_tokens: 4231
     reasoning_tokens: 0
     estimated_cost_usd: 0.008269
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y lo exhortaba a los que estaban con él a no temer[a] el ataque de las naciones, sino a tener presentes los auxilios que antes les habían venido del cielo, y ahora a esperar la victoria que les vendría del Todopoderoso.
+  to: Y exhortaba a los que estaban con él a no temer el ataque de las naciones, sino a tener presentes los auxilios que antes les habían venido del cielo, y ahora a esperar la victoria que les vendría del Todopoderoso.
+  rationale: Se elimina el pronombre erróneo 'lo' para corregir la sintaxis. Se suprime la nota al pie por innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:34:54Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido global del griego: Judas anima a los suyos a no temer el ataque enemigo, a recordar las ayudas previas venidas del cielo y a esperar la victoria procedente del Todopoderoso. Sin embargo, hay un problema gramatical importante en español con «Y lo exhortaba», porque el objeto directo singular «lo» no corresponde al plural griego «a los que estaban con él» y distorsiona la sintaxis del versículo.'
-  spanish_quality_summary: El español es mayormente claro y digno, con buenas elecciones como «tener presentes» y «Todopoderoso». La principal falla es la redacción inicial «Y lo exhortaba a los que estaban con él», que resulta incorrecta y poco natural. También la nota sobre «temer» no es necesaria, ya que el español base ya comunica bien el matiz sin crear ambigüedad especial.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Todopoderoso» para παντοκράτωρ está bien justificado. «Naciones» para ἐθνῶν y «auxilios» para βοηθήματα son fieles al expediente inglés y al griego. La revisión propuesta mantiene estas decisiones.
+  source_alignment_summary: El griego exhorta a los soldados a no temer el ataque de las naciones, a recordar ayudas pasadas del cielo y esperar la victoria del Todopoderoso. El borrador captura bien todos estos elementos excepto el pronombre erróneo 'lo' al inicio.
+  spanish_quality_summary: Claro y digno en general. La falla principal es 'Y lo exhortaba a los que estaban con él', donde el pronombre singular 'lo' no tiene referente y produce una frase gramaticalmente incorrecta. La nota al pie sobre 'temer' es innecesaria.
+  glossary_alignment: No hay conflictos. 'Todopoderoso' para παντοκράτωρ es correcto. 'Naciones' para ἐθνῶν y 'auxilios' para βοηθήματα están bien justificados.
   issues:
   - severity: high
-    issue: Pronombre erróneo en «Y lo exhortaba a los que estaban con él»
-    rationale: El griego tiene como complemento a «los que estaban con él»; el pronombre singular «lo» introduce un objeto inexistente y vuelve la frase gramaticalmente defectuosa en español.
+    issue: Pronombre erróneo 'lo' en la frase inicial
+    rationale: El objeto de παρεκάλει es plural; el pronombre singular 'lo' no tiene referente y es gramaticalmente incorrecto.
   - severity: low
-    issue: Nota al pie innecesaria sobre «temer»
-    rationale: El texto español no presenta una ambigüedad que requiera nota. El matiz alternativo «acobardarse» ya está suficientemente documentado en las decisiones léxicas y no necesita cargarse en el texto final.
+    issue: Nota al pie innecesaria sobre 'temer'
+    rationale: No crea ambigüedad que requiera nota y ya está cubierta en las decisiones léxicas.
   revised_spanish_text: Y exhortaba a los que estaban con él a no temer el ataque de las naciones, sino a tener presentes los auxilios que antes les habían venido del cielo, y ahora a esperar la victoria que les vendría del Todopoderoso.
-  revision_rationale: Se elimina el pronombre singular «lo» para corregir la sintaxis y alinear fielmente el español con el complemento plural del griego. También se suprime la nota al pie por no ser necesaria para la comprensión ni para resolver una ambigüedad relevante creada en español.
+  revision_rationale: Se elimina el pronombre erróneo 'lo' para corregir la sintaxis. Se suprime la nota al pie por innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 6ed90cd5e5358d2cbfa3c1aa83d6e74adf27f62319314741d5f1b57b12049ad1
-  timestamp: '2026-05-07T23:37:30Z'
-  output_hash: 3414d1033622dbb999eac977c631ce5f1d5c7d86a831790c4c1c0ede3d1575e8
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8cd6a276f772af726ca246e1f9876fb4d8ffd1d6df54423609b19515bf673019
+  timestamp: '2026-05-18T12:34:54Z'
+  output_hash: 8cd6a276f772af726ca246e1f9876fb4d8ffd1d6df54423609b19515bf673019
   usage:
-    prompt_tokens: 3915
-    completion_tokens: 565
-    total_tokens: 4480
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.018263
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

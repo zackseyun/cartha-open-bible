@@ -48,7 +48,7 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Posible lectura alternativa: «Atargatis» puede designar un santuario de Atargatis más que otro nombre de ciudad.'
+    text: O posiblemente, «Atargatión» se refiere a un santuario de Atargatis más que a un segundo nombre de ciudad.
     reason: lexical_alternative
   - marker: b
     text: 'Griego literalmente: «dos miríadas de cuerpos y cinco mil», es decir, veinticinco mil muertos.'
@@ -126,19 +126,16 @@ ai_draft:
     total_tokens: 3334
     reasoning_tokens: 0
     estimated_cost_usd: 0.005579
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien el sentido básico del griego y sigue de cerca la auditoría inglesa: movimiento ofensivo contra Carnión y Atargatis, seguido de una matanza de 25.000. Sin embargo, la nota [a] no preserva con precisión la alternativa documentada en inglés, que contrasta el topónimo con un posible santuario de Atargatis y menciona la posibilidad de «Atargation»; además, «lectura alternativa» suena menos exacto que una nota de identificación referencial.'
-  spanish_quality_summary: El español es claro y natural. «Avanzó contra», «Carnión» y «veinticinco mil hombres» funcionan bien. «Masacró» es aceptable, pero «slaughtered» queda algo mejor con «mató» o «dio muerte a» en registro bíblico; aun así, no es un error. La mejora necesaria es principalmente en la redacción de la nota, no en el texto principal.
-  glossary_alignment: No hay términos teológicos sensibles en este versículo. El tratamiento de nombres propios y el valor militar de ἐπὶ están bien. La política del proyecto sobre notas léxicas se cumple en parte, pero conviene ajustar la nota [a] para preservar mejor la alternativa auditada.
+  source_alignment_summary: 'El borrador refleja bien el sentido del griego: avance militar contra Carnión y Atargatis, matanza de 25.000. La nota [a] debe ser corregida para reflejar la alternativa léxica auditada que menciona ''Atargatión'' como posible nombre alternativo/santuario.'
+  spanish_quality_summary: El texto principal es claro y natural. El único ajuste necesario es la redacción de la nota [a] para preservar mejor la alternativa documentada en el inglés POB.
+  glossary_alignment: No hay términos del glosario mayor implicados. El tratamiento de nombres propios y el valor militar son adecuados.
   issues:
   - severity: medium
-    issue: La nota [a] no reproduce fielmente la alternativa léxica auditada.
-    rationale: El inglés conserva la posibilidad de que Ἀτεργάτιον se entienda como «Atargation» o como un santuario de Atargatis, en vez de simplemente otro nombre de ciudad. La nota española actual repite «Atargatis» y pierde parte del contraste formal documentado.
-  - severity: low
-    issue: La formulación «lectura alternativa» en [a] es menos precisa que una nota lexical/referencial.
-    rationale: No se trata tanto de una variante textual como de una posible identificación del referente. Una redacción más directa mejora fidelidad y claridad editorial.
+    issue: La nota [a] no reproduce fielmente la alternativa léxica auditada
+    rationale: El inglés conserva 'Atargation' como posible referencia a un santuario; la nota española no refleja esta alternativa con precisión.
   revised_spanish_text: Entonces avanzó contra Carnión y Atargatis[a][b], y masacró veinticinco mil hombres.
   revised_footnotes:
   - marker: a
@@ -147,19 +144,22 @@ review_pass:
   - marker: b
     text: 'Griego literalmente: «dos miríadas de cuerpos y cinco mil», es decir, veinticinco mil muertos.'
     reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal, que es fiel y natural, y se corrige la nota [a] para reflejar con mayor precisión la alternativa léxica/referencial preservada en la auditoría inglesa.
+  revision_rationale: Se conserva el texto principal y se corrige la nota [a] para reflejar con mayor precisión la alternativa léxica documentada en la auditoría inglesa.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: e1b4ca5ed627dd2603c7221b2019eaec0fc6200809c4f98b8b470348204941ce
-  timestamp: '2026-05-07T23:09:59Z'
-  output_hash: c44b862b2260e755ee17361bcc1509a3715ad892fdc41ba73cf19ef6a050164e
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 1e7182d96c3deb4931bdfec6bf0f6445ef5d878e3b310a8b416a865ee39dcffc
+  timestamp: '2026-05-18T12:34:17Z'
+  output_hash: 1e7182d96c3deb4931bdfec6bf0f6445ef5d878e3b310a8b416a865ee39dcffc
   usage:
-    prompt_tokens: 2956
-    completion_tokens: 625
-    total_tokens: 3581
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.016765
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -55,7 +55,7 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «consideramos propio transgredir la ley de ningún modo».'
+    text: 'O: «consideramos propio no transgredir la ley de ningún modo».'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: διὸ
@@ -132,34 +132,37 @@ ai_draft:
     total_tokens: 3078
     reasoning_tokens: 0
     estimated_cost_usd: 0.005069
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español transmite correctamente el sentido básico de διὸ δὴ κατʼ οὐδένα τρόπον παρανομεῖν ἀξιοῦμεν: una conclusión enfática de que juzgan impropio violar la ley. Sin embargo, la nota alternativa española reproduce de forma demasiado literal y poco natural el orden inglés auditado, y pierde claridad en español.'
-  spanish_quality_summary: 'El texto principal es claro, fiel y legible: «Por tanto, en efecto, consideramos justo no quebrantar la ley». Suena natural y mantiene el tono digno. La única reparación necesaria es la nota al pie, que debe expresar la alternativa léxica en español idiomático.'
-  glossary_alignment: No hay conflicto con la terminología base del proyecto. «La ley» en minúscula respeta la decisión documentada. «Quebrantar la ley» refleja bien παρανομεῖν. «En efecto» para δὴ es aceptable, aunque algo marcado; no requiere cambio.
+  source_alignment_summary: 'El borrador capta bien el sentido: conclusión inferencial enfática de que juzgan impropio violar la ley en cualquier forma. El texto principal es fiel y natural. La nota alternativa es torpe en español.'
+  spanish_quality_summary: 'Texto principal claro y fiel. La nota al pie formula la alternativa de manera poco idiomática: ''consideramos propio transgredir la ley de ningún modo'' suena ambigua. Debe reformularse.'
+  glossary_alignment: No hay conflictos. 'La ley' en minúscula respeta la decisión documentada. 'Quebrantar la ley' refleja bien παρανομεῖν.
   issues:
   - severity: medium
-    issue: 'La nota al pie alternativa es poco idiomática en español: «consideramos propio transgredir la ley de ningún modo».'
-    rationale: Aunque intenta reflejar la alternativa inglesa, el orden y la colocación de «de ningún modo» resultan torpes y ambiguos en español. Debe reformularse como «consideramos propio de ningún modo transgredir la ley» o, mejor, «juzgamos propio no transgredir la ley de ningún modo», manteniendo el valor alternativo sin sonar antinatural.
+    issue: La nota al pie alternativa es poco idiomática en español
+    rationale: '''consideramos propio transgredir la ley de ningún modo'' es torpe y ambigua; debe reformularse.'
   revised_spanish_text: Por tanto[a], en efecto, consideramos justo no quebrantar la ley.
   revised_footnotes:
   - marker: a
     text: 'O: «consideramos propio no transgredir la ley de ningún modo».'
     reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal porque es fiel, claro y natural. Solo se corrige la nota alternativa para que exprese la misma opción léxica documentada en el inglés con sintaxis española idiomática y sin ambigüedad.
+  revision_rationale: Se conserva el texto principal fiel y natural. Se corrige la nota alternativa para que exprese la misma opción léxica con sintaxis española idiomática.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 4195b37ef9d252979c5f218fb0852d25205c825aed0bc313d6ba6b3b9c8eba7f
-  timestamp: '2026-05-07T23:25:26Z'
-  output_hash: 1d4d34e346f00fd20c863a7006de2b57a7e3864ce3914e0c50a0f206e23a90b9
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 822a9544ba825cb5e85d7e9f22df1215fd5607f858fede26dfc4a282a57fc49b
+  timestamp: '2026-05-18T12:36:43Z'
+  output_hash: 822a9544ba825cb5e85d7e9f22df1215fd5607f858fede26dfc4a282a57fc49b
   usage:
-    prompt_tokens: 2695
-    completion_tokens: 482
-    total_tokens: 3177
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.013968
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

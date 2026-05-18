@@ -38,12 +38,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: ¿Cómo, entonces, podría decirse, si la razón domina[a] a las pasiones, no domina también a la falta de memoria y a la ignorancia?
+  text: ¿Cómo, entonces, alguien podría decir, si la razón domina a las pasiones, no domina también al olvido y a la ignorancia?
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Domina» traduce el griego κρατεῖ con un verbo español natural para autoridad o control. También podría verterse «rige sobre» o «tiene poder sobre».
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Πῶς οὖν
   english_pob_choice: How then
@@ -136,38 +132,45 @@ ai_draft:
     total_tokens: 3363
     reasoning_tokens: 0
     estimated_cost_usd: 0.006362
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: ¿Cómo, entonces, podría decirse, si la razón domina[a] a las pasiones, no domina también a la falta de memoria y a la ignorancia?
+  to: ¿Cómo, entonces, alguien podría decir, si la razón domina a las pasiones, no domina también al olvido y a la ignorancia?
+  rationale: Se introduce 'alguien podría decir' para el interlocutor hipotético explícito del griego, se usa 'olvido' en vez de 'falta de memoria', y se elimina la nota innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:36:32Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien la estructura argumentativa griega: pregunta retórica con objeción hipotética, λογισμός como «razón», πάθη como «pasiones», y el contraste con «olvido/ignorancia». Sin embargo, «podría decirse» debilita ligeramente εἴποι τις ἄν, que introduce mejor a un interlocutor hipotético («alguien podría decir»). Además, «falta de memoria» es más perifrástico que λήθης y menos elegante que «olvido» en este registro filosófico.'
-  spanish_quality_summary: El español es claro, pero la secuencia «¿Cómo, entonces, podría decirse...?» suena algo impersonal y menos natural que una formulación con sujeto explícito. «La falta de memoria» también resulta más pesada que «el olvido», que mantiene mejor el paralelismo con «la ignorancia» y suena más literario y digno.
-  glossary_alignment: 'Se alinea bien con la terminología del proyecto en «razón» para λογισμός y «pasiones» para πάθη. No hay conflictos con términos doctrinales mayores. El ajuste recomendado es estilístico-lexical: preferir «alguien podría decir» para εἴποι τις ἄν y «olvido» para λήθης.'
+  source_alignment_summary: El borrador refleja bien la estructura argumentativa griega con pregunta retórica, λογισμός como 'razón', πάθη como 'pasiones'. Sin embargo, 'podría decirse' debilita el interlocutor hipotético explícito de εἴποι τις ἄν y 'falta de memoria' es más perifrástico que λήθης.
+  spanish_quality_summary: El español es claro pero puede afinarse. 'Alguien podría decir' preserva mejor la objeción hipotética explícita del griego. 'Olvido' es más elegante y directo que 'falta de memoria'. La nota sobre 'domina' es innecesaria.
+  glossary_alignment: Bien alineado. 'Razón' para λογισμός y 'pasiones' para πάθη están correctos.
   issues:
   - severity: medium
-    issue: εἴποι τις ἄν se tradujo como «podría decirse»
-    rationale: La pasiva impersonal es comprensible, pero el griego introduce un objetor hipotético explícito («alguien/uno podría decir»). La formulación personal preserva mejor la fuerza retórica del original y del POB inglés.
+    issue: εἴποι τις ἄν traducido como 'podría decirse' (pasiva impersonal) pierde el interlocutor hipotético
+    rationale: El griego introduce explícitamente a alguien que objeta; 'alguien podría decir' preserva ese elemento.
   - severity: low
-    issue: λήθης se tradujo como «la falta de memoria»
-    rationale: Aunque semánticamente posible, es más pesado y menos directo que «olvido», que corresponde bien al sustantivo abstracto griego y mantiene mejor el paralelismo estilístico con «ignorancia».
+    issue: '''falta de memoria'' más pesado que λήθης'
+    rationale: '''Olvido'' es más directo y mantiene el paralelismo estilístico con ''ignorancia''.'
   - severity: low
-    issue: La nota sobre «domina» no es necesaria
-    rationale: «Domina» es una opción plenamente natural y fiel para κρατεῖ, y aquí no parece hacer falta una nota léxica para sostener una decisión no problemática.
+    issue: Nota sobre 'domina' innecesaria
+    rationale: '''Domina'' es natural para κρατεῖ y no requiere nota léxica.'
   revised_spanish_text: ¿Cómo, entonces, alguien podría decir, si la razón domina a las pasiones, no domina también al olvido y a la ignorancia?
-  revision_rationale: Se revisa para reflejar con mayor fidelidad la objeción hipotética explícita del griego («alguien podría decir») y para usar «olvido», que es más directo y estilísticamente mejor que «falta de memoria» para λήθης. Se elimina la nota por innecesaria.
+  revision_rationale: Se introduce 'alguien podría decir' para el interlocutor hipotético explícito del griego, se usa 'olvido' en vez de 'falta de memoria', y se elimina la nota innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: c515a457bfe062f9855abea58703e21edf157edc583f75d45dd988631334ce98
-  timestamp: '2026-05-07T22:53:37Z'
-  output_hash: a1c8922b49c18d7808170d397c08f2c08f968d412817bd79b8ab5755e6638a54
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a55327671ceb2c8eda4ae2ca8fd1ef75c90c5179a64b9a1b44266b5eb784153b
+  timestamp: '2026-05-18T12:36:32Z'
+  output_hash: a55327671ceb2c8eda4ae2ca8fd1ef75c90c5179a64b9a1b44266b5eb784153b
   usage:
-    prompt_tokens: 3075
-    completion_tokens: 644
-    total_tokens: 3719
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.017348
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

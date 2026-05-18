@@ -54,7 +54,7 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'También puede entenderse: «No nos vengues por la impureza de ellos». El verbo griego puede expresar castigo o venganza retributiva.'
+    text: 'También puede entenderse: «No tomes venganza contra nosotros por la impureza de ellos». El verbo griego puede expresar castigo o venganza retributiva.'
     reason: lexical_alternative
   - marker: b
     text: 'O: «desecración». El sustantivo alude a tratar como común lo que es santo.'
@@ -175,16 +175,16 @@ ai_draft:
     total_tokens: 4704
     reasoning_tokens: 0
     estimated_cost_usd: 0.009584
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien la estructura y el sentido del griego: súplica negativa doble dirigida a Dios, distinción entre ἀκαθαρσία y βεβήλωσις, y propósito de evitar que los παράνομοι se gloríen. También conserva correctamente el referente personal de τούτων como «de ellos». Sin embargo, la nota a del borrador introduce una alternativa española defectuosa para ἐκδίκησῃς.'
-  spanish_quality_summary: El texto principal es claro, digno y natural en español eclesial contemporáneo. «No nos castigues… ni nos llames a cuentas…» funciona bien; «los sin ley» preserva el matiz moral-jurídico, aunque suena algo literal. «Furor» y «el orgullo de su lengua» son aceptables y legibles. La única reparación necesaria es en la formulación de la nota alternativa.
-  glossary_alignment: No hay conflicto con los términos globales del proyecto. No aparecen Yahvé, Mesías/Cristo, espíritu, etc. Las decisiones «impureza», «profanación», «los sin ley» y «se jacten» están bien alineadas con el expediente léxico inglés y con el griego fuente.
+  source_alignment_summary: 'El borrador refleja bien la estructura y el sentido del griego: súplica negativa doble, distinción entre ἀκαθαρσία y βεβήλωσις, y propósito de evitar que los παράνομοι se gloríen. El texto principal es fiel. Solo la nota [a] necesita corrección.'
+  spanish_quality_summary: El texto principal es claro, digno y natural. La nota [a] usa 'No nos vengues' que en español suena como si Dios fuera a vindicar a los hablantes; debe reformularse como 'No tomes venganza contra nosotros'.
+  glossary_alignment: No hay conflictos con terminología base. 'Los sin ley' para παράνομοι preserva el matiz moral-jurídico.
   issues:
   - severity: medium
-    issue: La nota [a] usa «No nos vengues por la impureza de ellos» como alternativa.
-    rationale: En español, «vengar» normalmente requiere un complemento como la persona o causa vengada («vengar a alguien», «vengar una ofensa»). «No nos vengues» no comunica bien el valor de ἐκδίκησῃς aquí y puede sonar como si Dios fuera a vindicar a los hablantes, no a tomar represalia contra ellos. Debe reformularse como «No tomes venganza contra nosotros…» o equivalente.
+    issue: La nota [a] usa 'No nos vengues' que es idiomáticamente incorrecto en español para este sentido
+    rationale: '''Vengar'' en español normalmente requiere un complemento; ''No nos vengues'' puede sonar como si pidieran a Dios que los vindique, no que se abstenga de represalias.'
   revised_spanish_text: No nos castigues por la impureza[a] de ellos, ni nos llames a cuentas por la profanación[b], para que no se jacten los sin ley en su furor, ni se regocijen en el orgullo de su lengua, diciendo
   revised_footnotes:
   - marker: a
@@ -193,19 +193,22 @@ review_pass:
   - marker: b
     text: 'O: «desecración». El sustantivo alude a tratar como común lo que es santo.'
     reason: lexical_alternative
-  revision_rationale: Se conserva intacto el texto principal porque es fiel al griego y natural en español. Solo se corrige la nota [a] para que la alternativa léxica represente con precisión el sentido posible de ἐκδίκησῃς en español idiomático.
+  revision_rationale: Se conserva intacto el texto principal. Solo se corrige la nota [a] para que la alternativa represente con precisión el sentido de ἐκδίκησῃς en español idiomático.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 1d54ef7eba9e82d07505e7a20ad6e5568a21ba23a59ed12a09ba90873f79f3ac
-  timestamp: '2026-05-07T23:12:14Z'
-  output_hash: 4c9873c294c27582f18409914b321e0ae7b2ac0a9ee53ee93329ec680fe6ecbd
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: ea592415aec541064f600d9548ba213c9ca442c8d7a1b1b0cc8f5b6f98be8c81
+  timestamp: '2026-05-18T12:35:34Z'
+  output_hash: ea592415aec541064f600d9548ba213c9ca442c8d7a1b1b0cc8f5b6f98be8c81
   usage:
-    prompt_tokens: 4370
-    completion_tokens: 652
-    total_tokens: 5022
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.020705
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

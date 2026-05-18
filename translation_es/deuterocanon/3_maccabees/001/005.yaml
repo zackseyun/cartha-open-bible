@@ -120,34 +120,27 @@ ai_draft:
     total_tokens: 3330
     reasoning_tokens: 0
     estimated_cost_usd: 0.005846
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
-  verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien la estructura y el sentido general del griego: συνέβη = «sucedió», ἀντιπάλους = «los adversarios», ἐν χειρονομίαις = «en combate cuerpo a cuerpo», διαφθαρῆναι = «fueron destruidos», y συλλημφθῆναι con δοριαλώτους = «fueron capturados como prisioneros de guerra». Sin embargo, la nota al pie está anclada al sintagma equivocado: el matiz literal «capturados por la lanza» explica δοριαλώτους («prisioneros de guerra»), no el verbo «capturados».'
-  spanish_quality_summary: El español es claro, natural y digno. La frase funciona bien en registro bíblico moderno. El único ajuste necesario es mover la llamada de nota para que el lector la asocie con «prisioneros de guerra» y no con «capturados», lo cual mejora precisión semántica y legibilidad.
-  glossary_alignment: No hay términos del glosario teológico principal en juego. Las decisiones léxicas relevantes están alineadas con el expediente inglés. «Adversarios», «combate cuerpo a cuerpo» y «prisioneros de guerra» son adecuados en español. La excepción necesaria es de formato/anclaje de nota, no de terminología.
-  issues:
-  - severity: medium
-    issue: La nota [a] está colocada después de «prisioneros de guerra» en el expediente inglés, pero en el borrador español queda tras toda la cláusula y puede leerse como si explicara «capturados» más que δοριαλώτους.
-    rationale: El contenido de la nota («capturados por la lanza») corresponde específicamente al sustantivo/adjetivo militar δοριαλώτους, cuya equivalencia idiomática es «prisioneros de guerra». Conviene anclarla directamente a esa expresión para mantener la lógica léxica del aparato crítico.
-  revised_spanish_text: Y así sucedió que los adversarios fueron destruidos en el combate cuerpo a cuerpo, y muchos también fueron capturados como prisioneros de guerra[a].
-  revised_footnotes:
-  - marker: a
-    text: Literalmente, «capturados por la lanza», una expresión militar para decir que fueron tomados como prisioneros de guerra.
-    reason: lexical_alternative
-  revision_rationale: Se conserva el texto base porque es fiel y natural; solo se precisa el anclaje de la nota para que explique correctamente «prisioneros de guerra», que es donde recae el matiz literal de δοριαλώτους.
+  verdict: approve
+  source_alignment_summary: 'El borrador refleja fielmente el griego: συνέβη = ''sucedió'', ἀντιπάλους = ''los adversarios'', ἐν χειρονομίαις = ''en el combate cuerpo a cuerpo'', διαφθαρῆναι = ''fueron destruidos'', δοριαλώτους con συλλημφθῆναι = ''capturados como prisioneros de guerra[a]''. El marcador [a] está correctamente ubicado después de ''prisioneros de guerra''.'
+  spanish_quality_summary: El español es claro, natural y digno. El marcador de nota [a] está anclado al término correcto. No se requieren cambios.
+  glossary_alignment: No hay términos del glosario mayor implicados. Las decisiones léxicas están alineadas con el expediente inglés.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 46d591f8f5747a3c5bd17f64e6b968a16e09410ad61b8187d93623372fc2f332
-  timestamp: '2026-05-07T22:53:13Z'
-  output_hash: 13a18bb4ac8a08c7181621484a5fd3cfcf82159d2b120b9f526b7b668cf472a7
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d50da0a94c6db260c49526b60ca40651f83cd80dbd367d21527e63cacd42613b
+  timestamp: '2026-05-18T12:35:20Z'
+  output_hash: d50da0a94c6db260c49526b60ca40651f83cd80dbd367d21527e63cacd42613b
   usage:
-    prompt_tokens: 2909
-    completion_tokens: 594
-    total_tokens: 3503
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.016182
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
