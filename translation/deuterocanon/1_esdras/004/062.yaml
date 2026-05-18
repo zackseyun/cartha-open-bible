@@ -21,102 +21,17 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And they blessed the God of their fathers[a], because he had given them relief and remission.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'forgiveness' or 'remission' for 'release' (Greek ἄφεσιν).
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: εὐλόγησαν
-  chosen: blessed
-  alternatives:
-  - praised
-  lexicon: BDAG
-  rationale: The verb commonly means 'bless' in God-directed doxological contexts. 'Praised' is possible in English, but 'blessed' more closely reflects the Greek wording and biblical idiom.
-- source_word: τὸν θεὸν τῶν πατέρων αὐτῶν
-  chosen: the God of their fathers
-  alternatives:
-  - their ancestral God
-  lexicon: BDAG
-  rationale: This preserves the covenantal-historical expression found in biblical narrative. 'Ancestral God' is smoother but less transparent to the source phrasing.
-- source_word: ἔδωκεν
-  chosen: had given
-  alternatives:
-  - gave
-  lexicon: BDAG
-  rationale: English past perfect fits naturally after the preceding main action ('they blessed ... because he had given'), clarifying the causal sequence without adding content.
-- source_word: ἄνεσιν
-  chosen: relief
-  alternatives:
-  - rest
-  - ease
-  lexicon: BDAG
-  rationale: ἄνεσις denotes easing of pressure or distress. 'Relief' communicates that sense clearly in modern English; 'rest' could suggest cessation from labor more narrowly.
-- source_word: ἄφεσιν
-  chosen: release
-  alternatives:
-  - remission
-  - forgiveness
-  - liberty
-  lexicon: BDAG
-  rationale: In this context, paired with ἄνεσις, the term most naturally denotes release or freedom rather than specifically forgiveness of sins. 'Release' preserves the broad sense and avoids importing a narrower theological meaning not explicit here.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 744cfbe9ab89f502d52cd28f19d00a8f7c1e77e019061600ce9de29818b3783b
-  timestamp: '2026-04-21T21:21:48Z'
-  output_hash: 4681a34e8bb74848cef4ca435c8dc6ab2c8c131d0e205316b30642300cf4f0c0
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @8acd1608
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Myers 1974, Anchor Bible 42
-  - Talshir 2001, SBL Commentary
-  - Hanhart 1974, Göttingen LXX -- Esdrae liber I
-  revision_candidates: []
-status: revised
-theological_decisions:
-- issue: Sense of ἄφεσιν in context
-  chosen_reading: release
-  alternative_readings:
-  - forgiveness
-  - remission
-  rationale: Although ἄφεσις can mean forgiveness/remission in many biblical contexts, here it is coordinated with ἄνεσις ('relief'), favoring a socio-political or circumstantial sense of release. The translation avoids importing a specifically soteriological reading absent from the immediate wording.
-  doctrine_reference: Translation philosophy §§1, 3, 6
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:28:49Z'
-  unchanged: false
-  changes_summary: Changed 'release' to 'remission' to better reflect ἄφεσιν in a formal translation and to avoid the awkward pairing 'relief and release.'
+  text: 'And they blessed the God of their fathers, because he had given them relief and release.'
 revisions:
-- timestamp: '2026-04-23T15:28:49Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And they blessed the God of their fathers, because he had given them relief and release.
-  to: And they blessed the God of their fathers, because he had given them relief and remission.
-  rationale: Changed 'release' to 'remission' to better reflect ἄφεσιν in a formal translation and to avoid the awkward pairing 'relief and release.'
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T22:42:30Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/004/062.job-47662.json
+- timestamp: '2026-05-18T04:00:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they blessed the God of their fathers[a], because he had given them relief and remission.'
+  to: 'And they blessed the God of their fathers, because he had given them relief and release.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''release'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:17Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 1 Esdras 4:62 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''release'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'

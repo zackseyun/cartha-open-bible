@@ -29,109 +29,17 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: Lord of Israel[a], you are true; for we have been left as a remnant to this day.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, with the Hebrew parallel in Ezra 9:13, 'a remnant' or 'an escaped remnant.' The Greek here uses the image 'a root.'
-    reason: alternative_reading
-lexical_decisions:
-- source_word: κύριε
-  chosen: Lord
-  alternatives:
-  - Master
-  lexicon: BDAG
-  rationale: Direct vocative of κύριος used as a divine title. Per doctrine, κύριος defaults to 'Lord.'
-- source_word: τοῦ Ἰσραήλ
-  chosen: of Israel
-  rationale: Genitive identifying the God addressed as Israel's Lord; straightforward title construction.
-- source_word: ἀληθινὸς
-  chosen: 'true'
-  alternatives:
-  - righteous
-  - faithful
-  - genuine
-  lexicon: BDAG
-  rationale: The adjective most naturally means 'true' or 'genuine.' In this prayer context it affirms God's truthfulness/rightness without over-interpreting toward a narrower theological term like 'righteous.'
-- source_word: κατελείφθημεν
-  chosen: we have been left
-  alternatives:
-  - we were left
-  - we have been preserved
-  lexicon: BDAG
-  rationale: 'Aorist/passive of καταλείπω, ''leave behind, leave remaining.'' English perfect fits the present-result sense in context: the people remain because God has not utterly destroyed them.'
-- source_word: ῥίζα
-  chosen: a root
-  alternatives:
-  - a remnant
-  - root-stock
-  - seed
-  lexicon: LSJ
-  rationale: The Greek explicitly says 'root.' Although the MT parallel in Ezra 9:13 speaks of 'a remnant/escape,' the primary Greek witness uses the metaphor of surviving root-stock. The translation preserves the Greek image rather than harmonizing to the Hebrew parallel.
-- source_word: ἐν τῇ σήμερον
-  chosen: to this day
-  alternatives:
-  - at the present time
-  - today
-  lexicon: LSJ
-  rationale: Idiomatic temporal expression meaning 'up to the present day/time.' 'To this day' is natural English and preserves the force.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: abdbea38ed2f6411b110ce03d31961c488373542effc720686aa48355e8310dc
-  timestamp: '2026-04-21T21:17:14Z'
-  output_hash: 614b4dd1fe63c48654ca65ff871eeee758c18ee9783a1e001c7a7e53a1c2ebdf
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @004b7414
-  - WLC MT alignment (Zone 1 Hebrew parallel) @004b7414
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Myers 1974, Anchor Bible 42
-  - Talshir 2001, SBL Commentary
-  - Hanhart 1974, Göttingen LXX -- Esdrae liber I
-  revision_candidates: []
-status: revised
-theological_decisions:
-- issue: Relation of the Greek wording to the MT parallel in Ezra 9:13
-  chosen_reading: Preserve the Greek metaphor 'a root' in the main text
-  alternative_readings:
-  - '''a remnant'' based on the Hebrew parallel'
-  - '''an escaped remnant'' by harmonization to Ezra 9:13'
-  rationale: Project policy gives original-language primacy to the Zone 1 witness for deuterocanonical books, while using the MT parallel as a real input and sanity check. Here the Greek of 1 Esdras appears to recast the Hebrew idea of surviving remnant with the image of a remaining root. The main text therefore follows the Greek, while the Hebrew-parallel sense is preserved in a footnote.
-  doctrine_reference: Translation philosophy §§1, 3, 5
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:40Z'
-  unchanged: false
-  changes_summary: Changed 'a root' to 'a remnant' to better reflect the idiomatic sense here in context and produce natural formal English; retained the rest unchanged.
+  text: 'Lord of Israel, you are true; for we have been left as a root to this day.'
 revisions:
-- timestamp: '2026-04-23T15:29:40Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: Lord of Israel, you are true; for we have been left as a root to this day.
-  to: Lord of Israel, you are true; for we have been left as a remnant to this day.
-  rationale: Changed 'a root' to 'a remnant' to better reflect the idiomatic sense here in context and produce natural formal English; retained the rest unchanged.
-
-cross_check:
-  status: high_agreement
-  agreement: 0.95
-  agreement_score: 0.95
-  agreement_min: 0.95
-  agreement_max: 0.95
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T22:44:28Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    minor-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/008/087.job-47891.json
+- timestamp: '2026-05-18T04:00:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Lord of Israel[a], you are true; for we have been left as a remnant to this day.'
+  to: 'Lord of Israel, you are true; for we have been left as a root to this day.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a root'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:17Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 1 Esdras 8:87 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a root'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '

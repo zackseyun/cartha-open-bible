@@ -11,87 +11,17 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 4 = Addition D, segmented from Swete pages 784-785 with manual phrase anchors derived from the Swete transcription.
 translation:
-  text: And while she was speaking[a], she collapsed from faintness.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'collapsed from weakness' or 'fell in a faint.'
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: ἐν ... τῷ διαλέγεσθαι
-  chosen: while she was speaking
-  alternatives:
-  - as she was speaking
-  - while she was conversing
-  lexicon: BDAG
-  rationale: The articular infinitive with ἐν commonly expresses contemporaneous time, so 'while she was speaking' best captures the temporal sense in natural English. 'Conversing' is possible from διαλέγομαι, but in this narrative context 'speaking' is the clearer idiomatic rendering.
-- source_word: αὐτήν
-  chosen: she
-  alternatives:
-  - her
-  lexicon: Greek grammar
-  rationale: Although the form is accusative, in this construction it refers back to Esther as the subject of the infinitive clause. English requires an explicit subject for the finite rendering, so 'she' communicates the sense naturally.
-- source_word: ἔπεσεν
-  chosen: fell
-  alternatives:
-  - collapsed
-  - dropped
-  lexicon: BDAG
-  rationale: The basic sense is 'fell.' In context it implies physical collapse, but 'fell' preserves the source wording without over-interpreting; the cause is then supplied by the following phrase.
-- source_word: ἀπὸ ἐκλύσεως
-  chosen: from faintness
-  alternatives:
-  - from weakness
-  - from exhaustion
-  - in a faint
-  lexicon: BDAG
-  rationale: ἐκλύσις denotes a state of weakness, collapse, or faintness. 'From faintness' keeps the causal force of ἀπό and matches the immediate scene of physical collapse. 'In a faint' is smoother English but less directly tied to the Greek prepositional phrase.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 4e669f3dbfb6424b7c29a511c17f9c990e1339eaebf1b1905f07f0f72438a77d
-  timestamp: '2026-04-21T20:13:30Z'
-  output_hash: 05c3e644f1c3c072dc16f1f00d746ac7fdcee0d595373dc67d318a0b3ae01e04
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (normalized translation corpus) @f1b1f500
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Moore 1977, Anchor Bible 44
-  revision_candidates: []
-status: revised
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:37:56Z'
-  unchanged: false
-  changes_summary: Changed 'fell' to 'collapsed' for more natural English in context while preserving the sense of ἔπεσεν; retained 'from faintness' as a faithful rendering of ἀπὸ ἐκλύσεως.
+  text: 'And while she was speaking, she fell from faintness.'
 revisions:
-- timestamp: '2026-04-23T15:37:56Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And while she was speaking, she fell from faintness.
-  to: And while she was speaking, she collapsed from faintness.
-  rationale: Changed 'fell' to 'collapsed' for more natural English in context while preserving the sense of ἔπεσεν; retained 'from faintness' as a faithful rendering of ἀπὸ ἐκλύσεως.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:00:18Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/004/015.job-50277.json
+- timestamp: '2026-05-18T04:00:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And while she was speaking[a], she collapsed from faintness.'
+  to: 'And while she was speaking, she fell from faintness.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fell'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:17Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Additions to Esther 4:15 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fell'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote ma'

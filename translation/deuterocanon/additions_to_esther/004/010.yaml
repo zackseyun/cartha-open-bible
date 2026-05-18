@@ -11,95 +11,17 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 4 = Addition D, segmented from Swete pages 784-785 with manual phrase anchors derived from the Swete transcription.
 translation:
-  text: You certainly will not die[a], for our decree is general.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for our decree applies to everyone alike.'
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: οὐ μὴ ἀποθάνῃς
-  chosen: You certainly will not die
-  alternatives:
-  - You will surely not die
-  - Do not die
-  lexicon: BDAG
-  rationale: οὐ μή with the aorist subjunctive is a strong negation, best represented as emphatic future denial rather than an imperative. 'Certainly will not die' preserves the force without sounding archaic.
-- source_word: κοινὸν
-  chosen: common
-  alternatives:
-  - shared
-  - general
-  - the same for all
-  lexicon: LSJ
-  rationale: κοινός here carries the sense of something held in common or applying generally. 'Common' is the most direct rendering, though the context implies a decree applying alike to all.
-- source_word: τὸ πρόσταγμά
-  chosen: decree
-  alternatives:
-  - command
-  - edict
-  - order
-  lexicon: LSJ
-  rationale: πρόσταγμα denotes an official command or edict. 'Decree' fits the courtly/legal setting better than the more generic 'command' or 'order'.
-- source_word: ἡμῶν
-  chosen: our
-  alternatives:
-  - of us
-  lexicon: BDAG
-  rationale: The possessive pronoun is retained straightforwardly. Although the exact referent of 'our' depends on the speakers in context, the Greek explicitly includes the first-person plural and should not be flattened away.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: d5f8eee775f54912a034db4a89415e78243c656d03f1ad5b0f5005526547e27a
-  timestamp: '2026-04-21T20:12:36Z'
-  output_hash: 19ca99669d3e7276f3475382f831d1ed8c6bf422455b753c35057bd588dd2afe
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (normalized translation corpus) @f1b1f500
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Moore 1977, Anchor Bible 44
-  revision_candidates: []
-status: revised
-theological_decisions:
-- issue: Force of the opening negation
-  chosen_reading: 'A reassurance/prediction: ''You certainly will not die'''
-  alternative_readings:
-  - 'An imperative-like plea: ''Do not die'''
-  rationale: The Greek construction οὐ μή + subjunctive normally expresses emphatic negation of a future event, not a prohibition. Rendering it as reassurance better reflects the grammar and avoids importing a different speech act.
-  doctrine_reference: DOCTRINE.md §Translation philosophy 1, 5
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:37:55Z'
-  unchanged: false
-  changes_summary: Changed 'common' to 'general' for more natural formal English while preserving the sense of κοινόν; retained the rest of the wording.
+  text: 'You certainly will not die, for our decree is common.'
 revisions:
-- timestamp: '2026-04-23T15:37:55Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: You certainly will not die, for our decree is common.
-  to: You certainly will not die, for our decree is general.
-  rationale: Changed 'common' to 'general' for more natural formal English while preserving the sense of κοινόν; retained the rest of the wording.
-
-cross_check:
-  status: moderate_agreement
-  agreement: 0.8
-  agreement_score: 0.8
-  agreement_min: 0.8
-  agreement_max: 0.8
-  verdict: major-issues
-  reviewed_at: '2026-04-21T23:00:35Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    major-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/004/010.job-50272.json
+- timestamp: '2026-05-18T04:00:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'You certainly will not die[a], for our decree is general.'
+  to: 'You certainly will not die, for our decree is common.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''common'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:17Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Additions to Esther 4:10 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''common'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '
