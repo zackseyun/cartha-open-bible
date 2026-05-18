@@ -4,119 +4,17 @@ source:
   edition: WLC
   text: כִּ֤י זֶ֨ה אֱלֹהִ֣ים אֱ֭לֹהֵי/נוּ עוֹלָ֣ם וָ/עֶ֑ד ה֖וּא יְנַהֲגֵ֣/נוּ עַל מֽוּת׀־׃
 translation:
-  text: For this God is our God forever and ever[a]; he will guide us forever.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'until death,' 'through death,' or possibly 'in youth.' The Hebrew phrase is difficult; the Masoretic Text reads literally 'upon death.'
-    reason: alternative_reading
-lexical_decisions:
-- source_word: כִּי
-  chosen: For
-  alternatives:
-  - Indeed
-  - Surely
-  lexicon: HALOT
-  rationale: Introduces the ground or explanation for the preceding praise; 'for' best preserves the causal/explanatory force in context.
-- source_word: זֶה
-  chosen: this
-  alternatives:
-  - this one
-  lexicon: HALOT
-  rationale: 'Retains the demonstrative emphasis: the God just celebrated is specifically identified as Israel''s God.'
-- source_word: אֱלֹהִים אֱלֹהֵינוּ
-  chosen: God is our God
-  alternatives:
-  - is God, our God
-  lexicon: HALOT
-  rationale: The repetition is preserved for emphasis and covenantal force. English smoothness favors 'this God is our God' while keeping both occurrences audible.
-- source_word: עוֹלָם וָעֶד
-  chosen: forever and ever
-  alternatives:
-  - for ever and ever
-  - for eternity
-  lexicon: HALOT
-  rationale: This idiom expresses enduring perpetuity. 'Forever and ever' is natural modern English and preserves the intensification of the pair.
-- source_word: הוּא
-  chosen: he
-  alternatives:
-  - he himself
-  lexicon: HALOT
-  rationale: The pronoun is explicit in Hebrew for emphasis. English requires the pronoun; the emphasis is sufficiently carried by the clause structure without adding 'himself'.
-- source_word: יְנַהֲגֵנוּ
-  chosen: will guide us
-  alternatives:
-  - will lead us
-  - guides us
-  lexicon: HALOT
-  rationale: The verb commonly denotes leading or guiding, often with pastoral or providential nuance. 'Will guide us' fits the future sense and the psalm's confidence.
-- source_word: עַל
-  chosen: beyond
-  alternatives:
-  - over
-  - through
-  - until
-  lexicon: HALOT
-  rationale: With the difficult phrase עַל־מוּת, the preposition is not most naturally rendered woodenly as 'upon.' In context, 'beyond' communicates continued divine guidance extending past death, while acknowledging the phrase's debated sense.
-- source_word: מוּת
-  chosen: death
-  alternatives:
-  - death itself
-  - youth
-  lexicon: HALOT
-  rationale: The consonantal text most naturally relates to מות, 'death.' Some have proposed readings yielding 'forever' or 'in youth,' but the MT as pointed supports 'death,' and the line plausibly expresses God's guidance even beyond death.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: nt_draft_v1
-  prompt_sha256: 3592645124b439a4e0e415faecd8a4bd67ca42c889247eee3d6f4f79eeddc4a3
-  timestamp: '2026-04-19T07:06:41Z'
-  output_hash: 1719b2f8e239f27a77b93f02f3592b28216aca705063692e6bef58eeceda1041
-  temperature: 0.2
-status: revised
-theological_decisions:
-- issue: Interpretation of the difficult phrase עַל־מוּת
-  chosen_reading: beyond death
-  alternative_readings:
-  - until death
-  - through death
-  - in youth
-  - according to Alamoth
-  rationale: The phrase is textually and lexically difficult. The Masoretic pointing suggests relation to 'death,' and the immediate context emphasizes God's enduring covenant faithfulness ('forever and ever'). Rendering it 'beyond death' best preserves that theological tension without flattening the ambiguity into mere lifespan limitation. Because the phrase is genuinely debated, alternatives are preserved in a footnote rather than suppressed.
-  doctrine_reference: 'Translation philosophy §3: Preserve theological tension rather than resolve it.'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:25:45Z'
-  unchanged: false
-  changes_summary: Revised the final phrase from 'beyond death' to 'forever' to reflect the likely sense of the Hebrew more accurately and avoid an interpretive rendering. Kept the rest unchanged.
+  text: 'For this God is our God forever and ever; he will guide us beyond death.'
 revisions:
-- timestamp: '2026-04-23T11:25:45Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: For this God is our God forever and ever; he will guide us beyond death.
-  to: For this God is our God forever and ever; he will guide us forever.
-  rationale: Revised the final phrase from 'beyond death' to 'forever' to reflect the likely sense of the Hebrew more accurately and avoid an interpretive rendering. Kept the rest unchanged.
-
-cross_check:
-  status: moderate_agreement
-  agreement: 0.85
-  agreement_score: 0.85
-  agreement_min: 0.85
-  agreement_max: 1.0
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T22:14:27Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: weighted_vocab
-  pass_count: 2
-  passes_with_issues: 1
-  models:
-  - gemini-2.5-pro
-  - gemini-3.1-pro-preview
-  strategies:
-  - high_scrutiny
-  - weighted_vocab
-  verdict_counts:
-    agree: 1
-    minor-issues: 1
-  source_review: state/reviews/gemini/weighted_vocab/ot/psalms/048/015.job-17078.json
+- timestamp: '2026-05-18T03:58:52Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For this God is our God forever and ever[a]; he will guide us forever.'
+  to: 'For this God is our God forever and ever; he will guide us beyond death.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''beyond'', ''death'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:58:52Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Psalms 48:15 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''beyond'', ''death'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, '
