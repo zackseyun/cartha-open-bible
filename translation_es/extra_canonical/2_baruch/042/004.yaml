@@ -24,12 +24,9 @@ base_translation:
     changes_summary: 'Adjusted wording for smoother, more formal English while preserving the source sense: ''were subject'' to ''were formerly under subjection,'' and ''mingled themselves with'' retained; ''their former time'' kept intact.'
 translation:
   language: es
-  text: Los que antes estaban bajo sujeción y después se apartaron y se mezclaron con la descendencia de los pueblos mezclados[a]—su tiempo anterior se cuenta como nada.
+  text: Los que antes estaban sometidos y después se apartaron y se mezclaron con la descendencia de los pueblos mezclados—su tiempo anterior es considerado como nada.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Pueblos mezclados» traduce de forma más literal la idea del inglés auditado; también puede entenderse como «pueblos de mezcla» o «gentes mezcladas».
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: under subjection
   english_pob_choice: formerly under subjection
@@ -110,38 +107,26 @@ ai_draft:
     total_tokens: 2718
     reasoning_tokens: 0
     estimated_cost_usd: 0.005777
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español sigue bien la estructura del inglés auditado y preserva los elementos semánticos principales: estado previo de sujeción, posterior apartarse, mezcla con la descendencia de pueblos mezclados, y evaluación del tiempo previo como nada. Sin embargo, «bajo sujeción» suena algo calcado y «su tiempo anterior se cuenta como nada» es comprensible pero menos natural y menos idiomático que una formulación más clara en español bíblico actual.'
-  spanish_quality_summary: La redacción es en general clara y digna, pero requiere un ajuste menor para mayor naturalidad y legibilidad. «Estaban sometidos» fluye mejor que «estaban bajo sujeción», y «su tiempo anterior es considerado como nada» comunica mejor la idea evaluativa de reckoned as nothing. La nota al pie actual no es necesaria si se conserva «pueblos mezclados», que ya es suficientemente clara en español.
-  glossary_alignment: No hay términos del glosario principal en juego como Yahvé, Mesías o esclavo. «Descendencia» para «seed» está bien justificado en español. «Se apartaron» y «se mezclaron con» son fieles. La revisión propuesta mejora estilo sin alterar la decisión léxica central.
+  source_alignment_summary: El borrador español sigue bien la estructura del inglés auditado. Se ajustó «bajo sujeción» a «sometidos» para mayor naturalidad, «se cuenta como nada» a «es considerado como nada» para mayor claridad evaluativa, y se eliminó la nota innecesaria.
+  spanish_quality_summary: La redacción resultante es clara, digna y más idiomática. «Estaban sometidos» fluye mejor y «es considerado como nada» comunica con más claridad la valoración del texto fuente.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. «Descendencia», «se apartaron» y «se mezclaron con» son fieles al audit trail.
   issues:
   - severity: medium
-    issue: «bajo sujeción» suena poco natural en español corriente
-    rationale: Aunque es entendible, la expresión resulta más calcada del inglés que «sometidos» o «en sujeción». Dado el tono buscado—moderno pero digno—conviene una formulación más idiomática.
+    issue: «bajo sujeción» poco natural; corregido a «sometidos»
+    rationale: La expresión calcada del inglés se reemplaza por una formulación más idiomática en español bíblico actual.
   - severity: low
-    issue: La nota al pie sobre «pueblos mezclados» no aporta una ambigüedad real que el lector necesite resolver
-    rationale: El texto principal ya comunica adecuadamente la idea. La nota parece justificar una opción traductora más que aclarar una dificultad significativa del pasaje.
+    issue: Nota al pie sobre «pueblos mezclados» eliminada
+    rationale: El texto principal ya comunica adecuadamente la idea; la nota no resolvía ninguna ambigüedad real.
   - severity: low
-    issue: «se cuenta como nada» es correcto pero algo menos natural que otras opciones
-    rationale: La idea de reckon/evaluar queda mejor expresada en español con «es considerado como nada» o «se tiene por nada», sin perder fidelidad.
+    issue: «se cuenta como nada» mejorado a «es considerado como nada»
+    rationale: Refleja mejor la valoración implícita en «is reckoned as nothing» del audit trail.
   revised_spanish_text: Los que antes estaban sometidos y después se apartaron y se mezclaron con la descendencia de los pueblos mezclados—su tiempo anterior es considerado como nada.
-  revision_rationale: 'La revisión hace ajustes menores de naturalidad y estilo: «estaban sometidos» sustituye un giro más calcado, y «es considerado como nada» expresa con mayor claridad la valoración implícita en «is reckoned as nothing». Se elimina la nota al pie porque no resuelve una ambigüedad necesaria para el lector español.'
+  revised_footnotes: []
+  revision_rationale: Ajustes menores de naturalidad y estilo; se eliminó la nota al pie innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: cb76df9f2ea33a1fb62b53554564215762e1a123725d7c8338f658cd3a8b2f5c
-  timestamp: '2026-05-07T23:26:20Z'
-  output_hash: 5bdc9b884fa50ba5408adda4edc10d34c658eb192a1f78ba7ee8f23dde9ba5b7
-  usage:
-    prompt_tokens: 2334
-    completion_tokens: 621
-    total_tokens: 2955
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01515
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true

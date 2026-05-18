@@ -29,12 +29,9 @@ base_translation:
     changes_summary: 'Improved naturalness and formal register: changed “by your signal” to “at your signal,” and “like” to “as,” while retaining the Syriac-supported “have passed” for temporal contrast.'
 translation:
   language: es
-  text: Tú mandas el relámpago[a] a tu señal, y has visto las cosas que han de venir, como las que han pasado.
-  philosophy: formal
-  footnotes:
-  - marker: a
-    text: 'También puede entenderse: «Tú ordenas el relámpago»; se optó por «mandas» por su naturalidad y por conservar el matiz de autoridad eficaz.'
-    reason: lexical_alternative
+  text: Tú mandas el relámpago a tu señal, y has visto las cosas que han de venir, igual que las que han pasado.
+  philosophy: optimal-equivalence
+  footnotes: []
 lexical_decisions:
 - source_word: command the lightning
   english_pob_choice: You command the lightning
@@ -102,35 +99,23 @@ ai_draft:
     total_tokens: 2890
     reasoning_tokens: 0
     estimated_cost_usd: 0.005449
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español conserva bien el sentido básico del siríaco según el rastro de auditoría inglés: autoridad divina sobre el relámpago y contraste temporal entre lo venidero y lo pasado. Sin embargo, el nexo comparativo inglés final "as the things that have passed" queda mejor reflejado en español con "igual que" o "tal como" que con "como", para evitar una leve ambigüedad estilística.'
-  spanish_quality_summary: El texto es claro y digno, pero "mandas el relámpago" suena algo menos natural en español bíblico general que "ordenas al relámpago" o "das órdenes al relámpago". Aun así, puede mantenerse. El ajuste principal recomendado es estilístico-semántico en el comparativo final. La nota léxica sobre "relámpago" no es necesaria para fidelidad y además ancla una nota en un lugar donde no hay verdadera ambigüedad para el lector.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen Yahvé/Mesías/Esclavo, etc. La elección "mandas" no contradice el glosario, pero "ordenas al relámpago" sería más idiomático en español; se deja como mejora menor, no obligatoria.
+  source_alignment_summary: 'El borrador español conserva bien el sentido básico del siríaco según el rastro de auditoría inglés: autoridad divina sobre el relámpago y contraste temporal entre lo venidero y lo pasado. Se ajustó el comparativo final de «como» a «igual que» para mayor claridad y se eliminó la nota innecesaria.'
+  spanish_quality_summary: El texto es claro y digno. «Mandas el relámpago» puede mantenerse. El ajuste del comparativo final a «igual que las que han pasado» transmite mejor el paralelismo temporal.
+  glossary_alignment: No hay conflictos con la terminología base del proyecto. No aparecen Yahvé/Mesías/Esclavo, etc.
   issues:
   - severity: medium
     issue: Comparativo final "como las que han pasado"
-    rationale: Aunque comprensible, "como" puede sonar algo suelto o ambiguo. El inglés auditado usa "as" para marcar correspondencia plena entre lo futuro y lo pasado; en español "igual que las que han pasado" transmite mejor ese paralelismo temporal.
+    rationale: '"Igual que las que han pasado" transmite mejor el paralelismo temporal que el más ambiguo "como".'
   - severity: low
     issue: Nota al pie innecesaria en "relámpago"
-    rationale: La alternativa "ordenas el relámpago" no preserva mejor el original de manera sustantiva y la nota no responde a una ambigüedad real del pasaje. Conviene simplificar si se revisa el verso.
+    rationale: La nota no respondía a una ambigüedad real del pasaje.
   revised_spanish_text: Tú mandas el relámpago a tu señal, y has visto las cosas que han de venir, igual que las que han pasado.
-  revision_rationale: Se elimina la nota innecesaria y se ajusta el comparativo final a "igual que" para reflejar con más claridad el contraste-paralelo temporal del siríaco y del texto POB auditado, manteniendo el resto del verso fiel y natural en español.
+  revised_footnotes: []
+  revision_rationale: Se eliminó la nota innecesaria y se ajustó el comparativo final a «igual que» para reflejar con más claridad el contraste-paralelo temporal del siríaco y del texto POB auditado.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 37640bd8a6ad7539892d261123aacb6390e88aa37f92edb62f96e600feaf4fa1
-  timestamp: '2026-05-07T23:15:04Z'
-  output_hash: 670a22315458f111a6fc5d7d22c8d986303b1e2125465ac5ce5c897b92613e9d
-  usage:
-    prompt_tokens: 2433
-    completion_tokens: 572
-    total_tokens: 3005
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.014663
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true

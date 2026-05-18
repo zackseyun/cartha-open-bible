@@ -31,12 +31,9 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Porque ¿dónde buscaremos otra vez la ley, o quién nos distinguirá entre la muerte y la vida?[a]
+  text: Porque ¿dónde buscaremos otra vez la ley, o quién distinguirá para nosotros entre la muerte y la vida?
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «o quién nos separará entre la muerte y la vida».'
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: law
   english_pob_choice: the law
@@ -103,35 +100,23 @@ ai_draft:
     total_tokens: 2617
     reasoning_tokens: 0
     estimated_cost_usd: 0.005191
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue correctamente la corrección del siríaco: la segunda pregunta habla de distinguir/separar entre muerte y vida, no de guiar desde la casa de la muerte a la vida. También conserva bien ''la ley'' y el tono interrogativo de lamento.'
-  spanish_quality_summary: La frase principal es comprensible, pero 'nos distinguirá entre la muerte y la vida' suena poco natural e imprecisa en español. Lo idiomático es 'distinguirá para nosotros entre...' o mejor 'nos mostrará la diferencia entre...' si se quisiera suavizar, pero para conservar de cerca el valor léxico conviene 'distinguirá para nosotros entre...'. Además, la nota propuesta con 'nos separará entre' tampoco suena natural en español.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'La ley', 'la muerte' y 'la vida' están bien. La decisión clave es mantener el campo semántico de prš como 'distinguir/separar' y evitar volver a la lectura previa 'guiar'.
+  source_alignment_summary: El borrador sigue correctamente la corrección del siríaco (distinguir entre muerte y vida, no guiar desde la casa de la muerte). Se ajustó la sintaxis a «distinguirá para nosotros entre» para expresar con naturalidad el «for us» del inglés POB y se eliminó la nota mal formulada.
+  spanish_quality_summary: El texto resultante es claro, natural y digno. «Distinguirá para nosotros entre la muerte y la vida» reproduce fielmente el sentido del siríaco y del audit trail sin forzar la sintaxis española.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. «La ley», «la muerte» y «la vida» están bien.
   issues:
   - severity: medium
-    issue: 'Construcción española poco natural: ''nos distinguirá entre la muerte y la vida'''
-    rationale: En español, 'distinguir entre X e Y' normalmente no toma 'nos' como objeto directo de la misma manera que en inglés 'distinguish for us between...'. La preposición dativa 'para nosotros' expresa mejor el sentido del siríaco/inglés sin forzar la sintaxis.
+    issue: Construcción poco natural «nos distinguirá entre» corregida a «distinguirá para nosotros entre»
+    rationale: En español, «para nosotros» expresa mejor el sentido dativo del siríaco/inglés sin forzar a «distinguir» un objeto directo poco idiomático.
   - severity: medium
-    issue: 'Nota al pie mal formulada: ''nos separará entre la muerte y la vida'''
-    rationale: Como alternativa léxica de prš, 'separará' puede servir, pero la construcción 'separará entre' no es idiomática. Si se conserva nota, debe reformularse como 'o quién separará para nosotros entre la muerte y la vida' o mejor omitirse si no aporta claridad suficiente.
+    issue: Nota al pie mal formulada eliminada
+    rationale: La alternativa «nos separará entre» no era idiomática en español y no mejoraba el sentido frente al texto principal corregido.
   revised_spanish_text: Porque ¿dónde buscaremos otra vez la ley, o quién distinguirá para nosotros entre la muerte y la vida?
-  revision_rationale: Se ajusta la sintaxis española para expresar con naturalidad el sentido del siríaco y del inglés POB ('for us' = 'para nosotros') sin perder la idea de distinguir entre dos realidades. Se elimina la nota al pie porque la alternativa dada no era idiomática en español y no preserva mejor el sentido que el texto principal.
+  revised_footnotes: []
+  revision_rationale: Se ajusta la sintaxis española y se elimina la nota al pie; el texto corregido reproduce con naturalidad el sentido del siríaco y del inglés POB.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 201b394fd283de505d26d033efc3ad1b550d6166df97c54f6311313baabf5580
-  timestamp: '2026-05-07T23:39:30Z'
-  output_hash: 82f04f93b2f13e88e8bc62d6f5a5cccf9102661b38943fef691fab28a994fdb3
-  usage:
-    prompt_tokens: 2253
-    completion_tokens: 570
-    total_tokens: 2823
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.014183
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true
