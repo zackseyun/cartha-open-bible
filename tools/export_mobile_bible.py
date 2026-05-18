@@ -120,6 +120,7 @@ EXTRA_CANONICAL_BOOK_ORDER: list[str] = [
     "ENO",     # 1 Enoch
     "JUB",     # Jubilees
     "2BAR",    # 2 Baruch (Syriac Apocalypse)
+    "GOSTR",   # Gospel of Truth
 ]
 
 EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
@@ -129,6 +130,7 @@ EXTRA_CANONICAL_BOOK_TITLES: dict[str, str] = {
     "ENO":   "1 Enoch",
     "JUB":   "Jubilees",
     "2BAR":  "2 Baruch",
+    "GOSTR": "Gospel of Truth",
 }
 
 EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
@@ -138,6 +140,7 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
     "ENO":   "1_enoch",
     "JUB":   "jubilees",
     "2BAR":  "2_baruch",
+    "GOSTR": "gospel_of_truth",
 }
 
 # Extra-canonical books that only have chapter-level YAMLs (single
@@ -154,7 +157,93 @@ EXTRA_CANONICAL_BOOK_SLUGS: dict[str, str] = {
 # can be added here for single-synthetic-verse emission without
 # invoking the verse splitter. 2 Baruch is intentionally not listed:
 # it now has reader-facing per-verse YAMLs under 2_baruch/NNN/VVV.yaml.
-EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = set()
+EXTRA_CANONICAL_CHAPTER_LEVEL: set[str] = {"GOSTR"}
+
+
+def reader_navigation_fields(record: dict[str, Any]) -> dict[str, Any]:
+    """Optional export metadata for non-verse editorial divisions.
+
+    Consumers that only understand the existing mobile shape can ignore these
+    keys and keep reading `chapter.verses[].text`. Newer website/mobile readers
+    can render `heading` while treating it as navigation, not translated text.
+    """
+    fields: dict[str, Any] = {}
+    unit = record.get("unit")
+    reference = record.get("reference")
+    nav = record.get("reader_navigation")
+    if unit:
+        fields["unit"] = unit
+    if reference:
+        fields["reference"] = reference
+    if isinstance(nav, dict):
+        heading = nav.get("heading")
+        if heading:
+            fields["heading"] = heading
+        fields["reader_navigation"] = nav
+    return fields
+
+
+def _paragraphs(text: str) -> list[str]:
+    return [p.strip() for p in str(text or "").splitlines() if p.strip()]
+
+
+def _reader_sections(record: dict[str, Any]) -> list[dict[str, Any]]:
+    nav = record.get("reader_navigation")
+    raw = record.get("reader_sections")
+    if not isinstance(raw, list) and isinstance(nav, dict):
+        raw = nav.get("reader_sections")
+    if not isinstance(raw, list):
+        return []
+
+    out: list[dict[str, Any]] = []
+    for index, item in enumerate(raw, start=1):
+        if not isinstance(item, dict):
+            continue
+        try:
+            section = int(item.get("section") or item.get("number") or item.get("order") or index)
+            start = int(item.get("paragraph_start") or item.get("paragraphStart") or item.get("start"))
+            end = int(item.get("paragraph_end") or item.get("paragraphEnd") or item.get("end") or start)
+        except (TypeError, ValueError):
+            continue
+        title = str(item.get("title") or item.get("heading") or item.get("label") or "").strip()
+        if section < 1 or start < 1 or end < start:
+            continue
+        out.append({"section": section, "start": start, "end": end, "title": title})
+    return out
+
+
+def _split_reader_sections(text: str, sections: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    paragraphs = _paragraphs(text)
+    if not paragraphs or not sections:
+        return []
+
+    covered: list[int] = []
+    verses: list[dict[str, Any]] = []
+    for item in sections:
+        start = int(item["start"])
+        end = int(item["end"])
+        if end > len(paragraphs):
+            return []
+        body = "\n".join(paragraphs[start - 1:end]).strip()
+        if not body:
+            return []
+        section = int(item["section"])
+        title = str(item.get("title") or "").strip()
+        covered.extend(range(start, end + 1))
+        verse: dict[str, Any] = {
+            "verse": section,
+            "text": body,
+            "section_label": f"§{section}",
+            "is_editorial_section": True,
+        }
+        if title:
+            verse["editorial_heading"] = title
+            verse["section_heading"] = title
+        verses.append(verse)
+
+    if sorted(covered) != list(range(1, len(paragraphs) + 1)):
+        return []
+    return verses
 
 
 def book_title(book_code: str) -> str:
@@ -346,14 +435,17 @@ def export_extra_canonical_book(book_code: str) -> dict[str, Any] | None:
             text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
             if not text:
                 continue
-            # Emit as a single synthetic verse-1 block so the reader gets
-            # the whole chapter as a continuous prose unit.
-            chapters_out.append({
+            reader_verses = _split_reader_sections(text, _reader_sections(record))
+            if not reader_verses:
+                # Emit as a single synthetic verse-1 block so legacy
+                # chapter-level books still render as continuous prose.
+                reader_verses = [{"verse": 1, "text": text}]
+            chapter_payload = {
                 "chapter": chapter_num,
-                "verses": [
-                    {"verse": 1, "text": text},
-                ],
-            })
+                "verses": reader_verses,
+            }
+            chapter_payload.update(reader_navigation_fields(record))
+            chapters_out.append(chapter_payload)
     else:
         # Verse-level nested layout: translation/extra_canonical/<slug>/<NNN>/<VVV>.yaml
         by_chapter: dict[int, dict[int, str]] = defaultdict(dict)

@@ -29,8 +29,33 @@ BOOKS: dict[str, dict[str, str]] = {
         "id": "1CLEM",
         "name": "1 Clement",
         "slug": "1_clement",
+        "unit": "chapter",
+    },
+    "gospel_of_truth": {
+        "id": "GOSTR",
+        "name": "Gospel of Truth",
+        "slug": "gospel_of_truth",
+        "unit": "section",
     },
 }
+
+
+def reader_navigation_fields(record: dict[str, Any]) -> dict[str, Any]:
+    """Expose optional editorial navigation metadata without changing text."""
+    fields: dict[str, Any] = {}
+    unit = record.get("unit")
+    reference = record.get("reference")
+    nav = record.get("reader_navigation")
+    if unit:
+        fields["unit"] = unit
+    if reference:
+        fields["reference"] = reference
+    if isinstance(nav, dict):
+        heading = nav.get("heading")
+        if heading:
+            fields["heading"] = heading
+        fields["reader_navigation"] = nav
+    return fields
 
 
 def load_book(slug: str) -> dict[str, Any] | None:
@@ -49,16 +74,17 @@ def load_book(slug: str) -> dict[str, Any] | None:
         text = str(((record.get("translation") or {}).get("text", "")) or "").strip()
         if not text:
             continue
-        chapters_out.append(
-            {
-                "chapter": chapter_num,
-                "reference": record.get("reference", f"{meta['name']} {chapter_num}"),
-                "text": text,
-                "philosophy": ((record.get("translation") or {}).get("philosophy", "")),
-                "source_pages": ((record.get("source") or {}).get("pages", [])),
-                "footnotes": ((record.get("translation") or {}).get("footnotes", [])),
-            }
-        )
+        source = record.get("source") or {}
+        chapter_payload = {
+            "chapter": chapter_num,
+            "reference": record.get("reference", f"{meta['name']} {chapter_num}"),
+            "text": text,
+            "philosophy": ((record.get("translation") or {}).get("philosophy", "")),
+            "source_pages": source.get("pages") or source.get("codex_pages") or source.get("consult_codex_pages", []),
+            "footnotes": ((record.get("translation") or {}).get("footnotes", [])),
+        }
+        chapter_payload.update(reader_navigation_fields(record))
+        chapters_out.append(chapter_payload)
 
     if not chapters_out:
         return None
@@ -67,7 +93,7 @@ def load_book(slug: str) -> dict[str, Any] | None:
         "id": meta["id"],
         "name": meta["name"],
         "slug": meta["slug"],
-        "unit": "chapter",
+        "unit": meta.get("unit", "chapter"),
         "chapters": chapters_out,
     }
 

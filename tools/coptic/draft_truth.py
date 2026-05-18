@@ -25,6 +25,7 @@ import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_truth_section_prompt as bp  # noqa: E402
+from truth_reader_structure import reader_navigation_for_section  # noqa: E402
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 TRANSLATION_ROOT = REPO_ROOT / 'translation' / 'extra_canonical' / 'gospel_of_truth'
@@ -205,6 +206,7 @@ def build_record(bundle: bp.PromptBundle, tool_input: dict[str, Any], *, model_i
         'reference': f'Gospel of Truth — {bundle.section_label}',
         'unit': 'section',
         'book': 'Gospel of Truth',
+        'reader_navigation': reader_navigation_for_section(bundle.section_id, bundle.section_label),
         'source': bundle.source_payload,
         'translation': {'text': str(tool_input['english_text']).strip(), 'philosophy': tool_input['translation_philosophy']},
         'lexical_decisions': tool_input.get('lexical_decisions', []),
