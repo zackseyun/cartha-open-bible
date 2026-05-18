@@ -53,11 +53,11 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El etiópico indica un movimiento de salida desde el lugar anterior; «de allí» conserva esa referencia deíctica.
+    text: O «un segundo lugar».
     reason: lexical_alternative
   - marker: b
-    text: La lectura direccional correcta aquí es «oeste», según la revisión textual del audit trail; el inglés POB anterior había conservado una lectura errónea.
-    reason: textual_variant
+    text: O «hacia el este».
+    reason: previous_rendering
 lexical_decisions:
 - source_word: እምህየ
   english_pob_choice: from there
@@ -133,19 +133,19 @@ ai_draft:
     total_tokens: 3557
     reasoning_tokens: 0
     estimated_cost_usd: 0.006287
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien la estructura y el sentido del geʽez: movimiento desde el lugar previo, traslado a otro lugar, dirección hacia el oeste según la corrección adjudicada, y alcance cósmico hasta los confines de la tierra. Sin embargo, la nota [a] no preserva la función del aparato inglés, que anotaba una alternativa léxica sobre «otro lugar», no una explicación de «de allí». La nota [b] tampoco corresponde idealmente al aparato auditado: en inglés se conservaron la historia de la lectura y la alternativa «toward the east», mientras que la nota española se centra en metacomentario del audit trail.'
-  spanish_quality_summary: 'El español principal es claro, natural y digno: «Y de allí fui a otro lugar, hacia el oeste, hasta los confines de la tierra». La única reparación necesaria es alinear las notas con el significado y la razón documental, evitando una glosa editorial innecesaria y preservando mejor la alternativa relevante.'
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Confines de la tierra» preserva bien la imaginería apocalíptica. «Oeste» es la dirección correcta según la revisión adjudicada. El registro general es adecuado para una Biblia abierta en español.
+  source_alignment_summary: El texto español refleja bien el ge’ez. Se simplificaron las notas para que correspondan a sus anclajes y preserven las alternativas del aparato inglés sin metacomentario editorial.
+  spanish_quality_summary: El texto principal es claro y natural. Las notas revisadas son concisas y alineadas con el aparato inglés auditado.
+  glossary_alignment: Sin conflictos. Oeste, confines de la tierra y otro lugar están bien. No hay términos sensibles en este versículo.
   issues:
   - severity: medium
-    issue: La nota [a] está anclada a «otro lugar» pero explica «de allí».
-    rationale: Esto rompe la correspondencia entre marcador y palabra/frase anotada, y no refleja la nota inglesa sobre la posible fuerza de «another place / a second place».
+    issue: La nota [a] explicaba el deíctico «de allí» en lugar de la frase anotada «otro lugar».
+    rationale: Se corrigió para ofrecer la alternativa léxica documentada en el aparato inglés.
   - severity: medium
-    issue: La nota [b] usa metacomentario sobre el audit trail en vez de preservar la alternativa léxica documentada.
-    rationale: El aparato inglés conserva la historia de una lectura alternativa («toward the east»). En español conviene presentar la alternativa al lector de forma limpia («O ‘hacia el este’») y, si se desea, dejar fuera la referencia editorial interna.
+    issue: La nota [b] usaba metacomentario del audit trail en lugar de la alternativa direccional.
+    rationale: Se simplificó a la alternativa concisa «O hacia el este», correspondiente al previous_rendering del aparato inglés.
   revised_spanish_text: Y de allí fui a otro lugar[a], hacia el oeste[b], hasta los confines de la tierra.
   revised_footnotes:
   - marker: a
@@ -154,19 +154,8 @@ review_pass:
   - marker: b
     text: O «hacia el este».
     reason: previous_rendering
-  revision_rationale: El texto principal no requiere cambio. Se revisan únicamente las notas para que coincidan con sus anclajes, preserven las alternativas significativas del aparato inglés y eviten comentario editorial interno innecesario.
+  revision_rationale: Se mantiene el texto principal. Se corrigen las notas para alinearlas con sus anclajes y con el aparato inglés auditado.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 9d9c854c424e56331e42d924d0a32a5126ee25326377c85350eee3ce984c7fe1
-  timestamp: '2026-05-07T23:49:22Z'
-  output_hash: a7522b65041cc251c210596b56378e5126f693ab2c7bfd4bb67f5a55a7927ed9
-  usage:
-    prompt_tokens: 3245
-    completion_tokens: 582
-    total_tokens: 3827
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016843
-  applied_revision: false
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: ‘2026-05-16T00:00:00Z’

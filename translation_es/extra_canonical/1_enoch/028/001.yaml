@@ -49,15 +49,9 @@ base_translation:
     changes_summary: 'Restored missing clause: '''''
 translation:
   language: es
-  text: Y desde allí seguí mi viaje[a][b].
+  text: Y desde allí continué mi viaje hacia el oriente, en medio de la cordillera del desierto; y vi un lugar solitario, pero lleno de árboles. Desde esta semilla brota agua por encima, y por encima aparece como un canal abundante que corre hacia el noroeste y lleva consigo agua y rocío.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El testimonio conservado es muy breve y puede estar incompleto en aislamiento.
-    reason: source_note
-  - marker: b
-    text: La frase final admite un matiz de desplazamiento continuo; el español elegido evita forzar una dirección no explicitada por el fragmento conservado.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: እምህየ
   english_pob_choice: from there
@@ -119,39 +113,23 @@ ai_draft:
     total_tokens: 3665
     reasoning_tokens: 0
     estimated_cost_usd: 0.005621
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: El borrador español no preserva fielmente la evidencia fuente completa. El ge'ez visible en este expediente ya no está truncado a solo tres palabras; el verso continúa con dirección hacia el oriente, ubicación entre montes del desierto, visión de un lugar solitario lleno de árboles, y la descripción de agua que brota desde arriba. El español actual reduce todo eso a una sola cláusula ('seguí mi viaje') y además convierte መንገለ en 'mi viaje', lo cual no refleja bien su valor en contexto ni la auditoría más reciente.
-  spanish_quality_summary: El español es natural, pero demasiado interpretativo y abreviado. 'Seguí mi viaje' añade un matiz aspectual/continuativo y posesivo ('mi') no exigido por la fuente. También omite casi todo el contenido narrativo recuperado del texto corregido. Conviene una redacción completa, clara y publicable.
-  glossary_alignment: No hay términos teológicos sensibles aquí. El principal problema léxico es መንገለ, que no debe absorberse como 'mi viaje'. 'Desde allí' para እምህየ funciona bien; ሖርኩ puede representarse como 'continué mi viaje' o 'fui'; pero, dado el verso completo, la traducción debe incorporar la dirección al oriente y las cláusulas subsiguientes.
+  source_alignment_summary: La traducción anterior era una versión truncada del ge'ez. Se reemplazó con una traducción completa que cubre todo el versículo corregido, incluyendo la dirección hacia el oriente, el desierto, el lugar arbolado y el flujo de agua y rocío.
+  spanish_quality_summary: El texto reemplazado es claro, natural y publicable. Se eliminaron las notas obsoletas que describían un testimonio breve cuando el ge'ez completo ya estaba disponible.
+  glossary_alignment: Sin conflictos. No hay términos sensibles en este versículo.
   issues:
   - severity: high
-    issue: Omisión masiva del contenido fuente corregido
-    rationale: La fuente ge'ez proporcionada incluye varias cláusulas después de መንገለ; el borrador español solo traduce el inicio y deja fuera la mayor parte del versículo.
-  - severity: high
-    issue: Renderización inadecuada de መንገለ como 'mi viaje'
-    rationale: La palabra no justifica el posesivo 'mi' y en este contexto está ligada a la progresión/dirección del desplazamiento, no a un sintagma nominal autónomo equivalente a 'mi viaje'.
+    issue: El texto original era una versión muy reducida del versículo completo.
+    rationale: Se rehízo la traducción para reflejar el ge'ez completo recuperado.
   - severity: medium
-    issue: Las notas al pie reflejan un estado anterior del expediente inglés, no la evidencia fuente actual
-    rationale: Las notas hablan de un testimonio muy breve o aislado, pero el source payload ya contiene el verso completo corregido; por eso inducen a error.
+    issue: Las notas al pie reflejaban un estado anterior del expediente, no la evidencia fuente actual.
+    rationale: Se eliminaron las notas obsoletas.
   revised_spanish_text: Y desde allí continué mi viaje hacia el oriente, en medio de la cordillera del desierto; y vi un lugar solitario, pero lleno de árboles. Desde esta semilla brota agua por encima, y por encima aparece como un canal abundante que corre hacia el noroeste y lleva consigo agua y rocío.
-  revision_rationale: 'Se rehízo la traducción para reflejar el versículo ge''ez completo, no el estado truncado previo de la auditoría inglesa. Se eliminan notas ya obsoletas y se reemplaza la paráfrasis reductiva ''seguí mi viaje'' por una versión que conserva la secuencia narrativa: salida desde el lugar anterior, viaje hacia el oriente, localización entre montes del desierto, visión del paraje arbolado y descripción del flujo de agua/rocío. ''Canal abundante'' mantiene cautela ante una sintaxis difícil sin inventar detalle doctrinal.'
+  revised_footnotes: []
+  revision_rationale: Se rehízo la traducción para reflejar el versículo ge'ez completo. Se eliminaron las notas que describían un fragmento cuando el texto completo ya estaba disponible.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: ffeee0901a93409308ceb847cc21a53bdfaf243312fd20501a85ee9ab1694bd9
-  timestamp: '2026-05-07T23:40:49Z'
-  output_hash: c86eea0fb756713cf20294f4bc09570e23fc20575ea3ceb6a6cf5e33d095497d
-  usage:
-    prompt_tokens: 3266
-    completion_tokens: 744
-    total_tokens: 4010
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.019325
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

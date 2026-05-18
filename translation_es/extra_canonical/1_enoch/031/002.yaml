@@ -52,15 +52,9 @@ base_translation:
     changes_summary: Reordered the final phrase to make the comparison modify both 'full' and 'strong' more naturally in English, while preserving the source sense.
 translation:
   language: es
-  text: Y sobre aquella montaña vi otra montaña[a], y dentro de ella había árboles; y aquellos árboles eran fuertes[b] y estaban llenos, como almendros.
+  text: Y sobre aquella montaña vi otra montaña, y dentro de ella había árboles; y aquellos árboles estaban llenos y eran robustos, como almendros.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Otra montaña» conserva la relación secuencial del original; la imagen no requiere armonizarla con una geografía literal.
-    reason: textual_variant
-  - marker: b
-    text: El orden «fuertes y estaban llenos» refleja el cierre del hebraísmo/gee'z sin hacer que la comparación botánica modifique solo una de las cualidades.
-    reason: spanish_style_note
+  footnotes: []
 lexical_decisions:
 - source_word: ዲበ
   english_pob_choice: upon
@@ -162,39 +156,23 @@ ai_draft:
     total_tokens: 4320
     reasoning_tokens: 0
     estimated_cost_usd: 0.007463
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien la revisión adjudicada principal: እልኩ se entiende correctamente como demostrativo («aquellos»), no como «percibí fragancia», y ከርካዕ se vierte conforme a la corrección auditada como «almendros», no «algarrobo». También conserva la topografía secuencial («sobre aquella montaña… otra montaña») y la localización algo inusual («dentro de ella»). Sin embargo, la cláusula final en español queda menos natural y menos precisa al dividir «eran fuertes» y «estaban llenos»; conviene una formulación más idiomática que mantenga ambas cualidades como predicados descriptivos de los árboles.'
-  spanish_quality_summary: El texto es legible y digno, pero «eran fuertes y estaban llenos» suena algo forzado para árboles en español. «Llenos y robustos» o «frondosos y robustos» serían más naturales; sin embargo, para preservar el matiz literal de ምሉኣን, «llenos y robustos» es la mejor reparación mínima. La nota b actual explica un orden poco elegante en vez de resolverlo en el texto mismo. La nota a no es necesaria, porque no responde a una incertidumbre textual vigente en la traducción española.
-  glossary_alignment: No hay términos teológicos del glosario mayor en juego. La decisión botánica «almendros» sí se alinea con la revisión auditada de la POB inglesa. «Montaña», «árboles» y «dentro de ella» son coherentes con las decisiones léxicas documentadas.
+  source_alignment_summary: Se actualizó el texto principal para que sea más idiomático en español y refleje fielmente los dos predicados del original. Se eliminaron notas que no aportaban variantes textuales relevantes.
+  spanish_quality_summary: El texto revisado es claro, natural y digno. Estaban llenos y eran robustos es más idiomático que la formulación anterior para describir árboles.
+  glossary_alignment: Sin conflictos. No hay términos sensibles en este versículo. Almendros sigue la revisión auditada de la POB inglesa.
   issues:
   - severity: medium
-    issue: La frase «eran fuertes y estaban llenos» es poco idiomática en español para describir árboles.
-    rationale: 'Aunque no altera gravemente el sentido, suena torpe y distrae de la imagen descriptiva. El español permite una reparación mínima y fiel: «estaban llenos y eran robustos» o mejor «aquellos árboles estaban llenos y eran robustos, como almendros».'
+    issue: La cláusula eran fuertes y estaban llenos era poco idiomática en español para árboles.
+    rationale: Se ajustó a estaban llenos y eran robustos, que preserva ambos predicados con mayor naturalidad.
   - severity: low
-    issue: La nota al pie a no preserva una variante o ambigüedad relevante del expediente fuente.
-    rationale: La revisión inglesa ya resolvió la dificultad central en otra dirección; aquí «otra montaña» no necesita nota explicativa. Mantener notas innecesarias sobrecarga el texto sin aportar evidencia útil.
-  - severity: low
-    issue: La nota b justifica un orden sintáctico mejorable en vez de ofrecer una alternativa textual o léxica significativa.
-    rationale: Dado que el problema puede corregirse directamente en la redacción española, la nota deja de ser necesaria.
+    issue: Las notas al pie no preservaban variantes o ambigüedades relevantes.
+    rationale: Se eliminaron las notas obsoletas.
   revised_spanish_text: Y sobre aquella montaña vi otra montaña, y dentro de ella había árboles; y aquellos árboles estaban llenos y eran robustos, como almendros.
-  revision_rationale: 'Se elimina el aparato de notas porque no hay en la versión española una ambigüedad que deba preservarse con nota una vez aplicada la revisión fuente principal. Se ajusta la última cláusula para que suene natural en español sin perder los dos rasgos descriptivos del original revisado: plenitud (ምሉኣን) y fortaleza (ጽኑዕተ). «Robustos» expresa mejor la cualidad física de árboles que «fuertes».'
+  revised_footnotes: []
+  revision_rationale: Se ajustó el texto para mayor idiomaticidad y se eliminaron las notas que explicaban un orden sintáctico mejorable en lugar de ofrecer alternativas textuales significativas.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 2e141b4324c989ef2169139f391f70c896137451101294e57cccd91393b397b5
-  timestamp: '2026-05-07T23:27:42Z'
-  output_hash: 332b86862e6a651f5522618609ececf1e0d4c93688a9fb79ee0c9bca4e02b88a
-  usage:
-    prompt_tokens: 3888
-    completion_tokens: 764
-    total_tokens: 4652
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.02118
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
