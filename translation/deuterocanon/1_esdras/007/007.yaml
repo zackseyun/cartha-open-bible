@@ -16,115 +16,17 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And they offered for the dedication of the temple of the Lord one hundred bulls[a], two hundred rams, and four hundred lambs,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the temple of the Lord.' The Greek term can denote the sacred precinct or temple.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: προσήνεγκαν
-  chosen: they offered
-  alternatives:
-  - they brought
-  - they presented
-  lexicon: BDAG
-  rationale: In sacrificial/dedication context, 'offered' best conveys cultic presentation rather than mere physical bringing.
-- source_word: ἐγκαινισμός
-  chosen: dedication
-  alternatives:
-  - consecration
-  - inauguration
-  lexicon: LSJ
-  rationale: The noun denotes a dedicatory occasion; 'dedication' is natural English and fits temple context without over-specifying ritual nuance.
-- source_word: ἱεροῦ
-  chosen: house
-  alternatives:
-  - temple
-  - sanctuary
-  lexicon: LSJ
-  rationale: Although ἱερόν often means 'temple' or sacred precinct, the phrase 'the house of the Lord' aligns with the Semitic temple idiom and preserves continuity with biblical usage. The genitive τοῦ κυρίου clarifies whose house is meant.
-- source_word: κυρίου
-  chosen: Lord
-  alternatives:
-  - the LORD
-  lexicon: BDAG
-  rationale: Per doctrine, κύριος defaults to 'Lord.' In this Greek deuterocanonical context, 'the house of the Lord' is idiomatic and clear.
-- source_word: ταύρους ἑκατόν
-  chosen: one hundred bulls
-  alternatives:
-  - a hundred bulls
-  lexicon: LSJ
-  rationale: Straightforward sacrificial inventory; numeral retained explicitly.
-- source_word: κριοὺς διακοσίους
-  chosen: two hundred rams
-  alternatives:
-  - two hundred male sheep
-  lexicon: LSJ
-  rationale: '''Rams'' is the standard and precise rendering for κριοί in sacrificial lists.'
-- source_word: ἄρνας τετρακοσίας
-  chosen: four hundred lambs
-  alternatives:
-  - four hundred male lambs
-  lexicon: LSJ
-  rationale: ἄρνες are lambs/sheep in this offering list; 'lambs' is the most idiomatic English rendering here, even though the Greek term can imply males.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: dc5eea812b915a3007847da95409d0d09f37b5d8021a28318deeeef62419a435
-  timestamp: '2026-04-21T20:51:31Z'
-  output_hash: b3def153b30349e707ebb70cabb8a2cbc67bebb8167a8cea68423eeff85f75e9
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @f33522e3
-  - WLC MT alignment (Zone 1 Hebrew parallel) @f33522e3
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Myers 1974, Anchor Bible 42
-  - Talshir 2001, SBL Commentary
-  - Hanhart 1974, Göttingen LXX -- Esdrae liber I
-  revision_candidates: []
-status: revised
-theological_decisions:
-- issue: Rendering ἱεροῦ in relation to temple terminology
-  chosen_reading: house of the Lord
-  alternative_readings:
-  - temple of the Lord
-  - sanctuary of the Lord
-  rationale: The Greek could be rendered 'temple,' but 'house of the Lord' preserves the biblical temple idiom and resonates with the broader Ezra/Esdras tradition. This is a lexical-theological choice about sacred-space terminology rather than a doctrinal dispute.
-  doctrine_reference: Translation philosophy §§1, 5
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:01Z'
-  unchanged: false
-  changes_summary: Changed 'house' to 'temple' for more precise rendering of ἱερόν in this verse. No other changes needed.
+  text: 'And they offered for the dedication of the house of the Lord one hundred bulls, two hundred rams, and four hundred lambs,'
 revisions:
-- timestamp: '2026-04-23T15:29:01Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And they offered for the dedication of the house of the Lord one hundred bulls, two hundred rams, and four hundred lambs,
-  to: And they offered for the dedication of the temple of the Lord one hundred bulls, two hundred rams, and four hundred lambs,
-  rationale: Changed 'house' to 'temple' for more precise rendering of ἱερόν in this verse. No other changes needed.
-
-cross_check:
-  status: high_agreement
-  agreement: 0.9
-  agreement_score: 0.9
-  agreement_min: 0.9
-  agreement_max: 0.9
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T22:43:42Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    minor-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/007/007.job-47796.json
+- timestamp: '2026-05-18T04:00:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they offered for the dedication of the temple of the Lord one hundred bulls[a], two hundred rams, and four hundred lambs,'
+  to: 'And they offered for the dedication of the house of the Lord one hundred bulls, two hundred rams, and four hundred lambs,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''house'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:13Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: 1 Esdras 7:7 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''house'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote m'
