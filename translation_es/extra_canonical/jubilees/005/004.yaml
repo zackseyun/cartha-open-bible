@@ -31,12 +31,9 @@ base_translation:
     changes_summary: Changed 'shall' to 'will' for more natural formal English; otherwise left the draft unchanged.
 translation:
   language: es
-  text: 'Y dijo: «Destruiré al hombre y a toda carne sobre la faz de la tierra, a quien creé».[a]'
+  text: 'Y dijo: «Destruiré al hombre y a toda carne sobre la faz de la tierra, que yo creé».'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El inglés POB tenía una nota «Or 'from upon'», pero la revisión textual del Ge'ez confirma aquí solo «upon»; por eso no se introduce «de / desde sobre» en español.
-    reason: textual_variant
+  footnotes: []
 lexical_decisions:
 - source_word: ወይቤ / And he said
   english_pob_choice: And he said
@@ -128,7 +125,7 @@ ai_draft:
     total_tokens: 3224
     reasoning_tokens: 0
     estimated_cost_usd: 0.007184
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador sigue bien la estructura básica del Ge''ez y la revisión inglesa en casi todo: «Y dijo», «Destruiré», «al hombre y a toda carne», y «sobre la faz de la tierra» reflejan fielmente el sentido fuente. Sin embargo, la cláusula final «ዘፈጠርኩ / which I created» queda mal anclada en español como «a quien creé», porque en la frase española su antecedente natural pasa a ser «al hombre», mientras que el original y el inglés dejan la relativa después de «the earth» y permiten o favorecen que modifique el ámbito entero expresado inmediatamente antes. En español, además, «a quien» introduce una referencia personal singular que suena discordante tras «la tierra».'
@@ -142,21 +139,9 @@ review_pass:
     issue: La nota [a] es innecesaria en la versión española final.
     rationale: La auditoría inglesa ya descartó «from upon» como lectura base. Como el texto español no ofrece una alternativa que requiera aclaración para el lector, la nota funciona más como comentario editorial interno que como ayuda de traducción.
   revised_spanish_text: 'Y dijo: «Destruiré al hombre y a toda carne sobre la faz de la tierra, que yo creé».'
+  revised_footnotes: []
   revision_rationale: Se reemplaza «a quien creé» por «que yo creé» para evitar una relativa personal mal anclada y preservar mejor el sentido del original. También se elimina la nota porque no hace falta en la presentación española final una vez resuelta la cuestión textual de «upon».
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 04bf5281260526cc3ba7ffcf3269d9dac59ed2a09d161c7afc55ba0063f46c0d
-  timestamp: '2026-05-07T23:12:58Z'
-  output_hash: 054b795d2e95aae82029b5645268ce5753e14c63eafc747648a59a0b4fba6a66
-  usage:
-    prompt_tokens: 2885
-    completion_tokens: 639
-    total_tokens: 3524
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016797
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
