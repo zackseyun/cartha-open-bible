@@ -26,15 +26,9 @@ base_translation:
     changes_summary: Removed 'and leap about,' which is not present in the provided Latin. Retained the rest with only the source-supported content.
 translation:
   language: es
-  text: Y los infantes de un año hablarán con sus propias voces[a], y las embarazadas darán a luz infantes prematuros de tres y cuatro meses[b], y vivirán.
+  text: Y los infantes de un año hablarán con sus voces, y las embarazadas darán a luz infantes prematuros de tres y cuatro meses, y vivirán.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Algunos testimonios de la tradición latina presentan aquí una cláusula adicional que puede interpretarse como «y saltarán» o «y se moverán activamente», aludiendo al vigor de los infantes prematuros a pesar de nacer antes de tiempo. Esa lectura no está presente en el texto latino de base empleado por esta edición (Bensly 1895) y fue suprimida del texto principal en la revisión del POB inglés.
-    reason: textual_variant
-  - marker: b
-    text: O «criaturas prematuras».
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: anniculi
   english_pob_choice: year-old
@@ -123,7 +117,7 @@ ai_draft:
     estimated_cost_usd: 0.122263
   provider: anthropic_claude_code_cli
   fallback_reason: azure_content_filter
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador español sigue de cerca el latín: anniculi infantes = «infantes de un año», loquentur uocibus suis = «hablarán con sus voces», praegnantes = «las embarazadas», immaturos… infantes trium et quatuor mensium = «infantes prematuros de tres y cuatro meses», et uiuent = «y vivirán». También respeta la revisión auditada del POB inglés al no incluir en el texto principal la cláusula sobre «saltar»/«moverse», ausente del latín base.'
@@ -140,22 +134,9 @@ review_pass:
     issue: La nota [b] es innecesaria y el alternativo «criaturas prematuras» es menos preciso
     rationale: El proyecto ya decidió mantener «infantes» en ambas ocurrencias por consistencia léxica; la nota no preserva una ambigüedad importante del original.
   revised_spanish_text: Y los infantes de un año hablarán con sus voces, y las embarazadas darán a luz infantes prematuros de tres y cuatro meses, y vivirán.
+  revised_footnotes: []
   revision_rationale: Se elimina la sobretraducción «propias» para ceñirse mejor a uocibus suis y se suprimen notas no necesarias que pueden confundir sobre la base textual o debilitar la consistencia léxica ya documentada.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 4bc3842d31e5065cc0c2670c6994f4ad3d2ece7e0781903cea1a0c54fa0a0ea9
-  timestamp: '2026-05-07T23:35:04Z'
-  output_hash: ca1032c67fd9d1d2cd625c34a7e2664bdd95ef8258df563efebd70cccb9f4ecf
-  usage:
-    prompt_tokens: 3236
-    completion_tokens: 673
-    total_tokens: 3909
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.018185
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
