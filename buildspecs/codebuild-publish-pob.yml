@@ -45,6 +45,7 @@ phases:
             echo "attempt=$i manifest_sha=$SHA target_sha=$TARGET_SHA"
             if [[ "$SHA" == "$TARGET_SHA" ]]; then
               echo "CDN manifest matches pushed commit."
+              TARGET_SHA="$TARGET_SHA" scripts/trigger_website_pob_sync.sh
               exit 0
             fi
           else

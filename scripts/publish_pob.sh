@@ -26,3 +26,8 @@ aws lambda invoke \
 if [[ -f "$RESP" ]]; then
   echo "[publish] response: $(tr '\n' ' ' < "$RESP")" >> "$LOG"
 fi
+
+if [[ "${POB_SKIP_WEBSITE_SYNC:-0}" != "1" ]]; then
+  echo "[publish] triggering website POB bundle sync" | tee -a "$LOG"
+  "$SCRIPT_DIR/trigger_website_pob_sync.sh" 2>&1 | tee -a "$LOG"
+fi

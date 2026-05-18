@@ -125,6 +125,15 @@ cat > "$TMP_DIR/codebuild-policy.json" <<JSON
       "Resource": "arn:aws:lambda:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:function:cartha-cob-publisher"
     },
     {
+      "Sid": "TriggerWebsitePobSync",
+      "Effect": "Allow",
+      "Action": [
+        "codepipeline:GetPipelineState",
+        "codepipeline:StartPipelineExecution"
+      ],
+      "Resource": "arn:aws:codepipeline:${AWS_RESOURCE_REGION}:${ACCOUNT_ID}:cartha-website-pipeline"
+    },
+    {
       "Sid": "SummaryCacheWrite",
       "Effect": "Allow",
       "Action": [
