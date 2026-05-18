@@ -4,90 +4,17 @@ source:
   edition: WLC
   text: וַ/יֹּ֥אמֶר יְהוָ֖ה אֶל מֹשֶׁ֥ה לֵּ/אמֹֽר־׃
 translation:
-  text: Then Yahweh said to Moses,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''And the LORD said to Moses, saying.'' The initial conjunction may also be rendered ''And,'' and the final ''saying'' introduces the speech in the following verse.'
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: וַיֹּאמֶר
-  chosen: Then ... said
-  alternatives:
-  - And ... said
-  lexicon: HALOT
-  rationale: The waw-consecutive with אמר advances the narrative. 'Then' gives natural English narrative progression while preserving the sequential force; 'And' is possible but less idiomatic here.
-- source_word: יְהוָה
-  chosen: Yahweh
-  alternatives:
-  - Jehovah
-  lexicon: HALOT
-  rationale: Per doctrine, the Tetragrammaton יְהוָה is rendered 'Yahweh' — the transliteration of the divine name — rather than the traditional 'the LORD' substitution. This preserves the personal name God revealed to Israel rather than substituting a title.
-- source_word: אֶל
-  chosen: to
-  alternatives:
-  - unto
-  lexicon: HALOT
-  rationale: The preposition marks direction toward Moses; 'to' is the clear modern English equivalent.
-- source_word: מֹשֶׁה
-  chosen: Moses
-  lexicon: HALOT
-  rationale: Standard English transliteration of the personal name.
-- source_word: לֵאמֹר
-  chosen: saying
-  alternatives:
-  - ''
-  - as follows
-  lexicon: HALOT
-  rationale: The infinitive introduces the following divine speech. Retaining 'saying' preserves the Hebrew discourse formula, even though English can omit it. Because the next verse contains the content, keeping the formula here best reflects the source text.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: nt_draft_v1
-  prompt_sha256: 88393825a602269272fd7ece24b393f1cb75dece71290eada31eae69980e1904
-  timestamp: '2026-04-19T16:25:54Z'
-  output_hash: 39fa3f315357d1f2ed476b2b54a8389f80fa2bed7c795a561c307e66c26b7621
-  temperature: 0.2
-status: revised
-theological_decisions:
-- issue: Rendering the divine name יְהוָה
-  chosen_reading: Yahweh
-  alternative_readings:
-  - Yahweh
-  - Jehovah
-  rationale: The verse uses the Tetragrammaton יְהוָה directly. Per updated doctrine, the divine name is rendered 'Yahweh' rather than 'the LORD', preserving the covenant name God revealed at Sinai.
-  doctrine_reference: 'DOCTRINE.md: Contested terms — יְהוָה YHWH'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:42Z'
-  unchanged: false
-  changes_summary: Removed the redundant 'saying,' since the Hebrew introductory formula is naturally rendered in English as 'Then the LORD said to Moses,' without repeating it.
+  text: 'Then the LORD said to Moses, saying,'
 revisions:
-- timestamp: '2026-04-23T11:15:42Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: Then the LORD said to Moses, saying,
-  to: Then the LORD said to Moses,
-  rationale: Removed the redundant 'saying,' since the Hebrew introductory formula is naturally rendered in English as 'Then the LORD said to Moses,' without repeating it.
-
-cross_check:
-  status: high_agreement
-  agreement: 0.95
-  agreement_score: 0.95
-  agreement_min: 0.85
-  agreement_max: 0.95
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T22:10:46Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: full_coverage_priority
-  pass_count: 2
-  passes_with_issues: 2
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - full_coverage_priority
-  - weighted_vocab
-  verdict_counts:
-    minor-issues: 2
-  source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/007/004.job-41215.json
+- timestamp: '2026-05-18T03:59:51Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Yahweh said to Moses,[a]'
+  to: 'Then the LORD said to Moses, saying,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''saying'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:59:51Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Numbers 7:4 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''saying'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '
