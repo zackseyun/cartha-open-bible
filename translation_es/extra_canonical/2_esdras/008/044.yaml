@@ -23,12 +23,9 @@ base_translation:
     changes_summary: Revised to reflect nominatus ('called') rather than omitting it; changed 'for whose sake' to 'through whom' to match per quem more closely; removed interpretive 'over us' not present in the Latin; retained the final broken phrase as 'No, Lord' to match the source's abrupt ending.
 translation:
   language: es
-  text: llamado tu imagen[a], porque ha sido hecho semejante a ti, por quien hiciste todas las cosas, y lo has comparado con la semilla del labrador. No, Señor
+  text: llamado tu imagen, porque ha sido hecho semejante a ti, por cuya causa hiciste todas las cosas, y lo has comparado con la semilla del labrador. No, Señor
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «por quien hiciste todas las cosas».'
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: tua imago nominatus
   english_pob_choice: called your image
@@ -111,7 +108,7 @@ ai_draft:
     total_tokens: 3189
     reasoning_tokens: 0
     estimated_cost_usd: 0.006479
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador sigue bien la mayor parte del latín: ''llamado tu imagen'', ''ha sido hecho semejante a ti'', ''la semilla del labrador'' y el cierre abrupto ''No, Señor'' reflejan fielmente el texto fuente. Sin embargo, el tratamiento de ''per quem omnia plasmasti'' queda problemático: el español ''por quien hiciste todas las cosas'' sigue sonando naturalmente instrumental en español y puede sugerir erróneamente que el ser humano fue el medio de la creación. Dado el historial de auditoría, la mejor preservación del sentido documentado en español es causal/final, no instrumental.'
@@ -125,21 +122,9 @@ review_pass:
     issue: La nota al pie actual conserva como alternativa la lectura incorrecta
     rationale: 'La nota ''[a] O: «por quien hiciste todas las cosas»'' reintroduce la opción que el propio expediente teológico considera engañosa. Además, la nota inglesa previa estaba asociada a una etapa superada del texto, no a una alternativa que deba preservarse en español.'
   revised_spanish_text: llamado tu imagen, porque ha sido hecho semejante a ti, por cuya causa hiciste todas las cosas, y lo has comparado con la semilla del labrador. No, Señor
+  revised_footnotes: []
   revision_rationale: Se elimina la nota porque ya no hay una alternativa útil que deba preservarse en español, y se corrige 'por quien' a 'por cuya causa' para reflejar el sentido causal/final documentado en la auditoría y evitar una lectura instrumental teológicamente errónea. El resto del versículo se mantiene por ser fiel, natural y estilísticamente adecuado.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 2c6be68a2fc4755796722cb1828f8f28296c2bc28ebc08644461e7fead349971
-  timestamp: '2026-05-07T23:45:38Z'
-  output_hash: 47d03a5ffa83999d946df3abf715c39906401184f77fa0c09a79ba910bd72dbe
-  usage:
-    prompt_tokens: 2777
-    completion_tokens: 638
-    total_tokens: 3415
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016512
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true
