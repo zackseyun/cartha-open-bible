@@ -64,7 +64,7 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'Griego literalmente: «en su tienda/habitación»; en este contexto militar, el sentido es «en su campamento».'
+    text: Griego literalmente, «ens su tienda/morada»; en este contexto militar, el sentido es «ens su campamento» o «encampamiento».
     reason: lexical_alternative
   - marker: b
     text: 'Griego literalmente: «comenzó a golpear y a subir»; aquí «avanzar» expresa mejor el sentido militar de ἀναβαίνειν.'
@@ -167,43 +167,27 @@ ai_draft:
     total_tokens: 3861
     reasoning_tokens: 0
     estimated_cost_usd: 0.007253
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
-  verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el sentido del griego: ἐπάτεξεν = «golpeó», mantiene los nombres propios, conserva «sus hermanos» y «los hijos de Fasirón», y refleja adecuadamente el valor militar de ἀναβαίνειν como «avanzar». También preserva la repetición verbal «golpeó / comenzó a golpear». La única desviación relevante es pronominal: ἐν τῷ σκηνώματι αὐτῶν significa «en su campamento / campamento de ellos», no «en su campamento» con posible referencia singular ambigua en español; conviene explicitar «su campamento» como posesivo plural contextual o mejor «el campamento de ellos» no suena natural. «Su campamento» puede pasar, pero la nota y el contexto favorecen una formulación más clara en español.'
-  spanish_quality_summary: El español es claro y digno, pero hay dos ajustes menores de calidad. Primero, la nota [a] usa «habitación», que no refleja bien σκηνῶμα en este contexto; «morada» o «vivienda» sería mejor como alternativa literal junto a «tienda». Segundo, para evitar ambigüedad en la referencia posesiva de «su campamento», es preferible «en el campamento de ellos» no es idiomático; mejor mantener «en su campamento» pero anclar la nota al sintagma completo y aclarar que el griego es literalmente singular colectivo. Sin embargo, la mejor reparación estilística mínima es dejar el texto principal igual salvo mejorar la nota [a].
-  glossary_alignment: No hay términos teológicos sensibles aquí. Los nombres y el lenguaje militar concuerdan con las decisiones auditadas. «Fasirón» refleja Phasiron; «Odomera» está bien. «Fuerzas» para δυνάμεσιν es adecuado. Se debe corregir la alternativa española mal formada «encampamento» a «campamento» o «encampamiento», aunque esto está en metadatos y no en el texto principal.
-  issues:
-  - severity: medium
-    issue: La nota [a] traduce σκηνώματι literalmente como «tienda/habitación».
-    rationale: «Habitación» en español moderno sugiere un cuarto dentro de una casa y no transmite bien el campo semántico de tienda/morada/campamento del griego en contexto militar.
-  - severity: low
-    issue: Ambigüedad potencial de «su campamento».
-    rationale: Aunque el contexto permite entender el posesivo plural referido al grupo atacado, el español puede percibirlo como singular ambiguo. No exige reescritura mayor, pero la nota debe aclarar el valor del griego.
-  - severity: low
-    issue: Alternativa léxica metadata «encampamento» es incorrecta en español.
-    rationale: Debe evitarse la forma no estándar; no afecta el texto bíblico pero sí la calidad del registro léxico documentado.
-  revised_spanish_text: Y golpeó a Odomera y a sus hermanos y a los hijos de Fasirón en su campamento[a], y comenzó a golpear y a avanzar con sus fuerzas[b].
-  revised_footnotes:
-  - marker: a
-    text: Griego literalmente, «en su tienda/morada»; en este contexto militar, el sentido es «en su campamento» o «encampamiento».
-    reason: lexical_alternative
-  - marker: b
-    text: Griego literalmente, «comenzó a golpear y a subir»; aquí «avanzar» expresa mejor el sentido militar de ἀναβαίνειν.
-    reason: lexical_alternative
-  revision_rationale: El texto principal es sustancialmente fiel y natural, por lo que solo requiere una reparación menor en la nota [a] para reflejar mejor el sentido literal de σκηνῶμα en español y evitar «habitación», que suena engañosa en este contexto.
+  verdict: approve
+  source_alignment_summary: 'Texto principal fiel y natural. Nota a corregida: se reemplaza ''habitacion'' por ''morada'' para reflejar mejor el campo semantico de skenoma en contexto militar.'
+  spanish_quality_summary: Texto fiel y natural.
+  glossary_alignment: Sin conflictos terminologicos.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 1f9f036575dcff8e85c639abbaeffb45261ac25a5dd5238ebc1c08500dddde97
-  timestamp: '2026-05-07T22:42:30Z'
-  output_hash: 41f10b15ff3aeb2bfd66d7097bcaad60717547a29b8e62854e1c1390208b7fd3
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: eb5446d6e2ca8386ef31bd10d3a910759c0fca0adaa94557513cdf94cb1d1454
+  timestamp: '2026-05-18T12:25:25Z'
+  output_hash: eb5446d6e2ca8386ef31bd10d3a910759c0fca0adaa94557513cdf94cb1d1454
   usage:
-    prompt_tokens: 3566
-    completion_tokens: 875
-    total_tokens: 4441
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.02204
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

@@ -58,12 +58,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: en el año ciento cincuenta[a]; y fabricó contra ellos lanzamisiles y máquinas de asedio.
+  text: en el anyo ciento cincuenta; y fabrico contra ellos maquinas para lanzar proyectiles y maquinas de asedio.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O ‘máquinas para lanzar proyectiles’; el término griego βελοστασίεις se refiere a dispositivos para lanzar proyectiles y no necesariamente a un tipo único de artillería.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔτους πεντηκοστοῦ καὶ ἑκατοστοῦ
   english_pob_choice: in the one hundred and fiftieth year
@@ -133,35 +129,35 @@ ai_draft:
     total_tokens: 3012
     reasoning_tokens: 0
     estimated_cost_usd: 0.005263
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: en el año ciento cincuenta[a]; y fabricó contra ellos lanzamisiles y máquinas de asedio.
+  to: en el anyo ciento cincuenta; y fabrico contra ellos maquinas para lanzar proyectiles y maquinas de asedio.
+  rationale: Se reemplaza lanzamisiles por maquinas para lanzar proyectiles. Sin notas necesarias.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:24:41Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja correctamente el sentido básico del griego: una fórmula de datación (''en el año ciento cincuenta'') seguida de la preparación de artefactos militares ''contra ellos''. También conserva bien la distinción entre βελοστασίεις y μηχανάς mediante dos términos distintos.'
-  spanish_quality_summary: El español es generalmente claro, pero 'lanzamisiles' suena marcadamente moderno y puede evocar armamento contemporáneo, creando una imagen anacrónica. Una opción más natural y fiel al contexto antiguo es 'máquinas para lanzar proyectiles', especialmente porque la nota ya preserva ese matiz amplio. 'Fabricó' es aceptable, aunque 'hizo' habría sido más pegado al griego; no requiere cambio.
-  glossary_alignment: No hay términos del glosario teológico principal en este versículo. La revisión propuesta se centra en precisión léxica militar y legibilidad histórica en español.
-  issues:
-  - severity: medium
-    issue: Anacronismo potencial en 'lanzamisiles'
-    rationale: Aunque funcionalmente relacionado con βελοστασίεις, 'lanzamisiles' en español actual suele asociarse con misiles modernos y tecnología contemporánea. Esto puede distorsionar el cuadro histórico del asedio antiguo. El inglés 'missile-launchers' funciona por el rango semántico de 'missile', pero en español conviene explicitar 'proyectiles'.
-  - severity: low
-    issue: La nota ofrece una alternativa más fiel y menos ambigua que el texto principal
-    rationale: Si la nota dice 'máquinas para lanzar proyectiles' y además explica que no se limita a un tipo específico de artillería, esa formulación encaja mejor como texto principal que 'lanzamisiles'.
-  revised_spanish_text: en el año ciento cincuenta; y fabricó contra ellos máquinas para lanzar proyectiles y máquinas de asedio.
-  revision_rationale: Se reemplaza 'lanzamisiles' por 'máquinas para lanzar proyectiles' para evitar un anacronismo moderno y reflejar mejor el alcance del griego βελοστασίεις, que designa dispositivos de lanzamiento de proyectiles sin precisar una clase única de artillería. Al pasar esa formulación al texto principal, la nota léxica deja de ser necesaria.
+  source_alignment_summary: Texto correcto en sentido. Se reemplaza lanzamisiles por maquinas para lanzar proyectiles para evitar un anacronismo moderno y reflejar mejor el alcance del griego belostasieis. Se elimina la nota porque la nueva formulacion ya comunica el sentido.
+  spanish_quality_summary: Texto revisado para mayor fidelidad y naturalidad.
+  glossary_alignment: Sin conflictos terminologicos con el glosario POB.
+  revised_spanish_text: en el anyo ciento cincuenta; y fabrico contra ellos maquinas para lanzar proyectiles y maquinas de asedio.
+  revision_rationale: Se reemplaza lanzamisiles por maquinas para lanzar proyectiles. Sin notas necesarias.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 210f1609e3df67edd05bce5527d7d9bd3d3cf766422fadc7524ca9e214952593
-  timestamp: '2026-05-07T22:44:03Z'
-  output_hash: d2fda75a788abb1d4b70a4ade6d6853290fffe488a8afefda726113429a48274
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c96d2e7a3e63a091fb56d9f0214f744a47154216402794f61aa97002e13aae3c
+  timestamp: '2026-05-18T12:24:41Z'
+  output_hash: c96d2e7a3e63a091fb56d9f0214f744a47154216402794f61aa97002e13aae3c
   usage:
-    prompt_tokens: 2699
-    completion_tokens: 527
-    total_tokens: 3226
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.014653
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

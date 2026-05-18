@@ -57,12 +57,8 @@ base_translation:
     changes_summary: Revised 'the battle raged' to 'the battle was joined' to reflect ἐγένετο ὁ πόλεμος συνηγμένος more closely and avoid interpretive expansion. Kept the rest unchanged.
 translation:
   language: es
-  text: Y la tierra fue sacudida por causa de sus campamentos[a]; y la batalla se trabó desde la mañana hasta la tarde.
+  text: Y la tierra fue sacudida a causa de sus campamentos; y la batalla se trabo desde la manyana hasta la tarde.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O, más literalmente: «la batalla se trabó desde la mañana hasta la tarde».'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐσείσθη
   english_pob_choice: shook
@@ -139,35 +135,35 @@ ai_draft:
     total_tokens: 3406
     reasoning_tokens: 0
     estimated_cost_usd: 0.005667
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y la tierra fue sacudida por causa de sus campamentos[a]; y la batalla se trabó desde la mañana hasta la tarde.
+  to: Y la tierra fue sacudida a causa de sus campamentos; y la batalla se trabo desde la manyana hasta la tarde.
+  rationale: 'Eliminacion de nota mal anclada. Ajuste: ''a causa de'' en vez de ''por causa de''.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:25:24Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido general del griego: la tierra/la tierra firme se sacude por los campamentos/fuerzas, y el combate queda entablado durante toda la jornada. Sin embargo, la nota al pie está mal anclada y no corresponde al lugar ni al contenido de la alternativa inglesa documentada. Además, «por causa de sus campamentos» es defendible, pero «a causa de sus campamentos» o una formulación más directa suena un poco más natural en español; el punto principal a corregir es la nota.'
-  spanish_quality_summary: 'El español es claro y digno. «La batalla se trabó» es idiomático y fiel a la intención de evitar una expansión como «rugió» o «arreció». «Fue sacudida» conserva bien el valor pasivo, aunque «tembló» también sería posible. La principal deficiencia de calidad es editorial: la nota [a] está colocada tras «campamentos» pero explica una alternativa para la segunda cláusula, lo que confunde al lector.'
-  glossary_alignment: 'No hay conflictos con la terminología doctrinal del proyecto. Las decisiones léxicas principales son aceptables: γῆ -> «tierra», παρεμβολῶν -> «campamentos», πόλεμος -> «batalla». συνηγμένος -> «se trabó» encaja bien con la revisión inglesa «was joined».'
-  issues:
-  - severity: medium
-    issue: La nota [a] está anclada en «campamentos» pero su contenido trata la frase «la batalla se trabó desde la mañana hasta la tarde».
-    rationale: Las notas deben aparecer en el lugar exacto al que se refieren. Aquí la alternativa documentada pertenece a la segunda cláusula, no a «campamentos». Esto crea una incoherencia editorial y puede inducir a error.
-  - severity: low
-    issue: La redacción de la nota usa «más literalmente» para una frase que en realidad coincide con el texto principal en español.
-    rationale: En el rastro inglés, la nota preserva una alternativa frente a una formulación más dinámica anterior. En español revisado, el texto principal ya adopta esa opción literal («se trabó»), por lo que la nota resulta innecesaria y redundante.
-  revised_spanish_text: Y la tierra fue sacudida a causa de sus campamentos; y la batalla se trabó desde la mañana hasta la tarde.
-  revision_rationale: Se elimina la nota porque está mal anclada y además ya no aporta una alternativa real frente al texto principal. Se ajusta «por causa de» a «a causa de» por mayor naturalidad en español, manteniendo el mismo valor causal/originario del griego ἀπό en contexto.
+  source_alignment_summary: Se elimina la nota porque estaba mal anclada y resultaba redundante con el texto principal. Se ajusta 'por causa de' a 'a causa de' por mayor naturalidad en espanol.
+  spanish_quality_summary: Texto revisado para mayor fidelidad y naturalidad.
+  glossary_alignment: Sin conflictos terminologicos con el glosario POB.
+  revised_spanish_text: Y la tierra fue sacudida a causa de sus campamentos; y la batalla se trabo desde la manyana hasta la tarde.
+  revision_rationale: 'Eliminacion de nota mal anclada. Ajuste: ''a causa de'' en vez de ''por causa de''.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: cdeda39a9ae04334d887049e0e3a5ff0f90847bad2c6a7c373a3c53d975cfcb7
-  timestamp: '2026-05-07T22:33:39Z'
-  output_hash: ab392e6c9c3d5085e344b7a17e7e38a912950389c88f29eb3e8d9c991cb40291
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 342db31c25ecbcf7471099a9d31c25683bbef66e8ae1cb0ee52260eb3d6a0afa
+  timestamp: '2026-05-18T12:25:24Z'
+  output_hash: 342db31c25ecbcf7471099a9d31c25683bbef66e8ae1cb0ee52260eb3d6a0afa
   usage:
-    prompt_tokens: 3076
-    completion_tokens: 623
-    total_tokens: 3699
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.017035
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

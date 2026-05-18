@@ -51,12 +51,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y establecieron que este día se observara[a] cada año, el día trece de Adar.
+  text: Y establecieron que este dia debia observarse cada anyo, el trece de Adar.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «se observara» puede entenderse también como «se celebrara» o «se guardara»; se eligió una forma más amplia para no sobrecargar el carácter festivo.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔστησαν
   english_pob_choice: they established
@@ -131,38 +127,35 @@ ai_draft:
     total_tokens: 2962
     reasoning_tokens: 0
     estimated_cost_usd: 0.005068
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y establecieron que este día se observara[a] cada año, el día trece de Adar.
+  to: Y establecieron que este dia debia observarse cada anyo, el trece de Adar.
+  rationale: 'Correccion verbal: ''debia observarse''. Fecha simplificada: ''el trece de Adar''. Sin notas.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:25:04Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido general del griego: ἔστησαν = «establecieron», κατʼ ἐνιαυτὸν = «cada año», y conserva «Adar». Sin embargo, «se observara» en indicativo/imperfecto de subjuntivo sin el auxiliar correspondiente no expresa con naturalidad en español el valor de lo establecido; la construcción griega indica una observancia instituida, mejor vertida como «debía observarse» o «fuera observado». Además, la fecha suena más natural y clara como «el día trece del mes de Adar» o «el trece de Adar».'
-  spanish_quality_summary: El texto es comprensible, pero «que este día se observara» resulta gramaticalmente menos natural en español contemporáneo para este contexto normativo. También «el día trece de Adar» es aceptable, aunque «el trece de Adar» o «el día trece del mes de Adar» fluye mejor. La nota léxica es innecesaria si se adopta una formulación española más natural.
-  glossary_alignment: No hay conflictos con la terminología del proyecto. «Adar» está bien conservado. No aparecen términos teológicos sensibles del glosario principal.
-  issues:
-  - severity: medium
-    issue: Construcción verbal española poco natural en «que este día se observara»
-    rationale: Aunque intenta reflejar «should be observed», en español suena incompleto sin auxiliar o contexto más claramente subordinante. «debía observarse» expresa de forma natural la observancia instituida por ἔστησαν τοῦ ἄγειν.
-  - severity: low
-    issue: Expresión de fecha mejorable
-    rationale: «el día trece de Adar» no es incorrecto, pero «el trece de Adar» o «el día trece del mes de Adar» es más idiomático y claro en español bíblico moderno.
-  - severity: low
-    issue: Nota al pie prescindible tras la mejora verbal
-    rationale: La nota explica una elección inglesa trasladada de forma algo mecánica. En español, una redacción natural puede comunicar el mismo sentido sin requerir nota.
-  revised_spanish_text: Y establecieron que este día debía observarse cada año, el trece de Adar.
-  revision_rationale: Se ajusta la construcción verbal para un español natural y fiel al sentido institucional del griego, y se simplifica la fecha a una forma más idiomática sin alterar el significado.
+  source_alignment_summary: Se ajusta la construccion verbal 'se observara' por 'debia observarse' para un espanol natural y fiel al sentido institucional del griego. Se simplifica la fecha a una forma mas idiomatica. Se elimina la nota innecesaria.
+  spanish_quality_summary: Texto revisado para mayor fidelidad y naturalidad.
+  glossary_alignment: Sin conflictos terminologicos con el glosario POB.
+  revised_spanish_text: Y establecieron que este dia debia observarse cada anyo, el trece de Adar.
+  revision_rationale: 'Correccion verbal: ''debia observarse''. Fecha simplificada: ''el trece de Adar''. Sin notas.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: b881e6cc47155cc15d2c0c75c2a72c13bb77cc52cd11ce8a930ccdee8c924a12
-  timestamp: '2026-05-07T23:12:15Z'
-  output_hash: 5857cfb951ee06e65fc38b18fc8c7160747987e2afcae360d03b21467ecf88e9
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f3367dce7b9f5805e309df49ddf735e15b3a3f28f32cd65ef3929990fb8ed70e
+  timestamp: '2026-05-18T12:25:04Z'
+  output_hash: f3367dce7b9f5805e309df49ddf735e15b3a3f28f32cd65ef3929990fb8ed70e
   usage:
-    prompt_tokens: 2699
-    completion_tokens: 579
-    total_tokens: 3278
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.015433
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

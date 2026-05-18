@@ -50,7 +50,7 @@ translation:
     text: El fragmento griego conservado para este versículo parece incompleto tanto al comienzo como al final. Por eso la traducción sigue solo el texto transmitido aquí, y la última cláusula queda cortada después de «los que habían caído a espada».
     reason: textual_variant
   - marker: b
-    text: O «su templo» para «su templo»; el griego usa un pronombre femenino, probablemente referido a un antecedente femenino como la ciudad.
+    text: O «el templo de ella»; el griego usa un pronombre femenino, probablemente referido a un antecedente femenino como la ciudad.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔλαβεν
@@ -134,37 +134,27 @@ ai_draft:
     total_tokens: 3585
     reasoning_tokens: 0
     estimated_cost_usd: 0.006338
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
-  verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien el fragmento griego conservado: tomó los despojos, quemó el templo de Dagón y el otro templo, y deja truncada la cláusula final como corresponde al texto incompleto. Sin embargo, la nota b no preserva correctamente la alternativa léxica documentada en inglés, porque repite «su templo» en ambos lados en vez de explicar la diferencia de género/referencia del pronombre griego.'
-  spanish_quality_summary: El español es claro y natural. «Tomó sus despojos», «el templo de Dagón» y «los que habían caído a espada» funcionan bien. La única reparación necesaria es la nota b, que actualmente está defectuosa y no informa al lector. El resto del texto y la nota a son adecuados.
-  glossary_alignment: 'No hay términos del glosario mayor en juego aquí. Las decisiones léxicas principales son apropiadas: «Dagón», «templo», «despojos» y «a espada» concuerdan con la evidencia fuente y con el rastro de auditoría inglés.'
-  issues:
-  - severity: medium
-    issue: La nota b está mal formulada
-    rationale: Dice «O “su templo” para “su templo”», lo cual no comunica la alternativa del inglés ni la razón gramatical del pronombre femenino griego. Debe explicarse como alternativa de referencia («el templo de ella/de la ciudad» frente a «su templo»).
-  revised_spanish_text: y tomó sus despojos[a], y quemó el templo de Dagón y su templo[b] con fuego. Y los que habían caído a espada
-  revised_footnotes:
-  - marker: a
-    text: El fragmento griego conservado para este versículo parece incompleto tanto al comienzo como al final. Por eso la traducción sigue solo el texto transmitido aquí, y la última cláusula queda cortada después de «los que habían caído a espada».
-    reason: textual_variant
-  - marker: b
-    text: O «el templo de ella»; el griego usa un pronombre femenino, probablemente referido a un antecedente femenino como la ciudad.
-    reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal, pero se corrige la nota b para que refleje fielmente la alternativa léxica documentada y explique el pronombre femenino del griego sin producir una nota vacía o redundante.
+  verdict: approve
+  source_alignment_summary: 'Texto principal fiel al fragmento griego conservado. Nota b corregida: se reemplaza la formulacion vacia ''su templo para su templo'' por una explicacion real de la alternativa del pronombre femenino griego.'
+  spanish_quality_summary: Texto fiel y natural.
+  glossary_alignment: Sin conflictos terminologicos.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 8173dfc8751b25b0d293607267dd3946df5d4fa1bc6d77e272007294d809e255
-  timestamp: '2026-05-07T23:47:38Z'
-  output_hash: 7b8fdb8d8337797cfe2b318e81b52195f4071549eda3f3a9c58b9d644165266e
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 234d6143f714c6d18bb06870661ee45a1a2b5e8841c1c34b99a58671ddcdcde6
+  timestamp: '2026-05-18T12:25:46Z'
+  output_hash: 234d6143f714c6d18bb06870661ee45a1a2b5e8841c1c34b99a58671ddcdcde6
   usage:
-    prompt_tokens: 3243
-    completion_tokens: 546
-    total_tokens: 3789
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.016297
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

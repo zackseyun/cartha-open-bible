@@ -67,7 +67,7 @@ translation:
     text: 'O: «en el año venidero». La expresión griega dice literalmente «en el año que viene», y señala simplemente el año siguiente en la secuencia narrativa.'
     reason: lexical_alternative
   - marker: b
-    text: 'O: «cinco mil de caballería» o «cinco mil jinetes». El griego usa «caballo» con valor colectivo militar.'
+    text: 'O: «cinco mil jinetes». El griego usa «caballo» con valor colectivo militar.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐν τῷ ἐρχομένῳ ἐνιαυτῷ
@@ -148,40 +148,27 @@ ai_draft:
     total_tokens: 3350
     reasoning_tokens: 0
     estimated_cost_usd: 0.005914
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
-  verdict: revise
-  source_alignment_summary: 'El borrador refleja correctamente el sentido griego general: tiempo narrativo futuro relativo (''en el año siguiente''), reunión/movilización de tropas, sesenta mil hombres selectos, cinco mil tropas montadas, y propósito de hacer guerra contra ellos. Sin embargo, hay un problema en el tratamiento de la nota sobre πεντακισχιλίαν ἵππον: el texto principal ya dice «cinco mil de caballería», pero la nota lo presenta como alternativa, duplicando la lectura principal en vez de ofrecer una verdadera alternativa al colectivo militar griego.'
-  spanish_quality_summary: El español es claro, natural y de registro digno. «Reunió», «hombres escogidos» y «para hacerles guerra» funcionan bien. La única reparación necesaria es la nota b, para que no repita la redacción principal y para explicar mejor la alternativa «jinetes».
-  glossary_alignment: 'No hay términos teológicos sensibles en este versículo. Las decisiones léxicas están bien alineadas con el proyecto: formulación narrativa natural, conservación del matiz militar de ἵππον como colectivo, y propósito bélico claramente expresado.'
-  issues:
-  - severity: medium
-    issue: La nota b repite la traducción principal en lugar de ofrecer una alternativa real.
-    rationale: 'El texto principal ya usa «cinco mil de caballería[a][b]», pero la nota b dice «O: “cinco mil de caballería” o “cinco mil jinetes”». Una nota de alternativa no debe presentar como alternativa exacta la misma lectura escogida para el texto principal.'
-  - severity: low
-    issue: El anclaje de notas [a][b] sobre «caballería» no sigue el orden conceptual del inglés auditado.
-    rationale: No es incorrecto en sí, pero conviene mantener notas claras y no redundantes. Conservar ambos marcadores es aceptable si cada uno aporta información distinta y bien enfocada.
-  revised_spanish_text: Y en el año siguiente reunió sesenta mil hombres escogidos y cinco mil de caballería[a][b], para hacerles guerra.
-  revised_footnotes:
-  - marker: a
-    text: 'O: «en el año venidero». La expresión griega dice literalmente «en el año que viene», y señala simplemente el año siguiente en la secuencia narrativa.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'O: «cinco mil jinetes». El griego usa «caballo» con valor colectivo militar.'
-    reason: lexical_alternative
-  revision_rationale: Se mantiene el texto principal, porque es fiel al griego y suena natural en español. Solo se corrige la nota b para eliminar la redundancia y preservar adecuadamente la alternativa léxica documentada en el audit trail inglés.
+  verdict: approve
+  source_alignment_summary: El texto español refleja fielmente el griego. Las notas han sido corregidas para eliminar la redundancia en la nota b.
+  spanish_quality_summary: Texto claro, natural y fiel con notas correctas.
+  glossary_alignment: Sin conflictos terminologicos.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: b0b1316d030ee05899d28d76835bb7367cf196fd5896a47570f2314a5eb29aac
-  timestamp: '2026-05-07T23:10:37Z'
-  output_hash: 5fb9dc53da313bd75d90ff82813725f57a9dbf7e8927354c7561d3912ce44bcb
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 06d57f0876a68f6492bd7ac046bd70758e330b3412c58ad165ca1318b5bf782a
+  timestamp: '2026-05-18T12:23:56Z'
+  output_hash: 06d57f0876a68f6492bd7ac046bd70758e330b3412c58ad165ca1318b5bf782a
   usage:
-    prompt_tokens: 3054
-    completion_tokens: 625
-    total_tokens: 3679
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.01701
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

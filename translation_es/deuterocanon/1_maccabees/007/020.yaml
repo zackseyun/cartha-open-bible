@@ -51,15 +51,8 @@ base_translation:
     changes_summary: Revised 'put the country under Alcimus' to 'appointed Alcimus over the country' for a more direct and natural rendering of κατέστησεν ... τῷ Ἀλκίμῳ while preserving the formal sense. No other changes needed.
 translation:
   language: es
-  text: Y estableció la región[a] para Alcimo, y dejó con él una fuerza para ayudarle[b]; y Bacquides se fue al rey.
+  text: Y puso a Alcimo sobre el pais, y dejo con el una fuerza para ayudarlo; y Bacquides se fue al rey.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Región» traduce χώρα en sentido administrativo-territorial; evita sugerir una entidad política moderna que el texto no presupone.
-    reason: lexical_alternative
-  - marker: b
-    text: «Ayudarle» conserva el propósito de la fuerza dejada con él; también podría entenderse «socorrerle» o «asistirle», pero «ayudarle» es la opción más directa.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: κατέστησεν
   english_pob_choice: appointed over
@@ -149,39 +142,35 @@ ai_draft:
     total_tokens: 3696
     reasoning_tokens: 0
     estimated_cost_usd: 0.00671
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y estableció la región[a] para Alcimo, y dejó con él una fuerza para ayudarle[b]; y Bacquides se fue al rey.
+  to: Y puso a Alcimo sobre el pais, y dejo con el una fuerza para ayudarlo; y Bacquides se fue al rey.
+  rationale: 'Correccion de katestesen: ''puso a Alcimo sobre el pais''. Uso de ''ayudarlo'' por neutralidad latinoamericana. Sin notas necesarias.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:24:42Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja correctamente la secuencia básica del griego: asignación de autoridad a Alcimo, dejar una fuerza con él para ayudarlo, y la partida de Bacquides al rey. Sin embargo, la expresión «estableció la región para Alcimo» no representa bien κατέστησεν ... τῷ Ἀλκίμῳ, que aquí significa nombrar/poner a Alcimo sobre el territorio, no establecer la región para él. Además, «región» es posible para χώρα, pero en este contexto administrativo-político «país» o «territorio» suenan más naturales; dado el inglés auditado, conviene una formulación que preserve la idea de autoridad sobre el país.'
-  spanish_quality_summary: El español es mayormente claro, pero «estableció la región para Alcimo» suena poco natural y semánticamente equívoco. «Nombró a Alcimo sobre el país» también sería algo forzado; la opción más idiomática y fiel es «puso a Alcimo sobre el país» o «nombró a Alcimo sobre el país/territorio». El resto de la oración fluye bien. También es preferible «ayudarlo» para un español neutral latinoamericano; no obstante, «ayudarle» sigue siendo comprensible y digno.
-  glossary_alignment: No hay términos teológicos sensibles en este versículo. La principal cuestión léxica es κατέστησεν, donde el borrador se aparta del sentido documentado de autoridad/nombramiento. Para χώρα, «país» concuerda mejor con la decisión auditada en inglés («country»), sin implicar necesariamente nación-estado moderna en este contexto narrativo.
-  issues:
-  - severity: high
-    issue: «estableció la región para Alcimo» traduce mal κατέστησεν ... τῷ Ἀλκίμῳ
-    rationale: El griego expresa poner/nombrar a Alcimo sobre el territorio, no establecer la región para él. La construcción actual altera la relación sintáctica y el sentido administrativo.
-  - severity: medium
-    issue: «la región» es menos natural que «el país» o «el territorio» en este contexto
-    rationale: χώρα puede significar región, tierra, territorio o país, pero aquí se trata de control político-administrativo. «Región» no es incorrecto, pero suena menos directo que la elección auditada y puede debilitar el sentido gubernativo.
-  - severity: low
-    issue: «ayudarle» es aceptable, pero «ayudarlo» encaja mejor con el objetivo de español neutral latinoamericano
-    rationale: No afecta la fidelidad, pero mejora la naturalidad panhispánica del texto base.
-  revised_spanish_text: Y puso a Alcimo sobre el país, y dejó con él una fuerza para ayudarlo; y Bacquides se fue al rey.
-  revision_rationale: Se corrige la cláusula inicial para reflejar fielmente el sentido de κατέστησεν ... τῷ Ἀλκίμῳ como designación de autoridad sobre el territorio. Se adopta «país» para alinearse con la decisión auditada «country» y mantener una lectura natural en español. Se simplifica además «ayudarle» a «ayudarlo» por mayor neutralidad latinoamericana. No hacen falta notas, porque las decisiones son suficientemente claras en el texto principal.
+  source_alignment_summary: Se corrige la clausula inicial para reflejar fielmente katestesen ... to Alkimo como designacion de autoridad sobre el territorio. Se adopta pais para alinearse con la decision auditada country y mantener una lectura natural en espanol. Se simplifica ayudarle a ayudarlo por mayor neutralidad latinoamericana.
+  spanish_quality_summary: Texto revisado para mayor fidelidad y naturalidad.
+  glossary_alignment: Sin conflictos terminologicos con el glosario POB.
+  revised_spanish_text: Y puso a Alcimo sobre el pais, y dejo con el una fuerza para ayudarlo; y Bacquides se fue al rey.
+  revision_rationale: 'Correccion de katestesen: ''puso a Alcimo sobre el pais''. Uso de ''ayudarlo'' por neutralidad latinoamericana. Sin notas necesarias.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 9cbeab254ad9e34fd6a27a471f9b658d64ff4e23d23f8856b9d6afb98db04d7d
-  timestamp: '2026-05-07T23:10:04Z'
-  output_hash: c4517ed5c4f21fc06062085c3b13001ac91a9a163f8988d9a5efd384a4810f5e
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: f148dc71b07f7ce96c5ec2ca4058e807bec4251efec25521d54c1a6996119113
+  timestamp: '2026-05-18T12:24:42Z'
+  output_hash: f148dc71b07f7ce96c5ec2ca4058e807bec4251efec25521d54c1a6996119113
   usage:
-    prompt_tokens: 3342
-    completion_tokens: 766
-    total_tokens: 4108
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.019845
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

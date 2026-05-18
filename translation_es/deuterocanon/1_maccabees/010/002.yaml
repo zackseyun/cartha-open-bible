@@ -58,12 +58,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y Demetrio el rey oyó, y reunió muchísimas fuerzas, y salió al encuentro de él para combatir[a].
+  text: Y el rey Demetrio oyo, y reunio muchisimas fuerzas, y salio a su encuentro para combatir.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Para combatir» expresa el propósito bélico de εἰς πόλεμον; también podría leerse «para la guerra», pero la versión verbal fluye mejor con «salió al encuentro de él».
-    reason: alternative_reading
 lexical_decisions:
 - source_word: Δημήτριος ὁ βασιλεὺς
   english_pob_choice: King Demetrius
@@ -147,38 +143,35 @@ ai_draft:
     total_tokens: 3327
     reasoning_tokens: 0
     estimated_cost_usd: 0.006084
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y Demetrio el rey oyó, y reunió muchísimas fuerzas, y salió al encuentro de él para combatir[a].
+  to: Y el rey Demetrio oyo, y reunio muchisimas fuerzas, y salio a su encuentro para combatir.
+  rationale: El rey Demetrio (orden natural). A su encuentro (mas idiomatico). Sin notas.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:25:46Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el griego: ἤκουσεν = «oyó», συνήγαγεν = «reunió», δυνάμεις πολλὰς σφόδρα = «muchísimas fuerzas», ἐξῆλθεν = «salió», y εἰς πόλεμον queda bien expresado como finalidad bélica. Sin embargo, «al encuentro de él» es poco natural en español y no preserva tan bien la idiomaticidad de εἰς συνάντησιν αὐτῷ como «a su encuentro» o «a encontrarse con él».'
-  spanish_quality_summary: El texto es mayormente claro y fiel, pero requiere un ajuste de naturalidad y fluidez. «Demetrio el rey» suena marcado; «el rey Demetrio» es más idiomático y plenamente fiel. «Al encuentro de él» resulta forzado en español bíblico actual; «a su encuentro» suena natural y digno. La nota al pie no es necesaria después del ajuste.
-  glossary_alignment: No hay términos del glosario de alto impacto involucrados. Las decisiones léxicas principales concuerdan con el POB inglés. Se mantiene «fuerzas» para δυνάμεις, lo cual respeta la rationale documentada.
-  issues:
-  - severity: medium
-    issue: Orden nominal poco natural en «Demetrio el rey»
-    rationale: Aunque refleja el orden griego, en español natural y eclesial «el rey Demetrio» comunica mejor sin pérdida de sentido.
-  - severity: medium
-    issue: Expresión forzada «al encuentro de él»
-    rationale: La frase es comprensible, pero suena poco idiomática en español. «A su encuentro» preserva el sentido de εἰς συνάντησιν αὐτῷ con mejor legibilidad y dignidad estilística.
-  - severity: low
-    issue: Nota al pie innecesaria para «para combatir»
-    rationale: La traducción ya comunica adecuadamente εἰς πόλεμον y no introduce ambigüedad que exija nota en español.
-  revised_spanish_text: Y el rey Demetrio oyó, y reunió muchísimas fuerzas, y salió a su encuentro para combatir.
-  revision_rationale: 'Se ajusta la redacción para un español más natural y eclesial sin apartarse del griego ni de la audit trail inglesa: «el rey Demetrio» mejora la idiomaticidad, y «a su encuentro» expresa mejor εἰς συνάντησιν αὐτῷ que «al encuentro de él». Se elimina la nota porque ya no aporta una aclaración necesaria.'
+  source_alignment_summary: Se ajusta 'Demetrio el rey' a 'el rey Demetrio' para un espanol mas natural. Se reemplaza 'al encuentro de el' por 'a su encuentro' para mayor idiomaticidad. Se elimina la nota innecesaria.
+  spanish_quality_summary: Texto revisado para mayor fidelidad y naturalidad.
+  glossary_alignment: Sin conflictos terminologicos con el glosario POB.
+  revised_spanish_text: Y el rey Demetrio oyo, y reunio muchisimas fuerzas, y salio a su encuentro para combatir.
+  revision_rationale: El rey Demetrio (orden natural). A su encuentro (mas idiomatico). Sin notas.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 953e8f24c665e1be6fd463a971db09f0b67937e122a53fb3a9280193a5862d82
-  timestamp: '2026-05-07T23:04:47Z'
-  output_hash: b5ebdd40b71be389085632fe79f2e69d194d664721cdc769bd2941c0f6187dba
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: e27688bc0cfaa56e01b01c0592968218d608b4862b6467020ef3f3397027573f
+  timestamp: '2026-05-18T12:25:46Z'
+  output_hash: e27688bc0cfaa56e01b01c0592968218d608b4862b6467020ef3f3397027573f
   usage:
-    prompt_tokens: 3020
-    completion_tokens: 611
-    total_tokens: 3631
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.016715
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

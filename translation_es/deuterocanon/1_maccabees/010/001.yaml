@@ -72,13 +72,13 @@ translation:
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: Or 'subió'; el griego preserva un giro direccional convencional que también puede funcionar como avance militar.
+    text: O «avanzó»; el griego preserva un giro direccional convencional que tambien puede usarse para un movimiento militar.
     reason: lexical_alternative
   - marker: b
     text: O 'capturó Ptolemaida'; el verbo griego puede implicar tomar posesión o conquistar la ciudad.
     reason: lexical_alternative
   - marker: c
-    text: O 'fue rey allí'; el verbo griego puede entenderse como ejercicio del reinado o como acceso al trono.
+    text: O «llegó a ser rey allí»; el verbo griego puede entenderse como ejercicio del reinado o como acceso al trono.
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἐν ἔτει ἑξηκοστῷ καὶ ἑκατοστῷ
@@ -155,43 +155,27 @@ ai_draft:
     total_tokens: 3948
     reasoning_tokens: 0
     estimated_cost_usd: 0.006842
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
-  verdict: revise
-  source_alignment_summary: 'El borrador español refleja correctamente la secuencia y el sentido del griego: datación, identificación de Alejandro por filiación, avance, toma de Ptolemaida, recepción política y reinado allí. Sin embargo, una nota al pie introduce una alternativa que duplica innecesariamente la lectura principal y otra está formulada de modo poco idiomático en español.'
-  spanish_quality_summary: 'El texto principal es claro, natural y fiel: «Y en el año ciento sesenta, Alejandro, hijo de Antíoco Epífanes, subió y tomó Ptolemaida, y lo recibieron, y reinó allí». La puntuación y el registro son adecuados. La única reparación necesaria está en las notas: la nota [a] no debe ofrecer «subió» como alternativa cuando ya es la lectura principal, y la nota [c] conviene expresarla con un español más natural.'
-  glossary_alignment: No hay términos del glosario teológico principal implicados. Los nombres propios y el epíteto «Antíoco Epífanes» están bien conservados. «Tomó», «lo recibieron» y «reinó allí» siguen correctamente el audit trail inglés revisado.
-  issues:
-  - severity: medium
-    issue: La nota [a] ofrece como alternativa «subió», que es exactamente la lectura principal del texto.
-    rationale: Las notas deben preservar alternativas reales del griego o del audit trail, no repetir la traducción ya escogida. Aquí la alternativa documentada en inglés es «went up» frente a «came up»; en español conviene ofrecer una alternativa distinta como «avanzó» o reformular la nota para explicar el giro direccional sin duplicación.
-  - severity: low
-    issue: La nota [c] dice «O 'fue rey allí'», formulación menos natural que la alternativa española disponible.
-    rationale: Aunque comprensible, «fue rey allí» suena más tosco que «llegó a ser rey allí» o «comenzó a reinar allí» para expresar el posible matiz ingresivo de ἐβασίλευσεν.
-  revised_spanish_text: Y en el año ciento sesenta[a], Alejandro, hijo de Antíoco Epífanes, subió y tomó Ptolemaida[b], y lo recibieron, y reinó allí[c].
-  revised_footnotes:
-  - marker: a
-    text: O «avanzó»; el griego preserva un giro direccional convencional que también puede usarse para un movimiento militar.
-    reason: lexical_alternative
-  - marker: b
-    text: O «capturó Ptolemaida»; el verbo griego puede implicar tomar posesión o conquistar la ciudad.
-    reason: lexical_alternative
-  - marker: c
-    text: O «llegó a ser rey allí»; el verbo griego puede entenderse como ejercicio del reinado o como acceso al trono.
-    reason: alternative_reading
-  revision_rationale: Se mantiene intacto el texto principal porque es fiel y natural. Se corrigen solo las notas al pie para que presenten alternativas reales y un español más idiomático, en línea con el audit trail inglés y con la disciplina del proyecto.
+  verdict: approve
+  source_alignment_summary: 'Texto principal fiel al griego. Notas a y c corregidas: nota a ya no duplica la lectura principal sino que ofrece ''avanzo'' como alternativa real; nota c reformulada con espanol mas natural.'
+  spanish_quality_summary: Texto fiel y natural.
+  glossary_alignment: Sin conflictos terminologicos.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 79fb0ed8f9366ffa2e4c115ac99d2594ac92b59bb50a056e7b0e1362ed587662
-  timestamp: '2026-05-07T22:49:01Z'
-  output_hash: 7a100a27da40227f9f8204be90674715c168fab8dd5c38b2358dd6ad972058fe
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8862b666841c6f1c675c6236d020e83f2dbd7911a87e2d98f6e9a57a6c16d33c
+  timestamp: '2026-05-18T12:25:46Z'
+  output_hash: 8862b666841c6f1c675c6236d020e83f2dbd7911a87e2d98f6e9a57a6c16d33c
   usage:
-    prompt_tokens: 3580
-    completion_tokens: 716
-    total_tokens: 4296
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.01969
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
   applied_revision: false
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

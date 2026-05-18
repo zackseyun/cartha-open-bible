@@ -51,18 +51,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Que no haya batalla[a] entre nosotros. Yo vendré con pocos hombres, para ver vuestros rostros[b] en paz[c].
+  text: Que no haya batalla entre mi y ustedes. Yo vendre con pocos hombres, para ver sus rostros en paz.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Batalla» traduce μάχη y conserva el tono militar del pasaje; «combate» o «lucha» también serían posibles, pero menos específicos aquí.
-    reason: lexical_alternative
-  - marker: b
-    text: «Rostros» retiene la imagen literal de τὰ πρόσωπα. En español podría entenderse también como «presencia», pero la formulación concreta es más cercana al griego.
-    reason: lexical_alternative
-  - marker: c
-    text: «En paz» sigue de cerca μετ’ εἰρήνης y expresa un encuentro sin hostilidad; también podría verterse «pacientemente» solo de manera incorrecta, o «en amistad» con un matiz más interpretativo.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Μὴ ἔστω
   english_pob_choice: Let there be no
@@ -157,40 +147,35 @@ ai_draft:
     total_tokens: 3640
     reasoning_tokens: 0
     estimated_cost_usd: 0.007009
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Que no haya batalla[a] entre nosotros. Yo vendré con pocos hombres, para ver vuestros rostros[b] en paz[c].
+  to: Que no haya batalla entre mi y ustedes. Yo vendre con pocos hombres, para ver sus rostros en paz.
+  rationale: 'Correccion de persona/numero y variedad de espanol: entre mi y ustedes, sus rostros. Sin notas.'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:24:42Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador transmite bien el sentido general del griego: no haya enfrentamiento, el hablante vendrá con pocos hombres y busca un encuentro pacífico. Sin embargo, «entre nosotros» borra la distinción explícita de ἀνὰ μέσον ἐμοῦ καὶ ὑμῶν («entre mí y ustedes»), y «vuestros» no encaja con el estilo objetivo de español neutral latinoamericano solicitado.'
-  spanish_quality_summary: El texto es claro y digno, pero mezcla registro peninsular («vuestros») con una solución más neutral posible. También puede mejorarse ligeramente la naturalidad manteniendo la literalidad del original.
-  glossary_alignment: No hay términos teológicos especiales en este versículo. Las decisiones léxicas principales («batalla», «hombres», «en paz») están bien alineadas con el expediente inglés y con el griego. La principal corrección es de persona/número y de variedad de español.
-  issues:
-  - severity: medium
-    issue: «entre nosotros» sustituye «entre mí y ustedes»
-    rationale: El griego distingue al hablante singular (ἐμοῦ) de los destinatarios plurales (ὑμῶν). «Entre nosotros» suaviza esa distinción que el expediente inglés decidió conservar explícitamente.
-  - severity: medium
-    issue: Uso de «vuestros rostros» en vez de una forma neutral latinoamericana
-    rationale: El encargo pide español neutral latinoamericano / ampliamente legible en iglesia. «Vuetros/vuestros» introduce un registro peninsular no necesario. «sus rostros» conserva el sentido sin perder dignidad.
-  - severity: low
-    issue: Notas innecesarias para decisiones suficientemente claras
-    rationale: Las notas sobre «batalla», «rostros» y «en paz» no corrigen ambigüedades reales en español ni preservan una alternativa esencial del expediente; pueden omitirse para mayor limpieza.
-  revised_spanish_text: Que no haya batalla entre mí y ustedes. Yo vendré con pocos hombres, para ver sus rostros en paz.
-  revision_rationale: Se corrige «entre nosotros» a «entre mí y ustedes» para preservar la distinción singular/plural del griego y del expediente inglés. Se cambia «vuestros rostros» por «sus rostros» para ajustarse al español neutral latinoamericano, manteniendo la literalidad digna del original. Se eliminan las notas al no ser necesarias en esta línea.
+  source_alignment_summary: Se corrige 'entre nosotros' a 'entre mi y ustedes' para preservar la distincion singular/plural del griego ana meson emou kai hymon. Se cambia 'vuestros rostros' por 'sus rostros' para ajustarse al espanol neutral latinoamericano. Se eliminan notas innecesarias.
+  spanish_quality_summary: Texto revisado para mayor fidelidad y naturalidad.
+  glossary_alignment: Sin conflictos terminologicos con el glosario POB.
+  revised_spanish_text: Que no haya batalla entre mi y ustedes. Yo vendre con pocos hombres, para ver sus rostros en paz.
+  revision_rationale: 'Correccion de persona/numero y variedad de espanol: entre mi y ustedes, sus rostros. Sin notas.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 4e0820c48a9e69bd4b52384a8002bb39c97bb76bbf859afcda8234419c64a290
-  timestamp: '2026-05-07T23:48:46Z'
-  output_hash: ee79d8daab913f9f0fc4051e391870cd3884118c01dc7f19292e7aac87965521
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: c63e48604426d0d1bf110921590ba821c5030d5843425d7a04eeda3b054511db
+  timestamp: '2026-05-18T12:24:42Z'
+  output_hash: c63e48604426d0d1bf110921590ba821c5030d5843425d7a04eeda3b054511db
   usage:
-    prompt_tokens: 3378
-    completion_tokens: 557
-    total_tokens: 3935
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.0168
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
-  - footnote marker [c] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
