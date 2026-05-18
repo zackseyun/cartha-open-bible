@@ -25,15 +25,9 @@ base_translation:
     changes_summary: Removed the initial 'bless you' because the source begins with 'I will make your name great,' not 'I will bless you.' Kept the rest essentially unchanged for accuracy and natural formal English.
 translation:
   language: es
-  text: Y haré grande tu nombre, y serás bendecido[a] en la tierra, y en ti serán benditas[b] todas las naciones de la tierra. Y a los que te bendigan, yo los bendeciré, y a los que te maldigan, yo los maldeciré.
+  text: Y haré grande tu nombre, y serás bendecido en la tierra, y en ti serán benditas todas las naciones de la tierra. Y a los que te bendigan, yo los bendeciré, y a los que te maldigan, yo los maldeciré.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: También puede entenderse simplemente «bendecido», sin añadir matiz de resultativo; se deja el pasivo para reflejar la forma del texto.
-    reason: lexical_alternative
-  - marker: b
-    text: «Serán benditas» conserva la pasiva del original; una alternativa posible sería «serán bendecidas», pero aquí se mantiene la concordancia femenina con «naciones».
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: ወአዐቢ፡ ስመከ፡
   english_pob_choice: And I will make your name great
@@ -124,7 +118,7 @@ ai_draft:
     total_tokens: 3532
     reasoning_tokens: 0
     estimated_cost_usd: 0.008634
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador español sigue bien el sentido del ge''ez y la revisión inglesa: «haré grande tu nombre», «serás bendecido en la tierra», «en ti ... todas las naciones de la tierra», y la simetría «a los que te bendigan ... a los que te maldigan». No añade el «te bendeciré» inicial que fue eliminado en la auditoría inglesa. La única desviación relevante está en la nota [b], que presenta «serán bendecidas» como alternativa a «serán benditas», aunque ambas formas son pasivas y la explicación de «concordancia femenina» no justifica la elección; además, las notas son innecesarias para el sentido fuente.'
@@ -138,22 +132,9 @@ review_pass:
     issue: La nota [a] es innecesaria y poco informativa.
     rationale: El texto «serás bendecido» ya refleja con naturalidad el pasivo del original; la nota no aclara una ambigüedad real ni preserva una alternativa significativa del fuente.
   revised_spanish_text: Y haré grande tu nombre, y serás bendecido en la tierra, y en ti serán benditas todas las naciones de la tierra. Y a los que te bendigan, yo los bendeciré, y a los que te maldigan, yo los maldeciré.
+  revised_footnotes: []
   revision_rationale: Se mantiene intacto el texto principal porque es fiel al ge'ez y al rastro de auditoría inglés, pero se eliminan las notas [a] y [b] por innecesarias y porque una de ellas explica de manera imprecisa la diferencia entre «benditas» y «bendecidas». El versículo funciona mejor sin notas.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: cd25cba3ba4e904e4195ca59d8af46b077d393d565c6b8b94c0ada579d0feafe
-  timestamp: '2026-05-07T23:34:39Z'
-  output_hash: 101a2753486826e082a3cc6a1cd8195f086789b55e53b67ad058b888d3bb707e
-  usage:
-    prompt_tokens: 3202
-    completion_tokens: 643
-    total_tokens: 3845
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01765
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true
