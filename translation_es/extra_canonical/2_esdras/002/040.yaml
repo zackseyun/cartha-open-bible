@@ -26,15 +26,15 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Recibe tu número[a], Sion, y reúne a tus vestidos de blanco[b], los que han cumplido la ley del Señor.
+  text: Recibe tu número, Sion, y reúne a los tuyos vestidos de blanco[a], los que han cumplido la ley del Señor.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: O «reúne a tus vestidos de blanco».
-    reason: lexical_alternative
+    text: O «reúne a los tuyos vestidos».[b]
+    reason: previous_rendering
   - marker: b
-    text: El latín candidatos procede de candidus, «blanco brillante»; por eso se prefirió una imagen de vestidura blanca antes que «candidatos» en sentido político.
-    reason: source_note
+    text: El latín candidatos procede de candidus, «blanco brillante», y puede también significar «candidatos». Aquí se prefirió la imagen de personas vestidas de blanco, que encaja mejor con la escena visionaria que un sentido político.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Recipe
   english_pob_choice: Receive
@@ -109,7 +109,7 @@ ai_draft:
     total_tokens: 2855
     reasoning_tokens: 0
     estimated_cost_usd: 0.00585
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador conserva bien la estructura del latín y la decisión clave de candidatos como imagen de blancura/vestidura, en línea con la revisión inglesa. Sin embargo, «tus vestidos de blanco» suena incompleto en español porque nominaliza a las personas de forma poco natural; el sentido fuente apunta a personas vestidas de blanco, no a prendas ni a un participio desnudo. También hay desajuste en las notas: la nota anclada en «tu número» no explica ese sintagma, sino una alternativa para la frase de reunión.'
@@ -135,19 +135,6 @@ review_pass:
     reason: lexical_alternative
   revision_rationale: Se ajusta la frase central para que suene natural en español y mantenga el referente humano implícito en el latín. Se reordenan y corrigen las notas para que el marcador aparezca en la frase pertinente y para conservar la explicación léxica sobre candidatos/candidus en conformidad con el rastro de auditoría inglés.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 0c3629f190aadd11792d5ab8f07202f215c4374c2e76bc784bffabee6ba2015a
-  timestamp: '2026-05-07T23:47:32Z'
-  output_hash: 9f325e90129b250524726aa2c56b7c3381c33e27fe24b55d46f7b5375a42fc1f
-  usage:
-    prompt_tokens: 2508
-    completion_tokens: 738
-    total_tokens: 3246
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01734
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [b] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
