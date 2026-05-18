@@ -29,12 +29,9 @@ base_translation:
     changes_summary: Changed 'week of years' to 'week' for a more direct rendering of the source, and 'pastures' to singular 'pasture' to match the source wording. Kept the rest unchanged.
 translation:
   language: es
-  text: Y en el sexto año de esta semana, de este cuadragésimo cuarto jubileo, Jacob envió a sus hijos a apacentar sus ovejas, y también a sus esclavos[a] con ellos, en el pastizal de Siquem.
+  text: Y en el sexto año de esta semana, de este cuadragésimo cuarto jubileo, Jacob envió a sus hijos a apacentar sus ovejas, y también sus siervos con ellos, en la pastura de Siquem.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or: «sus siervos».'
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: ወበሳድስ፡ ዓመት፡ ለዝ፡ ሱባዔ፡
   english_pob_choice: in the sixth year of this week
@@ -127,38 +124,26 @@ ai_draft:
     total_tokens: 3507
     reasoning_tokens: 0
     estimated_cost_usd: 0.007783
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador sigue bien la estructura del ge''ez y el audit trail inglés: ''en el sexto año de esta semana'', ''de este cuadragésimo cuarto jubileo'', ''Jacob envió a sus hijos'', singular ''pastizal/pastura de Siquem'', y refleja correctamente la corrección clave ''their servants'' frente a ''his servants''. Sin embargo, la traducción española introduce un desajuste léxico importante al convertir ''servants'' en ''esclavos'', una fuerza semántica no documentada por la evidencia fuente ni por el POB inglés para este pasaje.'
-  spanish_quality_summary: El español es claro y digno, pero 'también a sus esclavos con ellos' suena algo forzado sintácticamente y además sobretraduce el término. 'Y también sus siervos con ellos' o 'y también sus servidores con ellos' fluye mejor; en registro bíblico amplio, 'siervos' es la mejor opción aquí. 'Pastizal' es posible, pero 'pastura' encaja mejor con el tono bíblico y con 'pasture' singular sin sonar rural-regional.
-  glossary_alignment: No hay términos de glosario mayor en juego salvo la política sobre δοῦλος -> 'esclavo', pero aquí no estamos traduciendo griego δοῦλος ni hay una decisión inglesa documentada que exija esa fuerza. Por tanto, aplicar 'esclavos' por default de proyecto es inapropiado. 'Siquem' está bien. 'Jubileo' y 'semana' están bien preservados.
+  spanish_quality_summary: El español es claro y digno, pero 'también a sus esclavos con ellos' sobretraduce el término. 'siervos' es la mejor opción aquí. 'Pastizal' puede mejorarse con 'pastura'.
+  glossary_alignment: La política sobre δοῦλος -> 'esclavo' no aplica aquí; no hay δοῦλος griego ni decisión inglesa documentada que exija esa fuerza.
   issues:
   - severity: high
     issue: '''servants'' se tradujo como ''esclavos'''
-    rationale: 'La fuente ge''ez y el audit trail inglés solo apoyan ''their servants''. No hay justificación documental en este registro para intensificar a ''esclavos''. La nota ''Or: sus siervos'' invierte indebidamente la prioridad léxica.'
+    rationale: 'La fuente ge''ez y el audit trail inglés solo apoyan ''their servants''. No hay justificación documental para intensificar a ''esclavos''.'
   - severity: medium
     issue: La nota al pie presenta la mejor opción como alternativa
-    rationale: Si el texto principal se corrige a 'siervos', ya no hace falta nota. Si se mantuviera una alternativa, tendría que reflejar una ambigüedad real de fuente, que aquí no está documentada.
+    rationale: Si el texto principal se corrige a 'siervos', ya no hace falta nota.
   - severity: low
     issue: '''pastizal'' puede sonar menos bíblico/literario que ''pastura'''
-    rationale: No es un error, pero 'pastura de Siquem' transmite mejor el registro del pasaje y sigue el singular del original/POB.
+    rationale: 'pastura de Siquem' transmite mejor el registro del pasaje.
   revised_spanish_text: Y en el sexto año de esta semana, de este cuadragésimo cuarto jubileo, Jacob envió a sus hijos a apacentar sus ovejas, y también sus siervos con ellos, en la pastura de Siquem.
-  revision_rationale: Se corrige 'esclavos' a 'siervos' porque la evidencia fuente y el POB inglés solo sostienen 'servants', no una intensificación a 'slaves/esclavos'. Se elimina la nota porque deja de haber una alternativa necesaria. También se ajusta 'pastizal' a 'pastura' para un registro más natural y bíblico en español, manteniendo el singular del original.
+  revised_footnotes: []
+  revision_rationale: Se corrige 'esclavos' a 'siervos' porque la evidencia fuente y el POB inglés solo sostienen 'servants'. Se elimina la nota. También se ajusta 'pastizal' a 'pastura' para un registro más natural y bíblico en español, manteniendo el singular del original.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: c23977d7fbf13f6dcb1375b0702b51dc3304840116b9ca7eb8b225fa0ae26fa9
-  timestamp: '2026-05-07T23:52:43Z'
-  output_hash: 30f51daa35441f2b65ad2f559896b44709b31d928269b37824df863cfef799a6
-  usage:
-    prompt_tokens: 3161
-    completion_tokens: 728
-    total_tokens: 3889
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.018822
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

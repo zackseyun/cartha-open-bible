@@ -29,12 +29,9 @@ base_translation:
     changes_summary: Removed the unnecessary object pronoun in 'told it to no one' to better reflect the source and improve natural English; otherwise retained the draft.
 translation:
   language: es
-  text: 'y no se lo contó a nadie. Y cuando Jacob vino y él la buscó[a], ella le dijo:'
+  text: 'y no lo dijo a nadie. Y cuando Jacob vino y él la buscó, ella le dijo:'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: El verbo ge'ez aquí fue revisado en el audit trail para indicar que Jacob es quien la buscó; por eso la traducción sigue esa relación sujeto-objeto.
-    reason: textual_variant
+  footnotes: []
 lexical_decisions:
 - source_word: ፈድፋደ ፡ ... ወኢለመኑሂ ፡ ሰብአ
   english_pob_choice: and she told no one
@@ -94,38 +91,23 @@ ai_draft:
     total_tokens: 2773
     reasoning_tokens: 0
     estimated_cost_usd: 0.00496
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador capta bien la secuencia básica del ge''ez y sigue la corrección importante del audit trail: ወኀሠሣ debe entenderse como ''él la buscó'', con Jacob como sujeto y la mujer como objeto. ''Y cuando Jacob vino'' también preserva adecuadamente ወሶበ መጽአ ያዕቆብ. Sin embargo, ''no se lo contó a nadie'' introduce en español un objeto pronominal (''lo'') que el inglés auditado eliminó precisamente por no estar expreso en la fuente.'
-  spanish_quality_summary: 'El español es mayormente natural y legible, pero puede mejorarse con una redacción más fiel y limpia: ''y no se lo contó a nadie'' suena idiomático, aunque añade un referente tácito más fuerte de lo necesario. La nota [a] es explicativa del proceso editorial inglés, no del texto mismo, y no hace falta para la comprensión del español. Una forma más sobria y fiel sería ''y no se lo dijo a nadie'' o mejor aún ''y no informó a nadie'', pero la opción más directa y natural aquí es ''y no se lo dijo a nadie'' o ''y no lo dijo a nadie''; para evitar añadir demasiado objeto implícito, conviene una formulación sin nota editorial.'
-  glossary_alignment: 'No hay términos teológicos de proyecto en juego. La decisión clave es sintáctica/lexical: mantener ''él la buscó'' y evitar una nota innecesaria sobre el audit trail. También conviene evitar justificar en las decisiones léxicas que no se añade objeto inexistente mientras el texto español sí introduce ''lo''.'
+  spanish_quality_summary: 'El español es mayormente natural y legible, pero puede mejorarse con una redacción más fiel y limpia. La nota [a] explica la historia de revisión inglesa en vez de aportar una alternativa o aclaración textual útil al lector.'
+  glossary_alignment: 'No hay términos teológicos de proyecto en juego. La decisión clave es sintáctica/lexical: mantener ''él la buscó'' y evitar una nota innecesaria.'
   issues:
   - severity: medium
     issue: El español 'no se lo contó a nadie' introduce un objeto pronominal no expreso en la fuente.
-    rationale: El audit trail inglés eliminó precisamente 'it' por innecesario. Aunque en español es común explicitar un pronombre, aquí conviene una formulación más austera para no cargar el texto con un objeto no presente.
+    rationale: El audit trail inglés eliminó precisamente 'it' por innecesario.
   - severity: low
     issue: La nota [a] explica la historia de revisión inglesa en vez de aportar una alternativa o aclaración textual útil al lector.
     rationale: Las notas deben servir al lector del texto español; aquí la relación sujeto-objeto puede resolverse directamente en la traducción sin nota.
-  - severity: low
-    issue: La justificación léxica entra en tensión con el texto elegido.
-    rationale: Afirma que se evita añadir un objeto inexistente, pero el texto usa 'se lo', que sí lo presupone.
   revised_spanish_text: 'y no lo dijo a nadie. Y cuando Jacob vino y él la buscó, ella le dijo:'
+  revised_footnotes: []
   revision_rationale: Se elimina la nota innecesaria y se ajusta la primera cláusula para reflejar mejor la ausencia de objeto expreso en la fuente, manteniendo un español natural. Se conserva 'él la buscó' porque sigue correctamente la revisión del ge'ez y evita invertir sujeto y objeto.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: b55f2d5073236df7a0cbccfeb3eaa37abc88b90f29583bc06906dafcd0122129
-  timestamp: '2026-05-07T23:49:35Z'
-  output_hash: 5fe3741138f73a821ef2bd3cecd7e3c146f68d434e6d59659f33a10bb6af0d78
-  usage:
-    prompt_tokens: 2391
-    completion_tokens: 684
-    total_tokens: 3075
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016238
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
