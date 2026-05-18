@@ -54,12 +54,8 @@ base_translation:
     changes_summary: 'Replaced ''if they win'' with ''if they are victorious'' for a more formal register, and restructured the final clause to reflect the Greek more naturally and completely: ''and whatever else they plunder'' for καὶ ἐὰν προνομεύσωσιν, καὶ τὰ ἄλλα πάντα.'
 translation:
   language: es
-  text: Matan y son matados, y no quebrantan la palabra del rey; y si salen victoriosos[a], le llevan al rey todo, y también todo lo demás que plotean.
+  text: Matan y son muertos, y no desobedecen la palabra del rey; y si salen victoriosos, llevan todo al rey, y también todo lo demás que saquean.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O, más formalmente, «si salen victoriosos».
-    reason: alternative_reading
 lexical_decisions:
 - source_word: φονεύουσιν
   english_pob_choice: they kill
@@ -159,41 +155,20 @@ ai_draft:
     total_tokens: 3810
     reasoning_tokens: 0
     estimated_cost_usd: 0.006859
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja en general la secuencia del griego: matar/ser muertos, no desobedecer al rey, vencer y llevarle todo, incluido lo saqueado. Sin embargo, contiene una falla léxica grave en «plotean», que no corresponde a προνομεύσωσιν (‘saquear’, ‘tomar botín’). Además, «le llevan al rey todo» es poco natural en español por la duplicación dativa + complemento explícito, y la nota [a] no preserva una alternativa real porque el texto ya dice «salen victoriosos».'
-  spanish_quality_summary: La redacción necesita pulido para lograr español natural y digno. «Son matados» es comprensible pero torpe; «son muertos» conserva bien la pasiva y suena idiomático. «No quebrantan la palabra del rey» es aceptable, aunque «no desobedecen la palabra del rey» comunica mejor el sentido contextual de οὐ παραβαίνουσιν. «Plotean» es inaceptable en español bíblico y general.
-  glossary_alignment: 'No hay términos teológicos de proyecto en juego. Las decisiones léxicas principales deben alinearse con el audit trail: λόγον puede conservarse como «palabra»; οὐ παραβαίνουσιν se expresa mejor como «no desobedecen» en contexto de mandato real; προνομεύσωσιν debe ser «saquean» o equivalente de botín de guerra.'
-  issues:
-  - severity: high
-    issue: «plotean» no traduce προνομεύσωσιν
-    rationale: El griego significa ‘saquear’, ‘tomar botín’. «Plotear» no es equivalente semántico y rompe la fidelidad al texto fuente.
-  - severity: medium
-    issue: La nota [a] no ofrece una alternativa distinta del texto
-    rationale: El texto principal ya dice «salen victoriosos», y la nota repite esencialmente lo mismo; no cumple una función útil ni preserva adecuadamente la alternativa del inglés.
-  - severity: medium
-    issue: «le llevan al rey todo» suena poco natural
-    rationale: En español es preferible «llevan todo al rey» o «se lo llevan al rey». La forma actual resulta torpe.
-  - severity: low
-    issue: «son matados» es gramatical pero poco idiomático
-    rationale: «Son muertos» mantiene la pasiva del griego y mejora mucho la fluidez del español.
-  revised_spanish_text: Matan y son muertos, y no desobedecen la palabra del rey; y si salen victoriosos, llevan todo al rey, y también todo lo demás que saquean.
-  revision_rationale: Se corrige el error léxico grave «plotean» por «saquean», se elimina la nota innecesaria, y se mejora la naturalidad y fidelidad contextual con «son muertos», «no desobedecen» y «llevan todo al rey». Se conserva «palabra del rey» para reflejar λόγον, conforme al razonamiento auditado en inglés.
-  requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: f13ab56dd3aa4474f0734bbac42c281a52e0141c34c5dc7636f02d5b21f2e953
-  timestamp: '2026-05-07T23:29:27Z'
-  output_hash: 9edb6ae4d667b1d41359d292fbbb372bb95e74dcfa185a5db55941dbbeaa92eb
-  usage:
-    prompt_tokens: 3403
-    completion_tokens: 701
-    total_tokens: 4104
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.019023
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  source_alignment_summary: Se corrige «plotean» (no español válido) por «saquean», «son matados» por «son muertos», «no quebrantan» por «no desobedecen» y «le llevan al rey todo» por «llevan todo al rey».
+  revision_rationale: Se corrige «plotean» (no español válido) por «saquean», «son matados» por «son muertos», «no quebrantan» por «no desobedecen» y «le llevan al rey todo» por «llevan todo al rey».
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  prompt_id: spanish_source_review_claude_subagent_v1
+  timestamp: '2026-05-18T12:15:32Z'
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+revisions:
+- from: Matan y son matados, y no quebrantan la palabra del rey; y si salen victoriosos[a], le llevan al rey todo, y también todo lo demás que plotean.
+  to: Matan y son muertos, y no desobedecen la palabra del rey; y si salen victoriosos, llevan todo al rey, y también todo lo demás que saquean.
+  rationale: Se corrige «plotean» (no español válido) por «saquean», «son matados» por «son muertos», «no quebrantan» por «no desobedecen» y «le llevan al rey todo» por «llevan todo al rey».
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:15:32Z'

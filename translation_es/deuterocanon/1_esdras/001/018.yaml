@@ -52,12 +52,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y no se celebró en Israel un Pascua [a] como esta desde los días de Samuel el profeta.
+  text: Y no se celebró en Israel la Pascua como esta desde los días de Samuel el profeta.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «Pascua» en sentido de la celebración pascual; el griego τὸ πάσχα puede referirse a la fiesta misma.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἤχθη
   english_pob_choice: had been held
@@ -144,35 +140,20 @@ ai_draft:
     total_tokens: 3616
     reasoning_tokens: 0
     estimated_cost_usd: 0.006368
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido del griego: una comparación histórica sobre una Pascua sin igual en Israel desde los días de Samuel el profeta. Sin embargo, contiene un problema gramatical importante en español: ''un Pascua'' debe ser ''una Pascua'' o mejor ''la Pascua''.'
-  spanish_quality_summary: La redacción es clara y natural en general, pero 'un Pascua' es incorrecto en género y suena impropio. Además, la nota al pie es innecesaria porque introduce una alternativa que no aclara una ambigüedad real del español ni preserva una alternativa significativa del original.
-  glossary_alignment: No hay conflicto con la terminología base del proyecto. 'Pascua' es adecuado para τὸ πάσχα, y 'Samuel el profeta' sigue fielmente el griego. 'Se celebró' es una buena equivalencia idiomática para ἤχθη en contexto festivo.
-  issues:
-  - severity: high
-    issue: Error gramatical de género en 'un Pascua'
-    rationale: En español estándar, 'Pascua' es femenino; la forma correcta es 'una Pascua' o, dado el artículo griego y la referencia definida, más naturalmente 'la Pascua'.
-  - severity: low
-    issue: Nota al pie innecesaria sobre 'Pascua'
-    rationale: El texto español no crea una ambigüedad que requiera nota, y la glosa propuesta no preserva una alternativa textual o teológica relevante que el lector necesite.
-  revised_spanish_text: Y no se celebró en Israel la Pascua como esta desde los días de Samuel el profeta.
-  revision_rationale: Se corrige el género y se mejora la naturalidad y fidelidad definida de τὸ πάσχα con 'la Pascua'. Se elimina la nota al pie por innecesaria.
-  requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: ae57beb26453c53bec5d1703a17a5cc068f80b059c2baf81bd0ca68af630fbe2
-  timestamp: '2026-05-07T23:26:13Z'
-  output_hash: 4208fe8ad6c4d8fda9313416e6b24321b5dd56322dc6ce9773cbb75ee1fb4ef5
-  usage:
-    prompt_tokens: 3253
-    completion_tokens: 438
-    total_tokens: 3691
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.014703
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  source_alignment_summary: Se corrige el error de género «un Pascua» → «la Pascua» y se elimina la nota innecesaria.
+  revision_rationale: Se corrige el error de género «un Pascua» → «la Pascua» y se elimina la nota innecesaria.
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  prompt_id: spanish_source_review_claude_subagent_v1
+  timestamp: '2026-05-18T12:15:13Z'
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+revisions:
+- from: Y no se celebró en Israel un Pascua [a] como esta desde los días de Samuel el profeta.
+  to: Y no se celebró en Israel la Pascua como esta desde los días de Samuel el profeta.
+  rationale: Se corrige el error de género «un Pascua» → «la Pascua» y se elimina la nota innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:15:13Z'
