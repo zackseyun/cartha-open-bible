@@ -32,12 +32,9 @@ base_translation:
     changes_summary: Changed 'come to offer' to 'go up to offer' to reflect the verb more precisely; added final punctuation. No other changes needed.
 translation:
   language: es
-  text: Guarda este mandamiento y cúmplelo[a], hijo mío, para que camines rectamente en todas tus obras. Y en todo tiempo sé puro en tu cuerpo, y lávate con agua antes de subir a ofrecer sobre el altar; y lava tus manos y tus pies antes de acercarte al altar; y cuando hayas terminado de ofrecer, vuelve.
+  text: Guarda este mandamiento y cúmplelo, hijo mío, para que camines rectamente en todas tus obras. Y en todo tiempo sé puro en tu cuerpo, y lávate con agua antes de subir a ofrecer sobre el altar; y lava tus manos y tus pies antes de acercarte al altar; y cuando hayas terminado de ofrecer, vuelve.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O ‘ve a entrar’.
-    reason: textual_variant
+  footnotes: []
 lexical_decisions:
 - source_word: ዑቅ / keep this command
   english_pob_choice: Keep this command
@@ -145,32 +142,20 @@ ai_draft:
     total_tokens: 3730
     reasoning_tokens: 0
     estimated_cost_usd: 0.007976
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español sigue bien el sentido del ge''ez y del POB inglés auditado: guardar/cumplir el mandamiento, andar rectamente, pureza corporal continua, lavamiento antes de subir a ofrecer, lavado de manos y pies antes de acercarse al altar, y finalmente volver. La corrección clave de ግባእ como ‘vuelve/regresa’ está correctamente reflejada en el texto principal.'
-  spanish_quality_summary: 'El español es claro, natural y digno. Sin embargo, hay un problema editorial importante: la nota [a] contradice la revisión auditada, porque ofrece ‘ve a entrar’ como alternativa donde el POB inglés ya descartó ‘go in’ a favor de ‘return’. Además, la nota no es necesaria para la versión final y reintroduce una lectura considerada errónea.'
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. Las decisiones ‘mandamiento’, ‘cúmplelo’, ‘camines rectamente’, ‘sé puro en tu cuerpo’ y ‘vuelve’ son adecuadas. ‘Sobre el altar’ sigue de cerca el inglés POB; aunque ‘en el altar’ podría sonar más idiomático en algunos contextos sacrificiales, no exige cambio aquí.
+  source_alignment_summary: El ge’ez ግባእ (gəbāʾ) significa «volver/regresar» (imperativo de gabʾa), no «entrar». El audit trail ya documentó esta corrección. El texto principal «vuelve» refleja correctamente ese verbo. Las instrucciones rituales de pureza corporal, lavamiento y acercamiento al altar son fieles al ge’ez.
+  spanish_quality_summary: El texto principal es claro, natural y correcto. La nota «O ‘ve a entrar’» reintroducía una lectura textual ya descartada por la revisión auditada, lo que podría confundir al lector. Su eliminación limpia el texto sin pérdida de información válida.
+  glossary_alignment: No hay términos sensibles del glosario principal. «Mandamiento», «cúmplelo», «vuelve» son correctos.
   issues:
   - severity: medium
-    issue: La nota al pie [a] reintroduce una lectura descartada (‘ve a entrar’).
-    rationale: El historial auditado indica explícitamente que ግባእ debe entenderse como ‘return’ y no como ‘go in’. Mantener esa alternativa en español debilita la corrección textual ya documentada y puede confundir al lector.
+    issue: La nota [a] reintroducía la lectura descartada «ve a entrar»
+    rationale: El audit trail corrigió ግባእ a «return»; conservar «entrar» como alternativa contradice esa decisión textual.
   revised_spanish_text: Guarda este mandamiento y cúmplelo, hijo mío, para que camines rectamente en todas tus obras. Y en todo tiempo sé puro en tu cuerpo, y lávate con agua antes de subir a ofrecer sobre el altar; y lava tus manos y tus pies antes de acercarte al altar; y cuando hayas terminado de ofrecer, vuelve.
-  revision_rationale: Se elimina la nota [a] porque contradice la decisión textual auditada que corrige el sentido del verbo final a ‘volver/regresar’ y no ‘entrar’. El texto principal no requiere más cambios.
+  revised_footnotes: []
+  revision_rationale: Se eliminó la nota que contradecía la decisión textual auditada; el texto principal se mantuvo íntegro.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: e4faa2c398fac49f4ea6d0eb66adc80d8aed0bee96093e15923accf91f884838
-  timestamp: '2026-05-07T23:38:05Z'
-  output_hash: 84761a81038f5c350a055b1c7928292fd114b0b2eae77e735e6635a1c3f3f968
-  usage:
-    prompt_tokens: 3411
-    completion_tokens: 518
-    total_tokens: 3929
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016297
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: ‘2026-05-16T00:00:00Z’

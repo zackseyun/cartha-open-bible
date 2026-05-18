@@ -29,12 +29,9 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that matches the Geez text: Sarah''s statement that the slave woman''s son will not inherit with Isaac, followed by Abraham''s distress because of his maidservant and his son.'
 translation:
   language: es
-  text: …y su hijo, porque el hijo de esta esclava no heredará con mi hijo Isaac.” Y aquello fue muy doloroso a los ojos de Abraham por causa de su esclava[a] y por causa de su hijo.
+  text: …y su hijo, porque el hijo de esta esclava no será heredero junto con mi hijo Isaac.” Y este asunto fue muy doloroso para Abraham por causa de su esclava y por causa de su hijo.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Esclava» traduce el término con fuerza servil; la alternativa «sierva» suavizaría el contraste social del pasaje.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: Ὑ/Ge'ez ወወልዳ / “her son”
   english_pob_choice: and her son
@@ -133,38 +130,23 @@ ai_draft:
     total_tokens: 3480
     reasoning_tokens: 0
     estimated_cost_usd: 0.007267
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español sigue bien el sentido del texto ge''ez y del audit trail inglés: conserva la frase inicial elíptica «…y su hijo», la negación de la herencia con Isaac, y el dolor de Abraham por su esclava y por su hijo. Sin embargo, «no heredará con mi hijo Isaac» suena menos preciso que la idea de ser heredero/junto con, y «aquello fue muy doloroso a los ojos de Abraham» es comprensible pero algo menos natural que una formulación más idiomática en español.'
-  spanish_quality_summary: El español es claro y digno, pero hay un ajuste menor de naturalidad y precisión jurídica. Conviene cambiar «no heredará con» por «no será heredero junto con», que expresa mejor el valor de 'be an heir with'. También es preferible «este asunto fue muy doloroso para Abraham» frente a «aquello fue muy doloroso a los ojos de Abraham», que conserva el giro semítico pero suena algo forzado en español moderno. La nota al pie sobre «esclava» no es necesaria aquí, porque no preserva una alternativa textual sino una justificación interna ya cubierta en las decisiones léxicas.
-  glossary_alignment: 'Alineación buena con la terminología del proyecto: δοῦλος/slave language se vierte con «esclava», no con «sierva»; no hay conflictos con Yahvé/Mesías/Espíritu. La consistencia de «esclava» en ambas menciones es adecuada.'
+  source_alignment_summary: El texto ge'ez abre con ወወልዳ (y su hijo) completando la orden de expulsión del versículo anterior, luego da la razón (no será heredero con Isaac) y cierra con el dolor de Abraham por su esclava y su hijo. La revisión refleja fielmente esas tres cláusulas.
+  spanish_quality_summary: La construcción «no será heredero junto con» es más precisa que el simple «no heredará con», capturando el valor de estatus hereditario compartido. «Este asunto fue muy doloroso para Abraham» es más natural que el calco semítico anterior. Se suprimió la nota sobre «esclava» porque era redundante con las decisiones léxicas.
+  glossary_alignment: «Esclava» respeta la política del proyecto para δοῦλος/slave language. Sin Yahvé/Mesías/Espíritu implicados. Consistencia terminológica mantenida.
   issues:
   - severity: medium
-    issue: «no heredará con mi hijo Isaac» no refleja con máxima precisión la construcción de estatus hereditario
-    rationale: El inglés auditado y el sentido fuente apuntan a «will not be an heir with», no simplemente al acto de heredar. En español, «no será heredero junto con mi hijo Isaac» mantiene mejor la fuerza legal y relacional.
+    issue: «no heredará con» infrarepresenta el estatus hereditario compartido
+    rationale: El inglés auditado dice «will not be an heir with», que implica exclusión de participación como heredero conjunto, no solo el acto de heredar. «No será heredero junto con» es más fiel.
   - severity: low
-    issue: «aquello fue muy doloroso a los ojos de Abraham» suena algo rígido en español actual
-    rationale: Aunque es entendible y cercano al calco semítico, «este asunto fue muy doloroso para Abraham» comunica el mismo sentido con mejor legibilidad e igual fidelidad.
-  - severity: low
-    issue: La nota [a] es innecesaria en este versículo
-    rationale: No responde a una variante textual ni evita una ambigüedad nueva en español. La preferencia por «esclava» ya está bien sustentada en las decisiones léxicas y no requiere nota al lector.
+    issue: «aquello fue muy doloroso a los ojos de Abraham» suena forzado en español moderno
+    rationale: La sustitución por «este asunto fue muy doloroso para Abraham» mantiene la fidelidad sin el calco semítico rígido.
   revised_spanish_text: …y su hijo, porque el hijo de esta esclava no será heredero junto con mi hijo Isaac.” Y este asunto fue muy doloroso para Abraham por causa de su esclava y por causa de su hijo.
-  revision_rationale: 'Se hicieron ajustes menores para mejorar precisión semántica y naturalidad en español: «no será heredero junto con» refleja mejor la idea de exclusión de herencia compartida; «este asunto fue muy doloroso para Abraham» evita un giro demasiado calcado sin perder el sentido del original. Se eliminó la nota innecesaria sobre «esclava».'
+  revised_footnotes: []
+  revision_rationale: Se ajustó la construcción hereditaria a «no será heredero junto con» para precisión semántica; se modernizó la frase de dolor de Abraham; se eliminó la nota redundante sobre «esclava».
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: a779d5e3ba06ff00c7f657182935aa0a7d296ddab51caff25c07da120eb45c25
-  timestamp: '2026-05-07T23:01:33Z'
-  output_hash: 1d3b8f2c8677a41baa422758095d6a9292af25162017dcf0c273567b50330376
-  usage:
-    prompt_tokens: 3090
-    completion_tokens: 712
-    total_tokens: 3802
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.018405
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

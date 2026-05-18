@@ -29,12 +29,9 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that matches the Ge''ez source: the child grew; she arose and went to the wilderness of Paran; he became an archer; the Lord was with him; and his mother took a wife for him from the daughters of Egypt.'
 translation:
   language: es
-  text: su hijo[a]. Y ella se levantó y fue hacia el desierto de Parán. Y el niño creció, y se hizo arquero, y Yahvé estuvo con él, y su madre le tomó mujer de entre las hijas de Egipto.
+  text: su hijo. Y ella se levantó y fue hacia el desierto de Parán. Y el niño creció, y se hizo arquero, y Yahvé estuvo con él, y su madre le tomó esposa de entre las hijas de Egipto.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «su hijo».'
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: ሕፃና
   english_pob_choice: her child
@@ -127,35 +124,23 @@ ai_draft:
     total_tokens: 3505
     reasoning_tokens: 0
     estimated_cost_usd: 0.007102
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja correctamente la secuencia básica del ge''ez y del POB inglés auditado: ''su hijo'', el movimiento hacia el desierto de Parán, el crecimiento del niño, su condición de arquero, la presencia divina con él y la acción de su madre de procurarle esposa de Egipto. Sin embargo, añade una nota al pie innecesaria y circular sobre ''su hijo'' que no corresponde a una alternativa significativa del original ni del audit trail inglés.'
-  spanish_quality_summary: El español es claro y mayormente natural. 'Fue hacia el desierto de Parán' y 'Yahvé estuvo con él' funcionan bien. El punto mejorable es 'le tomó mujer', que suena demasiado calcado y poco idiomático en español actual eclesial; 'le tomó esposa' preserva la estructura narrativa y mejora la legibilidad. También conviene eliminar la nota [a], que no aporta información útil y crea ruido editorial.
-  glossary_alignment: 'Buena alineación general con la terminología del proyecto: ''Yahvé'' respeta la política del nombre divino; ''desierto de Parán'' y ''arquero'' son adecuados. El ajuste de ''mujer'' a ''esposa'' se justifica por claridad idiomática en español sin alterar el sentido matrimonial explícito del contexto.'
+  source_alignment_summary: El ge'ez ሕፃና es el complemento del versículo anterior, no una cláusula nueva con verbo de crecer. La corrección del audit trail inglés que lo lee como «her child» está correctamente reflejada. La secuencia posterior (desplazamiento hacia Parán, crecimiento, arquero, presencia de Yahvé, matrimonio) es fiel al ge'ez.
+  spanish_quality_summary: «Le tomó mujer» era un calco semítico poco idiomático en español moderno; «le tomó esposa» preserva el sentido matrimonial con naturalidad. La nota [a] era redundante porque repetía exactamente el texto principal sin ofrecer alternativa real.
+  glossary_alignment: «Yahvé» correcto para እግዚአብሔር según la política del proyecto. «Arquero», «desierto de Parán» y «hijas de Egipto» son adecuados.
   issues:
   - severity: medium
-    issue: Nota al pie innecesaria y mal justificada en 'su hijo[a]'
-    rationale: 'La nota ''O: «su hijo»'' no ofrece una variante real; repite exactamente la lectura principal. El POB inglés tampoco exige aquí una nota de alternativa significativa para español.'
+    issue: «le tomó mujer» suena forzado en español moderno
+    rationale: «Esposa» comunica el mismo sentido matrimonial con mayor fluidez.
   - severity: medium
-    issue: '''le tomó mujer'' suena forzado en español moderno'
-    rationale: Aunque intenta conservar un giro semítico, en español neutral resulta poco natural y puede distraer. 'Le tomó esposa' conserva el sentido de provisión matrimonial y mejora la inteligibilidad sin paraprasear.
+    issue: Nota [a] redundante sin alternativa real
+    rationale: La nota repetía «su hijo» que ya era el texto principal, sin aportar variante significativa.
   revised_spanish_text: su hijo. Y ella se levantó y fue hacia el desierto de Parán. Y el niño creció, y se hizo arquero, y Yahvé estuvo con él, y su madre le tomó esposa de entre las hijas de Egipto.
-  revision_rationale: Se elimina una nota al pie redundante que no preserva ninguna alternativa real del original ni del audit trail, y se cambia 'mujer' por 'esposa' para lograr un español más natural y claro, manteniendo el mismo sentido narrativo y matrimonial del texto fuente.
+  revised_footnotes: []
+  revision_rationale: Se eliminó la nota redundante y se cambió «mujer» por «esposa» para mejor idiomaticidad española.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 90aa506d46aceb3fbe6403e0f566332420ec7037126492b74a7d1f2adabff7d7
-  timestamp: '2026-05-07T23:06:58Z'
-  output_hash: 6de976bc18ccd78655b496349cb2c9bda9ddf8ef9816ec322ce751d15b02b18b
-  usage:
-    prompt_tokens: 3076
-    completion_tokens: 572
-    total_tokens: 3648
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01627
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

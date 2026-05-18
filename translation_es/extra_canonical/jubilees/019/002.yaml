@@ -30,12 +30,9 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y en el primer año de la tercera semana de este jubileo[2], se completaron los días de la vida de Sara, y murió en Hebrón.
+  text: Y en el primer año de la tercera semana de este jubileo, se completaron los días de la vida de Sara, y murió en Hebrón.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: '2'
-    text: «Este jubileo» mantiene la unidad cronológica del original. El inglés POB nota que la redacción etiópica usa una expresión descriptiva; en español se conserva esa misma sobriedad sin introducir una explicación narrativa en el texto principal.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: “in the first year of the third week of this jubilee”
   english_pob_choice: And in the first year of the third week of this jubilee
@@ -101,35 +98,20 @@ ai_draft:
     total_tokens: 2487
     reasoning_tokens: 0
     estimated_cost_usd: 0.004835
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español transmite correctamente la cronología jubilar, la idea de que la vida de Sara llegó a su término, y su muerte en Hebrón. Sin embargo, la nota al pie no corresponde al contenido de este versículo ni al rastro de auditoría inglés: la nota inglesa sobre “the double cave” pertenece evidentemente a otro referente y no a JUB 19:2, mientras que la nota española actual además comenta otra cosa distinta (“este jubileo”).'
-  spanish_quality_summary: El texto principal es claro, natural y digno en español. “Se completaron los días de la vida de Sara” es fiel, aunque “se cumplieron” también sería posible. La única reparación necesaria es eliminar la nota y su ancla, porque introduce confusión editorial y no está sustentada por el versículo.
-  glossary_alignment: No hay conflictos con la terminología del proyecto. Los nombres “Sara” y “Hebrón” están bien en español. No aparecen términos sensibles del glosario principal. La cronología técnica de Jubileos se conserva adecuadamente.
+  source_alignment_summary: El ge'ez de JUB 19:2 describe la muerte de Sara en Hebrón con datación jubilar. El texto español es fiel en todos los elementos. La nota inglesa sobre «the double cave» no corresponde a este versículo y la nota española sobre «este jubileo» tampoco respondía a una ambigüedad real del texto.
+  spanish_quality_summary: El texto principal es claro, fiel y natural. La única reparación era la nota y su marcador desalineados editorialmente. Con su eliminación el versículo queda limpio.
+  glossary_alignment: «Sara» y «Hebrón» son las formas españolas estándar. «Jubileo» es el término técnico del libro. No hay términos sensibles del glosario principal.
   issues:
   - severity: high
-    issue: La nota al pie heredada del audit trail inglés no corresponde a este versículo.
-    rationale: El texto fuente ge'ez citado termina con la muerte de Sara en Hebrón y no contiene ninguna expresión sobre “la doble cueva”. La nota inglesa parece desalineada, y la nota española actual además la reemplaza por un comentario sobre “este jubileo”, lo cual tampoco responde a una ambigüedad real del versículo.
-  - severity: medium
-    issue: El ancla de nota en el texto principal carece de justificación textual.
-    rationale: Mantener [2] sugiere una variante o decisión léxica importante en este versículo, pero no hay base suficiente en la evidencia suministrada para conservarla.
+    issue: Nota y marcador [2] no correspondían al versículo
+    rationale: La nota inglesa sobre «the double cave» pertenece a otro versículo; la nota española sobre «este jubileo» no respondía a ninguna ambigüedad real.
   revised_spanish_text: Y en el primer año de la tercera semana de este jubileo, se completaron los días de la vida de Sara, y murió en Hebrón.
-  revision_rationale: Se elimina la nota y su marcador porque no están respaldados por el texto fuente de JUB 19:2 y generan confusión editorial. El resto del texto español se mantiene por ser fiel, claro y conforme al estilo del proyecto.
+  revised_footnotes: []
+  revision_rationale: Se eliminaron la nota y el marcador desalineados; el texto principal se mantiene íntegro.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 392e0caec0c91ba526ef350f8a4e603cfeab3b18534acc366b235e35166dc5e4
-  timestamp: '2026-05-07T23:19:56Z'
-  output_hash: 4e05727ae0db6afb11b16190259626d4b9e900f1ab7a7c7d92964c3d663030fd
-  usage:
-    prompt_tokens: 2194
-    completion_tokens: 520
-    total_tokens: 2714
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.013285
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [2] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

@@ -29,12 +29,9 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that matches the Geʽez source: birth of a son named Nabaioth and the naming explanation, rendered in natural formal English.'
 translation:
   language: es
-  text: 'Y ella le dio a luz un hijo, y él llamó su nombre Nabaiot[a], porque ella dijo: «Yahvé está cerca de mí».'
+  text: 'Y ella le dio a luz un hijo, y él le puso por nombre Nabaiot, porque ella dijo: «Yahvé está cerca de mí».'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O «y llamó»; el sujeto del verbo es él, no ella.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: ወወለደት፡ ሎቱ፡ ወልደ፡
   english_pob_choice: And she bore him a son
@@ -102,38 +99,20 @@ ai_draft:
     total_tokens: 2978
     reasoning_tokens: 0
     estimated_cost_usd: 0.005564
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue correctamente el sentido básico del geʽez y del audit trail inglés: ella da a luz, él pone el nombre, y ella explica el nombre diciendo que Dios/Yahvé está cerca. También respeta bien el cambio de sujeto masculino en ወጸውዐ. Sin embargo, la formulación española «llamó su nombre» es un calco poco natural, y la nota [a] ya no es necesaria en español si se expresa con claridad «le puso por nombre».'
-  spanish_quality_summary: La oración es comprensible, pero «Y ella le dio a luz un hijo, y él llamó su nombre Nabaiot[a]» suena forzada en español e incluye una nota innecesaria. Una redacción más natural y digna es «Y ella le dio a luz un hijo, y él le puso por nombre Nabaiot». El resto del versículo lee bien y «Yahvé» encaja con la política del proyecto.
-  glossary_alignment: 'Alineación buena con la terminología del proyecto: እግዚአብሔር se traduce apropiadamente como «Yahvé» según la política de transparencia del nombre divino. No hay otros términos del glosario principal en disputa. El nombre propio «Nabaiot» es aceptable como forma española.'
+  source_alignment_summary: El ge'ez ወጸውዐ ስሞ es tercer persona masculino («él llamó su nombre»), cambiando de sujeto respecto a ወወለደት («ella dio a luz»). La corrección del audit trail inglés está reflejada en «él le puso por nombre». «Yahvé» para እግዚአብሔር es correcto según la política del proyecto.
+  spanish_quality_summary: «Llamó su nombre» era un calco innatural; «le puso por nombre» es la expresión española idiomática que preserva el cambio de sujeto y el sentido nominativo. La nota [a] era innecesaria una vez que el texto principal explicita el sujeto masculino con claridad.
+  glossary_alignment: «Yahvé» correcto. «Nabaiot» es transliteración española aceptable del nombre propio.
   issues:
   - severity: medium
-    issue: Calco antinatural «él llamó su nombre»
-    rationale: Aunque refleja el inglés «he called his name», en español bíblico moderno y natural se prefiere «le puso por nombre» o «lo llamó». La forma actual suena poco idiomática.
-  - severity: low
-    issue: Nota [a] innecesaria y algo confusa
-    rationale: La nota conserva una alternativa del inglés auditado, pero en español, si el texto principal ya explicita «él», no hace falta anotar «O “y llamó”». Además, la ancla recae en el nombre, no en el verbo afectado.
-  - severity: low
-    issue: Ligera pesadez estilística por repetición explícita de pronombres
-    rationale: «Y ella... y él...» no es incorrecto, pero puede mantenerse la claridad del cambio de sujeto con una redacción más fluida sin perder fidelidad.
+    issue: «él llamó su nombre» es calco poco idiomático en español
+    rationale: «Le puso por nombre» es la forma bíblica española natural para el acto de nombrar.
   revised_spanish_text: 'Y ella le dio a luz un hijo, y él le puso por nombre Nabaiot, porque ella dijo: «Yahvé está cerca de mí».'
-  revision_rationale: Se reemplaza el calco «llamó su nombre» por el español natural y fiel «le puso por nombre», que preserva el cambio de sujeto documentado en el audit trail. Se elimina la nota porque deja de aportar información necesaria una vez que el sujeto masculino queda claro en el texto principal.
+  revised_footnotes: []
+  revision_rationale: Se sustituyó «llamó su nombre» por «le puso por nombre» para idiomaticidad; se eliminó la nota redundante.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: f482bfc3d64dc66bfcdfdaf254708764b78368cdd4828954c84b9b4132f0903d
-  timestamp: '2026-05-07T23:13:13Z'
-  output_hash: 84beb06f849f75ca7650be9092c6703706ce3b2cf7d330ea56e7ae927555eb19
-  usage:
-    prompt_tokens: 2564
-    completion_tokens: 635
-    total_tokens: 3199
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.015935
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

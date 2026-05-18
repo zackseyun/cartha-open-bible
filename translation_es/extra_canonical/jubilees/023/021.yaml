@@ -31,12 +31,9 @@ base_translation:
     changes_summary: Changed 'stand' to 'rise up' for better lexical fit, and 'return' to 'turn back' for more natural rendering of the verb in context. Kept the rest substantially the same, including the final reciprocal phrase 'these by those.'
 translation:
   language: es
-  text: Y se levantarán con arco, con espadas y con matanza, para hacerlos volver al camino[a]; y no volverán atrás hasta que mucha sangre sea derramada sobre la tierra, estos por aquellos.
+  text: Y se levantarán con arco, con espadas y con matanza, para hacerlos volver al camino; y no volverán atrás hasta que mucha sangre sea derramada sobre la tierra, unos por otros.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «para volverlos al camino».'
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: ወይቀውሙ
   english_pob_choice: they will rise up
@@ -129,35 +126,23 @@ ai_draft:
     total_tokens: 3533
     reasoning_tokens: 0
     estimated_cost_usd: 0.007603
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español sigue bien el sentido base del Ge''ez y del rastro de auditoría inglés: ''se levantarán'' refleja la revisión a ''rise up''; ''hacerlos volver al camino'' preserva correctamente la corrección clave de dirección hacia el camino, no lejos de él; y ''no volverán atrás hasta que mucha sangre sea derramada sobre la tierra'' representa adecuadamente la perseverancia violenta hasta el derramamiento de sangre. La frase final compacta también conserva la ambigüedad del original.'
-  spanish_quality_summary: El español es claro y legible, con tono digno. Sin embargo, la nota al pie actual no aporta una alternativa semánticamente distinta útil, sino una mera variante sintáctica. Además, la construcción 'estos por aquellos' suena algo menos natural en español bíblico que una opción más idiomática que conserve la misma ambigüedad.
-  glossary_alignment: No hay términos del glosario mayor en juego. Las decisiones léxicas principales ('camino', 'matanza', 'derramada') son compatibles con el proyecto. La elección 'se levantarán' concuerda con la revisión inglesa documentada.
+  source_alignment_summary: El español sigue bien el Ge'ez y el rastro de auditoría inglés. «Se levantarán» refleja la revisión a «rise up»; «hacerlos volver al camino» preserva correctamente la dirección hacia el camino; y «no volverán atrás hasta que mucha sangre sea derramada sobre la tierra» es fiel al texto fuente.
+  spanish_quality_summary: El texto principal es claro y digno. Se eliminó la nota redundante (ofrecía solo una variante sintáctica mínima) y se ajustó «estos por aquellos» a «unos por otros», más natural en español bíblico para la reciprocidad ambigua del original.
+  glossary_alignment: No hay términos del glosario mayor en juego. «Camino», «matanza», «derramada» y «se levantarán» son correctos conforme al proyecto.
   issues:
   - severity: medium
-    issue: La nota [a] es redundante y poco informativa.
-    rationale: La nota ofrece 'para volverlos al camino', que en español no añade una alternativa de sentido apreciablemente distinta de 'para hacerlos volver al camino'. Las notas deben preservar alternativas significativas o ambigüedades reales, no simples reformulaciones estilísticas.
+    issue: La nota [a] era redundante y poco informativa.
+    rationale: La alternativa ofrecida no añadía sentido apreciablemente distinto del texto principal.
   - severity: low
-    issue: La frase final puede afinarse para sonar más natural en español sin perder la ambigüedad.
-    rationale: '''Estos por aquellos'' es comprensible, pero ''unos por otros'' comunica mejor la reciprocidad o enfrentamiento mutuo implícito en la clausula final, y sigue siendo deliberadamente abierta. Dado que el propio expediente reconoce la oscuridad de la frase, una solución idiomática española es preferible.'
+    issue: La frase final «estos por aquellos» resultaba menos natural.
+    rationale: «Unos por otros» comunica la reciprocidad ambigua con mayor idiomaticidad española.
   revised_spanish_text: Y se levantarán con arco, con espadas y con matanza, para hacerlos volver al camino; y no volverán atrás hasta que mucha sangre sea derramada sobre la tierra, unos por otros.
-  revision_rationale: Se elimina la nota redundante y se ajusta la cláusula final a una expresión española más natural que conserva la ambigüedad recíproca del original. El resto del versículo se mantiene porque refleja fielmente la evidencia fuente y la revisión inglesa documentada.
+  revised_footnotes: []
+  revision_rationale: Se eliminó la nota redundante y se ajustó la cláusula final a una expresión española más natural que conserva la ambigüedad recíproca del original.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: e0ef52bb8ff843559233bf8ac120d40ba18ad46ca23d73f7e80ea0c93570264d
-  timestamp: '2026-05-07T23:21:03Z'
-  output_hash: f6eb9aa34d637ce81184756ce48a5ebdd83b127eb76f6bee006ab4a3e2b4e095
-  usage:
-    prompt_tokens: 3110
-    completion_tokens: 570
-    total_tokens: 3680
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016325
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

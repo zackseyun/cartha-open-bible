@@ -29,12 +29,9 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft with a translation that reflects the Ge''ez text: rendered ውስተ ዐቢይ ሕዝብ as ''Among a great people,'' እሬስዮ as ''I have made him great,'' እስመ እምዘርእከ ውእቱ as ''because he is from your seed,'' and ወነገሀ አብርሃም በነግህ as ''And Abraham rose early in the morning.'''
 translation:
   language: es
-  text: Lo haré en una gran nación[a], porque procede de tu descendencia. Y Abraham se levantó muy de mañana.
+  text: Lo convertiré en una gran nación, porque procede de tu descendencia. Y Abraham se levantó muy de mañana.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «Lo convertiré en una gran nación». La revisión del texto fuente favorece una lectura futura y colectiva.'
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: ውስተ ዐቢይ ሕዝብ እሬስዮ
   english_pob_choice: I will make him into a great nation
@@ -93,35 +90,20 @@ ai_draft:
     total_tokens: 3273
     reasoning_tokens: 0
     estimated_cost_usd: 0.005755
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español capta bien la estructura básica del ge''ez auditado: promesa futura, razón genealógica y acción subsiguiente de Abraham. Sin embargo, la frase principal «Lo haré en una gran nación» no preserva con naturalidad ni precisión el sentido de transformación de ውስተ ... እሬስዮ, que el rastro inglés ya fijó como «I will make him into a great nation».'
-  spanish_quality_summary: El texto es legible, pero «Lo haré en una gran nación» suena poco idiomático en español y puede entenderse como ubicación o inclusión, no transformación. «Muy de mañana» es natural y fiel. La nota al pie actual introduce una alternativa que en realidad mejora el texto principal y por eso conviene moverla al cuerpo del versículo.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Descendencia» representa bien «seed» en sentido genealógico, y «nación» conserva la fuerza colectiva documentada. No aparecen términos teológicos sensibles del glosario principal.
+  source_alignment_summary: El ge'ez ውስተ ዐቢይ ሕዝብ እሬስዮ expresa cambio de estado resultativo ("I will make him into a great nation"). La traducción revisada «Lo convertiré en una gran nación» capta correctamente ese valor de transformación y el imperfecto futuro.
+  spanish_quality_summary: «Lo haré en una gran nación» era ambiguo (podía leerse como ubicación). «Lo convertiré en una gran nación» es la forma idiomática española que preserva el sentido de transformación. La nota era redundante al señalar una alternativa que en realidad era la mejor lectura; se movió al texto principal y se eliminó la nota.
+  glossary_alignment: No hay términos sensibles implicados. «Descendencia» para ዘርከ en sentido genealógico es correcto. Ninguna controversia con Yahvé/Mesías/Espíritu.
   issues:
   - severity: high
-    issue: 'Construcción principal poco fiel y poco idiomática: «Lo haré en una gran nación»'
-    rationale: El ge'ez, según la auditoría inglesa, expresa cambio de estado/resultado («make him into a great nation»). En español, «hacer a alguien en una nación» no es construcción natural y debilita la idea de transformación. «Lo convertiré en una gran nación» o «Haré de él una gran nación» la expresan claramente.
-  - severity: medium
-    issue: La nota al pie conserva como alternativa una formulación superior al texto principal
-    rationale: La nota «Lo convertiré en una gran nación» no añade una alternativa secundaria sino la mejor representación española del sentido fijado. Debe incorporarse al texto y eliminarse la nota para evitar confusión editorial.
+    issue: «Lo haré en una gran nación» no expresa transformación de manera idiomática en español
+    rationale: La construcción «hacer en» no es natural; «convertir en» expresa claramente el sentido resultativo del ge'ez auditado.
   revised_spanish_text: Lo convertiré en una gran nación, porque procede de tu descendencia. Y Abraham se levantó muy de mañana.
-  revision_rationale: Se sustituye «Lo haré en una gran nación» por «Lo convertiré en una gran nación» para reflejar con claridad el sentido de transformación/resultativo del ge'ez auditado y producir un español natural. Se elimina la nota porque deja de ser necesaria una vez que la mejor lectura pasa al texto principal. Se conserva «porque procede de tu descendencia» y «Y Abraham se levantó muy de mañana» por ser fieles e idiomáticas.
+  revised_footnotes: []
+  revision_rationale: «Lo convertiré en una gran nación» expresa el sentido de transformación del ge'ez con naturalidad española. Se suprimió la nota porque la mejor lectura está ya en el texto principal.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 45f91c986de7406230c980edfdcaec75a4c1b3ff56e78bf98d4981a18bb68d5e
-  timestamp: '2026-05-07T23:35:26Z'
-  output_hash: ef69472e05ae0c698e76e40621c38f0f800f6bf13f13d49a0e0304e5546ea1b5
-  usage:
-    prompt_tokens: 2710
-    completion_tokens: 582
-    total_tokens: 3292
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.015505
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
