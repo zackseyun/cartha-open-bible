@@ -28,96 +28,17 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And each confessed his anguish to the other[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'And they confessed to one another, each his own distress.'
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: ἐξωμολογήσαντο
-  chosen: confessed
-  alternatives:
-  - admitted
-  - disclosed
-  - acknowledged openly
-  lexicon: BDAG
-  rationale: The middle verb here conveys open acknowledgment to one another. 'Confessed' preserves the sense of candid disclosure without over-paraphrasing. In context the content is their inward distress/desire, not a formal liturgical confession, but 'confessed' still best matches the reciprocal candor of πρὸς ἀλλήλους.
-- source_word: πρὸς ἀλλήλους
-  chosen: to the other
-  alternatives:
-  - to one another
-  - to each other
-  lexicon: BDAG
-  rationale: The phrase is reciprocal. Because ἑκάτερος immediately follows ('each of the two'), 'to the other' fits the two-person setting neatly in English and avoids redundancy while preserving reciprocity.
-- source_word: ἑκάτερος
-  chosen: each
-  alternatives:
-  - each of the two
-  - both
-  lexicon: BDAG
-  rationale: Ἑκάτερος specifically refers to each of two persons. 'Each' is concise and natural in English; the two-person sense is already clear from the reciprocal construction.
-- source_word: τὴν ὀδύνην
-  chosen: anguish
-  alternatives:
-  - pain
-  - distress
-  - torment
-  lexicon: BDAG
-  rationale: Ὀδύνη denotes severe pain or distress. In this narrative context it refers to the torment of illicit desire rather than physical pain. 'Anguish' captures strong inward suffering without importing a more specific psychological category.
-- source_word: αὐτοῦ
-  chosen: his own
-  alternatives:
-  - his
-  - of him
-  lexicon: BDAG
-  rationale: The genitive/pronominal possessive marks that each man disclosed his own anguish. 'His own' makes the distributive force explicit in idiomatic English.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: b7a2f047466b4c40077cc0963ada329762e4b4045a68b93068f3bb43105264ad
-  timestamp: '2026-04-21T21:03:41Z'
-  output_hash: 4ea8adf70db88a47dabc79e642c36c0e4f815056d4a40fbbc7f40e6b9fa02e2c
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (normalized translation corpus) @63a77163
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Moore 1977, Anchor Bible 44
-  revision_candidates: []
-status: revised
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:44Z'
-  unchanged: false
-  changes_summary: Reordered the phrase for more natural formal English while preserving the reciprocal sense of πρὸς ἀλλήλους and the meaning of ἑκάτερος... τὴν ὀδύνην αὐτοῦ. Removed 'own' as unnecessary in English.
+  text: 'And each confessed to the other his own anguish.'
 revisions:
-- timestamp: '2026-04-23T15:46:44Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And each confessed to the other his own anguish.
-  to: And each confessed his anguish to the other.
-  rationale: Reordered the phrase for more natural formal English while preserving the reciprocal sense of πρὸς ἀλλήλους and the meaning of ἑκάτερος... τὴν ὀδύνην αὐτοῦ. Removed 'own' as unnecessary in English.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:14:00Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/013.job-52430.json
+- timestamp: '2026-05-18T04:00:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And each confessed his anguish to the other[a].'
+  to: 'And each confessed to the other his own anguish.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his own'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:08Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Susanna 1:13 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his own'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'

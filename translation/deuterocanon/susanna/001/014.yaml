@@ -28,98 +28,17 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: one said to the other[a], “Let us go home now[b], because it is time for the midday meal.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek ἀρίστου refers to the earlier meal of the day, often a midday meal; 'lunch' is a contextual modern equivalent.
-    reason: cultural_note
-  - marker: b
-    text: Literally, 'one to the other, “Let us go now into the house, because it is time for the meal.”'
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: ἕτερος τῷ ἑτέρῳ
-  chosen: one said to the other
-  alternatives:
-  - each to the other
-  - one to another
-  lexicon: LSJ
-  rationale: The idiom marks reciprocal speech between the two elders. English normally supplies a verb of speaking for clarity; 'one said to the other' best conveys the narrative sense without overparaphrase.
-- source_word: Πορευθῶμεν δὴ
-  chosen: Let us go now
-  alternatives:
-  - Come, let us go
-  - Let us be going now
-  lexicon: BDAG
-  rationale: Aorist subjunctive with exhortative force plus δή gives an immediate proposal. 'Let us go now' preserves the hortatory tone and the particle's sense of promptness.
-- source_word: εἰς οἶκον
-  chosen: home
-  alternatives:
-  - to the house
-  - to our house
-  lexicon: LSJ
-  rationale: In this context the idiom naturally means returning home rather than entering a specific house. 'Home' is idiomatic English and avoids an overly wooden rendering.
-- source_word: ἀρίστου
-  chosen: lunch
-  alternatives:
-  - the midday meal
-  - breakfast
-  - dinner
-  lexicon: LSJ
-  rationale: ἄριστον commonly denotes the earlier main meal, often around midday. In modern English 'lunch' most naturally communicates this timing. 'Breakfast' would mislead many readers, and 'dinner' suggests an evening meal.
-- source_word: ὥρα ἐστίν
-  chosen: it is time
-  alternatives:
-  - the hour is
-  - it is the hour
-  lexicon: BDAG
-  rationale: This is a standard idiomatic expression for the appropriate time. 'It is time' is natural English and preserves the sense.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 070edf8e5baa360fbd3f2fafbf00d630488240cfe456835764d4c912825e122f
-  timestamp: '2026-04-21T21:03:51Z'
-  output_hash: 006c1b63d66308587d9bc0883fc214c627709654d1f5266e53990b408c0a1747
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (normalized translation corpus) @63a77163
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Moore 1977, Anchor Bible 44
-  revision_candidates: []
-status: revised
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:44Z'
-  unchanged: false
-  changes_summary: Replaced 'lunch' with 'the midday meal' to better match the formal register and the sense of ἀρίστου while keeping the verse natural and complete.
+  text: 'one said to the other, “Let us go home now, because it is time for lunch.”'
 revisions:
-- timestamp: '2026-04-23T15:46:44Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: one said to the other, “Let us go home now, because it is time for lunch.”
-  to: one said to the other, “Let us go home now, because it is time for the midday meal.”
-  rationale: Replaced 'lunch' with 'the midday meal' to better match the formal register and the sense of ἀρίστου while keeping the verse natural and complete.
-
-cross_check:
-  status: high_agreement
-  agreement: 0.98
-  agreement_score: 0.98
-  agreement_min: 0.98
-  agreement_max: 0.98
-  verdict: minor-issues
-  reviewed_at: '2026-04-21T23:14:09Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 1
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    minor-issues: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/014.job-52431.json
+- timestamp: '2026-05-18T04:00:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'one said to the other[a], “Let us go home now[b], because it is time for the midday meal.”'
+  to: 'one said to the other, “Let us go home now, because it is time for lunch.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''lunch'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:08Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Susanna 1:14 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''lunch'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote m'
