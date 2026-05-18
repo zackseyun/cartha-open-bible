@@ -20,6 +20,7 @@ like `status.json`. Schema v3:
     "by_proposal_source": {...},
     "credited_contributors": N,
     "approved_credited_revisions": N,
+    "public_proposals_accepted": N,
     "approved_significant_revisions": N,
     "approved_proposed_revisions": N,  # backwards-compatible alias
     "approved_community_revisions": N
@@ -107,6 +108,18 @@ PROPOSAL_ADJUDICATORS = {
     "human",
     "human-maintainer",
     "maintainer",
+}
+
+PUBLIC_PROPOSAL_SOURCES = {
+    "public",
+    "community",
+    "contributor",
+    "human",
+    "human-maintainer",
+    "human_maintainer",
+    "maintainer",
+    "reader",
+    "reader_suggestion",
 }
 
 SIGNIFICANT_APPROVED_TIER_CATEGORIES = {
@@ -667,6 +680,12 @@ def build_index() -> dict[str, Any]:
         except Exception:
             pass
 
+    public_proposals_accepted = sum(
+        count
+        for source, count in by_proposal_source.items()
+        if str(source).strip().lower() in PUBLIC_PROPOSAL_SOURCES
+    )
+
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "commit_sha": head_commit_sha(),
@@ -682,6 +701,9 @@ def build_index() -> dict[str, Any]:
             "by_proposal_source": dict(by_proposal_source),
             "credited_contributors": len(credited_contributors),
             "approved_credited_revisions": sum(by_credit_source.values()),
+            "public_proposals_accepted": public_proposals_accepted,
+            "accepted_public_proposals": public_proposals_accepted,
+            "approved_public_proposals": public_proposals_accepted,
             "approved_significant_revisions": sum(by_proposal_source.values()),
             # Backwards-compatible aliases for deployed frontend builds that
             # still read the older proposal-oriented field names.
