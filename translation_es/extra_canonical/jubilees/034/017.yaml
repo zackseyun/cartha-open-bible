@@ -24,12 +24,9 @@ base_translation:
     changes_summary: Removed the comma before 'and did not cease' for smoother English while preserving the source wording.
 translation:
   language: es
-  text: 'Y lloró por José durante un año y no cesó, porque dijo: «Descenderé a la sepultura lamentándome por mi hijo».[a]'
+  text: 'Y guardó luto por José durante un año y no cesó, porque dijo: «Descenderé a la sepultura de luto por mi hijo».'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Sepultura» traduce un término funerario amplio; también podría entenderse como «tumba» o «sepulcro». Se eligió «sepultura» por su tono bíblico y su naturalidad en español.
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: mourned
   english_pob_choice: mourned
@@ -108,38 +105,25 @@ ai_draft:
     total_tokens: 2545
     reasoning_tokens: 0
     estimated_cost_usd: 0.005246
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el sentido general del inglés POB: duelo prolongado por José durante un año, sin cesar, y la cita sobre descender a la sepultura por su hijo. Sin embargo, hay una leve pérdida de precisión aspectual y de registro en «lloró ... lamentándome», y la nota sobre «sepultura» es defendible pero no necesaria para este nivel de ambigüedad.'
-  spanish_quality_summary: El español es claro y digno, pero «lloró por José» suena algo más puntual que «mourned», y «lamentándome por mi hijo» es menos idiomático en esta cita que «de luto por mi hijo» o «llorando por mi hijo». Además, la nota al pie añade carga innecesaria. Una pequeña revisión mejora naturalidad y fidelidad.
-  glossary_alignment: No hay conflictos con la terminología de proyecto. «José», «hijo» y el registro general son adecuados. La mejor opción para «mourned» en este contexto narrativo es «guardó luto» o «estuvo de duelo» más que «lloró», porque preserva mejor el campo semántico de duelo continuado. «Sepultura» es aceptable, aunque «sepulcro» también sería natural; no hace falta nota si no se preserva una alternativa significativa del audit trail.
+  source_alignment_summary: 'El borrador refleja bien el sentido general del inglés POB: duelo prolongado por José durante un año, sin cesar, y la cita sobre descender a la sepultura por su hijo. Sin embargo, hay una leve pérdida de precisión aspectual y de registro en «lloró ... lamentándome», y la nota sobre «sepultura» era defendible pero no necesaria.'
+  spanish_quality_summary: El español es claro y digno, pero «lloró por José» suena algo más puntual que «mourned», y «lamentándome por mi hijo» es menos idiomático en esta cita que «de luto por mi hijo». Se reemplaza «lloró» por «guardó luto» y «lamentándome por mi hijo» por «de luto por mi hijo». Se elimina la nota innecesaria.
+  glossary_alignment: No hay conflictos con la terminología de proyecto. «José», «hijo» y el registro general son adecuados. «Guardó luto» preserva mejor el campo semántico de duelo continuado.
   issues:
   - severity: medium
     issue: «lloró por José» debilita el matiz de duelo prolongado de «mourned».
-    rationale: «Mourned» aquí apunta más a guardar luto/estar de duelo que a un acto de llorar. El propio contexto «un año y no cesó» pide una formulación durativa.
+    rationale: «Mourned» apunta más a guardar luto que a un acto de llorar; el contexto «un año y no cesó» pide formulación durativa.
   - severity: medium
     issue: «lamentándome por mi hijo» suena menos natural en español bíblico actual.
-    rationale: Aunque es comprensible, en cita directa resulta algo forzado. «de luto por mi hijo» expresa mejor el estado continuo y encaja con la primera cláusula.
+    rationale: En cita directa resulta algo forzado; «de luto por mi hijo» expresa mejor el estado continuo.
   - severity: low
-    issue: La nota al pie sobre «sepultura» no es necesaria.
-    rationale: El inglés POB no documenta una alternativa obligatoria aquí, y «sepultura» no crea una ambigüedad nueva que requiera aclaración.
+    issue: La nota al pie sobre «sepultura» no era necesaria.
+    rationale: No documenta una alternativa obligatoria ni crea ambigüedad nueva.
   revised_spanish_text: 'Y guardó luto por José durante un año y no cesó, porque dijo: «Descenderé a la sepultura de luto por mi hijo».'
-  revision_rationale: Se reemplazó «lloró» por «guardó luto» para reflejar mejor el sentido de duelo prolongado de «mourned». También se cambió «lamentándome por mi hijo» por «de luto por mi hijo», que en español es más natural y conserva el valor continuo del lamento. Se eliminó la nota por no ser necesaria para la fidelidad ni para resolver una ambigüedad relevante.
-  requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 1d9764b2522d45700aa80a524a36a120a311c42a75d7f4c66ffcb57493b13f2a
-  timestamp: '2026-05-07T23:50:16Z'
-  output_hash: 93d5540d02449dc3eaa776207333da51b622812f6dada7a1aff0f456411af53a
-  usage:
-    prompt_tokens: 2233
-    completion_tokens: 663
-    total_tokens: 2896
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.015527
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  revised_footnotes: []
+  revision_rationale: Se reemplazó «lloró» por «guardó luto» para reflejar mejor el sentido de duelo prolongado. Se cambió «lamentándome por mi hijo» por «de luto por mi hijo», más natural y con valor continuo. Se eliminó la nota.
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

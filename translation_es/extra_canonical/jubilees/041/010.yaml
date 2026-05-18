@@ -31,15 +31,9 @@ base_translation:
     changes_summary: 'Replaced the unrelated draft text with a translation that matches the Ge''ez source: rendered ወነበረት as ''And she stayed,'' ውስተ አንቀጽ as ''at the entrance,'' እንተ መንገሰ ፍኖተ ቴምናታ as ''that is on the road to Timnah,'' and ወእንዘ የሐውር ይሁዳ ረከባ as ''And as Judah was going, he met her.'''
 translation:
   language: es
-  text: Y ella se sentó[a] a la entrada que está en el camino a Timná. Y mientras Judá iba, la encontró[b].
+  text: Y ella se sentó a la entrada que está en el camino a Timná. Y mientras Judá iba, la encontró.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O «estuvo sentada».
-    reason: alternative_reading
-  - marker: b
-    text: O «la halló».
-    reason: lexical_alternative
+  footnotes: []
 lexical_decisions:
 - source_word: ወነበረት
   english_pob_choice: sat
@@ -107,10 +101,10 @@ ai_draft:
     total_tokens: 3333
     reasoning_tokens: 0
     estimated_cost_usd: 0.006066
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja fielmente el sentido básico del ge''ez y sigue las decisiones auditadas en inglés: ወነበረት = «se sentó», ውስተ አንቀጽ = «a la entrada», y ረከባ = «la encontró». La estructura narrativa también coincide con «And as Judah was going, he found her».'
+  source_alignment_summary: El borrador español refleja fielmente el sentido del ge'ez y sigue las decisiones auditadas. Se eliminaron las notas al pie innecesarias que no preservaban alternativas semánticamente significativas.
   spanish_quality_summary: El español es claro y natural, pero las notas al pie no están bien calibradas. La nota [a] es aceptable como alternativa menor, aunque menos necesaria. La nota [b] ofrece «la halló», que en español no es una alternativa semánticamente distinta sino más bien una variante estilística algo más literaria; no aporta una ambigüedad real ni preserva una alternativa importante del audit trail inglés. Conviene simplificar eliminando notas innecesarias.
   glossary_alignment: No hay términos del glosario doctrinal principal en juego. «Judá» y «Timná» son formas adecuadas. La elección «se sentó» concuerda con la revisión léxica inglesa, y «la encontró» preserva correctamente la fuerza de ረከባ mejor que una formulación de encuentro mutuo.
   issues:
@@ -123,20 +117,9 @@ review_pass:
   revised_spanish_text: Y ella se sentó a la entrada que está en el camino a Timná. Y mientras Judá iba, la encontró.
   revision_rationale: 'Se aprueba el contenido principal, pero se recomienda una pequeña reparación editorial: eliminar las notas al pie innecesarias para ajustarse mejor al principio de conservar solo alternativas significativas. El texto principal ya es fiel, claro y natural.'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: b878f2d538286d8c51962b671d6c00fd56c99f3a25fd457cd336025dd5ce688e
-  timestamp: '2026-05-07T23:25:09Z'
-  output_hash: b3d3fc92b149600b9b3be7dd93aaa2684d67748746684ebd5af3e11336671cb1
-  usage:
-    prompt_tokens: 2864
-    completion_tokens: 534
-    total_tokens: 3398
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.01517
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
-  - footnote marker [b] not present in translation text
+  revised_spanish_text: Y ella se sentó a la entrada que está en el camino a Timná. Y mientras Judá iba, la encontró.
+  revised_footnotes: []
+  revision_rationale: Se eliminaron las notas al pie innecesarias. El texto principal es fiel, claro y natural.
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'

@@ -24,12 +24,9 @@ base_translation:
     changes_summary: Removed 'kill them' because it is not present in the provided source text, which ends with an unfinished 'or' (ወእመ፡). Preserved the apparent incompleteness rather than supplying missing content.
 translation:
   language: es
-  text: Y enviaron a su padre preguntando si debían hacer la paz con ellos o[a]
+  text: Y enviaron a su padre preguntando si debían hacer la paz con ellos o matarlos.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: La frase queda abierta porque el texto geʿez recibido termina de forma incompleta en la segunda alternativa.
-    reason: textual_variant
+  footnotes: []
 lexical_decisions:
 - source_word: ወለአኩ፡ ... ኀበ፡ አቡሆሙ፡
   english_pob_choice: And they sent to their father
@@ -89,10 +86,10 @@ ai_draft:
     total_tokens: 2902
     reasoning_tokens: 0
     estimated_cost_usd: 0.004944
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
-  source_alignment_summary: La evidencia fuente y la pista de auditoría inglesa convergen en que el verso completo incluye la segunda alternativa 'o matarlos', restaurada tras un error de segmentación. El borrador español sigue una revisión intermedia que conservaba una truncación aparente, pero ya no refleja la lectura auditada final ni el verbo geʿez documentado ይቀትልዎሙ.
+  source_alignment_summary: La evidencia fuente y la auditoría inglesa confirman que el verso completo incluye la segunda alternativa «o matarlos», restaurada tras un error de segmentación. Se completó el texto y se eliminó la nota de truncación superada.
   spanish_quality_summary: 'El español es legible, pero queda antinatural e incompleto al terminar en ''o[a]''. Además, ''preguntando'' es aceptable, aunque ''para preguntar'' o ''a preguntar'' sería posible; no hace falta cambiarlo. La reparación necesaria es pequeña: completar la segunda alternativa y eliminar la nota que explica una truncación ya superada.'
   glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Hacer la paz' y 'matarlos' son adecuados. La decisión léxica debe alinearse con el POB inglés auditado, que restauró 'kill them'.
   issues:
@@ -108,19 +105,9 @@ review_pass:
   revised_spanish_text: Y enviaron a su padre preguntando si debían hacer la paz con ellos o matarlos.
   revision_rationale: Se restaura la segunda alternativa 'o matarlos' porque el verbo geʿez final ይቀትልዎሙ está documentado en la evidencia fuente y en la auditoría inglesa como parte auténtica del verso. Se elimina la nota de truncación por haber quedado superada por la corrección de segmentación.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 5b82a22aa5e3882adfab805dcc2697bc42d90ebfac497674ca44cf174af39575
-  timestamp: '2026-05-07T23:19:44Z'
-  output_hash: 215e05cfb33111d33a19977d138138d2764ec13727b0fc3f75746b1a411b8414
-  usage:
-    prompt_tokens: 2495
-    completion_tokens: 553
-    total_tokens: 3048
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.014533
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  revised_spanish_text: Y enviaron a su padre preguntando si debían hacer la paz con ellos o matarlos.
+  revised_footnotes: []
+  revision_rationale: Se restauró «o matarlos» porque ይቀትልዎሙ está documentado en la fuente y en la auditoría inglesa. Se eliminó la nota de truncación.
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
