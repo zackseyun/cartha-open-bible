@@ -28,108 +28,17 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 7:29
 translation:
-  text: With all your heart fear God[a], and sanctify his priests.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''sanctify his priests'' more literally; the Greek parallel reads ''marvel at'' or ''hold in awe'' his priests. The main text renders the shared sense as ''honor his priests.'''
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: בְּכָל לִבְּך
-  chosen: with all your heart
-  alternatives:
-  - with your whole heart
-  - with all your mind
-  lexicon: HALOT
-  rationale: The Hebrew idiom literally uses 'heart' for the inner person/will. 'With all your heart' is a natural and faithful English rendering. The Greek parallel has 'with all your soul,' confirming the sense of total devotion rather than a narrowly emotional meaning.
-- source_word: פְּחַד
-  chosen: fear
-  alternatives:
-  - revere
-  - stand in awe of
-  lexicon: HALOT
-  rationale: The verb denotes fearing or standing in dread/awe. 'Fear' preserves the biblical wisdom register and the moral-religious weight of the command. The Greek εὐλαβοῦ suggests reverent fear, but the Hebrew witness is primary here, so 'fear' is retained rather than softened to 'revere'.
-- source_word: אִל
-  chosen: God
-  alternatives:
-  - the Mighty One
-  lexicon: HALOT
-  rationale: The Hebrew divine title אל is best rendered simply 'God' in this context. 'The Mighty One' is possible etymologically but would sound marked in English and is not required by the context.
-- source_word: כֹּהֲנָיו
-  chosen: his priests
-  alternatives:
-  - the priests
-  - his priesthood
-  lexicon: HALOT
-  rationale: The suffix is explicit in Hebrew and matches the Greek αὐτοῦ. 'His priests' preserves the possessive relation to God and keeps the plural concrete.
-- source_word: הַקְדִישׁ
-  chosen: honor
-  alternatives:
-  - sanctify
-  - treat as holy
-  - show honor to
-  lexicon: HALOT
-  rationale: The Hiphil of קדשׁ literally means 'make holy' or 'treat as holy.' In English, when the object is priests, the idiomatic sense is to accord them sacred honor or due respect. The Greek parallel θαύμαζε points toward honoring/holding in esteem rather than a technical act of consecration, so 'honor' best captures the intended force without wooden awkwardness.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 91973b873c3e14f88397af33c9801db770a3105d25a75dbd3ae1f82934541fee
-  timestamp: '2026-04-21T20:25:08Z'
-  output_hash: dc2322174f17f5fe494f54a831e2617eea2fe9ab5d31849c650acb9cd759c181
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @a90a565b
-  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a90a565b
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
-  - Beentjes 1997, The Book of Ben Sira in Hebrew
-  - Skehan & Di Lella 1987, Anchor Bible 39
-  - Ben-Hayyim 1973, Academy of the Hebrew Language
-  revision_candidates:
-  - reason: SIR 7:29 falls in the Schechter facsimile range; when direct MSS A/B transcription completes, re-run the draft against the deepened Zone 1 Hebrew witness.
-    trigger: schechter_pipeline_completes
-status: revised
-theological_decisions:
-- issue: Rendering the imperative toward priests without overstating sacerdotal theology
-  chosen_reading: and honor his priests
-  alternative_readings:
-  - and sanctify his priests
-  - and hold his priests in awe
-  rationale: The Hebrew could be rendered more literally as 'sanctify his priests,' but in English that may imply conferring holiness on them rather than recognizing their consecrated status. The Greek parallel supports an esteem/honor sense. 'Honor his priests' preserves the exhortation to respect the priesthood without importing later doctrinal claims.
-  doctrine_reference: Preserve theological tension rather than resolve it; optimal equivalence
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:29Z'
-  unchanged: false
-  changes_summary: Changed 'honor' to 'sanctify' to more closely reflect הַקְדִישׁ ('make holy/consecrate, treat as holy') while preserving formal, natural English.
+  text: 'With all your heart fear God, and honor his priests.'
 revisions:
-- timestamp: '2026-04-23T15:42:29Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: With all your heart fear God, and honor his priests.
-  to: With all your heart fear God, and sanctify his priests.
-  rationale: Changed 'honor' to 'sanctify' to more closely reflect הַקְדִישׁ ('make holy/consecrate, treat as holy') while preserving formal, natural English.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:05:22Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/007/029.job-51170.json
+- timestamp: '2026-05-18T04:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'With all your heart fear God[a], and sanctify his priests.'
+  to: 'With all your heart fear God, and honor his priests.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''honor'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:00Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Sirach 7:29 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''honor'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote m'

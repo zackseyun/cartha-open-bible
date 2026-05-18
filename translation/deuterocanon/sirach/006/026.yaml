@@ -21,113 +21,17 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Approach her with all your soul[a], and with all your strength keep her ways.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Draw near to her ... and guard her ways.' The Greek permits more formal renderings of both verbs.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: πρόσελθε
-  chosen: Approach
-  alternatives:
-  - Draw near
-  - Come near
-  lexicon: BDAG
-  rationale: Imperative of προσέρχομαι, calling for intentional movement toward wisdom. 'Approach' is natural English and preserves the direct exhortation without overinterpreting it as mere intellectual assent.
-- source_word: ἐν πάσῃ ψυχῇ σου
-  chosen: with all your soul
-  alternatives:
-  - with your whole being
-  - with all your heart
-  lexicon: BDAG
-  rationale: A semitic-style expression for total personal devotion. 'Soul' keeps the source wording and echoes biblical diction; 'heart' would shift the anthropology, and 'whole being' is interpretive.
-- source_word: αὐτῇ
-  chosen: her
-  alternatives:
-  - it
-  lexicon: BDAG
-  rationale: Refers to personified wisdom in the feminine. 'Her' preserves the literary personification present in the Greek.
-- source_word: ἐν ὅλῃ δυνάμει σου
-  chosen: with all your strength
-  alternatives:
-  - with your full power
-  - with all your might
-  lexicon: BDAG
-  rationale: δυνάμει here denotes one's capacity or strength. 'Strength' is idiomatic and resonates with biblical exhortation language; 'might' is possible but slightly more archaic.
-- source_word: συντήρησον
-  chosen: keep to
-  alternatives:
-  - guard
-  - observe
-  - maintain
-  lexicon: BDAG
-  rationale: The verb can mean keep, preserve, or observe. With 'ways' as object, 'keep to' communicates faithful adherence in clear modern English better than the more ambiguous 'keep' or the more defensive 'guard'.
-- source_word: τὰς ὁδοὺς αὐτῆς
-  chosen: her ways
-  alternatives:
-  - her paths
-  - her manner of life
-  lexicon: BDAG
-  rationale: A common metaphor for conduct or course of life. 'Ways' is the most direct and biblically recognizable rendering; 'paths' is possible but less likely here than the broader ethical sense.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: e37c448d2d0ded99f9d7b786542bdbf2ef0d739559a24776eb01dec2b81b2d27
-  timestamp: '2026-04-21T20:22:02Z'
-  output_hash: f31bf4cee6aa669e23a3b31108c455fa5410056641b323f6961d09dd5f0d1b4a
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @c79f077e
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
-  - Beentjes 1997, The Book of Ben Sira in Hebrew
-  - Skehan & Di Lella 1987, Anchor Bible 39
-  - Ben-Hayyim 1973, Academy of the Hebrew Language
-  revision_candidates:
-  - reason: SIR 6:26 falls in the Schechter facsimile range; when direct MSS A/B transcription completes, re-run the draft against the deepened Zone 1 Hebrew witness.
-    trigger: schechter_pipeline_completes
-status: revised
-theological_decisions:
-- issue: Personification of wisdom
-  chosen_reading: Retain feminine personal language ('her') for wisdom.
-  alternative_readings:
-  - Use impersonal language such as 'it'
-  rationale: The Greek explicitly uses feminine forms, continuing Sirach's personification of wisdom as a woman. Preserving this literary-theological feature is more faithful than flattening it into an abstraction.
-  doctrine_reference: 'Translation philosophy: preserve the source text''s plain sense; do not omit significant features.'
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:20Z'
-  unchanged: false
-  changes_summary: Changed 'keep to her ways' to 'keep her ways' for closer alignment with the Greek συντήρησον τὰς ὁδοὺς αὐτῆς ('keep/observe her ways') while preserving natural formal English.
+  text: 'Approach her with all your soul, and with all your strength keep to her ways.'
 revisions:
-- timestamp: '2026-04-23T15:42:20Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: Approach her with all your soul, and with all your strength keep to her ways.
-  to: Approach her with all your soul, and with all your strength keep her ways.
-  rationale: Changed 'keep to her ways' to 'keep her ways' for closer alignment with the Greek συντήρησον τὰς ὁδοὺς αὐτῆς ('keep/observe her ways') while preserving natural formal English.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:05:03Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/006/026.job-51130.json
+- timestamp: '2026-05-18T04:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Approach her with all your soul[a], and with all your strength keep her ways.'
+  to: 'Approach her with all your soul, and with all your strength keep to her ways.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''keep to'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:00Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Sirach 6:26 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''keep to'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'

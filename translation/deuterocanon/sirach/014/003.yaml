@@ -28,109 +28,17 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 14:3
 translation:
-  text: Wealth is not fitting for a small-hearted man[c][b][a], and treasure is not fitting for a man with an evil eye.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'small-hearted'; the Greek parallel suggests a petty or miserly person.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'a man with an evil eye,' an idiom for someone envious, stingy, or begrudging.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek parallel reads, 'For a petty man wealth is not good, and for an envious man, why money?' This supports the sense of the Hebrew while differing slightly in phrasing.
-    reason: alternative_reading
-lexical_decisions:
-- source_word: לְלֵב קָטֹן
-  chosen: for a small-hearted man
-  alternatives:
-  - for a petty man
-  - for a stingy man
-  - for a mean-spirited man
-  lexicon: HALOT
-  rationale: The Hebrew literally combines 'heart' with 'small,' suggesting narrowness or pettiness of disposition. The Greek parallel μικρολόγῳ points toward a miserly/petty character. 'Small-hearted man' preserves the Hebrew image while remaining intelligible in English; more interpretive options like 'stingy man' are possible but flatten the metaphor too quickly.
-- source_word: לֹא נָאוֶה
-  chosen: is not fitting
-  alternatives:
-  - does not suit
-  - is not becoming
-  lexicon: HALOT
-  rationale: The verb conveys what is suitable, proper, or becoming. 'Is not fitting' is natural modern English and preserves the evaluative sense without sounding archaic.
-- source_word: עֹשֶׁר
-  chosen: wealth
-  alternatives:
-  - riches
-  - abundance
-  lexicon: HALOT
-  rationale: A standard rendering for material wealth. 'Wealth' works well in the first colon and avoids unnecessary repetition with the second colon, where a near-synonym can be used in English.
-- source_word: וּלְאִישׁ רַע עַיִן
-  chosen: for a man with an evil eye
-  alternatives:
-  - for an envious man
-  - for a stingy man
-  - for a begrudging man
-  lexicon: HALOT
-  rationale: The Hebrew idiom 'evil eye' commonly denotes stinginess, envy, or begrudging selfishness. The Greek βασκάνῳ likewise supports a hostile/envious sense. The main text keeps the idiom for transparency and auditability; its sense can be clarified in a footnote.
-- source_word: חָרוּץ
-  chosen: riches
-  alternatives:
-  - gold
-  - money
-  - treasure
-  lexicon: HALOT
-  rationale: In this context the word denotes material assets or wealth. The Greek parallel χρήματα confirms a money/possessions sense. 'Riches' gives good English style in parallel with 'wealth' while reflecting the semantic field.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: cf98540216a492a023944bff3028db8cdd5bddfe1db694161623f3e856b06fbd
-  timestamp: '2026-04-21T20:35:46Z'
-  output_hash: 9d5c4bd549d6bbe4631760bd686345bed5ea49f2683c9150518d3fbd9b322207
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @a0b9ce84
-  - Sefaria Ben Sira Kahana (Zone 1 Hebrew) @a0b9ce84
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Yadin 1965, The Ben Sira Scroll from Masada (editio princeps)
-  - Beentjes 1997, The Book of Ben Sira in Hebrew
-  - Skehan & Di Lella 1987, Anchor Bible 39
-  - Ben-Hayyim 1973, Academy of the Hebrew Language
-  revision_candidates:
-  - reason: SIR 14:3 falls in the Schechter facsimile range; when direct MSS A/B transcription completes, re-run the draft against the deepened Zone 1 Hebrew witness.
-    trigger: schechter_pipeline_completes
-status: revised
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:57Z'
-  unchanged: false
-  changes_summary: Changed the second occurrence of 'riches' to 'treasure' to reflect the distinct Hebrew term חָרוּץ more accurately while keeping the verse natural and formal.
+  text: 'Wealth is not fitting for a small-hearted man, and riches are not fitting for a man with an evil eye.'
 revisions:
-- timestamp: '2026-04-23T15:42:57Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: Wealth is not fitting for a small-hearted man, and riches are not fitting for a man with an evil eye.
-  to: Wealth is not fitting for a small-hearted man, and treasure is not fitting for a man with an evil eye.
-  rationale: Changed the second occurrence of 'riches' to 'treasure' to reflect the distinct Hebrew term חָרוּץ more accurately while keeping the verse natural and formal.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:06:43Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/014/003.job-51328.json
+- timestamp: '2026-05-18T04:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Wealth is not fitting for a small-hearted man[c][b][a], and treasure is not fitting for a man with an evil eye.'
+  to: 'Wealth is not fitting for a small-hearted man, and riches are not fitting for a man with an evil eye.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''riches'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:00Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Sirach 14:3 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''riches'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote '
