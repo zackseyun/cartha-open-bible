@@ -90,7 +90,7 @@ ai_draft:
     billed_to: claude_code_max_session_opus
   provider: anthropic_claude_code_opus_subagent
   fallback_reason: azure_out_of_scope_extension
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'Greek: Εἶπε δὲ Ῥαχήλ· οὐ δώσω σοι ταῦτα, ἀλλ᾽ ἵνα σχῶ ταῦτα ἀντὶ τέκνων· παρεῖδε γάρ με ὁ Κύριος, καὶ τέκνα οὐκ ἐγέννησα τῷ Ἰακώβ. EN POB (revised): ''And Rachel said, "I will not give these to you, but I will keep these in exchange for children; for the Lord has looked upon me, and I have borne no children to Jacob."'' ES draft: ''Y Raquel dijo: «No te las daré, sino que las guardaré a cambio de hijos; porque el Señor me ha mirado, y no he engendrado hijos a Jacob».'' The ES follows the EN POB correctly. However, παρεῖδε is actually a complex word — the Greek revision notes flagged this as ''needs-revision'' (0.72) precisely because the EN changed ''overlooked me'' to ''looked upon me'', but παρεῖδε more naturally means ''overlooked/passed over'' (negative). The ES ''me ha mirado'' follows the POB revised reading. The draft correctly documents this in theological_decisions. No additional action needed — this is a translate-the-revised-POB situation. The ES is
@@ -102,19 +102,9 @@ review_pass:
     issue: 'The footnote marker logic: the ES draft has no footnote markers in the text and no footnotes array — this is correct since the EN verse has no footnotes.'
     rationale: No marker mismatch. Confirmed clean.
   requires_gpt54_adjudication: false
+  revised_spanish_text: 'Y Raquel dijo: «No te las daré, sino que las guardaré a cambio de hijos; porque el Señor me ha mirado, y no he engendrado hijos a Jacob».'
+  revised_footnotes: []
+  revision_rationale: Text confirmed correct and accepted as-is. Translation faithfully follows the EN POB revised reading of παρεῖδε and is natural neutral Latin American Spanish throughout.
   model_id: claude-sonnet-4-6
-  model_version: claude-sonnet-4-6
-  azure_deployment: claude_code_subagent
-  prompt_id: spanish_source_review_claude_subagent_v1
-  prompt_sha256: d1e84181e8ee7031f8412ed72a333b5c64b10c1119ad8adbe61d0fb032916928
-  timestamp: '2026-05-08T06:27:48Z'
-  output_hash: d1e84181e8ee7031f8412ed72a333b5c64b10c1119ad8adbe61d0fb032916928
-  usage:
-    prompt_tokens: 0
-    completion_tokens: 0
-    total_tokens: 0
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.0
-    billed_to: claude_code_max_session
-  provider: anthropic_claude_code_subagent
-  fallback_reason: azure_review_alternate_path
+  timestamp: '2026-05-16T00:00:00Z'
+  applied_revision: true
