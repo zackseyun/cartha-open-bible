@@ -198,15 +198,21 @@ def process_chapter(
     if not isinstance(record, dict):
         return 0
 
-    # Skip chapters that have already been split into multiple verses
-    # (identified by lacking the synthetic mirror note AND having correct verse files)
+    text = (record.get("translation") or {}).get("text") or ""
+
+    # Skip chapters that have already been split into multiple verses, but do
+    # not trust the absence of the old synthetic-note alone. Later revision
+    # passes can overwrite 001.yaml with a full numbered chapter while leaving
+    # 002.yaml+ in place; in that case the reader duplicates the chapter head.
     note = str(record.get("note") or "")
     existing_verse_files = [f for f in chapter_dir.glob("*.yaml")]
-    if "Synthetic single-verse mirror" not in note and len(existing_verse_files) > 1:
-        return 0
-
-    text = (record.get("translation") or {}).get("text") or ""
     verses = _split_with_flat_numbered_fallback(text.strip(), chapter=ch, book_dir=book_dir)
+    if (
+        "Synthetic single-verse mirror" not in note
+        and len(existing_verse_files) > 1
+        and len(verses) <= 1
+    ):
+        return 0
 
     if dry_run:
         print(f"  ch{ch:03d}: {len(verses)} verses → " +

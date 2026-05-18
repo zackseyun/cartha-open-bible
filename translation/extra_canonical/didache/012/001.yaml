@@ -4,30 +4,55 @@ unit: verse
 book: Didache
 source:
   edition: Hitchcock & Brown 1884 (normalized OCR)
-  text: Πᾶς δὲ ὁ ἐρχόμενος ἐν ὀνόματι Κυρίου δεχξήσθω, ἔπειτα δὲ δοκιμάσαντες αὐτὸν
-    γνώσεσθε· σύνεσιν γὰρ ἕξετε δεξιὰν καὶ ἀριστεράν. Εἰμὲν παρόδιος ἐστιν ὁ ἐρχόμενος,
-    βοηθεῖτε αὐτῷ ὅσον δύνασθε· οὐ μενεῖ δὲ πρὸς ὑμᾶς εἰ μὴ δύο ἢ τρεῖς ἡμέρας, ἐὰν
-    ᾖ ἀνάγκη. Εἰ δὲ θέλει πρὸς ὑμᾶς καθίσαι, τεχνίτης ὤν, ἐργαζέσθω καὶ φαγέτω· εἰ
-    δὲ οὐκ ἔχει τέχνην, κατὰ τὴν σύνεσιν ὑμῶν προνοήσατε, πῶς μὴ ἀργὸς μεθ᾽ ὑμῶν ζήσεται
-    χριστιανός. Εἰ δ᾽ οὐ θέλει οὕτω ποιεῖν, χριστέμπορός ἐστι· προσέχετε ἀπὸ τῶν τοιούτων.
+  text: Πᾶς δὲ ὁ ἐρχόμενος ἐν ὀνόματι Κυρίου δεχξήσθω, ἔπειτα δὲ δοκιμάσαντες αὐτὸν γνώσεσθε· σύνεσιν γὰρ ἕξετε δεξιὰν καὶ ἀριστεράν.
   language: Greek
-  pages:
-  - 36
-  note: This chapter comes from the normalized Hitchcock & Brown 1884 OCR layer. Line-number
-    noise and page segmentation were cleaned, but the translation must stay anchored
-    in the Greek wording.
 translation:
-  text: 'But let everyone who comes in the name of the Lord be received; then, after testing him, you will know him, for you will have understanding of right and left. But if the one who comes is a traveler, help him as much as you can; he shall not remain with you for more than two or three days, should there be a need. But if he wants to settle among you and is a craftsman, let him work and eat. But if he has no trade, plan, according to your understanding, how a Christian may not live idle among you. But if he is not willing to do so, he is a Christ-trader; watch out for such people.'
+  text: But let everyone who comes in the name of the Lord be received; then, after testing him, you will know, for you will have understanding of right and left.
+  philosophy: optimal-equivalence
+  footnotes:
+  - marker: a
+    text: Or 'you will know him'.
+    reason: previous_rendering
+note: Derived from the chapter-level draft at translation/extra_canonical/didache/012.yaml by tools/split_extra_canonical_into_verses.py. The chapter-level flat YAML remains the authoritative record of the AI draft and review passes; per-verse YAMLs exist for the reading surface (mobile/web) and per-verse bookmark/note IDs.
+ai_draft_provenance:
+  model_id: gpt-5.4
+  model_version: gpt-5.4-2026-03-05
+  prompt_id: didache_chapter_draft_v1
+  prompt_sha256: b0c35d579949e375e4cf23400fb03492f0561a3021a72b25a02fed222de39d77
+  temperature: 0.2
+  timestamp: '2026-04-21T20:04:33Z'
+  output_hash: b43c1cdcbdbf13fb8acd46bc0a6174b8824cbb5ae45119f28f0f09311ca06192
+  zone1_sources_at_draft:
+  - Hitchcock & Brown 1884 (normalized Didache OCR) @31d9c5d2
+  - Schaff 1885 (vendored consult source, not yet OCRed) @31d9c5d2
+  zone2_consults_known:
+  - Later Apostolic Fathers critical editions (consult only)
+  - Modern Didache commentary / translation literature (consult only)
+ai_draft_chapter_review_passes:
+- reviewer_model: gemini-2.5-pro
+  timestamp: '2026-04-21T20:49:08Z'
+  prompt_sha256: 96886f4d490ba95b29f0b1f0e17ac9c671fa92e30c3c53f7684a0027fc60b38f
+  summary: The draft was of high quality and required only minimal revision. The primary change was to one clause to more accurately reflect the Greek instruction to 'make provision' for a situation (preventing idleness) rather than 'provide for him' (which could imply simple charity). A minor correction was also made to a source word in the lexical decisions. The footnotes and theological decisions were excellent and retained without change.
+  issues_found:
+  - A clause was revised to more precisely render the Greek 'προνοήσατε' as making provision for a situation, not just a person.
+  - A source word in the lexical decisions was corrected for completeness.
+- reviewer_model: gemini-2.5-pro
+  timestamp: '2026-04-21T20:50:11Z'
+  prompt_sha256: ab078e4147bd2781a2a415cc5497dbf986e853f4422c071355398ad90cfeab9f
+  summary: The draft was very strong. I made minor revisions to improve clarity and flow. The traveler's limited stay was rephrased to be more idiomatic in English. The instruction for providing for a tradeless Christian was restructured to more closely follow the Greek syntax ('provide... how...'). A footnote was reworded to be clearer. The lexical and theological decisions were excellent and largely retained.
+  issues_found:
+  - Minor source drift in sentence structure.
+  - Slightly unnatural phrasing for a time limit.
+  - A footnote was slightly redundant.
+status: reviewed
 revisions:
-- timestamp: '2026-05-18T03:32:11Z'
-  adjudicator: doctrine-realignment
-  reviewer_model: agentic-pilot-claude-sonnet-4-6
-  category: doctrine_realignment
-  from: 'But let everyone who comes in the name of the Lord be received; then, after testing him, you will know him, for you will have understanding of right and left. But if the one who comes is a traveler, help him as much as you can; he shall not remain with you for more than two or three days, if there is a need. But if he wants to settle among you and is a craftsman, let him work and eat. But if he has no trade, provide, according to your understanding, how a Christian may not live idle among you. But if he is not willing to do so, he is a Messiah-trader; watch out for such people.'
-  to: 'But let everyone who comes in the name of the Lord be received; then, after testing him, you will know him, for you will have understanding of right and left. But if the one who comes is a traveler, help him as much as you can; he shall not remain with you for more than two or three days, should there be a need. But if he wants to settle among you and is a craftsman, let him work and eat. But if he has no trade, plan, according to your understanding, how a Christian may not live idle among you. But if he is not willing to do so, he is a Christ-trader; watch out for such people.'
-  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Christ-trader'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
-revision_pass:
-  model: doctrine-realignment
-  timestamp: '2026-05-18T03:32:11Z'
-  unchanged: false
-  changes_summary: 'doctrine_realignment: Didache 12:1 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Christ-trader'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, fo'
+- timestamp: '2026-04-22T08:05:47Z'
+  adjudicator: azure_gpt54_tier3_adjudicator
+  adjudicator_confidence: 0.91
+  reviewer_model: gemini-3.1-pro-preview
+  source_review: state/reviews/gemini/phase9_greek/extra_canonical/didache/012/001.job-70589.json
+  category: missing_nuance
+  tier: 3
+  from: you will know him
+  to: you will know
+  rationale: 'The verb γνώσεσθε (you will know) is used absolutely here, carrying the sense of ''you will find out'' or ''you will discern [the truth].'' Supplying ''him'' as a direct object in English (''you will know him'') introduces a connotation of personal acquaintance, whereas the author''s focus is strictly on discerning the visitor''s true character after testing. | Azure: The Greek reads ἔπειτα δὲ δοκιμάσαντες αὐτὸν γνώσεσθε, with αὐτόν governed by the participle δοκιμάσαντες (''after testing him''), while γνώσεσθε stands without an expressed object. So the current Engli'
