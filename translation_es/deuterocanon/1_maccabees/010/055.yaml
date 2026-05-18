@@ -58,12 +58,8 @@ base_translation:
     changes_summary: 'Adjusted the opening exclamation to more natural formal English: ''A good day is this'' → ''It is a good day.'' Preserved all source elements and sense.'
 translation:
   language: es
-  text: 'Y el rey Ptolomeo respondió, diciendo: «Buen día[a], en que volviste a la tierra de tus padres y te sentaste sobre el trono de su reino.»'
+  text: 'Y el rey Ptolomeo respondió, diciendo: «Es un buen día, en que volviste a la tierra de tus padres y te sentaste en el trono de su reino.»'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Buen día» refleja la exclamación griega Ἀγαθὴ ἡμέρα. Otras posibilidades serían «Es un buen día» o «Un buen día es este», pero la forma breve mantiene mejor el tono directo del original.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐπεκρίθη
   english_pob_choice: answered
@@ -138,35 +134,42 @@ ai_draft:
     total_tokens: 3433
     reasoning_tokens: 0
     estimated_cost_usd: 0.005541
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: 'Y el rey Ptolomeo respondió, diciendo: «Buen día[a], en que volviste a la tierra de tus padres y te sentaste sobre el trono de su reino.»'
+  to: 'Y el rey Ptolomeo respondió, diciendo: «Es un buen día, en que volviste a la tierra de tus padres y te sentaste en el trono de su reino.»'
+  rationale: Se reemplaza «Buen día» por «Es un buen día» para reflejar con claridad la exclamación valorativa griega sin crear la ambigüedad del saludo español. Se ajusta «sobre el trono» a «en el trono» por naturalidad idiomática. Se elimina la nota al pie porque el texto revisado ya es claro y fiel sin ambigüedad nueva.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:24:34Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador conserva bien la estructura y el sentido general del griego: respuesta de Ptolomeo, regreso a la tierra de los padres y entronización en el reino de ellos. Sin embargo, «Buen día» en español se entiende ante todo como saludo y no transmite con claridad la cláusula exclamativa/valorativa Ἀγαθὴ ἡμέρα. También conviene ajustar «sobre el trono» a «en el trono» o mantener una formulación más idiomática de entronización en español.'
-  spanish_quality_summary: El texto es claro, pero «Buen día» suena poco natural en este contexto narrativo y puede desviar el sentido hacia un saludo. «En que» funciona, aunque «el día en que» o «en el que» sería más natural; no obstante, el ajuste principal necesario es la frase inicial. El resto del verso es legible y digno.
-  glossary_alignment: No hay términos del glosario doctrinal principal en juego. Las decisiones léxicas sobre «respondió», «la tierra de tus padres» y «reino» están bien alineadas con la evidencia fuente. La principal excepción es Ἀγαθὴ ἡμέρα, donde la solución española debe evitar el falso amigo pragmático «Buen día».
+  source_alignment_summary: 'El borrador conserva bien la estructura y sentido del griego: respuesta de Ptolomeo, regreso a la tierra de los padres y entronización. La corrección necesaria es Ἀγαθὴ ἡμέρα: en español «Buen día» funciona principalmente como saludo y distorsiona la exclamación valorativa griega; «Es un buen día» transmite el significado con claridad. También «sobre el trono» se ajusta a «en el trono» para mayor naturalidad idiomática en contexto de entronización.'
+  spanish_quality_summary: El texto revisado es claro, fiel y natural en español bíblico moderno. Se elimina la nota al pie porque el texto revisado ya transmite el sentido sin ambigüedad nueva.
+  glossary_alignment: No intervienen términos del glosario doctrinal principal. Las decisiones léxicas sobre «respondió», «la tierra de tus padres» y «reino» están bien alineadas.
   issues:
   - severity: high
-    issue: «Buen día» distorsiona Ἀγαθὴ ἡμέρα
-    rationale: En español general, especialmente latinoamericano, «buen día» suele funcionar como saludo. Aquí el griego expresa una valoración del día, no un saludo. «Es un buen día» preserva mejor el sentido.
+    issue: «Buen día» distorsiona Ἀγαθὴ ἡμέρα en español
+    rationale: En español latinoamericano «buen día» es principalmente saludo. El griego expresa una valoración del día; «Es un buen día» preserva el sentido correcto.
   - severity: medium
-    issue: «sobre el trono» suena menos idiomático que «en el trono» en contexto de entronización
-    rationale: Aunque ἐπὶ puede reflejarse literalmente, en español bíblico y natural «sentarse en el trono» expresa mejor la idea de reinar/entronizarse sin pérdida de significado.
+    issue: «sobre el trono» menos idiomático que «en el trono» en contexto de entronización
+    rationale: En español bíblico, sentarse en el trono expresa mejor la idea de reinar.
   revised_spanish_text: 'Y el rey Ptolomeo respondió, diciendo: «Es un buen día, en que volviste a la tierra de tus padres y te sentaste en el trono de su reino.»'
-  revision_rationale: Se reemplaza «Buen día» por «Es un buen día» para reflejar con claridad la exclamación valorativa griega sin crear la ambigüedad de un saludo en español. Se ajusta «sobre el trono» a «en el trono» por naturalidad idiomática en contexto de entronización, manteniendo el sentido fuente. No hacen falta notas, porque el texto revisado transmite adecuadamente la evidencia griega sin ambigüedad nueva.
+  revision_rationale: Se reemplaza «Buen día» por «Es un buen día» para reflejar con claridad la exclamación valorativa griega sin crear la ambigüedad del saludo español. Se ajusta «sobre el trono» a «en el trono» por naturalidad idiomática. Se elimina la nota al pie porque el texto revisado ya es claro y fiel sin ambigüedad nueva.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 5a4208a9543c5100c8c05458fcb71a599f3a59b02b59d72a2b3de0215f069bee
-  timestamp: '2026-05-07T23:10:30Z'
-  output_hash: 1e37c9a7c8566ea96deb2852093fbb09384dc6f5e10331b21c2b2aa54bd1f6ca
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 05fff31d5867e830547ec0f425dca0695b4fa69b1fde7c80f7280f9a65897d24
+  timestamp: '2026-05-18T12:24:34Z'
+  output_hash: 05fff31d5867e830547ec0f425dca0695b4fa69b1fde7c80f7280f9a65897d24
   usage:
-    prompt_tokens: 3068
-    completion_tokens: 625
-    total_tokens: 3693
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.017045
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

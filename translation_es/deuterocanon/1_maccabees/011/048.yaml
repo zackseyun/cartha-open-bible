@@ -57,12 +57,8 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y prendieron fuego a la ciudad, y tomaron mucho botín[a] en aquel día, y salvaron al rey.
+  text: Y prendieron fuego a la ciudad, y tomaron mucho botín ese día, y salvaron al rey.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: «Botín» traduce el griego σκῦλα, término militar para los despojos tomados al enemigo; no se trata de una alusión moralizante, sino del resultado de saqueo bélico.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐνεπύρισαν
   english_pob_choice: set ... on fire
@@ -136,35 +132,42 @@ ai_draft:
     total_tokens: 3035
     reasoning_tokens: 0
     estimated_cost_usd: 0.005366
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y prendieron fuego a la ciudad, y tomaron mucho botín[a] en aquel día, y salvaron al rey.
+  to: Y prendieron fuego a la ciudad, y tomaron mucho botín ese día, y salvaron al rey.
+  rationale: Se mantiene íntegramente el sentido del griego. Se sustituye «en aquel día» por «ese día» para mayor naturalidad idiomática. Se elimina la nota léxica sobre «botín» por innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:25:42Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja fielmente el griego: ἐνεπύρισαν = «prendieron fuego a», πόλιν = «la ciudad», ἐλάβοσαν σκῦλα πολλὰ = «tomaron mucho botín», ἐν ἐκείνῃ τῇ ἡμέρᾳ = referencia temporal al mismo día, y ἔσωσαν τὸν βασιλέα = «salvaron al rey». No hay problemas teológicos ni omisiones de sentido.'
-  spanish_quality_summary: El español es claro y natural en general, pero «en aquel día» suena algo calcado y menos idiomático que «ese día» o «aquel día». Además, la nota sobre «botín» no es necesaria para comprender el sentido y añade explicación interpretativa no exigida por una ambigüedad real del español. Conviene simplificar.
-  glossary_alignment: Sin conflictos con la terminología base del proyecto. «Botín» para σκῦλα y «salvaron» para ἔσωσαν están bien elegidos; no aparecen términos del glosario sensible como Yahvé, Mesías o esclavo.
+  source_alignment_summary: 'El borrador refleja fielmente el griego: ἐνεπύρισαν = «prendieron fuego a», ἐλάβοσαν σκῦλα πολλὰ = «tomaron mucho botín», referencia temporal al mismo día, y ἔσωσαν τὸν βασιλέα = «salvaron al rey». No hay problemas de contenido.'
+  spanish_quality_summary: El español es claro y natural. «En aquel día» suena algo calcado; «ese día» es más idiomático. La nota sobre «botín» no es necesaria y añade carga expositiva innecesaria.
+  glossary_alignment: Sin conflictos con la terminología del proyecto. «Botín» para σκῦλα y «salvaron» para ἔσωσαν están bien elegidos.
   issues:
   - severity: low
-    issue: La frase temporal «en aquel día» es menos natural que «ese día» en español actual.
-    rationale: El griego expresa una referencia temporal sencilla; en español moderno y eclesial legible, «ese día» transmite el mismo sentido con mayor fluidez sin pérdida de deixis narrativa.
+    issue: «en aquel día» es menos natural que «ese día» en español actual
+    rationale: «Ese día» transmite el mismo sentido deíctico con mayor fluidez en español moderno.
   - severity: low
-    issue: La nota al pie sobre «botín» es prescindible.
-    rationale: No hay ambigüedad relevante en español ni una alternativa preservada por el inglés POB que exija nota. La explicación sobre «saqueo bélico» añade carga expositiva innecesaria para este versículo.
+    issue: La nota al pie sobre «botín» es prescindible
+    rationale: No hay ambigüedad relevante ni alternativa necesaria; añade carga expositiva sin beneficio.
   revised_spanish_text: Y prendieron fuego a la ciudad, y tomaron mucho botín ese día, y salvaron al rey.
-  revision_rationale: Se mantiene íntegramente el sentido del griego y del POB inglés, pero se mejora la naturalidad del español sustituyendo «en aquel día» por «ese día» y eliminando una nota léxica innecesaria.
+  revision_rationale: Se mantiene íntegramente el sentido del griego. Se sustituye «en aquel día» por «ese día» para mayor naturalidad idiomática. Se elimina la nota léxica sobre «botín» por innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: f0849e7669ff77e2f47d3bde465f22b4a356d07d8183f483a16fc9f2d87a667b
-  timestamp: '2026-05-07T22:45:22Z'
-  output_hash: cae886055a437a1b7a36fd3bde965d3ae4fe1bf1dec365820821c0f3e8356ff7
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: d1a5d3299edfcfb05dabe878678f69ebbe1bad00fb083b0cab0c101f1bb0ea36
+  timestamp: '2026-05-18T12:25:42Z'
+  output_hash: d1a5d3299edfcfb05dabe878678f69ebbe1bad00fb083b0cab0c101f1bb0ea36
   usage:
-    prompt_tokens: 2726
-    completion_tokens: 516
-    total_tokens: 3242
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.014555
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

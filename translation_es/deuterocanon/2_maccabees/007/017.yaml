@@ -56,12 +56,8 @@ base_translation:
     changes_summary: Replaced 'keep waiting' with 'endure' for καρτέρει, which means to be steadfast/endure rather than wait. Rendered μεγαλεῖον αὐτοῦ κράτος more directly as 'his great power.' Added 'But' to reflect δέ at the start of the second clause.
 translation:
   language: es
-  text: Pero no pienses que nuestra nación ha sido abandonada por Dios. Pero tú, resiste[a] y mira su gran poder, cómo te torturará a ti y a tu descendencia.
+  text: Pero no pienses que nuestra nación ha sido abandonada por Dios. Pero tú, soporta y mira su gran poder, cómo te torturará a ti y a tu descendencia.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «persevera»; καρτέρει puede expresar firmeza, resistencia o perseverancia. Aquí se eligió «resiste» por el tono retórico del contexto.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: μὴ δόκει
   english_pob_choice: do not think
@@ -160,35 +156,42 @@ ai_draft:
     total_tokens: 4377
     reasoning_tokens: 0
     estimated_cost_usd: 0.008315
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Pero no pienses que nuestra nación ha sido abandonada por Dios. Pero tú, resiste[a] y mira su gran poder, cómo te torturará a ti y a tu descendencia.
+  to: Pero no pienses que nuestra nación ha sido abandonada por Dios. Pero tú, soporta y mira su gran poder, cómo te torturará a ti y a tu descendencia.
+  rationale: Se reemplaza «resiste» por «soporta» para reflejar mejor καρτέρει y la revisión inglesa final «endure», evitando la connotación de oposición activa. Se elimina la nota porque ya no preserva una alternativa necesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:28:58Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el griego y la auditoría inglesa en casi todo: «no pienses», «nuestra nación», «abandonada por Dios», «mira su gran poder» y «te… a tu descendencia» preservan el sentido general. Sin embargo, «resiste» para καρτέρει desplaza el matiz de soportar/aguantar/endurecerse hacia oponerse o resistir activamente, lo que no refleja tan bien la revisión inglesa final («endure») ni el valor básico del verbo en este contexto de desafío.'
-  spanish_quality_summary: El español es claro y natural, pero «Pero tú, resiste» suena algo tosco y ligeramente ambiguo en español bíblico moderno, porque puede sugerir resistencia contra alguien. «Pero tú, soporta» o «Pero tú, aguanta» expresarían mejor el reto irónico; «soporta» mantiene un registro más digno. La nota actual también deja de ser necesaria si se adopta una opción más fiel al núcleo semántico.
-  glossary_alignment: 'No hay conflictos con la terminología del proyecto: «Dios» es correcto; no aparecen términos como Yahvé, Mesías, Espíritu, etc. La elección «descendencia» para σπέρμα es adecuada en español. La tensión sobre el sujeto de βασανιεῖ puede mantenerse sin nota adicional, como en el borrador.'
+  source_alignment_summary: 'El borrador sigue bien el griego en casi todo: «no pienses», «nuestra nación», «abandonada por Dios», «mira su gran poder», «te torturará a ti y a tu descendencia». La corrección principal es καρτέρει: «resiste» implica oposición activa en español, mientras que el griego y la revisión inglesa («endure») apuntan a soportar/aguantar.'
+  spanish_quality_summary: El español es claro. «Soporta» para καρτέρει refleja mejor el reto irónico del contexto sin sugerir resistencia activa. La nota léxica ya no es necesaria con la nueva opción.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. «Dios» es correcto; «descendencia» para σπέρμα es adecuado en español bíblico.
   issues:
   - severity: medium
-    issue: «resiste» para καρτέρει
-    rationale: Aunque posible por contexto retórico, en español «resistir» suele implicar oponerse/defenderse. El griego aquí encaja mejor con «soporta», «aguanta» o «mantente firme», y la auditoría inglesa final optó por «endure» en vez de «keep waiting».
+    issue: «resiste» para καρτέρει implica oposición activa en español
+    rationale: El griego y la revisión inglesa («endure») apuntan a aguantar/soportar, no a oponerse. «Soporta» preserva el reto irónico sin esa connotación.
   - severity: low
-    issue: Nota léxica innecesaria tras la corrección
-    rationale: Si se corrige a una opción más fiel como «soporta», la nota alternativa sobre «persevera» ya no aporta una ambigüedad textual o teológica significativa que deba conservarse.
+    issue: La nota léxica ya no es necesaria
+    rationale: Con «soporta» como opción principal, la nota sobre «persevera» no preserva ambigüedad textual significativa.
   revised_spanish_text: Pero no pienses que nuestra nación ha sido abandonada por Dios. Pero tú, soporta y mira su gran poder, cómo te torturará a ti y a tu descendencia.
-  revision_rationale: Se reemplaza «resiste» por «soporta» para reflejar mejor καρτέρει y la decisión inglesa final «endure», evitando en español la connotación de oposición activa. Se elimina la nota porque ya no preserva una alternativa necesaria para el lector.
+  revision_rationale: Se reemplaza «resiste» por «soporta» para reflejar mejor καρτέρει y la revisión inglesa final «endure», evitando la connotación de oposición activa. Se elimina la nota porque ya no preserva una alternativa necesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 9c7d8364a6887a74b7b494e659314927beeecd77ad49440ef44a6e9b568deb02
-  timestamp: '2026-05-07T22:39:45Z'
-  output_hash: 5d8ae1d4143434d25ea93ad9013a2112c4e1c62454879cb420caba023b408990
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9d52dc927f6faa356ccb0c29ca54a1e2a208e3f32b988880a9d276c99be4c419
+  timestamp: '2026-05-18T12:28:58Z'
+  output_hash: 9d52dc927f6faa356ccb0c29ca54a1e2a208e3f32b988880a9d276c99be4c419
   usage:
-    prompt_tokens: 3997
-    completion_tokens: 592
-    total_tokens: 4589
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.018873
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

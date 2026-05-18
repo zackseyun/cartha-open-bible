@@ -55,12 +55,8 @@ base_translation:
     changes_summary: Changed 'handling' to 'administration' for a more formal rendering of πρᾶξις, and removed 'men' since it is not explicit in the Greek.
 translation:
   language: es
-  text: Pero cuando Sostrato[a], el comandante de la ciudadela, presionaba la reclamación —porque la administración de los ingresos le correspondía—, por esta razón los dos fueron convocados por el rey.
+  text: Pero cuando Sostrato, el comandante de la ciudadela, insistía en la reclamación —porque la administración de los ingresos le correspondía—, por esta razón los dos fueron convocados por el rey.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'O: «Sostratus». La forma española «Sostrato» adapta el nombre propio al uso hispano; la forma griega transliterada conserva más de cerca el original.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ποιουμένου δὲ τὴν ἀπαίτησιν
   english_pob_choice: pressed the claim
@@ -155,35 +151,42 @@ ai_draft:
     total_tokens: 4129
     reasoning_tokens: 0
     estimated_cost_usd: 0.007387
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Pero cuando Sostrato[a], el comandante de la ciudadela, presionaba la reclamación —porque la administración de los ingresos le correspondía—, por esta razón los dos fueron convocados por el rey.
+  to: Pero cuando Sostrato, el comandante de la ciudadela, insistía en la reclamación —porque la administración de los ingresos le correspondía—, por esta razón los dos fueron convocados por el rey.
+  rationale: Se reemplaza «presionaba la reclamación» por «insistía en la reclamación» para un español natural que preserve la acción de ποιουμένου τὴν ἀπαίτησιν. Se elimina la nota sobre el nombre propio por innecesaria.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:28:12Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien la estructura del griego: genitivo absoluto inicial, identificación de Sostrato como ἔπαρχος de la ἀκρόπολις, explicación causal sobre la competencia financiera, y conclusión con la convocatoria real de ambos. Sin embargo, «presionaba la reclamación» no reproduce bien en español idiomático el sentido de ποιουμένου ... τὴν ἀπαίτησιν; suena calcado y poco natural. También la nota sobre el nombre introduce una alternativa innecesaria frente al rastro inglés, que usa la transliteración Sostratus pero no exige nota en español.'
-  spanish_quality_summary: La redacción general es clara y digna, pero hay un calco poco natural en «presionaba la reclamación». «Insistía en la reclamación» o «hacía valer la reclamación» suena mejor en español y conserva el sentido de insistencia/exigencia administrativa. La puntuación puede mantenerse con rayas parentéticas. El resto del verso es legible y adecuado.
-  glossary_alignment: No hay términos teológicos sensibles en juego. «Ciudadela» para ἀκρόπολις y «comandante» para ἔπαρχος son aceptables. «Administración de los ingresos» sigue razonablemente la decisión inglesa, aunque «rentas» también sería posible. El nombre propio puede quedar como «Sostrato» sin nota, ya que es una adaptación española normal y no afecta el sentido.
+  source_alignment_summary: 'El borrador refleja bien la estructura del griego: genitivo absoluto inicial, identificación de Sostrato como ἔπαρχος de la ἀκρόπολις, explicación causal sobre la competencia financiera, y conclusión con la convocatoria real. El ajuste principal es en «presionaba la reclamación», que suena calcado del inglés y poco natural; y la nota sobre el nombre propio es innecesaria.'
+  spanish_quality_summary: La redacción general es clara y digna. «Insistía en la reclamación» expresa mejor la acción continuada de ποιουμένου τὴν ἀπαίτησιν en español idiomático.
+  glossary_alignment: No hay términos teológicos sensibles. «Ciudadela» y «comandante» son adecuados. «Ingresos» para διαφορά es aceptable.
   issues:
   - severity: medium
-    issue: Calco poco natural en «presionaba la reclamación»
-    rationale: Aunque intenta seguir 'pressed the claim', en español esa combinación suena forzada y no idiomática. El griego expresa hacer/impulsar una demanda o reclamación; «insistía en la reclamación» comunica mejor la acción en curso sin perder precisión.
+    issue: «presionaba la reclamación» es un calco poco natural
+    rationale: En español idiomático «insistía en la reclamación» comunica mejor la acción en curso de exigencia administrativa.
   - severity: low
-    issue: Nota al pie innecesaria sobre «Sostrato/Sostratus»
-    rationale: La nota no preserva una ambigüedad relevante del original ni responde a una dificultad exegética. Añade ruido editorial sin beneficio claro para el lector.
+    issue: La nota sobre «Sostrato/Sostratus» es innecesaria
+    rationale: No resuelve ambigüedad exegética relevante ni preserva una lectura importante del original.
   revised_spanish_text: Pero cuando Sostrato, el comandante de la ciudadela, insistía en la reclamación —porque la administración de los ingresos le correspondía—, por esta razón los dos fueron convocados por el rey.
-  revision_rationale: Se reemplaza «presionaba la reclamación» por «insistía en la reclamación» para lograr un español natural que conserve el sentido de exigencia o prosecución de la demanda en el griego. Se elimina la nota sobre el nombre propio por innecesaria en esta unidad.
+  revision_rationale: Se reemplaza «presionaba la reclamación» por «insistía en la reclamación» para un español natural que preserve la acción de ποιουμένου τὴν ἀπαίτησιν. Se elimina la nota sobre el nombre propio por innecesaria.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 3a50d5ff9bfa0cc131a864e05e6c46283c9319e4ee8914afc459a45186223bf6
-  timestamp: '2026-05-07T22:53:01Z'
-  output_hash: d931490ec2e23e2439861ab1fc99759221ff91a84f2e941390e1ef06f97ba9ef
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 8f5489f55d22d59c6adc7dd4e0424866246a5aeb3031be8bd5ae589f9e4ed07f
+  timestamp: '2026-05-18T12:28:12Z'
+  output_hash: 8f5489f55d22d59c6adc7dd4e0424866246a5aeb3031be8bd5ae589f9e4ed07f
   usage:
-    prompt_tokens: 3733
-    completion_tokens: 613
-    total_tokens: 4346
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.018528
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

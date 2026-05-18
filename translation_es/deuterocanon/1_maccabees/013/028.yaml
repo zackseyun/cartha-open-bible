@@ -41,11 +41,11 @@ base_translation:
     changes_summary: Changed 'one opposite another' to 'one opposite the other' for more natural English while preserving the Greek sense.
 translation:
   language: es
-  text: Y levantó siete pirámides[a], una frente a la otra, para su padre y su madre y sus cuatro hermanos.
+  text: Y erigió siete pirámides[a], una frente a la otra, para su padre y su madre y sus cuatro hermanos.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «una frente a la otra». La frase griega describe los monumentos dispuestos en posición opuesta.'
+    text: 'O: «una opuesta a la otra». La frase griega describe los monumentos dispuestos en posición enfrentada.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔστησεν
@@ -113,37 +113,43 @@ ai_draft:
     total_tokens: 3062
     reasoning_tokens: 0
     estimated_cost_usd: 0.005229
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y levantó siete pirámides[a], una frente a la otra, para su padre y su madre y sus cuatro hermanos.
+  to: Y erigió siete pirámides[a], una frente a la otra, para su padre y su madre y sus cuatro hermanos.
+  rationale: Se cambia «levantó» por «erigió» para mayor formalidad en el contexto de monumentos funerarios, y se corrige la nota al pie para que ofrezca una alternativa léxica genuina («opuesta») en vez de repetir la expresión del texto principal.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:26:14Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español refleja bien el sentido del griego: ἔστησεν como acción de erigir/levantar, ἑπτὰ πυραμίδας como «siete pirámides», y el dativo final como dedicación conmemorativa «para su padre y su madre y sus cuatro hermanos». La frase espacial μίαν κατέναντι τῆς μιᾶς también está bien captada con «una frente a la otra».'
-  spanish_quality_summary: El texto es claro y natural, pero la nota al pie no preserva una alternativa real, porque repite exactamente la misma expresión ya usada en el texto principal. Además, la formulación de la nota incluye comillas innecesarias al inicio. Conviene ajustar la nota para que ofrezca una variante genuina y mejor estilo editorial.
-  glossary_alignment: No hay términos teológicos sensibles en este versículo. «Pirámides» concuerda con la decisión léxica documentada; «levantó» es aceptable en español; «hermanos» preserva correctamente el masculino específico de ἀδελφοῖς en contexto.
+  source_alignment_summary: 'El borrador refleja bien el griego: ἔστησεν = «levantó», ἑπτὰ πυραμίδας = «siete pirámides», μίαν κατέναντι τῆς μιᾶς = «una frente a la otra», y la dedicatoria a padre, madre y hermanos. La única corrección necesaria es la nota al pie, que repite exactamente la misma expresión del texto principal en vez de ofrecer una alternativa léxica real.'
+  spanish_quality_summary: 'El texto es claro, natural y digno. «Erigió» (en lugar de «levantó») aporta un tono levemente más formal apropiado para monumentos funerarios, y se corrige la nota para que ofrezca una alternativa genuina: «una opuesta a la otra».'
+  glossary_alignment: No hay términos teológicos sensibles. «Pirámides» y «hermanos» están bien. La nota corregida preserva la alternativa espacial del inglés POB.
   issues:
   - severity: medium
-    issue: La nota al pie repite la misma lectura del texto principal en vez de ofrecer una alternativa léxica real.
-    rationale: 'El texto principal ya dice «una frente a la otra», por lo que una nota que diga «O: “una frente a la otra”» no añade información y no preserva el patrón del inglés POB, que sí ofrece una alternativa distinta.'
-  - severity: low
-    issue: Puntuación y estilo editorial mejorables en la nota al pie.
-    rationale: La nota comienza con una comilla simple innecesaria y puede formularse con mayor limpieza en español bíblico editorial.
-  revised_spanish_text: Y levantó siete pirámides[a], una frente a la otra, para su padre y su madre y sus cuatro hermanos.
+    issue: La nota al pie repite la misma lectura del texto principal
+    rationale: 'La nota dice «O: «una frente a la otra»» que es exactamente el texto principal. Debe ofrecer una alternativa genuina como «una opuesta a la otra» en línea con el inglés POB.'
+  revised_spanish_text: Y erigió siete pirámides[a], una frente a la otra, para su padre y su madre y sus cuatro hermanos.
   revised_footnotes:
   - marker: a
-    text: 'O: «una opuesta a la otra». La frase griega describe los monumentos dispuestos en posición opuesta.'
+    text: 'O: «una opuesta a la otra». La frase griega describe los monumentos dispuestos en posición enfrentada.'
     reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal porque es fiel y natural. Solo se corrige la nota al pie para que aporte una alternativa léxica genuina y esté mejor redactada en español.
+  revision_rationale: Se cambia «levantó» por «erigió» para mayor formalidad en el contexto de monumentos funerarios, y se corrige la nota al pie para que ofrezca una alternativa léxica genuina («opuesta») en vez de repetir la expresión del texto principal.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 58e3ae7098749bb68f396ae863b7dd1acf1d192f76689799210fd7bc6e41634d
-  timestamp: '2026-05-07T22:52:28Z'
-  output_hash: c82a86d5fd6238671efccbae79fffea0491d293b71625747b8ff05063ab0f75a
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 530f74c36539f8f7bd8cddc086502a38492425f6b66f99ba11ea22c37a508372
+  timestamp: '2026-05-18T12:26:14Z'
+  output_hash: 530f74c36539f8f7bd8cddc086502a38492425f6b66f99ba11ea22c37a508372
   usage:
-    prompt_tokens: 2738
-    completion_tokens: 529
-    total_tokens: 3267
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.01478
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

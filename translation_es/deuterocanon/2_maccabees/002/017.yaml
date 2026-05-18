@@ -54,11 +54,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Acepta el sacrificio[a] por todo tu pueblo Israel[b], y preserva tu porción y santifícala.
+  text: Acepta el sacrificio[a] por todo tu pueblo Israel[b], y preserva tu porción y conságrala.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «Recibe la ofrenda».'
+    text: 'O: «Recibe la ofrenda por todo tu pueblo Israel».'
     reason: lexical_alternative
   - marker: b
     text: «Tu porción» probablemente se refiere a Israel como el pueblo que pertenece a Dios; alternativamente, «tu herencia».
@@ -147,17 +147,23 @@ ai_draft:
     total_tokens: 3503
     reasoning_tokens: 0
     estimated_cost_usd: 0.006433
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Acepta el sacrificio[a] por todo tu pueblo Israel[b], y preserva tu porción y santifícala.
+  to: Acepta el sacrificio[a] por todo tu pueblo Israel[b], y preserva tu porción y conságrala.
+  rationale: Se cambia «santifícala» por «conságrala» (también válido para καθαγίασον) y se corrige la nota [a] para que preserve la alternativa completa documentada en la auditoría inglesa, incluyendo el complemento «por todo tu pueblo Israel».
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:27:21Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español sigue de cerca el griego y el rastro auditado en inglés: πρόσδεξαι = «Acepta», θυσίαν = «el sacrificio», ὑπὲρ παντὸς τοῦ λαοῦ σου Ἰσραήλ = «por todo tu pueblo Israel», διαφύλαξον = «preserva», τὴν μερίδα σου = «tu porción», καθαγίασον = «santifícala». El sentido central está bien conservado. La única desalineación material está en la nota [a], que omite «por todo tu pueblo Israel» presente en la alternativa inglesa completa.'
-  spanish_quality_summary: El español es claro, digno y legible. «Acepta el sacrificio ... y preserva tu porción y santifícala» suena natural en registro bíblico moderno. «Por todo tu pueblo Israel» es comprensible, aunque «por todo tu pueblo, Israel» también sería posible; no es necesario cambiarlo. La reparación necesaria es solo en la nota [a] para reflejar fielmente la alternativa completa.
-  glossary_alignment: No hay conflicto con la terminología por defecto del proyecto. No aparecen términos sensibles como Yahvé/Mesías/esclavo. «Porción» preserva correctamente la decisión teológica auditada de no resolver la metáfora como «herencia» en el texto principal.
+  source_alignment_summary: 'El borrador sigue de cerca el griego y la auditoría inglesa: πρόσδεξαι = «Acepta», θυσίαν = «el sacrificio», ὑπὲρ παντὸς τοῦ λαοῦ σου Ἰσραήλ = «por todo tu pueblo Israel», διαφύλαξον = «preserva», τὴν μερίδα σου = «tu porción», καθαγίασον = «santifícala». El sentido central está bien conservado. La única corrección necesaria es la nota [a], que omite el complemento «por todo tu pueblo Israel» presente en la alternativa inglesa.'
+  spanish_quality_summary: El español es claro, digno y natural en registro bíblico. La corrección es solo en la nota [a] para reflejar fielmente la alternativa completa documentada en la auditoría inglesa.
+  glossary_alignment: No hay conflicto con la terminología del proyecto. «Porción» preserva correctamente la decisión teológica de no resolver la metáfora como «herencia».
   issues:
   - severity: medium
-    issue: La nota [a] está incompleta frente al audit trail inglés.
-    rationale: 'La nota inglesa dice: «Or ''Receive the offering on behalf of all your people Israel.''» La española reduce esto a «O: “Recibe la ofrenda”», perdiendo el complemento ὑπὲρ παντὸς τοῦ λαοῦ σου Ἰσραήλ y por tanto una alternativa significativa de sentido.'
-  revised_spanish_text: Acepta el sacrificio[a] por todo tu pueblo Israel[b], y preserva tu porción y santifícala.
+    issue: La nota [a] está incompleta frente a la auditoría inglesa
+    rationale: 'La nota inglesa dice «Or Receive the offering on behalf of all your people Israel». La española reduce esto a «O: «Recibe la ofrenda»», perdiendo el complemento ὑπὲρ παντὸς τοῦ λαοῦ σου Ἰσραήλ.'
+  revised_spanish_text: Acepta el sacrificio[a] por todo tu pueblo Israel[b], y preserva tu porción y conságrala.
   revised_footnotes:
   - marker: a
     text: 'O: «Recibe la ofrenda por todo tu pueblo Israel».'
@@ -165,19 +171,22 @@ review_pass:
   - marker: b
     text: «Tu porción» probablemente se refiere a Israel como el pueblo que pertenece a Dios; alternativamente, «tu herencia».
     reason: alternative_reading
-  revision_rationale: Se mantiene intacto el texto principal porque es fiel al griego y suena bien en español. Se corrige únicamente la nota [a] para que preserve la alternativa completa documentada en inglés, incluyendo el complemento «por todo tu pueblo Israel».
+  revision_rationale: Se cambia «santifícala» por «conságrala» (también válido para καθαγίασον) y se corrige la nota [a] para que preserve la alternativa completa documentada en la auditoría inglesa, incluyendo el complemento «por todo tu pueblo Israel».
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 4cc677651ad55a88aa78465c0218f4d66cbe5721972646afe1434b160948e361
-  timestamp: '2026-05-07T22:54:10Z'
-  output_hash: 3b2c590686fbcb6a1b604ccb6df4be07c39cb63c7c697b82469ec1bbedfd84b7
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: a04ecfe24504a4046eb554949a1aa72e613d4e350f42bcb1be6b1353c3b16a00
+  timestamp: '2026-05-18T12:27:21Z'
+  output_hash: a04ecfe24504a4046eb554949a1aa72e613d4e350f42bcb1be6b1353c3b16a00
   usage:
-    prompt_tokens: 3134
-    completion_tokens: 600
-    total_tokens: 3734
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.016835
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

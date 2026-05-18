@@ -47,11 +47,11 @@ base_translation:
     changes_summary: Changed 'encounter this book' to 'read this book' for a more natural and accurate rendering of ἐντυγχάνοντας τῇδε τῇ βίβλῳ. Simplified 'are meant not for' to 'are not for' to more directly reflect the Greek infinitive construction.
 translation:
   language: es
-  text: Por tanto, ruego a los que leen este libro que no se desanimen a causa de estas calamidades[a], sino que consideren que estos castigos no son para destrucción[c][b], sino para la disciplina de nuestro pueblo.
+  text: Por eso, ruego a los que leen este libro que no se desanimen a causa de estas calamidades[a], sino que consideren que estos castigos no son para destrucción[c][b], sino para la disciplina de nuestro pueblo.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: O «los que se topan con este libro». El griego dice literalmente «los que encuentran/encuentran por casualidad este libro».
+    text: O «los que se topan con este libro». La expresión griega literalmente habla de quienes «encuentran» este libro.
     reason: lexical_alternative
   - marker: b
     text: O «no pierdan el ánimo».
@@ -176,17 +176,23 @@ ai_draft:
     total_tokens: 4849
     reasoning_tokens: 0
     estimated_cost_usd: 0.009468
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Por tanto, ruego a los que leen este libro que no se desanimen a causa de estas calamidades[a], sino que consideren que estos castigos no son para destrucción[c][b], sino para la disciplina de nuestro pueblo.
+  to: Por eso, ruego a los que leen este libro que no se desanimen a causa de estas calamidades[a], sino que consideren que estos castigos no son para destrucción[c][b], sino para la disciplina de nuestro pueblo.
+  rationale: Se cambia «Por tanto» a «Por eso» (equivalente, más coloquial y natural en español moderno) y se corrige la nota [a] para eliminar la duplicación defectuosa, simplificándola a una alternativa clara.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:28:45Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien el griego y el rastro de auditoría inglés: Παρακαλῶ = «ruego», ἐντυγχάνοντας τῇδε τῇ βίβλῳ = «los que leen este libro», μὴ συντελεσθαι = «no se desanimen», συμφοραί = «calamidades», τιμωρίαι = «castigos», y el contraste teleológico μὴ πρὸς ὄλεθρον / ἀλλὰ πρὸς παιδείαν queda preservado. La única corrección necesaria es en la nota a, donde el texto español actual duplica y sobreexplica el literal griego de manera poco natural.'
-  spanish_quality_summary: El español es claro, digno y bien legible. La frase principal suena natural en español eclesial moderno. Sin embargo, la nota a contiene una redacción defectuosa («encuentran/encuentran por casualidad») y conviene simplificarla para precisión y mejor estilo. El resto está bien puntuado y es idiomático.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. «Disciplina» refleja bien παιδεία; «pueblo» refleja bien γένος en este contexto; «castigos» es una opción válida para τιμωρίας. No aparecen términos sensibles del glosario principal como Yahvé, Mesías, Espíritu, etc.
+  source_alignment_summary: 'El borrador sigue bien el griego y la auditoría inglesa: Παρακαλῶ = «ruego», ἐντυγχάνοντας = «los que leen», μὴ συντελεσθαι = «no se desanimen», συμφοραί = «calamidades», τιμωρίαι = «castigos», y el contraste teleológico preservado. La única corrección es la nota [a], que contiene duplicación defectuosa («encuentran/encuentran por casualidad»).'
+  spanish_quality_summary: El español es claro y natural. «Por eso» y «Por tanto» son equivalentes; se mantiene el resto del texto. Se corrige solo la nota [a] para eliminar la duplicación.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. «Disciplina» refleja bien παιδεία; «pueblo» refleja bien γένος.
   issues:
   - severity: medium
-    issue: Nota al pie a mal redactada y algo inexacta
-    rationale: La nota dice «los que encuentran/encuentran por casualidad este libro», con duplicación evidente y una explicación demasiado torpe. El inglés auditado solo preserva la alternativa «encounter this book»; en español basta «se topan con este libro» o «encuentran este libro».
-  revised_spanish_text: Por tanto, ruego a los que leen este libro que no se desanimen a causa de estas calamidades[a], sino que consideren que estos castigos no son para destrucción[c][b], sino para la disciplina de nuestro pueblo.
+    issue: La nota [a] contiene duplicación defectuosa
+    rationale: La nota dice «encuentran/encuentran por casualidad» con duplicación evidente. Debe simplificarse a «los que se topan con este libro».
+  revised_spanish_text: Por eso, ruego a los que leen este libro que no se desanimen a causa de estas calamidades[a], sino que consideren que estos castigos no son para destrucción[c][b], sino para la disciplina de nuestro pueblo.
   revised_footnotes:
   - marker: a
     text: O «los que se topan con este libro». La expresión griega literalmente habla de quienes «encuentran» este libro.
@@ -197,19 +203,22 @@ review_pass:
   - marker: c
     text: «Disciplina» también puede entenderse como «instrucción» o «corrección»; el griego incluye un sentido de corrección formativa.
     reason: lexical_alternative
-  revision_rationale: Se mantiene el texto principal porque es fiel al griego, natural en español y alineado con el audit trail inglés. Solo se corrige la nota a para eliminar la duplicación, mejorar la precisión léxica y conservar la alternativa documentada sin sobrecargarla.
+  revision_rationale: Se cambia «Por tanto» a «Por eso» (equivalente, más coloquial y natural en español moderno) y se corrige la nota [a] para eliminar la duplicación defectuosa, simplificándola a una alternativa clara.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 23cd1109ce003145c2bfc02a176e37a6822f5a00b40df89d1ad8dddc8ceac184
-  timestamp: '2026-05-07T22:42:25Z'
-  output_hash: 50bec069a9fe599778c84d5e12385ffaa20f4715e07aec8e85a654efd54ec29d
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 204107f8b22e1be55fd95ed66d0ff7c85db720fd3254a12fe705c413a4f001f1
+  timestamp: '2026-05-18T12:28:45Z'
+  output_hash: 204107f8b22e1be55fd95ed66d0ff7c85db720fd3254a12fe705c413a4f001f1
   usage:
-    prompt_tokens: 4477
-    completion_tokens: 665
-    total_tokens: 5142
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.021167
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

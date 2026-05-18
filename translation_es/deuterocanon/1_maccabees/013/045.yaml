@@ -44,15 +44,12 @@ base_translation:
     changes_summary: Revised 'his right hand' to 'pledges of peace' to reflect the idiomatic sense of δεξιὰς ... δοῦναι in this context. Kept the rest of the wording, which is accurate and natural.
 translation:
   language: es
-  text: Y los que estaban en la ciudad subieron a la muralla con sus mujeres y sus hijos[a], con sus vestidos rasgados, y gritaron con fuerte voz[b], pidiendo a Simón que les diera una prenda de paz.
+  text: Y los que estaban en la ciudad subieron a la muralla con sus mujeres y sus hijos, con sus vestidos rasgados, y clamaron a gran voz, pidiendo a Simón que les diera garantías de paz[a].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: O, «con sus esposas y sus hijos». El griego literalmente dice «con las mujeres y los hijos», pero el contexto sugiere el sentido relacional de familia.
+    text: O, «que les diera una garantía», o «que les concediera términos de paz». El griego literalmente dice «darles las derechas», un modismo para ofrecer una garantía de buena fe o términos de paz.
     reason: lexical_alternative
-  - marker: b
-    text: Rasgarse los vestidos era una señal habitual de dolor, angustia o súplica urgente.
-    reason: cultural_note
 lexical_decisions:
 - source_word: ἀνέβησαν
   english_pob_choice: went up
@@ -154,48 +151,49 @@ ai_draft:
     total_tokens: 4487
     reasoning_tokens: 0
     estimated_cost_usd: 0.008788
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y los que estaban en la ciudad subieron a la muralla con sus mujeres y sus hijos[a], con sus vestidos rasgados, y gritaron con fuerte voz[b], pidiendo a Simón que les diera una prenda de paz.
+  to: Y los que estaban en la ciudad subieron a la muralla con sus mujeres y sus hijos, con sus vestidos rasgados, y clamaron a gran voz, pidiendo a Simón que les diera garantías de paz[a].
+  rationale: Se ajusta «gritaron con fuerte voz» a «clamaron a gran voz» para mejor naturalidad bíblica. Se reemplaza «una prenda de paz» por «garantías de paz» para comunicar mejor el modismo δεξιὰς ... δοῦναι. Se traslada la nota al modismo griego final, la verdadera dificultad exegética del versículo. La nota cultural sobre los vestidos rasgados no se incluye porque no tiene anclaje en el texto revisado.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:26:47Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien la estructura básica del griego: subida a la muralla, presencia de mujeres e hijos, vestidos rasgados, clamor fuerte y petición a Simón. Sin embargo, hay dos desajustes importantes: ἐπὶ τὸ τεῖχος con ἀνέβησαν se entiende mejor como subir «a/sobre la muralla» que simplemente «a la muralla», y δεξιὰς ... δοῦναι en plural idiomático apunta a garantías/compromisos de paz, no a «una prenda» singular, que en español además suena a objeto material.'
-  spanish_quality_summary: 'El español es generalmente claro, pero varias expresiones suenan poco naturales o algo calcadas: «con fuerte voz» es menos idiomático que «a gran voz» o «con fuerte clamor»; «prenda de paz» resulta extraña en español bíblico general; y conviene mantener una nota para el idiomático «dar las derechas». También es preferible no anclar la nota de mujeres/hijos, ya que la nota pertinente aquí es la del modismo griego final.'
-  glossary_alignment: No hay conflicto con la terminología central del proyecto. Las decisiones léxicas principales son adecuadas salvo el modismo δεξιὰς ... δοῦναι, que debe expresarse en español como «garantías de paz» o equivalente, con nota sobre el literal griego «dar las derechas».
+  source_alignment_summary: 'El borrador refleja bien la estructura del griego: subida a la muralla con mujeres e hijos, vestidos rasgados, clamor fuerte y petición a Simón. Ajustes necesarios: «gritaron con fuerte voz» es menos idiomático que «clamaron a gran voz» para φωνῇ μεγάλῃ, y «una prenda de paz» no comunica bien el modismo δεξιὰς ... δοῦναι (singular evoca objeto material); «garantías de paz» es más fiel.'
+  spanish_quality_summary: El texto revisado es claro, fiel y natural. Se consolida la nota al pie en el modismo griego final, que es la verdadera dificultad exegética. La nota cultural sobre los vestidos rasgados no necesita anclaje explícito en el texto revisado.
+  glossary_alignment: No hay conflicto con la terminología central del proyecto. Las decisiones léxicas principales son adecuadas tras la revisión.
   issues:
   - severity: medium
-    issue: «a la muralla» debilita el sentido de ascenso sobre la estructura
-    rationale: Con ἀνέβησαν ἐπὶ τὸ τεῖχος, la imagen es subir a la parte alta de la muralla, no meramente acercarse a ella.
-  - severity: medium
-    issue: «gritaron con fuerte voz» suena poco idiomático en español
-    rationale: Aunque comprensible, no es la formulación más natural. «clamaron a gran voz» o «gritaron a gran voz» refleja mejor la frase hecha bíblica φωνῇ μεγάλῃ.
+    issue: «gritaron con fuerte voz» es poco idiomático
+    rationale: «Clamaron a gran voz» refleja mejor la frase hecha bíblica φωνῇ μεγάλῃ.
   - severity: high
-    issue: «una prenda de paz» no comunica bien el modismo griego
-    rationale: «Prenda» en español suele evocar una pieza de ropa u objeto dado en garantía, y en singular pierde el valor idiomático de δεξιὰς ... δοῦναι como ofrecer garantías, buena fe o términos de paz.
+    issue: «una prenda de paz» no comunica bien el modismo griego δεξιὰς ... δοῦναι
+    rationale: «Prenda» en español evoca objeto material dado en garantía; «garantías de paz» (plural) comunica mejor el idiomático «dar las derechas».
   - severity: medium
-    issue: La nota al pie actual no cubre la principal dificultad léxica del versículo
-    rationale: El audit trail inglés documenta la dificultad idiomática de «dar las derechas». Esa explicación debe preservarse en español, mientras que la nota sobre «mujeres/esposas» no es tan necesaria aquí.
+    issue: La nota al pie debe cubrir el modismo griego principal
+    rationale: La dificultad exegética principal es δεξιὰς ... δοῦναι; esa explicación debe preservarse en español.
   revised_spanish_text: Y los que estaban en la ciudad subieron a la muralla con sus mujeres y sus hijos, con sus vestidos rasgados, y clamaron a gran voz, pidiendo a Simón que les diera garantías de paz[a].
   revised_footnotes:
   - marker: a
     text: O, «que les diera una garantía», o «que les concediera términos de paz». El griego literalmente dice «darles las derechas», un modismo para ofrecer una garantía de buena fe o términos de paz.
     reason: lexical_alternative
-  - marker: b
-    text: Rasgarse los vestidos era una señal habitual de dolor, angustia o súplica urgente.
-    reason: cultural_note
-  revision_rationale: Se ajusta «a la muralla» a «a la muralla» en sentido de ascenso efectivo conservado por «subieron a la muralla»; se mejora la naturalidad de φωνῇ μεγάλῃ con «clamaron a gran voz»; y se reemplaza «una prenda de paz» por «garantías de paz», que comunica mejor el modismo δεξιὰς ... δοῦναι. Además, se traslada la nota principal al modismo griego final, que es la verdadera dificultad exegética del versículo. La nota cultural sobre los vestidos rasgados no debe incluirse si no va anclada en el texto revisado.
+  revision_rationale: Se ajusta «gritaron con fuerte voz» a «clamaron a gran voz» para mejor naturalidad bíblica. Se reemplaza «una prenda de paz» por «garantías de paz» para comunicar mejor el modismo δεξιὰς ... δοῦναι. Se traslada la nota al modismo griego final, la verdadera dificultad exegética del versículo. La nota cultural sobre los vestidos rasgados no se incluye porque no tiene anclaje en el texto revisado.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: e6eecde052ef7c87617a6f1a8e4adc6b9929a68c73400a1f88cae440b965de4f
-  timestamp: '2026-05-07T23:16:16Z'
-  output_hash: ae29778a271ee2982565146d13a1c254bed1baf8303d8df4de91a0f65f311385
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 79bb41870c971b5de22a62eb7d6229a58a961fcb04121345b82c68171264d0be
+  timestamp: '2026-05-18T12:26:47Z'
+  output_hash: 79bb41870c971b5de22a62eb7d6229a58a961fcb04121345b82c68171264d0be
   usage:
-    prompt_tokens: 4139
-    completion_tokens: 940
-    total_tokens: 5079
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.024448
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [b] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

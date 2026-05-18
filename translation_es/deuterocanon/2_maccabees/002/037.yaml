@@ -53,14 +53,14 @@ base_translation:
     changes_summary: Revised the final clause to more closely reflect the Greek sequence ('the fire came down and consumed') and removed the relative phrasing 'that came down' for a more direct, formal rendering. Kept 'things of the sacrifice' though somewhat wooden, since it reflects the Greek expression.
 translation:
   language: es
-  text: Así como también Moisés oró al Señor[a], y descendió fuego del cielo y consumió las cosas del sacrificio; así también Salomón oró al Señor[b], y el fuego descendió y consumió los holocaustos.
+  text: Así como Moisés oró a Yahvé, y descendió fuego del cielo y consumió las cosas del sacrificio[a], así también Salomón oró a Yahvé, y el fuego descendió y consumió las ofrendas completamente quemadas[b].
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: El griego tiene una expresión más amplia, ‘las cosas del sacrificio’, que puede aludir a los materiales sacrificiales o a las ofrendas asociadas con el sacrificio.
+    text: 'El griego tiene una expresión más amplia: «las cosas del sacrificio», que puede aludir a los materiales sacrificiales o a las ofrendas asociadas con el sacrificio. También: el griego dice «al Señor» (Κύριον); en la POB española se usa «Yahvé» en el texto principal para el Dios de Israel.'
     reason: lexical_alternative
   - marker: b
-    text: O ‘ofrendas totalmente quemadas’. El término griego designa ofrendas consumidas por completo por el fuego.
+    text: O «holocaustos». El término griego (ὁλοκαυτώματα) designa ofrendas consumidas por completo por el fuego.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: προσηύξατο
@@ -193,48 +193,52 @@ ai_draft:
     total_tokens: 4926
     reasoning_tokens: 0
     estimated_cost_usd: 0.010115
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Así como también Moisés oró al Señor[a], y descendió fuego del cielo y consumió las cosas del sacrificio; así también Salomón oró al Señor[b], y el fuego descendió y consumió los holocaustos.
+  to: Así como Moisés oró a Yahvé, y descendió fuego del cielo y consumió las cosas del sacrificio[a], así también Salomón oró a Yahvé, y el fuego descendió y consumió las ofrendas completamente quemadas[b].
+  rationale: Se corrige la terminología divina a «Yahvé» según la política española del proyecto y se combina la nota explicativa con la de τὰ τῆς θυσίας. Se suaviza el arranque a «Así como». Se reemplaza «holocaustos» por «ofrendas completamente quemadas» con la alternativa técnica en nota [b].
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:27:58Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador sigue bien la estructura comparativa del griego: Moisés/Salomón, oración a Κύριον, descenso del fuego y consumo de las ofrendas. También conserva correctamente la amplitud de τὰ τῆς θυσίας mediante una nota. Sin embargo, hay dos desajustes importantes: en español principal se usó «Señor» en lugar de «Yahvé», contrario a la política española del proyecto para κύριος vinculado al Dios de Israel, y «holocaustos» suena problemático en español moderno eclesial general; una formulación como «ofrendas completamente quemadas» preserva mejor la especificidad cultual sin la carga moderna del término.'
-  spanish_quality_summary: El texto es generalmente claro y digno, pero «Así como también» al inicio suena algo forzado; «Así como» basta y mantiene el paralelismo. «Las cosas del sacrificio» es fiel aunque algo áspero, y la nota lo justifica bien. El punto y coma es aceptable, pero una coma da mejor continuidad al paralelismo. El mayor problema de legibilidad es «holocaustos», que hoy puede distraer o malentenderse.
-  glossary_alignment: Debe ajustarse «Κύριον» a «Yahvé» según la terminología española del proyecto, aun reconociendo que el griego tiene κύριος. También conviene evitar «holocaustos» como equivalente principal de ὁλοκαυτώματα y expresar la idea como «ofrendas completamente quemadas», preservando la explicación técnica en nota. «Oró», «consumió» y la nota sobre τὰ τῆς θυσίας están alineados con el audit trail.
+  source_alignment_summary: 'El borrador sigue bien la estructura comparativa del griego: Moisés/Salomón, oración a Κύριον, descenso del fuego y consumo de las ofrendas. La nota sobre τὰ τῆς θυσίας también está bien. Ajustes necesarios: la política española del proyecto usa «Yahvé» en el texto principal para el Dios de Israel (con nota explicando que el griego tiene κύριος); «holocaustos» puede resultar confuso en español moderno, y «Así como también» al inicio es algo rígido.'
+  spanish_quality_summary: El texto revisado es más claro y natural. «Así como» sin «también» inicial mejora el flujo. «Ofrendas completamente quemadas» preserva la especificidad cultual con mejor legibilidad moderna. Las notas explican las decisiones principales.
+  glossary_alignment: La política española del proyecto usa «Yahvé» en el texto principal para el Dios de Israel, documentando en nota que el griego conserva κύριος/Señor. «Oró», «consumió» y la nota sobre τὰ τῆς θυσίας están alineados con la auditoría.
   issues:
   - severity: high
     issue: Uso de «Señor» en vez de «Yahvé»
-    rationale: La guía española del proyecto establece como valor por defecto «Yahvé» para el nombre/título divino en el texto principal. Aunque el audit trail inglés mantenga «Lord» por seguir el griego κύριος, la revisión española debe aplicar la política terminológica del proyecto y explicar la excepción si no lo hiciera.
+    rationale: La política española del proyecto establece «Yahvé» como valor por defecto para el nombre/título divino en el texto principal; el griego κύριος se explica en nota.
   - severity: medium
-    issue: «Holocaustos» como texto principal para ὁλοκαυτώματα
-    rationale: Aunque es etimológicamente cercano, en español moderno puede resultar ambiguo o distraer por su fuerte asociación histórica contemporánea. «Ofrendas completamente quemadas» o similar comunica mejor la especificidad cultual para lectores amplios.
+    issue: «holocaustos» puede resultar ambiguo en español moderno
+    rationale: «Ofrendas completamente quemadas» preserva mejor la especificidad cultual para lectores amplios.
   - severity: low
-    issue: Inicio «Así como también» algo rígido
-    rationale: El griego καθὼς καὶ se puede reflejar naturalmente como «Así como»; el segundo miembro ya lleva «así también», por lo que mantener «también» en ambos lados suena pesado en español.
-  revised_spanish_text: Así como Moisés oró a Yahvé[a], y descendió fuego del cielo y consumió las cosas del sacrificio, así también Salomón oró a Yahvé[b], y el fuego descendió y consumió las ofrendas completamente quemadas.
+    issue: «Así como también» al inicio suena algo rígido
+    rationale: «Así como» basta para reflejar καθὼς καὶ con mayor fluidez.
+  revised_spanish_text: Así como Moisés oró a Yahvé, y descendió fuego del cielo y consumió las cosas del sacrificio[a], así también Salomón oró a Yahvé, y el fuego descendió y consumió las ofrendas completamente quemadas[b].
   revised_footnotes:
   - marker: a
-    text: El griego dice «al Señor» (Κύριον). En la POB española se usa «Yahvé» en el texto principal para el Dios de Israel, aunque aquí el testimonio griego conserve el título κύριος.
-    reason: theological_terminology
+    text: 'El griego tiene una expresión más amplia: «las cosas del sacrificio», que puede aludir a los materiales sacrificiales o a las ofrendas asociadas con el sacrificio. También: el griego dice «al Señor» (Κύριον); en la POB española se usa «Yahvé» en el texto principal para el Dios de Israel.'
+    reason: lexical_alternative
   - marker: b
-    text: 'Griego literalmente: «las cosas del sacrificio», expresión más amplia que puede aludir a los materiales sacrificiales o a las ofrendas asociadas con el sacrificio.'
+    text: O «holocaustos». El término griego (ὁλοκαυτώματα) designa ofrendas consumidas por completo por el fuego.
     reason: lexical_alternative
-  - marker: c
-    text: O «holocaustos». El término griego designa ofrendas consumidas por completo por el fuego.
-    reason: lexical_alternative
-  revision_rationale: Se corrigió la terminología divina a «Yahvé» para ajustarla a la política española del proyecto. Se suavizó el arranque a «Así como» para mejor naturalidad. Se mantuvo la rareza fiel de τὰ τῆς θυσίας, pero su nota se reancló correctamente. Se reemplazó «holocaustos» en el texto principal por «ofrendas completamente quemadas» para preservar el sentido cultual con mejor legibilidad en español moderno; la alternativa técnica quedó en nota. También se ajustaron los marcadores de notas para que correspondan exactamente a sus anclajes.
+  revision_rationale: Se corrige la terminología divina a «Yahvé» según la política española del proyecto y se combina la nota explicativa con la de τὰ τῆς θυσίας. Se suaviza el arranque a «Así como». Se reemplaza «holocaustos» por «ofrendas completamente quemadas» con la alternativa técnica en nota [b].
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: d605beffb5b73fb5b7bc7a439a02fdcacd8b1df0dc0aa5b00a94d772445ac1b1
-  timestamp: '2026-05-07T22:44:25Z'
-  output_hash: 11021da9cb94ad485ec2005dab8c321c867f8a410e0edb6d524b4cfdf3f4c736
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 428128bf87afa48dff221fb1912feb709515581e8a93524755b37c8a90e345b7
+  timestamp: '2026-05-18T12:27:58Z'
+  output_hash: 428128bf87afa48dff221fb1912feb709515581e8a93524755b37c8a90e345b7
   usage:
-    prompt_tokens: 4513
-    completion_tokens: 994
-    total_tokens: 5507
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.026193
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [c] not present in translation text
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

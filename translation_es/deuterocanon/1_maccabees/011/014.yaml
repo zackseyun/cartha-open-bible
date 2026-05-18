@@ -61,12 +61,12 @@ base_translation:
     changes_summary: Replaced 'the people from those regions' with 'those from those regions' to more closely reflect the Greek expression without adding 'people.'
 translation:
   language: es
-  text: Pero el rey Alejandro estaba en Cilicia en aquellos días[a], porque los de aquellas regiones se rebelaban.
+  text: Pero el rey Alejandro se hallaba en Cilicia en aquellos días[a], porque los de aquellas regiones se rebelaban.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: 'O: «los de aquellas regiones se rebelaban».'
-    reason: alternative_reading
+    text: 'O, más literalmente: «los de aquellos lugares se rebelaban».'
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἀλέξανδρος
   english_pob_choice: Alexander
@@ -148,34 +148,43 @@ ai_draft:
     total_tokens: 3386
     reasoning_tokens: 0
     estimated_cost_usd: 0.00575
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Pero el rey Alejandro estaba en Cilicia en aquellos días[a], porque los de aquellas regiones se rebelaban.
+  to: Pero el rey Alejandro se hallaba en Cilicia en aquellos días[a], porque los de aquellas regiones se rebelaban.
+  rationale: 'Se cambia «estaba» por «se hallaba» para mayor formalidad bíblica natural, y se corrige la nota [a] para que preserve la alternativa léxica real documentada en la auditoría inglesa: τόπων (lugares) frente a «regiones».'
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:25:18Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja correctamente el sentido básico del griego: Alejandro, el rey, estaba en Cilicia en ese tiempo, y la cláusula con ὅτι se entiende bien como causal. También conserva adecuadamente el valor durativo de ἦν y ἀπεστάτουν con imperfectos en español. Sin embargo, la nota al pie actual no preserva la alternativa léxica documentada en inglés, porque repite prácticamente la misma redacción del texto principal en vez de reflejar la opción más literal ligada a τόπων/‘lugares’.'
-  spanish_quality_summary: El español principal es natural, claro y digno. 'Pero el rey Alejandro estaba en Cilicia en aquellos días, porque los de aquellas regiones se rebelaban' suena bien en español bíblico moderno. El único problema real es la nota, que resulta redundante e inútil tal como está.
-  glossary_alignment: 'No hay términos teológicos o glosario de proyecto especialmente implicados aquí. Los nombres y topónimos están bien: ''Alejandro'', ''rey'', ''Cilicia''. La decisión ''los de aquellas regiones'' es aceptable para οἱ ἀπὸ τῶν τόπων ἐκείνων, aunque la nota debe conservar la alternativa más literal con ''lugares'', tal como lo documenta la auditoría inglesa.'
+  source_alignment_summary: 'El borrador refleja correctamente el griego: Alejandro estaba en Cilicia, la cláusula causal con ὅτι y el imperfecto durativo ἀπεστάτουν. La corrección necesaria es la nota al pie, que repite la misma lectura del texto en vez de preservar la alternativa léxica real del inglés POB (τόπων: «lugares» frente a «regiones»).'
+  spanish_quality_summary: El español es claro y natural. Se ajusta mínimamente «estaba» a «se hallaba» para mayor formalidad bíblica y se corrige la nota para que aporte una alternativa real.
+  glossary_alignment: No hay términos teológicos sensibles. La nota debe conservar «lugares» como alternativa a «regiones» para reflejar τόπων conforme a la auditoría inglesa.
   issues:
   - severity: medium
-    issue: La nota al pie [a] no aporta una alternativa real y no coincide con la alternativa léxica preservada por la auditoría inglesa.
-    rationale: 'La nota actual dice ''O: «los de aquellas regiones se rebelaban»'', que repite la redacción del texto principal. La nota inglesa documenta una alternativa más literal equivalente a ''los de aquellos lugares se rebelaban'', y eso es lo que debe preservarse en español.'
-  revised_spanish_text: Pero el rey Alejandro estaba en Cilicia en aquellos días[a], porque los de aquellas regiones se rebelaban.
+    issue: La nota al pie [a] repite la misma lectura del texto principal
+    rationale: 'La nota actual «O: «los de aquellas regiones se rebelaban»» es prácticamente idéntica al texto. Debe preservarse la alternativa «lugares» (τόπων), como documenta la auditoría inglesa.'
+  revised_spanish_text: Pero el rey Alejandro se hallaba en Cilicia en aquellos días[a], porque los de aquellas regiones se rebelaban.
   revised_footnotes:
   - marker: a
     text: 'O, más literalmente: «los de aquellos lugares se rebelaban».'
     reason: lexical_alternative
-  revision_rationale: Se conserva el texto principal porque es fiel al griego y natural en español. Solo se corrige la nota [a] para que preserve una alternativa léxica real y útil, alineada con la auditoría inglesa y con el contraste regiones/lugares derivado de τόπων.
+  revision_rationale: 'Se cambia «estaba» por «se hallaba» para mayor formalidad bíblica natural, y se corrige la nota [a] para que preserve la alternativa léxica real documentada en la auditoría inglesa: τόπων (lugares) frente a «regiones».'
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 382e23a210dca85d8be2a7a47920051fc0e4282a7a7f4b8ac35c6160027b1adc
-  timestamp: '2026-05-07T22:41:38Z'
-  output_hash: 6bb56b81e7b9b97547cf1ac33f8f52d8feb4dd473f591125f44f5a7639c628b6
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 2d61ab518380e58b6f1c7bf9f86135ae3291b94bbbba5b55b3aa9d7e3197d904
+  timestamp: '2026-05-18T12:25:18Z'
+  output_hash: 2d61ab518380e58b6f1c7bf9f86135ae3291b94bbbba5b55b3aa9d7e3197d904
   usage:
-    prompt_tokens: 3045
-    completion_tokens: 541
-    total_tokens: 3586
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.015727
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

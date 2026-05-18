@@ -41,11 +41,11 @@ base_translation:
     changes_summary: No changes needed.
 translation:
   language: es
-  text: Y los que estaban en la torre de asedio salieron a la ciudad[a], y hubo una gran agitación en la ciudad.
+  text: Y los que estaban en la torre de asedio salieron a la ciudad[a], y hubo un gran alboroto en la ciudad.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
-    text: O «un gran disturbio» o «un gran alboroto»; κίνημα puede indicar agitación o unrest en sentido amplio.
+    text: O «una gran agitación» o «una gran conmoción»; κίνημα puede indicar agitación o inquietud en sentido amplio.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐξήλοντο
@@ -115,34 +115,43 @@ ai_draft:
     total_tokens: 2875
     reasoning_tokens: 0
     estimated_cost_usd: 0.00492
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y los que estaban en la torre de asedio salieron a la ciudad[a], y hubo una gran agitación en la ciudad.
+  to: Y los que estaban en la torre de asedio salieron a la ciudad[a], y hubo un gran alboroto en la ciudad.
+  rationale: Se cambia «una gran agitación» por «un gran alboroto» en el texto principal, ambos válidos para κίνημα μέγα, y se ajusta la nota para eliminar el anglicismo «unrest» reemplazándolo con «inquietud» en español. El cambio también conserva «una gran agitación» como alternativa en la nota.
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:26:30Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador refleja bien el griego: ἐξήλοντο = «salieron», οἱ ἐν τῇ ἑλεπόλει = «los que estaban en la torre de asedio», εἰς τὴν πόλιν = «a la ciudad», y ἐγένετο κίνημα μέγα = «hubo una gran agitación». La única desviación relevante está en la nota, que introduce el anglicismo «unrest» en vez de una explicación plenamente española.'
-  spanish_quality_summary: El texto principal es claro, natural y fiel. «Torre de asedio» y «gran agitación» suenan bien en español bíblico moderno. Conviene reparar la nota para eliminar el anglicismo y mantener una redacción plenamente idiomática.
-  glossary_alignment: No hay términos del glosario teológico principal implicados aquí. Las decisiones léxicas coinciden con la guía del proyecto y con el razonamiento del POB en inglés.
+  source_alignment_summary: 'El borrador refleja bien el griego: ἐξήλοντο = «salieron», οἱ ἐν τῇ ἑλεπόλει = «los que estaban en la torre de asedio», εἰς τὴν πόλιν = «a la ciudad», y ἐγένετο κίνημα μέγα = «hubo una gran agitación». La única corrección necesaria es la nota al pie, que contiene el anglicismo «unrest» en lugar de una expresión española natural.'
+  spanish_quality_summary: El texto es claro y natural. Se corrige la nota para eliminar el anglicismo «unrest» y reemplazarlo con «inquietud», manteniendo la misma función léxica documentada.
+  glossary_alignment: No hay términos del glosario teológico principal implicados. Las decisiones léxicas coinciden con el proyecto.
   issues:
   - severity: medium
-    issue: La nota al pie contiene el anglicismo «unrest».
-    rationale: La nota debe estar en español natural y eclesialmente legible. «Unrest» rompe la calidad del español y no añade precisión que no pueda expresarse con «inquietud», «disturbio» o «agitación».
-  revised_spanish_text: Y los que estaban en la torre de asedio salieron a la ciudad[a], y hubo una gran agitación en la ciudad.
+    issue: La nota al pie contiene el anglicismo «unrest»
+    rationale: Rompe la calidad del español y puede reemplazarse con «inquietud» sin pérdida de precisión.
+  revised_spanish_text: Y los que estaban en la torre de asedio salieron a la ciudad[a], y hubo un gran alboroto en la ciudad.
   revised_footnotes:
   - marker: a
-    text: O «un gran disturbio» o «un gran alboroto»; κίνημα puede indicar agitación o inquietud en sentido amplio.
+    text: O «una gran agitación» o «una gran conmoción»; κίνημα puede indicar agitación o inquietud en sentido amplio.
     reason: lexical_alternative
-  revision_rationale: Se conserva intacto el texto principal porque es fiel y natural. Solo se corrige la nota al pie para reemplazar el anglicismo «unrest» por «inquietud», manteniendo la misma función léxica documentada en el POB en inglés.
+  revision_rationale: Se cambia «una gran agitación» por «un gran alboroto» en el texto principal, ambos válidos para κίνημα μέγα, y se ajusta la nota para eliminar el anglicismo «unrest» reemplazándolo con «inquietud» en español. El cambio también conserva «una gran agitación» como alternativa en la nota.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 9816bf43151a4545626e49a2ff2fe15263a0ab8ec0c21c490dfa7a065688dcb1
-  timestamp: '2026-05-07T23:06:15Z'
-  output_hash: cf92b68a1c02998315e3fdc16ff1d183a7533d254c33edf1187a1c89bb19612d
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 76982e9980441258e4cbaebd367eedae2d8f6966fa4194ca957c05d0cc3e9e12
+  timestamp: '2026-05-18T12:26:30Z'
+  output_hash: 76982e9980441258e4cbaebd367eedae2d8f6966fa4194ca957c05d0cc3e9e12
   usage:
-    prompt_tokens: 2551
-    completion_tokens: 470
-    total_tokens: 3021
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.013427
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path

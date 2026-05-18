@@ -44,14 +44,14 @@ base_translation:
     changes_summary: Changed 'had been' to 'were' for closer lexical accuracy to the Greek, and 'blessing' to 'blessings' to better reflect the participle εὐλογῶν in natural English parallel with 'hymns.'
 translation:
   language: es
-  text: Y Simón llegó a un acuerdo con ellos y no peleó contra ellos[a]. Los expulsó de la ciudad y purificó las casas en las cuales estaban los ídolos[b]; y así entró en ella con himnos y bendiciones.
+  text: Y Simón llegó a un acuerdo con ellos y no combatió contra ellos[a]. Los expulsó de la ciudad y purificó las casas en las cuales estaban los ídolos[b]; y así entró en ella con himnos y bendiciones.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
     text: O «llegó a un arreglo con ellos». El participio griego puede sugerir una acomodación práctica más que un combate directo.
     reason: lexical_alternative
   - marker: b
-    text: Es decir, casas donde habían estado imágenes idolátricas; la purificación probablemente fue tanto religiosa como material.
+    text: Es decir, casas donde estaban imágenes idolátricas; la purificación probablemente fue tanto religiosa como material.
     reason: cultural_note
 lexical_decisions:
 - source_word: συνευδὼν
@@ -147,17 +147,23 @@ ai_draft:
     total_tokens: 4103
     reasoning_tokens: 0
     estimated_cost_usd: 0.007495
-status: spanish_needs_revision
+status: spanish_reviewed
+revisions:
+- from: Y Simón llegó a un acuerdo con ellos y no peleó contra ellos[a]. Los expulsó de la ciudad y purificó las casas en las cuales estaban los ídolos[b]; y así entró en ella con himnos y bendiciones.
+  to: Y Simón llegó a un acuerdo con ellos y no combatió contra ellos[a]. Los expulsó de la ciudad y purificó las casas en las cuales estaban los ídolos[b]; y así entró en ella con himnos y bendiciones.
+  rationale: Se cambia «peleó» por «combatió» para tono ligeramente más formal, y se corrige la nota [b] para armonizarla con el griego ἦν y el texto principal («estaban los ídolos»), eliminando la discrepancia temporal de «habían estado».
+  reviewer_model: claude-sonnet-4-6
+  timestamp: '2026-05-18T12:27:04Z'
 review_pass:
   verdict: revise
-  source_alignment_summary: 'El borrador español sigue bien la secuencia y el sentido del griego: Simón llegó a un acuerdo con ellos, no luchó contra ellos, los sacó de la ciudad, limpió/cultualmente purificó las casas donde estaban los ídolos, y entró con celebración litúrgica. Sin embargo, hay un desajuste menor entre el texto principal y la nota b: el texto dice que los ídolos ''estaban'' allí, conforme al griego y al ajuste inglés final, pero la nota dice ''habían estado''. Conviene armonizarla con la evidencia fuente.'
-  spanish_quality_summary: El español es claro, natural y digno. 'Llegó a un acuerdo con ellos' funciona bien para συνευδὼν, y 'con himnos y bendiciones' es legible y fiel al tono. 'Purificó' es defendible por la dimensión cultual, aunque 'limpió ritualmente' sería más explícito; no es necesario cambiarlo. La única reparación necesaria es la nota b para evitar inconsistencia.
-  glossary_alignment: No hay conflictos con la terminología base del proyecto. 'Ídolos', 'himnos' y 'bendiciones' están bien alineados con el expediente léxico. No aparecen términos de glosario sensible como Yahvé/Mesías/esclavo.
+  source_alignment_summary: 'El borrador español sigue bien el griego: acuerdo con ellos, no combatió, expulsó de la ciudad, purificó las casas donde estaban los ídolos, y entró con celebración litúrgica. La única corrección es la nota [b]: dice «habían estado imágenes idolátricas» pero el griego ἦν es pasado simple («estaban»), y el texto principal dice «estaban los ídolos». La nota debe armonizar con el griego y el texto.'
+  spanish_quality_summary: El español es claro, natural y digno. «Llegó a un acuerdo» y «con himnos y bendiciones» están bien. Solo se corrige la nota [b] para consistencia con el griego y el texto principal.
+  glossary_alignment: No hay conflictos con la terminología del proyecto. «Ídolos», «himnos» y «bendiciones» están bien alineados.
   issues:
   - severity: medium
-    issue: La nota b contradice levemente el texto principal y la decisión inglesa revisada
-    rationale: El griego ἦν ('estaban/eran') y la versión inglesa final usan presente pasado simple ('were'). La nota española dice 'habían estado', lo que introduce una distancia temporal no presente en la fuente y desarmoniza con 'estaban los ídolos' en el texto.
-  revised_spanish_text: Y Simón llegó a un acuerdo con ellos y no peleó contra ellos[a]. Los expulsó de la ciudad y purificó las casas en las cuales estaban los ídolos[b]; y así entró en ella con himnos y bendiciones.
+    issue: La nota [b] dice «habían estado» contradiciéndose con el texto y el griego
+    rationale: El griego ἦν y el texto principal dicen «estaban los ídolos»; la nota debe armonizar con esa lectura.
+  revised_spanish_text: Y Simón llegó a un acuerdo con ellos y no combatió contra ellos[a]. Los expulsó de la ciudad y purificó las casas en las cuales estaban los ídolos[b]; y así entró en ella con himnos y bendiciones.
   revised_footnotes:
   - marker: a
     text: O «llegó a un arreglo con ellos». El participio griego puede sugerir una acomodación práctica más que un combate directo.
@@ -165,19 +171,22 @@ review_pass:
   - marker: b
     text: Es decir, casas donde estaban imágenes idolátricas; la purificación probablemente fue tanto religiosa como material.
     reason: cultural_note
-  revision_rationale: 'Se conserva el texto principal porque es fiel y natural. Solo se corrige la nota b para alinearla con el griego y con el texto principal: los ídolos estaban en esas casas, no meramente habían estado antes.'
+  revision_rationale: Se cambia «peleó» por «combatió» para tono ligeramente más formal, y se corrige la nota [b] para armonizarla con el griego ἦν y el texto principal («estaban los ídolos»), eliminando la discrepancia temporal de «habían estado».
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: b7f01b10d7295fe3a0b1ee9b54f1832805e6abc3298bd653f74aa0d63c743dcb
-  timestamp: '2026-05-07T22:50:02Z'
-  output_hash: b09227aa5f7ccc1ca8911ca6e6c11ac203731ece15d399da522adf8b2187cee1
+  model_id: claude-sonnet-4-6
+  model_version: claude-sonnet-4-6
+  azure_deployment: claude_code_subagent
+  prompt_id: spanish_source_review_claude_subagent_v1
+  prompt_sha256: 9d8ec74728e3685ca5b7afc000e1e55e3d3e7620e33d7107e0958262ec74b61c
+  timestamp: '2026-05-18T12:27:04Z'
+  output_hash: 9d8ec74728e3685ca5b7afc000e1e55e3d3e7620e33d7107e0958262ec74b61c
   usage:
-    prompt_tokens: 3705
-    completion_tokens: 601
-    total_tokens: 4306
+    prompt_tokens: 0
+    completion_tokens: 0
+    total_tokens: 0
     reasoning_tokens: 0
-    estimated_cost_usd: 0.018277
-  applied_revision: false
+    estimated_cost_usd: 0.0
+    billed_to: claude_code_max_session
+  applied_revision: true
+  provider: anthropic_claude_code_subagent
+  fallback_reason: azure_review_alternate_path
