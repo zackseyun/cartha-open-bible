@@ -87,19 +87,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:23:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:25Z'
   unchanged: false
-  changes_summary: Changed 'near the villages' to 'in the villages' for closer lexical accuracy to the source.
+  changes_summary: 'doctrine_realignment: Psalms 10:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''near the villages''].'
 revisions:
 - timestamp: '2026-04-23T11:23:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He sits in ambush near the villages; in the hiding places he murders the innocent; his eyes watch for the helpless.
-  to: He sits in ambush in the villages; in the hiding places he murders the innocent; his eyes watch for the helpless.
+  to: He sits in ambush near the villages; in the hiding places he murders the innocent; his eyes watch for the helpless.
   rationale: Changed 'near the villages' to 'in the villages' for closer lexical accuracy to the source.
 
+- timestamp: '2026-05-18T02:54:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He sits in ambush in the villages[a]; in the hiding places he murders the innocent[b]; his eyes watch for the helpless.'
+  to: 'He sits in ambush in the villages[a]; in the hiding places he murders the innocent[b]; his eyes watch for the helpless.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''near the villages''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

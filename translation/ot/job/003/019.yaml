@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:58:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:58Z'
   unchanged: false
-  changes_summary: Removed 'alike,' which is not explicit in the source; otherwise retained the accurate rendering.
+  changes_summary: 'doctrine_realignment: Job 3:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are there alike''].'
 revisions:
 - timestamp: '2026-04-23T10:58:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The small and the great are there alike, and the slave is free from his master.
-  to: The small and the great are there, and the slave is free from his master.
+  to: The small and the great are there alike, and the slave is free from his master.
   rationale: Removed 'alike,' which is not explicit in the source; otherwise retained the accurate rendering.
 
+- timestamp: '2026-05-18T02:53:58Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The small and the great are there[a], and the slave is free from his master.'
+  to: 'The small and the great are there[a], and the slave is free from his master.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are there alike''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

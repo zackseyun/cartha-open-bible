@@ -23,7 +23,7 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: So the smith sits near the anvil and examines the unworked iron[a]; the vapor of the fire wastes his flesh[b], and he struggles with the heat of the furnace.
+  text: So the smith sits near the anvil and studies the raw iron; the vapor of the fire wastes his flesh, and he struggles with the heat of the furnace.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -117,10 +117,10 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:34Z'
   unchanged: false
-  changes_summary: Changed 'studies' to 'examines' for a more natural rendering of καταμανθάνων, and 'raw iron' to 'unworked iron' to better reflect ἀργῷ σιδήρῳ without implying metallurgy beyond the text.
+  changes_summary: 'doctrine_realignment: Sirach 38:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the raw iron''].'
 revisions:
 - timestamp: '2026-04-23T15:45:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -130,6 +130,13 @@ revisions:
   to: So the smith sits near the anvil and examines the unworked iron; the vapor of the fire wastes his flesh, and he struggles with the heat of the furnace.
   rationale: Changed 'studies' to 'examines' for a more natural rendering of καταμανθάνων, and 'raw iron' to 'unworked iron' to better reflect ἀργῷ σιδήρῳ without implying metallurgy beyond the text.
 
+- timestamp: '2026-05-18T03:09:34Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So the smith sits near the anvil and examines the unworked iron[a]; the vapor of the fire wastes his flesh[b], and he struggles with the heat of the furnace.'
+  to: 'So the smith sits near the anvil and studies the raw iron; the vapor of the fire wastes his flesh, and he struggles with the heat of the furnace.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the raw iron''].'
 cross_check:
   status: high_agreement
   agreement: 0.92

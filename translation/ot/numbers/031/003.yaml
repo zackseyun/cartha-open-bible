@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַ/יְדַבֵּ֤ר מֹשֶׁה֙ אֶל הָ/עָ֣ם לֵ/אמֹ֔ר הֵחָלְצ֧וּ מֵ/אִתְּ/כֶ֛ם אֲנָשִׁ֖ים לַ/צָּבָ֑א וְ/יִהְיוּ֙ עַל מִדְיָ֔ן לָ/תֵ֥ת נִקְמַת יְהוָ֖ה בְּ/מִדְיָֽן־־־׃
 translation:
-  text: So Moses spoke to the people[a], saying, “Arm men from among you for the army, and let them be against Midian, to execute Yahweh’s vengeance on Midian.”
+  text: So Moses spoke to the people, saying, “Arm men from among you for the army, and let them go against Midian to execute Yahweh’s vengeance on Midian.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -105,10 +105,10 @@ theological_decisions:
   rationale: The construct phrase נִקְמַת יְהוָה most naturally means vengeance belonging to or carried out on behalf of the LORD. 'The LORD’s vengeance' preserves the text's attribution without softening or expanding it into a broader theological explanation.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:18:56Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:19Z'
   unchanged: false
-  changes_summary: Revised 'let them go against Midian' to 'let them be against Midian' to more closely reflect the Hebrew/Greek wording without adding 'go,' which is not explicit in the source.
+  changes_summary: 'doctrine_realignment: Numbers 31:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and let them go against Midian''].'
 revisions:
 - timestamp: '2026-04-23T11:18:56Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -118,6 +118,13 @@ revisions:
   to: So Moses spoke to the people, saying, “Arm men from among you for the army, and let them be against Midian, to execute the LORD’s vengeance on Midian.”
   rationale: Revised 'let them go against Midian' to 'let them be against Midian' to more closely reflect the Hebrew/Greek wording without adding 'go,' which is not explicit in the source.
 
+- timestamp: '2026-05-18T03:09:19Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So Moses spoke to the people[a], saying, “Arm men from among you for the army, and let them be against Midian, to execute Yahweh’s vengeance on Midian.”'
+  to: 'So Moses spoke to the people, saying, “Arm men from among you for the army, and let them go against Midian to execute Yahweh’s vengeance on Midian.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and let them go against Midian''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -9,7 +9,7 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Lysias came forward to the tribunal[a], made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and returned to Antioch[c][b]. Thus the king’s attack and withdrawal proceeded.
+  text: Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king’s attack and withdrawal proceeded.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -129,10 +129,10 @@ theological_decisions:
   rationale: The verse is historical/narrative rather than doctrinal. Choices were made for contextual clarity while avoiding embellishment beyond the Greek.
   doctrine_reference: 'DOCTRINE.md: optimal equivalence; preserve ambiguity where genuine'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:35:41Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:00Z'
   unchanged: false
-  changes_summary: Changed 'marched back to Antioch' to 'returned to Antioch' for closer lexical accuracy to ἀνέζευξεν, which refers to breaking camp/departing rather than specifically marching.
+  changes_summary: 'doctrine_realignment: 2 Maccabees 13:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''marched back''].'
 revisions:
 - timestamp: '2026-04-23T15:35:41Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -142,6 +142,13 @@ revisions:
   to: Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and returned to Antioch. Thus the king’s attack and withdrawal proceeded.
   rationale: Changed 'marched back to Antioch' to 'returned to Antioch' for closer lexical accuracy to ἀνέζευξεν, which refers to breaking camp/departing rather than specifically marching.
 
+- timestamp: '2026-05-18T03:10:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Lysias came forward to the tribunal[a], made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and returned to Antioch[c][b]. Thus the king’s attack and withdrawal proceeded.'
+  to: 'Lysias came forward to the tribunal, made as good a defense as he could, persuaded them, calmed them, made them well-disposed, and marched back to Antioch. Thus the king’s attack and withdrawal proceeded.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''marched back''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

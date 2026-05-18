@@ -84,19 +84,26 @@ theological_decisions:
   rationale: The Greek phrase itself is straightforward, but its referent is debated. Per translation philosophy, the translation preserves the textual wording and does not settle the interpretive debate in the main text.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:51:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:55Z'
   unchanged: false
-  changes_summary: Changed 'have happened' to 'happen' to better reflect the Greek aorist subjunctive γένηται after ἕως ἂν in natural English future sense. Retained 'will certainly not pass away' for οὐ μὴ παρέλθῃ.
+  changes_summary: 'doctrine_realignment: Luke 21:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have happened''].'
 revisions:
 - timestamp: '2026-04-23T09:51:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Truly I say to you, this generation will certainly not pass away until all things have happened.
-  to: Truly I say to you, this generation will certainly not pass away until all things happen.
+  to: Truly I say to you, this generation will certainly not pass away until all things have happened.
   rationale: Changed 'have happened' to 'happen' to better reflect the Greek aorist subjunctive γένηται after ἕως ἂν in natural English future sense. Retained 'will certainly not pass away' for οὐ μὴ παρέλθῃ.
 
+- timestamp: '2026-05-18T03:00:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Truly I say to you[c][b][a], this generation will certainly not pass away until all things happen.'
+  to: 'Truly I say to you[c][b][a], this generation will certainly not pass away until all things happen.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have happened''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

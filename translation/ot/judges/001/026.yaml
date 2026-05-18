@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:05:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:20Z'
   unchanged: false
-  changes_summary: Replaced the period with a semicolon to better reflect the Hebrew flow and improve natural formal English; otherwise retained the draft wording.
+  changes_summary: 'doctrine_realignment: Judges 1:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''That is its name''].'
 revisions:
 - timestamp: '2026-04-23T11:05:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the man went to the land of the Hittites and built a city and called its name Luz. That is its name to this day.
-  to: And the man went to the land of the Hittites and built a city and called its name Luz; that is its name to this day.
+  to: And the man went to the land of the Hittites and built a city and called its name Luz. That is its name to this day.
   rationale: Replaced the period with a semicolon to better reflect the Hebrew flow and improve natural formal English; otherwise retained the draft wording.
 
+- timestamp: '2026-05-18T02:56:20Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the man went to the land of the Hittites and built a city and called its name Luz[a]; that is its name to this day.'
+  to: 'And the man went to the land of the Hittites and built a city and called its name Luz[a]; that is its name to this day.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''That is its name''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

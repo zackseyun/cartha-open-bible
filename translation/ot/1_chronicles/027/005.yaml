@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:05:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:40Z'
   unchanged: false
-  changes_summary: Changed 'the chief priest' to 'the chief' to reflect the Hebrew more closely here and removed the unnecessary comma for smoother formal English.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 27:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the chief priest''].'
 revisions:
 - timestamp: '2026-04-23T10:05:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The commander of the third division for the third month was Benaiah son of Jehoiada, the chief priest; and in his division were twenty-four thousand.
-  to: The commander of the third division for the third month was Benaiah son of Jehoiada the chief, and in his division were twenty-four thousand.
+  to: The commander of the third division for the third month was Benaiah son of Jehoiada, the chief priest; and in his division were twenty-four thousand.
   rationale: Changed 'the chief priest' to 'the chief' to reflect the Hebrew more closely here and removed the unnecessary comma for smoother formal English.
 
+- timestamp: '2026-05-18T02:58:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.'
+  to: 'The commander of the third division for the third month was Benaiah son of Jehoiada the chief[a], and in his division were twenty-four thousand.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the chief priest''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

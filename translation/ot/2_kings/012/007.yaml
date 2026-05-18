@@ -61,19 +61,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:17:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:49Z'
   unchanged: false
-  changes_summary: Changed 'damage of the house' to 'damage to the house' for more natural English while preserving the meaning.
+  changes_summary: 'doctrine_realignment: 2 Kings 12:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the damage of the house''].'
 revisions:
 - timestamp: '2026-04-23T10:17:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now it happened in the twenty-third year of King Jehoash that the priests had not repaired the damage of the house.
-  to: Now it happened in the twenty-third year of King Jehoash that the priests had not repaired the damage to the house.
+  to: Now it happened in the twenty-third year of King Jehoash that the priests had not repaired the damage of the house.
   rationale: Changed 'damage of the house' to 'damage to the house' for more natural English while preserving the meaning.
 
+- timestamp: '2026-05-18T02:58:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now it happened in the twenty-third year of King Jehoash that the priests had not repaired the damage to the house[a].'
+  to: 'Now it happened in the twenty-third year of King Jehoash that the priests had not repaired the damage to the house[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the damage of the house''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

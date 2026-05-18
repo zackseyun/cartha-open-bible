@@ -87,19 +87,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:05Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:11Z'
   unchanged: false
-  changes_summary: 'Revised the final clause for closer lexical accuracy and completeness: rendered ''the number of your bricks'' instead of ''your daily number of bricks,'' and included the explicit repetition of ''day in its day'' as ''the daily quota each day.'''
+  changes_summary: 'doctrine_realignment: Exodus 5:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your daily number of bricks''].'
 revisions:
 - timestamp: '2026-04-23T10:30:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the officers of the sons of Israel saw that they were in trouble when it was said, “You must not reduce your daily number of bricks.”
-  to: Then the officers of the sons of Israel saw that they were in trouble when it was said, “You must not reduce the number of your bricks, the daily quota each day.”
+  to: Then the officers of the sons of Israel saw that they were in trouble when it was said, “You must not reduce your daily number of bricks.”
   rationale: 'Revised the final clause for closer lexical accuracy and completeness: rendered ''the number of your bricks'' instead of ''your daily number of bricks,'' and included the explicit repetition of ''day in its day'' as ''the daily quota each day.'''
 
+- timestamp: '2026-05-18T02:56:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the officers of the sons of Israel saw that they were in trouble when it was said[a], “You must not reduce the number of your bricks[b], the daily quota each day.”'
+  to: 'Then the officers of the sons of Israel saw that they were in trouble when it was said[a], “You must not reduce the number of your bricks[b], the daily quota each day.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your daily number of bricks''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

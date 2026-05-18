@@ -88,19 +88,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:36Z'
   unchanged: false
-  changes_summary: 'Adjusted the first clause for closer alignment with the Hebrew word order and sense: ''in the other court farther back from the Hall'' instead of ''was in the other court, set back from the Hall.'' Kept the rest essentially unchanged as accurate and natural.'
+  changes_summary: 'doctrine_realignment: 1 Kings 7:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''set back from the Hall''].'
 revisions:
 - timestamp: '2026-04-23T10:06:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: His house where he was to live was in the other court, set back from the Hall, and was of the same workmanship. He also made a house like this Hall for Pharaoh’s daughter, whom Solomon had taken as wife.
-  to: His house where he was to live, in the other court farther back from the Hall, was of the same workmanship. He also made a house like this Hall for Pharaoh’s daughter, whom Solomon had taken as wife.
+  to: His house where he was to live was in the other court, set back from the Hall, and was of the same workmanship. He also made a house like this Hall for Pharaoh’s daughter, whom Solomon had taken as wife.
   rationale: 'Adjusted the first clause for closer alignment with the Hebrew word order and sense: ''in the other court farther back from the Hall'' instead of ''was in the other court, set back from the Hall.'' Kept the rest essentially unchanged as accurate and natural.'
 
+- timestamp: '2026-05-18T02:56:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'His house where he was to live[a], in the other court farther back from the Hall, was of the same workmanship. He also made a house like this Hall for Pharaoh’s daughter[b], whom Solomon had taken as wife.'
+  to: 'His house where he was to live[a], in the other court farther back from the Hall, was of the same workmanship. He also made a house like this Hall for Pharaoh’s daughter[b], whom Solomon had taken as wife.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''set back from the Hall''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -87,19 +87,26 @@ theological_decisions:
   rationale: The source is grammatically masculine plural. Per the project's gender-accurate principle, the translation preserves that form rather than neutralizing it, while still communicating the corporate identity of Israel.
   doctrine_reference: 'DOCTRINE.md Translation philosophy §4: Gender-accurate over gender-neutral'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:33:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:08Z'
   unchanged: false
-  changes_summary: Changed 'word' to 'thing' to more naturally and accurately reflect הַדָּבָר in this context ('This is the thing that the LORD has commanded').
+  changes_summary: 'doctrine_realignment: Exodus 35:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This is the word''].'
 revisions:
 - timestamp: '2026-04-23T10:33:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Moses said to all the congregation of the sons of Israel, “This is the word that the LORD has commanded, saying,”
-  to: Then Moses said to all the congregation of the sons of Israel, “This is the thing that the LORD has commanded, saying,”
+  to: Then Moses said to all the congregation of the sons of Israel, “This is the word that the LORD has commanded, saying,”
   rationale: Changed 'word' to 'thing' to more naturally and accurately reflect הַדָּבָר in this context ('This is the thing that the LORD has commanded').
 
+- timestamp: '2026-05-18T02:55:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Moses said to all the congregation of the sons of Israel[a], “This is the thing that Yahweh has commanded[c][b], saying,”'
+  to: 'Then Moses said to all the congregation of the sons of Israel[a], “This is the thing that Yahweh has commanded[c][b], saying,”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This is the word''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

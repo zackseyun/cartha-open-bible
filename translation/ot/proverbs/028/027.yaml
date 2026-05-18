@@ -56,19 +56,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:22:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:29Z'
   unchanged: false
-  changes_summary: Changed 'will receive many curses' to 'will have many curses' for closer lexical alignment with the Hebrew, which states simply 'many curses' without an explicit verb of receiving.
+  changes_summary: 'doctrine_realignment: Proverbs 28:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will receive many curses''].'
 revisions:
 - timestamp: '2026-04-23T11:22:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Whoever gives to the poor will have no lack, but he who hides his eyes will receive many curses.
-  to: Whoever gives to the poor will have no lack, but he who hides his eyes will have many curses.
+  to: Whoever gives to the poor will have no lack, but he who hides his eyes will receive many curses.
   rationale: Changed 'will receive many curses' to 'will have many curses' for closer lexical alignment with the Hebrew, which states simply 'many curses' without an explicit verb of receiving.
 
+- timestamp: '2026-05-18T02:54:29Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Whoever gives to the poor will have no lack[a], but he who hides his eyes will have many curses.'
+  to: 'Whoever gives to the poor will have no lack[a], but he who hides his eyes will have many curses.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will receive many curses''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

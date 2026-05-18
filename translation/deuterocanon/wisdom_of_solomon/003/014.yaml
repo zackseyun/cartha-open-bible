@@ -10,7 +10,7 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And the eunuch who has not committed lawlessness with his hand[a], nor conceived evil things against the Lord[b], will be given the chosen grace of faith and a more delightful inheritance in the temple of the Lord.
+  text: And the eunuch who has not worked lawlessness with his hand, nor conceived evil things against the Lord, will be given the chosen grace of faith and a more delightful inheritance in the temple of the Lord.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -129,10 +129,10 @@ theological_decisions:
   rationale: The project default for κύριος is 'Lord.' In this Greek deuterocanonical context, 'Lord' is the appropriate standard rendering.
   doctrine_reference: 'DOCTRINE.md Contested terms: κύριος → Lord'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:48:06Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:05Z'
   unchanged: false
-  changes_summary: Changed 'worked lawlessness' to 'committed lawlessness' for more natural English while preserving the sense of the Greek. Kept the rest substantially unchanged.
+  changes_summary: 'doctrine_realignment: Wisdom of Solomon 3:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who has not worked''].'
 revisions:
 - timestamp: '2026-04-23T15:48:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -142,6 +142,13 @@ revisions:
   to: And the eunuch who has not committed lawlessness with his hand, nor conceived evil things against the Lord, will be given the chosen grace of faith and a more delightful inheritance in the temple of the Lord.
   rationale: Changed 'worked lawlessness' to 'committed lawlessness' for more natural English while preserving the sense of the Greek. Kept the rest substantially unchanged.
 
+- timestamp: '2026-05-18T03:10:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the eunuch who has not committed lawlessness with his hand[a], nor conceived evil things against the Lord[b], will be given the chosen grace of faith and a more delightful inheritance in the temple of the Lord.'
+  to: 'And the eunuch who has not worked lawlessness with his hand, nor conceived evil things against the Lord, will be given the chosen grace of faith and a more delightful inheritance in the temple of the Lord.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who has not worked''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

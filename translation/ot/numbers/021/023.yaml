@@ -89,19 +89,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:18:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:14Z'
   unchanged: false
-  changes_summary: Replaced 'Instead' with 'So' to better reflect the Hebrew narrative sequence, and adjusted word order to 'went out to meet Israel in the wilderness' for closer alignment with the source while preserving natural English.
+  changes_summary: 'doctrine_realignment: Numbers 21:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into the wilderness''].'
 revisions:
 - timestamp: '2026-04-23T11:18:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But Sihon did not allow Israel to pass through his territory. Instead, Sihon gathered all his people and went out into the wilderness to meet Israel. He came to Jahaz and fought against Israel.
-  to: But Sihon did not allow Israel to pass through his territory. So Sihon gathered all his people and went out to meet Israel in the wilderness. He came to Jahaz and fought against Israel.
+  to: But Sihon did not allow Israel to pass through his territory. Instead, Sihon gathered all his people and went out into the wilderness to meet Israel. He came to Jahaz and fought against Israel.
   rationale: Replaced 'Instead' with 'So' to better reflect the Hebrew narrative sequence, and adjusted word order to 'went out to meet Israel in the wilderness' for closer alignment with the source while preserving natural English.
 
+- timestamp: '2026-05-18T02:57:14Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But Sihon did not allow Israel to pass through his territory[a]. So Sihon gathered all his people and went out to meet Israel in the wilderness[c][b]. He came to Jahaz and fought against Israel.'
+  to: 'But Sihon did not allow Israel to pass through his territory[a]. So Sihon gathered all his people and went out to meet Israel in the wilderness[c][b]. He came to Jahaz and fought against Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into the wilderness''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

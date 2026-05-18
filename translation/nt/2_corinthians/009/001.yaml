@@ -63,19 +63,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:37:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:27Z'
   unchanged: false
-  changes_summary: Replaced 'Now' with 'For' to reflect γὰρ more directly. Kept the rest unchanged, as 'ministry to the saints' and 'it is superfluous for me to write to you' accurately and naturally represent the Greek.
+  changes_summary: 'doctrine_realignment: 2 Corinthians 9:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Now concerning''].'
 revisions:
 - timestamp: '2026-04-23T09:37:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now concerning the ministry to the saints, it is superfluous for me to write to you,
-  to: For concerning the ministry to the saints, it is superfluous for me to write to you,
+  to: Now concerning the ministry to the saints, it is superfluous for me to write to you,
   rationale: Replaced 'Now' with 'For' to reflect γὰρ more directly. Kept the rest unchanged, as 'ministry to the saints' and 'it is superfluous for me to write to you' accurately and naturally represent the Greek.
 
+- timestamp: '2026-05-18T03:00:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For concerning the ministry to the saints[a], it is superfluous for me to write to you,'
+  to: 'For concerning the ministry to the saints[a], it is superfluous for me to write to you,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Now concerning''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

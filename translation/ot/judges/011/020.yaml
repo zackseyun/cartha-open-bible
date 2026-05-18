@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:07:07Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:20Z'
   unchanged: false
-  changes_summary: Changed 'fought with Israel' to 'fought against Israel' for natural and accurate English in context.
+  changes_summary: 'doctrine_realignment: Judges 11:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he fought with Israel''].'
 revisions:
 - timestamp: '2026-04-23T11:07:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But Sihon did not trust Israel to pass through his territory. So Sihon gathered all his people, and they camped at Jahaz, and he fought with Israel.
-  to: But Sihon did not trust Israel to pass through his territory. So Sihon gathered all his people, and they camped at Jahaz, and he fought against Israel.
+  to: But Sihon did not trust Israel to pass through his territory. So Sihon gathered all his people, and they camped at Jahaz, and he fought with Israel.
   rationale: Changed 'fought with Israel' to 'fought against Israel' for natural and accurate English in context.
 
+- timestamp: '2026-05-18T02:56:20Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But Sihon did not trust Israel to pass through his territory[a]. So Sihon gathered all his people, and they camped at Jahaz[c][b], and he fought against Israel.'
+  to: 'But Sihon did not trust Israel to pass through his territory[a]. So Sihon gathered all his people, and they camped at Jahaz[c][b], and he fought against Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he fought with Israel''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

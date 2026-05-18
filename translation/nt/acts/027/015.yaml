@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:41:58Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:41Z'
   unchanged: false
-  changes_summary: Changed 'caught up' to 'caught' for a more natural and precise rendering of the ship being seized by the storm, while retaining the rest of the accurate translation.
+  changes_summary: 'doctrine_realignment: Acts 27:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was caught up''].'
 revisions:
 - timestamp: '2026-04-23T09:41:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And when the ship was caught up and could not face the wind, we gave way and were driven along.
-  to: And when the ship was caught and could not face the wind, we gave way and were driven along.
+  to: And when the ship was caught up and could not face the wind, we gave way and were driven along.
   rationale: Changed 'caught up' to 'caught' for a more natural and precise rendering of the ship being seized by the storm, while retaining the rest of the accurate translation.
 
+- timestamp: '2026-05-18T03:00:41Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And when the ship was caught and could not face the wind[a], we gave way and were driven along.'
+  to: 'And when the ship was caught and could not face the wind[a], we gave way and were driven along.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was caught up''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

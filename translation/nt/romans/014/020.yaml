@@ -94,19 +94,26 @@ theological_decisions:
   rationale: The Greek is grammatically masculine singular and representative. Per the doctrine's gender-accurate principle, the main text should reflect the source form and intent, while a footnote can clarify the representative sense for modern readers.
   doctrine_reference: Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:01:49Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:56Z'
   unchanged: false
-  changes_summary: Changed 'man' to 'person' for natural, inclusive English while preserving the generic singular sense of τῷ ἀνθρώπῳ. No other changes needed.
+  changes_summary: 'doctrine_realignment: Romans 14:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for the man''].'
 revisions:
 - timestamp: '2026-04-23T10:01:49Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Do not, for the sake of food, tear down the work of God. All things are indeed clean, but it is evil for the man who eats in a way that causes stumbling.
-  to: Do not, for the sake of food, tear down the work of God. All things are indeed clean, but it is evil for the person who eats in a way that causes stumbling.
+  to: Do not, for the sake of food, tear down the work of God. All things are indeed clean, but it is evil for the man who eats in a way that causes stumbling.
   rationale: Changed 'man' to 'person' for natural, inclusive English while preserving the generic singular sense of τῷ ἀνθρώπῳ. No other changes needed.
 
+- timestamp: '2026-05-18T03:00:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.'
+  to: 'Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for the man''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

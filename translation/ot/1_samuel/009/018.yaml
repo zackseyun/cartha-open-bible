@@ -58,19 +58,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:09:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:05Z'
   unchanged: false
-  changes_summary: Changed 'in the middle of the gate' to 'in the midst of the gate' for a more formal and natural rendering of בתוך השער; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 1 Samuel 9:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the middle of the gate''].'
 revisions:
 - timestamp: '2026-04-23T10:09:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Saul approached Samuel in the middle of the gate and said, “Please tell me where the seer’s house is.”
-  to: Then Saul approached Samuel in the midst of the gate and said, “Please tell me where the seer’s house is.”
+  to: Then Saul approached Samuel in the middle of the gate and said, “Please tell me where the seer’s house is.”
   rationale: Changed 'in the middle of the gate' to 'in the midst of the gate' for a more formal and natural rendering of בתוך השער; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:56:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Saul approached Samuel in the midst of the gate and said[b][a], “Please tell me where the seer’s house is.”'
+  to: 'Then Saul approached Samuel in the midst of the gate and said[b][a], “Please tell me where the seer’s house is.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the middle of the gate''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

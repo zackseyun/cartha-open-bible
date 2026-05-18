@@ -89,19 +89,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:05Z'
   unchanged: false
-  changes_summary: Changed 'gathering' to 'assembly' for a more formal and consistent rendering of קְהִלָּה, while preserving the rest of the accurate draft.
+  changes_summary: 'doctrine_realignment: Nehemiah 5:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I assembled a great gathering against them''].'
 revisions:
 - timestamp: '2026-04-23T11:13:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then I took counsel with myself, and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest, each from his brother.” And I assembled a great gathering against them.
-  to: Then I took counsel with myself, and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest, each from his brother.” And I assembled a great assembly against them.
+  to: Then I took counsel with myself, and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest, each from his brother.” And I assembled a great gathering against them.
   rationale: Changed 'gathering' to 'assembly' for a more formal and consistent rendering of קְהִלָּה, while preserving the rest of the accurate draft.
 
+- timestamp: '2026-05-18T02:55:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.'
+  to: 'Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I assembled a great gathering against them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:07:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:05Z'
   unchanged: false
-  changes_summary: Changed 'remained in Egypt' to 'was still living in Egypt' to more naturally reflect the Hebrew wording and the temporal sense of his continued presence there.
+  changes_summary: 'doctrine_realignment: 1 Kings 12:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remained''].'
 revisions:
 - timestamp: '2026-04-23T10:07:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now when Jeroboam son of Nebat heard of it—while he was still in Egypt, where he had fled from King Solomon—Jeroboam remained in Egypt.
-  to: Now when Jeroboam son of Nebat heard of it—while he was still in Egypt, where he had fled from King Solomon—Jeroboam was still living in Egypt.
+  to: Now when Jeroboam son of Nebat heard of it—while he was still in Egypt, where he had fled from King Solomon—Jeroboam remained in Egypt.
   rationale: Changed 'remained in Egypt' to 'was still living in Egypt' to more naturally reflect the Hebrew wording and the temporal sense of his continued presence there.
 
+- timestamp: '2026-05-18T02:56:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now when Jeroboam son of Nebat heard of it—while he was still in Egypt[a], where he had fled from King Solomon—Jeroboam was still living in Egypt.'
+  to: 'Now when Jeroboam son of Nebat heard of it—while he was still in Egypt[a], where he had fled from King Solomon—Jeroboam was still living in Egypt.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remained''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

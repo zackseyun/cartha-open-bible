@@ -74,19 +74,26 @@ theological_decisions:
   rationale: 'The Hebrew is elliptical. The chosen rendering preserves the psalm''s argument: no human payment can redeem a life from death. Because the clause is genuinely difficult, alternatives are preserved in a footnote rather than overstated in the main text.'
   doctrine_reference: Translation philosophy §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:25:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:53Z'
   unchanged: false
-  changes_summary: Replaced 'it can never suffice' with the more literal 'it ceases forever' to reflect וחדל לעולם more accurately without interpretive expansion.
+  changes_summary: 'doctrine_realignment: Psalms 49:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it can never suffice''].'
 revisions:
 - timestamp: '2026-04-23T11:25:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For the ransom of their life is costly, and it can never suffice,
-  to: For the ransom of their life is costly, and it ceases forever,
+  to: For the ransom of their life is costly, and it can never suffice,
   rationale: Replaced 'it can never suffice' with the more literal 'it ceases forever' to reflect וחדל לעולם more accurately without interpretive expansion.
 
+- timestamp: '2026-05-18T02:53:53Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For the ransom of their life is costly[a], and it ceases forever[b],'
+  to: 'For the ransom of their life is costly[a], and it ceases forever[b],'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it can never suffice''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

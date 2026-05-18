@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:02:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:38Z'
   unchanged: false
-  changes_summary: Changed 'the son of Hananiah' to 'the sons of Hananiah' for lexical accuracy and completeness, since the Hebrew has a plural/collective construction followed by two names.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 3:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And the son of''].'
 revisions:
 - timestamp: '2026-04-23T10:02:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'And the son of Hananiah: Pelatiah and Jeshaiah; the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.'
-  to: 'And the sons of Hananiah: Pelatiah and Jeshaiah; the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.'
+  to: 'And the son of Hananiah: Pelatiah and Jeshaiah; the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.'
   rationale: Changed 'the son of Hananiah' to 'the sons of Hananiah' for lexical accuracy and completeness, since the Hebrew has a plural/collective construction followed by two names.
 
+- timestamp: '2026-05-18T02:57:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the sons of Hananiah: Pelatiah and Jeshaiah; the sons of Rephaiah[a], the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.'
+  to: 'And the sons of Hananiah: Pelatiah and Jeshaiah; the sons of Rephaiah[a], the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And the son of''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

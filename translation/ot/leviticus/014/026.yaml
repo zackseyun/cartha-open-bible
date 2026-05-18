@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:10:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:41Z'
   unchanged: false
-  changes_summary: Replaced 'the priest's left hand' with 'his own left hand' to reflect the Hebrew more naturally and avoid awkward repetition while preserving the sense that it is the priest's left palm.
+  changes_summary: 'doctrine_realignment: Leviticus 14:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["the priest''s left hand"].'
 revisions:
 - timestamp: '2026-04-23T11:10:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: And from the oil the priest shall pour onto the palm of the priest's left hand.
-  to: And from the oil the priest shall pour onto the palm of his own left hand.
+  from: 'And from the oil the priest shall pour onto the palm of the priest''s left hand.'
+  to: 'And from the oil the priest shall pour onto the palm of the priest''s left hand.'
   rationale: Replaced 'the priest's left hand' with 'his own left hand' to reflect the Hebrew more naturally and avoid awkward repetition while preserving the sense that it is the priest's left palm.
 
+- timestamp: '2026-05-18T02:56:41Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And from the oil the priest shall pour onto the palm of his own left hand[a].'
+  to: 'And from the oil the priest shall pour onto the palm of his own left hand[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["the priest''s left hand"].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

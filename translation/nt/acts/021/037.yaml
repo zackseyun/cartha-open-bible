@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:41:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:49Z'
   unchanged: false
-  changes_summary: Changed “If it is permitted for me” to “Is it permitted for me” to reflect the direct-question form in Greek and produce natural English.
+  changes_summary: 'doctrine_realignment: Acts 21:37 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''If it is permitted for me to say something to you?''].'
 revisions:
 - timestamp: '2026-04-23T09:41:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: As Paul was about to be brought into the barracks, he said to the tribune, “If it is permitted for me to say something to you?” And he said, “Do you know Greek?”
-  to: As Paul was about to be brought into the barracks, he said to the tribune, “Is it permitted for me to say something to you?” And he said, “Do you know Greek?”
+  to: As Paul was about to be brought into the barracks, he said to the tribune, “If it is permitted for me to say something to you?” And he said, “Do you know Greek?”
   rationale: Changed “If it is permitted for me” to “Is it permitted for me” to reflect the direct-question form in Greek and produce natural English.
 
+- timestamp: '2026-05-18T03:00:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'As Paul was about to be brought into the barracks[a], he said to the tribune, “Is it permitted for me to say something to you?” And he said[c][b], “Do you know Greek?”'
+  to: 'As Paul was about to be brought into the barracks[a], he said to the tribune, “Is it permitted for me to say something to you?” And he said[c][b], “Do you know Greek?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''If it is permitted for me to say something to you?''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

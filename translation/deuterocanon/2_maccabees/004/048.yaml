@@ -103,19 +103,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:33:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:08Z'
   unchanged: false
-  changes_summary: Changed 'those under accusation' to 'the accused' for more natural formal English, and 'would have been released as innocent' to 'would have been acquitted' for a more precise rendering of ἀπελύθησαν ἀκατάγνωστοι.
+  changes_summary: 'doctrine_realignment: 2 Maccabees 4:48 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would have been released as innocent''].'
 revisions:
 - timestamp: '2026-04-23T15:33:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he released Menelaus, the cause of all the evil, from among those under accusation; but for those wretched men—who, even if they had pleaded their case before Scythians, would have been released as innocent—for these he decreed death.
-  to: And he released Menelaus, the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians, would have been acquitted—for them he decreed death.
+  to: And he released Menelaus, the cause of all the evil, from among those under accusation; but for those wretched men—who, even if they had pleaded their case before Scythians, would have been released as innocent—for these he decreed death.
   rationale: Changed 'those under accusation' to 'the accused' for more natural formal English, and 'would have been released as innocent' to 'would have been acquitted' for a more precise rendering of ἀπελύθησαν ἀκατάγνωστοι.
 
+- timestamp: '2026-05-18T03:00:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.'
+  to: 'And he released Menelaus[a], the cause of all the evil, from among the accused; but for those wretched men—who, even if they had pleaded their case before Scythians[c][b], would have been acquitted—for them he decreed death.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would have been released as innocent''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

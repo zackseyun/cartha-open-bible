@@ -59,19 +59,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:34:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:54Z'
   unchanged: false
-  changes_summary: Changed 'from those counted of the congregation' to 'of those counted from the congregation' for more natural English while preserving the sense of פקודי העדה; changed 'by the sanctuary shekel' to 'according to the sanctuary shekel' for a more idiomatic rendering of בשקל הקדש.
+  changes_summary: 'doctrine_realignment: Exodus 38:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the sanctuary shekel''].'
 revisions:
 - timestamp: '2026-04-23T10:34:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the silver from those counted of the congregation was one hundred talents and one thousand seven hundred seventy-five shekels, by the sanctuary shekel.
-  to: And the silver of those counted from the congregation was one hundred talents and one thousand seven hundred seventy-five shekels, according to the sanctuary shekel.
+  to: And the silver from those counted of the congregation was one hundred talents and one thousand seven hundred seventy-five shekels, by the sanctuary shekel.
   rationale: Changed 'from those counted of the congregation' to 'of those counted from the congregation' for more natural English while preserving the sense of פקודי העדה; changed 'by the sanctuary shekel' to 'according to the sanctuary shekel' for a more idiomatic rendering of בשקל הקדש.
 
+- timestamp: '2026-05-18T02:54:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the silver of those counted from the congregation was one hundred talents and one thousand seven hundred seventy-five shekels[b][a], according to the sanctuary shekel.'
+  to: 'And the silver of those counted from the congregation was one hundred talents and one thousand seven hundred seventy-five shekels[b][a], according to the sanctuary shekel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the sanctuary shekel''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

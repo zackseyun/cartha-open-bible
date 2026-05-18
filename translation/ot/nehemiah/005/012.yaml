@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:33Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:05Z'
   unchanged: false
-  changes_summary: Changed “this promise” to “this word” to reflect the source more closely and avoid interpretive expansion; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Nehemiah 5:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to do according to this promise''].'
 revisions:
 - timestamp: '2026-04-23T11:13:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And they said, “We will restore it, and from them we will require nothing; we will do as you say.” Then I called the priests and made them swear to do according to this promise.
-  to: And they said, “We will restore it, and from them we will require nothing; we will do as you say.” Then I called the priests and made them swear to do according to this word.
+  to: And they said, “We will restore it, and from them we will require nothing; we will do as you say.” Then I called the priests and made them swear to do according to this promise.
   rationale: Changed “this promise” to “this word” to reflect the source more closely and avoid interpretive expansion; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:55:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they said[a], “We will restore it, and from them we will require nothing; we will do as you say.” Then I called the priests and made them swear to do according to this word.'
+  to: 'And they said[a], “We will restore it, and from them we will require nothing; we will do as you say.” Then I called the priests and made them swear to do according to this word.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to do according to this promise''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -76,19 +76,26 @@ theological_decisions:
   rationale: Following the gender-accurate principle, the Greek singular masculine generic is preserved as 'man.' The marital context is still clear through 'divorce his wife.' This avoids flattening the source's form while remaining natural English.
   doctrine_reference: 'DOCTRINE.md: Translation philosophy §4 (Gender-accurate over gender-neutral)'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:53:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:37Z'
   unchanged: false
-  changes_summary: Changed 'his wife' to 'a wife' to reflect the anarthrous Greek more closely and avoid adding specificity not explicit in the source.
+  changes_summary: 'doctrine_realignment: Mark 10:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his wife''].'
 revisions:
 - timestamp: '2026-04-23T09:53:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And they were asking him whether it is lawful for a man to divorce his wife, testing him.
-  to: And they were asking him whether it is lawful for a man to divorce a wife, testing him.
+  to: And they were asking him whether it is lawful for a man to divorce his wife, testing him.
   rationale: Changed 'his wife' to 'a wife' to reflect the anarthrous Greek more closely and avoid adding specificity not explicit in the source.
 
+- timestamp: '2026-05-18T03:01:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they were asking him whether it is lawful for a man to divorce a wife[a], testing him.'
+  to: 'And they were asking him whether it is lawful for a man to divorce a wife[a], testing him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his wife''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

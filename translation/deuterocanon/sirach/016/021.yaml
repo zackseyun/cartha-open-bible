@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 16:21
 translation:
-  text: If I have sinned[a], no eye sees me; or if I lie[b], who knows it in every secret place?
+  text: If I have sinned, no eye sees me; or if I lie, who knows it in every hiding place?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -113,10 +113,10 @@ theological_decisions:
   rationale: Per project philosophy for Sirach, surviving Hebrew is primary. The Greek parallel is used as actual input, but its substantial divergence here does not justify replacing the Hebrew line. No doctrinal issue is at stake; this is a textual/translation-priority decision.
   doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives; use Swete LXX alongside it'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:43:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:37Z'
   unchanged: false
-  changes_summary: Changed 'hiding place' to 'secret place' for a more natural and formally appropriate rendering of בְּכָל סֵתֶר while preserving the sense.
+  changes_summary: 'doctrine_realignment: Sirach 16:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in every hiding place''].'
 revisions:
 - timestamp: '2026-04-23T15:43:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -126,6 +126,13 @@ revisions:
   to: If I have sinned, no eye sees me; or if I lie, who knows it in every secret place?
   rationale: Changed 'hiding place' to 'secret place' for a more natural and formally appropriate rendering of בְּכָל סֵתֶר while preserving the sense.
 
+- timestamp: '2026-05-18T03:09:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'If I have sinned[a], no eye sees me; or if I lie[b], who knows it in every secret place?'
+  to: 'If I have sinned, no eye sees me; or if I lie, who knows it in every hiding place?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in every hiding place''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

@@ -113,19 +113,26 @@ theological_decisions:
   rationale: 'Project philosophy gives primacy to the Hebrew witness for Sirach where extant, but the prompt explicitly notes the Greek should be used as actual translation input. Here the major mismatch affects the opening condition: Hebrew ''if trouble overtakes you'' versus Greek ''if you are humbled.'' The main text follows the Hebrew, with the Greek preserved transparently in a footnote.'
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; Translation philosophy §3 preserve tension rather than resolve it silently.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:35Z'
   unchanged: false
-  changes_summary: Replaced 'from your presence' with the more natural and direct 'from you' for מִפָּנֶיךָ, while preserving the sense and formal tone. No other changes needed.
+  changes_summary: 'doctrine_realignment: Sirach 6:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from your presence''].'
 revisions:
 - timestamp: '2026-04-23T15:42:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: If trouble overtakes you, he will turn against you and hide himself from your presence.
-  to: If trouble overtakes you, he will turn against you and hide himself from you.
+  to: If trouble overtakes you, he will turn against you and hide himself from your presence.
   rationale: Replaced 'from your presence' with the more natural and direct 'from you' for מִפָּנֶיךָ, while preserving the sense and formal tone. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'If trouble overtakes you[a], he will turn against you and hide himself from you.'
+  to: 'If trouble overtakes you[a], he will turn against you and hide himself from you.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from your presence''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

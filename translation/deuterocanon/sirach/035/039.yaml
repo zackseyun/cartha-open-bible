@@ -80,19 +80,26 @@ theological_decisions:
   rationale: The Greek allows some ambiguity because the first clause centers on 'prayer' while the passive verb can naturally refer to the person praying. The chosen rendering preserves the poetic movement without over-resolving the imagery.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:11Z'
   unchanged: false
-  changes_summary: Changed 'he will not be comforted' to 'it will not be comforted' to match the feminine subject 'prayer' and the Greek construction more accurately.
+  changes_summary: 'doctrine_realignment: Sirach 35:39 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will not be comforted''].'
 revisions:
 - timestamp: '2026-04-23T15:45:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The prayer of the humble has passed through the clouds, and until it draws near, he will not be comforted;
-  to: The prayer of the humble has passed through the clouds, and until it draws near, it will not be comforted;
+  to: The prayer of the humble has passed through the clouds, and until it draws near, he will not be comforted;
   rationale: Changed 'he will not be comforted' to 'it will not be comforted' to match the feminine subject 'prayer' and the Greek construction more accurately.
 
+- timestamp: '2026-05-18T02:58:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The prayer of the humble has passed through the clouds[a], and until it draws near, it will not be comforted[b];'
+  to: 'The prayer of the humble has passed through the clouds[a], and until it draws near, it will not be comforted[b];'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will not be comforted''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

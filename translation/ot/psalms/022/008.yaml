@@ -65,19 +65,26 @@ theological_decisions:
   rationale: The verse is famously echoed in the Gospels, but the translation should reflect the Hebrew text itself and not preload New Testament interpretation into the wording.
   doctrine_reference: Translation philosophy §1, §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:24:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:07Z'
   unchanged: false
-  changes_summary: Replaced 'sneer with the lip' with the more literal and natural 'open wide the lip' to better reflect the Hebrew verb. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Psalms 22:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they sneer with the lip''].'
 revisions:
 - timestamp: '2026-04-23T11:24:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: All who see me mock me; they sneer with the lip; they shake the head.
-  to: All who see me mock me; they open wide the lip; they shake the head.
+  to: All who see me mock me; they sneer with the lip; they shake the head.
   rationale: Replaced 'sneer with the lip' with the more literal and natural 'open wide the lip' to better reflect the Hebrew verb. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:54:07Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'All who see me mock me[a]; they open wide the lip[b]; they shake the head.'
+  to: 'All who see me mock me[a]; they open wide the lip[b]; they shake the head.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they sneer with the lip''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

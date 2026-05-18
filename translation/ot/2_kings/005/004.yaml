@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:16:33Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:44Z'
   unchanged: false
-  changes_summary: Replaced the colloquial 'This and that is what' with the more formal and literal 'Thus and thus spoke'; changed 'from the land of Israel' to 'who is from the land of Israel' to reflect the relative clause more closely.
+  changes_summary: 'doctrine_realignment: 2 Kings 5:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This and that''].'
 revisions:
 - timestamp: '2026-04-23T10:16:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So he went in and told his master, saying, “This and that is what the girl from the land of Israel said.”
-  to: So he went in and told his master, saying, “Thus and thus spoke the girl who is from the land of Israel.”
+  to: So he went in and told his master, saying, “This and that is what the girl from the land of Israel said.”
   rationale: Replaced the colloquial 'This and that is what' with the more formal and literal 'Thus and thus spoke'; changed 'from the land of Israel' to 'who is from the land of Israel' to reflect the relative clause more closely.
 
+- timestamp: '2026-05-18T02:57:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So he went in and told his master[a], saying, “Thus and thus spoke the girl who is from the land of Israel.”'
+  to: 'So he went in and told his master[a], saying, “Thus and thus spoke the girl who is from the land of Israel.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This and that''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:43Z'
   unchanged: false
-  changes_summary: Adjusted 'This is what' to the more formal 'Thus'; changed 'to be avenged on' to 'to take vengeance on' for closer lexical accuracy and natural English; changed 'But Saul intended' to 'Now Saul intended' to reflect the Hebrew conjunction more neutrally.
+  changes_summary: 'doctrine_realignment: 1 Samuel 18:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be avenged''].'
 revisions:
 - timestamp: '2026-04-23T10:11:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'Then Saul said, “This is what you shall say to David: ‘The king has no desire for a bride-price except a hundred Philistine foreskins, to be avenged on the king’s enemies.’” But Saul intended to make David fall by the hand of the Philistines.'
-  to: Then Saul said, “Thus you shall say to David, ‘The king has no desire for a bride-price except a hundred Philistine foreskins, to take vengeance on the king’s enemies.’” Now Saul intended to make David fall by the hand of the Philistines.
+  to: 'Then Saul said, “This is what you shall say to David: ‘The king has no desire for a bride-price except a hundred Philistine foreskins, to be avenged on the king’s enemies.’” But Saul intended to make David fall by the hand of the Philistines.'
   rationale: Adjusted 'This is what' to the more formal 'Thus'; changed 'to be avenged on' to 'to take vengeance on' for closer lexical accuracy and natural English; changed 'But Saul intended' to 'Now Saul intended' to reflect the Hebrew conjunction more neutrally.
 
+- timestamp: '2026-05-18T02:56:43Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Saul said[a], “Thus you shall say to David, ‘The king has no desire for a bride-price except a hundred Philistine foreskins[c][b], to take vengeance on the king’s enemies.’” Now Saul intended to make David fall by the hand of the Philistines.'
+  to: 'Then Saul said[a], “Thus you shall say to David, ‘The king has no desire for a bride-price except a hundred Philistine foreskins[c][b], to take vengeance on the king’s enemies.’” Now Saul intended to make David fall by the hand of the Philistines.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be avenged''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -86,19 +86,26 @@ theological_decisions:
   rationale: The Greek uses the masculine plural ἀδελφοῖς, which in early Christian usage can refer to a mixed community. Following the stated policy, the main text remains gender-accurate to the source form, while inclusivity is preserved in a footnote rather than being resolved in the main text.
   doctrine_reference: DOCTRINE.md Translation philosophy §4 (Gender-accurate over gender-neutral)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:40:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:09Z'
   unchanged: false
-  changes_summary: Removed "for service," which awkwardly and unnecessarily renders εἰς διακονίαν; here the sense is simply sending aid/relief to the brothers in Judea.
+  changes_summary: 'doctrine_realignment: Acts 11:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for service''].'
 revisions:
 - timestamp: '2026-04-23T09:40:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So the disciples determined, each according to his ability, to send relief for service to the brothers living in Judea.
-  to: So the disciples determined, each according to his ability, to send relief to the brothers living in Judea.
+  to: So the disciples determined, each according to his ability, to send relief for service to the brothers living in Judea.
   rationale: Removed "for service," which awkwardly and unnecessarily renders εἰς διακονίαν; here the sense is simply sending aid/relief to the brothers in Judea.
 
+- timestamp: '2026-05-18T03:01:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So the disciples determined[a], each according to his ability[b], to send relief to the brothers living in Judea.'
+  to: 'So the disciples determined[a], each according to his ability[b], to send relief to the brothers living in Judea.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for service''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

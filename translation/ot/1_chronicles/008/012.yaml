@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:03:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:05Z'
   unchanged: false
-  changes_summary: Revised the final phrase from 'with its surrounding villages' to 'and its villages' for closer lexical accuracy to the source, avoiding interpretive expansion.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 8:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with its surrounding villages''].'
 revisions:
 - timestamp: '2026-04-23T10:03:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'The sons of Elpaal: Eber, Misham, and Shemed; he built Ono and Lod with its surrounding villages.'
-  to: 'The sons of Elpaal: Eber, Misham, and Shemed; he built Ono and Lod and its villages.'
+  to: 'The sons of Elpaal: Eber, Misham, and Shemed; he built Ono and Lod with its surrounding villages.'
   rationale: Revised the final phrase from 'with its surrounding villages' to 'and its villages' for closer lexical accuracy to the source, avoiding interpretive expansion.
 
+- timestamp: '2026-05-18T02:58:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The sons of Elpaal: Eber[a], Misham, and Shemed[b]; he built Ono and Lod and its villages.'
+  to: 'The sons of Elpaal: Eber[a], Misham, and Shemed[b]; he built Ono and Lod and its villages.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with its surrounding villages''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

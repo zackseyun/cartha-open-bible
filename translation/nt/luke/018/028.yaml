@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:51:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:05Z'
   unchanged: false
-  changes_summary: Replaced 'our own things' with 'our own' to more closely reflect the Greek τὰ ἴδια, which is broader and more natural in formal English without adding specificity not present in the source.
+  changes_summary: 'doctrine_realignment: Luke 18:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''our own things''].'
 revisions:
 - timestamp: '2026-04-23T09:51:09Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Peter said, “Look, we have left our own things and followed you.”
-  to: Then Peter said, “Look, we have left our own and followed you.”
+  to: Then Peter said, “Look, we have left our own things and followed you.”
   rationale: Replaced 'our own things' with 'our own' to more closely reflect the Greek τὰ ἴδια, which is broader and more natural in formal English without adding specificity not present in the source.
 
+- timestamp: '2026-05-18T03:01:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Peter said[a], “Look, we have left our own and followed you.”'
+  to: 'Then Peter said[a], “Look, we have left our own and followed you.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''our own things''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

@@ -92,19 +92,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:43Z'
   unchanged: false
-  changes_summary: Adjusted word order for more natural English while preserving emphasis ('please listen, you also'). Changed 'on the way' to 'on your way' to better reflect the idiom in context. Kept 'female servant' and 'piece of bread' as accurate renderings.
+  changes_summary: 'doctrine_realignment: 1 Samuel 28:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because you must go on the way''].'
 revisions:
 - timestamp: '2026-04-23T10:12:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now then, please, you also listen to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you, because you must go on the way.
-  to: Now then, please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you, because you must go on your way.
+  to: Now then, please, you also listen to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you, because you must go on the way.
   rationale: Adjusted word order for more natural English while preserving emphasis ('please listen, you also'). Changed 'on the way' to 'on your way' to better reflect the idiom in context. Kept 'female servant' and 'piece of bread' as accurate renderings.
 
+- timestamp: '2026-05-18T02:56:43Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.'
+  to: 'Now then[a], please listen, you also, to the voice of your female servant, and let me set a piece of bread before you. Eat, so that there may be strength in you[c][b], because you must go on your way.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because you must go on the way''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

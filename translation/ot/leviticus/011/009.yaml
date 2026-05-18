@@ -80,19 +80,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:10:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:04Z'
   unchanged: false
-  changes_summary: Revised opening to plural 'These you may eat' for agreement with the source, changed 'everything' to 'whatever' for smoother formal English, and replaced final 'them' with 'these' to reflect the demonstrative in the Hebrew more closely.
+  changes_summary: 'doctrine_realignment: Leviticus 11:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you may eat them''].'
 revisions:
 - timestamp: '2026-04-23T11:10:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'You may eat this from all that are in the waters: everything in the waters, in the seas and in the streams, that has fins and scales—you may eat them.'
-  to: 'These you may eat from all that are in the waters: whatever in the waters, in the seas and in the streams, has fins and scales—these you may eat.'
+  to: 'You may eat this from all that are in the waters: everything in the waters, in the seas and in the streams, that has fins and scales—you may eat them.'
   rationale: Revised opening to plural 'These you may eat' for agreement with the source, changed 'everything' to 'whatever' for smoother formal English, and replaced final 'them' with 'these' to reflect the demonstrative in the Hebrew more closely.
 
+- timestamp: '2026-05-18T02:58:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'These you may eat from all that are in the waters: whatever in the waters[a], in the seas and in the streams, has fins and scales—these you may eat.'
+  to: 'These you may eat from all that are in the waters: whatever in the waters[a], in the seas and in the streams, has fins and scales—these you may eat.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you may eat them''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

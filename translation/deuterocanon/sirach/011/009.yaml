@@ -106,19 +106,26 @@ ai_draft:
     trigger: schechter_pipeline_completes
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:42Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:57Z'
   unchanged: false
-  changes_summary: Replaced 'in the midst of another's speech' with 'in the midst of conversation' to reflect the Hebrew more directly and naturally, since the source says 'in the midst of conversation/discourse' without explicitly specifying 'another's.'
+  changes_summary: 'doctrine_realignment: Sirach 11:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["in the midst of another''s speech"].'
 revisions:
 - timestamp: '2026-04-23T15:42:42Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: My son, do not answer a matter before you hear it, and do not speak in the midst of another's speech.
-  to: My son, do not answer a matter before you hear it, and do not speak in the midst of conversation.
+  from: 'My son, do not answer a matter before you hear it, and do not speak in the midst of another''s speech.'
+  to: 'My son, do not answer a matter before you hear it, and do not speak in the midst of another''s speech.'
   rationale: Replaced 'in the midst of another's speech' with 'in the midst of conversation' to reflect the Hebrew more directly and naturally, since the source says 'in the midst of conversation/discourse' without explicitly specifying 'another's.'
 
+- timestamp: '2026-05-18T02:57:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'My son[a], do not answer a matter before you hear it, and do not speak in the midst of conversation.'
+  to: 'My son[a], do not answer a matter before you hear it, and do not speak in the midst of conversation.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["in the midst of another''s speech"].'
 cross_check:
   status: needs_review
   agreement: 0.6

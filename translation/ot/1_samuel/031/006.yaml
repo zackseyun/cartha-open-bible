@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:33Z'
   unchanged: false
-  changes_summary: Removed 'indeed' because גַּם here is adequately represented by the coordination and does not require emphatic expansion in English; otherwise retained the full sense and formal register.
+  changes_summary: 'doctrine_realignment: 1 Samuel 31:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and indeed''].'
 revisions:
 - timestamp: '2026-04-23T10:12:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So Saul died, and his three sons, and his armor-bearer, and indeed all his men, together on that day.
-  to: So Saul died, and his three sons, and his armor-bearer, and all his men, together on that day.
+  to: So Saul died, and his three sons, and his armor-bearer, and indeed all his men, together on that day.
   rationale: Removed 'indeed' because גַּם here is adequately represented by the coordination and does not require emphatic expansion in English; otherwise retained the full sense and formal register.
 
+- timestamp: '2026-05-18T02:55:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So Saul died[a], and his three sons, and his armor-bearer, and all his men[b], together on that day.'
+  to: 'So Saul died[a], and his three sons, and his armor-bearer, and all his men[b], together on that day.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and indeed''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

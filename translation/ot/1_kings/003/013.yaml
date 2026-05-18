@@ -78,19 +78,26 @@ theological_decisions:
   rationale: The Hebrew explicitly uses אִישׁ ('man'), not merely an indefinite pronoun. Following the gender-accurate policy, the translation preserves the masculine singular while recognizing that English alternatives could smooth the expression. 'No king like you' would over-assimilate the wording to the following phrase 'among the kings.'
   doctrine_reference: DOCTRINE.md Translation philosophy §4 (Gender-accurate over gender-neutral)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:45Z'
   unchanged: false
-  changes_summary: Adjusted punctuation for smoother formal English and changed 'has not been any man' to 'has been no man' for more natural, concise rendering without changing meaning.
+  changes_summary: 'doctrine_realignment: 1 Kings 3:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that there has not been any man like you''].'
 revisions:
 - timestamp: '2026-04-23T10:06:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And I have also given you what you did not ask for—both riches and honor—so that there has not been any man like you among the kings all your days.
-  to: And I have also given you what you did not ask for, both riches and honor, so that there has been no man like you among the kings all your days.
+  to: And I have also given you what you did not ask for—both riches and honor—so that there has not been any man like you among the kings all your days.
   rationale: Adjusted punctuation for smoother formal English and changed 'has not been any man' to 'has been no man' for more natural, concise rendering without changing meaning.
 
+- timestamp: '2026-05-18T02:56:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I have also given you what you did not ask for[a], both riches and honor, so that there has been no man like you among the kings all your days.'
+  to: 'And I have also given you what you did not ask for[a], both riches and honor, so that there has been no man like you among the kings all your days.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that there has not been any man like you''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

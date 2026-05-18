@@ -114,19 +114,26 @@ theological_decisions:
   rationale: For Sirach, the Hebrew witness is primary where it survives. Here the Greek is not a minor variant but a substantially different line, so the Hebrew governs the main translation while the Greek alternative is preserved in a footnote for transparency.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach Hebrew survives; preserve source uncertainty honestly'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:06Z'
   unchanged: false
-  changes_summary: Changed 'for his speech' to 'for his words' for closer lexical correspondence to the Hebrew singular collective sense in context; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Sirach 37:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for his speech''].'
 revisions:
 - timestamp: '2026-04-23T15:45:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: There is a wise man who is despised for his speech, and he is deprived of every pleasant food.
-  to: There is a wise man who is despised for his words, and he is deprived of every pleasant food.
+  to: There is a wise man who is despised for his speech, and he is deprived of every pleasant food.
   rationale: Changed 'for his speech' to 'for his words' for closer lexical correspondence to the Hebrew singular collective sense in context; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:59:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'There is a wise man who is despised for his words[a], and he is deprived of every pleasant food.'
+  to: 'There is a wise man who is despised for his words[a], and he is deprived of every pleasant food.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for his speech''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

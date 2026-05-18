@@ -85,19 +85,26 @@ theological_decisions:
   rationale: PHILOSOPHY gives original-language primacy to the Hebrew for Sirach where Hebrew survives, while also requiring the Greek parallel to be used as a real input. Here the Hebrew and Greek differ substantially in the second colon. Because the Hebrew witness is present and high-confidence, the main text follows it; the Greek alternative is preserved in a footnote due to the significance of the divergence.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; DOCTRINE.md: preserve theological tension rather than resolve it silently'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:41:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:13Z'
   unchanged: false
-  changes_summary: Removed 'is' before 'repaying God' to make the second clause more natural and formally equivalent to the Hebrew.
+  changes_summary: 'doctrine_realignment: Sirach 3:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is repaying God''].'
 revisions:
 - timestamp: '2026-04-23T15:41:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Whoever honors his father will have long days, and whoever honors his mother is repaying God.
-  to: Whoever honors his father will have long days, and whoever honors his mother repays God.
+  to: Whoever honors his father will have long days, and whoever honors his mother is repaying God.
   rationale: Removed 'is' before 'repaying God' to make the second clause more natural and formally equivalent to the Hebrew.
 
+- timestamp: '2026-05-18T02:59:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Whoever honors his father will have long days[a], and whoever honors his mother repays God.'
+  to: 'Whoever honors his father will have long days[a], and whoever honors his mother repays God.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is repaying God''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

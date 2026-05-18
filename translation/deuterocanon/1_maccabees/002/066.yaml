@@ -21,7 +21,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas Maccabeus himself[a], strong in might from his youth, shall be your commander of the army, and you shall fight the war against the nations.
+  text: And Judas Maccabeus himself, strong in might from his youth, shall be your commander of the army, and you shall fight the battle against the nations.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -94,10 +94,10 @@ theological_decisions:
   rationale: This is not a major doctrinal issue, but it is a significant translational crux. Because the first ἐκ αὐτοῦ is awkward in English and does not materially alter the sense of the commendation, the main text reflects the probable force of the clause rather than reproducing opacity. The unusual wording is preserved in a footnote for auditability.
   doctrine_reference: 'Translation philosophy: optimal equivalence; preserve source primacy without opaque English where the sense is recoverable.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:53Z'
   unchanged: false
-  changes_summary: Changed 'fight the battle' to 'fight the war' for a more natural and lexically direct rendering of πολεμήσετε πόλεμον; retained the rest as accurate and complete.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 2:66 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall fight the battle''].'
 revisions:
 - timestamp: '2026-04-23T15:29:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -107,6 +107,13 @@ revisions:
   to: And Judas Maccabeus himself, strong in might from his youth, shall be your commander of the army, and you shall fight the war against the nations.
   rationale: Changed 'fight the battle' to 'fight the war' for a more natural and lexically direct rendering of πολεμήσετε πόλεμον; retained the rest as accurate and complete.
 
+- timestamp: '2026-05-18T03:09:53Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Judas Maccabeus himself[a], strong in might from his youth, shall be your commander of the army, and you shall fight the war against the nations.'
+  to: 'And Judas Maccabeus himself, strong in might from his youth, shall be your commander of the army, and you shall fight the battle against the nations.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall fight the battle''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

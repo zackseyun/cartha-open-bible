@@ -73,19 +73,26 @@ theological_decisions:
   rationale: The Greek contains two masculine vocatives, ἄνδρες and ἀδελφοί. In keeping with the project's gender-accurate policy, the translation preserves the form and rhetorical force of the original rather than neutralizing it. Because modern readers may understand the address more broadly in context, an explanatory footnote preserves that contextual nuance without altering the wording.
   doctrine_reference: DOCTRINE.md Translation philosophy §4 (Gender-accurate over gender-neutral)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:40:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:00Z'
   unchanged: false
-  changes_summary: Replaced the overly literal and unnatural address “Men, brothers” with the natural formal rendering “Brothers,” while preserving the sense of Ἄνδρες ἀδελφοί. No other changes needed.
+  changes_summary: 'doctrine_realignment: Acts 15:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Men, brothers''].'
 revisions:
 - timestamp: '2026-04-23T09:40:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And after they became silent, James answered, saying, “Men, brothers, listen to me.”
-  to: And after they became silent, James answered, saying, “Brothers, listen to me.”
+  to: And after they became silent, James answered, saying, “Men, brothers, listen to me.”
   rationale: Replaced the overly literal and unnatural address “Men, brothers” with the natural formal rendering “Brothers,” while preserving the sense of Ἄνδρες ἀδελφοί. No other changes needed.
 
+- timestamp: '2026-05-18T03:01:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”'
+  to: 'And after they became silent[a], James answered, saying, “Brothers[b], listen to me.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Men, brothers''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

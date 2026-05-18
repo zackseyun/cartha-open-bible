@@ -93,19 +93,26 @@ theological_decisions:
   rationale: Supplying an object resolves an ambiguity the Greek leaves open. Preserving that tension better matches the source and the translation philosophy.
   doctrine_reference: 'Translation philosophy #3: Preserve theological tension rather than resolve it'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:35:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:00Z'
   unchanged: false
-  changes_summary: 'Reordered the final clause to reflect the Greek more naturally and completely in English: ''as the Lord gave to each one'' instead of ''and each one as the Lord gave.'''
+  changes_summary: 'doctrine_realignment: 1 Corinthians 3:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and each one as the Lord gave''].'
 revisions:
 - timestamp: '2026-04-23T09:35:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: What then is Apollos? And what is Paul? Servants through whom you believed, and each one as the Lord gave.
-  to: What then is Apollos? And what is Paul? Servants through whom you believed, as the Lord gave to each one.
+  to: What then is Apollos? And what is Paul? Servants through whom you believed, and each one as the Lord gave.
   rationale: 'Reordered the final clause to reflect the Greek more naturally and completely in English: ''as the Lord gave to each one'' instead of ''and each one as the Lord gave.'''
 
+- timestamp: '2026-05-18T03:01:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'What then is Apollos? And what is Paul? Servants through whom you believed[c][b][a], as the Lord gave to each one.'
+  to: 'What then is Apollos? And what is Paul? Servants through whom you believed[c][b][a], as the Lord gave to each one.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and each one as the Lord gave''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

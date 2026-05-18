@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:46:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:47Z'
   unchanged: false
-  changes_summary: 'Revised the appositional phrase to more directly reflect the Greek double genitive construction: ''which is the Sea of Tiberias'' instead of ''that is, of Tiberias.'''
+  changes_summary: 'doctrine_realignment: John 6:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that is, of Tiberias''].'
 revisions:
 - timestamp: '2026-04-23T09:46:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: After these things, Jesus went away to the other side of the Sea of Galilee, that is, of Tiberias.
-  to: After these things, Jesus went away to the other side of the Sea of Galilee, which is the Sea of Tiberias.
+  to: After these things, Jesus went away to the other side of the Sea of Galilee, that is, of Tiberias.
   rationale: 'Revised the appositional phrase to more directly reflect the Greek double genitive construction: ''which is the Sea of Tiberias'' instead of ''that is, of Tiberias.'''
 
+- timestamp: '2026-05-18T03:00:47Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'After these things[a], Jesus went away to the other side of the Sea of Galilee[b], which is the Sea of Tiberias.'
+  to: 'After these things[a], Jesus went away to the other side of the Sea of Galilee[b], which is the Sea of Tiberias.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that is, of Tiberias''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

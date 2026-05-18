@@ -91,19 +91,26 @@ theological_decisions:
   rationale: The translation philosophy prefers gender-accurate renderings over gender-neutral ones when the source is grammatically masculine. Here the literal phrase is preserved in the main text, while a more idiomatic alternative is preserved in a footnote for readability.
   doctrine_reference: DOCTRINE.md Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:25Z'
   unchanged: false
-  changes_summary: Changed 'are living' to 'dwell' for closer lexical consistency with the Hebrew and to match the repeated dwelling language in the verse. No other changes needed.
+  changes_summary: 'doctrine_realignment: Numbers 35:34 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in which you are living''].'
 revisions:
 - timestamp: '2026-04-23T11:19:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And you shall not defile the land in which you are living, in the midst of which I dwell, for I, the LORD, dwell in the midst of the sons of Israel.
-  to: And you shall not defile the land in which you dwell, in the midst of which I dwell, for I, the LORD, dwell in the midst of the sons of Israel.
+  to: And you shall not defile the land in which you are living, in the midst of which I dwell, for I, the LORD, dwell in the midst of the sons of Israel.
   rationale: Changed 'are living' to 'dwell' for closer lexical consistency with the Hebrew and to match the repeated dwelling language in the verse. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And you shall not defile the land in which you dwell[a], in the midst of which I dwell, for I, Yahweh, dwell in the midst of the sons of Israel.'
+  to: 'And you shall not defile the land in which you dwell[a], in the midst of which I dwell, for I, Yahweh, dwell in the midst of the sons of Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in which you are living''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

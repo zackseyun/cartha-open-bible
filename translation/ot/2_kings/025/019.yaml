@@ -83,19 +83,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:05Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:46Z'
   unchanged: false
-  changes_summary: Changed 'court official' to 'official' for closer lexical accuracy to saris, avoiding an overly specific courtly nuance not explicit in the term here. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Kings 25:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''court official''].'
 revisions:
 - timestamp: '2026-04-23T10:19:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And from the city he took one court official, who was appointed over the men of war, and five men from those who saw the king’s face, who were found in the city, and the scribe, the commander of the army, who mustered the people of the land, and sixty men from the people of the land who were found in the city.
-  to: And from the city he took one official, who was appointed over the men of war, and five men from those who saw the king’s face, who were found in the city, and the scribe, the commander of the army, who mustered the people of the land, and sixty men from the people of the land who were found in the city.
+  to: And from the city he took one court official, who was appointed over the men of war, and five men from those who saw the king’s face, who were found in the city, and the scribe, the commander of the army, who mustered the people of the land, and sixty men from the people of the land who were found in the city.
   rationale: Changed 'court official' to 'official' for closer lexical accuracy to saris, avoiding an overly specific courtly nuance not explicit in the term here. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:46Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And from the city he took one official[a], who was appointed over the men of war, and five men from those who saw the king’s face, who were found in the city, and the scribe, the commander of the army, who mustered the people of the land[c][b], and sixty men from the people of the land who were found in the city.'
+  to: 'And from the city he took one official[a], who was appointed over the men of war, and five men from those who saw the king’s face, who were found in the city, and the scribe, the commander of the army, who mustered the people of the land[c][b], and sixty men from the people of the land who were found in the city.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''court official''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

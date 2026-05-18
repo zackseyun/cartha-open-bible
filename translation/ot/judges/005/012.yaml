@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:06:43Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:58Z'
   unchanged: false
-  changes_summary: Changed 'speak a song' to 'sing a song' for more natural and accurate English rendering of the imperative. Kept the repeated imperatives and 'take captive your captives' to preserve the Hebrew wording.
+  changes_summary: 'doctrine_realignment: Judges 5:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''speak a song''].'
 revisions:
 - timestamp: '2026-04-23T11:06:43Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Awake, awake, Deborah! Awake, awake, speak a song! Rise up, Barak, and take captive your captives, son of Abinoam.
-  to: Awake, awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives, son of Abinoam.
+  to: Awake, awake, Deborah! Awake, awake, speak a song! Rise up, Barak, and take captive your captives, son of Abinoam.
   rationale: Changed 'speak a song' to 'sing a song' for more natural and accurate English rendering of the imperative. Kept the repeated imperatives and 'take captive your captives' to preserve the Hebrew wording.
 
+- timestamp: '2026-05-18T02:55:58Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.'
+  to: 'Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''speak a song''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

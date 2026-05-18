@@ -21,7 +21,7 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.
+  text: On the day your life's days are completed, and at the time of your death, distribute your inheritance.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -100,19 +100,26 @@ theological_decisions:
   rationale: The verse is framed by death and inheritance language, so the primary sense is disposition of property at the end of life. The translation avoids expanding it into a generalized theological statement beyond the text.
   doctrine_reference: 'Translation philosophy: original-language primacy over translation tradition; preserve the text''s plain sense without importing doctrinal claims.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:44:39Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:37Z'
   unchanged: false
-  changes_summary: Replaced 'your life's days' with 'the days of your life' for more natural formal English while preserving the Greek wording and sense.
+  changes_summary: 'doctrine_realignment: Sirach 30:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["your life''s days"].'
 revisions:
 - timestamp: '2026-04-23T15:44:39Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: On the day your life's days are completed, and at the time of your death, distribute your inheritance.
+  from: 'On the day your life''s days are completed, and at the time of your death, distribute your inheritance.'
   to: On the day the days of your life are completed, and at the time of your death, distribute your inheritance.
   rationale: Replaced 'your life's days' with 'the days of your life' for more natural formal English while preserving the Greek wording and sense.
 
+- timestamp: '2026-05-18T03:09:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'On the day the days of your life are completed[a], and at the time of your death, distribute your inheritance.'
+  to: 'On the day your life''s days are completed, and at the time of your death, distribute your inheritance.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["your life''s days"].'
 cross_check:
   status: high_agreement
   agreement: 0.95

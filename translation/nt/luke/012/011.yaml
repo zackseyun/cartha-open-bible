@@ -93,19 +93,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:46Z'
   unchanged: false
-  changes_summary: Revised 'what you should defend yourselves' to 'what you should say in your defense' for accurate rendering of ἀπολογήσησθε and natural English. Kept the rest essentially unchanged.
+  changes_summary: 'doctrine_realignment: Luke 12:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you should defend yourselves''].'
 revisions:
 - timestamp: '2026-04-23T09:50:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But whenever they bring you before the synagogues and the rulers and the authorities, do not worry about how or what you should defend yourselves, or what you should say;
-  to: But whenever they bring you before the synagogues and the rulers and the authorities, do not worry about how or what you should say in your defense, or what you should say;
+  to: But whenever they bring you before the synagogues and the rulers and the authorities, do not worry about how or what you should defend yourselves, or what you should say;
   rationale: Revised 'what you should defend yourselves' to 'what you should say in your defense' for accurate rendering of ἀπολογήσησθε and natural English. Kept the rest essentially unchanged.
 
+- timestamp: '2026-05-18T03:00:46Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];'
+  to: 'But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you should defend yourselves''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

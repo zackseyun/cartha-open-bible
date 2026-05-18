@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:08:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:06Z'
   unchanged: false
-  changes_summary: Changed 'could enter' to 'would enter' to better reflect the Hebrew sense of expected occurrence rather than mere possibility.
+  changes_summary: 'doctrine_realignment: Lamentations 4:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''could enter''].'
 revisions:
 - timestamp: '2026-04-23T11:08:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The kings of the earth did not believe, nor did any of the inhabitants of the world, that an adversary and an enemy could enter the gates of Jerusalem.
-  to: The kings of the earth did not believe, nor did any of the inhabitants of the world, that an adversary and an enemy would enter the gates of Jerusalem.
+  to: The kings of the earth did not believe, nor did any of the inhabitants of the world, that an adversary and an enemy could enter the gates of Jerusalem.
   rationale: Changed 'could enter' to 'would enter' to better reflect the Hebrew sense of expected occurrence rather than mere possibility.
 
+- timestamp: '2026-05-18T02:55:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The kings of the earth did not believe[a], nor did any of the inhabitants of the world, that an adversary and an enemy would enter the gates of Jerusalem.'
+  to: 'The kings of the earth did not believe[a], nor did any of the inhabitants of the world, that an adversary and an enemy would enter the gates of Jerusalem.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''could enter''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

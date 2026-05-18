@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:11Z'
   unchanged: false
-  changes_summary: Changed 'five male lambs a year old' to 'five lambs a year old' for lexical accuracy, since the Hebrew says 'lambs, sons of a year' without specifying male here.
+  changes_summary: 'doctrine_realignment: Numbers 7:53 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''five male lambs a year old''].'
 revisions:
 - timestamp: '2026-04-23T11:15:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'and for the sacrifice of peace offerings: two cattle, five rams, five male goats, and five male lambs a year old. This was the offering of Elishama son of Ammihud.'
-  to: 'and for the sacrifice of peace offerings: two cattle, five rams, five male goats, and five lambs a year old. This was the offering of Elishama son of Ammihud.'
+  to: 'and for the sacrifice of peace offerings: two cattle, five rams, five male goats, and five male lambs a year old. This was the offering of Elishama son of Ammihud.'
   rationale: Changed 'five male lambs a year old' to 'five lambs a year old' for lexical accuracy, since the Hebrew says 'lambs, sons of a year' without specifying male here.
 
+- timestamp: '2026-05-18T02:58:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and for the sacrifice of peace offerings: two cattle[a], five rams, five male goats, and five lambs a year old[b]. This was the offering of Elishama son of Ammihud.'
+  to: 'and for the sacrifice of peace offerings: two cattle[a], five rams, five male goats, and five lambs a year old[b]. This was the offering of Elishama son of Ammihud.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''five male lambs a year old''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

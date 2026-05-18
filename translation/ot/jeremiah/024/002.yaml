@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:55:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:21Z'
   unchanged: false
-  changes_summary: Replaced 'so bad that' with 'which could not be eaten because of their badness' to more directly reflect the Hebrew wording and causal phrase.
+  changes_summary: 'doctrine_realignment: Jeremiah 24:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so bad that they could not be eaten''].'
 revisions:
 - timestamp: '2026-04-23T10:55:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: One basket had very good figs, like first-ripe figs, and one basket had very bad figs, so bad that they could not be eaten.
-  to: One basket had very good figs, like first-ripe figs, and one basket had very bad figs, which could not be eaten because of their badness.
+  to: One basket had very good figs, like first-ripe figs, and one basket had very bad figs, so bad that they could not be eaten.
   rationale: Replaced 'so bad that' with 'which could not be eaten because of their badness' to more directly reflect the Hebrew wording and causal phrase.
 
+- timestamp: '2026-05-18T02:56:21Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'One basket had very good figs[a], like first-ripe figs, and one basket had very bad figs[b], which could not be eaten because of their badness.'
+  to: 'One basket had very good figs[a], like first-ripe figs, and one basket had very bad figs[b], which could not be eaten because of their badness.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so bad that they could not be eaten''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

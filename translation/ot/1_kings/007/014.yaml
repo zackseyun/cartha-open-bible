@@ -93,19 +93,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:08Z'
   unchanged: false
-  changes_summary: Changed 'a craftsman in bronze' to 'a worker in bronze' for closer lexical correspondence to the Hebrew participle 'working/engraving bronze.'
+  changes_summary: 'doctrine_realignment: 1 Kings 7:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a craftsman in bronze''].'
 revisions:
 - timestamp: '2026-04-23T10:06:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He was the son of a widow from the tribe of Naphtali, and his father was a man of Tyre, a craftsman in bronze. He was filled with wisdom, understanding, and knowledge to do every kind of work in bronze. So he came to King Solomon and did all his work.
-  to: He was the son of a widow from the tribe of Naphtali, and his father was a man of Tyre, a worker in bronze. He was filled with wisdom, understanding, and knowledge to do every kind of work in bronze. So he came to King Solomon and did all his work.
+  to: He was the son of a widow from the tribe of Naphtali, and his father was a man of Tyre, a craftsman in bronze. He was filled with wisdom, understanding, and knowledge to do every kind of work in bronze. So he came to King Solomon and did all his work.
   rationale: Changed 'a craftsman in bronze' to 'a worker in bronze' for closer lexical correspondence to the Hebrew participle 'working/engraving bronze.'
 
+- timestamp: '2026-05-18T02:57:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He was the son of a widow from the tribe of Naphtali[a], and his father was a man of Tyre, a worker in bronze. He was filled with wisdom, understanding, and knowledge to do every kind of work in bronze[b]. So he came to King Solomon and did all his work.'
+  to: 'He was the son of a widow from the tribe of Naphtali[a], and his father was a man of Tyre, a worker in bronze. He was filled with wisdom, understanding, and knowledge to do every kind of work in bronze[b]. So he came to King Solomon and did all his work.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a craftsman in bronze''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

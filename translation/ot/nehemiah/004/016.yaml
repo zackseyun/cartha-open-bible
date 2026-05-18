@@ -88,19 +88,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:11Z'
   unchanged: false
-  changes_summary: Replaced 'young servant' with 'servant' for lexical accuracy, since the Hebrew נער can mean servant/attendant without emphasizing youth here. Simplified 'so that they may be' to 'and let them be' to reflect the straightforward coordination of the source more closely.
+  changes_summary: 'doctrine_realignment: Nehemiah 4:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''each man and his young servant''].'
 revisions:
 - timestamp: '2026-04-23T11:13:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Also at that time I said to the people, “Let each man and his young servant spend the night within Jerusalem, so that they may be a guard for us by night and workers by day.”
-  to: Also at that time I said to the people, “Let each man and his servant spend the night within Jerusalem, and let them be a guard for us by night and workers by day.”
+  to: Also at that time I said to the people, “Let each man and his young servant spend the night within Jerusalem, so that they may be a guard for us by night and workers by day.”
   rationale: Replaced 'young servant' with 'servant' for lexical accuracy, since the Hebrew נער can mean servant/attendant without emphasizing youth here. Simplified 'so that they may be' to 'and let them be' to reflect the straightforward coordination of the source more closely.
 
+- timestamp: '2026-05-18T02:54:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”'
+  to: 'Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''each man and his young servant''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

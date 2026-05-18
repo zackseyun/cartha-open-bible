@@ -121,19 +121,26 @@ theological_decisions:
   rationale: The Hebrew wording is terse and somewhat mismatched, while the Greek parallel reflects a different or expanded Vorlage. Rather than reproduce an opaque literalism, the translation keeps the Hebrew imagery of 'heart' and divine striking, while signaling the Greek alternative in a footnote. This preserves source uncertainty honestly without importing a full Greek reading into the main text.
   doctrine_reference: 'DOCTRINE.md: preserve theological tension rather than resolve it; PHILOSOPHY.md: transparency about source uncertainty'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:11Z'
   unchanged: false
-  changes_summary: 'Revised to reflect the Hebrew more closely: removed ''with dread,'' which is not explicit in the source, and rendered מִלֵּא לִבּוֹ more literally as ''filled his heart.'' Kept the final clause as ''struck him down completely'' for natural English and to convey עַד כַּלֵּה.'
+  changes_summary: 'doctrine_realignment: Sirach 10:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''struck his heart with dread''].'
 revisions:
 - timestamp: '2026-04-23T15:42:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Therefore God struck his heart with dread, and struck him down completely.
-  to: Therefore God filled his heart and struck him, and struck him down completely.
+  to: Therefore God struck his heart with dread, and struck him down completely.
   rationale: 'Revised to reflect the Hebrew more closely: removed ''with dread,'' which is not explicit in the source, and rendered מִלֵּא לִבּוֹ more literally as ''filled his heart.'' Kept the final clause as ''struck him down completely'' for natural English and to convey עַד כַּלֵּה.'
 
+- timestamp: '2026-05-18T02:59:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Therefore God filled his heart and struck him[b][a], and struck him down completely.'
+  to: 'Therefore God filled his heart and struck him[b][a], and struck him down completely.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''struck his heart with dread''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

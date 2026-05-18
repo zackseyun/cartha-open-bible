@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:18Z'
   unchanged: false
-  changes_summary: Replaced 'all the crafted articles' with 'every crafted article' to more closely reflect the singular collective sense of the Hebrew and improve formal consistency while preserving natural English.
+  changes_summary: 'doctrine_realignment: Numbers 31:51 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''articles''].'
 revisions:
 - timestamp: '2026-04-23T11:19:09Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So Moses and Eleazar the priest took the gold from them, all the crafted articles.
-  to: So Moses and Eleazar the priest took the gold from them, every crafted article.
+  to: So Moses and Eleazar the priest took the gold from them, all the crafted articles.
   rationale: Replaced 'all the crafted articles' with 'every crafted article' to more closely reflect the singular collective sense of the Hebrew and improve formal consistency while preserving natural English.
 
+- timestamp: '2026-05-18T02:58:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So Moses and Eleazar the priest took the gold from them[a], every crafted article.'
+  to: 'So Moses and Eleazar the priest took the gold from them[a], every crafted article.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''articles''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

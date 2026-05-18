@@ -82,19 +82,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:39:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:45Z'
   unchanged: false
-  changes_summary: Reworded the opening to reflect the Hebrew construction more naturally ('as the city's property, you shall give'). Replaced 'corresponding to' with 'alongside' for לְעֻמַּת, which better fits the spatial sense here. Kept all measurements and the final possession clause intact.
+  changes_summary: 'doctrine_realignment: Ezekiel 45:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''corresponding to''].'
 revisions:
 - timestamp: '2026-04-23T10:39:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: And you shall give the city's property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.
-  to: And as the city's property, you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution; it shall belong to the whole house of Israel.
+  from: 'And you shall give the city''s property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.'
+  to: 'And you shall give the city''s property an area five thousand wide and twenty-five thousand long, corresponding to the holy contribution; it shall belong to the whole house of Israel.'
   rationale: Reworded the opening to reflect the Hebrew construction more naturally ('as the city's property, you shall give'). Replaced 'corresponding to' with 'alongside' for לְעֻמַּת, which better fits the spatial sense here. Kept all measurements and the final possession clause intact.
 
+- timestamp: '2026-05-18T02:55:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And as the city''s property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.'
+  to: 'And as the city''s property[a], you shall give an area five thousand wide and twenty-five thousand long, alongside the holy contribution[b]; it shall belong to the whole house of Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''corresponding to''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

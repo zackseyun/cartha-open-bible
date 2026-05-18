@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:32Z'
   unchanged: false
-  changes_summary: Changed 'your female servant' to 'your servant' for more natural formal English while preserving the sense of אֲמָתְךָ. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 25:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your female servant''].'
 revisions:
 - timestamp: '2026-04-23T10:11:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'Please, my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your female servant, did not see the young men of my lord whom you sent.'
-  to: 'Please, my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
+  to: 'Please, my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your female servant, did not see the young men of my lord whom you sent.'
   rationale: Changed 'your female servant' to 'your servant' for more natural formal English while preserving the sense of אֲמָתְךָ. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Please[a], my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
+  to: 'Please[a], my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your female servant''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

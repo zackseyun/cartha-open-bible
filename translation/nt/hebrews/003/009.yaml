@@ -71,19 +71,26 @@ theological_decisions:
   rationale: Although the explicit object 'me' is not written in this clause in SBLGNT, the quotation context from Psalm 95 and the flow of the sentence make God the understood object. Supplying 'me' yields natural English and reflects the sense of the source without adding doctrinal content beyond the quotation's referent.
   doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:43:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:53Z'
   unchanged: false
-  changes_summary: Changed 'in trial' to 'by trial' to better reflect ἐν δοκιμασίᾳ idiomatically while preserving the sense of testing/proving. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Hebrews 3:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in trial''].'
 revisions:
 - timestamp: '2026-04-23T09:43:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: where your fathers tested me in trial and saw my works,
-  to: where your fathers tested me by trial and saw my works,
+  to: where your fathers tested me in trial and saw my works,
   rationale: Changed 'in trial' to 'by trial' to better reflect ἐν δοκιμασίᾳ idiomatically while preserving the sense of testing/proving. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T03:01:53Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'where your fathers tested me by trial and saw my works[b][a],'
+  to: 'where your fathers tested me by trial and saw my works[b][a],'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in trial''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

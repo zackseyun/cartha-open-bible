@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:24:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:25Z'
   unchanged: false
-  changes_summary: Replaced 'words of deceit' with 'deceitful words' for more natural English while preserving the Hebrew sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Psalms 35:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''words of deceit''].'
 revisions:
 - timestamp: '2026-04-23T11:24:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For they do not speak peace, but against the quiet ones of the land they devise words of deceit.
-  to: For they do not speak peace, but against the quiet ones of the land they devise deceitful words.
+  to: For they do not speak peace, but against the quiet ones of the land they devise words of deceit.
   rationale: Replaced 'words of deceit' with 'deceitful words' for more natural English while preserving the Hebrew sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:54:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For they do not speak peace[a], but against the quiet ones of the land they devise deceitful words.'
+  to: 'For they do not speak peace[a], but against the quiet ones of the land they devise deceitful words.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''words of deceit''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

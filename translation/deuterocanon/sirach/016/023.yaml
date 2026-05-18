@@ -109,19 +109,26 @@ ai_draft:
     trigger: schechter_pipeline_completes
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:43:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:08Z'
   unchanged: false
-  changes_summary: Changed “think on this” to “consider this” for more natural formal English while preserving the sense of יחשׁב; retained the rest as accurate and complete.
+  changes_summary: 'doctrine_realignment: Sirach 16:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will think on''].'
 revisions:
 - timestamp: '2026-04-23T15:43:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Those lacking sense will understand these things, and a foolish man will think on this.
-  to: Those lacking sense will understand these things, and a foolish man will consider this.
+  to: Those lacking sense will understand these things, and a foolish man will think on this.
   rationale: Changed “think on this” to “consider this” for more natural formal English while preserving the sense of יחשׁב; retained the rest as accurate and complete.
 
+- timestamp: '2026-05-18T02:59:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Those lacking sense will understand these things[a], and a foolish man will consider this.'
+  to: 'Those lacking sense will understand these things[a], and a foolish man will consider this.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will think on''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

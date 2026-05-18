@@ -66,19 +66,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:03:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:44Z'
   unchanged: false
-  changes_summary: Replaced 'to be with them' with the more literal 'with these' to reflect עִם אֵלֶּה; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 9:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be with them''].'
 revisions:
 - timestamp: '2026-04-23T10:03:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And their brothers in their villages were to come in every seven days, from time to time, to be with them.
-  to: And their brothers in their villages were to come in every seven days, from time to time, with these.
+  to: And their brothers in their villages were to come in every seven days, from time to time, to be with them.
   rationale: Replaced 'to be with them' with the more literal 'with these' to reflect עִם אֵלֶּה; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T02:58:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And their brothers in their villages were to come in every seven days[a], from time to time[b], with these.'
+  to: 'And their brothers in their villages were to come in every seven days[a], from time to time[b], with these.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be with them''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

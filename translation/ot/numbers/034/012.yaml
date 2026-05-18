@@ -82,19 +82,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:33Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:31Z'
   unchanged: false
-  changes_summary: Changed 'end points' to singular 'end' to match the singular Hebrew suffix and improve naturalness; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Numbers 34:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''its end points''].'
 revisions:
 - timestamp: '2026-04-23T11:19:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the border shall go down to the Jordan, and its end points shall be at the Salt Sea. This shall be your land according to its borders all around.
-  to: Then the border shall go down to the Jordan, and its end shall be at the Salt Sea. This shall be your land according to its borders all around.
+  to: Then the border shall go down to the Jordan, and its end points shall be at the Salt Sea. This shall be your land according to its borders all around.
   rationale: Changed 'end points' to singular 'end' to match the singular Hebrew suffix and improve naturalness; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:58:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the border shall go down to the Jordan[a], and its end shall be at the Salt Sea[b]. This shall be your land according to its borders all around.'
+  to: 'Then the border shall go down to the Jordan[a], and its end shall be at the Salt Sea[b]. This shall be your land according to its borders all around.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''its end points''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:32Z'
   unchanged: false
-  changes_summary: Changed 'has brought trouble on the land' to 'has troubled the land' for a more direct and formal rendering of the Hebrew while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 14:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has brought trouble on''].'
 revisions:
 - timestamp: '2026-04-23T10:10:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Jonathan said, “My father has brought trouble on the land. See, please, how my eyes have brightened because I tasted a little of this honey.”
-  to: Then Jonathan said, “My father has troubled the land. See, please, how my eyes have brightened because I tasted a little of this honey.”
+  to: Then Jonathan said, “My father has brought trouble on the land. See, please, how my eyes have brightened because I tasted a little of this honey.”
   rationale: Changed 'has brought trouble on the land' to 'has troubled the land' for a more direct and formal rendering of the Hebrew while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Jonathan said[a], “My father has troubled the land. See, please, how my eyes have brightened because I tasted a little of this honey.”'
+  to: 'Then Jonathan said[a], “My father has troubled the land. See, please, how my eyes have brightened because I tasted a little of this honey.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has brought trouble on''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

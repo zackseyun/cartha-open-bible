@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:06:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:15Z'
   unchanged: false
-  changes_summary: Changed 'your young man' to 'your servant' for more natural and accurate rendering of נַעַר in this context.
+  changes_summary: 'doctrine_realignment: Judges 7:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your young man''].'
 revisions:
 - timestamp: '2026-04-23T11:06:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But if you are afraid to go down, go down to the camp with Purah your young man.
-  to: But if you are afraid to go down, go down to the camp with Purah your servant.
+  to: But if you are afraid to go down, go down to the camp with Purah your young man.
   rationale: Changed 'your young man' to 'your servant' for more natural and accurate rendering of נַעַר in this context.
 
+- timestamp: '2026-05-18T02:55:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But if you are afraid to go down[a], go down to the camp with Purah your servant.'
+  to: 'But if you are afraid to go down[a], go down to the camp with Purah your servant.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your young man''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

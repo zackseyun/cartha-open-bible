@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:54Z'
   unchanged: false
-  changes_summary: Removed 'the distance' because the source simply says 'measure to the cities'; this keeps the wording closer to the Hebrew while remaining natural English.
+  changes_summary: 'doctrine_realignment: Deuteronomy 21:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''measure the distance''].'
 revisions:
 - timestamp: '2026-04-23T10:26:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: then your elders and your judges shall go out and measure the distance to the cities that are around the slain man.
-  to: then your elders and your judges shall go out and measure to the cities that are around the slain man.
+  to: then your elders and your judges shall go out and measure the distance to the cities that are around the slain man.
   rationale: Removed 'the distance' because the source simply says 'measure to the cities'; this keeps the wording closer to the Hebrew while remaining natural English.
 
+- timestamp: '2026-05-18T02:55:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'then your elders and your judges shall go out and measure to the cities that are around the slain man[a].'
+  to: 'then your elders and your judges shall go out and measure to the cities that are around the slain man[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''measure the distance''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

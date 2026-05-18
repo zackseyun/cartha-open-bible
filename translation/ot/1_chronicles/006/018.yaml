@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:02:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:40Z'
   unchanged: false
-  changes_summary: Removed 'with' to reflect the simple conjunction 'and their sons,' and changed 'the Kohathite' to the more natural plural 'the Kohathites' for 'from the sons of the Kohathites.'
+  changes_summary: 'doctrine_realignment: 1 Chronicles 6:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with their sons''].'
 revisions:
 - timestamp: '2026-04-23T10:02:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'And these are the ones who stood with their sons: from the sons of the Kohathite: Heman the singer, son of Joel, son of Samuel.'
-  to: 'And these are the ones who stood, and their sons: from the sons of the Kohathites: Heman the singer, son of Joel, son of Samuel.'
+  to: 'And these are the ones who stood with their sons: from the sons of the Kohathite: Heman the singer, son of Joel, son of Samuel.'
   rationale: Removed 'with' to reflect the simple conjunction 'and their sons,' and changed 'the Kohathite' to the more natural plural 'the Kohathites' for 'from the sons of the Kohathites.'
 
+- timestamp: '2026-05-18T02:58:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And these are the ones who stood[a], and their sons: from the sons of the Kohathites: Heman the singer, son of Joel[b], son of Samuel.'
+  to: 'And these are the ones who stood[a], and their sons: from the sons of the Kohathites: Heman the singer, son of Joel[b], son of Samuel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with their sons''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

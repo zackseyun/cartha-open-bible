@@ -82,19 +82,26 @@ theological_decisions:
   rationale: The Greek contains two instances of πάλιν, and preserving the repetition maintains the narrative emphasis without importing theological interpretation beyond the text.
   doctrine_reference: Translation philosophy §§1, 3, 5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:58:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:08Z'
   unchanged: false
-  changes_summary: Changed 'the same words' to 'the same thing' for closer alignment with λόγον ('word/saying/matter') in the singular; retained the repeated 'again' to reflect both instances of πάλιν.
+  changes_summary: 'doctrine_realignment: Matthew 26:44 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the same words''].'
 revisions:
 - timestamp: '2026-04-23T09:58:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And leaving them again, he went away and prayed a third time, saying the same words again.
-  to: And leaving them again, he went away and prayed a third time, saying the same thing again.
+  to: And leaving them again, he went away and prayed a third time, saying the same words again.
   rationale: Changed 'the same words' to 'the same thing' for closer alignment with λόγον ('word/saying/matter') in the singular; retained the repeated 'again' to reflect both instances of πάλιν.
 
+- timestamp: '2026-05-18T03:00:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And leaving them again[a], he went away and prayed a third time, saying the same thing again.'
+  to: 'And leaving them again[a], he went away and prayed a third time, saying the same thing again.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the same words''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

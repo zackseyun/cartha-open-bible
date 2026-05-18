@@ -94,19 +94,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:29:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:05Z'
   unchanged: false
-  changes_summary: Added 'him' to reflect the pronominal object in 'saw him,' while retaining 'the child' in apposition for completeness and formal accuracy.
+  changes_summary: 'doctrine_realignment: Exodus 2:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and saw the child''].'
 revisions:
 - timestamp: '2026-04-23T10:29:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: She opened it and saw the child, and behold, a boy was crying. She had compassion on him and said, “This is one of the Hebrews’ children.”
-  to: She opened it and saw him, the child, and behold, a boy was crying. She had compassion on him and said, “This is one of the Hebrews’ children.”
+  to: She opened it and saw the child, and behold, a boy was crying. She had compassion on him and said, “This is one of the Hebrews’ children.”
   rationale: Added 'him' to reflect the pronominal object in 'saw him,' while retaining 'the child' in apposition for completeness and formal accuracy.
 
+- timestamp: '2026-05-18T02:56:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'She opened it and saw him[a], the child, and behold, a boy was crying. She had compassion on him and said[c][b], “This is one of the Hebrews’ children.”'
+  to: 'She opened it and saw him[a], the child, and behold, a boy was crying. She had compassion on him and said[c][b], “This is one of the Hebrews’ children.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and saw the child''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

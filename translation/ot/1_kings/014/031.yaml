@@ -82,19 +82,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:03Z'
   unchanged: false
-  changes_summary: Removed 'woman' after 'the Ammonite' for a more natural and formally accurate rendering of the gentilic הָעַמֹּנִית without unnecessary expansion.
+  changes_summary: 'doctrine_realignment: 1 Kings 14:31 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Naamah the Ammonite woman''].'
 revisions:
 - timestamp: '2026-04-23T10:08:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: And Rehoboam slept with his fathers and was buried with his fathers in the city of David. And his mother's name was Naamah the Ammonite woman. And Abijam his son reigned in his place.
-  to: And Rehoboam slept with his fathers and was buried with his fathers in the city of David. And his mother's name was Naamah the Ammonite. And Abijam his son reigned in his place.
+  from: 'And Rehoboam slept with his fathers and was buried with his fathers in the city of David. And his mother''s name was Naamah the Ammonite woman. And Abijam his son reigned in his place.'
+  to: 'And Rehoboam slept with his fathers and was buried with his fathers in the city of David. And his mother''s name was Naamah the Ammonite woman. And Abijam his son reigned in his place.'
   rationale: Removed 'woman' after 'the Ammonite' for a more natural and formally accurate rendering of the gentilic הָעַמֹּנִית without unnecessary expansion.
 
+- timestamp: '2026-05-18T02:56:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Rehoboam slept with his fathers and was buried with his fathers in the city of David[a]. And his mother''s name was Naamah the Ammonite[b]. And Abijam his son reigned in his place.'
+  to: 'And Rehoboam slept with his fathers and was buried with his fathers in the city of David[a]. And his mother''s name was Naamah the Ammonite[b]. And Abijam his son reigned in his place.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Naamah the Ammonite woman''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

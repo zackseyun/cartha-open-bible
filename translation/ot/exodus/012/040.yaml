@@ -61,19 +61,26 @@ theological_decisions:
   rationale: The Hebrew source provided is the Masoretic Text and explicitly says 'in Egypt.' Because a well-known alternative textual tradition exists and affects chronology, it should be preserved in a footnote rather than imported into the main text.
   doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:54Z'
   unchanged: false
-  changes_summary: Replaced 'during which they lived in Egypt' with 'who lived in Egypt' to more directly reflect the Hebrew relative clause and improve natural English while preserving formal register.
+  changes_summary: 'doctrine_realignment: Exodus 12:40 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''during which they lived''].'
 revisions:
 - timestamp: '2026-04-23T10:30:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now the dwelling of the sons of Israel, during which they lived in Egypt, was four hundred thirty years.
-  to: Now the dwelling of the sons of Israel, who lived in Egypt, was four hundred thirty years.
+  to: Now the dwelling of the sons of Israel, during which they lived in Egypt, was four hundred thirty years.
   rationale: Replaced 'during which they lived in Egypt' with 'who lived in Egypt' to more directly reflect the Hebrew relative clause and improve natural English while preserving formal register.
 
+- timestamp: '2026-05-18T02:54:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now the dwelling of the sons of Israel[a], who lived in Egypt, was four hundred thirty years.'
+  to: 'Now the dwelling of the sons of Israel[a], who lived in Egypt, was four hundred thirty years.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''during which they lived''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

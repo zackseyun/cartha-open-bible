@@ -110,19 +110,26 @@ theological_decisions:
   rationale: Project policy gives primacy to the surviving Hebrew of Sirach where available. Here the Hebrew is extant but terse and somewhat difficult, while the Greek parallel appears to reflect a fuller surrounding admonition about bad counselors. Because the Hebrew witness is present and confidence is high, the main translation follows it, but the uncertainty is preserved in a footnote.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use parallel Greek as actual input'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:21Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:57Z'
   unchanged: false
-  changes_summary: Replaced 'but then' with 'and then' to reflect the Hebrew conjunction more directly and avoid adding adversative force not explicit in the source.
+  changes_summary: 'doctrine_realignment: Sirach 37:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but then stand opposite''].'
 revisions:
 - timestamp: '2026-04-23T15:45:21Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He will speak to you of the good of your way, but then stand opposite to watch your downfall.
-  to: He will speak to you of the good of your way, and then stand opposite to watch your downfall.
+  to: He will speak to you of the good of your way, but then stand opposite to watch your downfall.
   rationale: Replaced 'but then' with 'and then' to reflect the Hebrew conjunction more directly and avoid adding adversative force not explicit in the source.
 
+- timestamp: '2026-05-18T02:57:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He will speak to you of the good of your way[a], and then stand opposite to watch your downfall.'
+  to: 'He will speak to you of the good of your way[a], and then stand opposite to watch your downfall.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but then stand opposite''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

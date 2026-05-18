@@ -91,19 +91,26 @@ theological_decisions:
   rationale: Zone 1 marks the Hebrew as the primary witness, but also flags a major mismatch with the Greek parallel, whose wording appears substantially different. Following project policy for Sirach, the surviving Hebrew remains primary where extant; the Greek is used as a consistency check and to confirm that the verse concerns prudent choice of counsel/confidants, not to override the Hebrew wording without stronger textual-critical grounds in the prompt.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input while keeping Hebrew primary'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:21Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:35Z'
   unchanged: false
-  changes_summary: Changed 'hide' to 'conceal' for a slightly more formal register while preserving the meaning; otherwise retained the draft as accurate and complete.
+  changes_summary: 'doctrine_realignment: Sirach 37:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''hide a secret''].'
 revisions:
 - timestamp: '2026-04-23T15:45:21Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Do not consult with your father-in-law, and hide a secret from one who is jealous.
-  to: Do not consult with your father-in-law, and conceal a secret from one who is jealous.
+  to: Do not consult with your father-in-law, and hide a secret from one who is jealous.
   rationale: Changed 'hide' to 'conceal' for a slightly more formal register while preserving the meaning; otherwise retained the draft as accurate and complete.
 
+- timestamp: '2026-05-18T02:58:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Do not consult with your father-in-law[a], and conceal a secret from one who is jealous.'
+  to: 'Do not consult with your father-in-law[a], and conceal a secret from one who is jealous.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''hide a secret''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

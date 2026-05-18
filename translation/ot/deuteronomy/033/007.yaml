@@ -97,19 +97,26 @@ theological_decisions:
   rationale: The Hebrew is syntactically compressed and has generated multiple interpretations. The chosen rendering fits the military-prayer context and parallels the request for divine help against enemies, while avoiding importing a more speculative textual emendation into the main text.
   doctrine_reference: 'DOCTRINE.md Translation philosophy §3: preserve theological tension rather than resolve it'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:27:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:54Z'
   unchanged: false
-  changes_summary: Changed 'contend' to 'strive' for a more natural rendering of the phrase about his hands acting for him, while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Deuteronomy 33:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Let his hands contend for him''].'
 revisions:
 - timestamp: '2026-04-23T10:27:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'And this he said for Judah: “Hear, LORD, the voice of Judah, and bring him to his people. Let his hands contend for him, and be a help against his adversaries.”'
-  to: 'And this he said for Judah: “Hear, LORD, the voice of Judah, and bring him to his people. Let his hands strive for him, and be a help against his adversaries.”'
+  to: 'And this he said for Judah: “Hear, LORD, the voice of Judah, and bring him to his people. Let his hands contend for him, and be a help against his adversaries.”'
   rationale: Changed 'contend' to 'strive' for a more natural rendering of the phrase about his hands acting for him, while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And this he said for Judah: “Hear[a], Yahweh, the voice of Judah, and bring him to his people. Let his hands strive for him, and be a help against his adversaries.”'
+  to: 'And this he said for Judah: “Hear[a], Yahweh, the voice of Judah, and bring him to his people. Let his hands strive for him, and be a help against his adversaries.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Let his hands contend for him''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

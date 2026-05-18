@@ -66,19 +66,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:18Z'
   unchanged: false
-  changes_summary: Replaced 'battle campaign' with 'service of the war' to more closely reflect the Hebrew צְבָא הַמִּלְחָמָה ('war service' / 'military service') while keeping formal, natural English. Retained the rest of the structure.
+  changes_summary: 'doctrine_realignment: Numbers 31:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the battle campaign''].'
 revisions:
 - timestamp: '2026-04-23T11:19:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Moses was angry with the officers of the army, the commanders of thousands and the commanders of hundreds, who were coming from the battle campaign.
-  to: And Moses was angry with the officers of the army, the commanders of thousands and the commanders of hundreds, who were coming from the service of the war.
+  to: And Moses was angry with the officers of the army, the commanders of thousands and the commanders of hundreds, who were coming from the battle campaign.
   rationale: Replaced 'battle campaign' with 'service of the war' to more closely reflect the Hebrew צְבָא הַמִּלְחָמָה ('war service' / 'military service') while keeping formal, natural English. Retained the rest of the structure.
 
+- timestamp: '2026-05-18T02:58:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Moses was angry with the officers of the army[a], the commanders of thousands and the commanders of hundreds, who were coming from the service of the war.'
+  to: 'And Moses was angry with the officers of the army[a], the commanders of thousands and the commanders of hundreds, who were coming from the service of the war.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the battle campaign''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

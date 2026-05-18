@@ -63,19 +63,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:57Z'
   unchanged: false
-  changes_summary: Replaced 'who had edema' with 'with dropsy' to more directly reflect ὑδρωπικός in a formal translation and to avoid a modern clinical term that sounds less natural in this register.
+  changes_summary: 'doctrine_realignment: Luke 14:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who had edema''].'
 revisions:
 - timestamp: '2026-04-23T09:50:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And behold, a certain man who had edema was before him.
-  to: And behold, a certain man with dropsy was before him.
+  to: And behold, a certain man who had edema was before him.
   rationale: Replaced 'who had edema' with 'with dropsy' to more directly reflect ὑδρωπικός in a formal translation and to avoid a modern clinical term that sounds less natural in this register.
 
+- timestamp: '2026-05-18T03:01:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And behold[a], a certain man with dropsy was before him.'
+  to: 'And behold[a], a certain man with dropsy was before him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who had edema''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

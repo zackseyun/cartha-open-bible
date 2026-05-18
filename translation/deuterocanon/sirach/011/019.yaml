@@ -116,19 +116,26 @@ theological_decisions:
   rationale: Project policy gives original-language primacy to the most original Zone 1 witness available for Sirach; where Hebrew survives, it is primary. Here the Hebrew and Greek differ substantially, likely reflecting a variant textual tradition or mismatch in verse alignment. Because the Hebrew witness is marked high confidence with only minor mismatch, the main text follows Hebrew, while the Greek alternative is preserved in a footnote for transparency.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve source uncertainty honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:04Z'
   unchanged: false
-  changes_summary: Replaced 'those who do evil' with 'evildoers' for a more formal and concise rendering of מְרֵעִים while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Sirach 11:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who do evil''].'
 revisions:
 - timestamp: '2026-04-23T15:42:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Folly and darkness are reserved for transgressors, and those who do evil have evil with them.
-  to: Folly and darkness are reserved for transgressors, and evildoers have evil with them.
+  to: Folly and darkness are reserved for transgressors, and those who do evil have evil with them.
   rationale: Replaced 'those who do evil' with 'evildoers' for a more formal and concise rendering of מְרֵעִים while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Folly and darkness are reserved for transgressors[a], and evildoers have evil with them.'
+  to: 'Folly and darkness are reserved for transgressors[a], and evildoers have evil with them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who do evil''].'
 cross_check:
   status: needs_review
   agreement: 0.6

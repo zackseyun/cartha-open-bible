@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:29:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Replaced 'the second' with 'the other' for more natural English while preserving the meaning. No other changes needed.
+  changes_summary: 'doctrine_realignment: Exodus 1:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one of whom was named Shiphrah and the second Puah''].'
 revisions:
 - timestamp: '2026-04-23T10:29:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king of Egypt said to the Hebrew midwives, one of whom was named Shiphrah and the second Puah,
-  to: Then the king of Egypt said to the Hebrew midwives, one of whom was named Shiphrah and the other Puah,
+  to: Then the king of Egypt said to the Hebrew midwives, one of whom was named Shiphrah and the second Puah,
   rationale: Replaced 'the second' with 'the other' for more natural English while preserving the meaning. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king of Egypt said to the Hebrew midwives[a], one of whom was named Shiphrah and the other Puah,'
+  to: 'Then the king of Egypt said to the Hebrew midwives[a], one of whom was named Shiphrah and the other Puah,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one of whom was named Shiphrah and the second Puah''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

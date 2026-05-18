@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:17Z'
   unchanged: false
-  changes_summary: Replaced 'after some time' with 'after some days' to more closely reflect מִקֵּץ יָמִים, and added 'it happened' and 'that' to represent the Hebrew narrative structure more fully.
+  changes_summary: 'doctrine_realignment: 1 Kings 17:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after some time''].'
 revisions:
 - timestamp: '2026-04-23T10:08:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And after some time, the wadi dried up, because there was no rain in the land.
-  to: And it happened after some days that the wadi dried up, because there was no rain in the land.
+  to: And after some time, the wadi dried up, because there was no rain in the land.
   rationale: Replaced 'after some time' with 'after some days' to more closely reflect מִקֵּץ יָמִים, and added 'it happened' and 'that' to represent the Hebrew narrative structure more fully.
 
+- timestamp: '2026-05-18T02:57:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And it happened after some days that the wadi dried up[a], because there was no rain in the land.'
+  to: 'And it happened after some days that the wadi dried up[a], because there was no rain in the land.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after some time''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

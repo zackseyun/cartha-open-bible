@@ -112,19 +112,26 @@ theological_decisions:
   rationale: The primary witness is the Hebrew, but the task requires the Greek parallel to be used as actual translation input. Since the Greek reads 'the Lord, the Most High' and the Hebrew reads 'God Most High,' the chosen English harmonizes the two without introducing a new theological claim. This also aligns with the project's default rendering of κύριος as 'Lord.'
   doctrine_reference: 'DOCTRINE.md: Original-language primacy over translation tradition; Contested terms table for κύριος'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:25Z'
   unchanged: false
-  changes_summary: Changed 'the Lord Most High' to 'God Most High' for closer lexical accuracy to אל אליון ('God Most High').
+  changes_summary: 'doctrine_realignment: Sirach 47:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the Lord Most High''].'
 revisions:
 - timestamp: '2026-04-23T15:46:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For he called on the Lord Most High, and he gave strength to his right hand, to drive back a man skilled in war and to raise up the horn of Israel.
-  to: For he called on God Most High, and he gave strength to his right hand, to drive back a man skilled in war and to raise up the horn of Israel.
+  to: For he called on the Lord Most High, and he gave strength to his right hand, to drive back a man skilled in war and to raise up the horn of Israel.
   rationale: Changed 'the Lord Most High' to 'God Most High' for closer lexical accuracy to אל אליון ('God Most High').
 
+- timestamp: '2026-05-18T02:58:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For he called on God Most High[a], and he gave strength to his right hand[b], to drive back a man skilled in war and to raise up the horn of Israel.'
+  to: 'For he called on God Most High[a], and he gave strength to his right hand[b], to drive back a man skilled in war and to raise up the horn of Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the Lord Most High''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

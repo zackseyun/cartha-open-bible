@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:05:03Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:05Z'
   unchanged: false
-  changes_summary: Changed 'mighty men' to 'men' for better lexical accuracy, since the Hebrew here refers to men/great men in context of family heads rather than warriors. Added a comma after 'more numerous' for readability; otherwise retained the structure and content.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 24:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as heads of the mighty men''].'
 revisions:
 - timestamp: '2026-04-23T10:05:03Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'The sons of Eleazar were found to be more numerous as heads of the mighty men than the sons of Ithamar, so they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses, eight.'
-  to: 'The sons of Eleazar were found to be more numerous, as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses, eight.'
+  to: 'The sons of Eleazar were found to be more numerous as heads of the mighty men than the sons of Ithamar, so they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses, eight.'
   rationale: Changed 'mighty men' to 'men' for better lexical accuracy, since the Hebrew here refers to men/great men in context of family heads rather than warriors. Added a comma after 'more numerous' for readability; otherwise retained the structure and content.
 
+- timestamp: '2026-05-18T02:58:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The sons of Eleazar were found to be more numerous[a], as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses[b], eight.'
+  to: 'The sons of Eleazar were found to be more numerous[a], as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses[b], eight.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as heads of the mighty men''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

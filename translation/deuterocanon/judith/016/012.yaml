@@ -111,19 +111,26 @@ theological_decisions:
   rationale: Following DOCTRINE.md, κύριος defaults to 'Lord.' In this hymn context the referent is God, and 'my Lord' preserves both the devotional tone and the theological weight without paraphrastic expansion.
   doctrine_reference: 'DOCTRINE.md Contested terms: κύριος → Lord'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:40:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:20Z'
   unchanged: false
-  changes_summary: Replaced 'young women' with 'maidens' for a more formal/literal rendering of κορασίων, and 'runaway children' with 'the children of deserters' to reflect αὐτομολούντων more accurately. Kept the rest substantially unchanged.
+  changes_summary: 'doctrine_realignment: Judith 16:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The sons of young women''].'
 revisions:
 - timestamp: '2026-04-23T15:40:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The sons of young women pierced them through, and wounded them like runaway children; they perished before the battle line of my Lord.
-  to: The sons of maidens pierced them through, and wounded them like the children of deserters; they perished before the battle line of my Lord.
+  to: The sons of young women pierced them through, and wounded them like runaway children; they perished before the battle line of my Lord.
   rationale: Replaced 'young women' with 'maidens' for a more formal/literal rendering of κορασίων, and 'runaway children' with 'the children of deserters' to reflect αὐτομολούντων more accurately. Kept the rest substantially unchanged.
 
+- timestamp: '2026-05-18T02:59:20Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.'
+  to: 'The sons of maidens pierced them through[a], and wounded them like the children of deserters[b]; they perished before the battle line of my Lord.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The sons of young women''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -49,19 +49,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:30:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:33Z'
   unchanged: false
-  changes_summary: Changed 'have been standing' to 'are standing' for a more natural and direct rendering of the Hebrew perfect in context, while preserving the sense of present arrival within Jerusalem's gates.
+  changes_summary: 'doctrine_realignment: Psalms 122:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have been''].'
 revisions:
 - timestamp: '2026-04-23T11:30:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Our feet have been standing within your gates, O Jerusalem.
-  to: Our feet are standing within your gates, O Jerusalem.
+  to: Our feet have been standing within your gates, O Jerusalem.
   rationale: Changed 'have been standing' to 'are standing' for a more natural and direct rendering of the Hebrew perfect in context, while preserving the sense of present arrival within Jerusalem's gates.
 
+- timestamp: '2026-05-18T02:54:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Our feet are standing within your gates[a], O Jerusalem.'
+  to: 'Our feet are standing within your gates[a], O Jerusalem.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have been''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

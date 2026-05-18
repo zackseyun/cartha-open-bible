@@ -106,19 +106,26 @@ theological_decisions:
   rationale: 'For Sirach, where Hebrew survives, the project prioritizes the Hebrew witness while consulting the Greek as a real input. Here the first colon aligns closely, but the second differs: Hebrew has תבונה / מענה, while Greek has παιδεία / ῥήματι. Since the Hebrew is high-confidence and validated, the main text follows it; the Greek alternative is preserved in a footnote for transparency.'
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as input/check'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:09Z'
   unchanged: false
-  changes_summary: Changed 'answer' to 'response' for more natural English while preserving the sense of מענה; otherwise retained the draft as accurate and complete.
+  changes_summary: 'doctrine_realignment: Sirach 4:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the answer''].'
 revisions:
 - timestamp: '2026-04-23T15:42:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For wisdom is made known in speech, and understanding in the answer of the tongue.
-  to: For wisdom is made known in speech, and understanding in the response of the tongue.
+  to: For wisdom is made known in speech, and understanding in the answer of the tongue.
   rationale: Changed 'answer' to 'response' for more natural English while preserving the sense of מענה; otherwise retained the draft as accurate and complete.
 
+- timestamp: '2026-05-18T02:58:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For wisdom is made known in speech[a], and understanding in the response of the tongue.'
+  to: 'For wisdom is made known in speech[a], and understanding in the response of the tongue.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the answer''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

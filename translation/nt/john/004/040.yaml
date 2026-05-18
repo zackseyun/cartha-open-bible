@@ -66,19 +66,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:45:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:52Z'
   unchanged: false
-  changes_summary: Changed 'were asking' to 'asked' for a more natural rendering of the Greek imperfect in context, while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: John 4:40 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were asking''].'
 revisions:
 - timestamp: '2026-04-23T09:45:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So when the Samaritans came to him, they were asking him to stay with them, and he stayed there two days.
-  to: So when the Samaritans came to him, they asked him to stay with them, and he stayed there two days.
+  to: So when the Samaritans came to him, they were asking him to stay with them, and he stayed there two days.
   rationale: Changed 'were asking' to 'asked' for a more natural rendering of the Greek imperfect in context, while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:59:52Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So when the Samaritans came to him[a], they asked him to stay with them, and he stayed there two days.'
+  to: 'So when the Samaritans came to him[a], they asked him to stay with them, and he stayed there two days.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were asking''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And we were destroyed[a], and there was no one to help us in any matter, and we found nothing. We were tormented and destroyed[c][b], and we had no hope of seeing life from day to day.
+  text: And we were destroyed, and there was no one to help us with a word; and we found nothing. We were tormented and destroyed, and we had no hope of seeing life from day to day.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -132,10 +132,10 @@ theological_decisions:
   rationale: The Epistle's rhetoric often intensifies suffering through repetition. Preserving this repetition keeps the apocalyptic lament force rather than reducing it to generic hardship.
   doctrine_reference: 'Translation philosophy: preserve significant repetition and do not flatten apocalyptic rhetoric.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:38:56Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:44Z'
   unchanged: false
-  changes_summary: Revised 'with a word' to 'in any matter' for more natural and likely more accurate rendering of በነገር, while preserving the rest of the verse's sense and formal tone.
+  changes_summary: 'doctrine_realignment: 1 Enoch 103:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a word''].'
 revisions:
 - timestamp: '2026-04-23T11:38:56Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -145,6 +145,13 @@ revisions:
   to: And we were destroyed, and there was no one to help us in any matter, and we found nothing. We were tormented and destroyed, and we had no hope of seeing life from day to day.
   rationale: Revised 'with a word' to 'in any matter' for more natural and likely more accurate rendering of በነገር, while preserving the rest of the verse's sense and formal tone.
 
+- timestamp: '2026-05-18T03:10:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And we were destroyed[a], and there was no one to help us in any matter, and we found nothing. We were tormented and destroyed[c][b], and we had no hope of seeing life from day to day.'
+  to: 'And we were destroyed, and there was no one to help us with a word; and we found nothing. We were tormented and destroyed, and we had no hope of seeing life from day to day.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a word''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

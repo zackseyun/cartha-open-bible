@@ -83,19 +83,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:31:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:31Z'
   unchanged: false
-  changes_summary: Changed 'her temple' to 'its temple' for natural English referring to the city; removed the unsupported words 'came to' because the Greek clause is incomplete here and they are not represented in the source provided.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 9:84 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''her temple''].'
 revisions:
 - timestamp: '2026-04-23T15:31:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: and he took their spoils, and he burned the temple of Dagon and her temple with fire. And those who had fallen by the sword came to
-  to: and he took their spoils, and he burned the temple of Dagon and its temple with fire. And those who had fallen by the sword
+  to: and he took their spoils, and he burned the temple of Dagon and her temple with fire. And those who had fallen by the sword came to
   rationale: Changed 'her temple' to 'its temple' for natural English referring to the city; removed the unsupported words 'came to' because the Greek clause is incomplete here and they are not represented in the source provided.
 
+- timestamp: '2026-05-18T02:58:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword'
+  to: 'and he took their spoils[a], and he burned the temple of Dagon and its temple with fire[b]. And those who had fallen by the sword'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''her temple''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

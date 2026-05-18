@@ -92,19 +92,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:56:49Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:37Z'
   unchanged: false
-  changes_summary: Replaced 'after depositing' with 'and they deposited' to more directly reflect the Hebrew sequence and preserve the explicit action without subordinating it.
+  changes_summary: 'doctrine_realignment: Jeremiah 36:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after depositing''].'
 revisions:
 - timestamp: '2026-04-23T10:56:49Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then they went to the king in the court, after depositing the scroll in the chamber of Elishama the scribe, and they reported all the words in the hearing of the king.
-  to: Then they went to the king in the court, and they deposited the scroll in the chamber of Elishama the scribe, and they reported all the words in the hearing of the king.
+  to: Then they went to the king in the court, after depositing the scroll in the chamber of Elishama the scribe, and they reported all the words in the hearing of the king.
   rationale: Replaced 'after depositing' with 'and they deposited' to more directly reflect the Hebrew sequence and preserve the explicit action without subordinating it.
 
+- timestamp: '2026-05-18T02:57:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then they went to the king in the court[a], and they deposited the scroll in the chamber of Elishama the scribe[b], and they reported all the words in the hearing of the king.'
+  to: 'Then they went to the king in the court[a], and they deposited the scroll in the chamber of Elishama the scribe[b], and they reported all the words in the hearing of the king.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after depositing''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

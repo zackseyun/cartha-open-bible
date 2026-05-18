@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:12Z'
   unchanged: false
-  changes_summary: Replaced 'But' with 'And' to reflect the simple narrative conjunction, and changed 'you will be killed' to 'you will be put to death' for a more formal rendering of the passive verb.
+  changes_summary: 'doctrine_realignment: 1 Samuel 19:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will be killed''].'
 revisions:
 - timestamp: '2026-04-23T10:11:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. But Michal his wife told David, saying, “If you do not save your life tonight, tomorrow you will be killed.”
-  to: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David, saying, “If you do not save your life tonight, tomorrow you will be put to death.”
+  to: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. But Michal his wife told David, saying, “If you do not save your life tonight, tomorrow you will be killed.”
   rationale: Replaced 'But' with 'And' to reflect the simple narrative conjunction, and changed 'you will be killed' to 'you will be put to death' for a more formal rendering of the passive verb.
 
+- timestamp: '2026-05-18T02:56:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”'
+  to: 'Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will be killed''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

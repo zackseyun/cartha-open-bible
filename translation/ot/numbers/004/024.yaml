@@ -61,19 +61,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:14Z'
   unchanged: false
-  changes_summary: Changed 'carrying loads' to 'carrying' for closer lexical correspondence to the source, which simply says 'for service and for carrying/bearing.'
+  changes_summary: 'doctrine_realignment: Numbers 4:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and for carrying loads''].'
 revisions:
 - timestamp: '2026-04-23T11:15:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: This is the service of the families of the Gershonites, for serving and for carrying loads.
-  to: This is the service of the families of the Gershonites, for serving and for carrying.
+  to: This is the service of the families of the Gershonites, for serving and for carrying loads.
   rationale: Changed 'carrying loads' to 'carrying' for closer lexical correspondence to the source, which simply says 'for service and for carrying/bearing.'
 
+- timestamp: '2026-05-18T02:57:14Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'This is the service of the families of the Gershonites[a], for serving and for carrying.'
+  to: 'This is the service of the families of the Gershonites[a], for serving and for carrying.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and for carrying loads''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

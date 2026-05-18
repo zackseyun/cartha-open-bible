@@ -30,7 +30,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And I also give[a], year by year, fifteen thousand shekels of silver from the king’s revenues[b], from the places that belong to him.
+  text: And I also give, year by year, fifteen thousand shekels of silver from the king’s account, from the places that belong to him.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -100,10 +100,10 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:31:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:50Z'
   unchanged: false
-  changes_summary: Changed “account” to “revenues” for better lexical accuracy and more natural formal English for τοῦ λόγου τοῦ βασιλέως in this financial context; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 10:40 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the king’s account''].'
 revisions:
 - timestamp: '2026-04-23T15:31:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -113,6 +113,13 @@ revisions:
   to: And I also give, year by year, fifteen thousand shekels of silver from the king’s revenues, from the places that belong to him.
   rationale: Changed “account” to “revenues” for better lexical accuracy and more natural formal English for τοῦ λόγου τοῦ βασιλέως in this financial context; otherwise retained the draft.
 
+- timestamp: '2026-05-18T03:09:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I also give[a], year by year, fifteen thousand shekels of silver from the king’s revenues[b], from the places that belong to him.'
+  to: 'And I also give, year by year, fifteen thousand shekels of silver from the king’s account, from the places that belong to him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the king’s account''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

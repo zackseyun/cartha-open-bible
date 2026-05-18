@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וְ/יָצְאָ֖ה מִ/בֵּית֑/וֹ וְ/הָלְכָ֖ה וְ/הָיְתָ֥ה לְ/אִישׁ אַחֵֽר־׃
 translation:
-  text: and she goes out from his house and goes and becomes another man's wife,[a]
+  text: and she leaves his house and goes and becomes another man's wife,[a]
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -55,19 +55,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:42Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:47Z'
   unchanged: false
-  changes_summary: Added 'goes out from' to more fully represent וְיָצְאָה מִבֵּיתוֹ ('and she goes out from his house') rather than simply 'leaves his house.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 24:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and she leaves''].'
 revisions:
 - timestamp: '2026-04-23T10:26:42Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: and she leaves his house and goes and becomes another man's wife,
-  to: and she goes out from his house and goes and becomes another man's wife,
+  from: 'and she leaves his house and goes and becomes another man''s wife,'
+  to: 'and she goes out from his house and goes and becomes another man''s wife,'
   rationale: Added 'goes out from' to more fully represent וְיָצְאָה מִבֵּיתוֹ ('and she goes out from his house') rather than simply 'leaves his house.'
 
+- timestamp: '2026-05-18T02:55:47Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and she goes out from his house and goes and becomes another man''s wife,[a]'
+  to: 'and she leaves his house and goes and becomes another man''s wife,[a]'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and she leaves''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

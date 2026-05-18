@@ -88,19 +88,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:35:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:30Z'
   unchanged: false
-  changes_summary: 'Adjusted the opening to reflect the Greek more accurately: ἄρτι δέ as ''But just then,'' and ἀλεκτρυὼν ἐκέκραγεν ὄρθρος as ''when the rooster had crowed at dawn,'' rather than making dawn the subject. Retained the rest with only minor punctuation smoothing.'
+  changes_summary: 'doctrine_realignment: 3 Maccabees 5:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''dawn was breaking''].'
 revisions:
 - timestamp: '2026-04-23T15:35:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But just then dawn was breaking, the rooster had crowed, and Hermon, having armed the beasts, was driving them on in the great colonnade.
-  to: But just then, when the rooster had crowed at dawn, Hermon, having armed the beasts, was driving them on in the great colonnade.
+  to: But just then dawn was breaking, the rooster had crowed, and Hermon, having armed the beasts, was driving them on in the great colonnade.
   rationale: 'Adjusted the opening to reflect the Greek more accurately: ἄρτι δέ as ''But just then,'' and ἀλεκτρυὼν ἐκέκραγεν ὄρθρος as ''when the rooster had crowed at dawn,'' rather than making dawn the subject. Retained the rest with only minor punctuation smoothing.'
 
+- timestamp: '2026-05-18T02:59:30Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But just then[a], when the rooster had crowed at dawn, Hermon, having armed the beasts, was driving them on in the great colonnade.'
+  to: 'But just then[a], when the rooster had crowed at dawn, Hermon, having armed the beasts, was driving them on in the great colonnade.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''dawn was breaking''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

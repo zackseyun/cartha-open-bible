@@ -73,19 +73,26 @@ theological_decisions:
   rationale: The verse uses two related divine titles in poetic parallelism. English normally does not preserve such fine-grained distinction naturally in prayer language, and 'O God ... O God' reads clearly and reverently without importing extra theological nuance. The lexical distinction is preserved in documentation and noted in a footnote.
   doctrine_reference: 'Translation philosophy: readable modern English, not archaic or academic; consistency of key terms, or documented exception.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:27:58Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:53Z'
   unchanged: false
-  changes_summary: Removed 'do not be deaf,' because the Hebrew means 'do not be quiet/silent' rather than 'be deaf.' Streamlined the verse to reflect the source more accurately and naturally while retaining the repeated address to God.
+  changes_summary: 'doctrine_realignment: Psalms 83:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and do not be still''].'
 revisions:
 - timestamp: '2026-04-23T11:27:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: O God, do not be silent; do not be deaf, and do not be still, O God.
-  to: O God, do not be silent; do not be still, O God.
+  to: O God, do not be silent; do not be deaf, and do not be still, O God.
   rationale: Removed 'do not be deaf,' because the Hebrew means 'do not be quiet/silent' rather than 'be deaf.' Streamlined the verse to reflect the source more accurately and naturally while retaining the repeated address to God.
 
+- timestamp: '2026-05-18T02:53:53Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'O God[a], do not be silent; do not be still[b], O God.'
+  to: 'O God[a], do not be silent; do not be still[b], O God.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and do not be still''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

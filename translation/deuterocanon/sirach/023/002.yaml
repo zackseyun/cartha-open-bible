@@ -144,19 +144,26 @@ theological_decisions:
   rationale: The source text as given reads αὐτῶν ('their'). Because the wording is auditable and the source confidence is high despite minor mismatch, the translation should not silently resolve the difficulty. The smoother alternative is preserved in a footnote rather than imported into the text.
   doctrine_reference: Translation philosophy §§1, 3, 5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:43:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:18Z'
   unchanged: false
-  changes_summary: Changed 'pass over' to 'overlook' for more natural formal English while preserving the sense of παρῇ. Retained 'their sins' as in the Greek.
+  changes_summary: 'doctrine_realignment: Sirach 23:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''may not pass over''].'
 revisions:
 - timestamp: '2026-04-23T15:43:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Who will set whips over my thoughts, and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not pass over their sins?
-  to: Who will set whips over my thoughts, and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?
+  to: Who will set whips over my thoughts, and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not pass over their sins?
   rationale: Changed 'pass over' to 'overlook' for more natural formal English while preserving the sense of παρῇ. Retained 'their sins' as in the Greek.
 
+- timestamp: '2026-05-18T02:58:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?'
+  to: 'Who will set whips over my thoughts[a], and the discipline of wisdom over my heart, so that they may not spare me for my ignorances, and may not overlook their sins?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''may not pass over''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

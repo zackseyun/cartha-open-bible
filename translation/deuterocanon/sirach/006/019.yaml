@@ -137,19 +137,26 @@ theological_decisions:
   rationale: The project translates Sirach from the Hebrew where it survives, while using the Greek parallel as a real input. Here the Hebrew witness is the primary source, so the main text keeps 'reaps'; the Greek alternative is preserved in a footnote because the divergence is significant and may reflect a different Vorlage or transmission history.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; preserve source uncertainty honestly'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:18Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:57Z'
   unchanged: false
-  changes_summary: Changed 'soon' to 'before long' to reflect the Hebrew 'tomorrow' idiom more formally and naturally, without sounding overly immediate.
+  changes_summary: 'doctrine_realignment: Sirach 6:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and soon''].'
 revisions:
 - timestamp: '2026-04-23T15:42:18Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Draw near to her like one who plows and reaps, and wait for her abundant produce. For in her service you will labor only a little, and soon you will eat her fruit.
-  to: Draw near to her like one who plows and reaps, and wait for her abundant produce. For in her service you will labor only a little, and before long you will eat her fruit.
+  to: Draw near to her like one who plows and reaps, and wait for her abundant produce. For in her service you will labor only a little, and soon you will eat her fruit.
   rationale: Changed 'soon' to 'before long' to reflect the Hebrew 'tomorrow' idiom more formally and naturally, without sounding overly immediate.
 
+- timestamp: '2026-05-18T02:57:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Draw near to her like one who plows and reaps[a], and wait for her abundant produce. For in her service you will labor only a little[b], and before long you will eat her fruit.'
+  to: 'Draw near to her like one who plows and reaps[a], and wait for her abundant produce. For in her service you will labor only a little[b], and before long you will eat her fruit.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and soon''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

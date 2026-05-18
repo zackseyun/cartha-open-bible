@@ -18,7 +18,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until the Lord of the sheep came to them[a], and he took in his hand the staff of wrath and struck the earth, and the earth was split open, and all the beasts and all the birds of heaven fell away from among those sheep and sank into the earth[c][b], and it covered over them.
+  text: And I saw until the Lord of the sheep came to them, and he took in his hand the staff of wrath and struck the earth; and the earth split open, and all the beasts and all the birds of heaven fell away from among those sheep and sank into the earth, and it covered over them.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -154,12 +154,18 @@ revisions:
   from: And I saw until the Lord of the sheep came to them, and he took in his hand the staff of wrath and struck the earth; and the earth split open, and all the beasts and all the birds of heaven fell away from among those sheep and sank into the earth, and it covered over them.
   to: And I saw until the Lord of the sheep came to them, and he took in his hand the staff of wrath and struck the earth, and the earth was split open, and all the beasts and all the birds of heaven fell away from among those sheep and sank into the earth, and it covered over them.
   rationale: Changed 'split open' to 'was split open' to reflect the passive form more accurately; otherwise retained the draft as accurate and natural.
+- timestamp: '2026-05-18T03:10:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I saw until the Lord of the sheep came to them[a], and he took in his hand the staff of wrath and struck the earth, and the earth was split open, and all the beasts and all the birds of heaven fell away from among those sheep and sank into the earth[c][b], and it covered over them.'
+  to: 'And I saw until the Lord of the sheep came to them, and he took in his hand the staff of wrath and struck the earth; and the earth split open, and all the beasts and all the birds of heaven fell away from among those sheep and sank into the earth, and it covered over them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the earth split open''].'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:38:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:48Z'
   unchanged: false
-  changes_summary: Changed 'split open' to 'was split open' to reflect the passive form more accurately; otherwise retained the draft as accurate and natural.
-
+  changes_summary: 'doctrine_realignment: 1 Enoch 90:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the earth split open''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

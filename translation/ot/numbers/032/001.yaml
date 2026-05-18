@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:09Z'
   unchanged: false
-  changes_summary: Removed 'when' to reflect the simple conjunction in the source rather than a temporal nuance not explicit in the text.
+  changes_summary: 'doctrine_realignment: Numbers 32:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when they saw''].'
 revisions:
 - timestamp: '2026-04-23T11:19:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now the sons of Reuben and the sons of Gad had a very great amount of livestock, and when they saw the land of Jazer and the land of Gilead, behold, the place was a place for livestock.
-  to: Now the sons of Reuben and the sons of Gad had a very great amount of livestock, and they saw the land of Jazer and the land of Gilead, and behold, the place was a place for livestock.
+  to: Now the sons of Reuben and the sons of Gad had a very great amount of livestock, and when they saw the land of Jazer and the land of Gilead, behold, the place was a place for livestock.
   rationale: Removed 'when' to reflect the simple conjunction in the source rather than a temporal nuance not explicit in the text.
 
+- timestamp: '2026-05-18T02:57:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now the sons of Reuben and the sons of Gad had a very great amount of livestock[a], and they saw the land of Jazer and the land of Gilead, and behold[b], the place was a place for livestock.'
+  to: 'Now the sons of Reuben and the sons of Gad had a very great amount of livestock[a], and they saw the land of Jazer and the land of Gilead, and behold[b], the place was a place for livestock.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when they saw''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

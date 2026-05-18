@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: כְּעַ֗ן יְדִ֨יעַ֙ לֶהֱוֵ֣א לְ/מַלְכָּ֔/א דִּ֠י הֵ֣ן קִרְיְתָ֥/א דָךְ֙ תִּתְבְּנֵ֔א וְ/שׁוּרַיָּ֖/ה יִֽשְׁתַּכְלְל֑וּן מִנְדָּֽה בְל֤וֹ וַ/הֲלָךְ֙ לָ֣א יִנְתְּנ֔וּן וְ/אַפְּתֹ֥ם מַלְכִ֖ים תְּהַנְזִֽק־׃
 translation:
-  text: Now let it be known to the king that if this city is rebuilt and its walls are completed[a], they will not pay tribute, tax, or toll, and in the end it will damage the kings' revenue.
+  text: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -122,19 +122,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:40:06Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:25Z'
   unchanged: false
-  changes_summary: Changed 'the revenue of the kings' to 'the kings' revenue' for more natural English while preserving the sense. Kept the rest unchanged as accurate and complete.
+  changes_summary: 'doctrine_realignment: Ezra 4:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it will damage the revenue of''].'
 revisions:
 - timestamp: '2026-04-23T10:40:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.
-  to: Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the kings' revenue.
+  to: 'Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the kings'' revenue.'
   rationale: Changed 'the revenue of the kings' to 'the kings' revenue' for more natural English while preserving the sense. Kept the rest unchanged as accurate and complete.
 
+- timestamp: '2026-05-18T03:09:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now let it be known to the king that if this city is rebuilt and its walls are completed[a], they will not pay tribute, tax, or toll, and in the end it will damage the kings'' revenue.'
+  to: 'Now let it be known to the king that if this city is rebuilt and its walls are completed, they will not pay tribute, tax, or toll, and in the end it will damage the revenue of the kings.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it will damage the revenue of''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

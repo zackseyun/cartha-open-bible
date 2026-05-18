@@ -116,19 +116,26 @@ theological_decisions:
   rationale: The translation aims for readable modern English rather than archaic diction, while still preserving the discourse force of the particle.
   doctrine_reference: DOCTRINE.md Translation philosophy §6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:29:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:11Z'
   unchanged: false
-  changes_summary: Replaced 'look' with the more formal 'behold'; changed 'Egypt' to 'the Egyptians' to match the plural subject in the source and improve lexical accuracy.
+  changes_summary: 'doctrine_realignment: Exodus 3:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is oppressing''].'
 revisions:
 - timestamp: '2026-04-23T10:29:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And now, look, the cry of the sons of Israel has come to me, and I have also seen the oppression with which Egypt is oppressing them.
-  to: And now, behold, the cry of the sons of Israel has come to me, and I have also seen the oppression with which the Egyptians are oppressing them.
+  to: And now, look, the cry of the sons of Israel has come to me, and I have also seen the oppression with which Egypt is oppressing them.
   rationale: Replaced 'look' with the more formal 'behold'; changed 'Egypt' to 'the Egyptians' to match the plural subject in the source and improve lexical accuracy.
 
+- timestamp: '2026-05-18T02:56:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And now[a], behold, the cry of the sons of Israel has come to me[b], and I have also seen the oppression with which the Egyptians are oppressing them.'
+  to: 'And now[a], behold, the cry of the sons of Israel has come to me[b], and I have also seen the oppression with which the Egyptians are oppressing them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is oppressing''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

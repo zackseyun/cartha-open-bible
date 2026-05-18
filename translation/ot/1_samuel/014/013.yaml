@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:35Z'
   unchanged: false
-  changes_summary: Changed 'kept killing them behind him' to 'killed them after him' for a more literal and formal rendering of the Hebrew, avoiding an interpretive progressive sense and preserving the repeated 'after him' wording.
+  changes_summary: 'doctrine_realignment: 1 Samuel 14:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''kept killing them''].'
 revisions:
 - timestamp: '2026-04-23T10:10:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Jonathan climbed up on his hands and feet, with his armor-bearer behind him. They fell before Jonathan, and his armor-bearer kept killing them behind him.
-  to: Then Jonathan climbed up on his hands and feet, with his armor-bearer behind him. They fell before Jonathan, and his armor-bearer killed them after him.
+  to: Then Jonathan climbed up on his hands and feet, with his armor-bearer behind him. They fell before Jonathan, and his armor-bearer kept killing them behind him.
   rationale: Changed 'kept killing them behind him' to 'killed them after him' for a more literal and formal rendering of the Hebrew, avoiding an interpretive progressive sense and preserving the repeated 'after him' wording.
 
+- timestamp: '2026-05-18T02:56:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Jonathan climbed up on his hands and feet[a], with his armor-bearer behind him. They fell before Jonathan, and his armor-bearer killed them after him.'
+  to: 'Then Jonathan climbed up on his hands and feet[a], with his armor-bearer behind him. They fell before Jonathan, and his armor-bearer killed them after him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''kept killing them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

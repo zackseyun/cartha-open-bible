@@ -105,19 +105,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:32:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:57Z'
   unchanged: false
-  changes_summary: Replaced 'he himself' with 'he' for more natural English, and rendered τοῦ τεμένους as 'the temple precinct' rather than 'the sanctuary' to distinguish it from τὸ ἱερόν ('the temple') and preserve the contrast in the verse.
+  changes_summary: 'doctrine_realignment: 2 Maccabees 1:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sanctuary''].'
 revisions:
 - timestamp: '2026-04-23T15:32:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And when the priests of Nanea had set these things out, and he himself had come with a few men into the enclosure of the sanctuary, they shut the temple as soon as Antiochus entered.
-  to: And when the priests of Nanea had set these things out, and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.
+  to: And when the priests of Nanea had set these things out, and he himself had come with a few men into the enclosure of the sanctuary, they shut the temple as soon as Antiochus entered.
   rationale: Replaced 'he himself' with 'he' for more natural English, and rendered τοῦ τεμένους as 'the temple precinct' rather than 'the sanctuary' to distinguish it from τὸ ἱερόν ('the temple') and preserve the contrast in the verse.
 
+- timestamp: '2026-05-18T02:59:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.'
+  to: 'And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sanctuary''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

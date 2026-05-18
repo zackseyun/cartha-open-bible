@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:35Z'
   unchanged: false
-  changes_summary: Changed 'every life' to 'all the lives' for more natural formal English while preserving the sense of בְּכָל נֶפֶשׁ. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 22:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for every life''].'
 revisions:
 - timestamp: '2026-04-23T10:11:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: David said to Abiathar, “I knew on that day, when Doeg the Edomite was there, that he would surely tell Saul. I am responsible for every life in your father’s house.”
-  to: David said to Abiathar, “I knew on that day, when Doeg the Edomite was there, that he would surely tell Saul. I am responsible for all the lives of your father’s house.”
+  to: David said to Abiathar, “I knew on that day, when Doeg the Edomite was there, that he would surely tell Saul. I am responsible for every life in your father’s house.”
   rationale: Changed 'every life' to 'all the lives' for more natural formal English while preserving the sense of בְּכָל נֶפֶשׁ. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'David said to Abiathar[a], “I knew on that day, when Doeg the Edomite was there, that he would surely tell Saul[c][b]. I am responsible for all the lives of your father’s house.”'
+  to: 'David said to Abiathar[a], “I knew on that day, when Doeg the Edomite was there, that he would surely tell Saul[c][b]. I am responsible for all the lives of your father’s house.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for every life''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

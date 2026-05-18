@@ -94,19 +94,26 @@ theological_decisions:
   rationale: The Hebrew is notably compressed and difficult. The chosen rendering preserves the main verbal action ('I have gathered') and keeps the final clause close to the Masoretic wording without importing a stronger interpretive paraphrase than necessary. This maintains the restoration theme while respecting the text's ambiguity.
   doctrine_reference: 'Translation philosophy §3: Preserve theological tension rather than resolve it.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:33:21Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:01Z'
   unchanged: false
-  changes_summary: 'Changed ''because of'' to ''over'' for a more natural rendering of grieving in relation to the festival, and reordered the final clause to more closely reflect the source sequence: ''a reproach upon her, a burden.'''
+  changes_summary: 'doctrine_realignment: Zephaniah 3:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of the appointed festival''].'
 revisions:
 - timestamp: '2026-04-23T11:33:21Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: I have gathered those grieving because of the appointed festival from you; they were a burden on her, a reproach.
-  to: I have gathered those grieving over the appointed festival from you; they were a reproach upon her, a burden.
+  to: I have gathered those grieving because of the appointed festival from you; they were a burden on her, a reproach.
   rationale: 'Changed ''because of'' to ''over'' for a more natural rendering of grieving in relation to the festival, and reordered the final clause to more closely reflect the source sequence: ''a reproach upon her, a burden.'''
 
+- timestamp: '2026-05-18T02:58:01Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'I have gathered those grieving over the appointed festival from you[a]; they were a reproach upon her[c][b], a burden.'
+  to: 'I have gathered those grieving over the appointed festival from you[a]; they were a reproach upon her[c][b], a burden.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of the appointed festival''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -108,19 +108,26 @@ theological_decisions:
   rationale: 'The project philosophy gives primacy to the surviving Hebrew of Sirach where extant. Here the Hebrew and Greek differ materially in the reason clause: Hebrew emphasizes each thing''s force or appropriateness in its proper time; Greek emphasizes creation for usefulness/need. Because the Hebrew witness is present and high-confidence, the main text follows it. The Greek alternative is significant enough to preserve in a footnote due to the source-validation note (''major_mismatch'') and the substantial semantic difference.'
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input without overriding extant Hebrew.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:06Z'
   unchanged: false
-  changes_summary: Removed the unnecessary repeated conjunction for smoother, more natural English while preserving the Hebrew sense; retained 'prevail' and 'in its time' as accurate renderings.
+  changes_summary: 'doctrine_realignment: Sirach 39:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''“Why this? And why that?”''].'
 revisions:
 - timestamp: '2026-04-23T15:45:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: One should not say, “Why this? And why that?” For everything will prevail in its time.
-  to: One should not say, “Why this and why that?” For everything will prevail in its time.
+  to: One should not say, “Why this? And why that?” For everything will prevail in its time.
   rationale: Removed the unnecessary repeated conjunction for smoother, more natural English while preserving the Hebrew sense; retained 'prevail' and 'in its time' as accurate renderings.
 
+- timestamp: '2026-05-18T02:59:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'One should not say[a], “Why this and why that?” For everything will prevail in its time.'
+  to: 'One should not say[a], “Why this and why that?” For everything will prevail in its time.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''“Why this? And why that?”''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

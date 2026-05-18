@@ -103,19 +103,26 @@ theological_decisions:
   rationale: 'The Greek wording can be read either as an assertion or as an ironic/rhetorical question in response to the servant''s claim in the preceding verse. Rendering it as a rhetorical question fits the argumentative flow: the master turns the servant''s own premise back on him. This does not settle a doctrinal issue but affects tone and interpretation, so the alternative is preserved in a footnote.'
   doctrine_reference: Preserve theological tension rather than resolve it
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:57:52Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:27Z'
   unchanged: false
-  changes_summary: Removed ‘seed’ because it is not present in the Greek; otherwise retained the draft as accurate and natural.
+  changes_summary: 'doctrine_realignment: Matthew 25:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''where I did not scatter seed''].'
 revisions:
 - timestamp: '2026-04-23T09:57:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But his master answered and said to him, ‘Wicked and lazy servant, you knew that I reap where I did not sow and gather where I did not scatter seed?
-  to: But his master answered and said to him, ‘Wicked and lazy servant, you knew that I reap where I did not sow and gather where I did not scatter?
+  to: But his master answered and said to him, ‘Wicked and lazy servant, you knew that I reap where I did not sow and gather where I did not scatter seed?
   rationale: Removed ‘seed’ because it is not present in the Greek; otherwise retained the draft as accurate and natural.
 
+- timestamp: '2026-05-18T03:00:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But his master answered and said to him[a], ‘Wicked and lazy servant[b], you knew that I reap where I did not sow and gather where I did not scatter?'
+  to: 'But his master answered and said to him[a], ‘Wicked and lazy servant[b], you knew that I reap where I did not sow and gather where I did not scatter?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''where I did not scatter seed''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

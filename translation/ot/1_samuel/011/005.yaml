@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:40Z'
   unchanged: false
-  changes_summary: Changed 'coming in from the field' to 'coming from the field' for closer alignment with the source; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 1 Samuel 11:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was coming in''].'
 revisions:
 - timestamp: '2026-04-23T10:10:09Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And behold, Saul was coming in from the field behind the cattle, and Saul said, “What is wrong with the people, that they are weeping?” And they told him the words of the men of Jabesh.
-  to: And behold, Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people, that they are weeping?” And they told him the words of the men of Jabesh.
+  to: And behold, Saul was coming in from the field behind the cattle, and Saul said, “What is wrong with the people, that they are weeping?” And they told him the words of the men of Jabesh.
   rationale: Changed 'coming in from the field' to 'coming from the field' for closer alignment with the source; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:55:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.'
+  to: 'And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was coming in''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

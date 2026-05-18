@@ -76,19 +76,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:13Z'
   unchanged: false
-  changes_summary: 'Reordered the final phrase to reflect the Hebrew more completely and naturally: included ''cut stones'' as a third appositional description of the stones rather than ''with cut stones,'' which could imply an added instrument or separate material.'
+  changes_summary: 'doctrine_realignment: 1 Kings 5:31 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with cut stones''].'
 revisions:
 - timestamp: '2026-04-23T10:06:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king commanded, and they quarried great stones, costly stones, to lay the foundation of the house with cut stones.
-  to: Then the king commanded, and they quarried great stones, costly stones, cut stones, to lay the foundation of the house.
+  to: Then the king commanded, and they quarried great stones, costly stones, to lay the foundation of the house with cut stones.
   rationale: 'Reordered the final phrase to reflect the Hebrew more completely and naturally: included ''cut stones'' as a third appositional description of the stones rather than ''with cut stones,'' which could imply an added instrument or separate material.'
 
+- timestamp: '2026-05-18T02:56:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king commanded[a], and they quarried great stones, costly stones, cut stones[b], to lay the foundation of the house.'
+  to: 'Then the king commanded[a], and they quarried great stones, costly stones, cut stones[b], to lay the foundation of the house.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with cut stones''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

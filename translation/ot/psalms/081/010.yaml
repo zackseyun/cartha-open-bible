@@ -77,19 +77,26 @@ theological_decisions:
   rationale: Hebrew commonly addresses Israel as a singular entity. English 'you' can preserve this without awkward literalism. This avoids importing either purely individual or purely national emphasis beyond the text.
   doctrine_reference: Translation philosophy §1, §6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:27:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:48Z'
   unchanged: false
-  changes_summary: Changed 'among you' to 'in you' to reflect בך more closely, and rendered both זָר and נֵכָר consistently as 'foreign' instead of alternating 'foreign' and 'strange.'
+  changes_summary: 'doctrine_realignment: Psalms 81:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''among you''].'
 revisions:
 - timestamp: '2026-04-23T11:27:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: There shall not be among you any foreign god, and you shall not bow down to a strange god.
-  to: There shall not be in you any foreign god, and you shall not bow down to a foreign god.
+  to: There shall not be among you any foreign god, and you shall not bow down to a strange god.
   rationale: Changed 'among you' to 'in you' to reflect בך more closely, and rendered both זָר and נֵכָר consistently as 'foreign' instead of alternating 'foreign' and 'strange.'
 
+- timestamp: '2026-05-18T02:53:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'There shall not be in you any foreign god[a], and you shall not bow down to a foreign god.'
+  to: 'There shall not be in you any foreign god[a], and you shall not bow down to a foreign god.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''among you''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

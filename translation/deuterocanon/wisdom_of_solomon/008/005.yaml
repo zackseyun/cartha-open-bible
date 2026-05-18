@@ -10,7 +10,7 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And if wealth is a desirable possession in life[a], what is richer than wisdom, which accomplishes all things?
+  text: And if wealth is a desirable possession in life, what is richer than wisdom, which works all things?
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -87,10 +87,10 @@ theological_decisions:
   rationale: The text attributes sweeping efficacy to wisdom, but the participle itself does not require a specific metaphysical claim such as ex nihilo creation. The translation preserves the theological weight while avoiding importing a more precise doctrine than the Greek states.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:48:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:02Z'
   unchanged: false
-  changes_summary: Changed 'works all things' to 'accomplishes all things' for more natural formal English while preserving the sense of ἐργαζομένης.
+  changes_summary: 'doctrine_realignment: Wisdom of Solomon 8:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''which works all things''].'
 revisions:
 - timestamp: '2026-04-23T15:48:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -100,6 +100,13 @@ revisions:
   to: And if wealth is a desirable possession in life, what is richer than wisdom, which accomplishes all things?
   rationale: Changed 'works all things' to 'accomplishes all things' for more natural formal English while preserving the sense of ἐργαζομένης.
 
+- timestamp: '2026-05-18T03:10:02Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And if wealth is a desirable possession in life[a], what is richer than wisdom, which accomplishes all things?'
+  to: 'And if wealth is a desirable possession in life, what is richer than wisdom, which works all things?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''which works all things''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

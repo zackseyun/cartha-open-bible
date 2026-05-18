@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:32Z'
   unchanged: false
-  changes_summary: Replaced 'with this same message' with 'in this way' to more directly reflect the Hebrew wording and avoid adding 'message,' which is not explicit in the source.
+  changes_summary: 'doctrine_realignment: Nehemiah 6:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with this same message''].'
 revisions:
 - timestamp: '2026-04-23T11:13:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They sent to me four times with this same message, and I answered them in the same way.
-  to: They sent to me four times in this way, and I answered them in the same way.
+  to: They sent to me four times with this same message, and I answered them in the same way.
   rationale: Replaced 'with this same message' with 'in this way' to more directly reflect the Hebrew wording and avoid adding 'message,' which is not explicit in the source.
 
+- timestamp: '2026-05-18T02:54:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They sent to me four times in this way[a], and I answered them in the same way.'
+  to: 'They sent to me four times in this way[a], and I answered them in the same way.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with this same message''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

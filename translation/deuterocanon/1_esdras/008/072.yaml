@@ -107,19 +107,26 @@ theological_decisions:
   rationale: The Greek uses two different terms, likely for rhetorical intensification and possibly to distinguish deliberate sins from offenses arising from ignorance. Preserving the distinction best fits the source-text transparency goal, even if the second term is less idiomatic in English.
   doctrine_reference: DOCTRINE.md § Translation philosophy, points 1 and 5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:14Z'
   unchanged: false
-  changes_summary: Replaced "ignorances" with "offenses" for more natural formal English and a better rendering of ἄγνοιαι in context; retained the rest of the structure.
+  changes_summary: 'doctrine_realignment: 1 Esdras 8:72 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''ignorances''].'
 revisions:
 - timestamp: '2026-04-23T15:29:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For our sins have multiplied beyond our heads, and our ignorances have risen up to heaven.
-  to: For our sins have multiplied beyond our heads, and our offenses have risen up to heaven.
+  to: For our sins have multiplied beyond our heads, and our ignorances have risen up to heaven.
   rationale: Replaced "ignorances" with "offenses" for more natural formal English and a better rendering of ἄγνοιαι in context; retained the rest of the structure.
 
+- timestamp: '2026-05-18T02:59:14Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For our sins have multiplied beyond our heads[a], and our offenses have risen up to heaven.'
+  to: 'For our sins have multiplied beyond our heads[a], and our offenses have risen up to heaven.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''ignorances''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

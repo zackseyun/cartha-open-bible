@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:05:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:49Z'
   unchanged: false
-  changes_summary: Changed 'households' to 'house' for closer alignment with the singular 'house of their father' in the source; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 26:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their fathers’ households''].'
 revisions:
 - timestamp: '2026-04-23T10:05:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And to Shemaiah his son, sons were born who ruled over their fathers’ households, for they were mighty men of valor.
-  to: And to Shemaiah his son, sons were born who ruled over their fathers’ house, for they were mighty men of valor.
+  to: And to Shemaiah his son, sons were born who ruled over their fathers’ households, for they were mighty men of valor.
   rationale: Changed 'households' to 'house' for closer alignment with the singular 'house of their father' in the source; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:58:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And to Shemaiah his son[a], sons were born who ruled over their fathers’ house[b], for they were mighty men of valor.'
+  to: 'And to Shemaiah his son[a], sons were born who ruled over their fathers’ house[b], for they were mighty men of valor.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their fathers’ households''].'
 cross_check:
   status: high_agreement
   agreement: 0.92

@@ -57,19 +57,26 @@ theological_decisions:
   rationale: The Hebrew literally says 'and she shall do/make her nails,' which is idiomatic and debated. The translation keeps a natural English rendering in the main text while preserving the alternative in a footnote, in keeping with the policy of preserving genuine ambiguity rather than overstating certainty.
   doctrine_reference: DOCTRINE.md Translation philosophy §3 (Preserve theological tension rather than resolve it)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:55Z'
   unchanged: false
-  changes_summary: Removed 'into the midst of' and replaced it with the more natural and accurate 'into your house.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 21:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into the midst of your house''].'
 revisions:
 - timestamp: '2026-04-23T10:26:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: then you shall bring her into the midst of your house, and she shall shave her head and trim her nails.
-  to: then you shall bring her into your house, and she shall shave her head and trim her nails.
+  to: then you shall bring her into the midst of your house, and she shall shave her head and trim her nails.
   rationale: Removed 'into the midst of' and replaced it with the more natural and accurate 'into your house.'
 
+- timestamp: '2026-05-18T02:55:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'then you shall bring her into your house[a], and she shall shave her head and trim her nails.'
+  to: 'then you shall bring her into your house[a], and she shall shave her head and trim her nails.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into the midst of your house''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

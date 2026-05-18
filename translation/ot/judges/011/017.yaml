@@ -105,19 +105,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:07:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:15Z'
   unchanged: false
-  changes_summary: Changed ‘let me pass’ to ‘let us pass’ to match Israel as the speaker. Added ‘And’ at the start of the second clause for closer correspondence to the source. Kept the rest substantially unchanged as accurate and natural.
+  changes_summary: 'doctrine_realignment: Judges 11:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Please let me pass''].'
 revisions:
 - timestamp: '2026-04-23T11:07:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Israel sent messengers to the king of Edom, saying, ‘Please let me pass through your land,’ but the king of Edom did not listen. He also sent to the king of Moab, but he was unwilling, so Israel remained at Kadesh.
-  to: Then Israel sent messengers to the king of Edom, saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling, so Israel remained at Kadesh.
+  to: Then Israel sent messengers to the king of Edom, saying, ‘Please let me pass through your land,’ but the king of Edom did not listen. He also sent to the king of Moab, but he was unwilling, so Israel remained at Kadesh.
   rationale: Changed ‘let me pass’ to ‘let us pass’ to match Israel as the speaker. Added ‘And’ at the start of the second clause for closer correspondence to the source. Kept the rest substantially unchanged as accurate and natural.
 
+- timestamp: '2026-05-18T02:55:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.'
+  to: 'Then Israel sent messengers to the king of Edom[a], saying, ‘Please let us pass through your land,’ but the king of Edom did not listen. And he also sent to the king of Moab, but he was unwilling[b], so Israel remained at Kadesh.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Please let me pass''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

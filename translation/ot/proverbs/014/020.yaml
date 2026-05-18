@@ -71,19 +71,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:21:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:06Z'
   unchanged: false
-  changes_summary: Changed 'lovers of a rich man' to 'friends of a rich man' for more natural English and a better contextual rendering of the Hebrew term, while preserving the contrast and meaning.
+  changes_summary: 'doctrine_realignment: Proverbs 14:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the lovers of''].'
 revisions:
 - timestamp: '2026-04-23T11:21:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Even his neighbor hates a poor man, but the lovers of a rich man are many.
-  to: Even his neighbor hates a poor man, but the friends of a rich man are many.
+  to: Even his neighbor hates a poor man, but the lovers of a rich man are many.
   rationale: Changed 'lovers of a rich man' to 'friends of a rich man' for more natural English and a better contextual rendering of the Hebrew term, while preserving the contrast and meaning.
 
+- timestamp: '2026-05-18T02:55:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Even his neighbor hates a poor man[b][a], but the friends of a rich man are many.'
+  to: 'Even his neighbor hates a poor man[b][a], but the friends of a rich man are many.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the lovers of''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

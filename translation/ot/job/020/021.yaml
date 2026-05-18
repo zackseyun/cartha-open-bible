@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:00:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:25Z'
   unchanged: false
-  changes_summary: 'Revised the first clause for closer lexical accuracy and natural English: ''Nothing escaped his devouring'' became ''Nothing was left for him to devour,'' better reflecting the sense that nothing remained for his eating/devouring. Kept the second clause essentially unchanged.'
+  changes_summary: 'doctrine_realignment: Job 20:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his devouring''].'
 revisions:
 - timestamp: '2026-04-23T11:00:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Nothing escaped his devouring; therefore his prosperity will not endure.
-  to: Nothing was left for him to devour; therefore his prosperity will not endure.
+  to: Nothing escaped his devouring; therefore his prosperity will not endure.
   rationale: 'Revised the first clause for closer lexical accuracy and natural English: ''Nothing escaped his devouring'' became ''Nothing was left for him to devour,'' better reflecting the sense that nothing remained for his eating/devouring. Kept the second clause essentially unchanged.'
 
+- timestamp: '2026-05-18T02:54:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Nothing was left for him to devour[b][a]; therefore his prosperity will not endure.'
+  to: 'Nothing was left for him to devour[b][a]; therefore his prosperity will not endure.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his devouring''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

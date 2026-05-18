@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:59:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:00Z'
   unchanged: false
-  changes_summary: Removed 'about them' as an unnecessary expansion not present in the source; otherwise retained the accurate rendering.
+  changes_summary: 'doctrine_realignment: Job 14:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about them''].'
 revisions:
 - timestamp: '2026-04-23T10:59:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: His sons come to honor, and he does not know it; they are brought low, and he does not perceive it about them.
-  to: His sons come to honor, and he does not know it; they are brought low, and he does not perceive it.
+  to: His sons come to honor, and he does not know it; they are brought low, and he does not perceive it about them.
   rationale: Removed 'about them' as an unnecessary expansion not present in the source; otherwise retained the accurate rendering.
 
+- timestamp: '2026-05-18T02:54:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'His sons come to honor[a], and he does not know it; they are brought low, and he does not perceive it.'
+  to: 'His sons come to honor[a], and he does not know it; they are brought low, and he does not perceive it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about them''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

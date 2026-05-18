@@ -108,19 +108,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:05:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:45Z'
   unchanged: false
-  changes_summary: Removed 'Surely,' which is not required by the source here and slightly overtranslates the clause. Otherwise retained the draft as accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Kings 1:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''saying, “Surely''].'
 revisions:
 - timestamp: '2026-04-23T10:05:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Please go in to King David and say to him, ‘My lord the king, did you not swear to your servant, saying, “Surely Solomon your son shall reign after me, and he shall sit on my throne”? Why then has Adonijah become king?’
-  to: Please go in to King David and say to him, ‘My lord the king, did you not swear to your servant, saying, “Solomon your son shall reign after me, and he shall sit on my throne”? Why then has Adonijah become king?’
+  to: Please go in to King David and say to him, ‘My lord the king, did you not swear to your servant, saying, “Surely Solomon your son shall reign after me, and he shall sit on my throne”? Why then has Adonijah become king?’
   rationale: Removed 'Surely,' which is not required by the source here and slightly overtranslates the clause. Otherwise retained the draft as accurate and natural.
 
+- timestamp: '2026-05-18T02:56:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Please go in to King David and say to him[a], ‘My lord the king, did you not swear to your servant, saying, “Solomon your son shall reign after me, and he shall sit on my throne”? Why then has Adonijah become king?’'
+  to: 'Please go in to King David and say to him[a], ‘My lord the king, did you not swear to your servant, saying, “Solomon your son shall reign after me, and he shall sit on my throne”? Why then has Adonijah become king?’'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''saying, “Surely''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

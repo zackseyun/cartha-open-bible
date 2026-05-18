@@ -71,19 +71,26 @@ theological_decisions:
   rationale: The Hebrew permits a rendering that preserves tension. Since Genesis contains occurrences of the divine name in patriarchal contexts, the verse is often understood as speaking not of mere phonetic knowledge of the name but of experiential/covenantal knowledge of what that name signifies. The translation should not import that interpretation into the main text beyond what the Hebrew states, but it should preserve the alternative in a footnote.
   doctrine_reference: 'DOCTRINE.md: Contested terms — יְהוָה YHWH → Yahweh'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:06Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Added commas around the appositional phrase 'the LORD' for clearer, more natural English while preserving the meaning.
+  changes_summary: 'doctrine_realignment: Exodus 6:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but by my name the LORD''].'
 revisions:
 - timestamp: '2026-04-23T10:30:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And I appeared to Abraham, to Isaac, and to Jacob as God Almighty, but by my name the LORD I was not known to them.
-  to: And I appeared to Abraham, to Isaac, and to Jacob as God Almighty, but by my name, the LORD, I was not known to them.
+  to: And I appeared to Abraham, to Isaac, and to Jacob as God Almighty, but by my name the LORD I was not known to them.
   rationale: Added commas around the appositional phrase 'the LORD' for clearer, more natural English while preserving the meaning.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I appeared to Abraham[a], to Isaac, and to Jacob as God Almighty, but by my name, Yahweh[b], I was not known to them.'
+  to: 'And I appeared to Abraham[a], to Isaac, and to Jacob as God Almighty, but by my name, Yahweh[b], I was not known to them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but by my name the LORD''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

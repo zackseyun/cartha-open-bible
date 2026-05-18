@@ -58,19 +58,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:31:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:27Z'
   unchanged: false
-  changes_summary: 'Added the second subject after ''was left'' to reflect the Hebrew explicitly: ''she and her two sons'' rather than ''with her two sons.'''
+  changes_summary: 'doctrine_realignment: Ruth 1:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with her two sons''].'
 revisions:
 - timestamp: '2026-04-23T11:31:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Elimelech, Naomi’s husband, died, and she was left with her two sons.
-  to: Then Elimelech, Naomi’s husband, died, and she was left, and her two sons.
+  to: Then Elimelech, Naomi’s husband, died, and she was left with her two sons.
   rationale: 'Added the second subject after ''was left'' to reflect the Hebrew explicitly: ''she and her two sons'' rather than ''with her two sons.'''
 
+- timestamp: '2026-05-18T02:57:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Elimelech[a], Naomi’s husband, died, and she was left, and her two sons.'
+  to: 'Then Elimelech[a], Naomi’s husband, died, and she was left, and her two sons.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with her two sons''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

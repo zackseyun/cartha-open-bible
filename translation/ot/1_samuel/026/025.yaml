@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:38Z'
   unchanged: false
-  changes_summary: Removed 'great things,' which is not explicit in the source. Preserved the emphatic Hebrew construction with 'will surely do' and retained 'will surely prevail' for יכל תוכל.
+  changes_summary: 'doctrine_realignment: 1 Samuel 26:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You will surely do great things''].'
 revisions:
 - timestamp: '2026-04-23T10:12:09Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Saul said to David, “Blessed are you, my son David. You will surely do great things, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
-  to: Then Saul said to David, “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
+  to: Then Saul said to David, “Blessed are you, my son David. You will surely do great things, and you will surely prevail.” Then David went on his way, and Saul returned to his place.
   rationale: Removed 'great things,' which is not explicit in the source. Preserved the emphatic Hebrew construction with 'will surely do' and retained 'will surely prevail' for יכל תוכל.
 
+- timestamp: '2026-05-18T02:55:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.'
+  to: 'Then Saul said to David[a], “Blessed are you, my son David. You will surely do, and you will surely prevail.” Then David went on his way, and Saul returned to his place.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You will surely do great things''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

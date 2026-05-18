@@ -76,19 +76,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:16:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:44Z'
   unchanged: false
-  changes_summary: Changed 'something' to 'anything' for more natural English in the question; otherwise retained the draft as accurate and complete.
+  changes_summary: 'doctrine_realignment: 2 Kings 4:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Is there something to be spoken for you''].'
 revisions:
 - timestamp: '2026-04-23T10:16:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he said to him, “Please say to her, ‘Look, you have taken all this trouble for us. What is to be done for you? Is there something to be spoken for you to the king or to the commander of the army?’” And she said, “I am living among my own people.”
-  to: And he said to him, “Please say to her, ‘Look, you have taken all this trouble for us. What is to be done for you? Is there anything to be spoken for you to the king or to the commander of the army?’” And she said, “I am living among my own people.”
+  to: And he said to him, “Please say to her, ‘Look, you have taken all this trouble for us. What is to be done for you? Is there something to be spoken for you to the king or to the commander of the army?’” And she said, “I am living among my own people.”
   rationale: Changed 'something' to 'anything' for more natural English in the question; otherwise retained the draft as accurate and complete.
 
+- timestamp: '2026-05-18T02:57:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he said to him[a], “Please say to her, ‘Look, you have taken all this trouble for us. What is to be done for you? Is there anything to be spoken for you to the king or to the commander of the army?’” And she said[c][b], “I am living among my own people.”'
+  to: 'And he said to him[a], “Please say to her, ‘Look, you have taken all this trouble for us. What is to be done for you? Is there anything to be spoken for you to the king or to the commander of the army?’” And she said[c][b], “I am living among my own people.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Is there something to be spoken for you''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

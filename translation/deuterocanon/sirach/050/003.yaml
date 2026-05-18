@@ -106,19 +106,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:11Z'
   unchanged: false
-  changes_summary: Revised 'the wall of the corners' to 'the wall with corner towers' for more natural English and a more accurate rendering of the Hebrew phrase. Retained the rest of the verse substantially unchanged.
+  changes_summary: 'doctrine_realignment: Sirach 50:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the corners''].'
 revisions:
 - timestamp: '2026-04-23T15:46:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: In his days the wall of the corners was built, a dwelling like a royal palace.
-  to: In his days the wall with corner towers was built, a dwelling like a royal palace.
+  to: In his days the wall of the corners was built, a dwelling like a royal palace.
   rationale: Revised 'the wall of the corners' to 'the wall with corner towers' for more natural English and a more accurate rendering of the Hebrew phrase. Retained the rest of the verse substantially unchanged.
 
+- timestamp: '2026-05-18T02:58:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'In his days the wall with corner towers was built[b][a], a dwelling like a royal palace.'
+  to: 'In his days the wall with corner towers was built[b][a], a dwelling like a royal palace.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the corners''].'
 cross_check:
   status: needs_review
   agreement: 0.65

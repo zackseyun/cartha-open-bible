@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:32Z'
   unchanged: false
-  changes_summary: Changed 'in the open field' to 'in the field' for closer lexical accuracy to the source without unnecessary expansion. The rest is accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Samuel 30:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the open field''].'
 revisions:
 - timestamp: '2026-04-23T10:12:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They found an Egyptian man in the open field and brought him to David. They gave him bread, and he ate, and they gave him water to drink.
-  to: They found an Egyptian man in the field and brought him to David. They gave him bread, and he ate, and they gave him water to drink.
+  to: They found an Egyptian man in the open field and brought him to David. They gave him bread, and he ate, and they gave him water to drink.
   rationale: Changed 'in the open field' to 'in the field' for closer lexical accuracy to the source without unnecessary expansion. The rest is accurate and natural.
 
+- timestamp: '2026-05-18T02:56:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They found an Egyptian man in the field and brought him to David[a]. They gave him bread, and he ate[c][b], and they gave him water to drink.'
+  to: 'They found an Egyptian man in the field and brought him to David[a]. They gave him bread, and he ate[c][b], and they gave him water to drink.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the open field''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

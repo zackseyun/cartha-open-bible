@@ -87,19 +87,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:05Z'
   unchanged: false
-  changes_summary: Changed 'were summoned' to 'were called out' to more closely reflect the Hebrew verb for mustering/calling the people, while keeping the rest of the verse intact.
+  changes_summary: 'doctrine_realignment: 1 Samuel 13:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were summoned to join''].'
 revisions:
 - timestamp: '2026-04-23T10:10:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And all Israel heard it said, “Saul has struck down the Philistine garrison, and Israel has also become odious to the Philistines.” Then the people were summoned to join Saul at Gilgal.
-  to: And all Israel heard it said, “Saul has struck down the Philistine garrison, and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.
+  to: And all Israel heard it said, “Saul has struck down the Philistine garrison, and Israel has also become odious to the Philistines.” Then the people were summoned to join Saul at Gilgal.
   rationale: Changed 'were summoned' to 'were called out' to more closely reflect the Hebrew verb for mustering/calling the people, while keeping the rest of the verse intact.
 
+- timestamp: '2026-05-18T02:56:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.'
+  to: 'And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were summoned to join''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

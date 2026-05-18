@@ -95,19 +95,26 @@ theological_decisions:
   - the Passover sacrifice
   rationale: The Hebrew uses 'Passover' as a metonym for the sacrificial victim. English normally requires the implied object to be made explicit. 'Passover lamb' is the most familiar and contextually fitting expression, though the broader sacrificial sense is preserved in documentation because Exod 12:5 allows sheep or goats.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:42Z'
   unchanged: false
-  changes_summary: Removed 'from the flock,' which is not represented in the source. Retained 'Draw out and take' for מִשְׁכוּ וּקְחוּ and 'the Passover lamb' as a natural rendering of הַפָּסַח in context.
+  changes_summary: 'doctrine_realignment: Exodus 12:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sheep from the flock''].'
 revisions:
 - timestamp: '2026-04-23T10:30:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Moses called for all the elders of Israel and said to them, “Draw out and take for yourselves sheep from the flock according to your families, and slaughter the Passover lamb.”
-  to: Then Moses called for all the elders of Israel and said to them, “Draw out and take for yourselves sheep according to your families, and slaughter the Passover lamb.”
+  to: Then Moses called for all the elders of Israel and said to them, “Draw out and take for yourselves sheep from the flock according to your families, and slaughter the Passover lamb.”
   rationale: Removed 'from the flock,' which is not represented in the source. Retained 'Draw out and take' for מִשְׁכוּ וּקְחוּ and 'the Passover lamb' as a natural rendering of הַפָּסַח in context.
 
+- timestamp: '2026-05-18T02:54:42Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Moses called for all the elders of Israel and said to them[a], “Draw out and take for yourselves sheep according to your families[c][b], and slaughter the Passover lamb.”'
+  to: 'Then Moses called for all the elders of Israel and said to them[a], “Draw out and take for yourselves sheep according to your families[c][b], and slaughter the Passover lamb.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sheep from the flock''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -103,19 +103,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:31:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:43Z'
   unchanged: false
-  changes_summary: Changed 'seized' to 'took' for a more neutral rendering of κατελάβετο, and 'became king there' to 'reigned there' for a more natural and direct rendering of ἐβασίλευσεν.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 10:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he became king there''].'
 revisions:
 - timestamp: '2026-04-23T15:31:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And in the one hundred sixtieth year, Alexander, the son of Antiochus Epiphanes, came up and seized Ptolemais, and they received him, and he became king there.
-  to: And in the one hundred sixtieth year, Alexander, the son of Antiochus Epiphanes, came up and took Ptolemais, and they received him, and he reigned there.
+  to: And in the one hundred sixtieth year, Alexander, the son of Antiochus Epiphanes, came up and seized Ptolemais, and they received him, and he became king there.
   rationale: Changed 'seized' to 'took' for a more neutral rendering of κατελάβετο, and 'became king there' to 'reigned there' for a more natural and direct rendering of ἐβασίλευσεν.
 
+- timestamp: '2026-05-18T02:58:43Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And in the one hundred sixtieth year[a], Alexander, the son of Antiochus Epiphanes, came up and took Ptolemais, and they received him[c][b], and he reigned there.'
+  to: 'And in the one hundred sixtieth year[a], Alexander, the son of Antiochus Epiphanes, came up and took Ptolemais, and they received him[c][b], and he reigned there.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he became king there''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

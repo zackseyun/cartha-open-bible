@@ -11,7 +11,7 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 1 = Addition A, segmented from Swete pages 772-773 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: He was from the captivity that Nebuchadnezzar king of Babylon had carried away from Jerusalem with Jeconiah king of Judah[a][b].
+  text: He was from the captivity that Nebuchadnezzar king of Babylon had carried away from Jerusalem with Jeconiah king of Judea.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -76,10 +76,10 @@ theological_decisions:
   rationale: The verse is historical and genealogical rather than doctrinal. The chosen wording preserves the forced-exile sense of the Greek while keeping the statement readable and not overinterpreting the social status of the group.
   doctrine_reference: DOCTRINE.md §Translation philosophy 1, 6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:37:41Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:56Z'
   unchanged: false
-  changes_summary: Changed 'Judea' to 'Judah' to reflect τῆς Ἰουδαίας more naturally in this royal context and align with standard biblical register; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Additions to Esther 1:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of Judea''].'
 revisions:
 - timestamp: '2026-04-23T15:37:41Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -89,6 +89,13 @@ revisions:
   to: He was from the captivity that Nebuchadnezzar king of Babylon had carried away from Jerusalem with Jeconiah king of Judah.
   rationale: Changed 'Judea' to 'Judah' to reflect τῆς Ἰουδαίας more naturally in this royal context and align with standard biblical register; otherwise retained the draft.
 
+- timestamp: '2026-05-18T03:09:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He was from the captivity that Nebuchadnezzar king of Babylon had carried away from Jerusalem with Jeconiah king of Judah[a][b].'
+  to: 'He was from the captivity that Nebuchadnezzar king of Babylon had carried away from Jerusalem with Jeconiah king of Judea.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of Judea''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

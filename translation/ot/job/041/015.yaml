@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:02:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:44Z'
   unchanged: false
-  changes_summary: 'Adjusted punctuation and wording for more natural formal English: added ''they are'' to make the second clause explicit, changed ''not to be moved'' to ''cannot be moved'' for clearer idiomatic sense, while preserving the meaning of the Hebrew.'
+  changes_summary: 'doctrine_realignment: Job 41:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be moved''].'
 revisions:
 - timestamp: '2026-04-23T11:02:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The folds of his flesh cling together, cast firm upon him, not to be moved.
-  to: The folds of his flesh cling together; they are cast firm upon him and cannot be moved.
+  to: The folds of his flesh cling together, cast firm upon him, not to be moved.
   rationale: 'Adjusted punctuation and wording for more natural formal English: added ''they are'' to make the second clause explicit, changed ''not to be moved'' to ''cannot be moved'' for clearer idiomatic sense, while preserving the meaning of the Hebrew.'
 
+- timestamp: '2026-05-18T02:54:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The folds of his flesh cling together[a]; they are cast firm upon him and cannot be moved.'
+  to: 'The folds of his flesh cling together[a]; they are cast firm upon him and cannot be moved.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be moved''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

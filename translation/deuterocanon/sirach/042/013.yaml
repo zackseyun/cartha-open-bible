@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 42:13
 translation:
-  text: For from a garment comes a moth[a], and from a woman comes a woman's wickedness.
+  text: For from a garment comes a moth, and from a woman a woman’s wickedness.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -107,19 +107,26 @@ theological_decisions:
   rationale: The source text itself presents a stark proverb and should not be softened to avoid offense. At the same time, the translation avoids importing broader doctrinal claims beyond the verse. The Hebrew and Greek both support the pointed formulation centered on 'woman.'
   doctrine_reference: 'DOCTRINE.md: original-language primacy; preserve tension rather than resolve it; gender-accurate over gender-neutral'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:52Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:37Z'
   unchanged: false
-  changes_summary: Added the second occurrence of 'comes' to reflect the parallel Hebrew structure and improve natural English while preserving the formal sense.
+  changes_summary: 'doctrine_realignment: Sirach 42:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a woman’s wickedness''].'
 revisions:
 - timestamp: '2026-04-23T15:45:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For from a garment comes a moth, and from a woman a woman’s wickedness.
-  to: For from a garment comes a moth, and from a woman comes a woman's wickedness.
+  to: 'For from a garment comes a moth, and from a woman comes a woman''s wickedness.'
   rationale: Added the second occurrence of 'comes' to reflect the parallel Hebrew structure and improve natural English while preserving the formal sense.
 
+- timestamp: '2026-05-18T03:09:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For from a garment comes a moth[a], and from a woman comes a woman''s wickedness.'
+  to: 'For from a garment comes a moth, and from a woman a woman’s wickedness.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a woman’s wickedness''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

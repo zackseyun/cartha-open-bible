@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:08Z'
   unchanged: false
-  changes_summary: Changed 'the day before yesterday' to 'the day before' for a more natural and idiomatic rendering of the Hebrew expression 'yesterday and the day before.'
+  changes_summary: 'doctrine_realignment: Exodus 5:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''yesterday and the day before yesterday''].'
 revisions:
 - timestamp: '2026-04-23T10:30:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the quota of bricks that they were making yesterday and the day before yesterday, you shall impose on them; you shall not reduce any of it, because they are idle. Therefore they are crying out, saying, ‘Let us go and sacrifice to our God.’
-  to: And the quota of bricks that they were making yesterday and the day before, you shall impose on them; you shall not reduce any of it, because they are idle. Therefore they are crying out, saying, ‘Let us go and sacrifice to our God.’
+  to: And the quota of bricks that they were making yesterday and the day before yesterday, you shall impose on them; you shall not reduce any of it, because they are idle. Therefore they are crying out, saying, ‘Let us go and sacrifice to our God.’
   rationale: Changed 'the day before yesterday' to 'the day before' for a more natural and idiomatic rendering of the Hebrew expression 'yesterday and the day before.'
 
+- timestamp: '2026-05-18T02:55:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the quota of bricks that they were making yesterday and the day before[a], you shall impose on them; you shall not reduce any of it, because they are idle. Therefore they are crying out, saying, ‘Let us go and sacrifice to our God.’'
+  to: 'And the quota of bricks that they were making yesterday and the day before[a], you shall impose on them; you shall not reduce any of it, because they are idle. Therefore they are crying out, saying, ‘Let us go and sacrifice to our God.’'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''yesterday and the day before yesterday''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

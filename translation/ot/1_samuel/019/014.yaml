@@ -58,19 +58,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:44Z'
   unchanged: false
-  changes_summary: Replaced “but” with “and” to reflect the simple Hebrew conjunction more accurately and avoid implying contrast not explicit in the source.
+  changes_summary: 'doctrine_realignment: 1 Samuel 19:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but she said''].'
 revisions:
 - timestamp: '2026-04-23T10:11:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Saul sent messengers to seize David, but she said, “He is sick.”
-  to: Then Saul sent messengers to seize David, and she said, “He is sick.”
+  to: Then Saul sent messengers to seize David, but she said, “He is sick.”
   rationale: Replaced “but” with “and” to reflect the simple Hebrew conjunction more accurately and avoid implying contrast not explicit in the source.
 
+- timestamp: '2026-05-18T02:56:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Saul sent messengers to seize David[a], and she said, “He is sick.”'
+  to: 'Then Saul sent messengers to seize David[a], and she said, “He is sick.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but she said''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

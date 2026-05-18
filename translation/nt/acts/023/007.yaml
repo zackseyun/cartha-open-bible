@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:41:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:09Z'
   unchanged: false
-  changes_summary: Changed 'when he said this' to 'as he was saying this' to better reflect the participial construction indicating contemporaneous action; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: Acts 23:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And when he said this''].'
 revisions:
 - timestamp: '2026-04-23T09:41:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And when he said this, a dispute arose between the Pharisees and Sadducees, and the assembly was divided.
-  to: And as he was saying this, a dispute arose between the Pharisees and Sadducees, and the assembly was divided.
+  to: And when he said this, a dispute arose between the Pharisees and Sadducees, and the assembly was divided.
   rationale: Changed 'when he said this' to 'as he was saying this' to better reflect the participial construction indicating contemporaneous action; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T03:01:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And as he was saying this[a], a dispute arose between the Pharisees and Sadducees[b], and the assembly was divided.'
+  to: 'And as he was saying this[a], a dispute arose between the Pharisees and Sadducees[b], and the assembly was divided.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And when he said this''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

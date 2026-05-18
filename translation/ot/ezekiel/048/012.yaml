@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:39:34Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:26Z'
   unchanged: false
-  changes_summary: Removed 'place' because the Hebrew says 'most holy' as a predicate description, not explicitly 'a most holy place.' Kept the rest substantially the same for accuracy and natural formal English.
+  changes_summary: 'doctrine_realignment: Ezekiel 48:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a most holy place''].'
 revisions:
 - timestamp: '2026-04-23T10:39:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And it shall be for them a special allotment from the contribution of the land, a most holy place, beside the territory of the Levites.
-  to: And it shall be for them a special allotment from the contribution of the land, most holy, beside the territory of the Levites.
+  to: And it shall be for them a special allotment from the contribution of the land, a most holy place, beside the territory of the Levites.
   rationale: Removed 'place' because the Hebrew says 'most holy' as a predicate description, not explicitly 'a most holy place.' Kept the rest substantially the same for accuracy and natural formal English.
 
+- timestamp: '2026-05-18T02:54:26Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.'
+  to: 'And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a most holy place''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

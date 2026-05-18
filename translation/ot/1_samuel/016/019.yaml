@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:38Z'
   unchanged: false
-  changes_summary: Changed 'with the sheep' to 'with the flock' for a more natural and contextually fitting rendering of the Hebrew phrase while preserving the meaning.
+  changes_summary: 'doctrine_realignment: 1 Samuel 16:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who is with the sheep''].'
 revisions:
 - timestamp: '2026-04-23T10:10:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So Saul sent messengers to Jesse and said, “Send me your son David, who is with the sheep.”
-  to: So Saul sent messengers to Jesse and said, “Send me your son David, who is with the flock.”
+  to: So Saul sent messengers to Jesse and said, “Send me your son David, who is with the sheep.”
   rationale: Changed 'with the sheep' to 'with the flock' for a more natural and contextually fitting rendering of the Hebrew phrase while preserving the meaning.
 
+- timestamp: '2026-05-18T02:55:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So Saul sent messengers to Jesse and said[a], “Send me your son David, who is with the flock.”'
+  to: 'So Saul sent messengers to Jesse and said[a], “Send me your son David, who is with the flock.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who is with the sheep''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

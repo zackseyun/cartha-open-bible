@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:39:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:49Z'
   unchanged: false
-  changes_summary: Changed 'is staying' to 'is lodging' to more directly reflect ξενίζεται ('is being hosted/lodging') while keeping the rest of the verse natural and formal.
+  changes_summary: 'doctrine_realignment: Acts 10:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is staying''].'
 revisions:
 - timestamp: '2026-04-23T09:39:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Therefore send to Joppa and summon Simon, who is called Peter. He is staying in the house of Simon, a tanner, by the sea.
-  to: Therefore send to Joppa and summon Simon, who is called Peter. He is lodging in the house of Simon, a tanner, by the sea.
+  to: Therefore send to Joppa and summon Simon, who is called Peter. He is staying in the house of Simon, a tanner, by the sea.
   rationale: Changed 'is staying' to 'is lodging' to more directly reflect ξενίζεται ('is being hosted/lodging') while keeping the rest of the verse natural and formal.
 
+- timestamp: '2026-05-18T03:00:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Therefore send to Joppa and summon Simon[a], who is called Peter. He is lodging in the house of Simon, a tanner[b], by the sea.'
+  to: 'Therefore send to Joppa and summon Simon[a], who is called Peter. He is lodging in the house of Simon, a tanner[b], by the sea.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is staying''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

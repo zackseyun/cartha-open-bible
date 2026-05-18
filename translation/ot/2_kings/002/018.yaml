@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:16:41Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:18Z'
   unchanged: false
-  changes_summary: Changed 'was staying' to 'was sitting' to more closely reflect the Hebrew participle while keeping natural English. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Kings 2:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he was staying''].'
 revisions:
 - timestamp: '2026-04-23T10:16:41Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When they returned to him, he was staying in Jericho, and he said to them, “Did I not tell you, ‘Do not go’?”
-  to: When they returned to him, he was sitting in Jericho, and he said to them, “Did I not tell you, ‘Do not go’?”
+  to: When they returned to him, he was staying in Jericho, and he said to them, “Did I not tell you, ‘Do not go’?”
   rationale: Changed 'was staying' to 'was sitting' to more closely reflect the Hebrew participle while keeping natural English. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When they returned to him[a], he was sitting in Jericho, and he said to them, “Did I not tell you, ‘Do not go’?”'
+  to: 'When they returned to him[a], he was sitting in Jericho, and he said to them, “Did I not tell you, ‘Do not go’?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he was staying''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

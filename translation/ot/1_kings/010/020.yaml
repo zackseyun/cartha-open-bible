@@ -72,19 +72,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:07:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:17Z'
   unchanged: false
-  changes_summary: Changed 'for any kingdom' to 'in any kingdom' for more natural rendering of the Hebrew preposition while preserving the sense. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 1 Kings 10:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for any kingdom''].'
 revisions:
 - timestamp: '2026-04-23T10:07:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And twelve lions were standing there on the six steps, on this side and on that side; nothing like it had been made for any kingdom.
-  to: And twelve lions were standing there on the six steps, on this side and on that side; nothing like it had been made in any kingdom.
+  to: And twelve lions were standing there on the six steps, on this side and on that side; nothing like it had been made for any kingdom.
   rationale: Changed 'for any kingdom' to 'in any kingdom' for more natural rendering of the Hebrew preposition while preserving the sense. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:57:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And twelve lions were standing there on the six steps[a], on this side and on that side[b]; nothing like it had been made in any kingdom.'
+  to: 'And twelve lions were standing there on the six steps[a], on this side and on that side[b]; nothing like it had been made in any kingdom.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for any kingdom''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

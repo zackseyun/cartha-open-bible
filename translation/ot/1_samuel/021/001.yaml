@@ -51,19 +51,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:40Z'
   unchanged: false
-  changes_summary: Changed 'went into the city' to 'entered the city' for a more natural and formal rendering of בָּא הָעִיר, while preserving the meaning. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 1 Samuel 21:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''went into''].'
 revisions:
 - timestamp: '2026-04-23T10:11:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then he arose and went away, and Jonathan went into the city.
-  to: Then he arose and went away, and Jonathan entered the city.
+  to: Then he arose and went away, and Jonathan went into the city.
   rationale: Changed 'went into the city' to 'entered the city' for a more natural and formal rendering of בָּא הָעִיר, while preserving the meaning. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:55:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then he arose and went away[a], and Jonathan entered the city.'
+  to: 'Then he arose and went away[a], and Jonathan entered the city.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''went into''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

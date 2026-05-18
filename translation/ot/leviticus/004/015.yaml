@@ -87,19 +87,26 @@ theological_decisions:
   rationale: The Hebrew text uses a singular verb after the plural subject 'elders of the congregation.' Retaining the singular preserves the source-text form and leaves open whether a representative individual performs the slaughter. Smoothing the number would resolve an ambiguity the Hebrew does not resolve.
   doctrine_reference: DOCTRINE.md Translation philosophy §3, §5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:09:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:57Z'
   unchanged: false
-  changes_summary: Changed 'he shall slaughter' to 'the bull shall be slaughtered' to avoid supplying an unspecified subject not present in the source and to preserve the formal, natural sense of the Hebrew.
+  changes_summary: 'doctrine_realignment: Leviticus 4:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he shall slaughter''].'
 revisions:
 - timestamp: '2026-04-23T11:09:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the elders of the congregation shall lay their hands on the head of the bull before the LORD, and he shall slaughter the bull before the LORD.
-  to: And the elders of the congregation shall lay their hands on the head of the bull before the LORD, and the bull shall be slaughtered before the LORD.
+  to: And the elders of the congregation shall lay their hands on the head of the bull before the LORD, and he shall slaughter the bull before the LORD.
   rationale: Changed 'he shall slaughter' to 'the bull shall be slaughtered' to avoid supplying an unspecified subject not present in the source and to preserve the formal, natural sense of the Hebrew.
 
+- timestamp: '2026-05-18T02:56:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the elders of the congregation shall lay their hands on the head of the bull before Yahweh[a], and the bull shall be slaughtered before Yahweh.'
+  to: 'And the elders of the congregation shall lay their hands on the head of the bull before Yahweh[a], and the bull shall be slaughtered before Yahweh.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he shall slaughter''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

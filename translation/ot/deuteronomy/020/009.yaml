@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:48Z'
   unchanged: false
-  changes_summary: Removed 'the' before 'armies' for a more natural rendering of the plural construct without changing the sense; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Deuteronomy 20:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''commanders of the armies''].'
 revisions:
 - timestamp: '2026-04-23T10:26:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And when the officers have finished speaking to the people, they shall appoint commanders of the armies at the head of the people.
-  to: And when the officers have finished speaking to the people, they shall appoint commanders of armies at the head of the people.
+  to: And when the officers have finished speaking to the people, they shall appoint commanders of the armies at the head of the people.
   rationale: Removed 'the' before 'armies' for a more natural rendering of the plural construct without changing the sense; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:55:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.'
+  to: 'And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''commanders of the armies''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

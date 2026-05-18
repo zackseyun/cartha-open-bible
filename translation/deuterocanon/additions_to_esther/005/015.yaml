@@ -12,7 +12,7 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: But we find that the Jews[a], who have been handed over to destruction by that thrice-accursed man, are not criminals, but live by most righteous laws[b],
+  text: But we find that the Jews, who have been handed over to destruction by that thrice-accursed man, are not criminals, but are governed by most righteous laws,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -108,10 +108,10 @@ theological_decisions:
   rationale: The term carries both moral and juridical force. 'Righteous' preserves the ethical dimension without excluding legal justice. This is not a major doctrinal crux, but the choice aligns with the project's preference to preserve theological texture where present.
   doctrine_reference: 'DOCTRINE.md: consistency of key terms; δικαιοσύνη default rationale informs related adjective rendering'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:38:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:56Z'
   unchanged: false
-  changes_summary: Changed 'are governed by most righteous laws' to 'live by most righteous laws' to more naturally reflect πολιτευομένους ('conduct/live as citizens') rather than passive governance.
+  changes_summary: 'doctrine_realignment: Additions to Esther 5:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are governed by''].'
 revisions:
 - timestamp: '2026-04-23T15:38:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -121,6 +121,13 @@ revisions:
   to: But we find that the Jews, who have been handed over to destruction by that thrice-accursed man, are not criminals, but live by most righteous laws,
   rationale: Changed 'are governed by most righteous laws' to 'live by most righteous laws' to more naturally reflect πολιτευομένους ('conduct/live as citizens') rather than passive governance.
 
+- timestamp: '2026-05-18T03:09:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But we find that the Jews[a], who have been handed over to destruction by that thrice-accursed man, are not criminals, but live by most righteous laws[b],'
+  to: 'But we find that the Jews, who have been handed over to destruction by that thrice-accursed man, are not criminals, but are governed by most righteous laws,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are governed by''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

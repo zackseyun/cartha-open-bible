@@ -99,19 +99,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:58:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:06Z'
   unchanged: false
-  changes_summary: Changed 'look' to 'behold' for a more formal register consistent with translation style. Kept the rest unchanged, as it accurately and completely reflects the source.
+  changes_summary: 'doctrine_realignment: Job 1:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And look''].'
 revisions:
 - timestamp: '2026-04-23T10:58:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And look, a great wind came from across the wilderness and struck the four corners of the house, and it fell on the young men, and they died; and I alone have escaped to tell you.
-  to: And behold, a great wind came from across the wilderness and struck the four corners of the house, and it fell on the young men, and they died; and I alone have escaped to tell you.
+  to: And look, a great wind came from across the wilderness and struck the four corners of the house, and it fell on the young men, and they died; and I alone have escaped to tell you.
   rationale: Changed 'look' to 'behold' for a more formal register consistent with translation style. Kept the rest unchanged, as it accurately and completely reflects the source.
 
+- timestamp: '2026-05-18T02:54:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And behold[a], a great wind came from across the wilderness and struck the four corners of the house, and it fell on the young men, and they died[b]; and I alone have escaped to tell you.'
+  to: 'And behold[a], a great wind came from across the wilderness and struck the four corners of the house, and it fell on the young men, and they died[b]; and I alone have escaped to tell you.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And look''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

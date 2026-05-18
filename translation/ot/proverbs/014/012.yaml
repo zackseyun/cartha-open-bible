@@ -85,19 +85,26 @@ theological_decisions:
   rationale: The proverb warns of a course that appears correct but ends in death. The text itself says 'death,' and the translation should not narrow or expand this into merely physical death or generalized ruin without textual warrant.
   doctrine_reference: DOCTRINE.md Translation philosophy §1, §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:21:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:06Z'
   unchanged: false
-  changes_summary: Changed 'before a man' to 'to a man' for more natural and accurate English with לִפְנֵי אִישׁ in this context; retained 'ways of death' to reflect the plural in the source.
+  changes_summary: 'doctrine_realignment: Proverbs 14:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before a man''].'
 revisions:
 - timestamp: '2026-04-23T11:21:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: There is a way that seems right before a man, but its end is the ways of death.
-  to: There is a way that seems right to a man, but its end is the ways of death.
+  to: There is a way that seems right before a man, but its end is the ways of death.
   rationale: Changed 'before a man' to 'to a man' for more natural and accurate English with לִפְנֵי אִישׁ in this context; retained 'ways of death' to reflect the plural in the source.
 
+- timestamp: '2026-05-18T02:55:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'There is a way that seems right to a man[a], but its end is the ways of death.'
+  to: 'There is a way that seems right to a man[a], but its end is the ways of death.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before a man''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

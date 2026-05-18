@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:38:50Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Changed 'on the east side' to 'toward the east' for closer alignment with the Hebrew while preserving natural English.
+  changes_summary: 'doctrine_realignment: Ezekiel 41:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the east side''].'
 revisions:
 - timestamp: '2026-04-23T10:38:50Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the width of the front of the temple and of the separate area on the east side was a hundred cubits.
-  to: And the width of the front of the temple and of the separate area toward the east was a hundred cubits.
+  to: And the width of the front of the temple and of the separate area on the east side was a hundred cubits.
   rationale: Changed 'on the east side' to 'toward the east' for closer alignment with the Hebrew while preserving natural English.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the width of the front of the temple and of the separate area toward the east was a hundred cubits[a][b][c].'
+  to: 'And the width of the front of the temple and of the separate area toward the east was a hundred cubits[a][b][c].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the east side''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

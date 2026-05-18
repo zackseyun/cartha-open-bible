@@ -100,19 +100,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:39Z'
   unchanged: false
-  changes_summary: 'Revised the proper names to match the Greek text: Ἰωνᾶ = Jona (not Johanan) and τοῦ Νασείβου = son of Naseib (not son of Eliashib). Kept the rest of the wording unchanged.'
+  changes_summary: 'doctrine_realignment: 1 Esdras 9:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Johanan son of Eliashib''].'
 revisions:
 - timestamp: '2026-04-23T15:29:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Ezra rose up from the court of the temple and went into the chamber of Johanan son of Eliashib,
-  to: Then Ezra rose up from the court of the temple and went into the chamber of Jona son of Naseib,
+  to: Then Ezra rose up from the court of the temple and went into the chamber of Johanan son of Eliashib,
   rationale: 'Revised the proper names to match the Greek text: Ἰωνᾶ = Jona (not Johanan) and τοῦ Νασείβου = son of Naseib (not son of Eliashib). Kept the rest of the wording unchanged.'
 
+- timestamp: '2026-05-18T02:59:39Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Ezra rose up from the court of the temple and went into the chamber of Jona son of Naseib[b][a],'
+  to: 'Then Ezra rose up from the court of the temple and went into the chamber of Jona son of Naseib[b][a],'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Johanan son of Eliashib''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.8

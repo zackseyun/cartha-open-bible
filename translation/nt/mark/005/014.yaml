@@ -83,19 +83,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:52:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:37Z'
   unchanged: false
-  changes_summary: Combined the final sentence with the preceding clause for closer alignment with the Greek flow, and changed 'people came' to 'they came' to avoid adding an explicit subject not stated in the text.
+  changes_summary: 'doctrine_realignment: Mark 5:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''people came''].'
 revisions:
 - timestamp: '2026-04-23T09:52:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And those who were tending them fled and reported it in the city and in the countryside. And people came to see what had happened.
-  to: And those who were tending them fled and reported it in the city and in the countryside, and they came to see what had happened.
+  to: And those who were tending them fled and reported it in the city and in the countryside. And people came to see what had happened.
   rationale: Combined the final sentence with the preceding clause for closer alignment with the Greek flow, and changed 'people came' to 'they came' to avoid adding an explicit subject not stated in the text.
 
+- timestamp: '2026-05-18T03:01:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And those who were tending them fled and reported it in the city and in the countryside[a], and they came to see what had happened.'
+  to: 'And those who were tending them fled and reported it in the city and in the countryside[a], and they came to see what had happened.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''people came''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

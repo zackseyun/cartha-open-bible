@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: Βαρναβᾶς δὲ καὶ Σαῦλος ὑπέστρεψαν, ⸀εἰς Ἰερουσαλὴμ πληρώσαντες τὴν διακονίαν, ⸀συμπαραλαβόντες Ἰωάννην τὸν ἐπικληθέντα Μᾶρκον.
 translation:
-  text: But Barnabas and Saul returned from Jerusalem after completing the ministry[a], taking along John, who was called Mark.
+  text: But Barnabas and Saul returned to Jerusalem after completing the ministry, taking along John, who was called Mark.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -69,10 +69,10 @@ theological_decisions:
   rationale: The SBLGNT text provided reads εἰς Ἰερουσαλήμ ('to Jerusalem'), so the draft follows the source text directly. Because the variant ἐξ Ἰερουσαλήμ ('from Jerusalem') is well known and affects the sense of the verse, it is preserved in a footnote for auditability.
   doctrine_reference: Translation philosophy §1 (Original-language primacy over translation tradition); §3 (Preserve theological tension rather than resolve it) applied analogously to a meaningful textual alternative.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:40:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:25Z'
   unchanged: false
-  changes_summary: Changed 'to Jerusalem' to 'from Jerusalem' to reflect the likely original reading and the context of their return after completing the service there; retained the rest with natural formal wording.
+  changes_summary: 'doctrine_realignment: Acts 12:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to Jerusalem''].'
 revisions:
 - timestamp: '2026-04-23T09:40:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -82,6 +82,13 @@ revisions:
   to: But Barnabas and Saul returned from Jerusalem after completing the ministry, taking along John, who was called Mark.
   rationale: Changed 'to Jerusalem' to 'from Jerusalem' to reflect the likely original reading and the context of their return after completing the service there; retained the rest with natural formal wording.
 
+- timestamp: '2026-05-18T03:10:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But Barnabas and Saul returned from Jerusalem after completing the ministry[a], taking along John, who was called Mark.'
+  to: 'But Barnabas and Saul returned to Jerusalem after completing the ministry, taking along John, who was called Mark.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to Jerusalem''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 31:30
 translation:
-  text: Listen[a], my son, and do not despise me; in the end you will understand my words.
+  text: Listen, my son, and do not despise me; in the end you will grasp my words.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -105,10 +105,10 @@ theological_decisions:
   rationale: For Sirach, where Hebrew survives, project policy gives Hebrew primacy. Here the supplied Greek parallel is not a close variant but an entirely different saying, indicating a major mismatch in verse alignment or textual tradition. The main text therefore follows the Hebrew, and the Greek is preserved in a footnote as a textual-variant-level note so the divergence remains auditable.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach survives; preserve source uncertainty honestly'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:44:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:34Z'
   unchanged: false
-  changes_summary: Changed 'grasp' to 'understand' for a more natural and contextually fitting rendering of תשיג with אמרי, while preserving the formal tone and meaning.
+  changes_summary: 'doctrine_realignment: Sirach 31:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will grasp''].'
 revisions:
 - timestamp: '2026-04-23T15:44:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -118,6 +118,13 @@ revisions:
   to: Listen, my son, and do not despise me; in the end you will understand my words.
   rationale: Changed 'grasp' to 'understand' for a more natural and contextually fitting rendering of תשיג with אמרי, while preserving the formal tone and meaning.
 
+- timestamp: '2026-05-18T03:09:34Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Listen[a], my son, and do not despise me; in the end you will understand my words.'
+  to: 'Listen, my son, and do not despise me; in the end you will grasp my words.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will grasp''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

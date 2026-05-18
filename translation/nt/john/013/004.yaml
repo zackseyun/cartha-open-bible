@@ -58,19 +58,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:47:05Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:47Z'
   unchanged: false
-  changes_summary: 'Capitalized the initial word for standard verse formatting. The draft accurately reflects the Greek: ''rises,'' ''from the supper,'' ''lays aside his outer garments,'' and ''taking a towel, tied it around himself.'''
+  changes_summary: 'doctrine_realignment: John 13:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he rises''].'
 revisions:
 - timestamp: '2026-04-23T09:47:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: he rises from the supper and lays aside his outer garments, and taking a towel, tied it around himself.
-  to: He rises from the supper and lays aside his outer garments, and taking a towel, tied it around himself.
+  to: he rises from the supper and lays aside his outer garments, and taking a towel, tied it around himself.
   rationale: 'Capitalized the initial word for standard verse formatting. The draft accurately reflects the Greek: ''rises,'' ''from the supper,'' ''lays aside his outer garments,'' and ''taking a towel, tied it around himself.'''
 
+- timestamp: '2026-05-18T03:00:47Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He rises from the supper and lays aside his outer garments[a], and taking a towel[b], tied it around himself.'
+  to: 'He rises from the supper and lays aside his outer garments[a], and taking a towel[b], tied it around himself.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he rises''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַ/יֵּ֧לֶךְ הַ/נַּ֛עַר הַ/נַּ֥עַר הַ/נָּבִ֖יא רָמֹ֥ת גִּלְעָֽד׃
 translation:
-  text: So the young man[a], the prophet's servant, went to Ramoth-gilead.
+  text: So the young man, the young prophet, went to Ramoth-gilead.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -50,19 +50,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:17:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:30Z'
   unchanged: false
-  changes_summary: Replaced 'the young prophet' with 'the prophet's servant' to reflect the Hebrew construction more accurately and avoid implying that the young man himself was a prophet.
+  changes_summary: 'doctrine_realignment: 2 Kings 9:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the young prophet''].'
 revisions:
 - timestamp: '2026-04-23T10:17:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So the young man, the young prophet, went to Ramoth-gilead.
-  to: So the young man, the prophet's servant, went to Ramoth-gilead.
+  to: 'So the young man, the prophet''s servant, went to Ramoth-gilead.'
   rationale: Replaced 'the young prophet' with 'the prophet's servant' to reflect the Hebrew construction more accurately and avoid implying that the young man himself was a prophet.
 
+- timestamp: '2026-05-18T03:09:30Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So the young man[a], the prophet''s servant, went to Ramoth-gilead.'
+  to: 'So the young man, the young prophet, went to Ramoth-gilead.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the young prophet''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

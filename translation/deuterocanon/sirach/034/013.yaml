@@ -114,19 +114,26 @@ theological_decisions:
   rationale: For Sirach, the project translates from the Hebrew where it survives, while using the Greek as an actual input and consistency check. Here the Greek is not a close verbal parallel but a substantially different reading, so the Hebrew governs the main translation. The Greek alternative is significant enough to preserve for auditability.
   doctrine_reference: 'PHILOSOPHY.md: translate Sirach from Hebrew where it survives; use Swete LXX alongside it.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:17Z'
   unchanged: false
-  changes_summary: Changed 'against the poor' to 'to the poor' for a more accurate rendering of the idiom 'show partiality/favoritism to' (לא ישא פנים אל דל).
+  changes_summary: 'doctrine_realignment: Sirach 34:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against the poor''].'
 revisions:
 - timestamp: '2026-04-23T15:45:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He does not show partiality against the poor, and he hears the plea of the oppressed.
-  to: He does not show partiality to the poor, and he hears the plea of the oppressed.
+  to: He does not show partiality against the poor, and he hears the plea of the oppressed.
   rationale: Changed 'against the poor' to 'to the poor' for a more accurate rendering of the idiom 'show partiality/favoritism to' (לא ישא פנים אל דל).
 
+- timestamp: '2026-05-18T02:58:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He does not show partiality to the poor[a], and he hears the plea of the oppressed.'
+  to: 'He does not show partiality to the poor[a], and he hears the plea of the oppressed.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against the poor''].'
 cross_check:
   status: needs_review
   agreement: 0.6

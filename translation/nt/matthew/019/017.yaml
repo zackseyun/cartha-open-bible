@@ -73,19 +73,26 @@ theological_decisions:
   rationale: The SBLGNT text in Matthew differs from the Markan/Lukan form. Faithfulness to the Greek requires preserving Matthew's wording while avoiding doctrinal overstatement. This maintains orthodox Christology by not construing the verse as a denial of Jesus' deity, while also not forcing that conclusion into the translation.
   doctrine_reference: Affirmations; Translation philosophy items 1 and 3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:56:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:00Z'
   unchanged: false
-  changes_summary: Revised 'One is the good one' to the more natural and accurate 'One is good,' which better reflects the Greek without awkward literalism. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Matthew 19:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''One is the good one''].'
 revisions:
 - timestamp: '2026-04-23T09:56:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he said to him, “Why do you ask me about what is good? One is the good one. But if you want to enter into life, keep the commandments.”
-  to: And he said to him, “Why do you ask me about what is good? One is good. But if you want to enter into life, keep the commandments.”
+  to: And he said to him, “Why do you ask me about what is good? One is the good one. But if you want to enter into life, keep the commandments.”
   rationale: Revised 'One is the good one' to the more natural and accurate 'One is good,' which better reflects the Greek without awkward literalism. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T03:01:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”'
+  to: 'And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''One is the good one''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

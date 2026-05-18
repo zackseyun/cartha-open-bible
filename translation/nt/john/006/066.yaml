@@ -84,19 +84,26 @@ theological_decisions:
   rationale: The text states that many from among Jesus' disciples withdrew; it does not identify them with the Twelve nor make a doctrinal distinction between superficial and genuine disciples in the translation itself. 'Disciples' preserves the narrative category without importing later theological conclusions.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:46:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:10Z'
   unchanged: false
-  changes_summary: Changed 'From that time' to 'From this time' to more directly reflect Ἐκ τούτου; otherwise retained the accurate and natural rendering.
+  changes_summary: 'doctrine_realignment: John 6:66 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''From that time''].'
 revisions:
 - timestamp: '2026-04-23T09:46:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: From that time many of his disciples went back and no longer walked with him.
-  to: From this time many of his disciples went back and no longer walked with him.
+  to: From that time many of his disciples went back and no longer walked with him.
   rationale: Changed 'From that time' to 'From this time' to more directly reflect Ἐκ τούτου; otherwise retained the accurate and natural rendering.
 
+- timestamp: '2026-05-18T03:00:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'From this time many of his disciples went back and no longer walked with him[a].'
+  to: 'From this time many of his disciples went back and no longer walked with him[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''From that time''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

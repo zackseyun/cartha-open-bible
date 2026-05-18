@@ -100,19 +100,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:35Z'
   unchanged: false
-  changes_summary: Changed 'screamed at them' to 'shouted at them' for a more natural and appropriately formal rendering of the Hebrew verb, while preserving the sense of harsh verbal rejection.
+  changes_summary: 'doctrine_realignment: 1 Samuel 25:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he screamed at them''].'
 revisions:
 - timestamp: '2026-04-23T10:12:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But one of the young men told Abigail, Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master, and he screamed at them.”
-  to: But one of the young men told Abigail, Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master, and he shouted at them.”
+  to: But one of the young men told Abigail, Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master, and he screamed at them.”
   rationale: Changed 'screamed at them' to 'shouted at them' for a more natural and appropriately formal rendering of the Hebrew verb, while preserving the sense of harsh verbal rejection.
 
+- timestamp: '2026-05-18T02:56:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”'
+  to: 'But one of the young men told Abigail[a], Nabal’s wife, saying, “Look, David sent messengers from the wilderness to greet our master[b], and he shouted at them.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he screamed at them''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

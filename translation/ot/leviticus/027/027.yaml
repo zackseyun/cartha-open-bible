@@ -66,19 +66,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:12:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:05Z'
   unchanged: false
-  changes_summary: Changed 'may redeem' to 'shall redeem' to better reflect the Hebrew perfect with vav in this legal context, indicating the required procedure rather than mere permission. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Leviticus 27:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he may redeem it''].'
 revisions:
 - timestamp: '2026-04-23T11:12:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But if it is among the unclean animals, then he may redeem it at your valuation and add a fifth of it to it; and if it is not redeemed, then it shall be sold at your valuation.
-  to: But if it is among the unclean animals, then he shall redeem it at your valuation and add a fifth of it to it; and if it is not redeemed, then it shall be sold at your valuation.
+  to: But if it is among the unclean animals, then he may redeem it at your valuation and add a fifth of it to it; and if it is not redeemed, then it shall be sold at your valuation.
   rationale: Changed 'may redeem' to 'shall redeem' to better reflect the Hebrew perfect with vav in this legal context, indicating the required procedure rather than mere permission. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:58:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But if it is among the unclean animals[a], then he shall redeem it at your valuation and add a fifth of it to it; and if it is not redeemed[b], then it shall be sold at your valuation.'
+  to: 'But if it is among the unclean animals[a], then he shall redeem it at your valuation and add a fifth of it to it; and if it is not redeemed[b], then it shall be sold at your valuation.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he may redeem it''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

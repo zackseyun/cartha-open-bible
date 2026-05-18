@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:49Z'
   unchanged: false
-  changes_summary: Changed 'the throne' to 'the thrones' to reflect the plural 'of the kings' more naturally and accurately in English.
+  changes_summary: 'doctrine_realignment: 2 Kings 25:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''above the throne of the kings''].'
 revisions:
 - timestamp: '2026-04-23T10:19:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He spoke kindly to him and set his throne above the throne of the kings who were with him in Babylon.
-  to: He spoke kindly to him and set his throne above the thrones of the kings who were with him in Babylon.
+  to: He spoke kindly to him and set his throne above the throne of the kings who were with him in Babylon.
   rationale: Changed 'the throne' to 'the thrones' to reflect the plural 'of the kings' more naturally and accurately in English.
 
+- timestamp: '2026-05-18T02:58:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He spoke kindly to him and set his throne above the thrones of the kings who were with him in Babylon[a][b].'
+  to: 'He spoke kindly to him and set his throne above the thrones of the kings who were with him in Babylon[a][b].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''above the throne of the kings''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

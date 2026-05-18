@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:46Z'
   unchanged: false
-  changes_summary: Revised 'warriors' to 'those who took part in the war' to more closely reflect the Hebrew 'those seizing/handling the war,' while retaining 'who went out to battle.' Kept 'congregation' and overall formal register.
+  changes_summary: 'doctrine_realignment: Numbers 31:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the warriors''].'
 revisions:
 - timestamp: '2026-04-23T11:19:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And divide the plunder between the warriors who went out to battle and all the congregation.
-  to: And divide the plunder between those who took part in the war, who went out to battle, and all the congregation.
+  to: And divide the plunder between the warriors who went out to battle and all the congregation.
   rationale: Revised 'warriors' to 'those who took part in the war' to more closely reflect the Hebrew 'those seizing/handling the war,' while retaining 'who went out to battle.' Kept 'congregation' and overall formal register.
 
+- timestamp: '2026-05-18T02:57:46Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And divide the plunder between those who took part in the war[a], who went out to battle[b], and all the congregation.'
+  to: 'And divide the plunder between those who took part in the war[a], who went out to battle[b], and all the congregation.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the warriors''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

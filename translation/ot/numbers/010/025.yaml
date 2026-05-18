@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:16:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:25Z'
   unchanged: false
-  changes_summary: Changed 'division' to 'company' in the final clause to better reflect צבא in this context and to avoid awkward repetition with 'by their divisions.'
+  changes_summary: 'doctrine_realignment: Numbers 10:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and over its division was''].'
 revisions:
 - timestamp: '2026-04-23T11:16:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the banner of the camp of the sons of Dan set out, serving as the rear guard for all the camps by their divisions; and over its division was Ahiezer the son of Ammishaddai.
-  to: Then the banner of the camp of the sons of Dan set out, serving as the rear guard for all the camps by their divisions; and over its company was Ahiezer the son of Ammishaddai.
+  to: Then the banner of the camp of the sons of Dan set out, serving as the rear guard for all the camps by their divisions; and over its division was Ahiezer the son of Ammishaddai.
   rationale: Changed 'division' to 'company' in the final clause to better reflect צבא in this context and to avoid awkward repetition with 'by their divisions.'
 
+- timestamp: '2026-05-18T02:58:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the banner of the camp of the sons of Dan set out[a], serving as the rear guard for all the camps by their divisions[c][b]; and over its company was Ahiezer the son of Ammishaddai.'
+  to: 'Then the banner of the camp of the sons of Dan set out[a], serving as the rear guard for all the camps by their divisions[c][b]; and over its company was Ahiezer the son of Ammishaddai.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and over its division was''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

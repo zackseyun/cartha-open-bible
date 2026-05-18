@@ -76,19 +76,26 @@ theological_decisions:
   rationale: The verse uses the Tetragrammaton יְהוָה directly. Per updated doctrine, the divine name is rendered 'Yahweh' rather than 'the LORD', preserving the covenant name God revealed at Sinai.
   doctrine_reference: 'DOCTRINE.md Contested terms: יְהוָה YHWH'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Changed "Moses's" to the more formal possessive "Moses'"; otherwise retained the draft as accurate and natural.
+  changes_summary: 'doctrine_realignment: Exodus 8:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["according to Moses''s word"].'
 revisions:
 - timestamp: '2026-04-23T10:30:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: And the LORD did according to Moses's word, and removed the swarm from Pharaoh, from his servants, and from his people; not one remained.
-  to: And the LORD did according to Moses' word, and removed the swarm from Pharaoh, from his servants, and from his people; not one remained.
+  from: 'And the LORD did according to Moses''s word, and removed the swarm from Pharaoh, from his servants, and from his people; not one remained.'
+  to: 'And the LORD did according to Moses''s word, and removed the swarm from Pharaoh, from his servants, and from his people; not one remained.'
   rationale: Changed "Moses's" to the more formal possessive "Moses'"; otherwise retained the draft as accurate and natural.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Yahweh did according to Moses'' word[a], and removed the swarm from Pharaoh, from his servants, and from his people; not one remained.'
+  to: 'And Yahweh did according to Moses'' word[a], and removed the swarm from Pharaoh, from his servants, and from his people; not one remained.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["according to Moses''s word"].'
 cross_check:
   status: high_agreement
   agreement: 1.0

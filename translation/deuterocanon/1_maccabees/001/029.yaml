@@ -17,7 +17,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: After two years had passed[a], the king sent a chief collector of tribute to the cities of Judah, and he came to Jerusalem with a large force.
+  text: After two years had passed, the king sent a chief collector of tribute to the cities of Judah, and he came to Jerusalem with a heavy crowd.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -76,10 +76,10 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:50Z'
   unchanged: false
-  changes_summary: Replaced 'with a heavy crowd' with 'with a large force' for more natural English and a more accurate rendering of ἐν ὄχλῳ βαρεῖ in context.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 1:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a heavy crowd''].'
 revisions:
 - timestamp: '2026-04-23T15:29:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -89,6 +89,13 @@ revisions:
   to: After two years had passed, the king sent a chief collector of tribute to the cities of Judah, and he came to Jerusalem with a large force.
   rationale: Replaced 'with a heavy crowd' with 'with a large force' for more natural English and a more accurate rendering of ἐν ὄχλῳ βαρεῖ in context.
 
+- timestamp: '2026-05-18T03:09:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'After two years had passed[a], the king sent a chief collector of tribute to the cities of Judah, and he came to Jerusalem with a large force.'
+  to: 'After two years had passed, the king sent a chief collector of tribute to the cities of Judah, and he came to Jerusalem with a heavy crowd.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a heavy crowd''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

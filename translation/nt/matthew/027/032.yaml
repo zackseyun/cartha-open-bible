@@ -97,19 +97,26 @@ theological_decisions:
   rationale: Narrative context makes Jesus the intended referent, since Simon is being compelled to carry the condemned man's cross. The translation preserves the Greek pronoun rather than replacing it with 'Jesus' cross,' but the decision is documented because English readers could momentarily perceive ambiguity.
   doctrine_reference: Preserve theological tension rather than resolve it; here the context sufficiently resolves the referent, so no doctrinally driven ambiguity is being imposed or removed.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:58:21Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:59Z'
   unchanged: false
-  changes_summary: Replaced 'this man' with 'him' for more natural English while preserving the referent and meaning. No other changes needed.
+  changes_summary: 'doctrine_realignment: Matthew 27:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this man''].'
 revisions:
 - timestamp: '2026-04-23T09:58:21Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And as they were going out, they found a man of Cyrene named Simon. They compelled this man to carry his cross.
-  to: And as they were going out, they found a man of Cyrene named Simon. They compelled him to carry his cross.
+  to: And as they were going out, they found a man of Cyrene named Simon. They compelled this man to carry his cross.
   rationale: Replaced 'this man' with 'him' for more natural English while preserving the referent and meaning. No other changes needed.
 
+- timestamp: '2026-05-18T02:59:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And as they were going out[a], they found a man of Cyrene named Simon[b]. They compelled him to carry his cross.'
+  to: 'And as they were going out[a], they found a man of Cyrene named Simon[b]. They compelled him to carry his cross.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this man''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

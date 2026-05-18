@@ -77,19 +77,26 @@ theological_decisions:
   rationale: The Greek does not explicitly supply 'yes,' and the translation should preserve the tension rather than resolve it into either an unqualified affirmation or a denial. 'You say so' communicates that Jesus places the wording on Pilate's lips while not rejecting it.
   doctrine_reference: 'Translation philosophy §3: Preserve theological tension rather than resolve it.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:54:32Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:56Z'
   unchanged: false
-  changes_summary: Replaced the awkward participial phrase “And answering him, he says” with the more natural and accurate “And he answered him.” This preserves the sense of ἀποκριθεὶς αὐτῷ λέγει without unnecessary literal awkwardness, while retaining “You say so.”
+  changes_summary: 'doctrine_realignment: Mark 15:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''answering''].'
 revisions:
 - timestamp: '2026-04-23T09:54:32Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Pilate asked him, “Are you the king of the Jews?” And answering him, he says, “You say so.”
-  to: And Pilate asked him, “Are you the king of the Jews?” And he answered him, “You say so.”
+  to: And Pilate asked him, “Are you the king of the Jews?” And answering him, he says, “You say so.”
   rationale: Replaced the awkward participial phrase “And answering him, he says” with the more natural and accurate “And he answered him.” This preserves the sense of ἀποκριθεὶς αὐτῷ λέγει without unnecessary literal awkwardness, while retaining “You say so.”
 
+- timestamp: '2026-05-18T03:00:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Pilate asked him[a], “Are you the king of the Jews?” And he answered him[b], “You say so.”'
+  to: 'And Pilate asked him[a], “Are you the king of the Jews?” And he answered him[b], “You say so.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''answering''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

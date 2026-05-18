@@ -22,7 +22,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he summoned seventy shepherds and gave those sheep over to them[a], that they might pasture them. And he said to the shepherds and to all their companions, “From now on, each of you shall pasture the sheep[b], and do all that I command you.”
+  text: And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -143,10 +143,10 @@ theological_decisions:
   rationale: The Dream Visions communicate through sustained symbolic imagery. The translation should not collapse the vision into its presumed referents in the main text.
   doctrine_reference: 'Book context: visionary and apocalyptic prose/poetry; do not flatten cosmic imagery.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:38:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:48Z'
   unchanged: false
-  changes_summary: Added 'all' before 'their companions' to reflect ኵሉ, and adjusted word order slightly to 'gave those sheep over to them' for natural English while preserving the source sense.
+  changes_summary: 'doctrine_realignment: 1 Enoch 89:59 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to their companions''].'
 revisions:
 - timestamp: '2026-04-23T11:38:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -156,6 +156,13 @@ revisions:
   to: And he summoned seventy shepherds and gave those sheep over to them, that they might pasture them. And he said to the shepherds and to all their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”
   rationale: Added 'all' before 'their companions' to reflect ኵሉ, and adjusted word order slightly to 'gave those sheep over to them' for natural English while preserving the source sense.
 
+- timestamp: '2026-05-18T03:10:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he summoned seventy shepherds and gave those sheep over to them[a], that they might pasture them. And he said to the shepherds and to all their companions, “From now on, each of you shall pasture the sheep[b], and do all that I command you.”'
+  to: 'And he summoned seventy shepherds and gave over those sheep to them, that they might pasture them. And he said to the shepherds and to their companions, “From now on, each of you shall pasture the sheep, and do all that I command you.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to their companions''].'
 cross_check:
   status: high_agreement
   agreement: 0.92

@@ -65,19 +65,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:29:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:59Z'
   unchanged: false
-  changes_summary: Changed 'for lack of fat' to 'from lack of fat' for a more direct and natural rendering of the Hebrew preposition while preserving the sense. The rest is accurate and complete.
+  changes_summary: 'doctrine_realignment: Psalms 109:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for lack of fat''].'
 revisions:
 - timestamp: '2026-04-23T11:29:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: My knees give way from fasting, and my flesh grows lean for lack of fat.
-  to: My knees give way from fasting, and my flesh grows lean from lack of fat.
+  to: My knees give way from fasting, and my flesh grows lean for lack of fat.
   rationale: Changed 'for lack of fat' to 'from lack of fat' for a more direct and natural rendering of the Hebrew preposition while preserving the sense. The rest is accurate and complete.
 
+- timestamp: '2026-05-18T02:53:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'My knees give way from fasting[a], and my flesh grows lean from lack of fat.'
+  to: 'My knees give way from fasting[a], and my flesh grows lean from lack of fat.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for lack of fat''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

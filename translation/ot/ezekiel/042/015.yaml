@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:39:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:32Z'
   unchanged: false
-  changes_summary: Changed 'inner temple' to 'inner house' for closer lexical correspondence to the Hebrew 'house' while keeping the rest of the verse natural and complete.
+  changes_summary: 'doctrine_realignment: Ezekiel 42:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the inner temple''].'
 revisions:
 - timestamp: '2026-04-23T10:39:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When he had finished measuring the inner temple, he brought me out by way of the gate that faced east, and he measured it all around.
-  to: When he had finished measuring the inner house, he brought me out by way of the gate that faced east, and he measured it all around.
+  to: When he had finished measuring the inner temple, he brought me out by way of the gate that faced east, and he measured it all around.
   rationale: Changed 'inner temple' to 'inner house' for closer lexical correspondence to the Hebrew 'house' while keeping the rest of the verse natural and complete.
 
+- timestamp: '2026-05-18T02:54:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.'
+  to: 'When he had finished measuring the inner house[a], he brought me out by way of the gate that faced east[b], and he measured it all around.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the inner temple''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

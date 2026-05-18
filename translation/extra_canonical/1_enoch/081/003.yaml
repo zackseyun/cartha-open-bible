@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch81.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 81, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And at that time I blessed the Great Lord[a], the King of Glory forever, because he has made all the works of the world; and I praised the Lord for his patience[b], and I blessed him concerning the children of Adam.
+  text: And at that time I blessed the Great Lord, the King of Glory forever, because he has made all the works of the world; and I praised the Lord for his patience, and I blessed him on account of the children of Adam.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -137,10 +137,10 @@ theological_decisions:
   rationale: The Ge'ez expression is retained in a form that preserves its Adamic, human-lineage resonance. This avoids both male-specific English ('men') and an over-smoothed abstraction ('humankind').
   doctrine_reference: Translate from the local passage first; preserve significant theological wording rather than harmonizing.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:37:41Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:52Z'
   unchanged: false
-  changes_summary: Changed 'on account of' to 'concerning' for a more direct and natural rendering of the preposition, avoiding an interpretive causal nuance not required by the source. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 1 Enoch 81:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on account of the children of Adam''].'
 revisions:
 - timestamp: '2026-04-23T11:37:41Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -150,6 +150,13 @@ revisions:
   to: And at that time I blessed the Great Lord, the King of Glory forever, because he has made all the works of the world; and I praised the Lord for his patience, and I blessed him concerning the children of Adam.
   rationale: Changed 'on account of' to 'concerning' for a more direct and natural rendering of the preposition, avoiding an interpretive causal nuance not required by the source. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T03:10:52Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And at that time I blessed the Great Lord[a], the King of Glory forever, because he has made all the works of the world; and I praised the Lord for his patience[b], and I blessed him concerning the children of Adam.'
+  to: 'And at that time I blessed the Great Lord, the King of Glory forever, because he has made all the works of the world; and I praised the Lord for his patience, and I blessed him on account of the children of Adam.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on account of the children of Adam''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

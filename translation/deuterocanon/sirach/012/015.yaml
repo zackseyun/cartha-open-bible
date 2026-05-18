@@ -110,19 +110,26 @@ theological_decisions:
   rationale: The Hebrew wording is high-confidence as transmitted in Zone 1 but marked by minor mismatch and is semantically difficult. Transparency requires preserving the difficult reading rather than silently normalizing it. The divergent Greek is important enough to footnote.
   doctrine_reference: 'DOCTRINE.md: preserve theological/interpretive tension rather than resolve it silently'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:18Z'
   unchanged: false
-  changes_summary: Changed 'attain' to 'understand' for more natural and contextually fitting English for תַּשִּׂיג with 'my words'; retained the rest as accurate and complete.
+  changes_summary: 'doctrine_realignment: Sirach 12:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will attain''].'
 revisions:
 - timestamp: '2026-04-23T15:42:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Afterward you will attain my words, and for my sister you will sigh.
-  to: Afterward you will understand my words, and for my sister you will sigh.
+  to: Afterward you will attain my words, and for my sister you will sigh.
   rationale: Changed 'attain' to 'understand' for more natural and contextually fitting English for תַּשִּׂיג with 'my words'; retained the rest as accurate and complete.
 
+- timestamp: '2026-05-18T02:58:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Afterward you will understand my words[a], and for my sister you will sigh.'
+  to: 'Afterward you will understand my words[a], and for my sister you will sigh.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will attain''].'
 cross_check:
   status: needs_review
   agreement: 0.4

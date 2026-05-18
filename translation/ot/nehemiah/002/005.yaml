@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:12Z'
   unchanged: false
-  changes_summary: Adjusted 'If it seems good to the king' to the more natural formal rendering 'If it pleases the king,' and preserved the Hebrew's request form with 'that you would send me' rather than the imperative 'send me.'
+  changes_summary: 'doctrine_realignment: Nehemiah 2:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''If it seems good to the king''].'
 revisions:
 - timestamp: '2026-04-23T11:13:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: Then I said to the king, "If it seems good to the king, and if your servant has found favor before you, send me to Judah, to the city of my fathers' graves, so that I may rebuild it."
-  to: Then I said to the king, "If it pleases the king, and if your servant has found favor before you, that you would send me to Judah, to the city of my fathers' graves, so that I may rebuild it."
+  from: 'Then I said to the king, "If it seems good to the king, and if your servant has found favor before you, send me to Judah, to the city of my fathers'' graves, so that I may rebuild it."'
+  to: 'Then I said to the king, "If it seems good to the king, and if your servant has found favor before you, send me to Judah, to the city of my fathers'' graves, so that I may rebuild it."'
   rationale: Adjusted 'If it seems good to the king' to the more natural formal rendering 'If it pleases the king,' and preserved the Hebrew's request form with 'that you would send me' rather than the imperative 'send me.'
 
+- timestamp: '2026-05-18T02:54:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then I said to the king[a], "If it pleases the king, and if your servant has found favor before you, that you would send me to Judah, to the city of my fathers'' graves[c][b], so that I may rebuild it."'
+  to: 'Then I said to the king[a], "If it pleases the king, and if your servant has found favor before you, that you would send me to Judah, to the city of my fathers'' graves[c][b], so that I may rebuild it."'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''If it seems good to the king''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -94,19 +94,26 @@ theological_decisions:
   rationale: The Greek is terse and can function as a qualified assent rather than an unambiguous bare 'yes.' To preserve the text's tension and avoid importing a stronger or weaker christological claim than the wording itself makes, the translation keeps the ambiguity in the main text and notes alternatives.
   doctrine_reference: 'Translation philosophy §3: Preserve theological tension rather than resolve it.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:51:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:46Z'
   unchanged: false
-  changes_summary: 'Revised the second clause to more closely reflect the Greek participle and indirect object: changed ''And in answer he said to him'' to ''And answering him, he said.'''
+  changes_summary: 'doctrine_realignment: Luke 23:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in answer''].'
 revisions:
 - timestamp: '2026-04-23T09:51:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Pilate asked him, saying, “Are you the king of the Jews?” And in answer he said to him, “You say so.”
-  to: Then Pilate asked him, saying, “Are you the king of the Jews?” And answering him, he said, “You say so.”
+  to: Then Pilate asked him, saying, “Are you the king of the Jews?” And in answer he said to him, “You say so.”
   rationale: 'Revised the second clause to more closely reflect the Greek participle and indirect object: changed ''And in answer he said to him'' to ''And answering him, he said.'''
 
+- timestamp: '2026-05-18T03:00:46Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Pilate asked him[a], saying, “Are you the king of the Jews?” And answering him, he said[b], “You say so.”'
+  to: 'Then Pilate asked him[a], saying, “Are you the king of the Jews?” And answering him, he said[b], “You say so.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in answer''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

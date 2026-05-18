@@ -89,19 +89,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:17:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:35Z'
   unchanged: false
-  changes_summary: Changed 'army' to 'people' for closer lexical accuracy to עָם, and revised 'for trampling' to 'at threshing' to better reflect לָדוּשׁ.
+  changes_summary: 'doctrine_realignment: 2 Kings 13:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for trampling''].'
 revisions:
 - timestamp: '2026-04-23T10:17:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For he left Jehoahaz no army except fifty horsemen, ten chariots, and ten thousand foot soldiers, because the king of Aram had destroyed them and made them like dust for trampling.
-  to: For he left Jehoahaz no people except fifty horsemen, ten chariots, and ten thousand foot soldiers, because the king of Aram had destroyed them and made them like dust at threshing.
+  to: For he left Jehoahaz no army except fifty horsemen, ten chariots, and ten thousand foot soldiers, because the king of Aram had destroyed them and made them like dust for trampling.
   rationale: Changed 'army' to 'people' for closer lexical accuracy to עָם, and revised 'for trampling' to 'at threshing' to better reflect לָדוּשׁ.
 
+- timestamp: '2026-05-18T02:57:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For he left Jehoahaz no people except fifty horsemen[a], ten chariots, and ten thousand foot soldiers, because the king of Aram had destroyed them and made them like dust at threshing.'
+  to: 'For he left Jehoahaz no people except fifty horsemen[a], ten chariots, and ten thousand foot soldiers, because the king of Aram had destroyed them and made them like dust at threshing.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for trampling''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -103,19 +103,26 @@ theological_decisions:
   rationale: Project philosophy gives primacy to the surviving Hebrew of Sirach where available. Here the Greek confirms the verse's sense but appears to interpret or smooth the Hebrew expression כבני בשן. Therefore the main text stays closer to the Hebrew, with the Greek-style clarification preserved in a footnote.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:58Z'
   unchanged: false
-  changes_summary: Revised 'the young of Bashan' to 'calves of Bashan' for lexical accuracy and natural English, reflecting בני בשן more specifically.
+  changes_summary: 'doctrine_realignment: Sirach 47:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as with the young of Bashan''].'
 revisions:
 - timestamp: '2026-04-23T15:46:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He played with young lions as with a kid, and with bears as with the young of Bashan.
-  to: He played with young lions as with a kid, and with bears as with calves of Bashan.
+  to: He played with young lions as with a kid, and with bears as with the young of Bashan.
   rationale: Revised 'the young of Bashan' to 'calves of Bashan' for lexical accuracy and natural English, reflecting בני בשן more specifically.
 
+- timestamp: '2026-05-18T02:57:58Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He played with young lions as with a kid[b][a], and with bears as with calves of Bashan.'
+  to: 'He played with young lions as with a kid[b][a], and with bears as with calves of Bashan.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as with the young of Bashan''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

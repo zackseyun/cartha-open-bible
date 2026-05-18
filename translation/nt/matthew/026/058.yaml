@@ -85,19 +85,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:58:09Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:35Z'
   unchanged: false
-  changes_summary: Changed 'was sitting' to 'sat' to better reflect the aorist verb and improve natural English. Kept 'officers' and 'outcome' as acceptable renderings in context.
+  changes_summary: 'doctrine_realignment: Matthew 26:58 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he was sitting''].'
 revisions:
 - timestamp: '2026-04-23T09:58:09Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But Peter was following him from a distance, as far as the courtyard of the high priest. And after going inside, he was sitting with the officers to see the outcome.
-  to: But Peter was following him from a distance, as far as the courtyard of the high priest. And after going inside, he sat with the officers to see the outcome.
+  to: But Peter was following him from a distance, as far as the courtyard of the high priest. And after going inside, he was sitting with the officers to see the outcome.
   rationale: Changed 'was sitting' to 'sat' to better reflect the aorist verb and improve natural English. Kept 'officers' and 'outcome' as acceptable renderings in context.
 
+- timestamp: '2026-05-18T03:00:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But Peter was following him from a distance[a], as far as the courtyard of the high priest. And after going inside[b], he sat with the officers to see the outcome.'
+  to: 'But Peter was following him from a distance[a], as far as the courtyard of the high priest. And after going inside[b], he sat with the officers to see the outcome.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he was sitting''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

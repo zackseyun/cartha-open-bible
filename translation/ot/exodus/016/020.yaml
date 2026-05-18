@@ -85,19 +85,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:31:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:56Z'
   unchanged: false
-  changes_summary: Changed 'left part of it' to 'left some of it' for more natural English while preserving the sense of leaving a portion until morning. No other changes needed.
+  changes_summary: 'doctrine_realignment: Exodus 16:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''left part of it''].'
 revisions:
 - timestamp: '2026-04-23T10:31:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But they did not listen to Moses, and some men left part of it until morning, and it bred worms and stank; and Moses was angry with them.
-  to: But they did not listen to Moses, and some men left some of it until morning, and it bred worms and stank; and Moses was angry with them.
+  to: But they did not listen to Moses, and some men left part of it until morning, and it bred worms and stank; and Moses was angry with them.
   rationale: Changed 'left part of it' to 'left some of it' for more natural English while preserving the sense of leaving a portion until morning. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But they did not listen to Moses[a], and some men left some of it until morning, and it bred worms and stank[b]; and Moses was angry with them.'
+  to: 'But they did not listen to Moses[a], and some men left some of it until morning, and it bred worms and stank[b]; and Moses was angry with them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''left part of it''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

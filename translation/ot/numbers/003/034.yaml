@@ -56,19 +56,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:31Z'
   unchanged: false
-  changes_summary: Changed 'from them' to 'among them' for more natural and accurate English reflecting the sense of those counted within the group.
+  changes_summary: 'doctrine_realignment: Numbers 3:34 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those counted from them''].'
 revisions:
 - timestamp: '2026-04-23T11:15:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And those counted from them, by the number of every male from a month old and upward, were six thousand two hundred.
-  to: And those counted among them, by the number of every male from a month old and upward, were six thousand two hundred.
+  to: And those counted from them, by the number of every male from a month old and upward, were six thousand two hundred.
   rationale: Changed 'from them' to 'among them' for more natural and accurate English reflecting the sense of those counted within the group.
 
+- timestamp: '2026-05-18T02:58:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And those counted among them[a], by the number of every male from a month old and upward, were six thousand two hundred.'
+  to: 'And those counted among them[a], by the number of every male from a month old and upward, were six thousand two hundred.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those counted from them''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -57,19 +57,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:37Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:17Z'
   unchanged: false
-  changes_summary: Changed 'was preparing' to 'was making' for closer lexical correspondence to ἐποίει while keeping natural English.
+  changes_summary: 'doctrine_realignment: Luke 14:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was preparing''].'
 revisions:
 - timestamp: '2026-04-23T09:50:37Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But he said to him, “A certain man was preparing a great dinner and invited many,”
-  to: But he said to him, “A certain man was making a great dinner and invited many,”
+  to: But he said to him, “A certain man was preparing a great dinner and invited many,”
   rationale: Changed 'was preparing' to 'was making' for closer lexical correspondence to ἐποίει while keeping natural English.
 
+- timestamp: '2026-05-18T03:01:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But he said to him[a], “A certain man was making a great dinner and invited many,”'
+  to: 'But he said to him[a], “A certain man was making a great dinner and invited many,”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was preparing''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

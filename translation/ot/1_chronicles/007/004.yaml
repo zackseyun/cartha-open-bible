@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַ/עֲלֵי/הֶ֨ם לְ/תֹלְדוֹתָ֜/ם לְ/בֵ֣ית אֲבוֹתָ֗/ם גְּדוּדֵי֙ צְבָ֣א מִלְחָמָ֔ה שְׁלֹשִׁ֥ים וְ/שִׁשָּׁ֖ה אָ֑לֶף כִּֽי הִרְבּ֥וּ נָשִׁ֖ים וּ/בָנִֽים־׃
 translation:
-  text: And with them[a], by their generations, according to their fathers' houses, were 36,000 troops of the army for war[b], for they had many wives and sons.
+  text: And with them, by their generations, according to their fathers' houses, were 36,000 troops for the army of war, for they had many wives and sons.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -85,19 +85,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:03:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:28Z'
   unchanged: false
-  changes_summary: Adjusted 'troops for the army of war' to 'troops of the army for war' for more natural English while preserving the Hebrew construction. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 7:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''troops for the army of war''].'
 revisions:
 - timestamp: '2026-04-23T10:03:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: And with them, by their generations, according to their fathers' houses, were 36,000 troops for the army of war, for they had many wives and sons.
-  to: And with them, by their generations, according to their fathers' houses, were 36,000 troops of the army for war, for they had many wives and sons.
+  from: 'And with them, by their generations, according to their fathers'' houses, were 36,000 troops for the army of war, for they had many wives and sons.'
+  to: 'And with them, by their generations, according to their fathers'' houses, were 36,000 troops of the army for war, for they had many wives and sons.'
   rationale: Adjusted 'troops for the army of war' to 'troops of the army for war' for more natural English while preserving the Hebrew construction. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T03:09:28Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And with them[a], by their generations, according to their fathers'' houses, were 36,000 troops of the army for war[b], for they had many wives and sons.'
+  to: 'And with them, by their generations, according to their fathers'' houses, were 36,000 troops for the army of war, for they had many wives and sons.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''troops for the army of war''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -59,19 +59,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:11Z'
   unchanged: false
-  changes_summary: Changed 'numbered' to 'was' for a more direct rendering of the Hebrew construction while preserving natural formal English.
+  changes_summary: 'doctrine_realignment: 1 Kings 5:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and the forced labor numbered''].'
 revisions:
 - timestamp: '2026-04-23T10:06:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: King Solomon conscripted forced labor from all Israel, and the forced labor numbered thirty thousand men.
-  to: King Solomon conscripted forced labor from all Israel, and the forced labor was thirty thousand men.
+  to: King Solomon conscripted forced labor from all Israel, and the forced labor numbered thirty thousand men.
   rationale: Changed 'numbered' to 'was' for a more direct rendering of the Hebrew construction while preserving natural formal English.
 
+- timestamp: '2026-05-18T02:56:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'King Solomon conscripted forced labor from all Israel[b][a], and the forced labor was thirty thousand men.'
+  to: 'King Solomon conscripted forced labor from all Israel[b][a], and the forced labor was thirty thousand men.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and the forced labor numbered''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

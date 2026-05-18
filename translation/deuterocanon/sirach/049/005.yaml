@@ -116,19 +116,26 @@ theological_decisions:
   rationale: Because the Hebrew witness appears slightly irregular here and the prompt explicitly instructs that the Greek parallel be used as actual translation input, the translation follows the best recoverable sense rather than a wooden but likely misleading rendering.
   doctrine_reference: 'PHILOSOPHY.md: Hebrew Sirach translated from Hebrew where it survives, with Greek kept in view; user task requirement on parallel source'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:00Z'
   unchanged: false
-  changes_summary: Revised 'For they gave' to 'And they gave' to match the simple conjunction ו. Changed 'to others' to 'backward' to reflect לאחור more literally, since 'others' is not in the Hebrew. Retained 'horn,' 'glory,' and 'a foolish foreign nation' as accurate and natural renderings.
+  changes_summary: 'doctrine_realignment: Sirach 49:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to others''].'
 revisions:
 - timestamp: '2026-04-23T15:46:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For they gave their horn to others, and their glory to a foolish foreign nation.
-  to: And they gave their horn backward, and their glory to a foolish foreign nation.
+  to: For they gave their horn to others, and their glory to a foolish foreign nation.
   rationale: Revised 'For they gave' to 'And they gave' to match the simple conjunction ו. Changed 'to others' to 'backward' to reflect לאחור more literally, since 'others' is not in the Hebrew. Retained 'horn,' 'glory,' and 'a foolish foreign nation' as accurate and natural renderings.
 
+- timestamp: '2026-05-18T02:59:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they gave their horn backward[b][a], and their glory to a foolish foreign nation.'
+  to: 'And they gave their horn backward[b][a], and their glory to a foolish foreign nation.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to others''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

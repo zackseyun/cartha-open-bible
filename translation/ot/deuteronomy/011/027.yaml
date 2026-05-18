@@ -83,19 +83,26 @@ theological_decisions:
   rationale: The verse uses the Tetragrammaton יְהוָה directly. Per updated doctrine, the divine name is rendered 'Yahweh' rather than 'the LORD', preserving the covenant name God revealed at Sinai.
   doctrine_reference: 'DOCTRINE.md: Contested terms — יְהוָה YHWH → Yahweh'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:25:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:50Z'
   unchanged: false
-  changes_summary: Added a comma for readability and changed 'that I am commanding you today' to 'which I am commanding you today' so the relative clause more naturally modifies 'the commandments.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 11:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that I am commanding you today''].'
 revisions:
 - timestamp: '2026-04-23T10:25:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: the blessing, if you listen to the commandments of the LORD your God that I am commanding you today.
-  to: the blessing, if you listen to the commandments of the LORD your God, which I am commanding you today.
+  to: the blessing, if you listen to the commandments of the LORD your God that I am commanding you today.
   rationale: Added a comma for readability and changed 'that I am commanding you today' to 'which I am commanding you today' so the relative clause more naturally modifies 'the commandments.'
 
+- timestamp: '2026-05-18T02:56:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'the blessing[a], if you listen to the commandments of Yahweh your God[b], which I am commanding you today.'
+  to: 'the blessing[a], if you listen to the commandments of Yahweh your God[b], which I am commanding you today.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that I am commanding you today''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:17Z'
   unchanged: false
-  changes_summary: 'Adjusted the first clause to more closely reflect the Hebrew word order and apposition: ''This is my son, the living one'' instead of ''This living one is my son.'''
+  changes_summary: 'doctrine_realignment: 1 Kings 3:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This living one''].'
 revisions:
 - timestamp: '2026-04-23T10:06:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king said, “This one says, ‘This living one is my son, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
-  to: Then the king said, “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
+  to: Then the king said, “This one says, ‘This living one is my son, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”
   rationale: 'Adjusted the first clause to more closely reflect the Hebrew word order and apposition: ''This is my son, the living one'' instead of ''This living one is my son.'''
 
+- timestamp: '2026-05-18T02:57:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”'
+  to: 'Then the king said[a], “This one says, ‘This is my son, the living one, and your son is the dead one,’ and this one says, ‘No, for your son is the dead one, and my son is the living one.’”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''This living one''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

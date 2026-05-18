@@ -80,19 +80,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:12Z'
   unchanged: false
-  changes_summary: Removed 'they themselves' because the Hebrew pronoun is naturally represented by the English subject without added emphasis here; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: Nehemiah 3:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they themselves''].'
 revisions:
 - timestamp: '2026-04-23T11:13:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The sons of Hassenaah built the Fish Gate; they themselves roofed it and set up its doors, its bolts, and its bars.
-  to: The sons of Hassenaah built the Fish Gate; they roofed it and set up its doors, its bolts, and its bars.
+  to: The sons of Hassenaah built the Fish Gate; they themselves roofed it and set up its doors, its bolts, and its bars.
   rationale: Removed 'they themselves' because the Hebrew pronoun is naturally represented by the English subject without added emphasis here; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T02:54:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The sons of Hassenaah built the Fish Gate[a]; they roofed it and set up its doors, its bolts[b], and its bars.'
+  to: 'The sons of Hassenaah built the Fish Gate[a]; they roofed it and set up its doors, its bolts[b], and its bars.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they themselves''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

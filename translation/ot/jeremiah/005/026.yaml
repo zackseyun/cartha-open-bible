@@ -93,19 +93,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:53:37Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:42Z'
   unchanged: false
-  changes_summary: Removed 'crouching,' which is not clearly represented in the source and slightly over-interprets the imagery. Kept the rest essentially unchanged for accuracy and natural English.
+  changes_summary: 'doctrine_realignment: Jeremiah 5:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like fowlers crouching''].'
 revisions:
 - timestamp: '2026-04-23T10:53:37Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For wicked men are found among my people; they lie in wait like fowlers crouching. They set a trap; they catch men.
-  to: For wicked men are found among my people; they lie in wait like fowlers. They set a trap; they catch men.
+  to: For wicked men are found among my people; they lie in wait like fowlers crouching. They set a trap; they catch men.
   rationale: Removed 'crouching,' which is not clearly represented in the source and slightly over-interprets the imagery. Kept the rest essentially unchanged for accuracy and natural English.
 
+- timestamp: '2026-05-18T02:56:42Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For wicked men are found among my people[a]; they lie in wait like fowlers. They set a trap[b]; they catch men.'
+  to: 'For wicked men are found among my people[a]; they lie in wait like fowlers. They set a trap[b]; they catch men.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like fowlers crouching''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

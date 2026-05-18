@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:48:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:57Z'
   unchanged: false
-  changes_summary: Revised the final clause for more natural English while preserving the sense of ἐν τῷ χρονίζειν... αὐτόν as 'at his delay in the temple' rather than 'that he was delaying in the temple.'
+  changes_summary: 'doctrine_realignment: Luke 1:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that he was delaying''].'
 revisions:
 - timestamp: '2026-04-23T09:48:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the people were waiting for Zechariah, and they were marveling that he was delaying in the temple.
-  to: And the people were waiting for Zechariah, and they were marveling at his delay in the temple.
+  to: And the people were waiting for Zechariah, and they were marveling that he was delaying in the temple.
   rationale: Revised the final clause for more natural English while preserving the sense of ἐν τῷ χρονίζειν... αὐτόν as 'at his delay in the temple' rather than 'that he was delaying in the temple.'
 
+- timestamp: '2026-05-18T03:00:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the people were waiting for Zechariah[a], and they were marveling at his delay in the temple.'
+  to: 'And the people were waiting for Zechariah[a], and they were marveling at his delay in the temple.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that he was delaying''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

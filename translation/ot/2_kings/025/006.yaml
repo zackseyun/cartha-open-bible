@@ -60,19 +60,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:19:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:09Z'
   unchanged: false
-  changes_summary: Revised 'passed sentence on him' to 'pronounced judgment on him' for closer alignment with the source wording while preserving natural formal English.
+  changes_summary: 'doctrine_realignment: 2 Kings 25:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they passed sentence on him''].'
 revisions:
 - timestamp: '2026-04-23T10:19:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then they captured the king and brought him up to the king of Babylon at Riblah, and they passed sentence on him.
-  to: Then they captured the king and brought him up to the king of Babylon at Riblah, and they pronounced judgment on him.
+  to: Then they captured the king and brought him up to the king of Babylon at Riblah, and they passed sentence on him.
   rationale: Revised 'passed sentence on him' to 'pronounced judgment on him' for closer alignment with the source wording while preserving natural formal English.
 
+- timestamp: '2026-05-18T02:58:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then they captured the king and brought him up to the king of Babylon at Riblah[a], and they pronounced judgment on him.'
+  to: 'Then they captured the king and brought him up to the king of Babylon at Riblah[a], and they pronounced judgment on him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they passed sentence on him''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

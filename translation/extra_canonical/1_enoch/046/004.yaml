@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch46.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 46, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And this Son of Man whom you have seen will remove kings and the mighty from their couches[a], and the strong from their thrones; and he will loosen the loins of the strong[c][b], and crush the teeth of sinners.
+  text: And this Son of Man whom you have seen will raise up kings and the mighty from their couches, and the strong from their thrones; and he will loosen the loins of the strong, and crush the teeth of sinners.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -169,12 +169,18 @@ revisions:
   from: And this Son of Man whom you have seen will raise up kings and the mighty from their couches, and the strong from their thrones; and he will loosen the loins of the strong, and crush the teeth of sinners.
   to: And this Son of Man whom you have seen will remove kings and the mighty from their couches, and the strong from their thrones; and he will loosen the loins of the strong, and crush the teeth of sinners.
   rationale: Changed 'raise up' to 'remove' to better fit the context and the sense of taking kings and the mighty from their couches and thrones. No other changes needed.
+- timestamp: '2026-05-18T03:10:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And this Son of Man whom you have seen will remove kings and the mighty from their couches[a], and the strong from their thrones; and he will loosen the loins of the strong[c][b], and crush the teeth of sinners.'
+  to: 'And this Son of Man whom you have seen will raise up kings and the mighty from their couches, and the strong from their thrones; and he will loosen the loins of the strong, and crush the teeth of sinners.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will raise up''].'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:36:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:44Z'
   unchanged: false
-  changes_summary: Changed 'raise up' to 'remove' to better fit the context and the sense of taking kings and the mighty from their couches and thrones. No other changes needed.
-
+  changes_summary: 'doctrine_realignment: 1 Enoch 46:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will raise up''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

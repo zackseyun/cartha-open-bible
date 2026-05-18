@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:57:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:59Z'
   unchanged: false
-  changes_summary: Added the article and changed singular 'fruit' to plural 'fruits' to reflect the Greek τῶν καρπῶν ... τοὺς καρποὺς more accurately and completely.
+  changes_summary: 'doctrine_realignment: Matthew 21:34 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for fruit''].'
 revisions:
 - timestamp: '2026-04-23T09:57:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But when the season for fruit had drawn near, he sent his servants to the tenant farmers to collect his fruit.
-  to: But when the season for the fruits had drawn near, he sent his servants to the tenant farmers to collect his fruits.
+  to: But when the season for fruit had drawn near, he sent his servants to the tenant farmers to collect his fruit.
   rationale: Added the article and changed singular 'fruit' to plural 'fruits' to reflect the Greek τῶν καρπῶν ... τοὺς καρποὺς more accurately and completely.
 
+- timestamp: '2026-05-18T02:59:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But when the season for the fruits had drawn near[b][a], he sent his servants to the tenant farmers to collect his fruits.'
+  to: 'But when the season for the fruits had drawn near[b][a], he sent his servants to the tenant farmers to collect his fruits.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for fruit''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

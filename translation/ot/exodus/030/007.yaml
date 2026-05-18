@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:33:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Changed 'every morning' to 'morning by morning' to more closely reflect the repeated Hebrew expression while keeping the rest unchanged.
+  changes_summary: 'doctrine_realignment: Exodus 30:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every morning''].'
 revisions:
 - timestamp: '2026-04-23T10:33:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Aaron shall burn fragrant incense on it every morning; when he tends the lamps, he shall burn it.
-  to: Aaron shall burn fragrant incense on it morning by morning; when he tends the lamps, he shall burn it.
+  to: Aaron shall burn fragrant incense on it every morning; when he tends the lamps, he shall burn it.
   rationale: Changed 'every morning' to 'morning by morning' to more closely reflect the repeated Hebrew expression while keeping the rest unchanged.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Aaron shall burn fragrant incense on it morning by morning[a]; when he tends the lamps[b], he shall burn it.'
+  to: 'Aaron shall burn fragrant incense on it morning by morning[a]; when he tends the lamps[b], he shall burn it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every morning''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

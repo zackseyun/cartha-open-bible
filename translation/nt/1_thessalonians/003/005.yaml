@@ -117,19 +117,26 @@ theological_decisions:
   rationale: The doctrine file specifies 'faith' as the default rendering for πίστις, with alternatives preserved in a footnote where contested. Here 'your faith' most naturally refers to the Thessalonians' continuing faith in response to the gospel, but 'faithfulness' is a plausible contextual nuance and is therefore footnoted rather than elevated to the main text.
   doctrine_reference: 'DOCTRINE.md: Contested terms — πίστις'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:36:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:54Z'
   unchanged: false
-  changes_summary: Changed 'become empty' to 'be in vain' for a more natural and accurate rendering of εἰς κενὸν γένηται. Kept the rest of the draft, which faithfully represents the Greek.
+  changes_summary: 'doctrine_realignment: 1 Thessalonians 3:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''might become''].'
 revisions:
 - timestamp: '2026-04-23T09:36:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For this reason, when I could bear it no longer, I sent to learn about your faith, lest somehow the tempter had tempted you and our labor might become empty.
-  to: For this reason, when I could bear it no longer, I sent to learn about your faith, lest somehow the tempter had tempted you and our labor might be in vain.
+  to: For this reason, when I could bear it no longer, I sent to learn about your faith, lest somehow the tempter had tempted you and our labor might become empty.
   rationale: Changed 'become empty' to 'be in vain' for a more natural and accurate rendering of εἰς κενὸν γένηται. Kept the rest of the draft, which faithfully represents the Greek.
 
+- timestamp: '2026-05-18T03:00:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.'
+  to: 'For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''might become''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

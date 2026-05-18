@@ -98,19 +98,26 @@ theological_decisions:
   rationale: The Greek text has a clear number shift from συνέλαβον ('they seized') to ἀπέκτεινεν ('he killed'). Since the source confidence is high and there is no supplied textual warning, the translation preserves the grammatical tension rather than harmonizing it away. The singular likely refers back to the principal leader in context, but the translation does not over-specify.
   doctrine_reference: DOCTRINE.md §3 Preserve theological tension rather than resolve it
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:31:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:30Z'
   unchanged: false
-  changes_summary: Replaced 'leaders of the evil' with 'leaders of wickedness' for more natural and accurate English while preserving the sense. Kept the singular 'he killed them' to reflect the Greek.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 9:61 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the evil''].'
 revisions:
 - timestamp: '2026-04-23T15:31:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And they seized from the men of the country fifty men who were leaders of the evil, and he killed them.
-  to: And they seized from the men of the country fifty men who were leaders of wickedness, and he killed them.
+  to: And they seized from the men of the country fifty men who were leaders of the evil, and he killed them.
   rationale: Replaced 'leaders of the evil' with 'leaders of wickedness' for more natural and accurate English while preserving the sense. Kept the singular 'he killed them' to reflect the Greek.
 
+- timestamp: '2026-05-18T02:59:30Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they seized from the men of the country fifty men who were leaders of wickedness[a], and he killed them.'
+  to: 'And they seized from the men of the country fifty men who were leaders of wickedness[a], and he killed them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the evil''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

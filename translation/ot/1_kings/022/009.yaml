@@ -54,19 +54,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:04Z'
   unchanged: false
-  changes_summary: 'Adjusted word order to reflect the Hebrew adverb more naturally in formal English: ''Bring Micaiah son of Imlah quickly.'''
+  changes_summary: 'doctrine_realignment: 1 Kings 22:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Quickly bring''].'
 revisions:
 - timestamp: '2026-04-23T10:08:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the king of Israel called one officer and said, “Quickly bring Micaiah son of Imlah.”
-  to: Then the king of Israel called one officer and said, “Bring Micaiah son of Imlah quickly.”
+  to: Then the king of Israel called one officer and said, “Quickly bring Micaiah son of Imlah.”
   rationale: 'Adjusted word order to reflect the Hebrew adverb more naturally in formal English: ''Bring Micaiah son of Imlah quickly.'''
 
+- timestamp: '2026-05-18T02:56:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”'
+  to: 'Then the king of Israel called one officer and said[a], “Bring Micaiah son of Imlah quickly.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Quickly bring''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

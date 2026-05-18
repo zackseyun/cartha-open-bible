@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:33Z'
   unchanged: false
-  changes_summary: Changed 'who were found with them' to 'who were with them' for more natural English while preserving the sense of the Hebrew. All other wording remains accurate and complete.
+  changes_summary: 'doctrine_realignment: 1 Samuel 13:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who were found with them''].'
 revisions:
 - timestamp: '2026-04-23T10:10:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now Saul and Jonathan his son, and the people who were found with them, were staying in Geba of Benjamin, while the Philistines had encamped at Michmash.
-  to: Now Saul and Jonathan his son, and the people who were with them, were staying in Geba of Benjamin, while the Philistines had encamped at Michmash.
+  to: Now Saul and Jonathan his son, and the people who were found with them, were staying in Geba of Benjamin, while the Philistines had encamped at Michmash.
   rationale: Changed 'who were found with them' to 'who were with them' for more natural English while preserving the sense of the Hebrew. All other wording remains accurate and complete.
 
+- timestamp: '2026-05-18T02:55:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now Saul and Jonathan his son[a], and the people who were with them, were staying in Geba of Benjamin[b], while the Philistines had encamped at Michmash.'
+  to: 'Now Saul and Jonathan his son[a], and the people who were with them, were staying in Geba of Benjamin[b], while the Philistines had encamped at Michmash.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who were found with them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

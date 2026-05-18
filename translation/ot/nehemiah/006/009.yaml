@@ -85,19 +85,26 @@ theological_decisions:
   - 'Render as a self-exhortation: ''But now I strengthened my hands'' (requiring a different vocalization/textual form)'
   rationale: The Masoretic Text points to an imperative 2ms, naturally read as a brief prayer to God embedded in the narrative. This preserves the text as transmitted and fits Nehemiah's pattern of short prayers.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:05Z'
   unchanged: false
-  changes_summary: Changed “will drop from the work” to “will grow weak from the work” for more accurate and natural rendering of the idiom יִרְפּוּ יְדֵיהֶם. Kept the rest essentially unchanged.
+  changes_summary: 'doctrine_realignment: Nehemiah 6:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Their hands will drop''].'
 revisions:
 - timestamp: '2026-04-23T11:13:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For all of them were trying to frighten us, saying, “Their hands will drop from the work, and it will not be done.” But now, strengthen my hands.
-  to: For all of them were trying to frighten us, saying, “Their hands will grow weak from the work, and it will not be done.” But now, strengthen my hands.
+  to: For all of them were trying to frighten us, saying, “Their hands will drop from the work, and it will not be done.” But now, strengthen my hands.
   rationale: Changed “will drop from the work” to “will grow weak from the work” for more accurate and natural rendering of the idiom יִרְפּוּ יְדֵיהֶם. Kept the rest essentially unchanged.
 
+- timestamp: '2026-05-18T02:55:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For all of them were trying to frighten us[a], saying, “Their hands will grow weak from the work, and it will not be done.” But now[b], strengthen my hands.'
+  to: 'For all of them were trying to frighten us[a], saying, “Their hands will grow weak from the work, and it will not be done.” But now[b], strengthen my hands.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Their hands will drop''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

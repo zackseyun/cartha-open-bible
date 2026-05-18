@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:33:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:05Z'
   unchanged: false
-  changes_summary: Adjusted 'in their shouting' to 'as they shouted' for more natural English while preserving the sense of the source. No other changes needed.
+  changes_summary: 'doctrine_realignment: Exodus 32:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in their shouting''].'
 revisions:
 - timestamp: '2026-04-23T10:33:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When Joshua heard the sound of the people in their shouting, he said to Moses, “There is the sound of war in the camp.”
-  to: When Joshua heard the sound of the people as they shouted, he said to Moses, “There is the sound of war in the camp.”
+  to: When Joshua heard the sound of the people in their shouting, he said to Moses, “There is the sound of war in the camp.”
   rationale: Adjusted 'in their shouting' to 'as they shouted' for more natural English while preserving the sense of the source. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When Joshua heard the sound of the people as they shouted[a], he said to Moses, “There is the sound of war in the camp.”'
+  to: 'When Joshua heard the sound of the people as they shouted[a], he said to Moses, “There is the sound of war in the camp.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in their shouting''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

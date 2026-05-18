@@ -85,19 +85,26 @@ theological_decisions:
   rationale: The Greek text here reads simply ἄγγελος, not 'the angel of the Lord.' Because the verse itself does not specify more, the translation should not import a fuller theological identification from Exodus or later interpretation. The broader canonical connection may be noted in a footnote rather than resolved in the main text.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:39:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:09Z'
   unchanged: false
-  changes_summary: Changed 'had been fulfilled' to 'had passed' for more natural English while preserving the sense of the Greek. Kept the rest unchanged as accurate and complete.
+  changes_summary: 'doctrine_realignment: Acts 7:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after forty years had been fulfilled''].'
 revisions:
 - timestamp: '2026-04-23T09:39:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And after forty years had been fulfilled, an angel appeared to him in the wilderness of Mount Sinai, in a flame of fire from a bush.
-  to: And after forty years had passed, an angel appeared to him in the wilderness of Mount Sinai, in a flame of fire from a bush.
+  to: And after forty years had been fulfilled, an angel appeared to him in the wilderness of Mount Sinai, in a flame of fire from a bush.
   rationale: Changed 'had been fulfilled' to 'had passed' for more natural English while preserving the sense of the Greek. Kept the rest unchanged as accurate and complete.
 
+- timestamp: '2026-05-18T03:01:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And after forty years had passed[a], an angel appeared to him in the wilderness of Mount Sinai[c][b], in a flame of fire from a bush.'
+  to: 'And after forty years had passed[a], an angel appeared to him in the wilderness of Mount Sinai[c][b], in a flame of fire from a bush.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after forty years had been fulfilled''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

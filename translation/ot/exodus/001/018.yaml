@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:29:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:54Z'
   unchanged: false
-  changes_summary: Changed 'boys' to 'children' to reflect the source term more accurately and avoid importing a narrower sense not present in this verse.
+  changes_summary: 'doctrine_realignment: Exodus 1:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the boys''].'
 revisions:
 - timestamp: '2026-04-23T10:29:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So the king of Egypt called for the midwives and said to them, “Why have you done this thing and let the boys live?”
-  to: So the king of Egypt called for the midwives and said to them, “Why have you done this thing and let the children live?”
+  to: So the king of Egypt called for the midwives and said to them, “Why have you done this thing and let the boys live?”
   rationale: Changed 'boys' to 'children' to reflect the source term more accurately and avoid importing a narrower sense not present in this verse.
 
+- timestamp: '2026-05-18T02:54:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So the king of Egypt called for the midwives and said to them[a], “Why have you done this thing and let the children live?”'
+  to: 'So the king of Egypt called for the midwives and said to them[a], “Why have you done this thing and let the children live?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the boys''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

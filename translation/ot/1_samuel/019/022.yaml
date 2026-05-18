@@ -82,19 +82,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:40Z'
   unchanged: false
-  changes_summary: Changed 'He asked, saying' to 'He asked and said' for closer correspondence to the Hebrew while keeping natural formal English. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 19:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''He asked, saying''].'
 revisions:
 - timestamp: '2026-04-23T10:11:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He too went to Ramah, and he came as far as the great well that is at Seku. He asked, saying, “Where are Samuel and David?” And one said, “Look, they are at Naioth in Ramah.”
-  to: He too went to Ramah, and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look, they are at Naioth in Ramah.”
+  to: He too went to Ramah, and he came as far as the great well that is at Seku. He asked, saying, “Where are Samuel and David?” And one said, “Look, they are at Naioth in Ramah.”
   rationale: Changed 'He asked, saying' to 'He asked and said' for closer correspondence to the Hebrew while keeping natural formal English. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”'
+  to: 'He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''He asked, saying''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

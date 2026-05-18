@@ -97,19 +97,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:56Z'
   unchanged: false
-  changes_summary: Replaced 'had no sentence of death' with 'did not deserve the death penalty' for more natural and accurate English while preserving the legal sense of 'there is not for him a judgment of death.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 19:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though he had no sentence of death''].'
 revisions:
 - timestamp: '2026-04-23T10:26:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: otherwise the avenger of blood may pursue the manslayer, because his heart is hot, and overtake him because the way is long, and strike him dead, though he had no sentence of death, since he had not hated him previously.
-  to: otherwise the avenger of blood may pursue the manslayer, because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty, since he had not hated him previously.
+  to: otherwise the avenger of blood may pursue the manslayer, because his heart is hot, and overtake him because the way is long, and strike him dead, though he had no sentence of death, since he had not hated him previously.
   rationale: Replaced 'had no sentence of death' with 'did not deserve the death penalty' for more natural and accurate English while preserving the legal sense of 'there is not for him a judgment of death.'
 
+- timestamp: '2026-05-18T02:55:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.'
+  to: 'otherwise the avenger of blood may pursue the manslayer[a], because his heart is hot, and overtake him because the way is long, and strike him dead, though he did not deserve the death penalty[b], since he had not hated him previously.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though he had no sentence of death''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

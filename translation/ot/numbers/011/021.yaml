@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:16:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:05Z'
   unchanged: false
-  changes_summary: Changed 'in whose midst I am' to the more natural 'among whom I am' while preserving the sense. Kept the rest unchanged, including 'on foot' and 'a month of days,' which closely reflect the source.
+  changes_summary: 'doctrine_realignment: Numbers 11:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in whose midst I am''].'
 revisions:
 - timestamp: '2026-04-23T11:16:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But Moses said, “The people in whose midst I am are six hundred thousand on foot, and yet you have said, ‘I will give them meat, and they will eat for a month of days.’”
-  to: But Moses said, “The people among whom I am are six hundred thousand on foot, and yet you have said, ‘I will give them meat, and they will eat for a month of days.’”
+  to: But Moses said, “The people in whose midst I am are six hundred thousand on foot, and yet you have said, ‘I will give them meat, and they will eat for a month of days.’”
   rationale: Changed 'in whose midst I am' to the more natural 'among whom I am' while preserving the sense. Kept the rest unchanged, including 'on foot' and 'a month of days,' which closely reflect the source.
 
+- timestamp: '2026-05-18T02:57:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But Moses said[a], “The people among whom I am are six hundred thousand on foot, and yet you have said, ‘I will give them meat[b], and they will eat for a month of days.’”'
+  to: 'But Moses said[a], “The people among whom I am are six hundred thousand on foot, and yet you have said, ‘I will give them meat[b], and they will eat for a month of days.’”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in whose midst I am''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

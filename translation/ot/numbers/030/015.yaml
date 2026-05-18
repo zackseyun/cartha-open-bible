@@ -91,19 +91,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:18:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:05Z'
   unchanged: false
-  changes_summary: Removed the awkward repeated 'to her' after 'keeps silent' and 'kept silent' for more natural English while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Numbers 30:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he kept silent to her''].'
 revisions:
 - timestamp: '2026-04-23T11:18:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But if her husband indeed keeps silent to her from day to day, then he confirms all her vows or all her obligations that are upon her; he has confirmed them, because he kept silent to her on the day he heard.
-  to: But if her husband indeed keeps silent from day to day, then he confirms all her vows or all her obligations that are upon her; he has confirmed them, because he kept silent on the day he heard.
+  to: But if her husband indeed keeps silent to her from day to day, then he confirms all her vows or all her obligations that are upon her; he has confirmed them, because he kept silent to her on the day he heard.
   rationale: Removed the awkward repeated 'to her' after 'keeps silent' and 'kept silent' for more natural English while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:57:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But if her husband indeed keeps silent from day to day[a], then he confirms all her vows or all her obligations that are upon her; he has confirmed them, because he kept silent on the day he heard.'
+  to: 'But if her husband indeed keeps silent from day to day[a], then he confirms all her vows or all her obligations that are upon her; he has confirmed them, because he kept silent on the day he heard.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he kept silent to her''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

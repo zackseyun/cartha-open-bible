@@ -97,19 +97,26 @@ theological_decisions:
   rationale: The Greek uses masculine singular forms (οὐδεὶς σοφὸς; ἀδελφοῦ αὐτοῦ). Following the stated gender-accurate policy, the main text preserves the source's grammatical form while a footnote can clarify representative force in context.
   doctrine_reference: DOCTRINE.md Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:35:05Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:02:06Z'
   unchanged: false
-  changes_summary: Replaced 'between his brother and another' with 'between his brothers' to reflect the Greek more naturally and avoid adding 'and another,' which is not explicit in the text.
+  changes_summary: 'doctrine_realignment: 1 Corinthians 6:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his brother and another''].'
 revisions:
 - timestamp: '2026-04-23T09:35:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: I say this to your shame. Is it really so, that there is not among you even one wise man who will be able to judge between his brother and another?
-  to: I say this to your shame. Is it really so, that there is not among you even one wise man who will be able to judge between his brothers?
+  to: I say this to your shame. Is it really so, that there is not among you even one wise man who will be able to judge between his brother and another?
   rationale: Replaced 'between his brother and another' with 'between his brothers' to reflect the Greek more naturally and avoid adding 'and another,' which is not explicit in the text.
 
+- timestamp: '2026-05-18T03:02:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'I say this to your shame[a]. Is it really so[b], that there is not among you even one wise man who will be able to judge between his brothers?'
+  to: 'I say this to your shame[a]. Is it really so[b], that there is not among you even one wise man who will be able to judge between his brothers?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his brother and another''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

@@ -65,19 +65,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:17:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:38Z'
   unchanged: false
-  changes_summary: Changed 'large army' to 'great army' for a more formal register and closer fit to the Hebrew phrase.
+  changes_summary: 'doctrine_realignment: 2 Kings 6:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and a large army''].'
 revisions:
 - timestamp: '2026-04-23T10:17:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So he sent horses and chariots there, and a large army; they came by night and surrounded the city.
-  to: So he sent horses and chariots there, and a great army; they came by night and surrounded the city.
+  to: So he sent horses and chariots there, and a large army; they came by night and surrounded the city.
   rationale: Changed 'large army' to 'great army' for a more formal register and closer fit to the Hebrew phrase.
 
+- timestamp: '2026-05-18T02:57:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So he sent horses and chariots there[a], and a great army; they came by night and surrounded the city.'
+  to: 'So he sent horses and chariots there[a], and a great army; they came by night and surrounded the city.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and a large army''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

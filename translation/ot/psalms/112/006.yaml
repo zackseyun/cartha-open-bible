@@ -72,19 +72,26 @@ theological_decisions:
   rationale: The Hebrew is grammatically masculine singular and functions as a representative wisdom-category individual. Per doctrine, gender-accurate rendering is preferred over flattening to a gender-neutral expression, while the representative force can be noted in a footnote.
   doctrine_reference: DOCTRINE.md Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:30:01Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:00Z'
   unchanged: false
-  changes_summary: Changed 'the righteous man' to 'the righteous' to reflect the Hebrew singular used generically and to avoid adding 'man' where the source simply has 'righteous.'
+  changes_summary: 'doctrine_realignment: Psalms 112:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the righteous man''].'
 revisions:
 - timestamp: '2026-04-23T11:30:01Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For he will never be shaken; the righteous man will be remembered forever.
-  to: For he will never be shaken; the righteous will be remembered forever.
+  to: For he will never be shaken; the righteous man will be remembered forever.
   rationale: Changed 'the righteous man' to 'the righteous' to reflect the Hebrew singular used generically and to avoid adding 'man' where the source simply has 'righteous.'
 
+- timestamp: '2026-05-18T02:54:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For he will never be shaken[a]; the righteous will be remembered forever.'
+  to: 'For he will never be shaken[a]; the righteous will be remembered forever.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the righteous man''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

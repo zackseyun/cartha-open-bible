@@ -11,7 +11,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch95.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 95, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you who repay your neighbor with evil[a], for you will be repaid according to your deeds.
+  text: Woe to you who repay evil to your neighbor, for you will be repaid according to your deeds.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -138,10 +138,10 @@ theological_decisions:
   rationale: The passive wording leaves the agent unstated, but in the Epistle's woe context this functions as a judgment formula. The translation preserves the passive without over-specifying God as the explicit subject.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:38:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:52Z'
   unchanged: false
-  changes_summary: Adjusted word order to more naturally reflect the sense of repaying one's neighbor with evil while preserving the formal tone; retained the rest unchanged.
+  changes_summary: 'doctrine_realignment: 1 Enoch 95:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to your neighbor''].'
 revisions:
 - timestamp: '2026-04-23T11:38:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -151,6 +151,13 @@ revisions:
   to: Woe to you who repay your neighbor with evil, for you will be repaid according to your deeds.
   rationale: Adjusted word order to more naturally reflect the sense of repaying one's neighbor with evil while preserving the formal tone; retained the rest unchanged.
 
+- timestamp: '2026-05-18T03:10:52Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Woe to you who repay your neighbor with evil[a], for you will be repaid according to your deeds.'
+  to: 'Woe to you who repay evil to your neighbor, for you will be repaid according to your deeds.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to your neighbor''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

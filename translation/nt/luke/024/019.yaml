@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: καὶ εἶπεν αὐτοῖς· Ποῖα; οἱ δὲ εἶπαν αὐτῷ· Τὰ περὶ Ἰησοῦ τοῦ ⸀Ναζαρηνοῦ, ὃς ἐγένετο ἀνὴρ προφήτης δυνατὸς ἐν ἔργῳ καὶ λόγῳ ἐναντίον τοῦ θεοῦ καὶ παντὸς τοῦ λαοῦ,
 translation:
-  text: And he said to them[a], “What things?” And they said to him, “The things concerning Jesus the Nazarene, who was a prophet[b], mighty in deed and word before God and all the people,”
+  text: And he said to them, “What things?” And they said to him, “The things concerning Jesus the Nazarene, who became a man, a prophet mighty in deed and word before God and all the people,”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -90,10 +90,10 @@ theological_decisions:
   rationale: The Greek explicitly includes ἀνήρ. In line with the gender-accurate principle, the translation preserves 'man' rather than omitting it for smoother English. This does not diminish Christology; it reflects the speakers' description in context.
   doctrine_reference: DOCTRINE.md Translation philosophy §4 (Gender-accurate over gender-neutral)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:52:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:38Z'
   unchanged: false
-  changes_summary: Changed 'who became a man, a prophet' to 'who was a prophet' for more natural English and to reflect ἐγένετο idiomatically here without the awkward and potentially misleading 'became a man.'
+  changes_summary: 'doctrine_realignment: Luke 24:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a man, a prophet''].'
 revisions:
 - timestamp: '2026-04-23T09:52:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -103,6 +103,13 @@ revisions:
   to: And he said to them, “What things?” And they said to him, “The things concerning Jesus the Nazarene, who was a prophet, mighty in deed and word before God and all the people,”
   rationale: Changed 'who became a man, a prophet' to 'who was a prophet' for more natural English and to reflect ἐγένετο idiomatically here without the awkward and potentially misleading 'became a man.'
 
+- timestamp: '2026-05-18T03:10:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he said to them[a], “What things?” And they said to him, “The things concerning Jesus the Nazarene, who was a prophet[b], mighty in deed and word before God and all the people,”'
+  to: 'And he said to them, “What things?” And they said to him, “The things concerning Jesus the Nazarene, who became a man, a prophet mighty in deed and word before God and all the people,”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a man, a prophet''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

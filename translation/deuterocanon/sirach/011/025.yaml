@@ -119,19 +119,26 @@ theological_decisions:
   rationale: For Sirach, where Hebrew survives, the project translates from the Hebrew witness while using the Greek parallel as actual input and consistency check. Here the Greek presents a different saying ('In a day of good things there is forgetfulness of bad things...'), not merely a minor variant. The main text therefore follows the Hebrew, and the Greek is preserved as a textual-variant footnote rather than silently ignored or harmonized.
   doctrine_reference: PHILOSOPHY.md — translate from Hebrew where it survives; use Greek parallel as input
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:04Z'
   unchanged: false
-  changes_summary: Replaced 'those who do evil' with the more concise and natural 'evildoers,' while preserving the Hebrew sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Sirach 11:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at those who do evil''].'
 revisions:
 - timestamp: '2026-04-23T15:42:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Do not be astonished at those who do evil; run to the Lord and wait for his light.
-  to: Do not be astonished at evildoers; run to the Lord and wait for his light.
+  to: Do not be astonished at those who do evil; run to the Lord and wait for his light.
   rationale: Replaced 'those who do evil' with the more concise and natural 'evildoers,' while preserving the Hebrew sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Do not be astonished at evildoers[a]; run to the Lord and wait for his light.'
+  to: 'Do not be astonished at evildoers[a]; run to the Lord and wait for his light.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at those who do evil''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -8,7 +8,7 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: And at this time there is no ruler or prophet or leader[a], no whole burnt offering or sacrifice or offering or incense, and no place to offer before you and to find mercy.
+  text: And at this time there is no ruler or prophet or leader, no whole burnt offering or sacrifice or offering or incense, and no place to bring firstfruits before you and to find mercy.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -119,10 +119,10 @@ theological_decisions:
   rationale: Given the surrounding sacrificial vocabulary and the temple setting, a cultic sense tied to produce/firstfruits is more likely than a generic reference to fruit. This is a lexical-contextual judgment rather than a doctrinal claim.
   doctrine_reference: Translation philosophy §§1, 5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:40:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:44Z'
   unchanged: false
-  changes_summary: Replaced 'bring firstfruits' with 'offer' because καρπῶσαι here is better rendered more generally as making an offering, not specifically bringing firstfruits. Kept the rest substantially unchanged for accuracy and natural formal style.
+  changes_summary: 'doctrine_realignment: Prayer of Azariah and Song of the Three 1:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to bring firstfruits''].'
 revisions:
 - timestamp: '2026-04-23T15:40:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -132,6 +132,13 @@ revisions:
   to: And at this time there is no ruler or prophet or leader, no whole burnt offering or sacrifice or offering or incense, and no place to offer before you and to find mercy.
   rationale: Replaced 'bring firstfruits' with 'offer' because καρπῶσαι here is better rendered more generally as making an offering, not specifically bringing firstfruits. Kept the rest substantially unchanged for accuracy and natural formal style.
 
+- timestamp: '2026-05-18T03:09:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And at this time there is no ruler or prophet or leader[a], no whole burnt offering or sacrifice or offering or incense, and no place to offer before you and to find mercy.'
+  to: 'And at this time there is no ruler or prophet or leader, no whole burnt offering or sacrifice or offering or incense, and no place to bring firstfruits before you and to find mercy.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to bring firstfruits''].'
 cross_check:
   status: needs_review
   agreement: 0.6

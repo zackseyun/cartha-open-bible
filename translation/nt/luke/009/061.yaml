@@ -91,19 +91,26 @@ theological_decisions:
   rationale: The translation follows the project's default rendering of κύριος as 'Lord.' In Luke, address to Jesus can carry a range from respectful address to fuller recognition; 'Lord' preserves that theological tension rather than resolving it downward to 'sir' or merely functional 'Master.'
   doctrine_reference: 'DOCTRINE.md: Contested terms table (κύριος → Lord); Translation philosophy #3'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:49:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:57Z'
   unchanged: false
-  changes_summary: Changed 'at my house' to 'in my house' for a more natural and accurate rendering of τοῖς εἰς τὸν οἶκόν μου ('those in my house/household').
+  changes_summary: 'doctrine_realignment: Luke 9:61 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to those at my house''].'
 revisions:
 - timestamp: '2026-04-23T09:49:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And another also said, “I will follow you, Lord, but first permit me to say farewell to those at my house.”
-  to: And another also said, “I will follow you, Lord, but first permit me to say farewell to those in my house.”
+  to: And another also said, “I will follow you, Lord, but first permit me to say farewell to those at my house.”
   rationale: Changed 'at my house' to 'in my house' for a more natural and accurate rendering of τοῖς εἰς τὸν οἶκόν μου ('those in my house/household').
 
+- timestamp: '2026-05-18T03:01:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And another also said[a], “I will follow you, Lord[c][b], but first permit me to say farewell to those in my house.”'
+  to: 'And another also said[a], “I will follow you, Lord[c][b], but first permit me to say farewell to those in my house.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to those at my house''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

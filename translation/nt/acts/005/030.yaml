@@ -84,19 +84,26 @@ theological_decisions:
   rationale: The Greek uses ξύλον rather than σταυρός. Retaining 'tree' preserves the lexical choice and the likely allusion to Deuteronomy 21:23, while readers can still understand it as referring to Jesus' crucifixion.
   doctrine_reference: Original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:39:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:16Z'
   unchanged: false
-  changes_summary: Changed 'put to death' to 'killed' for a more direct rendering of διεχειρίσασθε while keeping the instrumental phrase 'by hanging on a tree.'
+  changes_summary: 'doctrine_realignment: Acts 5:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''put to death''].'
 revisions:
 - timestamp: '2026-04-23T09:39:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The God of our fathers raised up Jesus, whom you put to death by hanging on a tree.
-  to: The God of our fathers raised up Jesus, whom you killed by hanging on a tree.
+  to: The God of our fathers raised up Jesus, whom you put to death by hanging on a tree.
   rationale: Changed 'put to death' to 'killed' for a more direct rendering of διεχειρίσασθε while keeping the instrumental phrase 'by hanging on a tree.'
 
+- timestamp: '2026-05-18T03:01:16Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.'
+  to: 'The God of our fathers raised up Jesus[b][a], whom you killed by hanging on a tree.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''put to death''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

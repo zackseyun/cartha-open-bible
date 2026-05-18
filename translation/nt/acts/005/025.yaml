@@ -122,19 +122,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:39:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:27Z'
   unchanged: false
-  changes_summary: Changed 'in the prison' to 'in prison' for more natural English while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Acts 5:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the prison''].'
 revisions:
 - timestamp: '2026-04-23T09:39:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But someone came and reported to them, “Look, the men whom you put in the prison are standing in the temple and teaching the people.”
-  to: But someone came and reported to them, “Look, the men whom you put in prison are standing in the temple and teaching the people.”
+  to: But someone came and reported to them, “Look, the men whom you put in the prison are standing in the temple and teaching the people.”
   rationale: Changed 'in the prison' to 'in prison' for more natural English while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T03:00:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”'
+  to: 'But someone came and reported to them[a], “Look, the men whom you put in prison are standing in the temple and teaching the people.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the prison''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

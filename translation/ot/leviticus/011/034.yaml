@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:10:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:05Z'
   unchanged: false
-  changes_summary: Replaced 'if water comes on it' with 'on which water comes' to more directly reflect the Hebrew construction while keeping formal, natural English. No other changes needed.
+  changes_summary: 'doctrine_realignment: Leviticus 11:34 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if water comes on it''].'
 revisions:
 - timestamp: '2026-04-23T11:10:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Any food that may be eaten, if water comes on it, becomes unclean; and any drink that may be drunk in any vessel becomes unclean.
-  to: Any food that may be eaten, on which water comes, becomes unclean; and any drink that may be drunk in any vessel becomes unclean.
+  to: Any food that may be eaten, if water comes on it, becomes unclean; and any drink that may be drunk in any vessel becomes unclean.
   rationale: Replaced 'if water comes on it' with 'on which water comes' to more directly reflect the Hebrew construction while keeping formal, natural English. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Any food that may be eaten[a], on which water comes, becomes unclean; and any drink that may be drunk in any vessel becomes unclean.'
+  to: 'Any food that may be eaten[a], on which water comes, becomes unclean; and any drink that may be drunk in any vessel becomes unclean.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if water comes on it''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

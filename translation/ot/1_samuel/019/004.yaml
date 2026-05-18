@@ -99,19 +99,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:38Z'
   unchanged: false
-  changes_summary: 'Removed the second ''against'' before ''David'' to reflect the Hebrew more naturally: ''against his servant David'' rather than ''against his servant, against David.'''
+  changes_summary: 'doctrine_realignment: 1 Samuel 19:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against David''].'
 revisions:
 - timestamp: '2026-04-23T10:11:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Jonathan spoke well of David to Saul his father, and said to him, “Let not the king sin against his servant, against David, because he has not sinned against you, and because his deeds have been very good for you.”
-  to: Jonathan spoke well of David to Saul his father, and said to him, “Let not the king sin against his servant David, because he has not sinned against you, and because his deeds have been very good for you.”
+  to: Jonathan spoke well of David to Saul his father, and said to him, “Let not the king sin against his servant, against David, because he has not sinned against you, and because his deeds have been very good for you.”
   rationale: 'Removed the second ''against'' before ''David'' to reflect the Hebrew more naturally: ''against his servant David'' rather than ''against his servant, against David.'''
 
+- timestamp: '2026-05-18T02:55:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”'
+  to: 'Jonathan spoke well of David to Saul his father[a], and said to him, “Let not the king sin against his servant David, because he has not sinned against you[b], and because his deeds have been very good for you.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against David''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

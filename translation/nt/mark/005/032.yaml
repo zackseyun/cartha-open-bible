@@ -55,19 +55,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:52:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:03Z'
   unchanged: false
-  changes_summary: Replaced 'the woman' with 'the one' because the Greek has only the feminine participle ('the one who had done this') without an explicit noun; this is more formally accurate while remaining natural.
+  changes_summary: 'doctrine_realignment: Mark 5:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the woman who had done''].'
 revisions:
 - timestamp: '2026-04-23T09:52:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he kept looking around to see the woman who had done this.
-  to: And he kept looking around to see the one who had done this.
+  to: And he kept looking around to see the woman who had done this.
   rationale: Replaced 'the woman' with 'the one' because the Greek has only the feminine participle ('the one who had done this') without an explicit noun; this is more formally accurate while remaining natural.
 
+- timestamp: '2026-05-18T03:01:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he kept looking around to see the one who had done this[a].'
+  to: 'And he kept looking around to see the one who had done this[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the woman who had done''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

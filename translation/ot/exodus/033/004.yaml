@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:33:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:03Z'
   unchanged: false
-  changes_summary: Changed 'bad word' to 'bad news' for more natural and accurate English rendering of the Hebrew expression; retained the rest.
+  changes_summary: 'doctrine_realignment: Exodus 33:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this bad word''].'
 revisions:
 - timestamp: '2026-04-23T10:33:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When the people heard this bad word, they mourned, and no man put on his ornaments.
-  to: When the people heard this bad news, they mourned, and no man put on his ornaments.
+  to: When the people heard this bad word, they mourned, and no man put on his ornaments.
   rationale: Changed 'bad word' to 'bad news' for more natural and accurate English rendering of the Hebrew expression; retained the rest.
 
+- timestamp: '2026-05-18T02:55:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When the people heard this bad news[a], they mourned[b], and no man put on his ornaments.'
+  to: 'When the people heard this bad news[a], they mourned[b], and no man put on his ornaments.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this bad word''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

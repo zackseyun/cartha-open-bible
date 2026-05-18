@@ -92,19 +92,26 @@ theological_decisions:
   rationale: The Hebrew text itself shifts person, likely reflecting the prophetic style and the movement between direct address and description of the figure symbolized by the tree. Preserving the shift is more transparent to the source than smoothing it away.
   doctrine_reference: Preserve theological tension rather than resolve it; original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:37:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Changed 'clouds' to 'thick boughs' to reflect עֲבוֹתִים ('thickets/thick boughs') more accurately. Kept the rest substantially the same, including the shift to 'his heart,' which reflects the Hebrew.
+  changes_summary: 'doctrine_realignment: Ezekiel 31:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''among the clouds''].'
 revisions:
 - timestamp: '2026-04-23T10:37:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'Therefore thus says the Lord GOD: Because you grew tall in stature, and set your top among the clouds, and his heart was lifted up in his height,'
-  to: 'Therefore thus says the Lord GOD: Because you grew tall in stature, and set your top among the thick boughs, and his heart was lifted up in his height,'
+  to: 'Therefore thus says the Lord GOD: Because you grew tall in stature, and set your top among the clouds, and his heart was lifted up in his height,'
   rationale: Changed 'clouds' to 'thick boughs' to reflect עֲבוֹתִים ('thickets/thick boughs') more accurately. Kept the rest substantially the same, including the shift to 'his heart,' which reflects the Hebrew.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Therefore thus says the Lord GOD: Because you grew tall in stature[a], and set your top among the thick boughs, and his heart was lifted up in his height,'
+  to: 'Therefore thus says the Lord GOD: Because you grew tall in stature[a], and set your top among the thick boughs, and his heart was lifted up in his height,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''among the clouds''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

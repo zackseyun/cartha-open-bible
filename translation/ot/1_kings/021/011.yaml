@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:17Z'
   unchanged: false
-  changes_summary: Changed 'had sent word to them' to 'had sent to them' for closer lexical accuracy to the source, which simply says she sent to them; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Kings 21:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as Jezebel had sent word to them''].'
 revisions:
 - timestamp: '2026-04-23T10:08:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent word to them, as it was written in the letters that she had sent to them.
-  to: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them, as it was written in the letters that she had sent to them.
+  to: So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent word to them, as it was written in the letters that she had sent to them.
   rationale: Changed 'had sent word to them' to 'had sent to them' for closer lexical accuracy to the source, which simply says she sent to them; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T02:57:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.'
+  to: 'So the men of his city—the elders and the nobles who lived in his city—did as Jezebel had sent to them[a], as it was written in the letters that she had sent to them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as Jezebel had sent word to them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

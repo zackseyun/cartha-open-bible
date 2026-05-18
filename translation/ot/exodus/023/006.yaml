@@ -67,19 +67,26 @@ theological_decisions:
   rationale: The Hebrew syntax places מִשְׁפַּט as the object being bent/perverted and identifies the beneficiary as 'your poor man' in the setting of a legal dispute. In context with nearby laws, the point is impartial justice, not a generalized social slogan. The translation keeps the legal focus explicit.
   doctrine_reference: Translation philosophy §1, §3, §4, §6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:32:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:42Z'
   unchanged: false
-  changes_summary: Replaced 'poor man' with 'poor person' to reflect the Hebrew more accurately and avoid adding gender not explicit in the source; otherwise retained the formal wording and structure.
+  changes_summary: 'doctrine_realignment: Exodus 23:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your poor man''].'
 revisions:
 - timestamp: '2026-04-23T10:32:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: You shall not pervert the justice due to your poor man in his dispute.
-  to: You shall not pervert the justice due to your poor person in his dispute.
+  to: You shall not pervert the justice due to your poor man in his dispute.
   rationale: Replaced 'poor man' with 'poor person' to reflect the Hebrew more accurately and avoid adding gender not explicit in the source; otherwise retained the formal wording and structure.
 
+- timestamp: '2026-05-18T02:54:42Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'You shall not pervert the justice due to your poor person in his dispute[a].'
+  to: 'You shall not pervert the justice due to your poor person in his dispute[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your poor man''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

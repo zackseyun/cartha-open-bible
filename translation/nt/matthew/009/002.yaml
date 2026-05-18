@@ -102,19 +102,26 @@ theological_decisions:
   rationale: The Greek passive leaves the agent unstated while clearly announcing forgiveness. The English passive preserves this and avoids importing a fuller theological explanation into the main text, while still allowing the narrative context to imply Jesus' authority.
   doctrine_reference: Original-language primacy over translation tradition; preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:55:34Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:00Z'
   unchanged: false
-  changes_summary: Changed 'they were bringing' to 'they brought' to better reflect the simple past narrative of προσέφερον in this context. No other changes needed.
+  changes_summary: 'doctrine_realignment: Matthew 9:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were bringing''].'
 revisions:
 - timestamp: '2026-04-23T09:55:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And behold, they were bringing to him a paralytic lying on a bed. And when Jesus saw their faith, he said to the paralytic, “Take courage, child; your sins are forgiven.”
-  to: And behold, they brought to him a paralytic lying on a bed. And when Jesus saw their faith, he said to the paralytic, “Take courage, child; your sins are forgiven.”
+  to: And behold, they were bringing to him a paralytic lying on a bed. And when Jesus saw their faith, he said to the paralytic, “Take courage, child; your sins are forgiven.”
   rationale: Changed 'they were bringing' to 'they brought' to better reflect the simple past narrative of προσέφερον in this context. No other changes needed.
 
+- timestamp: '2026-05-18T03:00:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And behold[a], they brought to him a paralytic lying on a bed. And when Jesus saw their faith, he said to the paralytic, “Take courage, child[c][b]; your sins are forgiven.”'
+  to: 'And behold[a], they brought to him a paralytic lying on a bed. And when Jesus saw their faith, he said to the paralytic, “Take courage, child[c][b]; your sins are forgiven.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were bringing''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:41:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:41Z'
   unchanged: false
-  changes_summary: Changed 'Roman man' to 'Roman citizen' for more accurate and natural rendering of ἄνθρωπον Ῥωμαῖον in this legal context; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Acts 22:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a Roman man''].'
 revisions:
 - timestamp: '2026-04-23T09:41:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But when they had stretched him out with the straps, Paul said to the centurion standing there, “Is it lawful for you to flog a Roman man who is uncondemned?”
-  to: But when they had stretched him out with the straps, Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”
+  to: But when they had stretched him out with the straps, Paul said to the centurion standing there, “Is it lawful for you to flog a Roman man who is uncondemned?”
   rationale: Changed 'Roman man' to 'Roman citizen' for more accurate and natural rendering of ἄνθρωπον Ῥωμαῖον in this legal context; otherwise retained the draft.
 
+- timestamp: '2026-05-18T03:00:41Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”'
+  to: 'But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a Roman man''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

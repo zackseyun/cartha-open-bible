@@ -71,19 +71,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:02:02Z'
   unchanged: false
-  changes_summary: Changed 'at his house' to 'with him' to reflect the Greek more precisely, since the location is implied rather than explicitly stated. Kept the historical present 'asks' and the formal phrasing otherwise unchanged.
+  changes_summary: 'doctrine_realignment: Luke 11:37 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at his house''].'
 revisions:
 - timestamp: '2026-04-23T09:50:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: While he was speaking, a Pharisee asks him to dine at his house; so he went in and reclined at the table.
-  to: While he was speaking, a Pharisee asks him to dine with him; so he went in and reclined at the table.
+  to: While he was speaking, a Pharisee asks him to dine at his house; so he went in and reclined at the table.
   rationale: Changed 'at his house' to 'with him' to reflect the Greek more precisely, since the location is implied rather than explicitly stated. Kept the historical present 'asks' and the formal phrasing otherwise unchanged.
 
+- timestamp: '2026-05-18T03:02:02Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'While he was speaking[a], a Pharisee asks him to dine with him[b]; so he went in and reclined at the table.'
+  to: 'While he was speaking[a], a Pharisee asks him to dine with him[b]; so he went in and reclined at the table.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at his house''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

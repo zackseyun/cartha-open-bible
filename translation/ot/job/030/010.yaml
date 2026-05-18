@@ -57,19 +57,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:01:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:00Z'
   unchanged: false
-  changes_summary: Revised 'in my face' to 'before my face' for closer lexical accuracy to the Hebrew/Greek sense of 'before/from my face' without over-interpreting the idiom. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Job 30:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in my face''].'
 revisions:
 - timestamp: '2026-04-23T11:01:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They abhor me; they keep far from me, and they do not hold back spitting in my face.
-  to: They abhor me; they keep far from me, and they do not hold back spitting before my face.
+  to: They abhor me; they keep far from me, and they do not hold back spitting in my face.
   rationale: Revised 'in my face' to 'before my face' for closer lexical accuracy to the Hebrew/Greek sense of 'before/from my face' without over-interpreting the idiom. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:54:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They abhor me; they keep far from me[a], and they do not hold back spitting before my face.'
+  to: 'They abhor me; they keep far from me[a], and they do not hold back spitting before my face.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in my face''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

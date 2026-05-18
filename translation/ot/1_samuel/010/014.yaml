@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:07Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:40Z'
   unchanged: false
-  changes_summary: Changed 'look for' to 'seek' for a slightly more formal register while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 10:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''To look for the donkeys''].'
 revisions:
 - timestamp: '2026-04-23T10:10:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Saul’s uncle said to him and to his young man, “Where did you go?” And he said, “To look for the donkeys. When we saw that they were nowhere to be found, we went to Samuel.”
-  to: Then Saul’s uncle said to him and to his young man, “Where did you go?” And he said, “To seek the donkeys. When we saw that they were nowhere to be found, we went to Samuel.”
+  to: Then Saul’s uncle said to him and to his young man, “Where did you go?” And he said, “To look for the donkeys. When we saw that they were nowhere to be found, we went to Samuel.”
   rationale: Changed 'look for' to 'seek' for a slightly more formal register while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Saul’s uncle said to him and to his young man[a], “Where did you go?” And he said, “To seek the donkeys. When we saw that they were nowhere to be found[b], we went to Samuel.”'
+  to: 'Then Saul’s uncle said to him and to his young man[a], “Where did you go?” And he said, “To seek the donkeys. When we saw that they were nowhere to be found[b], we went to Samuel.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''To look for the donkeys''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

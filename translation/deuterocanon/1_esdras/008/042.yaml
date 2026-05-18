@@ -109,19 +109,26 @@ theological_decisions:
   rationale: The Greek text itself shifts from first-person plural to first-person singular. This likely reflects Ezra narrating a personal act after a group action. The translation preserves that tension rather than harmonizing it.
   doctrine_reference: DOCTRINE.md §3 Preserve theological tension rather than resolve it
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:06Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:49Z'
   unchanged: false
-  changes_summary: Changed 'inspected' to 'examined' for a more natural and formally appropriate rendering of κατέμαθον in this context; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 1 Esdras 8:42 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I inspected them''].'
 revisions:
 - timestamp: '2026-04-23T15:29:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And after gathering them to the river called the River, we camped there for three days, and I inspected them.
-  to: And after gathering them to the river called the River, we camped there for three days, and I examined them.
+  to: And after gathering them to the river called the River, we camped there for three days, and I inspected them.
   rationale: Changed 'inspected' to 'examined' for a more natural and formally appropriate rendering of κατέμαθον in this context; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:58:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And after gathering them to the river called the River[a], we camped there for three days[b], and I examined them.'
+  to: 'And after gathering them to the river called the River[a], we camped there for three days[b], and I examined them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I inspected them''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

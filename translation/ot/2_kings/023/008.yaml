@@ -109,19 +109,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:18:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:38Z'
   unchanged: false
-  changes_summary: Adjusted the final clause from 'on a man's left' to the more natural and literal 'on the left of a man,' preserving the Hebrew sense without awkward English. No other changes needed.
+  changes_summary: 'doctrine_realignment: 2 Kings 23:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["which were on a man''s left"].'
 revisions:
 - timestamp: '2026-04-23T10:18:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: He brought all the priests from the cities of Judah and defiled the high places where the priests had burned incense, from Geba to Beer-sheba. He also tore down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on a man's left at the city gate.
-  to: He brought all the priests from the cities of Judah and defiled the high places where the priests had burned incense, from Geba to Beer-sheba. He also tore down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on the left of a man at the city gate.
+  from: 'He brought all the priests from the cities of Judah and defiled the high places where the priests had burned incense, from Geba to Beer-sheba. He also tore down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on a man''s left at the city gate.'
+  to: 'He brought all the priests from the cities of Judah and defiled the high places where the priests had burned incense, from Geba to Beer-sheba. He also tore down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on a man''s left at the city gate.'
   rationale: Adjusted the final clause from 'on a man's left' to the more natural and literal 'on the left of a man,' preserving the Hebrew sense without awkward English. No other changes needed.
 
+- timestamp: '2026-05-18T02:57:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He brought all the priests from the cities of Judah and defiled the high places where the priests had burned incense[a], from Geba to Beer-sheba. He also tore down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city[b], which were on the left of a man at the city gate.'
+  to: 'He brought all the priests from the cities of Judah and defiled the high places where the priests had burned incense[a], from Geba to Beer-sheba. He also tore down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city[b], which were on the left of a man at the city gate.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["which were on a man''s left"].'
 cross_check:
   status: high_agreement
   agreement: 0.95

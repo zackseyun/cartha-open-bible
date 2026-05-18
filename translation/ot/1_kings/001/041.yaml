@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:05:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:12Z'
   unchanged: false
-  changes_summary: Changed 'were finishing eating' to 'finished eating' for more natural formal English while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Kings 1:41 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as they were finishing eating''].'
 revisions:
 - timestamp: '2026-04-23T10:05:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Adonijah and all the invited guests who were with him heard it as they were finishing eating. And when Joab heard the sound of the trumpet, he said, “Why is the sound of the city in an uproar?”
-  to: Adonijah and all the invited guests who were with him heard it as they finished eating. And when Joab heard the sound of the trumpet, he said, “Why is the sound of the city in an uproar?”
+  to: Adonijah and all the invited guests who were with him heard it as they were finishing eating. And when Joab heard the sound of the trumpet, he said, “Why is the sound of the city in an uproar?”
   rationale: Changed 'were finishing eating' to 'finished eating' for more natural formal English while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Adonijah and all the invited guests who were with him heard it as they finished eating[a]. And when Joab heard the sound of the trumpet, he said[b], “Why is the sound of the city in an uproar?”'
+  to: 'Adonijah and all the invited guests who were with him heard it as they finished eating[a]. And when Joab heard the sound of the trumpet, he said[b], “Why is the sound of the city in an uproar?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as they were finishing eating''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

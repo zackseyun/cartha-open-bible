@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:27:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:58Z'
   unchanged: false
-  changes_summary: Changed 'drop off' to 'fall off' for a more natural and formally neutral rendering of the verb, while preserving the meaning. No other changes needed.
+  changes_summary: 'doctrine_realignment: Deuteronomy 28:40 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will drop off''].'
 revisions:
 - timestamp: '2026-04-23T10:27:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: You will have olive trees throughout all your territory, but you will not anoint yourself with oil, because your olives will drop off.
-  to: You will have olive trees throughout all your territory, but you will not anoint yourself with oil, because your olives will fall off.
+  to: You will have olive trees throughout all your territory, but you will not anoint yourself with oil, because your olives will drop off.
   rationale: Changed 'drop off' to 'fall off' for a more natural and formally neutral rendering of the verb, while preserving the meaning. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:58Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'You will have olive trees throughout all your territory[a], but you will not anoint yourself with oil, because your olives will fall off.'
+  to: 'You will have olive trees throughout all your territory[a], but you will not anoint yourself with oil, because your olives will fall off.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will drop off''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

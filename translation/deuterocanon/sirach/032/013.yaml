@@ -123,19 +123,26 @@ theological_decisions:
   rationale: Project philosophy gives primacy to the Hebrew of Sirach where it survives. Here the Hebrew and Greek differ sharply, and the source metadata flags a major mismatch. The main text therefore follows the Hebrew witness, but the Greek alternative is preserved in a footnote because it represents a materially different textual tradition.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input and preserve uncertainty honestly.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:44:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:03Z'
   unchanged: false
-  changes_summary: Changed 'satisfies you with his goodness' to 'fills you with his goodness' for closer lexical alignment with the Hebrew while preserving natural formal English. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Sirach 32:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who satisfies you with his goodness''].'
 revisions:
 - timestamp: '2026-04-23T15:44:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For all these things bless your Maker, who satisfies you with his goodness. He who seeks the law will obtain favor, but the hypocrite will be caught by it.
-  to: For all these things bless your Maker, who fills you with his goodness. He who seeks the law will obtain favor, but the hypocrite will be caught by it.
+  to: For all these things bless your Maker, who satisfies you with his goodness. He who seeks the law will obtain favor, but the hypocrite will be caught by it.
   rationale: Changed 'satisfies you with his goodness' to 'fills you with his goodness' for closer lexical alignment with the Hebrew while preserving natural formal English. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:58:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For all these things bless your Maker[a], who fills you with his goodness. He who seeks the law will obtain favor[c][b], but the hypocrite will be caught by it.'
+  to: 'For all these things bless your Maker[a], who fills you with his goodness. He who seeks the law will obtain favor[c][b], but the hypocrite will be caught by it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who satisfies you with his goodness''].'
 cross_check:
   status: needs_review
   agreement: 0.6

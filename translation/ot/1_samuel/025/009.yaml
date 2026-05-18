@@ -63,19 +63,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:12:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:35Z'
   unchanged: false
-  changes_summary: Changed 'waited' to 'rested' to more directly reflect the Hebrew verb, while preserving the verse’s formal tone and structure.
+  changes_summary: 'doctrine_realignment: 1 Samuel 25:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they waited''].'
 revisions:
 - timestamp: '2026-04-23T10:12:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When David’s young men came, they spoke to Nabal all these words in David’s name, and then they waited.
-  to: When David’s young men came, they spoke to Nabal all these words in David’s name, and then they rested.
+  to: When David’s young men came, they spoke to Nabal all these words in David’s name, and then they waited.
   rationale: Changed 'waited' to 'rested' to more directly reflect the Hebrew verb, while preserving the verse’s formal tone and structure.
 
+- timestamp: '2026-05-18T02:56:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When David’s young men came[a], they spoke to Nabal all these words in David’s name, and then they rested.'
+  to: 'When David’s young men came[a], they spoke to Nabal all these words in David’s name, and then they rested.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they waited''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

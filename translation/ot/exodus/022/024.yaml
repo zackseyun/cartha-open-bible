@@ -98,19 +98,26 @@ theological_decisions:
   rationale: Hebrew legal casuistic style often uses 'if' for case law. Retaining 'if' preserves the source form while still functioning naturally in English law-like discourse.
   doctrine_reference: DOCTRINE.md Translation philosophy §1, §6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:32:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:42Z'
   unchanged: false
-  changes_summary: Changed 'the poor man among you' to 'the poor among you' to reflect the Hebrew more accurately without adding 'man.' Slightly adjusted word order to 'be like a creditor to him' for more natural English while preserving the sense.
+  changes_summary: 'doctrine_realignment: Exodus 22:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the poor man''].'
 revisions:
 - timestamp: '2026-04-23T10:32:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: If you lend money to my people, to the poor man among you, you shall not be to him like a creditor; you shall not impose interest on him.
-  to: If you lend money to my people, to the poor among you, you shall not be like a creditor to him; you shall not impose interest on him.
+  to: If you lend money to my people, to the poor man among you, you shall not be to him like a creditor; you shall not impose interest on him.
   rationale: Changed 'the poor man among you' to 'the poor among you' to reflect the Hebrew more accurately without adding 'man.' Slightly adjusted word order to 'be like a creditor to him' for more natural English while preserving the sense.
 
+- timestamp: '2026-05-18T02:54:42Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'If you lend money to my people[a], to the poor among you, you shall not be like a creditor to him[c][b]; you shall not impose interest on him.'
+  to: 'If you lend money to my people[a], to the poor among you, you shall not be like a creditor to him[c][b]; you shall not impose interest on him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the poor man''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

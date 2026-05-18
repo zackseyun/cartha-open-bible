@@ -57,19 +57,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:00:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:45Z'
   unchanged: false
-  changes_summary: Replaced 'mistreat me' with 'wrong me' to more closely reflect the sense of acting wrongly against someone, while keeping the formal tone and natural English.
+  changes_summary: 'doctrine_realignment: Job 19:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to mistreat me''].'
 revisions:
 - timestamp: '2026-04-23T11:00:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: These ten times you have humiliated me; you are not ashamed to mistreat me.
-  to: These ten times you have humiliated me; you are not ashamed to wrong me.
+  to: These ten times you have humiliated me; you are not ashamed to mistreat me.
   rationale: Replaced 'mistreat me' with 'wrong me' to more closely reflect the sense of acting wrongly against someone, while keeping the formal tone and natural English.
 
+- timestamp: '2026-05-18T02:54:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'These ten times you have humiliated me[a]; you are not ashamed to wrong me.'
+  to: 'These ten times you have humiliated me[a]; you are not ashamed to wrong me.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to mistreat me''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

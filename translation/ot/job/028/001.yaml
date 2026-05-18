@@ -71,19 +71,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:01:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:25Z'
   unchanged: false
-  changes_summary: 'Reordered the final clause to more naturally reflect the Hebrew while preserving the impersonal plural verb: ''a place where they refine gold'' instead of ''a place for gold that they refine.'''
+  changes_summary: 'doctrine_realignment: Job 28:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for gold''].'
 revisions:
 - timestamp: '2026-04-23T11:01:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Surely there is a mine for silver, and a place for gold that they refine.
-  to: Surely there is a mine for silver, and a place where they refine gold.
+  to: Surely there is a mine for silver, and a place for gold that they refine.
   rationale: 'Reordered the final clause to more naturally reflect the Hebrew while preserving the impersonal plural verb: ''a place where they refine gold'' instead of ''a place for gold that they refine.'''
 
+- timestamp: '2026-05-18T02:54:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Surely there is a mine for silver[b][a], and a place where they refine gold.'
+  to: 'Surely there is a mine for silver[b][a], and a place where they refine gold.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for gold''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

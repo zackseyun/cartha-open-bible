@@ -114,19 +114,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:34:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:31Z'
   unchanged: false
-  changes_summary: 'Adjusted the final phrase to improve accuracy and natural English: changed ''five cubits high in width'' to ''five cubits high, corresponding in width to the hangings of the courtyard,'' which better reflects the Hebrew construction.'
+  changes_summary: 'doctrine_realignment: Exodus 38:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''corresponding to''].'
 revisions:
 - timestamp: '2026-04-23T10:34:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the screen for the gate of the courtyard was the work of an embroiderer, in blue and purple and scarlet yarn, and fine twined linen, twenty cubits long, and five cubits high in width, corresponding to the hangings of the courtyard.
-  to: And the screen for the gate of the courtyard was the work of an embroiderer, in blue and purple and scarlet yarn, and fine twined linen, twenty cubits long, and five cubits high, corresponding in width to the hangings of the courtyard.
+  to: And the screen for the gate of the courtyard was the work of an embroiderer, in blue and purple and scarlet yarn, and fine twined linen, twenty cubits long, and five cubits high in width, corresponding to the hangings of the courtyard.
   rationale: 'Adjusted the final phrase to improve accuracy and natural English: changed ''five cubits high in width'' to ''five cubits high, corresponding in width to the hangings of the courtyard,'' which better reflects the Hebrew construction.'
 
+- timestamp: '2026-05-18T02:55:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the screen for the gate of the courtyard was the work of an embroiderer[a], in blue and purple and scarlet yarn, and fine twined linen, twenty cubits long, and five cubits high[c][b], corresponding in width to the hangings of the courtyard.'
+  to: 'And the screen for the gate of the courtyard was the work of an embroiderer[a], in blue and purple and scarlet yarn, and fine twined linen, twenty cubits long, and five cubits high[c][b], corresponding in width to the hangings of the courtyard.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''corresponding to''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

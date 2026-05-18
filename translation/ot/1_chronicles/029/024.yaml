@@ -57,19 +57,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:29Z'
   unchanged: false
-  changes_summary: Reordered 'King Solomon' for more natural formal English while preserving the sense of 'under Solomon the king'; otherwise retained the draft, since 'pledged allegiance' accurately renders the idiom 'gave the hand under.'
+  changes_summary: 'doctrine_realignment: 1 Chronicles 29:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Solomon the king''].'
 revisions:
 - timestamp: '2026-04-23T10:06:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And all the officials, the mighty men, and also all the sons of King David pledged allegiance to Solomon the king.
-  to: And all the officials, the mighty men, and also all the sons of King David pledged allegiance to King Solomon.
+  to: And all the officials, the mighty men, and also all the sons of King David pledged allegiance to Solomon the king.
   rationale: Reordered 'King Solomon' for more natural formal English while preserving the sense of 'under Solomon the king'; otherwise retained the draft, since 'pledged allegiance' accurately renders the idiom 'gave the hand under.'
 
+- timestamp: '2026-05-18T02:57:29Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And all the officials[a], the mighty men, and also all the sons of King David pledged allegiance to King Solomon.'
+  to: 'And all the officials[a], the mighty men, and also all the sons of King David pledged allegiance to King Solomon.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Solomon the king''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

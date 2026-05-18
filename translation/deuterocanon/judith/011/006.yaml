@@ -121,19 +121,26 @@ theological_decisions:
   rationale: Because the referent is a human superior rather than God, lowercase 'lord' is appropriate. This preserves the title sense without implying divinity.
   doctrine_reference: 'DOCTRINE.md: κύριος default rendering ''Lord''; context determines capitalization and referent.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:39:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:28Z'
   unchanged: false
-  changes_summary: Changed 'fail in his plans' to 'depart from his purposes' to more closely reflect οὐκ ἀποστεῖται ... τῶν ἐπιτηδευμάτων αὐτοῦ. Retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: Judith 11:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will not fail''].'
 revisions:
 - timestamp: '2026-04-23T15:39:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And if you follow the words of your servant girl, God will fully accomplish the matter with you, and my lord will not fail in his plans.
-  to: And if you follow the words of your servant girl, God will fully accomplish the matter with you, and my lord will not depart from his purposes.
+  to: And if you follow the words of your servant girl, God will fully accomplish the matter with you, and my lord will not fail in his plans.
   rationale: Changed 'fail in his plans' to 'depart from his purposes' to more closely reflect οὐκ ἀποστεῖται ... τῶν ἐπιτηδευμάτων αὐτοῦ. Retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T03:00:28Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.'
+  to: 'And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will not fail''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

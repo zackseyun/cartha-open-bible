@@ -105,19 +105,26 @@ theological_decisions:
   rationale: Per translation philosophy, gender-accurate renderings are preferred where they match the source's intent. Here בְּנֵי is grammatically masculine plural in a standard ethnonymic expression. 'Sons of Israel' preserves the Hebrew form transparently, while a footnote can preserve smoother English alternatives.
   doctrine_reference: DOCTRINE.md §Translation philosophy 4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:29:42Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:31Z'
   unchanged: false
-  changes_summary: Removed 'the Egyptians' because it is not explicit in the source; retained the implied subject in natural English while preserving the sense.
+  changes_summary: 'doctrine_realignment: Exodus 1:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that the Egyptians dreaded''].'
 revisions:
 - timestamp: '2026-04-23T10:29:42Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But the more they afflicted them, the more they multiplied and the more they spread out, so that the Egyptians dreaded the sons of Israel.
-  to: But the more they afflicted them, the more they multiplied and the more they spread out, so that they dreaded the sons of Israel.
+  to: But the more they afflicted them, the more they multiplied and the more they spread out, so that the Egyptians dreaded the sons of Israel.
   rationale: Removed 'the Egyptians' because it is not explicit in the source; retained the implied subject in natural English while preserving the sense.
 
+- timestamp: '2026-05-18T02:55:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But the more they afflicted them[a], the more they multiplied and the more they spread out[c][b], so that they dreaded the sons of Israel.'
+  to: 'But the more they afflicted them[a], the more they multiplied and the more they spread out[c][b], so that they dreaded the sons of Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that the Egyptians dreaded''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

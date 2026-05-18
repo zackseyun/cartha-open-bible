@@ -16,7 +16,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 8:1
 translation:
-  text: Do not quarrel with a great man[a], lest you fall into his hands.
+  text: Do not quarrel with a powerful man, lest you fall into his hands.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -69,10 +69,10 @@ ai_draft:
     trigger: schechter_pipeline_completes
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:37Z'
   unchanged: false
-  changes_summary: Changed 'powerful man' to 'great man' for closer lexical correspondence to גָּדוֹל while retaining natural formal English; kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Sirach 8:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a powerful man''].'
 revisions:
 - timestamp: '2026-04-23T15:42:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -82,6 +82,13 @@ revisions:
   to: Do not quarrel with a great man, lest you fall into his hands.
   rationale: Changed 'powerful man' to 'great man' for closer lexical correspondence to גָּדוֹל while retaining natural formal English; kept the rest unchanged.
 
+- timestamp: '2026-05-18T03:09:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Do not quarrel with a great man[a], lest you fall into his hands.'
+  to: 'Do not quarrel with a powerful man, lest you fall into his hands.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a powerful man''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

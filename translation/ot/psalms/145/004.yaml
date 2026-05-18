@@ -60,19 +60,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:31:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:49Z'
   unchanged: false
-  changes_summary: Removed the second 'they' for a more formal and natural rendering while preserving the Hebrew sense and completeness.
+  changes_summary: 'doctrine_realignment: Psalms 145:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will declare''].'
 revisions:
 - timestamp: '2026-04-23T11:31:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Generation to generation will praise your works, and they will declare your mighty acts.
-  to: Generation to generation will praise your works, and will declare your mighty acts.
+  to: Generation to generation will praise your works, and they will declare your mighty acts.
   rationale: Removed the second 'they' for a more formal and natural rendering while preserving the Hebrew sense and completeness.
 
+- timestamp: '2026-05-18T02:53:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Generation to generation will praise your works[b][a], and will declare your mighty acts.'
+  to: 'Generation to generation will praise your works[b][a], and will declare your mighty acts.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will declare''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

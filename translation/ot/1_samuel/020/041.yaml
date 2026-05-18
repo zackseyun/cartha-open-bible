@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:38Z'
   unchanged: false
-  changes_summary: Changed 'the mound' to 'the south side' to reflect the Hebrew/Greek source more accurately; retained the rest as natural and complete.
+  changes_summary: 'doctrine_realignment: 1 Samuel 20:41 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from beside the mound''].'
 revisions:
 - timestamp: '2026-04-23T10:11:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When the boy had come, David rose from beside the mound and fell with his face to the ground and bowed three times. Then they kissed one another and wept with one another, until David wept the more.
-  to: When the boy had come, David rose from beside the south side and fell with his face to the ground and bowed three times. Then they kissed one another and wept with one another, until David wept the more.
+  to: When the boy had come, David rose from beside the mound and fell with his face to the ground and bowed three times. Then they kissed one another and wept with one another, until David wept the more.
   rationale: Changed 'the mound' to 'the south side' to reflect the Hebrew/Greek source more accurately; retained the rest as natural and complete.
 
+- timestamp: '2026-05-18T02:55:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When the boy had come[a], David rose from beside the south side and fell with his face to the ground and bowed three times. Then they kissed one another and wept with one another[b], until David wept the more.'
+  to: 'When the boy had come[a], David rose from beside the south side and fell with his face to the ground and bowed three times. Then they kissed one another and wept with one another[b], until David wept the more.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from beside the mound''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

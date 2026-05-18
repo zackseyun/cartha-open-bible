@@ -62,19 +62,26 @@ theological_decisions:
   rationale: The passive leaves the agent unstated. In context, divine mercy is strongly implied, but the Greek does not explicitly name God. To preserve theological tension and avoid importing more specificity than the text states, the translation keeps the passive promise general.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:55:07Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:00Z'
   unchanged: false
-  changes_summary: Replaced 'because they will receive mercy' with 'for they will be shown mercy' to more directly reflect the passive Greek verb and maintain a more formal, natural translation style.
+  changes_summary: 'doctrine_realignment: Matthew 5:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will receive mercy''].'
 revisions:
 - timestamp: '2026-04-23T09:55:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Blessed are the merciful, because they will receive mercy.
-  to: Blessed are the merciful, for they will be shown mercy.
+  to: Blessed are the merciful, because they will receive mercy.
   rationale: Replaced 'because they will receive mercy' with 'for they will be shown mercy' to more directly reflect the passive Greek verb and maintain a more formal, natural translation style.
 
+- timestamp: '2026-05-18T03:01:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Blessed are the merciful[a], for they will be shown mercy.'
+  to: 'Blessed are the merciful[a], for they will be shown mercy.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will receive mercy''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

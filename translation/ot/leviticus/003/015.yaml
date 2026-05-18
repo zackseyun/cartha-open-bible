@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:09:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:37Z'
   unchanged: false
-  changes_summary: Changed 'along with' to 'with' for a more formal, literal rendering of the Hebrew preposition while preserving natural English. No other changes needed.
+  changes_summary: 'doctrine_realignment: Leviticus 3:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with the kidneys''].'
 revisions:
 - timestamp: '2026-04-23T11:09:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: and the two kidneys, and the fat that is on them, which is on the loins, and the appendage on the liver, along with the kidneys, he shall remove.
-  to: and the two kidneys, and the fat that is on them, which is on the loins, and the appendage on the liver, with the kidneys, he shall remove.
+  to: and the two kidneys, and the fat that is on them, which is on the loins, and the appendage on the liver, along with the kidneys, he shall remove.
   rationale: Changed 'along with' to 'with' for a more formal, literal rendering of the Hebrew preposition while preserving natural English. No other changes needed.
 
+- timestamp: '2026-05-18T02:57:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and the two kidneys[a], and the fat that is on them, which is on the loins, and the appendage on the liver, with the kidneys[b], he shall remove.'
+  to: 'and the two kidneys[a], and the fat that is on them, which is on the loins, and the appendage on the liver, with the kidneys[b], he shall remove.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with the kidneys''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

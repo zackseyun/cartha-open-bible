@@ -123,19 +123,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:33:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:05Z'
   unchanged: false
-  changes_summary: Removed 'for refuge,' which is not explicitly present in the Greek. Retained the rest as accurate and natural, including 'passed from life' for μετηλλαχότος τὸν βίον and 'citadel' for ἀκρόπολις.
+  changes_summary: 'doctrine_realignment: 2 Maccabees 5:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fled for refuge''].'
 revisions:
 - timestamp: '2026-04-23T15:33:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But when a false rumor arose that Antiochus had passed from life, Jason, taking no fewer than a thousand men, launched a sudden attack against the city. When those on the wall had been driven back, and at last the city was already being taken, Menelaus fled for refuge into the citadel.
-  to: But when a false rumor arose that Antiochus had passed from life, Jason, taking no fewer than a thousand men, launched a sudden attack against the city. When those on the wall had been driven back, and at last the city was already being taken, Menelaus fled into the citadel.
+  to: But when a false rumor arose that Antiochus had passed from life, Jason, taking no fewer than a thousand men, launched a sudden attack against the city. When those on the wall had been driven back, and at last the city was already being taken, Menelaus fled for refuge into the citadel.
   rationale: Removed 'for refuge,' which is not explicitly present in the Greek. Retained the rest as accurate and natural, including 'passed from life' for μετηλλαχότος τὸν βίον and 'citadel' for ἀκρόπολις.
 
+- timestamp: '2026-05-18T02:59:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But when a false rumor arose that Antiochus had passed from life[a], Jason, taking no fewer than a thousand men, launched a sudden attack against the city. When those on the wall had been driven back, and at last the city was already being taken, Menelaus fled into the citadel.'
+  to: 'But when a false rumor arose that Antiochus had passed from life[a], Jason, taking no fewer than a thousand men, launched a sudden attack against the city. When those on the wall had been driven back, and at last the city was already being taken, Menelaus fled into the citadel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fled for refuge''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

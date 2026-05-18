@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 6:23
 translation:
-  text: A potter's vessel is tested in a furnace[c][b][a], and so a man is tested by his reasoning.
+  text: Listen, my son, and accept my judgment, and do not reject my counsel.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -112,19 +112,26 @@ theological_decisions:
   rationale: The supplied Hebrew text ('A potter's vessel burns in a furnace, and so a man according to his reckoning') does not correspond to Sirach 6:23, whereas the Greek parallel is internally coherent and contextually appropriate. Given the task's instruction to use the parallel as actual translation input and to preserve source uncertainty honestly, the English draft follows the Greek for this verse.
   doctrine_reference: 'PHILOSOPHY.md: translate from the most-original witness available, but use Swete LXX for deuterocanonical books and preserve uncertainty transparently.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:37Z'
   unchanged: false
-  changes_summary: 'Replaced the unrelated draft with a translation that reflects the Hebrew imagery and syntax: ''potter''s vessel'' for כלי יוצר, ''is tested in a furnace'' for לבער כבשן, and ''a man is tested by his reasoning'' for וכמהו איש על חשבונו.'
+  changes_summary: 'doctrine_realignment: Sirach 6:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''judgment''].'
 revisions:
 - timestamp: '2026-04-23T15:42:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Listen, my son, and accept my judgment, and do not reject my counsel.
-  to: A potter's vessel is tested in a furnace, and so a man is tested by his reasoning.
+  to: 'A potter''s vessel is tested in a furnace, and so a man is tested by his reasoning.'
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew imagery and syntax: ''potter''s vessel'' for כלי יוצר, ''is tested in a furnace'' for לבער כבשן, and ''a man is tested by his reasoning'' for וכמהו איש על חשבונו.'
 
+- timestamp: '2026-05-18T03:09:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'A potter''s vessel is tested in a furnace[c][b][a], and so a man is tested by his reasoning.'
+  to: 'Listen, my son, and accept my judgment, and do not reject my counsel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''judgment''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

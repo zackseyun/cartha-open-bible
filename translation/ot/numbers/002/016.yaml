@@ -74,19 +74,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:33Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:01Z'
   unchanged: false
-  changes_summary: Changed 'divisions' to 'companies' for closer alignment with צבאותם ('their companies/hosts').
+  changes_summary: 'doctrine_realignment: Numbers 2:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by their divisions''].'
 revisions:
 - timestamp: '2026-04-23T11:15:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: All those counted for the camp of Reuben were 151,450 by their divisions. They shall set out second.
-  to: All those counted for the camp of Reuben were 151,450 by their companies. They shall set out second.
+  to: All those counted for the camp of Reuben were 151,450 by their divisions. They shall set out second.
   rationale: Changed 'divisions' to 'companies' for closer alignment with צבאותם ('their companies/hosts').
 
+- timestamp: '2026-05-18T02:58:01Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'All those counted for the camp of Reuben were 151,450 by their companies[b][a]. They shall set out second.'
+  to: 'All those counted for the camp of Reuben were 151,450 by their companies[b][a]. They shall set out second.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by their divisions''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

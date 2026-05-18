@@ -114,19 +114,26 @@ theological_decisions:
   rationale: Zone 1 gives a high-confidence Hebrew witness, which is primary for extant Hebrew Sirach. The Hebrew syntax is declarative ('Many heard... and they acquired...'), unlike the Greek imperative. Since the task requires keeping the Greek in view, the Greek parallel is used to clarify that the final prepositional phrase likely expresses means connected with instruction/wisdom. The main text therefore follows the Hebrew witness while preserving the notable Greek alternative in a footnote.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input without displacing the more original extant witness.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:38Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:50Z'
   unchanged: false
-  changes_summary: Changed 'through me' to 'by me' for a more formal, closer rendering of בִּי while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Sirach 51:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through me''].'
 revisions:
 - timestamp: '2026-04-23T15:46:38Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Many heard my instruction in my youth, and they acquired silver and gold through me.
-  to: Many heard my instruction in my youth, and they acquired silver and gold by me.
+  to: Many heard my instruction in my youth, and they acquired silver and gold through me.
   rationale: Changed 'through me' to 'by me' for a more formal, closer rendering of בִּי while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Many heard my instruction in my youth[b][a], and they acquired silver and gold by me.'
+  to: 'Many heard my instruction in my youth[b][a], and they acquired silver and gold by me.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through me''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.8

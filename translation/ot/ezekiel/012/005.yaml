@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:35:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:21Z'
   unchanged: false
-  changes_summary: Removed 'for yourself' and 'your baggage,' which are not present in the source text of this verse. Kept the imperative/action sequence and the final 'through it' to reflect the Hebrew closely and naturally.
+  changes_summary: 'doctrine_realignment: Ezekiel 12:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for yourself''].'
 revisions:
 - timestamp: '2026-04-23T10:35:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Before their eyes, dig through the wall for yourself, and bring your baggage out through it.
-  to: Before their eyes, dig through the wall, and bring out through it.
+  to: Before their eyes, dig through the wall for yourself, and bring your baggage out through it.
   rationale: Removed 'for yourself' and 'your baggage,' which are not present in the source text of this verse. Kept the imperative/action sequence and the final 'through it' to reflect the Hebrew closely and naturally.
 
+- timestamp: '2026-05-18T02:55:21Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Before their eyes[a], dig through the wall, and bring out through it.'
+  to: 'Before their eyes[a], dig through the wall, and bring out through it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for yourself''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

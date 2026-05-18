@@ -121,19 +121,26 @@ theological_decisions:
   rationale: The psalm recalls the LORD's restoration as already experienced, and the surrounding lines are naturally read as retrospective celebration. Rendering the verb as past in English preserves the discourse sense without forcing a strictly formal tense equivalence.
   doctrine_reference: 'DOCTRINE.md Translation philosophy: optimal equivalence; original-language primacy over translation tradition'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:30:26Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:24Z'
   unchanged: false
-  changes_summary: Changed “for these people” to “for them” for closer lexical accuracy to אֵלֶּה and more natural English in reported speech; retained the rest.
+  changes_summary: 'doctrine_realignment: Psalms 126:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for these people''].'
 revisions:
 - timestamp: '2026-04-23T11:30:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then our mouth was filled with laughter, and our tongue with joyful shouting; then they said among the nations, “The LORD has done great things for these people.”
-  to: Then our mouth was filled with laughter, and our tongue with joyful shouting; then they said among the nations, “The LORD has done great things for them.”
+  to: Then our mouth was filled with laughter, and our tongue with joyful shouting; then they said among the nations, “The LORD has done great things for these people.”
   rationale: Changed “for these people” to “for them” for closer lexical accuracy to אֵלֶּה and more natural English in reported speech; retained the rest.
 
+- timestamp: '2026-05-18T02:54:24Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then our mouth was filled with laughter[a], and our tongue with joyful shouting; then they said among the nations[b], “Yahweh has done great things for them.”'
+  to: 'Then our mouth was filled with laughter[a], and our tongue with joyful shouting; then they said among the nations[b], “Yahweh has done great things for them.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for these people''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -137,19 +137,26 @@ theological_decisions:
   rationale: The supplied MT parallel does not correspond directly to this verse's content, so the Greek must govern. The mismatch is material and should be acknowledged rather than harmonized away.
   doctrine_reference: PHILOSOPHY.md 'Original-language primacy' and task requirement on source uncertainty
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:14Z'
   unchanged: false
-  changes_summary: Changed 'carefully punished' to 'diligently punished' for a more natural rendering of ἐπιμελῶς, and changed 'penalty' to 'punishment' for closer lexical correspondence to τιμωρίᾳ.
+  changes_summary: 'doctrine_realignment: 1 Esdras 8:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''carefully''].'
 revisions:
 - timestamp: '2026-04-23T15:29:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And all who transgress both the law of your God and the king’s law shall be carefully punished, whether by death or by penalty, by a fine of silver or by confiscation.
-  to: And all who transgress both the law of your God and the king’s law shall be diligently punished, whether by death or by punishment, by a fine of silver or by confiscation.
+  to: And all who transgress both the law of your God and the king’s law shall be carefully punished, whether by death or by penalty, by a fine of silver or by confiscation.
   rationale: Changed 'carefully punished' to 'diligently punished' for a more natural rendering of ἐπιμελῶς, and changed 'penalty' to 'punishment' for closer lexical correspondence to τιμωρίᾳ.
 
+- timestamp: '2026-05-18T02:59:14Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.'
+  to: 'And all who transgress both the law of your God and the king’s law shall be diligently punished[a], whether by death or by punishment[c][b], by a fine of silver or by confiscation.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''carefully''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

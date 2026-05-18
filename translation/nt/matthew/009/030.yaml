@@ -74,19 +74,26 @@ theological_decisions:
   rationale: The verse presents Jesus as issuing a forceful command, but it does not explain his motive. The translation preserves the strength of the command without importing a theological explanation for why he wanted silence.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:55:41Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:02Z'
   unchanged: false
-  changes_summary: Removed 'it' to more closely reflect the Greek, which simply says 'let no one know.' Kept the rest unchanged as accurate and natural.
+  changes_summary: 'doctrine_realignment: Matthew 9:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''no one knows it''].'
 revisions:
 - timestamp: '2026-04-23T09:55:41Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And their eyes were opened. And Jesus sternly warned them, saying, “See that no one knows it.”
-  to: And their eyes were opened. And Jesus sternly warned them, saying, “See that no one knows.”
+  to: And their eyes were opened. And Jesus sternly warned them, saying, “See that no one knows it.”
   rationale: Removed 'it' to more closely reflect the Greek, which simply says 'let no one know.' Kept the rest unchanged as accurate and natural.
 
+- timestamp: '2026-05-18T03:01:02Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And their eyes were opened[a]. And Jesus sternly warned them, saying[b], “See that no one knows.”'
+  to: 'And their eyes were opened[a]. And Jesus sternly warned them, saying[b], “See that no one knows.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''no one knows it''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -96,19 +96,26 @@ theological_decisions:
   rationale: The Greek says 'it became clear to all' followed by the causal phrase, so the translation preserves the text's stated causal inference without adding explanatory theology beyond the verse itself.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:34:34Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:57Z'
   unchanged: false
-  changes_summary: Adjusted singulars to match the Greek ('the tunic of each'), rendered 'idols of Jamnia' more directly, clarified the relative clause as 'which the law forbids the Jews to have' to avoid awkwardness, and slightly smoothed the final clause.
+  changes_summary: 'doctrine_realignment: 2 Maccabees 12:40 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the idols from Jamnia''].'
 revisions:
 - timestamp: '2026-04-23T15:34:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But under the tunics of each of the dead they found sacred tokens of the idols from Jamnia, from which the law forbids the Jews; and so it became clear to all that for this reason these men had fallen.
-  to: But under the tunic of each of the dead they found sacred tokens of the idols of Jamnia, which the law forbids the Jews to have; and it became clear to all that for this reason these men had fallen.
+  to: But under the tunics of each of the dead they found sacred tokens of the idols from Jamnia, from which the law forbids the Jews; and so it became clear to all that for this reason these men had fallen.
   rationale: Adjusted singulars to match the Greek ('the tunic of each'), rendered 'idols of Jamnia' more directly, clarified the relative clause as 'which the law forbids the Jews to have' to avoid awkwardness, and slightly smoothed the final clause.
 
+- timestamp: '2026-05-18T02:59:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But under the tunic of each of the dead they found sacred tokens of the idols of Jamnia[a], which the law forbids the Jews to have[b]; and it became clear to all that for this reason these men had fallen.'
+  to: 'But under the tunic of each of the dead they found sacred tokens of the idols of Jamnia[a], which the law forbids the Jews to have[b]; and it became clear to all that for this reason these men had fallen.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the idols from Jamnia''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

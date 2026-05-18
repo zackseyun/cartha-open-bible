@@ -66,19 +66,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:20:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:55Z'
   unchanged: false
-  changes_summary: Revised the second clause from 'will be ruined' to 'will come to ruin' for a more natural and closer rendering of the Hebrew, while retaining the formal sense. Kept 'wise-hearted' and 'accepts commands' as accurate and natural.
+  changes_summary: 'doctrine_realignment: Proverbs 10:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will be ruined''].'
 revisions:
 - timestamp: '2026-04-23T11:20:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: A wise-hearted man accepts commands, but a foolish man of lips will be ruined.
-  to: A wise-hearted man accepts commands, but a foolish man of lips will come to ruin.
+  to: A wise-hearted man accepts commands, but a foolish man of lips will be ruined.
   rationale: Revised the second clause from 'will be ruined' to 'will come to ruin' for a more natural and closer rendering of the Hebrew, while retaining the formal sense. Kept 'wise-hearted' and 'accepts commands' as accurate and natural.
 
+- timestamp: '2026-05-18T02:54:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'A wise-hearted man accepts commands[a], but a foolish man of lips will come to ruin.'
+  to: 'A wise-hearted man accepts commands[a], but a foolish man of lips will come to ruin.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will be ruined''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -116,19 +116,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:17Z'
   unchanged: false
-  changes_summary: 'Revised for more natural English and closer sense: rendered גרגרת as ''the throat,'' expressed כל מאכל as ''every kind of food,'' and clarified the comparison in the second clause as ''one kind of food is more pleasant than another.'''
+  changes_summary: 'doctrine_realignment: Sirach 35:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the throat''].'
 revisions:
 - timestamp: '2026-04-23T15:45:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Any food the throat eats, but there is food more pleasant than food.
-  to: The throat eats every kind of food, but one kind of food is more pleasant than another.
+  to: Any food the throat eats, but there is food more pleasant than food.
   rationale: 'Revised for more natural English and closer sense: rendered גרגרת as ''the throat,'' expressed כל מאכל as ''every kind of food,'' and clarified the comparison in the second clause as ''one kind of food is more pleasant than another.'''
 
+- timestamp: '2026-05-18T02:58:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The throat eats every kind of food[b][a], but one kind of food is more pleasant than another.'
+  to: 'The throat eats every kind of food[b][a], but one kind of food is more pleasant than another.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the throat''].'
 cross_check:
   status: needs_review
   agreement: 0.65

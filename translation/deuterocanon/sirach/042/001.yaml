@@ -28,7 +28,7 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 42:1
 translation:
-  text: But concerning these things[a], do not be ashamed[c][b], and do not show partiality so as to sin.
+  text: Do not be ashamed of these things, and do not show partiality and sin.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -110,10 +110,10 @@ theological_decisions:
   rationale: The Hebrew wording is compressed, and the Greek parallel for this verse reflects a substantially different textual form, so the Hebrew should control while the ambiguity is preserved. A more explicit English expansion would resolve a syntactic relation the source leaves terse.
   doctrine_reference: DOCTRINE.md §Translation philosophy 3 (preserve theological tension rather than resolve it)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:50Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:37Z'
   unchanged: false
-  changes_summary: Added 'But concerning' to reflect אך על אלה more fully, and rendered ואל תשא פנים וחטא as 'do not show partiality so as to sin' for more natural and accurate English.
+  changes_summary: 'doctrine_realignment: Sirach 42:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of these things''].'
 revisions:
 - timestamp: '2026-04-23T15:45:50Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -123,6 +123,13 @@ revisions:
   to: But concerning these things, do not be ashamed, and do not show partiality so as to sin.
   rationale: Added 'But concerning' to reflect אך על אלה more fully, and rendered ואל תשא פנים וחטא as 'do not show partiality so as to sin' for more natural and accurate English.
 
+- timestamp: '2026-05-18T03:09:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But concerning these things[a], do not be ashamed[c][b], and do not show partiality so as to sin.'
+  to: 'Do not be ashamed of these things, and do not show partiality and sin.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of these things''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

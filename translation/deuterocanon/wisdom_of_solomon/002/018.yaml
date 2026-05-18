@@ -19,7 +19,7 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For if the righteous man is God's son[a], God will help him and rescue him from the hand of those who oppose him.
+  text: For if the righteous man is God's son, he will help him and rescue him from the hand of those who oppose him.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -94,19 +94,26 @@ theological_decisions:
   rationale: In context, the speakers are making a claim about the righteous man; while the verse is later read christologically, the Greek itself here does not require titular capitalization. The translation preserves the wording without importing later doctrinal interpretation.
   doctrine_reference: Translation philosophy §§1, 3, 6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:48:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:05Z'
   unchanged: false
-  changes_summary: Added 'God' as the subject of 'will help' to reflect the implied subject from the Greek and avoid ambiguity in English; otherwise retained the draft wording.
+  changes_summary: 'doctrine_realignment: Wisdom of Solomon 2:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will help him''].'
 revisions:
 - timestamp: '2026-04-23T15:48:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: For if the righteous man is God's son, he will help him and rescue him from the hand of those who oppose him.
-  to: For if the righteous man is God's son, God will help him and rescue him from the hand of those who oppose him.
+  from: 'For if the righteous man is God''s son, he will help him and rescue him from the hand of those who oppose him.'
+  to: 'For if the righteous man is God''s son, God will help him and rescue him from the hand of those who oppose him.'
   rationale: Added 'God' as the subject of 'will help' to reflect the implied subject from the Greek and avoid ambiguity in English; otherwise retained the draft wording.
 
+- timestamp: '2026-05-18T03:10:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For if the righteous man is God''s son[a], God will help him and rescue him from the hand of those who oppose him.'
+  to: 'For if the righteous man is God''s son, he will help him and rescue him from the hand of those who oppose him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he will help him''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

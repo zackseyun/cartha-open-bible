@@ -87,19 +87,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:40:03Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:19Z'
   unchanged: false
-  changes_summary: Changed the final phrase from 'translated in Aramaic' to 'translated from Aramaic' to better reflect the sense of the clause in natural English while preserving the source wording.
+  changes_summary: 'doctrine_realignment: Ezra 4:7 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and translated in Aramaic''].'
 revisions:
 - timestamp: '2026-04-23T10:40:03Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And in the days of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia. The text of the letter was written in Aramaic and translated in Aramaic.
-  to: And in the days of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia. The text of the letter was written in Aramaic and translated from Aramaic.
+  to: And in the days of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia. The text of the letter was written in Aramaic and translated in Aramaic.
   rationale: Changed the final phrase from 'translated in Aramaic' to 'translated from Aramaic' to better reflect the sense of the clause in natural English while preserving the source wording.
 
+- timestamp: '2026-05-18T02:57:19Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.'
+  to: 'And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and translated in Aramaic''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

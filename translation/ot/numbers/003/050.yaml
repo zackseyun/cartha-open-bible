@@ -65,19 +65,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:09Z'
   unchanged: false
-  changes_summary: Replaced 'by the sanctuary shekel' with 'according to the sanctuary shekel' for a more natural and accurate rendering of בְּשֶׁקֶל הַקֹּדֶשׁ.
+  changes_summary: 'doctrine_realignment: Numbers 3:50 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the sanctuary shekel''].'
 revisions:
 - timestamp: '2026-04-23T11:15:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: From the firstborn of the sons of Israel he took the silver, one thousand three hundred sixty-five shekels, by the sanctuary shekel.
-  to: From the firstborn of the sons of Israel he took the silver, one thousand three hundred sixty-five shekels, according to the sanctuary shekel.
+  to: From the firstborn of the sons of Israel he took the silver, one thousand three hundred sixty-five shekels, by the sanctuary shekel.
   rationale: Replaced 'by the sanctuary shekel' with 'according to the sanctuary shekel' for a more natural and accurate rendering of בְּשֶׁקֶל הַקֹּדֶשׁ.
 
+- timestamp: '2026-05-18T02:57:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'From the firstborn of the sons of Israel he took the silver[a], one thousand three hundred sixty-five shekels[b], according to the sanctuary shekel.'
+  to: 'From the firstborn of the sons of Israel he took the silver[a], one thousand three hundred sixty-five shekels[b], according to the sanctuary shekel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the sanctuary shekel''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

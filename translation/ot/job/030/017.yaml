@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:01:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:33Z'
   unchanged: false
-  changes_summary: Changed 'within me' to 'in me' for a slightly more literal rendering of the Hebrew while preserving natural English. Retained 'gnawing pains' for וְעֹרְקַי as a natural contextual rendering, and kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Job 30:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''within me''].'
 revisions:
 - timestamp: '2026-04-23T11:01:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: At night my bones are pierced within me, and my gnawing pains do not lie down.
-  to: At night my bones are pierced in me, and my gnawing pains do not lie down.
+  to: At night my bones are pierced within me, and my gnawing pains do not lie down.
   rationale: Changed 'within me' to 'in me' for a slightly more literal rendering of the Hebrew while preserving natural English. Retained 'gnawing pains' for וְעֹרְקַי as a natural contextual rendering, and kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:54:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'At night my bones are pierced in me[b][a], and my gnawing pains do not lie down.'
+  to: 'At night my bones are pierced in me[b][a], and my gnawing pains do not lie down.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''within me''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

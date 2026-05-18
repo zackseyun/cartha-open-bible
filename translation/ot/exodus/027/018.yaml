@@ -83,19 +83,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:33:39Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:04Z'
   unchanged: false
-  changes_summary: Added 'cubits' after 'fifty' to reflect the Hebrew explicitly and removed the awkward 'by fifty,' which is not natural here.
+  changes_summary: 'doctrine_realignment: Exodus 27:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fifty by fifty''].'
 revisions:
 - timestamp: '2026-04-23T10:33:39Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The length of the court shall be a hundred cubits, and the width fifty by fifty, and the height five cubits, of finely twisted linen, with their bases of bronze.
-  to: The length of the court shall be a hundred cubits, and the width fifty cubits, and the height five cubits, of finely twisted linen, with their bases of bronze.
+  to: The length of the court shall be a hundred cubits, and the width fifty by fifty, and the height five cubits, of finely twisted linen, with their bases of bronze.
   rationale: Added 'cubits' after 'fifty' to reflect the Hebrew explicitly and removed the awkward 'by fifty,' which is not natural here.
 
+- timestamp: '2026-05-18T02:55:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The length of the court shall be a hundred cubits[a], and the width fifty cubits, and the height five cubits, of finely twisted linen[b], with their bases of bronze.'
+  to: 'The length of the court shall be a hundred cubits[a], and the width fifty cubits, and the height five cubits, of finely twisted linen[b], with their bases of bronze.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fifty by fifty''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

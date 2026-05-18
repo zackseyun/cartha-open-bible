@@ -90,19 +90,26 @@ ai_draft:
     trigger: schechter_pipeline_completes
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:57Z'
   unchanged: false
-  changes_summary: Changed 'learn discipline' to 'receive instruction' to more directly reflect תִּוָּסֵר ('you will be instructed/disciplined') in natural formal English. Kept the second clause unchanged.
+  changes_summary: 'doctrine_realignment: Sirach 6:33 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will learn discipline''].'
 revisions:
 - timestamp: '2026-04-23T15:42:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: If you are willing to listen, you will learn discipline; if you incline your ear, you will become wise.
-  to: If you are willing to listen, you will receive instruction; if you incline your ear, you will become wise.
+  to: If you are willing to listen, you will learn discipline; if you incline your ear, you will become wise.
   rationale: Changed 'learn discipline' to 'receive instruction' to more directly reflect תִּוָּסֵר ('you will be instructed/disciplined') in natural formal English. Kept the second clause unchanged.
 
+- timestamp: '2026-05-18T02:57:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.'
+  to: 'If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will learn discipline''].'
 cross_check:
   status: needs_review
   agreement: 0.6

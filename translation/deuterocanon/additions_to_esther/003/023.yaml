@@ -12,7 +12,7 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: Put fitting words in my mouth before the lion[a], and turn his heart to hatred against the one who is warring against us[c][b], for his destruction and that of those who are of one mind with him.
+  text: Put fitting words in my mouth before the lion, and turn his heart to hatred against the one who is warring against us, to his destruction and that of those who are of one mind with him.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -112,10 +112,10 @@ theological_decisions:
   rationale: The Greek is singular, likely pointing to the chief adversary. Keeping the singular avoids importing a broader referent than the text states, while the following plural phrase covers his associates.
   doctrine_reference: 'Translation philosophy: never paraphrase beyond what the source text warrants.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:37:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:56Z'
   unchanged: false
-  changes_summary: Changed 'to his destruction' to 'for his destruction' to better reflect the Greek εἰς συντέλειαν as purpose/result rather than motion. Kept the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: Additions to Esther 3:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to his destruction''].'
 revisions:
 - timestamp: '2026-04-23T15:37:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -125,6 +125,13 @@ revisions:
   to: Put fitting words in my mouth before the lion, and turn his heart to hatred against the one who is warring against us, for his destruction and that of those who are of one mind with him.
   rationale: Changed 'to his destruction' to 'for his destruction' to better reflect the Greek εἰς συντέλειαν as purpose/result rather than motion. Kept the rest as accurate and natural.
 
+- timestamp: '2026-05-18T03:09:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Put fitting words in my mouth before the lion[a], and turn his heart to hatred against the one who is warring against us[c][b], for his destruction and that of those who are of one mind with him.'
+  to: 'Put fitting words in my mouth before the lion, and turn his heart to hatred against the one who is warring against us, to his destruction and that of those who are of one mind with him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to his destruction''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

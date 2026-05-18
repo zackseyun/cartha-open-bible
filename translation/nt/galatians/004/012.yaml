@@ -88,19 +88,26 @@ theological_decisions:
   rationale: The Greek form is masculine plural and likely addresses the whole community, including women. Per doctrine, the translation retains the form matching the source rather than resolving to a gender-neutral expansion in the main text.
   doctrine_reference: DOCTRINE.md Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:43:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:45Z'
   unchanged: false
-  changes_summary: Changed 'became' to 'am' for the second clause to reflect the Greek more directly, and adjusted punctuation for a more natural rendering while preserving all source elements.
+  changes_summary: 'doctrine_realignment: Galatians 4:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I also became as you are''].'
 revisions:
 - timestamp: '2026-04-23T09:43:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Become as I am, because I also became as you are, brothers. I beg you, you did me no wrong.
-  to: Become as I am, because I also am as you are, brothers; I beg you, you did me no wrong.
+  to: Become as I am, because I also became as you are, brothers. I beg you, you did me no wrong.
   rationale: Changed 'became' to 'am' for the second clause to reflect the Greek more directly, and adjusted punctuation for a more natural rendering while preserving all source elements.
 
+- timestamp: '2026-05-18T03:01:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.'
+  to: 'Become as I am[a], because I also am as you are, brothers; I beg you[c][b], you did me no wrong.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I also became as you are''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

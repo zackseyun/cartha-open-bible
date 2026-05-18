@@ -61,19 +61,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:58:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:54Z'
   unchanged: false
-  changes_summary: Changed 'oldest brother' to 'firstborn brother' for closer lexical accuracy to הַבְּכוֹר while keeping the rest unchanged.
+  changes_summary: 'doctrine_realignment: Job 1:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the house of their oldest brother''].'
 revisions:
 - timestamp: '2026-04-23T10:58:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: While this one was still speaking, another came and said, “Your sons and your daughters were eating and drinking wine in the house of their oldest brother.”
-  to: While this one was still speaking, another came and said, “Your sons and your daughters were eating and drinking wine in the house of their firstborn brother.”
+  to: While this one was still speaking, another came and said, “Your sons and your daughters were eating and drinking wine in the house of their oldest brother.”
   rationale: Changed 'oldest brother' to 'firstborn brother' for closer lexical accuracy to הַבְּכוֹר while keeping the rest unchanged.
 
+- timestamp: '2026-05-18T02:54:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'While this one was still speaking[a], another came and said, “Your sons and your daughters were eating and drinking wine in the house of their firstborn brother.”'
+  to: 'While this one was still speaking[a], another came and said, “Your sons and your daughters were eating and drinking wine in the house of their firstborn brother.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the house of their oldest brother''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

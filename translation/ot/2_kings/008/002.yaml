@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:16:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:49Z'
   unchanged: false
-  changes_summary: Made the second sentence more complete and closer to the Hebrew by explicitly reflecting 'she went, she and her household' rather than only 'She went with her household.'
+  changes_summary: 'doctrine_realignment: 2 Kings 8:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''She went with her household''].'
 revisions:
 - timestamp: '2026-04-23T10:16:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So the woman arose and did according to the word of the man of God. She went with her household and lived as a foreign resident in the land of the Philistines for seven years.
-  to: So the woman arose and did according to the word of the man of God. She went, she and her household, and lived as a foreign resident in the land of the Philistines for seven years.
+  to: So the woman arose and did according to the word of the man of God. She went with her household and lived as a foreign resident in the land of the Philistines for seven years.
   rationale: Made the second sentence more complete and closer to the Hebrew by explicitly reflecting 'she went, she and her household' rather than only 'She went with her household.'
 
+- timestamp: '2026-05-18T02:58:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So the woman arose and did according to the word of the man of God. She went[a], she and her household, and lived as a foreign resident in the land of the Philistines for seven years.'
+  to: 'So the woman arose and did according to the word of the man of God. She went[a], she and her household, and lived as a foreign resident in the land of the Philistines for seven years.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''She went with her household''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

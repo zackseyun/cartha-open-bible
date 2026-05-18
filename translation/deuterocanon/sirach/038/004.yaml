@@ -110,19 +110,26 @@ theological_decisions:
   rationale: 'The Hebrew points to God as subject, while the Greek explicitly has ''Lord.'' Because the parallel source is to be used as actual translation input and the project''s default for κύριος is ''Lord,'' the main text uses ''The Lord.'' The theological point is not altered: medicines are presented as part of God''s created provision.'
   doctrine_reference: 'DOCTRINE.md: translate titles; transliterate names; κύριος default ''Lord'''
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:24Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:25Z'
   unchanged: false
-  changes_summary: Changed 'an intelligent man' to 'a sensible man' for more natural formal English and a better fit for מבין ('understanding, discerning').
+  changes_summary: 'doctrine_realignment: Sirach 38:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''an intelligent man''].'
 revisions:
 - timestamp: '2026-04-23T15:45:24Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The Lord created medicines from the earth, and an intelligent man will not despise them.
-  to: The Lord created medicines from the earth, and a sensible man will not despise them.
+  to: The Lord created medicines from the earth, and an intelligent man will not despise them.
   rationale: Changed 'an intelligent man' to 'a sensible man' for more natural formal English and a better fit for מבין ('understanding, discerning').
 
+- timestamp: '2026-05-18T02:58:25Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The Lord created medicines from the earth[b][a], and a sensible man will not despise them.'
+  to: 'The Lord created medicines from the earth[b][a], and a sensible man will not despise them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''an intelligent man''].'
 cross_check:
   status: needs_review
   agreement: 0.7

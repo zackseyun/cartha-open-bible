@@ -18,7 +18,7 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For although Moses was angered against Dathan and Abiron[a], he did nothing against them in anger[b], but with reason he mastered anger.
+  text: For although Moses was angered against Dathan and Abiron, he did nothing against them in anger, but with reason he restrained anger.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -103,10 +103,10 @@ theological_decisions:
   rationale: The project's policy is to transliterate names from the source text rather than normalize them to more familiar traditional English forms. Because the Greek reads Ἀβειρών, 'Abiron' is used in the main text.
   doctrine_reference: DOCTRINE.md §Translation philosophy 2
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:36:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:10Z'
   unchanged: false
-  changes_summary: Changed 'restrained anger' to 'mastered anger' to better reflect διήτησεν as overcoming or controlling anger, while preserving the contrast with acting 'in anger.'
+  changes_summary: 'doctrine_realignment: 4 Maccabees 2:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he restrained anger''].'
 revisions:
 - timestamp: '2026-04-23T15:36:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -116,6 +116,13 @@ revisions:
   to: For although Moses was angered against Dathan and Abiron, he did nothing against them in anger, but with reason he mastered anger.
   rationale: Changed 'restrained anger' to 'mastered anger' to better reflect διήτησεν as overcoming or controlling anger, while preserving the contrast with acting 'in anger.'
 
+- timestamp: '2026-05-18T03:10:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For although Moses was angered against Dathan and Abiron[a], he did nothing against them in anger[b], but with reason he mastered anger.'
+  to: 'For although Moses was angered against Dathan and Abiron, he did nothing against them in anger, but with reason he restrained anger.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he restrained anger''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

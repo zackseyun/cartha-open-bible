@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:40Z'
   unchanged: false
-  changes_summary: Changed 'whenever' to 'as often as' for a more formal and precise rendering of the repeated action; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: 1 Samuel 18:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whenever they went out''].'
 revisions:
 - timestamp: '2026-04-23T10:11:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then the commanders of the Philistines went out, and whenever they went out, David acted more wisely than all the servants of Saul, so that his name was highly esteemed.
-  to: Then the commanders of the Philistines went out, and as often as they went out, David acted more wisely than all the servants of Saul, so that his name was highly esteemed.
+  to: Then the commanders of the Philistines went out, and whenever they went out, David acted more wisely than all the servants of Saul, so that his name was highly esteemed.
   rationale: Changed 'whenever' to 'as often as' for a more formal and precise rendering of the repeated action; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:55:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then the commanders of the Philistines went out[a], and as often as they went out, David acted more wisely than all the servants of Saul[c][b], so that his name was highly esteemed.'
+  to: 'Then the commanders of the Philistines went out[a], and as often as they went out, David acted more wisely than all the servants of Saul[c][b], so that his name was highly esteemed.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whenever they went out''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

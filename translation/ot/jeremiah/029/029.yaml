@@ -58,19 +58,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:56:05Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:36Z'
   unchanged: false
-  changes_summary: Changed 'letter' to 'scroll' to more directly reflect the Hebrew word for a written document/book here. The rest is accurate and natural.
+  changes_summary: 'doctrine_realignment: Jeremiah 29:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this letter''].'
 revisions:
 - timestamp: '2026-04-23T10:56:05Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Zephaniah the priest read this letter in the hearing of Jeremiah the prophet.
-  to: Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet.
+  to: Then Zephaniah the priest read this letter in the hearing of Jeremiah the prophet.
   rationale: Changed 'letter' to 'scroll' to more directly reflect the Hebrew word for a written document/book here. The rest is accurate and natural.
 
+- timestamp: '2026-05-18T02:56:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].'
+  to: 'Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this letter''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

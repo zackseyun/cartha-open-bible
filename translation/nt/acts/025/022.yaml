@@ -91,19 +91,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:42:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:06Z'
   unchanged: false
-  changes_summary: Changed 'was wanting' to 'would like' for more natural English while preserving the sense of Ἐβουλόμην. Left 'he says' and the rest unchanged.
+  changes_summary: 'doctrine_realignment: Acts 25:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was wanting''].'
 revisions:
 - timestamp: '2026-04-23T09:42:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Agrippa said to Festus, “I myself was wanting to hear the man.” “Tomorrow,” he says, “you will hear him.”
-  to: Then Agrippa said to Festus, “I myself would like to hear the man.” “Tomorrow,” he says, “you will hear him.”
+  to: Then Agrippa said to Festus, “I myself was wanting to hear the man.” “Tomorrow,” he says, “you will hear him.”
   rationale: Changed 'was wanting' to 'would like' for more natural English while preserving the sense of Ἐβουλόμην. Left 'he says' and the rest unchanged.
 
+- timestamp: '2026-05-18T03:00:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Agrippa said to Festus[a], “I myself would like to hear the man.” “Tomorrow,” he says[c][b], “you will hear him.”'
+  to: 'Then Agrippa said to Festus[a], “I myself would like to hear the man.” “Tomorrow,” he says[c][b], “you will hear him.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was wanting''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

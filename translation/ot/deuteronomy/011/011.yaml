@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:25:55Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:47Z'
   unchanged: false
-  changes_summary: Changed 'the heavens' to 'heaven' for more natural English and closer idiomatic rendering of the Hebrew phrase 'rain of heaven.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 11:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the rain of the heavens''].'
 revisions:
 - timestamp: '2026-04-23T10:25:55Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But the land that you are crossing over to possess is a land of mountains and valleys; it drinks water from the rain of the heavens.
-  to: But the land that you are crossing over to possess is a land of mountains and valleys; it drinks water from the rain of heaven.
+  to: But the land that you are crossing over to possess is a land of mountains and valleys; it drinks water from the rain of the heavens.
   rationale: Changed 'the heavens' to 'heaven' for more natural English and closer idiomatic rendering of the Hebrew phrase 'rain of heaven.'
 
+- timestamp: '2026-05-18T02:55:47Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But the land that you are crossing over to possess is a land of mountains and valleys[b][a]; it drinks water from the rain of heaven.'
+  to: 'But the land that you are crossing over to possess is a land of mountains and valleys[b][a]; it drinks water from the rain of heaven.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the rain of the heavens''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

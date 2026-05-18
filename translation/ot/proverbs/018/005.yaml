@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:21:39Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:13Z'
   unchanged: false
-  changes_summary: Replaced 'or' with 'nor' for better coordination with 'is not good,' and removed 'in court' because the source says 'in judgment/justice' without explicitly adding 'court.'
+  changes_summary: 'doctrine_realignment: Proverbs 18:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of justice in court''].'
 revisions:
 - timestamp: '2026-04-23T11:21:39Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: To show partiality to the wicked is not good, or to deprive the righteous of justice in court.
-  to: To show partiality to the wicked is not good, nor to deprive the righteous of justice.
+  to: To show partiality to the wicked is not good, or to deprive the righteous of justice in court.
   rationale: Replaced 'or' with 'nor' for better coordination with 'is not good,' and removed 'in court' because the source says 'in judgment/justice' without explicitly adding 'court.'
 
+- timestamp: '2026-05-18T02:55:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'To show partiality to the wicked is not good[b][a], nor to deprive the righteous of justice.'
+  to: 'To show partiality to the wicked is not good[b][a], nor to deprive the righteous of justice.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of justice in court''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

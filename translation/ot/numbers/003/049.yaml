@@ -65,19 +65,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:09Z'
   unchanged: false
-  changes_summary: Replaced 'the redeemed of the Levites' with 'those redeemed by the Levites' for more natural English and to reflect the sense of the Hebrew construct more clearly.
+  changes_summary: 'doctrine_realignment: Numbers 3:49 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the redeemed of the Levites''].'
 revisions:
 - timestamp: '2026-04-23T11:15:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Moses took the redemption money from those who were in excess over the redeemed of the Levites.
-  to: And Moses took the redemption money from those who were in excess over those redeemed by the Levites.
+  to: And Moses took the redemption money from those who were in excess over the redeemed of the Levites.
   rationale: Replaced 'the redeemed of the Levites' with 'those redeemed by the Levites' for more natural English and to reflect the sense of the Hebrew construct more clearly.
 
+- timestamp: '2026-05-18T02:57:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Moses took the redemption money from those who were in excess over those redeemed by the Levites[a][b].'
+  to: 'And Moses took the redemption money from those who were in excess over those redeemed by the Levites[a][b].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the redeemed of the Levites''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

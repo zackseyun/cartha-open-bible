@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:47Z'
   unchanged: false
-  changes_summary: Changed 'make your neighbor a loan of anything' to the more natural and accurate 'lend your neighbor anything.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 24:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a loan of anything''].'
 revisions:
 - timestamp: '2026-04-23T10:26:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When you make your neighbor a loan of anything, you shall not go into his house to take his pledge.
-  to: When you lend your neighbor anything, you shall not go into his house to take his pledge.
+  to: When you make your neighbor a loan of anything, you shall not go into his house to take his pledge.
   rationale: Changed 'make your neighbor a loan of anything' to the more natural and accurate 'lend your neighbor anything.'
 
+- timestamp: '2026-05-18T02:55:47Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When you lend your neighbor anything[a], you shall not go into his house to take his pledge.'
+  to: 'When you lend your neighbor anything[a], you shall not go into his house to take his pledge.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a loan of anything''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

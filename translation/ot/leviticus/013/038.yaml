@@ -56,19 +56,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:10:13Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:41Z'
   unchanged: false
-  changes_summary: Changed 'their body' to 'the body' for a more formal and literal rendering of the singular Hebrew while preserving natural English. No other changes needed.
+  changes_summary: 'doctrine_realignment: Leviticus 13:38 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the skin of their body''].'
 revisions:
 - timestamp: '2026-04-23T11:10:13Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And if a man or a woman has bright spots on the skin of their body, white bright spots,
-  to: And if a man or a woman has bright spots on the skin of the body, white bright spots,
+  to: And if a man or a woman has bright spots on the skin of their body, white bright spots,
   rationale: Changed 'their body' to 'the body' for a more formal and literal rendering of the singular Hebrew while preserving natural English. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:41Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And if a man or a woman has bright spots on the skin of the body[a], white bright spots,'
+  to: 'And if a man or a woman has bright spots on the skin of the body[a], white bright spots,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the skin of their body''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:18Z'
   unchanged: false
-  changes_summary: Changed 'shameful accusations' to 'false accusations' for better lexical accuracy of עֲלִילֹת דְּבָרִים; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: Deuteronomy 22:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shameful accusations''].'
 revisions:
 - timestamp: '2026-04-23T10:26:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: and he charges her with shameful accusations and brings a bad name upon her, saying, ‘I took this woman, and when I came near to her, I did not find evidence of virginity in her.’
-  to: and he charges her with false accusations and brings a bad name upon her, saying, ‘I took this woman, and when I came near to her, I did not find evidence of virginity in her.’
+  to: and he charges her with shameful accusations and brings a bad name upon her, saying, ‘I took this woman, and when I came near to her, I did not find evidence of virginity in her.’
   rationale: Changed 'shameful accusations' to 'false accusations' for better lexical accuracy of עֲלִילֹת דְּבָרִים; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T02:56:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and he charges her with false accusations and brings a bad name upon her[a], saying, ‘I took this woman, and when I came near to her[d][c][b], I did not find evidence of virginity in her.’'
+  to: 'and he charges her with false accusations and brings a bad name upon her[a], saying, ‘I took this woman, and when I came near to her[d][c][b], I did not find evidence of virginity in her.’'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shameful accusations''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

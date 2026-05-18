@@ -4,7 +4,7 @@ source:
   edition: SBLGNT
   text: ἀλλ’ εἰ καὶ πάσχοιτε διὰ δικαιοσύνην, μακάριοι. τὸν δὲ φόβον αὐτῶν μὴ φοβηθῆτε μηδὲ ταραχθῆτε,
 translation:
-  text: But even if you should suffer for righteousness[a], you are blessed. And do not fear what they fear, nor be troubled,
+  text: But even if you should suffer for righteousness, you are blessed. And do not fear their fear, nor be troubled,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -85,10 +85,10 @@ theological_decisions:
   rationale: The doctrine file lists δικαιοσύνη with default English 'righteousness,' preserving 'justice' as an alternative where relevant. In 1 Peter 3:14 the context is suffering for upright conduct before God and others, so 'righteousness' best preserves the moral-theological sense without narrowing it to social justice alone.
   doctrine_reference: 'DOCTRINE.md Contested terms: δικαιοσύνη → righteousness'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:36:01Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:33Z'
   unchanged: false
-  changes_summary: Revised 'do not fear their fear' to the more natural and contextually accurate 'do not fear what they fear.'
+  changes_summary: 'doctrine_realignment: 1 Peter 3:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their fear''].'
 revisions:
 - timestamp: '2026-04-23T09:36:01Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -98,6 +98,13 @@ revisions:
   to: But even if you should suffer for righteousness, you are blessed. And do not fear what they fear, nor be troubled,
   rationale: Revised 'do not fear their fear' to the more natural and contextually accurate 'do not fear what they fear.'
 
+- timestamp: '2026-05-18T03:10:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But even if you should suffer for righteousness[a], you are blessed. And do not fear what they fear, nor be troubled,'
+  to: 'But even if you should suffer for righteousness, you are blessed. And do not fear their fear, nor be troubled,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their fear''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

@@ -90,19 +90,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:17:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:56Z'
   unchanged: false
-  changes_summary: Changed 'officials' to 'rulers' for closer lexical correspondence to שָׂרֵי. Kept the rest substantially the same, including the implied 'sons' with 'guardians of Ahab's sons' for natural English and completeness.
+  changes_summary: 'doctrine_realignment: 2 Kings 10:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the officials of Jezreel''].'
 revisions:
 - timestamp: '2026-04-23T10:17:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: Now Ahab had seventy sons in Samaria. And Jehu wrote letters and sent them to Samaria, to the officials of Jezreel, the elders, and the guardians of Ahab's sons, saying,
-  to: Now Ahab had seventy sons in Samaria. And Jehu wrote letters and sent them to Samaria, to the rulers of Jezreel, the elders, and the guardians of Ahab's sons, saying,
+  from: 'Now Ahab had seventy sons in Samaria. And Jehu wrote letters and sent them to Samaria, to the officials of Jezreel, the elders, and the guardians of Ahab''s sons, saying,'
+  to: 'Now Ahab had seventy sons in Samaria. And Jehu wrote letters and sent them to Samaria, to the officials of Jezreel, the elders, and the guardians of Ahab''s sons, saying,'
   rationale: Changed 'officials' to 'rulers' for closer lexical correspondence to שָׂרֵי. Kept the rest substantially the same, including the implied 'sons' with 'guardians of Ahab's sons' for natural English and completeness.
 
+- timestamp: '2026-05-18T02:58:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now Ahab had seventy sons in Samaria[a]. And Jehu wrote letters and sent them to Samaria, to the rulers of Jezreel, the elders, and the guardians of Ahab''s sons, saying[b],'
+  to: 'Now Ahab had seventy sons in Samaria[a]. And Jehu wrote letters and sent them to Samaria, to the rulers of Jezreel, the elders, and the guardians of Ahab''s sons, saying[b],'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the officials of Jezreel''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

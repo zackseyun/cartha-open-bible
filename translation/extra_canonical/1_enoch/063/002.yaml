@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch63.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 63, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And they will bless and praise the Lord of spirits[a], and they will say, “Blessed is the Lord of spirits, the Lord of the kings, the Lord of the mighty, the Lord of the great ones, the Lord of glory[c][b], and the Lord of wisdom.”
+  text: And they will bless and praise the Lord of spirits, and they will say, “Blessed is the Lord of spirits, and the Lord of the kings, and the Lord of the mighty, and the Lord of the rich, and the Lord of glory, and the Lord of wisdom.”
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -163,12 +163,18 @@ revisions:
   from: And they will bless and praise the Lord of spirits, and they will say, “Blessed is the Lord of spirits, and the Lord of the kings, and the Lord of the mighty, and the Lord of the rich, and the Lord of glory, and the Lord of wisdom.”
   to: And they will bless and praise the Lord of spirits, and they will say, “Blessed is the Lord of spirits, the Lord of the kings, the Lord of the mighty, the Lord of the great ones, the Lord of glory, and the Lord of wisdom.”
   rationale: Removed repeated 'and' within the quoted blessing for smoother, more formal English while preserving the list structure; changed 'the rich' to 'the great ones' to better reflect ብዑላን as nobles/great men rather than specifically wealthy people.
+- timestamp: '2026-05-18T03:10:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they will bless and praise the Lord of spirits[a], and they will say, “Blessed is the Lord of spirits, the Lord of the kings, the Lord of the mighty, the Lord of the great ones, the Lord of glory[c][b], and the Lord of wisdom.”'
+  to: 'And they will bless and praise the Lord of spirits, and they will say, “Blessed is the Lord of spirits, and the Lord of the kings, and the Lord of the mighty, and the Lord of the rich, and the Lord of glory, and the Lord of wisdom.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the rich''].'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:36:56Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:48Z'
   unchanged: false
-  changes_summary: Removed repeated 'and' within the quoted blessing for smoother, more formal English while preserving the list structure; changed 'the rich' to 'the great ones' to better reflect ብዑላን as nobles/great men rather than specifically wealthy people.
-
+  changes_summary: 'doctrine_realignment: 1 Enoch 63:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the rich''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

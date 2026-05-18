@@ -19,7 +19,7 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But let us lie in wait for the righteous man[a], because he is troublesome to us and opposes our deeds, and reproaches us for sins against the law[b], and charges us with sins against our upbringing.
+  text: But let us lie in wait for the righteous man, because he is troublesome to us and opposes our deeds, and reproaches us for sins against the law, and charges us with sins against our training.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -127,10 +127,10 @@ theological_decisions:
   - our instruction
   rationale: The context is ethical accusation. 'Training' preserves the formative sense of παιδεία without narrowing it to formal schooling. The phrase likely refers to the standards inculcated in them, which they are accused of violating.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:47:59Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:05Z'
   unchanged: false
-  changes_summary: Changed 'training' to 'upbringing' for παιδείας, which more naturally reflects moral formation/instruction in this context while preserving the formal tone. No other changes needed.
+  changes_summary: 'doctrine_realignment: Wisdom of Solomon 2:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sins against our training''].'
 revisions:
 - timestamp: '2026-04-23T15:47:59Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -140,6 +140,13 @@ revisions:
   to: But let us lie in wait for the righteous man, because he is troublesome to us and opposes our deeds, and reproaches us for sins against the law, and charges us with sins against our upbringing.
   rationale: Changed 'training' to 'upbringing' for παιδείας, which more naturally reflects moral formation/instruction in this context while preserving the formal tone. No other changes needed.
 
+- timestamp: '2026-05-18T03:10:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But let us lie in wait for the righteous man[a], because he is troublesome to us and opposes our deeds, and reproaches us for sins against the law[b], and charges us with sins against our upbringing.'
+  to: 'But let us lie in wait for the righteous man, because he is troublesome to us and opposes our deeds, and reproaches us for sins against the law, and charges us with sins against our training.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sins against our training''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

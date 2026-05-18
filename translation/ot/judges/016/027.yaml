@@ -89,19 +89,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:07:39Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:20Z'
   unchanged: false
-  changes_summary: Replaced 'as he entertained them' with 'as he performed' to avoid adding the object 'them,' which is not explicit in the source, while preserving the sense of Samson being made sport for the crowd.
+  changes_summary: 'doctrine_realignment: Judges 16:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as he entertained them''].'
 revisions:
 - timestamp: '2026-04-23T11:07:39Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now the house was full of men and women, and all the lords of the Philistines were there. And on the roof were about three thousand men and women watching Samson as he entertained them.
-  to: Now the house was full of men and women, and all the lords of the Philistines were there. And on the roof were about three thousand men and women watching Samson as he performed.
+  to: Now the house was full of men and women, and all the lords of the Philistines were there. And on the roof were about three thousand men and women watching Samson as he entertained them.
   rationale: Replaced 'as he entertained them' with 'as he performed' to avoid adding the object 'them,' which is not explicit in the source, while preserving the sense of Samson being made sport for the crowd.
 
+- timestamp: '2026-05-18T02:56:20Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now the house was full of men and women[a], and all the lords of the Philistines were there. And on the roof were about three thousand men and women watching Samson as he performed.'
+  to: 'Now the house was full of men and women[a], and all the lords of the Philistines were there. And on the roof were about three thousand men and women watching Samson as he performed.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as he entertained them''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -12,7 +12,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch01.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the lofty mountains will quake[a], and the high hills will be brought low[c][b]; they will melt like wax before the flame.
+  text: And the lofty mountains will quake, and the high hills will be brought low; they will melt like wax before the blaze.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -129,10 +129,10 @@ enoch_witnesses:
   source_warnings:
   - Dillmann 1851 chapter OCR exists for chapter 1, but verse-aligned extraction is not yet implemented in this prompt builder.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:35:26Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:48Z'
   unchanged: false
-  changes_summary: Changed “blaze” to “flame” for closer lexical correspondence to the source term for fire/flame; otherwise retained the accurate and natural rendering.
+  changes_summary: 'doctrine_realignment: 1 Enoch 1:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the blaze''].'
 revisions:
 - timestamp: '2026-04-23T11:35:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -142,6 +142,13 @@ revisions:
   to: And the lofty mountains will quake, and the high hills will be brought low; they will melt like wax before the flame.
   rationale: Changed “blaze” to “flame” for closer lexical correspondence to the source term for fire/flame; otherwise retained the accurate and natural rendering.
 
+- timestamp: '2026-05-18T03:10:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the lofty mountains will quake[a], and the high hills will be brought low[c][b]; they will melt like wax before the flame.'
+  to: 'And the lofty mountains will quake, and the high hills will be brought low; they will melt like wax before the blaze.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the blaze''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

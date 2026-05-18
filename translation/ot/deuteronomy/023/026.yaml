@@ -97,19 +97,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:42Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:18Z'
   unchanged: false
-  changes_summary: Replaced 'wield a sickle against' with the more literal and natural 'put a sickle to,' which better reflects the Hebrew idiom. No other changes needed.
+  changes_summary: 'doctrine_realignment: Deuteronomy 23:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall not wield''].'
 revisions:
 - timestamp: '2026-04-23T10:26:42Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: When you come into your neighbor’s standing grain, you may pluck heads with your hand, but you shall not wield a sickle against your neighbor’s standing grain.
-  to: When you come into your neighbor’s standing grain, you may pluck heads with your hand, but you shall not put a sickle to your neighbor’s standing grain.
+  to: When you come into your neighbor’s standing grain, you may pluck heads with your hand, but you shall not wield a sickle against your neighbor’s standing grain.
   rationale: Replaced 'wield a sickle against' with the more literal and natural 'put a sickle to,' which better reflects the Hebrew idiom. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.'
+  to: 'When you come into your neighbor’s standing grain[a], you may pluck heads with your hand[b], but you shall not put a sickle to your neighbor’s standing grain.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall not wield''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

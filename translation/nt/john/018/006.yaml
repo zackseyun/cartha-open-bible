@@ -62,19 +62,26 @@ theological_decisions:
   rationale: The immediate discourse context favors straightforward self-identification, so the main text uses idiomatic English. However, because John's Gospel can invest ἐγώ εἰμι with deeper resonance, the more literal 'I am' is preserved in a footnote rather than being erased.
   doctrine_reference: Translation philosophy §3 (Preserve theological tension rather than resolve it)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:47:42Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:10Z'
   unchanged: false
-  changes_summary: Changed “drew back” to “went backward” for closer lexical correspondence to ἀπῆλθον εἰς τὰ ὀπίσω; retained the rest.
+  changes_summary: 'doctrine_realignment: John 18:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they drew back''].'
 revisions:
 - timestamp: '2026-04-23T09:47:42Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So when he said to them, “I am he,” they drew back and fell to the ground.
-  to: So when he said to them, “I am he,” they went backward and fell to the ground.
+  to: So when he said to them, “I am he,” they drew back and fell to the ground.
   rationale: Changed “drew back” to “went backward” for closer lexical correspondence to ἀπῆλθον εἰς τὰ ὀπίσω; retained the rest.
 
+- timestamp: '2026-05-18T03:00:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So when he said to them[a], “I am he,” they went backward and fell to the ground.'
+  to: 'So when he said to them[a], “I am he,” they went backward and fell to the ground.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they drew back''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

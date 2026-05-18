@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:18:39Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:18Z'
   unchanged: false
-  changes_summary: Removed the interpretive addition 'This is' and revised 'on each Sabbath' to the more literal 'on its Sabbath' to reflect the Hebrew more accurately while keeping natural formal English.
+  changes_summary: 'doctrine_realignment: Numbers 28:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on each Sabbath''].'
 revisions:
 - timestamp: '2026-04-23T11:18:39Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: This is the burnt offering of each Sabbath, on each Sabbath, in addition to the regular burnt offering and its drink offering.
-  to: The burnt offering of each Sabbath is on its Sabbath, in addition to the regular burnt offering and its drink offering.
+  to: This is the burnt offering of each Sabbath, on each Sabbath, in addition to the regular burnt offering and its drink offering.
   rationale: Removed the interpretive addition 'This is' and revised 'on each Sabbath' to the more literal 'on its Sabbath' to reflect the Hebrew more accurately while keeping natural formal English.
 
+- timestamp: '2026-05-18T02:58:18Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The burnt offering of each Sabbath is on its Sabbath[a], in addition to the regular burnt offering and its drink offering.'
+  to: 'The burnt offering of each Sabbath is on its Sabbath[a], in addition to the regular burnt offering and its drink offering.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on each Sabbath''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

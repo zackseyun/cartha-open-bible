@@ -108,19 +108,26 @@ theological_decisions:
   rationale: The verse uses the traditional Hebrew term for the realm of the dead. Translating it as 'Sheol' preserves the text's theological and poetic texture without forcing a later doctrinal interpretation of the afterlife.
   doctrine_reference: 'DOCTRINE.md: preserve theological tension rather than resolve it; readable modern English with documented lexical choices'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:47:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:19Z'
   unchanged: false
-  changes_summary: Changed 'cried for help' to 'cried out' to more directly reflect שִׁוַּעְתִּי without adding an explicit object not present in the Hebrew.
+  changes_summary: 'doctrine_realignment: Sirach 51:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I cried for help''].'
 revisions:
 - timestamp: '2026-04-23T15:47:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And I raised my voice from the earth, and from the gates of Sheol I cried for help.
-  to: And I raised my voice from the earth, and from the gates of Sheol I cried out.
+  to: And I raised my voice from the earth, and from the gates of Sheol I cried for help.
   rationale: Changed 'cried for help' to 'cried out' to more directly reflect שִׁוַּעְתִּי without adding an explicit object not present in the Hebrew.
 
+- timestamp: '2026-05-18T02:59:19Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I raised my voice from the earth[b][a], and from the gates of Sheol I cried out.'
+  to: 'And I raised my voice from the earth[b][a], and from the gates of Sheol I cried out.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I cried for help''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

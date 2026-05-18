@@ -87,19 +87,26 @@ theological_decisions:
   rationale: This verse, as phrased in Luke, gives a concise universal statement. The translation should reflect Luke's wording alone and not import qualifications not present in the Greek text. Interpretive harmonization belongs in commentary, not the main translation.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:05Z'
   unchanged: false
-  changes_summary: Changed 'divorced from a husband' to 'divorced from her husband' for more natural English while preserving the Greek sense.
+  changes_summary: 'doctrine_realignment: Luke 16:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from a husband''].'
 revisions:
 - timestamp: '2026-04-23T09:50:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Everyone who divorces his wife and marries another commits adultery, and he who marries a woman divorced from a husband commits adultery.
-  to: Everyone who divorces his wife and marries another commits adultery, and he who marries a woman divorced from her husband commits adultery.
+  to: Everyone who divorces his wife and marries another commits adultery, and he who marries a woman divorced from a husband commits adultery.
   rationale: Changed 'divorced from a husband' to 'divorced from her husband' for more natural English while preserving the Greek sense.
 
+- timestamp: '2026-05-18T03:01:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Everyone who divorces his wife and marries another commits adultery[b][a], and he who marries a woman divorced from her husband commits adultery.'
+  to: 'Everyone who divorces his wife and marries another commits adultery[b][a], and he who marries a woman divorced from her husband commits adultery.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from a husband''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

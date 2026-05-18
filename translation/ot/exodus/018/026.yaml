@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:31:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:56Z'
   unchanged: false
-  changes_summary: Adjusted 'bring every difficult matter' to 'Every difficult matter they would bring' for closer alignment with the source word order and smoother formal English. No substantive meaning change.
+  changes_summary: 'doctrine_realignment: Exodus 18:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every difficult matter''].'
 revisions:
 - timestamp: '2026-04-23T10:31:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And they judged the people at all times. They would bring every difficult matter to Moses, but every small matter they themselves would judge.
-  to: And they judged the people at all times. Every difficult matter they would bring to Moses, but every small matter they themselves would judge.
+  to: And they judged the people at all times. They would bring every difficult matter to Moses, but every small matter they themselves would judge.
   rationale: Adjusted 'bring every difficult matter' to 'Every difficult matter they would bring' for closer alignment with the source word order and smoother formal English. No substantive meaning change.
 
+- timestamp: '2026-05-18T02:55:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they judged the people at all times. Every difficult matter they would bring to Moses[a], but every small matter they themselves would judge.'
+  to: 'And they judged the people at all times. Every difficult matter they would bring to Moses[a], but every small matter they themselves would judge.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every difficult matter''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

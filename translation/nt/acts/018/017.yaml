@@ -91,19 +91,26 @@ theological_decisions:
   rationale: The Greek text simply says πάντες ('all') without an explicit subject. Some manuscripts and interpreters associate the crowd with Greeks, while some later traditions read Jews. The translation should not import an identification the source text does not state. The ambiguity is preserved in the main text and clarified in a footnote.
   doctrine_reference: Preserve theological/interpreive tension rather than resolve it; original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:40:56Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:41Z'
   unchanged: false
-  changes_summary: Changed 'were beating' to 'beat' to better reflect the Greek aorist and improve natural formal English; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Acts 18:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were beating''].'
 revisions:
 - timestamp: '2026-04-23T09:40:56Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then they all seized Sosthenes, the synagogue ruler, and were beating him in front of the tribunal. But Gallio paid no attention to these things.
-  to: Then they all seized Sosthenes, the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.
+  to: Then they all seized Sosthenes, the synagogue ruler, and were beating him in front of the tribunal. But Gallio paid no attention to these things.
   rationale: Changed 'were beating' to 'beat' to better reflect the Greek aorist and improve natural formal English; otherwise retained the draft.
 
+- timestamp: '2026-05-18T03:00:41Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.'
+  to: 'Then they all seized Sosthenes[a], the synagogue ruler, and beat him in front of the tribunal. But Gallio paid no attention to these things.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were beating''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

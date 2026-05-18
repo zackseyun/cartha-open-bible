@@ -100,19 +100,26 @@ theological_decisions:
   rationale: Project policy gives primacy to the surviving Hebrew of Sirach where extant. Here the Hebrew is brief and somewhat opaque, while the Greek appears to reflect either an expanded Vorlage or interpretive development. The main translation therefore follows the Hebrew, but the Greek is significant enough to preserve for auditability and interpretation.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives; use Greek parallel as actual input without displacing Hebrew primacy.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:48Z'
   unchanged: false
-  changes_summary: 'Revised the clause to reflect the Hebrew more naturally and accurately: תבער means ''burns/blazes'' rather than ''has kindled,'' and the subject is the fire rather than the man.'
+  changes_summary: 'doctrine_realignment: Sirach 12:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he has kindled''].'
 revisions:
 - timestamp: '2026-04-23T15:42:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He will not pass by until he has kindled a fire in him.
-  to: He will not pass by until a fire burns in him.
+  to: He will not pass by until he has kindled a fire in him.
   rationale: 'Revised the clause to reflect the Hebrew more naturally and accurately: תבער means ''burns/blazes'' rather than ''has kindled,'' and the subject is the fire rather than the man.'
 
+- timestamp: '2026-05-18T02:57:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He will not pass by until a fire burns in him[a].'
+  to: 'He will not pass by until a fire burns in him[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he has kindled''].'
 cross_check:
   status: needs_review
   agreement: 0.6

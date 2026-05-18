@@ -98,19 +98,26 @@ theological_decisions:
   rationale: The Hebrew noun צדק can overlap with both 'righteousness' and 'justice.' In this legal command, either is possible. 'Righteously' was chosen to preserve the lexical form and moral dimension, while the justice nuance is preserved as an alternative.
   doctrine_reference: DOCTRINE.md § Translation philosophy 5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:24:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:49Z'
   unchanged: false
-  changes_summary: Added 'the' before 'cases' for more natural English, and changed 'and the resident foreigner with him' to 'or the resident foreigner with him' to better reflect the Hebrew sequence 'between a man and his brother or his resident foreigner.'
+  changes_summary: 'doctrine_realignment: Deuteronomy 1:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Hear cases between your brothers''].'
 revisions:
 - timestamp: '2026-04-23T10:24:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And at that time I commanded your judges, saying, ‘Hear cases between your brothers, and judge righteously between a man and his brother and the resident foreigner with him.’
-  to: And at that time I commanded your judges, saying, ‘Hear the cases between your brothers, and judge righteously between a man and his brother or the resident foreigner with him.’
+  to: And at that time I commanded your judges, saying, ‘Hear cases between your brothers, and judge righteously between a man and his brother and the resident foreigner with him.’
   rationale: Added 'the' before 'cases' for more natural English, and changed 'and the resident foreigner with him' to 'or the resident foreigner with him' to better reflect the Hebrew sequence 'between a man and his brother or his resident foreigner.'
 
+- timestamp: '2026-05-18T02:56:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And at that time I commanded your judges[a], saying, ‘Hear the cases between your brothers[c][b], and judge righteously between a man and his brother or the resident foreigner with him.’'
+  to: 'And at that time I commanded your judges[a], saying, ‘Hear the cases between your brothers[c][b], and judge righteously between a man and his brother or the resident foreigner with him.’'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Hear cases between your brothers''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

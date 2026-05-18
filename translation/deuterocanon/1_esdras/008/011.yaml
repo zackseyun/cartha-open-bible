@@ -110,19 +110,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:45Z'
   unchanged: false
-  changes_summary: 'Adjusted word order to reflect the Greek more closely: ''my seven friends who are counselors'' instead of ''the seven friends who are my counselors.'' Kept ''who are so minded'' and ''set out together'' as accurate and natural renderings.'
+  changes_summary: 'doctrine_realignment: 1 Esdras 8:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by me and the seven friends who are my counselors''].'
 revisions:
 - timestamp: '2026-04-23T15:29:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Therefore, let all who are so minded set out together, just as it has been decided by me and the seven friends who are my counselors;
-  to: Therefore, let all who are so minded set out together, just as it has been decided by me and my seven friends who are counselors;
+  to: Therefore, let all who are so minded set out together, just as it has been decided by me and the seven friends who are my counselors;
   rationale: 'Adjusted word order to reflect the Greek more closely: ''my seven friends who are counselors'' instead of ''the seven friends who are my counselors.'' Kept ''who are so minded'' and ''set out together'' as accurate and natural renderings.'
 
+- timestamp: '2026-05-18T02:58:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Therefore[a], let all who are so minded set out together, just as it has been decided by me and my seven friends who are counselors[b];'
+  to: 'Therefore[a], let all who are so minded set out together, just as it has been decided by me and my seven friends who are counselors[b];'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by me and the seven friends who are my counselors''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

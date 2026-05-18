@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:12Z'
   unchanged: false
-  changes_summary: Replaced the interpretive phrase 'kept a jealous eye on' with the more direct 'eyed,' which better reflects the source without adding 'jealous' explicitly. Retained 'from that day forward' as a natural rendering of the time expression.
+  changes_summary: 'doctrine_realignment: 1 Samuel 18:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''kept a jealous eye on''].'
 revisions:
 - timestamp: '2026-04-23T10:11:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Saul kept a jealous eye on David from that day forward.
-  to: And Saul eyed David from that day forward.
+  to: And Saul kept a jealous eye on David from that day forward.
   rationale: Replaced the interpretive phrase 'kept a jealous eye on' with the more direct 'eyed,' which better reflects the source without adding 'jealous' explicitly. Retained 'from that day forward' as a natural rendering of the time expression.
 
+- timestamp: '2026-05-18T02:56:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Saul eyed David from that day forward[a].'
+  to: 'And Saul eyed David from that day forward[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''kept a jealous eye on''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

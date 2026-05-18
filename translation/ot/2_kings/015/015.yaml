@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:18:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:35Z'
   unchanged: false
-  changes_summary: Replaced 'his conspiracy' with 'the conspiracy' to reflect the Hebrew more precisely without adding possession not explicit in the text. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: 2 Kings 15:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and his conspiracy''].'
 revisions:
 - timestamp: '2026-04-23T10:18:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now the rest of the acts of Shallum, and his conspiracy that he conspired—behold, they are written in the Book of the Chronicles of the Kings of Israel.
-  to: Now the rest of the acts of Shallum, and the conspiracy that he conspired—behold, they are written in the Book of the Chronicles of the Kings of Israel.
+  to: Now the rest of the acts of Shallum, and his conspiracy that he conspired—behold, they are written in the Book of the Chronicles of the Kings of Israel.
   rationale: Replaced 'his conspiracy' with 'the conspiracy' to reflect the Hebrew more precisely without adding possession not explicit in the text. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:57:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now the rest of the acts of Shallum[a], and the conspiracy that he conspired—behold[c][b], they are written in the Book of the Chronicles of the Kings of Israel.'
+  to: 'Now the rest of the acts of Shallum[a], and the conspiracy that he conspired—behold[c][b], they are written in the Book of the Chronicles of the Kings of Israel.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and his conspiracy''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

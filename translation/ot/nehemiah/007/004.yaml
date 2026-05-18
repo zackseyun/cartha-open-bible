@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:13:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:32Z'
   unchanged: false
-  changes_summary: Changed 'had been rebuilt' to 'had been built' for closer lexical accuracy to the Hebrew, which simply says 'built' without the 're-' prefix.
+  changes_summary: 'doctrine_realignment: Nehemiah 7:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and no houses had been rebuilt''].'
 revisions:
 - timestamp: '2026-04-23T11:13:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now the city was wide and large, but the people within it were few, and no houses had been rebuilt.
-  to: Now the city was wide and large, but the people within it were few, and no houses had been built.
+  to: Now the city was wide and large, but the people within it were few, and no houses had been rebuilt.
   rationale: Changed 'had been rebuilt' to 'had been built' for closer lexical accuracy to the Hebrew, which simply says 'built' without the 're-' prefix.
 
+- timestamp: '2026-05-18T02:54:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now the city was wide and large[a], but the people within it were few, and no houses had been built.'
+  to: 'Now the city was wide and large[a], but the people within it were few, and no houses had been built.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and no houses had been rebuilt''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

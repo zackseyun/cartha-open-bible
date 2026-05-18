@@ -93,19 +93,26 @@ theological_decisions:
   rationale: The Hebrew legal formulation is grammatically masculine singular. Per the gender-accurate principle, the English should reflect that rather than neutralizing it.
   doctrine_reference: Translation philosophy 4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:31:52Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:11Z'
   unchanged: false
-  changes_summary: Changed 'remains alive' to 'survives' for a more natural rendering of the verb while preserving the meaning. The rest is accurate and complete.
+  changes_summary: 'doctrine_realignment: Exodus 21:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remains alive''].'
 revisions:
 - timestamp: '2026-04-23T10:31:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: However, if he remains alive for a day or two, he shall not be avenged, for he is his money.
-  to: However, if he survives for a day or two, he shall not be avenged, for he is his money.
+  to: However, if he remains alive for a day or two, he shall not be avenged, for he is his money.
   rationale: Changed 'remains alive' to 'survives' for a more natural rendering of the verb while preserving the meaning. The rest is accurate and complete.
 
+- timestamp: '2026-05-18T02:56:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.'
+  to: 'However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remains alive''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

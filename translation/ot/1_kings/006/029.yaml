@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:39Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:13Z'
   unchanged: false
-  changes_summary: Changed 'rooms' to 'walls' to match the Hebrew, which refers to the inner and outer sides/walls, not rooms.
+  changes_summary: 'doctrine_realignment: 1 Kings 6:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the inner and outer rooms''].'
 revisions:
 - timestamp: '2026-04-23T10:06:39Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He carved all the walls of the house all around with engraved figures of cherubim, palm trees, and open flowers, on the inner and outer rooms.
-  to: He carved all the walls of the house all around with engraved figures of cherubim, palm trees, and open flowers, on the inner and outer walls.
+  to: He carved all the walls of the house all around with engraved figures of cherubim, palm trees, and open flowers, on the inner and outer rooms.
   rationale: Changed 'rooms' to 'walls' to match the Hebrew, which refers to the inner and outer sides/walls, not rooms.
 
+- timestamp: '2026-05-18T02:56:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.'
+  to: 'He carved all the walls of the house all around with engraved figures of cherubim[a], palm trees, and open flowers[c][b], on the inner and outer walls.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the inner and outer rooms''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

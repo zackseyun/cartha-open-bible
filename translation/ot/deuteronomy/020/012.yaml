@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:26:19Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:47Z'
   unchanged: false
-  changes_summary: Replaced 'and it makes war against you' with 'but makes war against you' to better reflect the adversative sense and improve natural English flow.
+  changes_summary: 'doctrine_realignment: Deuteronomy 20:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it makes war against you''].'
 revisions:
 - timestamp: '2026-04-23T10:26:19Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But if it does not make peace with you, and it makes war against you, then you shall besiege it.
-  to: But if it does not make peace with you, but makes war against you, then you shall besiege it.
+  to: But if it does not make peace with you, and it makes war against you, then you shall besiege it.
   rationale: Replaced 'and it makes war against you' with 'but makes war against you' to better reflect the adversative sense and improve natural English flow.
 
+- timestamp: '2026-05-18T02:55:47Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But if it does not make peace with you[a], but makes war against you[b], then you shall besiege it.'
+  to: 'But if it does not make peace with you[a], but makes war against you[b], then you shall besiege it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it makes war against you''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

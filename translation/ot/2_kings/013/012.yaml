@@ -87,19 +87,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:17:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:49Z'
   unchanged: false
-  changes_summary: 'Revised ''how he fought with'' to ''with which he fought against'' to reflect the Hebrew more closely: גבורתו אשר נלחם עם links his might to the fighting, and עם here is better rendered ''against'' in context.'
+  changes_summary: 'doctrine_realignment: 2 Kings 13:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''how he fought with''].'
 revisions:
 - timestamp: '2026-04-23T10:17:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now the rest of the acts of Joash, and all that he did, and his might, how he fought with Amaziah king of Judah—are they not written in the Book of the Chronicles of the Kings of Israel?
-  to: Now the rest of the acts of Joash, and all that he did, and his might with which he fought against Amaziah king of Judah—are they not written in the Book of the Chronicles of the Kings of Israel?
+  to: Now the rest of the acts of Joash, and all that he did, and his might, how he fought with Amaziah king of Judah—are they not written in the Book of the Chronicles of the Kings of Israel?
   rationale: 'Revised ''how he fought with'' to ''with which he fought against'' to reflect the Hebrew more closely: גבורתו אשר נלחם עם links his might to the fighting, and עם here is better rendered ''against'' in context.'
 
+- timestamp: '2026-05-18T02:58:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now the rest of the acts of Joash[a], and all that he did[b], and his might with which he fought against Amaziah king of Judah—are they not written in the Book of the Chronicles of the Kings of Israel?'
+  to: 'Now the rest of the acts of Joash[a], and all that he did[b], and his might with which he fought against Amaziah king of Judah—are they not written in the Book of the Chronicles of the Kings of Israel?'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''how he fought with''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

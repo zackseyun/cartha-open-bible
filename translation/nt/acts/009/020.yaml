@@ -77,19 +77,26 @@ theological_decisions:
   rationale: The Greek phrase ὁ υἱὸς τοῦ θεοῦ is rendered directly and without reduction. This preserves the explicit christological claim of the text while avoiding interpretive expansion beyond what Luke states.
   doctrine_reference: Affirmations; Translation philosophy §1, §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:39:42Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:06Z'
   unchanged: false
-  changes_summary: Replaced 'this one' with 'he' for more natural English while preserving the referent of οὗτός; retained the rest as accurate and complete.
+  changes_summary: 'doctrine_realignment: Acts 9:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this one''].'
 revisions:
 - timestamp: '2026-04-23T09:39:42Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And immediately in the synagogues he began proclaiming Jesus, that this one is the Son of God.
-  to: And immediately in the synagogues he began proclaiming Jesus, that he is the Son of God.
+  to: And immediately in the synagogues he began proclaiming Jesus, that this one is the Son of God.
   rationale: Replaced 'this one' with 'he' for more natural English while preserving the referent of οὗτός; retained the rest as accurate and complete.
 
+- timestamp: '2026-05-18T03:00:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And immediately in the synagogues he began proclaiming Jesus[b][a], that he is the Son of God.'
+  to: 'And immediately in the synagogues he began proclaiming Jesus[b][a], that he is the Son of God.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this one''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

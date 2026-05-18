@@ -107,19 +107,26 @@ theological_decisions:
   rationale: The source text is Greek and uses κύριος, and the project's default rendering is 'Lord.' Small-caps 'LORD' is reserved as an English convention for explicit Hebrew YHWH representation; here the Greek witness governs.
   doctrine_reference: 'DOCTRINE.md Contested terms: κύριος → Lord; יְהוָה → the LORD'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:28:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:51Z'
   unchanged: false
-  changes_summary: Changed 'holy vessels' to 'sacred vessels' for more natural formal English matching ἱερῶν; removed the extra second 'and he' for smoother style without changing meaning.
+  changes_summary: 'doctrine_realignment: 1 Esdras 1:39 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''holy vessels''].'
 revisions:
 - timestamp: '2026-04-23T15:28:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And Nebuchadnezzar took some of the holy vessels of the Lord and carried them away, and he deposited them in his temple in Babylon.
-  to: And Nebuchadnezzar took some of the sacred vessels of the Lord and carried them away and deposited them in his temple in Babylon.
+  to: And Nebuchadnezzar took some of the holy vessels of the Lord and carried them away, and he deposited them in his temple in Babylon.
   rationale: Changed 'holy vessels' to 'sacred vessels' for more natural formal English matching ἱερῶν; removed the extra second 'and he' for smoother style without changing meaning.
 
+- timestamp: '2026-05-18T02:58:51Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Nebuchadnezzar took some of the sacred vessels of the Lord and carried them away and deposited them in his temple in Babylon[a].'
+  to: 'And Nebuchadnezzar took some of the sacred vessels of the Lord and carried them away and deposited them in his temple in Babylon[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''holy vessels''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

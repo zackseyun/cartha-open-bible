@@ -11,7 +11,7 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 6 = Addition F, segmented from Swete pages 796-797 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: The little spring that became a river is Esther[a], whom the king married and made queen; and there was light and sun and abundant water.
+  text: The little spring that became a river was Esther, whom the king married and made queen; and there was light and sun and abundant water.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -90,10 +90,10 @@ theological_decisions:
   rationale: This verse interprets symbolic dream imagery rather than making a doctrinal claim. The chosen English prioritizes clarity while preserving the metaphor and the identification of Esther with the river.
   doctrine_reference: 'Translation philosophy: optimal equivalence; preserve the source''s meaning without unnecessary paraphrase.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:38:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:56Z'
   unchanged: false
-  changes_summary: Changed 'was Esther' to 'is Esther' to reflect the Greek present tense ἐστιν more accurately; retained the rest as natural and complete.
+  changes_summary: 'doctrine_realignment: Additions to Esther 6:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was Esther''].'
 revisions:
 - timestamp: '2026-04-23T15:38:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -103,6 +103,13 @@ revisions:
   to: The little spring that became a river is Esther, whom the king married and made queen; and there was light and sun and abundant water.
   rationale: Changed 'was Esther' to 'is Esther' to reflect the Greek present tense ἐστιν more accurately; retained the rest as natural and complete.
 
+- timestamp: '2026-05-18T03:09:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The little spring that became a river is Esther[a], whom the king married and made queen; and there was light and sun and abundant water.'
+  to: 'The little spring that became a river was Esther, whom the king married and made queen; and there was light and sun and abundant water.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was Esther''].'
 cross_check:
   status: needs_review
   agreement: 0.6

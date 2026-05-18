@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:40:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:09Z'
   unchanged: false
-  changes_summary: Changed 'tribunal seat' to 'tribunal' for a more natural rendering of βῆμα while preserving the formal sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Acts 12:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the tribunal seat''].'
 revisions:
 - timestamp: '2026-04-23T09:40:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now on an appointed day, Herod, having put on royal clothing and having sat down on the tribunal seat, was delivering a public address to them.
-  to: Now on an appointed day, Herod, having put on royal clothing and having sat down on the tribunal, was delivering a public address to them.
+  to: Now on an appointed day, Herod, having put on royal clothing and having sat down on the tribunal seat, was delivering a public address to them.
   rationale: Changed 'tribunal seat' to 'tribunal' for a more natural rendering of βῆμα while preserving the formal sense. No other changes needed.
 
+- timestamp: '2026-05-18T03:01:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now on an appointed day[a], Herod, having put on royal clothing and having sat down on the tribunal[b], was delivering a public address to them.'
+  to: 'Now on an appointed day[a], Herod, having put on royal clothing and having sat down on the tribunal[b], was delivering a public address to them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the tribunal seat''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

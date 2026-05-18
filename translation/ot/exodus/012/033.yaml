@@ -88,19 +88,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:30:58Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:55Z'
   unchanged: false
-  changes_summary: Replaced 'pressed ... urgently' with 'urged ... on' to reflect the Hebrew more naturally; changed 'to send them out ... quickly' to 'hurrying to send them out' for smoother syntax; rendered 'We are all dying' as 'We are all dead men' to better match the Hebrew idiom.
+  changes_summary: 'doctrine_realignment: Exodus 12:33 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''urgently''].'
 revisions:
 - timestamp: '2026-04-23T10:30:58Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the Egyptians pressed the people urgently to send them out of the land quickly, for they said, “We are all dying.”
-  to: And the Egyptians urged the people on, hurrying to send them out of the land, for they said, “We are all dead men.”
+  to: And the Egyptians pressed the people urgently to send them out of the land quickly, for they said, “We are all dying.”
   rationale: Replaced 'pressed ... urgently' with 'urged ... on' to reflect the Hebrew more naturally; changed 'to send them out ... quickly' to 'hurrying to send them out' for smoother syntax; rendered 'We are all dying' as 'We are all dead men' to better match the Hebrew idiom.
 
+- timestamp: '2026-05-18T02:54:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the Egyptians urged the people on[a], hurrying to send them out of the land, for they said, “We are all dead men.”'
+  to: 'And the Egyptians urged the people on[a], hurrying to send them out of the land, for they said, “We are all dead men.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''urgently''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

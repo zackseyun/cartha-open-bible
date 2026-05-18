@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:09:08Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:32Z'
   unchanged: false
-  changes_summary: Removed 'that' and 'he would give' to better reflect the Hebrew narrative sequence with simple past verbs; smoothed the sentence while preserving all source elements.
+  changes_summary: 'doctrine_realignment: 1 Samuel 1:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he would give''].'
 revisions:
 - timestamp: '2026-04-23T10:09:08Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And when the day came that Elkanah sacrificed, he would give portions to Peninnah his wife and to all her sons and daughters.
-  to: And when the day came, Elkanah sacrificed and gave portions to Peninnah his wife and to all her sons and daughters.
+  to: And when the day came that Elkanah sacrificed, he would give portions to Peninnah his wife and to all her sons and daughters.
   rationale: Removed 'that' and 'he would give' to better reflect the Hebrew narrative sequence with simple past verbs; smoothed the sentence while preserving all source elements.
 
+- timestamp: '2026-05-18T02:55:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And when the day came[a], Elkanah sacrificed and gave portions to Peninnah his wife and to all her sons and daughters.'
+  to: 'And when the day came[a], Elkanah sacrificed and gave portions to Peninnah his wife and to all her sons and daughters.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he would give''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

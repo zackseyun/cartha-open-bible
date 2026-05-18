@@ -108,19 +108,26 @@ theological_decisions:
   rationale: The verse speaks of salvation as both already related to believers ('our') and yet still approaching ('nearer'). The translation should not collapse this into a single doctrinal stage. This preserves theological tension rather than resolving it beyond the text.
   doctrine_reference: Translation philosophy §3 Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:01:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:34Z'
   unchanged: false
-  changes_summary: Replaced the colon with a comma for smoother syntax and changed 'wake' to 'awaken' for a slightly more formal register matching the verse's tone.
+  changes_summary: 'doctrine_realignment: Romans 13:11 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to wake from sleep''].'
 revisions:
 - timestamp: '2026-04-23T10:01:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'And do this, knowing the time: that it is already the hour for you to wake from sleep, for now our salvation is nearer than when we believed.'
-  to: And do this, knowing the time, that it is already the hour for you to awaken from sleep, for now our salvation is nearer than when we believed.
+  to: 'And do this, knowing the time: that it is already the hour for you to wake from sleep, for now our salvation is nearer than when we believed.'
   rationale: Replaced the colon with a comma for smoother syntax and changed 'wake' to 'awaken' for a slightly more formal register matching the verse's tone.
 
+- timestamp: '2026-05-18T03:00:34Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And do this[a], knowing the time, that it is already the hour for you to awaken from sleep[b], for now our salvation is nearer than when we believed.'
+  to: 'And do this[a], knowing the time, that it is already the hour for you to awaken from sleep[b], for now our salvation is nearer than when we believed.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to wake from sleep''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

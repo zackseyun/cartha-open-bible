@@ -96,19 +96,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:06:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:27Z'
   unchanged: false
-  changes_summary: Removed 'through' to avoid adding a nuance not explicit in the source; otherwise retained the draft's accurate and natural rendering.
+  changes_summary: 'doctrine_realignment: Judges 5:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''pierced through''].'
 revisions:
 - timestamp: '2026-04-23T11:06:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: She reached out her hand for the tent peg, her right hand for the workmen’s hammer; then she struck Sisera, she shattered his head, she smashed and pierced through his temple.
-  to: She reached out her hand for the tent peg, her right hand for the workmen’s hammer; then she struck Sisera, she shattered his head, she smashed and pierced his temple.
+  to: She reached out her hand for the tent peg, her right hand for the workmen’s hammer; then she struck Sisera, she shattered his head, she smashed and pierced through his temple.
   rationale: Removed 'through' to avoid adding a nuance not explicit in the source; otherwise retained the draft's accurate and natural rendering.
 
+- timestamp: '2026-05-18T02:56:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'She reached out her hand for the tent peg[a], her right hand for the workmen’s hammer; then she struck Sisera, she shattered his head[c][b], she smashed and pierced his temple.'
+  to: 'She reached out her hand for the tent peg[a], her right hand for the workmen’s hammer; then she struck Sisera, she shattered his head[c][b], she smashed and pierced his temple.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''pierced through''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

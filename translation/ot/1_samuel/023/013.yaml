@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:31Z'
   unchanged: false
-  changes_summary: Replaced 'moved about' with 'went' for a more direct and natural rendering of the repeated verb, while preserving the sense of going wherever they could. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 23:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and moved about wherever they could go''].'
 revisions:
 - timestamp: '2026-04-23T10:11:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then David arose with his men, about six hundred men, and they went out from Keilah and moved about wherever they could go. And it was told to Saul that David had escaped from Keilah, so he stopped going out.
-  to: Then David arose with his men, about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah, so he stopped going out.
+  to: Then David arose with his men, about six hundred men, and they went out from Keilah and moved about wherever they could go. And it was told to Saul that David had escaped from Keilah, so he stopped going out.
   rationale: Replaced 'moved about' with 'went' for a more direct and natural rendering of the repeated verb, while preserving the sense of going wherever they could. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.'
+  to: 'Then David arose with his men[a], about six hundred men, and they went out from Keilah and went wherever they could go. And it was told to Saul that David had escaped from Keilah[b], so he stopped going out.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and moved about wherever they could go''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

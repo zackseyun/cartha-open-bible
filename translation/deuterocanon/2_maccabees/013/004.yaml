@@ -25,7 +25,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for all of them, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.
+  text: But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -128,10 +128,10 @@ theological_decisions:
   rationale: Within the narrative of 2 Maccabees, such exalted sovereignty language functions as a reference to God overruling human kings. Capitalization in English signals this interpretive judgment while remaining faithful to the text's reverential force.
   doctrine_reference: 'DOCTRINE.md: Translate titles; preserve theological weight without importing extra claims.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:34:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:00Z'
   unchanged: false
-  changes_summary: Changed 'for everything' to 'for all of them' to reflect πάντων more literally alongside 'the evils,' avoiding an unnatural absolute while preserving completeness.
+  changes_summary: 'doctrine_realignment: 2 Maccabees 13:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as being responsible for the evils and for everything''].'
 revisions:
 - timestamp: '2026-04-23T15:34:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -141,6 +141,13 @@ revisions:
   to: But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for all of them, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.
   rationale: Changed 'for everything' to 'for all of them' to reflect πάντων more literally alongside 'the evils,' avoiding an unnatural absolute while preserving completeness.
 
+- timestamp: '2026-05-18T03:10:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But the King of kings stirred up Antiochus’s anger against the wretch[a], and when Lysias pointed him out as being responsible for the evils and for all of them, he ordered them to put him to death, taking him to Beroea[b], as is the custom in that place.'
+  to: 'But the King of kings stirred up Antiochus’s anger against the wretch, and when Lysias pointed him out as being responsible for the evils and for everything, he ordered them to put him to death, taking him to Beroea, as is the custom in that place.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as being responsible for the evils and for everything''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

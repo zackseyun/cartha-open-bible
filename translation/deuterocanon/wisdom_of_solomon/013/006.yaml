@@ -10,7 +10,7 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Yet even for these there is only slight blame[a], for they too perhaps go astray while seeking God and desiring to find him;
+  text: Yet even for these there is only slight blame, for they too perhaps go astray while seeking God and wanting to find him;
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -93,10 +93,10 @@ theological_decisions:
   rationale: In Wisdom 13 the author critiques people who infer divinity from creation yet fail to recognize the true Creator. The singular θεόν here is best understood as the true God whom they are attempting, however mistakenly, to seek. Rendering 'God' preserves that theological frame.
   doctrine_reference: 'Translation philosophy: original-language primacy; preserve theological tension rather than flatten context.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:49:20Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:02Z'
   unchanged: false
-  changes_summary: Changed 'wanting' to 'desiring' for a slightly more formal register while preserving the sense of θέλοντες. No other changes needed.
+  changes_summary: 'doctrine_realignment: Wisdom of Solomon 13:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''wanting to find him''].'
 revisions:
 - timestamp: '2026-04-23T15:49:20Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -106,6 +106,13 @@ revisions:
   to: Yet even for these there is only slight blame, for they too perhaps go astray while seeking God and desiring to find him;
   rationale: Changed 'wanting' to 'desiring' for a slightly more formal register while preserving the sense of θέλοντες. No other changes needed.
 
+- timestamp: '2026-05-18T03:10:02Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Yet even for these there is only slight blame[a], for they too perhaps go astray while seeking God and desiring to find him;'
+  to: 'Yet even for these there is only slight blame, for they too perhaps go astray while seeking God and wanting to find him;'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''wanting to find him''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

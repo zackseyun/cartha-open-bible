@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וְ/הַ/כֶּ֣סֶף וְ/הַ/זָּהָ֗ב נָתַ֤ן יְהוֹיָקִים֙ לְ/פַרְעֹ֔ה אַ֚ךְ הֶעֱרִ֣יךְ אֶת הָ/אָ֔רֶץ לָ/תֵ֥ת אֶת הַ/כֶּ֖סֶף עַל פִּ֣י פַרְעֹ֑ה אִ֣ישׁ כְּ/עֶרְכּ֗/וֹ נָגַ֞שׂ אֶת הַ/כֶּ֤סֶף וְ/אֶת הַ/זָּהָב֙ אֶת עַ֣ם הָ/אָ֔רֶץ לָ/תֵ֖ת לְ/פַרְעֹ֥ה נְכֹֽה־־־־־־׃ס
 translation:
-  text: And Jehoiakim gave the silver and the gold to Pharaoh[a], but he assessed the land to give the silver according to Pharaoh’s command. He exacted the silver and the gold from the people of the land, each according to his assessment[d][c][b], to give it to Pharaoh Neco.
+  text: And Jehoiakim gave the silver and the gold to Pharaoh, but he taxed the land to give the silver according to Pharaoh’s command. He exacted the silver and the gold from the people of the land, each according to his valuation, to give it to Pharaoh Neco.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -93,10 +93,10 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:18:52Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:30Z'
   unchanged: false
-  changes_summary: Replaced 'taxed' with 'assessed' to more closely reflect the Hebrew verb, and changed 'each according to his valuation' to 'each according to his assessment' for more natural and consistent rendering of the same root.
+  changes_summary: 'doctrine_realignment: 2 Kings 23:35 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''each according to his valuation''].'
 revisions:
 - timestamp: '2026-04-23T10:18:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -106,6 +106,13 @@ revisions:
   to: And Jehoiakim gave the silver and the gold to Pharaoh, but he assessed the land to give the silver according to Pharaoh’s command. He exacted the silver and the gold from the people of the land, each according to his assessment, to give it to Pharaoh Neco.
   rationale: Replaced 'taxed' with 'assessed' to more closely reflect the Hebrew verb, and changed 'each according to his valuation' to 'each according to his assessment' for more natural and consistent rendering of the same root.
 
+- timestamp: '2026-05-18T03:09:30Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Jehoiakim gave the silver and the gold to Pharaoh[a], but he assessed the land to give the silver according to Pharaoh’s command. He exacted the silver and the gold from the people of the land, each according to his assessment[d][c][b], to give it to Pharaoh Neco.'
+  to: 'And Jehoiakim gave the silver and the gold to Pharaoh, but he taxed the land to give the silver according to Pharaoh’s command. He exacted the silver and the gold from the people of the land, each according to his valuation, to give it to Pharaoh Neco.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''each according to his valuation''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

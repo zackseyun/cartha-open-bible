@@ -122,19 +122,26 @@ theological_decisions:
   rationale: 'The project''s policy gives primacy to the Hebrew where it survives, but the Hebrew here has a notable grammatical/semantic difficulty in תַּשִּׂיגֵם and the verse is flagged ''major_mismatch.'' The Greek parallel offers a coherent reading that matches the broader wisdom sense: a vicious inner disposition ruins its possessor and turns him into an object of enemy triumph. This preserves source uncertainty honestly while producing a defensible main text.'
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where it survives in Sirach, using the Greek parallel as actual translation input'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:06Z'
   unchanged: false
-  changes_summary: 'Changed the second clause to reflect the Hebrew more accurately: rendered וְשִׂמְחַת שׂוֹנֵא תַּשִּׂיגֵם as ''and the rejoicing of an enemy overtakes him'' rather than ''and it makes him the rejoicing of enemies.'''
+  changes_summary: 'doctrine_realignment: Sirach 6:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it makes him''].'
 revisions:
 - timestamp: '2026-04-23T15:42:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For a fierce soul destroys its owner, and it makes him the rejoicing of enemies.
-  to: For a fierce soul destroys its owner, and the rejoicing of an enemy overtakes him.
+  to: For a fierce soul destroys its owner, and it makes him the rejoicing of enemies.
   rationale: 'Changed the second clause to reflect the Hebrew more accurately: rendered וְשִׂמְחַת שׂוֹנֵא תַּשִּׂיגֵם as ''and the rejoicing of an enemy overtakes him'' rather than ''and it makes him the rejoicing of enemies.'''
 
+- timestamp: '2026-05-18T02:59:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For a fierce soul destroys its owner[a], and the rejoicing of an enemy overtakes him.'
+  to: 'For a fierce soul destroys its owner[a], and the rejoicing of an enemy overtakes him.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it makes him''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

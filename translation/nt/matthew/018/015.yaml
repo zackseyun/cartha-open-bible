@@ -98,19 +98,26 @@ theological_decisions:
   rationale: The provided source text is SBLGNT, which includes εἰς σέ. Because the phrase is a well-known textual variant affecting whether the instruction is limited to personal offenses or broader sin, the shorter reading is preserved in a footnote rather than silently ignored.
   doctrine_reference: DOCTRINE.md Translation philosophy §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:56:48Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:00Z'
   unchanged: false
-  changes_summary: Changed 'confront' to 'reprove' for a more precise and formal rendering of ἔλεγξον; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Matthew 18:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''confront''].'
 revisions:
 - timestamp: '2026-04-23T09:56:48Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But if your brother sins against you, go and confront him between you and him alone. If he listens to you, you have gained your brother.
-  to: But if your brother sins against you, go and reprove him between you and him alone. If he listens to you, you have gained your brother.
+  to: But if your brother sins against you, go and confront him between you and him alone. If he listens to you, you have gained your brother.
   rationale: Changed 'confront' to 'reprove' for a more precise and formal rendering of ἔλεγξον; otherwise retained the draft.
 
+- timestamp: '2026-05-18T03:01:00Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[c][b], you have gained your brother.'
+  to: 'But if your brother sins against you[a], go and reprove him between you and him alone. If he listens to you[c][b], you have gained your brother.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''confront''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

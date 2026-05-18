@@ -72,19 +72,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:29:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:03Z'
   unchanged: false
-  changes_summary: Removed the redundant final phrase 'they came,' which duplicates the earlier verb and is not natural in English. The revised wording fully represents the Hebrew while reading more smoothly.
+  changes_summary: 'doctrine_realignment: Exodus 1:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they came''].'
 revisions:
 - timestamp: '2026-04-23T10:29:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'Now these are the names of the sons of Israel who came to Egypt with Jacob, each man with his household: they came.'
-  to: Now these are the names of the sons of Israel who came to Egypt with Jacob, each man with his household.
+  to: 'Now these are the names of the sons of Israel who came to Egypt with Jacob, each man with his household: they came.'
   rationale: Removed the redundant final phrase 'they came,' which duplicates the earlier verb and is not natural in English. The revised wording fully represents the Hebrew while reading more smoothly.
 
+- timestamp: '2026-05-18T02:55:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now these are the names of the sons of Israel who came to Egypt with Jacob[a], each man with his household.'
+  to: 'Now these are the names of the sons of Israel who came to Egypt with Jacob[a], each man with his household.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they came''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

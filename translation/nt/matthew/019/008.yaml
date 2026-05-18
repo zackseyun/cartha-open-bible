@@ -86,19 +86,26 @@ theological_decisions:
   rationale: The translation preserves the wording of the Greek without importing an expanded doctrinal paraphrase. The creational implication is present in context and should not be over-resolved in the main text.
   doctrine_reference: Translation philosophy §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:56:53Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:09Z'
   unchanged: false
-  changes_summary: Updated the final clause from past tense ('it was not so') to present perfect ('it has not been so') to more closely reflect γέγονεν while preserving natural English.
+  changes_summary: 'doctrine_realignment: Matthew 19:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it was not so''].'
 revisions:
 - timestamp: '2026-04-23T09:56:53Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He said to them, “Because of your hardness of heart Moses permitted you to divorce your wives, but from the beginning it was not so.”
-  to: He said to them, “Because of your hardness of heart Moses permitted you to divorce your wives, but from the beginning it has not been so.”
+  to: He said to them, “Because of your hardness of heart Moses permitted you to divorce your wives, but from the beginning it was not so.”
   rationale: Updated the final clause from past tense ('it was not so') to present perfect ('it has not been so') to more closely reflect γέγονεν while preserving natural English.
 
+- timestamp: '2026-05-18T03:01:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He said to them[a], “Because of your hardness of heart Moses permitted you to divorce your wives[c][b], but from the beginning it has not been so.”'
+  to: 'He said to them[a], “Because of your hardness of heart Moses permitted you to divorce your wives[c][b], but from the beginning it has not been so.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it was not so''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

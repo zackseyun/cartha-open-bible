@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:25:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:50Z'
   unchanged: false
-  changes_summary: Replaced 'while' with 'and' to reflect the Hebrew conjunction more directly and avoid implying a specifically temporal nuance not explicit in the source.
+  changes_summary: 'doctrine_realignment: Deuteronomy 9:15 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while the mountain was burning with fire''].'
 revisions:
 - timestamp: '2026-04-23T10:25:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So I turned and came down from the mountain, while the mountain was burning with fire, and the two tablets of the covenant were in my two hands.
-  to: So I turned and came down from the mountain, and the mountain was burning with fire, and the two tablets of the covenant were in my two hands.
+  to: So I turned and came down from the mountain, while the mountain was burning with fire, and the two tablets of the covenant were in my two hands.
   rationale: Replaced 'while' with 'and' to reflect the Hebrew conjunction more directly and avoid implying a specifically temporal nuance not explicit in the source.
 
+- timestamp: '2026-05-18T02:56:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So I turned and came down from the mountain[a], and the mountain was burning with fire[b], and the two tablets of the covenant were in my two hands.'
+  to: 'So I turned and came down from the mountain[a], and the mountain was burning with fire[b], and the two tablets of the covenant were in my two hands.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while the mountain was burning with fire''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

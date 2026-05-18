@@ -77,19 +77,26 @@ theological_decisions:
   rationale: The provided Greek text reads βασιλεύουσιν as future, so the main text should preserve that future sense rather than resolve eschatological questions by choosing a present-tense reading from another textual tradition. The present reading is preserved in a footnote as a textual variant.
   doctrine_reference: 'Translation philosophy #1 and #3'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:59:16Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:02Z'
   unchanged: false
-  changes_summary: Changed 'will reign' to 'reign' to reflect the present-tense reading in the provided Greek text (βασιλεύουσιν).
+  changes_summary: 'doctrine_realignment: Revelation 5:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will reign''].'
 revisions:
 - timestamp: '2026-04-23T09:59:16Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: and you made them a kingdom and priests to our God, and they will reign on the earth.
-  to: and you made them a kingdom and priests to our God, and they reign on the earth.
+  to: and you made them a kingdom and priests to our God, and they will reign on the earth.
   rationale: Changed 'will reign' to 'reign' to reflect the present-tense reading in the provided Greek text (βασιλεύουσιν).
 
+- timestamp: '2026-05-18T03:01:02Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'and you made them a kingdom and priests to our God[b][a], and they reign on the earth.'
+  to: 'and you made them a kingdom and priests to our God[b][a], and they reign on the earth.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will reign''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.8

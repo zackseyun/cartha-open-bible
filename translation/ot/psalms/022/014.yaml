@@ -60,19 +60,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:24:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:40Z'
   unchanged: false
-  changes_summary: Revised to reflect the singular 'mouth' and to attach 'tearing and roaring' more clearly to 'lion,' matching the Hebrew syntax more closely while keeping natural English.
+  changes_summary: 'doctrine_realignment: Psalms 22:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like a lion''].'
 revisions:
 - timestamp: '2026-04-23T11:24:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They open their mouth against me like a lion, tearing and roaring.
-  to: They open their mouth against me like a tearing and roaring lion.
+  to: They open their mouth against me like a lion, tearing and roaring.
   rationale: Revised to reflect the singular 'mouth' and to attach 'tearing and roaring' more clearly to 'lion,' matching the Hebrew syntax more closely while keeping natural English.
 
+- timestamp: '2026-05-18T02:53:40Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They open their mouth against me like a tearing and roaring lion[a].'
+  to: 'They open their mouth against me like a tearing and roaring lion[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''like a lion''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

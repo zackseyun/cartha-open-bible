@@ -100,19 +100,26 @@ theological_decisions:
   rationale: The Hebrew is grammatically masculine singular but functions generically in legal instruction. Per translation philosophy, the rendering should be gender-accurate rather than automatically gender-neutral; the generic force is preserved in a footnote.
   doctrine_reference: DOCTRINE.md Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:16:57Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:57Z'
   unchanged: false
-  changes_summary: Changed 'man' to 'person' because the Hebrew 'the native-born' is not explicitly male here; otherwise retained the draft as accurate and natural.
+  changes_summary: 'doctrine_realignment: Numbers 15:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''native-born man''].'
 revisions:
 - timestamp: '2026-04-23T11:16:57Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Every native-born man shall do these things in this way, to present a food offering, a pleasing aroma to the LORD.
-  to: Every native-born person shall do these things in this way, to present a food offering, a pleasing aroma to the LORD.
+  to: Every native-born man shall do these things in this way, to present a food offering, a pleasing aroma to the LORD.
   rationale: Changed 'man' to 'person' because the Hebrew 'the native-born' is not explicitly male here; otherwise retained the draft as accurate and natural.
 
+- timestamp: '2026-05-18T02:56:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Every native-born person shall do these things in this way[a], to present a food offering[b], a pleasing aroma to Yahweh.'
+  to: 'Every native-born person shall do these things in this way[a], to present a food offering[b], a pleasing aroma to Yahweh.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''native-born man''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

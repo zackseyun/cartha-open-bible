@@ -98,19 +98,26 @@ theological_decisions:
   rationale: The text states the exiles will serve other gods in the foreign land. 'Serve' preserves the lexical range and the theological irony without over-specifying whether the service is willing worship, coerced assimilation, or both.
   doctrine_reference: DOCTRINE.md Translation philosophy §3
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:54:41Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:36Z'
   unchanged: false
-  changes_summary: Changed 'hurl' to 'cast ... out' to more naturally and accurately reflect the verb with the sense of expulsion from the land, while preserving the rest of the verse.
+  changes_summary: 'doctrine_realignment: Jeremiah 16:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I will hurl''].'
 revisions:
 - timestamp: '2026-04-23T10:54:41Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So I will hurl you from this land onto a land that neither you nor your fathers have known, and there you will serve other gods day and night, for I will show you no favor.
-  to: So I will cast you out from this land onto a land that neither you nor your fathers have known, and there you will serve other gods day and night, for I will show you no favor.
+  to: So I will hurl you from this land onto a land that neither you nor your fathers have known, and there you will serve other gods day and night, for I will show you no favor.
   rationale: Changed 'hurl' to 'cast ... out' to more naturally and accurately reflect the verb with the sense of expulsion from the land, while preserving the rest of the verse.
 
+- timestamp: '2026-05-18T02:56:36Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.'
+  to: 'So I will cast you out from this land onto a land that neither you nor your fathers have known[a], and there you will serve other gods day and night[d][c][b], for I will show you no favor.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I will hurl''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

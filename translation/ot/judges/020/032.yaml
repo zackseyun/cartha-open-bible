@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:08:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:50Z'
   unchanged: false
-  changes_summary: Changed “draw him away” to “draw them away” to match the plural object in context and the sense of the Hebrew. No other changes needed.
+  changes_summary: 'doctrine_realignment: Judges 20:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and draw him away''].'
 revisions:
 - timestamp: '2026-04-23T11:08:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the sons of Benjamin said, “They are being struck down before us as at the first.” But the sons of Israel said, “Let us flee and draw him away from the city to the highways.”
-  to: And the sons of Benjamin said, “They are being struck down before us as at the first.” But the sons of Israel said, “Let us flee and draw them away from the city to the highways.”
+  to: And the sons of Benjamin said, “They are being struck down before us as at the first.” But the sons of Israel said, “Let us flee and draw him away from the city to the highways.”
   rationale: Changed “draw him away” to “draw them away” to match the plural object in context and the sense of the Hebrew. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the sons of Benjamin said[a], “They are being struck down before us as at the first.” But the sons of Israel said[c][b], “Let us flee and draw them away from the city to the highways.”'
+  to: 'And the sons of Benjamin said[a], “They are being struck down before us as at the first.” But the sons of Israel said[c][b], “Let us flee and draw them away from the city to the highways.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and draw him away''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

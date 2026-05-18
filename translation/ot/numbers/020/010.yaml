@@ -4,7 +4,7 @@ source:
   edition: WLC
   text: וַ/יַּקְהִ֜לוּ מֹשֶׁ֧ה וְ/אַהֲרֹ֛ן אֶת הַ/קָּהָ֖ל אֶל פְּנֵ֣י הַ/סָּ֑לַע וַ/יֹּ֣אמֶר לָ/הֶ֗ם שִׁמְעוּ נָא֙ הַ/מֹּרִ֔ים הֲ/מִן הַ/סֶּ֣לַע הַ/זֶּ֔ה נוֹצִ֥יא לָ/כֶ֖ם מָֽיִם־־־־׃
 translation:
-  text: 'Then Moses and Aaron assembled the congregation before the rock[a], and he said to them, “Listen now, you rebels: shall we bring out water for you from this rock?”'
+  text: 'Then Moses and Aaron assembled the assembly before the rock, and he said to them, “Listen now, you rebels: shall we bring out water for you from this rock?”'
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -87,10 +87,10 @@ theological_decisions:
   rationale: The Hebrew explicitly uses first person plural נוֹצִיא ('shall we bring out'). The translation preserves the wording without softening the theological tension about Moses and Aaron's role versus God's agency; the narrative context resolves the issue rather than the translation.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:17:37Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:19Z'
   unchanged: false
-  changes_summary: Changed 'assembly' to 'congregation' for more natural and contextually appropriate rendering of הַקָּהָל, while preserving the rest of the verse.
+  changes_summary: 'doctrine_realignment: Numbers 20:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the assembly''].'
 revisions:
 - timestamp: '2026-04-23T11:17:37Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -100,6 +100,13 @@ revisions:
   to: 'Then Moses and Aaron assembled the congregation before the rock, and he said to them, “Listen now, you rebels: shall we bring out water for you from this rock?”'
   rationale: Changed 'assembly' to 'congregation' for more natural and contextually appropriate rendering of הַקָּהָל, while preserving the rest of the verse.
 
+- timestamp: '2026-05-18T03:09:19Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Moses and Aaron assembled the congregation before the rock[a], and he said to them, “Listen now, you rebels: shall we bring out water for you from this rock?”'
+  to: 'Then Moses and Aaron assembled the assembly before the rock, and he said to them, “Listen now, you rebels: shall we bring out water for you from this rock?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the assembly''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:02:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:54Z'
   unchanged: false
-  changes_summary: Adjusted the final clause from 'when the sound of the trumpet comes' to 'at the sound of the trumpet' for closer alignment with the source and more natural formal English.
+  changes_summary: 'doctrine_realignment: Job 39:24 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the sound of the trumpet comes''].'
 revisions:
 - timestamp: '2026-04-23T11:02:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: With fierceness and rage he devours the ground, and he cannot stand still when the sound of the trumpet comes.
-  to: With fierceness and rage he devours the ground, and he cannot stand still at the sound of the trumpet.
+  to: With fierceness and rage he devours the ground, and he cannot stand still when the sound of the trumpet comes.
   rationale: Adjusted the final clause from 'when the sound of the trumpet comes' to 'at the sound of the trumpet' for closer alignment with the source and more natural formal English.
 
+- timestamp: '2026-05-18T02:54:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'With fierceness and rage he devours the ground[b][a], and he cannot stand still at the sound of the trumpet.'
+  to: 'With fierceness and rage he devours the ground[b][a], and he cannot stand still at the sound of the trumpet.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the sound of the trumpet comes''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

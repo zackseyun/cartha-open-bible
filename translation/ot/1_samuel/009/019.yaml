@@ -77,19 +77,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:32Z'
   unchanged: false
-  changes_summary: Changed 'you shall eat' to 'eat' to better reflect the imperative sense of the Hebrew and improve naturalness. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 9:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and you shall eat with me today''].'
 revisions:
 - timestamp: '2026-04-23T10:10:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Samuel answered Saul and said, “I am the seer. Go up before me to the high place, and you shall eat with me today. In the morning I will send you on your way, and I will tell you all that is in your heart.”
-  to: Samuel answered Saul and said, “I am the seer. Go up before me to the high place, and eat with me today. In the morning I will send you on your way, and I will tell you all that is in your heart.”
+  to: Samuel answered Saul and said, “I am the seer. Go up before me to the high place, and you shall eat with me today. In the morning I will send you on your way, and I will tell you all that is in your heart.”
   rationale: Changed 'you shall eat' to 'eat' to better reflect the imperative sense of the Hebrew and improve naturalness. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:32Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Samuel answered Saul and said[a], “I am the seer. Go up before me to the high place, and eat with me today. In the morning I will send you on your way[b], and I will tell you all that is in your heart.”'
+  to: 'Samuel answered Saul and said[a], “I am the seer. Go up before me to the high place, and eat with me today. In the morning I will send you on your way[b], and I will tell you all that is in your heart.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and you shall eat with me today''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

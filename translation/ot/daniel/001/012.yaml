@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:22:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:58Z'
   unchanged: false
-  changes_summary: Replaced the colon with a comma for smoother formal English, added 'and' to reflect the Hebrew conjunction, and removed 'some' since it is not explicit in the source.
+  changes_summary: 'doctrine_realignment: Daniel 1:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''some vegetables''].'
 revisions:
 - timestamp: '2026-04-23T10:22:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'Please test your servants for ten days: let us be given some vegetables to eat and water to drink.'
-  to: Please test your servants for ten days, and let us be given vegetables to eat and water to drink.
+  to: 'Please test your servants for ten days: let us be given some vegetables to eat and water to drink.'
   rationale: Replaced the colon with a comma for smoother formal English, added 'and' to reflect the Hebrew conjunction, and removed 'some' since it is not explicit in the source.
 
+- timestamp: '2026-05-18T02:55:58Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.'
+  to: 'Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''some vegetables''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

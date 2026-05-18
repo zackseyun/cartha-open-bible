@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:47Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:57Z'
   unchanged: false
-  changes_summary: Changed ‘perishing with hunger’ to ‘perishing from hunger’ for a more natural rendering of λιμῷ while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: Luke 15:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with hunger''].'
 revisions:
 - timestamp: '2026-04-23T09:50:47Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But when he came to himself, he said, ‘How many of my father’s hired workers have more than enough bread, but here I am perishing with hunger!’
-  to: But when he came to himself, he said, ‘How many of my father’s hired workers have more than enough bread, but here I am perishing from hunger!’
+  to: But when he came to himself, he said, ‘How many of my father’s hired workers have more than enough bread, but here I am perishing with hunger!’
   rationale: Changed ‘perishing with hunger’ to ‘perishing from hunger’ for a more natural rendering of λιμῷ while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T03:01:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But when he came to himself[a], he said, ‘How many of my father’s hired workers have more than enough bread[c][b], but here I am perishing from hunger!’'
+  to: 'But when he came to himself[a], he said, ‘How many of my father’s hired workers have more than enough bread[c][b], but here I am perishing from hunger!’'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with hunger''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

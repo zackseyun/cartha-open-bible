@@ -94,19 +94,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:41:21Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:28Z'
   unchanged: false
-  changes_summary: Changed 'they were dragging' to 'they dragged' to better reflect the aorist verb and improve naturalness. Kept the rest of the draft, which accurately and completely represents the Greek.
+  changes_summary: 'doctrine_realignment: Acts 21:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were dragging''].'
 revisions:
 - timestamp: '2026-04-23T09:41:21Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the whole city was stirred up, and a crowd of the people formed; and after seizing Paul, they were dragging him outside the temple, and immediately the doors were shut.
-  to: And the whole city was stirred up, and a crowd of the people formed; and after seizing Paul, they dragged him outside the temple, and immediately the doors were shut.
+  to: And the whole city was stirred up, and a crowd of the people formed; and after seizing Paul, they were dragging him outside the temple, and immediately the doors were shut.
   rationale: Changed 'they were dragging' to 'they dragged' to better reflect the aorist verb and improve naturalness. Kept the rest of the draft, which accurately and completely represents the Greek.
 
+- timestamp: '2026-05-18T03:01:28Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the whole city was stirred up[a], and a crowd of the people formed; and after seizing Paul, they dragged him outside the temple[c][b], and immediately the doors were shut.'
+  to: 'And the whole city was stirred up[a], and a crowd of the people formed; and after seizing Paul, they dragged him outside the temple[c][b], and immediately the doors were shut.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were dragging''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

@@ -62,19 +62,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:30:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:33Z'
   unchanged: false
-  changes_summary: 'Revised to more closely reflect the Hebrew: kept ''then,'' rendered עָבַר עַל as ''passed over,'' preserved the singular ''soul'' for נַפְשֵׁנוּ, and retained ''raging waters'' for הַמַּיִם הַזֵּידוֹנִים.'
+  changes_summary: 'doctrine_realignment: Psalms 124:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would have swept over''].'
 revisions:
 - timestamp: '2026-04-23T11:30:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: then the raging waters would have swept over us.
-  to: then the raging waters would have passed over our soul.
+  to: then the raging waters would have swept over us.
   rationale: 'Revised to more closely reflect the Hebrew: kept ''then,'' rendered עָבַר עַל as ''passed over,'' preserved the singular ''soul'' for נַפְשֵׁנוּ, and retained ''raging waters'' for הַמַּיִם הַזֵּידוֹנִים.'
 
+- timestamp: '2026-05-18T02:54:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'then the raging waters would have passed over our soul[a].'
+  to: 'then the raging waters would have passed over our soul[a].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would have swept over''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

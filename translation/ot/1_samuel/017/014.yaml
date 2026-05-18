@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:54Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:38Z'
   unchanged: false
-  changes_summary: Changed 'had followed Saul' to 'had gone after Saul' for closer lexical correspondence to הָלְכוּ אַחֲרֵי while keeping natural English.
+  changes_summary: 'doctrine_realignment: 1 Samuel 17:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had followed''].'
 revisions:
 - timestamp: '2026-04-23T10:10:54Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Now David was the youngest, and the three oldest had followed Saul.
-  to: Now David was the youngest, and the three oldest had gone after Saul.
+  to: Now David was the youngest, and the three oldest had followed Saul.
   rationale: Changed 'had followed Saul' to 'had gone after Saul' for closer lexical correspondence to הָלְכוּ אַחֲרֵי while keeping natural English.
 
+- timestamp: '2026-05-18T02:55:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now David was the youngest[a], and the three oldest had gone after Saul.'
+  to: 'Now David was the youngest[a], and the three oldest had gone after Saul.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had followed''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

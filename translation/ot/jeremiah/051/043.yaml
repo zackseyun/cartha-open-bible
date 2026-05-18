@@ -82,19 +82,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:58:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:41Z'
   unchanged: false
-  changes_summary: Changed 'no man lives' to 'no one lives' for more natural English while preserving the sense; retained 'son of man' as a formal rendering of the final phrase.
+  changes_summary: 'doctrine_realignment: Jeremiah 51:43 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a land where no man lives''].'
 revisions:
 - timestamp: '2026-04-23T10:58:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Her cities have become a desolation, a dry land and a desert, a land where no man lives, and through which no son of man passes.
-  to: Her cities have become a desolation, a dry land and a desert, a land where no one lives, and through which no son of man passes.
+  to: Her cities have become a desolation, a dry land and a desert, a land where no man lives, and through which no son of man passes.
   rationale: Changed 'no man lives' to 'no one lives' for more natural English while preserving the sense; retained 'son of man' as a formal rendering of the final phrase.
 
+- timestamp: '2026-05-18T02:56:41Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Her cities have become a desolation[a], a dry land and a desert, a land where no one lives[c][b], and through which no son of man passes.'
+  to: 'Her cities have become a desolation[a], a dry land and a desert, a land where no one lives[c][b], and through which no son of man passes.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a land where no man lives''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

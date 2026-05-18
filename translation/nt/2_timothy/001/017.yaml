@@ -63,19 +63,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:38:22Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:55Z'
   unchanged: false
-  changes_summary: Changed "arrived in Rome" to "was in Rome" for closer lexical accuracy to γενόμενος ἐν Ῥώμῃ, without adding the idea of arrival.
+  changes_summary: 'doctrine_realignment: 2 Timothy 1:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when he arrived''].'
 revisions:
 - timestamp: '2026-04-23T09:38:22Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: but when he arrived in Rome, he searched for me diligently and found me—
-  to: but when he was in Rome, he searched for me diligently and found me—
+  to: but when he arrived in Rome, he searched for me diligently and found me—
   rationale: Changed "arrived in Rome" to "was in Rome" for closer lexical accuracy to γενόμενος ἐν Ῥώμῃ, without adding the idea of arrival.
 
+- timestamp: '2026-05-18T03:00:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'but when he was in Rome[a], he searched for me diligently and found me—'
+  to: 'but when he was in Rome[a], he searched for me diligently and found me—'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when he arrived''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

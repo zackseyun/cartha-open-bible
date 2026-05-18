@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:48:04Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:52Z'
   unchanged: false
-  changes_summary: Changed 'the net full of fish' to 'the net of fish' for closer lexical accuracy; the Greek says 'the net of the fish,' not explicitly 'full of fish.'
+  changes_summary: 'doctrine_realignment: John 21:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the net full of fish''].'
 revisions:
 - timestamp: '2026-04-23T09:48:04Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: But the other disciples came in the small boat, for they were not far from the land, but about two hundred cubits away, dragging the net full of fish.
-  to: But the other disciples came in the small boat, for they were not far from the land, but about two hundred cubits away, dragging the net of fish.
+  to: But the other disciples came in the small boat, for they were not far from the land, but about two hundred cubits away, dragging the net full of fish.
   rationale: Changed 'the net full of fish' to 'the net of fish' for closer lexical accuracy; the Greek says 'the net of the fish,' not explicitly 'full of fish.'
 
+- timestamp: '2026-05-18T02:59:52Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But the other disciples came in the small boat[a], for they were not far from the land, but about two hundred cubits away[c][b], dragging the net of fish.'
+  to: 'But the other disciples came in the small boat[a], for they were not far from the land, but about two hundred cubits away[c][b], dragging the net of fish.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the net full of fish''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

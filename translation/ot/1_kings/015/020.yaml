@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:08Z'
   unchanged: false
-  changes_summary: Changed 'along with all the land of Naphtali' to 'against all the land of Naphtali' to reflect the repeated Hebrew preposition and preserve the sense of military action directed against the land.
+  changes_summary: 'doctrine_realignment: 1 Kings 15:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with all the land of Naphtali''].'
 revisions:
 - timestamp: '2026-04-23T10:08:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Ben-hadad listened to King Asa and sent the commanders of the armies that were his against the cities of Israel, and he struck Ijon, Dan, Abel-beth-maacah, and all Chinneroth, along with all the land of Naphtali.
-  to: Ben-hadad listened to King Asa and sent the commanders of the armies that were his against the cities of Israel, and he struck Ijon, Dan, Abel-beth-maacah, and all Chinneroth, against all the land of Naphtali.
+  to: Ben-hadad listened to King Asa and sent the commanders of the armies that were his against the cities of Israel, and he struck Ijon, Dan, Abel-beth-maacah, and all Chinneroth, along with all the land of Naphtali.
   rationale: Changed 'along with all the land of Naphtali' to 'against all the land of Naphtali' to reflect the repeated Hebrew preposition and preserve the sense of military action directed against the land.
 
+- timestamp: '2026-05-18T02:57:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Ben-hadad listened to King Asa and sent the commanders of the armies that were his against the cities of Israel[a], and he struck Ijon, Dan, Abel-beth-maacah, and all Chinneroth[b], against all the land of Naphtali.'
+  to: 'Ben-hadad listened to King Asa and sent the commanders of the armies that were his against the cities of Israel[a], and he struck Ijon, Dan, Abel-beth-maacah, and all Chinneroth[b], against all the land of Naphtali.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with all the land of Naphtali''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

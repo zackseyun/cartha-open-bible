@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:07:26Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:13Z'
   unchanged: false
-  changes_summary: Changed 'small boy' to 'young boy' for more natural formal English while preserving the sense of נער קטן. Kept the rest unchanged as accurate and complete.
+  changes_summary: 'doctrine_realignment: 1 Kings 11:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a small boy''].'
 revisions:
 - timestamp: '2026-04-23T10:07:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: Hadad fled to Egypt, he and some Edomite men from among his father's servants with him; and Hadad was a small boy.
-  to: Hadad fled to Egypt, he and some Edomite men from among his father's servants with him; and Hadad was a young boy.
+  from: 'Hadad fled to Egypt, he and some Edomite men from among his father''s servants with him; and Hadad was a small boy.'
+  to: 'Hadad fled to Egypt, he and some Edomite men from among his father''s servants with him; and Hadad was a small boy.'
   rationale: Changed 'small boy' to 'young boy' for more natural formal English while preserving the sense of נער קטן. Kept the rest unchanged as accurate and complete.
 
+- timestamp: '2026-05-18T02:56:13Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Hadad fled to Egypt[a], he and some Edomite men from among his father''s servants with him[b]; and Hadad was a young boy.'
+  to: 'Hadad fled to Egypt[a], he and some Edomite men from among his father''s servants with him[b]; and Hadad was a young boy.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a small boy''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

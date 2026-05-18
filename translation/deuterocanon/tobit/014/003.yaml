@@ -104,19 +104,26 @@ theological_decisions:
   rationale: The Greek uses a softened, idiomatic expression rather than the blunt verb 'die.' Preserving the euphemism respects the source's tone without becoming obscure.
   doctrine_reference: Translation philosophy §§1, 6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:47:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:19Z'
   unchanged: false
-  changes_summary: Replaced 'his son's sons' with the more natural 'his grandsons' while preserving the meaning. No other changes needed.
+  changes_summary: 'doctrine_realignment: Tobit 14:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["his son''s sons"].'
 revisions:
 - timestamp: '2026-04-23T15:47:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: Now he had grown very old; and he called his son and his son's sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”
-  to: Now he had grown very old; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”
+  from: 'Now he had grown very old; and he called his son and his son''s sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”'
+  to: 'Now he had grown very old; and he called his son and his son''s sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”'
   rationale: Replaced 'his son's sons' with the more natural 'his grandsons' while preserving the meaning. No other changes needed.
 
+- timestamp: '2026-05-18T02:59:19Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”'
+  to: 'Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["his son''s sons"].'
 cross_check:
   status: high_agreement
   agreement: 0.95

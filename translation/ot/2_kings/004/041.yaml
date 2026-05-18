@@ -80,19 +80,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:16:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:56Z'
   unchanged: false
-  changes_summary: Changed “Serve it to the people” to “Pour it out for the people” to more closely reflect the Hebrew verb for serving/distributing from the pot.
+  changes_summary: 'doctrine_realignment: 2 Kings 4:41 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Serve it to the people''].'
 revisions:
 - timestamp: '2026-04-23T10:16:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then he said, “Bring some flour.” And he threw it into the pot and said, “Serve it to the people so that they may eat.” And there was nothing harmful in the pot.
-  to: Then he said, “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people, so that they may eat.” And there was nothing harmful in the pot.
+  to: Then he said, “Bring some flour.” And he threw it into the pot and said, “Serve it to the people so that they may eat.” And there was nothing harmful in the pot.
   rationale: Changed “Serve it to the people” to “Pour it out for the people” to more closely reflect the Hebrew verb for serving/distributing from the pot.
 
+- timestamp: '2026-05-18T02:58:56Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.'
+  to: 'Then he said[a], “Bring some flour.” And he threw it into the pot and said, “Pour it out for the people[b], so that they may eat.” And there was nothing harmful in the pot.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Serve it to the people''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

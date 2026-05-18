@@ -70,19 +70,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:03:33Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:44Z'
   unchanged: false
-  changes_summary: Replaced 'chief men' with 'heads' to reflect the repeated Hebrew term more directly and consistently within the verse.
+  changes_summary: 'doctrine_realignment: 1 Chronicles 9:34 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''chief men''].'
 revisions:
 - timestamp: '2026-04-23T10:03:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: These were the heads of the fathers’ houses of the Levites, according to their generations, chief men. These lived in Jerusalem.
-  to: These were the heads of the fathers’ houses of the Levites, according to their generations, heads. These lived in Jerusalem.
+  to: These were the heads of the fathers’ houses of the Levites, according to their generations, chief men. These lived in Jerusalem.
   rationale: Replaced 'chief men' with 'heads' to reflect the repeated Hebrew term more directly and consistently within the verse.
 
+- timestamp: '2026-05-18T02:58:44Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.'
+  to: 'These were the heads of the fathers’ houses of the Levites[a], according to their generations, heads[b]. These lived in Jerusalem.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''chief men''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

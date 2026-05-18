@@ -85,19 +85,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:33:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:08Z'
   unchanged: false
-  changes_summary: Changed 'watch Moses' to 'watch after Moses' to more closely reflect the Hebrew expression אַחֲרֵי מֹשֶׁה ('after Moses').
+  changes_summary: 'doctrine_realignment: Exodus 33:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and they would watch Moses''].'
 revisions:
 - timestamp: '2026-04-23T10:33:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And whenever Moses went out to the tent, all the people would rise and stand, each man at the entrance of his tent, and they would watch Moses until he entered the tent.
-  to: And whenever Moses went out to the tent, all the people would rise and stand, each man at the entrance of his tent, and they would watch after Moses until he entered the tent.
+  to: And whenever Moses went out to the tent, all the people would rise and stand, each man at the entrance of his tent, and they would watch Moses until he entered the tent.
   rationale: Changed 'watch Moses' to 'watch after Moses' to more closely reflect the Hebrew expression אַחֲרֵי מֹשֶׁה ('after Moses').
 
+- timestamp: '2026-05-18T02:55:08Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And whenever Moses went out to the tent[a], all the people would rise and stand, each man at the entrance of his tent[b], and they would watch after Moses until he entered the tent.'
+  to: 'And whenever Moses went out to the tent[a], all the people would rise and stand, each man at the entrance of his tent[b], and they would watch after Moses until he entered the tent.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and they would watch Moses''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

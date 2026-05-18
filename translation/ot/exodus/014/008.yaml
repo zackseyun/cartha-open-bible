@@ -87,19 +87,26 @@ theological_decisions:
   rationale: The Hebrew attributes the action directly to the LORD, and the translation should preserve that theological tension rather than soften it. At the same time, the underlying verb can be rendered 'strengthened'; this lexical alternative is preserved in documentation rather than used to reduce the force of the statement.
   doctrine_reference: Preserve theological tension rather than resolve it; YHWH default rendering as 'the LORD'.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:31:03Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:55Z'
   unchanged: false
-  changes_summary: Changed 'with a raised hand' to 'with a high hand' for a more standard and accurate rendering of the Hebrew idiom בְּיָד רָמָה.
+  changes_summary: 'doctrine_realignment: Exodus 14:8 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a raised hand''].'
 revisions:
 - timestamp: '2026-04-23T10:31:03Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the LORD hardened the heart of Pharaoh king of Egypt, and he pursued the sons of Israel, while the sons of Israel were going out with a raised hand.
-  to: And the LORD hardened the heart of Pharaoh king of Egypt, and he pursued the sons of Israel, while the sons of Israel were going out with a high hand.
+  to: And the LORD hardened the heart of Pharaoh king of Egypt, and he pursued the sons of Israel, while the sons of Israel were going out with a raised hand.
   rationale: Changed 'with a raised hand' to 'with a high hand' for a more standard and accurate rendering of the Hebrew idiom בְּיָד רָמָה.
 
+- timestamp: '2026-05-18T02:54:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And Yahweh hardened the heart of Pharaoh king of Egypt[a], and he pursued the sons of Israel[b], while the sons of Israel were going out with a high hand.'
+  to: 'And Yahweh hardened the heart of Pharaoh king of Egypt[a], and he pursued the sons of Israel[b], while the sons of Israel were going out with a high hand.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with a raised hand''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

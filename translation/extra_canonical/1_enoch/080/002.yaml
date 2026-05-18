@@ -11,7 +11,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch80.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 80, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in the days of the sinners the years shall be shortened[a], and their seed shall be delayed on their land and in their fields; and all the works on the earth shall change and shall not appear in their times, and the rain shall be withheld[c][b], and heaven shall withhold.
+  text: And in the days of the sinners the years shall be shortened, and their seed shall be late upon their land and in their fields; and all the works that are on the earth shall change and shall not appear in their times, and the rain shall be withheld, and heaven shall hold back.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -180,12 +180,18 @@ revisions:
   from: And in the days of the sinners the years shall be shortened, and their seed shall be late upon their land and in their fields; and all the works that are on the earth shall change and shall not appear in their times, and the rain shall be withheld, and heaven shall hold back.
   to: And in the days of the sinners the years shall be shortened, and their seed shall be delayed on their land and in their fields; and all the works on the earth shall change and shall not appear in their times, and the rain shall be withheld, and heaven shall withhold.
   rationale: Changed 'late upon' to the more natural 'delayed on' for clarity and formal readability; simplified 'that are on the earth' to 'on the earth'; changed 'heaven shall hold back' to the more idiomatic and consistent 'heaven shall withhold.'
+- timestamp: '2026-05-18T03:10:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And in the days of the sinners the years shall be shortened[a], and their seed shall be delayed on their land and in their fields; and all the works on the earth shall change and shall not appear in their times, and the rain shall be withheld[c][b], and heaven shall withhold.'
+  to: 'And in the days of the sinners the years shall be shortened, and their seed shall be late upon their land and in their fields; and all the works that are on the earth shall change and shall not appear in their times, and the rain shall be withheld, and heaven shall hold back.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''heaven shall hold back''].'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:37:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:48Z'
   unchanged: false
-  changes_summary: Changed 'late upon' to the more natural 'delayed on' for clarity and formal readability; simplified 'that are on the earth' to 'on the earth'; changed 'heaven shall hold back' to the more idiomatic and consistent 'heaven shall withhold.'
-
+  changes_summary: 'doctrine_realignment: 1 Enoch 80:2 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''heaven shall hold back''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

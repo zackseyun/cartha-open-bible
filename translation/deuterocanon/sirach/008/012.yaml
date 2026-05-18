@@ -103,19 +103,26 @@ theological_decisions:
   rationale: For Sirach, where Hebrew survives, project policy gives primacy to the Hebrew witness. Here the Greek is not a minor variant but an entirely different saying, so it is preserved as an alternative textual tradition in a footnote rather than harmonized into the main text.
   doctrine_reference: 'PHILOSOPHY.md: translate from Hebrew where Sirach Hebrew survives; use Greek parallel as actual input while keeping Hebrew primary.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:42:31Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:04Z'
   unchanged: false
-  changes_summary: Revised 'hearing from those who return' to 'hearing from those who have returned' for more natural English while preserving the sense of שָׁבִים.
+  changes_summary: 'doctrine_realignment: Sirach 8:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who return''].'
 revisions:
 - timestamp: '2026-04-23T15:42:31Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Do not despise hearing from those who return, who have heard from their fathers.
-  to: Do not despise hearing from those who have returned, who have heard from their fathers.
+  to: Do not despise hearing from those who return, who have heard from their fathers.
   rationale: Revised 'hearing from those who return' to 'hearing from those who have returned' for more natural English while preserving the sense of שָׁבִים.
 
+- timestamp: '2026-05-18T02:58:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Do not despise hearing from those who have returned[b][a], who have heard from their fathers.'
+  to: 'Do not despise hearing from those who have returned[b][a], who have heard from their fathers.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who return''].'
 cross_check:
   status: needs_review
   agreement: 0.4

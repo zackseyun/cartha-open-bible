@@ -94,19 +94,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:07:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:04Z'
   unchanged: false
-  changes_summary: Replaced 'but' with 'and' to match the Hebrew narrative sequence more closely, and changed 'strengthened himself' to 'made haste' for a more accurate and natural rendering of הִתְאַמֵּץ in this context.
+  changes_summary: 'doctrine_realignment: 1 Kings 12:18 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''strengthened himself''].'
 revisions:
 - timestamp: '2026-04-23T10:07:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then King Rehoboam sent Adoram, who was over the forced labor, but all Israel stoned him with stones, and he died. And King Rehoboam strengthened himself to get up into the chariot to flee to Jerusalem.
-  to: Then King Rehoboam sent Adoram, who was over the forced labor, and all Israel stoned him with stones, and he died. And King Rehoboam made haste to get up into the chariot to flee to Jerusalem.
+  to: Then King Rehoboam sent Adoram, who was over the forced labor, but all Israel stoned him with stones, and he died. And King Rehoboam strengthened himself to get up into the chariot to flee to Jerusalem.
   rationale: Replaced 'but' with 'and' to match the Hebrew narrative sequence more closely, and changed 'strengthened himself' to 'made haste' for a more accurate and natural rendering of הִתְאַמֵּץ in this context.
 
+- timestamp: '2026-05-18T02:56:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then King Rehoboam sent Adoram[a], who was over the forced labor, and all Israel stoned him with stones, and he died[c][b]. And King Rehoboam made haste to get up into the chariot to flee to Jerusalem.'
+  to: 'Then King Rehoboam sent Adoram[a], who was over the forced labor, and all Israel stoned him with stones, and he died[c][b]. And King Rehoboam made haste to get up into the chariot to flee to Jerusalem.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''strengthened himself''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

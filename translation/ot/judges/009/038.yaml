@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:06:51Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:15Z'
   unchanged: false
-  changes_summary: Changed the final pronoun from singular to plural ('him' to 'them') to match 'the people' in the source and improve lexical accuracy and consistency.
+  changes_summary: 'doctrine_realignment: Judges 9:38 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and fight against him''].'
 revisions:
 - timestamp: '2026-04-23T11:06:51Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Zebul said to him, “Where is your mouth now, you who said, ‘Who is Abimelech, that we should serve him?’ Is this not the people whom you despised? Go out now and fight against him.”
-  to: Then Zebul said to him, “Where is your mouth now, you who said, ‘Who is Abimelech, that we should serve him?’ Is this not the people whom you despised? Go out now and fight against them.”
+  to: Then Zebul said to him, “Where is your mouth now, you who said, ‘Who is Abimelech, that we should serve him?’ Is this not the people whom you despised? Go out now and fight against him.”
   rationale: Changed the final pronoun from singular to plural ('him' to 'them') to match 'the people' in the source and improve lexical accuracy and consistency.
 
+- timestamp: '2026-05-18T02:55:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Zebul said to him[a], “Where is your mouth now, you who said, ‘Who is Abimelech, that we should serve him?’ Is this not the people whom you despised? Go out now and fight against them.”'
+  to: 'Then Zebul said to him[a], “Where is your mouth now, you who said, ‘Who is Abimelech, that we should serve him?’ Is this not the people whom you despised? Go out now and fight against them.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and fight against him''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

@@ -93,19 +93,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:22:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:31Z'
   unchanged: false
-  changes_summary: Changed 'with prudent counsel and discretion' to 'with counsel and discretion' for closer lexical accuracy, since the source expresses counsel/advice and discretion/judgment without an explicit adjective like 'prudent.'
+  changes_summary: 'doctrine_realignment: Daniel 2:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with prudent counsel and discretion''].'
 revisions:
 - timestamp: '2026-04-23T10:22:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Then Daniel answered Arioch, the chief of the king’s executioners, with prudent counsel and discretion—the one who had gone out to kill the wise men of Babylon.
-  to: Then Daniel answered Arioch, the chief of the king’s executioners, with counsel and discretion—the one who had gone out to kill the wise men of Babylon.
+  to: Then Daniel answered Arioch, the chief of the king’s executioners, with prudent counsel and discretion—the one who had gone out to kill the wise men of Babylon.
   rationale: Changed 'with prudent counsel and discretion' to 'with counsel and discretion' for closer lexical accuracy, since the source expresses counsel/advice and discretion/judgment without an explicit adjective like 'prudent.'
 
+- timestamp: '2026-05-18T02:55:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Then Daniel answered Arioch[a], the chief of the king’s executioners, with counsel and discretion—the one who had gone out to kill the wise men of Babylon.'
+  to: 'Then Daniel answered Arioch[a], the chief of the king’s executioners, with counsel and discretion—the one who had gone out to kill the wise men of Babylon.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with prudent counsel and discretion''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

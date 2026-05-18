@@ -76,19 +76,26 @@ theological_decisions:
   - 'No explicit speech tag: ''for the God of my father was my help, and he delivered me from Pharaoh’s sword'''
   rationale: The Hebrew does not contain a verb of speaking here, but English often benefits from making the naming formula explicit. This addition is interpretive but modest, clarifying that the clause gives Moses' rationale for the name rather than introducing a narrator aside. Because the source does not explicitly say 'he said,' this decision is documented.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:32:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:03Z'
   unchanged: false
-  changes_summary: Removed 'he said,' since it is not in the source text. Kept the causal 'for' and preserved the formal wording of the name explanation.
+  changes_summary: 'doctrine_realignment: Exodus 18:4 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The God of my father''].'
 revisions:
 - timestamp: '2026-04-23T10:32:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the name of the other was Eliezer, for he said, “The God of my father was my help, and he delivered me from Pharaoh’s sword.”
-  to: And the name of the other was Eliezer, for the God of my father was my help, and he delivered me from Pharaoh’s sword.
+  to: And the name of the other was Eliezer, for he said, “The God of my father was my help, and he delivered me from Pharaoh’s sword.”
   rationale: Removed 'he said,' since it is not in the source text. Kept the causal 'for' and preserved the formal wording of the name explanation.
 
+- timestamp: '2026-05-18T02:56:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the name of the other was Eliezer[a], for the God of my father was my help, and he delivered me from Pharaoh’s sword.'
+  to: 'And the name of the other was Eliezer[a], for the God of my father was my help, and he delivered me from Pharaoh’s sword.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The God of my father''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:41:23Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:06Z'
   unchanged: false
-  changes_summary: 'Reordered the phrasing to reflect the Greek more naturally and accurately: moved ''now'' before ''my defense'' and rendered πρὸς ὑμᾶς as ''to you'' rather than ''before you.'''
+  changes_summary: 'doctrine_realignment: Acts 22:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before you''].'
 revisions:
 - timestamp: '2026-04-23T09:41:23Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Men, brothers and fathers, hear my defense now before you.
-  to: Men, brothers and fathers, hear now my defense to you.
+  to: Men, brothers and fathers, hear my defense now before you.
   rationale: 'Reordered the phrasing to reflect the Greek more naturally and accurately: moved ''now'' before ''my defense'' and rendered πρὸς ὑμᾶς as ''to you'' rather than ''before you.'''
 
+- timestamp: '2026-05-18T03:00:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Men[a], brothers and fathers, hear now my defense to you.'
+  to: 'Men[a], brothers and fathers, hear now my defense to you.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before you''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

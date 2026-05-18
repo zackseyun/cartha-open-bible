@@ -76,19 +76,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:39:10Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:14Z'
   unchanged: false
-  changes_summary: Changed “opened them” to “opened it” to match the singular “prison”/“prison house” implied by the Greek, while retaining the natural reference to the doors in context.
+  changes_summary: 'doctrine_realignment: Acts 5:23 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when we opened them''].'
 revisions:
 - timestamp: '2026-04-23T09:39:10Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: saying, “We found the prison securely locked, and the guards standing at the doors; but when we opened them, we found no one inside.”
-  to: saying, “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”
+  to: saying, “We found the prison securely locked, and the guards standing at the doors; but when we opened them, we found no one inside.”
   rationale: Changed “opened them” to “opened it” to match the singular “prison”/“prison house” implied by the Greek, while retaining the natural reference to the doors in context.
 
+- timestamp: '2026-05-18T03:00:14Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”'
+  to: 'saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when we opened them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

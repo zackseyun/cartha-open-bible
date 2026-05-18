@@ -102,19 +102,26 @@ theological_decisions:
   rationale: The source is singular masculine and likely representative. Per doctrine, gender-accurate rendering is preferred over gender-neutral smoothing unless context clearly demands otherwise.
   doctrine_reference: Translation philosophy §4
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:36:37Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:26Z'
   unchanged: false
-  changes_summary: Adjusted 'sought from among them' to the more natural English 'sought among them for a man.'
+  changes_summary: 'doctrine_realignment: Ezekiel 22:30 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from among them''].'
 revisions:
 - timestamp: '2026-04-23T10:36:37Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And I sought from among them a man who would build up a wall and stand in the breach before me on behalf of the land, so that I would not destroy it, but I found none.
-  to: And I sought among them for a man who would build up a wall and stand in the breach before me on behalf of the land, so that I would not destroy it, but I found none.
+  to: And I sought from among them a man who would build up a wall and stand in the breach before me on behalf of the land, so that I would not destroy it, but I found none.
   rationale: Adjusted 'sought from among them' to the more natural English 'sought among them for a man.'
 
+- timestamp: '2026-05-18T02:54:26Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I sought among them for a man who would build up a wall and stand in the breach before me on behalf of the land[a], so that I would not destroy it[b], but I found none.'
+  to: 'And I sought among them for a man who would build up a wall and stand in the breach before me on behalf of the land[a], so that I would not destroy it[b], but I found none.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from among them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

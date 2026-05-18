@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:28Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:17Z'
   unchanged: false
-  changes_summary: Adjusted 'against King Solomon' to the more literal 'against the king,' since the Hebrew says 'against the king' and Solomon is identified in the following clause. Added 'why' for smoother English while preserving the sense.
+  changes_summary: 'doctrine_realignment: 1 Kings 11:27 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against King''].'
 revisions:
 - timestamp: '2026-04-23T10:08:28Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'And this was the reason he raised his hand against King Solomon: Solomon had built the Millo and closed up the breach of the city of David his father.'
-  to: 'And this was the reason why he raised his hand against the king: Solomon had built the Millo and closed up the breach of the city of David his father.'
+  to: 'And this was the reason he raised his hand against King Solomon: Solomon had built the Millo and closed up the breach of the city of David his father.'
   rationale: Adjusted 'against King Solomon' to the more literal 'against the king,' since the Hebrew says 'against the king' and Solomon is identified in the following clause. Added 'why' for smoother English while preserving the sense.
 
+- timestamp: '2026-05-18T02:57:17Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And this was the reason why he raised his hand against the king: Solomon had built the Millo and closed up the breach of the city of David his father[a][b].'
+  to: 'And this was the reason why he raised his hand against the king: Solomon had built the Millo and closed up the breach of the city of David his father[a][b].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against King''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

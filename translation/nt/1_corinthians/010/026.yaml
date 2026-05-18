@@ -66,19 +66,26 @@ theological_decisions:
   rationale: Per doctrine, κύριος defaults to 'Lord.' Although the line quotes Psalm 24:1, Paul’s Greek text uses κύριος, and 'Lord' preserves both the citation and New Testament usage without importing the small-caps convention reserved in this project for YHWH in Hebrew contexts.
   doctrine_reference: 'DOCTRINE.md Contested terms: κύριος → Lord'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:35:15Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:38Z'
   unchanged: false
-  changes_summary: Revised 'its fullness' to 'all that fills it' for more natural English while accurately conveying τὸ πλήρωμα αὐτῆς.
+  changes_summary: 'doctrine_realignment: 1 Corinthians 10:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fullness''].'
 revisions:
 - timestamp: '2026-04-23T09:35:15Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For the earth is the Lord’s, and its fullness.
-  to: For the earth is the Lord’s, and all that fills it.
+  to: For the earth is the Lord’s, and its fullness.
   rationale: Revised 'its fullness' to 'all that fills it' for more natural English while accurately conveying τὸ πλήρωμα αὐτῆς.
 
+- timestamp: '2026-05-18T03:01:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For the earth is the Lord’s[a], and all that fills it.'
+  to: 'For the earth is the Lord’s[a], and all that fills it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''fullness''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

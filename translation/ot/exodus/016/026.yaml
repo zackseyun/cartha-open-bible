@@ -70,19 +70,26 @@ theological_decisions:
   rationale: The Hebrew lacks the article on שַׁבָּת here and functions appositionally with 'the seventh day.' Rendering 'a Sabbath' preserves the lexical form and avoids importing a more developed liturgical sense than the text itself states, while still recognizing the institution of Sabbath rest in context.
   doctrine_reference: 'Translation philosophy: original-language primacy over translation tradition; preserve theological tension rather than resolve it.'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:31:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:54Z'
   unchanged: false
-  changes_summary: Removed 'on it,' which does not reflect the Hebrew here. The verse simply says there will be none on the seventh day.
+  changes_summary: 'doctrine_realignment: Exodus 16:26 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''there will be none on it''].'
 revisions:
 - timestamp: '2026-04-23T10:31:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For six days you shall gather it, but on the seventh day, a Sabbath, there will be none on it.
-  to: For six days you shall gather it, but on the seventh day, a Sabbath, there will be none.
+  to: For six days you shall gather it, but on the seventh day, a Sabbath, there will be none on it.
   rationale: Removed 'on it,' which does not reflect the Hebrew here. The verse simply says there will be none on the seventh day.
 
+- timestamp: '2026-05-18T02:54:54Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For six days you shall gather it[a], but on the seventh day, a Sabbath[c][b], there will be none.'
+  to: 'For six days you shall gather it[a], but on the seventh day, a Sabbath[c][b], there will be none.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''there will be none on it''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

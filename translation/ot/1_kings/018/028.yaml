@@ -78,19 +78,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:08:30Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:45Z'
   unchanged: false
-  changes_summary: Changed 'blood poured out' to 'the blood gushed out' for a more natural and vivid rendering of the Hebrew singular noun with the verb 'to pour/shed,' while preserving the sense and completeness of the verse.
+  changes_summary: 'doctrine_realignment: 1 Kings 18:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''until blood poured out''].'
 revisions:
 - timestamp: '2026-04-23T10:08:30Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: So they cried out with a loud voice and cut themselves according to their custom with swords and spears until blood poured out on them.
-  to: So they cried out with a loud voice and cut themselves according to their custom with swords and spears until the blood gushed out on them.
+  to: So they cried out with a loud voice and cut themselves according to their custom with swords and spears until blood poured out on them.
   rationale: Changed 'blood poured out' to 'the blood gushed out' for a more natural and vivid rendering of the Hebrew singular noun with the verb 'to pour/shed,' while preserving the sense and completeness of the verse.
 
+- timestamp: '2026-05-18T02:56:45Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'So they cried out with a loud voice and cut themselves according to their custom with swords and spears until the blood gushed out on them[a][b].'
+  to: 'So they cried out with a loud voice and cut themselves according to their custom with swords and spears until the blood gushed out on them[a][b].'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''until blood poured out''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

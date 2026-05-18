@@ -60,19 +60,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:11:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:43Z'
   unchanged: false
-  changes_summary: Replaced 'only' with 'just' for more natural English while preserving the sense of הֲלֹא דָבָר הוּא ('Was it not a word/just words?').
+  changes_summary: 'doctrine_realignment: 1 Samuel 17:29 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''only a word''].'
 revisions:
 - timestamp: '2026-04-23T10:11:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: David said, “What have I done now? Was it not only a word?”
-  to: David said, “What have I done now? Was it not just a word?”
+  to: David said, “What have I done now? Was it not only a word?”
   rationale: Replaced 'only' with 'just' for more natural English while preserving the sense of הֲלֹא דָבָר הוּא ('Was it not a word/just words?').
 
+- timestamp: '2026-05-18T02:56:43Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'David said[a], “What have I done now? Was it not just a word?”'
+  to: 'David said[a], “What have I done now? Was it not just a word?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''only a word''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

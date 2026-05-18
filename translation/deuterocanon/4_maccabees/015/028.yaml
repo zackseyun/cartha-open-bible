@@ -18,7 +18,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the daughter remembered the steadfastness of God-fearing Abraham[a].
+  text: But the daughter remembered the steadfastness of Abraham, who feared God.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -91,10 +91,10 @@ theological_decisions:
   rationale: The Greek explicitly contains θεο- ('God'), so the translation preserves that reference rather than using the broader English adjective 'godly.' This is a lexical-theological choice because Abraham is presented as a model of piety before God, not merely generic virtue.
   doctrine_reference: Translation philosophy §1, §6
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:37:27Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:07Z'
   unchanged: false
-  changes_summary: Reordered the phrase to reflect the Greek more directly and rendered θεοσεβοῦς attributively as 'God-fearing' modifying Abraham, avoiding the relative clause 'who feared God.'
+  changes_summary: 'doctrine_realignment: 4 Maccabees 15:28 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who feared God''].'
 revisions:
 - timestamp: '2026-04-23T15:37:27Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -104,6 +104,13 @@ revisions:
   to: But the daughter remembered the steadfastness of God-fearing Abraham.
   rationale: Reordered the phrase to reflect the Greek more directly and rendered θεοσεβοῦς attributively as 'God-fearing' modifying Abraham, avoiding the relative clause 'who feared God.'
 
+- timestamp: '2026-05-18T03:10:07Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'But the daughter remembered the steadfastness of God-fearing Abraham[a].'
+  to: 'But the daughter remembered the steadfastness of Abraham, who feared God.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who feared God''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.8

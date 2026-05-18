@@ -82,19 +82,26 @@ theological_decisions:
   rationale: The Hebrew syntax distinguishes the prophets' lying purpose (לְמַעַן הַרְחִיק) from the explicit first-person divine action in וְהִדַּחְתִּי. The translation preserves that tension rather than collapsing all agency into one actor.
   doctrine_reference: Preserve theological tension rather than resolve it.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:55:46Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:37Z'
   unchanged: false
-  changes_summary: Changed 'a lie' to 'lies' for more natural rendering of שקר in this context, and removed 'far' since it is not explicitly present in the source. Kept the rest unchanged.
+  changes_summary: 'doctrine_realignment: Jeremiah 27:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remove you far from your land''].'
 revisions:
 - timestamp: '2026-04-23T10:55:46Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For they are prophesying a lie to you, in order to remove you far from your land; and I will drive you out, and you will perish.
-  to: For they are prophesying lies to you, in order to remove you from your land; and I will drive you out, and you will perish.
+  to: For they are prophesying a lie to you, in order to remove you far from your land; and I will drive you out, and you will perish.
   rationale: Changed 'a lie' to 'lies' for more natural rendering of שקר in this context, and removed 'far' since it is not explicitly present in the source. Kept the rest unchanged.
 
+- timestamp: '2026-05-18T02:57:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.'
+  to: 'For they are prophesying lies to you[a], in order to remove you from your land; and I will drive you out[c][b], and you will perish.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remove you far from your land''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

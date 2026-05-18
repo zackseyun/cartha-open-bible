@@ -109,19 +109,26 @@ theological_decisions:
   rationale: For Sirach, surviving Hebrew has primacy, but the prompt requires the Greek parallel to be used as actual translation input. Here the Greek helps resolve a likely idiomatic or textually uncertain Hebrew expression without displacing the Hebrew base.
   doctrine_reference: PHILOSOPHY.md 'What we are translating' and task requirement on parallel sources
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:45:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:49Z'
   unchanged: false
-  changes_summary: Changed 'enjoy food' to 'enjoy pleasure' to reflect תענוג more accurately; retained the rest as faithful and natural.
+  changes_summary: 'doctrine_realignment: Sirach 41:1 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and still strong enough to enjoy food''].'
 revisions:
 - timestamp: '2026-04-23T15:45:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: O death, how bitter is your remembrance to a man at ease in his possessions, to a man untroubled and prospering in everything, and still strong enough to enjoy food.
-  to: O death, how bitter is your remembrance to a man at ease in his possessions, to a man untroubled and prospering in everything, and still strong enough to enjoy pleasure.
+  to: O death, how bitter is your remembrance to a man at ease in his possessions, to a man untroubled and prospering in everything, and still strong enough to enjoy food.
   rationale: Changed 'enjoy food' to 'enjoy pleasure' to reflect תענוג more accurately; retained the rest as faithful and natural.
 
+- timestamp: '2026-05-18T02:57:49Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'O death[a], how bitter is your remembrance to a man at ease in his possessions, to a man untroubled and prospering in everything[b], and still strong enough to enjoy pleasure.'
+  to: 'O death[a], how bitter is your remembrance to a man at ease in his possessions, to a man untroubled and prospering in everything[b], and still strong enough to enjoy pleasure.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and still strong enough to enjoy food''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

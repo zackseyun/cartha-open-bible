@@ -100,19 +100,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:32:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:43Z'
   unchanged: false
-  changes_summary: Removed 'away' after 'take John' because it is not expressed in the Greek. Kept the rest unchanged as accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 16:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to take John away''].'
 revisions:
 - timestamp: '2026-04-23T15:32:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he sent others to Gazara to take John away, and to the commanders of thousands he sent letters to come to him, so that he might give them silver and gold and gifts.
-  to: And he sent others to Gazara to take John, and to the commanders of thousands he sent letters to come to him, so that he might give them silver and gold and gifts.
+  to: And he sent others to Gazara to take John away, and to the commanders of thousands he sent letters to come to him, so that he might give them silver and gold and gifts.
   rationale: Removed 'away' after 'take John' because it is not expressed in the Greek. Kept the rest unchanged as accurate and natural.
 
+- timestamp: '2026-05-18T02:58:43Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he sent others to Gazara to take John[a], and to the commanders of thousands he sent letters to come to him[b], so that he might give them silver and gold and gifts.'
+  to: 'And he sent others to Gazara to take John[a], and to the commanders of thousands he sent letters to come to him[b], so that he might give them silver and gold and gifts.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to take John away''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

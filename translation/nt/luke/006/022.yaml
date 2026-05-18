@@ -109,19 +109,26 @@ theological_decisions:
   rationale: The traditional translated title best preserves the Greek wording, Gospel usage, and likely allusive force, while avoiding an unnecessarily novel rendering.
   doctrine_reference: Translation philosophy §2, §5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:49:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:57Z'
   unchanged: false
-  changes_summary: Changed 'cast out your name as evil' to 'reject your name as evil' for more natural English while preserving the sense of ἐκβάλωσιν τὸ ὄνομα ὑμῶν ὡς πονηρόν.
+  changes_summary: 'doctrine_realignment: Luke 6:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''cast out your name''].'
 revisions:
 - timestamp: '2026-04-23T09:49:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Blessed are you when people hate you, and when they exclude you and insult you and cast out your name as evil because of the Son of Man.
-  to: Blessed are you when people hate you, and when they exclude you and insult you and reject your name as evil because of the Son of Man.
+  to: Blessed are you when people hate you, and when they exclude you and insult you and cast out your name as evil because of the Son of Man.
   rationale: Changed 'cast out your name as evil' to 'reject your name as evil' for more natural English while preserving the sense of ἐκβάλωσιν τὸ ὄνομα ὑμῶν ὡς πονηρόν.
 
+- timestamp: '2026-05-18T03:00:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Blessed are you when people hate you[a], and when they exclude you and insult you and reject your name as evil because of the Son of Man.'
+  to: 'Blessed are you when people hate you[a], and when they exclude you and insult you and reject your name as evil because of the Son of Man.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''cast out your name''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

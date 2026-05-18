@@ -73,19 +73,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:07:33Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:04Z'
   unchanged: false
-  changes_summary: Changed 'so that' to 'that' for a slightly more formal and natural rendering while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Kings 12:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that we may answer''].'
 revisions:
 - timestamp: '2026-04-23T10:07:33Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he said to them, “What do you advise, so that we may answer this people who have spoken to me, saying, ‘Lighten the yoke that your father put on us’?”
-  to: And he said to them, “What do you advise, that we may answer this people who have spoken to me, saying, ‘Lighten the yoke that your father put on us’?”
+  to: And he said to them, “What do you advise, so that we may answer this people who have spoken to me, saying, ‘Lighten the yoke that your father put on us’?”
   rationale: Changed 'so that' to 'that' for a slightly more formal and natural rendering while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:04Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he said to them[a], “What do you advise, that we may answer this people who have spoken to me, saying[b], ‘Lighten the yoke that your father put on us’?”'
+  to: 'And he said to them[a], “What do you advise, that we may answer this people who have spoken to me, saying[b], ‘Lighten the yoke that your father put on us’?”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that we may answer''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

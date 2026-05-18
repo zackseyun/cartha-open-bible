@@ -68,19 +68,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:00:29Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:54:06Z'
   unchanged: false
-  changes_summary: Changed 'build it up' to 'rebuild it' for a more natural and precise rendering of the verb, while preserving the sense of not restoring what he seized.
+  changes_summary: 'doctrine_realignment: Job 20:19 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and will not build it up''].'
 revisions:
 - timestamp: '2026-04-23T11:00:29Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For he has crushed and abandoned the poor; he has seized a house and will not build it up.
-  to: For he has crushed and abandoned the poor; he has seized a house and will not rebuild it.
+  to: For he has crushed and abandoned the poor; he has seized a house and will not build it up.
   rationale: Changed 'build it up' to 'rebuild it' for a more natural and precise rendering of the verb, while preserving the sense of not restoring what he seized.
 
+- timestamp: '2026-05-18T02:54:06Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For he has crushed and abandoned the poor[a]; he has seized a house and will not rebuild it.'
+  to: 'For he has crushed and abandoned the poor[a]; he has seized a house and will not rebuild it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and will not build it up''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.8

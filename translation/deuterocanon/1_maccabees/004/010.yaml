@@ -118,19 +118,26 @@ theological_decisions:
   rationale: The Greek wording is somewhat marked. Preserving that markedness in the draft keeps the translation auditable, while alternatives are documented for possible revision.
   doctrine_reference: Translation philosophy §1, §5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:30:07Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:31Z'
   unchanged: false
-  changes_summary: Replaced 'if he will desire us' with the more natural and accurate 'if he is willing toward us'; added a semicolon to clarify the conditional structure; retained the rest with minor smoothing.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 4:10 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if he will desire us''].'
 revisions:
 - timestamp: '2026-04-23T15:30:07Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And now let us cry out to heaven, if he will desire us, and he will remember the covenant of our fathers and crush this camp before us today.
-  to: And now let us cry out to heaven; if he is willing toward us, he will remember the covenant of our fathers and crush this camp before us today.
+  to: And now let us cry out to heaven, if he will desire us, and he will remember the covenant of our fathers and crush this camp before us today.
   rationale: Replaced 'if he will desire us' with the more natural and accurate 'if he is willing toward us'; added a semicolon to clarify the conditional structure; retained the rest with minor smoothing.
 
+- timestamp: '2026-05-18T02:59:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And now let us cry out to heaven; if he is willing toward us[a], he will remember the covenant of our fathers and crush this camp before us today.'
+  to: 'And now let us cry out to heaven; if he is willing toward us[a], he will remember the covenant of our fathers and crush this camp before us today.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if he will desire us''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -59,19 +59,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:54:11Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:48Z'
   unchanged: false
-  changes_summary: Changed 'ground' to 'land' for closer lexical accuracy to אֶרֶץ while keeping the rest of the verse natural and formal.
+  changes_summary: 'doctrine_realignment: Jeremiah 10:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the ground''].'
 revisions:
 - timestamp: '2026-04-23T10:54:11Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Gather up your bundle from the ground, you who dwell under siege.
-  to: Gather up your bundle from the land, you who dwell under siege.
+  to: Gather up your bundle from the ground, you who dwell under siege.
   rationale: Changed 'ground' to 'land' for closer lexical accuracy to אֶרֶץ while keeping the rest of the verse natural and formal.
 
+- timestamp: '2026-05-18T02:57:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Gather up your bundle from the land[a], you who dwell under siege.'
+  to: 'Gather up your bundle from the land[a], you who dwell under siege.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the ground''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

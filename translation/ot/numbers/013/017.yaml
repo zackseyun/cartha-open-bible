@@ -84,19 +84,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:17:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:09Z'
   unchanged: false
-  changes_summary: Changed 'through the Negev' to 'into the Negev' for closer alignment with the directional sense of the Hebrew. Kept 'scout out' and 'hill country' as accurate and natural renderings.
+  changes_summary: 'doctrine_realignment: Numbers 13:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through the Negev''].'
 revisions:
 - timestamp: '2026-04-23T11:17:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Moses sent them to scout out the land of Canaan, and he said to them, “Go up this way through the Negev, and go up into the hill country.”
-  to: Moses sent them to scout out the land of Canaan, and he said to them, “Go up this way into the Negev, and go up into the hill country.”
+  to: Moses sent them to scout out the land of Canaan, and he said to them, “Go up this way through the Negev, and go up into the hill country.”
   rationale: Changed 'through the Negev' to 'into the Negev' for closer alignment with the directional sense of the Hebrew. Kept 'scout out' and 'hill country' as accurate and natural renderings.
 
+- timestamp: '2026-05-18T02:58:09Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”'
+  to: 'Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through the Negev''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

@@ -81,19 +81,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:06:18Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:15Z'
   unchanged: false
-  changes_summary: Changed 'against him' to 'against them' to match the collective sense of 'Israel' in natural English while preserving the source meaning.
+  changes_summary: 'doctrine_realignment: Judges 6:3 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would come up against him''].'
 revisions:
 - timestamp: '2026-04-23T11:06:18Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And whenever Israel sowed, Midian and Amalek and the people of the East would come up against him.
-  to: And whenever Israel sowed, Midian and Amalek and the people of the East would come up against them.
+  to: And whenever Israel sowed, Midian and Amalek and the people of the East would come up against him.
   rationale: Changed 'against him' to 'against them' to match the collective sense of 'Israel' in natural English while preserving the source meaning.
 
+- timestamp: '2026-05-18T02:55:15Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.'
+  to: 'And whenever Israel sowed[a], Midian and Amalek and the people of the East would come up against them.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would come up against him''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

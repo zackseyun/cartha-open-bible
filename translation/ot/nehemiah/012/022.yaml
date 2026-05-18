@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:15:01Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:05Z'
   unchanged: false
-  changes_summary: Adjusted 'and so were the priests' to 'and the priests also' for a more formal, literal rendering of the Hebrew while preserving the sense.
+  changes_summary: 'doctrine_realignment: Nehemiah 12:22 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and so were the priests''].'
 revisions:
 - timestamp: '2026-04-23T11:15:01Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: In the days of Eliashib, Joiada, Johanan, and Jaddua, the Levites were recorded as heads of fathers’ houses, and so were the priests, during the reign of Darius the Persian.
-  to: In the days of Eliashib, Joiada, Johanan, and Jaddua, the Levites were recorded as heads of fathers’ houses, and the priests also, during the reign of Darius the Persian.
+  to: In the days of Eliashib, Joiada, Johanan, and Jaddua, the Levites were recorded as heads of fathers’ houses, and so were the priests, during the reign of Darius the Persian.
   rationale: Adjusted 'and so were the priests' to 'and the priests also' for a more formal, literal rendering of the Hebrew while preserving the sense.
 
+- timestamp: '2026-05-18T02:55:05Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'In the days of Eliashib[a], Joiada, Johanan, and Jaddua, the Levites were recorded as heads of fathers’ houses, and the priests also[c][b], during the reign of Darius the Persian.'
+  to: 'In the days of Eliashib[a], Joiada, Johanan, and Jaddua, the Levites were recorded as heads of fathers’ houses, and the priests also[c][b], during the reign of Darius the Persian.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and so were the priests''].'
 cross_check:
   status: high_agreement
   agreement: 0.98

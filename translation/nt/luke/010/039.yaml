@@ -74,19 +74,26 @@ theological_decisions:
   rationale: The main text uses 'the Lord' to reflect the adopted Greek reading and because κύριος is the default rendering for this title per doctrine. The alternative 'Jesus' is preserved in a footnote because it is a meaningful textual variant affecting whether the verse emphasizes title or personal name.
   doctrine_reference: 'DOCTRINE.md: Contested terms table (κύριος → Lord); preserve alternatives in footnotes where ambiguity or contested reading remains'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:02Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:55Z'
   unchanged: false
-  changes_summary: Replaced “the Lord’s” with “Jesus’” to match the Greek text, which reads “Jesus,” not “the Lord.” No other changes needed.
+  changes_summary: 'doctrine_realignment: Luke 10:39 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the Lord''].'
 revisions:
 - timestamp: '2026-04-23T09:50:02Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And she had a sister called Mary, who also sat at the Lord’s feet and was listening to his word.
-  to: And she had a sister called Mary, who also sat at Jesus’ feet and was listening to his word.
+  to: And she had a sister called Mary, who also sat at the Lord’s feet and was listening to his word.
   rationale: Replaced “the Lord’s” with “Jesus’” to match the Greek text, which reads “Jesus,” not “the Lord.” No other changes needed.
 
+- timestamp: '2026-05-18T03:00:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And she had a sister called Mary[a], who also sat at Jesus’ feet and was listening to his word.'
+  to: 'And she had a sister called Mary[a], who also sat at Jesus’ feet and was listening to his word.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the Lord''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

@@ -85,19 +85,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:06:18Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:50Z'
   unchanged: false
-  changes_summary: Changed 'would come in' to 'would come' for more natural English and closer fit to the source; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: Judges 6:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and their tents would come in''].'
 revisions:
 - timestamp: '2026-04-23T11:06:18Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For they and their livestock would come up, and their tents would come in like locusts in multitude; both they and their camels were without number, and they came into the land to destroy it.
-  to: For they and their livestock would come up, and their tents would come like locusts in multitude; both they and their camels were without number, and they came into the land to destroy it.
+  to: For they and their livestock would come up, and their tents would come in like locusts in multitude; both they and their camels were without number, and they came into the land to destroy it.
   rationale: Changed 'would come in' to 'would come' for more natural English and closer fit to the source; otherwise retained the draft.
 
+- timestamp: '2026-05-18T02:55:50Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For they and their livestock would come up[a], and their tents would come like locusts in multitude; both they and their camels were without number[c][b], and they came into the land to destroy it.'
+  to: 'For they and their livestock would come up[a], and their tents would come like locusts in multitude; both they and their camels were without number[c][b], and they came into the land to destroy it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and their tents would come in''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.75

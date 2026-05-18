@@ -9,7 +9,7 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the men of the city encamped[a], and they fought all that day and all that night, and the city was delivered into his hands.
+  text: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -88,10 +88,10 @@ theological_decisions:
   rationale: The source text ends with singular αὐτοῦ after plural verbs earlier in the verse. Since there is no doctrinal issue but a significant interpretive/translation choice, the draft preserves the singular as the more transparent rendering of the Greek witness.
   doctrine_reference: Translation philosophy §§1, 5
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:30:26Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:09:53Z'
   unchanged: false
-  changes_summary: Removed 'against the city,' which is not represented in the Greek and makes the sentence self-contradictory. Retained the rest with natural formal wording.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 5:50 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they fought against''].'
 revisions:
 - timestamp: '2026-04-23T15:30:26Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -101,6 +101,13 @@ revisions:
   to: And the men of the city encamped, and they fought all that day and all that night, and the city was delivered into his hands.
   rationale: Removed 'against the city,' which is not represented in the Greek and makes the sentence self-contradictory. Retained the rest with natural formal wording.
 
+- timestamp: '2026-05-18T03:09:53Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the men of the city encamped[a], and they fought all that day and all that night, and the city was delivered into his hands.'
+  to: 'And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they fought against''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

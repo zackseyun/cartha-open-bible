@@ -18,7 +18,7 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For who[a], while devoutly practicing philosophy according to the whole rule of philosophy, and having put his trust in God,
+  text: For who, while devoutly pursuing philosophy according to the whole rule of philosophy, and having put his trust in God,
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -115,10 +115,10 @@ theological_decisions:
   rationale: The verb here denotes reliance on God rather than mere assent. This aligns with the project's default handling of πίστις/πιστεύω language as 'faith/trust' where context supports it, while avoiding unnecessary doctrinal loading.
   doctrine_reference: 'DOCTRINE.md: πίστις default ''faith'' with ''trust'' as contextual alternative'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:36:36Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:10Z'
   unchanged: false
-  changes_summary: Changed 'pursuing philosophy' to 'practicing philosophy' to better reflect φιλοσοφῶν in a formal, natural way while preserving the structure and completeness of the Greek.
+  changes_summary: 'doctrine_realignment: 4 Maccabees 7:21 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''pursuing philosophy''].'
 revisions:
 - timestamp: '2026-04-23T15:36:36Z'
   adjudicator: azure-gpt-5.4-revision-pass
@@ -128,6 +128,13 @@ revisions:
   to: For who, while devoutly practicing philosophy according to the whole rule of philosophy, and having put his trust in God,
   rationale: Changed 'pursuing philosophy' to 'practicing philosophy' to better reflect φιλοσοφῶν in a formal, natural way while preserving the structure and completeness of the Greek.
 
+- timestamp: '2026-05-18T03:10:10Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For who[a], while devoutly practicing philosophy according to the whole rule of philosophy, and having put his trust in God,'
+  to: 'For who, while devoutly pursuing philosophy according to the whole rule of philosophy, and having put his trust in God,'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''pursuing philosophy''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

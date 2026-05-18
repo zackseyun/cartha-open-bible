@@ -101,19 +101,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:30:34Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:59:37Z'
   unchanged: false
-  changes_summary: Removed 'again,' since the Greek does not explicitly indicate repetition here; retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 6:9 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''came over him again''].'
 revisions:
 - timestamp: '2026-04-23T15:30:34Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he remained there for many days, because great grief came over him again, and he thought that he was dying.
-  to: And he remained there for many days, because great grief came over him, and he thought that he was dying.
+  to: And he remained there for many days, because great grief came over him again, and he thought that he was dying.
   rationale: Removed 'again,' since the Greek does not explicitly indicate repetition here; retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T02:59:37Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he remained there for many days[a], because great grief came over him, and he thought that he was dying.'
+  to: 'And he remained there for many days[a], because great grief came over him, and he thought that he was dying.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''came over him again''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

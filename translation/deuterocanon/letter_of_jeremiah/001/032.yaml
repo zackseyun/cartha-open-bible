@@ -101,19 +101,26 @@ theological_decisions:
   rationale: The immediate and broader context of the Letter of Jeremiah repeatedly mocks idols being adorned and handled by priests. The Greek itself uses only the pronoun, so the main text preserves that with 'them' while allowing context to supply the referent.
   doctrine_reference: Preserve source-text wording unless clarity requires expansion; original-language primacy over translation tradition.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:40:14Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:31Z'
   unchanged: false
-  changes_summary: Removed 'their own' because αὐτῶν naturally refers to the priests' wives and children without requiring emphatic 'own'; otherwise retained the draft's accurate and natural wording.
+  changes_summary: 'doctrine_realignment: Letter of Jeremiah 1:32 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their own wives''].'
 revisions:
 - timestamp: '2026-04-23T15:40:14Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: After taking garments from them, the priests clothe their own wives and children.
-  to: After taking garments from them, the priests clothe their wives and children.
+  to: After taking garments from them, the priests clothe their own wives and children.
   rationale: Removed 'their own' because αὐτῶν naturally refers to the priests' wives and children without requiring emphatic 'own'; otherwise retained the draft's accurate and natural wording.
 
+- timestamp: '2026-05-18T02:58:31Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'After taking garments from them[a], the priests clothe their wives and children.'
+  to: 'After taking garments from them[a], the priests clothe their wives and children.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their own wives''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

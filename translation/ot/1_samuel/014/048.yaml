@@ -69,19 +69,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:35Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:33Z'
   unchanged: false
-  changes_summary: Changed 'them' to 'it' to match the singular referent 'Israel' in the Hebrew. Retained the rest as accurate and natural.
+  changes_summary: 'doctrine_realignment: 1 Samuel 14:48 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who plundered them''].'
 revisions:
 - timestamp: '2026-04-23T10:10:35Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: He fought valiantly and struck Amalek, and he delivered Israel from the hand of those who plundered them.
-  to: He fought valiantly and struck Amalek, and he delivered Israel from the hand of those who plundered it.
+  to: He fought valiantly and struck Amalek, and he delivered Israel from the hand of those who plundered them.
   rationale: Changed 'them' to 'it' to match the singular referent 'Israel' in the Hebrew. Retained the rest as accurate and natural.
 
+- timestamp: '2026-05-18T02:55:33Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.'
+  to: 'He fought valiantly and struck Amalek[c][b][a], and he delivered Israel from the hand of those who plundered it.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who plundered them''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

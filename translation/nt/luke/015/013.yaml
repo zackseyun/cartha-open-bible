@@ -86,19 +86,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:50:45Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:57Z'
   unchanged: false
-  changes_summary: Added a comma before the final participial phrase and revised 'while living recklessly' to 'living recklessly' for a more natural and direct rendering of ζῶν ἀσώτως, while preserving the sense.
+  changes_summary: 'doctrine_realignment: Luke 15:13 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while living recklessly''].'
 revisions:
 - timestamp: '2026-04-23T09:50:45Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And after not many days, the younger son gathered everything together and went away to a distant country, and there he squandered his property while living recklessly.
-  to: And after not many days, the younger son gathered everything together and went away to a distant country, and there he squandered his property, living recklessly.
+  to: And after not many days, the younger son gathered everything together and went away to a distant country, and there he squandered his property while living recklessly.
   rationale: Added a comma before the final participial phrase and revised 'while living recklessly' to 'living recklessly' for a more natural and direct rendering of ζῶν ἀσώτως, while preserving the sense.
 
+- timestamp: '2026-05-18T03:00:57Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And after not many days[a], the younger son gathered everything together and went away to a distant country, and there he squandered his property[c][b], living recklessly.'
+  to: 'And after not many days[a], the younger son gathered everything together and went away to a distant country, and there he squandered his property[c][b], living recklessly.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while living recklessly''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

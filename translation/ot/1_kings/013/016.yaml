@@ -75,19 +75,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:07:44Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:03Z'
   unchanged: false
-  changes_summary: Changed “go in with you” to “go with you” for more natural English and because the Hebrew simply says “go/come with you” here, without requiring “in.”
+  changes_summary: 'doctrine_realignment: 1 Kings 13:16 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''or go in''].'
 revisions:
 - timestamp: '2026-04-23T10:07:44Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And he said, “I cannot return with you or go in with you, and I will not eat bread or drink water with you in this place.”
-  to: And he said, “I cannot return with you or go with you, and I will not eat bread or drink water with you in this place.”
+  to: And he said, “I cannot return with you or go in with you, and I will not eat bread or drink water with you in this place.”
   rationale: Changed “go in with you” to “go with you” for more natural English and because the Hebrew simply says “go/come with you” here, without requiring “in.”
 
+- timestamp: '2026-05-18T02:56:03Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And he said[a], “I cannot return with you or go with you, and I will not eat bread or drink water with you in this place.”'
+  to: 'And he said[a], “I cannot return with you or go with you, and I will not eat bread or drink water with you in this place.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''or go in''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

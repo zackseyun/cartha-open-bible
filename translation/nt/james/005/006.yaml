@@ -66,19 +66,26 @@ theological_decisions:
   rationale: The Greek wording with οὐκ can be read as a rhetorical question, but many English readers will understand the intended sense more clearly as a statement. This is an optimal-equivalence choice for readability while preserving the substance of the clause. The interrogative alternative is preserved in a footnote for auditability.
   doctrine_reference: Translation philosophy §6 (Readable modern English, not archaic or academic)
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:45:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:01:30Z'
   unchanged: false
-  changes_summary: Changed 'the righteous man' to 'the righteous one' for a more direct and slightly less interpretive rendering of τὸν δίκαιον; otherwise retained the draft.
+  changes_summary: 'doctrine_realignment: James 5:6 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the righteous man''].'
 revisions:
 - timestamp: '2026-04-23T09:45:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: You condemned, you murdered the righteous man. He does not resist you.
-  to: You condemned, you murdered the righteous one. He does not resist you.
+  to: You condemned, you murdered the righteous man. He does not resist you.
   rationale: Changed 'the righteous man' to 'the righteous one' for a more direct and slightly less interpretive rendering of τὸν δίκαιον; otherwise retained the draft.
 
+- timestamp: '2026-05-18T03:01:30Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'You condemned[a], you murdered the righteous one[b]. He does not resist you.'
+  to: 'You condemned[a], you murdered the righteous one[b]. He does not resist you.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the righteous man''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

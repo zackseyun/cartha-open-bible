@@ -61,19 +61,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:20:52Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:11Z'
   unchanged: false
-  changes_summary: 'Revised the second clause to reflect the Hebrew more closely: the text says literally ''bread of secrecy/secret things,'' not ''bread eaten in secret.'' This avoids adding an action not explicit in the source while keeping natural formal English.'
+  changes_summary: 'doctrine_realignment: Proverbs 9:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in secret''].'
 revisions:
 - timestamp: '2026-04-23T11:20:52Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: Stolen water is sweet, and bread eaten in secret is pleasant.
-  to: Stolen water is sweet, and bread of secrecy is pleasant.
+  to: Stolen water is sweet, and bread eaten in secret is pleasant.
   rationale: 'Revised the second clause to reflect the Hebrew more closely: the text says literally ''bread of secrecy/secret things,'' not ''bread eaten in secret.'' This avoids adding an action not explicit in the source while keeping natural formal English.'
 
+- timestamp: '2026-05-18T02:55:11Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'Stolen water is sweet[a], and bread of secrecy is pleasant.'
+  to: 'Stolen water is sweet[a], and bread of secrecy is pleasant.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in secret''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

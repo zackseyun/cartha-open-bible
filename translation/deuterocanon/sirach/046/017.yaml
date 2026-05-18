@@ -116,19 +116,26 @@ theological_decisions:
   rationale: The Greek parallel explicitly attributes the thunderous voice to the Lord, and the surrounding context in Sirach 46 recounts Samuel calling on the Lord against Israel's enemies. The Hebrew leaves the pronoun implicit enough to require contextual identification, and the Greek helps secure the referent.
   doctrine_reference: Preserve theological tension rather than resolve it; use parallel source as actual translation input while keeping Hebrew primary.
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:46:12Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:57:48Z'
   unchanged: false
-  changes_summary: Replaced 'enemy' with 'foe' to more closely reflect the singular Hebrew צר while keeping formal, natural English. No other changes needed.
+  changes_summary: 'doctrine_realignment: Sirach 46:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the leaders of the enemy''].'
 revisions:
 - timestamp: '2026-04-23T15:46:12Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: In a mighty crash his voice was heard, and the leaders of the enemy were subdued, and all the rulers of the Philistines perished.
-  to: In a mighty crash his voice was heard, and the leaders of the foe were subdued, and all the rulers of the Philistines perished.
+  to: In a mighty crash his voice was heard, and the leaders of the enemy were subdued, and all the rulers of the Philistines perished.
   rationale: Replaced 'enemy' with 'foe' to more closely reflect the singular Hebrew צר while keeping formal, natural English. No other changes needed.
 
+- timestamp: '2026-05-18T02:57:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'In a mighty crash his voice was heard[a], and the leaders of the foe were subdued[c][b], and all the rulers of the Philistines perished.'
+  to: 'In a mighty crash his voice was heard[a], and the leaders of the foe were subdued[c][b], and all the rulers of the Philistines perished.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the leaders of the enemy''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

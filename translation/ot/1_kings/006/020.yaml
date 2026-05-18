@@ -67,19 +67,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:06:37Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:12Z'
   unchanged: false
-  changes_summary: Reordered the opening phrase to reflect the Hebrew more naturally and accurately ('In front of the inner sanctuary was...') rather than making the sanctuary itself the subject. Also adjusted the dimensions to a more formal, complete rendering ('in length... in width... in its height').
+  changes_summary: 'doctrine_realignment: 1 Kings 6:20 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''twenty cubits long, twenty cubits wide, and twenty cubits high''].'
 revisions:
 - timestamp: '2026-04-23T10:06:37Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The inner sanctuary was twenty cubits long, twenty cubits wide, and twenty cubits high in front of it. He overlaid it with pure gold, and he overlaid the cedar altar.
-  to: In front of the inner sanctuary was twenty cubits in length, twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold, and he overlaid the cedar altar.
+  to: The inner sanctuary was twenty cubits long, twenty cubits wide, and twenty cubits high in front of it. He overlaid it with pure gold, and he overlaid the cedar altar.
   rationale: Reordered the opening phrase to reflect the Hebrew more naturally and accurately ('In front of the inner sanctuary was...') rather than making the sanctuary itself the subject. Also adjusted the dimensions to a more formal, complete rendering ('in length... in width... in its height').
 
+- timestamp: '2026-05-18T02:56:12Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.'
+  to: 'In front of the inner sanctuary was twenty cubits in length[a], twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold[b], and he overlaid the cedar altar.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''twenty cubits long, twenty cubits wide, and twenty cubits high''].'
 cross_check:
   status: needs_review
   agreement: 0.6

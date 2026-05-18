@@ -105,19 +105,26 @@ ai_draft:
   revision_candidates: []
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:31:18Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:35Z'
   unchanged: false
-  changes_summary: Changed 'placed' to 'stationed' for more natural rendering of military deployment, and 'stores of food' to 'supplies of food' for a more direct rendering of παραθέσεις βρωμάτων.
+  changes_summary: 'doctrine_realignment: 1 Maccabees 9:52 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''stores of food''].'
 revisions:
 - timestamp: '2026-04-23T15:31:18Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And they fortified the city, and Beth-zur, and Gazara, and the citadel, and they placed forces in them and stores of food.
-  to: And they fortified the city, and Beth-zur, and Gazara, and the citadel, and they stationed forces in them and supplies of food.
+  to: And they fortified the city, and Beth-zur, and Gazara, and the citadel, and they placed forces in them and stores of food.
   rationale: Changed 'placed' to 'stationed' for more natural rendering of military deployment, and 'stores of food' to 'supplies of food' for a more direct rendering of παραθέσεις βρωμάτων.
 
+- timestamp: '2026-05-18T02:58:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And they fortified the city[a], and Beth-zur, and Gazara, and the citadel[b], and they stationed forces in them and supplies of food.'
+  to: 'And they fortified the city[a], and Beth-zur, and Gazara, and the citadel[b], and they stationed forces in them and supplies of food.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''stores of food''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

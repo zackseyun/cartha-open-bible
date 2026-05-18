@@ -63,19 +63,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:27:40Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:53:59Z'
   unchanged: false
-  changes_summary: Changed 'along with mankind' to 'with mankind' for a more natural and direct rendering of the Hebrew/Greek sense, while preserving the meaning. Kept 'trouble of mortal man' and 'plagued' as accurate and formal.
+  changes_summary: 'doctrine_realignment: Psalms 73:5 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with''].'
 revisions:
 - timestamp: '2026-04-23T11:27:40Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They are not in the trouble of mortal man, and they are not plagued along with mankind.
-  to: They are not in the trouble of mortal man, and they are not plagued with mankind.
+  to: They are not in the trouble of mortal man, and they are not plagued along with mankind.
   rationale: Changed 'along with mankind' to 'with mankind' for a more natural and direct rendering of the Hebrew/Greek sense, while preserving the meaning. Kept 'trouble of mortal man' and 'plagued' as accurate and formal.
 
+- timestamp: '2026-05-18T02:53:59Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They are not in the trouble of mortal man[a], and they are not plagued with mankind.'
+  to: 'They are not in the trouble of mortal man[a], and they are not plagued with mankind.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with''].'
 cross_check:
   status: high_agreement
   agreement: 0.9

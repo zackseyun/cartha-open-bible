@@ -127,19 +127,26 @@ theological_decisions:
   rationale: The Greek source reads Κυρίου, and the project's default rendering for κύριος is 'Lord.' Since this is a Greek deuterocanonical text rather than a direct Hebrew YHWH form in the base text, 'Lord' best matches source primacy while preserving biblical register.
   doctrine_reference: 'DOCTRINE.md: Contested terms table (κύριος → Lord)'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:29:00Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:55Z'
   unchanged: false
-  changes_summary: Changed 'had been placed' to 'were placed' for a more direct and natural rendering of the Greek imperfect, while preserving the sense. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Esdras 6:25 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''where they had been placed''].'
 revisions:
 - timestamp: '2026-04-23T15:29:00Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the holy vessels of the house of the Lord, both the gold and the silver ones, which Nebuchadnezzar carried out from the house in Jerusalem and took to Babylon, are to be restored to the house in Jerusalem where they had been placed, so that they may be set there.
-  to: And the holy vessels of the house of the Lord, both the gold and the silver ones, which Nebuchadnezzar carried out from the house in Jerusalem and took to Babylon, are to be restored to the house in Jerusalem where they were placed, so that they may be set there.
+  to: And the holy vessels of the house of the Lord, both the gold and the silver ones, which Nebuchadnezzar carried out from the house in Jerusalem and took to Babylon, are to be restored to the house in Jerusalem where they had been placed, so that they may be set there.
   rationale: Changed 'had been placed' to 'were placed' for a more direct and natural rendering of the Greek imperfect, while preserving the sense. No other changes needed.
 
+- timestamp: '2026-05-18T02:58:55Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the holy vessels of the house of the Lord[a], both the gold and the silver ones, which Nebuchadnezzar carried out from the house in Jerusalem and took to Babylon, are to be restored to the house in Jerusalem where they were placed[b], so that they may be set there.'
+  to: 'And the holy vessels of the house of the Lord[a], both the gold and the silver ones, which Nebuchadnezzar carried out from the house in Jerusalem and took to Babylon, are to be restored to the house in Jerusalem where they were placed[b], so that they may be set there.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''where they had been placed''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

@@ -71,19 +71,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:19:06Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:58:20Z'
   unchanged: false
-  changes_summary: Changed 'went out in the army' to 'went out to war' for more natural and accurate rendering of the military expression; otherwise retained the structure and total.
+  changes_summary: 'doctrine_realignment: Numbers 31:36 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who went out in the army''].'
 revisions:
 - timestamp: '2026-04-23T11:19:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: And the half, the portion of those who went out in the army, was in number 337,500 sheep.
-  to: And the half, the portion of those who went out to war, was in number 337,500 sheep.
+  to: And the half, the portion of those who went out in the army, was in number 337,500 sheep.
   rationale: Changed 'went out in the army' to 'went out to war' for more natural and accurate rendering of the military expression; otherwise retained the structure and total.
 
+- timestamp: '2026-05-18T02:58:20Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And the half[a], the portion of those who went out to war, was in number 337,500 sheep.'
+  to: 'And the half[a], the portion of those who went out to war, was in number 337,500 sheep.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those who went out in the army''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

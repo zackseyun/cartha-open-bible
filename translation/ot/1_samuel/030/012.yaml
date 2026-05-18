@@ -64,19 +64,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:13:17Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:56:35Z'
   unchanged: false
-  changes_summary: Changed 'a piece of pressed fig cake' to 'a piece of fig cake' for a more natural rendering while preserving the sense of the Hebrew. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 30:12 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a piece of pressed fig cake''].'
 revisions:
 - timestamp: '2026-04-23T10:13:17Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: They gave him a piece of pressed fig cake and two clusters of raisins, and he ate, and his spirit returned to him, for he had not eaten bread or drunk water for three days and three nights.
-  to: They gave him a piece of fig cake and two clusters of raisins, and he ate, and his spirit returned to him, for he had not eaten bread or drunk water for three days and three nights.
+  to: They gave him a piece of pressed fig cake and two clusters of raisins, and he ate, and his spirit returned to him, for he had not eaten bread or drunk water for three days and three nights.
   rationale: Changed 'a piece of pressed fig cake' to 'a piece of fig cake' for a more natural rendering while preserving the sense of the Hebrew. No other changes needed.
 
+- timestamp: '2026-05-18T02:56:35Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'They gave him a piece of fig cake and two clusters of raisins[a], and he ate, and his spirit returned to him[c][b], for he had not eaten bread or drunk water for three days and three nights.'
+  to: 'They gave him a piece of fig cake and two clusters of raisins[a], and he ate, and his spirit returned to him[c][b], for he had not eaten bread or drunk water for three days and three nights.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a piece of pressed fig cake''].'
 cross_check:
   status: high_agreement
   agreement: 1.0

@@ -13,7 +13,7 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: From where the light comes to the moon[a], from there again it wanes until all the light is ended, and the days of the month pass, and its disk remains empty[c][b], without light.
+  text: From where the light comes to the moon, from there again it wanes until all the light is finished, and the days of the month pass, and its disk remains empty, without light.
   philosophy: optimal-equivalence
   footnotes:
   - marker: a
@@ -155,12 +155,18 @@ revisions:
   from: From where the light comes to the moon, from there again it wanes until all the light is finished, and the days of the month pass, and its disk remains empty, without light.
   to: From where the light comes to the moon, from there again it wanes until all the light is ended, and the days of the month pass, and its disk remains empty, without light.
   rationale: Changed 'is finished' to 'is ended' for a more formal and natural rendering while preserving the sense; otherwise retained the draft as accurate and complete.
+- timestamp: '2026-05-18T03:10:48Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'From where the light comes to the moon[a], from there again it wanes until all the light is ended, and the days of the month pass, and its disk remains empty[c][b], without light.'
+  to: 'From where the light comes to the moon, from there again it wanes until all the light is finished, and the days of the month pass, and its disk remains empty, without light.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''until all the light is finished''].'
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T11:37:37Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:10:48Z'
   unchanged: false
-  changes_summary: Changed 'is finished' to 'is ended' for a more formal and natural rendering while preserving the sense; otherwise retained the draft as accurate and complete.
-
+  changes_summary: 'doctrine_realignment: 1 Enoch 78:14 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''until all the light is finished''].'
 cross_check:
   status: moderate_agreement
   agreement: 0.85

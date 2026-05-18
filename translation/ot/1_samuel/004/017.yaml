@@ -89,19 +89,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T10:10:06Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T02:55:38Z'
   unchanged: false
-  changes_summary: Changed 'have died' to 'are dead' for a more natural and formally appropriate rendering of the Hebrew 'died/are dead' in this report context. No other changes needed.
+  changes_summary: 'doctrine_realignment: 1 Samuel 4:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have died''].'
 revisions:
 - timestamp: '2026-04-23T10:10:06Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: The messenger answered and said, “Israel has fled before the Philistines, and there has also been a great slaughter among the people; and your two sons also have died, Hophni and Phinehas; and the ark of God has been taken.”
-  to: The messenger answered and said, “Israel has fled before the Philistines, and there has also been a great slaughter among the people; and your two sons also are dead, Hophni and Phinehas; and the ark of God has been taken.”
+  to: The messenger answered and said, “Israel has fled before the Philistines, and there has also been a great slaughter among the people; and your two sons also have died, Hophni and Phinehas; and the ark of God has been taken.”
   rationale: Changed 'have died' to 'are dead' for a more natural and formally appropriate rendering of the Hebrew 'died/are dead' in this report context. No other changes needed.
 
+- timestamp: '2026-05-18T02:55:38Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'The messenger answered and said[a], “Israel has fled before the Philistines, and there has also been a great slaughter among the people; and your two sons also are dead, Hophni and Phinehas[b]; and the ark of God has been taken.”'
+  to: 'The messenger answered and said[a], “Israel has fled before the Philistines, and there has also been a great slaughter among the people; and your two sons also are dead, Hophni and Phinehas[b]; and the ark of God has been taken.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have died''].'
 cross_check:
   status: high_agreement
   agreement: 0.95

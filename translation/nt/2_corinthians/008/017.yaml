@@ -79,19 +79,26 @@ ai_draft:
   temperature: 0.2
 status: revised
 revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T09:37:25Z'
+  model: doctrine-realignment
+  timestamp: '2026-05-18T03:00:27Z'
   unchanged: false
-  changes_summary: Changed 'went out to you' to 'went to you' for more natural English; retained 'appeal,' 'more earnest,' and 'of his own accord' as accurate renderings of the Greek.
+  changes_summary: 'doctrine_realignment: 2 Corinthians 8:17 wholesale revert (1 override). Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he went out to you''].'
 revisions:
 - timestamp: '2026-04-23T09:37:25Z'
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For he accepted the appeal, but being more earnest, he went out to you of his own accord.
-  to: For he accepted the appeal, but being more earnest, he went to you of his own accord.
+  to: For he accepted the appeal, but being more earnest, he went out to you of his own accord.
   rationale: Changed 'went out to you' to 'went to you' for more natural English; retained 'appeal,' 'more earnest,' and 'of his own accord' as accurate renderings of the Greek.
 
+- timestamp: '2026-05-18T03:00:27Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'For he accepted the appeal[a], but being more earnest[d][c][b], he went to you of his own accord.'
+  to: 'For he accepted the appeal[a], but being more earnest[d][c][b], he went to you of his own accord.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he went out to you''].'
 cross_check:
   status: high_agreement
   agreement: 0.95
