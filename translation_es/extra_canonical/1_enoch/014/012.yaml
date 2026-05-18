@@ -57,15 +57,8 @@ base_translation:
     changes_summary: Replaced 'its doors were burning with fire' with 'beneath them was a blaze of fire' to reflect ወጥሕቱ ('and beneath it/them') and ይውዒ በእሳት ('was blazing with fire'), avoiding the unsupported 'doors.'
 translation:
   language: es
-  text: y un fuego ardía todo alrededor de los muros[a], y debajo de ellos había una llamarada de fuego[b].
+  text: y un fuego ardía alrededor de los muros, y debajo de ellos había un fuego ardiente.
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: La revisión textual identifica አረፍት como «muros»; por eso la traducción concreta ese referente en lugar de dejarlo implícito.
-    reason: textual_variant
-  - marker: b
-    text: «Llamarada de fuego» intenta expresar el valor intenso de la frase final; también podría leerse como «había fuego» en un español más llano.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ወእሳት
   english_pob_choice: and a fire
@@ -167,7 +160,7 @@ ai_draft:
     total_tokens: 4734
     reasoning_tokens: 0
     estimated_cost_usd: 0.008467
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador español refleja correctamente el sentido principal del ge''ez auditado en esta fase: fuego ardiendo alrededor de los muros y fuego debajo de ellos. Sin embargo, conserva una nota textual innecesaria sobre «muros» como si la decisión siguiera siendo variante debatida, cuando en el historial aplicado esa corrección ya quedó incorporada al texto base inglés revisado para esta etapa. Además, «llamarada» puede sonar momentánea o explosiva en español, mientras que el cuadro es más bien de fuego encendido o abrasador debajo de los muros.'
@@ -199,7 +192,13 @@ review_pass:
     total_tokens: 4968
     reasoning_tokens: 0
     estimated_cost_usd: 0.021145
-  applied_revision: false
+  applied_revision: true
   auto_apply_blocked_errors:
   - footnote marker [a] not present in translation text
   - footnote marker [b] not present in translation text
+revisions:
+- from: y un fuego ardía todo alrededor de los muros[a], y debajo de ellos había una llamarada de fuego[b].
+  to: y un fuego ardía alrededor de los muros, y debajo de ellos había un fuego ardiente.
+  rationale: Se elimina el aparato de notas porque no preserva una ambigüedad necesaria del original ni una aclaración útil creada por el español. Se suaviza «todo alrededor» a una formulación más natural en español y se sustituye «llamarada de fuego» por «un fuego ardiente» para mantener la viveza del original sin sugerir una explosión momentánea.
+  reviewer_model: gpt-5.4
+  timestamp: '2026-05-07T23:35:07Z'
