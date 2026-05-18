@@ -17,93 +17,17 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And all the people said[a], “May it be so.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “May it be so,” literally reflecting the Greek optative.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: καὶ
-  chosen: And
-  alternatives:
-  - Then
-  lexicon: BDAG
-  rationale: Standard connective introducing the next action; simple coordination is sufficient in English.
-- source_word: εἶπεν
-  chosen: said
-  alternatives:
-  - spoke
-  lexicon: BDAG
-  rationale: Aorist of λέγω is most naturally rendered 'said' in this brief narrative clause.
-- source_word: πᾶς ὁ λαός
-  chosen: all the people
-  alternatives:
-  - the whole people
-  - all the assembly
-  lexicon: BDAG
-  rationale: The phrase is collective and straightforward; 'all the people' is natural modern English and preserves the comprehensiveness of πᾶς with the collective noun λαός.
-- source_word: Γένοιτο
-  chosen: Amen
-  alternatives:
-  - May it be so
-  - So be it
-  lexicon: BDAG
-  rationale: Although γένοιτο literally means 'may it happen/be so,' in this responsive liturgical setting it functions idiomatically as an assent formula. 'Amen' best captures the congregational response in concise, natural English, while the more literal sense is preserved in a footnote.
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 0a660cabd7a508aa21cd03fd89703eff3582ceea3036b5f0849cfe3b41cf6135
-  timestamp: '2026-04-21T20:20:22Z'
-  output_hash: d2209e01264ec0e541f71e1b70a7e5805edb2487878a0a3eb273e2f254a685f5
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (scan-adjudicated corpus) @b24c243a
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Moore 1985, Anchor Bible 40
-  revision_candidates: []
-status: revised
-theological_decisions:
-- issue: Rendering the congregational acclamation Γένοιτο
-  chosen_reading: Amen
-  alternative_readings:
-  - May it be so
-  - So be it
-  rationale: This is not a doctrinally weighty contested term, but it is a significant interpretive choice. The Greek optative expresses assent/wish; in context, an English liturgical response 'Amen' communicates the force more naturally than a wooden literalism. The literal alternative is preserved in a footnote for transparency.
-  doctrine_reference: Translation philosophy §1, §6
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:39:56Z'
-  unchanged: false
-  changes_summary: Replaced “Amen” with “May it be so” to more directly reflect Γένοιτο, while preserving the formal tone and natural English.
+  text: 'And all the people said, “Amen.”'
 revisions:
-- timestamp: '2026-04-23T15:39:56Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And all the people said, “Amen.”
-  to: And all the people said, “May it be so.”
-  rationale: Replaced “Amen” with “May it be so” to more directly reflect Γένοιτο, while preserving the formal tone and natural English.
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T23:03:06Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: v31_full_coverage
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - v31_full_coverage
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/015/011.job-50809.json
+- timestamp: '2026-05-18T04:00:21Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And all the people said[a], “May it be so.”'
+  to: 'And all the people said, “Amen.”'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Amen'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:21Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Judith 15:11 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Amen'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote ma'

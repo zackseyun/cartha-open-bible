@@ -10,115 +10,17 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And I rejoiced in them all[a], because wisdom leads them; but I did not know that she is the source of these things.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'I did not know that she is the origin/source of these things.' The Greek uses a term related to generation or origin.
-    reason: lexical_alternative
-lexical_decisions:
-- source_word: εὐφράνθην
-  chosen: I rejoiced
-  alternatives:
-  - I was glad
-  - I delighted
-  lexicon: BDAG
-  rationale: Aorist passive/deponent form conveying gladness or rejoicing. 'I rejoiced' is natural English and preserves the personal response without over-paraphrase.
-- source_word: ἐπὶ πάντων
-  chosen: in them all
-  alternatives:
-  - over all these things
-  - because of them all
-  lexicon: LSJ
-  rationale: Given the following αὐτῶν ('of them') and the broader context of wisdom bringing various goods, the phrase refers to rejoicing with respect to all these things/benefits. 'In them all' is concise and idiomatic while staying anchored to the Greek.
-- source_word: ἡγεῖται
-  chosen: leads
-  alternatives:
-  - guides
-  - governs
-  - is leader of
-  lexicon: BDAG
-  rationale: The verb can mean lead, guide, or rule. Here wisdom is portrayed as the one going before or directing all these goods. 'Leads' preserves the metaphor simply; 'guides' is possible but slightly more interpretive.
-- source_word: σοφία
-  chosen: wisdom
-  lexicon: BDAG
-  rationale: Standard rendering. In this context wisdom is personified as feminine, which is reflected later by 'she'.
-- source_word: ἠγνόουν
-  chosen: I did not know
-  alternatives:
-  - I was ignorant
-  - I did not realize
-  lexicon: BDAG
-  rationale: Imperfect form expressing prior lack of knowledge. 'I did not know' is straightforward and readable.
-- source_word: γένεσίν
-  chosen: mother
-  alternatives:
-  - origin
-  - source
-  - begetter
-  lexicon: LSJ
-  rationale: Although γένεσις often means 'origin' or 'generation,' in this clause αὐτὴν γένεσίν εἶναι τούτων most naturally means that wisdom is the generating source of these things. Because wisdom is grammatically feminine and personified, 'mother' brings out the personal metaphor more clearly than the abstract 'origin,' while remaining within the semantic range of generative source.
-- source_word: τούτων
-  chosen: their
-  alternatives:
-  - of these things
-  - of them
-  lexicon: BDAG
-  rationale: 'Rendered pronominally in English for smoother style: wisdom is ''their mother,'' i.e., the source of all these things previously mentioned.'
-ai_draft:
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  prompt_id: deuterocanon_draft_v1
-  prompt_sha256: 8e86edcaef34fc9e72a8f4ab2a46ea36d445463bc304577d5936365c73cc4af5
-  timestamp: '2026-04-21T15:05:00Z'
-  output_hash: 44350340adacb0c4c40ff4caed05a2924170e4875bb7a29eb8482a807d14d247
-  temperature: 0.2
-  zone1_sources_at_draft:
-  - Swete LXX (normalized translation corpus) @00172e7a
-  zone2_consults_known:
-  - Gottingen LXX critical editions
-  - Rahlfs-Hanhart 2006, Stuttgart revised LXX
-  - Winston 1979, Anchor Bible 43
-  revision_candidates: []
-status: revised
-theological_decisions:
-- issue: Personification of wisdom and the generative metaphor in γένεσις
-  chosen_reading: Retain feminine personification ('she') and render γένεσις concretely as 'mother.'
-  alternative_readings:
-  - '''I did not know that she is the origin of these things'''
-  - '''I did not know that she is the source of them'''
-  rationale: The Greek explicitly personifies wisdom and uses a term of generation/origin. Because English can naturally sustain the personification, 'mother' preserves the literary force better than a flattened abstraction. The alternative is preserved in a footnote because 'origin/source' is also lexically defensible and may be preferred by some readers.
-  doctrine_reference: Preserve theological tension rather than resolve it; consistency of key terms, or documented exception.
-revision_pass:
-  model: gpt-5.4
-  timestamp: '2026-04-23T15:48:19Z'
-  unchanged: false
-  changes_summary: Replaced 'their mother' with 'the source of these things' to reflect γένεσιν more accurately as origin/source rather than specifically mother, and to better match τούτων ('these things') rather than 'them.'
+  text: 'And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.'
 revisions:
-- timestamp: '2026-04-23T15:48:19Z'
-  adjudicator: azure-gpt-5.4-revision-pass
-  reviewer_model: gpt-5.4
-  category: revision_pass
-  from: And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.
-  to: And I rejoiced in them all, because wisdom leads them; but I did not know that she is the source of these things.
-  rationale: Replaced 'their mother' with 'the source of these things' to reflect γένεσιν more accurately as origin/source rather than specifically mother, and to better match τούτων ('these things') rather than 'them.'
-
-cross_check:
-  status: high_agreement
-  agreement: 1.0
-  agreement_score: 1.0
-  agreement_min: 1.0
-  agreement_max: 1.0
-  verdict: agree
-  reviewed_at: '2026-04-21T21:48:19Z'
-  reviewer_model: gemini-3.1-pro-preview
-  strategy: full_coverage_priority
-  pass_count: 1
-  passes_with_issues: 0
-  models:
-  - gemini-3.1-pro-preview
-  strategies:
-  - full_coverage_priority
-  verdict_counts:
-    agree: 1
-  source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/007/012.job-39276.json
+- timestamp: '2026-05-18T04:00:21Z'
+  adjudicator: doctrine-realignment
+  reviewer_model: agentic-pilot-claude-sonnet-4-6
+  category: doctrine_realignment
+  from: 'And I rejoiced in them all[a], because wisdom leads them; but I did not know that she is the source of these things.'
+  to: 'And I rejoiced in them all, because wisdom leads them; but I did not know that she is their mother.'
+  rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''mother'', ''their'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+revision_pass:
+  model: doctrine-realignment
+  timestamp: '2026-05-18T04:00:21Z'
+  unchanged: false
+  changes_summary: 'doctrine_realignment: Wisdom of Solomon 7:12 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''mother'', ''their'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, '
