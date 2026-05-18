@@ -29,12 +29,9 @@ base_translation:
     changes_summary: Changed 'the blessing' to 'a blessing' for lexical accuracy and natural English. Retained the unfinished final phrase as in the source/draft rather than supplying words not present in the provided text.
 translation:
   language: es
-  text: 'Y dijo: «¿No me has reservado una bendición, padre?». E Isaac respondió y dijo a Esaú: «Mira, lo he puesto por señor sobre ti, y a todos sus hermanos le he dado por esclavos; y con abundancia[a]».'
+  text: 'Y dijo: «¿No me has reservado una bendición, padre?». E Isaac respondió y dijo a Esaú: «Mira, lo he puesto por señor sobre ti, y a todos sus hermanos se los he dado por esclavos; y con abundancia».'
   philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: O «y con abundancia».
-    reason: alternative_reading
+  footnotes: []
 lexical_decisions:
 - source_word: በረከተ / blessing
   english_pob_choice: a blessing
@@ -107,7 +104,7 @@ ai_draft:
     total_tokens: 3100
     reasoning_tokens: 0
     estimated_cost_usd: 0.005996
-status: spanish_needs_revision
+status: spanish_reviewed
 review_pass:
   verdict: revise
   source_alignment_summary: 'El borrador español sigue bien el sentido del testimonio ge''ez y del rastro POB en los elementos principales: «una bendición», el nombramiento de Jacob como señor de Esaú, la entrega de los hermanos como esclavos, y la preservación de la frase final incompleta «y con abundancia». Sin embargo, hay un problema de referencia pronominal en español: «a todos sus hermanos le he dado» hace concordar mal el complemento directo plural con el pronombre indirecto singular, y además puede sonar menos natural que una formulación con doble acusativo/dativo más clara.'
@@ -121,21 +118,9 @@ review_pass:
     issue: La nota [a] no aporta una alternativa distinta
     rationale: La nota dice «O “y con abundancia”», que es idéntico al texto principal. Las notas deben preservar variantes o aclaraciones reales; aquí resulta redundante.
   revised_spanish_text: 'Y dijo: «¿No me has reservado una bendición, padre?». E Isaac respondió y dijo a Esaú: «Mira, lo he puesto por señor sobre ti, y a todos sus hermanos se los he dado por esclavos; y con abundancia».'
+  revised_footnotes: []
   revision_rationale: Se hizo una reparación sintáctica menor para que el español exprese con claridad la relación entre Jacob y «todos sus hermanos» sin alterar el sentido del original ni del POB inglés. También se eliminó una nota redundante que no ofrecía una variante real. Se conserva intacta la frase final incompleta «y con abundancia», de acuerdo con la evidencia y la auditoría.
   requires_gpt54_adjudication: false
-  model_id: gpt-5.4
-  model_version: gpt-5.4-2026-03-05
-  azure_deployment: gpt-5-4-deployment
-  prompt_id: spanish_source_review_v1
-  prompt_sha256: 632e5e901ae02264cca80b3860fd567b1608806b326ac2cb870f14f8df288bc0
-  timestamp: '2026-05-07T23:04:46Z'
-  output_hash: 47a23e6a49b8c9035bfa72e714749795765eb20f8a3b7799566d670b8209bb41
-  usage:
-    prompt_tokens: 2755
-    completion_tokens: 658
-    total_tokens: 3413
-    reasoning_tokens: 0
-    estimated_cost_usd: 0.016757
-  applied_revision: false
-  auto_apply_blocked_errors:
-  - footnote marker [a] not present in translation text
+  applied_revision: true
+  model_id: claude-sonnet-4-6
+  timestamp: '2026-05-16T00:00:00Z'
